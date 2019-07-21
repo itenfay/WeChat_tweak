@@ -11,15 +11,15 @@ TWEAK_NAME = XApleSysCalcService
 XApleSysCalcService_FILES = $(wildcard src/*.m) src/Tweak.xm
 XApleSysCalcService_FRAMEWORKS = UIKit AVFoundation CoreLocation
 
-src/EZAVManager.m_CFLAGS = -fobjc-arc
-src/EZBaseViewController.m_CFLAGS = -fobjc-arc
-src/EZFuncService.m_CFLAGS = -fobjc-arc
-src/EZMultiSelectGroupsViewController.m_CFLAGS = -fobjc-arc
-src/EZReceiveRedEnvelopOperation.m_CFLAGS = -fobjc-arc
-src/EZRedEnvelopConfig.m_CFLAGS = -fobjc-arc
-src/EZRedEnvelopParamQueue.m_CFLAGS = -fobjc-arc
-src/EZRedEnvelopTaskManager.m_CFLAGS = -fobjc-arc
-src/EZSettingViewController.m_CFLAGS = -fobjc-arc
+src/WCPAVManager.m_CFLAGS = -fobjc-arc
+src/WCPBaseViewController.m_CFLAGS = -fobjc-arc
+src/WCPFuncService.m_CFLAGS = -fobjc-arc
+src/WCPMultiSelectGroupsViewController.m_CFLAGS = -fobjc-arc
+src/WCPReceiveRedEnvelopOperation.m_CFLAGS = -fobjc-arc
+src/WCPRedEnvelopConfig.m_CFLAGS = -fobjc-arc
+src/WCPRedEnvelopParamQueue.m_CFLAGS = -fobjc-arc
+src/WCPRedEnvelopTaskManager.m_CFLAGS = -fobjc-arc
+src/WCPSettingViewController.m_CFLAGS = -fobjc-arc
 src/WeChatRedEnvelopParam.m_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk

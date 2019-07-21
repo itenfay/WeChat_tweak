@@ -95,7 +95,7 @@
 - (void)GetHongbaoBusinessRequest:(id)arg1 CMDID:(unsigned int)arg2 OutputType:(unsigned int)arg3;
 
 /** Added Methods */
-- (unsigned int)ez_calculateDelaySeconds;
+- (unsigned int)wcp_calculateDelaySeconds;
 
 @end
 

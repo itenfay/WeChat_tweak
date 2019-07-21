@@ -1,15 +1,15 @@
 //
-//  EZRedEnvelopConfig.h
+// WCPRedEnvelopConfig.h
 //
-//  Created by ez on 17/4/6.
-//  Copyright © 2017年 ez. All rights reserved.
+// Created by dyf on 17/4/6.
+// Copyright © 2017 dyf. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 @class CContact;
 
-@interface EZRedEnvelopConfig : NSObject
+@interface WCPRedEnvelopConfig : NSObject
 
 + (instancetype)sharedConfig;
 
@@ -19,7 +19,7 @@
 @property (assign, nonatomic) BOOL serialReceive;
 @property (strong, nonatomic) NSArray *blackList;
 
-/** Pro */
+/** Advanced */
 @property (assign, nonatomic) BOOL revokeEnable;
 
 /** Step */

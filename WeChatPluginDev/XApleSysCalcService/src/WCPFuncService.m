@@ -1,40 +1,42 @@
 //
-//  EZFuncService.m
+// WCPFuncService.m
 //
-//  Created by ez on 17/6/6.
-//  Copyright © 2017年 ez. All rights reserved.
+// Created by dyf on 17/6/6.
+// Copyright © 2017 dyf. All rights reserved.
 //
 
-#import "EZFuncService.h"
-#import "EZRedEnvelopConfig.h"
+#import "WCPFuncService.h"
+#import "WCPRedEnvelopConfig.h"
 #import <objc/objc-runtime.h>
 
-NSString *const EZShortDateFormat = @"yyyy-MM-dd";
-NSString *const EZLongDateFormat = @"yyyy-MM-dd HH:mm:ss";
+NSString *const WCPShortDateFormat = @"yyyy-MM-dd";
+NSString *const WCPLongDateFormat  = @"yyyy-MM-dd HH:mm:ss";
 
-@interface EZFuncService ()
+@interface WCPFuncService ()
 
 @end
 
-@implementation EZFuncService
+@implementation WCPFuncService
 
 + (CGFloat)screenWidth {
-    return EZScreenWidth;
+    return WCPScreenWidth;
 }
 
 + (CGFloat)screenHeight {
-    return EZScreenHeight;
+    return WCPScreenHeight;
 }
 
 + (NSMutableArray *)filtMessageFromMsgList:(NSMutableArray *)msgList {
     NSMutableArray *msgListResult = [msgList mutableCopy];
+    
     for (id msgWrap in msgList) {
         Ivar nsFromUsrIvar = class_getInstanceVariable(objc_getClass("CMessageWrap"), "m_nsFromUsr");
         NSString *m_nsFromUsr = object_getIvar(msgWrap, nsFromUsrIvar);
-        if ([EZRedEnvelopConfig sharedConfig].chatIgnoreInfo[m_nsFromUsr].boolValue) {
+        if ([WCPRedEnvelopConfig sharedConfig].chatIgnoreInfo[m_nsFromUsr].boolValue) {
             [msgListResult removeObject:msgWrap];
         }
     }
+    
     return msgListResult;
 }
 

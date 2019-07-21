@@ -1,27 +1,27 @@
 //
-//  EZRedEnvelopTaskManager.m
+// WCPRedEnvelopTaskManager.m
 //
-//  Created by ez on 17/4/6.
-//  Copyright © 2017年 ez. All rights reserved.
+// Created by dyf on 17/4/6.
+// Copyright © 2017 dyf. All rights reserved.
 //
 
-#import "EZRedEnvelopTaskManager.h"
-#import "EZReceiveRedEnvelopOperation.h"
+#import "WCPRedEnvelopTaskManager.h"
+#import "WCPReceiveRedEnvelopOperation.h"
 
-@interface EZRedEnvelopTaskManager ()
+@interface WCPRedEnvelopTaskManager ()
 
 @property (strong, nonatomic) NSOperationQueue *normalTaskQueue;
 @property (strong, nonatomic) NSOperationQueue *serialTaskQueue;
 
 @end
 
-@implementation EZRedEnvelopTaskManager
+@implementation WCPRedEnvelopTaskManager
 
 + (instancetype)sharedManager {
-    static EZRedEnvelopTaskManager *taskManager = nil;
+    static WCPRedEnvelopTaskManager *taskManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        taskManager = [EZRedEnvelopTaskManager new];
+        taskManager = [WCPRedEnvelopTaskManager new];
     });
     return taskManager;
 }
@@ -37,11 +37,11 @@
     return self;
 }
 
-- (void)addNormalTask:(EZReceiveRedEnvelopOperation *)task {
+- (void)addNormalTask:(WCPReceiveRedEnvelopOperation *)task {
     [self.normalTaskQueue addOperation:task];
 }
 
-- (void)addSerialTask:(EZReceiveRedEnvelopOperation *)task {
+- (void)addSerialTask:(WCPReceiveRedEnvelopOperation *)task {
     [self.serialTaskQueue addOperation:task];
 }
 

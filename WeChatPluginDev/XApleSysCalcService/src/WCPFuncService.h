@@ -20,13 +20,13 @@
 // Judge iPad.
 #define WCPIsIPad        (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad)
 
-// Judge iPhoneX，XS
+// Judge iPhoneX，XS.
 #define WCPIsIPhoneX     ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), UIScreen.mainScreen.currentMode.size) && !WCPIsIPad : NO)
 
-// Judge iPhoneXR
+// Judge iPhoneXR.
 #define WCPIsIPhoneXR    ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), UIScreen.mainScreen.currentMode.size) && !WCPIsIPad : NO)
 
-// Judge iPhoneXS Max
+// Judge iPhoneXS Max.
 #define WCPIsIPhoneXSMax ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), UIScreen.mainScreen.currentMode.size) && !WCPIsIPad : NO)
 
 // Judge iPhone X series.
@@ -42,25 +42,26 @@
 #define WCPStatusBarAndNavigationBarHeight (WCPIsIPhoneXAll ? 88.f : 64.f)
 
 // Tabbar height.
-#define WCPTabbarHeight                    (WCPIsIPhoneXAll ? (49.f+34.f) : 49.f)
+#define WCPTabBarHeight                    (WCPIsIPhoneXAll ? (49.f+34.f) : 49.f)
 
-// Tabbar safe bottom margin.
-#define WCPTabbarSafeBottomMargin          (WCPIsIPhoneXAll ? 34.f : 0.f)
+// View safe bottom margin.
+#define WCPViewSafeBottomMargin            (WCPIsIPhoneXAll ? 34.f : 0.f)
 
-// Date format: yyyy-MM-dd
+// Date format: "yyyy-MM-dd".
 FOUNDATION_EXPORT NSString *const WCPShortDateFormat;
 
-// Date format: yyyy-MM-dd HH:mm:ss
+// Date format: "yyyy-MM-dd HH:mm:ss".
 FOUNDATION_EXPORT NSString *const WCPLongDateFormat;
 
 @interface WCPFuncService : NSObject
 
 // Return screen width.
 + (CGFloat)screenWidth;
+
 // Return screen height.
 + (CGFloat)screenHeight;
 
-// filt message from list.
+// Filt message from list.
 + (NSMutableArray *)filtMessageFromMsgList:(NSMutableArray *)msgList;
 
 // Convert `NSDate` object to string with formatter.

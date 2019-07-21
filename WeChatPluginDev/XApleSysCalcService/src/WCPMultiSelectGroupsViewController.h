@@ -1,8 +1,8 @@
 //
-//  EZMultiSelectGroupsViewController.h
+// WCPMultiSelectGroupsViewController.h
 //
-//  Created by ez on 17/4/6.
-//  Copyright © 2017年 ez. All rights reserved.
+// Created by dyf on 17/4/6.
+// Copyright © 2017 dyf. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -15,7 +15,7 @@
 
 @end
 
-@interface EZMultiSelectGroupsViewController : UIViewController
+@interface WCPMultiSelectGroupsViewController : UIViewController
 
 - (instancetype)initWithBlackList:(NSArray *)blackList;
 

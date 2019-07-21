@@ -1,23 +1,23 @@
 //
-//  EZMultiSelectGroupsViewController.m
+// WCPMultiSelectGroupsViewController.m
 //
-//  Created by ez on 17/4/6.
-//  Copyright © 2017年 ez. All rights reserved.
+// Created by dyf on 17/4/6.
+// Copyright © 2017 dyf. All rights reserved.
 //
 
-#import "EZMultiSelectGroupsViewController.h"
+#import "WCPMultiSelectGroupsViewController.h"
 #import "WeChatRedEnvelop.h"
-#import "EZFuncService.h"
+#import "WCPFuncService.h"
 #import <objc/objc-runtime.h>
 
-@interface EZMultiSelectGroupsViewController () <ContactSelectViewDelegate>
+@interface WCPMultiSelectGroupsViewController () <ContactSelectViewDelegate>
 
 @property (strong, nonatomic) ContactSelectView *selectView;
 @property (strong, nonatomic) NSArray *blackList;
 
 @end
 
-@implementation EZMultiSelectGroupsViewController
+@implementation WCPMultiSelectGroupsViewController
 
 - (instancetype)initWithBlackList:(NSArray *)blackList {
     if (self = [super initWithNibName:nil bundle:nil]) {
@@ -60,14 +60,15 @@
 }
 
 - (UIBarButtonItem *)rightBarButtonWithSelectCount:(unsigned long)selectCount {
-    
     UIBarButtonItem *barButtonItem;
+    
     if (selectCount == 0) {
-        barButtonItem = [objc_getClass("MMUICommonUtil") getBarButtonWithTitle:@"确定" target:self action:@selector(onDone:) style:2];
+        barButtonItem   = [objc_getClass("MMUICommonUtil") getBarButtonWithTitle:@"确定" target:self action:@selector(onDone:) style:2];
     } else {
         NSString *title = [NSString stringWithFormat:@"确定(%lu)", selectCount];
-        barButtonItem = [objc_getClass("MMUICommonUtil") getBarButtonWithTitle:title target:self action:@selector(onDone:) style:4];
+        barButtonItem   = [objc_getClass("MMUICommonUtil") getBarButtonWithTitle:title target:self action:@selector(onDone:) style:4];
     }
+    
     return barButtonItem;
 }
 
@@ -85,7 +86,7 @@
 }
 
 - (void)initSelectView {
-    self.selectView = [[objc_getClass("ContactSelectView") alloc] initWithFrame:CGRectMake(0, EZStatusBarAndNavigationBarHeight, EZScreenWidth, EZScreenHeight - EZStatusBarAndNavigationBarHeight - EZTabbarSafeBottomMargin) delegate:self];
+    self.selectView = [[objc_getClass("ContactSelectView") alloc] initWithFrame:CGRectMake(0, WCPStatusBarAndNavigationBarHeight, WCPScreenWidth, WCPScreenHeight - WCPStatusBarAndNavigationBarHeight - WCPViewSafeBottomMargin) delegate:self];
     
     self.selectView.m_uiGroupScene = 5;
     self.selectView.m_bMultiSelect = YES;
@@ -96,6 +97,7 @@
 }
 
 #pragma mark - ContactSelectViewDelegate
+
 - (void)onSelectContact:(CContact *)arg1 {
     self.navigationItem.rightBarButtonItem = [self rightBarButtonWithSelectCount:[self getTotalSelectCount]];
 }

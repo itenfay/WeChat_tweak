@@ -1,26 +1,26 @@
 //
-//  EZRedEnvelopParamQueue.m
+// WCPRedEnvelopParamQueue.m
 //
-//  Created by ez on 17/4/6.
-//  Copyright © 2017年 ez. All rights reserved.
+// Created by dyf on 17/4/6.
+// Copyright © 2017 dyf. All rights reserved.
 //
 
-#import "EZRedEnvelopParamQueue.h"
+#import "WCPRedEnvelopParamQueue.h"
 #import "WeChatRedEnvelopParam.h"
 
-@interface EZRedEnvelopParamQueue ()
+@interface WCPRedEnvelopParamQueue ()
 
 @property (strong, nonatomic) NSMutableArray *queue;
 
 @end
 
-@implementation EZRedEnvelopParamQueue
+@implementation WCPRedEnvelopParamQueue
 
 + (instancetype)sharedQueue {
-    static EZRedEnvelopParamQueue *queue = nil;
+    static WCPRedEnvelopParamQueue *queue = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        queue = [[EZRedEnvelopParamQueue alloc] init];
+        queue = [[WCPRedEnvelopParamQueue alloc] init];
     });
     return queue;
 }
