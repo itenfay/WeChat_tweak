@@ -143,11 +143,11 @@ $ /Users/dyf/Documents/Wks/Dev/WeChat_tweak/Hook-Tools/optool install -c load -p
 
 - 修改微信Info.plist和本地化文本 (Modify Info.plist of WeChat and Localized File)
 
-修改 WeChat.app/Info.plist 的 bundle id 和 bundle display name，本地化文本(Localized File)的CFBundleDisplayName，删除Watch目录。
+    修改 WeChat.app/Info.plist 的 bundle id 和 bundle display name，删除本地化文本(Localized File)中的CFBundleDisplayName，删除Watch目录。
  
 - 修改微信插件 (Modify WeChat PlugIns)
 
-修改插件的bundle id，重签名。
+    修改插件的bundle id，重签名。
 
 ```
 $ codesign -f -s "iPhone Distribution: XinQi Lee (5WQHRCQ7JQ)" Payload/WeChat.app/PlugIns/WeChatShareExtensionNew.appex
