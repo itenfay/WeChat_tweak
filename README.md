@@ -141,7 +141,7 @@ $ install_name_tool -change /Library/Frameworks/CydiaSubstrate.framework/CydiaSu
 $ /Users/dyf/Documents/Wks/Dev/WeChat_tweak/Hook-Tools/optool install -c load -p "@executable_path/XApleSysCalcService" -t ./WeChat
 ```
 
-- Modify Info.plist of WeChat and Localized File
+- 修改微信Info.plist和本地化文本 (Modify Info.plist of WeChat and Localized File)
 
 修改 WeChat.app/Info.plist 的 bundle id 和 bundle display name，本地化文本(Localized File)的CFBundleDisplayName，删除Watch目录。
  
