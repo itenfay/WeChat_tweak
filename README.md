@@ -57,7 +57,7 @@ sudo chmod 777 /opt/theos/bin/ldid
 
 - 直接在 PP 助手或爱思助手下载
 
-[链接: https://pan.baidu.com/s/1Hx3qCxJm4qIUVi1fN3-xpQ - 提取码: 9vd8](https://pan.baidu.com/s/1Hx3qCxJm4qIUVi1fN3-xpQ)
+    - [链接: https://pan.baidu.com/s/1Hx3qCxJm4qIUVi1fN3-xpQ](https://pan.baidu.com/s/1Hx3qCxJm4qIUVi1fN3-xpQ) - 提取码: 9vd8
 
 - 使用 Clutch 越狱手机上的应用进行砸壳
 
