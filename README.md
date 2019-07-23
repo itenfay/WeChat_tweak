@@ -188,6 +188,8 @@ $ ./DYFCodesign.sh /Users/dyf/Desktop/Payload "iPhone Distribution: XXX (5WQHRCQ
 $ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat_New.ipa
 ```
 
+- 最后使用 PP 助手 / 爱思助手 / ifunbox 安装 WeChat_New.ipa
+
 ## iOS逆向交流
 
 - [iOS逆向交流社区 -  iOSRE](http://bbs.iosre.com)
