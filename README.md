@@ -133,7 +133,7 @@ $ cp .theos/obj/debug/XApleSysCalcService.dylib ~/Desktop
 ```
 $ lipo libsubstrate.dylib -remove armv7 -output ./libsubstrate.dylib
 $ lipo -info libsubstrate.dylib
-$ lipo libsubstrate.dylib -remove armv7 -output ./XApleSysCalcService
+$ lipo XApleSysCalcService -remove armv7 -output ./XApleSysCalcService
 $ lipo -info XApleSysCalcService
 ```
 
