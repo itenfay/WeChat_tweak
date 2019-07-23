@@ -56,7 +56,7 @@ sudo chmod 777 /opt/theos/bin/ldid
     - install_name_tool - 一般Mac OS X自带，修改动态库的路径。
     - yoyolib - 用于向iOS的可执行文件中注入dylib。
     - optool - 将动态链接库注入二进制文件中。
-    - class-dump - 导出app所有头文件 (`class-dump -s -S -H ~/Desktop/x.app -o ~/Desktop/XX-Headers`)。
+    - class-dump - 导出app所有头文件 (`class-dump -s -S -H ~/Desktop/xx.app -o ~/Desktop/xx-headers`)。
     - [ios-app-signer](https://github.com/dgynfi/OpenSource#Mac) - 打包 ipa 与重签名图形化工具。
 - [Resources](Resources) - Icon 目录 (带抢红包的Icon) 和 wav 目录 (音频文件)。
 - [WeChatPluginDev](WeChatPluginDev) - 微信插件tweak源码开发。
@@ -93,7 +93,6 @@ $ clutch -i
 # Installed apps:
 # 1: WeChat <com.tencent.xin>
 # 2: DingTalk <com.laiwang.DingTalk>
-# 3: 喜马拉雅FM（听书社区）电台有声小说相声英语 <com.gemd.iting>
 ```
 
 开始砸壳
@@ -200,4 +199,3 @@ $ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeCh
 - [iOS微信抢红包Tweak安装教程](http://www.swiftyper.com/2016/01/25/ios-tweak-install-guide)
 
 - [一步一步实现iOS微信自动抢红包(非越狱)](https://www.jianshu.com/p/189afbe3b429)
-
