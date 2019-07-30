@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 7]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if !IE]><!--> <html> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1255494d3a","applicationID":"15702971","transactionName":"e1daR0JWVV9RER9ZWkxdRxxDUVZE","queueTime":72,"applicationTime":95,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="description"  content="说明 1、基于微信iOS 6.5.4版本 2、依然需要借助越狱的设备实现（打包后可以在非越狱设备安装） 3、本文大部分取自（一步一步实现iOS微信自动抢红包(非越狱)），在其文的基础上跑了一遍流程；也根据理解简化了其中的部分工作：） 4、仅用于学习交流使用 5、本文不讲解如何找到抢红包的方法 准备 一、硬件 1、Mac 电脑 2、已越狱的iPhone 5 （iOS 7.1.2） 3、未越狱的...">
+  <meta property="wb:webmaster" content="294ec9de89e7fadb" />
+  <meta property="qc:admins" content="104102651453316562112116375" />
+  <meta property="qc:admins" content="11635613706305617" />
+  <meta property="qc:admins" content="1163561616621163056375" />
+  <meta name="google-site-verification" content="cV4-qkUJZR6gmFeajx_UyPe47GW9vY6cnCrYtCHYNh4" />
+  <meta name="google-site-verification" content="HF7lfF8YEGs1qtCE-kPml8Z469e2RHhGajy6JPVy5XI" />
+  <meta http-equiv="mobile-agent" content="format=html5; url=http://www.jianshu.com/p/ad578bef4b76">
+    <!--  Meta for Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=888237539, app-argument=jianshu://notes/8803593">
+  <!-- End -->
+
+  <!--  Meta for Twitter Card -->
+  <meta content="summary" property="twitter:card">
+  <meta content="@jianshucom" property="twitter:site">
+  <meta content="iOS微信自动抢红包-入门教程（非越狱）" property="twitter:title">
+  <meta content="说明 1、基于微信iOS 6.5.4版本 2、依然需要借助越狱的设备实现（打包后可以在非越狱设备安装） 3、本文大部分取自（一步一步实现iOS微信自动抢红包(非越狱)），在其文的基础上跑了一遍流程；也根据理解简化了其中的部分工作：） 4、仅用于学习交流使用 5、本文不讲解如何找到抢红包的方法 准备 一、硬件 1、Mac 电脑 2、已越狱的iPhone 5 （iOS 7.1.2） 3、未越狱的iPhone 6s (iOS 10.2.1) 二、软件 Mac电脑需要准备的： 1、Mac OS自带的终端 2、yoyolib（用于向iOS的可执行文件中注入dylib） 3、dumpdecrypte..." property="twitter:description">
+  <meta content="http://www.jianshu.com/p/ad578bef4b76" property="twitter:url">
+  <!-- End -->
+
+  <!--  Meta for OpenGraph -->
+  <meta property="fb:app_id" content="865829053512461">
+  <meta property="og:site_name" content="简书">
+  <meta property="og:title" content="iOS微信自动抢红包-入门教程（非越狱）">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://www.jianshu.com/p/ad578bef4b76">
+  <meta property="og:description" content="说明 1、基于微信iOS 6.5.4版本 2、依然需要借助越狱的设备实现（打包后可以在非越狱设备安装） 3、本文大部分取自（一步一步实现iOS微信自动抢红包(非越狱)），在其文的基础上跑了一遍流...">
+  <!-- End -->
+
+  <!--  Meta for Facebook Applinks -->
+  <meta property="al:ios:url" content="jianshu://notes/8803593" />
+  <meta property="al:ios:app_store_id" content="888237539" />
+  <meta property="al:ios:app_name" content="简书" />
+
+  <meta property="al:android:url" content="jianshu://notes/8803593" />
+  <meta property="al:android:package" content="com.jianshu.haruki" />
+  <meta property="al:android:app_name" content="简书" />
+  <!-- End -->
+
+  <title>iOS微信自动抢红包-入门教程（非越狱） - 简书</title>
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="BHJmF7NLcSWi8Ci+qoeSXEuF23xfH/hZP3v3oNevOGO/0YrEChVmLUBYJaPX0dPpHxhNBJoDB5+uq7e/FeaZTg==" />
+  <!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/web-fcff343d4d675e16bab4.css" />
+  
+  <link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/web/pages/notes/show/entry-fcff343d4d675e16bab4.css" />
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if IE 8]><link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/scaffolding/for_ie-7f1c477ffedc13c11315103e8787dc6c.css" /><![endif]-->
+  <!--[if lt IE 9]><link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/scaffolding/for_ie-7f1c477ffedc13c11315103e8787dc6c.css" /><![endif]-->
+  <link href="http://baijii-common.b0.upaiyun.com/icons/favicon.ico" rel="icon">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/57-102eb808e418f59bfed2fc083b775207.png" sizes="57x57" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/72-9a0e20fa5637c781c5ffcc45e96b000a.png" sizes="72x72" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/76-cd6fe1b7a3ff8db8264e45c210d3e488.png" sizes="76x76" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/114-8cdbbf3a82188ac743551ff40f62ddd7.png" sizes="114x114" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/120-b5864fe9b70ca71f4ea083f6fe54e003.png" sizes="120x120" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/152-d820a88a50af87375962e890c8223134.png" sizes="152x152" />
+</head>
+
+  <body lang="zh-CN" class="reader-black-font">
+    <!-- 全局顶部导航栏 -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="width-limit">
+    <!-- 左上方 Logo -->
+    <a class="logo" href="/"><img src="http://cdn-qn0.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" alt="Logo" /></a>
+
+    <!-- 右上角 -->
+      <!-- 未登录显示登录/注册/写文章 -->
+      <a class="btn write-btn" target="_blank" href="/writer#/">
+        <i class="iconfont ic-write"></i>写文章
+</a>      <a class="btn sign-up" href="/sign_up">注册</a>
+      <a class="btn log-in" href="/sign_in">登录</a>
+
+    <!-- 如果用户登录，显示下拉菜单 -->
+
+    <div id="view-mode-ctrl">
+    </div>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav">
+            <li class="">
+              <a href="/">
+                <span class="menu-text">首页</span><i class="iconfont ic-navigation-discover menu-icon"></i>
+</a>            </li>
+            <li class="">
+              <a class="app-download-btn" href="/apps"><span class="menu-text">下载App</span><i class="iconfont ic-navigation-download menu-icon"></i></a>
+            </li>
+          <li class="search">
+            <form target="_blank" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+              <input type="text" name="q" id="q" value="" placeholder="搜索" class="search-input" />
+              <a class="search-btn" href="javascript:void(null)"><i class="iconfont ic-search"></i></a>
+              <!-- <div id="navbar-trending-search"></div> -->
+</form>          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    
+<div class="note">
+  <div class="post">
+    <div class="article">
+        <h1 class="title">iOS微信自动抢红包-入门教程（非越狱）</h1>
+
+        <!-- 作者区域 -->
+        <div class="author">
+          <a class="avatar" href="/u/cbf09e4ef5e3">
+            <img src="http://upload.jianshu.io/users/upload_avatars/4013038/4ec59bf635b8?imageMogr2/auto-orient/strip|imageView2/1/w/144/h/144" alt="144" />
+</a>          <div class="info">
+            <span class="tag">作者</span>
+            <span class="name"><a href="/u/cbf09e4ef5e3">辣辣的东西</a></span>
+            <!-- 关注用户按钮 -->
+            <div data-author-follow-button></div>
+            <!-- 文章数据信息 -->
+            <div class="meta">
+              <!-- 如果文章更新时间大于发布时间，那么使用 tooltip 显示更新时间 -->
+                <span class="publish-time" data-toggle="tooltip" data-placement="bottom" title="最后编辑于 2017.02.14 16:20">2017.02.10 19:47*</span>
+              <span class="wordage">字数 1827</span>
+            </div>
+          </div>
+          <!-- 如果是当前作者，加入编辑按钮 -->
+        </div>
+        <!-- -->
+
+        <!-- 文章内容 -->
+        <div class="show-content">
+          <h1>说明</h1><p>1、基于微信iOS 6.5.4版本</p><p>2、依然需要借助越狱的设备实现（打包后可以在非越狱设备安装）</p><p>3、本文大部分取自（<a href="http://www.jianshu.com/p/189afbe3b429" target="_blank">一步一步实现iOS微信自动抢红包(非越狱)</a>），在其文的基础上跑了一遍流程；也根据理解简化了其中的部分工作：）</p><p>4、仅用于学习交流使用</p><p>5、本文不讲解如何找到抢红包的方法</p><hr><h1>准备</h1><p>一、硬件</p><p>1、Mac 电脑</p><p>2、已越狱的iPhone 5 （iOS 7.1.2）</p><p>3、未越狱的iPhone 6s (iOS 10.2.1)</p><p>二、软件</p><p>Mac电脑需要准备的：</p><p>1、Mac OS自带的终端</p><p>2、<a href="https://github.com/KJCracks/yololib" target="_blank">yoyolib</a>（用于向iOS的可执行文件中注入dylib）</p><p>3、<a href="https://github.com/stefanesser/dumpdecrypted" target="_blank">dumpdecrypted</a> （用于解密iOS的可执行文件，即砸壳-可不需要）</p><p>4、<a href="http://iosopendev.com/download/" target="_blank">iOSOpenDev</a> （Xcode增强工具，需要通过它生成用于注入的dylib）</p><p>5、<a href="http://pro.itools.cn/pro_mac/" target="_blank">iTools</a> （通过它，将打包后的安装包安装到手机里）</p><p>6、otool  （一般Mac OS X自带，用于查看解密后文件的解密情况）</p><p>7、<a href="https://github.com/Urinx/iOSAppHook/releases" target="_blank">iOS App Signer</a>  （重新签名并生成ipa文件）</p><p><br></p><p>已越狱的iPhone需要准备的</p><p>1、OpenSSH (越狱后通过Cydia安装，安装后可以实现远程登录)</p><p>2、Cycript （越狱后通过Cydia安装，这个工具可以在命令行下实现与应用的交互）</p><p>3、PP助手   (用于在手机上安装PP助手中的微信客户端)</p><p>三、其他</p><p>1、苹果开发者账号</p><h1>开始</h1><p>准备工作完成后，可以工作了</p><h2>一、砸壳</h2><p>砸壳可以选择两种方式：自己砸壳 和 利用PP助手</p><h3>第一种：自己砸壳（不推荐）</h3><p>1、首先使用已越狱的iPhone，通过App Store下载微信客户端（当前是6.5.4版本）</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-2e5983278d599b4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-2e5983278d599b4b.png?imageMogr2/auto-orient/strip" data-image-slug="2e5983278d599b4b" data-width="640" data-height="1136"><br><div class="image-caption">安装微信客户端</div>
+</div><p>2、确保已越狱的iPhone和Mac处于同一局域网，打开Mac OS的终端命令行工具</p><p>3、输入<b>ssh root@192.168.1.121</b>远程登录已越狱的iPhone，root密码默认为<i>alpine</i>（其中192.168.1.121是iPhone的局域网IP地址）</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-0a16b34eb15a41f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-0a16b34eb15a41f3.png?imageMogr2/auto-orient/strip" data-image-slug="0a16b34eb15a41f3" data-width="570" data-height="389"><br><div class="image-caption">远程登录越狱的iPhone</div>
+</div><p>4、在iPhone上运行一下微信，之后执行<b>ps -e | grep WeChat</b>查找WeChat可执行文件的路径，并记录为：<b>可执行文件路径</b></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-3e389d6a1de3993e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-3e389d6a1de3993e.png?imageMogr2/auto-orient/strip" data-image-slug="3e389d6a1de3993e" data-width="570" data-height="389"><br><div class="image-caption">查找微信可执行文件的位置</div>
+</div><p>5、通过Cycript查找到WeChat的Documents路径，输入<b>cycript -p WeChat</b>,进入cycript命令行状态</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-32de088c0f3715e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-32de088c0f3715e7.png?imageMogr2/auto-orient/strip" data-image-slug="32de088c0f3715e7" data-width="570" data-height="389"><br><div class="image-caption">cy命令行状态</div>
+</div><p>6、输入<b>NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES)[0]</b>,就可以获取到WeChat的Documents路径了，并记录为：<b>Documents路径</b></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-284bed1b36ae8fc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-284bed1b36ae8fc4.png?imageMogr2/auto-orient/strip" data-image-slug="284bed1b36ae8fc4" data-width="570" data-height="389"><br><div class="image-caption">WeChat Documents路径</div>
+</div><p>记录下刚才的两个路径，接下来需要将砸壳工具dumpdecrypted拷贝到WeChat的Documents目录下用于砸壳</p><p>7、将命令行切换回Mac OS X</p><p>输入<b>scp dumpdecrypted.dylib root@192.168.1.121:<b><i>Documents路径</i></b></b></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-7e00983c00d7cfff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-7e00983c00d7cfff.png?imageMogr2/auto-orient/strip" data-image-slug="7e00983c00d7cfff" data-width="570" data-height="389"><br><div class="image-caption">拷贝dumpdecrypted到Documents目录</div>
+</div><p>8、重新远程登录到iPhone，使用dumpdecrypted.dylib砸壳，具体用法：</p><p>DYLD_INSERT_LIBRARIES=/<b><b><i>Documents路径</i></b></b>/dumpdecrypted.dylib <b>可执行文件路径</b></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-e6598afcfcd0ce50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-e6598afcfcd0ce50.png?imageMogr2/auto-orient/strip" data-image-slug="e6598afcfcd0ce50" data-width="605" data-height="403"><br><div class="image-caption">dumpdecrypted砸壳过程</div>
+</div><p>出现了如截图页面则表示砸壳成功，会在命令行执行的当前路径下生成WeChat.decrypted文件</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-02ab9287242df5b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-02ab9287242df5b5.png?imageMogr2/auto-orient/strip" data-image-slug="02ab9287242df5b5" data-width="605" data-height="403"><br><div class="image-caption">生成的WeChat.decrypted文件</div>
+</div><p>9、将生成的WeChat.decrypted使用scp命令拷贝到Mac电脑上，和之前从Mac电脑拷贝dumpdecrypted.dylib到手机上类似的语法。(下图中的黑色覆盖部分替换为你的Mac登陆用户名)</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-1df5d23e27a809b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-1df5d23e27a809b6.png?imageMogr2/auto-orient/strip" data-image-slug="1df5d23e27a809b6" data-width="605" data-height="403"><br><div class="image-caption">拷贝解密文件到Mac</div>
+</div><p>10、为保险起见，可以对WeChat.decrypted文件检查一下，查看砸壳是否成功</p><p>如截图第一个cryptid 0表示armv7架构已成功，第二个cryptid 1表示arm64未成功</p><p>理论上只要把最老的架构解密就可以了，因为新的cpu会兼容老的架构；所以这里arm64未成功不影响<br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-c15225f114acb1d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-c15225f114acb1d1.png?imageMogr2/auto-orient/strip" data-image-slug="c15225f114acb1d1" data-width="605" data-height="403"><br><div class="image-caption">查看砸壳情况</div>
+</div><p>11、再次远程连接iPhone，拷贝出WeChat.app待用（注意使用scp -r）</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-027e16c74c65c4e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-027e16c74c65c4e2.png?imageMogr2/auto-orient/strip" data-image-slug="027e16c74c65c4e2" data-width="605" data-height="403"><br><div class="image-caption">拷贝WeChat.app到Mac电脑</div>
+</div><h3>第二种：利用PP助手（推荐）</h3><p>在已越狱的iPhone上安装PP助手后，从PP助手中下载微信客户端</p><p>PP助手上面的App的可执行文件都是经过了砸壳的,所以可以省去自己砸壳的步骤</p><p>我们可以按照自己砸壳的步骤，导出PP助手的微信可执行文件，利用otool查看砸壳情况</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-d2887fc6699e7336.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-d2887fc6699e7336.png?imageMogr2/auto-orient/strip" data-image-slug="d2887fc6699e7336" data-width="605" data-height="403"><br><div class="image-caption">PP助手中WeChat砸壳情况</div>
+</div><p>这表示armv7和arm64均已解密</p><p>同样再次远程连接iPhone，拷贝出WeChat.app待用</p><blockquote>
+<p>为什么需要砸壳？<br></p>
+<p>因为苹果会将上线的iOS App进行加密，导致无法往其中写入编写好的抢红包dylib。</p>
+</blockquote><h2>二、生成并注入dylib</h2><h3>一、下载并安装<a href="http://iosopendev.com/download/" target="_blank">iOSOpenDev</a>
+</h3><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-11b36265fa6a0471.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-11b36265fa6a0471.png?imageMogr2/auto-orient/strip" data-image-slug="11b36265fa6a0471" data-width="620" data-height="438"><br><div class="image-caption">安装iOSOpenDev</div>
+</div><p>因为我使用的是Xcode 8，直接安装<a href="http://iosopendev.com/download/" target="_blank">iOSOpenDev</a>会失败。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-cde1d61c99eb9c34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-cde1d61c99eb9c34.png?imageMogr2/auto-orient/strip" data-image-slug="cde1d61c99eb9c34" data-width="404" data-height="275"><br><div class="image-caption">安装iOSOpenDev失败</div>
+</div><p>如果你们也遇到类似的问题，可以尝试下载<a href="https://github.com/provswin/Wechat-Auto-Red/blob/master/tools/iOSOpenDev_Patches.zip" target="_blank">iOSOpenDev_Patches</a>，然后按照如下步骤：</p><p>1、把Specifications1文件夹重命名为Specifications放到/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/</p><p>2、把Specifications2文件夹重命名为Specifications放到/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/</p><p>3、把usr3重命名为usr放到/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/</p><p>4、安装<a href="http://iosopendev.com/download/" target="_blank">iOSOpenDev</a></p><h3>二、创建dylib工程并生成dylib</h3><p>安装完<a href="http://iosopendev.com/download/" target="_blank">iOSOpenDev</a>后，在Xcode中选择<b>Cocoa Touch Library</b>。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-268f1d916dddca9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-268f1d916dddca9a.png?imageMogr2/auto-orient/strip" data-image-slug="268f1d916dddca9a" data-width="730" data-height="518"><br><div class="image-caption">创建Cocoa Touch Library工程</div>
+</div><p>点击Next开始新建工程，将product name命名为autoGetRedEnv；</p><p>删除autoGetRedEnv.h文件，修改autoGetRedEnv.m为autoGetRedEnv.mm，然后在项目中加入CaptainHook.h；</p><p>从github中下载<a href="https://github.com/provswin/Wechat-Auto-Red/tree/master/source" target="_blank">autoGetRedEnv</a>工程源码中的CaptainHook.h和autoGetRedEnv.mm拷贝源码，复制到工程中对应文件中，完成后进行(真机)编译，即可得到libautoGetRedEnv.dylib文件</p><h3>三、注入dylib</h3><p>通过yoyolib向WeChat注入dylib （相当于告知WeChat有这么个东西了，到时候程序可以加载这个dylib）<br></p><p><b>./yololib 目标可执行文件 需注入的dylib</b><br></p><p>目标可执行文件：即，WeChat.app/WeChat解密后得到的文件；如果是自己砸壳时，对应的则是之前导出的WeChat.decrypted文件（建议将WeChat.decrypted文件做好备份以便之后使用，同时把WeChat.decrypted重命名为WeChat）；如果是利用PP助手，则直接将手机中的WeChat.app/WeChat文件拷贝出来进行注入就好了。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-e3b507f7c2c679e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-e3b507f7c2c679e6.png?imageMogr2/auto-orient/strip" data-image-slug="e3b507f7c2c679e6" data-width="605" data-height="403"><br><div class="image-caption">注入dylib</div>
+</div><p>上图效果则代表注入成功了</p><h2>三、重新签名并安装ipa</h2><h3>一、重新签名并生成ipa</h3><p>在重新签名之前，需要将三个文件，放入到之前备份好的WeChat.app文件夹中：</p><p>1、embedded.mobileprovision</p><p>2、libautoGetRedEnv.dylib</p><p>3、注入libautoGetRedEnv.dylib后的WeChat文件</p><p>embedded.mobileprovision文件就是苹果开发者网站中的Provisioning Profiles文件,如果之前创建好了直接下载重命名为embedded.mobileprovision即可。</p><p>下载后双击导入Xcode确保iOS App Signer能够选择到这个mobileprovision</p><p>之后使用iOS App Signer重新签名</p><p>Input File  -&gt; 选择刚才已经放入了新的可执行文件的WeChat.app</p><p>Signing Certificate -&gt; 开发者签名证书</p><p>Provisioning Profile -&gt; 选择下载并导入的mobileprovision</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-ff89fb5a135d79eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-ff89fb5a135d79eb.png?imageMogr2/auto-orient/strip" data-image-slug="ff89fb5a135d79eb" data-width="725" data-height="263"><br><div class="image-caption">重新签名</div>
+</div><p>点击Start开始进行打包，如下图表示生成成功</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-ca04eb18cd071edb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-ca04eb18cd071edb.png?imageMogr2/auto-orient/strip" data-image-slug="ca04eb18cd071edb" data-width="728" data-height="264"><br><div class="image-caption"></div>
+</div><p>生成WeChat.ipa</p><h3>二、使用iTools安装打包的ipa</h3><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-2607b990becb08e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-2607b990becb08e5.png?imageMogr2/auto-orient/strip" data-image-slug="2607b990becb08e5" data-width="1000" data-height="638"><br><div class="image-caption">安装打包的WeChat.ipa</div>
+</div><p>抢红包开始，基本都是0秒抢到：</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-d44d56aa54be881a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-d44d56aa54be881a.png?imageMogr2/auto-orient/strip" data-image-slug="d44d56aa54be881a" data-width="501" data-height="896"><br><div class="image-caption">0秒抢红包</div>
+</div><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4013038-da4ece35150a14df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4013038-da4ece35150a14df.png?imageMogr2/auto-orient/strip" data-image-slug="da4ece35150a14df" data-width="504" data-height="899"><br><div class="image-caption">开启红包插件</div>
+</div>
+        </div>
+        <!--  -->
+
+        <div class="show-foot">
+          <a class="notebook" href="/nb/8315870">
+            <i class="iconfont ic-search-notebook"></i> <span>日记本</span>
+</a>          <div class="copyright" data-toggle="tooltip" data-html="true" data-original-title="转载请联系作者获得授权，并标注“简书作者”。">
+            © 著作权归作者所有
+          </div>
+          <div class="modal-wrap" data-report-note>
+            <a id="report-modal">举报文章</a>
+          </div>
+        </div>
+    </div>
+
+    <!-- 文章底部作者信息 -->
+        <div class="follow-detail">
+          <div class="info">
+            <a class="avatar" href="/u/cbf09e4ef5e3">
+              <img src="http://upload.jianshu.io/users/upload_avatars/4013038/4ec59bf635b8?imageMogr2/auto-orient/strip|imageView2/1/w/144/h/144" alt="144" />
+</a>            <div data-author-follow-button></div>
+            <a class="title" href="/u/cbf09e4ef5e3">辣辣的东西</a>
+          </div>
+        </div>
+
+      <div class="support-author"></div>
+
+    <div class="meta-bottom">
+      <div class="btn like-group"></div>
+      <div class="share-group">
+        <a class="share-circle" data-action="weixin-share" data-toggle="tooltip" data-original-title="分享到微信">
+          <i class="iconfont ic-wechat"></i>
+        </a>
+        <a class="share-circle" data-toggle="tooltip" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f=&#39;http://v.t.sina.com.cn/share/share.php?appkey=1881139527&#39;,u=z||d.location,p=[&#39;&amp;url=&#39;,e(u),&#39;&amp;title=&#39;,e(t||d.title),&#39;&amp;source=&#39;,e(r),&#39;&amp;sourceUrl=&#39;,e(l),&#39;&amp;content=&#39;,c||&#39;gb2312&#39;,&#39;&amp;pic=&#39;,e(p||&#39;&#39;)].join(&#39;&#39;);function%20a(){if(!window.open([f,p].join(&#39;&#39;),&#39;mb&#39;,[&#39;toolbar=0,status=0,resizable=1,width=440,height=430,left=&#39;,(s.width-440)/2,&#39;,top=&#39;,(s.height-430)/2].join(&#39;&#39;)))u.href=[f,p].join(&#39;&#39;);};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,&#39;&#39;,&#39;&#39;,&#39;http://cwb.assets.jianshu.io/notes/images/8803593/weibo/image_db11cee77d38.jpg&#39;, &#39;推荐 辣辣的东西 的文章《iOS微信自动抢红包-入门教程（非越狱）》（ 分享自 @简书 ）&#39;,&#39;http://www.jianshu.com/p/ad578bef4b76?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weibo&#39;,&#39;页面编码gb2312|utf-8默认gb2312&#39;));" data-original-title="分享到微博">
+          <i class="iconfont ic-weibo"></i>
+        </a>
+          <a class="share-circle" data-toggle="tooltip" href="http://cwb.assets.jianshu.io/notes/images/8803593/weibo/image_db11cee77d38.jpg" target="_blank" data-original-title="下载长微博图片">
+            <i class="iconfont ic-picture"></i>
+          </a>
+        <a class="share-circle more-share" tabindex="0" data-toggle="popover" data-placement="top" data-html="true" data-trigger="focus" href="javascript:void(0);" data-content='
+          <ul class="share-list">
+            <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&#39;+e(&#39;http://www.jianshu.com/p/ad578bef4b76?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qzone&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 辣辣的东西 的文章《iOS微信自动抢红包-入门教程（非越狱）》&#39;),x=function(){if(!window.open(r,&#39;qzone&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"><i class="social-icon-sprite social-icon-zone"></i><span>分享到QQ空间</span></a></li>
+            <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://twitter.com/share?url=&#39;+e(&#39;http://www.jianshu.com/p/ad578bef4b76?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=twitter&#39;)+&#39;&amp;text=&#39;+e(&#39;推荐 辣辣的东西 的文章《iOS微信自动抢红包-入门教程（非越狱）》（ 分享自 @jianshucom ）&#39;)+&#39;&amp;related=&#39;+e(&#39;jianshucom&#39;),x=function(){if(!window.open(r,&#39;twitter&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"><i class="social-icon-sprite social-icon-twitter"></i><span>分享到Twitter</span></a></li>
+            <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=http://www.jianshu.com/p/ad578bef4b76?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=facebook&#39;,x=function(){if(!window.open(r,&#39;facebook&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"><i class="social-icon-sprite social-icon-facebook"></i><span>分享到Facebook</span></a></li>
+            <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://plus.google.com/share?url=&#39;+e(&#39;http://www.jianshu.com/p/ad578bef4b76?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=google_plus&#39;),x=function(){if(!window.open(r,&#39;google_plus&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"><i class="social-icon-sprite social-icon-google"></i><span>分享到Google+</span></a></li>
+            <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:&#39;&#39;,r=&#39;http://www.douban.com/recommend/?url=&#39;+e(&#39;http://www.jianshu.com/p/ad578bef4b76?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=douban&#39;)+&#39;&amp;title=&#39;+e(&#39;iOS微信自动抢红包-入门教程（非越狱）&#39;)+&#39;&amp;sel=&#39;+e(s)+&#39;&amp;v=1&#39;,x=function(){if(!window.open(r,&#39;douban&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r+&#39;&amp;r=1&#39;};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()"><i class="social-icon-sprite social-icon-douban"></i><span>分享到豆瓣</span></a></li>
+          </ul>
+        '>更多分享</a>
+      </div>
+    </div>
+    <div id="vue_comment"></div>
+  </div>
+
+  <div class="vue-side-tool"></div>
+</div>
+<div class="js-included-collections"></div>
+
+    <script type="application/json" data-name="page-data">{"user_signed_in":false,"locale":"zh-CN","os":"mac","read_mode":"day","read_font":"font2","note_show":{"is_author":false,"is_following_author":false,"is_liked_note":false,"uuid":"1883e2f6-f41e-44a2-8990-cfc9c8d876d0"},"note":{"id":8803593,"slug":"ad578bef4b76","user_id":4013038,"notebook_id":8315870,"commentable":true,"likes_count":98,"views_count":2687,"public_wordage":1827,"comments_count":46,"author":{"total_wordage":1827,"followers_count":29,"total_likes_count":98}}}</script>
+    
+    <script src="http://cdn-qn0.jianshu.io/assets/babel-polyfill-fcff343d4d675e16bab4.js"></script>
+    <script src="http://cdn-qn0.jianshu.io/assets/web-base-fcff343d4d675e16bab4.js"></script>
+<script src="http://cdn-qn0.jianshu.io/assets/web-fcff343d4d675e16bab4.js"></script>
+    
+    <script src="http://cdn-qn0.jianshu.io/assets/web/pages/notes/show/entry-fcff343d4d675e16bab4.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35169517-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<div style="display:none">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1258679142&web_id=1258679142" language="JavaScript"></script>
+</div>
+
+<script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+  </body>
+</html>

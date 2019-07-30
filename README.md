@@ -202,5 +202,7 @@ $ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeCh
 
 - [一步一步实现iOS微信自动抢红包(非越狱)](https://www.jianshu.com/p/189afbe3b429)
 
+- [iOS微信自动抢红包-入门教程(非越狱)](Resources/Html/iOS微信自动抢红包-入门教程(非越狱).html)
+
 
 > [简书传送门：《iOS逆向：实现功能最全的微信插件》](https://www.jianshu.com/p/8fa5f61af3e4)
