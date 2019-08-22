@@ -30,7 +30,7 @@ theos 是一个越狱开发工具包，它可以生成 iOS 越狱APP以及tweak�
 打开 Terminal（Mac电脑自带的终端）
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Terminal.png" width="100%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Terminal.png" width="30%" />
 </div>
 
 - 从 Github 下载 theos ，进行如下操作：
@@ -312,5 +312,7 @@ Hook的版本只需要按上述步骤重签名，打包应用即可。
 ## iOS逆向交流
 
 - [iOS逆向交流社区 -  iOSRE](http://bbs.iosre.com)
+
+
 
 > [简书传送门：《iOS逆向：实现功能最全的微信插件》](https://www.jianshu.com/p/8fa5f61af3e4)
