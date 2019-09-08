@@ -49,16 +49,16 @@ vi. 屏蔽消息和群消息，消息防止撤回
 - 插件设置
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings.gif" width="40%" />        
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_01.png" width="40%" />  <br /> <br />
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_02.png" width="40%" />        
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings.gif" width="40%" />  
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_01.png" width="40%" />  <br />  
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_02.png" width="40%" />  
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_03.png" width="40%" />
 </div>
 
 - 插件应用
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_01.gif" width="40%" />        
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_01.gif" width="40%" />  
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_02.gif" width="40%" />
 </div>
 
@@ -741,7 +741,7 @@ cp waplesubstrate wapleodtcorexpc Payload/WeChat.app/
 打开钥匙串访问
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/keychain_access.png" width="60%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/keychain_access.png" width="20%" />
 </div>
 
 点击登录 -> 我的证书，找出要签名的证书，右击显示简介，找到常用名称，然后拷贝后面的字符串。
@@ -783,7 +783,7 @@ codesign -f -s "iPhone Developer: xxx@qq.com (9ZU3R2F3D4)" Payload/WeChat.app/Fr
 open ~/Library/MobileDevice/Provisioning\ Profiles/ 
 ```
 
-在 Finder 工具栏选择以分栏或画廊方式显示，然后逐一点击 xxx.mobileprovision 文件，找出相匹配的 Bundle identifier 的配置文件 。也可以直接从开发者平台中下载证书和 mobileprovision 配置文件，导入证书 p12 文件 和 mobileprovision 配置文件 (可直接使用)。
+在 Finder 工具栏选择以分栏或画廊方式显示，然后逐一点击 xxx.mobileprovision 文件，找出相匹配的 Bundle identifier 的配置文件 。也可以直接从苹果开发者后台中下载证书和 mobileprovision 配置文件，导入证书 p12 文件 和 mobileprovision 配置文件 (可直接使用)。
 
 或者用 cat 命令逐一查看 xxx.mobileprovision 文件
 
@@ -865,12 +865,20 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 ## 支持作者
 
-如果你觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发个高逼格国外的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，...) ，不妨进行小额赞助，这样我会有更大的动力去更新和优化代码。
+如果你觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发高逼格国外的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，不妨进行小额赞助，这样我会有更大的动力去更新和优化代码。
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Alipay_paymentcode.jpg" width="30%" /> <br /> <br />
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WeChat_apprcode.jpg" width="30%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WeChat_apprcode.jpg" width="30%" /> <br /> 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Alipay_paymentcode.jpg" width="30%" />
 </div>
+
+## Hook 版本下载
+
+Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign app) ，打包应用 (Package app) ，安装 ipa 等步骤执行即可。
+
+百度网盘下载：
+
+[https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg - 提取码：3eqb](https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg)
 
 ## 坐标拾取
 
@@ -878,19 +886,19 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 - [高德地图-坐标拾取器](https://lbs.amap.com/console/show/picker)
 - [腾讯地图-坐标拾取器](https://lbs.qq.com/tool/getpoint/index.html)
 
-    清华大学：116.333446,40.009557
+  清华大学：116.333446,40.009557
 
-## Hook 版本下载
+## 免费证书
 
-Hook 的版本只需要解压 ipa (Unzip ipa)，重签名应用 (Resign app) ，打包应用 (Package app) ，安装 ipa 即可。
+- [iOS个人证书真机调试及报错](https://www.jianshu.com/p/f31116a76ea9)
+- [iOS Xcode8免证书真机调试（不越狱）](https://www.jianshu.com/p/5c1fb2cb293c)
+- [IOS开发之免费证书+不越狱真机调试](https://www.cnblogs.com/iOS-mt/p/5454287.html)
 
-百度网盘下载：
-
-[https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg - 提取码：3eqb](https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg)
+  免费证书能真机调试程序，通过 Xcode 登录自己的 Apple ID ，进入 TARGETS -> General 设置 Bundle Identifier ，勾选自动管理签名 (Automatically manage signing) ，自动生成完成后，可查看 Team, Provisioning Profile, Signing Certificate ，但免费证书有个缺点 ，其中 Provisioning Profile (xxx.mobileprovision) 文件有效期仅只有 6 天，过期后打开 Xcode 工程重新生成。我们可以利用免费证书重签名应用 (Resign app) ，但是长期使用，需要经常重签名。
 
 ## 建议
 
-可以将动态库 wapleodtcorexpc 和 waplesubstrate 修改自己想要的名字，只需将 wapleodtcorexpc 工程名和 Makefile control xxx.plist 文件一同修改，然后重新从编译 tweak 项目步骤开始操作。
+可以将动态库 wapleodtcorexpc 和 waplesubstrate 修改自己想要的名字，只需将 wapleodtcorexpc 工程名和 Makefile control xxx.plist 文件一同修改，然后从步骤【编译 tweak 项目 (Compile Tweak Project)】重新开始操作。
 
 ## 我的简书
 
@@ -913,3 +921,5 @@ Hook 的版本只需要解压 ipa (Unzip ipa)，重签名应用 (Resign app) ，
 ## iOS逆向交流
 
 - [iOS逆向交流社区 -  iOSRE](http://bbs.iosre.com)
+
+
