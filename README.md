@@ -4,31 +4,31 @@
 
 ## WeChat_tweak
 
- iOS版功能较全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人) ，修改微信运动步数和信息内容页的实时取景背景等功能。 !
+ iOS版功能较全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人) ，修改微信运动步数和信息内容页的实时取景背景等功能。
 
 ## 插件特点
 
-- 1. 完全原生体验
+i. 完全原生体验
 
     完美嵌入微信设置中，无需安装其它无关应用。开启插件后，所有抢红包工作都会默默进行，不会影响微信的正常使用流程。
 
-- 2. 自由设置延迟抢红包时间
+ii. 自由设置延迟抢红包时间
 
     有效防止抢红包速度太快而被拉黑或者踢出群聊。
 
-- 3. 设置防止同时抢多个红包
+iii. 设置防止同时抢多个红包
 
     最大程度避免被系统检测出使用插件，红包抢得更安心。
 
-- 4. 设置过滤特定的群聊
+iv. 设置过滤特定的群聊
 
     防止落入公司群或者点餐群抢红包的尴尬境地。
 
-- 5. 伪定位 
+v. 伪定位 
 
     自由修改手机定位，偶尔出个国，发个圈，装个逼。
 
-- 6. 屏蔽消息和群消息，消息防止撤回
+vi. 屏蔽消息和群消息，消息防止撤回
 
     屏蔽讨厌的人和群的消息，让他们不再打扰你，需要时可关闭，重新接收他们的消息，防止撤回消息，让你不再错过任何信息。
 
@@ -48,26 +48,26 @@
 - 插件设置
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings.gif" width="50%" /> <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_01.png" width="50%" />
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_02.png" width="50%" /> <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_03.png" width="50%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings.gif" width="30%" />  <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_01.png" width="30%" />  <br />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_02.png" width="30%" />  <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_03.png" width="30%" />
 </div>
 
 - 插件应用
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_01.gif" width="50%" /> <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_02.gif" width="50%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_01.gif" width="30%" />  <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_02.gif" width="30%" />
 </div>
 
 - 伪定位
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Fake_location_applying.gif" width="50%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Fake_location_applying.gif" width="30%" />
 </div>
 
 - 消息防止撤回
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Prevent_msg_revocation.png" width="50%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Prevent_msg_revocation.png" width="30%" />
 </div>
 
 ## 基本原理
@@ -703,12 +703,12 @@ cp waplesubstrate wapleodtcorexpc Payload/WeChat.app/
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/del_files.png" width="80%" />
 </div>
 
-- 删除 _CFBundleDisplayName
+- 删除 _CFBundleDisplayName
 
-删除  zh_CN.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
-删除  zh_HK.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
-删除  zh_TW.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
-删除  en.lproj         InfoPlist.strings  _CFBundleDisplayName  <br />
+删除  zh_CN.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
+删除  zh_HK.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
+删除  zh_TW.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
+删除  en.lproj         InfoPlist.strings  _CFBundleDisplayName  <br />
 
 - 删除 Entitlements
 
@@ -861,11 +861,7 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 - [高德地图-坐标拾取器](https://lbs.amap.com/console/show/picker)
 - [腾讯地图-坐标拾取器](https://lbs.qq.com/tool/getpoint/index.html)
 
-清华大学：116.333446,40.009557
-
-## 建议
-
-可以将动态库 wapleodtcorexpc 和 waplesubstrate 修改自己想要的名字，只需将 wapleodtcorexpc 工程名和 Makefile control xxx.plist 文件一同修改，然后重新从[编译 tweak 项目](#编译-tweak-项目-(Compiling-Tweak-Project))步骤开始操作。
+    清华大学：116.333446,40.009557
 
 ## Hook 版本下载
 
@@ -875,9 +871,13 @@ Hook 的版本只需要解压 ipa (Unzip ipa)，重签名应用 (Resign app) ，
 
 [https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg - 提取码：3eqb](https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg)
 
+## 建议
+
+可以将动态库 wapleodtcorexpc 和 waplesubstrate 修改自己想要的名字，只需将 wapleodtcorexpc 工程名和 Makefile control xxx.plist 文件一同修改，然后重新从[编译 tweak 项目](#编译-tweak-项目-(Compiling-Tweak-Project))步骤开始操作。
+
 ## 我的简书
 
-- [《iOS逆向：实现功能最全的微信插件》](https://www.jianshu.com/p/8fa5f61af3e4)
+- [iOS逆向：实现功能最全的微信插件](https://www.jianshu.com/p/8fa5f61af3e4)
 
 ## 参考文章
 
