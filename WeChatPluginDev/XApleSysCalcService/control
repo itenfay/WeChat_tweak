@@ -1,9 +1,0 @@
-Package: com.dyf.XApleSysCalcService
-Name: XApleSysCalcService
-Depends: mobilesubstrate
-Version: 1.6.0
-Architecture: iphoneos-arm
-Description: WeChat Assistant
-Maintainer: dyf
-Author: dyf
-Section: Tweaks

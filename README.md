@@ -1,15 +1,36 @@
-[如果你觉得能帮助到你，请给一颗小星星。谢谢！(If you think it can help you, please give it a star. Thanks!)](https://github.com/dgynfi/WeChat_tweak)
+[如果你觉得能帮助到你，请给一颗小星星。欢迎提 Issues ，谢谢！(If you think it can help you, please give it a star. Welcome to issues, thanks!)](https://github.com/dgynfi/WeChat_tweak)
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)&nbsp;
 
-## 技术交流群(群号:155353383) 
-
-欢迎加入技术交流群，一起探讨技术问题。<br />
-![](https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg)
-
 ## WeChat_tweak
 
- iOS 版功能较全的微信插件，具备抢红包，修改微信运动步数，伪定位（朋友圈和附近的人），屏蔽消息和群消息，过滤群，防撤回消息和信息内容页的背景实时取景等功能。
+ iOS版功能较全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人) ，修改微信运动步数和信息内容页的实时取景背景等功能。 !
+
+## 插件特点
+
+- 1. 完全原生体验
+
+    完美嵌入微信设置中，无需安装其它无关应用。开启插件后，所有抢红包工作都会默默进行，不会影响微信的正常使用流程。
+
+- 2. 自由设置延迟抢红包时间
+
+    有效防止抢红包速度太快而被拉黑或者踢出群聊。
+
+- 3. 设置防止同时抢多个红包
+
+    最大程度避免被系统检测出使用插件，红包抢得更安心。
+
+- 4. 设置过滤特定的群聊
+
+    防止落入公司群或者点餐群抢红包的尴尬境地。
+
+- 5. 伪定位 
+
+    自由修改手机定位，偶尔出个国，发个圈，装个逼。
+
+- 6. 屏蔽消息和群消息，消息防止撤回
+
+    屏蔽讨厌的人和群的消息，让他们不再打扰你，需要时可关闭，重新接收他们的消息，防止撤回消息，让你不再错过任何信息。
 
 ## 免责声明
 
@@ -17,34 +38,94 @@
 - 外挂有风险，使用需谨慎。
 - 当使用本插件时，请使用者自行承担各种状况，包括但不限于“禁用红包功能”以及“微信封号”。
 
-## tweak
+## 技术交流群(群号:155353383) 
 
-- 何谓 tweak ?
+欢迎加入技术交流群，一起探讨技术问题。<br />
+![](https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg)
 
-tweak 定义是：对复杂的系统—通常是电子设备—进行微调或修改来增强其功能。而在 iOS 当中，tweak 是指那些能够增强其它进程功能的 dylib。可以将 tweak 理解为一个外挂，只不过这个外挂是以动态链接库的方式注入到目标应用当中。我们已经很了解外挂其实就是用来做一些原本的应用无法做到的事情。
+## 效果图
+
+- 插件设置
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings.gif" width="50%" /> <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_01.png" width="50%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_02.png" width="50%" /> <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_03.png" width="50%" />
+</div>
+
+- 插件应用
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_01.gif" width="50%" /> <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_02.gif" width="50%" />
+</div>
+
+- 伪定位
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Fake_location_applying.gif" width="50%" />
+</div>
+
+- 消息防止撤回
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Prevent_msg_revocation.png" width="50%" />
+</div>
+
+## 基本原理
+
+在 app 启动时，通过 dyld (the dynamic link editor) 加载我们注入的动态库，从而进行 hook ，而之所以能够执行注入的动态库，是因为使用了 mobilesubstrate 库，这个库能在程序运行的时候动态加载注入的动态库，而非越狱手机里面是没有的，所以我们需要直接将这个库打包进 ipa 中，使用它的 API 实现注入。mobilesubstrate 库在我的 [github](Dynamic%20library/dylib ) 中有提供，即是 libsubstrate.dylib 。
+
+## 打开终端
+
+Terminal 一般 Mac 电脑自带，打开 Terminal 执行后续操作。
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Terminal.png" width="20%" />
+</div>
 
 ## 安装 theos
 
-theos 是一个越狱开发工具包，它可以生成 iOS 越狱APP以及tweak等程序的框架，并提供makefile来编译、打包和安装。
-
-打开 Terminal（Mac电脑自带的终端）
-
-<div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Terminal.png" width="30%" />
-</div>
+theos 是一个越狱开发工具包，它可以生成 iOS app 以及 tweak 等程序的框架，并提供 makefile 来编译、打包和安装。
 
 - 从 Github 下载 theos ，进行如下操作：
 
 ```
 export THEOS=/opt/theos
-# 如果之前已经安装过 theos，请先删除，然后下载最新版
-rm -rf $THEOS
+rm -rf $THEOS # 如果之前已经安装过 theos，请先删除，然后下载最新版
 sudo git clone --recursive https://github.com/theos/theos.git $THEOS
+```
+
+执行命令后，显示如下：
+
+```
+Cloning into '/opt/theos'...
+remote: Enumerating objects: 18, done.
+remote: Counting objects: 100% (18/18), done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 8802 (delta 4), reused 9 (delta 4), pack-reused 8784
+Receiving objects: 100% (8802/8802), 2.20 MiB | 9.00 KiB/s, done.
+Resolving deltas: 100% (5467/5467), done.
+Submodule 'vendor/dm.pl' (https://github.com/theos/dm.pl.git) registered for path 'vendor/dm.pl'
+Submodule 'vendor/include' (https://github.com/theos/headers.git) registered for path 'vendor/include'
+Submodule 'vendor/lib' (https://github.com/theos/lib.git) registered for path 'vendor/lib'
+Submodule 'vendor/logos' (https://github.com/theos/logos.git) registered for path 'vendor/logos'
+Submodule 'vendor/nic' (https://github.com/theos/nic.git) registered for path 'vendor/nic'
+Cloning into '/opt/theos/vendor/dm.pl'...
+remote: Enumerating objects: 142, done.        
+remote: Total 142 (delta 0), reused 0 (delta 0), pack-reused 142        
+Receiving objects: 100% (142/142), 54.20 KiB | 9.00 KiB/s, done.
+Resolving deltas: 100% (72/72), done.
+...
+...
+...
+Submodule path 'vendor/include/rocketbootstrap/LightMessaging': checked out '496257b11c3e906333797639355db9a43015eb50'
+Submodule path 'vendor/lib': checked out 'b1d502cc632ec349f8e2b3df9d7630bad64fd25e'
+Submodule path 'vendor/logos': checked out 'a54760ea60acf45fa48267b9fb344c0317d9351c'
+Submodule path 'vendor/nic': checked out '794d210f81198c6aef4f0ab8d04bd74ffe149f51'
 ```
 
 - 配置ldid
 
-ldid是用于对 iOS 可执行文具进行签名的工具，可以在越狱 iOS 中替换 Xcode 自带的签名工具。
+ldid是用于对 iOS 可执行文件进行签名的工具，可以在越狱 iOS 中替换 Xcode 自带的签名工具。
 
 从 [http://joedj.net/ldid](http://joedj.net/ldid) 下载，将其移动到 /opt/theos/bin 目录下，然后设置可执行权限。
 
@@ -54,53 +135,339 @@ sudo mv ldid /opt/theos/bin
 sudo chmod 777 /opt/theos/bin/ldid
 ```
 
+- 配置环境变量
+
+使用命令 vi ~/.bash_profile 或者 open -e ~/.bash_profile，在 .bash_profile 文件的最后加入 (否则每次重启 Terminal 都要重新 export)
+
+```
+export PATH=/opt/theos/bin:$PATH
+export THEOS=/opt/theos
+```
+
+保存并退出，使用命令 `source ~/.bash_profile` ，立即生效。
+
+- PS: 也可以使用 [iOSOpenDev](http://iosopendev.com)
+
+iOSOpenDev 集成在 Xcode 中，提供了一些模板，可直接使用 Xcode 进行开发。只是这个工具停止更新，对高版本的 Xcode 不能很好地支持。本人安装遇到了许多问题，通过查阅资料，最后在 Xcode 中显示了该工具。若安装失败，则参考 [iOSOpenDev Wiki](https://github.com/kokoabim/iOSOpenDev/wiki) 或者其它资料。
+
+## tweak
+
+### 何谓 tweak ?
+
+tweak 定义是：对复杂的系统—通常是电子设备—进行微调或修改来增强其功能。而在 iOS 当中，tweak  是指那些能够增强其它进程功能的 dylib。可以将 tweak  理解为一个外挂，只不过这个外挂是以动态链接库的方式注入到目标应用当中。我们已经很了解外挂其实就是用来做一些原本的应用无法做到的事情。
+
+### 创建 tweak
+
+使用 nic.pl 创建 tweak ，若提示无此命令，请根据上述步骤配置环境变量，或者不嫌麻烦使用/opt/theos/bin/nic.pl ，根据提示选择 iphone/tweak，接着分别输入：
+
+- 项目名
+- 该 deb 包的名字（类似 bundle identifier，此 bundle identifier 与要 hook 的 app 的 bundle identifier 不是同一个）
+- 作者/维护者
+- tweak 作用对象的 bundle identifier（比如微信为com.tencent.xin）
+- tweak 安装完成后需要重启的应用名（比如微信为WeChat）
+
+如下图所示：
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/nic_create_tweak.png" width="70%" />
+</div>
+
+完成后会看到四个文件(make 后将生成 .theos 、obj 文件夹)：Makefile  wcodtplugin.plist  control  Tweak.xm 
+
+- Makefile
+
+工程用到的文件、框架、库等信息。该文件过于简单，还需要添加一些信息，如：<br />
+指定处理器架构 `ARCHS = armv7 arm64` <br />
+指定 SDK 版本 `TARGET = iphone:latest:8.0` <br />
+导入所需的 framework 等。<br />
+
+修改后的 Makefile 文件如下所示：
+
+```
+ARCHS = armv7 arm64
+TARGET = iphone:latest:8.0
+THEOS_MAKE_PATH = /opt/theos/makefiles
+
+include $(THEOS_MAKE_PATH)/common.mk
+
+TWEAK_NAME = wcodtplugin
+$(TWEAK_NAME)_FILES = $(wildcard src/*.m) src/Tweak.xm
+$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation
+
+src/xxa.m_CFLAGS = -fobjc-arc
+...
+src/xxz.m_CFLAGS = -fobjc-arc
+
+include $(THEOS_MAKE_PATH)/tweak.mk
+
+after-install::
+    install.exec "killall -9 WeChat"
+```
+
+- wcodtplugin.plist
+
+该文件中的 Bundles : 指定 bundle 为 tweak 的作用对象，也可添加多个 bundle ，指定多个为 tweak 作用对象。
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/tweak_plist.png" width="80%" />
+</div>
+
+- control
+
+该 tweak 所需的基本信息 (其实大部分都是创建 tweak 所填写的信息) 
+
+```
+Package: com.aple.wcodtplugin
+Name: wcodtplugin
+Depends: mobilesubstrate
+Version: 0.0.1 # 版本号
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak! # 填写项目描述
+Maintainer: dyf # 维护者
+Author: dyf # 作者
+Section: Tweaks
+```
+
+- Tweak.xm
+
+重点文件，用来编写 hook 代码，因为支持 Logos 和 C/C++ 语法，可以让我们不用去写一些 runtime 方法 (必要时候还是要写) ，从而进行 hook 。
+
+PS: .x 文件支持 Logos 语法，.xm 文件支持 Logos 和 C/C++ 语法。
+
+### Logos 常用语法
+
+- %hook
+
+指定需要 hook 的类，以%end结尾。
+
+- %orig
+
+在 %hook 内部使用，执行 hook 住的方法原代码。
+
+- %new
+
+在 %hook 内部使用，给 class 添加新方法，与 class_addMethod 相同。<br />
+与 Category 中添加方法的区别：Category 为编译时添加，class_addMethod 为动态添加。<br />
+warn ：添加的方法需要在 @interface 中进行声明。 <br />
+
+- %c
+
+获取一个类，等同于 objc_getClass 、NSClassFromString 。
+
+- MSHookIvar<id>(self, "m_tableViewMgr")
+
+在 %hook 内部使用，获取一个类的私有成员变量。
+
+> %hook、%log、%orig 等都是 mobilesubstrate 的 MobileHooker 模块提供的宏，除此之外还有 %group  %init  %ctor等，其实也就是把 method_swizzling 相关的方法封装成了各种宏标记，若想深入了解，请左转 [Google](https://www.google.com) 或者 [Baidu](https://www.baidu.com) 。
+
+### 编写 tweak.xm
+
+在熟悉各种语法之后，可以进行编写代码了，其中 MMUIViewController 为微信的基础的 ViewController 。我们通过 hook viewDidApper: 来进行 Hello World! 弹窗。 
+
+编写一个 hook 接口声明头文件 `HookInterfaceStatment.h`，代码如下：
+
+```
+@interface MMUIViewController : UIViewController
+
+- (void)startLoadingBlocked;
+- (void)startLoadingNonBlock;
+- (void)startLoadingWithText:(NSString *)text;
+- (void)stopLoading;
+- (void)stopLoadingWithFailText:(NSString *)text;
+- (void)stopLoadingWithOKText:(NSString *)text;
+
+// Added method.
+- (void)helloWorld;
+
+@end
+```
+
+```
+#import "HookInterfaceStatment.h"
+
+%hook MMUIViewController
+
+- (void)viewWillAppear:(_Bool)arg1 {
+    %orig;
+    [self helloWorld];
+}
+
+%new
+- (void)helloWorld {
+    UIAlertController *alertController = ({
+        UIAlertController *_alertController = [UIAlertController alertControllerWithTitle:@"Hello World!" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [_alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {}]];
+        [_alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+        _alertController;
+    });
+    [self presentViewController:alertController animated:YES completion:NULL];
+}
+
+%end
+```
+
+### 编译
+
+使用 `make` 进行编译，若想重新编译，则先 `make clean` 。<br />
+make 编译完成后，在当前文件夹下面将生成两个文件夹: .theos 与 obj ，其中编译完成的动态库就在 .thoes/obj/debug 的下面，与工程名相同。
+
+- 问题1
+
+```
+Makefile:6: theos/makefiles/common.mk: Not a directory
+Makefile:25: /tweak.mk: No such file or directory
+make: *** No rule to make target `/tweak.mk'.  Stop.
+```
+
+解决办法：首先确保安装并配置了 theos，其次修改 Makefile 文件，在 `$(THEOS)/makefiles` 代码行上方定义 `THEOS_MAKE_PATH = /opt/theos/makefiles` ，将 `$(THEOS)/makefiles` 替换成 `$(THEOS_MAKE_PATH)` 。
+
+- 问题2
+
+```
+bash: ldid: command not found
+make[2]: *** [/Users/xxx/Desktop/wcodtplugin/.theos/obj/debug/wcodtplugin.dylib] Error 6
+rm /Users/xxx/Desktop/wcodtplugin/.theos/obj/debug/wcodtplugin.dylib.47ba6b93.unsigned
+make[1]: *** [internal-library-all_] Error 2
+make: *** [wcodtplugin.all.tweak.variables] Error 2
+```
+
+解决办法：按照配置 ldid 步骤执行，重新编译即可。
+
+- 问题3
+
+```
+xcrun: error: SDK "iphoneos" cannot be located
+xcrun: error: SDK "iphoneos" cannot be located
+==> Error: You do not have any SDKs in /Library/Developer/CommandLineTools/Platforms/iPhoneOS.platform/Developer/SDKs or /opt/theos/sdks.
+make: *** [before-all] Error 1
+```
+
+解决办法：在终端执行命令 `sudo xcode-select --switch /Applications/Xcode.app` 即可。
+
+
+- 问题4 (代码报错)
+
+```
+> Making all for tweak wcodtplugin…
+==> Preprocessing Tweak.xm…
+==> Compiling Tweak.xm (armv7)…
+Tweak.xm:5:26: error: expected ';' after expression
+... UIAlertController *_alertController = [UIAlertController alertControllerWithTitle...
+                            ^
+                            ;
+1 error generated.
+make[3]: *** [/Users/xxx/Desktop/wcodtplugin/.theos/obj/debug/armv7/Tweak.xm.8aee9f68.o] Error 1
+rm /Users/xxx/Desktop/wcodtplugin/.theos/obj/debug/armv7/Tweak.xm.mm
+make[2]: *** [/Users/xxx/Desktop/wcodtplugin/.theos/obj/debug/armv7/wcodtplugin.dylib] Error 2
+make[1]: *** [internal-library-all_] Error 2
+make: *** [wcodtplugin.tweak.variables] Error 2
+```
+
+解决办法：根据错误提示，找到报错的代码进行修改，重新编译即可。
+
+- 问题5 (打包出错)
+
+```
+> Making all for tweak wcodtplugin…
+make[2]: Nothing to be done for `internal-library-compile'.
+> Making stage for tweak wcodtplugin…
+Can't locate IO/Compress/Lzma.pm in @INC (you may need to install the IO::Compress::Lzma module) (@INC contains: /usr/local/Cellar/perl/5.26.2/lib/perl5/site_perl/5.26.2/darwin-thread-multi-2level /usr/local/Cellar/perl/5.26.2/lib/perl5/site_perl/5.26.2 /usr/local/Cellar/perl/5.26.2/lib/perl5/5.26.2/darwin-thread-multi-2level /usr/local/Cellar/perl/5.26.2/lib/perl5/5.26.2 /usr/local/lib/perl5/site_perl/5.26.2/darwin-thread-multi-2level /usr/local/lib/perl5/site_perl/5.26.2) at /opt/theos/bin/dm.pl line 12.
+BEGIN failed--compilation aborted at /opt/theos/bin/dm.pl line 12.
+make: *** [internal-package] Error 2
+```
+
+解决办法：
+
+```
+1. /opt/theos/vendor/dm.pl/dm.pl
+# 注释掉第12、13行
+# use IO::Compress::Lzma;
+# use IO::Compress::Xz;
+
+2. /opt/theos/makefiles/package/deb.mk
+# 第6行 lzma 改为 gzip
+_THEOS_PLATFORM_DPKG_DEB_COMPRESSION ?= gzip
+```
+
+最后重新make package，成功了。
+
 ## 目录介绍
 
-- [Dynamic library](Dynamic%20library) - dylib 目录 (Raw Library) 和 modify 目录 (Modified Library)，可直接拿来注入。
-- [Hook-Tools](Hook-Tools) - Hook常用工具。
-    - iOSOpenDev - Xcode增强工具，需要通过它生成用于注入的dylib。也可用theos编译tweak项目生成注入的dylib库。
-    - dumpdecrypted - 用于解密iOS的可执行文件，砸壳时可不需要。
-    - otool - 一般Mac自带，用于查看解密后文件的依赖项检查。
-    - install_name_tool - 一般Mac自带，修改动态库的路径。
-    - yoyolib - 用于向iOS的可执行文件中注入dylib。
-    - optool - 将动态链接库注入二进制文件中。
+- [Dynamic library](Dynamic%20library) - dylib 目录 (Raw Dynamic Library) 和 modify 目录 (Modified Dynamic Library) ，可直接拿来注入。
+- [Hook-Tools](Hook-Tools) - Hook 使用的工具。
+    - dumpdecrypted - 用于解密 iOS 的可执行文件，砸壳时可不需要。
+    - otool - 一般 Mac 自带，用于查看解密后文件的依赖项检查。
+    - install_name_tool - 一般 Mac 自带，修改动态库的路径。
+    - yoyolib - 用于向 iOS 的可执行文件中注入 dylib 。
+    - optool - 将动态库注入目标二进制文件中。
     - class-dump - 导出app所有头文件 (`class-dump -s -S -H ~/Desktop/xx.app -o ~/Desktop/xx-headers`)。
+    - ldid - 用于对 iOS 可执行文件进行签名的工具，在越狱 iOS 中替换 Xcode 自带的签名工具。
+    - PackageApplication -  主要用来通过脚本打包 ipa 文件。
+    - 010Editor701 - 一款全新概念的十六进制编辑器，其最强大的功能在于支持模板和脚本操作。
+        - [010Editor 最新版 8.0.1 逆向分析](https://www.52pojie.cn/forum.php?mod=viewthread&tid=684119&page=)
+    - MachOView - 用于对 mach-o 文件分析的工具。
+    - DYFCodesign - 用于对 iOS app 进行脚本重签名。
     - [ios-app-signer](https://github.com/dgynfi/OpenSource#Mac) - 打包 ipa 与重签名图形化工具。
-- [Resources](Resources) - Icon 目录 (带抢红包的Icon) 和 wav 目录 (音频文件)。
-- [WeChatPluginDev](WeChatPluginDev) - 微信插件tweak源码开发。
+    - iOSOpenDev - Xcode 增强工具，通过它生成用于注入的 dylib 库。建议用 theos 编译 tweak 项目生成注入的 dylib 库。
+- [Resources](Resources) - Icon 目录 (带抢红包的Icon) 、 wav 目录 (音频文件) 和 WC_7_0_5_Headers (微信7.0.5头文件)。
+- [WeChatPluginDev](WeChatPluginDev/wapleodtcorexpc) - 微信插件 tweak 源码开发。
 
 ## 获取砸壳版本的微信
 
-- 直接在 PP 助手下载
+1. 直接在 PP 助手下载
 
-- 百度网盘提供部分下载：
+2. 百度网盘下载：
+
 [https://pan.baidu.com/s/1eT3tgfQRjIHUu3PL77YY9Q - 提取码：o8sa](https://pan.baidu.com/s/1eT3tgfQRjIHUu3PL77YY9Q)
 
-- 使用 Clutch 越狱手机上的应用进行砸壳
+3. SSH 服务
 
-将 Cluth 仓库 clone 到本地：
+实现在越狱手机上远程进行 ssh 服务，OpenSSH: 在 Cydia 中安装 OpenSSH 。
+
+- ssh : 远程登录
+
+```
+// 指令 ssh user@ip
+ssh mobile@192.168.6.6
+```
+
+- scp : 远程拷贝
+
+本地文件拷贝到 iOS 上 (若从 iOS 上拷贝到本地，则相反)
+
+```
+// 指令 scp /path/to/localFile user@ip:/path/to/remoteFile
+scp ~/Desktop/icon.png root@192.168.6.6:/var/tmp/
+```
+
+> 注意，OpenSSH 默认登录密码为 alpine ，iOS 上的用户只有 root 与 mobile，修改密码使用passwd root (mobile) 。
+
+4. 使用 Clutch 对越狱手机上的应用进行砸壳
+
+- 将 Cluth 仓库 clone 到本地：
 
 ```
 git clone https://github.com/KJCracks/Clutch
 cd Clutch
 ```
 
-使用 Xcode 进行构建，得到可执行文件：
+- 使用 Xcode 进行构建，得到可执行文件：
 
 ```
-xcodebuild -project Clutch.xcodeproj -configuration Release ARCHS="armv7s arm64" build
+xcodebuild -project Clutch.xcodeproj -configuration Release ARCHS="armv7 arm64" build
 ```
 
-将可执行文件 clutch 拷贝到手机上：
+- 将可执行文件 clutch 拷贝到手机上：
 
 ```
 scp Clutch/clutch root@<your.device.ip>:/usr/bin/
 ```
 
-先 ssh 到越狱手机上，然后查看当前安装的应用：
+- 先 ssh 到越狱手机上，然后查看当前安装的应用：
 
 ```
 ssh root@<your.device.ip>
+# 列出当前安装的应用
 clutch -i
 
 # Installed apps:
@@ -109,9 +476,10 @@ clutch -i
 # .......
 ```
 
-开始砸壳
+- 开始砸壳
 
 ```
+# clutch -d <bundle identifier>
 clutch -d com.tencent.xin
 
 # com.tencent.xin contains watchOS 2 compatible application. It's not possible to dump watchOS 2 apps with Clutch 2.0.4 at this moment.
@@ -120,161 +488,343 @@ clutch -d com.tencent.xin
 # ASLR slide: 0xb3000
 # ...
 # writing new checksum
-# DONE: /private/var/mobile/Documents/Dumped/com.tencent.xin-iOS9.0-(Clutch-2.0.4).ipa
+# DONE: /private/var/mobile/Documents/Dumped/com.tencent.xin-iOS9.2-(Clutch-2.0.4).ipa
 # Finished dumping com.tencent.xin in 76.9 seconds
-
 ```
 
-将砸完壳的ipa包拷回电脑上
+- 将砸完壳的ipa包拷回电脑上
 
 ```
-$ mv /private/var/mobile/Documents/Dumped/com.tencent.xin-iOS9.0-\(Clutch-2.0.4\).ipa /private/var/mobile/Documents/Dumped/wechat.ipa
+mv /private/var/mobile/Documents/Dumped/com.tencent.xin-iOS9.2-\(Clutch-2.0.4\).ipa /private/var/mobile/Documents/Dumped/WeChat.ipa
 
-$ scp root@<your.device.ip>:/private/var/mobile/Documents/Dumped/wechat.ipa ~/Desktop
-
+scp root@<your.device.ip>:/private/var/mobile/Documents/Dumped/WeChat.ipa ~/Desktop/
 ```
 
-## 注入库和重签名打包
+## 注入动态库和重签名打包应用
 
-- 编译 (Compiling)
+以微信 7.0.5 版本为例，执行下列操作：
+
+### 解压 ipa (Unzip ipa)
 
 ```
-cd /Users/dyf/Desktop//WeChat_tweak/WeChatPluginDev/XApleSysCalcService
+# cd <微信ipa下载目录>
+cd ~/Downloads/
+
+unzip -o 微信-7.0.5\(越狱应用\).ipa -d ./
+
+# 静默解压
+# unzip -q -o 微信-7.0.5\(越狱应用\).ipa -d ./
+
+# 将 Payload 移至桌面
+mv ./Payload/ ~/Desktop/
+```
+
+### 查看 app 是否被加密 (Check app)
+
+otool 可以输出 app 的 load commands，然后通过查看 cryptid 这个标志位来判断 app 是否被加密，1代表加密了，0代表被解密了。
+
+```
+# 进入桌面
+cd ~/Desktop/
+
+# 查看 app 是否被加密
+otool -l Payload/WeChat.app/WeChat | grep -B 2 crypt
+```
+
+结果显示如下：
+
+```
+otool -l Payload/WeChat.app/WeChat | grep -B 2 crypt
+          cmd LC_ENCRYPTION_INFO_64
+      cmdsize 24
+     cryptoff 16384
+    cryptsize 100237312
+      cryptid 0
+```
+
+### 克隆仓库 (Clone Repository)
+
+```
+# 克隆
+git clone https://github.com/dgynfi/WeChat_tweak.git
+```
+
+### 编译 tweak 项目 (Compile Tweak Project)
+
+```
+cd WeChat_tweak/WeChatPluginDev/wapleodtcorexpc/
+# compile
 make
-cp .theos/obj/debug/XApleSysCalcService.dylib ~/Desktop 
+```
 
-# 直接打开目录，拷贝或拖动dylib库至桌面
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/tweak_make.png" width="80%" />
+</div>
+
+```
+# 将 wapleodtcorexpc.dylib 库拷贝至桌面
+cp .theos/obj/debug/wapleodtcorexpc.dylib ~/Desktop/
+
+# 直接打开目录，将 wapleodtcorexpc.dylib 库拷贝或拖拽至桌面
 # open .theos/obj/debug/
 ```
 
-- 移除架构 (Remove Architecture) 
+### 更改动态库的依赖 (Change Dynamic Library Dependencies)
+
+将 libsubstrate.dylib 库拷贝至桌面：
 
 ```
-lipo libsubstrate.dylib -remove armv7 -output ./libsubstrate.dylib
-lipo -info libsubstrate.dylib
+# 进入桌面
+cd ~/Desktop/
 
-lipo XApleSysCalcService -remove armv7 -output ./XApleSysCalcService
-lipo -info XApleSysCalcService
+# 将 libsubstrate.dylib 库拷贝至桌面
+cp WeChat_tweak/Dynamic\ library/dylib/libsubstrate.dylib ~/Desktop/
 ```
 
-将 libsubstrate.dylib 改名为 XApleSysSubstr，并设置可执行权限：
+右键 libsubstrate.dylib ，选择显示简介，在名称与扩展名处将 libsubstrate.dylib 修改成 waplesubstrate ，回车并移除。
+
+同样，右键 wapleodtcorexpc.dylib ，选择显示简介，在名称与扩展名处将 wapleodtcorexpc.dylib 修改成 wapleodtcorexpc ，回车并移除。
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/rm_ext.png" width="80%" />
+</div>
+
+执行更改动态库的依赖命令：
 
 ```
-chmod 777 XApleSysSubstr
+install_name_tool -change /Library/Frameworks/CydiaSubstrate.framework/CydiaSubstrate @loader_path/waplesubstrate wapleodtcorexpc
 ```
 
-- 改变动态库的路径 (Change Library Path)
+查看依赖项，检查是否更改成功，使用以下命令：
 
 ```
-install_name_tool -change /Library/Frameworks/CydiaSubstrate.framework/CydiaSubstrate @loader_path/XApleSysSubstr XApleSysCalcService
-
-```
-
-查看依赖项，检查路径是否修改成功，使用以下命令：
-
-```
-otool -L XApleSysCalcService
+otool -L wapleodtcorexpc
 ```
 
 显示如下：
 
 ```
-XApleSysCalcService (architecture armv7):
-    /Library/MobileSubstrate/DynamicLibraries/XApleSysCalcService.dylib (compatibility version 0.0.0, current version 0.0.0)
+wapleodtcorexpc (architecture armv7):
+    /Library/MobileSubstrate/DynamicLibraries/wapleodtcorexpc.dylib (compatibility version 0.0.0, current version 0.0.0)
     /usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)
-    /System/Library/Frameworks/Foundation.framework/Foundation (compatibility version 300.0.0, current version 1450.14.0)
-    /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation (compatibility version 150.0.0, current version 1450.14.0)
-    /System/Library/Frameworks/UIKit.framework/UIKit (compatibility version 1.0.0, current version 3698.33.6)
+    /System/Library/Frameworks/Foundation.framework/Foundation (compatibility version 300.0.0, current version 1570.15.0)
+    /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation (compatibility version 150.0.0, current version 1570.15.0)
+    /System/Library/Frameworks/UIKit.framework/UIKit (compatibility version 1.0.0, current version 61000.0.0)
     /System/Library/Frameworks/AVFoundation.framework/AVFoundation (compatibility version 1.0.0, current version 2.0.0)
-    /System/Library/Frameworks/CoreLocation.framework/CoreLocation (compatibility version 1.0.0, current version 2237.0.22)
-    @loader_path/XApleSysSubstr (compatibility version 0.0.0, current version 0.0.0)
-    /usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 400.9.1)
-    /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.0.0)
+    /System/Library/Frameworks/CoreLocation.framework/CoreLocation (compatibility version 1.0.0, current version 2245.12.30)
+    @loader_path/waplesubstrate (compatibility version 0.0.0, current version 0.0.0)
+    /usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 400.9.4)
+    /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.250.1)
     /System/Library/Frameworks/CoreVideo.framework/CoreVideo (compatibility version 1.2.0, current version 1.5.0)
-XApleSysCalcService (architecture arm64):
-    /Library/MobileSubstrate/DynamicLibraries/XApleSysCalcService.dylib (compatibility version 0.0.0, current version 0.0.0)
+wapleodtcorexpc (architecture arm64):
+    /Library/MobileSubstrate/DynamicLibraries/wapleodtcorexpc.dylib (compatibility version 0.0.0, current version 0.0.0)
     /usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)
-    /System/Library/Frameworks/Foundation.framework/Foundation (compatibility version 300.0.0, current version 1450.14.0)
-    /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation (compatibility version 150.0.0, current version 1450.14.0)
-    /System/Library/Frameworks/UIKit.framework/UIKit (compatibility version 1.0.0, current version 3698.33.6)
+    /System/Library/Frameworks/Foundation.framework/Foundation (compatibility version 300.0.0, current version 1570.15.0)
+    /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation (compatibility version 150.0.0, current version 1570.15.0)
+    /System/Library/Frameworks/UIKit.framework/UIKit (compatibility version 1.0.0, current version 61000.0.0)
     /System/Library/Frameworks/AVFoundation.framework/AVFoundation (compatibility version 1.0.0, current version 2.0.0)
-    /System/Library/Frameworks/CoreLocation.framework/CoreLocation (compatibility version 1.0.0, current version 2237.0.22)
-    @loader_path/XApleSysSubstr (compatibility version 0.0.0, current version 0.0.0)
-    /usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 400.9.1)
-    /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.0.0)
+    /System/Library/Frameworks/CoreLocation.framework/CoreLocation (compatibility version 1.0.0, current version 2245.12.30)
+    @loader_path/waplesubstrate (compatibility version 0.0.0, current version 0.0.0)
+    /usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 400.9.4)
+    /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.250.1)
     /System/Library/Frameworks/CoreVideo.framework/CoreVideo (compatibility version 1.2.0, current version 1.5.0)
 ```
 
-由此可见，`/Library/Frameworks/CydiaSubstrate.framework/CydiaSubstrate` 修改成了`@loader_path/XApleSysSubstr`，这就证明动态库的路径修改成功。
+CydiaSubstrate 只有越狱的手机上才有，因此需要我们手动更改并导入。从上可见， `/Library/Frameworks/CydiaSubstrate.framework/CydiaSubstrate` 更改成了 `@loader_path/waplesubstrate` ，这表明动态库的依赖更改成功。
 
-- 注入动态库 (Install Dynamic Library)
+### 移除架构 (Remove Architectures) 
 
-```
-/Users/dyf/Desktop/WeChat_tweak/Hook-Tools/optool install -c load -p "@executable_path/XApleSysCalcService" -t Payload/WeChat.app/WeChat
-
-```
-
-- 修改微信Info.plist和本地化文本 (Modify Info.plist of WeChat and Localized File)
-
-  修改 WeChat.app/Info.plist 的 bundle id 和 bundle display name，删除本地化文本(Localized File)中的CFBundleDisplayName，删除Watch目录。
- 
-- 修改微信插件 (Modify WeChat PlugIns)
-
-  修改插件的bundle id，重签名。
+对于没有强迫证的同学来说，这步可略过。目前 `WeChat` 可执行文件只有 `arm64` 架构，在以前版本中，若移除 `armv7` 架构，则可以大大减少包的大小，以节省手机空间。
 
 ```
-codesign -f -s "iPhone Distribution: XXX (5WQHRCQ7JQ)" Payload/WeChat.app/PlugIns/WeChatShareExtensionNew.appex
-codesign -f -s "iPhone Distribution: XXX (5WQHRCQ7JQ)" Payload/WeChat.app/PlugIns/WeChatSiriExtension.appex
-codesign -f -s "iPhone Distribution: XXX (5WQHRCQ7JQ)" Payload/WeChat.app/PlugIns/WeChatSiriExtensionUI.appex
+# 进入桌面，确保当前在桌面上操作
+cd ~/Desktop/
 
+lipo -info waplesubstrate 
+# Architectures in the fat file: waplesubstrate are: armv7 arm64 
+
+lipo waplesubstrate -remove armv7 -output ./waplesubstrate 
+
+lipo -info waplesubstrate 
+# Architectures in the fat file: waplesubstrate are: arm64 
+
+lipo -info wapleodtcorexpc 
+# Architectures in the fat file: wapleodtcorexpc are: armv7 arm64
+
+lipo wapleodtcorexpc -remove armv7 -output ./wapleodtcorexpc
+
+lipo -info wapleodtcorexpc 
+# Architectures in the fat file: wapleodtcorexpc are: arm64
 ```
 
-- 重签名动态库 (Resign Dynamic Library)
-
-  将动态库 XApleSysCalcService 和 XApleSysSubstr 拷贝到 WeChat.app 目录中，然后重签名。
- 
-```
-cp -i ~/Desktop/WeChat_tweak/Dynamic\ library/modify/XApleSysCalcService ~/Desktop/WeChat_tweak/Dynamic\ library/modify/XApleSysSubstr Payload/WeChat.app
-
-codesign -f -s "iPhone Distribution: XXX (5WQHRCQ7JQ)" Payload/WeChat.app/XApleSysCalcService 
-codesign -f -s "iPhone Distribution: XXX (5WQHRCQ7JQ)" Payload/WeChat.app/XApleSysSubstr
-
-codesign -f -s "iPhone Distribution: XXX (5WQHRCQ7JQ)" Payload/WeChat.app/Frameworks/mars.framework
-codesign -f -s "iPhone Distribution: XXX (5WQHRCQ7JQ)" Payload/WeChat.app/Frameworks/MMCommon.framework
-codesign -f -s "iPhone Distribution: XXX (5WQHRCQ7JQ)" Payload/WeChat.app/Frameworks/WCDB.framework
-codesign -f -s "iPhone Distribution: XXX (5WQHRCQ7JQ)" Payload/WeChat.app/Frameworks/MultiMedia.framework
+### 注入动态库 (Install Dynamic Libraries)
 
 ```
+# 进入桌面，确保当前在桌面上操作
+# cd ~/Desktop/
 
-- 重签名应用 (Resign App)
-
-```
-/Users/dyf/Desktop/WeChat_tweak/Hook-Tools/DYFCodesign.sh /Users/dyf/Desktop/Payload "iPhone Distribution: XXX (5WQHRCQ7JQ)" /Users/dyf/Desktop/wcp_adhoc.mobileprovision
-
-```
-
-- 打包应用 (Package App)
-
-```
-xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat_New.ipa
-
+# @executable_path 是一个环境变量，指的是二进制文件所在的路径
+./WeChat_tweak/Hook-Tools/optool install -c load -p "@executable_path/wapleodtcorexpc" -t Payload/WeChat.app/WeChat
 ```
 
-**PackageApplication 主要用来通过脚本打包ipa文件，然而从 Xcode8.2.1 版本之后，就不建议使用了**。所以每次更新 Xcode 版本，都要手动添加PackageApplication。
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/optool_install.png" width="80%" />
+</div>
+
+将动态库拷贝至二进制文件所在的目录，操作如下：
+
+```
+# 进入桌面，确保当前在桌面上操作
+# cd ~/Desktop/
+
+# 将动态库拷贝至二进制文件所在的目录
+cp waplesubstrate wapleodtcorexpc Payload/WeChat.app/
+```
+
+### 打开 WeChat.app 目录 (Open WeChat.app)
+
+- 进入 WeChat.app 目录
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/show_wechatapp_dir.png" width="80%" />
+</div>
+
+- 找出 Info.plist 文件
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/found_Info.plist.png" width="80%" />
+</div>
+
+双击，默认 Xcode 打开，修改 Info.plist 中的 Bundle display name 和 Bundle identifier，将 WeChatBundleVersion 的 Value 修改成 Bundle version 的 Value，将 URL types -> URL identifier 修改成新的 Bundle identifier，删除 build_time, by, path, rev, tag, uuid, ver 等 Key。
+
+- 删除 PlugIns 和 Watch 目录中的文件
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/del_files.png" width="80%" />
+</div>
+
+- 删除 _CFBundleDisplayName
+
+删除  zh_CN.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
+删除  zh_HK.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
+删除  zh_TW.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
+删除  en.lproj         InfoPlist.strings  _CFBundleDisplayName  <br />
+
+- 删除 Entitlements
+
+删除  Entitlements_for_appstore.plist  <br />
+删除  Entitlements_for_ext.plist  <br />
+删除  Entitlements_for_jailbreak.plist  <br />
+删除  Entitlements_wc_for_ext.plist  <br />
+删除  Entitlements_wc.plist  <br />
+删除  Entitlements_wx_for_ext.plist  <br />
+删除  Entitlements_wx.plist  <br />
+
+ ### 重签名动态库 (Resign Dynamic Libraries)
+
+打开钥匙串访问，
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/keychain_access.png" width="80%" />
+</div>
+
+点击登录 -> 我的证书，找出要签名的证书，右击显示简介，找到常用名称，然后拷贝后面的字符串。
+
+执行重签名：
+
+```
+codesign -f -s "iPhone Developer: xxx@qq.com (9ZU3R2F3D4)" Payload/WeChat.app/waplesubstrate 
+# Payload/WeChat.app/waplesubstrate: replacing existing signature
+
+codesign -f -s "iPhone Developer: xxx@qq.com (9ZU3R2F3D4)" Payload/WeChat.app/wapleodtcorexpc
+# Payload/WeChat.app/wapleodtcorexpc: replacing existing signature
+
+codesign -f -s "iPhone Developer: xxx@qq.com (9ZU3R2F3D4)" Payload/WeChat.app/Frameworks/andromeda.framework
+# Payload/WeChat.app/Frameworks/andromeda.framework: replacing existing signature
+
+codesign -f -s "iPhone Developer: xxx@qq.com (9ZU3R2F3D4)" Payload/WeChat.app/Frameworks/mars.framework
+# Payload/WeChat.app/Frameworks/mars.framework: replacing existing signature
+
+codesign -f -s "iPhone Developer: xxx@qq.com (9ZU3R2F3D4)" Payload/WeChat.app/Frameworks/marsbridgenetwork.framework
+# Payload/WeChat.app/Frameworks/marsbridgenetwork.framework: replacing existing signature
+
+codesign -f -s "iPhone Developer: xxx@qq.com (9ZU3R2F3D4)" Payload/WeChat.app/Frameworks/matrixreport.framework
+# Payload/WeChat.app/Frameworks/matrixreport.framework: replacing existing signature
+
+codesign -f -s "iPhone Developer: xxx@qq.com (9ZU3R2F3D4)" Payload/WeChat.app/Frameworks/OpenSSL.framework
+# Payload/WeChat.app/Frameworks/OpenSSL.framework: replacing existing signature
+
+codesign -f -s "iPhone Developer: xxx@qq.com (9ZU3R2F3D4)" Payload/WeChat.app/Frameworks/ProtobufLite.framework
+# Payload/WeChat.app/Frameworks/ProtobufLite.framework: replacing existing signature
+```
+
+### 重签名应用 (Resign app)
+
+打开 Provisioning Profiles 目录
+
+```
+# 打开 Provisioning Profiles 目录
+open ~/Library/MobileDevice/Provisioning\ Profiles/ 
+```
+
+在 Finder 工具栏选择以分栏或画廊方式显示，然后逐一点击 xxx.mobileprovision 文件，找出相匹配的 Bundle identifier 的配置文件 。也可以直接从开发者平台中下载证书和 mobileprovision 配置文件，导入证书p12 和 mobileprovision 配置文件 (可直接使用)。
+
+用 cat 命令逐一查看 xxx.mobileprovision 文件
+
+```
+cat ~/Library/MobileDevice/Provisioning\ Profiles/ece5c913-5c15-45fd-82e3-90f23739521f.mobileprovision
+...
+cat ~/Library/MobileDevice/Provisioning\ Profiles/269bffd1-3743-4014-bf07-4eb94c048460.mobileprovision
+```
+
+将 xxx.mobileprovision 文件拷贝至桌面
+
+```
+cp ~/Library/MobileDevice/Provisioning\ Profiles/269bffd1-3743-4014-bf07-4eb94c048460.mobileprovision ~/Desktop/wcpl_adhoc.mobileprovision
+```
+
+执行重签名应用：
+
+```
+# 进入桌面，确保当前在桌面上操作
+cd ~/Desktop/
+
+./WeChat_tweak/Hook-Tools/DYFCodesign Payload/ "iPhone Developer: xxx@qq.com (9ZU3R2F3D4)" wcpl_adhoc.mobileprovision 
+# /Users/xxx/Desktop/Payload/WeChat.app: replacing existing signature
+```
+
+### 打包应用 (Package app)
+
+- 方法一
+
+```
+# 进入桌面，确保当前在桌面上操作
+# cd ~/Desktop/
+
+zip -r WeChat_705_New.ipa Payload/
+
+# 静默压缩
+# zip -qr WeChat_705_New.ipa Payload/
+```
+
+- 方法二
+
+**PackageApplication 主要用来通过脚本打包ipa文件，然而从 Xcode8.2.1 版本之后，就不建议使用了**。所以每次更新 Xcode 版本，都要手动添加 PackageApplication。
 
 PackageApplication 下载地址：
 
 1. 百度网盘下载：
+
 [https://pan.baidu.com/s/1AjVW8hWYlVz3Cu9UJByQOQ - 提取码：4sqb](https://pan.baidu.com/s/1AjVW8hWYlVz3Cu9UJByQOQ)
 
 2. Github下载：
+
 [https://github.com/dgynfi/WeChat_tweak/tree/master/Hook-Tools/](https://github.com/dgynfi/WeChat_tweak/tree/master/Hook-Tools/)
 
 将下载的 PackageApplication 执行以下命令，并设置可执行权限：
 
 ```
-chmod 777 /Users/dyf/Downloads/PackageApplication
-
+chmod 777 ~/Downloads/PackageApplication
 ```
 
 Applications -> 右键 Xcode.app -> 显示包内容 -> Contents -> Developer -> platforms -> iPhoneOS.platform -> Developer -> usr -> bin，进入这个目录之后，将获得执行权限的 PackageApplication 复制到这个目录。
@@ -282,24 +832,58 @@ Applications -> 右键 Xcode.app -> 显示包内容 -> Contents -> Developer -> 
 使用命令如下：
 
 ```
-cp -i ~/Downloads/PackageApplication /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
-
+cp ~/Downloads/PackageApplication /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
 ```
 
-- 最后使用 PP 助手/ ifunbox 安装 WeChat_New.ipa
+执行打包：
+
+```
+xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat_705_New.ipa
+```
+
+- 安装 ipa 
+
+1. 最后使用 PP 助手/ ifunbox 安装 WeChat_705_New.ipa 。
+
+2. 使用 Xcode -> Window -> Devices and Simulators ，右击自己的设备，选择 Connect via IP Adress...，输入设备的IP，然后点击 Connect ，最后在 INSTALLED APPS 处点击 “+” 号，然后选择 WeChat_705_New.ipa ，点击 Open ，然后漫长地等待安装，大约1 ~ 3分钟。
+
+## 支持作者
+
+如果你觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包) ，不妨进行小额赞助，这样我会有更大的动力去更新和优化代码。
+
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Alipay_paymentcode.jpg" width="50%" /> <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WeChat_apprcode.jpg" width="50%" />
+</div>
+
+## 坐标拾取
+
+- [百度地图-拾取坐标系统](http://api.map.baidu.com/lbsapi/getpoint/index.html)
+- [高德地图-坐标拾取器](https://lbs.amap.com/console/show/picker)
+- [腾讯地图-坐标拾取器](https://lbs.qq.com/tool/getpoint/index.html)
+
+清华大学：116.333446,40.009557
 
 ## 建议
 
-可以将动态库 XApleSysCalcService 和 XApleSysSubstr 修改自己想要的名字，只需将 XApleSysCalcService 项目源码工程名和配置文件一同修改，重新编译，并按上述步骤操作即可。
+可以将动态库 wapleodtcorexpc 和 waplesubstrate 修改自己想要的名字，只需将 wapleodtcorexpc 工程名和 Makefile control xxx.plist 文件一同修改，然后重新从[编译 tweak 项目](#编译-tweak-项目-(Compiling-Tweak-Project))步骤开始操作。
 
-## Hook版本下载
+## Hook 版本下载
 
-Hook的版本只需要按上述步骤重签名，打包应用即可。
+Hook 的版本只需要解压 ipa (Unzip ipa)，重签名应用 (Resign app) ，打包应用 (Package app) ，安装 ipa 即可。
 
 百度网盘下载：
+
 [https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg - 提取码：3eqb](https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg)
 
+## 我的简书
+
+- [《iOS逆向：实现功能最全的微信插件》](https://www.jianshu.com/p/8fa5f61af3e4)
+
 ## 参考文章
+
+- [移动App入侵与逆向破解技术－iOS篇](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577384&idx=1&sn=b44a9c9651bf09c5bea7e0337031c53c&scene=0#wechat_redirect)
+
+- [蒸米的文章 - iOS冰与火之歌系列](https://github.com/zhengmin1989/MyArticles)
 
 - [免越狱版 iOS 抢红包插件](http://www.swiftyper.com/2016/12/26/wechat-redenvelop-tweak-for-non-jailbroken-iphone)
 
@@ -307,12 +891,6 @@ Hook的版本只需要按上述步骤重签名，打包应用即可。
 
 - [一步一步实现iOS微信自动抢红包(非越狱)](https://www.jianshu.com/p/189afbe3b429)
 
-- [iOS微信自动抢红包-入门教程(非越狱)](Resources/Html/iOS微信自动抢红包-入门教程(非越狱).html)
-
 ## iOS逆向交流
 
 - [iOS逆向交流社区 -  iOSRE](http://bbs.iosre.com)
-
-
-
-> [简书传送门：《iOS逆向：实现功能最全的微信插件》](https://www.jianshu.com/p/8fa5f61af3e4)

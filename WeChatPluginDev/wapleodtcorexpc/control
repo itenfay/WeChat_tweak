@@ -1,0 +1,9 @@
+Package: com.aple.wapleodtcorexpc
+Name: wapleodtcorexpc
+Depends: mobilesubstrate
+Version: 1.7.8
+Architecture: iphoneos-arm
+Description: WeChatAssistant
+Maintainer: dyf
+Author: dyf
+Section: Tweaks
