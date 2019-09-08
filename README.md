@@ -42,7 +42,9 @@ vi. 屏蔽消息和群消息，消息防止撤回
 
 - 欢迎加入技术交流群，一起探讨技术问题。
 
-![](https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg)
+<div align=center>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg" width="90%" />
+</div>
 
 ## 效果图
 
@@ -142,12 +144,7 @@ sudo chmod 777 /opt/theos/bin/ldid
 
 - 配置环境变量
 
-```
-# 进入 User 根目录
-cd 
-```
-
-使用命令 vi ~/.bash_profile 或者 open -e ~/.bash_profile ，在 .bash_profile 文件的最后加入 (否则每次重启 Terminal 都要重新 export)
+使用命令 `vi ~/.bash_profile` 或者 `open -e ~/.bash_profile` ，在 .bash_profile 文件的最后加入 (否则每次重启 Terminal 都要重新 export)
 
 ```
 export PATH=/opt/theos/bin:$PATH
@@ -428,13 +425,13 @@ _THEOS_PLATFORM_DPKG_DEB_COMPRESSION ?= gzip
 
 1. 直接在 PP 助手下载
 
-2. 百度网盘下载：
+2. 百度网盘下载
 
     [https://pan.baidu.com/s/1eT3tgfQRjIHUu3PL77YY9Q - 提取码：o8sa](https://pan.baidu.com/s/1eT3tgfQRjIHUu3PL77YY9Q)
 
 3. SSH 服务
 
-实现在越狱手机上远程进行 ssh 服务，OpenSSH: 在 Cydia 中安装 OpenSSH 。
+实现在越狱手机上远程进行 ssh 服务，在 Cydia 中安装 OpenSSH 。
 
 - ssh : 远程登录
 
@@ -485,8 +482,7 @@ clutch -i
 
 # Installed apps:
 # 1: WeChat <com.tencent.xin>
-# 2: DingTalk <com.laiwang.DingTalk>
-# .......
+# ...
 ```
 
 - 开始砸壳
@@ -495,7 +491,6 @@ clutch -i
 # clutch -d <bundle identifier>
 clutch -d com.tencent.xin
 
-# com.tencent.xin contains watchOS 2 compatible application. It's not possible to dump watchOS 2 apps with Clutch 2.0.4 at this moment.
 # Zipping WeChat.app
 # Swapping architectures..
 # ASLR slide: 0xb3000
@@ -505,7 +500,7 @@ clutch -d com.tencent.xin
 # Finished dumping com.tencent.xin in 76.9 seconds
 ```
 
-- 将砸完壳的ipa包拷回电脑上
+- 将砸完壳的 ipa 包拷回 Mac 电脑上
 
 ```
 mv /private/var/mobile/Documents/Dumped/com.tencent.xin-iOS9.2-\(Clutch-2.0.4\).ipa /private/var/mobile/Documents/Dumped/WeChat.ipa
@@ -721,20 +716,20 @@ cp waplesubstrate wapleodtcorexpc Payload/WeChat.app/
 
 - 删除 _CFBundleDisplayName
 
-删除  zh_CN.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
-删除  zh_HK.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
-删除  zh_TW.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
-删除  en.lproj         InfoPlist.strings  _CFBundleDisplayName  <br />
+    删除  zh_CN.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
+    删除  zh_HK.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
+    删除  zh_TW.lproj  InfoPlist.strings  _CFBundleDisplayName  <br />
+    删除  en.lproj         InfoPlist.strings  _CFBundleDisplayName  <br />
 
 - 删除 Entitlements
 
-删除  Entitlements_for_appstore.plist  <br />
-删除  Entitlements_for_ext.plist  <br />
-删除  Entitlements_for_jailbreak.plist  <br />
-删除  Entitlements_wc_for_ext.plist  <br />
-删除  Entitlements_wc.plist  <br />
-删除  Entitlements_wx_for_ext.plist  <br />
-删除  Entitlements_wx.plist  <br />
+    删除  Entitlements_for_appstore.plist  <br />
+    删除  Entitlements_for_ext.plist  <br />
+    删除  Entitlements_for_jailbreak.plist  <br />
+    删除  Entitlements_wc_for_ext.plist  <br />
+    删除  Entitlements_wc.plist  <br />
+    删除  Entitlements_wx_for_ext.plist  <br />
+    删除  Entitlements_wx.plist  <br />
 
  ### 重签名动态库 (Resign Dynamic Libraries)
 
@@ -783,7 +778,7 @@ codesign -f -s "iPhone Developer: xxx@qq.com (9ZU3R2F3D4)" Payload/WeChat.app/Fr
 open ~/Library/MobileDevice/Provisioning\ Profiles/ 
 ```
 
-在 Finder 工具栏选择以分栏或画廊方式显示，然后逐一点击 xxx.mobileprovision 文件，找出相匹配的 Bundle identifier 的配置文件 。也可以直接从苹果开发者后台中下载证书和 mobileprovision 配置文件，导入证书 p12 文件 和 mobileprovision 配置文件 (可直接使用)。
+在 Finder 工具栏选择以分栏或画廊方式显示，然后逐一点击 xxx.mobileprovision 文件，找出相匹配的 Bundle identifier 的配置文件 。也可以直接从苹果开发者后台下载证书和 mobileprovision 配置文件，导入证书 p12 文件 和 mobileprovision 配置文件 (可直接使用)。
 
 或者用 cat 命令逐一查看 xxx.mobileprovision 文件
 
@@ -825,17 +820,17 @@ zip -r WeChat_705_New.ipa Payload/
 
 - 方法二
 
-**PackageApplication 主要用来通过脚本打包ipa文件，然而从 Xcode8.2.1 版本之后，就不建议使用了**。所以每次更新 Xcode 版本，都要手动添加 PackageApplication。
+**PackageApplication 主要用来通过脚本打包 ipa 文件，然而从 Xcode 8.2.1 版本之后，就不建议使用了**。所以每次更新 Xcode 版本，都要手动添加 PackageApplication。
 
 PackageApplication 下载地址：
 
 1. 百度网盘下载：
 
-[https://pan.baidu.com/s/1AjVW8hWYlVz3Cu9UJByQOQ - 提取码：4sqb](https://pan.baidu.com/s/1AjVW8hWYlVz3Cu9UJByQOQ)
+    [https://pan.baidu.com/s/1AjVW8hWYlVz3Cu9UJByQOQ - 提取码：4sqb](https://pan.baidu.com/s/1AjVW8hWYlVz3Cu9UJByQOQ)
 
 2. Github下载：
 
-[https://github.com/dgynfi/WeChat_tweak/tree/master/Hook-Tools/](https://github.com/dgynfi/WeChat_tweak/tree/master/Hook-Tools/)
+    [https://github.com/dgynfi/WeChat_tweak/tree/master/Hook-Tools/](https://github.com/dgynfi/WeChat_tweak/tree/master/Hook-Tools/)
 
 将下载的 PackageApplication 执行以下命令，并设置可执行权限：
 
@@ -865,7 +860,7 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 ## 支持作者
 
-如果你觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发高逼格国外的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，不妨进行小额赞助，这样我会有更大的动力去更新和优化代码。
+如果你觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发在国外高大尚的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，不妨小额捐赠给我，这样我会有更大的动力去更新和优化代码。
 
 <div align=center>
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WeChat_apprcode.jpg" width="30%" /> <br /> 
@@ -876,9 +871,9 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign app) ，打包应用 (Package app) ，安装 ipa 等步骤执行即可。
 
-百度网盘下载：
+- 百度网盘下载：
 
-[https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg - 提取码：3eqb](https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg)
+    [https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg - 提取码：3eqb](https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg)
 
 ## 坐标拾取
 
@@ -921,5 +916,4 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 ## iOS逆向交流
 
 - [iOS逆向交流社区 -  iOSRE](http://bbs.iosre.com)
-
 
