@@ -270,7 +270,7 @@ warn ：添加的方法需要在 @interface 中进行声明。 <br />
 
 > %hook、%log、%orig 等都是 mobilesubstrate 的 MobileHooker 模块提供的宏，除此之外还有 %group  %init  %ctor 等，其实也就是把 method swizzling 相关的方法封装成了各种宏标记，若想深入了解，请左转 [Google](https://www.google.com) 或者 [Baidu](https://www.baidu.com) 。
 
-### 编写 tweak.xm
+### 编写 Tweak.xm
 
 在熟悉各种语法之后，可以进行编写代码了，其中 MMUIViewController 为微信的基础的 ViewController 。我们通过 hook viewDidApper: 来进行 Hello World! 弹窗。 
 
@@ -291,6 +291,8 @@ warn ：添加的方法需要在 @interface 中进行声明。 <br />
 
 @end
 ```
+
+编写 Tweak.xm，代码如下：
 
 ```
 #import "HookInterfaceStatment.h"
