@@ -42,8 +42,8 @@ vi. 屏蔽消息和群消息，消息防止撤回
 
 - 欢迎加入技术交流群，一起探讨技术问题。
 
-<div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg" width="30%" />
+<div align=left>
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg" width="20%" />
 </div>
 
 ## 效果图
