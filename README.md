@@ -42,7 +42,7 @@ vi. 屏蔽消息和群消息，消息防止撤回
 
 - 欢迎加入技术交流群，一起探讨技术问题。
 
-<div align=left>
+<div align=center>
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg" width="20%" />
 </div>
 
@@ -572,7 +572,7 @@ make
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/tweak_make.png" width="60%" />
 </div>
 
-编译时出现的问题或错误，请查看[上述的解决方法](#编译)，
+编译时出现的问题或错误，请查看上述[问题描述和解决方法](#编译) 。
 
 将动态库拷贝至桌面：
 
