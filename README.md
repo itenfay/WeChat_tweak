@@ -245,25 +245,25 @@ PS:  .x 文件支持 Logos 语法，.xm 文件支持 Logos 和 C/C++ 语法。
 
 - %hook
 
-指定需要 hook 的类，以%end结尾。
+    指定需要 hook 的类，以%end结尾。
 
 - %orig
 
-在 %hook 内部使用，执行 hook 住的方法原代码。
+    在 %hook 内部使用，执行 hook 住的方法原代码。
 
 - %new
 
-在 %hook 内部使用，给 class 添加新方法，与 class_addMethod 相同。<br />
-与 Category 中添加方法的区别：Category 为编译时添加，class_addMethod 为动态添加。<br />
-warn ：添加的方法需要在 @interface 中进行声明。 <br />
+    在 %hook 内部使用，给 class 添加新方法，与 class_addMethod 相同。<br />
+    与 Category 中添加方法的区别：Category 为编译时添加，class_addMethod 为动态添加。<br />
+    warn ：添加的方法需要在 @interface 中进行声明。 <br />
 
 - %c
 
-获取一个类，等同于 objc_getClass 、NSClassFromString 。
+    获取一个类，等同于 objc_getClass 、NSClassFromString 。
 
 - MSHookIvar<id>(self, "m_tableViewMgr")
 
-在 %hook 内部使用，获取一个类的私有成员变量。
+    在 %hook 内部使用，获取一个类的私有成员变量。
 
 > %hook、%log、%orig 等都是 mobilesubstrate 的 MobileHooker 模块提供的宏，除此之外还有 %group  %init  %ctor 等，其实也就是把 method swizzling 相关的方法封装成了各种宏标记，若想深入了解，请左转 [Google](https://www.google.com) 或者 [Baidu](https://www.baidu.com) 。
 
@@ -289,7 +289,7 @@ warn ：添加的方法需要在 @interface 中进行声明。 <br />
 @end
 ```
 
-编写 Tweak.xm，代码如下：
+编写 Tweak.xm ，代码如下：
 
 ```
 #import "HookInterfaceStatment.h"
@@ -431,7 +431,7 @@ _THEOS_PLATFORM_DPKG_DEB_COMPRESSION ?= gzip
 
 3. SSH 服务
 
-实现在越狱手机上远程进行 ssh 服务，在 Cydia 中安装 OpenSSH 。
+    实现在越狱手机上远程进行 ssh 服务，在 Cydia 中安装 OpenSSH 。
 
 - ssh : 远程登录
 
@@ -442,7 +442,7 @@ ssh mobile@192.168.6.6
 
 - scp : 远程拷贝
 
-本地文件拷贝到 iOS 上 (若从 iOS 上拷贝到本地，则相反)
+    本地文件拷贝到 iOS 上 (若从 iOS 上拷贝到本地，则相反)
 
 ```
 // 指令 scp /path/to/localFile user@ip:/path/to/remoteFile
@@ -572,7 +572,7 @@ make
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/tweak_make.png" width="60%" />
 </div>
 
-编译时出现的问题或错误，请查看上述[问题描述和解决方法](#编译) 。
+编译时出现的问题或错误，请查看上述[问题描述和解决方法](#编译)。
 
 将动态库拷贝至桌面：
 
@@ -596,13 +596,13 @@ cd ~/Desktop/
 cp WeChat_tweak/Dynamic\ library/dylib/libsubstrate.dylib ~/Desktop/
 ```
 
-右键 libsubstrate.dylib ，选择显示简介，在名称与扩展名处将 libsubstrate.dylib 修改成 waplesubstrate ，回车并移除。
-
-同样，右键 wapleodtcorexpc.dylib ，选择显示简介，在名称与扩展名处将 wapleodtcorexpc.dylib 修改成 wapleodtcorexpc ，回车并移除。
+右键 wapleodtcorexpc.dylib ，选择显示简介，在名称与扩展名处将 wapleodtcorexpc.dylib 修改成 wapleodtcorexpc ，回车并移除。
 
 <div align=center>
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/rm_ext.png" width="60%" />
 </div>
+
+同理，右键 libsubstrate.dylib ，选择显示简介，在名称与扩展名处将 libsubstrate.dylib 修改成 waplesubstrate ，回车并移除。
 
 执行更改动态库的依赖命令：
 
@@ -645,7 +645,7 @@ wapleodtcorexpc (architecture arm64):
     /System/Library/Frameworks/CoreVideo.framework/CoreVideo (compatibility version 1.2.0, current version 1.5.0)
 ```
 
-CydiaSubstrate 只有越狱的手机上才有，因此需要我们手动更改并导入。从上可见， `/Library/Frameworks/CydiaSubstrate.framework/CydiaSubstrate` 更改成了 `@loader_path/waplesubstrate` ，这表明动态库的依赖更改成功。
+CydiaSubstrate 只有越狱的手机上才有，因此我们需要手动更改并导入。从上可见，`/Library/Frameworks/CydiaSubstrate.framework/CydiaSubstrate` 更改成了 `@loader_path/waplesubstrate` ，这表明动态库的依赖更改成功。
 
 ### 移除架构 (Remove Architectures) 
 
@@ -682,9 +682,14 @@ lipo -info wapleodtcorexpc
 ./WeChat_tweak/Hook-Tools/optool install -c load -p "@executable_path/wapleodtcorexpc" -t Payload/WeChat.app/WeChat
 ```
 
-<div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/optool_install.png" width="60%" />
-</div>
+注入过程显示如下：
+
+```
+Found thin header...
+Inserting a LC_LOAD_DYLIB command for architecture: arm64
+Successfully inserted a LC_LOAD_DYLIB command for arm64
+Writing executable to Payload/WeChat.app/WeChat...
+```
 
 将动态库拷贝至二进制文件所在的目录，操作如下：
 
@@ -893,11 +898,11 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 - [iOS Xcode8免证书真机调试（不越狱）](https://www.jianshu.com/p/5c1fb2cb293c)
 - [IOS开发之免费证书+不越狱真机调试](https://www.cnblogs.com/iOS-mt/p/5454287.html)
 
-  免费证书能真机调试程序，通过 Xcode 登录自己的 Apple ID ，进入 TARGETS -> General 设置 Bundle Identifier ，勾选自动管理签名 (Automatically manage signing) ，自动生成完成后，可查看 Team, Provisioning Profile, Signing Certificate ，但免费证书有个缺点 ，其中 Provisioning Profile (xxx.mobileprovision) 文件有效期仅只有 6 天，过期后打开 Xcode 工程重新生成。我们可以利用免费证书重签名应用 (Resign app) ，但是长期使用，需要经常重签名。
+  免费证书能真机调试程序，通过 Xcode 登录自己的 Apple ID ，进入 TARGETS -> General 设置 Bundle Identifier ，勾选自动管理签名 (Automatically manage signing) ，自动生成完成后，可查看 Team, Provisioning Profile, Signing Certificate ，但免费证书有个缺点 ，其中 Provisioning Profile (xxx.mobileprovision) 文件有效期仅只有 6 天，过期后打开 Xcode 工程重新生成。我们在学习时可以利用免费证书重签名应用 (Resign app) ，但是长期使用，需要经常重签名。
 
 ## 建议
 
-可以将动态库 wapleodtcorexpc 和 waplesubstrate 修改自己想要的名字，只需将 wapleodtcorexpc 工程名和 Makefile control xxx.plist 文件一同修改，然后从步骤【编译 tweak 项目 (Compile Tweak Project)】重新开始操作。
+可以将动态库 wapleodtcorexpc 和 waplesubstrate 修改自己想要的名字，只需将 wapleodtcorexpc 工程名和 Makefile control xxx.plist 文件一同修改，然后从步骤【编译 tweak 项目 (Compile Tweak Project) 】重新开始操作。
 
 ## 我的简书
 
