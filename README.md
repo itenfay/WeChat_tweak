@@ -43,7 +43,7 @@ vi. 屏蔽消息和群消息，消息防止撤回
 - 欢迎加入技术交流群，一起探讨技术问题。
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg" width="90%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg" width="30%" />
 </div>
 
 ## 效果图
@@ -418,7 +418,7 @@ _THEOS_PLATFORM_DPKG_DEB_COMPRESSION ?= gzip
     - DYFCodesign - 用于对 iOS app 进行脚本重签名。
     - [ios-app-signer](https://github.com/dgynfi/OpenSource#Mac) - 打包 ipa 与重签名图形化工具。
     - iOSOpenDev - Xcode 增强工具，通过它生成用于注入的 dylib 库。建议用 theos 编译 tweak 项目生成注入的 dylib 库。
-- [Resources](Resources) - Icon 目录 (带抢红包的Icon) 、 wav 目录 (音频文件) 和 WC_7_0_5_Headers (微信7.0.5头文件)。
+- [Resources](Resources) - Icon 目录 (带抢红包的Icon) 、 wav 目录 (音频文件) 和 [ WC_7_0_5_Headers (微信7.0.5头文件) ](Resources/WC_7_0_5_Headers)。
 - [WeChatPluginDev](WeChatPluginDev/wapleodtcorexpc) - 微信插件 tweak 源码开发。
 
 ## 获取砸壳版本的微信
@@ -571,6 +571,10 @@ make
 <div align=center>
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/tweak_make.png" width="60%" />
 </div>
+
+编译时出现的问题或错误，请查看[上述的解决方法](#编译)，
+
+将动态库拷贝至桌面：
 
 ```
 # 将 wapleodtcorexpc.dylib 库拷贝至桌面
@@ -916,4 +920,3 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 ## iOS逆向交流
 
 - [iOS逆向交流社区 -  iOSRE](http://bbs.iosre.com)
-
