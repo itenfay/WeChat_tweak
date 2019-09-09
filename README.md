@@ -4,7 +4,7 @@
 
 ## WeChat_tweak
 
- iOS版功能较全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人) ，修改微信运动步数和信息内容页的实时取景背景等功能。
+ iOS版市面功能最全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人) ，修改微信运动步数和实时取景做信息内容页的聊天背景等功能。
 
 ## 插件特点
 
@@ -22,7 +22,7 @@ iii. 设置防止同时抢多个红包
 
 iv. 设置过滤特定的群聊
 
-    防止落入公司群或者点餐群抢红包的尴尬境地。
+    防止落入亲人好友群、点餐群或者公司群抢红包的尴尬境地。
 
 v. 伪定位 
 
@@ -43,7 +43,7 @@ vi. 屏蔽消息和群消息，消息防止撤回
 - 欢迎加入技术交流群，一起探讨技术问题。
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg" width="20%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg" width="30%" />
 </div>
 
 ## 效果图
@@ -216,7 +216,7 @@ after-install::
 该文件中的 Bundles : 指定 bundle 为 tweak 的作用对象，也可添加多个 bundle ，指定多个为 tweak 作用对象。
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/tweak_plist.png" width="60%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/tweak_plist.png" width="80%" />
 </div>
 
 - control
@@ -317,8 +317,7 @@ PS:  .x 文件支持 Logos 语法，.xm 文件支持 Logos 和 C/C++ 语法。
 
 ### 编译
 
-使用 `make` 进行编译，若想重新编译，则先 `make clean` 。<br />
-make 编译完成后，在当前文件夹下面将生成两个文件夹: .theos 与 obj ，其中编译完成的动态库就在 .thoes/obj/debug 的下面，与工程名相同。
+使用 `make` 进行编译，若想重新编译，则先 `make clean` 。make 编译完成后，在当前文件夹下面将生成两个文件夹: .theos 与 obj ，其中编译完成的动态库就在 .thoes/obj/debug 的下面，与工程名相同。
 
 - 问题1
 
@@ -406,7 +405,7 @@ _THEOS_PLATFORM_DPKG_DEB_COMPRESSION ?= gzip
 - [Hook-Tools](Hook-Tools) - Hook 使用的工具。
     - dumpdecrypted - 用于解密 iOS 的可执行文件，砸壳时可不需要。
     - otool - 一般 Mac 自带，用于查看解密后文件的依赖项检查。
-    - install_name_tool - 一般 Mac 自带，修改动态库的路径。
+    - install_name_tool - 一般 Mac 自带，更改动态库的依赖。
     - yoyolib - 用于向 iOS 的可执行文件中注入 dylib 。
     - optool - 将动态库注入目标二进制文件中。
     - class-dump - 导出app所有头文件 (`class-dump -s -S -H ~/Desktop/xx.app -o ~/Desktop/xx-headers`)。
@@ -436,16 +435,16 @@ _THEOS_PLATFORM_DPKG_DEB_COMPRESSION ?= gzip
 - ssh : 远程登录
 
 ```
-// 指令 ssh user@ip
+# 指令 ssh user@ip
 ssh mobile@192.168.6.6
 ```
 
 - scp : 远程拷贝
 
-    本地文件拷贝到 iOS 上 (若从 iOS 上拷贝到本地，则相反)
+    本地文件拷贝到 iOS 上 (若从 iOS 上拷贝到本地，则相反) 。
 
 ```
-// 指令 scp /path/to/localFile user@ip:/path/to/remoteFile
+# 指令 scp /path/to/localFile user@ip:/path/to/remoteFile
 scp ~/Desktop/icon.png root@192.168.6.6:/var/tmp/
 ```
 
@@ -829,9 +828,9 @@ zip -r WeChat_705_New.ipa Payload/
 
 - 方法二
 
-**PackageApplication 主要用来通过脚本打包 ipa 文件，然而从 Xcode 8.2.1 版本之后，就不建议使用了**。所以每次更新 Xcode 版本，都要手动添加 PackageApplication。
+**PackageApplication** 主要用来通过脚本打包 ipa 文件，然而从 **Xcode 8.2.1** 版本之后，就不建议使用了。所以每次更新 Xcode 版本，都要手动添加 **PackageApplication** 。
 
-PackageApplication 下载地址：
+**PackageApplication** 下载地址：
 
 1. 百度网盘下载：
 
@@ -841,13 +840,13 @@ PackageApplication 下载地址：
 
     [https://github.com/dgynfi/WeChat_tweak/tree/master/Hook-Tools/](https://github.com/dgynfi/WeChat_tweak/tree/master/Hook-Tools/)
 
-将下载的 PackageApplication 执行以下命令，并设置可执行权限：
+将下载的 **PackageApplication** 执行以下命令，并设置可执行权限：
 
 ```
 chmod 777 ~/Downloads/PackageApplication
 ```
 
-Applications -> 右键 Xcode.app -> 显示包内容 -> Contents -> Developer -> platforms -> iPhoneOS.platform -> Developer -> usr -> bin，进入这个目录之后，将设置了可执行权限的 PackageApplication 复制到这个目录。
+Applications -> 右键 Xcode.app -> 显示包内容 -> Contents -> Developer -> platforms -> iPhoneOS.platform -> Developer -> usr -> bin，进入这个目录之后，将设置了可执行权限的 **PackageApplication** 复制到这个目录。
 
 使用命令如下：
 
@@ -861,7 +860,7 @@ cp ~/Downloads/PackageApplication /Applications/Xcode.app/Contents/Developer/Pla
 xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat_705_New.ipa
 ```
 
-- 安装 ipa 
+### 安装 ipa 
 
 1. 最后使用 PP 助手/ ifunbox 安装 WeChat_705_New.ipa 。
 
@@ -869,7 +868,7 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 ## 支持作者
 
-如果你觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发在国外高大尚的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，不妨小额捐赠给我，这样我会有更大的动力去更新和优化代码。
+如果你觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发在国外高大尚的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，不妨进行一下小额捐赠，这样我会有更大的动力去更新和优化代码。
 
 <div align=center>
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WeChat_apprcode.jpg" width="30%" /> <br /> 
@@ -906,7 +905,7 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 
 ## 我的简书
 
-- [iOS逆向：实现功能最全的微信插件](https://www.jianshu.com/p/8fa5f61af3e4)
+- [iOS逆向微信实战教程](https://www.jianshu.com/p/8fa5f61af3e4)
 
 ## 参考文章
 
@@ -925,3 +924,4 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 ## iOS逆向交流
 
 - [iOS逆向交流社区 -  iOSRE](http://bbs.iosre.com)
+
