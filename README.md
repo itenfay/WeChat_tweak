@@ -4,33 +4,33 @@
 
 ## WeChat_tweak
 
- iOS版市面功能最全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人) ，修改微信运动步数和实时取景做信息内容页的聊天背景等功能。
+&emsp;  iOS版功能最全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人) ，修改微信运动步数和实时取景做信息内容页的聊天背景等功能。
 
 ## 插件特点
 
 i. 完全原生体验
 
-    完美嵌入微信设置中，无需安装其它无关应用。开启插件后，所有抢红包工作都会默默进行，不会影响微信的正常使用流程。
+&emsp; 完美嵌入微信设置中，无需安装其它无关应用。开启插件后，所有抢红包工作都会默默进行，不会影响微信的正常使用流程。
 
 ii. 自由设置延迟抢红包时间
 
-    有效防止抢红包速度太快而被拉黑或者踢出群聊。
+&emsp; 有效防止抢红包速度太快而被拉黑或者踢出群聊。
 
 iii. 设置防止同时抢多个红包
 
-    最大程度避免被系统检测出使用插件，红包抢得更安心。
+&emsp; 最大程度避免被系统检测出使用插件，红包抢得更安心。
 
 iv. 设置过滤特定的群聊
 
-    防止落入亲人好友群、点餐群或者公司群抢红包的尴尬境地。
+&emsp; 防止落入亲人好友群、点餐群或者公司群抢红包的尴尬境地。
 
 v. 伪定位 
 
-    自由修改手机定位，偶尔出个国，发个朋友圈，装个逼。
+&emsp; 自由修改手机定位，偶尔出个国，发个朋友圈，装个逼。
 
 vi. 屏蔽消息和群消息，消息防止撤回
 
-    屏蔽讨厌的人和群的消息，让他们不再打扰你，需要时可关闭，重新接收他们的消息，防止撤回消息，让你不再错过任何信息。
+&emsp; 屏蔽讨厌的人和群的消息，让他们不再打扰你，需要时可关闭，重新接收他们的消息，防止撤回消息，让你不再错过任何信息。
 
 ## 免责声明
 
@@ -43,7 +43,7 @@ vi. 屏蔽消息和群消息，消息防止撤回
 - 欢迎加入技术交流群，一起探讨技术问题。
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg" width="30%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/qq155353383.jpg" width="20%" />
 </div>
 
 ## 效果图
@@ -78,11 +78,11 @@ vi. 屏蔽消息和群消息，消息防止撤回
 
 ## 基本原理
 
-在 app 启动时，通过 dyld (the dynamic link editor) 加载我们注入的动态库，从而进行 hook ，而之所以能够执行注入的动态库，是因为使用了 mobilesubstrate 库，这个库能在程序运行的时候动态加载注入的动态库，而非越狱手机里面是没有的，所以我们需要直接将这个库打包进 ipa 中，使用它的 API 实现注入。mobilesubstrate 库在我的 [github](Dynamic%20library/dylib ) 中有提供，即是 libsubstrate.dylib 。
+&emsp; 在 app 启动时，通过 dyld (the dynamic link editor) 加载我们注入的动态库，从而进行 hook ，而之所以能够执行注入的动态库，是因为使用了 mobilesubstrate 库，这个库能在程序运行的时候动态加载注入的动态库，而非越狱手机里面是没有的，所以我们需要直接将这个库打包进 ipa 中，使用它的 API 实现注入。mobilesubstrate 库在我的 [github](Dynamic%20library/dylib ) 中有提供，即是 libsubstrate.dylib 。
 
 ## 打开终端
 
-Terminal 一般 Mac 电脑自带，打开 Terminal 执行后续操作。
+&emsp; Terminal 一般 Mac 电脑自带，打开 Terminal 执行后续操作。
 
 <div align=center>
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Terminal.png" width="20%" />
@@ -877,7 +877,7 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 ## Hook 版本下载
 
-Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign app) ，打包应用 (Package app) ，安装 ipa 等步骤执行即可。
+&emsp; Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign app) ，打包应用 (Package app) ，安装 ipa 等步骤执行即可。
 
 - 百度网盘下载：
 
@@ -889,7 +889,7 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 - [高德地图-坐标拾取器](https://lbs.amap.com/console/show/picker)
 - [腾讯地图-坐标拾取器](https://lbs.qq.com/tool/getpoint/index.html)
 
-  清华大学：116.333446,40.009557
+&emsp; 清华大学：116.333446,40.009557
 
 ## 免费证书
 
@@ -897,11 +897,11 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 - [iOS Xcode8免证书真机调试（不越狱）](https://www.jianshu.com/p/5c1fb2cb293c)
 - [IOS开发之免费证书+不越狱真机调试](https://www.cnblogs.com/iOS-mt/p/5454287.html)
 
-  免费证书能真机调试程序，通过 Xcode 登录自己的 Apple ID ，进入 TARGETS -> General 设置 Bundle Identifier ，勾选自动管理签名 (Automatically manage signing) ，自动生成完成后，可查看 Team, Provisioning Profile, Signing Certificate ，但免费证书有个缺点 ，其中 Provisioning Profile (xxx.mobileprovision) 文件有效期仅只有 6 天，过期后打开 Xcode 工程重新生成。我们在学习时可以利用免费证书重签名应用 (Resign app) ，但是长期使用，需要经常重签名。
+&emsp; 免费证书能真机调试程序，通过 Xcode 登录自己的 Apple ID ，进入 TARGETS -> General 设置 Bundle Identifier ，勾选自动管理签名 (Automatically manage signing) ，自动生成完成后，可查看 Team, Provisioning Profile, Signing Certificate ，但免费证书有个缺点 ，其中 Provisioning Profile (xxx.mobileprovision) 文件有效期仅只有 6 天，过期后打开 Xcode 工程重新生成。我们在学习时可以利用免费证书重签名应用 (Resign app) ，但是长期使用，需要经常重签名。
 
 ## 建议
 
-可以将动态库 wapleodtcorexpc 和 waplesubstrate 修改自己想要的名字，只需将 wapleodtcorexpc 工程名和 Makefile control xxx.plist 文件一同修改，然后从步骤【编译 tweak 项目 (Compile Tweak Project) 】重新开始操作。
+&emsp; 可以将动态库 wapleodtcorexpc 和 waplesubstrate 修改自己想要的名字，只需将 wapleodtcorexpc 工程名和 Makefile control xxx.plist 文件一同修改，然后从步骤【编译 tweak 项目 (Compile Tweak Project) 】重新开始操作。
 
 ## 我的简书
 
@@ -924,4 +924,3 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 ## iOS逆向交流
 
 - [iOS逆向交流社区 -  iOSRE](http://bbs.iosre.com)
-
