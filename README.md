@@ -8,13 +8,13 @@
 
 ## 插件特点
 
-i. 完全原生体验
+i. 原生体验
 
-&emsp; 完美嵌入微信设置中，无需安装其它无关应用。开启插件后，所有抢红包工作都会默默进行，不会影响微信的正常使用流程。
+&emsp; 插件 UI 完美嵌入微信设置中，开启各功能后，所有执行的任务都会静默进行，不干扰微信的正常使用。
 
 ii. 自由设置延迟抢红包时间
 
-&emsp; 有效防止抢红包速度太快而被拉黑或者踢出群聊。
+&emsp; 有效防止抢红包速度太快而被拉黑或踢出群聊。
 
 iii. 设置防止同时抢多个红包
 
@@ -22,13 +22,13 @@ iii. 设置防止同时抢多个红包
 
 iv. 设置过滤特定的群聊
 
-&emsp; 防止落入亲人好友群、点餐群或者公司群抢红包的尴尬境地。
+&emsp; 防止落入家人好友群、点餐群或者公司群抢红包的尴尬境地。
 
 v. 伪定位 
 
 &emsp; 自由修改手机定位，偶尔出个国，发个朋友圈，装个逼。
 
-vi. 屏蔽消息和群消息，消息防止撤回
+vi. 屏蔽消息和群消息，防止撤回消息
 
 &emsp; 屏蔽讨厌的人和群的消息，让他们不再打扰你，需要时可关闭，重新接收他们的消息，防止撤回消息，让你不再错过任何信息。
 
@@ -70,7 +70,7 @@ vi. 屏蔽消息和群消息，消息防止撤回
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Fake_location_applying.gif" width="30%" />
 </div>
 
-- 消息防止撤回
+- 防止撤回消息
 
 <div align=center>
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Prevent_msg_revocation.png" width="30%" />
@@ -179,7 +179,7 @@ export THEOS=/opt/theos
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/nic_create_tweak.png" width="60%" />
 </div>
 
-&emsp; 完成后会看到四个文件(make 后将生成 .theos 、obj 文件夹)：Makefile  wcodtplugin.plist  control  Tweak.xm 
+&emsp; 完成后会看到四个文件( make 后将生成 .theos 、obj 文件夹)：Makefile &nbsp; wcodtplugin.plist &nbsp; control &nbsp; Tweak.xm 。
 
 - Makefile
 
@@ -217,7 +217,7 @@ after-install::
 &emsp; 该文件中的 Bundles : 指定 bundle 为 tweak 的作用对象，也可添加多个 bundle ，指定多个为 tweak 作用对象。
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/tweak_plist.png" width="80%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/tweak_plist.png" width="60%" />
 </div>
 
 - control
@@ -256,7 +256,7 @@ Section: Tweaks
 
 &emsp; 在 %hook 内部使用，给 class 添加新方法，与 class_addMethod 相同。<br />
 &emsp; 与 Category 中添加方法的区别：Category 为编译时添加，class_addMethod 为动态添加。<br />
-&emsp; Warning ：添加的方法需要在 @interface 中进行声明。 <br />
+&emsp; warning ：添加的方法需要在 @interface 中进行声明。 <br />
 
 - %c
 
@@ -418,7 +418,7 @@ _THEOS_PLATFORM_DPKG_DEB_COMPRESSION ?= gzip
     - DYFCodesign - 用于对 iOS app 进行脚本重签名。
     - [ios-app-signer](https://github.com/dgynfi/OpenSource#Mac) - 打包 ipa 与重签名图形化工具。
     - iOSOpenDev - Xcode 增强工具，通过它生成用于注入的 dylib 库。建议用 theos 编译 tweak 项目生成注入的 dylib 库。
-- [Resources](Resources) - Icon 目录 (带抢红包的Icon) 、 wav 目录 (音频文件) 和 [ WC_7_0_5_Headers (微信7.0.5头文件) ](Resources/WC_7_0_5_Headers)。
+- [Resources](Resources) - Icon 目录 (带抢红包的Icon) 、 wav 目录 (音频文件) 和 WC_7_0_5_Headers 目录 (微信7.0.5头文件) 等。
 - [WeChatPluginDev](WeChatPluginDev/wapleodtcorexpc) - 微信插件 tweak 源码开发。
 
 ## 获取砸壳版本的微信
@@ -787,7 +787,7 @@ codesign -f -s "iPhone Developer: xxx@qq.com (9ZU3R2F3D4)" Payload/WeChat.app/Fr
 open ~/Library/MobileDevice/Provisioning\ Profiles/ 
 ```
 
-&emsp; 在 Finder 工具栏选择以分栏或画廊方式显示，然后逐一点击 xxx.mobileprovision 文件，找出相匹配的 Bundle identifier 的配置文件 。也可以直接从苹果开发者后台下载证书和  xxx.mobileprovision 配置文件，导入证书 p12 文件 和  xxx.mobileprovision 配置文件 (可直接使用)。
+&emsp; 在 Finder 工具栏选择以分栏或画廊方式显示，然后逐一点击 xxx.mobileprovision 文件，找出相匹配的 Bundle identifier 的配置文件 。也可以直接从苹果开发者后台下载证书和  xxx.mobileprovision 配置文件，导入证书或 p12 文件和 xxx.mobileprovision 配置文件 (可直接使用) 。
 
 &emsp; 或者用 cat 命令逐一查看 xxx.mobileprovision 文件
 
@@ -797,13 +797,13 @@ cat ~/Library/MobileDevice/Provisioning\ Profiles/ece5c913-5c15-45fd-82e3-90f237
 cat ~/Library/MobileDevice/Provisioning\ Profiles/269bffd1-3743-4014-bf07-4eb94c048460.mobileprovision
 ```
 
- xxx.将 xxx.mobileprovision 文件拷贝至桌面
+&emsp; 将 xxx.mobileprovision 文件拷贝至桌面
 
 ```
 cp ~/Library/MobileDevice/Provisioning\ Profiles/269bffd1-3743-4014-bf07-4eb94c048460.mobileprovision ~/Desktop/wcpl_adhoc.mobileprovision
 ```
 
- xxx.执行重签名应用：
+&emsp; 执行重签名应用：
 
 ```
 # 进入桌面，确保当前在桌面上操作
@@ -849,7 +849,7 @@ chmod 777 ~/Downloads/PackageApplication
 
 &emsp; Applications -> 右键 Xcode.app -> 显示包内容 -> Contents -> Developer -> platforms -> iPhoneOS.platform -> Developer -> usr -> bin，进入这个目录之后，将设置了可执行权限的 **PackageApplication** 复制到这个目录。
 
-&emsp; 使用命令如下：
+&emsp; 或者使用命令如下：
 
 ```
 cp ~/Downloads/PackageApplication /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
