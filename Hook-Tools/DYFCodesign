@@ -2,11 +2,11 @@
 
 #-------------------------------------------------------
 #
-# Sign all the files in the Payload
+# Sign all the files in the Payload/xxx.app.
 #
-# 1.The first parameter is the path of Payload directory
-# 2.The second parameter is the name of certificate
-# 3.The third parameter is the path of mobileprovision
+# 1. The first parameter is the path of Payload directory.
+# 2. The second parameter is the name of certificate.
+# 3. The third parameter is the path of mobileprovision.
 #
 # Author: dyf
 # Email : 1659640627@qq.com
