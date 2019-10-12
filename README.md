@@ -4,7 +4,7 @@
 
 ## WeChat_tweak
 
-&emsp;  iOS版功能最全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人) ，修改微信运动步数和实时取景做信息内容页的聊天背景等功能。
+&emsp;  iOS 版功能最全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人) ，修改微信运动步数和实时取景做信息内容页的聊天背景等功能。
 
 ## 插件特点
 
@@ -51,16 +51,17 @@ vi. 屏蔽消息和群消息，防止撤回消息
 - 插件设置
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings.gif" width="30%" /> &nbsp; 
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_01.png" width="30%" /> <br /> 
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_02.png" width="30%" /> &nbsp; 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings.gif" width="30%" />&nbsp; 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_01.png" width="30%" />
+<br /> 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_02.png" width="30%" />&nbsp; 
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_03.png" width="30%" />
 </div>
 
 - 插件应用
 
 <div align=center>
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_01.gif" width="30%" /> &nbsp; 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_01.gif" width="30%" />&nbsp; 
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_02.gif" width="30%" />
 </div>
 
@@ -78,7 +79,7 @@ vi. 屏蔽消息和群消息，防止撤回消息
 
 ## 基本原理
 
-&emsp; 在 app 启动时，通过 dyld (the dynamic link editor) 加载我们注入的动态库，从而进行 hook ，而之所以能够执行注入的动态库，是因为使用了 mobilesubstrate 库，这个库能在程序运行的时候动态加载注入的动态库，而非越狱手机里面是没有的，所以我们需要直接将这个库打包进 ipa 中，使用它的 API 实现注入。mobilesubstrate 库在我的 [github](Dynamic%20library/dylib ) 中有提供，即是 libsubstrate.dylib 。
+&emsp; 在 App 启动时，通过 dyld (the dynamic link editor) 加载我们注入的动态库，从而进行 hook ，而之所以能够执行注入的动态库，是因为使用了 mobilesubstrate 库，这个库能在程序运行的时候动态加载注入的动态库，而非越狱手机里面是没有的，所以我们需要直接将这个库打包进 ipa 中，使用它的 API 实现注入。mobilesubstrate 库在我的 [github](Dynamic%20library/dylib ) 中有提供，即是 libsubstrate.dylib 。
 
 ## 打开终端
 
@@ -898,7 +899,7 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 - [iOS Xcode8免证书真机调试（不越狱）](https://www.jianshu.com/p/5c1fb2cb293c)
 - [IOS开发之免费证书+不越狱真机调试](https://www.cnblogs.com/iOS-mt/p/5454287.html)
 
-&emsp; 免费证书能真机调试程序，通过 Xcode 登录自己的 Apple ID ，进入 TARGETS -> General 设置 Bundle Identifier ，勾选自动管理签名 (Automatically manage signing) ，自动生成完成后，可查看 Team, Provisioning Profile, Signing Certificate ，但免费证书有个缺点 ，其中 Provisioning Profile (xxx.mobileprovision) 文件有效期仅只有 6 天，过期后打开 Xcode 工程重新生成。我们在学习时可以利用免费证书重签名应用 (Resign app) ，但是长期使用，需要经常重签名。
+&emsp; 免费证书能真机调试程序，通过 Xcode 登录自己的 Apple ID ，进入 TARGETS -> General 设置 Bundle Identifier ，勾选自动管理签名 (Automatically manage signing) ，自动生成完成后，可查看 Team, Provisioning Profile, Signing Certificate ，但免费证书有个缺点 ，其中 Provisioning Profile (xxx.mobileprovision) 文件有效期仅只有 7 天，过期后打开 Xcode 工程重新生成。我们在学习时可以利用免费证书重签名应用 (Resign app) ，但是长期使用，需要经常重签名。
 
 ## 建议
 
@@ -906,15 +907,13 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 ## 我的简书
 
-- [iOS逆向微信实战教程](https://www.jianshu.com/p/8fa5f61af3e4)
+- [iOS逆向 -- 实现微信自动抢红包-伪定位-防撤回消息 (非越狱)](https://www.jianshu.com/p/8fa5f61af3e4)
 
 ## 参考文章
 
 - [移动App入侵与逆向破解技术－iOS篇](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577384&idx=1&sn=b44a9c9651bf09c5bea7e0337031c53c&scene=0#wechat_redirect)
 
 - [蒸米的文章 - iOS冰与火之歌系列](https://github.com/zhengmin1989/MyArticles)
-
-- [免越狱版 iOS 抢红包插件](http://www.swiftyper.com/2016/12/26/wechat-redenvelop-tweak-for-non-jailbroken-iphone)
 
 - [iOS微信抢红包Tweak安装教程](http://www.swiftyper.com/2016/01/25/ios-tweak-install-guide)
 
@@ -925,3 +924,4 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 ## iOS逆向交流
 
 - [iOS逆向交流社区 -  iOSRE](http://bbs.iosre.com)
+
