@@ -868,7 +868,7 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 ## 支持作者
 
-如果你觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发在国外高大尚的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，不妨进行一下小额捐赠，这样我会有更大的动力去更新和优化代码。
+如果觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发在国外高大尚的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，就请给我小额捐赠。这样我会有更大的动力去更新和优化代码。
 
 <div align=left>
 &emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WeChat_apprcode.jpg" width="30%" />&nbsp; 
