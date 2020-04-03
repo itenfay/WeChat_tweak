@@ -152,7 +152,7 @@ export THEOS=/opt/theos
 
 保存并退出，使用命令 `source ~/.bash_profile` ，立即生效。
 
-- PS:  也可以使用 [iOSOpenDev](http://iosopendev.com)
+PS:  也可以使用 [iOSOpenDev](http://iosopendev.com)
 
 iOSOpenDev 集成在 Xcode 中，提供了一些模板，可直接使用 Xcode 进行开发。只是这个工具停止更新，对高版本的 Xcode 不能很好地支持。本人安装遇到了许多问题，通过查阅许多的资料，最后在 Xcode 中显示了该工具。若安装失败，则参考 [iOSOpenDev Wiki](https://github.com/kokoabim/iOSOpenDev/wiki) 或者其它资料。
 
