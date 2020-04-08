@@ -862,7 +862,7 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 ### 安装 ipa 
 
-1. 最后使用 PP助手/爱思助手/ifunbox安装 WeChat_705_New.ipa 。
+1. 最后使用 爱思助手/ifunbox安装 WeChat_705_New.ipa 。
 
 2. 使用 Xcode -> Window -> Devices and Simulators ，右击自己的设备，选择 Connect via IP Adress...，输入设备的IP，然后点击 Connect ，最后在 INSTALLED APPS 处点击 “+” 号，然后选择 WeChat_705_New.ipa ，点击 Open ，然后漫长地等待安装，大约1 ~ 3分钟。
 
@@ -905,7 +905,7 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 
 ## 我的简书
 
-- [iOS逆向 -- 实现微信自动抢红包-伪定位-防撤回消息 (非越狱)](https://www.jianshu.com/p/8fa5f61af3e4)
+- [iOS逆向 - 实现微信自动抢红包-伪定位-防撤回消息 (非越狱)](https://www.jianshu.com/p/8fa5f61af3e4)
 
 ## 参考文章
 
