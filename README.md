@@ -1,4 +1,4 @@
-[如果此项目能帮助到你，就请你给一颗星。谢谢！(If this project can help you, please give it a star. Thanks!)](https://github.com/dgynfi/WeChat_tweak)
+如果此项目能帮助到你，就请你给[一颗星](https://github.com/dgynfi/WeChat_tweak)。谢谢！(If this project can help you, please give it [a star](https://github.com/dgynfi/WeChat_tweak). Thanks!)
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)&nbsp;
 
@@ -49,30 +49,30 @@ vi. 屏蔽消息和群消息，防止撤回消息
 - 插件设置
 
 <div align=left>
-&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings.gif" width="30%" />&nbsp; 
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_01.png" width="30%" />
+&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wcplugin_settings.gif" width="30%" />&nbsp; 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wcplugin_settings_01.png" width="30%" />
 <br /> 
-&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_02.png" width="30%" />&nbsp; 
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_settings_03.png" width="30%" />
+&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wcplugin_settings_02.png" width="30%" />&nbsp; 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wcplugin_settings_03.png" width="30%" />
 </div>
 
 - 插件应用
 
 <div align=left>
-&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_01.gif" width="30%" />&nbsp; 
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WCPlugin_applying_02.gif" width="30%" />
+&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wcplugin_applying_01.gif" width="30%" />&nbsp; 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wcplugin_applying_02.gif" width="30%" />
 </div>
 
 - 伪定位
 
 <div align=left>
-&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Fake_location_applying.gif" width="30%" />
+&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/fake_location_applying.gif" width="30%" />
 </div>
 
 - 防止撤回消息
 
 <div align=left>
-&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Prevent_msg_revocation.png" width="30%" />
+&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/prevent_msg_revocation.png" width="30%" />
 </div>
 
 ## 基本原理
@@ -84,7 +84,7 @@ vi. 屏蔽消息和群消息，防止撤回消息
 Terminal 一般 Mac 电脑自带，打开 Terminal 执行后续操作。
 
 <div align=left>
-&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Terminal.png" width="20%" />
+&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/terminal.png" width="20%" />
 </div>
 
 ## 安装 theos
@@ -422,13 +422,11 @@ _THEOS_PLATFORM_DPKG_DEB_COMPRESSION ?= gzip
 
 ## 获取砸壳版本的微信
 
-1. 直接在 PP 助手下载
-
-2. 百度网盘下载
+1. 百度网盘下载
 
 [https://pan.baidu.com/s/1eT3tgfQRjIHUu3PL77YY9Q - 提取码：o8sa](https://pan.baidu.com/s/1eT3tgfQRjIHUu3PL77YY9Q)
 
-3. SSH 服务
+2. SSH 服务
 
 实现在越狱手机上远程进行 ssh 服务，在 Cydia 中安装 OpenSSH 。
 
@@ -509,7 +507,7 @@ scp root@<your.device.ip>:/private/var/mobile/Documents/Dumped/WeChat.ipa ~/Desk
 
 ## 注入动态库和重签名打包应用
 
-以微信 7.0.5 版本为例，执行下列操作：
+本文的重点内容，动态库可以到我的[GitHub仓库](Dynamic%20library)里下载。接下来请按照以下步骤操作执行：
 
 ### 解压 ipa (Unzip ipa)
 
@@ -517,6 +515,7 @@ scp root@<your.device.ip>:/private/var/mobile/Documents/Dumped/WeChat.ipa ~/Desk
 # cd <微信ipa下载目录>
 cd ~/Downloads/
 
+# 以 微信-7.0.5 版本为例，注意：下载的版本必须为破解版，如何查看？请阅读查看 app 是否被加密 (Check app)
 unzip -o 微信-7.0.5\(越狱应用\).ipa -d ./
 
 # 静默解压
@@ -862,7 +861,7 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 ### 安装 ipa 
 
-1. 最后使用 PP助手/爱思助手/ifunbox安装 WeChat_705_New.ipa 。
+1. 最后使用 **爱思助手/ifunbox** 安装 WeChat_705_New.ipa 。
 
 2. 使用 Xcode -> Window -> Devices and Simulators ，右击自己的设备，选择 Connect via IP Adress...，输入设备的IP，然后点击 Connect ，最后在 INSTALLED APPS 处点击 “+” 号，然后选择 WeChat_705_New.ipa ，点击 Open ，然后漫长地等待安装，大约1 ~ 3分钟。
 
@@ -871,8 +870,8 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 如果觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发在国外高大尚的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，就请给我小额捐赠。这样我会有更大的动力去更新和优化代码。
 
 <div align=left>
-&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/WeChat_apprcode.jpg" width="30%" />&nbsp; 
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/Alipay_paymentcode.jpg" width="30%" />
+&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wechat_apprcode.jpg" width="30%" />&nbsp; 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/alipay_paymentcode.jpg" width="30%" />
 </div>
 
 ## Hook 版本下载
@@ -897,11 +896,11 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 - [iOS Xcode8免证书真机调试（不越狱）](https://www.jianshu.com/p/5c1fb2cb293c)
 - [IOS开发之免费证书+不越狱真机调试](https://www.cnblogs.com/iOS-mt/p/5454287.html)
 
-免费证书能真机调试程序，通过 Xcode 登录自己的 Apple ID ，进入 TARGETS -> General 设置 Bundle Identifier ，勾选自动管理签名 (Automatically manage signing) ，自动生成完成后，可查看 Team, Provisioning Profile, Signing Certificate ，但免费证书有个缺点 ，其中 Provisioning Profile (xxx.mobileprovision) 文件有效期仅只有 7 天，过期后打开 Xcode 工程重新生成。我们在学习时可以利用免费证书重签名应用 (Resign app) ，但是长期使用，需要经常重签名。
+免费证书能进行真机调试程序。新建一个模板工程，通过 Xcode 登入自己的 Apple ID (菜单 Xcode -> Preferences... -> Accounts -> 点击 + -> 选择 Apple ID -> 输入账号密码 -> 登入)，进入 TARGETS -> General -> Identify -> 设置 Bundle Identifier ，新 Xcode 版本进入 Signing & Capabilities -> 勾选自动管理签名 (Automatically manage signing)，旧版本直接勾选自动管理签名 (Automatically manage signing) 即可，等待自动生成 Provisioning Profile 和 Signing Certificate 后，可查看 App ID, Team 等信息，但免费证书有个缺点 ，其中 Provisioning Profile (xxx.mobileprovision) 文件有效期仅只有 **7** 天，过期后需要打开 Xcode 模板工程重新生成。我们在学习时可以利用免费证书真机调试程序和重签名应用 (Resign app) ，但是长期使用，不建议使用免费证书，推荐可以去苹果开发者后台申请 Apple ID 账号或者去某宝找商家代签名 (风险需要自己承担)。
 
 ## 建议
 
-可以将动态库 wapleodtcorexpc 和 waplesubstrate 修改自己想要的名字，只需将 wapleodtcorexpc 工程名和 Makefile control xxx.plist 文件一同修改，然后从步骤【编译 tweak 项目 (Compile Tweak Project) 】重新开始操作。
+可以将动态库 **wapleodtcorexpc** 和 **waplesubstrate** 修改自己想要的名字，只需要将 **wapleodtcorexpc** 工程名和 **Makefile、control、xxx.plist** 文件内的部分信息一并修改，然后从步骤 **编译 tweak 项目 (Compile Tweak Project)** 重新开始操作。
 
 ## 我的简书
 
@@ -922,3 +921,4 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 ## iOS逆向交流
 
 - [iOS逆向交流社区 -  iOSRE](http://bbs.iosre.com)
+
