@@ -448,7 +448,7 @@ scp ~/Desktop/icon.png root@192.168.6.6:/var/tmp/
 
 > 注意，OpenSSH 默认登录密码为 alpine ，iOS 上的用户只有 root 和 mobile，修改密码使用 passwd root (mobile) 。
 
-4. 使用 Clutch 对越狱手机上的应用进行砸壳
+3. 使用 Clutch 对越狱手机上的应用进行砸壳
 
 - 将 Cluth 仓库 clone 到本地：
 
