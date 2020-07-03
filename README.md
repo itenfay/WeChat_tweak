@@ -922,3 +922,6 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 
 - [iOS逆向交流社区 -  iOSRE](http://bbs.iosre.com)
 
+## 欢迎反馈
+
+如果你注意到任何问题，被卡住或只是想聊天，请随意创建一个问题。我很乐意帮助你。
