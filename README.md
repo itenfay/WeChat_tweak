@@ -178,7 +178,7 @@ tweak 定义是：对复杂的系统—通常是电子设备—进行微调或�
 &emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/nic_create_tweak.png" width="60%" />
 </div>
 
-完成后会看到四个文件( make 后将生成 .theos 、obj 文件夹)：Makefile &nbsp; wcodtplugin.plist &nbsp; control &nbsp; Tweak.xm 。
+完成后会看到四个文件( make 后将生成 .theos 、obj 文件夹)：**Makefile &nbsp; wcodtplugin.plist &nbsp; control &nbsp; Tweak.xm**。
 
 - Makefile
 
@@ -900,9 +900,9 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 
 ## 建议
 
-可以将动态库 **wapleodtcorexpc** 和 **waplesubstrate** 修改自己想要的名字，只需要将 **wapleodtcorexpc** 工程名和 **Makefile、control、xxx.plist** 文件内的部分信息一并修改，然后从步骤 **编译 tweak 项目 (Compile Tweak Project)** 重新开始操作。
+如果您要将动态库 **wapleodtcorexpc** 和 **waplesubstrate** 修改成自定义的名字，那么只要将 **wapleodtcorexpc** 工程名和 **Makefile、control、xxx.plist** 文件内的部分信息一并修改，然后从步骤 **编译 tweak 项目 (Compile Tweak Project)** 重新开始操作。
 
-## 我的简书
+## 简书
 
 - [iOS逆向 - 实现微信自动抢红包-伪定位-防撤回消息 (非越狱)](https://www.jianshu.com/p/8fa5f61af3e4)
 
