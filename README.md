@@ -1,10 +1,8 @@
-如果此项目能帮助到你，就请你给[一颗星](https://github.com/dgynfi/WeChat_tweak)。谢谢！(If this project can help you, please give it [a star](https://github.com/dgynfi/WeChat_tweak). Thanks!)
-
-[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)&nbsp;
-
 ## WeChat_tweak
 
- iOS版功能最全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人)，修改微信运动步数和实时取景做信息内容页的聊天背景等功能。
+iOS版功能最全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人)，修改微信运动步数和实时取景做信息内容页的聊天背景等功能。
+
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)&nbsp;
 
 ## 插件特点
 
@@ -865,13 +863,13 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 2. 使用 Xcode -> Window -> Devices and Simulators ，右击自己的设备，选择 Connect via IP Adress...，输入设备的IP，然后点击 Connect ，最后在 INSTALLED APPS 处点击 “+” 号，然后选择 WeChat_705_New.ipa ，点击 Open ，然后漫长地等待安装，大约1 ~ 3分钟。
 
-## 支持作者
+## 💰支持作者
 
-如果觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发在国外高大尚的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，就请给我小额捐赠。这样我会有更大的动力去更新和优化代码。
+如果觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发在国外高大尚的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，那么不妨请我喝杯咖啡☕。
 
 <div align=left>
-&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wechat_apprcode.jpg" width="30%" />&nbsp; 
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/alipay_paymentcode.jpg" width="30%" />
+&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/alipay_paymentcode.jpg" width="30%" />&nbsp; 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wechat_apprcode.jpg" width="30%" />
 </div>
 
 ## Hook 版本下载
