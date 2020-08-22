@@ -576,7 +576,7 @@ make
 &emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/tweak_make.png" width="60%" />
 </div>
 
-编译时出现的问题或错误，请查看上述 **tweak** 小节中提及的**[编译（问题描述和解决方法）](#编译)**。
+编译时出现的问题或错误，请查看上述 **tweak** 小节中提及的 [编译（问题描述和解决方法）](#编译)。
 
 将动态库拷贝至桌面：
 
@@ -911,7 +911,7 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 
 ## 建议
 
-如果您要将动态库 **wapleodtcorexpc** 和 **waplesubstrate** 修改成自定义的名字，那么只要将 **wapleodtcorexpc** 工程名和 **Makefile、control、xxx.plist** 文件内的部分信息一并修改，然后从步骤 **[编译 tweak 项目 (Compile Tweak Project)](#编译-tweak-项目-(Compile-Tweak-Project))** 重新开始操作。
+如果您要将动态库 **wapleodtcorexpc** 和 **waplesubstrate** 修改成自定义的名字，那么只要将 **wapleodtcorexpc** 工程名和 **Makefile、control、xxx.plist** 文件内的部分信息一并修改，然后从步骤 **[编译 tweak 项目 (Compile Tweak Project)](#编译-tweak-项目-compile-tweak-project)** 重新开始操作。
 
 
 ## 免责声明
@@ -931,8 +931,6 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 - [移动App入侵与逆向破解技术－iOS篇](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577384&idx=1&sn=b44a9c9651bf09c5bea7e0337031c53c&scene=0#wechat_redirect)
 
 - [蒸米的文章 - iOS冰与火之歌系列](https://github.com/zhengmin1989/MyArticles)
-
-- [一步一步实现iOS微信自动抢红包(非越狱)](https://www.jianshu.com/p/189afbe3b429)
 
 - [iOS应用逆向工程(第2版)](https://www.amazon.cn/gp/product/B00VFDVY7E/ref=as_li_tf_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B00VFDVY7E&linkCode=as2&tag=buginux-23)
 
