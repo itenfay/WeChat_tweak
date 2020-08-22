@@ -1,4 +1,4 @@
-## WeChat_tweak
+## WeChat-tweak
 
 iOS版功能最全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人)，修改微信运动步数和实时取景做聊天页的背景等功能。
 
@@ -181,7 +181,7 @@ tweak 定义是：对复杂的系统—通常是电子设备—进行微调或�
 &emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/nic_create_tweak.png" width="60%" />
 </div>
 
-完成后会看到四个文件( make 后将生成 .theos 、obj 文件夹)：**Makefile ,&nbsp; wcodtplugin.plist ,&nbsp; control ,&nbsp; Tweak.xm**。
+完成后会看到四个文件( make 后将生成 .theos 、obj 文件夹)：**Makefile,&nbsp; wcodtplugin.plist,&nbsp; control,&nbsp; Tweak.xm**。
 
 - Makefile
 
