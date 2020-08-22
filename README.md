@@ -47,9 +47,9 @@ vi. 屏蔽消息和群消息，防止撤回消息
 - 插件设置
 
 <div align=left>
-&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wcplugin_settings_01.png" width="30%" />&nbsp; 
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wcplugin_settings_02.png" width="30%" />&nbsp; 
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wcplugin_settings_03.png" width="30%" />
+&emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wcplugin_settings.png" width="30%" />&nbsp; 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wcplugin_xwtx1.png" width="30%" />&nbsp; 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wcplugin_xwtx2.png" width="30%" />
 </div>
 
 - 自动抢红包
