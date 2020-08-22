@@ -1,8 +1,9 @@
 ## WeChat_tweak
 
-iOS版功能最全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人)，修改微信运动步数和实时取景做信息内容页的聊天背景等功能。
+iOS版功能最全的微信插件，支持最新版微信，具备自动抢红包，屏蔽消息和群消息，过滤特定的群聊，防止撤回消息，伪定位 (朋友圈和附近的人)，修改微信运动步数和实时取景做聊天页的背景等功能。
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)&nbsp;
+
 
 ## 插件特点
 
@@ -30,17 +31,13 @@ vi. 屏蔽消息和群消息，防止撤回消息
 
 屏蔽讨厌的人和群的消息，让他们不再打扰你，需要时可关闭，重新接收他们的消息，防止撤回消息，让你不再错过任何信息。
 
-## 免责声明
 
-- 本文所有纯属个人娱乐学习用，相关技术仅用于学习交流，请勿用于非法目的，不得有其他任何商业用途！！！
-- 外挂有风险，使用需谨慎。
-- 当使用本插件时，请使用者自行承担各种状况，包括但不限于“禁用红包功能”以及“微信封号”。
-
-## Group (ID:614799921)
+## QQ群 (ID:614799921)
 
 <div align=left>
 &emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/g614799921.jpg" width="30%" />
 </div>
+
 
 ## Preview
 
@@ -77,9 +74,11 @@ vi. 屏蔽消息和群消息，防止撤回消息
 &emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/prevent_msg_revoc.png" width="30%" />
 </div>
 
+
 ## 基本原理
 
-在 App 启动时，通过 dyld (the dynamic link editor) 加载我们注入的动态库，从而进行 hook ，而之所以能够执行注入的动态库，是因为使用了 mobilesubstrate 库，这个库能在程序运行的时候动态加载注入的动态库，而非越狱手机里面是没有的，所以我们需要直接将这个库打包进 ipa 中，使用它的 API 实现注入。mobilesubstrate 库在我的 [GitHub](Dynamic%20library/dylib ) 中有提供，即是 libsubstrate.dylib 。
+在 app 启动时，通过 dyld (the dynamic link editor) 加载我们注入的动态库，从而进行 hook ，而之所以能够执行注入的动态库，是因为使用了 mobilesubstrate 库，这个库能在程序运行的时候动态加载注入的动态库，而非越狱手机里面是没有的，所以我们需要直接将这个库打包进 ipa 中，使用它的 API 实现注入。mobilesubstrate 库在我的 [GitHub](Dynamic%20library/dylib ) 中有提供，即是 libsubstrate.dylib 。
+
 
 ## 打开终端
 
@@ -88,6 +87,7 @@ Terminal 一般 Mac 电脑自带，打开 Terminal 执行后续操作。
 <div align=left>
 &emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/terminal.png" width="20%" />
 </div>
+
 
 ## 安装 theos
 
@@ -154,9 +154,10 @@ export THEOS=/opt/theos
 
 保存并退出，使用命令 `source ~/.bash_profile` ，立即生效。
 
-PS:  也可以使用 [iOSOpenDev](http://iosopendev.com)
+*PS:  也可以使用 [iOSOpenDev](http://iosopendev.com)*
 
 iOSOpenDev 集成在 Xcode 中，提供了一些模板，可直接使用 Xcode 进行开发。只是这个工具停止更新，对高版本的 Xcode 不能很好地支持。本人安装遇到了许多问题，通过查阅许多的资料，最后在 Xcode 中显示了该工具。若安装失败，则参考 [iOSOpenDev Wiki](https://github.com/kokoabim/iOSOpenDev/wiki) 或者其它资料。
+
 
 ## tweak
 
@@ -180,7 +181,7 @@ tweak 定义是：对复杂的系统—通常是电子设备—进行微调或�
 &emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/nic_create_tweak.png" width="60%" />
 </div>
 
-完成后会看到四个文件( make 后将生成 .theos 、obj 文件夹)：**Makefile &nbsp; wcodtplugin.plist &nbsp; control &nbsp; Tweak.xm**。
+完成后会看到四个文件( make 后将生成 .theos 、obj 文件夹)：**Makefile ,&nbsp; wcodtplugin.plist ,&nbsp; control ,&nbsp; Tweak.xm**。
 
 - Makefile
 
@@ -401,6 +402,7 @@ _THEOS_PLATFORM_DPKG_DEB_COMPRESSION ?= gzip
 
 最后重新 make package ，成功了。
 
+
 ## 目录介绍
 
 - [Dynamic library](Dynamic%20library) - dylib 目录 (Raw Dynamic Library) 和 modify 目录 (Modified Dynamic Library) ，可直接拿来注入。
@@ -421,6 +423,7 @@ _THEOS_PLATFORM_DPKG_DEB_COMPRESSION ?= gzip
     - iOSOpenDev - Xcode 增强工具，通过它生成用于注入的 dylib 库。建议用 theos 编译 tweak 项目生成注入的 dylib 库。
 - [Resources](Resources) - Icon 目录 (带抢红包的Icon) 和 wav 目录 (音频文件) 等。
 - [WeChatPluginDev](WeChatPluginDev/wapleodtcorexpc) - 微信插件 tweak 源码开发。
+
 
 ## 获取砸壳版本的微信
 
@@ -507,9 +510,10 @@ mv /private/var/mobile/Documents/Dumped/com.tencent.xin-iOS9.2-\(Clutch-2.0.4\).
 scp root@<your.device.ip>:/private/var/mobile/Documents/Dumped/WeChat.ipa ~/Desktop/
 ```
 
+
 ## 注入动态库和重签名打包应用
 
-本文的重点内容，动态库可以到我的[GitHub仓库](Dynamic%20library)里下载。接下来请按照以下步骤操作执行：
+本文的重点内容，动态库可以到我的 [GitHub仓库](Dynamic%20library) 里下载。接下来请按照以下步骤操作执行：
 
 ### 解压 ipa (Unzip ipa)
 
@@ -529,7 +533,7 @@ mv ./Payload/ ~/Desktop/
 
 ### 查看 app 是否被加密 (Check app)
 
-otool 可以输出 app 的 load commands，然后通过查看 cryptid 这个标志位来判断 app 是否被加密，1代表加密，0代表被解密。
+otool 可以输出 app 的 load commands，然后通过查看 cryptid 这个标志位来判断 app 是否被加密，1：代表加密，0：代表被解密。
 
 ```
 # 进入桌面
@@ -572,7 +576,7 @@ make
 &emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/tweak_make.png" width="60%" />
 </div>
 
-编译时出现的问题或错误，请查看上述[问题描述和解决方法](#编译)。
+编译时出现的问题或错误，请查看上述 **tweak** 小节中提及的**[编译（问题描述和解决方法）](#编译)**。
 
 将动态库拷贝至桌面：
 
@@ -867,14 +871,16 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 2. 使用 Xcode -> Window -> Devices and Simulators ，右击自己的设备，选择 Connect via IP Adress...，输入设备的IP，然后点击 Connect ，最后在 INSTALLED APPS 处点击 “+” 号，然后选择 WeChat_705_New.ipa ，点击 Open ，然后漫长地等待安装，大约1 ~ 3分钟。
 
-## 💰支持作者
+
+## 💰打赏作者
 
 如果觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发在国外高大尚的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，那么不妨请我喝杯咖啡☕。
 
 <div align=left>
 &emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/alipay_paymentcode.jpg" width="30%" />&nbsp; &nbsp; &nbsp; 
-<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wechat_apprcode.jpg" width="50%" />
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wechat_apprcode.jpg" width="40%" />
 </div>
+
 
 ## Hook 版本下载
 
@@ -884,6 +890,7 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 
 [https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg - 提取码：3eqb](https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg)
 
+
 ## 坐标拾取
 
 - [百度地图-拾取坐标系统](http://api.map.baidu.com/lbsapi/getpoint/index.html)
@@ -891,6 +898,7 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 - [腾讯地图-坐标拾取器](https://lbs.qq.com/tool/getpoint/index.html)
 
 清华大学：116.333446,40.009557
+
 
 ## 免费证书
 
@@ -900,13 +908,23 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 
 免费证书能进行真机调试程序。新建一个模板工程，通过 Xcode 登入自己的 Apple ID (菜单 Xcode -> Preferences... -> Accounts -> 点击 + -> 选择 Apple ID -> 输入账号密码 -> 登入)，进入 TARGETS -> General -> Identify -> 设置 Bundle Identifier ，新 Xcode 版本进入 Signing & Capabilities -> 勾选自动管理签名 (Automatically manage signing)，旧版本直接勾选自动管理签名 (Automatically manage signing) 即可，等待自动生成 Provisioning Profile 和 Signing Certificate 后，可查看 App ID, Team 等信息，但免费证书有个缺点 ，其中 Provisioning Profile (xxx.mobileprovision) 文件有效期仅只有 **7** 天，过期后需要打开 Xcode 模板工程重新生成。我们在学习时可以利用免费证书真机调试程序和重签名应用 (Resign app) ，但是长期使用，不建议使用免费证书，推荐可以去苹果开发者后台申请 Apple ID 账号或者去某宝找商家代签名 (风险需要自己承担)。
 
+
 ## 建议
 
-如果您要将动态库 **wapleodtcorexpc** 和 **waplesubstrate** 修改成自定义的名字，那么只要将 **wapleodtcorexpc** 工程名和 **Makefile、control、xxx.plist** 文件内的部分信息一并修改，然后从步骤 **编译 tweak 项目 (Compile Tweak Project)** 重新开始操作。
+如果您要将动态库 **wapleodtcorexpc** 和 **waplesubstrate** 修改成自定义的名字，那么只要将 **wapleodtcorexpc** 工程名和 **Makefile、control、xxx.plist** 文件内的部分信息一并修改，然后从步骤 **[编译 tweak 项目 (Compile Tweak Project)](#编译-tweak-项目-(Compile-Tweak-Project))** 重新开始操作。
 
-## 简书
 
-- [iOS逆向 - 实现微信自动抢红包-伪定位-防撤回消息 (非越狱)](https://www.jianshu.com/p/8fa5f61af3e4)
+## 免责声明
+
+- 本文所有纯属个人娱乐学习用，相关技术仅用于学习交流，请勿用于非法目的，不得有其他任何商业用途！！！
+- 外挂有风险，使用需谨慎。
+- 当使用本插件时，请使用者自行承担各种状况，包括但不限于“禁用红包功能”以及“微信封号”。
+
+
+## 我的简书
+
+- [iOS逆向学习：免越狱给微信添加新功能](https://www.jianshu.com/p/8fa5f61af3e4)
+
 
 ## 参考文章
 
@@ -914,15 +932,15 @@ Hook 的版本只需要按照解压 ipa (Unzip ipa)，重签名应用 (Resign ap
 
 - [蒸米的文章 - iOS冰与火之歌系列](https://github.com/zhengmin1989/MyArticles)
 
-- [iOS微信抢红包Tweak安装教程](http://www.swiftyper.com/2016/01/25/ios-tweak-install-guide)
-
 - [一步一步实现iOS微信自动抢红包(非越狱)](https://www.jianshu.com/p/189afbe3b429)
 
 - [iOS应用逆向工程(第2版)](https://www.amazon.cn/gp/product/B00VFDVY7E/ref=as_li_tf_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B00VFDVY7E&linkCode=as2&tag=buginux-23)
 
+
 ## iOS逆向交流
 
 - [iOS逆向交流社区 -  iOSRE](http://bbs.iosre.com)
+
 
 ## 欢迎反馈
 
