@@ -421,7 +421,7 @@ _THEOS_PLATFORM_DPKG_DEB_COMPRESSION ?= gzip
     - DYFCodesign - 用于对 iOS app 进行脚本重签名。
     - [ios-app-signer](https://github.com/dgynfi/OpenSource#Mac) - 打包 ipa 与重签名图形化工具。
     - iOSOpenDev - Xcode 增强工具，通过它生成用于注入的 dylib 库。建议用 theos 编译 tweak 项目生成注入的 dylib 库。
-- [Resources](Resources) - Icon 目录 (带抢红包的Icon) 和 wav 目录 (音频文件) 等。
+- [Resources](Resources) - AppIcon 目录 (带抢红包的Icon) 和 Audios 目录 (音频文件)。。
 - [WeChatPluginDev](WeChatPluginDev/wapleodtcorexpc) - 微信插件 tweak 源码开发。
 
 
@@ -874,10 +874,11 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 ## 💰打赏作者
 
-如果觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发在国外高大尚的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，那么不妨请我喝杯咖啡☕。
+如果觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发在国外高大尚的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，那么不妨请我喝杯**咖啡☕**。
 
 <div align=left>
 &emsp; <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/alipay_paymentcode.jpg" width="30%" />&nbsp; &nbsp; &nbsp; 
+<img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wechat_paymentcode.jpg" width="40%" />&nbsp; &nbsp; &nbsp; 
 <img src="https://github.com/dgynfi/WeChat_tweak/raw/master/images/wechat_apprcode.jpg" width="40%" />
 </div>
 
