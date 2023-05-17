@@ -99,12 +99,12 @@ vi. 屏蔽消息和群消息，防止撤回消息
 
 ## 开发
 
-喜欢开发学习的同学请移步[Here](https://github.com/chenxing640/WeChat_tweak/raw/master/README-dev.md)。
+喜欢开发学习的同学请移步[Here](https://github.com/chenxing640/WeChat_tweak/blob/master/README-dev.md)。
 
 
 ## 修改 app 配置
 
-- 解压 ipa ==> [Here](https://github.com/chenxing640/WeChat_tweak/raw/master/README-dev.md#解压-ipa)
+- 解压 ipa ==> [Here](https://github.com/chenxing640/WeChat_tweak/blob/master/README-dev.md#解压-ipa)
 
 - 进入 WeChat 目录
 
