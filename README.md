@@ -102,9 +102,12 @@ vi. 屏蔽消息和群消息，防止撤回消息
 喜欢开发学习的同学请移步[Here](https://github.com/chenxing640/WeChat_tweak/blob/master/README-dev.md)。
 
 
-## 修改 app 配置
+## 解压 ipa
 
-- 解压 ipa ==> [Here](https://github.com/chenxing640/WeChat_tweak/blob/master/README-dev.md#解压-ipa)
+解压 ipa ==> [Here](https://github.com/chenxing640/WeChat_tweak/blob/master/README-dev.md#解压-ipa)
+
+
+## 修改 app 配置
 
 - 进入 WeChat 目录
 
@@ -148,7 +151,9 @@ vi. 屏蔽消息和群消息，防止撤回消息
 
 ## 获取动态库
 
-编译完成的动态库下载 ==> [Here](Dynamic%20library).
+- 使用自己编译完成的动态库
+
+- 已编译完成的动态库下载 ==> [Here](Dynamic%20library)
 
 
 ## 重签名动态库
@@ -295,11 +300,11 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 
 ## Hook 版本下载
 
-Hook 的版本只需要按照解压 ipa，重签名应用，打包应用，安装 ipa 等步骤执行即可。
-
 - 百度网盘下载：
 
 [https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg - 提取码：3eqb](https://pan.baidu.com/s/1KCwmMWzchaZDeZQSlNt6qg)
+
+Hook 的版本只需要按照[解压 ipa](#解压-ipa)，[重签名应用](#重签名应用)，[打包应用](#打包应用)，[安装 ipa](#安装-ipa)等步骤执行即可。
 
 
 ## 坐标拾取

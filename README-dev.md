@@ -245,7 +245,7 @@ warning ：添加的方法需要在 @interface 中进行声明。 <br />
 
 使用 `make` 进行编译，若想重新编译，则先 `make clean` 。make 编译完成后，在当前文件夹下面将生成两个文件夹: .theos 与 obj ，其中编译完成的动态库就在 .thoes/obj/debug 的下面，与工程名相同。
 
-在编译中可能遇到的问题，如下：
+#### 问题描述和解决方法
 
 - 问题1
 
@@ -479,7 +479,9 @@ make
 &emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/tweak_make.png" width="60%" />
 </div>
 
-编译时出现的问题或错误，请查看上述 **Tweak** 小节中提及的 [编译（问题描述和解决方法）](#编译)。
+编译时出现的问题或错误，请查看上述 **Tweak** 小节中 **编译** 提及的 [问题描述和解决方法](#问题描述和解决方法)。
+
+### 导出
 
 将动态库拷贝至桌面：
 
