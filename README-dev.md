@@ -8,7 +8,7 @@
 Terminal 一般 Mac 电脑自带，打开 Terminal 执行后续操作。
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/terminal.png" width="20%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/terminal.png" width="20%" />
 </div>
 
 
@@ -101,7 +101,7 @@ tweak 定义是：对复杂的系统—通常是电子设备—进行微调或�
 如下图所示：
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/nic_create_tweak.png" width="60%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/nic_create_tweak.png" width="60%" />
 </div>
 
 完成后会看到四个文件( make 后将生成 .theos 、obj 文件夹)：**Makefile,&nbsp; wcodtplugin.plist,&nbsp; control,&nbsp; Tweak.xm**。
@@ -142,7 +142,7 @@ after-install::
 该文件中的 Bundles : 指定 bundle 为 tweak 的作用对象，也可添加多个 bundle ，指定多个为 tweak 作用对象。
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/tweak_plist.png" width="60%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/tweak_plist.png" width="60%" />
 </div>
 
 - control
@@ -464,7 +464,7 @@ otool -l Payload/WeChat.app/WeChat | grep -B 2 crypt
 cd ~/Desktop/
 
 # 克隆 (Clone Repository)
-git clone https://github.com/chenxing640/WeChat_tweak.git
+git clone https://github.com/itenfay/WeChat_tweak.git
 ```
 
 ### 编译 tweak 项目
@@ -476,7 +476,7 @@ make
 ```
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/tweak_make.png" width="60%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/tweak_make.png" width="60%" />
 </div>
 
 编译时出现的问题或错误，请查看上述 **Tweak** 小节中 **编译** 提及的 [问题描述和解决方法](#问题描述和解决方法)。
@@ -509,7 +509,7 @@ cp WeChat_tweak/Dynamic\ library/dylib/libsubstrate.dylib ~/Desktop/
 右键 wapleodtcorexpc.dylib ，选择显示简介，在名称与扩展名处将 wapleodtcorexpc.dylib 修改成 wapleodtcorexpc ，回车并移除。
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/rm_ext.png" width="60%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/rm_ext.png" width="60%" />
 </div>
 
 同理，右键 libsubstrate.dylib ，选择显示简介，在名称与扩展名处将 libsubstrate.dylib 修改成 waplesubstrate ，回车并移除。

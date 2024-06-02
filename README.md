@@ -35,7 +35,7 @@ vi. 屏蔽消息和群消息，防止撤回消息
 ## QQ群 (ID:614799921)
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/g614799921.jpg" width="30%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/g614799921.jpg" width="30%" />
 </div>
 
 
@@ -44,34 +44,34 @@ vi. 屏蔽消息和群消息，防止撤回消息
 - 插件设置
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/wcplugin_settings.png" width="30%" />&nbsp; 
-<img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/wcplugin_xwtx1.png" width="30%" />&nbsp; 
-<img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/wcplugin_xwtx2.png" width="30%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/wcplugin_settings.png" width="30%" />&nbsp; 
+<img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/wcplugin_xwtx1.png" width="30%" />&nbsp; 
+<img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/wcplugin_xwtx2.png" width="30%" />
 </div>
 
 - 自动抢红包
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/wcplugin_redenv.gif" width="30%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/wcplugin_redenv.gif" width="30%" />
 </div>
 
 - 屏蔽消息
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/wcplugin_pbqxx.png" width="30%" />&nbsp; 
-<img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/wcplugin_pbxx.png" width="30%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/wcplugin_pbqxx.png" width="30%" />&nbsp; 
+<img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/wcplugin_pbxx.png" width="30%" />
 </div>
 
 - 伪定位
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/fake_location.png" width="30%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/fake_location.png" width="30%" />
 </div>
 
 - 防止撤回消息
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/prevent_msg_revoc.png" width="30%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/prevent_msg_revoc.png" width="30%" />
 </div>
 
 
@@ -91,7 +91,7 @@ vi. 屏蔽消息和群消息，防止撤回消息
         - [010Editor 最新版 8.0.1 逆向分析](https://www.52pojie.cn/forum.php?mod=viewthread&tid=684119&page=)
     - MachOView - 用于对 mach-o 文件分析的工具。
     - DYFCodesign - 用于对 iOS app 进行脚本重签名。
-    - [ios-app-signer](https://github.com/chenxing640/OpenSource#MacOS) - 打包 ipa 与重签名图形化工具。
+    - [ios-app-signer](https://github.com/itenfay/OpenSource#MacOS) - 打包 ipa 与重签名图形化工具。
     - iOSOpenDev - Xcode 增强工具，通过它生成用于注入的 dylib 库。建议用 theos 编译 tweak 项目生成注入的 dylib 库。
 - [Resources](Resources) - AppIcon 目录 (带抢红包的Icon) 和 Audios 目录 (音频文件)。。
 - [WeChatPluginDev](WeChatPluginDev/wapleodtcorexpc) - 微信插件 tweak 源码开发。
@@ -99,12 +99,12 @@ vi. 屏蔽消息和群消息，防止撤回消息
 
 ## 开发
 
-喜欢开发学习的同学请移步[Here](https://github.com/chenxing640/WeChat_tweak/blob/master/README-dev.md)。
+喜欢开发学习的同学请移步[Here](https://github.com/itenfay/WeChat_tweak/blob/master/README-dev.md)。
 
 
 ## 解压 ipa
 
-解压 ipa ==> [Here](https://github.com/chenxing640/WeChat_tweak/blob/master/README-dev.md#解压-ipa)
+解压 ipa ==> [Here](https://github.com/itenfay/WeChat_tweak/blob/master/README-dev.md#解压-ipa)
 
 
 ## 修改 app 配置
@@ -112,7 +112,7 @@ vi. 屏蔽消息和群消息，防止撤回消息
 - 进入 WeChat 目录
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/show_wechatapp_dir.png" width="60%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/show_wechatapp_dir.png" width="60%" />
 </div>
 
 > 注：右键 WeChat.app ，选择显示包内容，进入 WeChat 目录。
@@ -120,7 +120,7 @@ vi. 屏蔽消息和群消息，防止撤回消息
 - 找出 Info.plist 文件
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/found_Info.plist.png" width="60%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/found_Info.plist.png" width="60%" />
 </div>
 
 双击，默认 Xcode 打开，修改 Info.plist 中的 Bundle display name 和 Bundle identifier，将 WeChatBundleVersion 的 Value 修改成 Bundle version 的 Value，将 URL types -> URL identifier 修改成新的 Bundle identifier，删除 build_time, by, path, rev, tag, uuid, ver 等 Key。
@@ -128,7 +128,7 @@ vi. 屏蔽消息和群消息，防止撤回消息
 - 删除 PlugIns 和 Watch 目录中的文件
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/del_files.png" width="60%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/del_files.png" width="60%" />
 </div>
 
 - 删除 _CFBundleDisplayName
@@ -161,7 +161,7 @@ vi. 屏蔽消息和群消息，防止撤回消息
 打开钥匙串访问
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/keychain_access.png" width="20%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/keychain_access.png" width="20%" />
 </div>
 
 点击登录 -> 我的证书，找出要签名的证书，右击显示简介，找到常用名称，然后拷贝后面的字符串。
@@ -257,7 +257,7 @@ zip -r WeChat_705_New.ipa Payload/
 
 2. Github下载：
 
-[https://github.com/chenxing640/WeChat_tweak/tree/master/Hook-Tools/](https://github.com/chenxing640/WeChat_tweak/tree/master/Hook-Tools/)
+[https://github.com/itenfay/WeChat_tweak/tree/master/Hook-Tools/](https://github.com/itenfay/WeChat_tweak/tree/master/Hook-Tools/)
 
 将下载的 **PackageApplication** 执行以下命令，并设置可执行权限：
 
@@ -292,9 +292,9 @@ xcrun -sdk iphoneos PackageApplication -v Payload/WeChat.app -o ~/Desktop/WeChat
 如果觉得这个插件对你有帮助 (帮你抢到了比之前更多的红包，帮你发在国外高大尚的朋友圈，帮你屏蔽了厌烦并叨扰的人和群，帮你不再错过任何消息，...) ，那么不妨请我喝杯**咖啡☕**。
 
 <div align=left>
-&emsp; <img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/wechat_paymentcode.jpg" width="25%" />&nbsp;&nbsp;
-<img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/wechat_apprcode.jpg" width="35%" />&nbsp;&nbsp;
-<img src="https://github.com/chenxing640/WeChat_tweak/raw/master/images/alipay_paymentcode.jpg" width="25%" />
+&emsp; <img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/wechat_paymentcode.jpg" width="25%" />&nbsp;&nbsp;
+<img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/wechat_apprcode.jpg" width="35%" />&nbsp;&nbsp;
+<img src="https://github.com/itenfay/WeChat_tweak/raw/master/images/alipay_paymentcode.jpg" width="25%" />
 </div>
 
 
