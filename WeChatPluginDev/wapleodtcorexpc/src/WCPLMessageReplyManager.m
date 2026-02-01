@@ -224,15 +224,7 @@ static char kRepeatContentKey;
 
 - (UIView *)findBubbleViewInCellView:(CommonMessageCellView *)cellView {
     @try {
-        // 方法1: 尝试直接获取 m_bgImageView 属性
-        if ([cellView respondsToSelector:NSSelectorFromString(@"getBgImageView")]) {
-            UIView *bgView = [cellView performSelector:NSSelectorFromString(@"getBgImageView")];
-            if (bgView && !bgView.hidden && bgView.frame.size.width > 30) {
-                return bgView;
-            }
-        }
-
-        // 方法2: 遍历子视图查找气泡
+        // 遍历子视图查找气泡
         UIView *bestView = nil;
         CGFloat maxArea = 0;
 
