@@ -158,11 +158,6 @@ static char kRepeatContentKey;
             }
         }
 
-        // 检查是否是自己发送的消息
-        if ([self isSelfMessage:msgWrap]) {
-            return NO;
-        }
-
         // 检查消息内容是否为空
         NSString *content = [self getMessageContent:msgWrap];
         if (!content || content.length == 0) {
@@ -277,18 +272,18 @@ static char kRepeatContentKey;
 - (UIButton *)createRepeatButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.tag = kWCPLRepeatButtonTag;
-    button.frame = CGRectMake(0, 0, 24, 24);
+    button.frame = CGRectMake(0, 0, 20, 20);
 
     // 透明背景
     button.backgroundColor = [UIColor clearColor];
 
-    // 黑色圆圈边框
+    // 黑色圆圈边框 - 刚好包围+1
     button.layer.borderColor = [UIColor blackColor].CGColor;
     button.layer.borderWidth = 1.0;
-    button.layer.cornerRadius = 12;  // 圆形
+    button.layer.cornerRadius = 10;  // 圆形
 
     // 设置标题 - 黑色文字
-    button.titleLabel.font = [UIFont boldSystemFontOfSize:11];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:10];
     [button setTitle:@"+1" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 
@@ -312,15 +307,8 @@ static char kRepeatContentKey;
 
         CGRect bubbleFrame = bubbleView.frame;
 
-        // 判断消息方向（左边是别人的消息）
-        // 别人的消息气泡通常在左侧，x 坐标较小
+        // 判断消息方向（左边是别人的消息，右边是自己的消息）
         BOOL isLeftMessage = bubbleFrame.origin.x < 100;
-
-        if (!isLeftMessage) {
-            // 自己的消息 - 不显示
-            button.hidden = YES;
-            return;
-        }
 
         // 尝试查找 m_richTextView（回复文本视图），用于引用回复消息
         UIView *richTextView = [self findRichTextViewInCellView:cellView];
@@ -336,11 +324,18 @@ static char kRepeatContentKey;
         }
 
         // 按钮固定尺寸
-        CGFloat buttonSize = 24;
+        CGFloat buttonSize = 20;
 
-        // 别人的消息 - 按钮放在目标视图右侧外面，底部与目标视图底部对齐
-        CGFloat buttonX = CGRectGetMaxX(targetFrame) + 4;
-        CGFloat buttonY = CGRectGetMaxY(targetFrame) - buttonSize;
+        CGFloat buttonX;
+        CGFloat buttonY = CGRectGetMaxY(targetFrame) - buttonSize;  // 底部对齐
+
+        if (isLeftMessage) {
+            // 别人的消息 - 按钮放在目标视图右侧，紧贴气泡
+            buttonX = CGRectGetMaxX(targetFrame) + 2;
+        } else {
+            // 自己的消息 - 按钮放在目标视图左侧，紧贴气泡
+            buttonX = targetFrame.origin.x - buttonSize - 2;
+        }
 
         button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
         button.hidden = NO;
