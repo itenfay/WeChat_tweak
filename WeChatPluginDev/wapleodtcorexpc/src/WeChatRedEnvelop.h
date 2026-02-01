@@ -200,7 +200,7 @@
 
 @interface CEmoticonMgr : NSObject
 
-- (CEmoticonWrap *)getEmoticonWrapByMD5:(NSString *)md5;
+- (CEmoticonWrap *)getEmoticonWrapByMd5:(NSString *)md5;
 
 @end
 

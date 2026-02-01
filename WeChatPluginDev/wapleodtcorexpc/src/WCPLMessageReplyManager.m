@@ -981,7 +981,7 @@ static char kRepeatMsgWrapKey;
             return;
         }
 
-        NSLog(@"[WCPL] Repeating emoticon message");
+        NSLog(@"[WCPL] Repeating emoticon message, type: %u", msgWrap.m_uiMessageType);
 
         // 获取聊天对象用户名
         NSString *toUserName = nil;
@@ -997,70 +997,87 @@ static char kRepeatMsgWrapKey;
             return;
         }
 
-        // 方法1: 通过 SendEmoticonMessage 发送
         // 获取表情包 MD5
         NSString *emoticonMD5 = nil;
         if ([msgWrap respondsToSelector:@selector(m_nsEmoticonMD5)]) {
             emoticonMD5 = [msgWrap performSelector:@selector(m_nsEmoticonMD5)];
         }
+        NSLog(@"[WCPL] Emoticon MD5: %@", emoticonMD5 ?: @"nil");
 
+        // 方法1: 通过 logicController 的 SendEmoticonMessage 发送
         if (emoticonMD5 && emoticonMD5.length > 0) {
-            // 获取 CEmoticonMgr 服务
             id emoticonMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CEmoticonMgr")];
             if (emoticonMgr) {
-                // 通过 MD5 获取表情包 Wrap
                 CEmoticonWrap *emoticonWrap = nil;
-                if ([emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMD5:)]) {
-                    emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMD5:) withObject:emoticonMD5];
+                if ([emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)]) {
+                    emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMd5:) withObject:emoticonMD5];
+                    NSLog(@"[WCPL] Got emoticon wrap: %@", emoticonWrap ? @"success" : @"nil");
                 }
 
                 if (emoticonWrap) {
-                    // 通过 ViewController 发送表情包
-                    if ([viewController respondsToSelector:@selector(SendEmoticonMessage:)]) {
-                        [viewController performSelector:@selector(SendEmoticonMessage:) withObject:emoticonWrap];
-                        NSLog(@"[WCPL] Emoticon message repeated via SendEmoticonMessage");
-                        return;
-                    }
-
-                    // 备用方法：通过 logicController 发送
+                    // 通过 logicController 发送（优先）
                     if ([viewController respondsToSelector:@selector(m_logicController)]) {
                         id logicController = [viewController performSelector:@selector(m_logicController)];
                         if (logicController && [logicController respondsToSelector:@selector(SendEmoticonMessage:)]) {
                             [logicController performSelector:@selector(SendEmoticonMessage:) withObject:emoticonWrap];
-                            NSLog(@"[WCPL] Emoticon message repeated via logicController");
+                            NSLog(@"[WCPL] Emoticon repeated via logicController.SendEmoticonMessage");
                             return;
                         }
+                    }
+
+                    // 通过 ViewController 发送
+                    if ([viewController respondsToSelector:@selector(SendEmoticonMesssageToolView:)]) {
+                        [viewController performSelector:@selector(SendEmoticonMesssageToolView:) withObject:emoticonWrap];
+                        NSLog(@"[WCPL] Emoticon repeated via SendEmoticonMesssageToolView");
+                        return;
                     }
                 }
             }
         }
 
-        // 方法2: 通过 CMessageMgr 的 AddEmoticonMsg 发送
-        id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
-        if (msgMgr && [msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
-            // 创建新的消息 Wrap
-            CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] init];
-            newMsgWrap.m_uiMessageType = 47; // 表情包消息
-            newMsgWrap.m_nsToUsr = toUserName;
+        // 方法2: 通过消息内容直接发送（解析 XML 获取表情包信息）
+        NSString *content = msgWrap.m_nsContent;
+        if (content && content.length > 0) {
+            NSLog(@"[WCPL] Trying to send emoticon via content XML");
 
-            // 复制表情包相关属性
-            if (emoticonMD5) {
-                if ([newMsgWrap respondsToSelector:@selector(setM_nsEmoticonMD5:)]) {
-                    [newMsgWrap performSelector:@selector(setM_nsEmoticonMD5:) withObject:emoticonMD5];
+            // 获取 logicController
+            id logicController = nil;
+            if ([viewController respondsToSelector:@selector(m_logicController)]) {
+                logicController = [viewController performSelector:@selector(m_logicController)];
+            }
+
+            if (logicController) {
+                // 尝试通过 AddEmoticonMsg 发送
+                if ([logicController respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
+                    CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] initWithMsgType:47];
+                    newMsgWrap.m_nsToUsr = toUserName;
+                    newMsgWrap.m_nsContent = content;
+                    if (emoticonMD5) {
+                        if ([newMsgWrap respondsToSelector:@selector(setM_nsEmoticonMD5:)]) {
+                            [newMsgWrap performSelector:@selector(setM_nsEmoticonMD5:) withObject:emoticonMD5];
+                        }
+                    }
+                    [logicController performSelector:@selector(AddEmoticonMsg:MsgWrap:) withObject:toUserName withObject:newMsgWrap];
+                    NSLog(@"[WCPL] Emoticon repeated via logicController.AddEmoticonMsg");
+                    return;
                 }
             }
 
-            // 复制表情包内容
-            if ([msgWrap respondsToSelector:@selector(m_nsContent)] && [newMsgWrap respondsToSelector:@selector(setM_nsContent:)]) {
-                NSString *content = [msgWrap performSelector:@selector(m_nsContent)];
-                if (content) {
-                    [newMsgWrap performSelector:@selector(setM_nsContent:) withObject:content];
+            // 通过 CMessageMgr 发送
+            id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
+            if (msgMgr && [msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
+                CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] initWithMsgType:47];
+                newMsgWrap.m_nsToUsr = toUserName;
+                newMsgWrap.m_nsContent = content;
+                if (emoticonMD5) {
+                    if ([newMsgWrap respondsToSelector:@selector(setM_nsEmoticonMD5:)]) {
+                        [newMsgWrap performSelector:@selector(setM_nsEmoticonMD5:) withObject:emoticonMD5];
+                    }
                 }
+                [msgMgr AddEmoticonMsg:toUserName MsgWrap:newMsgWrap];
+                NSLog(@"[WCPL] Emoticon repeated via CMessageMgr.AddEmoticonMsg");
+                return;
             }
-
-            [msgMgr AddEmoticonMsg:toUserName MsgWrap:newMsgWrap];
-            NSLog(@"[WCPL] Emoticon message repeated via AddEmoticonMsg");
-            return;
         }
 
         NSLog(@"[WCPL] Failed to find suitable method for emoticon repeat");
