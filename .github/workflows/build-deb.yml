@@ -23,6 +23,16 @@ jobs:
       - name: Setup Theos
         uses: Randomblock1/theos-action@v1
 
+      - name: Setup Roothide Theos
+        run: |
+          # Clone roothide theos to a separate directory
+          git clone --depth=1 https://github.com/roothide/theos.git ${{ github.workspace }}/theos-roothide
+          # Download roothide SDK
+          curl -LO https://github.com/roothide/theos/releases/download/v1.0.0/roothide-sdk.zip || true
+          if [ -f roothide-sdk.zip ]; then
+            unzip -o roothide-sdk.zip -d ${{ github.workspace }}/theos-roothide/sdks/ || true
+          fi
+
       - name: Debug Environment
         run: |
           echo "=== Environment Variables ==="
@@ -57,23 +67,23 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
-      - name: Build Rootful Package (arm64 + arm64e)
+      - name: Build Roothide Package (arm64 + arm64e)
         run: |
           cd WeChatPluginDev/wapleodtcorexpc
           make clean || true
-          make package FINALPACKAGE=1 2>&1 || {
+          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide 2>&1 || {
             echo "=== Build failed, showing detailed errors ==="
-            make package FINALPACKAGE=1
+            make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide
           }
-          # Rename rootful package
+          # Rename roothide package
           for f in packages/*.deb; do
             if [ -f "$f" ] && [[ ! "$f" == *"-rootless.deb" ]]; then
-              newname=$(echo "$f" | sed 's/\.deb$/-rootful.deb/')
+              newname=$(echo "$f" | sed 's/\.deb$/-roothide.deb/')
               mv "$f" "$newname"
             fi
           done
         env:
-          THEOS: ${{ github.workspace }}/theos
+          THEOS: ${{ github.workspace }}/theos-roothide
 
       - name: List packages (debug)
         if: always()
@@ -92,11 +102,11 @@ jobs:
           path: WeChatPluginDev/wapleodtcorexpc/packages/*-rootless.deb
           if-no-files-found: warn
 
-      - name: Upload Rootful Artifact
+      - name: Upload Roothide Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: rootful-deb
-          path: WeChatPluginDev/wapleodtcorexpc/packages/*-rootful.deb
+          name: roothide-deb
+          path: WeChatPluginDev/wapleodtcorexpc/packages/*-roothide.deb
           if-no-files-found: warn
 
       - name: Release
