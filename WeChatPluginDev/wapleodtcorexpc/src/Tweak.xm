@@ -503,17 +503,36 @@
 
 %end
 
+// Hook 应用消息 Cell（包括引用回复消息）
+%hook AppMessageCellView
+
+- (void)layoutSubviews {
+    %orig;
+
+    // 添加复读按钮（仅对引用回复消息）
+    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
+}
+
+- (void)prepareForReuse {
+    %orig;
+
+    // Cell 复用时移除按钮
+    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
+}
+
+%end
+
 // 也 Hook CommonMessageCellView 以支持更多消息类型
 %hook CommonMessageCellView
 
 - (void)layoutSubviews {
     %orig;
 
-    // 只对文本消息添加按钮（TextMessageCellView 已经处理）
-    // 这里可以扩展支持其他消息类型
+    // 跳过已经单独处理的 Cell 类型
     NSString *className = NSStringFromClass([self class]);
-    if ([className isEqualToString:@"TextMessageCellView"]) {
-        // 已经在 TextMessageCellView 的 hook 中处理
+    if ([className isEqualToString:@"TextMessageCellView"] ||
+        [className isEqualToString:@"AppMessageCellView"]) {
+        // 已经在各自的 hook 中处理
         return;
     }
 

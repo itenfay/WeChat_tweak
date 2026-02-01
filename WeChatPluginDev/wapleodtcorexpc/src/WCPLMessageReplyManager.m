@@ -139,10 +139,16 @@ static char kRepeatContentKey;
         // 49 = 应用消息（包括引用回复）
         unsigned int msgType = msgWrap.m_uiMessageType;
 
-        // 只支持文本消息
-        // 引用回复消息也是文本消息类型，会在 TextMessageCellView 中显示
-        if (msgType != 1) {
+        // 支持文本消息和引用回复消息
+        if (msgType != 1 && msgType != 49) {
             return NO;
+        }
+
+        // 如果是应用消息(49)，检查是否是引用回复
+        if (msgType == 49) {
+            if (![self isQuoteReplyMessage:msgWrap]) {
+                return NO;
+            }
         }
 
         // 检查是否是自己发送的消息
@@ -151,7 +157,7 @@ static char kRepeatContentKey;
         }
 
         // 检查消息内容是否为空
-        NSString *content = msgWrap.m_nsContent;
+        NSString *content = [self getMessageContent:msgWrap];
         if (!content || content.length == 0) {
             return NO;
         }
@@ -164,13 +170,97 @@ static char kRepeatContentKey;
     }
 }
 
+// 判断是否是引用回复消息
+- (BOOL)isQuoteReplyMessage:(CMessageWrap *)msgWrap {
+    @try {
+        if (!msgWrap) return NO;
+
+        NSString *content = msgWrap.m_nsContent;
+        if (!content || content.length == 0) return NO;
+
+        // 引用回复消息的 XML 包含 <refermsg> 标签
+        // 或者 type=57 表示引用回复
+        if ([content containsString:@"<refermsg>"] ||
+            [content containsString:@"<type>57</type>"]) {
+            return YES;
+        }
+
+        return NO;
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[WCPL] Exception in isQuoteReplyMessage: %@", exception);
+        return NO;
+    }
+}
+
 - (NSString *)getMessageContent:(CMessageWrap *)msgWrap {
     @try {
         if (!msgWrap) return nil;
+
+        unsigned int msgType = msgWrap.m_uiMessageType;
+
+        // 普通文本消息直接返回内容
+        if (msgType == 1) {
+            return msgWrap.m_nsContent;
+        }
+
+        // 引用回复消息需要从 XML 中提取 title
+        if (msgType == 49) {
+            return [self extractTitleFromQuoteReply:msgWrap.m_nsContent];
+        }
+
         return msgWrap.m_nsContent;
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in getMessageContent: %@", exception);
+        return nil;
+    }
+}
+
+// 从引用回复消息的 XML 中提取 title（回复的文本内容）
+- (NSString *)extractTitleFromQuoteReply:(NSString *)xmlContent {
+    @try {
+        if (!xmlContent || xmlContent.length == 0) return nil;
+
+        // 使用正则表达式提取 <title> 标签内容
+        // 引用回复的 XML 格式: <msg><appmsg><title>回复内容</title>...</appmsg></msg>
+        NSRegularExpression *regex = [NSRegularExpression
+            regularExpressionWithPattern:@"<title><!\\[CDATA\\[(.+?)\\]\\]></title>"
+            options:NSRegularExpressionDotMatchesLineSeparators
+            error:nil];
+
+        NSTextCheckingResult *result = [regex firstMatchInString:xmlContent
+                                                         options:0
+                                                           range:NSMakeRange(0, xmlContent.length)];
+
+        if (result && result.numberOfRanges >= 2) {
+            NSString *title = [xmlContent substringWithRange:[result rangeAtIndex:1]];
+            if (title && title.length > 0) {
+                return title;
+            }
+        }
+
+        // 尝试不带 CDATA 的格式
+        regex = [NSRegularExpression
+            regularExpressionWithPattern:@"<title>(.+?)</title>"
+            options:NSRegularExpressionDotMatchesLineSeparators
+            error:nil];
+
+        result = [regex firstMatchInString:xmlContent
+                                   options:0
+                                     range:NSMakeRange(0, xmlContent.length)];
+
+        if (result && result.numberOfRanges >= 2) {
+            NSString *title = [xmlContent substringWithRange:[result rangeAtIndex:1]];
+            if (title && title.length > 0) {
+                return title;
+            }
+        }
+
+        return nil;
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[WCPL] Exception in extractTitleFromQuoteReply: %@", exception);
         return nil;
     }
 }
