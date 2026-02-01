@@ -23,21 +23,39 @@ jobs:
       - name: Setup Theos
         uses: Randomblock1/theos-action@v1
 
+      - name: Debug Environment
+        run: |
+          echo "=== Environment Variables ==="
+          echo "THEOS=$THEOS"
+          echo "HOME=$HOME"
+          echo "PWD=$PWD"
+          echo "=== Theos Directory ==="
+          ls -la $THEOS || echo "THEOS directory not found"
+          echo "=== Project Directory ==="
+          ls -la WeChatPluginDev/wapleodtcorexpc/
+          echo "=== Source Files ==="
+          ls -la WeChatPluginDev/wapleodtcorexpc/src/
+        env:
+          THEOS: ${{ github.workspace }}/theos
+
       - name: Build Package
         run: |
           cd WeChatPluginDev/wapleodtcorexpc
           rm -rf packages/*.deb 2>/dev/null || true
-          make clean
-          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
+          make clean || true
+          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless DEBUG=1
         env:
           THEOS: ${{ github.workspace }}/theos
 
       - name: List packages (debug)
+        if: always()
         run: |
           echo "=== Listing packages directory ==="
           ls -la WeChatPluginDev/wapleodtcorexpc/packages/ || echo "packages directory not found"
           echo "=== Finding all .deb files ==="
           find . -name "*.deb" -type f 2>/dev/null || echo "No .deb files found"
+          echo "=== Listing obj directory ==="
+          ls -la WeChatPluginDev/wapleodtcorexpc/.theos/obj/ 2>/dev/null || echo "obj directory not found"
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
