@@ -1,0 +1,37 @@
+name: Build Rootless DEB
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Build with Theos
+        uses: Randomblock1/theos-action@v1
+        with:
+          cwd: WeChatPluginDev/wapleodtcorexpc
+        env:
+          THEOS_PACKAGE_SCHEME: rootless
+
+      - name: List packages (debug)
+        run: ls -R WeChatPluginDev/wapleodtcorexpc/packages || true
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rootless-deb
+          path: WeChatPluginDev/wapleodtcorexpc/packages/*.deb
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: WeChatPluginDev/wapleodtcorexpc/packages/*.deb
