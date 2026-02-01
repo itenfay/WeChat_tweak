@@ -1002,17 +1002,19 @@ static char kRepeatMsgWrapKey;
         BOOL hasAddLocalMsg = msgMgr && [msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)];
         [debugInfo appendFormat:@"16. 有AddLocalMsg方法: %@\n", hasAddLocalMsg ? @"是" : @"否"];
 
-        [debugInfo appendString:@"\n✅ 开始执行复读..."];
+        [debugInfo appendString:@"\n✅ 开始执行复读...\n"];
 
-        // 显示调试信息
-        [self showDebugAlert:debugInfo];
-
-        // 执行复读
+        // 执行复读并收集执行日志
         if (isEmoticonMessage) {
-            [self handleRepeatEmoticonMessage:msgWrap viewController:viewController];
+            NSString *execLog = [self handleRepeatEmoticonMessage:msgWrap viewController:viewController];
+            [debugInfo appendString:@"\n=== 执行日志 ===\n"];
+            [debugInfo appendString:execLog];
         } else {
             [self handleRepeatButtonTapWithContent:content viewController:viewController msgWrap:msgWrap];
         }
+
+        // 显示完整调试信息
+        [self showDebugAlert:debugInfo];
     }
     @catch (NSException *exception) {
         [self showDebugAlert:[NSString stringWithFormat:@"❌ 异常: %@", exception]];
@@ -1099,10 +1101,13 @@ static char kRepeatMsgWrapKey;
 }
 
 // 处理表情包消息复读
-- (void)handleRepeatEmoticonMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController {
+- (NSString *)handleRepeatEmoticonMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController {
+    NSMutableString *execLog = [NSMutableString string];
+
     @try {
         if (!msgWrap || !viewController) {
-            return;
+            [execLog appendString:@"❌ 参数无效\n"];
+            return execLog;
         }
 
         // 获取聊天对象用户名
@@ -1115,77 +1120,106 @@ static char kRepeatMsgWrapKey;
         }
 
         if (!toUserName || toUserName.length == 0) {
-            return;
+            [execLog appendString:@"❌ 无法获取聊天对象\n"];
+            return execLog;
         }
+        [execLog appendFormat:@"✓ 聊天对象: %@\n", toUserName];
 
-        // 获取表情包 MD5 - 优先从属性获取，否则从 XML 解析
+        // 获取表情包 MD5
         NSString *emoticonMD5 = nil;
         if ([msgWrap respondsToSelector:@selector(m_nsEmoticonMD5)]) {
             emoticonMD5 = [msgWrap performSelector:@selector(m_nsEmoticonMD5)];
         }
 
-        // 如果属性为空，从消息内容 XML 中解析 MD5
         NSString *content = msgWrap.m_nsContent;
         if ((!emoticonMD5 || emoticonMD5.length == 0) && content && content.length > 0) {
             emoticonMD5 = [self parseEmoticonMD5FromContent:content];
+            [execLog appendFormat:@"✓ 从XML解析MD5: %@\n", emoticonMD5 ?: @"失败"];
         }
 
-        // 方法1: 通过 CEmoticonMgr 获取表情包并发送
+        // 方法1: 通过 EmoticonWrap 发送
         if (emoticonMD5 && emoticonMD5.length > 0) {
+            [execLog appendString:@"\n尝试方法1: EmoticonWrap\n"];
             id emoticonMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CEmoticonMgr")];
             if (emoticonMgr && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)]) {
                 CEmoticonWrap *emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMd5:) withObject:emoticonMD5];
 
                 if (emoticonWrap) {
-                    // 通过 logicController 发送
+                    [execLog appendString:@"✓ 获取到EmoticonWrap\n"];
+
                     if ([viewController respondsToSelector:@selector(m_logicController)]) {
                         id logicController = [viewController performSelector:@selector(m_logicController)];
                         if (logicController && [logicController respondsToSelector:@selector(SendEmoticonMessage:)]) {
                             [logicController performSelector:@selector(SendEmoticonMessage:) withObject:emoticonWrap];
-                            return;
+                            [execLog appendString:@"✅ 通过logicController发送成功\n"];
+                            return execLog;
                         }
                     }
 
-                    // 通过 ViewController 发送
                     if ([viewController respondsToSelector:@selector(SendEmoticonMesssageToolView:)]) {
                         [viewController performSelector:@selector(SendEmoticonMesssageToolView:) withObject:emoticonWrap];
-                        return;
+                        [execLog appendString:@"✅ 通过ViewController发送成功\n"];
+                        return execLog;
                     }
+                } else {
+                    [execLog appendString:@"✗ EmoticonWrap为nil\n"];
                 }
             }
         }
 
-        // 方法2: 直接通过 CMessageMgr 发送（使用原始消息内容）
+        // 方法2: 直接通过 CMessageMgr 发送
         if (content && content.length > 0) {
+            [execLog appendString:@"\n尝试方法2: CMessageMgr\n"];
             id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
-            if (msgMgr) {
-                // 创建新的消息 Wrap
-                CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] initWithMsgType:47];
-                newMsgWrap.m_nsToUsr = toUserName;
-                newMsgWrap.m_nsContent = content;
 
-                if (emoticonMD5) {
-                    if ([newMsgWrap respondsToSelector:@selector(setM_nsEmoticonMD5:)]) {
-                        [newMsgWrap performSelector:@selector(setM_nsEmoticonMD5:) withObject:emoticonMD5];
-                    }
-                }
-
-                // 尝试 AddEmoticonMsg
-                if ([msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
-                    [msgMgr AddEmoticonMsg:toUserName MsgWrap:newMsgWrap];
-                    return;
-                }
-
-                // 尝试 AddLocalMsg
-                if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
-                    [msgMgr AddLocalMsg:toUserName MsgWrap:newMsgWrap fixTime:YES NewMsgArriveNotify:YES];
-                    return;
-                }
+            if (!msgMgr) {
+                [execLog appendString:@"❌ 无法获取CMessageMgr\n"];
+                return execLog;
             }
+            [execLog appendString:@"✓ 获取到CMessageMgr\n"];
+
+            // 创建新消息
+            CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] init];
+            if (!newMsgWrap) {
+                [execLog appendString:@"❌ 创建CMessageWrap失败\n"];
+                return execLog;
+            }
+            [execLog appendString:@"✓ 创建CMessageWrap成功\n"];
+
+            newMsgWrap.m_uiMessageType = 47;
+            newMsgWrap.m_nsToUsr = toUserName;
+            newMsgWrap.m_nsContent = content;
+
+            if (emoticonMD5 && [newMsgWrap respondsToSelector:@selector(setM_nsEmoticonMD5:)]) {
+                [newMsgWrap performSelector:@selector(setM_nsEmoticonMD5:) withObject:emoticonMD5];
+            }
+
+            // 尝试 AddEmoticonMsg
+            if ([msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
+                [execLog appendString:@"✓ 调用AddEmoticonMsg\n"];
+                [msgMgr AddEmoticonMsg:toUserName MsgWrap:newMsgWrap];
+                [execLog appendString:@"✅ AddEmoticonMsg执行完成\n"];
+                return execLog;
+            }
+
+            // 尝试 AddLocalMsg
+            if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
+                [execLog appendString:@"✓ 调用AddLocalMsg\n"];
+                [msgMgr AddLocalMsg:toUserName MsgWrap:newMsgWrap fixTime:YES NewMsgArriveNotify:YES];
+                [execLog appendString:@"✅ AddLocalMsg执行完成\n"];
+                return execLog;
+            }
+
+            [execLog appendString:@"❌ 没有可用的发送方法\n"];
+        } else {
+            [execLog appendString:@"❌ 消息内容为空\n"];
         }
+
+        return execLog;
     }
     @catch (NSException *exception) {
-        // 静默失败
+        [execLog appendFormat:@"❌ 异常: %@\n", exception];
+        return execLog;
     }
 }
 
