@@ -1178,8 +1178,14 @@ static char kRepeatMsgWrapKey;
             }
             [execLog appendString:@"✓ 获取到CMessageMgr\n"];
 
-            // 创建新消息
-            CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] init];
+            // 创建新消息 - 使用 initWithMsgType: 初始化
+            Class CMessageWrapClass = objc_getClass("CMessageWrap");
+            if (!CMessageWrapClass) {
+                [execLog appendString:@"❌ 无法获取CMessageWrap类\n"];
+                return execLog;
+            }
+
+            CMessageWrap *newMsgWrap = [[CMessageWrapClass alloc] initWithMsgType:47];
             if (!newMsgWrap) {
                 [execLog appendString:@"❌ 创建CMessageWrap失败\n"];
                 return execLog;
@@ -1189,9 +1195,14 @@ static char kRepeatMsgWrapKey;
             newMsgWrap.m_uiMessageType = 47;
             newMsgWrap.m_nsToUsr = toUserName;
             newMsgWrap.m_nsContent = content;
+            newMsgWrap.m_uiStatus = 4; // 消息状态：已发送
+
+            // 设置创建时间
+            newMsgWrap.m_uiCreateTime = (unsigned int)[[NSDate date] timeIntervalSince1970];
 
             if (emoticonMD5 && [newMsgWrap respondsToSelector:@selector(setM_nsEmoticonMD5:)]) {
                 [newMsgWrap performSelector:@selector(setM_nsEmoticonMD5:) withObject:emoticonMD5];
+                [execLog appendFormat:@"✓ 设置MD5: %@\n", emoticonMD5];
             }
 
             // 尝试 AddEmoticonMsg
