@@ -308,7 +308,11 @@ static char kRepeatMsgWrapKey;
             return;
         }
 
+        // 将气泡坐标转换到 cellView 坐标系
         CGRect bubbleFrame = bubbleView.frame;
+        if (bubbleView.superview != cellView) {
+            bubbleFrame = [bubbleView.superview convertRect:bubbleView.frame toView:cellView];
+        }
 
         // 判断消息方向（左边是别人的消息，右边是自己的消息）
         BOOL isLeftMessage = bubbleFrame.origin.x < 100;
@@ -487,16 +491,11 @@ static char kRepeatMsgWrapKey;
         }
 
         if (logicController && [logicController respondsToSelector:@selector(SendTextMessage:)]) {
-            // 检查原消息是否有引用（referingMessageWrap）
-            CMessageWrap *referMsg = nil;
-            if (originalMsgWrap && [originalMsgWrap respondsToSelector:@selector(referingMessageWrap)]) {
-                referMsg = [originalMsgWrap valueForKey:@"referingMessageWrap"];
-            }
-
-            if (referMsg && [logicController respondsToSelector:@selector(SendTextMessage:replyingMessage:isPasted:)]) {
-                // 带引用发送
-                NSLog(@"[WCPL] Sending with reply reference");
-                [logicController SendTextMessage:content replyingMessage:referMsg isPasted:NO];
+            // 如果原消息存在，复读时引用原消息本身
+            if (originalMsgWrap && [logicController respondsToSelector:@selector(SendTextMessage:replyingMessage:isPasted:)]) {
+                // 带引用发送 - 引用原消息本身
+                NSLog(@"[WCPL] Sending with reply to original message");
+                [logicController SendTextMessage:content replyingMessage:originalMsgWrap isPasted:NO];
             } else {
                 // 普通发送
                 NSLog(@"[WCPL] Sending plain text");
