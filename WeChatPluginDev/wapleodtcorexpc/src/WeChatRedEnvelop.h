@@ -428,6 +428,8 @@
 
 - (id)GetContact;
 - (id)m_contact;
+- (void)AsyncSendMessage:(id)arg1 replyingMsg:(id)arg2 isPasted:(_Bool)arg3;
+- (void)onSendTextMsg:(id)arg1;
 
 @end
 

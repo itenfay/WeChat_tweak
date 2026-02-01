@@ -484,33 +484,49 @@ static char kRepeatMsgWrapKey;
                      viewController:(BaseMsgContentViewController *)viewController
                             msgWrap:(CMessageWrap *)originalMsgWrap {
     @try {
-        // 尝试获取 logicController 直接发送消息
+        // 检查原消息是否有引用（referingMessageWrap）
+        CMessageWrap *referMsg = nil;
+        if (originalMsgWrap) {
+            @try {
+                referMsg = [originalMsgWrap valueForKey:@"referingMessageWrap"];
+            }
+            @catch (NSException *e) {
+                // 忽略
+            }
+        }
+
+        // 方法1：直接使用 ViewController 的 AsyncSendMessage 方法
+        if ([viewController respondsToSelector:@selector(AsyncSendMessage:replyingMsg:isPasted:)]) {
+            NSLog(@"[WCPL] Using AsyncSendMessage method");
+            [viewController AsyncSendMessage:content replyingMsg:referMsg isPasted:NO];
+            return;
+        }
+
+        // 方法2：使用 onSendTextMsg 方法（不支持引用）
+        if (!referMsg && [viewController respondsToSelector:@selector(onSendTextMsg:)]) {
+            NSLog(@"[WCPL] Using onSendTextMsg method");
+            [viewController onSendTextMsg:content];
+            return;
+        }
+
+        // 方法3：尝试获取 logicController
         id logicController = nil;
-        if ([viewController respondsToSelector:@selector(m_logicController)]) {
+        @try {
             logicController = [viewController valueForKey:@"m_logicController"];
+        }
+        @catch (NSException *e) {
+            // 忽略
+        }
+
+        if (logicController && [logicController respondsToSelector:@selector(SendTextMessage:replyingMessage:isPasted:)]) {
+            NSLog(@"[WCPL] Using logicController SendTextMessage");
+            [logicController SendTextMessage:content replyingMessage:referMsg isPasted:NO];
+            return;
         }
 
         if (logicController && [logicController respondsToSelector:@selector(SendTextMessage:)]) {
-            // 检查原消息是否有引用（referingMessageWrap）
-            CMessageWrap *referMsg = nil;
-            if (originalMsgWrap) {
-                @try {
-                    referMsg = [originalMsgWrap valueForKey:@"referingMessageWrap"];
-                }
-                @catch (NSException *e) {
-                    // 忽略
-                }
-            }
-
-            if (referMsg && [logicController respondsToSelector:@selector(SendTextMessage:replyingMessage:isPasted:)]) {
-                // 带引用发送 - 使用原消息的引用
-                NSLog(@"[WCPL] Sending with same reference as original message");
-                [logicController SendTextMessage:content replyingMessage:referMsg isPasted:NO];
-            } else {
-                // 普通发送
-                NSLog(@"[WCPL] Sending plain text");
-                [logicController SendTextMessage:content];
-            }
+            NSLog(@"[WCPL] Using logicController SendTextMessage (no reply)");
+            [logicController SendTextMessage:content];
             return;
         }
 
@@ -520,6 +536,8 @@ static char kRepeatMsgWrapKey;
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in sendMessageViaInputToolView: %@", exception);
+        // 异常时也尝试回退方案
+        [self sendMessageViaInputFallback:content viewController:viewController];
     }
 }
 
