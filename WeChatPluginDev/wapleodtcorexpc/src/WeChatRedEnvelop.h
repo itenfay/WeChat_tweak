@@ -425,9 +425,43 @@
 
 - (id)GetContact;
 
-// Added Methods.
-- (void)wcpl_addReplyButton;
-- (void)wcpl_removeReplyButton;
+@end
+
+#pragma mark - CommonMessageCellView
+
+@class CommonMessageViewModel;
+
+@interface CommonMessageCellView : UIView
+
+@property(readonly, nonatomic) CommonMessageViewModel *viewModel;
+
+@end
+
+#pragma mark - TextMessageCellView
+
+@class TextMessageViewModel;
+
+@interface TextMessageCellView : CommonMessageCellView
+
+@property(readonly, nonatomic) TextMessageViewModel *viewModel;
+
+@end
+
+#pragma mark - CommonMessageViewModel
+
+@class CMessageWrap;
+
+@interface CommonMessageViewModel : NSObject
+
+@property(readonly, nonatomic) CMessageWrap *messageWrap;
+
+@end
+
+#pragma mark - TextMessageViewModel
+
+@interface TextMessageViewModel : CommonMessageViewModel
+
+@property(readonly, nonatomic) NSString *contentText;
 
 @end
 

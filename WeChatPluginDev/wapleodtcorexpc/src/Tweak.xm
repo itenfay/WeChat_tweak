@@ -416,24 +416,20 @@
 - (void)wcpl_pressTPButton:(id)sender {
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
     BOOL isTPOn = [config TPOn];
-    if (isTPOn) { 
-        UIView *view = [self valueForKey:@"view"]; 
-        [[WCPLAVManager shareManager] startCaptureInView:view]; 
-    } else {         
-        [[WCPLAVManager shareManager] stop];  
+    if (isTPOn) {
+        UIView *view = [self valueForKey:@"view"];
+        [[WCPLAVManager shareManager] startCaptureInView:view];
+    } else {
+        [[WCPLAVManager shareManager] stop];
     }
 }
 */
 
 - (void)viewDidLoad {
     %orig;
-    
-    // Add message reply button if enabled
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    if (config.messageReplyEnable) {
-        [[WCPLMessageReplyManager sharedManager] addReplyButtonToChatViewController:self];
-        NSLog(@"[WCPL] Message reply feature enabled, button added");
-    }
+
+    // 复读功能现在通过 Hook CommonMessageCellView 实现
+    // 不再需要在这里添加按钮
 }
 
 - (void)viewDidAppear:(_Bool)arg1 {
@@ -453,13 +449,6 @@
     if ([config TPOn]) {
         UIView *view = [self valueForKey:@"view"];
         [[WCPLAVManager shareManager] startCaptureInView:view];
-    }
-    
-    // Show/hide reply button based on setting
-    if (config.messageReplyEnable) {
-        [[WCPLMessageReplyManager sharedManager] addReplyButtonToChatViewController:self];
-    } else {
-        [[WCPLMessageReplyManager sharedManager] removeReplyButtonFromChatViewController:self];
     }
 }
 
@@ -491,17 +480,50 @@
     }
 }
 
-%new
-- (void)wcpl_addReplyButton {
-    [[WCPLMessageReplyManager sharedManager] addReplyButtonToChatViewController:self];
+%end
+
+// ==================== 复读机功能 Hook ====================
+// Hook 文本消息 Cell，在别人发送的消息气泡旁边添加 +1 按钮
+
+%hook TextMessageCellView
+
+- (void)layoutSubviews {
+    %orig;
+
+    // 添加复读按钮
+    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
 }
 
-%new
-- (void)wcpl_removeReplyButton {
-    [[WCPLMessageReplyManager sharedManager] removeReplyButtonFromChatViewController:self];
+- (void)prepareForReuse {
+    %orig;
+
+    // Cell 复用时移除按钮
+    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
 }
 
 %end
+
+// 也 Hook CommonMessageCellView 以支持更多消息类型
+%hook CommonMessageCellView
+
+- (void)layoutSubviews {
+    %orig;
+
+    // 只对文本消息添加按钮（TextMessageCellView 已经处理）
+    // 这里可以扩展支持其他消息类型
+    NSString *className = NSStringFromClass([self class]);
+    if ([className isEqualToString:@"TextMessageCellView"]) {
+        // 已经在 TextMessageCellView 的 hook 中处理
+        return;
+    }
+
+    // 可以在这里添加对其他消息类型的支持
+    // 例如：ImageMessageCellView, VoiceMessageCellView 等
+}
+
+%end
+
+// ==================== 复读机功能 Hook 结束 ====================
 
 %hook ChatRoomInfoViewController
 
