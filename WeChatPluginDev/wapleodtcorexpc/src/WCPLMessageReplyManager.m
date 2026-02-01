@@ -934,10 +934,14 @@ static char kRepeatMsgWrapKey;
             if ([msgWrap respondsToSelector:@selector(m_nsEmoticonMD5)]) {
                 emoticonMD5 = [msgWrap performSelector:@selector(m_nsEmoticonMD5)];
             }
-            [debugInfo appendFormat:@"5. 表情包MD5: %@\n", emoticonMD5 ?: @"nil"];
+            [debugInfo appendFormat:@"5. 表情包MD5(属性): %@\n", emoticonMD5 ?: @"nil"];
 
             NSString *msgContent = msgWrap.m_nsContent;
             [debugInfo appendFormat:@"6. 消息Content长度: %lu\n", (unsigned long)(msgContent ? msgContent.length : 0)];
+
+            // 尝试从 XML 解析 MD5
+            NSString *parsedMD5 = [self parseEmoticonMD5FromContent:msgContent];
+            [debugInfo appendFormat:@"6.1 解析的MD5: %@\n", parsedMD5 ?: @"nil"];
         }
 
         // 向上查找 ViewController
@@ -1078,11 +1082,8 @@ static char kRepeatMsgWrapKey;
 - (void)handleRepeatEmoticonMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController {
     @try {
         if (!msgWrap || !viewController) {
-            NSLog(@"[WCPL] Invalid params for emoticon repeat");
             return;
         }
-
-        NSLog(@"[WCPL] Repeating emoticon message, type: %u", msgWrap.m_uiMessageType);
 
         // 获取聊天对象用户名
         NSString *toUserName = nil;
@@ -1094,34 +1095,33 @@ static char kRepeatMsgWrapKey;
         }
 
         if (!toUserName || toUserName.length == 0) {
-            NSLog(@"[WCPL] Cannot get target user name for emoticon repeat");
             return;
         }
 
-        // 获取表情包 MD5
+        // 获取表情包 MD5 - 优先从属性获取，否则从 XML 解析
         NSString *emoticonMD5 = nil;
         if ([msgWrap respondsToSelector:@selector(m_nsEmoticonMD5)]) {
             emoticonMD5 = [msgWrap performSelector:@selector(m_nsEmoticonMD5)];
         }
-        NSLog(@"[WCPL] Emoticon MD5: %@", emoticonMD5 ?: @"nil");
 
-        // 方法1: 通过 logicController 的 SendEmoticonMessage 发送
+        // 如果属性为空，从消息内容 XML 中解析 MD5
+        NSString *content = msgWrap.m_nsContent;
+        if ((!emoticonMD5 || emoticonMD5.length == 0) && content && content.length > 0) {
+            emoticonMD5 = [self parseEmoticonMD5FromContent:content];
+        }
+
+        // 方法1: 通过 CEmoticonMgr 获取表情包并发送
         if (emoticonMD5 && emoticonMD5.length > 0) {
             id emoticonMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CEmoticonMgr")];
-            if (emoticonMgr) {
-                CEmoticonWrap *emoticonWrap = nil;
-                if ([emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)]) {
-                    emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMd5:) withObject:emoticonMD5];
-                    NSLog(@"[WCPL] Got emoticon wrap: %@", emoticonWrap ? @"success" : @"nil");
-                }
+            if (emoticonMgr && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)]) {
+                CEmoticonWrap *emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMd5:) withObject:emoticonMD5];
 
                 if (emoticonWrap) {
-                    // 通过 logicController 发送（优先）
+                    // 通过 logicController 发送
                     if ([viewController respondsToSelector:@selector(m_logicController)]) {
                         id logicController = [viewController performSelector:@selector(m_logicController)];
                         if (logicController && [logicController respondsToSelector:@selector(SendEmoticonMessage:)]) {
                             [logicController performSelector:@selector(SendEmoticonMessage:) withObject:emoticonWrap];
-                            NSLog(@"[WCPL] Emoticon repeated via logicController.SendEmoticonMessage");
                             return;
                         }
                     }
@@ -1129,63 +1129,72 @@ static char kRepeatMsgWrapKey;
                     // 通过 ViewController 发送
                     if ([viewController respondsToSelector:@selector(SendEmoticonMesssageToolView:)]) {
                         [viewController performSelector:@selector(SendEmoticonMesssageToolView:) withObject:emoticonWrap];
-                        NSLog(@"[WCPL] Emoticon repeated via SendEmoticonMesssageToolView");
                         return;
                     }
                 }
             }
         }
 
-        // 方法2: 通过消息内容直接发送（解析 XML 获取表情包信息）
-        NSString *content = msgWrap.m_nsContent;
+        // 方法2: 直接通过 CMessageMgr 发送（使用原始消息内容）
         if (content && content.length > 0) {
-            NSLog(@"[WCPL] Trying to send emoticon via content XML");
-
-            // 获取 logicController
-            id logicController = nil;
-            if ([viewController respondsToSelector:@selector(m_logicController)]) {
-                logicController = [viewController performSelector:@selector(m_logicController)];
-            }
-
-            if (logicController) {
-                // 尝试通过 AddEmoticonMsg 发送
-                if ([logicController respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
-                    CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] initWithMsgType:47];
-                    newMsgWrap.m_nsToUsr = toUserName;
-                    newMsgWrap.m_nsContent = content;
-                    if (emoticonMD5) {
-                        if ([newMsgWrap respondsToSelector:@selector(setM_nsEmoticonMD5:)]) {
-                            [newMsgWrap performSelector:@selector(setM_nsEmoticonMD5:) withObject:emoticonMD5];
-                        }
-                    }
-                    [logicController performSelector:@selector(AddEmoticonMsg:MsgWrap:) withObject:toUserName withObject:newMsgWrap];
-                    NSLog(@"[WCPL] Emoticon repeated via logicController.AddEmoticonMsg");
-                    return;
-                }
-            }
-
-            // 通过 CMessageMgr 发送
             id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
-            if (msgMgr && [msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
+            if (msgMgr) {
+                // 创建新的消息 Wrap
                 CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] initWithMsgType:47];
                 newMsgWrap.m_nsToUsr = toUserName;
                 newMsgWrap.m_nsContent = content;
+
                 if (emoticonMD5) {
                     if ([newMsgWrap respondsToSelector:@selector(setM_nsEmoticonMD5:)]) {
                         [newMsgWrap performSelector:@selector(setM_nsEmoticonMD5:) withObject:emoticonMD5];
                     }
                 }
-                [msgMgr AddEmoticonMsg:toUserName MsgWrap:newMsgWrap];
-                NSLog(@"[WCPL] Emoticon repeated via CMessageMgr.AddEmoticonMsg");
-                return;
+
+                // 尝试 AddEmoticonMsg
+                if ([msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
+                    [msgMgr AddEmoticonMsg:toUserName MsgWrap:newMsgWrap];
+                    return;
+                }
+
+                // 尝试 AddLocalMsg
+                if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
+                    [msgMgr AddLocalMsg:toUserName MsgWrap:newMsgWrap fixTime:YES NewMsgArriveNotify:YES];
+                    return;
+                }
             }
         }
-
-        NSLog(@"[WCPL] Failed to find suitable method for emoticon repeat");
     }
     @catch (NSException *exception) {
-        NSLog(@"[WCPL] Exception in handleRepeatEmoticonMessage: %@", exception);
+        // 静默失败
     }
+}
+
+// 从消息内容 XML 中解析表情包 MD5
+- (NSString *)parseEmoticonMD5FromContent:(NSString *)content {
+    if (!content || content.length == 0) return nil;
+
+    // 尝试匹配 md5="xxx" 格式
+    NSRegularExpression *regex1 = [NSRegularExpression regularExpressionWithPattern:@"md5=\"([a-fA-F0-9]+)\"" options:0 error:nil];
+    NSTextCheckingResult *match1 = [regex1 firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+    if (match1 && match1.numberOfRanges > 1) {
+        return [content substringWithRange:[match1 rangeAtIndex:1]];
+    }
+
+    // 尝试匹配 <md5>xxx</md5> 格式
+    NSRegularExpression *regex2 = [NSRegularExpression regularExpressionWithPattern:@"<md5>([a-fA-F0-9]+)</md5>" options:0 error:nil];
+    NSTextCheckingResult *match2 = [regex2 firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+    if (match2 && match2.numberOfRanges > 1) {
+        return [content substringWithRange:[match2 rangeAtIndex:1]];
+    }
+
+    // 尝试匹配 cdnurl 中的 MD5
+    NSRegularExpression *regex3 = [NSRegularExpression regularExpressionWithPattern:@"cdnurl=\"[^\"]*?([a-fA-F0-9]{32})" options:0 error:nil];
+    NSTextCheckingResult *match3 = [regex3 firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+    if (match3 && match3.numberOfRanges > 1) {
+        return [content substringWithRange:[match3 rangeAtIndex:1]];
+    }
+
+    return nil;
 }
 
 @end
