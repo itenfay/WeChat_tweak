@@ -491,11 +491,21 @@ static char kRepeatMsgWrapKey;
         }
 
         if (logicController && [logicController respondsToSelector:@selector(SendTextMessage:)]) {
-            // 如果原消息存在，复读时引用原消息本身
-            if (originalMsgWrap && [logicController respondsToSelector:@selector(SendTextMessage:replyingMessage:isPasted:)]) {
-                // 带引用发送 - 引用原消息本身
-                NSLog(@"[WCPL] Sending with reply to original message");
-                [logicController SendTextMessage:content replyingMessage:originalMsgWrap isPasted:NO];
+            // 检查原消息是否有引用（referingMessageWrap）
+            CMessageWrap *referMsg = nil;
+            if (originalMsgWrap) {
+                @try {
+                    referMsg = [originalMsgWrap valueForKey:@"referingMessageWrap"];
+                }
+                @catch (NSException *e) {
+                    // 忽略
+                }
+            }
+
+            if (referMsg && [logicController respondsToSelector:@selector(SendTextMessage:replyingMessage:isPasted:)]) {
+                // 带引用发送 - 使用原消息的引用
+                NSLog(@"[WCPL] Sending with same reference as original message");
+                [logicController SendTextMessage:content replyingMessage:referMsg isPasted:NO];
             } else {
                 // 普通发送
                 NSLog(@"[WCPL] Sending plain text");
