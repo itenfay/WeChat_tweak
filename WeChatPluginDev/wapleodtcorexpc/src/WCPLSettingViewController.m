@@ -127,18 +127,26 @@
 }
 
 - (void)settingDelay {
-    UIAlertView *alert   = [UIAlertView new];
-    alert.title          = @"延迟抢红包(秒)";
-    
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    alert.delegate       = self;
-    
-    [alert addButtonWithTitle:@"取消"];
-    [alert addButtonWithTitle:@"确定"];
-    
-    [alert textFieldAtIndex:0].placeholder  = @"延迟时长";
-    [alert textFieldAtIndex:0].keyboardType = UIKeyboardTypeNumberPad;
-    [alert show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"延迟抢红包(秒)"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"延迟时长";
+        textField.keyboardType = UIKeyboardTypeNumberPad;
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSString *text = alert.textFields.firstObject.text;
+        [WCPLRedEnvelopConfig sharedConfig].delaySeconds = [text integerValue];
+        [self reloadTableData];
+    }];
+
+    [alert addAction:cancelAction];
+    [alert addAction:confirmAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Advanced Setting
@@ -266,49 +274,39 @@
 }
 
 - (void)settingFakeLocationInfo {
-    UIAlertView *alert   = [UIAlertView new];
-    alert.title          = @"设置坐标";
-    alert.tag            = 666;
-    
-    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-    alert.delegate       = self;
-    
-    [alert addButtonWithTitle:@"取消"];
-    [alert addButtonWithTitle:@"确定"];
-    
-    [alert textFieldAtIndex:0].placeholder     = @"经度";
-    [alert textFieldAtIndex:0].text            = [NSString stringWithFormat:@"%f", [WCPLRedEnvelopConfig sharedConfig].lng];
-    [alert textFieldAtIndex:0].keyboardType    = UIKeyboardTypeDecimalPad;
-    
-    [alert textFieldAtIndex:1].secureTextEntry = NO;
-    [alert textFieldAtIndex:1].placeholder     = @"纬度";
-    [alert textFieldAtIndex:1].text            = [NSString stringWithFormat:@"%f", [WCPLRedEnvelopConfig sharedConfig].lat];
-    [alert textFieldAtIndex:1].keyboardType    = UIKeyboardTypeDecimalPad;
-    
-    [alert show];
-}
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"设置坐标"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
 
-#pragma mark - UIAlertViewDelegate
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"经度";
+        textField.text = [NSString stringWithFormat:@"%f", [WCPLRedEnvelopConfig sharedConfig].lng];
+        textField.keyboardType = UIKeyboardTypeDecimalPad;
+    }];
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        NSString *m_tfText = [alertView textFieldAtIndex:0].text;
-        
-        if (alertView.tag == 666) {
-            [WCPLRedEnvelopConfig sharedConfig].lng = [m_tfText doubleValue];
-            NSString *n_tfText = [alertView textFieldAtIndex:1].text;
-            [WCPLRedEnvelopConfig sharedConfig].lat = [n_tfText doubleValue];
-        } else {
-            [WCPLRedEnvelopConfig sharedConfig].delaySeconds = [m_tfText integerValue];
-        }
-        
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"纬度";
+        textField.text = [NSString stringWithFormat:@"%f", [WCPLRedEnvelopConfig sharedConfig].lat];
+        textField.keyboardType = UIKeyboardTypeDecimalPad;
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].fakeLocEnable = NO;
         [self reloadTableData];
-    } else {
-        if (alertView.tag == 666) {
-            [WCPLRedEnvelopConfig sharedConfig].fakeLocEnable = NO;
-            [self reloadTableData];
-        }
-    }
+    }];
+
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSString *lngText = alert.textFields[0].text;
+        NSString *latText = alert.textFields[1].text;
+        [WCPLRedEnvelopConfig sharedConfig].lng = [lngText doubleValue];
+        [WCPLRedEnvelopConfig sharedConfig].lat = [latText doubleValue];
+        [self reloadTableData];
+    }];
+
+    [alert addAction:cancelAction];
+    [alert addAction:confirmAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - TP
