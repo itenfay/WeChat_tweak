@@ -65,8 +65,15 @@ static char kRepeatContentKey;
             return;
         }
 
-        // 获取消息内容
-        NSString *content = [self getMessageContent:msgWrap];
+        // 获取消息内容 - 优先从 ViewModel 的 contentText 获取（用于引用回复消息）
+        NSString *content = nil;
+        if ([viewModel respondsToSelector:@selector(contentText)]) {
+            content = [viewModel performSelector:@selector(contentText)];
+        }
+        // 如果 contentText 为空，回退到 msgWrap.m_nsContent
+        if (!content || content.length == 0) {
+            content = [self getMessageContent:msgWrap];
+        }
         if (!content || content.length == 0) {
             [self removeRepeatButtonFromCellView:cellView];
             return;
@@ -82,7 +89,7 @@ static char kRepeatContentKey;
         // 关联消息内容
         objc_setAssociatedObject(repeatButton, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
 
-        // 定位按钮到消息气泡旁边
+        // 定位按钮到消息气泡旁边（对于引用回复消息，定位到回复文本旁边）
         [self layoutRepeatButton:repeatButton inCellView:cellView];
 
         repeatButton.hidden = NO;
@@ -312,18 +319,28 @@ static char kRepeatContentKey;
             return;
         }
 
-        // 计算按钮尺寸 - 高度为气泡高度的一半，但最小18，最大30
-        CGFloat bubbleHeight = bubbleFrame.size.height;
-        CGFloat buttonSize = bubbleHeight / 2.0;
+        // 尝试查找 m_richTextView（回复文本视图），用于引用回复消息
+        UIView *richTextView = [self findRichTextViewInCellView:cellView];
+        UIView *targetView = richTextView ? richTextView : bubbleView;
+        CGRect targetFrame = targetView.frame;
+
+        // 如果 richTextView 在气泡内部，需要转换坐标
+        if (richTextView && richTextView.superview != cellView) {
+            targetFrame = [richTextView.superview convertRect:richTextView.frame toView:cellView];
+        }
+
+        // 计算按钮尺寸 - 高度为目标视图高度的一半，但最小18，最大30
+        CGFloat targetHeight = targetFrame.size.height;
+        CGFloat buttonSize = targetHeight / 2.0;
         if (buttonSize < 18) buttonSize = 18;
         if (buttonSize > 30) buttonSize = 30;
 
         // 更新圆角半径
         button.layer.cornerRadius = buttonSize / 2.0;
 
-        // 别人的消息 - 按钮放在气泡右侧，垂直居中
-        CGFloat buttonX = CGRectGetMaxX(bubbleFrame) + 4;
-        CGFloat buttonY = bubbleFrame.origin.y + (bubbleHeight - buttonSize) / 2.0;
+        // 别人的消息 - 按钮放在目标视图右侧，垂直居中
+        CGFloat buttonX = CGRectGetMaxX(targetFrame) + 4;
+        CGFloat buttonY = targetFrame.origin.y + (targetHeight - buttonSize) / 2.0;
 
         button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
         button.hidden = NO;
@@ -331,6 +348,61 @@ static char kRepeatContentKey;
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in layoutRepeatButton: %@", exception);
         button.hidden = YES;
+    }
+}
+
+// 查找 m_richTextView（回复文本视图）
+- (UIView *)findRichTextViewInCellView:(CommonMessageCellView *)cellView {
+    @try {
+        // 尝试通过 KVC 获取 m_richTextView
+        if ([cellView respondsToSelector:NSSelectorFromString(@"m_richTextView")]) {
+            UIView *richTextView = [cellView valueForKey:@"m_richTextView"];
+            if (richTextView && !richTextView.hidden && richTextView.frame.size.width > 0) {
+                return richTextView;
+            }
+        }
+
+        // 遍历子视图查找 RichTextView
+        for (UIView *subview in cellView.subviews) {
+            if (subview.hidden) continue;
+            if (subview.tag == kWCPLRepeatButtonTag) continue;
+
+            NSString *className = NSStringFromClass([subview class]);
+            if ([className containsString:@"RichTextView"]) {
+                return subview;
+            }
+
+            // 递归查找
+            UIView *found = [self findRichTextViewInView:subview];
+            if (found) return found;
+        }
+
+        return nil;
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[WCPL] Exception in findRichTextViewInCellView: %@", exception);
+        return nil;
+    }
+}
+
+// 递归查找 RichTextView
+- (UIView *)findRichTextViewInView:(UIView *)view {
+    @try {
+        for (UIView *subview in view.subviews) {
+            if (subview.hidden) continue;
+
+            NSString *className = NSStringFromClass([subview class]);
+            if ([className containsString:@"RichTextView"]) {
+                return subview;
+            }
+
+            UIView *found = [self findRichTextViewInView:subview];
+            if (found) return found;
+        }
+        return nil;
+    }
+    @catch (NSException *exception) {
+        return nil;
     }
 }
 
