@@ -352,6 +352,10 @@ static char kRepeatMsgWrapKey;
     // 基础布局 - 稍大的尺寸更易点击
     button.frame = CGRectMake(0, 0, 24, 24);
 
+    // 确保按钮可交互
+    button.userInteractionEnabled = YES;
+    button.enabled = YES;
+
     // 现代扁平化背景 (Modern Flat Style)
     button.backgroundColor = [UIColor whiteColor];
 
@@ -371,14 +375,16 @@ static char kRepeatMsgWrapKey;
     // 根据配置设置按钮内容
     [self configureButtonContent:button];
 
-    // 添加点击事件
-    [button addTarget:self
+    // 添加点击事件 - 使用 sharedManager 确保 target 不会被释放
+    [button addTarget:[WCPLMessageReplyManager sharedManager]
                action:@selector(repeatButtonTapped:)
      forControlEvents:UIControlEventTouchUpInside];
 
     // 添加按压动画事件
-    [button addTarget:self action:@selector(animateButtonTouchDown:) forControlEvents:UIControlEventTouchDown];
-    [button addTarget:self action:@selector(animateButtonTouchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
+    [button addTarget:[WCPLMessageReplyManager sharedManager] action:@selector(animateButtonTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [button addTarget:[WCPLMessageReplyManager sharedManager] action:@selector(animateButtonTouchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
+
+    NSLog(@"[WCPL] Created repeat button with target: %@", [WCPLMessageReplyManager sharedManager]);
 
     return button;
 }
@@ -903,8 +909,12 @@ static char kRepeatMsgWrapKey;
 
 - (void)repeatButtonTapped:(UIButton *)sender {
     @try {
+        NSLog(@"[WCPL] repeatButtonTapped called");
+
         NSString *content = objc_getAssociatedObject(sender, &kRepeatContentKey);
         CMessageWrap *msgWrap = objc_getAssociatedObject(sender, &kRepeatMsgWrapKey);
+
+        NSLog(@"[WCPL] msgWrap: %@, type: %u", msgWrap ? @"exists" : @"nil", msgWrap ? msgWrap.m_uiMessageType : 0);
 
         // 检查是否是表情包消息
         BOOL isEmoticonMessage = (msgWrap && msgWrap.m_uiMessageType == 47);
@@ -916,9 +926,11 @@ static char kRepeatMsgWrapKey;
 
         // 向上查找 ViewController
         BaseMsgContentViewController *viewController = [self findViewControllerFromView:sender];
+        NSLog(@"[WCPL] Found viewController: %@", viewController ? NSStringFromClass([viewController class]) : @"nil");
 
         if (viewController) {
             if (isEmoticonMessage) {
+                NSLog(@"[WCPL] Calling handleRepeatEmoticonMessage");
                 [self handleRepeatEmoticonMessage:msgWrap viewController:viewController];
             } else {
                 [self handleRepeatButtonTapWithContent:content viewController:viewController msgWrap:msgWrap];
@@ -937,7 +949,14 @@ static char kRepeatMsgWrapKey;
         UIResponder *responder = view;
         while (responder) {
             if ([responder isKindOfClass:[UIViewController class]]) {
-                if ([responder isKindOfClass:objc_getClass("BaseMsgContentViewController")]) {
+                // 检查是否是 BaseMsgContentViewController 或其子类
+                Class baseMsgContentVCClass = objc_getClass("BaseMsgContentViewController");
+                if (baseMsgContentVCClass && [responder isKindOfClass:baseMsgContentVCClass]) {
+                    return (BaseMsgContentViewController *)responder;
+                }
+                // 也检查 ChatRoomContentViewController 等子类
+                Class chatRoomVCClass = objc_getClass("ChatRoomContentViewController");
+                if (chatRoomVCClass && [responder isKindOfClass:chatRoomVCClass]) {
                     return (BaseMsgContentViewController *)responder;
                 }
             }
