@@ -427,29 +427,7 @@
 
 @end
 
-#pragma mark - CommonMessageCellView
-
-@class CommonMessageViewModel;
-
-@interface CommonMessageCellView : UIView
-
-@property(readonly, nonatomic) CommonMessageViewModel *viewModel;
-
-@end
-
-#pragma mark - TextMessageCellView
-
-@class TextMessageViewModel;
-
-@interface TextMessageCellView : CommonMessageCellView
-
-@property(readonly, nonatomic) TextMessageViewModel *viewModel;
-
-@end
-
 #pragma mark - CommonMessageViewModel
-
-@class CMessageWrap;
 
 @interface CommonMessageViewModel : NSObject
 
@@ -462,6 +440,22 @@
 @interface TextMessageViewModel : CommonMessageViewModel
 
 @property(readonly, nonatomic) NSString *contentText;
+
+@end
+
+#pragma mark - CommonMessageCellView
+
+@interface CommonMessageCellView : UIView
+
+@property(readonly, nonatomic) CommonMessageViewModel *viewModel;
+
+@end
+
+#pragma mark - TextMessageCellView
+
+@interface TextMessageCellView : CommonMessageCellView
+
+@property(readonly, nonatomic) TextMessageViewModel *viewModel;
 
 @end
 
