@@ -770,27 +770,21 @@
 - (void)wchook_performDeleteMessage:(CMessageWrap *)msgWrap {
     if (!msgWrap) return;
 
-    // 获取当前聊天视图控制器
-    BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
-    if (!chatVC) {
-        NSLog(@"[WCPL] Cannot find chat view controller for delete");
-        return;
-    }
-
     // 调用微信的删除消息方法
     @try {
-        // 尝试调用 Cell 的删除方法
-        if ([self respondsToSelector:@selector(onDeleteMenuItem:)]) {
-            [self performSelector:@selector(onDeleteMenuItem:) withObject:nil];
+        // 优先调用 Cell 的删除方法 (正确的方法名是 onDelete:)
+        if ([self respondsToSelector:@selector(onDelete:)]) {
+            [self performSelector:@selector(onDelete:) withObject:nil];
+            NSLog(@"[WCPL] Message deleted via onDelete:");
             return;
         }
 
-        // 备用方案：通过 CMessageMgr 删除
+        // 备用方案：通过 CMessageMgr 删除 (正确的方法名是 DelMsg:MsgWrap:)
         id messageMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
-        if (messageMgr && [messageMgr respondsToSelector:@selector(DeleteMsg:MsgList:)]) {
+        if (messageMgr && [messageMgr respondsToSelector:@selector(DelMsg:MsgWrap:)]) {
             NSString *chatName = msgWrap.m_nsFromUsr ?: msgWrap.m_nsToUsr;
-            [messageMgr DeleteMsg:chatName MsgList:@[msgWrap]];
-            NSLog(@"[WCPL] Message deleted via CMessageMgr");
+            [messageMgr DelMsg:chatName MsgWrap:msgWrap];
+            NSLog(@"[WCPL] Message deleted via CMessageMgr DelMsg:MsgWrap:");
         }
     } @catch (NSException *exception) {
         NSLog(@"[WCPL] Delete message failed: %@", exception);
@@ -802,19 +796,19 @@
     if (!msgWrap) return;
 
     @try {
-        // 尝试调用 Cell 的撤回方法
-        if ([self respondsToSelector:@selector(onRevokeMenuItem:)]) {
-            [self performSelector:@selector(onRevokeMenuItem:) withObject:nil];
+        // 优先调用 Cell 的撤回方法 (正确的方法名是 onRevokeMsg:)
+        if ([self respondsToSelector:@selector(onRevokeMsg:)]) {
+            [self performSelector:@selector(onRevokeMsg:) withObject:nil];
+            NSLog(@"[WCPL] Message revoked via onRevokeMsg:");
             return;
         }
 
-        // 备用方案：通过 CMessageMgr 撤回
+        // 备用方案：通过 CMessageMgr 撤回 (正确的方法签名是 RevokeMsg:MsgWrap:Counter:)
         id messageMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
-        if (messageMgr && [messageMgr respondsToSelector:@selector(RevokeMsg:n64SvrId:)]) {
+        if (messageMgr && [messageMgr respondsToSelector:@selector(RevokeMsg:MsgWrap:Counter:)]) {
             NSString *chatName = msgWrap.m_nsToUsr;
-            unsigned long long svrId = msgWrap.m_n64MesSvrID;
-            [messageMgr RevokeMsg:chatName n64SvrId:svrId];
-            NSLog(@"[WCPL] Message revoked via CMessageMgr");
+            [messageMgr RevokeMsg:chatName MsgWrap:msgWrap Counter:0];
+            NSLog(@"[WCPL] Message revoked via CMessageMgr RevokeMsg:MsgWrap:Counter:");
         }
     } @catch (NSException *exception) {
         NSLog(@"[WCPL] Revoke message failed: %@", exception);

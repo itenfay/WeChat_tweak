@@ -125,11 +125,14 @@
 
 #pragma mark - CMessageMgr
 
+@class CMessageWrap;
+
 @interface CMessageMgr : MMService
 
 - (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 fixTime:(_Bool)arg3 NewMsgArriveNotify:(_Bool)arg4;
-- (void)DeleteMsg:(NSString *)chatName MsgList:(NSArray *)msgList;
-- (void)RevokeMsg:(NSString *)chatName n64SvrId:(unsigned long long)svrId;
+// 正确的微信原生方法签名 (来自微信逆向头文件)
+- (void)DelMsg:(NSString *)chatName MsgWrap:(CMessageWrap *)msgWrap;
+- (void)RevokeMsg:(NSString *)chatName MsgWrap:(CMessageWrap *)msgWrap Counter:(unsigned int)counter;
 
 @end
 
@@ -485,8 +488,9 @@
 - (UIViewController *)wchook_findTopViewController;
 - (BaseMsgContentViewController *)wchook_findChatViewController;
 - (void)onShowMsgReplyMenuItem:(id)sender;
-- (void)onDeleteMenuItem:(id)sender;
-- (void)onRevokeMenuItem:(id)sender;
+// 正确的微信原生方法名称 (来自微信逆向头文件)
+- (void)onDelete:(id)sender;
+- (void)onRevokeMsg:(id)sender;
 
 @end
 

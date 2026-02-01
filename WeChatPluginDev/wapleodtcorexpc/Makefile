@@ -3,6 +3,9 @@ THEOS_DEVICE_PORT = 2222
 ARCHS = arm64 arm64e
 TARGET = iphone:clang:latest:14.0
 
+# 禁用 Theos 的模块化编译
+MODULES = 0
+
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = wapleodtcorexpc
