@@ -558,7 +558,9 @@
 
 %new
 - (void)wchook_setupSwipeGestureIfNeeded {
-    if (![WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable) {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    // 检查总开关和是否有任何滑动功能启用
+    if (!config.swipeGestureEnable || (!config.swipeQuoteEnable && !config.swipeRightEnable)) {
         if (self.wchook_swipeGesture) {
             self.wchook_swipeGesture.enabled = NO;
         }
@@ -591,7 +593,9 @@
         return;
     }
 
-    if (![WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable) {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    // 检查总开关和是否有任何滑动功能启用
+    if (!config.swipeGestureEnable || (!config.swipeQuoteEnable && !config.swipeRightEnable)) {
         [self wchook_resetSwipeAnimated:YES];
         return;
     }
@@ -599,6 +603,26 @@
     NSArray<UIView *> *messageViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
     CGPoint translation = [gesture translationInView:self];
     CGPoint velocity = [gesture velocityInView:self];
+
+    // 判断滑动方向
+    WCHookSwipeDirection direction = [WCHookSwipeUtilities swipeDirectionFromTranslation:translation];
+
+    // 检查当前方向是否启用
+    BOOL isDirectionEnabled = NO;
+    if (direction == WCHookSwipeDirectionLeft && config.swipeQuoteEnable) {
+        isDirectionEnabled = YES;
+    } else if (direction == WCHookSwipeDirectionRight && config.swipeRightEnable) {
+        isDirectionEnabled = YES;
+    }
+
+    // 如果当前方向未启用，忽略手势
+    if (!isDirectionEnabled && gesture.state != UIGestureRecognizerStateBegan) {
+        [WCHookSwipeUtilities applyTransform:CGAffineTransformIdentity toViews:messageViews];
+        if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateCancelled) {
+            [self wchook_resetSwipeAnimated:YES];
+        }
+        return;
+    }
 
     // 使用双向滑动检测
     if ([WCHookSwipeUtilities shouldIgnoreTranslationBidirectional:translation]) {
@@ -610,7 +634,6 @@
     }
 
     CGFloat threshold = [WCHookSwipeUtilities thresholdForView:self];
-    WCHookSwipeDirection direction = [WCHookSwipeUtilities swipeDirectionFromTranslation:translation];
 
     switch (gesture.state) {
     case UIGestureRecognizerStateBegan: {
@@ -686,96 +709,115 @@
         msgWrap = [self performSelector:@selector(getCurrentMessageWrap)];
     }
 
-    // 检查是否可以复读（必须是对方发送的消息）
-    BOOL isFromOther = [[WCPLMessageReplyManager sharedManager] isMessageFromOther:msgWrap];
-    BOOL canRepeat = isFromOther && [[WCPLMessageReplyManager sharedManager] canRepeatMessage:msgWrap];
-    BOOL canQuote = [self respondsToSelector:@selector(onShowMsgReplyMenuItem:)];
-
-    // 如果两个功能都不可用，直接返回
-    if (!canRepeat && !canQuote) {
+    if (!msgWrap) {
+        NSLog(@"[WCPL] Cannot get message wrap");
         return;
     }
 
-    // 根据滑动方向决定默认操作
-    // 左滑：显示选项菜单（对方消息）或直接引用（自己消息）
-    // 右滑：直接复读消息（仅对方消息）
-    if (direction == WCHookSwipeDirectionRight) {
-        // 右滑：只有对方消息才能复读
-        if (canRepeat) {
+    // 判断是否是自己发送的消息
+    BOOL isFromOther = [[WCPLMessageReplyManager sharedManager] isMessageFromOther:msgWrap];
+    BOOL isSelf = !isFromOther;
+
+    // 获取配置
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    NSInteger action = 0;
+
+    // 根据滑动方向和消息发送者获取配置的操作
+    if (direction == WCHookSwipeDirectionLeft) {
+        action = isSelf ? config.swipeLeftSelfAction : config.swipeLeftOtherAction;
+    } else {
+        action = isSelf ? config.swipeRightSelfAction : config.swipeRightOtherAction;
+    }
+
+    // 执行对应操作
+    // 0=引用, 1=复读, 2=删除, 3=撤回(仅己方消息)
+    switch (action) {
+        case 0: // 引用
+            [self wchook_performQuoteReply];
+            break;
+        case 1: // 复读
             [self wchook_performRepeatMessage:msgWrap];
+            break;
+        case 2: // 删除
+            [self wchook_performDeleteMessage:msgWrap];
+            break;
+        case 3: // 撤回（仅己方消息有效）
+            if (isSelf) {
+                [self wchook_performRevokeMessage:msgWrap];
+            } else {
+                // 对方消息不能撤回，改为引用
+                [self wchook_performQuoteReply];
+            }
+            break;
+        default:
+            [self wchook_performQuoteReply];
+            break;
+    }
+}
+
+%new
+- (void)wchook_performQuoteReply {
+    if ([self respondsToSelector:@selector(onShowMsgReplyMenuItem:)]) {
+        @try {
+            [self onShowMsgReplyMenuItem:nil];
+        } @catch (__unused NSException *exception) {
+            NSLog(@"[WCPL] Quote reply failed: %@", exception);
+        }
+    }
+}
+
+%new
+- (void)wchook_performDeleteMessage:(CMessageWrap *)msgWrap {
+    if (!msgWrap) return;
+
+    // 获取当前聊天视图控制器
+    BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
+    if (!chatVC) {
+        NSLog(@"[WCPL] Cannot find chat view controller for delete");
+        return;
+    }
+
+    // 调用微信的删除消息方法
+    @try {
+        // 尝试调用 Cell 的删除方法
+        if ([self respondsToSelector:@selector(onDeleteMenuItem:)]) {
+            [self performSelector:@selector(onDeleteMenuItem:) withObject:nil];
             return;
         }
-        // 自己的消息右滑：引用回复
-        if (canQuote) {
-            @try {
-                [self onShowMsgReplyMenuItem:nil];
-            } @catch (__unused NSException *exception) {}
+
+        // 备用方案：通过 CMessageMgr 删除
+        id messageMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
+        if (messageMgr && [messageMgr respondsToSelector:@selector(DeleteMsg:MsgList:)]) {
+            NSString *chatName = msgWrap.m_nsFromUsr ?: msgWrap.m_nsToUsr;
+            [messageMgr DeleteMsg:chatName MsgList:@[msgWrap]];
+            NSLog(@"[WCPL] Message deleted via CMessageMgr");
         }
-        return;
+    } @catch (NSException *exception) {
+        NSLog(@"[WCPL] Delete message failed: %@", exception);
     }
+}
 
-    // 左滑处理
-    // 如果是自己的消息，只能引用
-    if (!isFromOther) {
-        if (canQuote) {
-            @try {
-                [self onShowMsgReplyMenuItem:nil];
-            } @catch (__unused NSException *exception) {}
+%new
+- (void)wchook_performRevokeMessage:(CMessageWrap *)msgWrap {
+    if (!msgWrap) return;
+
+    @try {
+        // 尝试调用 Cell 的撤回方法
+        if ([self respondsToSelector:@selector(onRevokeMenuItem:)]) {
+            [self performSelector:@selector(onRevokeMenuItem:) withObject:nil];
+            return;
         }
-        return;
-    }
 
-    // 对方消息左滑：显示选项菜单（如果两个功能都可用）
-    if (canQuote && !canRepeat) {
-        @try {
-            [self onShowMsgReplyMenuItem:nil];
-        } @catch (__unused NSException *exception) {}
-        return;
-    }
-
-    if (canRepeat && !canQuote) {
-        [self wchook_performRepeatMessage:msgWrap];
-        return;
-    }
-
-    // 两个功能都可用，显示选项菜单
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-
-    // 引用回复选项
-    UIAlertAction *quoteAction = [UIAlertAction actionWithTitle:@"引用回复"
-                                                          style:UIAlertActionStyleDefault
-                                                        handler:^(UIAlertAction *action) {
-        @try {
-            [self onShowMsgReplyMenuItem:nil];
-        } @catch (__unused NSException *exception) {}
-    }];
-
-    // 复读消息选项
-    UIAlertAction *repeatAction = [UIAlertAction actionWithTitle:@"复读消息"
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction *action) {
-        [self wchook_performRepeatMessage:msgWrap];
-    }];
-
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:nil];
-
-    [alert addAction:quoteAction];
-    [alert addAction:repeatAction];
-    [alert addAction:cancelAction];
-
-    // 获取当前视图控制器
-    UIViewController *topVC = [self wchook_findTopViewController];
-    if (topVC) {
-        // iPad 适配
-        if (alert.popoverPresentationController) {
-            alert.popoverPresentationController.sourceView = self;
-            alert.popoverPresentationController.sourceRect = self.bounds;
+        // 备用方案：通过 CMessageMgr 撤回
+        id messageMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
+        if (messageMgr && [messageMgr respondsToSelector:@selector(RevokeMsg:n64SvrId:)]) {
+            NSString *chatName = msgWrap.m_nsToUsr;
+            unsigned long long svrId = msgWrap.m_n64MesSvrID;
+            [messageMgr RevokeMsg:chatName n64SvrId:svrId];
+            NSLog(@"[WCPL] Message revoked via CMessageMgr");
         }
-        [topVC presentViewController:alert animated:YES completion:nil];
+    } @catch (NSException *exception) {
+        NSLog(@"[WCPL] Revoke message failed: %@", exception);
     }
 }
 
@@ -847,13 +889,24 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer == self.wchook_swipeGesture) {
-        if (![WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable) {
+        WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+        // 检查总开关和是否有任何滑动功能启用
+        if (!config.swipeGestureEnable || (!config.swipeQuoteEnable && !config.swipeRightEnable)) {
             return NO;
         }
         UIPanGestureRecognizer *pan = (UIPanGestureRecognizer *)gestureRecognizer;
         CGPoint velocity = [pan velocityInView:self];
         // 使用双向速度检测
         if (![WCHookSwipeUtilities isVelocityEligibleBidirectional:velocity]) {
+            return NO;
+        }
+        // 检查滑动方向是否启用
+        if (velocity.x < 0 && !config.swipeQuoteEnable) {
+            // 左滑但左滑功能未启用
+            return NO;
+        }
+        if (velocity.x > 0 && !config.swipeRightEnable) {
+            // 右滑但右滑功能未启用
             return NO;
         }
     }

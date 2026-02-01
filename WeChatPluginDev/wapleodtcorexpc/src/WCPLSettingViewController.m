@@ -226,28 +226,197 @@
 - (void)addSwipeQuoteSettingSection {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息手势"];
 
-    [section addCell:[self createSwipeQuoteSwitchCell]];
-    [section addCell:[self createTapReferJumpSwitchCell]];
+    // 消息手势总开关
+    [section addCell:[self createSwipeGestureSwitchCell]];
+
+    // 只有启用总开关时才显示详细设置
+    if ([WCPLRedEnvelopConfig sharedConfig].swipeGestureEnable) {
+        // 左滑功能开关
+        [section addCell:[self createSwipeQuoteSwitchCell]];
+
+        // 只有启用左滑功能时才显示详细设置
+        if ([WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable) {
+            [section addCell:[self createSwipeLeftOtherActionCell]];
+            [section addCell:[self createSwipeLeftSelfActionCell]];
+        }
+
+        // 右滑功能开关
+        [section addCell:[self createSwipeRightSwitchCell]];
+
+        // 只有启用右滑功能时才显示详细设置
+        if ([WCPLRedEnvelopConfig sharedConfig].swipeRightEnable) {
+            [section addCell:[self createSwipeRightOtherActionCell]];
+            [section addCell:[self createSwipeRightSelfActionCell]];
+        }
+
+        // 引用消息点击跳转
+        [section addCell:[self createTapReferJumpSwitchCell]];
+    }
 
     [self.tableViewMgr addSection:section];
 }
 
+- (WCTableViewNormalCellManager *)createSwipeGestureSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeGesture:) target:self title:@"启用消息手势" on:[WCPLRedEnvelopConfig sharedConfig].swipeGestureEnable];
+}
+
 - (WCTableViewNormalCellManager *)createSwipeQuoteSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeQuote:) target:self title:@"消息左滑引用" on:[WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeQuote:) target:self title:@"  消息左滑功能" on:[WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable];
+}
+
+- (WCTableViewNormalCellManager *)createSwipeRightSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeRight:) target:self title:@"  消息右滑功能" on:[WCPLRedEnvelopConfig sharedConfig].swipeRightEnable];
 }
 
 - (WCTableViewNormalCellManager *)createTapReferJumpSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingTapReferJump:) target:self title:@"引用消息点击跳转" on:[WCPLRedEnvelopConfig sharedConfig].tapReferJumpEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingTapReferJump:) target:self title:@"  引用消息点击跳转" on:[WCPLRedEnvelopConfig sharedConfig].tapReferJumpEnable];
+}
+
+// 获取对方消息操作名称（引用、复读、删除）
+- (NSString *)actionNameForOtherMessage:(NSInteger)action {
+    switch (action) {
+        case 0: return @"引用";
+        case 1: return @"复读";
+        case 2: return @"删除";
+        default: return @"引用";
+    }
+}
+
+// 获取己方消息操作名称（引用、复读、删除、撤回）
+- (NSString *)actionNameForSelfMessage:(NSInteger)action {
+    switch (action) {
+        case 0: return @"引用";
+        case 1: return @"复读";
+        case 2: return @"删除";
+        case 3: return @"撤回";
+        default: return @"引用";
+    }
+}
+
+- (WCTableViewNormalCellManager *)createSwipeLeftOtherActionCell {
+    NSInteger action = [WCPLRedEnvelopConfig sharedConfig].swipeLeftOtherAction;
+    NSString *actionName = [self actionNameForOtherMessage:action];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeLeftOtherActionPicker) target:self title:@"      左滑对方消息" rightValue:actionName accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createSwipeLeftSelfActionCell {
+    NSInteger action = [WCPLRedEnvelopConfig sharedConfig].swipeLeftSelfAction;
+    NSString *actionName = [self actionNameForSelfMessage:action];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeLeftSelfActionPicker) target:self title:@"      左滑己方消息" rightValue:actionName accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createSwipeRightOtherActionCell {
+    NSInteger action = [WCPLRedEnvelopConfig sharedConfig].swipeRightOtherAction;
+    NSString *actionName = [self actionNameForOtherMessage:action];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeRightOtherActionPicker) target:self title:@"      右滑对方消息" rightValue:actionName accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createSwipeRightSelfActionCell {
+    NSInteger action = [WCPLRedEnvelopConfig sharedConfig].swipeRightSelfAction;
+    NSString *actionName = [self actionNameForSelfMessage:action];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeRightSelfActionPicker) target:self title:@"      右滑己方消息" rightValue:actionName accessoryType:1];
+}
+
+- (void)settingSwipeGesture:(UISwitch *)sender {
+    [WCPLRedEnvelopConfig sharedConfig].swipeGestureEnable = sender.on;
+    NSLog(@"[WCPL] Swipe gesture feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    [self reloadTableData];
 }
 
 - (void)settingSwipeQuote:(UISwitch *)sender {
     [WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable = sender.on;
-    NSLog(@"[WCPL] Swipe quote feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    NSLog(@"[WCPL] Swipe left feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    [self reloadTableData];
+}
+
+- (void)settingSwipeRight:(UISwitch *)sender {
+    [WCPLRedEnvelopConfig sharedConfig].swipeRightEnable = sender.on;
+    NSLog(@"[WCPL] Swipe right feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    [self reloadTableData];
 }
 
 - (void)settingTapReferJump:(UISwitch *)sender {
     [WCPLRedEnvelopConfig sharedConfig].tapReferJumpEnable = sender.on;
     NSLog(@"[WCPL] Tap refer jump feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+}
+
+// 左滑对方消息操作选择器
+- (void)showSwipeLeftOtherActionPicker {
+    [self showActionPickerWithTitle:@"左滑对方消息操作"
+                           isSelf:NO
+                       completion:^(NSInteger action) {
+        [WCPLRedEnvelopConfig sharedConfig].swipeLeftOtherAction = action;
+        [self reloadTableData];
+    }];
+}
+
+// 左滑己方消息操作选择器
+- (void)showSwipeLeftSelfActionPicker {
+    [self showActionPickerWithTitle:@"左滑己方消息操作"
+                           isSelf:YES
+                       completion:^(NSInteger action) {
+        [WCPLRedEnvelopConfig sharedConfig].swipeLeftSelfAction = action;
+        [self reloadTableData];
+    }];
+}
+
+// 右滑对方消息操作选择器
+- (void)showSwipeRightOtherActionPicker {
+    [self showActionPickerWithTitle:@"右滑对方消息操作"
+                           isSelf:NO
+                       completion:^(NSInteger action) {
+        [WCPLRedEnvelopConfig sharedConfig].swipeRightOtherAction = action;
+        [self reloadTableData];
+    }];
+}
+
+// 右滑己方消息操作选择器
+- (void)showSwipeRightSelfActionPicker {
+    [self showActionPickerWithTitle:@"右滑己方消息操作"
+                           isSelf:YES
+                       completion:^(NSInteger action) {
+        [WCPLRedEnvelopConfig sharedConfig].swipeRightSelfAction = action;
+        [self reloadTableData];
+    }];
+}
+
+// 通用操作选择器
+- (void)showActionPickerWithTitle:(NSString *)title isSelf:(BOOL)isSelf completion:(void(^)(NSInteger action))completion {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    // 引用
+    UIAlertAction *quoteAction = [UIAlertAction actionWithTitle:@"引用" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        if (completion) completion(0);
+    }];
+
+    // 复读
+    UIAlertAction *repeatAction = [UIAlertAction actionWithTitle:@"复读" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        if (completion) completion(1);
+    }];
+
+    // 删除
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        if (completion) completion(2);
+    }];
+
+    [alert addAction:quoteAction];
+    [alert addAction:repeatAction];
+    [alert addAction:deleteAction];
+
+    // 己方消息额外有撤回选项
+    if (isSelf) {
+        UIAlertAction *revokeAction = [UIAlertAction actionWithTitle:@"撤回" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            if (completion) completion(3);
+        }];
+        [alert addAction:revokeAction];
+    }
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancelAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (WCTableViewNormalCellManager *)createMessageReplySwitchCell {
@@ -438,15 +607,11 @@
     NSString *fileName = @"repeat_button_custom.png";
     NSString *filePath = [documentsPath stringByAppendingPathComponent:fileName];
 
-    // 缩放图片到合适大小
-    CGSize targetSize = CGSizeMake(48, 48);
-    UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0);
-    [image drawInRect:CGRectMake(0, 0, targetSize.width, targetSize.height)];
-    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    // 从图片中心裁剪圆形
+    UIImage *circularImage = [self cropCircularImageFromCenter:image targetSize:CGSizeMake(48, 48)];
 
     // 保存为 PNG
-    NSData *imageData = UIImagePNGRepresentation(scaledImage);
+    NSData *imageData = UIImagePNGRepresentation(circularImage);
     [imageData writeToFile:filePath atomically:YES];
 
     // 保存路径到配置
@@ -455,10 +620,47 @@
 
     // 显示成功提示
     UIAlertController *successAlert = [UIAlertController alertControllerWithTitle:@"成功"
-                                                                          message:@"自定义图片已保存"
+                                                                          message:@"自定义图片已保存（已裁剪为圆形）"
                                                                    preferredStyle:UIAlertControllerStyleAlert];
     [successAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:successAlert animated:YES completion:nil];
+}
+
+// 从图片中心裁剪圆形
+- (UIImage *)cropCircularImageFromCenter:(UIImage *)image targetSize:(CGSize)targetSize {
+    if (!image) return nil;
+
+    CGFloat imageWidth = image.size.width;
+    CGFloat imageHeight = image.size.height;
+
+    // 计算中心正方形区域（取较短边作为边长）
+    CGFloat squareSize = MIN(imageWidth, imageHeight);
+    CGFloat originX = (imageWidth - squareSize) / 2.0;
+    CGFloat originY = (imageHeight - squareSize) / 2.0;
+    CGRect cropRect = CGRectMake(originX, originY, squareSize, squareSize);
+
+    // 裁剪中心正方形
+    CGImageRef cgImage = CGImageCreateWithImageInRect(image.CGImage, cropRect);
+    UIImage *croppedImage = [UIImage imageWithCGImage:cgImage scale:image.scale orientation:image.imageOrientation];
+    CGImageRelease(cgImage);
+
+    // 创建圆形图片
+    CGFloat diameter = targetSize.width;
+    UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+
+    // 创建圆形裁剪路径
+    CGRect circleRect = CGRectMake(0, 0, diameter, diameter);
+    CGContextAddEllipseInRect(context, circleRect);
+    CGContextClip(context);
+
+    // 绘制图片
+    [croppedImage drawInRect:circleRect];
+
+    UIImage *circularImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return circularImage;
 }
 
 // 显示错误提示

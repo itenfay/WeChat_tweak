@@ -24,8 +24,14 @@ static NSString *const kWCPLMessageReplyEnable      = @"kWCPLMessageReplyEnable"
 static NSString *const kWCPLRepeatButtonStyle       = @"kWCPLRepeatButtonStyle";
 static NSString *const kWCPLRepeatButtonIconIndex   = @"kWCPLRepeatButtonIconIndex";
 static NSString *const kWCPLRepeatButtonCustomImage = @"kWCPLRepeatButtonCustomImage";
+static NSString *const kWCPLSwipeGestureEnable      = @"kWCPLSwipeGestureEnable";
 static NSString *const kWCPLSwipeQuoteEnable        = @"kWCPLSwipeQuoteEnable";
 static NSString *const kWCPLTapReferJumpEnable      = @"kWCPLTapReferJumpEnable";
+static NSString *const kWCPLSwipeLeftOtherAction    = @"kWCPLSwipeLeftOtherAction";
+static NSString *const kWCPLSwipeLeftSelfAction     = @"kWCPLSwipeLeftSelfAction";
+static NSString *const kWCPLSwipeRightEnable        = @"kWCPLSwipeRightEnable";
+static NSString *const kWCPLSwipeRightOtherAction   = @"kWCPLSwipeRightOtherAction";
+static NSString *const kWCPLSwipeRightSelfAction    = @"kWCPLSwipeRightSelfAction";
 
 @interface WCPLRedEnvelopConfig ()
 
@@ -61,8 +67,14 @@ static NSString *const kWCPLTapReferJumpEnable      = @"kWCPLTapReferJumpEnable"
         _repeatButtonStyle       = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLRepeatButtonStyle];
         _repeatButtonIconIndex   = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLRepeatButtonIconIndex];
         _repeatButtonCustomImagePath = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonCustomImage];
+        _swipeGestureEnable      = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLSwipeGestureEnable];
         _swipeQuoteEnable        = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLSwipeQuoteEnable];
         _tapReferJumpEnable      = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLTapReferJumpEnable];
+        _swipeLeftOtherAction    = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLSwipeLeftOtherAction];
+        _swipeLeftSelfAction     = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLSwipeLeftSelfAction];
+        _swipeRightEnable        = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLSwipeRightEnable];
+        _swipeRightOtherAction   = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLSwipeRightOtherAction];
+        _swipeRightSelfAction    = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLSwipeRightSelfAction];
     }
     return self;
 }
@@ -180,6 +192,12 @@ static NSString *const kWCPLTapReferJumpEnable      = @"kWCPLTapReferJumpEnable"
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+- (void)setSwipeGestureEnable:(BOOL)swipeGestureEnable {
+    _swipeGestureEnable = swipeGestureEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:swipeGestureEnable forKey:kWCPLSwipeGestureEnable];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (void)setSwipeQuoteEnable:(BOOL)swipeQuoteEnable {
     _swipeQuoteEnable = swipeQuoteEnable;
     [[NSUserDefaults standardUserDefaults] setBool:swipeQuoteEnable forKey:kWCPLSwipeQuoteEnable];
@@ -189,6 +207,36 @@ static NSString *const kWCPLTapReferJumpEnable      = @"kWCPLTapReferJumpEnable"
 - (void)setTapReferJumpEnable:(BOOL)tapReferJumpEnable {
     _tapReferJumpEnable = tapReferJumpEnable;
     [[NSUserDefaults standardUserDefaults] setBool:tapReferJumpEnable forKey:kWCPLTapReferJumpEnable];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setSwipeLeftOtherAction:(NSInteger)swipeLeftOtherAction {
+    _swipeLeftOtherAction = swipeLeftOtherAction;
+    [[NSUserDefaults standardUserDefaults] setInteger:swipeLeftOtherAction forKey:kWCPLSwipeLeftOtherAction];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setSwipeLeftSelfAction:(NSInteger)swipeLeftSelfAction {
+    _swipeLeftSelfAction = swipeLeftSelfAction;
+    [[NSUserDefaults standardUserDefaults] setInteger:swipeLeftSelfAction forKey:kWCPLSwipeLeftSelfAction];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setSwipeRightEnable:(BOOL)swipeRightEnable {
+    _swipeRightEnable = swipeRightEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:swipeRightEnable forKey:kWCPLSwipeRightEnable];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setSwipeRightOtherAction:(NSInteger)swipeRightOtherAction {
+    _swipeRightOtherAction = swipeRightOtherAction;
+    [[NSUserDefaults standardUserDefaults] setInteger:swipeRightOtherAction forKey:kWCPLSwipeRightOtherAction];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setSwipeRightSelfAction:(NSInteger)swipeRightSelfAction {
+    _swipeRightSelfAction = swipeRightSelfAction;
+    [[NSUserDefaults standardUserDefaults] setInteger:swipeRightSelfAction forKey:kWCPLSwipeRightSelfAction];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

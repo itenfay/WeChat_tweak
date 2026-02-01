@@ -53,9 +53,24 @@
 // 自定义图片路径 (存储在 Documents 目录)
 @property (copy, nonatomic) NSString *repeatButtonCustomImagePath;
 
+// 消息手势总开关
+@property (assign, nonatomic) BOOL swipeGestureEnable;
 // 左滑引用功能
 @property (assign, nonatomic) BOOL swipeQuoteEnable;
 // 引用消息点击跳转
 @property (assign, nonatomic) BOOL tapReferJumpEnable;
+
+// 消息手势操作类型
+// 0=引用, 1=复读, 2=删除, 3=撤回(仅己方消息)
+// 左滑对方消息操作
+@property (assign, nonatomic) NSInteger swipeLeftOtherAction;
+// 左滑己方消息操作
+@property (assign, nonatomic) NSInteger swipeLeftSelfAction;
+// 右滑功能开关
+@property (assign, nonatomic) BOOL swipeRightEnable;
+// 右滑对方消息操作
+@property (assign, nonatomic) NSInteger swipeRightOtherAction;
+// 右滑己方消息操作
+@property (assign, nonatomic) NSInteger swipeRightSelfAction;
 
 @end

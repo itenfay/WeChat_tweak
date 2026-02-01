@@ -1,13 +1,14 @@
 THEOS_DEVICE_IP = localhost
 THEOS_DEVICE_PORT = 2222
 ARCHS = arm64 arm64e
-TARGET = iphone:latest:14.0
+TARGET = iphone:clang:14.5:14.0
 
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = wapleodtcorexpc
 $(TWEAK_NAME)_FILES = $(wildcard src/*.m) src/Tweak.xm
 $(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation UniformTypeIdentifiers
+$(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
 
 src/WCPLAVManager.m_CFLAGS = -fobjc-arc
 src/WCPLBaseViewController.m_CFLAGS = -fobjc-arc

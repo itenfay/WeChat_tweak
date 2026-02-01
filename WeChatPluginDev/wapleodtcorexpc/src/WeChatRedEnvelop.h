@@ -128,6 +128,8 @@
 @interface CMessageMgr : MMService
 
 - (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 fixTime:(_Bool)arg3 NewMsgArriveNotify:(_Bool)arg4;
+- (void)DeleteMsg:(NSString *)chatName MsgList:(NSArray *)msgList;
+- (void)RevokeMsg:(NSString *)chatName n64SvrId:(unsigned long long)svrId;
 
 @end
 
@@ -477,9 +479,14 @@
 - (void)wchook_triggerQuoteReply;
 - (void)wchook_showSwipeActionMenuForDirection:(NSInteger)direction;
 - (void)wchook_performRepeatMessage:(CMessageWrap *)msgWrap;
+- (void)wchook_performQuoteReply;
+- (void)wchook_performDeleteMessage:(CMessageWrap *)msgWrap;
+- (void)wchook_performRevokeMessage:(CMessageWrap *)msgWrap;
 - (UIViewController *)wchook_findTopViewController;
 - (BaseMsgContentViewController *)wchook_findChatViewController;
 - (void)onShowMsgReplyMenuItem:(id)sender;
+- (void)onDeleteMenuItem:(id)sender;
+- (void)onRevokeMenuItem:(id)sender;
 
 @end
 
