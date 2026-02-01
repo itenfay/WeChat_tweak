@@ -25,15 +25,25 @@ jobs:
 
       - name: Setup Roothide Theos
         run: |
+          ROOTHIDE_THEOS="${{ github.workspace }}/theos-roothide"
+
           # Clone roothide theos to a separate directory
-          git clone --depth=1 https://github.com/roothide/theos.git ${{ github.workspace }}/theos-roothide
+          git clone --depth=1 https://github.com/roothide/theos.git "$ROOTHIDE_THEOS"
+
           # Download roothide SDK
           curl -LO https://github.com/roothide/theos/releases/download/v1.0.0/roothide-sdk.zip || true
           if [ -f roothide-sdk.zip ]; then
-            unzip -o roothide-sdk.zip -d ${{ github.workspace }}/theos-roothide/sdks/ || true
+            unzip -o roothide-sdk.zip -d "$ROOTHIDE_THEOS/sdks/" || true
           fi
+
+          # Install vendor dependencies (include/lib)
+          echo "=== Installing vendor dependencies ==="
+          # Clone lib directory
+          git clone --depth=1 https://github.com/theos/lib.git "$ROOTHIDE_THEOS/vendor/lib" || true
+          # Clone include directory
+          git clone --depth=1 https://github.com/theos/headers.git "$ROOTHIDE_THEOS/vendor/include" || true
+
           # Fix dm.pl for roothide theos
-          ROOTHIDE_THEOS="${{ github.workspace }}/theos-roothide"
           if [ ! -f "$ROOTHIDE_THEOS/bin/dm.pl" ]; then
             echo "dm.pl not found in roothide theos, installing..."
             git clone --depth=1 https://github.com/theos/dm.pl.git "$ROOTHIDE_THEOS/vendor/dm.pl" || true
@@ -41,6 +51,11 @@ jobs:
             ln -sf ../vendor/dm.pl/dm.pl "$ROOTHIDE_THEOS/bin/dm.pl" || true
             chmod +x "$ROOTHIDE_THEOS/vendor/dm.pl/dm.pl" || true
           fi
+
+          # Verify installation
+          echo "=== Verifying roothide theos ==="
+          ls -la "$ROOTHIDE_THEOS/vendor/" || true
+          ls -la "$ROOTHIDE_THEOS/bin/dm.pl" || true
 
       - name: Debug Environment
         run: |
