@@ -88,7 +88,27 @@
     AVCaptureConnection *previewLayerConnection = self.previewLayer.connection;
     
     if ([previewLayerConnection isVideoOrientationSupported]) {
-        UIInterfaceOrientation appOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+        UIInterfaceOrientation appOrientation = UIInterfaceOrientationPortrait;
+
+        // iOS 13+ 使用 window scene
+        if (@available(iOS 13.0, *)) {
+            UIWindowScene *windowScene = nil;
+            for (UIScene *scene in [UIApplication sharedApplication].connectedScenes) {
+                if ([scene isKindOfClass:[UIWindowScene class]]) {
+                    windowScene = (UIWindowScene *)scene;
+                    break;
+                }
+            }
+            if (windowScene) {
+                appOrientation = windowScene.interfaceOrientation;
+            }
+        } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+            appOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+#pragma clang diagnostic pop
+        }
+
         AVCaptureVideoOrientation orientation;
         
         switch (appOrientation) {
