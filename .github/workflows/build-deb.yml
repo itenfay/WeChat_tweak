@@ -43,7 +43,10 @@ jobs:
           cd WeChatPluginDev/wapleodtcorexpc
           rm -rf packages/*.deb 2>/dev/null || true
           make clean || true
-          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless DEBUG=1
+          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless 2>&1 || {
+            echo "=== Build failed, showing detailed errors ==="
+            make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
+          }
         env:
           THEOS: ${{ github.workspace }}/theos
 
