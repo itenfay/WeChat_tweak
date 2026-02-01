@@ -519,6 +519,7 @@ static char kRepeatMsgWrapKey;
                     SEL setReplyingMsgSel = @selector(setReplyingMessage:);
                     SEL sendMsgSel = @selector(sendMsgWithText:);
                     SEL resetReplySel = @selector(resetReplyMessage);
+                    SEL clearReferSel = @selector(onClearInputMsgRefer);
 
                     if ([toolView respondsToSelector:setReplyingMsgSel] &&
                         [toolView respondsToSelector:sendMsgSel]) {
@@ -530,9 +531,17 @@ static char kRepeatMsgWrapKey;
                         [toolView performSelector:setReplyingMsgSel withObject:referredMsg];
                         // 发送文本
                         [toolView performSelector:sendMsgSel withObject:content];
-                        // 清除引用状态
+
+                        // 清除引用状态 - 尝试多种方法
+                        // 方法1: 设置 nil
+                        [toolView performSelector:setReplyingMsgSel withObject:nil];
+                        // 方法2: resetReplyMessage
                         if ([toolView respondsToSelector:resetReplySel]) {
                             [toolView performSelector:resetReplySel];
+                        }
+                        // 方法3: onClearInputMsgRefer
+                        if ([toolView respondsToSelector:clearReferSel]) {
+                            [toolView performSelector:clearReferSel];
                         }
 #pragma clang diagnostic pop
                         return;
@@ -561,8 +570,12 @@ static char kRepeatMsgWrapKey;
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
                             [toolView performSelector:sendMsgSel withObject:content];
                             // 清除引用状态
+                            [toolView performSelector:setReplyingMsgSel withObject:nil];
                             if ([toolView respondsToSelector:resetReplySel]) {
                                 [toolView performSelector:resetReplySel];
+                            }
+                            if ([toolView respondsToSelector:clearReferSel]) {
+                                [toolView performSelector:clearReferSel];
                             }
 #pragma clang diagnostic pop
                             return;
