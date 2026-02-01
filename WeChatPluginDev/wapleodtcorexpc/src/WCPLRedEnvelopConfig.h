@@ -45,4 +45,12 @@
 // Message Reply.
 @property (assign, nonatomic) BOOL messageReplyEnable;
 
+// Message Reply Button Style.
+// 0 = 文字模式 (+1), 1 = 内置图标, 2 = 自定义图片
+@property (assign, nonatomic) NSInteger repeatButtonStyle;
+// 内置图标索引: 0=+1, 1=👍, 2=❤️, 3=😂, 4=🔥, 5=👏, 6=🎉
+@property (assign, nonatomic) NSInteger repeatButtonIconIndex;
+// 自定义图片路径 (存储在 Documents 目录)
+@property (copy, nonatomic) NSString *repeatButtonCustomImagePath;
+
 @end

@@ -12,7 +12,7 @@
 #import "WeChatRedEnvelop.h"
 #import <objc/runtime.h>
 
-@interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate>
+@interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
 
 @property (nonatomic, strong) WCTableViewManager *tableViewMgr;
 
@@ -211,16 +211,278 @@
 
     [section addCell:[self createMessageReplySwitchCell]];
 
+    // 只有启用复读机时才显示按钮样式设置
+    if ([WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) {
+        [section addCell:[self createRepeatButtonStyleCell]];
+    }
+
     [self.tableViewMgr addSection:section];
 }
 
 - (WCTableViewNormalCellManager *)createMessageReplySwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageReply:) target:self title:@"启用复读机 (在消息旁显示+1按钮)" on:[WCPLRedEnvelopConfig sharedConfig].messageReplyEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageReply:) target:self title:@"启用复读机 (在消息旁显示按钮)" on:[WCPLRedEnvelopConfig sharedConfig].messageReplyEnable];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonStyleCell {
+    NSArray *styleNames = @[@"+1 文字", @"内置图标", @"自定义图片"];
+    NSInteger currentStyle = [WCPLRedEnvelopConfig sharedConfig].repeatButtonStyle;
+    NSString *styleName = (currentStyle >= 0 && currentStyle < styleNames.count) ? styleNames[currentStyle] : styleNames[0];
+
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRepeatButtonStylePicker) target:self title:@"按钮样式" rightValue:styleName accessoryType:1];
+}
+
+- (void)showRepeatButtonStylePicker {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"选择按钮样式"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    // 样式 0: +1 文字
+    UIAlertAction *textAction = [UIAlertAction actionWithTitle:@"+1 文字 (默认)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].repeatButtonStyle = 0;
+        [self reloadTableData];
+    }];
+
+    // 样式 1: 内置图标
+    UIAlertAction *iconAction = [UIAlertAction actionWithTitle:@"内置图标 (emoji)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].repeatButtonStyle = 1;
+        [self showBuiltInIconPicker];
+    }];
+
+    // 样式 2: 自定义图片
+    UIAlertAction *customAction = [UIAlertAction actionWithTitle:@"自定义图片" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].repeatButtonStyle = 2;
+        [self showImagePicker];
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+
+    [alert addAction:textAction];
+    [alert addAction:iconAction];
+    [alert addAction:customAction];
+    [alert addAction:cancelAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)showBuiltInIconPicker {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"选择图标"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    NSArray *icons = @[@"+1", @"👍", @"❤️", @"😂", @"🔥", @"👏", @"🎉"];
+
+    for (NSInteger i = 0; i < icons.count; i++) {
+        NSString *icon = icons[i];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:icon style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [WCPLRedEnvelopConfig sharedConfig].repeatButtonIconIndex = i;
+            [self reloadTableData];
+        }];
+        [alert addAction:action];
+    }
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        [self reloadTableData];
+    }];
+    [alert addAction:cancelAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)showImagePicker {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"选择图片来源"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    // 从相册选择
+    UIAlertAction *albumAction = [UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        [self presentViewController:picker animated:YES completion:nil];
+    }];
+
+    // 从文件选择 (iOS 14+)
+    UIAlertAction *fileAction = [UIAlertAction actionWithTitle:@"从文件选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSArray *documentTypes = @[@"public.image"];
+        UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:documentTypes inMode:UIDocumentPickerModeImport];
+        documentPicker.delegate = self;
+        documentPicker.allowsMultipleSelection = NO;
+        [self presentViewController:documentPicker animated:YES completion:nil];
+    }];
+
+    // 输入图片 URL
+    UIAlertAction *urlAction = [UIAlertAction actionWithTitle:@"输入图片路径" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self showImageURLInput];
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        [self reloadTableData];
+    }];
+
+    [alert addAction:albumAction];
+    [alert addAction:fileAction];
+    [alert addAction:urlAction];
+    [alert addAction:cancelAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+// 输入图片路径
+- (void)showImageURLInput {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"输入图片路径"
+                                                                   message:@"支持本地路径或网络 URL"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"例如: /var/mobile/Documents/icon.png";
+        textField.keyboardType = UIKeyboardTypeURL;
+        textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        [self reloadTableData];
+    }];
+
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSString *path = alert.textFields.firstObject.text;
+        [self loadImageFromPath:path];
+    }];
+
+    [alert addAction:cancelAction];
+    [alert addAction:confirmAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+// 从路径加载图片
+- (void)loadImageFromPath:(NSString *)path {
+    if (!path || path.length == 0) {
+        [self showErrorAlert:@"请输入有效的路径"];
+        return;
+    }
+
+    UIImage *image = nil;
+
+    // 判断是网络 URL 还是本地路径
+    if ([path hasPrefix:@"http://"] || [path hasPrefix:@"https://"]) {
+        // 网络图片 - 异步加载
+        NSURL *url = [NSURL URLWithString:path];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSData *data = [NSData dataWithContentsOfURL:url];
+            UIImage *downloadedImage = [UIImage imageWithData:data];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (downloadedImage) {
+                    [self saveCustomImage:downloadedImage];
+                } else {
+                    [self showErrorAlert:@"无法加载网络图片"];
+                }
+            });
+        });
+    } else {
+        // 本地路径
+        image = [UIImage imageWithContentsOfFile:path];
+        if (image) {
+            [self saveCustomImage:image];
+        } else {
+            [self showErrorAlert:@"无法加载本地图片，请检查路径是否正确"];
+        }
+    }
+}
+
+// 保存自定义图片
+- (void)saveCustomImage:(UIImage *)image {
+    // 保存图片到 Documents 目录
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *fileName = @"repeat_button_custom.png";
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:fileName];
+
+    // 缩放图片到合适大小
+    CGSize targetSize = CGSizeMake(48, 48);
+    UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0);
+    [image drawInRect:CGRectMake(0, 0, targetSize.width, targetSize.height)];
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    // 保存为 PNG
+    NSData *imageData = UIImagePNGRepresentation(scaledImage);
+    [imageData writeToFile:filePath atomically:YES];
+
+    // 保存路径到配置
+    [WCPLRedEnvelopConfig sharedConfig].repeatButtonCustomImagePath = fileName;
+    [self reloadTableData];
+
+    // 显示成功提示
+    UIAlertController *successAlert = [UIAlertController alertControllerWithTitle:@"成功"
+                                                                          message:@"自定义图片已保存"
+                                                                   preferredStyle:UIAlertControllerStyleAlert];
+    [successAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:successAlert animated:YES completion:nil];
+}
+
+// 显示错误提示
+- (void)showErrorAlert:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"错误"
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self reloadTableData];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark - UIDocumentPickerDelegate
+
+- (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
+    if (urls.count > 0) {
+        NSURL *url = urls.firstObject;
+
+        // 开始访问安全范围资源
+        BOOL accessing = [url startAccessingSecurityScopedResource];
+
+        NSData *imageData = [NSData dataWithContentsOfURL:url];
+        UIImage *image = [UIImage imageWithData:imageData];
+
+        if (accessing) {
+            [url stopAccessingSecurityScopedResource];
+        }
+
+        if (image) {
+            [self saveCustomImage:image];
+        } else {
+            [self showErrorAlert:@"无法加载选择的图片"];
+        }
+    }
+}
+
+- (void)documentPickerWasCancelled:(UIDocumentPickerViewController *)controller {
+    [self reloadTableData];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    UIImage *image = info[UIImagePickerControllerEditedImage] ?: info[UIImagePickerControllerOriginalImage];
+
+    [picker dismissViewControllerAnimated:YES completion:^{
+        if (image) {
+            [self saveCustomImage:image];
+        } else {
+            [self showErrorAlert:@"无法加载选择的图片"];
+        }
+    }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [self reloadTableData];
+    }];
 }
 
 - (void)settingMessageReply:(UISwitch *)sender {
     [WCPLRedEnvelopConfig sharedConfig].messageReplyEnable = sender.on;
     NSLog(@"[WCPL] Message repeat feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    [self reloadTableData];
 }
 
 #pragma mark - MultiSelectGroupsViewControllerDelegate

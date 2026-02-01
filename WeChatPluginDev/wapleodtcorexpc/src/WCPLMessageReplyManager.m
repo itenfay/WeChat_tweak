@@ -295,13 +295,8 @@ static char kRepeatMsgWrapKey;
     button.layer.borderWidth = 0.5;
     button.layer.borderColor = [UIColor colorWithWhite:0.0 alpha:0.1].CGColor;
 
-    // 字体与颜色 - 使用微信标准绿 (WeChat Green)
-    UIColor *weChatGreen = [UIColor colorWithRed:7.0/255.0 green:193.0/255.0 blue:96.0/255.0 alpha:1.0];
-    [button setTitle:@"+1" forState:UIControlStateNormal];
-    [button setTitleColor:weChatGreen forState:UIControlStateNormal];
-
-    // 字体稍微加粗，提升可读性
-    button.titleLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightMedium];
+    // 根据配置设置按钮内容
+    [self configureButtonContent:button];
 
     // 添加点击事件
     [button addTarget:self
@@ -313,6 +308,81 @@ static char kRepeatMsgWrapKey;
     [button addTarget:self action:@selector(animateButtonTouchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
 
     return button;
+}
+
+// 根据配置设置按钮内容（文字/图标/自定义图片）
+- (void)configureButtonContent:(UIButton *)button {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    NSInteger style = config.repeatButtonStyle;
+
+    // 清除之前的内容
+    [button setTitle:nil forState:UIControlStateNormal];
+    [button setImage:nil forState:UIControlStateNormal];
+
+    // 内置图标列表
+    NSArray *builtInIcons = @[@"+1", @"👍", @"❤️", @"😂", @"🔥", @"👏", @"🎉"];
+
+    if (style == 0) {
+        // 文字模式 - 使用微信绿色 +1
+        UIColor *weChatGreen = [UIColor colorWithRed:7.0/255.0 green:193.0/255.0 blue:96.0/255.0 alpha:1.0];
+        [button setTitle:@"+1" forState:UIControlStateNormal];
+        [button setTitleColor:weChatGreen forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightMedium];
+    } else if (style == 1) {
+        // 内置图标模式 - 使用 emoji
+        NSInteger iconIndex = config.repeatButtonIconIndex;
+        if (iconIndex < 0 || iconIndex >= builtInIcons.count) {
+            iconIndex = 0;
+        }
+        NSString *icon = builtInIcons[iconIndex];
+
+        if ([icon isEqualToString:@"+1"]) {
+            // +1 使用文字样式
+            UIColor *weChatGreen = [UIColor colorWithRed:7.0/255.0 green:193.0/255.0 blue:96.0/255.0 alpha:1.0];
+            [button setTitle:icon forState:UIControlStateNormal];
+            [button setTitleColor:weChatGreen forState:UIControlStateNormal];
+            button.titleLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightMedium];
+        } else {
+            // emoji 图标
+            [button setTitle:icon forState:UIControlStateNormal];
+            button.titleLabel.font = [UIFont systemFontOfSize:14];
+        }
+    } else if (style == 2) {
+        // 自定义图片模式
+        NSString *imagePath = config.repeatButtonCustomImagePath;
+        UIImage *customImage = nil;
+
+        if (imagePath && imagePath.length > 0) {
+            // 从 Documents 目录加载图片
+            NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+            NSString *fullPath = [documentsPath stringByAppendingPathComponent:imagePath];
+            customImage = [UIImage imageWithContentsOfFile:fullPath];
+        }
+
+        if (customImage) {
+            // 缩放图片到合适大小
+            CGSize targetSize = CGSizeMake(18, 18);
+            UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0);
+            [customImage drawInRect:CGRectMake(0, 0, targetSize.width, targetSize.height)];
+            UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+
+            [button setImage:scaledImage forState:UIControlStateNormal];
+            button.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        } else {
+            // 回退到默认 +1
+            UIColor *weChatGreen = [UIColor colorWithRed:7.0/255.0 green:193.0/255.0 blue:96.0/255.0 alpha:1.0];
+            [button setTitle:@"+1" forState:UIControlStateNormal];
+            [button setTitleColor:weChatGreen forState:UIControlStateNormal];
+            button.titleLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightMedium];
+        }
+    } else {
+        // 默认 +1
+        UIColor *weChatGreen = [UIColor colorWithRed:7.0/255.0 green:193.0/255.0 blue:96.0/255.0 alpha:1.0];
+        [button setTitle:@"+1" forState:UIControlStateNormal];
+        [button setTitleColor:weChatGreen forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightMedium];
+    }
 }
 
 #pragma mark - Animation Helpers

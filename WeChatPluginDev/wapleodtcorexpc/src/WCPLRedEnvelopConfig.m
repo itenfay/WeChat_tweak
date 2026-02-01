@@ -21,6 +21,9 @@ static NSString *const kWCPLFakeLocLng              = @"kWCPLFakeLocLng";
 static NSString *const kWCPLFakeLocEnable           = @"kWCPLFakeLocEnable";
 static NSString *const kWCPLAVTPOn                  = @"kWCPLAVTPOn";
 static NSString *const kWCPLMessageReplyEnable      = @"kWCPLMessageReplyEnable";
+static NSString *const kWCPLRepeatButtonStyle       = @"kWCPLRepeatButtonStyle";
+static NSString *const kWCPLRepeatButtonIconIndex   = @"kWCPLRepeatButtonIconIndex";
+static NSString *const kWCPLRepeatButtonCustomImage = @"kWCPLRepeatButtonCustomImage";
 
 @interface WCPLRedEnvelopConfig ()
 
@@ -53,6 +56,9 @@ static NSString *const kWCPLMessageReplyEnable      = @"kWCPLMessageReplyEnable"
         _fakeLocEnable           = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLFakeLocEnable];
         _TPOn                    = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLAVTPOn];
         _messageReplyEnable      = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLMessageReplyEnable];
+        _repeatButtonStyle       = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLRepeatButtonStyle];
+        _repeatButtonIconIndex   = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLRepeatButtonIconIndex];
+        _repeatButtonCustomImagePath = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonCustomImage];
     }
     return self;
 }
@@ -149,6 +155,24 @@ static NSString *const kWCPLMessageReplyEnable      = @"kWCPLMessageReplyEnable"
 - (void)setMessageReplyEnable:(BOOL)messageReplyEnable {
     _messageReplyEnable = messageReplyEnable;
     [[NSUserDefaults standardUserDefaults] setBool:messageReplyEnable forKey:kWCPLMessageReplyEnable];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setRepeatButtonStyle:(NSInteger)repeatButtonStyle {
+    _repeatButtonStyle = repeatButtonStyle;
+    [[NSUserDefaults standardUserDefaults] setInteger:repeatButtonStyle forKey:kWCPLRepeatButtonStyle];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setRepeatButtonIconIndex:(NSInteger)repeatButtonIconIndex {
+    _repeatButtonIconIndex = repeatButtonIconIndex;
+    [[NSUserDefaults standardUserDefaults] setInteger:repeatButtonIconIndex forKey:kWCPLRepeatButtonIconIndex];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setRepeatButtonCustomImagePath:(NSString *)repeatButtonCustomImagePath {
+    _repeatButtonCustomImagePath = repeatButtonCustomImagePath;
+    [[NSUserDefaults standardUserDefaults] setObject:repeatButtonCustomImagePath forKey:kWCPLRepeatButtonCustomImage];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
