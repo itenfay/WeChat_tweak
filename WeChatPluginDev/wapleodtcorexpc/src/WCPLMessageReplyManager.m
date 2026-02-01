@@ -518,6 +518,7 @@ static char kRepeatMsgWrapKey;
                     // 方法1：使用 setReplyingMessage: 设置引用，然后 sendMsgWithText: 发送
                     SEL setReplyingMsgSel = @selector(setReplyingMessage:);
                     SEL sendMsgSel = @selector(sendMsgWithText:);
+                    SEL resetReplySel = @selector(resetReplyMessage);
 
                     if ([toolView respondsToSelector:setReplyingMsgSel] &&
                         [toolView respondsToSelector:sendMsgSel]) {
@@ -529,6 +530,10 @@ static char kRepeatMsgWrapKey;
                         [toolView performSelector:setReplyingMsgSel withObject:referredMsg];
                         // 发送文本
                         [toolView performSelector:sendMsgSel withObject:content];
+                        // 清除引用状态
+                        if ([toolView respondsToSelector:resetReplySel]) {
+                            [toolView performSelector:resetReplySel];
+                        }
 #pragma clang diagnostic pop
                         return;
                     }
@@ -555,6 +560,10 @@ static char kRepeatMsgWrapKey;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
                             [toolView performSelector:sendMsgSel withObject:content];
+                            // 清除引用状态
+                            if ([toolView respondsToSelector:resetReplySel]) {
+                                [toolView performSelector:resetReplySel];
+                            }
 #pragma clang diagnostic pop
                             return;
                         }
