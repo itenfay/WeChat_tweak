@@ -29,7 +29,8 @@ static const NSInteger kWCPLRepeatButtonTag = 10087;
 
 // 处理复读按钮点击 - 发送复读消息
 - (void)handleRepeatButtonTapWithContent:(NSString *)content
-                          viewController:(BaseMsgContentViewController *)viewController;
+                          viewController:(BaseMsgContentViewController *)viewController
+                                 msgWrap:(CMessageWrap *)msgWrap;
 
 // 判断消息是否可以复读（文本消息且非自己发送）
 - (BOOL)canRepeatMessage:(CMessageWrap *)msgWrap;
