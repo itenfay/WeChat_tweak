@@ -41,7 +41,7 @@ static const NSInteger kWCPLRepeatButtonTag = 10087;
 // 获取消息内容
 - (NSString *)getMessageContent:(CMessageWrap *)msgWrap;
 
-// 处理表情包消息复读
-- (void)handleRepeatEmoticonMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController;
+// 处理表情包消息复读（返回执行日志）
+- (NSString *)handleRepeatEmoticonMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController;
 
 @end
