@@ -454,6 +454,22 @@ static char kRepeatMsgWrapKey;
 
 - (void)layoutRepeatButton:(UIButton *)button inCellView:(CommonMessageCellView *)cellView {
     @try {
+        // 获取 ViewModel 和 MessageWrap 来判断消息方向
+        id viewModel = nil;
+        if ([cellView respondsToSelector:@selector(viewModel)]) {
+            viewModel = [cellView performSelector:@selector(viewModel)];
+        }
+
+        CMessageWrap *msgWrap = nil;
+        if (viewModel && [viewModel respondsToSelector:@selector(messageWrap)]) {
+            msgWrap = [viewModel performSelector:@selector(messageWrap)];
+        }
+
+        if (!msgWrap) {
+            button.hidden = YES;
+            return;
+        }
+
         // 获取气泡视图
         UIView *bubbleView = [self findBubbleViewInCellView:cellView];
 
@@ -468,8 +484,8 @@ static char kRepeatMsgWrapKey;
             bubbleFrame = [bubbleView.superview convertRect:bubbleView.frame toView:cellView];
         }
 
-        // 判断消息方向（左边是别人的消息，右边是自己的消息）
-        BOOL isLeftMessage = bubbleFrame.origin.x < 100;
+        // 通过判断消息发送者来确定消息方向（更可靠）
+        BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
 
         // 按钮固定尺寸
         CGFloat buttonSize = 24;
@@ -477,12 +493,12 @@ static char kRepeatMsgWrapKey;
         CGFloat buttonX;
         CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonSize;  // 底部与气泡底部对齐
 
-        if (isLeftMessage) {
-            // 别人的消息 - 按钮放在气泡右侧外面，紧贴气泡边缘
-            buttonX = CGRectGetMaxX(bubbleFrame) + 2;
-        } else {
+        if (isFromSelf) {
             // 自己的消息 - 按钮放在气泡左侧外面，紧贴气泡边缘
             buttonX = bubbleFrame.origin.x - buttonSize - 2;
+        } else {
+            // 别人的消息 - 按钮放在气泡右侧外面，紧贴气泡边缘
+            buttonX = CGRectGetMaxX(bubbleFrame) + 2;
         }
 
         button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
@@ -892,6 +908,29 @@ static char kRepeatMsgWrapKey;
     }
     @catch (NSException *exception) {
         return nil;
+    }
+}
+
+// 判断消息是否为自己发送的
+- (BOOL)isMessageFromSelf:(CMessageWrap *)msgWrap {
+    @try {
+        if (!msgWrap) return NO;
+
+        // 获取联系人管理器
+        id contactManager = [[objc_getClass("MMServiceCenter") defaultCenter]
+                            getService:objc_getClass("CContactMgr")];
+        if (!contactManager) return NO;
+
+        // 获取自己的联系人信息
+        CContact *selfContact = [contactManager getSelfContact];
+        if (!selfContact || !selfContact.m_nsUsrName) return NO;
+
+        // 比较消息发送者和自己的用户名
+        return [msgWrap.m_nsFromUsr isEqualToString:selfContact.m_nsUsrName];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[WCPL] Exception in isMessageFromSelf: %@", exception);
+        return NO;
     }
 }
 
