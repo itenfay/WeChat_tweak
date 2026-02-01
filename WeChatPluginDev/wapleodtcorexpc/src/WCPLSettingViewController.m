@@ -69,6 +69,7 @@
     [self addBasicSettingSection];
     [self addAdvanceSettingSection];
     [self addOtherSettingSection];
+    [self addMessageReplySettingSection];
     [self addFakeLocSettingSection];
     [self addTPSettingSection];
     [self addAboutSection];
@@ -193,6 +194,25 @@
 
 - (void)settingMessageRevoke:(UISwitch *)sender {
     [WCPLRedEnvelopConfig sharedConfig].revokeEnable = sender.on;
+}
+
+#pragma mark - Message Reply Setting
+
+- (void)addMessageReplySettingSection {
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息复读"];
+    
+    [section addCell:[self createMessageReplySwitchCell]];
+    
+    [self.tableViewMgr addSection:section];
+}
+
+- (WCTableViewNormalCellManager *)createMessageReplySwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageReply:) target:self title:@"启用消息复读 (+1)" on:[WCPLRedEnvelopConfig sharedConfig].messageReplyEnable];
+}
+
+- (void)settingMessageReply:(UISwitch *)sender {
+    [WCPLRedEnvelopConfig sharedConfig].messageReplyEnable = sender.on;
+    NSLog(@"[WCPL] Message reply setting changed: %@", sender.on ? @"Enabled" : @"Disabled");
 }
 
 #pragma mark - MultiSelectGroupsViewControllerDelegate

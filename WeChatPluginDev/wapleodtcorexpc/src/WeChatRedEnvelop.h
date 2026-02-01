@@ -419,6 +419,18 @@
 
 @end
 
+#pragma mark - BaseMsgContentViewController
+
+@interface BaseMsgContentViewController : MMUIViewController
+
+- (id)GetContact;
+
+// Added Methods.
+- (void)wcpl_addReplyButton;
+- (void)wcpl_removeReplyButton;
+
+@end
+
 #pragma mark - ContactInfoViewController
 
 @interface ContactInfoViewController : MMUIViewController

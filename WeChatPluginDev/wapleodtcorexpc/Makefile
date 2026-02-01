@@ -20,8 +20,9 @@ src/WCPLRedEnvelopParamQueue.m_CFLAGS = -fobjc-arc
 src/WCPLRedEnvelopTaskManager.m_CFLAGS = -fobjc-arc
 src/WCPLSettingViewController.m_CFLAGS = -fobjc-arc
 src/WeChatRedEnvelopParam.m_CFLAGS = -fobjc-arc
+src/WCPLMessageReplyManager.m_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
 after-install::
-	install.exec "killall -9 WeChat"
+    install.exec "killall -9 WeChat"

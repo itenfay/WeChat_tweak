@@ -42,4 +42,7 @@
 // TP.
 @property (assign, nonatomic) BOOL TPOn;
 
+// Message Reply.
+@property (assign, nonatomic) BOOL messageReplyEnable;
+
 @end
