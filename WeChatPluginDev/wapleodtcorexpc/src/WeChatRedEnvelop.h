@@ -5,6 +5,9 @@
 // Copyright © 2017 dyf. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 #pragma mark - MMObject
 
 @interface MMObject : NSObject
