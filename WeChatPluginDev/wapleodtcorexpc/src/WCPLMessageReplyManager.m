@@ -982,6 +982,26 @@ static char kRepeatMsgWrapKey;
         BOOL hasGetEmoticonWrap = emoticonMgr && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)];
         [debugInfo appendFormat:@"12. 有getEmoticonWrapByMd5方法: %@\n", hasGetEmoticonWrap ? @"是" : @"否"];
 
+        // 尝试获取 emoticonWrap
+        if (isEmoticonMessage && hasGetEmoticonWrap) {
+            NSString *msgContent = msgWrap.m_nsContent;
+            NSString *parsedMD5 = [self parseEmoticonMD5FromContent:msgContent];
+            if (parsedMD5) {
+                CEmoticonWrap *emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMd5:) withObject:parsedMD5];
+                [debugInfo appendFormat:@"13. EmoticonWrap: %@\n", emoticonWrap ? @"获取成功" : @"nil"];
+            }
+        }
+
+        // 检查 CMessageMgr
+        id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
+        [debugInfo appendFormat:@"14. CMessageMgr: %@\n", msgMgr ? @"存在" : @"nil"];
+
+        BOOL hasAddEmoticonMsg = msgMgr && [msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)];
+        [debugInfo appendFormat:@"15. 有AddEmoticonMsg方法: %@\n", hasAddEmoticonMsg ? @"是" : @"否"];
+
+        BOOL hasAddLocalMsg = msgMgr && [msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)];
+        [debugInfo appendFormat:@"16. 有AddLocalMsg方法: %@\n", hasAddLocalMsg ? @"是" : @"否"];
+
         [debugInfo appendString:@"\n✅ 开始执行复读..."];
 
         // 显示调试信息
