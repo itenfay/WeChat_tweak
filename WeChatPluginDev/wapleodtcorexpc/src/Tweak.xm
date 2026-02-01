@@ -725,16 +725,25 @@ static BOOL didRegisterWCPLPlugin = NO;
     CMessageWrap *msgWrap = nil;
     if ([self respondsToSelector:@selector(viewModel)]) {
         id viewModel = [self performSelector:@selector(viewModel)];
-        if ([viewModel respondsToSelector:@selector(getCurrentMessageWrap)]) {
+        // 优先使用 messageWrap 属性（BaseMessageViewModel 的标准属性）
+        if ([viewModel respondsToSelector:@selector(messageWrap)]) {
+            msgWrap = [viewModel performSelector:@selector(messageWrap)];
+        }
+        // 备用方法
+        if (!msgWrap && [viewModel respondsToSelector:@selector(getCurrentMessageWrap)]) {
             msgWrap = [viewModel performSelector:@selector(getCurrentMessageWrap)];
         }
+    }
+    // 直接从 Cell 获取
+    if (!msgWrap && [self respondsToSelector:@selector(messageWrap)]) {
+        msgWrap = [self performSelector:@selector(messageWrap)];
     }
     if (!msgWrap && [self respondsToSelector:@selector(getCurrentMessageWrap)]) {
         msgWrap = [self performSelector:@selector(getCurrentMessageWrap)];
     }
 
     if (!msgWrap) {
-        NSLog(@"[WCPL] Cannot get message wrap");
+        NSLog(@"[WCPL] Cannot get message wrap for swipe action");
         return;
     }
 
@@ -781,12 +790,43 @@ static BOOL didRegisterWCPLPlugin = NO;
 
 %new
 - (void)wchook_performQuoteReply {
-    if ([self respondsToSelector:@selector(onShowMsgReplyMenuItem:)]) {
-        @try {
-            [self onShowMsgReplyMenuItem:nil];
-        } @catch (__unused NSException *exception) {
-            NSLog(@"[WCPL] Quote reply failed: %@", exception);
+    @try {
+        // 方法1: 直接调用 Cell 的引用方法
+        if ([self respondsToSelector:@selector(onShowMsgReplyMenuItem:)]) {
+            [self performSelector:@selector(onShowMsgReplyMenuItem:) withObject:nil];
+            NSLog(@"[WCPL] Quote reply via onShowMsgReplyMenuItem:");
+            return;
         }
+
+        // 方法2: 调用 onClickAsRefer 方法（表情包和图片消息可能使用这个）
+        if ([self respondsToSelector:@selector(onClickAsRefer)]) {
+            [self performSelector:@selector(onClickAsRefer)];
+            NSLog(@"[WCPL] Quote reply via onClickAsRefer");
+            return;
+        }
+
+        // 方法3: 通过 ViewController 触发引用
+        BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
+        if (chatVC) {
+            // 获取消息
+            CMessageWrap *msgWrap = nil;
+            if ([self respondsToSelector:@selector(viewModel)]) {
+                id viewModel = [self performSelector:@selector(viewModel)];
+                if ([viewModel respondsToSelector:@selector(messageWrap)]) {
+                    msgWrap = [viewModel performSelector:@selector(messageWrap)];
+                }
+            }
+
+            if (msgWrap && [chatVC respondsToSelector:@selector(startReplyWithMessageWrap:)]) {
+                [chatVC performSelector:@selector(startReplyWithMessageWrap:) withObject:msgWrap];
+                NSLog(@"[WCPL] Quote reply via startReplyWithMessageWrap:");
+                return;
+            }
+        }
+
+        NSLog(@"[WCPL] Quote reply: no suitable method found");
+    } @catch (NSException *exception) {
+        NSLog(@"[WCPL] Quote reply failed: %@", exception);
     }
 }
 
@@ -794,22 +834,32 @@ static BOOL didRegisterWCPLPlugin = NO;
 - (void)wchook_performDeleteMessage:(CMessageWrap *)msgWrap {
     if (!msgWrap) return;
 
-    // 调用微信的删除消息方法
     @try {
-        // 优先调用 Cell 的删除方法 (正确的方法名是 onDelete:)
+        // 方法1: 调用 Cell 的删除方法
         if ([self respondsToSelector:@selector(onDelete:)]) {
             [self performSelector:@selector(onDelete:) withObject:nil];
             NSLog(@"[WCPL] Message deleted via onDelete:");
             return;
         }
 
-        // 备用方案：通过 CMessageMgr 删除 (正确的方法名是 DelMsg:MsgWrap:)
+        // 方法2: 通过 CMessageMgr 删除
         id messageMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
         if (messageMgr && [messageMgr respondsToSelector:@selector(DelMsg:MsgWrap:)]) {
             NSString *chatName = msgWrap.m_nsFromUsr ?: msgWrap.m_nsToUsr;
             [messageMgr DelMsg:chatName MsgWrap:msgWrap];
             NSLog(@"[WCPL] Message deleted via CMessageMgr DelMsg:MsgWrap:");
+            return;
         }
+
+        // 方法3: 通过 ViewController 删除
+        BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
+        if (chatVC && [chatVC respondsToSelector:@selector(onDeleteMessage:)]) {
+            [chatVC performSelector:@selector(onDeleteMessage:) withObject:msgWrap];
+            NSLog(@"[WCPL] Message deleted via onDeleteMessage:");
+            return;
+        }
+
+        NSLog(@"[WCPL] Delete message: no suitable method found");
     } @catch (NSException *exception) {
         NSLog(@"[WCPL] Delete message failed: %@", exception);
     }
