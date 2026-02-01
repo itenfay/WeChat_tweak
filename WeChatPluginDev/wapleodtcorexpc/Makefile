@@ -1,8 +1,7 @@
 THEOS_DEVICE_IP = localhost
 THEOS_DEVICE_PORT = 2222
 ARCHS = arm64 arm64e
-TARGET = iphone:latest:8.0
-THEOS_PACKAGE_SCHEME = rootless
+TARGET = iphone:latest:14.0
 
 include $(THEOS)/makefiles/common.mk
 

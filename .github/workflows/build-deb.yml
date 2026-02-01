@@ -1,4 +1,4 @@
-name: Build Rootless DEB
+name: Build DEB Packages
 
 on:
   workflow_dispatch:
@@ -38,7 +38,7 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
-      - name: Build Package
+      - name: Build Rootless Package (arm64 + arm64e)
         run: |
           cd WeChatPluginDev/wapleodtcorexpc
           rm -rf packages/*.deb 2>/dev/null || true
@@ -47,6 +47,31 @@ jobs:
             echo "=== Build failed, showing detailed errors ==="
             make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
           }
+          # Rename rootless package
+          for f in packages/*.deb; do
+            if [ -f "$f" ]; then
+              newname=$(echo "$f" | sed 's/\.deb$/-rootless.deb/')
+              mv "$f" "$newname"
+            fi
+          done
+        env:
+          THEOS: ${{ github.workspace }}/theos
+
+      - name: Build Rootful Package (arm64 + arm64e)
+        run: |
+          cd WeChatPluginDev/wapleodtcorexpc
+          make clean || true
+          make package FINALPACKAGE=1 2>&1 || {
+            echo "=== Build failed, showing detailed errors ==="
+            make package FINALPACKAGE=1
+          }
+          # Rename rootful package
+          for f in packages/*.deb; do
+            if [ -f "$f" ] && [[ ! "$f" == *"-rootless.deb" ]]; then
+              newname=$(echo "$f" | sed 's/\.deb$/-rootful.deb/')
+              mv "$f" "$newname"
+            fi
+          done
         env:
           THEOS: ${{ github.workspace }}/theos
 
@@ -60,12 +85,19 @@ jobs:
           echo "=== Listing obj directory ==="
           ls -la WeChatPluginDev/wapleodtcorexpc/.theos/obj/ 2>/dev/null || echo "obj directory not found"
 
-      - name: Upload Artifact
+      - name: Upload Rootless Artifact
         uses: actions/upload-artifact@v4
         with:
           name: rootless-deb
-          path: WeChatPluginDev/wapleodtcorexpc/packages/*.deb
-          if-no-files-found: error
+          path: WeChatPluginDev/wapleodtcorexpc/packages/*-rootless.deb
+          if-no-files-found: warn
+
+      - name: Upload Rootful Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rootful-deb
+          path: WeChatPluginDev/wapleodtcorexpc/packages/*-rootful.deb
+          if-no-files-found: warn
 
       - name: Release
         uses: softprops/action-gh-release@v1
