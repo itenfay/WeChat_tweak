@@ -32,6 +32,15 @@ jobs:
           if [ -f roothide-sdk.zip ]; then
             unzip -o roothide-sdk.zip -d ${{ github.workspace }}/theos-roothide/sdks/ || true
           fi
+          # Fix dm.pl for roothide theos
+          ROOTHIDE_THEOS="${{ github.workspace }}/theos-roothide"
+          if [ ! -f "$ROOTHIDE_THEOS/bin/dm.pl" ]; then
+            echo "dm.pl not found in roothide theos, installing..."
+            git clone --depth=1 https://github.com/theos/dm.pl.git "$ROOTHIDE_THEOS/vendor/dm.pl" || true
+            mkdir -p "$ROOTHIDE_THEOS/bin"
+            ln -sf ../vendor/dm.pl/dm.pl "$ROOTHIDE_THEOS/bin/dm.pl" || true
+            chmod +x "$ROOTHIDE_THEOS/vendor/dm.pl/dm.pl" || true
+          fi
 
       - name: Debug Environment
         run: |
@@ -41,10 +50,33 @@ jobs:
           echo "PWD=$PWD"
           echo "=== Theos Directory ==="
           ls -la $THEOS || echo "THEOS directory not found"
+          echo "=== Theos bin Directory ==="
+          ls -la $THEOS/bin/ || echo "THEOS bin directory not found"
+          echo "=== Check dm.pl ==="
+          ls -la $THEOS/bin/dm.pl || echo "dm.pl not found in bin"
+          ls -la $THEOS/vendor/dm.pl/ || echo "dm.pl vendor not found"
           echo "=== Project Directory ==="
           ls -la WeChatPluginDev/wapleodtcorexpc/
           echo "=== Source Files ==="
           ls -la WeChatPluginDev/wapleodtcorexpc/src/
+        env:
+          THEOS: ${{ github.workspace }}/theos
+
+      - name: Fix dm.pl if missing
+        run: |
+          # Check if dm.pl exists
+          if [ ! -f "$THEOS/bin/dm.pl" ]; then
+            echo "dm.pl not found, installing..."
+            # Clone dm.pl to vendor directory
+            git clone --depth=1 https://github.com/theos/dm.pl.git "$THEOS/vendor/dm.pl" || true
+            # Create symlink
+            ln -sf ../vendor/dm.pl/dm.pl "$THEOS/bin/dm.pl" || true
+            chmod +x "$THEOS/vendor/dm.pl/dm.pl" || true
+          fi
+          # Verify
+          echo "=== Verifying dm.pl ==="
+          ls -la "$THEOS/bin/dm.pl"
+          "$THEOS/bin/dm.pl" --help 2>&1 | head -5 || echo "dm.pl test failed"
         env:
           THEOS: ${{ github.workspace }}/theos
 
