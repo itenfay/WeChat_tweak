@@ -7,7 +7,7 @@
 
 #import "WCPLFuncService.h"
 #import "WCPLRedEnvelopConfig.h"
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 
 NSString *const WCPLShortDateFormat = @"yyyy-MM-dd";
 NSString *const WCPLLongDateFormat  = @"yyyy-MM-dd HH:mm:ss";

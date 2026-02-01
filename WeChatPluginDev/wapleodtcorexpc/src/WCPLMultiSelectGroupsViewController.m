@@ -8,7 +8,7 @@
 #import "WCPLMultiSelectGroupsViewController.h"
 #import "WCPLFuncService.h"
 #import "WeChatRedEnvelop.h"
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 
 @interface WCPLMultiSelectGroupsViewController () <ContactSelectViewDelegate>
 
