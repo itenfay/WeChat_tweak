@@ -495,19 +495,10 @@ static char kRepeatMsgWrapKey;
                 NSLog(@"[WCPL] referingMessageWrap exception: %@", e.reason);
             }
 
-            // 调试：显示引用消息信息
-            NSMutableString *debugInfo = [NSMutableString string];
-            [debugInfo appendFormat:@"复读内容: %@\n\n", content];
-
             if (referredMsg) {
-                [debugInfo appendFormat:@"被引用消息存在\n"];
-                [debugInfo appendFormat:@"- 类型: %u\n", referredMsg.m_uiMessageType];
-                [debugInfo appendFormat:@"- 内容: %@\n\n", referredMsg.m_nsContent];
+                NSLog(@"[WCPL] Found referred message, trying to send with quote");
 
-                // 探索 viewController 的属性和方法
-                [debugInfo appendFormat:@"VC类: %@\n", NSStringFromClass([viewController class])];
-
-                // 尝试获取 inputToolView
+                // 获取 inputToolView
                 id toolView = nil;
                 @try {
                     if ([viewController respondsToSelector:@selector(toolView)]) {
@@ -523,49 +514,52 @@ static char kRepeatMsgWrapKey;
                     @catch (NSException *e) {}
                 }
 
-                if (!toolView) {
-                    @try {
-                        toolView = [viewController valueForKey:@"m_toolView"];
-                    }
-                    @catch (NSException *e) {}
-                }
-
-                [debugInfo appendFormat:@"toolView: %@\n\n", toolView ? NSStringFromClass([toolView class]) : @"nil"];
-
                 if (toolView) {
-                    // 列出 toolView 的所有方法中包含 reply/refer/quote 的
-                    unsigned int methodCount = 0;
-                    Method *methods = class_copyMethodList([toolView class], &methodCount);
-                    [debugInfo appendFormat:@"相关方法:\n"];
-                    for (unsigned int i = 0; i < methodCount; i++) {
-                        NSString *methodName = NSStringFromSelector(method_getName(methods[i]));
-                        NSString *lowerName = [methodName lowercaseString];
-                        if ([lowerName containsString:@"reply"] ||
-                            [lowerName containsString:@"refer"] ||
-                            [lowerName containsString:@"quote"] ||
-                            [lowerName containsString:@"send"]) {
-                            [debugInfo appendFormat:@"- %@\n", methodName];
+                    // 方法1：使用 setReplyingMessage: 设置引用，然后 sendMsgWithText: 发送
+                    SEL setReplyingMsgSel = @selector(setReplyingMessage:);
+                    SEL sendMsgSel = @selector(sendMsgWithText:);
+
+                    if ([toolView respondsToSelector:setReplyingMsgSel] &&
+                        [toolView respondsToSelector:sendMsgSel]) {
+                        NSLog(@"[WCPL] Using setReplyingMessage: + sendMsgWithText:");
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                        // 设置引用消息
+                        [toolView performSelector:setReplyingMsgSel withObject:referredMsg];
+                        // 发送文本
+                        [toolView performSelector:sendMsgSel withObject:content];
+#pragma clang diagnostic pop
+                        return;
+                    }
+
+                    // 方法2：使用 replyMessage:becomeFirstResponder:showDisplayName:
+                    // 这个方法可能会显示引用UI，然后我们手动发送
+                    SEL replyMsgSel = @selector(replyMessage:becomeFirstResponder:showDisplayName:);
+                    if ([toolView respondsToSelector:replyMsgSel]) {
+                        NSLog(@"[WCPL] Using replyMessage:becomeFirstResponder:showDisplayName:");
+
+                        NSMethodSignature *sig = [toolView methodSignatureForSelector:replyMsgSel];
+                        NSInvocation *inv = [NSInvocation invocationWithMethodSignature:sig];
+                        [inv setTarget:toolView];
+                        [inv setSelector:replyMsgSel];
+                        [inv setArgument:&referredMsg atIndex:2];
+                        BOOL becomeFirst = NO;
+                        [inv setArgument:&becomeFirst atIndex:3];
+                        BOOL showName = YES;
+                        [inv setArgument:&showName atIndex:4];
+                        [inv invoke];
+
+                        // 然后发送文本
+                        if ([toolView respondsToSelector:sendMsgSel]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                            [toolView performSelector:sendMsgSel withObject:content];
+#pragma clang diagnostic pop
+                            return;
                         }
                     }
-                    free(methods);
                 }
-            } else {
-                [debugInfo appendFormat:@"被引用消息: nil\n"];
-            }
-
-            // 显示调试弹窗
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"复读调试"
-                                                                               message:debugInfo
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
-                [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-                [viewController presentViewController:alert animated:YES completion:nil];
-            });
-
-            // 暂时只发送纯文本
-            if ([viewController respondsToSelector:@selector(onSendTextMsg:)]) {
-                [viewController onSendTextMsg:content];
-                return;
             }
         }
 
