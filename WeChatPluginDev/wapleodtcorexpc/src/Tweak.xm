@@ -470,8 +470,38 @@ static BOOL didRegisterWCPLPlugin = NO;
 
 %end
 
-// Hook 表情包消息 Cell
+// Hook 表情包消息 Cell (App类型)
 %hook AppEmoticonMessageCellView
+
+- (void)layoutSubviews {
+    %orig;
+
+    // 添加复读按钮
+    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
+}
+
+- (void)prepareForReuse {
+    %orig;
+
+    // Cell 复用时移除按钮
+    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
+}
+
+- (void)didMoveToWindow {
+    %orig;
+
+    // 确保表情包消息也支持滑动手势
+    if (self.window) {
+        [self wchook_setupSwipeGestureIfNeeded];
+    } else {
+        [self wchook_resetSwipeAnimated:NO];
+    }
+}
+
+%end
+
+// Hook 表情包消息 Cell (普通类型)
+%hook EmoticonMessageCellView
 
 - (void)layoutSubviews {
     %orig;
@@ -531,6 +561,7 @@ static BOOL didRegisterWCPLPlugin = NO;
     if ([className isEqualToString:@"TextMessageCellView"] ||
         [className isEqualToString:@"AppMessageCellView"] ||
         [className isEqualToString:@"AppEmoticonMessageCellView"] ||
+        [className isEqualToString:@"EmoticonMessageCellView"] ||
         [className isEqualToString:@"ImageMessageCellView"]) {
         // 已经在各自的 hook 中处理
         return;

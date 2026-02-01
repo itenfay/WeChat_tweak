@@ -559,6 +559,14 @@
 
 @end
 
+#pragma mark - EmoticonMessageCellView
+
+@interface EmoticonMessageCellView : CommonMessageCellView
+
+@property(readonly, nonatomic) CommonMessageViewModel *viewModel;
+
+@end
+
 #pragma mark - ContactInfoViewController
 
 @interface ContactInfoViewController : MMUIViewController
