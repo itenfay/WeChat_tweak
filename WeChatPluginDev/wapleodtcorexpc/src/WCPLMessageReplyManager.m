@@ -169,17 +169,16 @@ static char kRepeatContentKey;
 - (UIButton *)createRepeatButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.tag = kWCPLRepeatButtonTag;
-    button.frame = CGRectMake(0, 0, 28, 28);
+    button.frame = CGRectMake(0, 0, 32, 20);
 
-    // 设置样式 - 圆形蓝色按钮
-    button.backgroundColor = [UIColor colorWithRed:0.0 green:0.48 blue:1.0 alpha:0.9];
-    button.layer.cornerRadius = 14.0;
-    button.layer.masksToBounds = YES;
+    // 设置样式 - 透明背景
+    button.backgroundColor = [UIColor clearColor];
 
-    // 设置标题
-    button.titleLabel.font = [UIFont boldSystemFontOfSize:12];
+    // 设置标题 - 灰色文字
+    button.titleLabel.font = [UIFont systemFontOfSize:12];
     [button setTitle:@"+1" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
 
     // 添加点击事件
     [button addTarget:self
@@ -200,26 +199,24 @@ static char kRepeatContentKey;
             return;
         }
 
-        // 判断消息方向（左边是别人的消息）
+        // 判断消息方向（左边是别人的消息，气泡 x 坐标小于屏幕中间）
         BOOL isLeftMessage = bubbleFrame.origin.x < cellView.bounds.size.width / 2;
 
-        CGFloat buttonX;
-        CGFloat buttonY = CGRectGetMidY(bubbleFrame) - 14;
-
-        if (isLeftMessage) {
-            // 别人的消息 - 按钮放在气泡右侧
-            buttonX = CGRectGetMaxX(bubbleFrame) + 8;
-        } else {
+        if (!isLeftMessage) {
             // 自己的消息 - 不应该显示
             button.hidden = YES;
             return;
         }
 
-        // 确保按钮不超出边界
-        buttonX = MAX(8, MIN(buttonX, cellView.bounds.size.width - 36));
-        buttonY = MAX(8, MIN(buttonY, cellView.bounds.size.height - 36));
+        // 别人的消息 - 按钮放在气泡右侧末端
+        CGFloat buttonX = CGRectGetMaxX(bubbleFrame) + 4;
+        CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - 20; // 放在气泡底部
 
-        button.frame = CGRectMake(buttonX, buttonY, 28, 28);
+        // 确保按钮不超出边界
+        buttonX = MAX(8, MIN(buttonX, cellView.bounds.size.width - 40));
+        buttonY = MAX(8, MIN(buttonY, cellView.bounds.size.height - 24));
+
+        button.frame = CGRectMake(buttonX, buttonY, 32, 20);
         button.hidden = NO;
     }
     @catch (NSException *exception) {
@@ -230,30 +227,51 @@ static char kRepeatContentKey;
 
 - (CGRect)getBubbleFrameFromCellView:(CommonMessageCellView *)cellView {
     @try {
-        // 遍历子视图查找气泡背景
+        CGRect bestFrame = CGRectZero;
+        CGFloat maxWidth = 0;
+
+        // 遍历所有子视图，找到最大的气泡背景
         for (UIView *subview in cellView.subviews) {
-            // 查找 YYAsyncImageView (气泡背景)
+            if (subview.hidden) continue;
+
             NSString *className = NSStringFromClass([subview class]);
+
+            // 优先查找气泡背景图
             if ([className containsString:@"YYAsyncImageView"] ||
-                [className containsString:@"BgImage"]) {
-                if (subview.frame.size.width > 50 && subview.frame.size.height > 20 && !subview.hidden) {
-                    return subview.frame;
+                [className containsString:@"BgImage"] ||
+                [className containsString:@"bgImageView"]) {
+
+                CGRect frame = subview.frame;
+                // 气泡通常宽度大于50，高度大于20
+                if (frame.size.width > 50 && frame.size.height > 20) {
+                    // 选择最宽的作为气泡
+                    if (frame.size.width > maxWidth) {
+                        maxWidth = frame.size.width;
+                        bestFrame = frame;
+                    }
                 }
             }
         }
 
-        // 查找其他可能的气泡视图
-        for (UIView *subview in cellView.subviews) {
-            NSString *className = NSStringFromClass([subview class]);
-            if ([className containsString:@"Bubble"] ||
-                [className containsString:@"RichText"]) {
-                if (subview.frame.size.width > 50 && subview.frame.size.height > 20 && !subview.hidden) {
-                    return subview.frame;
+        // 如果没找到，查找 RichTextView
+        if (CGRectIsEmpty(bestFrame)) {
+            for (UIView *subview in cellView.subviews) {
+                if (subview.hidden) continue;
+
+                NSString *className = NSStringFromClass([subview class]);
+                if ([className containsString:@"RichText"]) {
+                    CGRect frame = subview.frame;
+                    if (frame.size.width > 50 && frame.size.height > 20) {
+                        if (frame.size.width > maxWidth) {
+                            maxWidth = frame.size.width;
+                            bestFrame = frame;
+                        }
+                    }
                 }
             }
         }
 
-        return CGRectZero;
+        return bestFrame;
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in getBubbleFrameFromCellView: %@", exception);
