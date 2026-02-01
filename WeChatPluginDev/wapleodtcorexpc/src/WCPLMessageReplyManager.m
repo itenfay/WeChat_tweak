@@ -282,8 +282,13 @@ static char kRepeatContentKey;
     // 透明背景
     button.backgroundColor = [UIColor clearColor];
 
+    // 黑色圆圈边框
+    button.layer.borderColor = [UIColor blackColor].CGColor;
+    button.layer.borderWidth = 1.0;
+    button.layer.cornerRadius = 12;  // 圆形
+
     // 设置标题 - 黑色文字
-    button.titleLabel.font = [UIFont boldSystemFontOfSize:12];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:11];
     [button setTitle:@"+1" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 
@@ -317,20 +322,88 @@ static char kRepeatContentKey;
             return;
         }
 
+        // 尝试查找 m_richTextView（回复文本视图），用于引用回复消息
+        UIView *richTextView = [self findRichTextViewInCellView:cellView];
+
+        // 确定目标视图和坐标
+        CGRect targetFrame;
+        if (richTextView) {
+            // 如果找到 richTextView，转换坐标到 cellView
+            targetFrame = [richTextView.superview convertRect:richTextView.frame toView:cellView];
+        } else {
+            // 否则使用气泡
+            targetFrame = bubbleFrame;
+        }
+
         // 按钮固定尺寸
-        CGFloat buttonWidth = 24;
-        CGFloat buttonHeight = 18;
+        CGFloat buttonSize = 24;
 
-        // 别人的消息 - 按钮放在气泡右侧外面，底部与气泡底部对齐
-        CGFloat buttonX = CGRectGetMaxX(bubbleFrame) + 4;
-        CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonHeight;
+        // 别人的消息 - 按钮放在目标视图右侧外面，底部与目标视图底部对齐
+        CGFloat buttonX = CGRectGetMaxX(targetFrame) + 4;
+        CGFloat buttonY = CGRectGetMaxY(targetFrame) - buttonSize;
 
-        button.frame = CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight);
+        button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
         button.hidden = NO;
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in layoutRepeatButton: %@", exception);
         button.hidden = YES;
+    }
+}
+
+// 查找 m_richTextView（回复文本视图）
+- (UIView *)findRichTextViewInCellView:(CommonMessageCellView *)cellView {
+    @try {
+        // 尝试通过 KVC 获取 m_richTextView
+        @try {
+            UIView *richTextView = [cellView valueForKey:@"m_richTextView"];
+            if (richTextView && !richTextView.hidden && richTextView.frame.size.width > 0) {
+                return richTextView;
+            }
+        }
+        @catch (NSException *e) {
+            // 忽略 KVC 异常
+        }
+
+        // 遍历子视图查找 RichTextView（不是 MMInputMsgReferView 里的）
+        return [self findMainRichTextViewInView:cellView excludeReferView:YES];
+    }
+    @catch (NSException *exception) {
+        return nil;
+    }
+}
+
+// 递归查找主要的 RichTextView（排除引用视图内的）
+- (UIView *)findMainRichTextViewInView:(UIView *)view excludeReferView:(BOOL)exclude {
+    @try {
+        for (UIView *subview in view.subviews) {
+            if (subview.hidden) continue;
+            if (subview.tag == kWCPLRepeatButtonTag) continue;
+
+            NSString *className = NSStringFromClass([subview class]);
+
+            // 跳过引用消息视图
+            if (exclude && [className containsString:@"MsgRefer"]) {
+                continue;
+            }
+
+            // 找到 RichTextView
+            if ([className isEqualToString:@"RichTextView"]) {
+                return subview;
+            }
+
+            // 递归查找（但不进入引用视图）
+            if (exclude && [className containsString:@"MsgRefer"]) {
+                continue;
+            }
+
+            UIView *found = [self findMainRichTextViewInView:subview excludeReferView:exclude];
+            if (found) return found;
+        }
+        return nil;
+    }
+    @catch (NSException *exception) {
+        return nil;
     }
 }
 
