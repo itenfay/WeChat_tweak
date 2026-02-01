@@ -270,15 +270,17 @@ static char kRepeatContentKey;
 - (UIButton *)createRepeatButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.tag = kWCPLRepeatButtonTag;
-    button.frame = CGRectMake(0, 0, 28, 18);
+    button.frame = CGRectMake(0, 0, 24, 24);
 
-    // 设置样式 - 透明背景
-    button.backgroundColor = [UIColor clearColor];
+    // 设置圆形背景
+    button.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+    button.layer.cornerRadius = 12;  // 半径为宽度的一半，形成圆形
+    button.layer.masksToBounds = YES;
 
-    // 设置标题 - 灰色文字
-    button.titleLabel.font = [UIFont systemFontOfSize:11];
+    // 设置标题 - 黑色文字
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:11];
     [button setTitle:@"+1" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 
     // 添加点击事件
     [button addTarget:self
@@ -310,11 +312,20 @@ static char kRepeatContentKey;
             return;
         }
 
-        // 别人的消息 - 按钮放在气泡右侧
-        CGFloat buttonX = CGRectGetMaxX(bubbleFrame) + 2;
-        CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - 18;
+        // 计算按钮尺寸 - 高度为气泡高度的一半，但最小18，最大30
+        CGFloat bubbleHeight = bubbleFrame.size.height;
+        CGFloat buttonSize = bubbleHeight / 2.0;
+        if (buttonSize < 18) buttonSize = 18;
+        if (buttonSize > 30) buttonSize = 30;
 
-        button.frame = CGRectMake(buttonX, buttonY, 28, 18);
+        // 更新圆角半径
+        button.layer.cornerRadius = buttonSize / 2.0;
+
+        // 别人的消息 - 按钮放在气泡右侧，垂直居中
+        CGFloat buttonX = CGRectGetMaxX(bubbleFrame) + 4;
+        CGFloat buttonY = bubbleFrame.origin.y + (bubbleHeight - buttonSize) / 2.0;
+
+        button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
         button.hidden = NO;
     }
     @catch (NSException *exception) {
