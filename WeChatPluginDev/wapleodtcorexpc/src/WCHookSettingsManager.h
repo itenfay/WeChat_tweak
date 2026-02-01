@@ -34,7 +34,7 @@ FOUNDATION_EXPORT WCHookSettingsManager *WCHookSettings(void);
 + (instancetype)navigationItemWithIdentifier:(NSString *)identifier
                                        title:(NSString *)title
                                       detail:(nullable NSString *)detail
-                               actionHandler:(dispatch_block_t)actionHandler;
+                               actionHandler:(nullable dispatch_block_t)actionHandler;
 
 - (void)wchook_handleToggleControl:(id)sender;
 - (void)wchook_handleSelection:(nullable id)sender;
