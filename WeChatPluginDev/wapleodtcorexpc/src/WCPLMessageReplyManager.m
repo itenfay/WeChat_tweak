@@ -484,73 +484,26 @@ static char kRepeatMsgWrapKey;
                      viewController:(BaseMsgContentViewController *)viewController
                             msgWrap:(CMessageWrap *)originalMsgWrap {
     @try {
-        NSMutableString *debugInfo = [NSMutableString string];
-        [debugInfo appendFormat:@"VC class: %@\n", NSStringFromClass([viewController class])];
-
         // 检查原消息是否有引用
         CMessageWrap *referMsg = nil;
         if (originalMsgWrap) {
-            [debugInfo appendFormat:@"msgWrap exists\n"];
-
-            // 尝试多种方式获取引用消息
+            // 尝试通过 KVC 获取引用消息
             @try {
-                // 方式1: m_refMessageWrap
-                if ([originalMsgWrap respondsToSelector:@selector(m_refMessageWrap)]) {
-                    referMsg = [originalMsgWrap performSelector:@selector(m_refMessageWrap)];
-                    [debugInfo appendFormat:@"m_refMessageWrap: %@\n", referMsg ? @"YES" : @"NO"];
-                }
-                // 方式2: referingMessageWrap
-                if (!referMsg && [originalMsgWrap respondsToSelector:@selector(referingMessageWrap)]) {
-                    referMsg = [originalMsgWrap performSelector:@selector(referingMessageWrap)];
-                    [debugInfo appendFormat:@"referingMessageWrap: %@\n", referMsg ? @"YES" : @"NO"];
-                }
-                // 方式3: getReplyMessage
-                if (!referMsg && [originalMsgWrap respondsToSelector:@selector(getReplyMessage)]) {
-                    referMsg = [originalMsgWrap performSelector:@selector(getReplyMessage)];
-                    [debugInfo appendFormat:@"getReplyMessage: %@\n", referMsg ? @"YES" : @"NO"];
-                }
-            }
-            @catch (NSException *e) {
-                [debugInfo appendFormat:@"Exception: %@\n", e.reason];
-            }
-
-            // 检查是否是引用消息类型
-            @try {
-                if ([originalMsgWrap respondsToSelector:@selector(isReferMsgType)]) {
-                    BOOL isRefer = [[originalMsgWrap performSelector:@selector(isReferMsgType)] boolValue];
-                    [debugInfo appendFormat:@"isReferMsgType: %d\n", isRefer];
-                }
+                referMsg = [originalMsgWrap valueForKey:@"m_refMessageWrap"];
             }
             @catch (NSException *e) {
                 // 忽略
             }
-        } else {
-            [debugInfo appendFormat:@"msgWrap is nil\n"];
         }
 
-        // 检查方法是否存在
-        BOOL hasAsync = [viewController respondsToSelector:@selector(AsyncSendMessage:replyingMsg:isPasted:)];
-        BOOL hasOnSend = [viewController respondsToSelector:@selector(onSendTextMsg:)];
-        [debugInfo appendFormat:@"AsyncSendMessage: %@\n", hasAsync ? @"YES" : @"NO"];
-        [debugInfo appendFormat:@"onSendTextMsg: %@\n", hasOnSend ? @"YES" : @"NO"];
-
-        // 显示调试弹窗
-        dispatch_async(dispatch_get_main_queue(), ^{
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Debug Info"
-                                                                           message:debugInfo
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-            [viewController presentViewController:alert animated:YES completion:nil];
-        });
-
         // 方法1：直接使用 ViewController 的 AsyncSendMessage 方法
-        if (hasAsync) {
+        if ([viewController respondsToSelector:@selector(AsyncSendMessage:replyingMsg:isPasted:)]) {
             [viewController AsyncSendMessage:content replyingMsg:referMsg isPasted:NO];
             return;
         }
 
         // 方法2：使用 onSendTextMsg 方法（不支持引用）
-        if (!referMsg && hasOnSend) {
+        if ([viewController respondsToSelector:@selector(onSendTextMsg:)]) {
             [viewController onSendTextMsg:content];
             return;
         }
