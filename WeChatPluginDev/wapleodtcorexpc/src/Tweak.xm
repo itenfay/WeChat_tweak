@@ -277,30 +277,8 @@
 
     WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoDefaut];
 
-    WCTableViewNormalCellManager *stepCountCell = [%c(WCTableViewNormalCellManager) editorCellForSel:@selector(wcpl_handleStepCount:) target:self title:@"修改微信运动步数                  " tip:@"步数小于10万" focus:NO autoCorrect:NO text:[NSString stringWithFormat:@"%ld", (long)[WCPLRedEnvelopConfig sharedConfig].stepCount]];
-    [sectionMgr addCell:stepCountCell];
-
     WCTableViewNormalCellManager *settingCell = [%c(WCTableViewNormalCellManager) normalCellForSel:@selector(wcpl_setting) target:self title:@"小微同学" accessoryType:1];
     [sectionMgr addCell:settingCell];
-
-    /*
-    CContactMgr *contactMgr = [[%c(MMServiceCenter) defaultCenter] getService:%c(CContactMgr)];
-
-    NSString *rightValue = @"未关注";
-
-    if ([contactMgr isInContactList:@"gh_dfca3xx3231"]) {
-        rightValue = @"已关注";
-    } else {
-        rightValue = @"未关注";
-        
-        CContact *contact = [contactMgr getContactForSearchByName:@"gh_dfca3xx3231"];
-        [contactMgr addLocalContact:contact listType:2];
-        [contactMgr getContactsFromServer:@[contact]];
-    }
-
-    WCTableViewNormalCellManager *followOfficalAccountCell = [%c(WCTableViewNormalCellManager) normalCellForSel:@selector(wcpl_followMyOfficalAccount) target:self title:@"关注我的公众号" rightValue:rightValue accessoryType:1];
-    [sectionMgr addCell:followOfficalAccountCell];
-    */
 
     [tableViewMgr insertSection:sectionMgr At:0];
 
@@ -312,14 +290,6 @@
 - (void)wcpl_setting {
     WCPLSettingViewController *settingViewController = [[WCPLSettingViewController alloc] init];
     [self.navigationController pushViewController:settingViewController animated:YES];
-}
-
-%new
-- (void)wcpl_handleStepCount:(UITextField *)sender {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    config.stepCount = sender.text.integerValue;
-    config.lastChangeStepCountDate = [NSDate date];
-    [config saveLastChangeStepCountDateToLocalFile];
 }
 
 /*
@@ -347,34 +317,6 @@
     [self setValue:msgListResult forKey:@"m_arrMsgList"];
 
     return %orig;
-}
-
-%end
-
-%hook WCDeviceStepObject
-
-- (unsigned int)m7StepCount {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    
-    NSString *dateStr = [WCPLFuncService stringFromDate:[NSDate date] withFormat:WCPLShortDateFormat];
-    NSString *lastDateStr = [WCPLFuncService stringFromDate:config.lastChangeStepCountDate withFormat:WCPLShortDateFormat];
-
-    BOOL shouldModify = NO;
-
-    if([dateStr isEqualToString:lastDateStr]) {
-        shouldModify = YES;
-    }
-
-    if (config.stepCount == 0 || !shouldModify) {
-        config.stepCount = %orig;
-    } 
-
-    /*
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@" dateStr: %@\n lastDateStr: %@\n shouldModify: %d\n stepCount: %d", dateStr, lastDateStr, shouldModify, (unsigned int)config.stepCount] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [alert show];
-    */
-
-    return (unsigned int)config.stepCount;
 }
 
 %end
