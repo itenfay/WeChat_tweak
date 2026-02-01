@@ -427,6 +427,16 @@
 @interface BaseMsgContentViewController : MMUIViewController
 
 - (id)GetContact;
+- (id)m_contact;
+
+@end
+
+#pragma mark - BaseMsgContentLogicController
+
+@interface BaseMsgContentLogicController : NSObject
+
+- (void)SendTextMessage:(id)arg1;
+- (void)SendTextMessage:(id)arg1 replyingMessage:(id)arg2 isPasted:(_Bool)arg3;
 
 @end
 

@@ -15,6 +15,7 @@
 
 // 关联对象的 key
 static char kRepeatContentKey;
+static char kRepeatMsgWrapKey;
 
 @implementation WCPLMessageReplyManager
 
@@ -86,8 +87,9 @@ static char kRepeatContentKey;
             [cellView addSubview:repeatButton];
         }
 
-        // 关联消息内容
+        // 关联消息内容和 msgWrap
         objc_setAssociatedObject(repeatButton, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        objc_setAssociatedObject(repeatButton, &kRepeatMsgWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
         // 定位按钮到消息气泡旁边（对于引用回复消息，定位到回复文本旁边）
         [self layoutRepeatButton:repeatButton inCellView:cellView];
@@ -115,7 +117,8 @@ static char kRepeatContentKey;
 }
 
 - (void)handleRepeatButtonTapWithContent:(NSString *)content
-                          viewController:(BaseMsgContentViewController *)viewController {
+                          viewController:(BaseMsgContentViewController *)viewController
+                                 msgWrap:(CMessageWrap *)msgWrap {
     @try {
         if (!content || content.length == 0) {
             NSLog(@"[WCPL] No content to repeat");
@@ -129,8 +132,8 @@ static char kRepeatContentKey;
 
         NSLog(@"[WCPL] Repeating message: %@", content);
 
-        // 尝试通过输入框发送
-        [self sendMessageViaInputToolView:content viewController:viewController];
+        // 发送消息
+        [self sendMessageViaInputToolView:content viewController:viewController msgWrap:msgWrap];
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in handleRepeatButtonTapWithContent: %@", exception);
@@ -391,6 +394,17 @@ static char kRepeatContentKey;
 
 - (UIView *)findBubbleViewInCellView:(CommonMessageCellView *)cellView {
     @try {
+        // 首先尝试通过 KVC 获取 m_bgImageView（气泡背景）
+        @try {
+            UIView *bgImageView = [cellView valueForKey:@"m_bgImageView"];
+            if (bgImageView && !bgImageView.hidden && bgImageView.frame.size.width > 40) {
+                return bgImageView;
+            }
+        }
+        @catch (NSException *e) {
+            // 忽略 KVC 异常
+        }
+
         // 遍历子视图查找气泡
         UIView *bestView = nil;
         CGFloat maxArea = 0;
@@ -401,11 +415,12 @@ static char kRepeatContentKey;
 
             NSString *className = NSStringFromClass([subview class]);
 
-            // 排除头像、标签等小视图
+            // 排除头像、标签、引用消息视图等
             if ([className containsString:@"HeadImage"] ||
                 [className containsString:@"Avatar"] ||
                 [className containsString:@"Label"] ||
-                [className containsString:@"StateView"]) {
+                [className containsString:@"StateView"] ||
+                [className containsString:@"MsgRefer"]) {
                 continue;
             }
 
@@ -462,6 +477,45 @@ static char kRepeatContentKey;
 }
 
 - (void)sendMessageViaInputToolView:(NSString *)content
+                     viewController:(BaseMsgContentViewController *)viewController
+                            msgWrap:(CMessageWrap *)originalMsgWrap {
+    @try {
+        // 尝试获取 logicController 直接发送消息
+        id logicController = nil;
+        if ([viewController respondsToSelector:@selector(m_logicController)]) {
+            logicController = [viewController valueForKey:@"m_logicController"];
+        }
+
+        if (logicController && [logicController respondsToSelector:@selector(SendTextMessage:)]) {
+            // 检查原消息是否有引用（referingMessageWrap）
+            CMessageWrap *referMsg = nil;
+            if (originalMsgWrap && [originalMsgWrap respondsToSelector:@selector(referingMessageWrap)]) {
+                referMsg = [originalMsgWrap valueForKey:@"referingMessageWrap"];
+            }
+
+            if (referMsg && [logicController respondsToSelector:@selector(SendTextMessage:replyingMessage:isPasted:)]) {
+                // 带引用发送
+                NSLog(@"[WCPL] Sending with reply reference");
+                [logicController SendTextMessage:content replyingMessage:referMsg isPasted:NO];
+            } else {
+                // 普通发送
+                NSLog(@"[WCPL] Sending plain text");
+                [logicController SendTextMessage:content];
+            }
+            return;
+        }
+
+        // 回退方案：通过输入框发送
+        NSLog(@"[WCPL] Fallback to input method");
+        [self sendMessageViaInputFallback:content viewController:viewController];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[WCPL] Exception in sendMessageViaInputToolView: %@", exception);
+    }
+}
+
+// 回退方案：通过输入框发送
+- (void)sendMessageViaInputFallback:(NSString *)content
                      viewController:(BaseMsgContentViewController *)viewController {
     @try {
         // 获取输入框
@@ -490,12 +544,16 @@ static char kRepeatContentKey;
                                                             object:textView];
 
         // 触发发送
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self triggerSendInToolView:toolView];
+            // 清空输入框
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                textView.text = @"";
+            });
         });
     }
     @catch (NSException *exception) {
-        NSLog(@"[WCPL] Exception in sendMessageViaInputToolView: %@", exception);
+        NSLog(@"[WCPL] Exception in sendMessageViaInputFallback: %@", exception);
     }
 }
 
@@ -555,6 +613,7 @@ static char kRepeatContentKey;
 - (void)repeatButtonTapped:(UIButton *)sender {
     @try {
         NSString *content = objc_getAssociatedObject(sender, &kRepeatContentKey);
+        CMessageWrap *msgWrap = objc_getAssociatedObject(sender, &kRepeatMsgWrapKey);
 
         if (!content || content.length == 0) {
             NSLog(@"[WCPL] No content associated with repeat button");
@@ -565,7 +624,7 @@ static char kRepeatContentKey;
         BaseMsgContentViewController *viewController = [self findViewControllerFromView:sender];
 
         if (viewController) {
-            [self handleRepeatButtonTapWithContent:content viewController:viewController];
+            [self handleRepeatButtonTapWithContent:content viewController:viewController msgWrap:msgWrap];
         } else {
             NSLog(@"[WCPL] Could not find view controller for repeat action");
         }
