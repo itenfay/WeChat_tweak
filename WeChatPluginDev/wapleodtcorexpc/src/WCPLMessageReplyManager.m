@@ -66,32 +66,37 @@ static char kRepeatMsgWrapKey;
             return;
         }
 
-        // 获取消息内容 - 优先从 ViewModel 的 contentText 获取（用于引用回复消息）
+        // 图片消息不需要检查文本内容
         NSString *content = nil;
-        if ([viewModel respondsToSelector:@selector(contentText)]) {
-            content = [viewModel performSelector:@selector(contentText)];
-        }
-        // 如果 contentText 为空，回退到 msgWrap.m_nsContent
-        if (!content || content.length == 0) {
-            content = [self getMessageContent:msgWrap];
-        }
-        if (!content || content.length == 0) {
-            [self removeRepeatButtonFromCellView:cellView];
-            return;
+        BOOL isImageMessage = (msgWrap.m_uiMessageType == 3);
+
+        if (!isImageMessage) {
+            // 获取消息内容 - 优先从 ViewModel 的 contentText 获取（用于引用回复消息）
+            if ([viewModel respondsToSelector:@selector(contentText)]) {
+                content = [viewModel performSelector:@selector(contentText)];
+            }
+            // 如果 contentText 为空，回退到 msgWrap.m_nsContent
+            if (!content || content.length == 0) {
+                content = [self getMessageContent:msgWrap];
+            }
+            if (!content || content.length == 0) {
+                [self removeRepeatButtonFromCellView:cellView];
+                return;
+            }
         }
 
-        // 查找或创建复读按钮
-        UIButton *repeatButton = [cellView viewWithTag:kWCPLRepeatButtonTag];
-        if (!repeatButton) {
-            repeatButton = [self createRepeatButton];
-            [cellView addSubview:repeatButton];
-        }
+        // 先移除所有旧按钮，确保只有一个
+        [self removeRepeatButtonFromCellView:cellView];
+
+        // 创建新按钮
+        UIButton *repeatButton = [self createRepeatButton];
+        [cellView addSubview:repeatButton];
 
         // 关联消息内容和 msgWrap
         objc_setAssociatedObject(repeatButton, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
         objc_setAssociatedObject(repeatButton, &kRepeatMsgWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
-        // 定位按钮到消息气泡旁边（对于引用回复消息，定位到回复文本旁边）
+        // 定位按钮到消息气泡旁边
         [self layoutRepeatButton:repeatButton inCellView:cellView];
 
         repeatButton.hidden = NO;
@@ -106,9 +111,15 @@ static char kRepeatMsgWrapKey;
     @try {
         if (!cellView) return;
 
-        UIButton *repeatButton = [cellView viewWithTag:kWCPLRepeatButtonTag];
-        if (repeatButton) {
-            repeatButton.hidden = YES;
+        // 移除所有带有指定 tag 的按钮（避免重复）
+        NSMutableArray *buttonsToRemove = [NSMutableArray array];
+        for (UIView *subview in cellView.subviews) {
+            if (subview.tag == kWCPLRepeatButtonTag) {
+                [buttonsToRemove addObject:subview];
+            }
+        }
+        for (UIView *button in buttonsToRemove) {
+            [button removeFromSuperview];
         }
     }
     @catch (NSException *exception) {
