@@ -2,6 +2,10 @@
 
 #import <objc/message.h>
 
+// Forward declaration - CommonMessageCellView is a UIView subclass
+@interface CommonMessageCellView : UIView
+@end
+
 static const CGFloat kWCHookSwipeTriggerRatio = 0.18f;
 static const CGFloat kWCHookSwipeMinimumTrigger = 44.0f;
 static const CGFloat kWCHookSwipeResetDuration = 0.25f;
