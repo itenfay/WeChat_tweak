@@ -546,6 +546,22 @@ static BOOL didRegisterWCPLPlugin = NO;
 
 %end
 
+// Hook 视频消息 Cell（支持手势操作）
+%hook VideoMessageCellView
+
+- (void)didMoveToWindow {
+    %orig;
+
+    // 确保视频消息也支持滑动手势
+    if (self.window) {
+        [self wchook_setupSwipeGestureIfNeeded];
+    } else {
+        [self wchook_resetSwipeAnimated:NO];
+    }
+}
+
+%end
+
 // 也 Hook CommonMessageCellView 以支持更多消息类型和左滑引用功能
 %hook CommonMessageCellView
 
@@ -562,7 +578,8 @@ static BOOL didRegisterWCPLPlugin = NO;
         [className isEqualToString:@"AppMessageCellView"] ||
         [className isEqualToString:@"AppEmoticonMessageCellView"] ||
         [className isEqualToString:@"EmoticonMessageCellView"] ||
-        [className isEqualToString:@"ImageMessageCellView"]) {
+        [className isEqualToString:@"ImageMessageCellView"] ||
+        [className isEqualToString:@"VideoMessageCellView"]) {
         // 已经在各自的 hook 中处理
         return;
     }

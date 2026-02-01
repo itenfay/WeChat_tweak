@@ -567,6 +567,14 @@
 
 @end
 
+#pragma mark - VideoMessageCellView
+
+@interface VideoMessageCellView : CommonMessageCellView
+
+@property(readonly, nonatomic) CommonMessageViewModel *viewModel;
+
+@end
+
 #pragma mark - ContactInfoViewController
 
 @interface ContactInfoViewController : MMUIViewController
