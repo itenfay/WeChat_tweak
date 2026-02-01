@@ -15,25 +15,36 @@ jobs:
   build:
     runs-on: macos-14
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - name: Build with Theos
+      - name: Setup Theos
         uses: Randomblock1/theos-action@v1
-        with:
-          cwd: WeChatPluginDev/wapleodtcorexpc
+
+      - name: Build Package
+        run: |
+          cd WeChatPluginDev/wapleodtcorexpc
+          rm -rf packages/*.deb 2>/dev/null || true
+          make clean
+          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
         env:
-          THEOS_PACKAGE_SCHEME: rootless
+          THEOS: ${{ github.workspace }}/theos
 
       - name: List packages (debug)
-        run: ls -R WeChatPluginDev/wapleodtcorexpc/packages || true
+        run: |
+          echo "=== Listing packages directory ==="
+          ls -la WeChatPluginDev/wapleodtcorexpc/packages/ || echo "packages directory not found"
+          echo "=== Finding all .deb files ==="
+          find . -name "*.deb" -type f 2>/dev/null || echo "No .deb files found"
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: rootless-deb
           path: WeChatPluginDev/wapleodtcorexpc/packages/*.deb
+          if-no-files-found: error
 
       - name: Release
         uses: softprops/action-gh-release@v1
