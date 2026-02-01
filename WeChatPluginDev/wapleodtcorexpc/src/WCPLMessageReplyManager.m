@@ -16,6 +16,7 @@
 // 关联对象的 key
 static char kRepeatContentKey;
 static char kRepeatMsgWrapKey;
+static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlertEnabled";
 
 @implementation WCPLMessageReplyManager
 
@@ -1000,11 +1001,40 @@ static char kRepeatMsgWrapKey;
 
 - (void)repeatButtonTapped:(UIButton *)sender {
     @try {
-        NSMutableString *debugInfo = [NSMutableString stringWithString:@"=== 复读按钮调试信息 ===\n\n"];
-        [debugInfo appendFormat:@"0. Build: %s %s\n\n", __DATE__, __TIME__];
-
         NSString *content = objc_getAssociatedObject(sender, &kRepeatContentKey);
         CMessageWrap *msgWrap = objc_getAssociatedObject(sender, &kRepeatMsgWrapKey);
+
+        // 关闭“调试信息弹窗”时，点击直接复读，仅保留 NSLog（默认关闭）
+        BOOL shouldShowDebugAlert = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLRepeatDebugAlertEnabledKey];
+        if (!shouldShowDebugAlert) {
+            if (!msgWrap) {
+                NSLog(@"[WCPL] Repeat tapped but msgWrap is nil");
+                return;
+            }
+
+            BaseMsgContentViewController *viewController = [self findViewControllerFromView:sender];
+            if (!viewController) {
+                NSLog(@"[WCPL] Repeat tapped but cannot find viewController");
+                return;
+            }
+
+            BOOL isEmoticonMessage = (msgWrap.m_uiMessageType == 47);
+            if (isEmoticonMessage) {
+                (void)[self handleRepeatEmoticonMessage:msgWrap viewController:viewController];
+                return;
+            }
+
+            if (!content || content.length == 0) {
+                NSLog(@"[WCPL] Repeat tapped but content is empty");
+                return;
+            }
+
+            [self handleRepeatButtonTapWithContent:content viewController:viewController msgWrap:msgWrap];
+            return;
+        }
+
+        NSMutableString *debugInfo = [NSMutableString stringWithString:@"=== 复读按钮调试信息 ===\n\n"];
+        [debugInfo appendFormat:@"0. Build: %s %s\n\n", __DATE__, __TIME__];
 
         [debugInfo appendFormat:@"1. 消息对象: %@\n", msgWrap ? @"存在" : @"nil"];
         [debugInfo appendFormat:@"2. 消息类型: %u\n", msgWrap ? msgWrap.m_uiMessageType : 0];
