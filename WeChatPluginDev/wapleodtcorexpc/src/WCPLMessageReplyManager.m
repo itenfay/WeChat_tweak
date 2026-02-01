@@ -484,22 +484,15 @@ static char kRepeatMsgWrapKey;
                      viewController:(BaseMsgContentViewController *)viewController
                             msgWrap:(CMessageWrap *)originalMsgWrap {
     @try {
-        NSMutableString *debugInfo = [NSMutableString string];
-        [debugInfo appendFormat:@"内容: %@\n\n", content];
-
         // 检查原消息是否有引用
         CMessageWrap *referMsg = nil;
         if (originalMsgWrap) {
-            [debugInfo appendFormat:@"原消息存在: YES\n"];
-            [debugInfo appendFormat:@"消息类型: %u\n", originalMsgWrap.m_uiMessageType];
-
             // 尝试通过 KVC 获取引用消息 - 使用正确的属性名 referingMessageWrap
             @try {
                 referMsg = [originalMsgWrap valueForKey:@"referingMessageWrap"];
-                [debugInfo appendFormat:@"referingMessageWrap: %@\n", referMsg ? @"有值" : @"nil"];
             }
             @catch (NSException *e) {
-                [debugInfo appendFormat:@"referingMessageWrap异常: %@\n", e.reason];
+                NSLog(@"[WCPL] referingMessageWrap exception: %@", e.reason);
             }
 
             // 如果没有，尝试 getReplyMessage 方法
@@ -507,13 +500,10 @@ static char kRepeatMsgWrapKey;
                 @try {
                     if ([originalMsgWrap respondsToSelector:@selector(getReplyMessage)]) {
                         referMsg = [originalMsgWrap performSelector:@selector(getReplyMessage)];
-                        [debugInfo appendFormat:@"getReplyMessage: %@\n", referMsg ? @"有值" : @"nil"];
-                    } else {
-                        [debugInfo appendFormat:@"getReplyMessage: 方法不存在\n"];
                     }
                 }
                 @catch (NSException *e) {
-                    [debugInfo appendFormat:@"getReplyMessage异常: %@\n", e.reason];
+                    NSLog(@"[WCPL] getReplyMessage exception: %@", e.reason);
                 }
             }
 
@@ -521,46 +511,67 @@ static char kRepeatMsgWrapKey;
             if (!referMsg) {
                 @try {
                     referMsg = [originalMsgWrap valueForKey:@"referHostMsg"];
-                    [debugInfo appendFormat:@"referHostMsg: %@\n", referMsg ? @"有值" : @"nil"];
                 }
                 @catch (NSException *e) {
-                    [debugInfo appendFormat:@"referHostMsg异常: %@\n", e.reason];
+                    NSLog(@"[WCPL] referHostMsg exception: %@", e.reason);
                 }
             }
-        } else {
-            [debugInfo appendFormat:@"原消息存在: NO\n"];
         }
 
-        [debugInfo appendFormat:@"\n最终引用消息: %@\n", referMsg ? @"有" : @"无"];
+        NSLog(@"[WCPL] Sending message with referMsg: %@", referMsg ? @"YES" : @"NO");
 
-        // 检查方法
-        BOOL hasAsync = [viewController respondsToSelector:@selector(AsyncSendMessage:replyingMsg:isPasted:)];
-        BOOL hasOnSend = [viewController respondsToSelector:@selector(onSendTextMsg:)];
-        [debugInfo appendFormat:@"AsyncSendMessage方法: %@\n", hasAsync ? @"存在" : @"不存在"];
-        [debugInfo appendFormat:@"onSendTextMsg方法: %@\n", hasOnSend ? @"存在" : @"不存在"];
+        // 方法1：通过 logicController 发送（支持引用消息）
+        @try {
+            id logicController = [viewController valueForKey:@"m_logicController"];
+            if (logicController) {
+                NSLog(@"[WCPL] Found logicController: %@", NSStringFromClass([logicController class]));
 
-        // 显示调试弹窗
-        dispatch_async(dispatch_get_main_queue(), ^{
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"复读调试信息"
-                                                                           message:debugInfo
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-            [viewController presentViewController:alert animated:YES completion:nil];
-        });
+                // 检查 SendTextMessage:replyingMessage:isPasted: 方法
+                SEL sendWithReplySelector = @selector(SendTextMessage:replyingMessage:isPasted:);
+                if ([logicController respondsToSelector:sendWithReplySelector]) {
+                    NSLog(@"[WCPL] Using logicController SendTextMessage:replyingMessage:isPasted:");
 
-        // 方法1：直接使用 ViewController 的 AsyncSendMessage 方法
-        if (hasAsync) {
+                    // 使用 NSInvocation 调用方法
+                    NSMethodSignature *signature = [logicController methodSignatureForSelector:sendWithReplySelector];
+                    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+                    [invocation setTarget:logicController];
+                    [invocation setSelector:sendWithReplySelector];
+                    [invocation setArgument:&content atIndex:2];
+                    [invocation setArgument:&referMsg atIndex:3];
+                    BOOL isPasted = NO;
+                    [invocation setArgument:&isPasted atIndex:4];
+                    [invocation invoke];
+                    return;
+                }
+
+                // 检查 SendTextMessage: 方法（不带引用）
+                if ([logicController respondsToSelector:@selector(SendTextMessage:)]) {
+                    NSLog(@"[WCPL] Using logicController SendTextMessage:");
+                    [logicController performSelector:@selector(SendTextMessage:) withObject:content];
+                    return;
+                }
+            }
+        }
+        @catch (NSException *e) {
+            NSLog(@"[WCPL] logicController exception: %@", e.reason);
+        }
+
+        // 方法2：直接使用 ViewController 的 AsyncSendMessage 方法
+        if ([viewController respondsToSelector:@selector(AsyncSendMessage:replyingMsg:isPasted:)]) {
+            NSLog(@"[WCPL] Using viewController AsyncSendMessage:replyingMsg:isPasted:");
             [viewController AsyncSendMessage:content replyingMsg:referMsg isPasted:NO];
             return;
         }
 
-        // 方法2：使用 onSendTextMsg 方法（不支持引用）
-        if (hasOnSend) {
+        // 方法3：使用 onSendTextMsg 方法（不支持引用）
+        if ([viewController respondsToSelector:@selector(onSendTextMsg:)]) {
+            NSLog(@"[WCPL] Using viewController onSendTextMsg:");
             [viewController onSendTextMsg:content];
             return;
         }
 
         // 回退方案：通过输入框发送
+        NSLog(@"[WCPL] Falling back to input method");
         [self sendMessageViaInputFallback:content viewController:viewController];
     }
     @catch (NSException *exception) {
