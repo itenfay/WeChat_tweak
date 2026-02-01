@@ -3,8 +3,13 @@ name: Build Rootless DEB
 on:
   workflow_dispatch:
   push:
+    branches:
+      - master
     tags:
       - 'v*'
+    paths:
+      - 'WeChatPluginDev/**'
+      - '.github/workflows/**'
 
 jobs:
   build:
