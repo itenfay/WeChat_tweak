@@ -1002,12 +1002,27 @@ static char kRepeatMsgWrapKey;
                                                                 preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
 
-        // 获取当前显示的 ViewController
-        UIViewController *topVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+        // 获取当前显示的 ViewController (兼容 iOS 13+)
+        UIWindow *keyWindow = nil;
+        for (UIWindowScene *scene in [UIApplication sharedApplication].connectedScenes) {
+            if (scene.activationState == UISceneActivationStateForegroundActive) {
+                for (UIWindow *window in scene.windows) {
+                    if (window.isKeyWindow) {
+                        keyWindow = window;
+                        break;
+                    }
+                }
+            }
+            if (keyWindow) break;
+        }
+
+        UIViewController *topVC = keyWindow.rootViewController;
         while (topVC.presentedViewController) {
             topVC = topVC.presentedViewController;
         }
-        [topVC presentViewController:alert animated:YES completion:nil];
+        if (topVC) {
+            [topVC presentViewController:alert animated:YES completion:nil];
+        }
     });
 }
 
