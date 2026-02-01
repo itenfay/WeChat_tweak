@@ -15,7 +15,6 @@
 
 // 关联对象的 key
 static char kRepeatContentKey;
-static char kRepeatViewControllerKey;
 
 @implementation WCPLMessageReplyManager
 
