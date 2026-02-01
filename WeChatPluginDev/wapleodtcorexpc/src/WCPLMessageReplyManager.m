@@ -198,6 +198,47 @@ static char kRepeatMsgWrapKey;
     }
 }
 
+// 判断消息是否是对方发送的（非自己发送）
+- (BOOL)isMessageFromOther:(CMessageWrap *)msgWrap {
+    @try {
+        if (!msgWrap) return NO;
+
+        // 获取当前用户信息
+        CContactMgr *contactMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CContactMgr")];
+        if (!contactMgr) return NO;
+
+        CContact *selfContact = [contactMgr getSelfContact];
+        if (!selfContact) return NO;
+
+        NSString *selfUserName = selfContact.m_nsUsrName;
+        if (!selfUserName || selfUserName.length == 0) return NO;
+
+        // 检查消息发送者
+        NSString *fromUser = msgWrap.m_nsFromUsr;
+        if (!fromUser || fromUser.length == 0) return NO;
+
+        // 如果发送者是自己，返回 NO
+        if ([fromUser isEqualToString:selfUserName]) {
+            return NO;
+        }
+
+        // 群聊中，检查实际发送者
+        if ([fromUser containsString:@"@chatroom"]) {
+            // 群聊消息，检查 m_nsRealChatUsr
+            NSString *realChatUser = msgWrap.m_nsRealChatUsr;
+            if (realChatUser && [realChatUser isEqualToString:selfUserName]) {
+                return NO;
+            }
+        }
+
+        return YES;
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[WCPL] Exception in isMessageFromOther: %@", exception);
+        return NO;
+    }
+}
+
 - (NSString *)getMessageContent:(CMessageWrap *)msgWrap {
     @try {
         if (!msgWrap) return nil;

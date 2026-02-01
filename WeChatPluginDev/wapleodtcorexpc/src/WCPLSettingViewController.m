@@ -66,16 +66,17 @@
 
 - (void)reloadTableData {
     [self.tableViewMgr clearAllSection];
-    
+
     [self addBasicSettingSection];
     [self addAdvanceSettingSection];
     [self addOtherSettingSection];
     [self addMessageReplySettingSection];
+    [self addSwipeQuoteSettingSection];
     [self addFakeLocSettingSection];
     [self addTPSettingSection];
     [self addAboutSection];
     [self addSupportSection];
-    
+
     MMTableView *tableView = [self.tableViewMgr getTableView];
     [tableView reloadData];
 }
@@ -218,6 +219,35 @@
     }
 
     [self.tableViewMgr addSection:section];
+}
+
+#pragma mark - Swipe Quote Setting
+
+- (void)addSwipeQuoteSettingSection {
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息手势"];
+
+    [section addCell:[self createSwipeQuoteSwitchCell]];
+    [section addCell:[self createTapReferJumpSwitchCell]];
+
+    [self.tableViewMgr addSection:section];
+}
+
+- (WCTableViewNormalCellManager *)createSwipeQuoteSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeQuote:) target:self title:@"消息左滑引用" on:[WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable];
+}
+
+- (WCTableViewNormalCellManager *)createTapReferJumpSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingTapReferJump:) target:self title:@"引用消息点击跳转" on:[WCPLRedEnvelopConfig sharedConfig].tapReferJumpEnable];
+}
+
+- (void)settingSwipeQuote:(UISwitch *)sender {
+    [WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable = sender.on;
+    NSLog(@"[WCPL] Swipe quote feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+}
+
+- (void)settingTapReferJump:(UISwitch *)sender {
+    [WCPLRedEnvelopConfig sharedConfig].tapReferJumpEnable = sender.on;
+    NSLog(@"[WCPL] Tap refer jump feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
 }
 
 - (WCTableViewNormalCellManager *)createMessageReplySwitchCell {

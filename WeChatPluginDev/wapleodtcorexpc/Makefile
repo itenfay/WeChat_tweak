@@ -20,6 +20,10 @@ src/WCPLRedEnvelopTaskManager.m_CFLAGS = -fobjc-arc
 src/WCPLSettingViewController.m_CFLAGS = -fobjc-arc
 src/WeChatRedEnvelopParam.m_CFLAGS = -fobjc-arc
 src/WCPLMessageReplyManager.m_CFLAGS = -fobjc-arc
+src/WCHookMessageNavigator.m_CFLAGS = -fobjc-arc
+src/WCHookSettingsManager.m_CFLAGS = -fobjc-arc
+src/WCHookSwipeUtilities.m_CFLAGS = -fobjc-arc
+src/WCHookTableViewFactory.m_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 

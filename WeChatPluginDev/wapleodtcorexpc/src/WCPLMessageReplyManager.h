@@ -35,6 +35,9 @@ static const NSInteger kWCPLRepeatButtonTag = 10087;
 // 判断消息是否可以复读（文本消息且非自己发送）
 - (BOOL)canRepeatMessage:(CMessageWrap *)msgWrap;
 
+// 判断消息是否是对方发送的（非自己发送）
+- (BOOL)isMessageFromOther:(CMessageWrap *)msgWrap;
+
 // 获取消息内容
 - (NSString *)getMessageContent:(CMessageWrap *)msgWrap;
 

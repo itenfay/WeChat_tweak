@@ -24,6 +24,8 @@ static NSString *const kWCPLMessageReplyEnable      = @"kWCPLMessageReplyEnable"
 static NSString *const kWCPLRepeatButtonStyle       = @"kWCPLRepeatButtonStyle";
 static NSString *const kWCPLRepeatButtonIconIndex   = @"kWCPLRepeatButtonIconIndex";
 static NSString *const kWCPLRepeatButtonCustomImage = @"kWCPLRepeatButtonCustomImage";
+static NSString *const kWCPLSwipeQuoteEnable        = @"kWCPLSwipeQuoteEnable";
+static NSString *const kWCPLTapReferJumpEnable      = @"kWCPLTapReferJumpEnable";
 
 @interface WCPLRedEnvelopConfig ()
 
@@ -59,6 +61,8 @@ static NSString *const kWCPLRepeatButtonCustomImage = @"kWCPLRepeatButtonCustomI
         _repeatButtonStyle       = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLRepeatButtonStyle];
         _repeatButtonIconIndex   = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLRepeatButtonIconIndex];
         _repeatButtonCustomImagePath = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonCustomImage];
+        _swipeQuoteEnable        = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLSwipeQuoteEnable];
+        _tapReferJumpEnable      = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLTapReferJumpEnable];
     }
     return self;
 }
@@ -173,6 +177,18 @@ static NSString *const kWCPLRepeatButtonCustomImage = @"kWCPLRepeatButtonCustomI
 - (void)setRepeatButtonCustomImagePath:(NSString *)repeatButtonCustomImagePath {
     _repeatButtonCustomImagePath = repeatButtonCustomImagePath;
     [[NSUserDefaults standardUserDefaults] setObject:repeatButtonCustomImagePath forKey:kWCPLRepeatButtonCustomImage];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setSwipeQuoteEnable:(BOOL)swipeQuoteEnable {
+    _swipeQuoteEnable = swipeQuoteEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:swipeQuoteEnable forKey:kWCPLSwipeQuoteEnable];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setTapReferJumpEnable:(BOOL)tapReferJumpEnable {
+    _tapReferJumpEnable = tapReferJumpEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:tapReferJumpEnable forKey:kWCPLTapReferJumpEnable];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

@@ -53,4 +53,9 @@
 // 自定义图片路径 (存储在 Documents 目录)
 @property (copy, nonatomic) NSString *repeatButtonCustomImagePath;
 
+// 左滑引用功能
+@property (assign, nonatomic) BOOL swipeQuoteEnable;
+// 引用消息点击跳转
+@property (assign, nonatomic) BOOL tapReferJumpEnable;
+
 @end

@@ -9,6 +9,8 @@
 #import "WCPLFuncService.h"
 #import "WCPLAVManager.h"
 #import "WCPLMessageReplyManager.h"
+#import "WCHookSwipeUtilities.h"
+#import "WCHookMessageNavigator.h"
 
 /*
 %hook MicroMessengerAppDelegate
@@ -522,8 +524,12 @@
 
 %end
 
-// 也 Hook CommonMessageCellView 以支持更多消息类型
+// 也 Hook CommonMessageCellView 以支持更多消息类型和左滑引用功能
 %hook CommonMessageCellView
+
+%property(nonatomic, strong) UIPanGestureRecognizer *wchook_swipeGesture;
+%property(nonatomic, strong) UIImpactFeedbackGenerator *wchook_feedbackGenerator;
+%property(nonatomic, assign) BOOL wchook_feedbackTriggered;
 
 - (void)layoutSubviews {
     %orig;
@@ -538,6 +544,353 @@
 
     // 可以在这里添加对其他消息类型的支持
     // 例如：ImageMessageCellView, VoiceMessageCellView 等
+}
+
+- (void)didMoveToWindow {
+    %orig;
+
+    if (self.window) {
+        [self wchook_setupSwipeGestureIfNeeded];
+    } else {
+        [self wchook_resetSwipeAnimated:NO];
+    }
+}
+
+%new
+- (void)wchook_setupSwipeGestureIfNeeded {
+    if (![WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable) {
+        if (self.wchook_swipeGesture) {
+            self.wchook_swipeGesture.enabled = NO;
+        }
+        return;
+    }
+
+    UIPanGestureRecognizer *gesture = self.wchook_swipeGesture;
+    if (!gesture) {
+        gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(wchook_handleSwipe:)];
+        gesture.maximumNumberOfTouches = 1;
+        gesture.minimumNumberOfTouches = 1;
+        gesture.cancelsTouchesInView = YES;
+        gesture.delaysTouchesBegan = NO;
+        gesture.delaysTouchesEnded = NO;
+        gesture.delegate = (id<UIGestureRecognizerDelegate>)self;
+        [self addGestureRecognizer:gesture];
+        self.wchook_swipeGesture = gesture;
+    }
+
+    gesture.enabled = YES;
+
+    if (!self.wchook_feedbackGenerator) {
+        self.wchook_feedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium];
+    }
+}
+
+%new
+- (void)wchook_handleSwipe:(UIPanGestureRecognizer *)gesture {
+    if (!gesture) {
+        return;
+    }
+
+    if (![WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable) {
+        [self wchook_resetSwipeAnimated:YES];
+        return;
+    }
+
+    NSArray<UIView *> *messageViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
+    CGPoint translation = [gesture translationInView:self];
+    CGPoint velocity = [gesture velocityInView:self];
+
+    // 使用双向滑动检测
+    if ([WCHookSwipeUtilities shouldIgnoreTranslationBidirectional:translation]) {
+        [WCHookSwipeUtilities applyTransform:CGAffineTransformIdentity toViews:messageViews];
+        if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateCancelled) {
+            [self wchook_resetSwipeAnimated:YES];
+        }
+        return;
+    }
+
+    CGFloat threshold = [WCHookSwipeUtilities thresholdForView:self];
+    WCHookSwipeDirection direction = [WCHookSwipeUtilities swipeDirectionFromTranslation:translation];
+
+    switch (gesture.state) {
+    case UIGestureRecognizerStateBegan: {
+        [self.wchook_feedbackGenerator prepare];
+        self.wchook_feedbackTriggered = NO;
+        break;
+    }
+    case UIGestureRecognizerStateChanged: {
+        // 双向滑动：限制在 [-threshold, threshold] 范围内
+        CGFloat clamped = [WCHookSwipeUtilities clampedTranslationBidirectional:translation.x threshold:threshold];
+        CGAffineTransform transform = CGAffineTransformMakeTranslation(clamped, 0.0f);
+        [WCHookSwipeUtilities applyTransform:transform toViews:messageViews];
+
+        // 触发震动反馈
+        CGFloat absTranslation = fabs(translation.x);
+        if (!self.wchook_feedbackTriggered && absTranslation >= threshold) {
+            [self.wchook_feedbackGenerator impactOccurred];
+            self.wchook_feedbackTriggered = YES;
+        }
+        break;
+    }
+    case UIGestureRecognizerStateCancelled:
+    case UIGestureRecognizerStateEnded: {
+        if ([WCHookSwipeUtilities shouldTriggerWithTranslationBidirectional:translation velocity:velocity threshold:threshold]) {
+            if (!self.wchook_feedbackTriggered) {
+                [self.wchook_feedbackGenerator impactOccurred];
+                self.wchook_feedbackTriggered = YES;
+            }
+            // 根据滑动方向执行不同操作
+            [self wchook_triggerActionForDirection:direction];
+        }
+        [self wchook_resetSwipeAnimated:YES];
+        break;
+    }
+    default: {
+        break;
+    }
+    }
+}
+
+%new
+- (void)wchook_triggerActionForDirection:(WCHookSwipeDirection)direction {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self wchook_showSwipeActionMenuForDirection:direction];
+    });
+}
+
+%new
+- (void)wchook_resetSwipeAnimated:(BOOL)animated {
+    NSArray<UIView *> *messageViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
+    [WCHookSwipeUtilities animateResetForViews:messageViews animated:animated];
+    self.wchook_feedbackTriggered = NO;
+}
+
+%new
+- (void)wchook_triggerQuoteReply {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self wchook_showSwipeActionMenuForDirection:WCHookSwipeDirectionLeft];
+    });
+}
+
+%new
+- (void)wchook_showSwipeActionMenuForDirection:(WCHookSwipeDirection)direction {
+    // 获取消息内容
+    CMessageWrap *msgWrap = nil;
+    if ([self respondsToSelector:@selector(viewModel)]) {
+        id viewModel = [self performSelector:@selector(viewModel)];
+        if ([viewModel respondsToSelector:@selector(getCurrentMessageWrap)]) {
+            msgWrap = [viewModel performSelector:@selector(getCurrentMessageWrap)];
+        }
+    }
+    if (!msgWrap && [self respondsToSelector:@selector(getCurrentMessageWrap)]) {
+        msgWrap = [self performSelector:@selector(getCurrentMessageWrap)];
+    }
+
+    // 检查是否可以复读（必须是对方发送的消息）
+    BOOL isFromOther = [[WCPLMessageReplyManager sharedManager] isMessageFromOther:msgWrap];
+    BOOL canRepeat = isFromOther && [[WCPLMessageReplyManager sharedManager] canRepeatMessage:msgWrap];
+    BOOL canQuote = [self respondsToSelector:@selector(onShowMsgReplyMenuItem:)];
+
+    // 如果两个功能都不可用，直接返回
+    if (!canRepeat && !canQuote) {
+        return;
+    }
+
+    // 根据滑动方向决定默认操作
+    // 左滑：显示选项菜单（对方消息）或直接引用（自己消息）
+    // 右滑：直接复读消息（仅对方消息）
+    if (direction == WCHookSwipeDirectionRight) {
+        // 右滑：只有对方消息才能复读
+        if (canRepeat) {
+            [self wchook_performRepeatMessage:msgWrap];
+            return;
+        }
+        // 自己的消息右滑：引用回复
+        if (canQuote) {
+            @try {
+                [self onShowMsgReplyMenuItem:nil];
+            } @catch (__unused NSException *exception) {}
+        }
+        return;
+    }
+
+    // 左滑处理
+    // 如果是自己的消息，只能引用
+    if (!isFromOther) {
+        if (canQuote) {
+            @try {
+                [self onShowMsgReplyMenuItem:nil];
+            } @catch (__unused NSException *exception) {}
+        }
+        return;
+    }
+
+    // 对方消息左滑：显示选项菜单（如果两个功能都可用）
+    if (canQuote && !canRepeat) {
+        @try {
+            [self onShowMsgReplyMenuItem:nil];
+        } @catch (__unused NSException *exception) {}
+        return;
+    }
+
+    if (canRepeat && !canQuote) {
+        [self wchook_performRepeatMessage:msgWrap];
+        return;
+    }
+
+    // 两个功能都可用，显示选项菜单
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    // 引用回复选项
+    UIAlertAction *quoteAction = [UIAlertAction actionWithTitle:@"引用回复"
+                                                          style:UIAlertActionStyleDefault
+                                                        handler:^(UIAlertAction *action) {
+        @try {
+            [self onShowMsgReplyMenuItem:nil];
+        } @catch (__unused NSException *exception) {}
+    }];
+
+    // 复读消息选项
+    UIAlertAction *repeatAction = [UIAlertAction actionWithTitle:@"复读消息"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+        [self wchook_performRepeatMessage:msgWrap];
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+
+    [alert addAction:quoteAction];
+    [alert addAction:repeatAction];
+    [alert addAction:cancelAction];
+
+    // 获取当前视图控制器
+    UIViewController *topVC = [self wchook_findTopViewController];
+    if (topVC) {
+        // iPad 适配
+        if (alert.popoverPresentationController) {
+            alert.popoverPresentationController.sourceView = self;
+            alert.popoverPresentationController.sourceRect = self.bounds;
+        }
+        [topVC presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+%new
+- (void)wchook_performRepeatMessage:(CMessageWrap *)msgWrap {
+    if (!msgWrap) return;
+
+    // 获取消息内容
+    NSString *content = [[WCPLMessageReplyManager sharedManager] getMessageContent:msgWrap];
+    if (!content || content.length == 0) {
+        NSLog(@"[WCPL] No content to repeat from swipe");
+        return;
+    }
+
+    // 获取当前聊天视图控制器
+    BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
+    if (!chatVC) {
+        NSLog(@"[WCPL] Cannot find chat view controller");
+        return;
+    }
+
+    // 调用复读功能
+    [[WCPLMessageReplyManager sharedManager] handleRepeatButtonTapWithContent:content
+                                                               viewController:chatVC
+                                                                      msgWrap:msgWrap];
+}
+
+%new
+- (UIViewController *)wchook_findTopViewController {
+    UIResponder *responder = self;
+    while (responder) {
+        if ([responder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)responder;
+        }
+        responder = [responder nextResponder];
+    }
+    return nil;
+}
+
+%new
+- (BaseMsgContentViewController *)wchook_findChatViewController {
+    UIResponder *responder = self;
+    while (responder) {
+        if ([responder isKindOfClass:NSClassFromString(@"BaseMsgContentViewController")]) {
+            return (BaseMsgContentViewController *)responder;
+        }
+        responder = [responder nextResponder];
+    }
+    return nil;
+}
+
+- (void)handleTapForReferMsg:(id)sender {
+    if ([WCPLRedEnvelopConfig sharedConfig].tapReferJumpEnable && [WCHookMessageNavigator senderLooksLikeReferView:sender]) {
+        if ([WCHookMessageNavigator tryJumpFromCell:self]) {
+            return;
+        }
+    }
+    %orig;
+}
+
+- (void)handleTapReferMessage {
+    if ([WCPLRedEnvelopConfig sharedConfig].tapReferJumpEnable) {
+        if ([WCHookMessageNavigator tryJumpFromCell:self]) {
+            return;
+        }
+    }
+    %orig;
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer == self.wchook_swipeGesture) {
+        if (![WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable) {
+            return NO;
+        }
+        UIPanGestureRecognizer *pan = (UIPanGestureRecognizer *)gestureRecognizer;
+        CGPoint velocity = [pan velocityInView:self];
+        // 使用双向速度检测
+        if (![WCHookSwipeUtilities isVelocityEligibleBidirectional:velocity]) {
+            return NO;
+        }
+    }
+
+    BOOL result = %orig;
+    return result;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if (gestureRecognizer == self.wchook_swipeGesture) {
+        return NO;
+    }
+    BOOL result = %orig;
+    return result;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if (gestureRecognizer == self.wchook_swipeGesture && [otherGestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+        return YES;
+    }
+    BOOL result = %orig;
+    return result;
+}
+
+%end
+
+// ==================== 左滑引用 Hook MMInputToolView ====================
+
+%hook MMInputToolView
+
+- (void)onTapMsgReplyView:(id)sender {
+    if ([WCPLRedEnvelopConfig sharedConfig].tapReferJumpEnable && [WCHookMessageNavigator senderLooksLikeReferView:sender]) {
+        if ([WCHookMessageNavigator tryJumpFromInputTool:self]) {
+            return;
+        }
+    }
+    %orig;
 }
 
 %end
