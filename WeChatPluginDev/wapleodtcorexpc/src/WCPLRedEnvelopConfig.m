@@ -20,6 +20,7 @@ static NSString *const kWCPLFakeLocLat              = @"kWCPLFakeLocLat";
 static NSString *const kWCPLFakeLocLng              = @"kWCPLFakeLocLng";
 static NSString *const kWCPLFakeLocEnable           = @"kWCPLFakeLocEnable";
 static NSString *const kWCPLAVTPOn                  = @"kWCPLAVTPOn";
+static NSString *const kWCPLMessageReplyEnable      = @"kWCPLMessageReplyEnable";
 
 @interface WCPLRedEnvelopConfig ()
 
@@ -51,6 +52,7 @@ static NSString *const kWCPLAVTPOn                  = @"kWCPLAVTPOn";
         _lng                     = [[NSUserDefaults standardUserDefaults] doubleForKey:kWCPLFakeLocLng];
         _fakeLocEnable           = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLFakeLocEnable];
         _TPOn                    = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLAVTPOn];
+        _messageReplyEnable      = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLMessageReplyEnable];
     }
     return self;
 }
@@ -141,6 +143,12 @@ static NSString *const kWCPLAVTPOn                  = @"kWCPLAVTPOn";
 - (void)setTPOn:(BOOL)TPOn {
     _TPOn = TPOn;
     [[NSUserDefaults standardUserDefaults] setBool:TPOn forKey:kWCPLAVTPOn];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setMessageReplyEnable:(BOOL)messageReplyEnable {
+    _messageReplyEnable = messageReplyEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:messageReplyEnable forKey:kWCPLMessageReplyEnable];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
