@@ -11,7 +11,7 @@
 
 @interface WCPLBaseViewController ()
 
-@property (strong, nonatomic) MMLoadingView *loadingView;
+@property (strong, nonatomic) id loadingView;
 
 @end
 
@@ -24,10 +24,10 @@
     } else {
         [self.view bringSubviewToFront:self.loadingView];
     }
-    
-    [self.loadingView setM_bIgnoringInteractionEventsWhenLoading:YES];
-    [self.loadingView setFitFrame:1];
-    [self.loadingView startLoading];
+
+    [self.loadingView performSelector:@selector(setM_bIgnoringInteractionEventsWhenLoading:) withObject:@YES];
+    [self.loadingView performSelector:@selector(setFitFrame:) withObject:@1];
+    [self.loadingView performSelector:@selector(startLoading)];
 }
 
 - (void)startLoadingNonBlock {
@@ -37,39 +37,41 @@
     } else {
         [self.view bringSubviewToFront:self.loadingView];
     }
-    
-    [self.loadingView setM_bIgnoringInteractionEventsWhenLoading:NO];
-    [self.loadingView setFitFrame:1];
-    [self.loadingView startLoading];
+
+    [self.loadingView performSelector:@selector(setM_bIgnoringInteractionEventsWhenLoading:) withObject:@NO];
+    [self.loadingView performSelector:@selector(setFitFrame:) withObject:@1];
+    [self.loadingView performSelector:@selector(startLoading)];
 }
 
 - (void)startLoadingWithText:(NSString *)text {
     [self startLoadingNonBlock];
-    [self.loadingView.m_label setText:text];
+    UILabel *label = [self.loadingView valueForKey:@"m_label"];
+    [label setText:text];
 }
 
-- (MMLoadingView *)createDefaultLoadingView {
-    MMLoadingView *loadingView     = [[objc_getClass("MMLoadingView") alloc] init];
-    
-    MMServiceCenter *serviceCenter = [objc_getClass("MMServiceCenter") defaultCenter];
-    MMLanguageMgr *languageMgr     = [serviceCenter getService:objc_getClass("MMLanguageMgr")];
-    NSString *loadingText          = [languageMgr getStringForCurLanguage:@"Common_DefaultLoadingText"];
-    
-    [loadingView.m_label setText:loadingText];
-    
+- (id)createDefaultLoadingView {
+    id loadingView = [[objc_getClass("MMLoadingView") alloc] init];
+
+    id serviceCenter = [objc_getClass("MMServiceCenter") defaultCenter];
+    id languageMgr = [serviceCenter getService:objc_getClass("MMLanguageMgr")];
+    NSString *loadingText = [languageMgr getStringForCurLanguage:@"Common_DefaultLoadingText"];
+
+    UILabel *label = [loadingView valueForKey:@"m_label"];
+    [label setText:loadingText];
+
     return loadingView;
 }
 
 - (void)stopLoading {
-    [self.loadingView stopLoading];
+    [self.loadingView performSelector:@selector(stopLoading)];
 }
 
 - (void)stopLoadingWithFailText:(NSString *)text {
-    [self.loadingView stopLoadingAndShowError:text];
+    [self.loadingView performSelector:@selector(stopLoadingAndShowError:) withObject:text];
 }
 
 - (void)stopLoadingWithOKText:(NSString *)text {
-    [self.loadingView stopLoadingAndShowOK:text];
+    [self.loadingView performSelector:@selector(stopLoadingAndShowOK:) withObject:text];
 }
 
 @end
