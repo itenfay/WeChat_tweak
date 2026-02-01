@@ -580,6 +580,8 @@ static char kRepeatMsgWrapKey;
                         SEL setReferSelector = @selector(setReferMessage:);
                         SEL showReplySelector = @selector(showReplyViewWithMessage:);
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
                         if ([toolView respondsToSelector:setReplySelector]) {
                             [toolView performSelector:setReplySelector withObject:referredMsg];
                             NSLog(@"[WCPL] Set reply message via setReplyMessage:");
@@ -590,6 +592,7 @@ static char kRepeatMsgWrapKey;
                             [toolView performSelector:showReplySelector withObject:referredMsg];
                             NSLog(@"[WCPL] Set reply message via showReplyViewWithMessage:");
                         }
+#pragma clang diagnostic pop
 
                         // 设置文本并发送
                         UITextView *textView = [self findTextViewInView:toolView];
