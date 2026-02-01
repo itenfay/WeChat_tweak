@@ -517,7 +517,7 @@ static char kRepeatMsgWrapKey;
             // 检查是否是引用消息类型
             @try {
                 if ([originalMsgWrap respondsToSelector:@selector(isReferMsgType)]) {
-                    BOOL isRefer = [originalMsgWrap isReferMsgType];
+                    BOOL isRefer = [[originalMsgWrap performSelector:@selector(isReferMsgType)] boolValue];
                     [debugInfo appendFormat:@"isReferMsgType: %d\n", isRefer];
                 }
             }
