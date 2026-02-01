@@ -275,27 +275,70 @@ static char kRepeatMsgWrapKey;
 - (UIButton *)createRepeatButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.tag = kWCPLRepeatButtonTag;
-    button.frame = CGRectMake(0, 0, 20, 20);
 
-    // 透明背景
-    button.backgroundColor = [UIColor clearColor];
+    // 基础布局 - 稍大的尺寸更易点击
+    button.frame = CGRectMake(0, 0, 24, 24);
 
-    // 黑色圆圈边框 - 刚好包围+1
-    button.layer.borderColor = [UIColor blackColor].CGColor;
-    button.layer.borderWidth = 1.0;
-    button.layer.cornerRadius = 10;  // 圆形
+    // 现代扁平化背景 (Modern Flat Style)
+    button.backgroundColor = [UIColor whiteColor];
 
-    // 设置标题 - 黑色文字
-    button.titleLabel.font = [UIFont boldSystemFontOfSize:10];
+    // 阴影与层次感 (Shadow & Depth) - 模仿 iOS 原生控件的悬浮感
+    button.layer.shadowColor = [UIColor blackColor].CGColor;
+    button.layer.shadowOffset = CGSizeMake(0, 1);  // 向下微小偏移
+    button.layer.shadowOpacity = 0.12;             // 低透明度，保持干净
+    button.layer.shadowRadius = 3.0;               // 柔和的扩散
+    button.layer.masksToBounds = NO;               // 允许阴影显示在边界外
+
+    // 边框与圆角 (Border & Corner)
+    button.layer.cornerRadius = 12;  // 圆形 (对应 24x24 尺寸)
+    // 极细的灰色描边，增强在白色背景上的可见度
+    button.layer.borderWidth = 0.5;
+    button.layer.borderColor = [UIColor colorWithWhite:0.0 alpha:0.1].CGColor;
+
+    // 字体与颜色 - 使用微信标准绿 (WeChat Green)
+    UIColor *weChatGreen = [UIColor colorWithRed:7.0/255.0 green:193.0/255.0 blue:96.0/255.0 alpha:1.0];
     [button setTitle:@"+1" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setTitleColor:weChatGreen forState:UIControlStateNormal];
+
+    // 字体稍微加粗，提升可读性
+    button.titleLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightMedium];
 
     // 添加点击事件
     [button addTarget:self
                action:@selector(repeatButtonTapped:)
      forControlEvents:UIControlEventTouchUpInside];
 
+    // 添加按压动画事件
+    [button addTarget:self action:@selector(animateButtonTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [button addTarget:self action:@selector(animateButtonTouchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
+
     return button;
+}
+
+#pragma mark - Animation Helpers
+
+// 按下时的动画：缩小并变暗
+- (void)animateButtonTouchDown:(UIButton *)sender {
+    [UIView animateWithDuration:0.15
+                          delay:0
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+        sender.transform = CGAffineTransformMakeScale(0.9, 0.9);
+        sender.backgroundColor = [UIColor colorWithWhite:0.96 alpha:1.0];  // 稍微变灰
+    } completion:nil];
+}
+
+// 松开时的动画：回弹
+- (void)animateButtonTouchUp:(UIButton *)sender {
+    [UIView animateWithDuration:0.25
+                          delay:0
+         usingSpringWithDamping:0.5    // 弹性效果
+          initialSpringVelocity:10.0
+                        options:UIViewAnimationOptionAllowUserInteraction
+                     animations:^{
+        sender.transform = CGAffineTransformIdentity;
+        sender.backgroundColor = [UIColor whiteColor];
+    } completion:nil];
 }
 
 - (void)layoutRepeatButton:(UIButton *)button inCellView:(CommonMessageCellView *)cellView {
@@ -318,7 +361,7 @@ static char kRepeatMsgWrapKey;
         BOOL isLeftMessage = bubbleFrame.origin.x < 100;
 
         // 按钮固定尺寸
-        CGFloat buttonSize = 20;
+        CGFloat buttonSize = 24;
 
         CGFloat buttonX;
         CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonSize;  // 底部与气泡底部对齐
