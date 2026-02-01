@@ -279,13 +279,11 @@ static char kRepeatContentKey;
     button.tag = kWCPLRepeatButtonTag;
     button.frame = CGRectMake(0, 0, 24, 24);
 
-    // 设置圆形背景
-    button.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
-    button.layer.cornerRadius = 12;  // 半径为宽度的一半，形成圆形
-    button.layer.masksToBounds = YES;
+    // 透明背景
+    button.backgroundColor = [UIColor clearColor];
 
     // 设置标题 - 黑色文字
-    button.titleLabel.font = [UIFont boldSystemFontOfSize:11];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:12];
     [button setTitle:@"+1" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 
@@ -319,90 +317,20 @@ static char kRepeatContentKey;
             return;
         }
 
-        // 尝试查找 m_richTextView（回复文本视图），用于引用回复消息
-        UIView *richTextView = [self findRichTextViewInCellView:cellView];
-        UIView *targetView = richTextView ? richTextView : bubbleView;
-        CGRect targetFrame = targetView.frame;
+        // 按钮固定尺寸
+        CGFloat buttonWidth = 24;
+        CGFloat buttonHeight = 18;
 
-        // 如果 richTextView 在气泡内部，需要转换坐标
-        if (richTextView && richTextView.superview != cellView) {
-            targetFrame = [richTextView.superview convertRect:richTextView.frame toView:cellView];
-        }
+        // 别人的消息 - 按钮放在气泡右侧外面，底部与气泡底部对齐
+        CGFloat buttonX = CGRectGetMaxX(bubbleFrame) + 4;
+        CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonHeight;
 
-        // 计算按钮尺寸 - 高度为目标视图高度的一半，但最小18，最大30
-        CGFloat targetHeight = targetFrame.size.height;
-        CGFloat buttonSize = targetHeight / 2.0;
-        if (buttonSize < 18) buttonSize = 18;
-        if (buttonSize > 30) buttonSize = 30;
-
-        // 更新圆角半径
-        button.layer.cornerRadius = buttonSize / 2.0;
-
-        // 别人的消息 - 按钮放在目标视图右侧，垂直居中
-        CGFloat buttonX = CGRectGetMaxX(targetFrame) + 4;
-        CGFloat buttonY = targetFrame.origin.y + (targetHeight - buttonSize) / 2.0;
-
-        button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
+        button.frame = CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight);
         button.hidden = NO;
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in layoutRepeatButton: %@", exception);
         button.hidden = YES;
-    }
-}
-
-// 查找 m_richTextView（回复文本视图）
-- (UIView *)findRichTextViewInCellView:(CommonMessageCellView *)cellView {
-    @try {
-        // 尝试通过 KVC 获取 m_richTextView
-        if ([cellView respondsToSelector:NSSelectorFromString(@"m_richTextView")]) {
-            UIView *richTextView = [cellView valueForKey:@"m_richTextView"];
-            if (richTextView && !richTextView.hidden && richTextView.frame.size.width > 0) {
-                return richTextView;
-            }
-        }
-
-        // 遍历子视图查找 RichTextView
-        for (UIView *subview in cellView.subviews) {
-            if (subview.hidden) continue;
-            if (subview.tag == kWCPLRepeatButtonTag) continue;
-
-            NSString *className = NSStringFromClass([subview class]);
-            if ([className containsString:@"RichTextView"]) {
-                return subview;
-            }
-
-            // 递归查找
-            UIView *found = [self findRichTextViewInView:subview];
-            if (found) return found;
-        }
-
-        return nil;
-    }
-    @catch (NSException *exception) {
-        NSLog(@"[WCPL] Exception in findRichTextViewInCellView: %@", exception);
-        return nil;
-    }
-}
-
-// 递归查找 RichTextView
-- (UIView *)findRichTextViewInView:(UIView *)view {
-    @try {
-        for (UIView *subview in view.subviews) {
-            if (subview.hidden) continue;
-
-            NSString *className = NSStringFromClass([subview class]);
-            if ([className containsString:@"RichTextView"]) {
-                return subview;
-            }
-
-            UIView *found = [self findRichTextViewInView:subview];
-            if (found) return found;
-        }
-        return nil;
-    }
-    @catch (NSException *exception) {
-        return nil;
     }
 }
 
