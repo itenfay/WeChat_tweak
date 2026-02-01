@@ -57,18 +57,18 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
-      - name: Build Roothide Package (arm64 + arm64e)
+      - name: Build Rootful Package (arm64 + arm64e)
         run: |
           cd WeChatPluginDev/wapleodtcorexpc
           make clean || true
-          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide 2>&1 || {
+          make package FINALPACKAGE=1 2>&1 || {
             echo "=== Build failed, showing detailed errors ==="
-            make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide
+            make package FINALPACKAGE=1
           }
-          # Rename roothide package
+          # Rename rootful package
           for f in packages/*.deb; do
             if [ -f "$f" ] && [[ ! "$f" == *"-rootless.deb" ]]; then
-              newname=$(echo "$f" | sed 's/\.deb$/-roothide.deb/')
+              newname=$(echo "$f" | sed 's/\.deb$/-rootful.deb/')
               mv "$f" "$newname"
             fi
           done
@@ -92,11 +92,11 @@ jobs:
           path: WeChatPluginDev/wapleodtcorexpc/packages/*-rootless.deb
           if-no-files-found: warn
 
-      - name: Upload Roothide Artifact
+      - name: Upload Rootful Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: roothide-deb
-          path: WeChatPluginDev/wapleodtcorexpc/packages/*-roothide.deb
+          name: rootful-deb
+          path: WeChatPluginDev/wapleodtcorexpc/packages/*-rootful.deb
           if-no-files-found: warn
 
       - name: Release
