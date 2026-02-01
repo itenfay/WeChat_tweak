@@ -464,6 +464,23 @@
 
 @property(readonly, nonatomic) CommonMessageViewModel *viewModel;
 
+// WCHook swipe gesture properties (injected via %property)
+@property(nonatomic, strong) UIPanGestureRecognizer *wchook_swipeGesture;
+@property(nonatomic, strong) UIImpactFeedbackGenerator *wchook_feedbackGenerator;
+@property(nonatomic, assign) BOOL wchook_feedbackTriggered;
+
+// WCHook methods
+- (void)wchook_setupSwipeGestureIfNeeded;
+- (void)wchook_resetSwipeAnimated:(BOOL)animated;
+- (void)wchook_handleSwipe:(UIPanGestureRecognizer *)gesture;
+- (void)wchook_triggerActionForDirection:(NSInteger)direction;
+- (void)wchook_triggerQuoteReply;
+- (void)wchook_showSwipeActionMenuForDirection:(NSInteger)direction;
+- (void)wchook_performRepeatMessage:(CMessageWrap *)msgWrap;
+- (UIViewController *)wchook_findTopViewController;
+- (BaseMsgContentViewController *)wchook_findChatViewController;
+- (void)onShowMsgReplyMenuItem:(id)sender;
+
 @end
 
 #pragma mark - TextMessageCellView
