@@ -11,6 +11,7 @@
 #import "WCPLFuncService.h"
 #import "WeChatRedEnvelop.h"
 #import <objc/runtime.h>
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
 @interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
 
@@ -304,8 +305,18 @@
 
     // 从文件选择 (iOS 14+)
     UIAlertAction *fileAction = [UIAlertAction actionWithTitle:@"从文件选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSArray *documentTypes = @[@"public.image"];
-        UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:documentTypes inMode:UIDocumentPickerModeImport];
+        UIDocumentPickerViewController *documentPicker;
+        if (@available(iOS 14.0, *)) {
+            // iOS 14+ 使用新 API
+            documentPicker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes:@[UTTypeImage] asCopy:YES];
+        } else {
+            // iOS 14 以下使用旧 API
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+            NSArray *documentTypes = @[@"public.image"];
+            documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:documentTypes inMode:UIDocumentPickerModeImport];
+#pragma clang diagnostic pop
+        }
         documentPicker.delegate = self;
         documentPicker.allowsMultipleSelection = NO;
         [self presentViewController:documentPicker animated:YES completion:nil];

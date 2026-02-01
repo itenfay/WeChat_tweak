@@ -7,7 +7,7 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = wapleodtcorexpc
 $(TWEAK_NAME)_FILES = $(wildcard src/*.m) src/Tweak.xm
-$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation
+$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation UniformTypeIdentifiers
 
 src/WCPLAVManager.m_CFLAGS = -fobjc-arc
 src/WCPLBaseViewController.m_CFLAGS = -fobjc-arc
