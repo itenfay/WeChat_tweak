@@ -50,6 +50,7 @@ jobs:
 
       - name: Build Rootless Package (arm64 + arm64e)
         run: |
+          export PATH="$THEOS/bin:$PATH"
           cd WeChatPluginDev/wapleodtcorexpc
           rm -rf packages/*.deb 2>/dev/null || true
           make clean || true
@@ -69,6 +70,7 @@ jobs:
 
       - name: Build Roothide Package (arm64 + arm64e)
         run: |
+          export PATH="$THEOS/bin:$PATH"
           cd WeChatPluginDev/wapleodtcorexpc
           make clean || true
           make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide 2>&1 || {
