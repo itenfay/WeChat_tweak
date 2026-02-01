@@ -310,31 +310,18 @@ static char kRepeatContentKey;
         // 判断消息方向（左边是别人的消息，右边是自己的消息）
         BOOL isLeftMessage = bubbleFrame.origin.x < 100;
 
-        // 尝试查找 m_richTextView（回复文本视图），用于引用回复消息
-        UIView *richTextView = [self findRichTextViewInCellView:cellView];
-
-        // 确定目标视图和坐标
-        CGRect targetFrame;
-        if (richTextView) {
-            // 如果找到 richTextView，转换坐标到 cellView
-            targetFrame = [richTextView.superview convertRect:richTextView.frame toView:cellView];
-        } else {
-            // 否则使用气泡
-            targetFrame = bubbleFrame;
-        }
-
         // 按钮固定尺寸
         CGFloat buttonSize = 20;
 
         CGFloat buttonX;
-        CGFloat buttonY = CGRectGetMaxY(targetFrame) - buttonSize;  // 底部对齐
+        CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonSize;  // 底部与气泡底部对齐
 
         if (isLeftMessage) {
-            // 别人的消息 - 按钮放在目标视图右侧，紧贴气泡
-            buttonX = CGRectGetMaxX(targetFrame) + 2;
+            // 别人的消息 - 按钮放在气泡右侧外面，紧贴气泡边缘
+            buttonX = CGRectGetMaxX(bubbleFrame) + 2;
         } else {
-            // 自己的消息 - 按钮放在目标视图左侧，紧贴气泡
-            buttonX = targetFrame.origin.x - buttonSize - 2;
+            // 自己的消息 - 按钮放在气泡左侧外面，紧贴气泡边缘
+            buttonX = bubbleFrame.origin.x - buttonSize - 2;
         }
 
         button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
