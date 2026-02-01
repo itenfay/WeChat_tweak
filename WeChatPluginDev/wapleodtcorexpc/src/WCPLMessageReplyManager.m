@@ -498,33 +498,60 @@ static char kRepeatMsgWrapKey;
             // 调试：显示引用消息信息
             NSMutableString *debugInfo = [NSMutableString string];
             [debugInfo appendFormat:@"复读内容: %@\n\n", content];
-            [debugInfo appendFormat:@"原消息类型: %u\n", originalMsgWrap.m_uiMessageType];
-            [debugInfo appendFormat:@"referingMessageWrap: %@\n", referredMsg ? @"有值" : @"nil"];
 
             if (referredMsg) {
-                [debugInfo appendFormat:@"\n被引用消息:\n"];
+                [debugInfo appendFormat:@"被引用消息存在\n"];
                 [debugInfo appendFormat:@"- 类型: %u\n", referredMsg.m_uiMessageType];
-                [debugInfo appendFormat:@"- 内容: %@\n", referredMsg.m_nsContent];
-                [debugInfo appendFormat:@"- LocalID: %u\n", referredMsg.m_uiMesLocalID];
-                [debugInfo appendFormat:@"- SvrID: %lld\n", referredMsg.m_n64MesSvrID];
+                [debugInfo appendFormat:@"- 内容: %@\n\n", referredMsg.m_nsContent];
+
+                // 探索 viewController 的属性和方法
+                [debugInfo appendFormat:@"VC类: %@\n", NSStringFromClass([viewController class])];
+
+                // 尝试获取 inputToolView
+                id toolView = nil;
+                @try {
+                    if ([viewController respondsToSelector:@selector(toolView)]) {
+                        toolView = [viewController performSelector:@selector(toolView)];
+                    }
+                }
+                @catch (NSException *e) {}
+
+                if (!toolView) {
+                    @try {
+                        toolView = [viewController valueForKey:@"m_inputToolView"];
+                    }
+                    @catch (NSException *e) {}
+                }
+
+                if (!toolView) {
+                    @try {
+                        toolView = [viewController valueForKey:@"m_toolView"];
+                    }
+                    @catch (NSException *e) {}
+                }
+
+                [debugInfo appendFormat:@"toolView: %@\n\n", toolView ? NSStringFromClass([toolView class]) : @"nil"];
+
+                if (toolView) {
+                    // 列出 toolView 的所有方法中包含 reply/refer/quote 的
+                    unsigned int methodCount = 0;
+                    Method *methods = class_copyMethodList([toolView class], &methodCount);
+                    [debugInfo appendFormat:@"相关方法:\n"];
+                    for (unsigned int i = 0; i < methodCount; i++) {
+                        NSString *methodName = NSStringFromSelector(method_getName(methods[i]));
+                        NSString *lowerName = [methodName lowercaseString];
+                        if ([lowerName containsString:@"reply"] ||
+                            [lowerName containsString:@"refer"] ||
+                            [lowerName containsString:@"quote"] ||
+                            [lowerName containsString:@"send"]) {
+                            [debugInfo appendFormat:@"- %@\n", methodName];
+                        }
+                    }
+                    free(methods);
+                }
+            } else {
+                [debugInfo appendFormat:@"被引用消息: nil\n"];
             }
-
-            // 检查 logicController
-            id logicController = nil;
-            @try {
-                logicController = [viewController valueForKey:@"m_logicController"];
-            }
-            @catch (NSException *e) {}
-
-            [debugInfo appendFormat:@"\nlogicController: %@\n", logicController ? NSStringFromClass([logicController class]) : @"nil"];
-
-            if (logicController) {
-                BOOL hasSendWithReply = [logicController respondsToSelector:@selector(SendTextMessage:replyingMessage:isPasted:)];
-                [debugInfo appendFormat:@"SendTextMessage:replyingMessage:isPasted: %@\n", hasSendWithReply ? @"存在" : @"不存在"];
-            }
-
-            BOOL hasAsync = [viewController respondsToSelector:@selector(AsyncSendMessage:replyingMsg:isPasted:)];
-            [debugInfo appendFormat:@"AsyncSendMessage:replyingMsg:isPasted: %@\n", hasAsync ? @"存在" : @"不存在"];
 
             // 显示调试弹窗
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -535,81 +562,10 @@ static char kRepeatMsgWrapKey;
                 [viewController presentViewController:alert animated:YES completion:nil];
             });
 
-            if (referredMsg) {
-                NSLog(@"[WCPL] Found referred message, trying to send with quote");
-
-                // 方法1：通过 logicController 发送带引用的消息
-                if (logicController) {
-                    SEL sendWithReplySelector = @selector(SendTextMessage:replyingMessage:isPasted:);
-                    if ([logicController respondsToSelector:sendWithReplySelector]) {
-                        NSLog(@"[WCPL] Using logicController SendTextMessage:replyingMessage:isPasted:");
-                        NSMethodSignature *signature = [logicController methodSignatureForSelector:sendWithReplySelector];
-                        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
-                        [invocation setTarget:logicController];
-                        [invocation setSelector:sendWithReplySelector];
-                        [invocation setArgument:&content atIndex:2];
-                        [invocation setArgument:&referredMsg atIndex:3];
-                        BOOL isPasted = NO;
-                        [invocation setArgument:&isPasted atIndex:4];
-                        [invocation invoke];
-                        return;
-                    }
-                }
-
-                // 方法2：通过 ViewController 的 AsyncSendMessage 方法
-                if ([viewController respondsToSelector:@selector(AsyncSendMessage:replyingMsg:isPasted:)]) {
-                    NSLog(@"[WCPL] Using viewController AsyncSendMessage:replyingMsg:isPasted:");
-                    [viewController AsyncSendMessage:content replyingMsg:referredMsg isPasted:NO];
-                    return;
-                }
-
-                // 方法3：尝试模拟引用回复操作
-                @try {
-                    // 获取 inputToolView
-                    id toolView = nil;
-                    if ([viewController respondsToSelector:@selector(toolView)]) {
-                        toolView = [viewController performSelector:@selector(toolView)];
-                    }
-                    if (!toolView) {
-                        toolView = [viewController valueForKey:@"m_inputToolView"];
-                    }
-
-                    if (toolView) {
-                        // 尝试设置引用消息
-                        SEL setReplySelector = @selector(setReplyMessage:);
-                        SEL setReferSelector = @selector(setReferMessage:);
-                        SEL showReplySelector = @selector(showReplyViewWithMessage:);
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                        if ([toolView respondsToSelector:setReplySelector]) {
-                            [toolView performSelector:setReplySelector withObject:referredMsg];
-                            NSLog(@"[WCPL] Set reply message via setReplyMessage:");
-                        } else if ([toolView respondsToSelector:setReferSelector]) {
-                            [toolView performSelector:setReferSelector withObject:referredMsg];
-                            NSLog(@"[WCPL] Set reply message via setReferMessage:");
-                        } else if ([toolView respondsToSelector:showReplySelector]) {
-                            [toolView performSelector:showReplySelector withObject:referredMsg];
-                            NSLog(@"[WCPL] Set reply message via showReplyViewWithMessage:");
-                        }
-#pragma clang diagnostic pop
-
-                        // 设置文本并发送
-                        UITextView *textView = [self findTextViewInView:toolView];
-                        if (textView) {
-                            textView.text = content;
-                            [[NSNotificationCenter defaultCenter] postNotificationName:UITextViewTextDidChangeNotification object:textView];
-
-                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                                [self triggerSendInToolView:toolView];
-                            });
-                            return;
-                        }
-                    }
-                }
-                @catch (NSException *e) {
-                    NSLog(@"[WCPL] Reply simulation exception: %@", e.reason);
-                }
+            // 暂时只发送纯文本
+            if ([viewController respondsToSelector:@selector(onSendTextMsg:)]) {
+                [viewController onSendTextMsg:content];
+                return;
             }
         }
 
