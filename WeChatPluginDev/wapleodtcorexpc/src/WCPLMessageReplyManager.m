@@ -28,6 +28,97 @@ static char kRepeatMsgWrapKey;
     return manager;
 }
 
+#pragma mark - Safe Helpers
+
+- (NSString *)wcpl_safeStringValueForObject:(id)obj selectorName:(NSString *)selectorName {
+    @try {
+        if (!obj || selectorName.length == 0) return nil;
+
+        SEL selector = NSSelectorFromString(selectorName);
+        if (!selector || ![obj respondsToSelector:selector]) return nil;
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        id value = [obj performSelector:selector];
+#pragma clang diagnostic pop
+
+        return [value isKindOfClass:[NSString class]] ? (NSString *)value : nil;
+    }
+    @catch (__unused NSException *exception) {
+        return nil;
+    }
+}
+
+- (void)wcpl_safeSetObject:(id)obj selectorName:(NSString *)selectorName value:(id)value {
+    @try {
+        if (!obj || selectorName.length == 0) return;
+
+        SEL selector = NSSelectorFromString(selectorName);
+        if (!selector || ![obj respondsToSelector:selector]) return;
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [obj performSelector:selector withObject:value];
+#pragma clang diagnostic pop
+    }
+    @catch (__unused NSException *exception) {
+        return;
+    }
+}
+
+- (NSString *)wcpl_getSelfUserName {
+    @try {
+        id contactMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CContactMgr")];
+        if (!contactMgr) return nil;
+
+        if (![contactMgr respondsToSelector:@selector(getSelfContact)]) return nil;
+
+        CContact *selfContact = [contactMgr performSelector:@selector(getSelfContact)];
+        NSString *selfUserName = [selfContact isKindOfClass:objc_getClass("CContact")] ? selfContact.m_nsUsrName : nil;
+        return selfUserName.length > 0 ? selfUserName : nil;
+    }
+    @catch (__unused NSException *exception) {
+        return nil;
+    }
+}
+
+- (NSString *)wcpl_fixEmoticonXMLFromTo:(NSString *)xml fromUser:(NSString *)fromUser toUser:(NSString *)toUser {
+    @try {
+        if (xml.length == 0 || fromUser.length == 0 || toUser.length == 0) return xml;
+
+        NSString *result = xml;
+
+        // fromusername
+        NSRegularExpression *fromRegex =
+            [NSRegularExpression regularExpressionWithPattern:@"fromusername\\s*=\\s*(['\\\"])(.*?)\\1"
+                                                      options:NSRegularExpressionCaseInsensitive
+                                                        error:nil];
+        if (fromRegex) {
+            result = [fromRegex stringByReplacingMatchesInString:result
+                                                         options:0
+                                                           range:NSMakeRange(0, result.length)
+                                                    withTemplate:[NSString stringWithFormat:@"fromusername=\"%@\"", fromUser]];
+        }
+
+        // tousername
+        NSRegularExpression *toRegex =
+            [NSRegularExpression regularExpressionWithPattern:@"tousername\\s*=\\s*(['\\\"])(.*?)\\1"
+                                                      options:NSRegularExpressionCaseInsensitive
+                                                        error:nil];
+        if (toRegex) {
+            result = [toRegex stringByReplacingMatchesInString:result
+                                                       options:0
+                                                         range:NSMakeRange(0, result.length)
+                                                  withTemplate:[NSString stringWithFormat:@"tousername=\"%@\"", toUser]];
+        }
+
+        return result;
+    }
+    @catch (__unused NSException *exception) {
+        return xml;
+    }
+}
+
 #pragma mark - Public Methods
 
 - (void)addRepeatButtonToCellView:(CommonMessageCellView *)cellView {
@@ -910,6 +1001,7 @@ static char kRepeatMsgWrapKey;
 - (void)repeatButtonTapped:(UIButton *)sender {
     @try {
         NSMutableString *debugInfo = [NSMutableString stringWithString:@"=== 复读按钮调试信息 ===\n\n"];
+        [debugInfo appendFormat:@"0. Build: %s %s\n\n", __DATE__, __TIME__];
 
         NSString *content = objc_getAssociatedObject(sender, &kRepeatContentKey);
         CMessageWrap *msgWrap = objc_getAssociatedObject(sender, &kRepeatMsgWrapKey);
@@ -931,9 +1023,7 @@ static char kRepeatMsgWrapKey;
         // 检查表情包 MD5
         if (isEmoticonMessage) {
             NSString *emoticonMD5 = nil;
-            if ([msgWrap respondsToSelector:@selector(m_nsEmoticonMD5)]) {
-                emoticonMD5 = [msgWrap performSelector:@selector(m_nsEmoticonMD5)];
-            }
+            emoticonMD5 = [self wcpl_safeStringValueForObject:msgWrap selectorName:@"m_nsEmoticonMD5"];
             [debugInfo appendFormat:@"5. 表情包MD5(属性): %@\n", emoticonMD5 ?: @"nil"];
 
             NSString *msgContent = msgWrap.m_nsContent;
@@ -942,6 +1032,16 @@ static char kRepeatMsgWrapKey;
             // 尝试从 XML 解析 MD5
             NSString *parsedMD5 = [self parseEmoticonMD5FromContent:msgContent];
             [debugInfo appendFormat:@"6.1 解析的MD5: %@\n", parsedMD5 ?: @"nil"];
+
+            NSString *msgSource = msgWrap.m_nsMsgSource;
+            [debugInfo appendFormat:@"6.2 MsgSource长度: %lu\n", (unsigned long)(msgSource ? msgSource.length : 0)];
+            NSString *parsedFromSource = [self parseEmoticonMD5FromContent:msgSource];
+            [debugInfo appendFormat:@"6.3 MsgSource解析MD5: %@\n", parsedFromSource ?: @"nil"];
+
+            NSString *appExtInfo = msgWrap.m_nsAppExtInfo;
+            [debugInfo appendFormat:@"6.4 AppExtInfo长度: %lu\n", (unsigned long)(appExtInfo ? appExtInfo.length : 0)];
+            NSString *parsedFromAppExtInfo = [self parseEmoticonMD5FromContent:appExtInfo];
+            [debugInfo appendFormat:@"6.5 AppExtInfo解析MD5: %@\n", parsedFromAppExtInfo ?: @"nil"];
         }
 
         // 向上查找 ViewController
@@ -969,11 +1069,19 @@ static char kRepeatMsgWrapKey;
         if ([viewController respondsToSelector:@selector(m_logicController)]) {
             logicController = [viewController performSelector:@selector(m_logicController)];
         }
+        if (!logicController && [viewController respondsToSelector:NSSelectorFromString(@"logicController")]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            logicController = [viewController performSelector:NSSelectorFromString(@"logicController")];
+#pragma clang diagnostic pop
+        }
         [debugInfo appendFormat:@"9. LogicController: %@\n", logicController ? NSStringFromClass([logicController class]) : @"nil"];
 
         // 检查发送方法
         BOOL hasSendEmoticon = logicController && [logicController respondsToSelector:@selector(SendEmoticonMessage:)];
         [debugInfo appendFormat:@"10. 有SendEmoticonMessage方法: %@\n", hasSendEmoticon ? @"是" : @"否"];
+        BOOL hasSendEmoticonToolView = [viewController respondsToSelector:@selector(SendEmoticonMesssageToolView:)];
+        [debugInfo appendFormat:@"10.1 有SendEmoticonMesssageToolView方法: %@\n", hasSendEmoticonToolView ? @"是" : @"否"];
 
         // 检查 CEmoticonMgr
         id emoticonMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CEmoticonMgr")];
@@ -984,10 +1092,12 @@ static char kRepeatMsgWrapKey;
 
         // 尝试获取 emoticonWrap
         if (isEmoticonMessage && hasGetEmoticonWrap) {
-            NSString *msgContent = msgWrap.m_nsContent;
-            NSString *parsedMD5 = [self parseEmoticonMD5FromContent:msgContent];
-            if (parsedMD5) {
-                CEmoticonWrap *emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMd5:) withObject:parsedMD5];
+            NSString *bestMD5 =
+                [self parseEmoticonMD5FromContent:msgWrap.m_nsContent] ?:
+                [self parseEmoticonMD5FromContent:msgWrap.m_nsMsgSource] ?:
+                [self parseEmoticonMD5FromContent:msgWrap.m_nsAppExtInfo];
+            if (bestMD5) {
+                CEmoticonWrap *emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMd5:) withObject:bestMD5];
                 [debugInfo appendFormat:@"13. EmoticonWrap: %@\n", emoticonWrap ? @"获取成功" : @"nil"];
             }
         }
@@ -1120,21 +1230,85 @@ static char kRepeatMsgWrapKey;
         }
 
         if (!toUserName || toUserName.length == 0) {
+            // 回退：从 msgWrap 推导聊天对象
+            BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
+            toUserName = isFromSelf ? msgWrap.m_nsToUsr : msgWrap.m_nsFromUsr;
+            if (toUserName && toUserName.length > 0) {
+                [execLog appendFormat:@"✓ 从消息推导聊天对象: %@\n", toUserName];
+            }
+        }
+
+        if (!toUserName || toUserName.length == 0) {
             [execLog appendString:@"❌ 无法获取聊天对象\n"];
             return execLog;
         }
         [execLog appendFormat:@"✓ 聊天对象: %@\n", toUserName];
 
         // 获取表情包 MD5
-        NSString *emoticonMD5 = nil;
-        if ([msgWrap respondsToSelector:@selector(m_nsEmoticonMD5)]) {
-            emoticonMD5 = [msgWrap performSelector:@selector(m_nsEmoticonMD5)];
-        }
+        NSString *emoticonMD5 =
+            [self wcpl_safeStringValueForObject:msgWrap selectorName:@"m_nsEmoticonMD5"] ?:
+            [self wcpl_safeStringValueForObject:msgWrap selectorName:@"m_nsEmoticonMd5"] ?:
+            [self wcpl_safeStringValueForObject:msgWrap selectorName:@"emoticonMD5"] ?:
+            [self wcpl_safeStringValueForObject:msgWrap selectorName:@"emoticonMd5"];
 
         NSString *content = msgWrap.m_nsContent;
-        if ((!emoticonMD5 || emoticonMD5.length == 0) && content && content.length > 0) {
-            emoticonMD5 = [self parseEmoticonMD5FromContent:content];
-            [execLog appendFormat:@"✓ 从XML解析MD5: %@\n", emoticonMD5 ?: @"失败"];
+        NSString *contentSource = @"m_nsContent";
+
+        // 兼容：部分版本表情包 XML 不在 m_nsContent
+        NSArray<NSDictionary *> *payloadCandidates = @[
+            @{@"name": @"m_nsContent", @"value": msgWrap.m_nsContent ?: @""},
+            @{@"name": @"m_nsMsgSource", @"value": msgWrap.m_nsMsgSource ?: @""},
+            @{@"name": @"m_nsAppExtInfo", @"value": msgWrap.m_nsAppExtInfo ?: @""},
+        ];
+
+        NSString *parsedMD5 = nil;
+        NSString *parsedFrom = nil;
+        for (NSDictionary *item in payloadCandidates) {
+            NSString *value = item[@"value"];
+            if (!value || value.length == 0) continue;
+
+            NSString *md5 = [self parseEmoticonMD5FromContent:value];
+            if (md5 && md5.length > 0) {
+                parsedMD5 = md5;
+                parsedFrom = item[@"name"];
+                // 优先使用能解析出 MD5 的内容作为发送 payload
+                content = value;
+                contentSource = item[@"name"];
+                break;
+            }
+        }
+
+        if ((!emoticonMD5 || emoticonMD5.length == 0) && parsedMD5 && parsedMD5.length > 0) {
+            emoticonMD5 = parsedMD5;
+            [execLog appendFormat:@"✓ 从%@解析MD5: %@\n", parsedFrom ?: @"XML", emoticonMD5];
+        } else if (emoticonMD5 && emoticonMD5.length > 0) {
+            [execLog appendFormat:@"✓ 消息自带MD5: %@\n", emoticonMD5];
+        }
+
+        if (!content || content.length == 0) {
+            // 兜底：找一个非空的 payload 作为内容（可能仅用于某些发送 API）
+            for (NSDictionary *item in payloadCandidates) {
+                NSString *value = item[@"value"];
+                if (value && value.length > 0) {
+                    content = value;
+                    contentSource = item[@"name"];
+                    break;
+                }
+            }
+        }
+
+        if (content && content.length > 0) {
+            [execLog appendFormat:@"✓ 表情包内容来源: %@ (len=%lu)\n", contentSource ?: @"unknown", (unsigned long)content.length];
+        }
+
+        // 某些版本发送接口会直接使用 XML 字段（收到的内容包含对方/自己反向信息），这里尽量修正
+        NSString *selfUserName = [self wcpl_getSelfUserName];
+        if (selfUserName.length > 0) {
+            NSString *fixedContent = [self wcpl_fixEmoticonXMLFromTo:content fromUser:selfUserName toUser:toUserName];
+            if (fixedContent.length > 0 && ![fixedContent isEqualToString:content]) {
+                content = fixedContent;
+                [execLog appendString:@"✓ 已修正XML中的from/tousername\n"];
+            }
         }
 
         // 方法1: 通过 EmoticonWrap 发送
@@ -1142,7 +1316,33 @@ static char kRepeatMsgWrapKey;
             [execLog appendString:@"\n尝试方法1: EmoticonWrap\n"];
             id emoticonMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CEmoticonMgr")];
             if (emoticonMgr && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)]) {
-                CEmoticonWrap *emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMd5:) withObject:emoticonMD5];
+                CEmoticonWrap *emoticonWrap = nil;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMd5:) withObject:emoticonMD5];
+#pragma clang diagnostic pop
+
+                // 兼容：尝试通过 msgWrap / content 获取 EmoticonWrap（不同版本可能存在）
+                if (!emoticonWrap) {
+                    SEL byMsgWrapSel = NSSelectorFromString(@"getEmoticonWrapByMessageWrap:");
+                    if ([emoticonMgr respondsToSelector:byMsgWrapSel]) {
+                        [execLog appendString:@"- 通过getEmoticonWrapByMessageWrap尝试\n"];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                        emoticonWrap = [emoticonMgr performSelector:byMsgWrapSel withObject:msgWrap];
+#pragma clang diagnostic pop
+                    }
+                }
+                if (!emoticonWrap) {
+                    SEL byContentSel = NSSelectorFromString(@"getEmoticonWrapByContent:");
+                    if (content && content.length > 0 && [emoticonMgr respondsToSelector:byContentSel]) {
+                        [execLog appendString:@"- 通过getEmoticonWrapByContent尝试\n"];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                        emoticonWrap = [emoticonMgr performSelector:byContentSel withObject:content];
+#pragma clang diagnostic pop
+                    }
+                }
 
                 if (emoticonWrap) {
                     [execLog appendString:@"✓ 获取到EmoticonWrap\n"];
@@ -1178,14 +1378,19 @@ static char kRepeatMsgWrapKey;
             }
             [execLog appendString:@"✓ 获取到CMessageMgr\n"];
 
-            // 创建新消息 - 使用 initWithMsgType: 初始化
+            // 创建新消息
             Class CMessageWrapClass = objc_getClass("CMessageWrap");
             if (!CMessageWrapClass) {
                 [execLog appendString:@"❌ 无法获取CMessageWrap类\n"];
                 return execLog;
             }
 
-            CMessageWrap *newMsgWrap = [[CMessageWrapClass alloc] initWithMsgType:47];
+            CMessageWrap *newMsgWrap = nil;
+            if ([CMessageWrapClass instancesRespondToSelector:@selector(initWithMsgType:)]) {
+                newMsgWrap = [[CMessageWrapClass alloc] initWithMsgType:47];
+            } else {
+                newMsgWrap = [[CMessageWrapClass alloc] init];
+            }
             if (!newMsgWrap) {
                 [execLog appendString:@"❌ 创建CMessageWrap失败\n"];
                 return execLog;
@@ -1195,13 +1400,32 @@ static char kRepeatMsgWrapKey;
             newMsgWrap.m_uiMessageType = 47;
             newMsgWrap.m_nsToUsr = toUserName;
             newMsgWrap.m_nsContent = content;
-            newMsgWrap.m_uiStatus = 4; // 消息状态：已发送
+            newMsgWrap.m_uiStatus = 1; // 消息状态：发送中（让微信自行更新状态）
 
             // 设置创建时间
             newMsgWrap.m_uiCreateTime = (unsigned int)[[NSDate date] timeIntervalSince1970];
 
-            if (emoticonMD5 && [newMsgWrap respondsToSelector:@selector(setM_nsEmoticonMD5:)]) {
-                [newMsgWrap performSelector:@selector(setM_nsEmoticonMD5:) withObject:emoticonMD5];
+            // 设置发信人（尽量补齐字段，提升不同版本兼容性）
+            if (selfUserName && selfUserName.length > 0) {
+                newMsgWrap.m_nsFromUsr = selfUserName;
+                [execLog appendFormat:@"✓ 设置FromUsr: %@\n", selfUserName];
+            }
+
+            // 复制缩略图/数据大小（部分版本发送表情包依赖这些字段）
+            if (msgWrap.m_dtThumbnail && [newMsgWrap respondsToSelector:@selector(setM_dtThumbnail:)]) {
+                newMsgWrap.m_dtThumbnail = msgWrap.m_dtThumbnail;
+                [execLog appendFormat:@"✓ 复制缩略图(len=%lu)\n", (unsigned long)msgWrap.m_dtThumbnail.length];
+            }
+            if ([msgWrap respondsToSelector:@selector(m_uiAppDataSize)] &&
+                [newMsgWrap respondsToSelector:@selector(setM_uiAppDataSize:)]) {
+                newMsgWrap.m_uiAppDataSize = msgWrap.m_uiAppDataSize;
+                [execLog appendFormat:@"✓ 复制AppDataSize=%u\n", msgWrap.m_uiAppDataSize];
+            }
+
+            if (emoticonMD5 && emoticonMD5.length > 0) {
+                // 兼容：不同版本 setter 名可能不同
+                [self wcpl_safeSetObject:newMsgWrap selectorName:@"setM_nsEmoticonMD5:" value:emoticonMD5];
+                [self wcpl_safeSetObject:newMsgWrap selectorName:@"setM_nsEmoticonMd5:" value:emoticonMD5];
                 [execLog appendFormat:@"✓ 设置MD5: %@\n", emoticonMD5];
             }
 
@@ -1217,7 +1441,7 @@ static char kRepeatMsgWrapKey;
             if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
                 [execLog appendString:@"✓ 调用AddLocalMsg\n"];
                 [msgMgr AddLocalMsg:toUserName MsgWrap:newMsgWrap fixTime:YES NewMsgArriveNotify:YES];
-                [execLog appendString:@"✅ AddLocalMsg执行完成\n"];
+                [execLog appendString:@"✅ AddLocalMsg执行完成（可能仅本地插入，不保证发出）\n"];
                 return execLog;
             }
 
@@ -1238,15 +1462,21 @@ static char kRepeatMsgWrapKey;
 - (NSString *)parseEmoticonMD5FromContent:(NSString *)content {
     if (!content || content.length == 0) return nil;
 
-    // 尝试匹配 md5="xxx" 格式
-    NSRegularExpression *regex1 = [NSRegularExpression regularExpressionWithPattern:@"md5=\"([a-fA-F0-9]+)\"" options:0 error:nil];
+    // 尝试匹配 md5="xxx" / md5='xxx' / md5=xxx 格式（兼容空格）
+    NSRegularExpression *regex1 =
+        [NSRegularExpression regularExpressionWithPattern:@"md5\\s*=\\s*['\\\"]?([a-fA-F0-9]{32})"
+                                                  options:NSRegularExpressionCaseInsensitive
+                                                    error:nil];
     NSTextCheckingResult *match1 = [regex1 firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
     if (match1 && match1.numberOfRanges > 1) {
         return [content substringWithRange:[match1 rangeAtIndex:1]];
     }
 
     // 尝试匹配 <md5>xxx</md5> 格式
-    NSRegularExpression *regex2 = [NSRegularExpression regularExpressionWithPattern:@"<md5>([a-fA-F0-9]+)</md5>" options:0 error:nil];
+    NSRegularExpression *regex2 =
+        [NSRegularExpression regularExpressionWithPattern:@"<md5>\\s*([a-fA-F0-9]{32})\\s*</md5>"
+                                                  options:NSRegularExpressionCaseInsensitive
+                                                    error:nil];
     NSTextCheckingResult *match2 = [regex2 firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
     if (match2 && match2.numberOfRanges > 1) {
         return [content substringWithRange:[match2 rangeAtIndex:1]];
