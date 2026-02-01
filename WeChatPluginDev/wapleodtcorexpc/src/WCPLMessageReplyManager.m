@@ -909,39 +909,106 @@ static char kRepeatMsgWrapKey;
 
 - (void)repeatButtonTapped:(UIButton *)sender {
     @try {
-        NSLog(@"[WCPL] repeatButtonTapped called");
+        NSMutableString *debugInfo = [NSMutableString stringWithString:@"=== 复读按钮调试信息 ===\n\n"];
 
         NSString *content = objc_getAssociatedObject(sender, &kRepeatContentKey);
         CMessageWrap *msgWrap = objc_getAssociatedObject(sender, &kRepeatMsgWrapKey);
 
-        NSLog(@"[WCPL] msgWrap: %@, type: %u", msgWrap ? @"exists" : @"nil", msgWrap ? msgWrap.m_uiMessageType : 0);
+        [debugInfo appendFormat:@"1. 消息对象: %@\n", msgWrap ? @"存在" : @"nil"];
+        [debugInfo appendFormat:@"2. 消息类型: %u\n", msgWrap ? msgWrap.m_uiMessageType : 0];
+        [debugInfo appendFormat:@"3. 文本内容: %@\n", content ? [content substringToIndex:MIN(50, content.length)] : @"nil"];
 
         // 检查是否是表情包消息
         BOOL isEmoticonMessage = (msgWrap && msgWrap.m_uiMessageType == 47);
+        [debugInfo appendFormat:@"4. 是否表情包: %@\n", isEmoticonMessage ? @"是" : @"否"];
 
         if (!isEmoticonMessage && (!content || content.length == 0)) {
-            NSLog(@"[WCPL] No content associated with repeat button");
+            [debugInfo appendString:@"\n❌ 错误: 非表情包消息且无文本内容"];
+            [self showDebugAlert:debugInfo];
             return;
+        }
+
+        // 检查表情包 MD5
+        if (isEmoticonMessage) {
+            NSString *emoticonMD5 = nil;
+            if ([msgWrap respondsToSelector:@selector(m_nsEmoticonMD5)]) {
+                emoticonMD5 = [msgWrap performSelector:@selector(m_nsEmoticonMD5)];
+            }
+            [debugInfo appendFormat:@"5. 表情包MD5: %@\n", emoticonMD5 ?: @"nil"];
+
+            NSString *msgContent = msgWrap.m_nsContent;
+            [debugInfo appendFormat:@"6. 消息Content长度: %lu\n", (unsigned long)(msgContent ? msgContent.length : 0)];
         }
 
         // 向上查找 ViewController
         BaseMsgContentViewController *viewController = [self findViewControllerFromView:sender];
-        NSLog(@"[WCPL] Found viewController: %@", viewController ? NSStringFromClass([viewController class]) : @"nil");
+        [debugInfo appendFormat:@"7. ViewController: %@\n", viewController ? NSStringFromClass([viewController class]) : @"nil"];
 
-        if (viewController) {
-            if (isEmoticonMessage) {
-                NSLog(@"[WCPL] Calling handleRepeatEmoticonMessage");
-                [self handleRepeatEmoticonMessage:msgWrap viewController:viewController];
-            } else {
-                [self handleRepeatButtonTapWithContent:content viewController:viewController msgWrap:msgWrap];
+        if (!viewController) {
+            [debugInfo appendString:@"\n❌ 错误: 找不到 ViewController"];
+            [self showDebugAlert:debugInfo];
+            return;
+        }
+
+        // 检查聊天对象
+        NSString *toUserName = nil;
+        if ([viewController respondsToSelector:@selector(GetContact)]) {
+            CContact *contact = [viewController performSelector:@selector(GetContact)];
+            if (contact) {
+                toUserName = contact.m_nsUsrName;
             }
+        }
+        [debugInfo appendFormat:@"8. 聊天对象: %@\n", toUserName ?: @"nil"];
+
+        // 检查 logicController
+        id logicController = nil;
+        if ([viewController respondsToSelector:@selector(m_logicController)]) {
+            logicController = [viewController performSelector:@selector(m_logicController)];
+        }
+        [debugInfo appendFormat:@"9. LogicController: %@\n", logicController ? NSStringFromClass([logicController class]) : @"nil"];
+
+        // 检查发送方法
+        BOOL hasSendEmoticon = logicController && [logicController respondsToSelector:@selector(SendEmoticonMessage:)];
+        [debugInfo appendFormat:@"10. 有SendEmoticonMessage方法: %@\n", hasSendEmoticon ? @"是" : @"否"];
+
+        // 检查 CEmoticonMgr
+        id emoticonMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CEmoticonMgr")];
+        [debugInfo appendFormat:@"11. CEmoticonMgr: %@\n", emoticonMgr ? @"存在" : @"nil"];
+
+        BOOL hasGetEmoticonWrap = emoticonMgr && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)];
+        [debugInfo appendFormat:@"12. 有getEmoticonWrapByMd5方法: %@\n", hasGetEmoticonWrap ? @"是" : @"否"];
+
+        [debugInfo appendString:@"\n✅ 开始执行复读..."];
+
+        // 显示调试信息
+        [self showDebugAlert:debugInfo];
+
+        // 执行复读
+        if (isEmoticonMessage) {
+            [self handleRepeatEmoticonMessage:msgWrap viewController:viewController];
         } else {
-            NSLog(@"[WCPL] Could not find view controller for repeat action");
+            [self handleRepeatButtonTapWithContent:content viewController:viewController msgWrap:msgWrap];
         }
     }
     @catch (NSException *exception) {
-        NSLog(@"[WCPL] Exception in repeatButtonTapped: %@", exception);
+        [self showDebugAlert:[NSString stringWithFormat:@"❌ 异常: %@", exception]];
     }
+}
+
+- (void)showDebugAlert:(NSString *)message {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"调试信息"
+                                                                       message:message
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+
+        // 获取当前显示的 ViewController
+        UIViewController *topVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+        while (topVC.presentedViewController) {
+            topVC = topVC.presentedViewController;
+        }
+        [topVC presentViewController:alert animated:YES completion:nil];
+    });
 }
 
 - (BaseMsgContentViewController *)findViewControllerFromView:(UIView *)view {
