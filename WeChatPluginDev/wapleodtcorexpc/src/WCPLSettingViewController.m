@@ -54,7 +54,7 @@
 }
 
 - (void)initTitle {
-    self.title = @"微信辣椒";
+    self.title = @"微信辣椒 by guanxi";
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0]}];
     self.navigationItem.leftBarButtonItem = [objc_getClass("MMUICommonUtil") getBarButtonWithImageName:@"ui-resource_back" target:self action:@selector(onBack:) style:0 accessibility:nil];

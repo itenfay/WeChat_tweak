@@ -12,23 +12,27 @@
 #import "WCHookSwipeUtilities.h"
 #import "WCHookMessageNavigator.h"
 
-/*
+// ==================== 插件注册 ====================
+static BOOL didRegisterWCPLPlugin = NO;
+
 %hook MicroMessengerAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-      
-      CContactMgr *contactMgr = [[%c(MMServiceCenter) defaultCenter] getService:%c(CContactMgr)];
-      CContact *contact = [contactMgr getContactForSearchByName:@"gh_dfca3xx3231"];
-    if (contact) {
-        [contactMgr addLocalContact:contact listType:2];
-        [contactMgr getContactsFromServer:@[contact]];
+    BOOL result = %orig(application, launchOptions);
+
+    // 通过 WCPluginsMgr 注册插件入口
+    if (NSClassFromString(@"WCPluginsMgr") && !didRegisterWCPLPlugin) {
+        [[objc_getClass("WCPluginsMgr") sharedInstance] registerControllerWithTitle:@"微信辣椒"
+                                                                           version:@"1.0 by guanxi"
+                                                                        controller:@"WCPLSettingViewController"];
+        didRegisterWCPLPlugin = YES;
+        NSLog(@"[WCPL] Plugin registered via WCPluginsMgr");
     }
-    
-    return %orig;
+
+    return result;
 }
 
 %end
-*/
 
 %hook WCRedEnvelopesLogicMgr
 

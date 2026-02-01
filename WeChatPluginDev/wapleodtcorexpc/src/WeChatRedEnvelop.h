@@ -268,6 +268,15 @@
 
 @end
 
+#pragma mark - WCPluginsMgr
+
+@interface WCPluginsMgr : NSObject
+
++ (instancetype)sharedInstance;
+- (void)registerControllerWithTitle:(NSString *)title version:(NSString *)version controller:(NSString *)controllerClassName;
+
+@end
+
 #pragma mark - ScanQRCodeLogicController
 
 @interface ScanQRCodeLogicController : BaseScanLogicController
