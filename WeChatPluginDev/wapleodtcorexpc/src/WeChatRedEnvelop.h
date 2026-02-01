@@ -133,8 +133,8 @@
 // 正确的微信原生方法签名 (来自微信逆向头文件)
 - (void)DelMsg:(NSString *)chatName MsgWrap:(CMessageWrap *)msgWrap;
 - (void)RevokeMsg:(NSString *)chatName MsgWrap:(CMessageWrap *)msgWrap Counter:(unsigned int)counter;
-// 图片消息发送
-- (void)AddImageMsg:(NSString *)toUserName MsgWrap:(CMessageWrap *)msgWrap;
+// 表情包消息发送
+- (void)AddEmoticonMsg:(NSString *)toUserName MsgWrap:(CMessageWrap *)msgWrap;
 
 @end
 
@@ -177,8 +177,30 @@
 
 @property (retain, nonatomic) NSData *m_dtThumbnail; // @synthesize m_dtThumbnail;
 
+// 表情包相关属性
+@property (retain, nonatomic) NSString *m_nsEmoticonMD5; // @dynamic m_nsEmoticonMD5;
+
 - (id)initWithMsgType:(long long)arg1;
 + (_Bool)isSenderFromMsgWrap:(id)arg1;
+
+@end
+
+#pragma mark - CEmoticonWrap
+
+@interface CEmoticonWrap : NSObject
+
+@property (nonatomic) unsigned int m_uiType;
+@property (retain, nonatomic) NSString *m_nsAppID;
+@property (retain, nonatomic) NSString *m_nsThumbImgPath;
+@property (retain, nonatomic) NSData *m_imageData;
+
+@end
+
+#pragma mark - CEmoticonMgr
+
+@interface CEmoticonMgr : NSObject
+
+- (CEmoticonWrap *)getEmoticonWrapByMD5:(NSString *)md5;
 
 @end
 

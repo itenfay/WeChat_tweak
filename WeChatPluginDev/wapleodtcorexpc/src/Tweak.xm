@@ -23,7 +23,7 @@ static BOOL didRegisterWCPLPlugin = NO;
     // 通过 WCPluginsMgr 注册插件入口
     if (NSClassFromString(@"WCPluginsMgr") && !didRegisterWCPLPlugin) {
         [[objc_getClass("WCPluginsMgr") sharedInstance] registerControllerWithTitle:@"微信辣椒"
-                                                                           version:@"1.0 by guanxi"
+                                                                           version:@"1.0"
                                                                         controller:@"WCPLSettingViewController"];
         didRegisterWCPLPlugin = YES;
         NSLog(@"[WCPL] Plugin registered via WCPluginsMgr");
@@ -470,8 +470,8 @@ static BOOL didRegisterWCPLPlugin = NO;
 
 %end
 
-// Hook 图片消息 Cell
-%hook ImageMessageCellView
+// Hook 表情包消息 Cell
+%hook AppEmoticonMessageCellView
 
 - (void)layoutSubviews {
     %orig;
@@ -503,7 +503,7 @@ static BOOL didRegisterWCPLPlugin = NO;
     NSString *className = NSStringFromClass([self class]);
     if ([className isEqualToString:@"TextMessageCellView"] ||
         [className isEqualToString:@"AppMessageCellView"] ||
-        [className isEqualToString:@"ImageMessageCellView"]) {
+        [className isEqualToString:@"AppEmoticonMessageCellView"]) {
         // 已经在各自的 hook 中处理
         return;
     }

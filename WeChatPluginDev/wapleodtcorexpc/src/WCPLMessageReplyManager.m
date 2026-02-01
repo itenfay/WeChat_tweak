@@ -66,11 +66,30 @@ static char kRepeatMsgWrapKey;
             return;
         }
 
-        // 图片消息不需要检查文本内容
-        NSString *content = nil;
-        BOOL isImageMessage = (msgWrap.m_uiMessageType == 3);
+        // 获取消息唯一标识（用于防止重复添加按钮）
+        unsigned int msgLocalID = msgWrap.m_uiMesLocalID;
 
-        if (!isImageMessage) {
+        // 检查是否已经存在相同消息的按钮
+        for (UIView *subview in cellView.subviews) {
+            if (subview.tag == kWCPLRepeatButtonTag) {
+                // 检查按钮关联的消息 ID 是否相同
+                CMessageWrap *existingMsgWrap = objc_getAssociatedObject(subview, &kRepeatMsgWrapKey);
+                if (existingMsgWrap && existingMsgWrap.m_uiMesLocalID == msgLocalID) {
+                    // 已存在相同消息的按钮，只需更新位置
+                    [self layoutRepeatButton:(UIButton *)subview inCellView:cellView];
+                    return;
+                }
+            }
+        }
+
+        // 先移除所有旧按钮，确保只有一个
+        [self removeRepeatButtonFromCellView:cellView];
+
+        // 表情包消息不需要检查文本内容
+        NSString *content = nil;
+        BOOL isEmoticonMessage = (msgWrap.m_uiMessageType == 47);
+
+        if (!isEmoticonMessage) {
             // 获取消息内容 - 优先从 ViewModel 的 contentText 获取（用于引用回复消息）
             if ([viewModel respondsToSelector:@selector(contentText)]) {
                 content = [viewModel performSelector:@selector(contentText)];
@@ -80,13 +99,9 @@ static char kRepeatMsgWrapKey;
                 content = [self getMessageContent:msgWrap];
             }
             if (!content || content.length == 0) {
-                [self removeRepeatButtonFromCellView:cellView];
                 return;
             }
         }
-
-        // 先移除所有旧按钮，确保只有一个
-        [self removeRepeatButtonFromCellView:cellView];
 
         // 创建新按钮
         UIButton *repeatButton = [self createRepeatButton];
@@ -157,12 +172,12 @@ static char kRepeatMsgWrapKey;
 
         // 获取消息类型
         // 1 = 文本消息
-        // 3 = 图片消息
+        // 47 = 表情包消息
         // 49 = 应用消息（包括引用回复）
         unsigned int msgType = msgWrap.m_uiMessageType;
 
-        // 支持文本消息、图片消息和引用回复消息
-        if (msgType != 1 && msgType != 3 && msgType != 49) {
+        // 支持文本消息、表情包消息和引用回复消息
+        if (msgType != 1 && msgType != 47 && msgType != 49) {
             return NO;
         }
 
@@ -173,8 +188,8 @@ static char kRepeatMsgWrapKey;
             }
         }
 
-        // 图片消息不检查文本内容，直接允许复读
-        if (msgType == 3) {
+        // 表情包消息不检查文本内容，直接允许复读
+        if (msgType == 47) {
             return YES;
         }
 
@@ -891,10 +906,10 @@ static char kRepeatMsgWrapKey;
         NSString *content = objc_getAssociatedObject(sender, &kRepeatContentKey);
         CMessageWrap *msgWrap = objc_getAssociatedObject(sender, &kRepeatMsgWrapKey);
 
-        // 检查是否是图片消息
-        BOOL isImageMessage = (msgWrap && msgWrap.m_uiMessageType == 3);
+        // 检查是否是表情包消息
+        BOOL isEmoticonMessage = (msgWrap && msgWrap.m_uiMessageType == 47);
 
-        if (!isImageMessage && (!content || content.length == 0)) {
+        if (!isEmoticonMessage && (!content || content.length == 0)) {
             NSLog(@"[WCPL] No content associated with repeat button");
             return;
         }
@@ -903,8 +918,8 @@ static char kRepeatMsgWrapKey;
         BaseMsgContentViewController *viewController = [self findViewControllerFromView:sender];
 
         if (viewController) {
-            if (isImageMessage) {
-                [self handleRepeatImageMessage:msgWrap viewController:viewController];
+            if (isEmoticonMessage) {
+                [self handleRepeatEmoticonMessage:msgWrap viewController:viewController];
             } else {
                 [self handleRepeatButtonTapWithContent:content viewController:viewController msgWrap:msgWrap];
             }
@@ -958,22 +973,15 @@ static char kRepeatMsgWrapKey;
     }
 }
 
-// 处理图片消息复读
-- (void)handleRepeatImageMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController {
+// 处理表情包消息复读
+- (void)handleRepeatEmoticonMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController {
     @try {
         if (!msgWrap || !viewController) {
-            NSLog(@"[WCPL] Invalid params for image repeat");
+            NSLog(@"[WCPL] Invalid params for emoticon repeat");
             return;
         }
 
-        NSLog(@"[WCPL] Repeating image message");
-
-        // 获取 CMessageMgr 服务
-        id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
-        if (!msgMgr) {
-            NSLog(@"[WCPL] Cannot get CMessageMgr service");
-            return;
-        }
+        NSLog(@"[WCPL] Repeating emoticon message");
 
         // 获取聊天对象用户名
         NSString *toUserName = nil;
@@ -985,66 +993,80 @@ static char kRepeatMsgWrapKey;
         }
 
         if (!toUserName || toUserName.length == 0) {
-            NSLog(@"[WCPL] Cannot get target user name for image repeat");
+            NSLog(@"[WCPL] Cannot get target user name for emoticon repeat");
             return;
         }
 
-        // 获取图片数据路径
-        NSString *imgPath = nil;
-        if ([msgWrap respondsToSelector:@selector(m_nsImgPath)]) {
-            imgPath = [msgWrap performSelector:@selector(m_nsImgPath)];
+        // 方法1: 通过 SendEmoticonMessage 发送
+        // 获取表情包 MD5
+        NSString *emoticonMD5 = nil;
+        if ([msgWrap respondsToSelector:@selector(m_nsEmoticonMD5)]) {
+            emoticonMD5 = [msgWrap performSelector:@selector(m_nsEmoticonMD5)];
         }
 
-        // 尝试通过 CMessageWrap 的图片数据发送
-        // 方法1: 通过 AddImageMsg 发送
-        if ([msgMgr respondsToSelector:@selector(AddImageMsg:MsgWrap:)]) {
+        if (emoticonMD5 && emoticonMD5.length > 0) {
+            // 获取 CEmoticonMgr 服务
+            id emoticonMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CEmoticonMgr")];
+            if (emoticonMgr) {
+                // 通过 MD5 获取表情包 Wrap
+                CEmoticonWrap *emoticonWrap = nil;
+                if ([emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMD5:)]) {
+                    emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMD5:) withObject:emoticonMD5];
+                }
+
+                if (emoticonWrap) {
+                    // 通过 ViewController 发送表情包
+                    if ([viewController respondsToSelector:@selector(SendEmoticonMessage:)]) {
+                        [viewController performSelector:@selector(SendEmoticonMessage:) withObject:emoticonWrap];
+                        NSLog(@"[WCPL] Emoticon message repeated via SendEmoticonMessage");
+                        return;
+                    }
+
+                    // 备用方法：通过 logicController 发送
+                    if ([viewController respondsToSelector:@selector(m_logicController)]) {
+                        id logicController = [viewController performSelector:@selector(m_logicController)];
+                        if (logicController && [logicController respondsToSelector:@selector(SendEmoticonMessage:)]) {
+                            [logicController performSelector:@selector(SendEmoticonMessage:) withObject:emoticonWrap];
+                            NSLog(@"[WCPL] Emoticon message repeated via logicController");
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 方法2: 通过 CMessageMgr 的 AddEmoticonMsg 发送
+        id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
+        if (msgMgr && [msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
             // 创建新的消息 Wrap
             CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] init];
-            newMsgWrap.m_uiMessageType = 3; // 图片消息
+            newMsgWrap.m_uiMessageType = 47; // 表情包消息
             newMsgWrap.m_nsToUsr = toUserName;
 
-            // 复制原始消息的图片数据
-            if ([msgWrap respondsToSelector:@selector(m_oImage)] && [newMsgWrap respondsToSelector:@selector(setM_oImage:)]) {
-                id image = [msgWrap performSelector:@selector(m_oImage)];
-                if (image) {
-                    [newMsgWrap performSelector:@selector(setM_oImage:) withObject:image];
+            // 复制表情包相关属性
+            if (emoticonMD5) {
+                if ([newMsgWrap respondsToSelector:@selector(setM_nsEmoticonMD5:)]) {
+                    [newMsgWrap performSelector:@selector(setM_nsEmoticonMD5:) withObject:emoticonMD5];
                 }
             }
 
-            // 复制图片路径
-            if (imgPath && [newMsgWrap respondsToSelector:@selector(setM_nsImgPath:)]) {
-                [newMsgWrap performSelector:@selector(setM_nsImgPath:) withObject:imgPath];
-            }
-
-            // 复制缩略图数据
-            if ([msgWrap respondsToSelector:@selector(m_dtThumbnail)] && [newMsgWrap respondsToSelector:@selector(setM_dtThumbnail:)]) {
-                id thumbnail = [msgWrap performSelector:@selector(m_dtThumbnail)];
-                if (thumbnail) {
-                    [newMsgWrap performSelector:@selector(setM_dtThumbnail:) withObject:thumbnail];
+            // 复制表情包内容
+            if ([msgWrap respondsToSelector:@selector(m_nsContent)] && [newMsgWrap respondsToSelector:@selector(setM_nsContent:)]) {
+                NSString *content = [msgWrap performSelector:@selector(m_nsContent)];
+                if (content) {
+                    [newMsgWrap performSelector:@selector(setM_nsContent:) withObject:content];
                 }
             }
 
-            [msgMgr AddImageMsg:toUserName MsgWrap:newMsgWrap];
-            NSLog(@"[WCPL] Image message repeated via AddImageMsg");
+            [msgMgr AddEmoticonMsg:toUserName MsgWrap:newMsgWrap];
+            NSLog(@"[WCPL] Emoticon message repeated via AddEmoticonMsg");
             return;
         }
 
-        // 方法2: 通过 ViewController 的 sendImage 方法
-        if ([viewController respondsToSelector:@selector(sendImageData:)]) {
-            if ([msgWrap respondsToSelector:@selector(m_dtThumbnail)]) {
-                NSData *imageData = [msgWrap performSelector:@selector(m_dtThumbnail)];
-                if (imageData) {
-                    [viewController performSelector:@selector(sendImageData:) withObject:imageData];
-                    NSLog(@"[WCPL] Image message repeated via sendImageData");
-                    return;
-                }
-            }
-        }
-
-        NSLog(@"[WCPL] Failed to find suitable method for image repeat");
+        NSLog(@"[WCPL] Failed to find suitable method for emoticon repeat");
     }
     @catch (NSException *exception) {
-        NSLog(@"[WCPL] Exception in handleRepeatImageMessage: %@", exception);
+        NSLog(@"[WCPL] Exception in handleRepeatEmoticonMessage: %@", exception);
     }
 }
 

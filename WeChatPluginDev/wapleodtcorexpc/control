@@ -1,9 +1,9 @@
 Package: com.aple.wapleodtcorexpc
-Name: wapleodtcorexpc
+Name: 微信辣椒
 Depends: mobilesubstrate
 Version: 1.7.8
 Architecture: iphoneos-arm
-Description: WeChatAssistant
-Maintainer: dyf
-Author: dyf
+Description: 微信辣椒 - WeChat Enhancement Plugin
+Maintainer: guanxi
+Author: guanxi
 Section: Tweaks
