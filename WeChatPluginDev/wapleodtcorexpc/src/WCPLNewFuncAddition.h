@@ -16,16 +16,7 @@
 
 @end
 
-#pragma mark - BaseMsgContentViewController
-
-@interface BaseMsgContentViewController : MMUIViewController
-
-- (id)GetContact;
-
-// Added Method.
-//- (void)wcpl_pressTPButton:(id)sender;
-
-@end
+// BaseMsgContentViewController 已在 WeChatRedEnvelop.h 中定义
 
 #pragma mark - ProtobufEventHandler
 
