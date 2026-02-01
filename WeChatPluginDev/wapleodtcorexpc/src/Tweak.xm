@@ -277,7 +277,7 @@
 
     WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoDefaut];
 
-    WCTableViewNormalCellManager *settingCell = [%c(WCTableViewNormalCellManager) normalCellForSel:@selector(wcpl_setting) target:self title:@"小微同学" accessoryType:1];
+    WCTableViewNormalCellManager *settingCell = [%c(WCTableViewNormalCellManager) normalCellForSel:@selector(wcpl_setting) target:self title:@"微信辣椒" accessoryType:1];
     [sectionMgr addCell:settingCell];
 
     [tableViewMgr insertSection:sectionMgr At:0];
@@ -466,6 +466,25 @@
 
 %end
 
+// Hook 图片消息 Cell
+%hook ImageMessageCellView
+
+- (void)layoutSubviews {
+    %orig;
+
+    // 添加复读按钮
+    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
+}
+
+- (void)prepareForReuse {
+    %orig;
+
+    // Cell 复用时移除按钮
+    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
+}
+
+%end
+
 // 也 Hook CommonMessageCellView 以支持更多消息类型和左滑引用功能
 %hook CommonMessageCellView
 
@@ -479,13 +498,13 @@
     // 跳过已经单独处理的 Cell 类型
     NSString *className = NSStringFromClass([self class]);
     if ([className isEqualToString:@"TextMessageCellView"] ||
-        [className isEqualToString:@"AppMessageCellView"]) {
+        [className isEqualToString:@"AppMessageCellView"] ||
+        [className isEqualToString:@"ImageMessageCellView"]) {
         // 已经在各自的 hook 中处理
         return;
     }
 
-    // 可以在这里添加对其他消息类型的支持
-    // 例如：ImageMessageCellView, VoiceMessageCellView 等
+    // 其他消息类型暂不处理复读按钮
 }
 
 - (void)didMoveToWindow {

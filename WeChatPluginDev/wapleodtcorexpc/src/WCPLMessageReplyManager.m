@@ -146,11 +146,12 @@ static char kRepeatMsgWrapKey;
 
         // 获取消息类型
         // 1 = 文本消息
+        // 3 = 图片消息
         // 49 = 应用消息（包括引用回复）
         unsigned int msgType = msgWrap.m_uiMessageType;
 
-        // 支持文本消息和引用回复消息
-        if (msgType != 1 && msgType != 49) {
+        // 支持文本消息、图片消息和引用回复消息
+        if (msgType != 1 && msgType != 3 && msgType != 49) {
             return NO;
         }
 
@@ -159,6 +160,11 @@ static char kRepeatMsgWrapKey;
             if (![self isQuoteReplyMessage:msgWrap]) {
                 return NO;
             }
+        }
+
+        // 图片消息不检查文本内容，直接允许复读
+        if (msgType == 3) {
+            return YES;
         }
 
         // 检查消息内容是否为空
@@ -874,7 +880,10 @@ static char kRepeatMsgWrapKey;
         NSString *content = objc_getAssociatedObject(sender, &kRepeatContentKey);
         CMessageWrap *msgWrap = objc_getAssociatedObject(sender, &kRepeatMsgWrapKey);
 
-        if (!content || content.length == 0) {
+        // 检查是否是图片消息
+        BOOL isImageMessage = (msgWrap && msgWrap.m_uiMessageType == 3);
+
+        if (!isImageMessage && (!content || content.length == 0)) {
             NSLog(@"[WCPL] No content associated with repeat button");
             return;
         }
@@ -883,7 +892,11 @@ static char kRepeatMsgWrapKey;
         BaseMsgContentViewController *viewController = [self findViewControllerFromView:sender];
 
         if (viewController) {
-            [self handleRepeatButtonTapWithContent:content viewController:viewController msgWrap:msgWrap];
+            if (isImageMessage) {
+                [self handleRepeatImageMessage:msgWrap viewController:viewController];
+            } else {
+                [self handleRepeatButtonTapWithContent:content viewController:viewController msgWrap:msgWrap];
+            }
         } else {
             NSLog(@"[WCPL] Could not find view controller for repeat action");
         }
@@ -931,6 +944,96 @@ static char kRepeatMsgWrapKey;
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in isMessageFromSelf: %@", exception);
         return NO;
+    }
+}
+
+// 处理图片消息复读
+- (void)handleRepeatImageMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController {
+    @try {
+        if (!msgWrap || !viewController) {
+            NSLog(@"[WCPL] Invalid params for image repeat");
+            return;
+        }
+
+        NSLog(@"[WCPL] Repeating image message");
+
+        // 获取 CMessageMgr 服务
+        id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
+        if (!msgMgr) {
+            NSLog(@"[WCPL] Cannot get CMessageMgr service");
+            return;
+        }
+
+        // 获取聊天对象用户名
+        NSString *toUserName = nil;
+        if ([viewController respondsToSelector:@selector(GetContact)]) {
+            CContact *contact = [viewController performSelector:@selector(GetContact)];
+            if (contact) {
+                toUserName = contact.m_nsUsrName;
+            }
+        }
+
+        if (!toUserName || toUserName.length == 0) {
+            NSLog(@"[WCPL] Cannot get target user name for image repeat");
+            return;
+        }
+
+        // 获取图片数据路径
+        NSString *imgPath = nil;
+        if ([msgWrap respondsToSelector:@selector(m_nsImgPath)]) {
+            imgPath = [msgWrap performSelector:@selector(m_nsImgPath)];
+        }
+
+        // 尝试通过 CMessageWrap 的图片数据发送
+        // 方法1: 通过 AddImageMsg 发送
+        if ([msgMgr respondsToSelector:@selector(AddImageMsg:MsgWrap:)]) {
+            // 创建新的消息 Wrap
+            CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] init];
+            newMsgWrap.m_uiMessageType = 3; // 图片消息
+            newMsgWrap.m_nsToUsr = toUserName;
+
+            // 复制原始消息的图片数据
+            if ([msgWrap respondsToSelector:@selector(m_oImage)] && [newMsgWrap respondsToSelector:@selector(setM_oImage:)]) {
+                id image = [msgWrap performSelector:@selector(m_oImage)];
+                if (image) {
+                    [newMsgWrap performSelector:@selector(setM_oImage:) withObject:image];
+                }
+            }
+
+            // 复制图片路径
+            if (imgPath && [newMsgWrap respondsToSelector:@selector(setM_nsImgPath:)]) {
+                [newMsgWrap performSelector:@selector(setM_nsImgPath:) withObject:imgPath];
+            }
+
+            // 复制缩略图数据
+            if ([msgWrap respondsToSelector:@selector(m_dtThumbnail)] && [newMsgWrap respondsToSelector:@selector(setM_dtThumbnail:)]) {
+                id thumbnail = [msgWrap performSelector:@selector(m_dtThumbnail)];
+                if (thumbnail) {
+                    [newMsgWrap performSelector:@selector(setM_dtThumbnail:) withObject:thumbnail];
+                }
+            }
+
+            [msgMgr AddImageMsg:toUserName MsgWrap:newMsgWrap];
+            NSLog(@"[WCPL] Image message repeated via AddImageMsg");
+            return;
+        }
+
+        // 方法2: 通过 ViewController 的 sendImage 方法
+        if ([viewController respondsToSelector:@selector(sendImageData:)]) {
+            if ([msgWrap respondsToSelector:@selector(m_dtThumbnail)]) {
+                NSData *imageData = [msgWrap performSelector:@selector(m_dtThumbnail)];
+                if (imageData) {
+                    [viewController performSelector:@selector(sendImageData:) withObject:imageData];
+                    NSLog(@"[WCPL] Image message repeated via sendImageData");
+                    return;
+                }
+            }
+        }
+
+        NSLog(@"[WCPL] Failed to find suitable method for image repeat");
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[WCPL] Exception in handleRepeatImageMessage: %@", exception);
     }
 }
 

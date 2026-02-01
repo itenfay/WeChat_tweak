@@ -133,6 +133,8 @@
 // 正确的微信原生方法签名 (来自微信逆向头文件)
 - (void)DelMsg:(NSString *)chatName MsgWrap:(CMessageWrap *)msgWrap;
 - (void)RevokeMsg:(NSString *)chatName MsgWrap:(CMessageWrap *)msgWrap Counter:(unsigned int)counter;
+// 图片消息发送
+- (void)AddImageMsg:(NSString *)toUserName MsgWrap:(CMessageWrap *)msgWrap;
 
 @end
 
