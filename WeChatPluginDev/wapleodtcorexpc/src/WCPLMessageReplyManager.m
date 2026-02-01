@@ -134,14 +134,25 @@ static char kRepeatContentKey;
     @try {
         if (!msgWrap) return NO;
 
-        // 获取消息类型 (1 = 文本消息)
+        // 获取消息类型
+        // 1 = 文本消息
+        // 49 = 应用消息（包括引用回复）
         unsigned int msgType = msgWrap.m_uiMessageType;
+
+        // 只支持文本消息
+        // 引用回复消息也是文本消息类型，会在 TextMessageCellView 中显示
         if (msgType != 1) {
             return NO;
         }
 
         // 检查是否是自己发送的消息
         if ([self isSelfMessage:msgWrap]) {
+            return NO;
+        }
+
+        // 检查消息内容是否为空
+        NSString *content = msgWrap.m_nsContent;
+        if (!content || content.length == 0) {
             return NO;
         }
 
@@ -232,21 +243,23 @@ static char kRepeatContentKey;
             if (subview.hidden) continue;
             if (subview.tag == kWCPLRepeatButtonTag) continue; // 跳过我们的按钮
 
-            CGFloat area = subview.frame.size.width * subview.frame.size.height;
+            NSString *className = NSStringFromClass([subview class]);
 
-            // 气泡通常是较大的视图
-            if (area > 1000 && area > maxArea) {
-                NSString *className = NSStringFromClass([subview class]);
+            // 排除头像、标签等小视图
+            if ([className containsString:@"HeadImage"] ||
+                [className containsString:@"Avatar"] ||
+                [className containsString:@"Label"] ||
+                [className containsString:@"StateView"]) {
+                continue;
+            }
 
-                // 排除头像等小视图
-                if (![className containsString:@"HeadImage"] &&
-                    ![className containsString:@"Avatar"] &&
-                    subview.frame.size.width > 40 &&
-                    subview.frame.size.height > 20) {
+            CGRect frame = subview.frame;
+            CGFloat area = frame.size.width * frame.size.height;
 
-                    maxArea = area;
-                    bestView = subview;
-                }
+            // 气泡通常是较大的视图，宽度大于40，高度大于20
+            if (frame.size.width > 40 && frame.size.height > 20 && area > maxArea) {
+                maxArea = area;
+                bestView = subview;
             }
         }
 
