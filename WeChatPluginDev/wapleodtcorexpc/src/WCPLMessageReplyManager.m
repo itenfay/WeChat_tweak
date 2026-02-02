@@ -91,6 +91,38 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     }
 }
 
+// 安全获取 MMServiceCenter（兼容不同版本的单例入口）
+- (id)wcpl_getServiceCenter {
+    Class serviceCenterClass = objc_getClass("MMServiceCenter");
+    if (!serviceCenterClass) return nil;
+
+    NSArray<NSString *> *selectorNames = @[
+        @"defaultCenter",
+        @"defaultServiceCenter",
+        @"sharedCenter",
+        @"sharedInstance"
+    ];
+
+    for (NSString *name in selectorNames) {
+        SEL selector = NSSelectorFromString(name);
+        if (selector && [(id)serviceCenterClass respondsToSelector:selector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            return [(id)serviceCenterClass performSelector:selector];
+#pragma clang diagnostic pop
+        }
+    }
+
+    return nil;
+}
+
+- (id)wcpl_getService:(Class)serviceClass {
+    if (!serviceClass) return nil;
+    id serviceCenter = [self wcpl_getServiceCenter];
+    if (!serviceCenter || ![serviceCenter respondsToSelector:@selector(getService:)]) return nil;
+    return [serviceCenter getService:serviceClass];
+}
+
 - (NSString *)wcpl_safeStringValueForObject:(id)obj selectorName:(NSString *)selectorName {
     @try {
         if (!obj || selectorName.length == 0) return nil;
@@ -478,7 +510,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
 - (NSString *)wcpl_getSelfUserName {
     @try {
-        id contactMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CContactMgr")];
+        id contactMgr = [self wcpl_getService:objc_getClass("CContactMgr")];
         if (!contactMgr) return nil;
 
         if (![contactMgr respondsToSelector:@selector(getSelfContact)]) return nil;
@@ -834,8 +866,23 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     @try {
         if (!msgWrap) return NO;
 
+        // 优先使用 CMessageWrap 判断是否为自己发送（更稳定，避免依赖 ServiceCenter）
+        Class msgWrapClass = objc_getClass("CMessageWrap");
+        if (msgWrapClass && [msgWrapClass respondsToSelector:@selector(isSenderFromMsgWrap:)]) {
+            BOOL isSender = NO;
+            @try {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                isSender = (BOOL)[msgWrapClass performSelector:@selector(isSenderFromMsgWrap:) withObject:msgWrap];
+#pragma clang diagnostic pop
+            } @catch (__unused NSException *exception) {
+                isSender = NO;
+            }
+            return !isSender;
+        }
+
         // 获取当前用户信息
-        CContactMgr *contactMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CContactMgr")];
+        CContactMgr *contactMgr = [self wcpl_getService:objc_getClass("CContactMgr")];
         if (!contactMgr) return NO;
 
         CContact *selfContact = [contactMgr getSelfContact];
@@ -1264,8 +1311,23 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
 - (BOOL)isSelfMessage:(CMessageWrap *)msgWrap {
     @try {
+        // 优先使用 CMessageWrap 判断是否为自己发送（更稳定，避免依赖 ServiceCenter）
+        Class msgWrapClass = objc_getClass("CMessageWrap");
+        if (msgWrapClass && [msgWrapClass respondsToSelector:@selector(isSenderFromMsgWrap:)]) {
+            BOOL isSender = NO;
+            @try {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                isSender = (BOOL)[msgWrapClass performSelector:@selector(isSenderFromMsgWrap:) withObject:msgWrap];
+#pragma clang diagnostic pop
+            } @catch (__unused NSException *exception) {
+                isSender = NO;
+            }
+            return isSender;
+        }
+
         // 获取当前用户信息
-        id serviceCenter = [objc_getClass("MMServiceCenter") defaultCenter];
+        id serviceCenter = [self wcpl_getServiceCenter];
         if (!serviceCenter) return NO;
 
         id contactMgr = [serviceCenter getService:objc_getClass("CContactMgr")];
@@ -1647,7 +1709,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         [debugInfo appendFormat:@"10.1 有SendEmoticonMesssageToolView方法: %@\n", hasSendEmoticonToolView ? @"是" : @"否"];
 
         // 检查 CEmoticonMgr
-        id emoticonMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CEmoticonMgr")];
+        id emoticonMgr = [self wcpl_getService:objc_getClass("CEmoticonMgr")];
         [debugInfo appendFormat:@"11. CEmoticonMgr: %@\n", emoticonMgr ? @"存在" : @"nil"];
 
         BOOL hasGetEmoticonWrap = emoticonMgr && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)];
@@ -1666,7 +1728,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         }
 
         // 检查 CMessageMgr
-        id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
+        id msgMgr = [self wcpl_getService:objc_getClass("CMessageMgr")];
         [debugInfo appendFormat:@"14. CMessageMgr: %@\n", msgMgr ? @"存在" : @"nil"];
 
         BOOL hasAddEmoticonMsg = msgMgr && [msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)];
@@ -1759,9 +1821,23 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     @try {
         if (!msgWrap) return NO;
 
+        // 优先使用 CMessageWrap 判断是否为自己发送（更稳定，避免依赖 ServiceCenter）
+        Class msgWrapClass = objc_getClass("CMessageWrap");
+        if (msgWrapClass && [msgWrapClass respondsToSelector:@selector(isSenderFromMsgWrap:)]) {
+            BOOL isSender = NO;
+            @try {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                isSender = (BOOL)[msgWrapClass performSelector:@selector(isSenderFromMsgWrap:) withObject:msgWrap];
+#pragma clang diagnostic pop
+            } @catch (__unused NSException *exception) {
+                isSender = NO;
+            }
+            return isSender;
+        }
+
         // 获取联系人管理器
-        id contactManager = [[objc_getClass("MMServiceCenter") defaultCenter]
-                            getService:objc_getClass("CContactMgr")];
+        id contactManager = [self wcpl_getService:objc_getClass("CContactMgr")];
         if (!contactManager) return NO;
 
         // 获取自己的联系人信息
@@ -1881,7 +1957,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         // 方法1: 通过 EmoticonWrap 发送
         if (emoticonMD5 && emoticonMD5.length > 0) {
             [execLog appendString:@"\n尝试方法1: EmoticonWrap\n"];
-            id emoticonMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CEmoticonMgr")];
+            id emoticonMgr = [self wcpl_getService:objc_getClass("CEmoticonMgr")];
             if (emoticonMgr && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)]) {
                 CEmoticonWrap *emoticonWrap = nil;
 #pragma clang diagnostic push
@@ -2032,7 +2108,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
         // 尝试通过 CMessageMgr 的 ReSendMessage 直接重发
         @try {
-            id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
+            id msgMgr = [self wcpl_getService:objc_getClass("CMessageMgr")];
             if (msgMgr && [msgMgr respondsToSelector:@selector(ReSendMessage:MsgWrap:)]) {
                 [execLog appendString:@"✓ 尝试使用 CMessageMgr.ReSendMessage 重发图片\n"];
                 BOOL result = NO;
@@ -2255,7 +2331,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             }
         }
 
-        id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
+        id msgMgr = [self wcpl_getService:objc_getClass("CMessageMgr")];
 
         BOOL sent = NO;
         // 优先尝试 LogicController (最可能有 SendImageMessage:withData:ImageInfo:)
