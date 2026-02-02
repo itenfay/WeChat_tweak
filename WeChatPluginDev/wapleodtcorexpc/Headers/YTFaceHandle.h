@@ -35,7 +35,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (id)checksum:(id)arg1 withData:(id)arg2;
 + (void)registerSDKLogger:(int)arg1 withListener:(CDUnknownBlockType)arg2;
-- (id).cxx_construct;
 @property(copy, nonatomic) CDUnknownBlockType reflectCallback; // @synthesize reflectCallback=_reflectCallback;
 @property(retain, nonatomic) NSMutableArray *BestImgPts; // @synthesize BestImgPts=_BestImgPts;
 @property(nonatomic) __weak id <YTAGReflectDeviceDelegate> device; // @synthesize device=_device;

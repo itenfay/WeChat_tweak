@@ -8,7 +8,6 @@
     struct StatementDelete _statement;
 }
 
-- (id).cxx_construct;
 - (_Bool)execute;
 - (id)offset:(const void *)arg1;
 - (id)limit:(const void *)arg1;

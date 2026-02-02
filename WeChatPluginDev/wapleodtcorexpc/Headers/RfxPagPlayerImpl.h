@@ -10,7 +10,6 @@
     struct shared_ptr<rfx::RfxPagPlayer> pagPlayer;
 }
 
-- (id).cxx_construct;
 - (_Bool)flush;
 - (void)prepare;
 - (void)setProgress:(double)arg1;

@@ -5,7 +5,7 @@
 
 @interface WAEJBindingDOMMatrix
 {
-    vector_8ca568ff _data;
+    void * _data;
 }
 
 + (void *)_ptr_to_get_f;
@@ -14,8 +14,7 @@
 + (void *)_ptr_to_get_c;
 + (void *)_ptr_to_get_b;
 + (void *)_ptr_to_get_a;
-- (id).cxx_construct;
-@property(nonatomic) vector_8ca568ff data; // @synthesize data=_data;
+@property(nonatomic) void * data; // @synthesize data=_data;
 - (struct OpaqueJSValue *)_get_f:(struct OpaqueJSContext *)arg1;
 - (struct OpaqueJSValue *)_get_e:(struct OpaqueJSContext *)arg1;
 - (struct OpaqueJSValue *)_get_d:(struct OpaqueJSContext *)arg1;

@@ -10,7 +10,6 @@
     struct weak_ptr<zidl::ZServerInvoker> server_invoker_;
 }
 
-- (id).cxx_construct;
 - (void)ongetResortContextComplete:(int)arg1 context:(id)arg2;
 - (id)initWithCpp:(const void *)arg1;
 

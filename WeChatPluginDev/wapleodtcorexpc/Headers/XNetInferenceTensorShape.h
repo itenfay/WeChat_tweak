@@ -12,7 +12,6 @@
     struct TensorShape _underlying;
 }
 
-- (id).cxx_construct;
 - (void)setObject:(id)arg1 atIndexedSubscript:(long long)arg2;
 - (id)objectAtIndexedSubscript:(long long)arg1;
 @property(readonly, nonatomic) long long length;

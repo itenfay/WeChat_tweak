@@ -32,7 +32,6 @@ typedef void (^CDUnknownBlockType)(void);
 }
 
 + (id)adapterWithVC:(id)arg1 listVCScene:(int)arg2;
-- (id).cxx_construct;
 @property(nonatomic) int listVCScene; // @synthesize listVCScene=_listVCScene;
 @property(retain, nonatomic) NSMutableSet *registerViews; // @synthesize registerViews=_registerViews;
 @property(retain, nonatomic) id <WCFinderFeedFlowViewAdapterDataSource><WCFinderFeedFlowViewDataSource> dataWrapper; // @synthesize dataWrapper=_dataWrapper;

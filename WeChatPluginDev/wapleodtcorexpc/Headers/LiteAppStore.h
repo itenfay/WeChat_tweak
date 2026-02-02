@@ -20,7 +20,6 @@ typedef void (^CDUnknownBlockType)(void);
 + (id)JSONValue:(id)arg1;
 + (id)JsonStringToObj:(id)arg1;
 + (id)ObjToJsonString:(id)arg1;
-- (id).cxx_construct;
 @property(copy, nonatomic) CDUnknownBlockType onDispatch; // @synthesize onDispatch=_onDispatch;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(nonatomic) unsigned int appUuid; // @synthesize appUuid=_appUuid;

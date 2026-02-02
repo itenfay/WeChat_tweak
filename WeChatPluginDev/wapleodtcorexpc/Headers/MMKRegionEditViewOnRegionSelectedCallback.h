@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KRegionEditViewOnRegionSelectedCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onRegionSelected;
 - (id)initWithCpp:(const void *)arg1;
 

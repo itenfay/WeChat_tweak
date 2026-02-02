@@ -11,7 +11,6 @@
 }
 
 + (id)createWithCpp:(const void *)arg1;
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_96b08bd7 cppHolderImpl; // @synthesize cppHolderImpl=_cppHolderImpl;
 - (void)dealloc;
 - (id)zidlHolderToObj:(Class)arg1;

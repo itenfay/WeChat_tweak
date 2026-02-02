@@ -33,7 +33,6 @@
 + (void)setLogLevel:(long long)arg1;
 + (int)setGlobalEnv:(const char *)arg1;
 + (id)sharedInstance;
-- (id).cxx_construct;
 @property(nonatomic) __weak id <TXLiveBaseDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onUpdateNetworkTime:(int)arg1 message:(id)arg2;
 - (void)onLicenceLoadNotification:(id)arg1;

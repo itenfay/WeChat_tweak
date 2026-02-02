@@ -25,7 +25,7 @@ typedef void (^CDUnknownBlockType)(void);
     _Bool _isFirstPkg;
     unsigned int _appServiceType;
     unsigned int _downloadMaxConcurrentCount;
-    basic_string_5909a4e2 _cronetTaskID;
+    void * _cronetTaskID;
     NSString *_nsCronetTaskID;
     double _timeout;
     _Bool _isCronetDownload;
@@ -55,7 +55,6 @@ typedef void (^CDUnknownBlockType)(void);
     WADownloadFileProgressInfo *_lastNotNotifyProgressInfo;
 }
 
-- (id).cxx_construct;
 @property(retain) WADownloadFileProgressInfo *lastNotNotifyProgressInfo; // @synthesize lastNotNotifyProgressInfo=_lastNotNotifyProgressInfo;
 @property unsigned long long lastUpdateProgressAbsoluteTime; // @synthesize lastUpdateProgressAbsoluteTime=_lastUpdateProgressAbsoluteTime;
 @property _Bool isCanceled; // @synthesize isCanceled=_isCanceled;

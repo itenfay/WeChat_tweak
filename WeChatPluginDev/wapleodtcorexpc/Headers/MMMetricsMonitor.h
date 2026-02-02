@@ -57,7 +57,6 @@ typedef void (^CDUnknownBlockType)(void);
     NSString *_weAppScene;
 }
 
-- (id).cxx_construct;
 @property(retain) NSString *weAppScene; // @synthesize weAppScene=_weAppScene;
 @property(retain) NSString *scene; // @synthesize scene=_scene;
 - (void)onStackReportCompleted:(_Bool)arg1;

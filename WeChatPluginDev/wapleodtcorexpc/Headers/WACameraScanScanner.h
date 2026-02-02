@@ -12,9 +12,9 @@
 {
     char *_sendImage;
     int _sendImageBufferSize;
-    basic_string_5909a4e2 _decodeData;
-    basic_string_5909a4e2 _decodeType;
-    basic_string_5909a4e2 _decodeCharset;
+    void * _decodeData;
+    void * _decodeType;
+    void * _decodeCharset;
     struct QBAR_REPORT_MSG _reportMsg;
     struct QBar *_qbar;
     int _scanCodeType;
@@ -30,7 +30,6 @@
     struct CGRect _cameraViewRect;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) double lastScanTime; // @synthesize lastScanTime=_lastScanTime;
 @property(nonatomic) unsigned int scanIndex; // @synthesize scanIndex=_scanIndex;
 @property(nonatomic) struct CGRect cameraViewRect; // @synthesize cameraViewRect=_cameraViewRect;
@@ -40,7 +39,7 @@
 @property(retain, nonatomic) NSString *resultType; // @synthesize resultType=_resultType;
 @property(retain, nonatomic) NSString *resultData; // @synthesize resultData=_resultData;
 @property(nonatomic) __weak id <WACameraQRCodeScannerDelegate> delegate; // @synthesize delegate=_delegate;
-- (struct CGRect)getImageRectBySearchResult:(vector_d4107ee0)arg1 outSize:(struct CGSize)arg2 angel:(double)arg3;
+- (struct CGRect)getImageRectBySearchResult:(void *)arg1 outSize:(struct CGSize)arg2 angel:(double)arg3;
 - (void)dealloc;
 - (void)notifyGotScanResult:(id)arg1;
 - (id)getStringFromUTF8Bytes:(const char *)arg1 LENGTH:(int)arg2;

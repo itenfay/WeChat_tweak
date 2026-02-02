@@ -14,7 +14,6 @@
     struct Mat _bgrFrame;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) long long capture_time; // @synthesize capture_time=_capture_time;
 @property(nonatomic) struct Mat bgrFrame; // @synthesize bgrFrame=_bgrFrame;
 @property(retain, nonatomic) CIImage *depthFrame; // @synthesize depthFrame=_depthFrame;

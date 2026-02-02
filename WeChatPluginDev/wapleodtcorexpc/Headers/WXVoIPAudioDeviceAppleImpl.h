@@ -35,7 +35,6 @@
 }
 
 + (id)sharedInstance;
-- (id).cxx_construct;
 @property int internalRemotePlaySoureceNumber; // @synthesize internalRemotePlaySoureceNumber=_internalRemotePlaySoureceNumber;
 @property(retain, nonatomic) WXVoIPAudioUnitThreadDaemon *audioUnitThreadDaemon; // @synthesize audioUnitThreadDaemon=_audioUnitThreadDaemon;
 @property(nonatomic) _Bool isEarMonitoringEnabled; // @synthesize isEarMonitoringEnabled=_isEarMonitoringEnabled;
@@ -84,7 +83,7 @@
 - (void)setRemotePlaySoureceNumber:(int)arg1;
 - (void)clean;
 - (void)setCaptureAndPlayDurationFactor:(int)arg1;
-- (vector_c729919e)getAvailableDevices:(_Bool)arg1;
+- (void *)getAvailableDevices:(_Bool)arg1;
 - (int)getActivePlayDeviceState;
 - (struct _AudioDeviceInfo)getActivePlayDevice;
 - (void)switchPlayDevice:(long long)arg1;

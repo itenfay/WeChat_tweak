@@ -23,7 +23,7 @@
 - (void)destoryImpl;
 - (id)makeUpGradientColor;
 - (struct Gradient *)createGradient;
-- (vector_60e76471)createArcLineCells;
+- (void *)createArcLineCells;
 - (void)setArcLineData:(void *)arg1 info:(struct ArcLineData *)arg2;
 - (void)updateArcLineData:(void *)arg1;
 - (void)setNeedsDisplay;

@@ -11,7 +11,6 @@ typedef void (^CDUnknownBlockType)(void);
     SharedPtr_3f9afb9a _backingSession;
 }
 
-- (id).cxx_construct;
 @property(readonly, nonatomic) SharedPtr_3f9afb9a backingSession; // @synthesize backingSession=_backingSession;
 - (void)cancelExportingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startExportingWithOutputFilePath:(id)arg1 exportSettings:(id)arg2 timeline:(id)arg3 exportTimeRange:(CDStruct_e83c9415)arg4 startHandler:(CDUnknownBlockType)arg5 progressHandler:(CDUnknownBlockType)arg6 completionHandler:(CDUnknownBlockType)arg7;

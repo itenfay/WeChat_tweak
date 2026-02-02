@@ -21,7 +21,6 @@ typedef void (^CDUnknownBlockType)(void);
     CDStruct_9e61a806 _landscapePreviewPag;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *resourcesPinningToken; // @synthesize resourcesPinningToken=_resourcesPinningToken;
 @property(retain, nonatomic) MMLiveResourceFetcherFanoutFlowAction *resourceFetcher; // @synthesize resourceFetcher=_resourceFetcher;
 @property(retain, nonatomic) NSMutableArray *pendingCallbacks; // @synthesize pendingCallbacks=_pendingCallbacks;

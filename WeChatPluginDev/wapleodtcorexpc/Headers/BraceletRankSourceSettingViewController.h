@@ -15,7 +15,6 @@
     NSString *m_nsWatchDataSourceFaqURL;
 }
 
-- (id).cxx_construct;
 - (void)onAddSportDevice:(id)arg1;
 - (_Bool)isM7Device:(id)arg1;
 - (id)makeMockAppleWatchDevice;

@@ -11,7 +11,6 @@
     SharedPtr_722639b5 _backCaptureSession;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) SharedPtr_722639b5 backCaptureSession; // @synthesize backCaptureSession=_backCaptureSession;
 @property(nonatomic) struct XMJCaptureSessionOptions options; // @synthesize options=_options;
 - (void)stopRunning;

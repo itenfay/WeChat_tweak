@@ -11,7 +11,6 @@
     struct vector<xnet::ObjectRef<rfx::RfxTexture>, std::allocator<xnet::ObjectRef<rfx::RfxTexture>>> _freeList;
 }
 
-- (id).cxx_construct;
 - (ObjectRef_32b092d4)acquireTexture;
 - (void)pushTexture:(ObjectRef_32b092d4)arg1;
 

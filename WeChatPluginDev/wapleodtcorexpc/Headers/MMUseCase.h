@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::UseCase>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)preStepDidDestory;
 - (void)notify:(id)arg1;
 - (id)initWithCpp:(const void *)arg1;

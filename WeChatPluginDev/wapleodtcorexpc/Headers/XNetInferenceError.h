@@ -10,7 +10,6 @@
     struct shared_ptr<xnet::Status> _underlying;
 }
 
-- (id).cxx_construct;
 - (id)descriptionWithoutCallStack;
 - (id)description;
 - (id)initWithUnderlying:(const void *)arg1;

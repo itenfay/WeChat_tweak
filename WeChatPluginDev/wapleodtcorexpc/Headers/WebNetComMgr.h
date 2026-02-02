@@ -12,7 +12,6 @@
     NSRecursiveLock *m_CallbackLock;
 }
 
-- (id).cxx_construct;
 - (void)OnDownloadCompleted:(id)arg1 response:(id)arg2;
 - (void)OnUploadCompleted:(id)arg1 response:(id)arg2;
 - (void)OnProgressChanged:(id)arg1 completedLength:(unsigned long long)arg2 totalLength:(unsigned long long)arg3;

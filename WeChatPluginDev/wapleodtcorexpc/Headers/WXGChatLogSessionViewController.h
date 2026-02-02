@@ -43,7 +43,6 @@ typedef void (^CDUnknownBlockType)(void);
 }
 
 + (id)getDateWithoutHMS:(id)arg1;
-- (id).cxx_construct;
 @property(nonatomic) _Bool bLoadDataEnd; // @synthesize bLoadDataEnd=_bLoadDataEnd;
 @property(nonatomic) unsigned long long lastSelectTimeIndex; // @synthesize lastSelectTimeIndex=_lastSelectTimeIndex;
 @property(retain, nonatomic) NSDate *selectEndDate; // @synthesize selectEndDate=_selectEndDate;

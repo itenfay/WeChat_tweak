@@ -13,7 +13,6 @@
 + (id)Load:(const void *)arg1 size:(unsigned long long)arg2;
 + (id)Load:(id)arg1;
 + (id)ToPagFile:(shared_ptr_fff0cd15)arg1;
-- (id).cxx_construct;
 - (id)copyOriginal;
 - (void)resetTextForAllTextLayersWithName:(id)arg1;
 - (void)setText:(id)arg1 forAllTextLayersWithName:(id)arg2;

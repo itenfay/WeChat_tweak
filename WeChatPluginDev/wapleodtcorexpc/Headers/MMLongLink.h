@@ -8,12 +8,11 @@
 @interface MMLongLink : NSObject
 {
     _Bool m_isConnected;
-    basic_string_5909a4e2 m_channelName;
+    void * m_channelName;
     void *m_llConfig;
 }
 
 + (id)defaultLongLink;
-- (id).cxx_construct;
 - (void)setMainLongLink;
 - (void)disconnect;
 - (void)connect;

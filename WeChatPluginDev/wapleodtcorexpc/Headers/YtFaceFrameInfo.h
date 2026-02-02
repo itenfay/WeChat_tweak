@@ -7,12 +7,11 @@
 
 @interface YtFaceFrameInfo : NSObject
 {
-    vector_8ca568ff _faceShape;
+    void * _faceShape;
     struct Mat _faceFrame;
 }
 
-- (id).cxx_construct;
-@property(nonatomic) vector_8ca568ff faceShape; // @synthesize faceShape=_faceShape;
+@property(nonatomic) void * faceShape; // @synthesize faceShape=_faceShape;
 @property(nonatomic) struct Mat faceFrame; // @synthesize faceFrame=_faceFrame;
 - (id)initWithMat:(struct Mat *)arg1 withShape:(void *)arg2;
 

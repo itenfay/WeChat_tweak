@@ -23,7 +23,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (id)providerWithSegments:(id)arg1 maxPixelSize:(struct CGSize)arg2 useOriginMediaClip:(_Bool)arg3;
 + (id)providerWithSegments:(id)arg1 maxPixelSize:(struct CGSize)arg2;
-- (id).cxx_construct;
 @property(nonatomic) struct CGSize maxPixelSize; // @synthesize maxPixelSize=_maxPixelSize;
 - (void)cancelAllTasks;
 - (void)cancelTask:(long long)arg1;

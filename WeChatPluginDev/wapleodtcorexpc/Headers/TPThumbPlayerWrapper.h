@@ -17,7 +17,6 @@
     shared_ptr_61da5af9 _eventRecordCbWrapper;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_61da5af9 eventRecordCbWrapper; // @synthesize eventRecordCbWrapper=_eventRecordCbWrapper;
 @property(nonatomic) struct TPThumbPlayerPostProcessFrameCallbackWrapper *postprocessFrameCbWrapper; // @synthesize postprocessFrameCbWrapper=_postprocessFrameCbWrapper;
 @property(nonatomic) struct TPThumbPlayerDemuxerCallbackWrapper *demuxerCbWrapper; // @synthesize demuxerCbWrapper=_demuxerCbWrapper;
@@ -34,8 +33,8 @@
 - (int)getPlayerID;
 - (struct TPFrame *)getSubtitleSnapshot:(int)arg1 width:(int)arg2 height:(int)arg3;
 - (struct TPFrame *)getSnapshot:(int)arg1 width:(int)arg2 height:(int)arg3;
-- (vector_5a53d670)getProgramInfo;
-- (vector_fdf80d0c)getTrackInfo;
+- (void *)getProgramInfo;
+- (void *)getTrackInfo;
 - (long long)getBufferedSize;
 - (long long)getBufferedDurationMs;
 - (long long)getCurrentPositionMs;

@@ -13,7 +13,6 @@
 }
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2 refCntManager:(void *)arg3;
-- (id).cxx_construct;
 - (void)dealloc;
 - (_Bool)isOnRecording:(id)arg1;
 - (void)onRecordClick:(_Bool)arg1;

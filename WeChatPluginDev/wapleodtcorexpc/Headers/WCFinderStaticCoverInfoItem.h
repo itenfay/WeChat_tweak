@@ -29,7 +29,6 @@ typedef void (^CDUnknownBlockType)(void);
     struct CGSize _iconSize;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) double flexGrow; // @synthesize flexGrow=_flexGrow;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 @property(nonatomic) double iconMarginRight; // @synthesize iconMarginRight=_iconMarginRight;

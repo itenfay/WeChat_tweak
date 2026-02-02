@@ -12,7 +12,6 @@
     struct SharedPtr<plzma::OutStream> _outStream;
 }
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)init;
 - (id)initWithPath:(id)arg1;

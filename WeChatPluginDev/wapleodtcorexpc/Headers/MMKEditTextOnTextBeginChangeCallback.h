@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KEditTextOnTextBeginChangeCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onTextBeginChange:(id)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

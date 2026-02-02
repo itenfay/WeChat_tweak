@@ -8,7 +8,6 @@
     struct StatementSelect _statement;
 }
 
-- (id).cxx_construct;
 - (id)offset:(const void *)arg1;
 - (id)limit:(const void *)arg1;
 - (id)orders:(const void *)arg1;

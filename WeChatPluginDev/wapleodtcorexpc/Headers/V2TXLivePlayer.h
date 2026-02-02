@@ -16,7 +16,6 @@
     _Bool _clear_last_image;
 }
 
-- (id).cxx_construct;
 - (long long)enableReceiveSeiMessage:(_Bool)arg1 payloadType:(int)arg2;
 - (void)showDebugView:(_Bool)arg1;
 - (long long)enableObserveVideoFrame:(_Bool)arg1 pixelFormat:(long long)arg2 bufferType:(long long)arg3;

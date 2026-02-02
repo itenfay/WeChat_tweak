@@ -199,7 +199,6 @@ typedef void (^CDUnknownBlockType)(void);
 + (id)rootPresentingViewControllerWithViewController:(id)arg1;
 + (id)appIDListFromViewController:(id)arg1;
 + (id)appIdWithWeAppNavigationController:(id)arg1;
-- (id).cxx_construct;
 @property(retain, nonatomic) NSMutableDictionary *bizDataPipeHandlerDic; // @synthesize bizDataPipeHandlerDic=_bizDataPipeHandlerDic;
 @property(nonatomic) _Bool hasCalculateIgnoreOpConfigAtLeastOnePage; // @synthesize hasCalculateIgnoreOpConfigAtLeastOnePage=_hasCalculateIgnoreOpConfigAtLeastOnePage;
 @property(nonatomic) _Bool isIgnoreOpConfigAtLeastOnePage; // @synthesize isIgnoreOpConfigAtLeastOnePage=_isIgnoreOpConfigAtLeastOnePage;

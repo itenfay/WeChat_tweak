@@ -28,7 +28,6 @@
 }
 
 + (id)getDateWithoutHMS:(id)arg1;
-- (id).cxx_construct;
 @property(nonatomic) unsigned long long curSelectType; // @synthesize curSelectType=_curSelectType;
 @property(nonatomic) unsigned long long lastSelectTimeType; // @synthesize lastSelectTimeType=_lastSelectTimeType;
 @property(retain, nonatomic) NSDate *selectEndDate; // @synthesize selectEndDate=_selectEndDate;

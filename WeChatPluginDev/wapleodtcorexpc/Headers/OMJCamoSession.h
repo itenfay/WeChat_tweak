@@ -17,7 +17,6 @@ typedef void (^CDUnknownBlockType)(void);
     shared_ptr_85cde1ea _backingRenderView;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_85cde1ea backingRenderView; // @synthesize backingRenderView=_backingRenderView;
 @property(nonatomic) SharedPtr_a4453dff backingSession; // @synthesize backingSession=_backingSession;
 @property(readonly, nonatomic) OMJCDNBridgeService *cdnBridgeService; // @synthesize cdnBridgeService=_cdnBridgeService;

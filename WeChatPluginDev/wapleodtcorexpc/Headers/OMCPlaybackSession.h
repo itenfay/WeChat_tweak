@@ -33,7 +33,6 @@ typedef void (^CDUnknownBlockType)(void);
     optional_9436b898 _windowName;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) __weak UIView *renderView; // @synthesize renderView=_renderView;
 @property(nonatomic) SharedPtr_f7d96994 windowCon; // @synthesize windowCon=_windowCon;
 @property(readonly, nonatomic) SharedPtr_37df0930 backingSession; // @synthesize backingSession=_backingSession;

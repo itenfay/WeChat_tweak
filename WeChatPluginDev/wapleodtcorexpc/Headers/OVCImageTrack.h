@@ -12,7 +12,6 @@
     SharedPtr_18dc3c11 _backingImageTrack;
 }
 
-- (id).cxx_construct;
 @property(readonly, nonatomic) SharedPtr_18dc3c11 backingImageTrack; // @synthesize backingImageTrack=_backingImageTrack;
 @property(readonly, nonatomic) unsigned long long orientation;
 @property(readonly, nonatomic) unsigned long long aspectRatio;

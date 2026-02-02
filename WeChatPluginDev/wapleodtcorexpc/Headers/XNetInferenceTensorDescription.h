@@ -12,7 +12,6 @@
     struct TensorDesc _underlying;
 }
 
-- (id).cxx_construct;
 @property(readonly, nonatomic) long long stride;
 @property(readonly, nonatomic) XNetInferenceTensorDataType *dataType;
 @property(readonly, nonatomic) XNetInferenceTensorShape *shape;

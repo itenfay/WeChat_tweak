@@ -13,7 +13,6 @@ typedef void (^CDUnknownBlockType)(void);
     CDUnknownBlockType _speakerTestBlock;
 }
 
-- (id).cxx_construct;
 @property(copy, nonatomic) CDUnknownBlockType speakerTestBlock; // @synthesize speakerTestBlock=_speakerTestBlock;
 @property(copy, nonatomic) CDUnknownBlockType micTestBlock; // @synthesize micTestBlock=_micTestBlock;
 - (void)onTestSpeakerVolume:(unsigned int)arg1;

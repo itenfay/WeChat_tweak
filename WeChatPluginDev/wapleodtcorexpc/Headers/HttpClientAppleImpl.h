@@ -20,14 +20,13 @@ typedef void (^CDUnknownBlockType)(void);
         int read_timeout_ms;
         int write_timeout_ms;
         _Bool is_keep_alive;
-        basic_string_5909a4e2 socks5_proxy_host;
+        void * socks5_proxy_host;
         unsigned short socks5_proxy_port;
-        basic_string_5909a4e2 socks5_proxy_user;
-        basic_string_5909a4e2 socks5_proxy_password;
+        void * socks5_proxy_user;
+        void * socks5_proxy_password;
     } _config;
 }
 
-- (id).cxx_construct;
 - (id)parseIpAddress:(id)arg1;
 - (struct IPEndPoint)getRemoteAddr:(id)arg1;
 - (id)base64DecodeString:(id)arg1;

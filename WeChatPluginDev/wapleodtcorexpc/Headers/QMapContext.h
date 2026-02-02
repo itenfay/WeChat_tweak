@@ -78,7 +78,7 @@ typedef void (^CDUnknownBlockType)(void);
 - (id)checkTrafficUpdateWithRect:(CDStruct_02837cd9)arg1 dataLevel:(int)arg2;
 - (void)setShowsTraffic:(_Bool)arg1;
 - (void)enableL4:(_Bool)arg1;
-- (id)getMarkerIDArray:(vector_cd3186ef)arg1 startIndex:(int)arg2 count:(int)arg3;
+- (id)getMarkerIDArray:(void *)arg1 startIndex:(int)arg2 count:(int)arg3;
 - (void)handleMarkerAoidedEventWithParam0:(const void *)arg1 param1:(const void *)arg2;
 - (void)reloadConfig;
 - (id)satelliteCacheFolder;

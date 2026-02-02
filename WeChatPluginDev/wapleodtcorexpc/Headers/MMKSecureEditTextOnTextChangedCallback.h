@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KSecureEditTextOnTextChangedCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onTextChanged:(id)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

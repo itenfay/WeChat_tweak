@@ -13,7 +13,6 @@
     deque_19df0b0c _currentRoutes;
 }
 
-- (id).cxx_construct;
 - (void)updateCurrentRoute:(id)arg1;
 - (void)onAudioSessionRouteChange:(id)arg1;
 - (void)unRegisterObserver;

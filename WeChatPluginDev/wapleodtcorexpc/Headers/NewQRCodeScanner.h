@@ -16,10 +16,10 @@
     NSString *_resultData;
     NSString *_resultType;
     char *_sendImage;
-    basic_string_5909a4e2 _decodeData;
-    basic_string_5909a4e2 _decodeType;
-    basic_string_5909a4e2 _decodeCharset;
-    struct QBAR_REPORT_MSG _reportMsg;
+    void * _decodeData;
+    void * _decodeType;
+    void * _decodeCharset;
+    void *_reportMsg;
     struct QBar *_qbar;
     struct timeval _startTime;
     unsigned long long _matchNeedConfirmPrefixTimes;
@@ -64,12 +64,11 @@
 }
 
 + (id)imageFromLockedCVImageBuffer:(struct __CVBuffer *)arg1;
-- (id).cxx_construct;
 @property(retain, nonatomic) NSRecursiveLock *variablesLock; // @synthesize variablesLock=_variablesLock;
 @property(nonatomic) struct opaqueCMSampleBuffer *currentSampleBuffer; // @synthesize currentSampleBuffer=_currentSampleBuffer;
 @property(nonatomic) struct CGPoint markDotCenter; // @synthesize markDotCenter=_markDotCenter;
 @property(nonatomic) float rotateDegree; // @synthesize rotateDegree=_rotateDegree;
-@property(nonatomic) basic_string_1e6f3770 decodeData; // @synthesize decodeData=_decodeData;
+@property(nonatomic) void * decodeData; // @synthesize decodeData=_decodeData;
 @property(nonatomic) _Bool isPreScanImageRatioChanged; // @synthesize isPreScanImageRatioChanged=_isPreScanImageRatioChanged;
 @property(nonatomic) _Bool isUseSmallCropArea; // @synthesize isUseSmallCropArea=_isUseSmallCropArea;
 @property(nonatomic) unsigned int qbarWaitingFrameCount; // @synthesize qbarWaitingFrameCount=_qbarWaitingFrameCount;
@@ -108,9 +107,9 @@
 - (id)getCameraSnapshotImage;
 - (void)releaseCurrentSampleBuffer;
 - (struct opaqueCMSampleBuffer *)getAndRetainCurrentSampleBuffer;
-- (struct CGPoint)getRealMarkDotCenterWithImageSize:(struct CGSize)arg1 detectResult:(struct QBAR_RESULT)arg2;
-- (id)convertQbarInfoList2MarkDotInfoList:(vector_95637d69)arg1 viewScaleRatio:(float)arg2 viewCropPoint:(struct CGPoint)arg3;
-- (id)converQbarResultList2MarkDotInfoList:(vector_04675aae)arg1;
+- (struct CGPoint)getRealMarkDotCenterWithImageSize:(struct CGSize)arg1 detectResult:(void *)arg2;
+- (id)convertQbarInfoList2MarkDotInfoList:(void *)arg1 viewScaleRatio:(float)arg2 viewCropPoint:(struct CGPoint)arg3;
+- (id)converQbarResultList2MarkDotInfoList:(void *)arg1;
 - (void)resetEngine;
 - (void)stopCapture;
 - (void)startCapture;
@@ -123,8 +122,8 @@
 - (_Bool)scanOnePicture:(id)arg1 context:(id)arg2;
 - (_Bool)scanOnePicture:(id)arg1;
 - (id)getStringFromUTF8Bytes:(const char *)arg1 LENGTH:(int)arg2;
-- (void)calScanResultReportDetailData:(vector_04675aae)arg1;
-- (void)genReportDetailForFileOriginalResults:(vector_04675aae)arg1 touchContext:(id)arg2;
+- (void)calScanResultReportDetailData:(void *)arg1;
+- (void)genReportDetailForFileOriginalResults:(void *)arg1 touchContext:(id)arg2;
 - (_Bool)doScanCode:(char *)arg1 cvImageBuffer:(struct __CVBuffer *)arg2 Width:(int)arg3 Height:(int)arg4 bufferWidth:(int)arg5 bufferHeight:(int)arg6;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
 - (_Bool)isWeAppCodeType:(id)arg1;

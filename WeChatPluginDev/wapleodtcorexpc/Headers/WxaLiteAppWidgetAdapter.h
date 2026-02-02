@@ -46,7 +46,6 @@ typedef void (^CDUnknownBlockType)(void);
     struct PageInfo _currentPageInfo;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) float lastVolume; // @synthesize lastVolume=_lastVolume;
 @property(nonatomic) long long lastOrientation; // @synthesize lastOrientation=_lastOrientation;
 @property(nonatomic) float lastBatteryLevel; // @synthesize lastBatteryLevel=_lastBatteryLevel;

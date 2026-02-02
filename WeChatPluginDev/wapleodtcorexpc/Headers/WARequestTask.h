@@ -24,7 +24,7 @@ typedef void (^CDUnknownBlockType)(void);
     NSURLSessionTask *_task;
     unsigned int _appServiceType;
     unsigned int _requestMaxConcurrentCount;
-    basic_string_5909a4e2 _cronetTaskID;
+    void * _cronetTaskID;
     NSString *_nsCronetTaskID;
     double _timeout;
     _Bool _isCronetRequest;
@@ -50,7 +50,6 @@ typedef void (^CDUnknownBlockType)(void);
     long long _lastUpdateProgressWritten;
 }
 
-- (id).cxx_construct;
 @property long long lastUpdateProgressWritten; // @synthesize lastUpdateProgressWritten=_lastUpdateProgressWritten;
 @property double lastUpdateProgressPercent; // @synthesize lastUpdateProgressPercent=_lastUpdateProgressPercent;
 @property unsigned long long lastUpdateProgressAbsoluteTime; // @synthesize lastUpdateProgressAbsoluteTime=_lastUpdateProgressAbsoluteTime;

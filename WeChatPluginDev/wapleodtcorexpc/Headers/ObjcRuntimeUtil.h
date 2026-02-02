@@ -9,7 +9,7 @@
 {
 }
 
-+ (vector_c11dd721)getAllMethodOfProtocol:(id)arg1;
++ (void *)getAllMethodOfProtocol:(id)arg1;
 + (struct objc_method_description *)wcvmProtocolCopyMethodDescriptionList:(id)arg1 requiredMethod:(_Bool)arg2 instanceMethod:(_Bool)arg3 outCount:(unsigned int *)arg4;
 + (_Bool)isClass:(Class)arg1 inheritsFromClass:(Class)arg2;
 

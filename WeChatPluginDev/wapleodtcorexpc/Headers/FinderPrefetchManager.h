@@ -12,7 +12,6 @@
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
-- (id).cxx_construct;
 - (void)dealloc;
 - (void)updateEduTipsSvrFlag:(id)arg1;
 - (void)resetEduTipsRecordWithKey:(int)arg1;

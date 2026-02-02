@@ -16,7 +16,6 @@ typedef void (^CDUnknownBlockType)(void);
     id <TXAudioEffectManagerDelegate> _delegate;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) __weak id <TXAudioEffectManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSMutableArray *effectIds; // @synthesize effectIds=_effectIds;
 - (void)resumeAudioEffect:(int)arg1;

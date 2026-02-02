@@ -18,7 +18,7 @@
     UIView *_coverStackView;
 }
 
-+ (double)displayHeightWithNewStyle:(_Bool)arg1 contact:(id)arg2 coverItems:(vector_3b4bbe29)arg3 titleFont:(id)arg4 contactDesc:(id)arg5;
++ (double)displayHeightWithNewStyle:(_Bool)arg1 contact:(id)arg2 coverItems:(void *)arg3 titleFont:(id)arg4 contactDesc:(id)arg5;
 @property(retain, nonatomic) UIView *coverStackView; // @synthesize coverStackView=_coverStackView;
 @property(retain, nonatomic) WCFinderAuthInfoIconView *authIconView; // @synthesize authIconView=_authIconView;
 @property(retain, nonatomic) UILabel *contactDescLabel; // @synthesize contactDescLabel=_contactDescLabel;
@@ -27,7 +27,7 @@
 @property(retain, nonatomic) UIView *contactInfoBox; // @synthesize contactInfoBox=_contactInfoBox;
 @property(nonatomic) _Bool useNewStyle; // @synthesize useNewStyle=_useNewStyle;
 - (void)configCellInfo:(id)arg1;
-- (void)setupViewWithNewStyle:(_Bool)arg1 contact:(id)arg2 coverItems:(vector_3b4bbe29)arg3 showIcon:(_Bool)arg4 contactDesc:(id)arg5;
+- (void)setupViewWithNewStyle:(_Bool)arg1 contact:(id)arg2 coverItems:(void *)arg3 showIcon:(_Bool)arg4 contactDesc:(id)arg5;
 - (id)initWithTitleFont:(id)arg1 width:(double)arg2;
 
 @end

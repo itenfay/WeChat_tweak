@@ -11,7 +11,6 @@ typedef void (^CDUnknownBlockType)(void);
     SharedPtr_153997a4 _backingMaterialManager;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) SharedPtr_153997a4 backingMaterialManager; // @synthesize backingMaterialManager=_backingMaterialManager;
 - (id)getMaterialInfoWithMaterialID:(id)arg1;
 - (id)getColorStyleMaterialInfosOfMaterial:(id)arg1;

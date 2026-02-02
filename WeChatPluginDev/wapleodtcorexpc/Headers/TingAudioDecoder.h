@@ -9,7 +9,7 @@
 {
 }
 
-+ (vector_8ca568ff)decodeAndResampleAudioToPCMFloatData:(id)arg1 resampleRate:(double)arg2 duration:(double)arg3;
++ (void *)decodeAndResampleAudioToPCMFloatData:(id)arg1 resampleRate:(double)arg2 duration:(double)arg3;
 
 @end
 

@@ -22,7 +22,6 @@
     struct vector<subpath_t, std::allocator<subpath_t>> paths;
 }
 
-- (id).cxx_construct;
 @property(readonly) int fillRule; // @synthesize fillRule;
 @property(nonatomic) struct CGAffineTransform transform; // @synthesize transform;
 - (void)drawLinesToContext:(id)arg1;

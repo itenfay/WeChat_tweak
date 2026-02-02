@@ -16,7 +16,6 @@ typedef void (^CDUnknownBlockType)(void);
 }
 
 + (id)convertToSDRWithImage:(id)arg1;
-- (id).cxx_construct;
 - (void)asyncExtractTextWithImage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)asyncDetectTextWithImage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)releaseOCRCache;

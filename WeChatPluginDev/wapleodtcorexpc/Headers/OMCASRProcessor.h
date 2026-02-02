@@ -10,7 +10,6 @@
     struct SharedPtr<XMFASRProcessor> _backingProcessor;
 }
 
-- (id).cxx_construct;
 - (id)processWithPCMData:(id)arg1;
 - (_Bool)isResourcesReady;
 - (void)releaseResources;

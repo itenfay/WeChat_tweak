@@ -10,7 +10,6 @@
     function_ffe40f9b callback;
 }
 
-- (id).cxx_construct;
 - (void)update:(id)arg1;
 - (id)initWithCallback:(function_ffe40f9b)arg1;
 

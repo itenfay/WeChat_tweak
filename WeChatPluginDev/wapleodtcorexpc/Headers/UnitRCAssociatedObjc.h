@@ -12,7 +12,6 @@
     weak_ptr_cef3ecd1 _weakCpp;
 }
 
-- (id).cxx_construct;
 - (weak_ptr_cef3ecd1)weakCpp;
 - (shared_ptr_ec19df4a)strongCpp;
 - (void)setWeakCpp:(const void *)arg1;

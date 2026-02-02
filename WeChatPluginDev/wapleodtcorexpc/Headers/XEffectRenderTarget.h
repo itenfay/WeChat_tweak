@@ -35,7 +35,6 @@
     struct CGRect _renderArea;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool shouldRecreateTexture; // @synthesize shouldRecreateTexture=_shouldRecreateTexture;
 @property(nonatomic) __weak id <XEffectRenderTargetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CAEAGLLayer *layer; // @synthesize layer=_layer;

@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KTableViewCellEditAction>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)triggered;
 - (id)getTitle;
 - (_Bool)getIsDestructive;

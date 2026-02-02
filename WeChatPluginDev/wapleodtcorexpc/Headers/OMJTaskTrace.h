@@ -14,7 +14,6 @@
     shared_ptr_1988f396 _backingTrace;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_1988f396 backingTrace; // @synthesize backingTrace=_backingTrace;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)runningLeafEntries;

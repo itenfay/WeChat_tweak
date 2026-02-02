@@ -10,7 +10,6 @@
     struct weak_ptr<zidl::ZServerInvoker> server_invoker_;
 }
 
-- (id).cxx_construct;
 - (void)onfinderRedDotDataChangedActionComplete:(unsigned long long)arg1;
 - (void)onfinderRedDotHasDisposeActionComplete:(unsigned long long)arg1;
 - (void)onfinderRedDotHasAddActionComplete:(unsigned long long)arg1;

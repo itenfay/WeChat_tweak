@@ -19,7 +19,6 @@ typedef void (^CDUnknownBlockType)(void);
     shared_ptr_7048591f _cronet_cb_;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_7048591f cronet_cb_; // @synthesize cronet_cb_=_cronet_cb_;
 @property(retain, nonatomic) NSMutableArray *waitingItemQueue; // @synthesize waitingItemQueue=_waitingItemQueue;
 @property(retain, nonatomic) NSMutableArray *downloadingItemQueue; // @synthesize downloadingItemQueue=_downloadingItemQueue;

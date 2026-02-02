@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::VoidStringStringStringCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)call:(id)arg1 value2:(id)arg2 value3:(id)arg3;
 - (id)initWithCpp:(const void *)arg1;
 

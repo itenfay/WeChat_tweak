@@ -12,7 +12,6 @@
     NSArray *_values;
 }
 
-- (id).cxx_construct;
 - (_Bool)realExecute;
 - (_Bool)execute;
 - (id)value:(id)arg1;

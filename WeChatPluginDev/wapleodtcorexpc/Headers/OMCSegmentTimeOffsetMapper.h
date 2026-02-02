@@ -16,7 +16,6 @@
     struct XTMTimeRange _backingTimeRange;
 }
 
-- (id).cxx_construct;
 @property(readonly, nonatomic) SharedPtr_1b64590e offset2TimeMapper; // @synthesize offset2TimeMapper=_offset2TimeMapper;
 @property(readonly, nonatomic) SharedPtr_141d0c2d time2OffsetMapper; // @synthesize time2OffsetMapper=_time2OffsetMapper;
 @property(readonly, nonatomic) struct XTMTimeRange backingTimeRange; // @synthesize backingTimeRange=_backingTimeRange;

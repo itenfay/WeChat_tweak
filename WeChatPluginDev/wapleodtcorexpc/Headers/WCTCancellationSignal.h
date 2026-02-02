@@ -10,7 +10,6 @@
     shared_ptr_2b1ef54d m_signal;
 }
 
-- (id).cxx_construct;
 - (void)cancel;
 - (shared_ptr_2b1ef54d)getInnerSignal;
 - (id)init;

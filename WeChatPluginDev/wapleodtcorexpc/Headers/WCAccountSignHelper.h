@@ -13,13 +13,12 @@
     PubKeyInfo *_pubKeyInfoForECDSA;
     unsigned long long _pubkeyLastUpdateTime;
     NSString *_lastUploadPubKeyCgiName;
-    basic_string_5909a4e2 _privateKeyForECDSA;
+    void * _privateKeyForECDSA;
 }
 
-- (id).cxx_construct;
 @property(retain) NSString *lastUploadPubKeyCgiName; // @synthesize lastUploadPubKeyCgiName=_lastUploadPubKeyCgiName;
 @property(nonatomic) unsigned long long pubkeyLastUpdateTime; // @synthesize pubkeyLastUpdateTime=_pubkeyLastUpdateTime;
-@property(nonatomic) basic_string_1e6f3770 privateKeyForECDSA; // @synthesize privateKeyForECDSA=_privateKeyForECDSA;
+@property(nonatomic) void * privateKeyForECDSA; // @synthesize privateKeyForECDSA=_privateKeyForECDSA;
 @property(retain, nonatomic) PubKeyInfo *pubKeyInfoForECDSA; // @synthesize pubKeyInfoForECDSA=_pubKeyInfoForECDSA;
 @property(retain, nonatomic) NSRecursiveLock *signKeyLock; // @synthesize signKeyLock=_signKeyLock;
 - (_Bool)createPubkey;

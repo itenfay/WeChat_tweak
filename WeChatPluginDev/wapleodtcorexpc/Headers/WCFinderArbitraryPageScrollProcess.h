@@ -19,7 +19,6 @@
     struct ConfigOffset _offset;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSMutableArray *pendingSwitchTab; // @synthesize pendingSwitchTab=_pendingSwitchTab;
 @property(nonatomic) _Bool needReloadAfterScroll; // @synthesize needReloadAfterScroll=_needReloadAfterScroll;
 @property(nonatomic) long long otherPageIdx; // @synthesize otherPageIdx=_otherPageIdx;

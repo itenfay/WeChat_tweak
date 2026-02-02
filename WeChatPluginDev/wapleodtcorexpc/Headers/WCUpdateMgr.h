@@ -19,7 +19,6 @@
 + (_Bool)verifyDiretory:(id)arg1;
 + (_Bool)shouldTrace;
 + (void)immediateRenameUpdate;
-- (id).cxx_construct;
 - (void)dummy;
 - (id)getUpdatePID;
 - (void)cleanOldOne;

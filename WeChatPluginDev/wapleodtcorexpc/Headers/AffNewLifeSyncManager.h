@@ -12,7 +12,6 @@
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
-- (id).cxx_construct;
 - (void)dealloc;
 - (void)doSyncWithConfig:(int)arg1 cgiBizId:(int)arg2 syncScene:(int)arg3;
 - (void)doSync:(int)arg1 cgiBizId:(int)arg2 reliableNotifyBuff:(id)arg3 syncScene:(int)arg4;

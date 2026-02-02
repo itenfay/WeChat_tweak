@@ -13,7 +13,6 @@
     struct vector<NSString *__unsafe_unretained, std::allocator<NSString *__unsafe_unretained>> m_vector;
 }
 
-- (id).cxx_construct;
 - (id)allKeysAndObjects;
 - (id)allObjects;
 - (id)allKeys;

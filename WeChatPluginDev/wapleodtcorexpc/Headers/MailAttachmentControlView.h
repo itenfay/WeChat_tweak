@@ -32,7 +32,7 @@ typedef void (^CDUnknownBlockType)(void);
 @property(nonatomic) __weak id <MailAttachmentControlViewDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onFileBrowser:(id)arg1 assetPickerController:(id)arg2 clickAssetInfo:(id)arg3;
 - (void)onFileBrowser:(id)arg1 clickFile:(id)arg2;
-- (void)addAttachmentsWithFileInfos:(vector_3510895a)arg1;
+- (void)addAttachmentsWithFileInfos:(void *)arg1;
 - (void)onFileBrowseMultiSelect:(id)arg1;
 - (_Bool)onFileBrowseWillSelectFile:(id)arg1 selected:(id)arg2;
 - (void)OnDeleteAttachment:(id)arg1;

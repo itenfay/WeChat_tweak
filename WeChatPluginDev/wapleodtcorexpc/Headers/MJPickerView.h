@@ -28,7 +28,6 @@ typedef void (^CDUnknownBlockType)(void);
     UISelectionFeedbackGenerator *_feedback;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) UISelectionFeedbackGenerator *feedback; // @synthesize feedback=_feedback;
 @property(nonatomic) _Bool isDarkCornerEnabled; // @synthesize isDarkCornerEnabled=_isDarkCornerEnabled;
 @property(nonatomic) _Bool isFeedbackEnabled; // @synthesize isFeedbackEnabled=_isFeedbackEnabled;

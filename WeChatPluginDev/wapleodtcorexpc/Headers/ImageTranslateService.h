@@ -14,7 +14,6 @@ typedef void (^CDUnknownBlockType)(void);
 }
 
 + (void)reportIDKey:(unsigned int)arg1 value:(unsigned int)arg2;
-- (id).cxx_construct;
 @property(retain, nonatomic) ImageTranslateRequest *currentRequest; // @synthesize currentRequest=_currentRequest;
 - (void)clearCurrentRequest;
 - (void)translateImage:(id)arg1 statInfo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

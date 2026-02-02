@@ -27,7 +27,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
-- (id).cxx_construct;
 - (void)dealloc;
 - (void)getUnreadMentionListAsync:(id)arg1 mentionType:(int)arg2 on:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)getUnreadMentionListAsync:(id)arg1 mentionType:(int)arg2 completion:(CDUnknownBlockType)arg3;

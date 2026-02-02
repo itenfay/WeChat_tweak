@@ -18,7 +18,7 @@
     MMUIView *m_minCardmMemberDisplayBigHeadView;
     UIImageView *m_minCardBlurView;
     ilinkMultiSelectLogic *m_ilinkMultiSelectLogic;
-    vector_cd3186ef memberIDMsgVector;
+    void * memberIDMsgVector;
     _Bool m_isMinCardExpandIng;
     _Bool _m_isCaller;
     _Bool _m_connect_hangup;
@@ -116,7 +116,6 @@
     NSString *_prevPortType;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSString *prevPortType; // @synthesize prevPortType=_prevPortType;
 @property(retain, nonatomic) AVRoutePickerView *avRouteView; // @synthesize avRouteView=_avRouteView;
 @property(nonatomic) _Bool isViewAppeared; // @synthesize isViewAppeared=_isViewAppeared;

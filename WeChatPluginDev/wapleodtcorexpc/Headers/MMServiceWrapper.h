@@ -14,7 +14,6 @@
     struct unordered_map<SEL *, NSMethodSignature *, std::hash<SEL *>, std::equal_to<SEL *>, std::allocator<std::pair<SEL *const, NSMethodSignature *>>> m_hookSet;
 }
 
-- (id).cxx_construct;
 - (id)unsafeUnwrap;
 - (id)debugDescription;
 - (id)description;

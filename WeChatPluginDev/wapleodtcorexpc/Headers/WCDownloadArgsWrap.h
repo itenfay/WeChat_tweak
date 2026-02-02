@@ -61,7 +61,6 @@ typedef void (^CDUnknownBlockType)(void);
     unsigned long long _maxPcdnConnections;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) int bitrate; // @synthesize bitrate=_bitrate;
 @property(nonatomic) int predownloadMinsize; // @synthesize predownloadMinsize=_predownloadMinsize;
 @property(nonatomic) int predownloadRatio; // @synthesize predownloadRatio=_predownloadRatio;

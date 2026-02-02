@@ -12,7 +12,6 @@
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
-- (id).cxx_construct;
 - (void)dealloc;
 - (void)configService:(id)arg1 dbPath:(id)arg2 prefetchDbDir:(id)arg3;
 - (void)testHello;

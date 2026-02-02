@@ -16,7 +16,6 @@
     NSMutableDictionary *_identifierMap;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSMutableDictionary *identifierMap; // @synthesize identifierMap=_identifierMap;
 @property(nonatomic) long long groupNumber; // @synthesize groupNumber=_groupNumber;
 @property(nonatomic) long long index; // @synthesize index=_index;

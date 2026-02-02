@@ -9,7 +9,6 @@
     Class m_class;
 }
 
-- (id).cxx_construct;
 - (id)firstObject;
 - (id)allObjects;
 - (id)ofClass:(Class)arg1;

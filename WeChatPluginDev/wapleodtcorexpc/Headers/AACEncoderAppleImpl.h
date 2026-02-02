@@ -13,7 +13,6 @@
     unsigned long long frameCount_;
 }
 
-- (id).cxx_construct;
 - (unsigned long long)frameLengthInBytes;
 - (Optional_eb6751fe)encodeAudioPacket:(const void *)arg1;
 - (Optional_3f6628e3)encodeAudioFrame:(const void *)arg1;

@@ -10,7 +10,6 @@
     SharedPtr_db4ce4f7 _backingIKImage;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) SharedPtr_db4ce4f7 backingIKImage; // @synthesize backingIKImage=_backingIKImage;
 - (id)initWithBackingIKImage:(const void *)arg1;
 

@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::TenpayCgiCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onSuccess:(id)arg1;
 - (void)onError:(int)arg1 errmsg:(id)arg2;
 - (id)initWithCpp:(const void *)arg1;

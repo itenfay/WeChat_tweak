@@ -14,7 +14,6 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedInstance;
-- (id).cxx_construct;
 @property(nonatomic) scoped_refptr_c1332177 onlineLogger; // @synthesize onlineLogger=_onlineLogger;
 @property(nonatomic) queue_7efded04 logQueue; // @synthesize logQueue=_logQueue;
 - (void)log:(id)arg1;

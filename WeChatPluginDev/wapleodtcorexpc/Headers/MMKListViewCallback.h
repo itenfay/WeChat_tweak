@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KListViewCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (id)fillData:(int)arg1 contentView:(id)arg2;
 - (int)getViewTypeCount;
 - (int)getViewType:(int)arg1;

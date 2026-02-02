@@ -62,7 +62,6 @@
     NSString *_m_nsChatName;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool m_bNotMainTable; // @synthesize m_bNotMainTable=_m_bNotMainTable;
 @property(retain, nonatomic) NSString *m_nsChatName; // @synthesize m_nsChatName=_m_nsChatName;
 @property(retain, nonatomic) NSString *m_sessionId; // @synthesize m_sessionId=_m_sessionId;

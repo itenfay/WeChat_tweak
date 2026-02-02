@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KEditTextOnFocusChangeCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onFocusChange:(_Bool)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

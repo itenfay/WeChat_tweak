@@ -19,7 +19,6 @@
     struct SemanticsNode _node;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSArray *childrenInHitTestOrder; // @synthesize childrenInHitTestOrder=_childrenInHitTestOrder;
 @property(retain, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(readonly, nonatomic) struct SemanticsNode node; // @synthesize node=_node;

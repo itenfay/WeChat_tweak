@@ -15,7 +15,6 @@ typedef void (^CDUnknownBlockType)(void);
     _Bool _enableViewControllerBasedStatusBarAppearance;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool enableViewControllerBasedStatusBarAppearance; // @synthesize enableViewControllerBasedStatusBarAppearance=_enableViewControllerBasedStatusBarAppearance;
 - (void)dealloc;
 - (id)textField;

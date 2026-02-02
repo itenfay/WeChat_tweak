@@ -28,7 +28,6 @@
     struct UIEdgeInsets _timelineViewContentInsets;
 }
 
-- (id).cxx_construct;
 @property(readonly, nonatomic) OMJID *blankMapperID; // @synthesize blankMapperID=_blankMapperID;
 @property(nonatomic) double storylineYOffset; // @synthesize storylineYOffset=_storylineYOffset;
 @property(nonatomic) struct UIEdgeInsets timelineViewContentInsets; // @synthesize timelineViewContentInsets=_timelineViewContentInsets;
@@ -59,7 +58,7 @@
 - (struct MCOffsetRange)yOffsetRangeForContent;
 @property(readonly, nonatomic) struct CGSize timelineViewContentSize;
 - (id)initWithTimelineViewModel:(id)arg1 visibleSegmentTypes:(id)arg2;
-- (vector_0e047154)calcWidthsForSegmentVMs:(id)arg1;
+- (void *)calcWidthsForSegmentVMs:(id)arg1;
 - (id)segmentViewMappersForSegmentVMs:(id)arg1;
 - (void)arrangeSegmentsOverlapDisabled;
 - (void)arrangeSegmentsOverlapEnabled;

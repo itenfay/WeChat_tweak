@@ -19,7 +19,6 @@
 + (id)assetInfoWithPHLocalIdentifier:(id)arg1 error:(id *)arg2;
 + (id)assetInfoWithPHAsset:(id)arg1 livePhotoUsage:(unsigned long long)arg2 error:(id *)arg3;
 + (id)assetInfoWithPHAsset:(id)arg1 error:(id *)arg2;
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_5d30c34f backingInfo; // @synthesize backingInfo=_backingInfo;
 @property(readonly, nonatomic) _Bool isLivePhoto; // @synthesize isLivePhoto=_isLivePhoto;
 @property(readonly, nonatomic) unsigned long long livePhotoUsage; // @synthesize livePhotoUsage=_livePhotoUsage;

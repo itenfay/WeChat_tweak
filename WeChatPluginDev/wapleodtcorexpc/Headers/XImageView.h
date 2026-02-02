@@ -18,7 +18,6 @@
     struct CGSize _realSize;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool disableOpaqueRender; // @synthesize disableOpaqueRender=_disableOpaqueRender;
 @property(nonatomic) unsigned long long videoContentMode; // @synthesize videoContentMode=_videoContentMode;
 @property(retain, nonatomic) XImageMetalView *metalView; // @synthesize metalView=_metalView;

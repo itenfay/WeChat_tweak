@@ -17,7 +17,6 @@
     NSString *_currentTid;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSString *currentTid; // @synthesize currentTid=_currentTid;
 - (void)updateCurrentTid:(id)arg1;
 - (void)reset;

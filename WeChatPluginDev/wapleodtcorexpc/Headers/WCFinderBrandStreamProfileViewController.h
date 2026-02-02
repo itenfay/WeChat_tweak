@@ -19,7 +19,6 @@
     optional_865a0c94 _justWatchCellFrame;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) WCFinderExtStatsReporter *extStatReporter; // @synthesize extStatReporter=_extStatReporter;
 @property(retain, nonatomic) NSIndexPath *serviceAuthBlockedIndexPath; // @synthesize serviceAuthBlockedIndexPath=_serviceAuthBlockedIndexPath;
 @property(nonatomic) _Bool displayThreeColumnSwitch; // @synthesize displayThreeColumnSwitch=_displayThreeColumnSwitch;

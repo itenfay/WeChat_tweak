@@ -33,7 +33,6 @@ typedef void (^CDUnknownBlockType)(void);
     function_ffe40f9b _didFinishSwitchCameraCallbackFunc;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) function_ffe40f9b didFinishSwitchCameraCallbackFunc; // @synthesize didFinishSwitchCameraCallbackFunc=_didFinishSwitchCameraCallbackFunc;
 @property(nonatomic) long long targetPositionFlagForSwitchCamera; // @synthesize targetPositionFlagForSwitchCamera=_targetPositionFlagForSwitchCamera;
 @property(nonatomic) _Bool isCameraSwitching; // @synthesize isCameraSwitching=_isCameraSwitching;

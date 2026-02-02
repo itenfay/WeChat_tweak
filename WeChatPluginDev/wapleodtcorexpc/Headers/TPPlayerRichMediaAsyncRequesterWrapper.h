@@ -13,13 +13,12 @@
     struct TPPlayerRichMediaAsyncRequesterCallbackWrapper *_richMediaAsyncRequesterCallbackWrapper;
 }
 
-- (id).cxx_construct;
 - (int)requestFeatureDataAsyncWithIndex:(int)arg1 timeRangeArray:(const void *)arg2;
 - (int)requestFeatureDataAsyncWithIndex:(int)arg1 timeRange:(const struct TPPlayerRichMediaTimeRange *)arg2;
 - (int)requestFeatureDataAsyncWithIndex:(int)arg1 timeMsArray:(const void *)arg2;
 - (int)requestFeatureDataAsyncWithIndex:(int)arg1 timeMs:(long long)arg2;
 - (void)releaseRequester;
-- (vector_f4e3e6bf)features;
+- (void *)features;
 - (void)cancelRequestWithRequestId:(int)arg1;
 - (int)prepareAsync;
 - (int)setRichMediaSource:(id)arg1;

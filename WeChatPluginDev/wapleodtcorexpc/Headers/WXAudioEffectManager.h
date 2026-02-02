@@ -20,7 +20,6 @@ typedef void (^CDUnknownBlockType)(void);
     shared_ptr_e3b70170 _callback;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) __weak id <WXAudioEffectManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) void *audioEngine; // @synthesize audioEngine=_audioEngine;
 @property(retain, nonatomic) NSMutableDictionary *audioEffectMap; // @synthesize audioEffectMap=_audioEffectMap;

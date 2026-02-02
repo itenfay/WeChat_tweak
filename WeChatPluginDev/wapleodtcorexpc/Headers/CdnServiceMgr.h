@@ -16,7 +16,6 @@ typedef void (^CDUnknownBlockType)(void);
     NSMutableDictionary *_dicTasksBlock;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSMutableDictionary *dicTasksBlock; // @synthesize dicTasksBlock=_dicTasksBlock;
 @property(retain, nonatomic) NSMutableArray *arrNotInitDownloadTaskBlock; // @synthesize arrNotInitDownloadTaskBlock=_arrNotInitDownloadTaskBlock;
 @property(retain, nonatomic) NSMutableArray *arrNotInitUploadTaskBlock; // @synthesize arrNotInitUploadTaskBlock=_arrNotInitUploadTaskBlock;

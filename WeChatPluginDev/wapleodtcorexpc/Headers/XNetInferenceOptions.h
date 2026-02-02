@@ -13,7 +13,6 @@
     _Bool _useNpuOnly;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool useNpuOnly; // @synthesize useNpuOnly=_useNpuOnly;
 @property(retain, nonatomic) NSDictionary *typicalShape;
 @property(retain, nonatomic) NSString *modelType;

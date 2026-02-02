@@ -13,7 +13,6 @@
 }
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
-- (id).cxx_construct;
 - (void)dealloc;
 - (void)reportThatPreload:(id)arg1 byPrediction:(const void *)arg2;
 - (void)reportThatConsume:(id)arg1 isReady:(const void *)arg2;

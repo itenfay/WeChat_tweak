@@ -30,7 +30,7 @@ typedef void (^CDUnknownBlockType)(void);
     unsigned int _appServiceType;
     unsigned int _uploadMaxConcurrentCount;
     double _timeout;
-    basic_string_5909a4e2 _cronetTaskID;
+    void * _cronetTaskID;
     NSString *_nsCronetTaskID;
     WAUploadFileConfig *_uploadFileConfig;
     _Bool _isIgnoreCheckDomain;
@@ -39,7 +39,6 @@ typedef void (^CDUnknownBlockType)(void);
     WAUploadFileProgressInfo *_lastNotNotifyProgressInfo;
 }
 
-- (id).cxx_construct;
 @property(retain) WAUploadFileProgressInfo *lastNotNotifyProgressInfo; // @synthesize lastNotNotifyProgressInfo=_lastNotNotifyProgressInfo;
 @property unsigned long long lastUpdateProgressAbsoluteTime; // @synthesize lastUpdateProgressAbsoluteTime=_lastUpdateProgressAbsoluteTime;
 @property(nonatomic) _Bool isIgnoreCheckDomain; // @synthesize isIgnoreCheckDomain=_isIgnoreCheckDomain;

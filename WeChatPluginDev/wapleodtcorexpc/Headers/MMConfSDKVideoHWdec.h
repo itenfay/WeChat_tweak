@@ -29,7 +29,6 @@
     id <MMConfSDKVideoHWdecDelegate> _mHWDecDelegate;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) __weak id <MMConfSDKVideoHWdecDelegate> mHWDecDelegate; // @synthesize mHWDecDelegate=_mHWDecDelegate;
 @property(nonatomic) __weak NSString *mErrorStr; // @synthesize mErrorStr=_mErrorStr;
 @property(retain, nonatomic) NSRecursiveLock *mVideoHWDecLock; // @synthesize mVideoHWDecLock;

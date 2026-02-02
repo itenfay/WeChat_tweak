@@ -26,7 +26,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (id)arrayWithFeeds:(id)arg1;
 + (id)array;
-- (id).cxx_construct;
 @property(retain, nonatomic) WCFinderFeedArrayBridge *bridge; // @synthesize bridge=_bridge;
 @property(retain, nonatomic) NSArray *beforeModifyFeeds; // @synthesize beforeModifyFeeds=_beforeModifyFeeds;
 @property(retain, nonatomic) NSOrderedCollectionDifference *changed; // @synthesize changed=_changed;

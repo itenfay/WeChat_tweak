@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KCardNumberEditViewOnTextEndEditingCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onTextEndEditing:(id)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

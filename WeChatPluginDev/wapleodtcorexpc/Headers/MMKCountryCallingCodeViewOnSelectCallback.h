@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KCountryCallingCodeViewOnSelectCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onSelect:(id)arg1 nationality:(id)arg2;
 - (id)initWithCpp:(const void *)arg1;
 

@@ -12,7 +12,6 @@
     WeakPtr_dad450d4 _backingPublisherSessionMetrics;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) WeakPtr_dad450d4 backingPublisherSessionMetrics; // @synthesize backingPublisherSessionMetrics=_backingPublisherSessionMetrics;
 - (void)notifyMCTouchFeedbackButton;
 - (void)markMCDidCompleteCreation;

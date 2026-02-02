@@ -18,7 +18,6 @@
     TXAudioEffectManager *_audioEffectManager;
 }
 
-- (id).cxx_construct;
 - (struct VideoSize)getVideoSizeWith:(long long)arg1 mode:(long long)arg2;
 - (id)convertToInnerFrame:(id)arg1;
 - (unsigned long long)convertToInnerFormat:(long long)arg1;

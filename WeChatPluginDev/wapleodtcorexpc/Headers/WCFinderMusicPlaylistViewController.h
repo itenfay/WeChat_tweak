@@ -20,7 +20,6 @@ typedef void (^CDUnknownBlockType)(void);
 }
 
 + (id)playListVCWithCategory:(id)arg1 cellUpdater:(CDUnknownFunctionPointerType)arg2 clickAction:(CDUnknownBlockType)arg3 reporter:(struct SDKReportInfo)arg4;
-- (id).cxx_construct;
 @property(nonatomic) struct SDKReportInfo reporter; // @synthesize reporter=_reporter;
 @property(copy, nonatomic) CDUnknownBlockType clickAction; // @synthesize clickAction=_clickAction;
 @property(nonatomic) CDUnknownFunctionPointerType cellUpdater; // @synthesize cellUpdater=_cellUpdater;

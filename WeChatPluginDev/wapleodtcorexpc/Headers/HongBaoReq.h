@@ -4,9 +4,10 @@
 //
 
 
+#import "WXPBGeneratedMessage.h"
+
 @class BaseRequest, SKBuiltinBuffer_t;
 
-@class WXPBGeneratedMessage;
 
 @interface HongBaoReq : WXPBGeneratedMessage
 {

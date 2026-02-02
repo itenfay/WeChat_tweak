@@ -29,7 +29,6 @@ typedef void (^CDUnknownBlockType)(void);
     unsigned long long _fillMode;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool requestClearView; // @synthesize requestClearView=_requestClearView;
 @property(nonatomic) unsigned long long fillMode; // @synthesize fillMode=_fillMode;
 @property(retain) TXCMTKView *renderView; // @synthesize renderView=_renderView;

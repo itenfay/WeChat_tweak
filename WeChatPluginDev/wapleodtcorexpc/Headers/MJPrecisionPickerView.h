@@ -39,7 +39,6 @@
     double _labelHeight;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool isShowLabelIndicator; // @synthesize isShowLabelIndicator=_isShowLabelIndicator;
 @property(nonatomic) double labelHeight; // @synthesize labelHeight=_labelHeight;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;

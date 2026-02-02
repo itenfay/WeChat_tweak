@@ -34,7 +34,6 @@
 }
 
 + (struct OpaqueJSValue *)loadFontData:(struct OpaqueJSContext *)arg1 fontData:(id)arg2;
-- (id).cxx_construct;
 - (CDStruct_869f9c67)measureString:(id)arg1 forContext:(id)arg2;
 - (void)drawString:(id)arg1 toContext:(id)arg2 x:(float)arg3 y:(float)arg4;
 - (float)getYOffsetForBaseline:(int)arg1;

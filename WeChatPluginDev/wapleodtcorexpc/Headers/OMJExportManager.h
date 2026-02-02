@@ -16,7 +16,6 @@ typedef void (^CDUnknownBlockType)(void);
     SharedPtr_9102e06d _backingManager;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) SharedPtr_9102e06d backingManager; // @synthesize backingManager=_backingManager;
 @property(nonatomic) SharedPtr_c67bd272 thumbnailLoader; // @synthesize thumbnailLoader=_thumbnailLoader;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;

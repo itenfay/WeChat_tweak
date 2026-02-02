@@ -22,7 +22,6 @@ typedef void (^CDUnknownBlockType)(void);
     MMMediaServiceWrapper *_service_wrapper;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) MMMediaServiceWrapper *service_wrapper; // @synthesize service_wrapper=_service_wrapper;
 - (void)wkRequest:(id)arg1;
 - (void)asyncRunOnMainThread:(CDUnknownBlockType)arg1;

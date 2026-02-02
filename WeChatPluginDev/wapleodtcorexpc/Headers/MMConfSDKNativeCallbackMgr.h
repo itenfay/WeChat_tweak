@@ -14,7 +14,6 @@
     struct recursive_mutex recursive_mutex_;
 }
 
-- (id).cxx_construct;
 - (void)removeWillListen:(int)arg1 callback:(id)arg2;
 - (void)registerWillListen:(int)arg1 callback:(id)arg2;
 - (id)callbackImp:(int)arg1 errCode:(int)arg2 data:(void *)arg3 dataLength:(int)arg4;

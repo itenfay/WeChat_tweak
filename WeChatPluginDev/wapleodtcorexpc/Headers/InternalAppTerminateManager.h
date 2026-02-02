@@ -11,7 +11,6 @@
 }
 
 + (id)sharedInstance;
-- (id).cxx_construct;
 - (void)onAppTerminate;
 - (void)deleteInstanceInfo:(unsigned int)arg1 roomId:(const void *)arg2 userId:(const void *)arg3 strRole:(const void *)arg4;
 - (void)saveInstanceInfo:(unsigned int)arg1 roomId:(const void *)arg2 userId:(const void *)arg3 strRole:(const void *)arg4;

@@ -20,7 +20,7 @@ typedef void (^CDUnknownBlockType)(void);
     NSMutableDictionary *_dicContext;
     unsigned int _downloadMaxConcurrentCount;
     unsigned long long _downloadMaxFileSize;
-    basic_string_5909a4e2 _cronetTaskID;
+    void * _cronetTaskID;
     NSString *_nsCronetTaskID;
     double _timeout;
     _Bool _hasCallBack;
@@ -42,7 +42,6 @@ typedef void (^CDUnknownBlockType)(void);
     MBDownloadFileProgressInfo *_lastNotNotifyProgressInfo;
 }
 
-- (id).cxx_construct;
 @property(retain) MBDownloadFileProgressInfo *lastNotNotifyProgressInfo; // @synthesize lastNotNotifyProgressInfo=_lastNotNotifyProgressInfo;
 @property unsigned long long lastUpdateProgressAbsoluteTime; // @synthesize lastUpdateProgressAbsoluteTime=_lastUpdateProgressAbsoluteTime;
 @property _Bool isCanceled; // @synthesize isCanceled=_isCanceled;

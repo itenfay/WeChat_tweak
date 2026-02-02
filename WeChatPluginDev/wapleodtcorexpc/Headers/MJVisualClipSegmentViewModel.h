@@ -27,7 +27,6 @@ typedef void (^CDUnknownBlockType)(void);
     id <OMCClipSpeedAdjustable> _speedAdjustable;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) id <OMCClipSpeedAdjustable> speedAdjustable; // @synthesize speedAdjustable=_speedAdjustable;
 @property(retain, nonatomic) id <OMCVolumeAdjustable> volumeAdjustable; // @synthesize volumeAdjustable=_volumeAdjustable;
 @property(retain, nonatomic) id <OMCContentSpatialAdjustable> contentSpatialAdjustable; // @synthesize contentSpatialAdjustable=_contentSpatialAdjustable;

@@ -15,7 +15,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2 refCntManager:(void *)arg3;
 + (id)shareInstance;
-- (id).cxx_construct;
 - (void)dealloc;
 - (void)updateEvent:(int)arg1 bytesInfo:(id)arg2;
 - (unsigned long long)timestampMSCurrentSystem;

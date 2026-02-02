@@ -8,7 +8,7 @@
 @interface MsgResourceBrowseViewController
 {
     NSMutableArray *m_arrMsg;
-    vector_d88869c6 _arrSelectedData;
+    void * _arrSelectedData;
     shared_ptr_5102c92c m_sessionItem;
     MsgFastBrowseView *m_msgFastBrowseView;
     UIView *_footerView;
@@ -25,7 +25,6 @@
 + (void)globalClickAppMessage:(id)arg1 inNavigationController:(id)arg2 withClickFrame:(struct CGRect)arg3;
 + (void)PreviewAppNode:(id)arg1 msgWrap:(id)arg2 inNavigationController:(id)arg3 withClickFrame:(struct CGRect)arg4 msgLocateForFile:(_Bool)arg5;
 + (void)PreviewAppNode:(id)arg1 msgWrap:(id)arg2 inNavigationController:(id)arg3 withClickFrame:(struct CGRect)arg4;
-- (id).cxx_construct;
 @property(retain, nonatomic) NSString *m_nsChatName; // @synthesize m_nsChatName;
 @property(retain, nonatomic) CMessageWrap *m_curMsgWrap; // @synthesize m_curMsgWrap;
 - (void)doDeleteData;

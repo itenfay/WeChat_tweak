@@ -14,7 +14,6 @@
     NSMutableDictionary *_remoteTrtcCustomRenderWrapperDict;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSMutableDictionary *remoteTrtcCustomRenderWrapperDict; // @synthesize remoteTrtcCustomRenderWrapperDict=_remoteTrtcCustomRenderWrapperDict;
 @property(retain, nonatomic) MMLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 - (void)destroyCustomRenderWrapper:(id)arg1;

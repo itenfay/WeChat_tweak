@@ -22,7 +22,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (id)loadRecordByPath:(id)arg1;
 + (id)newRecordForCurrentRun;
-- (id).cxx_construct;
 - (id)memoryDataPath;
 - (id)recordInfoPath;
 - (id)recordBasePath;

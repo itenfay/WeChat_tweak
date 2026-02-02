@@ -16,7 +16,6 @@
 + (id)positiveInfinityTime;
 + (id)invalidTime;
 + (id)zeroTime;
-- (id).cxx_construct;
 @property(nonatomic) struct XTMTime backingTime; // @synthesize backingTime=_backingTime;
 - (id)timecodeWithFrameDuration:(id)arg1;
 - (id)description;

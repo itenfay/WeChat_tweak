@@ -13,7 +13,6 @@
 }
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
-- (id).cxx_construct;
 - (void)dealloc;
 - (void)reportThatLiveRoomLag:(const void *)arg1 context:(id)arg2;
 - (void)stopPredict;

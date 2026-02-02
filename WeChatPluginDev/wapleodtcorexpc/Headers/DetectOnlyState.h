@@ -10,7 +10,6 @@
     struct YTFaceDetection *detector;
 }
 
-- (id).cxx_construct;
 - (void)update:(struct Mat)arg1 withTimeStamp:(unsigned long long)arg2;
 - (void)reset;
 - (void)unload;

@@ -17,7 +17,7 @@
 + (_Bool)isDolbyVisionSupported;
 + (_Bool)isHDRVividSupported;
 + (_Bool)isDRMsupport:(int)arg1;
-+ (vector_e6ac3340)getDRMCapabilities;
++ (void *)getDRMCapabilities;
 + (_Bool)isDolbyDSSupported;
 + (_Bool)isDDPlusSupported;
 + (_Bool)isDDSupported;

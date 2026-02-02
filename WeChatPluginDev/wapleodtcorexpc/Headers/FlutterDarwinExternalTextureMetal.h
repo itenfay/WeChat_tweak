@@ -19,7 +19,6 @@
     long long _textureID;
 }
 
-- (id).cxx_construct;
 @property(readonly, nonatomic) long long textureID; // @synthesize textureID=_textureID;
 - (sk_sp_5de25408)wrapRGBAExternalPixelBuffer:(struct __CVBuffer *)arg1 context:(struct PaintContext *)arg2;
 - (sk_sp_5de25408)wrapNV12ExternalPixelBuffer:(struct __CVBuffer *)arg1 context:(struct PaintContext *)arg2;

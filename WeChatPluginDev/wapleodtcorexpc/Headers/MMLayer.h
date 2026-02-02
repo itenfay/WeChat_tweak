@@ -21,7 +21,6 @@
 }
 
 + (id)layer;
-- (id).cxx_construct;
 @property(nonatomic) unsigned int zOrder; // @synthesize zOrder=_zOrder;
 @property(nonatomic) _Bool flipX; // @synthesize flipX=_flipX;
 @property(nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;

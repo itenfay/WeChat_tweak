@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KPatternLockViewEndWithPatternCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)endWithPattern:(id)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

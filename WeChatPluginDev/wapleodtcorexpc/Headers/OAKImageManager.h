@@ -13,7 +13,6 @@ typedef void (^CDUnknownBlockType)(void);
 }
 
 + (id)defaultManager;
-- (id).cxx_construct;
 - (void)cancelAllRequests;
 - (void)onRequestDidCompleteWithAsset:(id)arg1 audioMix:(id)arg2 info:(id)arg3 taskID:(unsigned int)arg4;
 - (void)onRequestDidCompleteWithImageData:(id)arg1 dataUTI:(id)arg2 orientation:(long long)arg3 info:(id)arg4 taskID:(unsigned int)arg5;

@@ -11,7 +11,6 @@
     int _count;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) int count; // @synthesize count=_count;
 
 @end

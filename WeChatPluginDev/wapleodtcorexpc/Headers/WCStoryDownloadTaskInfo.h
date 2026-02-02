@@ -34,7 +34,6 @@
     unsigned long long _ui64StartTime;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) unsigned long long ui64StartTime; // @synthesize ui64StartTime=_ui64StartTime;
 @property(nonatomic) unsigned long long xorEncryKey; // @synthesize xorEncryKey=_xorEncryKey;
 @property(nonatomic) _Bool bUseXorEncrypt; // @synthesize bUseXorEncrypt=_bUseXorEncrypt;

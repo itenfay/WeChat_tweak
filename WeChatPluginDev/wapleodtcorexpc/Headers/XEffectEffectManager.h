@@ -56,7 +56,6 @@ typedef void (^CDUnknownBlockType)(void);
     struct CGRect _preferredRect;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) unsigned int appScenario; // @synthesize appScenario=_appScenario;
 @property(retain, nonatomic) NSArray *modelKeyArray; // @synthesize modelKeyArray=_modelKeyArray;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;

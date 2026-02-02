@@ -25,7 +25,6 @@
 }
 
 + (id)getImageForMedia:(id)arg1;
-- (id).cxx_construct;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(retain, nonatomic) WCDataItem *m_dataItem; // @synthesize m_dataItem;
 @property(nonatomic) __weak id <WCPuzzleImageViewDelegate> m_delegate; // @synthesize m_delegate;

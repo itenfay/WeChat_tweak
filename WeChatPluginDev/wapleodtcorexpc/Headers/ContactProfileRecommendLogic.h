@@ -12,7 +12,6 @@
     NSRecursiveLock *m_lock;
 }
 
-- (id).cxx_construct;
 - (id)getFriendProfileRecommendInputInfoInHello:(id)arg1;
 - (id)getFriendProfileRecommendInputInfo:(id)arg1;
 - (id)getContactProfileRemarkRecommend:(id)arg1;

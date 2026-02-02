@@ -48,7 +48,6 @@
 + (double)sectionHeightWith:(id)arg1 width:(double)arg2 forceExpand:(_Bool)arg3 isAuthorView:(_Bool)arg4 avatarLeftMargin:(double)arg5;
 + (double)sectionHeightWith:(id)arg1 width:(double)arg2 forceExpand:(_Bool)arg3 isAuthorView:(_Bool)arg4;
 + (double)textViewMaxWidthWith:(double)arg1 avatarLeftMargin:(double)arg2;
-- (id).cxx_construct;
 @property(retain, nonatomic) WCFinderCommentTranslateView *translateView; // @synthesize translateView=_translateView;
 @property(retain, nonatomic) UIAccessibilityElement *likeAccessibility; // @synthesize likeAccessibility=_likeAccessibility;
 @property(retain, nonatomic) WCFinderJumpInfoPanelView *bottomRefJumpinfoPanel; // @synthesize bottomRefJumpinfoPanel=_bottomRefJumpinfoPanel;

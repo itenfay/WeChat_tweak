@@ -9,7 +9,6 @@
     _Bool _tracking;
 }
 
-- (id).cxx_construct;
 - (void)onEditChange:(id)arg1;
 - (void)onEndEdit:(id)arg1;
 - (void)onBeginEdit:(id)arg1;

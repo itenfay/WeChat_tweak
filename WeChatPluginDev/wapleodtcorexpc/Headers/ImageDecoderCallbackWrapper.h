@@ -13,7 +13,6 @@
     function_2b6ca66c _callback;
 }
 
-- (id).cxx_construct;
 @property function_2b6ca66c callback; // @synthesize callback=_callback;
 @property int height; // @synthesize height=_height;
 @property int width; // @synthesize width=_width;

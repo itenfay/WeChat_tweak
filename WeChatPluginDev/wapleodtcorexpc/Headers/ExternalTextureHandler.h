@@ -18,7 +18,6 @@
     WAEJJavaScriptView *_scriptView;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) __weak WAEJJavaScriptView *scriptView; // @synthesize scriptView=_scriptView;
 - (sk_sp_851faaab)makeTextureImage:(struct __CVBuffer *)arg1;
 - (_Bool)createYuvTexture:(int)arg1 height:(int)arg2;

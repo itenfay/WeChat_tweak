@@ -22,7 +22,6 @@
 
 + (_Bool)supportsHardwareHevcEncode;
 + (_Bool)supportsSoftwareEncode;
-- (id).cxx_construct;
 @property(nonatomic) double lastRequestKeyFrameTime; // @synthesize lastRequestKeyFrameTime=_lastRequestKeyFrameTime;
 @property(readonly, nonatomic) TXCVideoEncodeReport *report; // @synthesize report=_report;
 @property(nonatomic) __weak id <TXCVideoEncodeControllerDelegate> delegate; // @synthesize delegate=_delegate;

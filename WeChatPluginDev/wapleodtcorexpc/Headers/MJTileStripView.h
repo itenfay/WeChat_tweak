@@ -29,7 +29,7 @@
 - (void)addTileLayer:(id)arg1 withAttributes:(id)arg2;
 - (id)internalDequeueTileLayerWithAttributes:(id)arg1;
 - (void)recycleTileLayersWithActiveTileAttributesSet:(id)arg1 animationDuration:(double)arg2;
-- (void)recycleTilesWithShiftingAttributes:(vector_e62d36fb)arg1 appendingTileAttributes:(vector_1d27761d)arg2;
+- (void)recycleTilesWithShiftingAttributes:(void *)arg1 appendingTileAttributes:(void *)arg2;
 - (void)recycleTileLayersWithActiveTileAttributesSet:(id)arg1 forceUpdate:(_Bool)arg2;
 - (void)recycleTilesWithAttributesSet:(id)arg1 forceUpdate:(_Bool)arg2;
 - (void)recycleTilesWithAttributesSet:(id)arg1;

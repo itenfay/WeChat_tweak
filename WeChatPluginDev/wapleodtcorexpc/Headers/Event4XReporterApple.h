@@ -10,7 +10,6 @@
     struct unique_ptr<liteav::Event4XReporter, std::default_delete<liteav::Event4XReporter>> reporter_;
 }
 
-- (id).cxx_construct;
 - (void)reportDau:(long long)arg1 code:(long long)arg2 info:(id)arg3;
 - (long long)getColdDownTime;
 - (void)sendReport;

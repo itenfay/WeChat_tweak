@@ -16,7 +16,7 @@ typedef void (^CDUnknownBlockType)(void);
     NSString *_url;
     double _timeout;
     CDUnknownBlockType _completionHandler;
-    basic_string_5909a4e2 _cronetTaskID;
+    void * _cronetTaskID;
     NSString *_nsCronetTaskID;
     _Bool _isCanceled;
     id <WAPackageDownloadTaskDelegate> _delegate;
@@ -25,7 +25,6 @@ typedef void (^CDUnknownBlockType)(void);
     NSDictionary *_headerDic;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSDictionary *headerDic; // @synthesize headerDic=_headerDic;
 @property _Bool isCanceled; // @synthesize isCanceled=_isCanceled;
 @property unsigned long long taskStartTime; // @synthesize taskStartTime=_taskStartTime;

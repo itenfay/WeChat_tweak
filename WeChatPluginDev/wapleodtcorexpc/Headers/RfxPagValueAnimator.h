@@ -25,7 +25,6 @@
 + (void)HandleDisplayLink:(id)arg1;
 + (void)StopDisplayLink;
 + (void)StartDisplayLink;
-- (id).cxx_construct;
 @property long long animatorId; // @synthesize animatorId=_animatorId;
 - (void)stop:(_Bool)arg1;
 - (void)stop;

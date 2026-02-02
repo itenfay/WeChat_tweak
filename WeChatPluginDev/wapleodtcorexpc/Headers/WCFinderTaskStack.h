@@ -16,7 +16,6 @@ typedef void (^CDUnknownBlockType)(void);
     unsigned long long _maxNumberOfTasks;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) unsigned long long maxNumberOfTasks; // @synthesize maxNumberOfTasks=_maxNumberOfTasks;
 // Preceding property had unknown attributes: ?
 // Original attribute string: TQ,?,N,V_maxNumberOfTasks

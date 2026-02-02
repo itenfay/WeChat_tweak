@@ -11,7 +11,6 @@
     shared_ptr_45de587b m_inner;
 }
 
-- (id).cxx_construct;
 - (void)purge;
 - (shared_ptr_45de587b)lockWithName:(id)arg1;
 - (id)init;

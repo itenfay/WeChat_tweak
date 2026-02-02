@@ -16,7 +16,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)getLocalJumpInfo:(id)arg1 scene:(int)arg2;
 - (void)unSubscribeFetchJumpInfoCompleteEvent:(id)arg1;

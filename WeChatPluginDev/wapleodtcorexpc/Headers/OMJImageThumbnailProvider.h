@@ -17,7 +17,6 @@ typedef void (^CDUnknownBlockType)(void);
     struct CGSize _maxPixelSize;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) struct CGSize maxPixelSize; // @synthesize maxPixelSize=_maxPixelSize;
 @property(retain, nonatomic) UIImage *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
 @property(retain) NSMutableDictionary *resultHandlersByTaskID; // @synthesize resultHandlersByTaskID=_resultHandlersByTaskID;

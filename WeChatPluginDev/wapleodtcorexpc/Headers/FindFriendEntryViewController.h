@@ -69,7 +69,6 @@
 + (id)buildSystemNaviTitleLabel;
 + (_Bool)shouldCheckErrorCase;
 + (_Bool)shouldCheckFinderRedDotErrorCase;
-- (id).cxx_construct;
 @property(retain, nonatomic) FindFriendRedDotReporter *redDotReporter; // @synthesize redDotReporter=_redDotReporter;
 @property(retain, nonatomic) FindFriendRedDotEventSender *redDotEventSender; // @synthesize redDotEventSender=_redDotEventSender;
 @property(nonatomic) _Bool isShowingMomentsRedDot; // @synthesize isShowingMomentsRedDot=_isShowingMomentsRedDot;

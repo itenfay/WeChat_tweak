@@ -28,7 +28,6 @@
     struct C2CDownloadResult _result;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) struct C2CDownloadResult result; // @synthesize result=_result;
 @property(retain, nonatomic) NSString *savePath; // @synthesize savePath=_savePath;
 @property(nonatomic) unsigned long long recvedLength; // @synthesize recvedLength=_recvedLength;

@@ -14,7 +14,6 @@ typedef void (^CDUnknownBlockType)(void);
     NSMutableArray *_cachedObjects;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSMutableArray *cachedObjects; // @synthesize cachedObjects=_cachedObjects;
 - (void)removeObject:(id)arg1;
 @property(readonly) long long cacheCount;

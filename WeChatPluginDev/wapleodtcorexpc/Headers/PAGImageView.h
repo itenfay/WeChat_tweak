@@ -35,7 +35,6 @@ typedef void (^CDUnknownBlockType)(void);
 + (unsigned long long)MaxDiskSize;
 + (void)RegisterFlushQueueDestoryMethod;
 + (id)ImageViewFlushQueue;
-- (id).cxx_construct;
 @property(nonatomic) struct CGSize viewSize; // @synthesize viewSize=_viewSize;
 @property(nonatomic) float maxFrameRate; // @synthesize maxFrameRate=_maxFrameRate;
 @property(nonatomic) long long fileHeight; // @synthesize fileHeight=_fileHeight;

@@ -22,7 +22,6 @@
 
 + (id)convertMusicLyricInfos:(id)arg1;
 + (id)infoFromSelectedMusicData:(id)arg1;
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_c29e59e1 backingInfo; // @synthesize backingInfo=_backingInfo;
 @property(retain, nonatomic) NSString *externalMusicID; // @synthesize externalMusicID=_externalMusicID;
 @property(readonly, nonatomic) NSArray *lyricInfos; // @synthesize lyricInfos=_lyricInfos;

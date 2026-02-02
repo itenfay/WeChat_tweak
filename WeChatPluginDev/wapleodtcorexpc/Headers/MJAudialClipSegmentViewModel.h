@@ -7,7 +7,7 @@
 
 @interface MJAudialClipSegmentViewModel
 {
-    vector_8ca568ff _decibels;
+    void * _decibels;
     struct shared_ptr<std::vector<float>> _normalizedDecibelHeights;
     unsigned int _prevSampleCount;
     _Bool _shouldUpdateWaveformProvider;
@@ -16,7 +16,6 @@
     OMCDecibelHeightCalculator *_decibelHeightCalc;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool shouldUpdateWaveformProvider; // @synthesize shouldUpdateWaveformProvider=_shouldUpdateWaveformProvider;
 @property(retain, nonatomic) OMCDecibelHeightCalculator *decibelHeightCalc; // @synthesize decibelHeightCalc=_decibelHeightCalc;
 @property(retain, nonatomic) OMCAudioWaveformProvider *waveformProvider; // @synthesize waveformProvider=_waveformProvider;

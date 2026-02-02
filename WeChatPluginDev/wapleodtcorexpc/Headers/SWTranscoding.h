@@ -40,7 +40,6 @@ typedef void (^CDUnknownBlockType)(void);
     CDStruct_e83c9415 _timeRange;
 }
 
-- (id).cxx_construct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType videoProgressHandler; // @synthesize videoProgressHandler=_videoProgressHandler;
 @property(nonatomic) int intraPeriod; // @synthesize intraPeriod=_intraPeriod;

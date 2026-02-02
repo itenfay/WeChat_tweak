@@ -72,7 +72,6 @@ typedef void (^CDUnknownBlockType)(void);
 + (struct ThreadHost)makeThreadHost:(id)arg1 settings:(void *)arg2;
 + (id)generateThreadLabel:(id)arg1;
 + (_Bool)isProfilerEnabled;
-- (id).cxx_construct;
 @property(nonatomic) CDStruct_60417d04 *embedderAPI; // @synthesize embedderAPI=_embedderAPI;
 @property(nonatomic) _Bool enableEmbedderAPI; // @synthesize enableEmbedderAPI=_enableEmbedderAPI;
 @property(retain, nonatomic) id <NSObject> flutterViewControllerWillDeallocObserver; // @synthesize flutterViewControllerWillDeallocObserver=_flutterViewControllerWillDeallocObserver;

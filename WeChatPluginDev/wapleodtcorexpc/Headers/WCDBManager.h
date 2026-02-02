@@ -60,7 +60,6 @@ typedef void (^CDUnknownBlockType)(void);
 + (id)tryRecordTimeOnChainCall:(CDUnknownBlockType)arg1 ofType:(int)arg2 ofTag:(int)arg3;
 + (void)tryReportCompressionError:(id)arg1;
 + (id)compressRecordPathFor:(long long)arg1;
-- (id).cxx_construct;
 @property _Bool showWhereDatabase; // @synthesize showWhereDatabase=_showWhereDatabase;
 @property(readonly, nonatomic) NSArray *routerInfos; // @synthesize routerInfos=_routerInfos;
 - (void)saveRepairInfo:(id)arg1;

@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KViewOnClickCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onClick:(id)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

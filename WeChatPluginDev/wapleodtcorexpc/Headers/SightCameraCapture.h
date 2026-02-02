@@ -150,7 +150,7 @@ typedef void (^CDUnknownBlockType)(void);
 - (long long)flashMode;
 - (_Bool)supportFlashlightMode;
 - (void)initQRCodeScanner;
-- (void)onQRCodeScanSuccess:(id)arg1 atPoint:(vector_d4107ee0)arg2 originSize:(struct CGSize)arg3;
+- (void)onQRCodeScanSuccess:(id)arg1 atPoint:(void *)arg2 originSize:(struct CGSize)arg3;
 - (void)onNoQRCode;
 - (void)setMiaojianCameraRecordNeedAudio:(_Bool)arg1;
 - (_Bool)switchCameraToPosition:(long long)arg1 needAudio:(_Bool)arg2;

@@ -10,7 +10,6 @@
     struct SharedPtr<plzma::InStream> _inStream;
 }
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)initWithStreams:(id)arg1;
 - (id)initWithDataNoCopy:(id)arg1;

@@ -14,7 +14,6 @@ typedef void (^CDUnknownBlockType)(void);
     CDUnknownBlockType _testSpeedBlock;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool isComplete; // @synthesize isComplete=_isComplete;
 @property(copy, nonatomic) CDUnknownBlockType testSpeedBlock; // @synthesize testSpeedBlock=_testSpeedBlock;
 - (void)forceStopRequest;

@@ -28,7 +28,6 @@ typedef void (^CDUnknownBlockType)(void);
 }
 
 + (long long)optionsForMidiScoreWithSampleRate:(int)arg1;
-- (id).cxx_construct;
 @property(retain, nonatomic) NSString *mapString; // @synthesize mapString=_mapString;
 @property(nonatomic) double reduceRatio; // @synthesize reduceRatio=_reduceRatio;
 @property(nonatomic) long long shiftValue; // @synthesize shiftValue=_shiftValue;

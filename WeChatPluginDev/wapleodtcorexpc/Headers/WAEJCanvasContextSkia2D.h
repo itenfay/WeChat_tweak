@@ -17,7 +17,6 @@
     struct SkPath _path;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) struct SkPath path; // @synthesize path=_path;
 @property(retain, nonatomic) NSMutableArray *states; // @synthesize states=_states;
 @property(nonatomic) sk_sp_ce222020 offscreenSurface; // @synthesize offscreenSurface=_offscreenSurface;
@@ -56,7 +55,7 @@
 - (void)clearRectX:(float)arg1 y:(float)arg2 w:(float)arg3 h:(float)arg4;
 - (void)strokeRectX:(float)arg1 y:(float)arg2 w:(float)arg3 h:(float)arg4;
 - (void)fillRectX:(float)arg1 y:(float)arg2 w:(float)arg3 h:(float)arg4;
-- (vector_8ca568ff)getTransform;
+- (void *)getTransform;
 - (void)setTransformM11:(float)arg1 m12:(float)arg2 m21:(float)arg3 m22:(float)arg4 dx:(float)arg5 dy:(float)arg6;
 - (void)transformM11:(float)arg1 m12:(float)arg2 m21:(float)arg3 m22:(float)arg4 dx:(float)arg5 dy:(float)arg6;
 - (void)resetTransform;

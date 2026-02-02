@@ -9,7 +9,6 @@
 }
 
 + (id)createTitleWithIcon:(id)arg1 count:(long long)arg2;
-- (id).cxx_construct;
 @property(nonatomic) struct WCFinderInteractiveCounts counts; // @synthesize counts=_counts;
 - (void)unembedChildViewController:(id)arg1;
 - (void)embedSubviewFromChildViewController:(id)arg1;

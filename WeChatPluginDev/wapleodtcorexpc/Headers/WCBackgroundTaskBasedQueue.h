@@ -13,7 +13,6 @@ typedef void (^CDUnknownBlockType)(void);
     NSRecursiveLock *_lock;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 - (void)run;
 - (void)dispatchRecursively:(CDUnknownBlockType)arg1;

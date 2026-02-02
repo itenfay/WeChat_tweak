@@ -11,7 +11,6 @@
     struct EffectChain _chain;
 }
 
-- (id).cxx_construct;
 - (float)latencyMs;
 - (void)reset;
 - (_Bool)processWithBuffer:(char *)arg1 bufferLen:(unsigned long long *)arg2;

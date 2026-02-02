@@ -31,7 +31,7 @@
     UIView<YYWebViewInterface> *_webView;
     NSString *_payWalletFunctionID;
     NSMutableDictionary *_dictUrlWebComInfo;
-    vector_0827168c _pIDKeyList;
+    void * _pIDKeyList;
     NSString *_currentShareUrl;
     NSMutableDictionary *_dictUrl2PushStateShareUrl;
     _Bool _banIframeGetA8key;
@@ -52,7 +52,6 @@
     NSString *_firstGetA8KeyReqUrl;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSString *firstGetA8KeyReqUrl; // @synthesize firstGetA8KeyReqUrl=_firstGetA8KeyReqUrl;
 @property(copy, nonatomic) NSString *getA8keySceneNoteTmplId; // @synthesize getA8keySceneNoteTmplId=_getA8keySceneNoteTmplId;
 @property(copy, nonatomic) NSString *getA8keySceneNoteTmplUsername; // @synthesize getA8keySceneNoteTmplUsername=_getA8keySceneNoteTmplUsername;

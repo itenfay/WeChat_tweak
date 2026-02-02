@@ -21,7 +21,6 @@
 }
 
 + (id)createDrawerWithType:(unsigned long long)arg1 context:(id)arg2 coords:(id)arg3;
-- (id).cxx_construct;
 @property(nonatomic) long long textureHeight; // @synthesize textureHeight=_textureHeight;
 @property(nonatomic) long long textureWidth; // @synthesize textureWidth=_textureWidth;
 @property(nonatomic) unsigned int textureCordAttr; // @synthesize textureCordAttr=_textureCordAttr;

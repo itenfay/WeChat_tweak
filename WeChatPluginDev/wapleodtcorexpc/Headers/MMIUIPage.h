@@ -11,7 +11,6 @@
 }
 
 + (id)createAppUipage:(id)arg1;
-- (id).cxx_construct;
 - (void)notify:(id)arg1;
 - (_Bool)inVisibleOnRecently;
 - (_Bool)forceShowInLightMode;

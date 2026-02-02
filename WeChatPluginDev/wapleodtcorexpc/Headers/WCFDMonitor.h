@@ -12,7 +12,6 @@
 }
 
 + (id)shareInstance;
-- (id).cxx_construct;
 - (_Bool)isWCDBPath:(id)arg1;
 - (_Bool)isMMKVPath:(id)arg1;
 - (id)shortenPath:(const char *)arg1;

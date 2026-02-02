@@ -11,7 +11,6 @@
 }
 
 + (id)create;
-- (id).cxx_construct;
 - (id)getStringList:(id)arg1;
 - (id)getLongList:(id)arg1;
 - (id)getBoolList:(id)arg1;

@@ -11,7 +11,6 @@
 }
 
 + (id)FromView:(id)arg1;
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_4c3e2e39 pagSurface; // @synthesize pagSurface=_pagSurface;
 - (void)updateSize;
 - (int)height;

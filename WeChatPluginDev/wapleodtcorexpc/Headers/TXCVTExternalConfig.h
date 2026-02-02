@@ -17,7 +17,6 @@
     Optional_509529bd _upperLimitBitrateHealth;
 }
 
-- (id).cxx_construct;
 @property Optional_509529bd upperLimitBitrateHealth; // @synthesize upperLimitBitrateHealth=_upperLimitBitrateHealth;
 @property Optional_509529bd lowerLimitBitrateHealth; // @synthesize lowerLimitBitrateHealth=_lowerLimitBitrateHealth;
 @property Optional_509529bd enableRestartStrategyFlag; // @synthesize enableRestartStrategyFlag=_enableRestartStrategyFlag;

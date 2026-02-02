@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KSwitchViewOnChangeSwitchCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onChangeSwitch;
 - (id)initWithCpp:(const void *)arg1;
 

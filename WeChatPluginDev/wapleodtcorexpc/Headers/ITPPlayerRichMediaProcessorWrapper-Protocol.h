@@ -17,7 +17,7 @@
 - (int)reset;
 - (int)deselectFeatureAsync:(int)arg1;
 - (int)selectFeatureAsync:(int)arg1 extraRequestInfo:(const struct TPPlayerRichMediaExtraRequestInfo *)arg2;
-- (vector_f4e3e6bf)features;
+- (void *)features;
 - (int)prepareAsync;
 - (int)setRichMediaSource:(NSString *)arg1;
 - (void)setProcessorCallback:(id <ITPPlayerRichMediaProcessorWrapperCallback>)arg1;

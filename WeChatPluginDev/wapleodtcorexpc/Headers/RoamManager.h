@@ -15,7 +15,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
-- (id).cxx_construct;
 - (void)dealloc;
 - (void)setScheduleLevel:(int)arg1;
 - (void)triggerAutoBackupCheck;

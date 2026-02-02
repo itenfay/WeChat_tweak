@@ -18,7 +18,6 @@
     struct XChatCls m_imglabelNPU;
 }
 
-- (id).cxx_construct;
 - (id)getClassificationWithImage:(id)arg1;
 - (id)getIntelligentClsPerfEveryDayId;
 - (void)doReportIntelligentClsPerfEveryDay:(id)arg1 inferenceCost:(float)arg2;

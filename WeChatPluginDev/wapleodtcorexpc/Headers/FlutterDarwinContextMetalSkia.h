@@ -17,7 +17,6 @@
 }
 
 + (sk_sp_f030eba7)createGrContext:(id)arg1 commandQueue:(id)arg2;
-- (id).cxx_construct;
 @property(readonly, nonatomic) struct __CVMetalTextureCache *textureCache; // @synthesize textureCache=_textureCache;
 @property(readonly, nonatomic) sk_sp_f030eba7 resourceContext; // @synthesize resourceContext=_resourceContext;
 @property(readonly, nonatomic) sk_sp_f030eba7 mainContext; // @synthesize mainContext=_mainContext;

@@ -16,7 +16,6 @@ typedef void (^CDUnknownBlockType)(void);
 }
 
 + (id)sessionWithProject:(id)arg1 imageOriginDuration:(CDStruct_1b6d18a9)arg2 minSegmentPreservedDuration:(CDStruct_1b6d18a9)arg3 calcDurationWithAllSegments:(_Bool)arg4;
-- (id).cxx_construct;
 @property(readonly, nonatomic) OMCProject *project; // @synthesize project=_project;
 - (void)exportClipbundleWithCoverImage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)isClipSegmentMutated:(id)arg1 originAssetID:(id)arg2;

@@ -14,7 +14,6 @@
 + (id)FromPixelBuffer:(struct __CVBuffer *)arg1;
 + (id)FromBytes:(const void *)arg1 size:(unsigned long long)arg2;
 + (id)FromPath:(id)arg1;
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_d87a8cf2 pagImage; // @synthesize pagImage=_pagImage;
 - (void)setMatrix:(struct CGAffineTransform)arg1;
 - (struct CGAffineTransform)matrix;

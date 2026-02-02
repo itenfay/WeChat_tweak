@@ -32,7 +32,6 @@ typedef void (^CDUnknownBlockType)(void);
     struct WCFinderShareDataState _flag;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool appendingPlaceholderDataItems; // @synthesize appendingPlaceholderDataItems=_appendingPlaceholderDataItems;
 @property(nonatomic) _Bool hasRequestPlaceholderDataItems; // @synthesize hasRequestPlaceholderDataItems=_hasRequestPlaceholderDataItems;
 @property(copy, nonatomic) NSArray *needCollectionDataItemList; // @synthesize needCollectionDataItemList=_needCollectionDataItemList;

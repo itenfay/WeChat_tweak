@@ -11,7 +11,6 @@ typedef void (^CDUnknownBlockType)(void);
     SharedPtr_b1b13439 _backingService;
 }
 
-- (id).cxx_construct;
 - (SharedPtr_6de59d61)prepareTask:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)cancelProcessingTask:(id)arg1;
 - (id)sendProcessingTask:(id)arg1 withTaskPrepareCompletionHandler:(CDUnknownBlockType)arg2 taskStateUpdateHandler:(CDUnknownBlockType)arg3;

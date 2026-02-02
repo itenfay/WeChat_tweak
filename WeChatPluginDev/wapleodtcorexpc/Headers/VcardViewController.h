@@ -19,7 +19,6 @@
     struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> _mapSoundCellToCellType;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSString *copyedText; // @synthesize copyedText=_copyedText;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) MMVcardItem *vcardItem; // @synthesize vcardItem=_vcardItem;

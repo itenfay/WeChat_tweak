@@ -23,7 +23,6 @@
 + (void)printMat:(struct Mat)arg1;
 + (shared_ptr_8d48a68a)genCVMatWithMatArray:(id)arg1;
 + (shared_ptr_8d48a68a)getTranspose:(shared_ptr_8d48a68a)arg1;
-- (id).cxx_construct;
 - (shared_ptr_8d48a68a)filterWithMeasurement:(shared_ptr_8d48a68a)arg1;
 - (void)resetData;
 - (id)initWithF:(shared_ptr_8d48a68a)arg1 H:(shared_ptr_8d48a68a)arg2 B:(shared_ptr_8d48a68a)arg3 Q:(shared_ptr_8d48a68a)arg4 R:(shared_ptr_8d48a68a)arg5 PInit:(shared_ptr_8d48a68a)arg6 XInit:(shared_ptr_8d48a68a)arg7;

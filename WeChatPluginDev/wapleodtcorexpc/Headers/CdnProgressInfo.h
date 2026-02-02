@@ -17,7 +17,6 @@
     unsigned long long m_nFinishedLegth;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool m_nTryShow; // @synthesize m_nTryShow;
 @property(nonatomic) int m_nStatus; // @synthesize m_nStatus;
 @property(nonatomic) unsigned long long m_nFinishedLegth; // @synthesize m_nFinishedLegth;

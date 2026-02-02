@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::IAsyncTask>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)execute;
 - (id)initWithCpp:(const void *)arg1;
 

@@ -16,7 +16,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
-- (id).cxx_construct;
 - (void)dealloc;
 - (void)requestAdFetchingWithResortAsync:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestAdFetchingWithResortAsync:(CDUnknownBlockType)arg1;

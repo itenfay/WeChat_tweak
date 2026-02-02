@@ -16,7 +16,7 @@
 @property(retain, nonatomic) NSArray *five_points; // @synthesize five_points=_five_points;
 @property(retain, nonatomic) NSString *image; // @synthesize image=_image;
 - (id)initWithImage:(id)arg1 imgPts:(id)arg2 checksum:(id)arg3;
-- (id)initWithImage:(id)arg1 faceShape:(vector_8ca568ff)arg2 checksum:(id)arg3;
+- (id)initWithImage:(id)arg1 faceShape:(void *)arg2 checksum:(id)arg3;
 
 @end
 

@@ -15,7 +15,6 @@
 }
 
 + (Class)layerClass;
-- (id).cxx_construct;
 @property(nonatomic) __weak id <MJAudioWaveformViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)internalClearWaveform;
 - (void)internalDrawWaveform;

@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KScrollViewOnScrollCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onScroll:(float)arg1 y:(float)arg2;
 - (id)initWithCpp:(const void *)arg1;
 

@@ -13,7 +13,6 @@
     map_94801aa5 techeckts;
 }
 
-- (id).cxx_construct;
 - (void)onSendEvent:(id)arg1;
 - (id)convertScenes:(unsigned int)arg1;
 - (void)endRecord:(unsigned int)arg1;

@@ -22,7 +22,6 @@
     _Bool _forceReleaseInBg;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool forceReleaseInBg; // @synthesize forceReleaseInBg=_forceReleaseInBg;
 @property(nonatomic, getter=isEnterBackground) _Bool isEnterBackground; // @synthesize isEnterBackground;
 @property(readonly, nonatomic) EAGLSharegroup *glSharegroup; // @synthesize glSharegroup;

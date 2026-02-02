@@ -18,7 +18,6 @@ typedef void (^CDUnknownBlockType)(void);
     NSMutableDictionary *_views;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSMutableDictionary *views; // @synthesize views=_views;
 @property(nonatomic) unsigned int logCnt; // @synthesize logCnt=_logCnt;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *videoQueue; // @synthesize videoQueue=_videoQueue;

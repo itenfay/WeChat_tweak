@@ -11,7 +11,6 @@
     struct shared_ptr<pag::AnimatorListener> animatorListener;
 }
 
-- (id).cxx_construct;
 - (void)update;
 - (void)cancel;
 - (void)start;

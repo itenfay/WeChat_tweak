@@ -11,7 +11,6 @@
     SharedPtr_8d35978a _backingSession;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) SharedPtr_8d35978a backingSession; // @synthesize backingSession=_backingSession;
 - (void)sendAudioSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (void)sendVideoSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 clockwiseRotation:(int)arg2;

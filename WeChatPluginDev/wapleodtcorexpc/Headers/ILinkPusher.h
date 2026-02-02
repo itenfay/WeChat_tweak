@@ -19,7 +19,6 @@
     shared_ptr_f88d11c8 _ilinkPuhserAudioDataCallback;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool enableCustomAudio; // @synthesize enableCustomAudio=_enableCustomAudio;
 @property(nonatomic) _Bool isInRoom; // @synthesize isInRoom=_isInRoom;
 @property(retain, nonatomic) NSMutableArray *videoPixelBufferList; // @synthesize videoPixelBufferList=_videoPixelBufferList;

@@ -13,7 +13,6 @@
 }
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
-- (id).cxx_construct;
 - (void)dealloc;
 - (void)reportThatSend:(id)arg1;
 - (void)reportThatConsumeSession:(id)arg1;

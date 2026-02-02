@@ -95,7 +95,6 @@ typedef void (^CDUnknownBlockType)(void);
 + (void)updateLoadingView:(id)arg1 bgView:(id)arg2 inView:(id)arg3;
 + (id)createLoadingView:(id)arg1 inView:(id)arg2 insertLoadingViewAtIndexZero:(_Bool)arg3;
 + (id)createLoadingView:(id)arg1 inView:(id)arg2;
-- (id).cxx_construct;
 @property(nonatomic) unsigned int jitLiteMode; // @synthesize jitLiteMode=_jitLiteMode;
 @property(retain, nonatomic) NSMutableDictionary *mbCanvasMap; // @synthesize mbCanvasMap=_mbCanvasMap;
 @property(retain, nonatomic) NSMutableDictionary *mbCaptureInfos; // @synthesize mbCaptureInfos=_mbCaptureInfos;

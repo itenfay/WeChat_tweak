@@ -15,7 +15,6 @@ typedef void (^CDUnknownBlockType)(void);
     struct SharedPtr<XVIPreprocManager> _backingManager;
 }
 
-- (id).cxx_construct;
 - (void)internalStartWithTaskStateUpdateHandler:(CDUnknownBlockType)arg1 progressHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)prepareTasksWithCompletion:(CDUnknownBlockType)arg1;
 - (void)cancelProcessing;

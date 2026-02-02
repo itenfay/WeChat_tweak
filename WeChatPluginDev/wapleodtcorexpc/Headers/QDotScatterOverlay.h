@@ -24,7 +24,7 @@
 - (void)destoryInfoData:(void *)arg1;
 - (void)destoryImpl;
 - (struct ScatterPlotCell **)createScatterData;
-- (vector_59af8ef9)processColorCopy;
+- (void *)processColorCopy;
 - (void *)createInfoData;
 - (void *)createImpl;
 - (void)setNeedsDisplay;

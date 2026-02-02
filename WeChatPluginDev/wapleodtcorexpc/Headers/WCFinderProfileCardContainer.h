@@ -25,7 +25,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (void)updateView:(id)arg1 ty:(long long)arg2 withData:(id)arg3 scene:(unsigned long long)arg4;
 + (_Bool)shouldDisplayViewWithTy:(long long)arg1 withData:(id)arg2;
-- (id).cxx_construct;
 @property(retain, nonatomic) NSMutableSet *exposedItems; // @synthesize exposedItems=_exposedItems;
 @property(retain, nonatomic) NSArray *displayViewArray; // @synthesize displayViewArray=_displayViewArray;
 @property(retain, nonatomic) NSMutableDictionary *viewClassMap; // @synthesize viewClassMap=_viewClassMap;
@@ -44,7 +43,7 @@ typedef void (^CDUnknownBlockType)(void);
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)popCacheView:(Class)arg1;
 - (void)pushCacheView:(id)arg1;
-- (void)updateWithCards:(vector_7cafffa0)arg1;
+- (void)updateWithCards:(void *)arg1;
 - (void)update:(CDUnknownBlockType)arg1;
 - (void)registerViews;
 - (id)initWithFrame:(struct CGRect)arg1 withTheme:(id)arg2 scene:(unsigned long long)arg3;

@@ -43,7 +43,7 @@ typedef void (^CDUnknownBlockType)(void);
 - (void)onPostDataItemFailed:(id)arg1;
 - (void)onPostDataItem:(id)arg1;
 - (id)formatSubTags:(id)arg1;
-- (vector_c9a4c9eb)groupDataItem:(id)arg1 byLayout:(id)arg2;
+- (void *)groupDataItem:(id)arg1 byLayout:(id)arg2;
 - (void)appendDataItems:(id)arg1 layout:(id)arg2;
 - (void)fetchAsyncInfo:(id)arg1 location:(id)arg2;
 - (_Bool)deleteContentVM:(id)arg1;

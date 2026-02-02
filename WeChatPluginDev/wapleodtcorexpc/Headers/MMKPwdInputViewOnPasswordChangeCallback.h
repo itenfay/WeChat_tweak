@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KPwdInputViewOnPasswordChangeCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onPasswordChange:(int)arg1 payPassword:(id)arg2 passwordHashData:(id)arg3;
 - (id)initWithCpp:(const void *)arg1;
 

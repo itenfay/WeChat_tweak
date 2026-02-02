@@ -25,7 +25,6 @@
     optional_865a0c94 _area;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool hasMoveLong; // @synthesize hasMoveLong=_hasMoveLong;
 @property(nonatomic) long long m_startOrientation; // @synthesize m_startOrientation=_m_startOrientation;
 @property(nonatomic) struct CGPoint m_lastPosition; // @synthesize m_lastPosition=_m_lastPosition;

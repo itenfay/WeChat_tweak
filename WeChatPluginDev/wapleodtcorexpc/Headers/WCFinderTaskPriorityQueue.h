@@ -15,7 +15,6 @@ typedef void (^CDUnknownBlockType)(void);
     _Bool _ignoreNonEssentialTasks;
 }
 
-- (id).cxx_construct;
 - (id)createFinderTaskPQTask:(CDUnknownBlockType)arg1 priority:(unsigned long long)arg2 time:(double)arg3 asyncEnd:(_Bool)arg4;
 - (void)ignoreNonEssentialTasks:(_Bool)arg1;
 - (void)clearTasks;

@@ -15,7 +15,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2 refCntManager:(void *)arg3;
 + (id)shareInstance;
-- (id).cxx_construct;
 - (void)dealloc;
 - (_Bool)hasData;
 - (void)getAllStarDataAsync:(unsigned long long)arg1 on:(id)arg2 completion:(CDUnknownBlockType)arg3;

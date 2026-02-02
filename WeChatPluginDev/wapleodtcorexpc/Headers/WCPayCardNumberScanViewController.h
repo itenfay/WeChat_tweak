@@ -50,7 +50,6 @@
 }
 
 + (id)convertBitmapRGBA8ToUIImage:(char *)arg1 withWidth:(int)arg2 withHeight:(int)arg3;
-- (id).cxx_construct;
 @property(nonatomic) _Bool didSetupEngine; // @synthesize didSetupEngine=_didSetupEngine;
 @property(nonatomic) unsigned int beepSound; // @synthesize beepSound=_beepSound;
 @property(retain, nonatomic) MMUILabel *torchLabel; // @synthesize torchLabel=_torchLabel;

@@ -49,7 +49,6 @@
 + (unsigned long long)diffTime:(struct timeval *)arg1 endTime:(struct timeval *)arg2;
 + (void)checkRunloopDuration;
 + (id)shareInstance;
-- (id).cxx_construct;
 @property(retain, nonatomic) WCBlockMonitorConfigHandler *monitorConfigHandler; // @synthesize monitorConfigHandler=_monitorConfigHandler;
 @property(nonatomic) __weak id <WCBlockMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)makeThreadProfile;

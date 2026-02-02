@@ -26,7 +26,6 @@
 
 + (id)getVirsionString;
 + (Class)layerClass;
-- (id).cxx_construct;
 @property _Bool onForeground; // @synthesize onForeground=_onForeground;
 @property shared_ptr_013fd618 app; // @synthesize app=_app;
 @property(nonatomic) int gestureMode; // @synthesize gestureMode=_gestureMode;

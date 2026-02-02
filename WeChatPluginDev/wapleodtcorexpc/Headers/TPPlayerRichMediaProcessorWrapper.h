@@ -13,7 +13,6 @@
     struct TPPlayerRichMediaProcessorCallbackWrapper *_richMediaProcessCallbackWrapper;
 }
 
-- (id).cxx_construct;
 - (int)setPlaybackRate:(float)arg1;
 - (void)setInnerProcessCallback:(id)arg1;
 - (int)seek:(long long)arg1;
@@ -22,7 +21,7 @@
 - (int)getcurrentPositionMs:(long long)arg1 richMediaTypes:(const void *)arg2 featureData:(void *)arg3;
 - (int)deselectFeatureAsync:(int)arg1;
 - (int)selectFeatureAsync:(int)arg1 extraRequestInfo:(const struct TPPlayerRichMediaExtraRequestInfo *)arg2;
-- (vector_f4e3e6bf)features;
+- (void *)features;
 - (int)prepareAsync;
 - (int)setRichMediaSource:(id)arg1;
 - (void)setProcessorCallback:(id)arg1;

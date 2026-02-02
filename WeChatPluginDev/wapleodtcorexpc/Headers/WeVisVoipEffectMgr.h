@@ -26,7 +26,7 @@ typedef void (^CDUnknownBlockType)(void);
     long long lutRosyLutId;
     long long sharpenFilterId;
     long long teethBrightId;
-    basic_string_5909a4e2 filterStrPath;
+    void * filterStrPath;
     long long filterID;
     WeVisPixelBuffer *sdkSrcPixelBuffer;
     WeVisGLTexture *texSdkSrcRGBA;
@@ -132,7 +132,6 @@ typedef void (^CDUnknownBlockType)(void);
     WCLoopMetricsCollector *_liveCaptureMetricsCollector;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) WCLoopMetricsCollector *liveCaptureMetricsCollector; // @synthesize liveCaptureMetricsCollector=_liveCaptureMetricsCollector;
 @property(nonatomic) long long actionConfig; // @synthesize actionConfig=_actionConfig;
 @property(nonatomic) long long trackConfig; // @synthesize trackConfig=_trackConfig;

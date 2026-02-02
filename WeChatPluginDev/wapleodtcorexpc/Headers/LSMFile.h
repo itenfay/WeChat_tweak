@@ -33,7 +33,7 @@
 - (struct LSMFileItem *)fileItemOfFile:(id)arg1;
 - (_Bool)deleteDataOfFile:(id)arg1;
 - (id)dataOfFile:(id)arg1 itemWrap:(struct LSMFileItem **)arg2;
-- (vector_90b82a4e)writeDatas:(id)arg1 toFiles:(id)arg2;
+- (void *)writeDatas:(id)arg1 toFiles:(id)arg2;
 - (struct LSMFileItem *)writeData:(id)arg1 toFile:(id)arg2;
 - (void)tryLoadFromFile;
 - (_Bool)hasLoadedFromFile;

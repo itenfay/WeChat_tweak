@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KCgi>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onResp:(int)arg1 responseData:(id)arg2 extraInfo:(id)arg3;
 - (long long)getNewDNSBusinessType;
 - (id)getRouteInfo;

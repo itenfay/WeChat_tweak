@@ -11,7 +11,6 @@
 }
 
 + (id)Make:(id)arg1 maxFrameRate:(float)arg2 scale:(float)arg3;
-- (id).cxx_construct;
 - (id)frameAtIndex:(long long)arg1;
 - (_Bool)readFrame:(long long)arg1 to:(struct __CVBuffer *)arg2;
 - (_Bool)copyFrameTo:(void *)arg1 rowBytes:(unsigned long long)arg2 at:(long long)arg3;

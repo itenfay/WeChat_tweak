@@ -34,7 +34,6 @@
     long long _m_selectionLimit;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) long long m_selectionLimit; // @synthesize m_selectionLimit=_m_selectionLimit;
 @property(nonatomic) _Bool m_bNotMainTable; // @synthesize m_bNotMainTable=_m_bNotMainTable;
 @property(retain, nonatomic) NSString *m_nsChatName; // @synthesize m_nsChatName=_m_nsChatName;

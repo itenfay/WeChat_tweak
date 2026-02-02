@@ -15,14 +15,13 @@ typedef void (^CDUnknownBlockType)(void);
     double m_clusterThreshold;
     struct TrackerManager m_face_tracker;
     struct XFaceCluster m_face_cluster;
-    vector_8ca568ff m_arrVl2NormFaceCluster;
+    void * m_arrVl2NormFaceCluster;
     _Bool m_isFinishCompleteFaceCluster;
     _Bool m_isHadIntelligentFaceCluster;
     NSMutableArray *m_arrPreFaceCluster;
     CDUnknownBlockType _m_SaveFaceClusterToDbBlock;
 }
 
-- (id).cxx_construct;
 @property(copy, nonatomic) CDUnknownBlockType m_SaveFaceClusterToDbBlock; // @synthesize m_SaveFaceClusterToDbBlock=_m_SaveFaceClusterToDbBlock;
 @property(retain) NSMutableArray *m_arrPreFaceCluster; // @synthesize m_arrPreFaceCluster;
 - (_Bool)isEnableDataReport;

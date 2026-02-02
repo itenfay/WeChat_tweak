@@ -12,7 +12,6 @@
     SharedPtr_43668d6b _backingVideoTrack;
 }
 
-- (id).cxx_construct;
 @property(readonly, nonatomic) SharedPtr_43668d6b backingVideoTrack; // @synthesize backingVideoTrack=_backingVideoTrack;
 @property(readonly, nonatomic) long long averageBitrate;
 @property(readonly, nonatomic) unsigned long long imagePackingType;

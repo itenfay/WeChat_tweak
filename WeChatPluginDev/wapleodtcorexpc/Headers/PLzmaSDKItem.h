@@ -12,7 +12,6 @@
     struct SharedPtr<plzma::Item> _item;
 }
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)initWithItemM:(void *)arg1;
 - (id)initWithPath:(id)arg1 andIndex:(unsigned int)arg2;

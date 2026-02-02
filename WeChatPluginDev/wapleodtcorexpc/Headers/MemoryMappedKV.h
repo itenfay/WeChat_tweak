@@ -68,7 +68,6 @@ typedef void (^CDUnknownBlockType)(void);
 + (void)reportMetaLengthGreater;
 + (void)reportConfirmedLengthFail;
 + (void)reportLengthFail;
-- (id).cxx_construct;
 - (void)filterExpiredKeys;
 - (id)getRawDataWithoutMTimeForKey:(id)arg1;
 - (unsigned int)getExpireTimeForKey:(id)arg1;

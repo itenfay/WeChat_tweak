@@ -13,7 +13,6 @@
     WeakPtr_9998a1eb _bridge;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) __weak SemanticsObject *semanticsObject; // @synthesize semanticsObject=_semanticsObject;
 - (_Bool)accessibilityScroll:(long long)arg1;
 - (id)accessibilityContainer;

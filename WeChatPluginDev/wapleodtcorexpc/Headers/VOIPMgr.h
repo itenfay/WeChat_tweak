@@ -318,7 +318,6 @@ typedef void (^CDUnknownBlockType)(void);
     struct DialReport_t dialReport;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool isPIPDisplaying; // @synthesize isPIPDisplaying=_isPIPDisplaying;
 @property(nonatomic) _Bool shouldCheckLocalCaptureIsActive; // @synthesize shouldCheckLocalCaptureIsActive=_shouldCheckLocalCaptureIsActive;
 @property(nonatomic) double sessionStartUpTime; // @synthesize sessionStartUpTime=_sessionStartUpTime;
@@ -659,7 +658,7 @@ typedef void (^CDUnknownBlockType)(void);
 - (void)SendSpeedTestResultReq:(unsigned long long)arg1 ResultArray:(id)arg2;
 - (void)SendSpeedTestReq;
 - (void)SendRedirectRequest:(unsigned int)arg1 SampleArray:(id)arg2 OldNetType:(unsigned int)arg3 NewNetType:(unsigned int)arg4;
-- (void)SendNewStatReport:(unsigned long long)arg1 memberId:(unsigned int)arg2 dialReport:(id)arg3 channelReport:(id)arg4 engineReport:(id)arg5 engineExtReport:(id)arg6 directConnReport:(vector_bfe5b09a)arg7 relayConnReport:(vector_bfe5b09a)arg8 engineMPReport:(vector_bfe5b09a)arg9 natReport:(list_ea53b405)arg10;
+- (void)SendNewStatReport:(unsigned long long)arg1 memberId:(unsigned int)arg2 dialReport:(id)arg3 channelReport:(id)arg4 engineReport:(id)arg5 engineExtReport:(id)arg6 directConnReport:(void *)arg7 relayConnReport:(void *)arg8 engineMPReport:(void *)arg9 natReport:(list_ea53b405)arg10;
 - (void)SendStatReportRequest;
 - (_Bool)checkRoomIsAliveWhenTalkingWithCompletion:(CDUnknownBlockType)arg1;
 - (void)SendHeartbeatRequest;

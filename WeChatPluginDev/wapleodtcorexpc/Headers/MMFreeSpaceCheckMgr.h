@@ -18,7 +18,7 @@
     unsigned int _eDeviceStorageLevel;
     _Bool _bTipsing;
     unsigned int _lastScanAppSizeTimeStamp;
-    basic_string_5909a4e2 _statfsPath;
+    void * _statfsPath;
     NSURL *_volumnURL;
     MMDiskUsageScaner *_usageScanner;
 }
@@ -26,7 +26,6 @@
 + (id)testFilePath;
 + (id)configPath;
 + (id)workDir;
-- (id).cxx_construct;
 @property(retain, nonatomic) MMDiskUsageScaner *usageScanner; // @synthesize usageScanner=_usageScanner;
 - (void)reportTipsType:(unsigned int)arg1 andTipsOpt:(unsigned int)arg2 important:(_Bool)arg3;
 - (void)goCleanView;

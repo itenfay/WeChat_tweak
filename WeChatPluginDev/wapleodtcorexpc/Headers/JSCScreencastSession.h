@@ -26,7 +26,6 @@
     int _scrollOffsetY;
 }
 
-- (id).cxx_construct;
 - (void)recordingLoop;
 - (void)ackFrame:(int)arg1;
 - (void)stop;

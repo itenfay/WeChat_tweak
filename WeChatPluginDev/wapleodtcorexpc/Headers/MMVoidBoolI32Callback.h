@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::VoidBoolI32Callback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)call:(_Bool)arg1 value2:(int)arg2;
 - (id)initWithCpp:(const void *)arg1;
 

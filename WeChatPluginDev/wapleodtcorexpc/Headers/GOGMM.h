@@ -15,7 +15,6 @@
 
 + (id)sec:(const struct GOGImageFeatureItem *)arg1 v:(const struct GOGVideoFeatureItem *)arg2;
 + (id)qr:(id)arg1;
-- (id).cxx_construct;
 @property(readonly, nonatomic) shared_ptr_34bc0e86 api; // @synthesize api=_api;
 @property(nonatomic) _Bool ignorePdqhash; // @synthesize ignorePdqhash=_ignorePdqhash;
 @property(nonatomic) _Bool ignorePhash; // @synthesize ignorePhash=_ignorePhash;

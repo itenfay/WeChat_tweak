@@ -33,7 +33,7 @@
 - (void)setColorRange:(void *)arg1 option:(id)arg2;
 - (CDStruct_c3b9c2ee)getReferencePoint;
 - (void)buildHeatLayerData:(void *)arg1 option:(id)arg2;
-- (vector_fdbda47e)processNodeDataCopy;
+- (void *)processNodeDataCopy;
 - (void)calculateBoundingRect;
 - (id)getType;
 - (void)destoryImpl;

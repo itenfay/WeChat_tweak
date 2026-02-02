@@ -11,8 +11,8 @@ typedef void (^CDUnknownBlockType)(void);
 @interface TAVSourceSoftEncExportSession
 {
     char *mCameraBuf;
-    vector_1ee95920 pts;
-    vector_1ee95920 dts;
+    void * pts;
+    void * dts;
     _Bool _suspended;
     _Bool _isReaderReady;
     _Bool _canceled;
@@ -45,7 +45,6 @@ typedef void (^CDUnknownBlockType)(void);
     CDStruct_1b6d18a9 _lastAudioTime;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) long long backgroundCount; // @synthesize backgroundCount=_backgroundCount;
 @property(nonatomic) double exportStartTime; // @synthesize exportStartTime=_exportStartTime;
 @property(retain, nonatomic) TAVExportReportData *exportReportData; // @synthesize exportReportData=_exportReportData;

@@ -14,7 +14,6 @@ typedef void (^CDUnknownBlockType)(void);
 }
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
-- (id).cxx_construct;
 - (void)dealloc;
 - (void)getDeviceInfoAsync:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getDeviceInfoAsync:(CDUnknownBlockType)arg1;

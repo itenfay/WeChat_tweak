@@ -39,7 +39,6 @@ typedef void (^CDUnknownBlockType)(void);
 + (void)setABTestConfigWithName:(id)arg1 andValue:(id)arg2;
 + (void)registerScalarFunction:(const struct ScalarFunctionModule *)arg1 named:(id)arg2;
 + (void)setDefaultCipherConfiguration:(int)arg1;
-- (id).cxx_construct;
 - (struct RecyclableHandle)generateHandle:(_Bool)arg1;
 - (id)error;
 - (_Bool)incrementalVacuum:(int)arg1;

@@ -24,7 +24,6 @@
     struct shared_ptr<MMSMUploadFileObserver2> m_observer2;
 }
 
-- (id).cxx_construct;
 - (void)shieldFOOMEnterSafeMode;
 - (id)uploadFileZipName;
 - (id)uploadFileTempPath;

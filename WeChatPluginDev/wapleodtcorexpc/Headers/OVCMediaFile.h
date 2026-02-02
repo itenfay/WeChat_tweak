@@ -17,7 +17,6 @@
     SharedPtr_9e2e1e0b _backingMediaFile;
 }
 
-- (id).cxx_construct;
 @property(readonly, nonatomic) SharedPtr_9e2e1e0b backingMediaFile; // @synthesize backingMediaFile=_backingMediaFile;
 @property(readonly, nonatomic) OVCImageTrack *imageTrack; // @synthesize imageTrack=_imageTrack;
 @property(readonly, nonatomic) OVCVideoTrack *videoTrack; // @synthesize videoTrack=_videoTrack;

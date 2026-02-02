@@ -11,7 +11,6 @@ typedef void (^CDUnknownBlockType)(void);
     SharedPtr_874da711 _backingImageGenerator;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) SharedPtr_874da711 backingImageGenerator; // @synthesize backingImageGenerator=_backingImageGenerator;
 - (void)generateWithLowerThirdID:(id)arg1 userInputData:(id)arg2 maxPointSize:(double)arg3 scaleFactor:(double)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)generateWithLowerThirdID:(id)arg1 userInputData:(id)arg2 imageSize:(struct CGSize)arg3 scaleMode:(unsigned long long)arg4 completionHandler:(CDUnknownBlockType)arg5;

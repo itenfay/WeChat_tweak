@@ -14,7 +14,6 @@
     NSString *_cgiSettingFilePath;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSString *cgiSettingFilePath; // @synthesize cgiSettingFilePath=_cgiSettingFilePath;
 @property(retain, nonatomic) WeVisEffectConfigResponse *localSettingInfo; // @synthesize localSettingInfo=_localSettingInfo;
 - (_Bool)cgiEnable;

@@ -13,7 +13,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (_Bool)isLocalTemplateExistsWithTemplateID:(id)arg1 version:(unsigned long long)arg2 environmentCachesDirectory:(id)arg3;
 + (_Bool)registerLocalTemplateWithTemplateID:(id)arg1 version:(unsigned long long)arg2 filePath:(id)arg3 environmentCachesDirectory:(id)arg4 error:(id *)arg5;
-- (id).cxx_construct;
 @property(nonatomic) SharedPtr_8810e4e6 backingResourceManager; // @synthesize backingResourceManager=_backingResourceManager;
 - (void)cancelSelectAndLoadMusic;
 - (void)selectAndLoadMusicWithMusicIDs:(id)arg1 progressHandler:(CDUnknownBlockType)arg2 musicCompletionHandler:(CDUnknownBlockType)arg3;

@@ -13,7 +13,6 @@
 }
 
 + (id)copyFromCVPixelBuffer:(struct __CVBuffer *)arg1;
-- (id).cxx_construct;
 @property(nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(nonatomic) unsigned long long width; // @synthesize width=_width;
 - (char *)dataPtr;

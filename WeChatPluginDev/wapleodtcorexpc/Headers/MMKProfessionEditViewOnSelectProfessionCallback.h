@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KProfessionEditViewOnSelectProfessionCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onSelectProfession:(id)arg1 professionType:(int)arg2;
 - (id)initWithCpp:(const void *)arg1;
 

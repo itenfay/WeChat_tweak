@@ -15,7 +15,6 @@
     CDStruct_1b6d18a9 _minSegmentPreservedDuration;
 }
 
-- (id).cxx_construct;
 @property(readonly, nonatomic) OMCStoryline *storyline; // @synthesize storyline=_storyline;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 minSegmentPreservedDuration; // @synthesize minSegmentPreservedDuration=_minSegmentPreservedDuration;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 imageOriginDuration; // @synthesize imageOriginDuration=_imageOriginDuration;

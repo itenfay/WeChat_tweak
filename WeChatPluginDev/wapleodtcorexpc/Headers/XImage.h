@@ -37,7 +37,6 @@ typedef void (^CDUnknownBlockType)(void);
 + (long long)getYuvMatrixWithPixelBuffer:(struct __CVBuffer *)arg1;
 + (long long)getYuvRangeWithPixelBuffer:(struct __CVBuffer *)arg1;
 + (long long)getYuvColorPrimariesWithPixelBuffer:(struct __CVBuffer *)arg1;
-- (id).cxx_construct;
 @property(retain, nonatomic) id <MTLEvent> eventToWait; // @synthesize eventToWait=_eventToWait;
 @property(copy, nonatomic) CDUnknownBlockType notifyUseCompletedBlock; // @synthesize notifyUseCompletedBlock=_notifyUseCompletedBlock;
 @property(readonly, nonatomic) _Bool isHDR10; // @synthesize isHDR10=_isHDR10;

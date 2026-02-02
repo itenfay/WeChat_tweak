@@ -22,7 +22,6 @@ typedef void (^CDUnknownBlockType)(void);
     struct CGSize _maxPixelSize;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) struct CGSize maxPixelSize; // @synthesize maxPixelSize=_maxPixelSize;
 - (void)reopen;
 @property(readonly, nonatomic) OMJID *segmentID;

@@ -8,12 +8,12 @@
 @interface ActionLivenessState
 {
     void *faceCheckLivePose;
-    vector_8ca568ff bestImgShape;
+    void * bestImgShape;
     struct Mat eyeImg;
     struct Mat mouthImg;
-    vector_8ca568ff eyeShape;
-    vector_8ca568ff mouthShape;
-    vector_083faa51 currentFrameList;
+    void * eyeShape;
+    void * mouthShape;
+    void * currentFrameList;
     struct Mat currentBestFrame;
     YTVideoRecorder *videoRecorder;
     NSString *videoPath;
@@ -47,7 +47,6 @@
     struct YTPOSE *_facePose;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool ActionFinished; // @synthesize ActionFinished=_ActionFinished;
 @property(nonatomic) struct YTPOSE *facePose; // @synthesize facePose=_facePose;
 @property(nonatomic) _Bool canTransitToReflect; // @synthesize canTransitToReflect=_canTransitToReflect;
@@ -66,16 +65,16 @@
 - (void)sendUIEvent;
 - (void)resetPoseDetect;
 - (_Bool)changeToNextAction;
-- (int)poseDetect:(vector_8ca568ff)arg1 visVec:(vector_8ca568ff)arg2 poseType:(int)arg3 matRgb:(struct Mat)arg4 pitch:(float)arg5 yaw:(float)arg6 roll:(float)arg7;
+- (int)poseDetect:(void *)arg1 visVec:(void *)arg2 poseType:(int)arg3 matRgb:(struct Mat)arg4 pitch:(float)arg5 yaw:(float)arg6 roll:(float)arg7;
 - (int)handleActionFinished:(long long)arg1;
 - (void)update:(struct Mat)arg1 withTimeStamp:(unsigned long long)arg2;
 - (void)reset;
 - (void)enter;
 - (void)unload;
 - (void)loadWithName:(id)arg1 withSDKConfigData:(id)arg2;
-- (vector_8ca568ff)covnertFaceShape:(void *)arg1;
-- (void)addFaceShapePoint:(vector_4c9ad6d1)arg1 withFacePoints:(void *)arg2;
-- (vector_083faa51)convertMatList:(void *)arg1;
+- (void *)covnertFaceShape:(void *)arg1;
+- (void)addFaceShapePoint:(void *)arg1 withFacePoints:(void *)arg2;
+- (void *)convertMatList:(void *)arg1;
 - (struct Mat)convertMat:(void *)arg1;
 
 @end

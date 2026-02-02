@@ -29,7 +29,6 @@ typedef void (^CDUnknownBlockType)(void);
     unsigned long long _audioVolumeEvaluationInterval;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) unsigned long long audioVolumeEvaluationInterval; // @synthesize audioVolumeEvaluationInterval=_audioVolumeEvaluationInterval;
 @property(nonatomic) __weak id <TXAudioCustomProcessDelegate> audioProcessDelegate; // @synthesize audioProcessDelegate=_audioProcessDelegate;
 @property(nonatomic) __weak id <TXVideoCustomProcessDelegate> videoProcessDelegate; // @synthesize videoProcessDelegate=_videoProcessDelegate;

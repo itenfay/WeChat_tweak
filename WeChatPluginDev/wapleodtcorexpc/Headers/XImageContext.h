@@ -25,7 +25,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (id)builtInShaderPath;
 + (id)context;
-- (id).cxx_construct;
 - (void)dispatchAsync:(CDUnknownBlockType)arg1;
 - (void)dispatchSync:(CDUnknownBlockType)arg1;
 - (struct __CVBuffer *)createPixelBuffer:(unsigned int)arg1 width:(int)arg2 height:(int)arg3;

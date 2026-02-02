@@ -26,7 +26,6 @@ typedef void (^CDUnknownBlockType)(void);
 }
 
 + (void)setAudioRoute:(long long)arg1;
-- (id).cxx_construct;
 @property(nonatomic) _Bool isAutoPlay; // @synthesize isAutoPlay=_isAutoPlay;
 @property(nonatomic) __weak id <TXLiveRecordListener> recordDelegate; // @synthesize recordDelegate=_recordDelegate;
 @property(copy, nonatomic) TXLivePlayConfig *config; // @synthesize config=_config;

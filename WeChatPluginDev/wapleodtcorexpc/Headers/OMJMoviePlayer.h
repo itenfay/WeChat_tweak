@@ -19,7 +19,6 @@ typedef void (^CDUnknownBlockType)(void);
     CDStruct_e83c9415 _timeRange;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_85cde1ea backingRenderView; // @synthesize backingRenderView=_backingRenderView;
 @property(nonatomic) shared_ptr_c90976e0 backingPlayer; // @synthesize backingPlayer=_backingPlayer;
 @property(nonatomic) _Bool isAudioEnabled; // @synthesize isAudioEnabled=_isAudioEnabled;

@@ -41,7 +41,6 @@ typedef void (^CDUnknownBlockType)(void);
 + (id)createPublisherSessionMetricsWithEntryType:(id)arg1 enterScene:(unsigned long long)arg2 parentEnterScene:(unsigned long long)arg3;
 + (id)createPublisherSessionMetricsWithEntryType:(id)arg1;
 + (void)initMetricsReportingWithLogPath:(id)arg1 metricsReportingHandler:(CDUnknownBlockType)arg2;
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_32a93604 backingMaasCore; // @synthesize backingMaasCore=_backingMaasCore;
 @property(retain, nonatomic) OMJMovieComposingSession *movieComposingSession; // @synthesize movieComposingSession=_movieComposingSession;
 @property(retain, nonatomic) OMJMoviePlayer *moviePlayer; // @synthesize moviePlayer=_moviePlayer;

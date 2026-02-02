@@ -39,7 +39,6 @@
 + (void *)_ptr_to_func_makeBuffer;
 + (void *)_ptr_to_func_makePass;
 + (void *)_ptr_to_func_createNativeBuffer;
-- (id).cxx_construct;
 - (void)loadPixelsFromCGImage:(struct CGImage *)arg1 dst:(void *)arg2;
 - (struct OpaqueJSValue *)_func_decodeImage:(struct OpaqueJSContext *)arg1 argc:(unsigned long long)arg2 argv:(const struct OpaqueJSValue **)arg3 exception:(const struct OpaqueJSValue **)arg4;
 - (struct OpaqueJSValue *)_func_queryPipelineState:(struct OpaqueJSContext *)arg1 argc:(unsigned long long)arg2 argv:(const struct OpaqueJSValue **)arg3 exception:(const struct OpaqueJSValue **)arg4;

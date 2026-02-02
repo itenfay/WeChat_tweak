@@ -36,7 +36,6 @@ typedef void (^CDUnknownBlockType)(void);
 + (id)sharedInstance;
 + (void)setNetEnv:(int)arg1;
 + (void)load;
-- (id).cxx_construct;
 @property(retain, nonatomic) NSMutableArray *trtcSubClouds; // @synthesize trtcSubClouds=_trtcSubClouds;
 @property(nonatomic) __weak TRTCCloud *mainCloud; // @synthesize mainCloud=_mainCloud;
 @property(nonatomic) int screenStreamType; // @synthesize screenStreamType=_screenStreamType;

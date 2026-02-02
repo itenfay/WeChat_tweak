@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::IUIModal>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (_Bool)inVisibleOnRecently;
 - (float)animationCutLinePosition;
 - (_Bool)forceShowInLightMode;

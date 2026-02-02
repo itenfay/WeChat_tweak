@@ -21,7 +21,6 @@
 
 + (void)GlobalRelease;
 + (int)GlobalInit;
-- (id).cxx_construct;
 @property(nonatomic) CDStruct_0edc81f6 trackResInfo; // @synthesize trackResInfo=_trackResInfo;
 @property(nonatomic) struct YTPOSE facePose; // @synthesize facePose=_facePose;
 @property(nonatomic) struct CGRect faceRect; // @synthesize faceRect=_faceRect;
@@ -29,7 +28,7 @@
 - (id)facePointsInImage:(struct Mat)arg1 withRect:(struct CGRect)arg2;
 - (CDStruct_0edc81f6)getTrackInfo;
 - (id)getPtsFromFaceShape:(struct TC_FaceShape)arg1 withFacePoints:(void *)arg2;
-- (struct CGRect)generateFaceRect:(vector_4c9ad6d1)arg1 imageWidth:(int)arg2 imageHeight:(int)arg3;
+- (struct CGRect)generateFaceRect:(void *)arg1 imageWidth:(int)arg2 imageHeight:(int)arg3;
 - (id)faceRectsWithImage:(struct Mat)arg1;
 - (void)dealloc;
 - (id)initWith:(_Bool)arg1;

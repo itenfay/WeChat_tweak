@@ -22,7 +22,6 @@ typedef void (^CDUnknownBlockType)(void);
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
-- (id).cxx_construct;
 - (void)dealloc;
 - (_Bool)hasInit;
 - (void)callOnDeleteNoti:(unsigned long long)arg1 username:(id)arg2 svrId:(unsigned long long)arg3;

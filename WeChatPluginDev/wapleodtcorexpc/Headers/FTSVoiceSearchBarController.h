@@ -36,7 +36,6 @@
     NSString *_latestCompeleteWebSearchQuery;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool disableRawQuerySug; // @synthesize disableRawQuerySug=_disableRawQuerySug;
 @property(nonatomic) _Bool isFromVoice; // @synthesize isFromVoice=_isFromVoice;
 @property(copy, nonatomic) NSString *latestCompeleteWebSearchQuery; // @synthesize latestCompeleteWebSearchQuery=_latestCompeleteWebSearchQuery;

@@ -11,7 +11,6 @@
     Get3rdDnsReq *get3rdDnsReq;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) Get3rdDnsReq *get3rdDnsReq; // @synthesize get3rdDnsReq;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;
 - (void)didGetResponse:(id)arg1;

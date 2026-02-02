@@ -15,7 +15,6 @@
 + (id)FromCVPixelBuffer:(struct __CVBuffer *)arg1 context:(id)arg2;
 + (id)FromCVPixelBuffer:(struct __CVBuffer *)arg1;
 + (id)FromLayer:(id)arg1;
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_d7de483d pagSurface; // @synthesize pagSurface=_pagSurface;
 - (_Bool)copyPixelsTo:(void *)arg1 rowBytes:(unsigned long long)arg2;
 - (struct __CVBuffer *)makeSnapshot;

@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KViewOnTouchCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onTouch:(id)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

@@ -27,7 +27,6 @@ typedef void (^CDUnknownBlockType)(void);
     CDUnknownBlockType _preloadCompleteBlock;
 }
 
-- (id).cxx_construct;
 @property(copy, nonatomic) CDUnknownBlockType preloadCompleteBlock; // @synthesize preloadCompleteBlock=_preloadCompleteBlock;
 @property(copy, nonatomic) CDUnknownBlockType downloadCompleteBlock; // @synthesize downloadCompleteBlock=_downloadCompleteBlock;
 @property(copy, nonatomic) CDUnknownBlockType fastCompleteBlock; // @synthesize fastCompleteBlock=_fastCompleteBlock;

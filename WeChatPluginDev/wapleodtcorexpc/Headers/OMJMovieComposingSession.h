@@ -11,7 +11,6 @@ typedef void (^CDUnknownBlockType)(void);
     SharedPtr_d86e1db6 _backingSession;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) SharedPtr_d86e1db6 backingSession; // @synthesize backingSession=_backingSession;
 - (void)teardownWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startupWithcompletionHandler:(CDUnknownBlockType)arg1;

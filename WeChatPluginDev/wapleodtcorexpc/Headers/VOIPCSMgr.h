@@ -148,7 +148,6 @@ typedef void (^CDUnknownBlockType)(void);
     struct DialReport_t _dialReport;
 }
 
-- (id).cxx_construct;
 @property(copy, nonatomic) CDUnknownBlockType m_endEventBlock; // @synthesize m_endEventBlock=_m_endEventBlock;
 @property _Bool bForceKeyFrame; // @synthesize bForceKeyFrame=_bForceKeyFrame;
 @property int mLeftHWEncFrms; // @synthesize mLeftHWEncFrms=_mLeftHWEncFrms;

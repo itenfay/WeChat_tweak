@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KTableViewCellManager>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (id)getEditActions;
 - (id)getView;
 - (id)initWithCpp:(const void *)arg1;

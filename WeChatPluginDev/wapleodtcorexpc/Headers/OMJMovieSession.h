@@ -21,7 +21,6 @@ typedef void (^CDUnknownBlockType)(void);
     shared_ptr_85cde1ea _backingRenderView;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) shared_ptr_85cde1ea backingRenderView; // @synthesize backingRenderView=_backingRenderView;
 @property(nonatomic) SharedPtr_4dc38317 backingSession; // @synthesize backingSession=_backingSession;
 @property(nonatomic) __weak id <OMJMovieSessionComposingDelegate> composingDelegate; // @synthesize composingDelegate=_composingDelegate;

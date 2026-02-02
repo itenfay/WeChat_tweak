@@ -33,7 +33,6 @@ typedef void (^CDUnknownBlockType)(void);
     NSOperationQueue *_operationQueue;
 }
 
-- (id).cxx_construct;
 - (void)logWriterStatus;
 - (_Bool)writeVideoSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (int)writeVideoFrame:(unique_ptr_4b64f7fb)arg1 duration:(long long)arg2;

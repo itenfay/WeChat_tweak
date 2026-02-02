@@ -18,7 +18,7 @@
 
 @property(nonatomic) __weak NSObject<MMQRCodeScannerDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
-- (void)printArray:(vector_d4107ee0)arg1;
+- (void)printArray:(void *)arg1;
 - (id)getStringFromUTF8Bytes:(const char *)arg1 LENGTH:(int)arg2;
 - (void)scanVideoSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (void)stopQRScan;

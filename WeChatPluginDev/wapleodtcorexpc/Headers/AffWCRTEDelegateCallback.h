@@ -10,7 +10,6 @@
     struct weak_ptr<zidl::ZServerInvoker> server_invoker_;
 }
 
-- (id).cxx_construct;
 - (void)onSayHelloComplete:(unsigned long long)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

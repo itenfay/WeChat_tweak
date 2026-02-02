@@ -19,7 +19,6 @@ typedef void (^CDUnknownBlockType)(void);
     struct XMutexPOSIX _mutex;
 }
 
-- (id).cxx_construct;
 - (void)cancelAllTasks;
 - (void)cancelTask:(long long)arg1;
 - (void)onRequestCompleteForTimeRange:(struct XTMTimeRange)arg1 resultHandler:(CDUnknownBlockType)arg2 resultType:(int)arg3 videoFrame:(SharedPtr_43d2f63a)arg4 taskID:(unsigned int)arg5;

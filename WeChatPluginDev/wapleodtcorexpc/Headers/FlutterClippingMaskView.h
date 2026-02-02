@@ -11,7 +11,6 @@
     struct CATransform3D _reverseScreenScale;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) struct CATransform3D reverseScreenScale; // @synthesize reverseScreenScale=_reverseScreenScale;
 - (CFRef_9a097741)getTransformedPath:(struct CGPath *)arg1 matrix:(struct CATransform3D)arg2;
 - (void)clipPath:(const void *)arg1 matrix:(const struct SkMatrix *)arg2;

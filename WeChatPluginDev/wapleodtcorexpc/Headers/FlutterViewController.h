@@ -66,7 +66,6 @@ typedef void (^CDUnknownBlockType)(void);
 + (_Bool)isUIAccessibilityIsVoiceOverRunning;
 + (_Bool)accessibilityIsOnOffSwitchLabelsEnabled;
 + (_Bool)automaticallyNotifiesObserversOfDisplayingFlutterUI;
-- (id).cxx_construct;
 @property(retain, nonatomic) FlutterKeyboardManager *keyboardManager; // @synthesize keyboardManager=_keyboardManager;
 @property(readonly, nonatomic) _Bool isVoiceOverRunning; // @synthesize isVoiceOverRunning=_isVoiceOverRunning;
 @property(retain, nonatomic) UIRotationGestureRecognizer *rotationGestureRecognizer; // @synthesize rotationGestureRecognizer=_rotationGestureRecognizer;

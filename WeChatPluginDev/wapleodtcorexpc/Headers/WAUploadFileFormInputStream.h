@@ -14,15 +14,14 @@
     unsigned long long _curOffset;
     unsigned long long _contentLength;
     NSString *_boundary;
-    basic_string_5909a4e2 _headerData;
+    void * _headerData;
     int _headerDataLength;
-    basic_string_5909a4e2 _endData;
+    void * _endData;
     int _endDataLength;
     unsigned long long streamStatus;
     NSError *streamError;
 }
 
-- (id).cxx_construct;
 - (void)setStreamError:(id)arg1;
 - (id)streamError;
 - (void)setStreamStatus:(unsigned long long)arg1;

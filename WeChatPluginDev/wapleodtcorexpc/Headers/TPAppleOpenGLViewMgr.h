@@ -25,7 +25,6 @@
     struct TPRendererConfigs _configs;
 }
 
-- (id).cxx_construct;
 @property _Bool isInBackground; // @synthesize isInBackground=_isInBackground;
 @property _Bool backgroundRenderingEnabled; // @synthesize backgroundRenderingEnabled=_backgroundRenderingEnabled;
 @property(nonatomic) _Bool contentModeObserved; // @synthesize contentModeObserved=_contentModeObserved;

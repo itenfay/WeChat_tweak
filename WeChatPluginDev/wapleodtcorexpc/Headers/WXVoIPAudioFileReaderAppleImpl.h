@@ -32,7 +32,6 @@
 
 + (_Bool)isFileUrl:(id)arg1;
 + (_Bool)isNetStream:(id)arg1;
-- (id).cxx_construct;
 @property(retain, nonatomic) WXVoIPAudioFileExtensionRepairer *fileRepairer; // @synthesize fileRepairer=_fileRepairer;
 @property(nonatomic) long long retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) long long startTimeMs; // @synthesize startTimeMs=_startTimeMs;

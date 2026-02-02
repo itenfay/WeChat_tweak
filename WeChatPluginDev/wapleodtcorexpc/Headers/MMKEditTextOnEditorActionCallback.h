@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KEditTextOnEditorActionCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onEditorAction:(long long)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

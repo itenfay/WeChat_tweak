@@ -10,7 +10,6 @@
     struct SharedPtr<XMFAudioWaveformGenF32> _backingGen;
 }
 
-- (id).cxx_construct;
 - (const void *)outputSamples;
 - (void)reset;
 - (void)updateWithPCMData:(const float *)arg1 length:(unsigned long long)arg2;

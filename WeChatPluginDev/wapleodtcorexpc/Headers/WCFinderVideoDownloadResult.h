@@ -11,7 +11,6 @@
 }
 
 + (id)videoDownloadResult:(const void *)arg1;
-- (id).cxx_construct;
 @property(nonatomic) struct C2CDownloadResult result; // @synthesize result=_result;
 
 @end

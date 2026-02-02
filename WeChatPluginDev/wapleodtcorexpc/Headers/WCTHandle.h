@@ -16,7 +16,6 @@ typedef void (^CDUnknownBlockType)(void);
     _Bool _writeHint;
 }
 
-- (id).cxx_construct;
 - (_Bool)lazyRunTransaction:(CDUnknownBlockType)arg1;
 - (id)error;
 - (void)detachCancellationSignal;

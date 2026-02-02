@@ -8,7 +8,6 @@
     struct SharedPtr<XMJStickerSegment> _backingStickerSegment;
 }
 
-- (id).cxx_construct;
 - (id)initWithBackingSegment:(const void *)arg1;
 
 @end

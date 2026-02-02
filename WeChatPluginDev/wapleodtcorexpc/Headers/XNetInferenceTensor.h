@@ -13,7 +13,6 @@
     NSMutableData *_data;
 }
 
-- (id).cxx_construct;
 - (void *)bufferPtr;
 - (_Bool)setDataWithBufferPtr:(const void *)arg1 length:(unsigned int)arg2;
 - (void)setObjects:(id)arg1;

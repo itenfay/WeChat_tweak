@@ -8,7 +8,6 @@
     struct SharedPtr<XMJTextSegment> _backingTextSegment;
 }
 
-- (id).cxx_construct;
 - (id)description;
 - (_Bool)setSpatialInfo:(id)arg1 shouldCommit:(_Bool)arg2;
 - (id)spatialInfo;

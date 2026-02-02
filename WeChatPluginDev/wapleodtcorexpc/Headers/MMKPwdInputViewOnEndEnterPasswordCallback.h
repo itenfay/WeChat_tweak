@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KPwdInputViewOnEndEnterPasswordCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onEndEnterPassword:(id)arg1 passwordHashData:(id)arg2;
 - (id)initWithCpp:(const void *)arg1;
 

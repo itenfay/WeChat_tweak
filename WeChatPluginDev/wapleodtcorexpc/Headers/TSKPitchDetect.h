@@ -10,7 +10,6 @@
     struct unique_ptr<audiobase::dsp::PitchDetect, std::default_delete<audiobase::dsp::PitchDetect>> _pd;
 }
 
-- (id).cxx_construct;
 - (id)nonRealTimePitchsAligned5Ms;
 - (id)nonRealTimePitchs;
 - (void)stopTask;

@@ -11,9 +11,9 @@ typedef void (^CDUnknownBlockType)(void);
 @interface LiteAppEmbedViewController
 {
     struct shared_ptr<LVUICallback> lvUICallback;
-    basic_string_5909a4e2 _sourceType;
-    vector_bfe5b09a _enableActions;
-    vector_bfe5b09a _enableViews;
+    void * _sourceType;
+    void * _enableActions;
+    void * _enableViews;
     _Bool isHiddenHomeIndicator;
     _Bool _isTransparent;
     _Bool _isPopGestureEnable;
@@ -47,7 +47,6 @@ typedef void (^CDUnknownBlockType)(void);
     struct PageInfo _currentPageInfo;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) _Bool hasCheckCoreText; // @synthesize hasCheckCoreText=_hasCheckCoreText;
 @property(nonatomic) struct CGSize delayUpdateSize; // @synthesize delayUpdateSize=_delayUpdateSize;
 @property(nonatomic) struct CGSize lastSize; // @synthesize lastSize=_lastSize;

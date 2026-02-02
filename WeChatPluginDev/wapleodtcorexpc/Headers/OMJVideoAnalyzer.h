@@ -10,7 +10,6 @@
     struct shared_ptr<XMJVideoAnalyzer> _backingAnalyzer;
 }
 
-- (id).cxx_construct;
 - (id)calculateClassifyResult:(id *)arg1;
 - (_Bool)feedAudioData:(id)arg1 error:(id *)arg2;
 - (_Bool)feedVideoFrameWithImage:(id)arg1 startTime:(CDStruct_1b6d18a9)arg2 error:(id *)arg3;

@@ -8,12 +8,11 @@
 @interface SimpleChatLogInfo
 {
     shared_ptr_09342520 m_dataItem;
-    vector_d88869c6 m_multiDataItem;
+    void * m_multiDataItem;
     FavoritesItemDataField *_m_dataField;
     CMessageWrap *_m_dataMsg;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) CMessageWrap *m_dataMsg; // @synthesize m_dataMsg=_m_dataMsg;
 @property(retain, nonatomic) FavoritesItemDataField *m_dataField; // @synthesize m_dataField=_m_dataField;
 - (id)getDataBackgroundColor;

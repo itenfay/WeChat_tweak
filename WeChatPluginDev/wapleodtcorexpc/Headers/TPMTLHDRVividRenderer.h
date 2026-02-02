@@ -16,7 +16,6 @@
     struct TPHDRVividToneMappingParams _hdrVividParams;
 }
 
-- (id).cxx_construct;
 @property struct TPHDRDeviceInfo displayDeviceInfo; // @synthesize displayDeviceInfo=_displayDeviceInfo;
 @property struct TPHDRVividToneMappingParams hdrVividParams; // @synthesize hdrVividParams=_hdrVividParams;
 @property struct TPHDRVividMetadataProcessor *hdrVividProcessor; // @synthesize hdrVividProcessor=_hdrVividProcessor;

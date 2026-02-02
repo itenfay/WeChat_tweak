@@ -11,7 +11,6 @@
     struct EffectAnalysisChain _chain;
 }
 
-- (id).cxx_construct;
 - (_Bool)calculateLoudness:(double *)arg1;
 - (_Bool)processWithBuffer:(char *)arg1 bufferLen:(unsigned long long *)arg2;
 - (_Bool)loadEffectConfigParser:(id)arg1 effectSpec:(id)arg2;

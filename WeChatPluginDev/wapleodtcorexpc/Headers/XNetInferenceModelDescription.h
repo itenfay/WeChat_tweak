@@ -12,7 +12,6 @@
     struct ModelDesc _underlying;
 }
 
-- (id).cxx_construct;
 @property(readonly, nonatomic) NSDictionary *outputs;
 @property(readonly, nonatomic) NSDictionary *inputs;
 - (id)initWithInputs:(id)arg1 outputs:(id)arg2;

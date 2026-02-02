@@ -7,12 +7,11 @@
 
 @interface FPManager
 {
-    basic_string_5909a4e2 devToken;
+    void * devToken;
     unsigned int fpcgi_count;
     _Bool isRefreshWaiting;
 }
 
-- (id).cxx_construct;
 - (id)getLKID;
 - (id)getWAID;
 - (void)handleFpExtids:(id)arg1;

@@ -13,7 +13,6 @@
     NSObject *_value;
 }
 
-- (id).cxx_construct;
 - (_Bool)execute;
 - (id)toRow:(id)arg1;
 - (id)toValue:(id)arg1;

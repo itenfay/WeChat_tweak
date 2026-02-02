@@ -9,7 +9,7 @@
 
 @interface MultiArrayFeatureProvider : NSObject
 {
-    const vector_1994dafb *_inputs;
+    const void * *_inputs;
     NSSet *_featureNames;
     int _coreMlVersion;
 }
@@ -17,7 +17,7 @@
 @property(readonly, nonatomic) int coreMlVersion; // @synthesize coreMlVersion=_coreMlVersion;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;
-- (id)initWithInputs:(const vector_1994dafb *)arg1 coreMlVersion:(int)arg2;
+- (id)initWithInputs:(const void * *)arg1 coreMlVersion:(int)arg2;
 
 @end
 

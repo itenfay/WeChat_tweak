@@ -13,7 +13,6 @@
 + (id)create:(id)arg1 dependency:(id)arg2;
 + (id)makeLiteAppReporterWithoutAppId;
 + (id)makeLiteAppReporter:(id)arg1;
-- (id).cxx_construct;
 - (void)setVersion:(id)arg1;
 - (id)getVersion;
 - (void)setAppId:(id)arg1;

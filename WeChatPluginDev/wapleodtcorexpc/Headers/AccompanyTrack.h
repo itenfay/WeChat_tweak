@@ -10,7 +10,6 @@
     struct AccompanyTrack _accompanyTrack;
 }
 
-- (id).cxx_construct;
 - (_Bool)processWithTrackIndex:(unsigned long long)arg1 TrackInfo:(id)arg2 Buffer:(short *)arg3 BufLen:(unsigned long long)arg4 Gain:(float)arg5;
 - (_Bool)initWithTrackInfos:(id)arg1;
 

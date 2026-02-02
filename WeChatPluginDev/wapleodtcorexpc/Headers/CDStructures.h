@@ -119,36 +119,36 @@ struct AffRoamProviderDispatcherCallback;
 
 struct AffStarDataManagerCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct AffStarDataManagerDispatcher;
 
 struct AffStarManagerCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct AffStarManagerDispatcher;
 
 struct AffStarOptManagerCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct AffStarOptManagerDispatcher;
 
 struct AffStarSyncManagerCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct AffStarSyncManagerDispatcher;
@@ -579,73 +579,73 @@ struct BundleLoadIDKey {
 
 struct C2CDownloadRequest {
     struct shared_ptr<mars::cdn::TaskCallback> sp_callback;
-    basic_string_5909a4e2 debugip;
-    basic_string_5909a4e2 authkey;
-    basic_string_5909a4e2 filekey;
-    basic_string_5909a4e2 fileid;
-    basic_string_5909a4e2 aeskey;
-    basic_string_5909a4e2 savepath;
+    void * debugip;
+    void * authkey;
+    void * filekey;
+    void * fileid;
+    void * aeskey;
+    void * savepath;
     int filetype;
     int apptype;
     int bizid;
     _Bool needreport;
     void *user_context;
-    basic_string_5909a4e2 arg_info;
+    void * arg_info;
     int queue_timeout_seconds;
     int transfor_timeout_seconds;
     unsigned int chatnum;
     int chattype;
-    basic_string_5909a4e2 expected_filemd5;
+    void * expected_filemd5;
     unsigned long long expected_filesize;
     unsigned int statefile_keep_hours;
-    basic_string_5909a4e2 statefile;
+    void * statefile;
     unsigned long long filesize_max;
     unsigned int concurrent_count;
-    basic_string_5909a4e2 custom_request_header;
+    void * custom_request_header;
     unsigned long long filesize_hint;
     int download_behavior;
-    basic_string_5909a4e2 flowtag;
+    void * flowtag;
     unsigned int blocksize;
     _Bool issmallvideo;
     int islargesvide;
     int request_video_format;
     int videoflag_policy;
-    basic_string_5909a4e2 request_videoflag;
+    void * request_videoflag;
     int predownload_ratio;
     long long predownload_minsize;
     _Bool is_hot_snsvideo;
     int videomode;
-    basic_string_5909a4e2 msg_extra;
+    void * msg_extra;
     _Bool report_detail_transinfo;
-    basic_string_5909a4e2 bypass;
-    basic_string_5909a4e2 finder_ctrlinfo;
+    void * bypass;
+    void * finder_ctrlinfo;
     _Bool treat_as_videofile;
     _Bool is_hlsvideo;
-    basic_string_5909a4e2 hls_videoflag;
-    basic_string_5909a4e2 initial_decrypt_iv;
-    basic_string_5909a4e2 bigfile_signture;
-    basic_string_5909a4e2 fakeBigfileSignature;
-    basic_string_5909a4e2 fakeBigfileSignatureAeskey;
+    void * hls_videoflag;
+    void * initial_decrypt_iv;
+    void * bigfile_signture;
+    void * fakeBigfileSignature;
+    void * fakeBigfileSignatureAeskey;
     _Bool isstoragemode;
     _Bool isautostart;
     _Bool is_silent_task;
     struct unordered_set<mars::cdn::EMediaFormat, std::hash<mars::cdn::EMediaFormat>, std::equal_to<mars::cdn::EMediaFormat>, std::allocator<mars::cdn::EMediaFormat>> support_formats;
     long long max_retry_count;
     _Bool is_cold_snsdata;
-    basic_string_5909a4e2 url;
-    basic_string_5909a4e2 sns_scene;
+    void * url;
+    void * sns_scene;
     unsigned long long sns_decrypt_key;
-    basic_string_5909a4e2 snsvideo_extradata;
+    void * snsvideo_extradata;
     int msg_type_;
-    basic_string_5909a4e2 feed_id_;
+    void * feed_id_;
     int feed_pic_count_;
     struct vector<mars::cdn::BatchSnsReqImageData, std::allocator<mars::cdn::BatchSnsReqImageData>> batch_image_req_datas;
-    basic_string_5909a4e2 referer;
+    void * referer;
     unsigned long long task_start_time;
     int certificate_policy;
-    basic_string_5909a4e2 host;
+    void * host;
     unsigned int max_http_redirect_count;
-    basic_string_5909a4e2 bakup_url;
+    void * bakup_url;
     struct unordered_map<std::string, std::string, std::hash<std::string>, std::equal_to<std::string>, std::allocator<std::pair<const std::string, std::string>>> verify_headers;
     unsigned int pcdn_appid;
     int max_pcdn_connections;
@@ -655,8 +655,8 @@ struct C2CDownloadRequest {
     unsigned long long initial_offset;
     unsigned long long initial_length;
     _Bool try_realtime_transport_protocol;
-    basic_string_5909a4e2 ctag;
-    basic_string_5909a4e2 group_key;
+    void * ctag;
+    void * group_key;
     int group_capacity;
     unsigned int host_resolve_priority;
     unsigned int host_resolve_flags;
@@ -666,20 +666,20 @@ struct C2CDownloadResult {
     int error_code;
     int detail_error_type;
     int detail_error_code;
-    basic_string_5909a4e2 detail_error_msg;
+    void * detail_error_msg;
     int filetype;
-    basic_string_5909a4e2 filekey;
+    void * filekey;
     void *user_context;
-    basic_string_5909a4e2 arg_info;
+    void * arg_info;
     unsigned long long file_size;
-    basic_string_5909a4e2 fileid;
-    basic_string_5909a4e2 transfor_msg;
-    basic_string_5909a4e2 trace_msg;
-    basic_string_5909a4e2 filemd5;
+    void * fileid;
+    void * transfor_msg;
+    void * trace_msg;
+    void * filemd5;
     int video_format;
     int ori_video_format;
-    basic_string_5909a4e2 recved_video_format;
-    basic_string_5909a4e2 video_cdn_msg;
+    void * recved_video_format;
+    void * video_cdn_msg;
     unsigned long long recvedBytes;
     unsigned long long enQueueTime;
     unsigned long long startTime;
@@ -706,28 +706,28 @@ struct C2CDownloadResult {
     unsigned int requestTimeoutCount;
     unsigned int svrFallbackCount;
     int httpStatusCode;
-    basic_string_5909a4e2 httpResponseHeader;
-    basic_string_5909a4e2 real_used_url;
+    void * httpResponseHeader;
+    void * real_used_url;
     unsigned long long dns_cost_ms;
     unsigned long long queue_wait_cost_ms;
     unsigned long long connect_cost_ms;
     unsigned long long response_wait_cost_ms;
     unsigned long long response_all_cost_ms;
-    basic_string_5909a4e2 client_ip;
-    basic_string_5909a4e2 server_ip;
-    basic_string_5909a4e2 xerrno;
+    void * client_ip;
+    void * server_ip;
+    void * xerrno;
     int cseq_result;
     _Bool crossNet;
     _Bool private_protocol;
-    vector_bfe5b09a vUsedIp;
+    void * vUsedIp;
     unsigned short last_svrport;
     int last_nettype;
     _Bool is_resumed;
     _Bool is_sns_image_protocol_available;
     int pic_index;
-    basic_string_5909a4e2 pic_cache_path;
-    basic_string_5909a4e2 batch_pic_feedid;
-    basic_string_5909a4e2 batch_image_file_key;
+    void * pic_cache_path;
+    void * batch_pic_feedid;
+    void * batch_image_file_key;
     struct vector<mars::cdn::BatchSnsReqImageData, std::allocator<mars::cdn::BatchSnsReqImageData>> batch_image_need_retry;
     long long trywrite_bytes;
     long long available_bytes;
@@ -742,30 +742,30 @@ struct C2CDownloadResult {
     struct shared_ptr<mars::cdn::SNSVideoProfile> snsvideo_profile;
     struct shared_ptr<mars::cdn::VideoInfo> sp_videoinfo;
     unsigned long long trace_id;
-    basic_string_5909a4e2 profile;
+    void * profile;
 };
 
 struct C2CUploadRequest {
     struct shared_ptr<mars::cdn::TaskCallback> sp_callback;
-    basic_string_5909a4e2 debugip;
-    basic_string_5909a4e2 authkey;
+    void * debugip;
+    void * authkey;
     int bizid;
     int apptype;
     int filetype;
-    basic_string_5909a4e2 filekey;
+    void * filekey;
     void *user_context;
-    basic_string_5909a4e2 touser;
-    basic_string_5909a4e2 statefile;
-    basic_string_5909a4e2 filemd5;
+    void * touser;
+    void * statefile;
+    void * filemd5;
     _Bool needreport;
     int queue_timeout_seconds;
     int transfor_timeout_seconds;
-    basic_string_5909a4e2 filepath;
-    basic_string_5909a4e2 filebuffer;
-    basic_string_5909a4e2 midimgPath;
-    basic_string_5909a4e2 preview_video_path;
-    basic_string_5909a4e2 thumb_filebuffer;
-    basic_string_5909a4e2 thumb_filepath;
+    void * filepath;
+    void * filebuffer;
+    void * midimgPath;
+    void * preview_video_path;
+    void * thumb_filebuffer;
+    void * thumb_filepath;
     int file_format;
     int mid_format;
     int preview_format;
@@ -775,26 +775,26 @@ struct C2CUploadRequest {
     int videosource;
     _Bool issmallvideo;
     unsigned int concurrent_count;
-    basic_string_5909a4e2 custom_request_header;
+    void * custom_request_header;
     int lasterror;
-    basic_string_5909a4e2 flowtag;
+    void * flowtag;
     unsigned int chatnum;
     int chattype;
     _Bool check_exist_only;
     _Bool enableHitCheck;
-    basic_string_5909a4e2 forward_fileid;
-    basic_string_5909a4e2 forward_aeskey;
-    basic_string_5909a4e2 fakeBigfileSignature;
-    basic_string_5909a4e2 fakeBigfileSignatureAeskey;
-    basic_string_5909a4e2 bigfile_signture;
+    void * forward_fileid;
+    void * forward_aeskey;
+    void * fakeBigfileSignature;
+    void * fakeBigfileSignatureAeskey;
+    void * bigfile_signture;
     _Bool force_nosafecdn;
     _Bool trysafecdn;
     _Bool isstoragemode;
     _Bool sendmsg_from_cdn;
-    basic_string_5909a4e2 sso_buffer_request;
+    void * sso_buffer_request;
     _Bool issnsadvideo;
-    basic_string_5909a4e2 emoji_extinfo;
-    basic_string_5909a4e2 host_;
+    void * emoji_extinfo;
+    void * host_;
     int port_;
     struct vector<mars::cdn::FileID, std::allocator<mars::cdn::FileID>> vfileids;
     struct vector<mars::cdn::CheckHitRequestItem, std::allocator<mars::cdn::CheckHitRequestItem>> check_hit_requests;
@@ -802,7 +802,7 @@ struct C2CUploadRequest {
     _Bool try_realtime_transport_protocol;
     _Bool sns_multiphase_finish;
     int thumb_filetype;
-    basic_string_5909a4e2 ctag;
+    void * ctag;
 };
 
 struct CAFrameRateRange {
@@ -946,198 +946,198 @@ struct CallStackPool {
 
 struct CaraCppConsumeSessionProphetCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraCppConsumeSessionProphetDispatcher;
 
 struct CaraCppCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraCppDispatcher;
 
 struct CaraCppFinderPublishProphetCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraCppFinderPublishProphetDispatcher;
 
 struct CaraCppJoinLiveQualityProphetCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraCppJoinLiveQualityProphetDispatcher;
 
 struct CaraCppLiveCellProphetCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraCppLiveCellProphetDispatcher;
 
 struct CaraCppLiveFeatureCenterCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraCppLiveFeatureCenterDispatcher;
 
 struct CaraCppLiveReddotProphetCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraCppLiveReddotProphetDispatcher;
 
 struct CaraCppSessionFeatureCenterCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraCppSessionFeatureCenterDispatcher;
 
 struct CaraNativeAccountFeatureCenterCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeAccountFeatureCenterDispatcher;
 
 struct CaraNativeConsumeSessionCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeConsumeSessionDispatcher;
 
 struct CaraNativeContactCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeContactDispatcher;
 
 struct CaraNativeContactFeatureCenterCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeContactFeatureCenterDispatcher;
 
 struct CaraNativeDiscoverViewFeatureCenterCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeDiscoverViewFeatureCenterDispatcher;
 
 struct CaraNativeFeatureCenterCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeFeatureCenterDispatcher;
 
 struct CaraNativeFinderFeatureCenterCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeFinderFeatureCenterDispatcher;
 
 struct CaraNativeFinderPublishProphetContextCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeFinderPublishProphetContextDispatcher;
 
 struct CaraNativeJoinLiveQualityProphetContextCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeJoinLiveQualityProphetContextDispatcher;
 
 struct CaraNativeLiveCellProphetContextCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeLiveCellProphetContextDispatcher;
 
 struct CaraNativeLiveFeatureCenterCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeLiveFeatureCenterDispatcher;
 
 struct CaraNativeLiveReddotProphetContextCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeLiveReddotProphetContextDispatcher;
 
 struct CaraNativeProphetPredictPositiveCallbackCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeProphetPredictPositiveCallbackDispatcher;
 
 struct CaraNativeSessionFeatureCenterCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct CaraNativeSessionFeatureCenterDispatcher;
@@ -1233,8 +1233,8 @@ struct CommonReport_t {
 struct Concept;
 
 struct ConfigMode {
-    basic_string_5909a4e2 detect_model_param_;
-    basic_string_5909a4e2 detect_model_bin_;
+    void * detect_model_param_;
+    void * detect_model_bin_;
 };
 
 struct ConfigOffset {
@@ -1281,14 +1281,14 @@ struct CronetRequestCallback;
 struct CronetTaskCallback;
 
 struct CronetTaskParams {
-    basic_string_5909a4e2 url_;
-    basic_string_5909a4e2 task_id_;
-    basic_string_5909a4e2 body_data_;
+    void * url_;
+    void * task_id_;
+    void * body_data_;
     char *body_data_bytes_;
     unsigned long long body_length_;
     struct vector<CronetTaskProfile::HeaderMap, std::allocator<CronetTaskProfile::HeaderMap>> headers_;
-    basic_string_5909a4e2 method_;
-    basic_string_5909a4e2 origin_task_id_;
+    void * method_;
+    void * origin_task_id_;
     int task_type_;
     int response_type_;
     _Bool is_upload_;
@@ -1308,12 +1308,12 @@ struct CronetTaskParams {
     _Bool handle_data_self_;
     _Bool need_write_local_;
     _Bool download_resumption_;
-    basic_string_5909a4e2 ios_tmp_path_;
-    basic_string_5909a4e2 save_path_;
+    void * ios_tmp_path_;
+    void * save_path_;
     _Bool force_bind_mobile_;
     _Bool weak_wifi_prefer_mobile_;
     _Bool bind_mobile_internal_task_;
-    basic_string_5909a4e2 network_label_;
+    void * network_label_;
     struct weak_ptr<CronetTaskCallback> callback_instance_;
     struct QuicTaskProfile quic_params_;
     struct WxDownloadFileRequestParams download_file_params_;
@@ -1324,7 +1324,7 @@ struct CronetTaskParams {
     _Bool use_memory_cache_;
     _Bool cache_request_performance_;
     int cache_max_size_;
-    basic_string_5909a4e2 disk_cache_path_;
+    void * disk_cache_path_;
     int dns_type_;
     _Bool use_newdns_;
     _Bool dns_fail_for_debug;
@@ -1336,27 +1336,27 @@ struct CronetTaskResult {
     _Bool use_http2_;
     int dns_type_;
     int response_type_;
-    basic_string_5909a4e2 origin_task_id_;
-    basic_string_5909a4e2 task_id_;
+    void * origin_task_id_;
+    void * task_id_;
     int error_code_;
     int quic_error_code_;
     int cronet_error_code_;
-    basic_string_5909a4e2 error_msg_;
+    void * error_msg_;
     struct vector<CronetTaskProfile::HeaderMap, std::allocator<CronetTaskProfile::HeaderMap>> headers_;
-    basic_string_5909a4e2 header_;
-    basic_string_5909a4e2 data_;
+    void * header_;
+    void * data_;
     char *data_bytes_;
     unsigned long long data_length_;
     unsigned long long total_receive_bytes_;
     unsigned long long total_write_bytes_;
-    basic_string_5909a4e2 file_save_path_;
+    void * file_save_path_;
     _Bool download_resumption_;
     int status_code_;
-    basic_string_5909a4e2 status_text_;
+    void * status_text_;
     int total_redirect_count_;
-    basic_string_5909a4e2 new_location_;
+    void * new_location_;
     _Bool socket_reused;
-    basic_string_5909a4e2 protocol_;
+    void * protocol_;
     long long total_send_bytes_;
     struct WebPageNeedProfile web_profile_;
     struct WxDownloadFileProfile wx_download_file_profile_;
@@ -1512,8 +1512,8 @@ struct DialReport_t {
     unsigned int iTcpSwitchThreshold;
     unsigned int iCloudAppId;
     unsigned int iCloudHwpId;
-    basic_string_5909a4e2 appid;
-    basic_string_5909a4e2 sub_appid;
+    void * appid;
+    void * sub_appid;
 };
 
 struct DictVectorizer;
@@ -1535,9 +1535,9 @@ struct DownloadInfo {
 
 struct EcsManagerCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct EcsManagerDispatcher;
@@ -1547,7 +1547,7 @@ struct EffectAnalysisChain {
     struct function<bool (const std::string &, const std::string &, unsigned long, const audiobase::fx::AudioBlock &)> m_dumpWavCallBack;
     unsigned long long m_routerTag;
     struct vector<std::pair<unsigned long, std::string>, std::allocator<std::pair<unsigned long, std::string>>> m_vaildRouterTag;
-    basic_string_5909a4e2 m_name;
+    void * m_name;
     struct EffectConfigParser m_chainConfig;
     struct atomic<bool> m_isManageRouter;
     struct atomic<bool> m_needToClearContext;
@@ -1563,7 +1563,7 @@ struct EffectChain {
     struct function<bool (const std::string &, const std::string &, unsigned long, const audiobase::fx::AudioBlock &)> m_dumpWavCallBack;
     unsigned long long m_routerTag;
     struct vector<std::pair<unsigned long, std::string>, std::allocator<std::pair<unsigned long, std::string>>> m_vaildRouterTag;
-    basic_string_5909a4e2 m_name;
+    void * m_name;
     struct EffectConfigParser m_chainConfig;
     struct atomic<bool> m_isManageRouter;
     struct atomic<bool> m_needToClearContext;
@@ -1581,7 +1581,7 @@ struct EffectConfigParser {
     struct vector<audiobase::fx::EffectSliderConfig, std::allocator<audiobase::fx::EffectSliderConfig>> m_builtInSliderConfigs;
     struct pair<float, float> m_vocTargerLoundness;
     struct pair<float, float> m_accTargerLoundness;
-    basic_string_5909a4e2 m_effectName;
+    void * m_effectName;
 };
 
 struct EffectContext {
@@ -1639,27 +1639,27 @@ struct EffectSliderConfig;
 
 struct EmoticonDesignerPortfolioPackDataSourceCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct EmoticonDesignerPortfolioPackDataSourceDispatcher;
 
 struct EmoticonFinderDesignerDataSourceCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct EmoticonFinderDesignerDataSourceDispatcher;
 
 struct EmoticonMetaStorageCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct EmoticonMetaStorageDispatcher;
@@ -2700,13 +2700,13 @@ struct LockStepScriptState {
 };
 
 struct Log {
-    vector_8ca568ff mv_x_list;
-    vector_8ca568ff mv_y_list;
-    vector_8ca568ff variance_list;
-    vector_8ca568ff variance_thres_list;
-    vector_8ca568ff scancls_noise_list;
-    vector_8ca568ff scancls_object_list;
-    vector_8ca568ff scancls_landmark_list;
+    void * mv_x_list;
+    void * mv_y_list;
+    void * variance_list;
+    void * variance_thres_list;
+    void * scancls_noise_list;
+    void * scancls_object_list;
+    void * scancls_landmark_list;
     float t_det_avg;
     float t_det_max;
     struct vector<FFE::BoxInfo, std::allocator<FFE::BoxInfo>> top1_box_list;
@@ -3591,14 +3591,14 @@ struct OptionalStorage<unsigned int, true, true> {
 
 struct Options {
     int numThreads;
-    basic_string_5909a4e2 modelCachePath;
-    basic_string_5909a4e2 gpuLibFilename;
+    void * modelCachePath;
+    void * gpuLibFilename;
     struct map<std::string, std::vector<int>, std::less<std::string>, std::allocator<std::pair<const std::string, std::vector<int>>>> typicalShape;
     _Bool allowQuantize;
     _Bool allowGPU;
     _Bool allowNPU;
     _Bool useNpuOnly;
-    basic_string_5909a4e2 modelType;
+    void * modelType;
     int precisionLevel;
 };
 
@@ -3645,8 +3645,8 @@ struct PageInfo {
     unsigned long long app_ptr_;
     unsigned long long page_id_;
     unsigned long long render_id_;
-    basic_string_5909a4e2 base_path_;
-    basic_string_5909a4e2 page_url_;
+    void * base_path_;
+    void * page_url_;
     int flags_;
     int page_orientation_;
     _Bool is_preload_;
@@ -3741,7 +3741,7 @@ struct PlatformData {
             } _field1;
         } _field1;
     } _field5;
-    vector_bfe5b09a _field6;
+    void * _field6;
     struct basic_string<char, std::char_traits<char>, std::allocator<char>> {
         struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> {
             struct __rep {
@@ -3889,7 +3889,7 @@ struct PstnAndroidReport_t {
 struct PtsPostProc;
 
 struct PushNetworkConfig {
-    basic_string_5909a4e2 url;
+    void * url;
     int channel_type;
     _Bool enable_pure_audio_mode;
     _Bool enable_realtime;
@@ -4002,10 +4002,10 @@ struct QBAR_POINT;
 struct QBAR_REPORT_MSG {
     int qrcodeVersion;
     int pyramidLv;
-    basic_string_5909a4e2 binaryMethod;
-    basic_string_5909a4e2 ecLevel;
-    basic_string_5909a4e2 charsetMode;
-    basic_string_5909a4e2 scale_list_;
+    void * binaryMethod;
+    void * ecLevel;
+    void * charsetMode;
+    void * scale_list_;
     float decode_scale_;
     unsigned int detect_time_;
     unsigned int sr_time_;
@@ -4048,7 +4048,7 @@ struct QBAR_RESULT {
             } _field1;
         } _field1;
     } _field4;
-    vector_d4107ee0 _field5;
+    void * _field5;
     struct QBAR_AREA _field6;
     struct QBAR_REPORT_MSG _field7;
     int _field8;
@@ -4095,9 +4095,9 @@ struct RPSFramerateCallback;
 
 struct RTEAttachmentNativeItemCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct RTEAttachmentNativeItemDispatcher;
@@ -4239,7 +4239,7 @@ struct RelayTcpReport {
 
 struct RemoteAudioSelectorParams {
     unsigned int _field1;
-    vector_bfe5b09a _field2;
+    void * _field2;
     _Bool _field3;
 };
 
@@ -4375,18 +4375,18 @@ struct RfxThreadPool;
 
 struct RoamBackupPackageManagerCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct RoamBackupPackageManagerDispatcher;
 
 struct RoamBackupperCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct RoamBackupperDispatcher;
@@ -4394,9 +4394,9 @@ struct RoamBackupperDispatcher;
 struct RoamDeviceManagerCppCover {
     CDUnknownFunctionPointerType *_vptr$RoamDeviceManagerDispatcherEvent;
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
     NSMapTable *connectivityChangedEventMap;
 };
 
@@ -4405,9 +4405,9 @@ struct RoamDeviceManagerDispatcher;
 struct RoamManagerCppCover {
     CDUnknownFunctionPointerType *_vptr$RoamManagerDispatcherEvent;
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
     NSMapTable *deviceDiscoveredEventMap;
     NSMapTable *autoBackupEventEventMap;
     NSMapTable *deleteBackupDataProgressEventMap;
@@ -4419,9 +4419,9 @@ struct RoamManagerDispatcher;
 
 struct RoamMediaFormatterCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct RoamMediaFormatterDispatcher;
@@ -4429,9 +4429,9 @@ struct RoamMediaFormatterDispatcher;
 struct RoamTaskCppCover {
     CDUnknownFunctionPointerType *_vptr$RoamTaskDispatcherEvent;
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
     NSMapTable *progressEventMap;
     NSMapTable *stateChangedEventMap;
     NSMapTable *conversationCompletedEventMap;
@@ -4472,7 +4472,7 @@ struct RunConfiguration {
             } _field1;
         } _field1;
     } _field4;
-    vector_bfe5b09a _field5;
+    void * _field5;
 };
 
 struct RuntimeDelegate {
@@ -4616,24 +4616,24 @@ struct SemanticsNode {
     double scrollExtentMin;
     double elevation;
     double thickness;
-    basic_string_5909a4e2 identifier;
-    basic_string_5909a4e2 label;
+    void * identifier;
+    void * label;
     struct vector<std::shared_ptr<flutter::StringAttribute>, std::allocator<std::shared_ptr<flutter::StringAttribute>>> labelAttributes;
-    basic_string_5909a4e2 hint;
+    void * hint;
     struct vector<std::shared_ptr<flutter::StringAttribute>, std::allocator<std::shared_ptr<flutter::StringAttribute>>> hintAttributes;
-    basic_string_5909a4e2 value;
+    void * value;
     struct vector<std::shared_ptr<flutter::StringAttribute>, std::allocator<std::shared_ptr<flutter::StringAttribute>>> valueAttributes;
-    basic_string_5909a4e2 increasedValue;
+    void * increasedValue;
     struct vector<std::shared_ptr<flutter::StringAttribute>, std::allocator<std::shared_ptr<flutter::StringAttribute>>> increasedValueAttributes;
-    basic_string_5909a4e2 decreasedValue;
+    void * decreasedValue;
     struct vector<std::shared_ptr<flutter::StringAttribute>, std::allocator<std::shared_ptr<flutter::StringAttribute>>> decreasedValueAttributes;
-    basic_string_5909a4e2 tooltip;
+    void * tooltip;
     int textDirection;
     struct SkRect rect;
     struct SkM44 transform;
-    vector_cd3186ef childrenInTraversalOrder;
-    vector_cd3186ef childrenInHitTestOrder;
-    vector_cd3186ef customAccessibilityActions;
+    void * childrenInTraversalOrder;
+    void * childrenInHitTestOrder;
+    void * customAccessibilityActions;
 };
 
 struct Shadow<WCDB::Syntax::Expression> {
@@ -5185,7 +5185,7 @@ struct TBDrawParamType {
 };
 
 struct TC_FaceProfile {
-    vector_4c9ad6d1 points;
+    void * points;
 };
 
 struct TC_FaceShape {
@@ -5200,31 +5200,31 @@ struct TC_FaceShape {
 };
 
 struct TC_LeftEye {
-    vector_4c9ad6d1 points;
+    void * points;
 };
 
 struct TC_LeftEyebrow {
-    vector_4c9ad6d1 points;
+    void * points;
 };
 
 struct TC_Mouth {
-    vector_4c9ad6d1 points;
+    void * points;
 };
 
 struct TC_Nose {
-    vector_4c9ad6d1 points;
+    void * points;
 };
 
 struct TC_Pupil {
-    vector_4c9ad6d1 points;
+    void * points;
 };
 
 struct TC_RightEye {
-    vector_4c9ad6d1 points;
+    void * points;
 };
 
 struct TC_RightEyebrow {
-    vector_4c9ad6d1 points;
+    void * points;
 };
 
 struct TMBitmapContext {
@@ -6096,9 +6096,9 @@ struct UIOffset {
 };
 
 struct UploadParams {
-    basic_string_5909a4e2 file_path;
-    basic_string_5909a4e2 head_form_data;
-    basic_string_5909a4e2 end_form_data;
+    void * file_path;
+    void * head_form_data;
+    void * end_form_data;
     unsigned long long upload_offset;
     unsigned long long upload_range;
     _Bool vfs_upload_path_;
@@ -6131,27 +6131,27 @@ struct VOIPNetNotifier {
 
 struct VQMAPICppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct VQMAPIDispatcher;
 
 struct VQMConfAPICppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct VQMConfAPIDispatcher;
 
 struct VQMObserverCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct VQMObserverDispatcher;
@@ -6240,9 +6240,9 @@ struct ViewportMetrics {
     double physical_system_gesture_inset_bottom;
     double physical_system_gesture_inset_left;
     double physical_touch_slop;
-    vector_0e047154 physical_display_features_bounds;
-    vector_cd3186ef physical_display_features_type;
-    vector_cd3186ef physical_display_features_state;
+    void * physical_display_features_bounds;
+    void * physical_display_features_type;
+    void * physical_display_features_state;
     unsigned long long display_id;
 };
 
@@ -6250,27 +6250,27 @@ struct VisionFeaturePrint;
 
 struct VoIPMPIlinkSDKStatAPICppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct VoIPMPIlinkSDKStatAPIDispatcher;
 
 struct VoIPMPSystemAuthAPICppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct VoIPMPSystemAuthAPIDispatcher;
 
 struct VoIPMPSystemAuthNativeAPICppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct VoIPMPSystemAuthNativeAPIDispatcher;
@@ -6599,18 +6599,18 @@ struct VoipCSEngineReport_t {
 
 struct VoipmpCoreApiServiceCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct VoipmpCoreApiServiceDispatcher;
 
 struct VoipmpCoreImplServiceCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct VoipmpCoreImplServiceDispatcher;
@@ -6861,18 +6861,18 @@ struct WeImage<unsigned char> {
 
 struct WeNoteAffDelegateCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct WeNoteAffDelegateDispatcher;
 
 struct WeNoteCPPInstanceCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct WeNoteCPPInstanceDispatcher;
@@ -6887,9 +6887,9 @@ struct WeNoteCPPInstanceDispatcherCallback;
 
 struct WeNoteFlutterInstanceCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct WeNoteFlutterInstanceDispatcher;
@@ -6997,7 +6997,7 @@ struct WebPageNeedProfile {
     unsigned long long request_end;
     unsigned long long response_start;
     unsigned long long response_end;
-    basic_string_5909a4e2 protocol;
+    void * protocol;
     int rtt;
     int status_code;
     int network_estimate_type;
@@ -7005,7 +7005,7 @@ struct WebPageNeedProfile {
     int transport_rtt_estimate;
     int downstream_throughput_kbps_estimate;
     int throughput_kbps;
-    basic_string_5909a4e2 peer_ip;
+    void * peer_ip;
     int peer_port;
     _Bool socket_reused;
     long long sent_bytes_count;
@@ -7014,9 +7014,9 @@ struct WebPageNeedProfile {
 
 struct WenoteFlutterManagerCppCover {
     CDUnknownFunctionPointerType *_vptr$IdentityDispatcher;
-    basic_string_5909a4e2 zidl_svr_identity;
-    basic_string_5909a4e2 zidl_identity;
-    basic_string_5909a4e2 zidl_create_name;
+    void * zidl_svr_identity;
+    void * zidl_identity;
+    void * zidl_create_name;
 };
 
 struct WenoteFlutterManagerDispatcher;
@@ -7056,8 +7056,8 @@ struct WxConfSDKCallback {
 struct WxCronetGlobalCallback;
 
 struct WxDownloadFileProfile {
-    basic_string_5909a4e2 temp_file_path;
-    basic_string_5909a4e2 file_path;
+    void * temp_file_path;
+    void * file_path;
 };
 
 struct WxDownloadFileRequestParams {
@@ -7148,7 +7148,7 @@ struct XFaceCluster {
 
 struct XID {
     struct XUUID _backingUUID;
-    basic_string_5909a4e2 _string;
+    void * _string;
 };
 
 struct XIKImage;
@@ -7230,7 +7230,7 @@ struct XMJAssetInfo;
 struct XMJAsyncTaskInfo {
     struct shared_ptr<XMJError> Error;
     int ExecutionID;
-    basic_string_5909a4e2 TaskTag;
+    void * TaskTag;
 };
 
 struct XMJBridgeCDNService;
@@ -7572,7 +7572,7 @@ struct YTCAPTCHA {
     int unit;
     int rand_shift;
     int rand_inv;
-    vector_cd3186ef intervals;
+    void * intervals;
     char *SeqID;
 };
 
@@ -7580,7 +7580,7 @@ struct YTDataPack {
     struct vector<YTRawImgData, std::allocator<YTRawImgData>> VideoData;
     long long BeginTime;
     long long ChangePointTime;
-    vector_1ee95920 ChangePointTimeList;
+    void * ChangePointTimeList;
     float OffsetSys;
     int config_begin;
     int frameNum;
@@ -9614,7 +9614,7 @@ struct optional<int> {
 struct optional<std::string> {
     union {
         char __null_state_;
-        basic_string_5909a4e2 __val_;
+        void * __val_;
     } ;
     _Bool __engaged_;
 };
@@ -9622,7 +9622,7 @@ struct optional<std::string> {
 struct optional<std::vector<std::string>> {
     union {
         char __null_state_;
-        vector_bfe5b09a __val_;
+        void * __val_;
     } ;
     _Bool __engaged_;
 };
@@ -9672,8 +9672,8 @@ struct pair<float, float> {
 };
 
 struct pair<std::vector<std::pair<MJTileReusableAttributes *, MJTileReusableAttributes *>>, std::vector<MJTileReusableAttributes *>> {
-    vector_e62d36fb _field1;
-    vector_1d27761d _field2;
+    void * _field1;
+    void * _field2;
 };
 
 struct priority_queue<WCFinderTaskPQTask *, std::vector<WCFinderTaskPQTask *>, WCFinderTaskPQCMP> {
@@ -14424,7 +14424,7 @@ typedef struct ?<std::basic_string<char>::__rep, std::allocator<char>> {
 
 typedef struct ?<char, std::char_traits<char>, std::allocator<char>> {
     __compressed_pair_b5315e83 __r_;
-} basic_string_5909a4e2;
+} void *;
 
 typedef struct ?<char, std::char_traits<char>, std::allocator<char>> {
     struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> {
@@ -14432,7 +14432,7 @@ typedef struct ?<char, std::char_traits<char>, std::allocator<char>> {
             CDUnion_fb1c1f9e _field1;
         } _field1;
     } _field1;
-} basic_string_1e6f3770;
+} void *;
 
 typedef struct ?<char, std::char_traits<char>, std::allocator<char>> {
     struct __compressed_pair<std::basic_string<char>::__rep, std::allocator<char>> {
@@ -14454,20 +14454,20 @@ typedef struct ?<char, std::char_traits<char>, std::allocator<char>> {
             } _field1;
         } _field1;
     } _field1;
-} basic_string_831393b5;
+} void *;
 
 typedef struct {
-    basic_string_5909a4e2 url;
+    void * url;
     map_c53b27e0 headers;
     _Bool enable_mete_data;
-    basic_string_5909a4e2 flv_session_key;
+    void * flv_session_key;
     unsigned int connect_timeout_ms;
     unsigned int read_timeout_ms;
     unsigned int write_timeout_ms;
     struct set<std::string, std::less<std::string>, std::allocator<std::string>> target_rsp_headers_keys;
     int audio_codec_type_;
     _Bool enable_realtime;
-    basic_string_5909a4e2 leb_domain;
+    void * leb_domain;
     _Bool enable_ip_multiplexing;
 } Config_224c4c0b;
 
@@ -15072,7 +15072,7 @@ typedef struct {
 
 typedef struct {
     struct TC_FaceShape faceShape;
-    vector_8ca568ff facePointsVis;
+    void * facePointsVis;
     float cls;
 } CDStruct_0edc81f6;
 
@@ -15726,7 +15726,7 @@ typedef struct optional<int> {
 typedef struct optional<std::string> {
     union {
         char __null_state_;
-        basic_string_5909a4e2 __val_;
+        void * __val_;
     } ;
     _Bool __engaged_;
 } optional_9436b898;
@@ -15759,8 +15759,8 @@ typedef struct pair<double, double> {
 } pair_b2618ff2;
 
 typedef struct pair<std::vector<std::pair<MJTileReusableAttributes *, MJTileReusableAttributes *>>, std::vector<MJTileReusableAttributes *>> {
-    vector_e62d36fb _field1;
-    vector_1d27761d _field2;
+    void * _field1;
+    void * _field2;
 } pair_744b91e3;
 
 typedef struct queue<std::string, std::deque<std::string>> {
@@ -16392,7 +16392,7 @@ typedef struct vector<FileInfo, std::allocator<FileInfo>> {
     struct __compressed_pair<FileInfo *, std::allocator<FileInfo>> {
         struct FileInfo *_field1;
     } _field3;
-} vector_3510895a;
+} void *;
 
 typedef struct vector<MJTileReusableAttributes *, std::allocator<MJTileReusableAttributes *>> {
     id *_field1;
@@ -16400,7 +16400,7 @@ typedef struct vector<MJTileReusableAttributes *, std::allocator<MJTileReusableA
     struct __compressed_pair<MJTileReusableAttributes *__strong *, std::allocator<MJTileReusableAttributes *>> {
         id *_field1;
     } _field3;
-} vector_1d27761d;
+} void *;
 
 typedef struct vector<PreviewCoverItem, std::allocator<PreviewCoverItem>> {
     struct PreviewCoverItem *_field1;
@@ -16408,7 +16408,7 @@ typedef struct vector<PreviewCoverItem, std::allocator<PreviewCoverItem>> {
     struct __compressed_pair<PreviewCoverItem *, std::allocator<PreviewCoverItem>> {
         struct PreviewCoverItem *_field1;
     } _field3;
-} vector_3b4bbe29;
+} void *;
 
 typedef struct vector<QBAR_INFO, std::allocator<QBAR_INFO>> {
     struct QBAR_INFO *_field1;
@@ -16416,7 +16416,7 @@ typedef struct vector<QBAR_INFO, std::allocator<QBAR_INFO>> {
     struct __compressed_pair<QBAR_INFO *, std::allocator<QBAR_INFO>> {
         struct QBAR_INFO *_field1;
     } _field3;
-} vector_95637d69;
+} void *;
 
 typedef struct vector<QBAR_POINT, std::allocator<QBAR_POINT>> {
     struct QBAR_POINT *_field1;
@@ -16424,7 +16424,7 @@ typedef struct vector<QBAR_POINT, std::allocator<QBAR_POINT>> {
     struct __compressed_pair<QBAR_POINT *, std::allocator<QBAR_POINT>> {
         struct QBAR_POINT *_field1;
     } _field3;
-} vector_d4107ee0;
+} void *;
 
 typedef struct vector<QBAR_RESULT, std::allocator<QBAR_RESULT>> {
     struct QBAR_RESULT *_field1;
@@ -16432,7 +16432,7 @@ typedef struct vector<QBAR_RESULT, std::allocator<QBAR_RESULT>> {
     struct __compressed_pair<QBAR_RESULT *, std::allocator<QBAR_RESULT>> {
         struct QBAR_RESULT *_field1;
     } _field3;
-} vector_04675aae;
+} void *;
 
 typedef struct vector<TPAVProgramInfo, std::allocator<TPAVProgramInfo>> {
     struct TPAVProgramInfo *_field1;
@@ -16440,7 +16440,7 @@ typedef struct vector<TPAVProgramInfo, std::allocator<TPAVProgramInfo>> {
     struct __compressed_pair<TPAVProgramInfo *, std::allocator<TPAVProgramInfo>> {
         struct TPAVProgramInfo *_field1;
     } _field3;
-} vector_5a53d670;
+} void *;
 
 typedef struct vector<TPMediaTrackInfo, std::allocator<TPMediaTrackInfo>> {
     struct TPMediaTrackInfo *_field1;
@@ -16448,7 +16448,7 @@ typedef struct vector<TPMediaTrackInfo, std::allocator<TPMediaTrackInfo>> {
     struct __compressed_pair<TPMediaTrackInfo *, std::allocator<TPMediaTrackInfo>> {
         struct TPMediaTrackInfo *_field1;
     } _field3;
-} vector_fdf80d0c;
+} void *;
 
 typedef struct vector<TPPlayerRichMediaFeature, std::allocator<TPPlayerRichMediaFeature>> {
     struct TPPlayerRichMediaFeature *_field1;
@@ -16456,7 +16456,7 @@ typedef struct vector<TPPlayerRichMediaFeature, std::allocator<TPPlayerRichMedia
     struct __compressed_pair<TPPlayerRichMediaFeature *, std::allocator<TPPlayerRichMediaFeature>> {
         struct TPPlayerRichMediaFeature *_field1;
     } _field3;
-} vector_f4e3e6bf;
+} void *;
 
 typedef struct vector<TPPlayerRichMediaTimeRange, std::allocator<TPPlayerRichMediaTimeRange>> {
     struct TPPlayerRichMediaTimeRange *_field1;
@@ -16464,7 +16464,7 @@ typedef struct vector<TPPlayerRichMediaTimeRange, std::allocator<TPPlayerRichMed
     struct __compressed_pair<TPPlayerRichMediaTimeRange *, std::allocator<TPPlayerRichMediaTimeRange>> {
         struct TPPlayerRichMediaTimeRange *_field1;
     } _field3;
-} vector_d4921383;
+} void *;
 
 typedef struct vector<TensorData, std::__1::allocator<TensorData>> {
     struct TensorData *_field1;
@@ -16472,7 +16472,7 @@ typedef struct vector<TensorData, std::__1::allocator<TensorData>> {
     struct __compressed_pair<TensorData *, std::__1::allocator<TensorData>> {
         struct TensorData *_field1;
     } _field3;
-} vector_1994dafb;
+} void *;
 
 typedef struct vector<WCFinderProfileCard, std::allocator<WCFinderProfileCard>> {
     struct WCFinderProfileCard *_field1;
@@ -16480,7 +16480,7 @@ typedef struct vector<WCFinderProfileCard, std::allocator<WCFinderProfileCard>> 
     struct __compressed_pair<WCFinderProfileCard *, std::allocator<WCFinderProfileCard>> {
         struct WCFinderProfileCard *_field1;
     } _field3;
-} vector_7cafffa0;
+} void *;
 
 typedef struct vector<WeEffect::Rect, std::allocator<WeEffect::Rect>> {
     struct Rect *_field1;
@@ -16488,7 +16488,7 @@ typedef struct vector<WeEffect::Rect, std::allocator<WeEffect::Rect>> {
     struct __compressed_pair<WeEffect::Rect *, std::allocator<WeEffect::Rect>> {
         struct Rect *_field1;
     } _field3;
-} vector_44833bcd;
+} void *;
 
 typedef struct vector<double, std::allocator<double>> {
     double *__begin_;
@@ -16496,7 +16496,7 @@ typedef struct vector<double, std::allocator<double>> {
     struct __compressed_pair<double *, std::allocator<double>> {
         double *__value_;
     } __end_cap_;
-} vector_0e047154;
+} void *;
 
 typedef struct vector<float, std::allocator<float>> {
     float *__begin_;
@@ -16504,7 +16504,7 @@ typedef struct vector<float, std::allocator<float>> {
     struct __compressed_pair<float *, std::allocator<float>> {
         float *__value_;
     } __end_cap_;
-} vector_8ca568ff;
+} void *;
 
 typedef struct vector<int, std::allocator<int>> {
     int *__begin_;
@@ -16512,7 +16512,7 @@ typedef struct vector<int, std::allocator<int>> {
     struct __compressed_pair<int *, std::allocator<int>> {
         int *__value_;
     } __end_cap_;
-} vector_cd3186ef;
+} void *;
 
 typedef struct vector<long long, std::allocator<long long>> {
     long long *__begin_;
@@ -16520,7 +16520,7 @@ typedef struct vector<long long, std::allocator<long long>> {
     struct __compressed_pair<long long *, std::allocator<long long>> {
         long long *__value_;
     } __end_cap_;
-} vector_1ee95920;
+} void *;
 
 typedef struct vector<mars::smc::STIDKeyInfo, std::allocator<mars::smc::STIDKeyInfo>> {
     struct STIDKeyInfo *__begin_;
@@ -16528,7 +16528,7 @@ typedef struct vector<mars::smc::STIDKeyInfo, std::allocator<mars::smc::STIDKeyI
     struct __compressed_pair<mars::smc::STIDKeyInfo *, std::allocator<mars::smc::STIDKeyInfo>> {
         struct STIDKeyInfo *__value_;
     } __end_cap_;
-} vector_0827168c;
+} void *;
 
 typedef struct vector<objc_method_description, std::allocator<objc_method_description>> {
     struct objc_method_description *_field1;
@@ -16536,7 +16536,7 @@ typedef struct vector<objc_method_description, std::allocator<objc_method_descri
     struct __compressed_pair<objc_method_description *, std::allocator<objc_method_description>> {
         struct objc_method_description *_field1;
     } _field3;
-} vector_c11dd721;
+} void *;
 
 typedef struct vector<std::pair<FinderStreamDivider *, NSArray<WCFinderDataItem *>*>, std::allocator<std::pair<FinderStreamDivider *, NSArray<WCFinderDataItem *>*>>> {
     void *_field1;
@@ -16544,7 +16544,7 @@ typedef struct vector<std::pair<FinderStreamDivider *, NSArray<WCFinderDataItem 
     struct __compressed_pair<std::pair<FinderStreamDivider *, NSArray<WCFinderDataItem *>*>*, std::allocator<std::pair<FinderStreamDivider *, NSArray<WCFinderDataItem *>*>>> {
         void *_field1;
     } _field3;
-} vector_c9a4c9eb;
+} void *;
 
 typedef struct vector<std::pair<LSMFileItem *, NSData *__unsafe_unretained>, std::allocator<std::pair<LSMFileItem *, NSData *__unsafe_unretained>>> {
     void *_field1;
@@ -16552,7 +16552,7 @@ typedef struct vector<std::pair<LSMFileItem *, NSData *__unsafe_unretained>, std
     struct __compressed_pair<std::pair<LSMFileItem *, NSData *__unsafe_unretained>*, std::allocator<std::pair<LSMFileItem *, NSData *__unsafe_unretained>>> {
         void *_field1;
     } _field3;
-} vector_90b82a4e;
+} void *;
 
 typedef struct vector<std::pair<MJTileReusableAttributes *, MJTileReusableAttributes *>, std::allocator<std::pair<MJTileReusableAttributes *, MJTileReusableAttributes *>>> {
     void *_field1;
@@ -16560,7 +16560,7 @@ typedef struct vector<std::pair<MJTileReusableAttributes *, MJTileReusableAttrib
     struct __compressed_pair<std::pair<MJTileReusableAttributes *, MJTileReusableAttributes *>*, std::allocator<std::pair<MJTileReusableAttributes *, MJTileReusableAttributes *>>> {
         void *_field1;
     } _field3;
-} vector_e62d36fb;
+} void *;
 
 typedef struct vector<std::shared_ptr<ChatLogDataItem>, std::allocator<std::shared_ptr<ChatLogDataItem>>> {
     void *__begin_;
@@ -16568,7 +16568,7 @@ typedef struct vector<std::shared_ptr<ChatLogDataItem>, std::allocator<std::shar
     struct __compressed_pair<std::shared_ptr<ChatLogDataItem>*, std::allocator<std::shared_ptr<ChatLogDataItem>>> {
         void *__value_;
     } __end_cap_;
-} vector_d88869c6;
+} void *;
 
 typedef struct vector<std::string, std::allocator<std::string>> {
     void *__begin_;
@@ -16576,7 +16576,7 @@ typedef struct vector<std::string, std::allocator<std::string>> {
     struct __compressed_pair<std::string *, std::allocator<std::string>> {
         void *__value_;
     } __end_cap_;
-} vector_bfe5b09a;
+} void *;
 
 typedef struct vector<tcmapkit::ArcLineCell *, std::allocator<tcmapkit::ArcLineCell *>> {
     struct ArcLineCell **_field1;
@@ -16584,7 +16584,7 @@ typedef struct vector<tcmapkit::ArcLineCell *, std::allocator<tcmapkit::ArcLineC
     struct __compressed_pair<tcmapkit::ArcLineCell **, std::allocator<tcmapkit::ArcLineCell *>> {
         struct ArcLineCell **_field1;
     } _field3;
-} vector_60e76471;
+} void *;
 
 typedef struct vector<tcmapkit::IAggregatable *, std::allocator<tcmapkit::IAggregatable *>> {
     struct IAggregatable **_field1;
@@ -16592,7 +16592,7 @@ typedef struct vector<tcmapkit::IAggregatable *, std::allocator<tcmapkit::IAggre
     struct __compressed_pair<tcmapkit::IAggregatable **, std::allocator<tcmapkit::IAggregatable *>> {
         struct IAggregatable **_field1;
     } _field3;
-} vector_fdbda47e;
+} void *;
 
 typedef struct vector<tcmapkit::RGBColor, std::allocator<tcmapkit::RGBColor>> {
     struct RGBColor *_field1;
@@ -16600,7 +16600,7 @@ typedef struct vector<tcmapkit::RGBColor, std::allocator<tcmapkit::RGBColor>> {
     struct __compressed_pair<tcmapkit::RGBColor *, std::allocator<tcmapkit::RGBColor>> {
         struct RGBColor *_field1;
     } _field3;
-} vector_59af8ef9;
+} void *;
 
 typedef struct vector<tiny_cv::Mat, std::allocator<tiny_cv::Mat>> {
     struct Mat *__begin_;
@@ -16608,7 +16608,7 @@ typedef struct vector<tiny_cv::Mat, std::allocator<tiny_cv::Mat>> {
     struct __compressed_pair<tiny_cv::Mat *, std::allocator<tiny_cv::Mat>> {
         struct Mat *__value_;
     } __end_cap_;
-} vector_083faa51;
+} void *;
 
 typedef struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<float>>> {
     void *__begin_;
@@ -16616,7 +16616,7 @@ typedef struct vector<tiny_cv::Point_<float>, std::allocator<tiny_cv::Point_<flo
     struct __compressed_pair<tiny_cv::Point_<float>*, std::allocator<tiny_cv::Point_<float>>> {
         void *__value_;
     } __end_cap_;
-} vector_4c9ad6d1;
+} void *;
 
 typedef struct vector<tpdrm::DrmSchemeType, std::allocator<tpdrm::DrmSchemeType>> {
     int *_field1;
@@ -16624,7 +16624,7 @@ typedef struct vector<tpdrm::DrmSchemeType, std::allocator<tpdrm::DrmSchemeType>
     struct __compressed_pair<tpdrm::DrmSchemeType *, std::allocator<tpdrm::DrmSchemeType>> {
         int *_field1;
     } _field3;
-} vector_e6ac3340;
+} void *;
 
 typedef struct vector<wxvoipsdk::_AudioDeviceInfo, std::allocator<wxvoipsdk::_AudioDeviceInfo>> {
     struct _AudioDeviceInfo *_field1;
@@ -16632,7 +16632,7 @@ typedef struct vector<wxvoipsdk::_AudioDeviceInfo, std::allocator<wxvoipsdk::_Au
     struct __compressed_pair<wxvoipsdk::_AudioDeviceInfo *, std::allocator<wxvoipsdk::_AudioDeviceInfo>> {
         struct _AudioDeviceInfo *_field1;
     } _field3;
-} vector_c729919e;
+} void *;
 
 typedef struct weak_ptr<liteav::manager::DeviceManager> {
     struct DeviceManager *__ptr_;

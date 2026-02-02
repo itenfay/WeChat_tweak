@@ -11,7 +11,6 @@
 }
 
 + (id)getCgiList;
-- (id).cxx_construct;
 - (id)jsonToRequestData:(id)arg1;
 - (id)jsonToResponseData:(id)arg1;
 - (id)responseDataToJson:(id)arg1;

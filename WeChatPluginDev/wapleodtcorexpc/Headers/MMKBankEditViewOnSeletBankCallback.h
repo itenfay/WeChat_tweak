@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KBankEditViewOnSeletBankCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onSeletBank:(id)arg1 bankType:(id)arg2;
 - (id)initWithCpp:(const void *)arg1;
 

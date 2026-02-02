@@ -16,7 +16,6 @@
     NSString *_currentEffectName;
 }
 
-- (id).cxx_construct;
 @property(copy, nonatomic) NSString *currentEffectName; // @synthesize currentEffectName=_currentEffectName;
 - (float)latencyMs:(unsigned long long)arg1;
 - (_Bool)setBPM:(float)arg1;

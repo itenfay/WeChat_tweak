@@ -14,10 +14,10 @@
     double _transformOriginalDistance;
     double _transformOriginalScale;
     struct CGPoint _transformPreviousPoint;
-    vector_0e047154 _rotationSnapValues;
-    vector_0e047154 _scaleSnapValues;
-    vector_0e047154 _positionXSnapValues;
-    vector_0e047154 _positionYSnapValues;
+    void * _rotationSnapValues;
+    void * _scaleSnapValues;
+    void * _positionXSnapValues;
+    void * _positionYSnapValues;
     UISelectionFeedbackGenerator *_snapFeedbackGenerator;
     UISelectionFeedbackGenerator *_rotationSnapFeedbackGenerator;
     UISelectionFeedbackGenerator *_scaleSnapFeedbackGenerator;
@@ -48,7 +48,6 @@
     struct CGRect _canvasFrame;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSLayoutConstraint *verticalGuideLineWidthConstraint; // @synthesize verticalGuideLineWidthConstraint=_verticalGuideLineWidthConstraint;
 @property(retain, nonatomic) OMJOverlayGuideLine *verticalGuideLine; // @synthesize verticalGuideLine=_verticalGuideLine;
 @property(retain, nonatomic) OMJOverlayGuideLine *horizontalGuideLine; // @synthesize horizontalGuideLine=_horizontalGuideLine;

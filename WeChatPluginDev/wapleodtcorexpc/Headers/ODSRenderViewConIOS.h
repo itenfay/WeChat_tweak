@@ -18,7 +18,6 @@
     function_07344cbc _didTransitToSizeNotifunc;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) function_07344cbc didTransitToSizeNotifunc; // @synthesize didTransitToSizeNotifunc=_didTransitToSizeNotifunc;
 @property(nonatomic) function_8a9ca1d4 willTransitToSizeNotifunc; // @synthesize willTransitToSizeNotifunc=_willTransitToSizeNotifunc;
 @property(nonatomic) struct XSimpleFunction willDisappearNotifunc; // @synthesize willDisappearNotifunc=_willDisappearNotifunc;

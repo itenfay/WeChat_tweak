@@ -23,7 +23,6 @@
 }
 
 + (double)cellHeight;
-- (id).cxx_construct;
 @property(retain, nonatomic) UIView *bottomSeperateLine; // @synthesize bottomSeperateLine=_bottomSeperateLine;
 @property(retain, nonatomic) ResourceCountView *resCountView; // @synthesize resCountView=_resCountView;
 @property(retain, nonatomic) UIView *seperateLine; // @synthesize seperateLine=_seperateLine;

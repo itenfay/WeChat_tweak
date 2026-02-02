@@ -8,7 +8,6 @@
     struct SyntaxList<WCTResultColumn> _resultColumns;
 }
 
-- (id).cxx_construct;
 - (id)allMultiObjects;
 - (id)firstMultiObject;
 - (id)onResultColumns:(const void *)arg1;

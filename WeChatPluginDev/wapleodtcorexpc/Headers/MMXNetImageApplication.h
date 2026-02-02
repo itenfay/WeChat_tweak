@@ -11,7 +11,6 @@
     shared_ptr_772c274f _model;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSThread *thread; // @synthesize thread=_thread;
 @property(nonatomic) shared_ptr_772c274f model; // @synthesize model=_model;
 - (id)modelPath;

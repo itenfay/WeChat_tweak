@@ -16,7 +16,6 @@
     Log_IMOperation *_Log_IMOperation;
 }
 
-- (id).cxx_construct;
 - (void)OnAddMsg:(id)arg1 MsgWrap:(id)arg2;
 - (void)OnChangeNotifyStatus:(id)arg1 withStatus:(_Bool)arg2;
 - (void)onSessionTopStatusChanged:(id)arg1 bTop:(_Bool)arg2;

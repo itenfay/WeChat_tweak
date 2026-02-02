@@ -15,7 +15,6 @@
     id <PLzmaSDKEncoderDelegate> _delegate;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) __weak id <PLzmaSDKEncoderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dealloc;
 - (id)initWithStream:(id)arg1 fileType:(unsigned char)arg2 method:(unsigned char)arg3 andDelegate:(id)arg4;

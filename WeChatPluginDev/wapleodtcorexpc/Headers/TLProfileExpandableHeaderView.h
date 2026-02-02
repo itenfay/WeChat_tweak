@@ -31,7 +31,6 @@ typedef void (^CDUnknownBlockType)(void);
     struct CGRect _bkgRect;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) UIView *accessibilityView; // @synthesize accessibilityView=_accessibilityView;
 @property(nonatomic) _Bool showSignature; // @synthesize showSignature=_showSignature;
 @property(retain, nonatomic) MMCPLabel *signatureLabel; // @synthesize signatureLabel=_signatureLabel;

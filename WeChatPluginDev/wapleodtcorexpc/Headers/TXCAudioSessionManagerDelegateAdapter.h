@@ -13,7 +13,6 @@
     scoped_refptr_249dff9e _taskRunner;
 }
 
-- (id).cxx_construct;
 - (void)deviceOrientationDidChange;
 - (void)audioSession:(id)arg1 didChangeOtherAppPlayoutState:(_Bool)arg2;
 - (void)audioSession:(id)arg1 didChangeOutputVolume:(int)arg2;

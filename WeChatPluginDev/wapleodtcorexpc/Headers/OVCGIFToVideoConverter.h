@@ -14,7 +14,6 @@ typedef void (^CDUnknownBlockType)(void);
     id <OVCGIFToVideoConverterDelegate> _delegate;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) __weak id <OVCGIFToVideoConverterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)cancelConverting;
 - (void)startConvertingWithGIFFilePath:(id)arg1 toVideo:(id)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;

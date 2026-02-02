@@ -14,9 +14,9 @@
 - (void)stop;
 - (void)setRenderParams:(CDStruct_92d0be38)arg1;
 - (map_5b36435d)getSubtitleText:(long long)arg1;
-- (int)selectTracksAsync:(vector_cd3186ef)arg1 opaque:(long long)arg2;
+- (int)selectTracksAsync:(void *)arg1 opaque:(long long)arg2;
 - (int)selectTrackAsync:(int)arg1 opaque:(long long)arg2;
-- (vector_fdf80d0c)getTrackInfo;
+- (void *)getTrackInfo;
 - (void)pauseAsync;
 - (void)startAsync;
 - (void)loadAsync;

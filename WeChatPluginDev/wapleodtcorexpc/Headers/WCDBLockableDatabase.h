@@ -8,7 +8,6 @@
     struct WCDBLockGuard _lockGuard;
 }
 
-- (id).cxx_construct;
 - (void)lockGuard:(void *)arg1;
 - (id)initWithDatabase:(id)arg1;
 

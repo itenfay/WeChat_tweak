@@ -13,7 +13,6 @@
     NSMutableDictionary *_registerInfos;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) NSMutableDictionary *registerInfos; // @synthesize registerInfos=_registerInfos;
 - (void)enqueueObject:(id)arg1;
 - (id)dequeueObject:(id)arg1;

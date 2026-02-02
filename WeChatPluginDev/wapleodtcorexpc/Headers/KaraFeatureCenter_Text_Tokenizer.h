@@ -10,7 +10,6 @@
     struct shared_ptr<Kara::FeatureCenter::Text::FullTokenizer> _tokenizer;
 }
 
-- (id).cxx_construct;
 - (id)tokenize:(id)arg1 maxLength:(long long)arg2;
 - (id)initWithVacabulary:(id)arg1;
 

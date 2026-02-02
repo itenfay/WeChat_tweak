@@ -16,7 +16,6 @@
     SettingMyAccountExtInfoLogic *m_infoLogic;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) __weak id <settingMyAccountExtInfoDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onInfoChange;
 - (void)dealloc;

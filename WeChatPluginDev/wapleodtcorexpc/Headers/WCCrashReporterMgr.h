@@ -11,7 +11,7 @@
 }
 
 + (void)reportWithID:(int)arg1 ext:(id)arg2 isReportNow:(_Bool)arg3 isKeyLog:(_Bool)arg4;
-+ (void)reportIdKeyList:(vector_0827168c)arg1;
++ (void)reportIdKeyList:(void *)arg1;
 + (void)reportId:(int)arg1 key:(int)arg2 andValue:(int)arg3;
 @property(nonatomic) unsigned long long currentReportType; // @synthesize currentReportType=_currentReportType;
 - (void)handleReportCoreDumpIssue:(id)arg1 success:(_Bool)arg2;

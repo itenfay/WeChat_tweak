@@ -10,7 +10,6 @@
     struct Mat _oriImage;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) struct Mat oriImage; // @synthesize oriImage=_oriImage;
 
 @end

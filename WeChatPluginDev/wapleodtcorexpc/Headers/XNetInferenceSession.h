@@ -11,7 +11,6 @@
 }
 
 + (id)GetXNetSDKVersion;
-- (id).cxx_construct;
 - (id)modelDescriptionWithError:(id *)arg1;
 - (map_941ed0ad)convertObjC2CppTensors:(id)arg1;
 - (id)convertCpp2ObjCTensors:(const void *)arg1;

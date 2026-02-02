@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KPatternLockViewOnInputInvalidPatternCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onInputInvalidPattern;
 - (id)initWithCpp:(const void *)arg1;
 

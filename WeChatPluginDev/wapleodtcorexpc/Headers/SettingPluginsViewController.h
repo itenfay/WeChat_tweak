@@ -16,7 +16,6 @@
     ContactGetPluginSwitchCgi *_getPluginSwitchCgi;
 }
 
-- (id).cxx_construct;
 @property(retain, nonatomic) ContactGetPluginSwitchCgi *getPluginSwitchCgi; // @synthesize getPluginSwitchCgi=_getPluginSwitchCgi;
 @property(retain, nonatomic) WCPayGetCollAssitStatusCgi *getCollAssistStatusCgi; // @synthesize getCollAssistStatusCgi=_getCollAssistStatusCgi;
 - (void)onGetCollAssistStatusCgiSucc;

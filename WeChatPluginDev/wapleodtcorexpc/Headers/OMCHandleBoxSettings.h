@@ -10,7 +10,6 @@
     struct XMSHandleBoxSettings _backingSettings;
 }
 
-- (id).cxx_construct;
 @property(readonly, nonatomic) _Bool isNormalized;
 @property(readonly, nonatomic) unsigned int enabledButtonIDBits;
 @property(readonly, nonatomic) struct UIEdgeInsets edgeInsets;

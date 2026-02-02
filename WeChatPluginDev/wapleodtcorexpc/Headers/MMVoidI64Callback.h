@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::VoidI64Callback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)call:(long long)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

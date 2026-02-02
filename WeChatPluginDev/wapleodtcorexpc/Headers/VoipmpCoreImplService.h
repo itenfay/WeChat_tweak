@@ -14,7 +14,6 @@ typedef void (^CDUnknownBlockType)(void);
 }
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2 refCntManager:(void *)arg3;
-- (id).cxx_construct;
 - (void)dealloc;
 - (void)bindSocketToNetWorkAsync:(int)arg1 on:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)bindSocketToNetWorkAsync:(int)arg1 completion:(CDUnknownBlockType)arg2;

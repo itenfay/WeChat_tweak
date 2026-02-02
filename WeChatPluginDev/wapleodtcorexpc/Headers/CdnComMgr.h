@@ -21,7 +21,7 @@
         int enable_safecdn;
         int enable_snsvideo_stream_download;
         int enable_snsimage_stream_download;
-        basic_string_5909a4e2 video_private_protocol_approved_hostlist;
+        void * video_private_protocol_approved_hostlist;
         struct unordered_map<std::string, std::string, std::hash<std::string>, std::equal_to<std::string>, std::allocator<std::pair<const std::string, std::string>>> miscellaneous_exptvalues;
     } m_currentConfig;
     struct shared_ptr<CdnCallback> m_spCallback;
@@ -35,7 +35,6 @@
 + (id)GetDownloadThumbClientID:(id)arg1;
 + (id)GetDownloadClientID:(id)arg1 HD:(_Bool)arg2;
 + (id)GetCdnRootPath;
-- (id).cxx_construct;
 @property(readonly, nonatomic) _Bool m_bForbidSnsDownloadWithCustomProtocol; // @synthesize m_bForbidSnsDownloadWithCustomProtocol;
 - (void)SetAllDebugIP:(id)arg1;
 - (void)SetHttpDownloadDebugIP:(id)arg1;

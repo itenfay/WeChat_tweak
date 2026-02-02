@@ -22,7 +22,7 @@
 - (_Bool)build:(id)arg1;
 - (id)saveModel:(struct Model *)arg1;
 - (_Bool)cleanup;
-- (_Bool)invokeWithInputs:(const vector_1994dafb *)arg1 outputs:(const vector_1994dafb *)arg2;
+- (_Bool)invokeWithInputs:(const void * *)arg1 outputs:(const void * *)arg2;
 
 @end
 

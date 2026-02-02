@@ -10,7 +10,6 @@
     struct Handle<std::shared_ptr<kinda::KCardTypePickerViewOnSelectCallback>> _cppRefHandle;
 }
 
-- (id).cxx_construct;
 - (void)onSelect:(int)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

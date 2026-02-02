@@ -11,7 +11,6 @@
     struct XTMTime _imageOriginDuration;
 }
 
-- (id).cxx_construct;
 @property(readonly, nonatomic) SharedPtr_65cdf39d backingElementSegment;
 @property(readonly, nonatomic) _Bool isBuiltinAnimEnabled;
 - (void)disableBuiltinAnim;

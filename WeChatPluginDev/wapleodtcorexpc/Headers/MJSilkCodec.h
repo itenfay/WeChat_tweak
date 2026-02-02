@@ -13,7 +13,6 @@
 + (id)encodeToSilkFromPCMData:(id)arg1;
 + (id)decodeToAudioDataFromSilkData:(id)arg1;
 + (id)decodeToPCMFromSilkData:(id)arg1;
-- (id).cxx_construct;
 @property(nonatomic) struct AudioCoder encoder; // @synthesize encoder=_encoder;
 - (_Bool)uninitEncoder;
 - (id)encodeFromPCMData:(id)arg1;

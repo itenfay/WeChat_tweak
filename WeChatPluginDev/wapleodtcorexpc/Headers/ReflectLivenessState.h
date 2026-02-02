@@ -32,7 +32,6 @@
     unsigned long long _curState;
 }
 
-- (id).cxx_construct;
 @property(nonatomic) unsigned long long curState; // @synthesize curState=_curState;
 @property(nonatomic) float lux; // @synthesize lux=_lux;
 @property(retain, nonatomic) NSString *mRgbConfig; // @synthesize mRgbConfig=_mRgbConfig;
