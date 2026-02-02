@@ -36,8 +36,7 @@
 
 @interface ChatRoomInfoViewController : MMUIViewController
 
-// Added Methods. in MMUIViewController.
-//- (void)wcpl_handleIgnoreChatRoom:(UISwitch *)sender;
+@property (retain, nonatomic) CContact *m_chatRoomContact;
 
 @end
 
