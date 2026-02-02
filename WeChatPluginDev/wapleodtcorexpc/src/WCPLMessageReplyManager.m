@@ -2108,8 +2108,82 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         }
 
         if (!image && expandedPath.length == 0 && imageData.length == 0) {
-            [execLog appendString:@"❌ 无法获取图片数据/路径\n"];
-            return execLog;
+            [execLog appendString:@"⚠️ msgWrap 中无图片数据,尝试从界面获取\n"];
+
+            // 方案1: 尝试从消息 cell 的 ImageView 获取已显示的图片
+            @try {
+                // 查找消息对应的 cell
+                UIView *currentCell = nil;
+                UIResponder *responder = viewController.view;
+                while (responder) {
+                    if ([responder isKindOfClass:[UITableViewCell class]]) {
+                        currentCell = (UIView *)responder;
+                        break;
+                    }
+                    responder = [responder nextResponder];
+                }
+
+                if (!currentCell && viewController.view) {
+                    // 尝试遍历 tableView 的 cells
+                    for (UIView *subview in viewController.view.subviews) {
+                        if ([subview isKindOfClass:[UITableView class]]) {
+                            UITableView *tableView = (UITableView *)subview;
+                            for (UITableViewCell *cell in tableView.visibleCells) {
+                                // 检查 cell 是否包含此 msgWrap
+                                @try {
+                                    id cellMsgWrap = [cell valueForKey:@"m_msgWrap"];
+                                    if (cellMsgWrap && [cellMsgWrap isEqual:msgWrap]) {
+                                        currentCell = cell;
+                                        break;
+                                    }
+                                } @catch (NSException *e) {
+                                    // 继续查找
+                                }
+                            }
+                            if (currentCell) break;
+                        }
+                    }
+                }
+
+                // 在 cell 中查找 UIImageView
+                if (currentCell) {
+                    [execLog appendString:@"✓ 找到消息 cell,查找 ImageView\n"];
+                    UIImageView *foundImageView = nil;
+                    NSMutableArray *viewsToCheck = [NSMutableArray arrayWithObject:currentCell];
+
+                    while (viewsToCheck.count > 0) {
+                        UIView *view = viewsToCheck.firstObject;
+                        [viewsToCheck removeObjectAtIndex:0];
+
+                        if ([view isKindOfClass:[UIImageView class]]) {
+                            UIImageView *imgView = (UIImageView *)view;
+                            if (imgView.image && imgView.image.size.width > 50 && imgView.image.size.height > 50) {
+                                foundImageView = imgView;
+                                break;
+                            }
+                        }
+
+                        [viewsToCheck addObjectsFromArray:view.subviews];
+                    }
+
+                    if (foundImageView && foundImageView.image) {
+                        image = foundImageView.image;
+                        [execLog appendFormat:@"✅ 从 ImageView 获取图片成功 (%.0fx%.0f)\n",
+                         image.size.width, image.size.height];
+                    } else {
+                        [execLog appendString:@"❌ 未在 cell 中找到有效的 ImageView\n"];
+                    }
+                }
+            } @catch (NSException *e) {
+                [execLog appendFormat:@"⚠️ 从界面获取图片异常: %@\n", e];
+            }
+
+            // 方案2: 如果仍然没有图片,尝试触发图片下载
+            if (!image) {
+                [execLog appendFormat:@"⚠️ 图片状态: %@\n", [msgWrap valueForKey:@"m_uiImgStatus"]];
+                [execLog appendString:@"提示: 图片可能未下载或已过期,请先点击查看大图后再复读\n"];
+                return execLog;
+            }
         }
 
         id toolView = [self wcpl_inputToolViewFromViewController:viewController];
