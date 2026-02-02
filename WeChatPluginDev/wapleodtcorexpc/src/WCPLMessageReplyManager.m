@@ -260,8 +260,24 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             }
         }
 
-        // 检查是否已经存在相同消息的按钮
+        // 优先复用已关联的按钮，避免长文本/多次布局导致重复按钮残留
         UIButton *existingButton = nil;
+        if (associatedButton && [self wcpl_isRepeatButtonView:associatedButton]) {
+            CMessageWrap *associatedMsgWrap = objc_getAssociatedObject(associatedButton, &kRepeatMsgWrapKey);
+            BOOL isSameMessage = (associatedMsgWrap && associatedMsgWrap.m_uiMesLocalID == msgLocalID);
+            if (isSameMessage) {
+                existingButton = associatedButton;
+                if (existingButton.superview != containerView) {
+                    [existingButton removeFromSuperview];
+                    [containerView addSubview:existingButton];
+                }
+            } else if (associatedMsgWrap) {
+                [associatedButton removeFromSuperview];
+                objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+        }
+
+        // 检查是否已经存在相同消息的按钮
         NSMutableArray<UIButton *> *repeatButtons = [NSMutableArray array];
         if (containerView) {
             NSMutableArray<UIView *> *stack = [NSMutableArray arrayWithObject:containerView];
@@ -284,6 +300,9 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
         NSMutableArray<UIButton *> *buttonsToRemove = [NSMutableArray array];
         for (UIButton *button in repeatButtons) {
+            if (existingButton && button == existingButton) {
+                continue;
+            }
             CMessageWrap *existingMsgWrap = objc_getAssociatedObject(button, &kRepeatMsgWrapKey);
             BOOL isSameMessage = (existingMsgWrap && existingMsgWrap.m_uiMesLocalID == msgLocalID);
 

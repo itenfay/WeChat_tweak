@@ -46,6 +46,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self reloadTableData];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -190,6 +191,9 @@
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"其他"];
     
     [section addCell:[self createAbortRemokeMessageCell]];
+    [section addCell:[self createUserIgnoreEnableCell]];
+    [section addCell:[self createIgnoredChatroomCountCell]];
+    [section addCell:[self createIgnoredUserCountCell]];
     
     [self.tableViewMgr addSection:section];
 }
@@ -200,6 +204,36 @@
 
 - (void)settingMessageRevoke:(UISwitch *)sender {
     [WCPLRedEnvelopConfig sharedConfig].revokeEnable = sender.on;
+}
+
+- (WCTableViewNormalCellManager *)createUserIgnoreEnableCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingUserIgnoreEnable:) target:self title:@"启用消息屏蔽" on:[WCPLRedEnvelopConfig sharedConfig].userIgnoreEnable];
+}
+
+- (void)settingUserIgnoreEnable:(UISwitch *)sender {
+    [WCPLRedEnvelopConfig sharedConfig].userIgnoreEnable = sender.on;
+}
+
+- (WCTableViewNormalCellManager *)createIgnoredChatroomCountCell {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    __block NSUInteger count = 0;
+    [config.chatIgnoreInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
+        if (obj.boolValue && [key rangeOfString:@"@chatroom"].location != NSNotFound) {
+            count += 1;
+        }
+    }];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForTitle:@"已屏蔽群聊" rightValue:[NSString stringWithFormat:@"%lu", (unsigned long)count]];
+}
+
+- (WCTableViewNormalCellManager *)createIgnoredUserCountCell {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    __block NSUInteger count = 0;
+    [config.userIgnoreInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
+        if (obj.boolValue && [key rangeOfString:@"@chatroom"].location == NSNotFound) {
+            count += 1;
+        }
+    }];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForTitle:@"已屏蔽好友" rightValue:[NSString stringWithFormat:@"%lu", (unsigned long)count]];
 }
 
 #pragma mark - Message Reply Setting

@@ -11,6 +11,7 @@
 #import "WCPLMessageReplyManager.h"
 #import "WCHookSwipeUtilities.h"
 #import "WCHookMessageNavigator.h"
+#import <objc/runtime.h>
 
 // ==================== 插件注册 ====================
 static BOOL didRegisterWCPLPlugin = NO;
@@ -101,6 +102,32 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         default:
             return [NSString stringWithFormat:@"[类型:%u]", type];
     }
+}
+
+static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageWrap *msgWrap) {
+    if (!config || !config.userIgnoreEnable) return NO;
+    if (![msgWrap isKindOfClass:%c(CMessageWrap)]) return NO;
+
+    BOOL isSender = NO;
+    @try {
+        isSender = [%c(CMessageWrap) isSenderFromMsgWrap:msgWrap];
+    } @catch (__unused NSException *exception) {
+        isSender = NO;
+    }
+    if (isSender) return NO;
+
+    NSString *fromUsr = msgWrap.m_nsFromUsr;
+    if (fromUsr.length > 0 && config.chatIgnoreInfo[fromUsr].boolValue) {
+        return YES;
+    }
+    if (fromUsr.length > 0 && config.userIgnoreInfo[fromUsr].boolValue) {
+        return YES;
+    }
+    NSString *realChatUsr = msgWrap.m_nsRealChatUsr;
+    if (realChatUsr.length > 0 && config.userIgnoreInfo[realChatUsr].boolValue) {
+        return YES;
+    }
+    return NO;
 }
 
 %hook MicroMessengerAppDelegate
@@ -201,6 +228,11 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 %hook CMessageMgr
 
 - (void)AsyncOnAddMsg:(NSString *)msg MsgWrap:(CMessageWrap *)wrap {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    if (wcpl_shouldIgnoreMessageWrap(config, wrap)) {
+        return;
+    }
+
     %orig;
 
     switch(wrap.m_uiMessageType) {
@@ -410,8 +442,12 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
 
-    if (config.chatIgnoreInfo[arg1].boolValue) {
-        return [WCPLFuncService filtMessageFromMsgList:result];
+    if (!config.userIgnoreEnable) {
+        return result;
+    }
+
+    if ([result isKindOfClass:[NSArray class]] || [result isKindOfClass:[NSMutableArray class]]) {
+        return [WCPLFuncService filtMessageFromMsgList:(NSMutableArray *)result];
     }
 
     return result;
@@ -477,7 +513,15 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 %new
 - (void)wcpl_handleIgnoreChatRoom:(UISwitch *)sender {
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    if (!config.userIgnoreEnable) {
+        sender.on = NO;
+        return;
+    }
     NSString *usrName = config.curUsrName;
+    if (usrName.length == 0) {
+        sender.on = NO;
+        return;
+    }
     if (sender.on) {
         config.chatIgnoreInfo[usrName] = @(sender.on);
     } else {
@@ -1188,6 +1232,9 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     %orig;
 
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    if (!config.userIgnoreEnable) {
+        return;
+    }
     NSString *usrName = config.curUsrName;
 
     MMTableViewInfo *tableViewInfo = MSHookIvar<id>(self, "m_tableViewInfo");
@@ -1201,21 +1248,76 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 
 %end
 
-%hook AddContactToChatRoomViewController
+%hook ContactInfoViewController
 
 - (void)reloadTableData {
     %orig;
 
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    NSString *usrName = config.curUsrName;
+    if (!config.userIgnoreEnable) {
+        return;
+    }
 
-    MMTableViewInfo *tableViewInfo = MSHookIvar<id>(self, "m_tableViewInfo");
-    WCTableViewSectionManager *sectionMgr = [tableViewInfo getSectionAt:2];
-    WCTableViewNormalCellManager *ignoreCell = [%c(WCTableViewNormalCellManager) switchCellForSel:@selector(wcpl_handleIgnoreChatRoom:) target:self title:@"屏蔽消息" on:config.chatIgnoreInfo[usrName].boolValue];
+    CContact *contact = self.m_contact;
+    NSString *usrName = contact.m_nsUsrName;
+    if (usrName.length == 0) {
+        return;
+    }
+    if ([usrName rangeOfString:@"@chatroom"].location != NSNotFound) {
+        return;
+    }
+
+    id tableViewMgr = nil;
+    Ivar tableViewInfoIvar = class_getInstanceVariable([self class], "m_tableViewInfo");
+    if (tableViewInfoIvar) {
+        tableViewMgr = object_getIvar(self, tableViewInfoIvar);
+    }
+    if (!tableViewMgr) {
+        Ivar tableViewMgrIvar = class_getInstanceVariable([self class], "m_tableViewMgr");
+        if (tableViewMgrIvar) {
+            tableViewMgr = object_getIvar(self, tableViewMgrIvar);
+        }
+    }
+    if (!tableViewMgr || ![tableViewMgr respondsToSelector:@selector(addSection:)] || ![tableViewMgr respondsToSelector:@selector(getTableView)]) {
+        return;
+    }
+
+    WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoHeader:@"消息屏蔽"];
+    WCTableViewNormalCellManager *ignoreCell = [%c(WCTableViewNormalCellManager) switchCellForSel:@selector(wcpl_handleIgnoreUser:) target:self title:@"屏蔽此人消息" on:config.userIgnoreInfo[usrName].boolValue];
     [sectionMgr addCell:ignoreCell];
+    [tableViewMgr addSection:sectionMgr];
 
-    MMTableView *tableView = [tableViewInfo getTableView];
+    MMTableView *tableView = [tableViewMgr getTableView];
     [tableView reloadData];
+}
+
+%new
+- (void)wcpl_handleIgnoreUser:(UISwitch *)sender {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    if (!config.userIgnoreEnable) {
+        sender.on = NO;
+        return;
+    }
+
+    CContact *contact = self.m_contact;
+    NSString *usrName = contact.m_nsUsrName;
+    if (usrName.length == 0) {
+        sender.on = NO;
+        return;
+    }
+    if ([usrName rangeOfString:@"@chatroom"].location != NSNotFound) {
+        sender.on = NO;
+        return;
+    }
+
+    if (sender.on) {
+        config.userIgnoreInfo[usrName] = @(YES);
+    } else {
+        NSMutableDictionary *igDict = config.userIgnoreInfo;
+        [igDict removeObjectForKey:usrName];
+        config.userIgnoreInfo = igDict;
+    }
+    [config saveUserIgnoreNameListToLocalFile];
 }
 
 %end

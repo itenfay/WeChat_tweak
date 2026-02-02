@@ -16,6 +16,8 @@ static NSString *const kWCPLRevokeEnable            = @"kWCPLRevokeEnable";
 static NSString *const kWCPLStepCount               = @"kWCPLStepCount";
 static NSString *const kWCPLLastChangeStepCountDate = @"kWCPLLastChangeStepCountDate";
 static NSString *const kWCPLChatIgnoreInfo          = @"kWCPLChatIgnoreInfo";
+static NSString *const kWCPLUserIgnoreEnable        = @"kWCPLUserIgnoreEnable";
+static NSString *const kWCPLUserIgnoreInfo          = @"kWCPLUserIgnoreInfo";
 static NSString *const kWCPLFakeLocLat              = @"kWCPLFakeLocLat";
 static NSString *const kWCPLFakeLocLng              = @"kWCPLFakeLocLng";
 static NSString *const kWCPLFakeLocEnable           = @"kWCPLFakeLocEnable";
@@ -59,6 +61,8 @@ static NSString *const kWCPLSwipeRightSelfAction    = @"kWCPLSwipeRightSelfActio
         _stepCount               = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLStepCount];
         _lastChangeStepCountDate = [self getLastChangeStepCountDate];
         _chatIgnoreInfo          = [self getChatIgnoreNameList];
+        _userIgnoreEnable        = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLUserIgnoreEnable];
+        _userIgnoreInfo          = [self getUserIgnoreNameList];
         _lat                     = [[NSUserDefaults standardUserDefaults] doubleForKey:kWCPLFakeLocLat];
         _lng                     = [[NSUserDefaults standardUserDefaults] doubleForKey:kWCPLFakeLocLng];
         _fakeLocEnable           = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLFakeLocEnable];
@@ -141,6 +145,25 @@ static NSString *const kWCPLSwipeRightSelfAction    = @"kWCPLSwipeRightSelfActio
 
 - (void)saveChatIgnoreNameListToLocalFile {
     [[NSUserDefaults standardUserDefaults] setObject:_chatIgnoreInfo forKey:kWCPLChatIgnoreInfo];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setUserIgnoreEnable:(BOOL)userIgnoreEnable {
+    _userIgnoreEnable = userIgnoreEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:userIgnoreEnable forKey:kWCPLUserIgnoreEnable];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSMutableDictionary *)getUserIgnoreNameList {
+    NSDictionary *igDict = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLUserIgnoreInfo];
+    if (!igDict) {
+        igDict = [NSDictionary dictionary];
+    }
+    return [igDict mutableCopy];
+}
+
+- (void)saveUserIgnoreNameListToLocalFile {
+    [[NSUserDefaults standardUserDefaults] setObject:_userIgnoreInfo forKey:kWCPLUserIgnoreInfo];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

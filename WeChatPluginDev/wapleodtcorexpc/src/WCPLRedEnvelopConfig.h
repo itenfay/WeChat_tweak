@@ -34,6 +34,12 @@
 
 - (void)saveChatIgnoreNameListToLocalFile;
 
+// 屏蔽联系人消息（总开关 + 名单）
+@property (assign, nonatomic) BOOL userIgnoreEnable;
+@property (strong, nonatomic) NSMutableDictionary<NSString *,NSNumber *> *userIgnoreInfo;
+
+- (void)saveUserIgnoreNameListToLocalFile;
+
 // Fake Location.
 @property (assign, nonatomic) double lat;
 @property (assign, nonatomic) double lng;
