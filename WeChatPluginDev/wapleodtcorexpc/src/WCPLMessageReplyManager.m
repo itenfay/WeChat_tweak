@@ -1115,37 +1115,38 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             return;
         }
 
-        // 将气泡坐标转换到 cellView 坐标系
-        CGRect bubbleFrame = bubbleView.frame;
-        if (bubbleView.superview != containerView) {
-            bubbleFrame = [bubbleView.superview convertRect:bubbleView.frame toView:containerView];
-        }
-
         // 通过判断消息发送者来确定消息方向（更可靠）
         BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
+
+        // 移除旧的约束
+        [button removeFromSuperview];
+        [containerView addSubview:button];
+        button.translatesAutoresizingMaskIntoConstraints = NO;
 
         // 按钮固定尺寸
         CGFloat buttonSize = 24;
 
-        CGFloat buttonX;
-        CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonSize;  // 底部与气泡底部对齐
+        // 添加尺寸约束
+        [button.widthAnchor constraintEqualToConstant:buttonSize].active = YES;
+        [button.heightAnchor constraintEqualToConstant:buttonSize].active = YES;
+
+        // 垂直位置：底部与气泡底部对齐
+        [button.bottomAnchor constraintEqualToAnchor:bubbleView.bottomAnchor].active = YES;
 
         if (isFromSelf) {
             // 自己的消息 - 按钮放在气泡左侧外面，紧贴气泡边缘
-            buttonX = bubbleFrame.origin.x - buttonSize - 2;
+            [button.trailingAnchor constraintEqualToAnchor:bubbleView.leadingAnchor constant:-2].active = YES;
         } else {
             // 别人的消息 - 按钮放在气泡右侧外面，紧贴气泡边缘
-            buttonX = CGRectGetMaxX(bubbleFrame) + 2;
+            [button.leadingAnchor constraintEqualToAnchor:bubbleView.trailingAnchor constant:2].active = YES;
         }
 
-        CGFloat maxX = CGRectGetWidth(containerView.bounds) - buttonSize;
-        CGFloat maxY = CGRectGetHeight(containerView.bounds) - buttonSize;
-        buttonX = MAX(0.0f, MIN(buttonX, maxX));
-        buttonY = MAX(0.0f, MIN(buttonY, maxY));
-
-        button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
         [containerView bringSubviewToFront:button];
         button.hidden = NO;
+
+        // 强制立即更新布局
+        [button setNeedsLayout];
+        [button layoutIfNeeded];
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in layoutRepeatButton: %@", exception);
