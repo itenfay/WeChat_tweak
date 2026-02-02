@@ -1235,28 +1235,17 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         // 通过判断消息发送者来确定消息方向（更可靠）
         BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
 
-        // 移除旧的约束
+        // 重新挂载到容器，避免复用时层级异常
         [button removeFromSuperview];
         [containerView addSubview:button];
-        button.translatesAutoresizingMaskIntoConstraints = NO;
 
-        // 按钮固定尺寸
+        // 使用 frame 布局避免约束累积
         CGFloat buttonSize = 24;
-
-        // 添加尺寸约束
-        [button.widthAnchor constraintEqualToConstant:buttonSize].active = YES;
-        [button.heightAnchor constraintEqualToConstant:buttonSize].active = YES;
-
-        // 垂直位置：底部与气泡底部对齐
-        [button.bottomAnchor constraintEqualToAnchor:bubbleView.bottomAnchor].active = YES;
-
-        if (isFromSelf) {
-            // 自己的消息 - 按钮放在气泡左侧外面，紧贴气泡边缘
-            [button.trailingAnchor constraintEqualToAnchor:bubbleView.leadingAnchor constant:-2].active = YES;
-        } else {
-            // 别人的消息 - 按钮放在气泡右侧外面，紧贴气泡边缘
-            [button.leadingAnchor constraintEqualToAnchor:bubbleView.trailingAnchor constant:2].active = YES;
-        }
+        CGRect bubbleFrame = [bubbleView convertRect:bubbleView.bounds toView:containerView];
+        CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonSize;
+        CGFloat buttonX = isFromSelf ? (CGRectGetMinX(bubbleFrame) - buttonSize - 2)
+                                     : (CGRectGetMaxX(bubbleFrame) + 2);
+        button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
 
         [containerView bringSubviewToFront:button];
         button.hidden = NO;
