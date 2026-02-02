@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class NSString, ObjectAdContentH5, ObjectAdContentLeadLink, ObjectAdContentMiniApp, ObjectAdDesc;
+
+@class WXPBGeneratedMessage;
 
 @interface ObjectAdItem : WXPBGeneratedMessage
 {

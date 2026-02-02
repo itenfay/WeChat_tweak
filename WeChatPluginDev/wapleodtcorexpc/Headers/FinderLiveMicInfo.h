@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderJumpInfo, FinderLiveBattleInfo, FinderLiveBattleSettingInfo, FinderLiveContact, FinderLiveMicConfig, FinderLiveMicInfo_Wording, FinderLiveMicMeetInfo, FinderLiveMicPkInfo, FinderLiveNewPkInfo, FinderLivePurchaseMicConfig, FinderLiveRoomData, IntercomMicInfo, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderLiveMicInfo : WXPBGeneratedMessage
 {

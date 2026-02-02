@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, FinderGetLiveInfoResp_AnchorInfo, FinderGetLiveInfoResp_LiveClosePageControlInfo, FinderGetLiveInfoResp_LiveCoverImage, FinderGetLiveInfoResp_LiveNotificationDynamicDisplayInfo, FinderGetLiveInfoResp_LivePreviewJoinliveControlInfo, FinderJumpInfo, FinderLiveAbnormalClosedPageInfo, FinderLiveAnchorQuestEntrance, FinderLiveInfo, FinderLiveShareCardDisplayInfo, FinderLiveStreamJumpNavInfo, FinderNotifyMoreLiveInfo, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderGetLiveInfoResp : WXPBGeneratedMessage
 {

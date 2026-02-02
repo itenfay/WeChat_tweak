@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderVideoTemplateInfo_MusicInfo, FinderVideoTemplateInfo_SecurityAuditInfo, FinderVideoTemplateInfo_TraitsInfo, FinderVideoTemplateInfo_VersionInfo, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderVideoTemplateInfo : WXPBGeneratedMessage
 {

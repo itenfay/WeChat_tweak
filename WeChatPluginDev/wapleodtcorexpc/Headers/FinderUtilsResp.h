@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, FinderMusicInfo, FinderUtilsResp_FinderUtilsArticleItem, FinderUtilsResp_FinderUtilsMiniAppItem;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderUtilsResp : WXPBGeneratedMessage
 {

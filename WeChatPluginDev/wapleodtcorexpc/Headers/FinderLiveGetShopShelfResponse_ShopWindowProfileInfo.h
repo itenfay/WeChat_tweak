@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderLiveGetShopShelfResponse_ShopWindowProfileInfo_LiteAppJumpInfo, FinderLiveGetShopShelfResponse_ShopWindowProfileInfo_ShopWindowRankInfo, FinderLiveGetShopShelfResponse_ShopWindowProfileInfo_ShopWindowSalesInfo, FinderLiveGetShopShelfResponse_ShopWindowProfileInfo_ShopWindowScoreInfo, FinderWxAppInfo, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderLiveGetShopShelfResponse_ShopWindowProfileInfo : WXPBGeneratedMessage
 {

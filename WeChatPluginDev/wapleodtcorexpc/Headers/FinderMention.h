@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class CommentContentInfo, FinderCommentMentionedUser, FinderContact, FinderFollowReasonInfo, FinderHelpPromotionMentionInfo, FinderIdentityInfo, FinderMentionAggregated, FinderMentionContact, FinderMentionExtInfo, FinderMention_FinderMentionThankInfo, FinderMention_LikeContactInfo, FinderNotification, FinderPoiInteractionInfo, NSMutableArray, NSString, NewLifeMentionInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderMention : WXPBGeneratedMessage
 {

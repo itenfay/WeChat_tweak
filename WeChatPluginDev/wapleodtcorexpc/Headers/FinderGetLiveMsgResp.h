@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, FinderGetLiveMsgResp_LiveIntercomMicInfo, FinderGetLiveMsgResp_LiveMsgClientConfig, FinderLiveAudienceEventInfo, FinderLiveBadgeInfo, FinderLiveCheerInfo, FinderLiveContact, FinderLiveExtFlag, FinderLiveFanClubInfo, FinderLiveGameData, FinderLiveInfo, FinderLiveMicInfo, FinderLiveModModifyLiveCoverImageResponse, FinderLiveModeInfo, FinderLiveNoticeBubbleInfo, FinderLivePreloadInfo, FinderLivePromoteExtInfo, FinderLiveRealnameLikeBubbleInfo, FinderLiveUserQuitLiveGuideInfo, NSData, NSMutableArray, OnQualityChangeInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderGetLiveMsgResp : WXPBGeneratedMessage
 {

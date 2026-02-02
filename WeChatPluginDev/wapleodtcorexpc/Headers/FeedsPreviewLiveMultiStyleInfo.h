@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FeedsPreviewLiveMultiStyleInfo_StyleEleven, FeedsPreviewLiveMultiStyleInfo_StyleFive, FeedsPreviewLiveMultiStyleInfo_StyleFour, FeedsPreviewLiveMultiStyleInfo_StyleOne, FeedsPreviewLiveMultiStyleInfo_StyleSevenTeen, FeedsPreviewLiveMultiStyleInfo_StyleTen, FeedsPreviewLiveMultiStyleInfo_StyleThree, FeedsPreviewLiveMultiStyleInfo_StyleTwelve, FeedsPreviewLiveMultiStyleInfo_StyleTwo, NSData, NSMutableArray;
+
+@class WXPBGeneratedMessage;
 
 @interface FeedsPreviewLiveMultiStyleInfo : WXPBGeneratedMessage
 {

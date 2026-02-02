@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, GetCommentInfoResp_CommentModule, GetProfileInfoResponse_ProfilePageInfo, GetProfileInfoResponse_RelievedBuyInfo, GetProfileInfoResponse_ServicePreInfo, GetProfileInfoResponse_WxaEvaluateBasicInfo, GetProfileInfoResponse_WxaLikeList, GetProfileInfoResponse_WxaRelateBrandList, GetProfileInfoResponse_WxaRelateWeAppList, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface GetProfileInfoResponse : WXPBGeneratedMessage
 {

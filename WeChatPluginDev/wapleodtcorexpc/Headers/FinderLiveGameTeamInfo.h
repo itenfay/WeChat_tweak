@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderLiveGameTeamInfo_FinderGameLiveAppInfo, FinderLiveGameTeamInfo_FinderGameLiveWxaExtraJoinInfo, FinderLiveGameTeamInfo_GameLiveEnablePaymentPanelInfo, FinderLiveGameTeamInfo_GameTeamUpInfoForAnchor, FinderLiveGameTeamInfo_GameTeamUpInfoForAndience, FinderLiveGameTeamInfo_StartLiveGuide, FinderLiveGameTeamInfo_WeappJumpInfo, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderLiveGameTeamInfo : WXPBGeneratedMessage
 {

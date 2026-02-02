@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class EcProductCard_CouponInfo, EcProductCard_DescWordInfo, EcProductCard_GuaranteeInfo, EcProductCard_LimitDiscountInfo, EcProductCard_ShowBoxPictureInfo, NSData, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface EcProductCard_ShowBoxItem : WXPBGeneratedMessage
 {

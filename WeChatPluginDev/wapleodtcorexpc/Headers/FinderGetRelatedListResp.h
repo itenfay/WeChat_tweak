@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, FinderBarInfo, FinderLivePreloadInfo, FinderPreloadInfo, FinderRelatedRecommendTips, FinderStreamLayoutInfo, FinderStreamLongVideoInfo, GetRelatedListPrefetchConfig, NSData, NSMutableArray, NSString, StreamBackupInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderGetRelatedListResp : WXPBGeneratedMessage
 {

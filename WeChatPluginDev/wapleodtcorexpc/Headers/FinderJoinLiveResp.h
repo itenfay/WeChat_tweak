@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, CommentRelatedInfo, EcPromoterInfo, FinderBizUserInfo, FinderJoinLiveRespExtend, FinderJoinLiveResp_FlashSaleInfo, FinderJoinLiveResp_PromotingInfo, FinderJoinLiveResp_SyncExtraInfoConfig, FinderJoinLiveTips, FinderJumpInfo, FinderLiveAdInfo, FinderLiveAudienceEventInfo, FinderLiveAutoSwipeInfo, FinderLiveBackgroundMusicInfo, FinderLiveBulletin, FinderLiveCheerInfo, FinderLiveContact, FinderLiveErrorPage, FinderLiveExtFlag, FinderLiveFanClubInfo, FinderLiveGameData, FinderLiveGameInfo, FinderLiveGamePlayTogether, FinderLiveHotCommentAnimationInfoList, FinderLiveInfo, FinderLiveInternalPageInfo, FinderLiveMandatoryReplaceInfo, FinderLiveMicInfo, FinderLiveModModifyLiveCoverImageResponse, FinderLiveModeInfo, FinderLivePackageExtInfo, FinderLivePromoteExtInfo, FinderLivePromoteMsgInfo, FinderLiveRealnameLikeInfo, FinderLiveRecommendPreloadInfo, FinderLiveResourcePreloadInfo, FinderLiveRewardQuotaSwitchInfo, FinderLiveRoleAndPermissionList, FinderLiveShopWindowProductItem, FinderLiveStreamDecor, FinderLiveUserAttrUserSetting, FinderLiveUserInfo, FinderLocation, FinderWxAppInfo, GameLiveJumpInfo, GameRankSwitchInfo, GeneralGameLiveInfo, JoinLiveInvisiableSwitchInfo, LiveRoomImg, LiveSdkInfo, LiveWeappJumpInfo, NSData, NSMutableArray, NSString, SongListInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderJoinLiveResp : WXPBGeneratedMessage
 {

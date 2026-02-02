@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class GetWxaDebugInfoResp_ModuleItem_ClientJsExtInfo, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface GetWxaDebugInfoResp_ModuleItem : WXPBGeneratedMessage
 {

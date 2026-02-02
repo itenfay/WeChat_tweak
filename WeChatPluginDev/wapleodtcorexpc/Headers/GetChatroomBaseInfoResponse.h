@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class Background, BaseResponse, ChannelInfo, ChatroomButton, ChatroomData, ChatroomEnterInfo, ChatroomExternInfo, ChatroomJumpInfo, ChatroomPreloadInfo, ChatroomUserData, FirstEnterNotify, MsgBaseInfo, NSMutableArray, RealtimeControlInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface GetChatroomBaseInfoResponse : WXPBGeneratedMessage
 {

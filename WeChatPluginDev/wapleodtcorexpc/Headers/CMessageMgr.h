@@ -8,6 +8,8 @@ typedef void (^CDUnknownBlockType)(void);
 @class BypSendEmotionMessageMgr, BypSendMessageMgr, CDownloadVideoMgr, CEmoticonDownloadMgr, CEmoticonUploadMgr, CMessageDB, DownloadImageCDNMgr, DownloadImageMgr, DownloadVideoCDNMgr, MessageAssetThreshold, MessagePatternCacheMgr, MultiMediaUploadUnifyMgr, NSDate, NSMutableArray, NSMutableDictionary, NSNumber, NSObject, NSString, OpenDownloadCDNMgr, OpenDownloadMgr, OpenUploadCDNMgr, OpenUploadMgr, OpenUploadVideoCDNMgr, RecordDownloadCDNMgr, RecordUploadCDNMgr, RoomHistoryDownloadCDNMgr, ThumbDownloadMgr, UploadImageCDNMgr, UploadImageMgr, VideoUploadUnifyMgr;
 @protocol OS_dispatch_semaphore;
 
+struct XmlReaderNode_t;
+
 @interface CMessageMgr
 {
     CMessageDB *m_oMsgDB;

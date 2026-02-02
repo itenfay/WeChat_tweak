@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseRequest, HistoryInfo, NSMutableArray, NSString, SKBuiltinString_t;
+
+@class WXPBGeneratedMessage;
 
 @interface AddChatRoomMemberRequest : WXPBGeneratedMessage
 {

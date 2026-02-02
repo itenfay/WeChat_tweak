@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderLiveMilestoneLotteryInfo_AttendInfo, FinderLiveMilestoneLotteryInfo_BaseInfo, FinderLiveMilestoneLotteryInfo_ParticipantInfo, FinderLiveMilestoneLotteryInfo_PrizeInfo, FinderLiveMilestoneLotteryInfo_ResultInfo, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderLiveMilestoneLotteryInfo : WXPBGeneratedMessage
 {

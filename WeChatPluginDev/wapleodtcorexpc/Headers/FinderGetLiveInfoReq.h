@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseRequest, FinderGetLiveInfoReq_FinderGetLiveInfoSceneNotificationInfo, FinderGetLiveInfoReq_LiveADBypassInfo, FinderLiveClientStatus, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderGetLiveInfoReq : WXPBGeneratedMessage
 {

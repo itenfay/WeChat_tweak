@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class AuthorReactionToCommentInfo, CommentContentInfo, CommentRecommendFriendList, CommentRefFeedJumpInfo, CommentRefProductJumpInfo, FinderCommentAdvertisementInfo, FinderCommentPromotionInfo, FinderCommentRelatedFeedInfo, FinderContact, FinderContactMsgInfo, FinderIpRegionInfo, NSData, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderCommentInfo : WXPBGeneratedMessage
 {

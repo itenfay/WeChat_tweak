@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class AccountExtraSettingConfig, AcctTransferConfig, AgencyCollaborateInfo, BaseResponse, DataCenterConfig, FinderContact, FinderLiveNoticeListInfo, FinderLiveWxaPreloadInfo, FinderNicknameVerifyInfo, FinderPrivacySetting, FinderUserPreparePoiInfo, FinderWxAppInfo, GameRankSwitchInfo, JoinLiveInvisiableSwitchInfo, NSMutableArray, NSString, PostActionSheetList, PostActionWording, SettleToAgencyRelateInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderUserPrepareResponse : WXPBGeneratedMessage
 {

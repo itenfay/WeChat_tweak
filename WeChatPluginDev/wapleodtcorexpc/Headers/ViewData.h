@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class ActionSheetViewData, BannerViewData, ButtonViewData, ButtonWithConfirmProtocalViewData, CardRecordViewData, ConfrimProtocalViewData, CouponItemViewData, GroupViewData, HorizontalGroupViewData, ImageViewData, ItemListViewData, ItemSectionViewData, ListViewData, MultiLineTextViewData, NewCardItemViewData, OptionSwitchViewData, OrderDetailViewData, PriceAndFavorViewData, RightTextViewData, RoundTextViewData, SingleLineTextViewData, SwitchViewData, TableCellViewData, TextViewData, ViewStyle;
+
+@class WXPBGeneratedMessage;
 
 @interface ViewData : WXPBGeneratedMessage
 {

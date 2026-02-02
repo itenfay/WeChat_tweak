@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class GetCommentInfoResp_TagSummary, NSMutableArray;
+
+@class WXPBGeneratedMessage;
 
 @interface GetCommentInfoResp_AppRecommendInfoList : WXPBGeneratedMessage
 {

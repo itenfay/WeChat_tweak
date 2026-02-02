@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class GameIndex4FeedsBlock_Corner, GameIndex4FeedsBlock_CreateTopicTemplate, GameIndex4FeedsBlock_GameListTemplate, GameIndex4FeedsBlock_GameTemplate, GameIndex4FeedsBlock_ImageTextTemplate, GameIndex4FeedsBlock_LiveTemplate, GameIndex4FeedsBlock_MatchTemplate, GameIndex4FeedsBlock_MoreGameTemplate, GameIndex4FeedsBlock_NoPlayGameTemplate, GameIndex4FeedsBlock_RecommendGameTemplate, GameIndex4FeedsBlock_VideoTemplate, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface GameIndex4FeedsBlock : WXPBGeneratedMessage
 {

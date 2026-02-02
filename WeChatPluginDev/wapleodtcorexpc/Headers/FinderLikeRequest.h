@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseRequest, FinderBaseRequest, FinderLikeNewLifeReportInfo, NSData, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderLikeRequest : WXPBGeneratedMessage
 {

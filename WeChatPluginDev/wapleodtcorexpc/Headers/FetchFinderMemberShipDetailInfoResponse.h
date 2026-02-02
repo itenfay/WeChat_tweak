@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, FetchFinderMemberShipDetailInfoResponse_AuthorMemberInfo, FetchFinderMemberShipDetailInfoResponse_MemberCollectionInfo, FetchFinderMemberShipDetailInfoResponse_VisitorMemberInfo, FetchFinderMemberShipDetailInfoResponse_VisitorNonMemberInfo, FinderContact, FinderObject, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FetchFinderMemberShipDetailInfoResponse : WXPBGeneratedMessage
 {

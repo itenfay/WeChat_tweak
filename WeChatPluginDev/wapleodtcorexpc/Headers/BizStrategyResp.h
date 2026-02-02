@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class AdvertisementExtInfo, AppMsgCoverPreloadInfo, AudioFeedsInfo, BaseResponse, BizFinderLiveControlInfo, BizMsgReSortConfig, BizMsgResortV2ControlInfo, BizPersonalCenterCellList, BizReportConfig, BizStrategyControlInfo, BizWxaPersonalCenter, BoxSearchSettingInfo, FinderLiveAutoplayConfig, MenuEntryListInfo, OftenReadBarFeedsInfo, PaySubscribeInfo, ProfilePreloadInfo, PublisherNewMsgInfo, RecommendFeedsInfo, RedPacketCoverConfig, TimelineFinderInfo, TimelineSettingInfo, TimelineTitlePosConfig, VideoChannelControlInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface BizStrategyResp : WXPBGeneratedMessage
 {

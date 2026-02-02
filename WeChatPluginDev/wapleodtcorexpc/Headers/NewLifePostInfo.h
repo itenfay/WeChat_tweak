@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderEventInfo, FinderExtendedReading, FinderJumpInfo, FinderLocation, FinderObjectExtend, NSData, NSMutableArray, NSString, NewLifePostReportInfo, NewLifeSelectMusicInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface NewLifePostInfo : WXPBGeneratedMessage
 {

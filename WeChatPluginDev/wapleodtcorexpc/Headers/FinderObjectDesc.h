@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderClientDraftExtInfo, FinderExtendedReading, FinderFlowCardDesc, FinderFollowPostInfo, FinderFromAppInfo, FinderGeneralReportInfo, FinderLiveDesc, FinderLocation, FinderLongVideoDesc, FinderMVInfo, FinderMediaExtra, FinderMemberData, FinderMemberQAVO, FinderModFeedInfo, FinderMusicInfo, FinderNewLifeDesc, FinderObjectBGMInfo, FinderObjectEventDesc, FinderOriginalDesc, FinderSimpleTopicInfo, FinderTemplateInfo, FinderTopic, FinderTopicHashTagDesc, FinderVideoTemplateInfo, NSMutableArray, NSString, OriginalSoundInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderObjectDesc : WXPBGeneratedMessage
 {

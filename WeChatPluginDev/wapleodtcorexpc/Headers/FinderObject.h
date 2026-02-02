@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderAttachmentList, FinderContact, FinderFlowCardRecommendReason, FinderFoldedLayout, FinderIpRegionInfo, FinderLiveInfo, FinderMusicRealtimeInfo, FinderObjectAdInfo, FinderObjectClientLocalBuffer, FinderObjectDesc, FinderObjectExtend, FinderObjectHotTopicList, FinderObjectHotWordInfo, FinderObjectPlaceHolderInfo, FinderObjectWebInfo, FinderPlayHistoryInfo, FinderPromotionJumpInfo, FinderPublisherInfo, FinderRecommendLabel, FinderSnsShareInfo, FinderTipsInfo, FinderVideo, NSData, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderObject : WXPBGeneratedMessage
 {

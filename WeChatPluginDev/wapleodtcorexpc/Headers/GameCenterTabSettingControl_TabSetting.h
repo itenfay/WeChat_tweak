@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class GameCenterTabSettingControl_TabJumpLiteAppInfo, GameCenterTabSettingControl_TabJumpWeappInfo, GameCenterTabSettingControl_TabReport, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface GameCenterTabSettingControl_TabSetting : WXPBGeneratedMessage
 {

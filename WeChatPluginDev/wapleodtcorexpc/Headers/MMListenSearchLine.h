@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class MMListenSearchResultFinderVoice, MMListenSearchResultGenre, MMListenSearchResultMpUser, MMListenSearchResultMusic, MMListenSearchResultMusicAlbum, MMListenSearchResultNonMusic, MMListenSearchResultPlaylist, MMListenSearchResultSinger, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface MMListenSearchLine : WXPBGeneratedMessage
 {

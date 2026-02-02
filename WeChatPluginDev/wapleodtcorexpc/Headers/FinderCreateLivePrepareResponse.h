@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, FinderCoCertRewardInfo, FinderContactLiveInfo, FinderJumpInfo, FinderLiveAnchorQuestEntrance, FinderLiveBackgroundMusicInfo, FinderLiveErrorPage, FinderLiveFanClubInfo, FinderLiveFeedbackEntranceInfo, FinderLiveGuideInfo, FinderLiveKtvResourceAtmosphereBg, FinderLiveKtvResourceReverb, FinderLiveKtvSettingsInfo, FinderLiveMicInfo, FinderLiveModModifyLiveCoverImageResponse, FinderLivePromotionEntrance, FinderLivePromptInfo, FinderLiveQuestEntranceInfo, FinderLiveStickerBubble, FinderLiveStickerFont, FinderLiveStreamDecor, FinderLiveTagInfo, FinderLiveUserAttrUserSetting, FinderObject, FinderRecoverLiveInfo, GameLiveJoinTeamSettingInfo, LiveRoomImg, LiveWeappJumpInfo, NSData, NSMutableArray, NSString, OtherConfigItems, SongListInfo, SpamRisk;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderCreateLivePrepareResponse : WXPBGeneratedMessage
 {

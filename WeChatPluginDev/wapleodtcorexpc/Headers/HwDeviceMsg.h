@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class HwDeviceMsg_HwAppFile, HwDeviceMsg_HwImage, HwDeviceMsg_HwLocation, HwDeviceMsg_HwMusic, HwDeviceMsg_HwUrl, HwDeviceMsg_HwVideo;
+
+@class WXPBGeneratedMessage;
 
 @interface HwDeviceMsg : WXPBGeneratedMessage
 {

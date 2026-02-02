@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderLiveAppMsgUpdateFinderObjectInfo_LiveCoverImage, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderLiveAppMsgUpdateFinderObjectInfo : WXPBGeneratedMessage
 {

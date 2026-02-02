@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class NSMutableArray, NSString, VideoAlbumItem_BattleInfo, VideoAlbumItem_ExternInfo, VideoAlbumItem_GameInfo, VideoAlbumItem_LeaderBoardInfo, VideoAlbumItem_MixTagInfo, VideoAlbumItem_UserBattleInfo, VideoAlbumItem_VideoInfo, VideoAlbumItem_VideoJumpInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface VideoAlbumItem : WXPBGeneratedMessage
 {

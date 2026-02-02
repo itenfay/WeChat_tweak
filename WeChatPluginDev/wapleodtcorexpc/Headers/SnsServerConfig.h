@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class Dragon2024Config, Rabbit2023Config, SnsVideoOptions;
+
+@class WXPBGeneratedMessage;
 
 @interface SnsServerConfig : WXPBGeneratedMessage
 {

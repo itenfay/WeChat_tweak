@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderJumpInfoRedDot, FinderJumpInfo_FlutterInfo, FinderJumpInfo_Html5Info, FinderJumpInfo_LiteApp, FinderJumpInfo_MiniAppInfo, FinderJumpInfo_NativeInfo, FinderJumpInfo_OnlineHelp, FinderJumpInfo_SchemaInfo, NSData, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderJumpInfo : WXPBGeneratedMessage
 {

@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BizRecommendArticleRecycleAttr, NSString, TLRecArticleWrapper, TLRecCard, TLRecCardUserInfo_FeedbackInfoMsg, TLRecFinderCardWrapper;
+
+@class WXPBGeneratedMessage;
 
 @interface TLRecCardWrapper : WXPBGeneratedMessage
 {

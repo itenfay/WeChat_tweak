@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class DescCarouselInfo, FinderAdLivingProductInfo, FinderAdPreMovieAdInfo, FinderLiveAutoSwipeInfo, FinderLiveCardHighlightTag, FinderLiveCardProductShowcase, FinderLiveInfo, FinderLivePreJoinLiveInfo, FinderLiveStreamPlayTogetherInfo, FinderNpsSurveyTaskConf, FinderObjectControversialAlertInfo, FinderObjectDigest, FinderObjectHelpPromotionInfo, FinderObjectWordingInfo, FinderPurchaseLivePreviewInfo, NSMutableArray;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderObjectAsyncLoadInfo : WXPBGeneratedMessage
 {

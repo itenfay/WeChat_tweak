@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, CommentNewLifeInfo, FinderCommentInfo, FinderCommentSectionPromptInfo, FinderObjectCountInfo, FinderObjectMonotonicData, NSData, NSMutableArray, ProductCommentInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderGetCommentListResponse : WXPBGeneratedMessage
 {

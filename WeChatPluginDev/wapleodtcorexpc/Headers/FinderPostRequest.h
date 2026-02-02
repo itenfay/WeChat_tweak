@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseRequest, FinderAttachmentList, FinderBaseRequest, FinderObjectDesc, FinderPostNewLifeInfo, FinderPostOriginInfo, FinderPostTraceInfo, FinderVideoDesc, NSData, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderPostRequest : WXPBGeneratedMessage
 {

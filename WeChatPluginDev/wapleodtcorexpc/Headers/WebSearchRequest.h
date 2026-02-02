@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class ChildMode, LbsLocationNew, NSData, NSMutableArray, NSString, PoiCtrlInfo, SnsCtrlInfo, TagCtrlInfo, TagSearchInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface WebSearchRequest : WXPBGeneratedMessage
 {

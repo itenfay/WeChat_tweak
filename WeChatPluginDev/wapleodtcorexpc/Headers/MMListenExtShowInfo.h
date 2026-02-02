@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class MMListenBannerInfo, MMListenPlaylistExtShowInfo, MMListenSingerRadioShowInfo, MMListenSongOriginInfo, MMListenSpringFestivalGalaPlaylistInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface MMListenExtShowInfo : WXPBGeneratedMessage
 {

@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, FinderCategoryRecommend, FinderContactRecommend, FinderLivePreloadInfo, FinderPreloadInfo, FinderRelatedRecommendTips, FinderSectionInfo, FinderStreamLayoutInfo, FinderStreamOftenReadBar, FinderStreamPrefechTimeIntervalConf, FinderStreamTipsShowInfo, FinderTopicRecommend, NSData, NSMutableArray, NSString, StreamBackupInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderStreamResponse : WXPBGeneratedMessage
 {

@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class GameLiveJumpInfo_FinderLiveWeappJumpInfo, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface GameLiveJumpInfo_FinderLiveJumpInfo : WXPBGeneratedMessage
 {

@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderBaseMediaInfo, FinderCoverScalingInfo, FinderHalfRect, FinderHdrMediaSpecList, FinderHlsMediaSpecList, FinderLiveMediaSpec, FinderLivePhotoMediaInfo, FinderMediaCdnInfo, FinderMediaCodecInfo, FinderMediaDebug, FinderObjectScalingInfo, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderMedia : WXPBGeneratedMessage
 {

@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class EnhanceBubble, FinderJumpInfo_AccountStyle, FinderJumpInfo_AroundAccountCircleStyle, FinderJumpInfo_BannerStyle, FinderJumpInfo_BariableButtonStyle, FinderJumpInfo_BigBubbleStyle, FinderJumpInfo_BigButtonStyle, FinderJumpInfo_ButtonStyle, FinderJumpInfo_CardBottomBarLeftStyle, FinderJumpInfo_CardBottomBarRightStyle, FinderJumpInfo_CardStyle, FinderJumpInfo_CarouselCardStyle, FinderJumpInfo_CombinationStyle, FinderJumpInfo_CommentCarouselStyle, FinderJumpInfo_DynamicCardStyle, FinderJumpInfo_DynamicCardStyleV2, FinderJumpInfo_DynamicCarouselCardStyle, FinderJumpInfo_FinderCrossPlatformCardStyle, FinderJumpInfo_GradientCardStyle, FinderJumpInfo_HotBubbleStyle, FinderJumpInfo_IconTextStyle, FinderJumpInfo_ImageStyle, FinderJumpInfo_JumpButtonStyle, FinderJumpInfo_LabelStyle, FinderJumpInfo_LbsLifeCardStyle, FinderJumpInfo_LinkStyle, FinderJumpInfo_LiveLivingStyle, FinderJumpInfo_LiveReservationStyle, FinderJumpInfo_LoadingStyle, FinderJumpInfo_LuckyBag, FinderJumpInfo_NormalBubbleStyle, FinderJumpInfo_RelativePosition, FinderJumpInfo_SubtitleBubbleStyle, FinderVideoStyle, ProductCardStyle;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderJumpInfo_Style : WXPBGeneratedMessage
 {

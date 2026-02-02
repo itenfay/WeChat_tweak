@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderLiveNoticeInfo_ConcertInfo, FinderLiveNoticeInfo_MembershipInfo, FinderLiveNoticeInfo_PayInfo, FinderLiveNoticeInfo_PersonalColumnInfo, MMFinderLiveCouponItem, NSArray, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderLiveNoticeInfo : WXPBGeneratedMessage
 {

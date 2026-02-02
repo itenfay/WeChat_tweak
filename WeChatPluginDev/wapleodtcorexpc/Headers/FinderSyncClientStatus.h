@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderReddotFreqInfo, FinderSyncClientStatus_DiscoveryReddotInfo, FinderSyncClientStatus_FinderNewLifePrefetchInfo, FinderSyncClientStatus_ReddotSession;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderSyncClientStatus : WXPBGeneratedMessage
 {

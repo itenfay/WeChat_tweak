@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, DocumentItem, HoneyPayListResp_Banner, HoneyPayListResp_Pertermit, NSMutableArray, NSString, NoticeItem, RightCorner;
+
+@class WXPBGeneratedMessage;
 
 @interface HoneyPayListResp : WXPBGeneratedMessage
 {

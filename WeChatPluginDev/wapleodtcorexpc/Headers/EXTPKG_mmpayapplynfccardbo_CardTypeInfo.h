@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class EXTPKG_mmpayapplynfccardbo_CardRecordsInfo, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface EXTPKG_mmpayapplynfccardbo_CardTypeInfo : WXPBGeneratedMessage
 {

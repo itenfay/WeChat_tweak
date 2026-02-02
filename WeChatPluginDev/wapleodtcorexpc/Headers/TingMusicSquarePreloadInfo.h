@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class MMListenRecommendInfo, NSData, NSString, TingMusicSquarePreloadInfo_SourceInfo, TingReddotReportInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface TingMusicSquarePreloadInfo : WXPBGeneratedMessage
 {

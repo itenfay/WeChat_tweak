@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class NSData, NSString, VideoTemplate_AlbumTemplateInfo, VideoTemplate_CameraTemplateInfo, VideoTemplate_CommonTemplateInfo, VideoTemplate_DynamicInfo, VideoTemplate_EventTopicInfo, VideoTemplate_FinderUserInfo, VideoTemplate_VersionInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface VideoTemplate : WXPBGeneratedMessage
 {

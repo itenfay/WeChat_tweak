@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class NSMutableArray, RoamBackupRangeItem_ContactFilter;
+
+@class WXPBGeneratedMessage;
 
 @interface RoamBackupRangeItem : WXPBGeneratedMessage
 {

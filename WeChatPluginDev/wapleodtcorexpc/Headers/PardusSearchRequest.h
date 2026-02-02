@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class ChildMode, LbsLocationNew, NSMutableArray, NSString, PardusSearchRequest_ClickContextInfo, PardusSearchRequest_SearchClickItem;
+
+@class WXPBGeneratedMessage;
 
 @interface PardusSearchRequest : WXPBGeneratedMessage
 {

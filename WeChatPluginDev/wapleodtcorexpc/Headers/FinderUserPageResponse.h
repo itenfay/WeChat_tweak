@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, FinderBizInfo, FinderClubInfo, FinderCollectionListInfo, FinderContact, FinderFeedBriefInfo, FinderIpRegionInfo, FinderJumpInfo, FinderJustWatchControl, FinderLayoutConfig, FinderLiveAnchorStat, FinderLiveNoticeInfo, FinderLiveNoticeListInfo, FinderMcnInfo, FinderMileStone, FinderMusicRadio, FinderNicknameVerifyInfo, FinderOriginal, FinderPreloadInfo, FinderProfileBanner, FinderUserInfo, FinderUserPagePoi, FinderUserPageSectionQAInfo, FinderUserpageAdInfo, FinderWxAppInfo, NSData, NSMutableArray, NSString, OriginalEntranceInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderUserPageResponse : WXPBGeneratedMessage
 {

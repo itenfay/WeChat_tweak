@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderLiveQuestBonusResult_FeedPromotionInfo, FinderLiveQuestBonusResult_GrowthCardInfo, FinderLiveQuestBonusResult_Heat, FinderLiveQuestBonusResult_VoucherInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderLiveQuestBonusResult : WXPBGeneratedMessage
 {

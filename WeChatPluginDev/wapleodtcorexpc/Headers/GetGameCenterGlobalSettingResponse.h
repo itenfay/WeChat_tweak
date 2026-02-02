@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class A8KeyControl, AppStoreControl, AppStorePreloadControl, AutoRunTaskSettingControl, BaseResponse, CommJsLibControl, GameBannerControl, GameCenterTabSettingControl, GameCommunityControl, GameDetailSettingControl, GameDyeReportInfoControl, GameIndexSettingControl, GameLifeSettingControl, GameReportControl, GameSightControl, GameSimpleDnsControl, GeneralJumpInfoControl, LiteAppControl, MessageDBStrategyControl, MessageExposureStrategyControl, MessagePullStrategyControl, NSString, ResourcePreloadControl, StatusBarStyleControl, UrlPreloadControl, WeappGameStatGlobalControl, WebViewControl, WepkgControl;
+
+@class WXPBGeneratedMessage;
 
 @interface GetGameCenterGlobalSettingResponse : WXPBGeneratedMessage
 {

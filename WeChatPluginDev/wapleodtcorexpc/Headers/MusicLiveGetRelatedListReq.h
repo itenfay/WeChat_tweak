@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseRequest, FinderBaseRequest, FinderCategoryInfo, FinderClientStatus, FinderGetRelatedEntranceInfo, FinderLiveClientStatus, FinderSectionInfo, MusicLiveGetRelatedListReq_GetColumnFeedInfo, MusicLiveGetRelatedListReq_GetRelatedColumnTopicInfo, MusicLiveGetRelatedListReq_SwitchColumnInfo, NSData, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface MusicLiveGetRelatedListReq : WXPBGeneratedMessage
 {

@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, FinderDirectAddPreviousLiveProductsPageInfo, FinderFlashSaleOrderSetting, FinderFlashSaleSetting, FinderLiveGetShopShelfResponse_ShopVipInfo, FinderLiveGetShopShelfResponse_ShopWindowCouponInfo, FinderLiveGetShopShelfResponse_ShopWindowProfileInfo, FinderLiveShopCustomerServiceInfo, FinderLiveWxaPreloadInfo, FinderReplayRecordSetting, FinderShopLiteAppJumpInfo, FinderShopShelfAnchorMoneyOffCouponListInfo, FinderShopShelfAskForPromoteSetting, FinderShopShelfHintInfo, FinderShopShelfOrderSetting, FinderShopShelfPlatformDiscountCouponListInfo, FinderWxAppInfo, NSData, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderLiveGetShopShelfResponse : WXPBGeneratedMessage
 {

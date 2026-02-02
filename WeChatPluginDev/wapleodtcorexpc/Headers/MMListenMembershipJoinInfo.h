@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class MMListenHalfPanelInfo, MMListenMembershipJoinInfo_AdSchemeInfo, MMListenMembershipJoinInfo_BindQQMusicSchemeInfo, MMListenMembershipJoinInfo_H5Info, MMListenMembershipJoinInfo_SchemeInfo, MMListenMembershipJoinInfo_WecoinSchemeInfo, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface MMListenMembershipJoinInfo : WXPBGeneratedMessage
 {

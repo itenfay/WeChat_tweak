@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, FinderContact, FinderPoiStreamNearbyInfo, FinderPoiStreamResponse_PoiPrepare, FinderPoiStreamTabList, FinderPreloadInfo, NSData, NSMutableArray, NSString, SnsPoiDetail;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderPoiStreamResponse : WXPBGeneratedMessage
 {

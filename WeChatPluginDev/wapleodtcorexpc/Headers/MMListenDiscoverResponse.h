@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, MMListenAudioBaseResponse, MMListenDiscoverResponse_JumpableTopToast, MMListenDiscoverResponse_JumpableTopToastV2, MMListenFinderAudioDiscoverMessage, MMListenFinderSingerDiscoverMessage, MMListenMusicBaseResponse, NSData, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface MMListenDiscoverResponse : WXPBGeneratedMessage
 {

@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderJumpInfo, FinderLiveProductHintAnimationInfo, FinderLiveShopCustomerServiceInfo, FinderWindowProductImgButtonInfo, FinderWindowProductInfo_AskForPromoteInfo, FinderWindowProductInfo_DescWordInfo, FinderWindowProductInfo_DetailPage, FinderWindowProductInfo_ExclusiveInfo, FinderWindowProductInfo_FriendBuyInfo, FinderWindowProductInfo_GiftActivityInfo, FinderWindowProductInfo_GuaranteeInfo, FinderWindowProductInfo_LimitDiscountInfo, FinderWindowProductInfo_ProductReplayInfo, FinderWindowProductInfo_SkuAttrInfoList, HiddenPriceInfo, LiveExclusiveInfo, NSArray, NSData, NSMutableArray, NSString, VirtualPriceInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderWindowProductInfo : WXPBGeneratedMessage
 {

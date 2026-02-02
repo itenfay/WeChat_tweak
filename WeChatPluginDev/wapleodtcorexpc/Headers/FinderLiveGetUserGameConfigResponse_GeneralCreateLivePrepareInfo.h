@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderContactLiveInfo, FinderJumpInfo, FinderLiveBackgroundMusicInfo, FinderLiveFanClubInfo, FinderLiveGamePlayTogether, FinderLiveNoticeInfo, FinderLiveQuestEntranceInfo, NSMutableArray, SongListInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderLiveGetUserGameConfigResponse_GeneralCreateLivePrepareInfo : WXPBGeneratedMessage
 {

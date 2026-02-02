@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseRequest, FinderBaseRequest, FinderClientStatus, FinderLivePermissionVerifyInfo, FinderLiveReportBaseInfo, NSData, NSString, StreamTabTipsInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderGetCommentDetailRequest : WXPBGeneratedMessage
 {

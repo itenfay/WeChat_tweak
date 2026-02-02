@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderTabTipsDSLRenderTmpl_RenderNode_ContentAttr, FinderTabTipsDSLRenderTmpl_RenderNode_Icon, FinderTabTipsDSLRenderTmpl_RenderNode_ReddotPendant, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderTabTipsDSLRenderTmpl_RenderNode_RenderContent_ContentDetail : WXPBGeneratedMessage
 {

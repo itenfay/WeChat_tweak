@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseRequest, FinderBaseRequest, FinderCategoryInfo, FinderClientStatus, FinderCommByPass, FinderGetRelatedEntranceInfo, FinderGetRelatedListReq_GetColumnFeedInfo, FinderGetRelatedListReq_GetRelatedColumnTopicInfo, FinderGetRelatedListReq_MsgInfo, FinderGetRelatedListReq_SwitchColumnInfo, FinderLiveBeforeJoinLiveRoomStatus, FinderLiveClientStatus, FinderSectionInfo, LongVideoPlayerContext, NSData, NSMutableArray, NSString, StreamTabTipsInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderGetRelatedListReq : WXPBGeneratedMessage
 {

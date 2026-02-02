@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class NSString, WxaAppGetShareInfoResponse_WxaAppShareInfo_ChatToolMsgInfo, WxaAppGetShareInfoResponse_WxaAppShareInfo_ToDoMsgInfo, WxaAppGetShareInfoResponse_WxaAppShareInfo_UpdatableMsgInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface WxaAppGetShareInfoResponse_WxaAppShareInfo : WXPBGeneratedMessage
 {

@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, MMListenPlayResponse_MMListenPlayUrl, MMListenPlayResponse_PlatformInfo, MMListenPlayResponse_TryInfo, MMListenPlayResponse_VipInfo, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface MMListenPlayResponse : WXPBGeneratedMessage
 {

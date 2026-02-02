@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class ClientSessionInfo, MMListenRecommendInfo_Activity, MMListenRecommendInfo_ClientRecommendInfo, MMListenRecommendInfo_PlayableInfo, MMListenRecommendInfo_ReviewInfo, MMListenRecommendInfo_StatisticsData, MMListenRecommendInfo_VipLimitFree, NSData, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface MMListenRecommendInfo : WXPBGeneratedMessage
 {

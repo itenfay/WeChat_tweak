@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderHomePageSection_FinderAudioSection, FinderHomePageSection_FinderCollectionSection, FinderHomePageSection_FinderCourseSection, FinderHomePageSection_FinderEmotionSection, FinderHomePageSection_FinderLiveRepalySection, FinderHomePageSection_FinderMemberVideoSection, FinderHomePageSection_FinderMusicListSection, FinderHomePageSection_FinderMusicSection, FinderHomePageSection_FinderNewLifeSection, FinderHomePageSection_FinderPaidCollectionSection, FinderHomePageSection_FinderQASection, FinderHomePageSection_FinderTemplateSection, FinderHomePageSection_FinderVideoSection, NSData, NSString, TabInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderHomePageSection : WXPBGeneratedMessage
 {

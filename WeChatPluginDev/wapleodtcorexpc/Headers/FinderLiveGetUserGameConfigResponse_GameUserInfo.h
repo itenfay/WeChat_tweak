@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderLiveGetUserGameConfigResponse_GameActivityBanner, FinderLiveGetUserGameConfigResponse_GameAppInfo, FinderLiveGetUserGameConfigResponse_GameLiveInfo, FinderLiveGetUserGameConfigResponse_GeneralCreateLivePrepareInfo, FinderLiveGetUserGameConfigResponse_UserStat, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderLiveGetUserGameConfigResponse_GameUserInfo : WXPBGeneratedMessage
 {

@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderLiveAliasSync, LinkedinContactItem, NSString, NewRingBackSetting, PatternLockInfo, RingBackSetting, SKBuiltinBuffer_t, SKBuiltinString_t, SafeDeviceList, SnsUserInfo, VerifyContentList, XAgreementInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface UserInfoExt : WXPBGeneratedMessage
 {

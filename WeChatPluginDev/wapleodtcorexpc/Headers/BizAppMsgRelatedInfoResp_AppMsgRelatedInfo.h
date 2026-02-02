@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BizAppMsgRelatedInfoResp_AppMsgFriendInfo, BizAppMsgRelatedInfoResp_AppMsgPayInfo, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface BizAppMsgRelatedInfoResp_AppMsgRelatedInfo : WXPBGeneratedMessage
 {

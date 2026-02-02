@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FetchDataRequest_FetchItem_LaunchParam, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FetchDataRequest_FetchItem : WXPBGeneratedMessage
 {

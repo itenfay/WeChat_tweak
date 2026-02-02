@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderBizUserInfo, FinderLiveAnchorCloseLivePageData, FinderLiveAnchorReplaceInfo, FinderLiveCoverInfo, FinderLiveEventInfo, FinderLiveExtInfo, FinderLiveFeedBackInfo, FinderLiveKtvSettingsInfo, FinderLiveLayerShowInfo, FinderLiveMediaSpec, FinderLiveMicInfo, FinderLiveModeInfo, FinderLivePrivilegeInfo, FinderLivePurchaseInfo, FinderLiveReplayInfo, FinderLiveRewardWishListInfo, FinderLiveScreenOrientationInfo, FinderLiveSdkChannelInfo, FinderLiveShopTagInfo, FinderLiveTabInfo, FinderLiveUrlOption, FinderMemberLiveInfo, IntercomMicInfo, LiveConcertInfo, LiveCrowdfundGiftInfo, LiveOnlineInfo, LiveRoomImg, LiveSdkInfo, NSMutableArray, NSString;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderLiveInfo : WXPBGeneratedMessage
 {

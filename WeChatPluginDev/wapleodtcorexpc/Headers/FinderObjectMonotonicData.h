@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class FinderObjectCountInfo, FinderObjectMonotonicData_ChatRoomPushCount, FinderObjectMonotonicData_ChatRoomPushFlag, FinderObjectMonotonicData_CommentCount, FinderObjectMonotonicData_FollowPostCount, FinderObjectMonotonicData_GlobalFavCount, FinderObjectMonotonicData_GlobalFavFlag, FinderObjectMonotonicData_ThankChatRoomPushFlag, FinderObjectMonotonicData_ThumbUpCount, FinderObjectMonotonicData_ThumbUpFlag;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderObjectMonotonicData : WXPBGeneratedMessage
 {

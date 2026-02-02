@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class BaseResponse, FinderCheckPrefetchConfig, FinderDescCarouselConfig, FinderEnterStreamTips, FinderHelpPromotionConfig, FinderJumpInfo, FinderLbsLifeConfig, FinderMentionConfig, FinderNegativeFeedbackConfig, FinderPoiConfig, FinderRecommendCloseConfig, FinderReddotFreqConfig, FinderRingtoneConfig, FinderSnsCreateUserInfo, FinderTeenModeSetting, FinderTeenModeTipsConfig, FinderTeenagerInfo, FinderUploadOriginConfig, FinderWxPersonalizedSetting, FinderWxUserSettingInfo, NSData, NSMutableArray, NSString, PCFinderExptInfo, SKBuiltinBuffer_t, WXUserAttr;
+
+@class WXPBGeneratedMessage;
 
 @interface FinderInitResponse : WXPBGeneratedMessage
 {

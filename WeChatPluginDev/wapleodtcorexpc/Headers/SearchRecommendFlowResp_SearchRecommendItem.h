@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class NSString, SearchRecommendFlowResp_FinderInfo, SearchRecommendFlowResp_LiteAppInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface SearchRecommendFlowResp_SearchRecommendItem : WXPBGeneratedMessage
 {

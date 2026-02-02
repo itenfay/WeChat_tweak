@@ -3,9 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import <ProtobufLite/WXPBGeneratedMessage.h>
 
 @class CustomizedInfo, NSString, SnsUserInfo;
+
+@class WXPBGeneratedMessage;
 
 @interface LbsContactInfo : WXPBGeneratedMessage
 {
