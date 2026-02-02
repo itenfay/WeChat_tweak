@@ -191,14 +191,34 @@
 
 @end
 
+#pragma mark - EmojiInfoObj
+
+@interface EmojiInfoObj : NSObject
+
+@property (retain, nonatomic) NSString *md5;
+@property (retain, nonatomic) NSString *url;
+@property (retain, nonatomic) NSString *thumbUrl;
+@property (retain, nonatomic) NSString *encryptUrl;
+@property (retain, nonatomic) NSString *aesKey;
+@property (retain, nonatomic) NSString *designerId;
+@property (retain, nonatomic) NSString *productId;
+@property (retain, nonatomic) NSString *externUrl;
+@property (retain, nonatomic) NSString *attachedText;
+@property (retain, nonatomic) NSString *externMd5;
+
+@end
+
 #pragma mark - CEmoticonWrap
 
 @interface CEmoticonWrap : NSObject
 
 @property (nonatomic) unsigned int m_uiType;
+@property (nonatomic) unsigned int m_uiGameType;
+@property (nonatomic) unsigned int m_extFlag;
 @property (retain, nonatomic) NSString *m_nsAppID;
 @property (retain, nonatomic) NSString *m_nsThumbImgPath;
 @property (retain, nonatomic) NSData *m_imageData;
+@property (retain, nonatomic) EmojiInfoObj *m_emojiInfo;
 
 @end
 

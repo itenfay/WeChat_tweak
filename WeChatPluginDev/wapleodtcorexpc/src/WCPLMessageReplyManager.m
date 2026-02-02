@@ -1925,12 +1925,65 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                     }
                 } else {
                     [execLog appendString:@"✗ EmoticonWrap为nil\n"];
+
+                    // 方法1.5: 手工构造 CEmoticonWrap（表情未缓存时的 fallback）
+                    [execLog appendString:@"\n尝试方法1.5: 手工构造EmoticonWrap\n"];
+
+                    NSDictionary *emoticonInfo = [self parseEmoticonInfoFromContent:content];
+                    if (emoticonInfo && emoticonInfo[@"encryptUrl"] && emoticonInfo[@"aesKey"]) {
+                        [execLog appendFormat:@"✓ 解析到encryptUrl和aesKey\n"];
+
+                        // 构造 EmojiInfoObj
+                        EmojiInfoObj *emojiInfo = [[objc_getClass("EmojiInfoObj") alloc] init];
+                        if (emojiInfo) {
+                            emojiInfo.md5 = emoticonInfo[@"md5"] ?: emoticonMD5;
+                            emojiInfo.encryptUrl = emoticonInfo[@"encryptUrl"];
+                            emojiInfo.aesKey = emoticonInfo[@"aesKey"];
+                            emojiInfo.thumbUrl = emoticonInfo[@"thumbUrl"];
+                            emojiInfo.productId = emoticonInfo[@"productId"];
+
+                            // 构造 CEmoticonWrap
+                            CEmoticonWrap *manualWrap = [[objc_getClass("CEmoticonWrap") alloc] init];
+                            if (manualWrap) {
+                                manualWrap.m_emojiInfo = emojiInfo;
+                                NSNumber *typeNum = emoticonInfo[@"type"];
+                                manualWrap.m_uiType = typeNum ? [typeNum unsignedIntValue] : 1; // 默认自定义表情
+
+                                [execLog appendString:@"✓ 手工构造EmoticonWrap成功\n"];
+
+                                // 尝试发送
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                                if ([viewController respondsToSelector:@selector(m_logicController)]) {
+                                    id lc = [viewController performSelector:@selector(m_logicController)];
+                                    if (lc && [lc respondsToSelector:@selector(SendEmoticonMessage:)]) {
+                                        [lc performSelector:@selector(SendEmoticonMessage:) withObject:manualWrap];
+                                        [execLog appendString:@"✅ 通过logicController发送成功(手工构造)\n"];
+#pragma clang diagnostic pop
+                                        return execLog;
+                                    }
+                                }
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                                if ([viewController respondsToSelector:@selector(SendEmoticonMesssageToolView:)]) {
+                                    [viewController performSelector:@selector(SendEmoticonMesssageToolView:) withObject:manualWrap];
+                                    [execLog appendString:@"✅ 通过ViewController发送成功(手工构造)\n"];
+#pragma clang diagnostic pop
+                                    return execLog;
+                                }
+                            }
+                        }
+                        [execLog appendString:@"✗ 手工构造失败\n"];
+                    } else {
+                        [execLog appendFormat:@"✗ XML中缺少必要字段(encryptUrl/aesKey)\n"];
+                    }
                 }
             }
         }
 
         // 方法2: 通过 InputToolView 发送文本形式（表情包发送失败的回退方案已禁用，避免发送 XML）
-        [execLog appendString:@"\n❌ 方法1失败，表情包复读不可用\n"];
+        [execLog appendString:@"\n❌ 方法1和1.5均失败，表情包复读不可用\n"];
         [execLog appendString:@"提示: 该表情包可能未下载或已过期\n"];
 
         return execLog;
@@ -2249,6 +2302,57 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 }
 
 // 从消息内容 XML 中解析表情包 MD5
+// 从表情包 XML 解析完整信息（用于手工构造 CEmoticonWrap）
+- (NSDictionary *)parseEmoticonInfoFromContent:(NSString *)content {
+    if (!content || content.length == 0) return nil;
+
+    NSMutableDictionary *info = [NSMutableDictionary dictionary];
+
+    // 解析 md5
+    NSRegularExpression *md5Regex = [NSRegularExpression regularExpressionWithPattern:@"md5\\s*=\\s*['\"]?([a-fA-F0-9]{32})" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSTextCheckingResult *md5Match = [md5Regex firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+    if (md5Match && md5Match.numberOfRanges > 1) {
+        info[@"md5"] = [content substringWithRange:[md5Match rangeAtIndex:1]];
+    }
+
+    // 解析 cdnurl（映射到 encryptUrl）
+    NSRegularExpression *cdnurlRegex = [NSRegularExpression regularExpressionWithPattern:@"cdnurl\\s*=\\s*['\"]([^'\"]+)['\"]" options:0 error:nil];
+    NSTextCheckingResult *cdnurlMatch = [cdnurlRegex firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+    if (cdnurlMatch && cdnurlMatch.numberOfRanges > 1) {
+        info[@"encryptUrl"] = [content substringWithRange:[cdnurlMatch rangeAtIndex:1]];
+    }
+
+    // 解析 aeskey
+    NSRegularExpression *aeskeyRegex = [NSRegularExpression regularExpressionWithPattern:@"aeskey\\s*=\\s*['\"]([^'\"]+)['\"]" options:0 error:nil];
+    NSTextCheckingResult *aeskeyMatch = [aeskeyRegex firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+    if (aeskeyMatch && aeskeyMatch.numberOfRanges > 1) {
+        info[@"aesKey"] = [content substringWithRange:[aeskeyMatch rangeAtIndex:1]];
+    }
+
+    // 解析 type（表情类型，1=自定义, 2=商店表情等）
+    NSRegularExpression *typeRegex = [NSRegularExpression regularExpressionWithPattern:@"type\\s*=\\s*['\"]?(\\d+)" options:0 error:nil];
+    NSTextCheckingResult *typeMatch = [typeRegex firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+    if (typeMatch && typeMatch.numberOfRanges > 1) {
+        info[@"type"] = @([[content substringWithRange:[typeMatch rangeAtIndex:1]] integerValue]);
+    }
+
+    // 解析 thumburl（缩略图）
+    NSRegularExpression *thumbRegex = [NSRegularExpression regularExpressionWithPattern:@"thumburl\\s*=\\s*['\"]([^'\"]+)['\"]" options:0 error:nil];
+    NSTextCheckingResult *thumbMatch = [thumbRegex firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+    if (thumbMatch && thumbMatch.numberOfRanges > 1) {
+        info[@"thumbUrl"] = [content substringWithRange:[thumbMatch rangeAtIndex:1]];
+    }
+
+    // 解析 productid（商品ID，商店表情使用）
+    NSRegularExpression *productRegex = [NSRegularExpression regularExpressionWithPattern:@"productid\\s*=\\s*['\"]([^'\"]+)['\"]" options:0 error:nil];
+    NSTextCheckingResult *productMatch = [productRegex firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+    if (productMatch && productMatch.numberOfRanges > 1) {
+        info[@"productId"] = [content substringWithRange:[productMatch rangeAtIndex:1]];
+    }
+
+    return info.count > 0 ? info : nil;
+}
+
 - (NSString *)parseEmoticonMD5FromContent:(NSString *)content {
     if (!content || content.length == 0) return nil;
 
