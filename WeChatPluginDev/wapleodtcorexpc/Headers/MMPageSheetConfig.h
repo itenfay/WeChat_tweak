@@ -1,0 +1,164 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import <objc/NSObject.h>
+
+@class NSArray, NSNumber, NSString, PageSheetBarButtonContext, UIColor, UIFont, UIImage, UIScrollView, UIView;
+@protocol MMPageSheetBottomViewDelegate, MMPageSheetConfigDelegate, MMPageSheetGestureRecognizerDelegate, UIViewControllerTransitioningDelegate;
+
+@interface MMPageSheetConfig : NSObject
+{
+    _Bool _enableDragToClose;
+    _Bool _isAllowTapBgMaskToClose;
+    _Bool _isNavAddDragDown;
+    _Bool _showNavigationBarSepLine;
+    _Bool _handleCustomBgTap;
+    _Bool _hideBgMask;
+    _Bool _transferTouchEventInBgMask;
+    _Bool _backgroundBlur;
+    _Bool _autoAdjustAtKeyboardChange;
+    _Bool _hideBottomWhenShowingKeyboard;
+    _Bool _showFromRightToLeftAtLandscape;
+    _Bool _showFromRightToLeftAtPortrait;
+    _Bool _autoRotatePortraitAtPresent;
+    _Bool _forbidCorner;
+    _Bool _useIphoneUIStyleInIpad;
+    _Bool _enableEdgeSlideToClose;
+    _Bool _recognizeHorizontalWhenDragToClose;
+    _Bool _ignoreDragVelocityThreshold;
+    _Bool _navHidden;
+    _Bool _isNavTranslucent;
+    _Bool _alignTitleAndIconToCenter;
+    _Bool _preferredCenterTitleAlignment;
+    _Bool _isConfirmButtonDisable;
+    int _windowLevel;
+    unsigned int _dragDownButtonStyle;
+    unsigned int _navLeftStyle;
+    UIColor *_maskBackgroundColor;
+    UIColor *_contentBackgroundColor;
+    UIView *_customBackgroundView;
+    UIView *_customBackgroundMaskView;
+    unsigned long long _overrideSupportOrientation;
+    id <UIViewControllerTransitioningDelegate> _presentTransitionDelegate;
+    double _contentWidthInIphone;
+    double _edgeSlideThreshold;
+    UIScrollView *_dragToCloseInstallScrollView;
+    double _dragToCloseRatio;
+    NSNumber *_animateDuration;
+    NSString *_title;
+    NSString *_topTitle;
+    long long _titleLineBreakMode;
+    UIColor *_dragDownProgressBarColor;
+    UIColor *_dragDownProgressArrowColor;
+    UIColor *_titleColor;
+    UIFont *_titleFont;
+    NSString *_subTitle;
+    UIColor *_subTitleColor;
+    UIFont *_subTitleFont;
+    UIImage *_headIconImage;
+    UIView *_titleView;
+    UIView *_titleRightIconView;
+    UIView *_navLeftButton;
+    double _leftMargin;
+    PageSheetBarButtonContext *_leftBarButtonContext;
+    PageSheetBarButtonContext *_rightBarButtonContext;
+    NSArray *_leftBarButtonContexts;
+    NSArray *_rightBarButtonContexts;
+    UIView *_navRightButton;
+    UIView *_navBackButton;
+    UIColor *_navButtonTintColor;
+    UIColor *_navBarBackgroundColor;
+    long long _bottomType;
+    id <MMPageSheetBottomViewDelegate> _bottomViewDelegate;
+    UIView *_bottomCustomSubview;
+    id <MMPageSheetGestureRecognizerDelegate> _pageSheetGestureRecognizerDelegate;
+    id <MMPageSheetConfigDelegate> _delegate;
+}
+
+- (void).cxx_destruct;
+@property(nonatomic) __weak id <MMPageSheetConfigDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <MMPageSheetGestureRecognizerDelegate> pageSheetGestureRecognizerDelegate; // @synthesize pageSheetGestureRecognizerDelegate=_pageSheetGestureRecognizerDelegate;
+@property(retain, nonatomic) UIView *bottomCustomSubview; // @synthesize bottomCustomSubview=_bottomCustomSubview;
+@property(nonatomic) _Bool isConfirmButtonDisable; // @synthesize isConfirmButtonDisable=_isConfirmButtonDisable;
+@property(nonatomic) __weak id <MMPageSheetBottomViewDelegate> bottomViewDelegate; // @synthesize bottomViewDelegate=_bottomViewDelegate;
+@property(nonatomic) long long bottomType; // @synthesize bottomType=_bottomType;
+@property(retain, nonatomic) UIColor *navBarBackgroundColor; // @synthesize navBarBackgroundColor=_navBarBackgroundColor;
+@property(nonatomic) _Bool preferredCenterTitleAlignment; // @synthesize preferredCenterTitleAlignment=_preferredCenterTitleAlignment;
+@property(retain, nonatomic) UIColor *navButtonTintColor; // @synthesize navButtonTintColor=_navButtonTintColor;
+@property(retain, nonatomic) UIView *navBackButton; // @synthesize navBackButton=_navBackButton;
+@property(retain, nonatomic) UIView *navRightButton; // @synthesize navRightButton=_navRightButton;
+@property(retain, nonatomic) NSArray *rightBarButtonContexts; // @synthesize rightBarButtonContexts=_rightBarButtonContexts;
+@property(retain, nonatomic) NSArray *leftBarButtonContexts; // @synthesize leftBarButtonContexts=_leftBarButtonContexts;
+@property(retain, nonatomic) PageSheetBarButtonContext *rightBarButtonContext; // @synthesize rightBarButtonContext=_rightBarButtonContext;
+@property(retain, nonatomic) PageSheetBarButtonContext *leftBarButtonContext; // @synthesize leftBarButtonContext=_leftBarButtonContext;
+@property(nonatomic) double leftMargin; // @synthesize leftMargin=_leftMargin;
+@property(retain, nonatomic) UIView *navLeftButton; // @synthesize navLeftButton=_navLeftButton;
+@property(nonatomic) unsigned int navLeftStyle; // @synthesize navLeftStyle=_navLeftStyle;
+@property(nonatomic) _Bool alignTitleAndIconToCenter; // @synthesize alignTitleAndIconToCenter=_alignTitleAndIconToCenter;
+@property(retain, nonatomic) UIView *titleRightIconView; // @synthesize titleRightIconView=_titleRightIconView;
+@property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
+@property(retain, nonatomic) UIImage *headIconImage; // @synthesize headIconImage=_headIconImage;
+@property(retain, nonatomic) UIFont *subTitleFont; // @synthesize subTitleFont=_subTitleFont;
+@property(retain, nonatomic) UIColor *subTitleColor; // @synthesize subTitleColor=_subTitleColor;
+@property(retain, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
+@property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
+@property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
+@property(retain, nonatomic) UIColor *dragDownProgressArrowColor; // @synthesize dragDownProgressArrowColor=_dragDownProgressArrowColor;
+@property(retain, nonatomic) UIColor *dragDownProgressBarColor; // @synthesize dragDownProgressBarColor=_dragDownProgressBarColor;
+@property(nonatomic) unsigned int dragDownButtonStyle; // @synthesize dragDownButtonStyle=_dragDownButtonStyle;
+@property(nonatomic) long long titleLineBreakMode; // @synthesize titleLineBreakMode=_titleLineBreakMode;
+@property(retain, nonatomic) NSString *topTitle; // @synthesize topTitle=_topTitle;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
+@property(nonatomic) _Bool isNavTranslucent; // @synthesize isNavTranslucent=_isNavTranslucent;
+@property(nonatomic) _Bool navHidden; // @synthesize navHidden=_navHidden;
+@property(retain, nonatomic) NSNumber *animateDuration; // @synthesize animateDuration=_animateDuration;
+@property(nonatomic) double dragToCloseRatio; // @synthesize dragToCloseRatio=_dragToCloseRatio;
+@property(nonatomic) _Bool ignoreDragVelocityThreshold; // @synthesize ignoreDragVelocityThreshold=_ignoreDragVelocityThreshold;
+@property(nonatomic) __weak UIScrollView *dragToCloseInstallScrollView; // @synthesize dragToCloseInstallScrollView=_dragToCloseInstallScrollView;
+@property(nonatomic) _Bool recognizeHorizontalWhenDragToClose; // @synthesize recognizeHorizontalWhenDragToClose=_recognizeHorizontalWhenDragToClose;
+@property(nonatomic) double edgeSlideThreshold; // @synthesize edgeSlideThreshold=_edgeSlideThreshold;
+@property(nonatomic) _Bool enableEdgeSlideToClose; // @synthesize enableEdgeSlideToClose=_enableEdgeSlideToClose;
+@property(nonatomic) _Bool useIphoneUIStyleInIpad; // @synthesize useIphoneUIStyleInIpad=_useIphoneUIStyleInIpad;
+@property(nonatomic) double contentWidthInIphone; // @synthesize contentWidthInIphone=_contentWidthInIphone;
+@property(nonatomic) _Bool forbidCorner; // @synthesize forbidCorner=_forbidCorner;
+@property(retain, nonatomic) id <UIViewControllerTransitioningDelegate> presentTransitionDelegate; // @synthesize presentTransitionDelegate=_presentTransitionDelegate;
+@property(nonatomic) unsigned long long overrideSupportOrientation; // @synthesize overrideSupportOrientation=_overrideSupportOrientation;
+@property(nonatomic) _Bool autoRotatePortraitAtPresent; // @synthesize autoRotatePortraitAtPresent=_autoRotatePortraitAtPresent;
+@property(nonatomic) int windowLevel; // @synthesize windowLevel=_windowLevel;
+@property(nonatomic) _Bool showFromRightToLeftAtPortrait; // @synthesize showFromRightToLeftAtPortrait=_showFromRightToLeftAtPortrait;
+@property(nonatomic) _Bool showFromRightToLeftAtLandscape; // @synthesize showFromRightToLeftAtLandscape=_showFromRightToLeftAtLandscape;
+@property(nonatomic) _Bool hideBottomWhenShowingKeyboard; // @synthesize hideBottomWhenShowingKeyboard=_hideBottomWhenShowingKeyboard;
+@property(nonatomic) _Bool autoAdjustAtKeyboardChange; // @synthesize autoAdjustAtKeyboardChange=_autoAdjustAtKeyboardChange;
+@property(retain, nonatomic) UIView *customBackgroundMaskView; // @synthesize customBackgroundMaskView=_customBackgroundMaskView;
+@property(retain, nonatomic) UIView *customBackgroundView; // @synthesize customBackgroundView=_customBackgroundView;
+@property(nonatomic) _Bool backgroundBlur; // @synthesize backgroundBlur=_backgroundBlur;
+@property(retain, nonatomic) UIColor *contentBackgroundColor; // @synthesize contentBackgroundColor=_contentBackgroundColor;
+@property(retain, nonatomic) UIColor *maskBackgroundColor; // @synthesize maskBackgroundColor=_maskBackgroundColor;
+@property(nonatomic) _Bool transferTouchEventInBgMask; // @synthesize transferTouchEventInBgMask=_transferTouchEventInBgMask;
+@property(nonatomic) _Bool hideBgMask; // @synthesize hideBgMask=_hideBgMask;
+@property(nonatomic) _Bool handleCustomBgTap; // @synthesize handleCustomBgTap=_handleCustomBgTap;
+@property(nonatomic) _Bool showNavigationBarSepLine; // @synthesize showNavigationBarSepLine=_showNavigationBarSepLine;
+@property(nonatomic) _Bool isNavAddDragDown; // @synthesize isNavAddDragDown=_isNavAddDragDown;
+@property(nonatomic) _Bool isAllowTapBgMaskToClose; // @synthesize isAllowTapBgMaskToClose=_isAllowTapBgMaskToClose;
+- (id)navigationBarView;
+- (_Bool)isPageSheetPushIn;
+- (_Bool)isPageSheetVisible;
+- (double)headerHeight;
+- (double)footerHeight;
+@property(nonatomic) _Bool enableDragToClose; // @synthesize enableDragToClose=_enableDragToClose;
+- (id)init;
+- (double)defaultPageSheetContentWidth;
+- (_Bool)isUseIpadUIStyle;
+- (_Bool)shouldUseIPadCenterMode;
+- (_Bool)shouldShowFromRightToLeftAtPortrait;
+- (_Bool)shouldShowFromRightToLeftAtLandscape;
+- (double)bottomViewBottomMargin;
+- (double)bottomViewTopMargin;
+- (_Bool)shouldShowFooter;
+- (double)headerHeight:(_Bool)arg1;
+- (_Bool)shouldShowHeader:(_Bool)arg1;
+
+@end
+

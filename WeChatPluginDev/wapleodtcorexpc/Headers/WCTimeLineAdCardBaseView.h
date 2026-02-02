@@ -1,0 +1,197 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class MMUIButton, MMUIView, NSString, WCAdAppointmentLogic, WCAdCardActionButtonLogic, WCAdCardDescriptionView, WCAdCommonInteractionLogic, WCAdCountdownView, WCAdCouponLogic, WCAdFinderFollowLogic, WCAdFinderLiveLogic, WCAdFinderLiveNoticeLogic, WCAdFinderLivePlayerView, WCAdLiveDisplayView, WCAdLiveLikeAnimationView, WCAdMultiProductsLogic, WCAdQuicklyAddBrandLogic, WCAdRollView, WCAdSellingPointLogic, WCAdSubscriptionLogic, WCDataItem, WCHighLightButton, WCSightView, WCTagsView, WCTimeLineTagView;
+@protocol WCTimeLineAdCardBaseViewDelegate;
+
+@interface WCTimeLineAdCardBaseView
+{
+    _Bool _isCanvasPageOpenBySelf;
+    unsigned int _liveStatus;
+    id <WCTimeLineAdCardBaseViewDelegate> _delegate;
+    WCDataItem *_dataItem;
+    double _mediaAreaHeight;
+    double _mediaAreaWidth;
+    MMUIView *_mediaHolder;
+    long long _mediaType;
+    MMUIButton *_mediaBgButton;
+    WCAdCardDescriptionView *_descriptionView;
+    WCAdMultiProductsLogic *_multiProductsLogic;
+    WCAdCardActionButtonLogic *_actionButtonLogic;
+    WCAdSellingPointLogic *_sellingPointLogic;
+    WCAdAppointmentLogic *_appointmentLogic;
+    WCSightView *_sightView;
+    MMUIView *_actionTipsView;
+    WCHighLightButton *_leftButton;
+    WCHighLightButton *_rightButton;
+    MMUIView *_topMaskView;
+    WCTimeLineTagView *_tagView;
+    WCAdSubscriptionLogic *_subscriptionLogic;
+    WCTagsView *_weAppSpecialTagIcon;
+    WCAdQuicklyAddBrandLogic *_addBrandLogic;
+    WCAdCouponLogic *_adCouponLogic;
+    WCAdFinderLiveNoticeLogic *_adFinderLiveNoticeLogic;
+    WCAdFinderFollowLogic *_adFinderFollowLogic;
+    MMUIView *_promotionView;
+    WCAdCountdownView *_countdownView;
+    WCAdLiveDisplayView *_liveDisplayView;
+    WCAdLiveLikeAnimationView *_liveLikeAnimationView;
+    WCAdRollView *_rollView;
+    WCAdFinderLivePlayerView *_finderLivePlayerView;
+    WCAdFinderLiveLogic *_finderLiveLogic;
+    WCAdCommonInteractionLogic *_commonInteractionLogic;
+    double _lastTouchTimestamp;
+    struct CGPoint _lastTouchPoint;
+}
+
++ (id)fetchDescriptionItemsWithDataItem:(id)arg1;
++ (id)fetchTrimDesc:(id)arg1;
++ (_Bool)hasLeftAndRightButton:(id)arg1;
++ (double)heightForOperationArea:(id)arg1 maxWidth:(double)arg2;
++ (double)heightForMediaView:(id)arg1 maxWidth:(double)arg2;
++ (double)heightForMedia:(id)arg1;
++ (double)heightForMedia:(id)arg1 maxWidth:(double)arg2;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool isCanvasPageOpenBySelf; // @synthesize isCanvasPageOpenBySelf=_isCanvasPageOpenBySelf;
+@property(nonatomic) double lastTouchTimestamp; // @synthesize lastTouchTimestamp=_lastTouchTimestamp;
+@property(nonatomic) struct CGPoint lastTouchPoint; // @synthesize lastTouchPoint=_lastTouchPoint;
+@property(retain, nonatomic) WCAdCommonInteractionLogic *commonInteractionLogic; // @synthesize commonInteractionLogic=_commonInteractionLogic;
+@property(retain, nonatomic) WCAdFinderLiveLogic *finderLiveLogic; // @synthesize finderLiveLogic=_finderLiveLogic;
+@property(retain, nonatomic) WCAdFinderLivePlayerView *finderLivePlayerView; // @synthesize finderLivePlayerView=_finderLivePlayerView;
+@property(retain, nonatomic) WCAdRollView *rollView; // @synthesize rollView=_rollView;
+@property(retain, nonatomic) WCAdLiveLikeAnimationView *liveLikeAnimationView; // @synthesize liveLikeAnimationView=_liveLikeAnimationView;
+@property(nonatomic) unsigned int liveStatus; // @synthesize liveStatus=_liveStatus;
+@property(retain, nonatomic) WCAdLiveDisplayView *liveDisplayView; // @synthesize liveDisplayView=_liveDisplayView;
+@property(retain, nonatomic) WCAdCountdownView *countdownView; // @synthesize countdownView=_countdownView;
+@property(retain, nonatomic) MMUIView *promotionView; // @synthesize promotionView=_promotionView;
+@property(retain, nonatomic) WCAdFinderFollowLogic *adFinderFollowLogic; // @synthesize adFinderFollowLogic=_adFinderFollowLogic;
+@property(retain, nonatomic) WCAdFinderLiveNoticeLogic *adFinderLiveNoticeLogic; // @synthesize adFinderLiveNoticeLogic=_adFinderLiveNoticeLogic;
+@property(retain, nonatomic) WCAdCouponLogic *adCouponLogic; // @synthesize adCouponLogic=_adCouponLogic;
+@property(retain, nonatomic) WCAdQuicklyAddBrandLogic *addBrandLogic; // @synthesize addBrandLogic=_addBrandLogic;
+@property(retain, nonatomic) WCTagsView *weAppSpecialTagIcon; // @synthesize weAppSpecialTagIcon=_weAppSpecialTagIcon;
+@property(retain, nonatomic) WCAdSubscriptionLogic *subscriptionLogic; // @synthesize subscriptionLogic=_subscriptionLogic;
+@property(retain, nonatomic) WCTimeLineTagView *tagView; // @synthesize tagView=_tagView;
+@property(retain, nonatomic) MMUIView *topMaskView; // @synthesize topMaskView=_topMaskView;
+@property(retain, nonatomic) WCHighLightButton *rightButton; // @synthesize rightButton=_rightButton;
+@property(retain, nonatomic) WCHighLightButton *leftButton; // @synthesize leftButton=_leftButton;
+@property(retain, nonatomic) MMUIView *actionTipsView; // @synthesize actionTipsView=_actionTipsView;
+@property(retain, nonatomic) WCSightView *sightView; // @synthesize sightView=_sightView;
+@property(retain, nonatomic) WCAdAppointmentLogic *appointmentLogic; // @synthesize appointmentLogic=_appointmentLogic;
+@property(retain, nonatomic) WCAdSellingPointLogic *sellingPointLogic; // @synthesize sellingPointLogic=_sellingPointLogic;
+@property(retain, nonatomic) WCAdCardActionButtonLogic *actionButtonLogic; // @synthesize actionButtonLogic=_actionButtonLogic;
+@property(retain, nonatomic) WCAdMultiProductsLogic *multiProductsLogic; // @synthesize multiProductsLogic=_multiProductsLogic;
+@property(retain, nonatomic) WCAdCardDescriptionView *descriptionView; // @synthesize descriptionView=_descriptionView;
+@property(retain, nonatomic) MMUIButton *mediaBgButton; // @synthesize mediaBgButton=_mediaBgButton;
+@property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
+@property(retain, nonatomic) MMUIView *mediaHolder; // @synthesize mediaHolder=_mediaHolder;
+@property(nonatomic) double mediaAreaWidth; // @synthesize mediaAreaWidth=_mediaAreaWidth;
+@property(nonatomic) double mediaAreaHeight; // @synthesize mediaAreaHeight=_mediaAreaHeight;
+@property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;
+@property(nonatomic) __weak id <WCTimeLineAdCardBaseViewDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)onCanvasViewWillClose;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)updateAdExpParamsReportInfoWithLastTouch:(struct CGPoint)arg1;
+- (void)updateAdExpParamsReportInfo;
+- (void)onAdCommonInteractionLogicShakeActionFired;
+- (unsigned long long)onAdCommonInteractionLogicFetchScene;
+- (id)onAdCommonInteractionLogicFetchDataItem;
+- (void)initInteractionViewWithDataItem:(id)arg1;
+- (id)interactionView;
+- (id)actionButton;
+- (void)onAdCardActionButtonClicked;
+- (void)updateActionButtonWithTransform:(struct CATransform3D)arg1 duration:(double)arg2;
+- (void)onAdMultiProductsLogicUpdateButtonWithScale:(double)arg1 duration:(double)arg2 delay:(double)arg3;
+- (id)multiProductsView;
+- (void)initMultiProductsViewWithItem:(id)arg1 maxWidth:(double)arg2;
+- (void)doFinderFollow;
+- (void)onFinderFollowingStateChanged:(_Bool)arg1 byUser:(_Bool)arg2;
+- (void)onFinderLiveNoticeReserved:(id)arg1 snsId:(id)arg2;
+- (_Bool)checkActionButtonType:(long long)arg1;
+- (void)onDownloadCancel:(id)arg1;
+- (void)onDownloadFailed:(id)arg1;
+- (void)onDownloadFinish:(id)arg1;
+- (void)onAppointmentSubmitForType:(int)arg1 isSuccess:(_Bool)arg2;
+- (void)onAppointmentUpdatingStatus:(int)arg1;
+- (void)onAppointmentConfirmViewDidConfirm;
+- (void)onSellingPointLogicSwitchToIndex:(unsigned long long)arg1 animated:(_Bool)arg2;
+- (void)onQuicklyAddBrandResult:(long long)arg1 andBrandInfo:(id)arg2;
+- (void)updateAdRelievedBuyVisibility:(id)arg1;
+- (void)updateFinderLiveNoticeReserveInfo;
+- (void)updateFinderLiveNoticeReserveBtnStateWithLocal;
+- (void)doFinderLiveNoticeReserve;
+- (void)doGetCoupon;
+- (void)doSubscribe;
+- (void)doAddBrandOrEnterBrandProfileVC:(_Bool)arg1;
+- (void)updateQuicklyAddBrandBtnState;
+- (void)updateSubscriptionBtnState;
+- (void)setActionButtonWithEnabledStyle:(long long)arg1 title:(id)arg2;
+- (void)doSubscriptionMessageReport:(long long)arg1 clickSubmit:(_Bool)arg2;
+- (void)onSubscriptionClosePageSheetWithoutSubmit;
+- (void)onSubscriptionFinishedWithResult:(id)arg1 success:(_Bool)arg2 cancel:(_Bool)arg3 errorCode:(long long)arg4;
+- (void)onSelectBtnClick:(id)arg1 isLeft:(_Bool)arg2 originView:(id)arg3;
+- (id)fetchMediaHolder;
+- (void)doAppointment;
+- (void)tryToResetSellingPoint;
+- (void)initActionTipsView:(id)arg1;
+- (void)initRatingCardView:(id)arg1;
+- (id)genAdTagList:(id)arg1;
+- (void)onActionBtnClick;
+- (void)updateActionButtonTitle:(id)arg1;
+- (double)fetchDescriptionAreaBottom;
+- (void)updateSubViewsLayout:(id)arg1;
+- (void)initActionButtonLogic:(id)arg1;
+- (void)initActionButton:(id)arg1;
+- (void)initDescriptionViewWithItem:(id)arg1 maxWidth:(double)arg2;
+- (void)calcMediaArea:(id)arg1;
+- (void)contentItemDidEndDecelerating;
+- (void)contentItemBecomeInvisible;
+- (void)contentItemWillDisappear;
+- (void)contentItemDidEndDisplaying;
+- (void)contentItemWillDisplay;
+- (void)autoPauseWithoutSound;
+- (void)autoPlayWithoutSound;
+- (id)getMainContentView;
+- (void)initFinderLivePlayer:(id)arg1;
+- (id)createFinderLivePlayer:(id)arg1;
+- (id)createSightView:(id)arg1;
+- (void)initSightViewForAdCard:(id)arg1;
+- (void)initImageViewForAdCard:(id)arg1;
+- (double)getMaxWidthForDescriptionView:(id)arg1;
+- (void)initContentArea:(id)arg1;
+- (void)delayClickAdCardTouchButton;
+- (id)getVoiceOverStrForTimeline;
+- (void)onVoiceOverClick;
+- (void)onClickBgButton:(id)arg1 forEvent:(id)arg2;
+- (void)onRightButtonClick:(id)arg1 forEvent:(id)arg2;
+- (void)onLeftButtonClick:(id)arg1 forEvent:(id)arg2;
+- (void)initSelectButton:(id)arg1;
+- (id)createSelectButton:(id)arg1 fontSize:(double)arg2 fontColor:(id)arg3 isLeft:(_Bool)arg4;
+- (void)removeAllButtons;
+- (void)initBgButton:(id)arg1;
+- (void)initRollView:(id)arg1;
+- (void)checkUpdateLiveInfo;
+- (void)stopLiveLikeAnimation;
+- (void)tryStartLiveLikeAnimation;
+- (void)updateLiveStatus:(int)arg1;
+- (id)createLiveLikeAnimationView;
+- (void)initLiveInfoView:(id)arg1;
+- (void)onCountdownEnd;
+- (void)onCountdownUpdate;
+- (void)initPromotionView:(id)arg1;
+- (void)initMediaView:(id)arg1;
+- (void)initViewsWithWCDataItem:(id)arg1;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

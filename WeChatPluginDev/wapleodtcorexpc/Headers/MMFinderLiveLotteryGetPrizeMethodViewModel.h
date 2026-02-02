@@ -1,0 +1,44 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import <objc/NSObject.h>
+
+@class NSIndexPath, NSMutableArray, NSString, UITableView;
+@protocol MMFinderLiveLotteryGetPrizeMethodDelegate;
+
+@interface MMFinderLiveLotteryGetPrizeMethodViewModel : NSObject
+{
+    UITableView *_tableView;
+    id <MMFinderLiveLotteryGetPrizeMethodDelegate> _dataDelegate;
+    NSMutableArray *_lotteryMethodDataArray;
+    NSIndexPath *_selectIndexPath;
+}
+
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSIndexPath *selectIndexPath; // @synthesize selectIndexPath=_selectIndexPath;
+@property(retain, nonatomic) NSMutableArray *lotteryMethodDataArray; // @synthesize lotteryMethodDataArray=_lotteryMethodDataArray;
+@property(nonatomic) __weak id <MMFinderLiveLotteryGetPrizeMethodDelegate> dataDelegate; // @synthesize dataDelegate=_dataDelegate;
+@property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (double)getLotteryTableHeight;
+- (void)appendLotteryMethodData:(id)arg1;
+- (id)createData;
+- (id)initWithTableView:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

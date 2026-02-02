@@ -1,0 +1,210 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import <objc/NSObject.h>
+
+@class MMFinderLiveTask, MMLiveTaskId, MMWeEffectManager, NSMutableArray, NSMutableDictionary, NSString;
+
+@interface MMFinderLiveGiftAttackRenderLogic : NSObject
+{
+    _Bool _isOverDelayAfterRenderEnd;
+    _Bool _isAllTaskRenderEnd;
+    _Bool _isAllOperationsEnd;
+    _Bool _isClearingPreEnvRes;
+    _Bool _isAppActive;
+    int _currIdentifierNum;
+    CDUnknownBlockType _prepareToPlayCallback;
+    CDUnknownBlockType _willPlayCallback;
+    CDUnknownBlockType _renderEndCallback;
+    CDUnknownBlockType _getRenderWeffectMgrCallback;
+    CDUnknownBlockType _allOperationsEndCallback;
+    CDUnknownBlockType _singleRenderTaskWillStartCallback;
+    CDUnknownBlockType _singleRenderTaskDidFinishCallback;
+    MMLiveTaskId *_taskId;
+    NSMutableArray *_pendingTaskList;
+    NSMutableArray *_runningTaskList;
+    NSMutableDictionary *_taskDict;
+    NSMutableDictionary *_recyclingTaskDict;
+    NSMutableDictionary *_standardRenderScriptIdDict;
+    NSMutableDictionary *_reusedRenderScriptIdDict;
+    NSMutableDictionary *_renderTimeRecordDict;
+    NSMutableDictionary *_attackRecordDict;
+    NSMutableArray *_operatingScriptList;
+    long long _currMaxRunningTaskCnt;
+    MMWeEffectManager *_renderWeffectManager;
+    long long _renderEnv;
+    NSMutableArray *_recentRenderFullLoadTimeRangeList;
+    unsigned long long _lastMaxSumResuedScriptIdCnt;
+}
+
++ (_Bool)isGiftPlayItemValid:(id)arg1;
+- (void).cxx_destruct;
+@property(nonatomic) unsigned long long lastMaxSumResuedScriptIdCnt; // @synthesize lastMaxSumResuedScriptIdCnt=_lastMaxSumResuedScriptIdCnt;
+@property(nonatomic) _Bool isAppActive; // @synthesize isAppActive=_isAppActive;
+@property(retain, nonatomic) NSMutableArray *recentRenderFullLoadTimeRangeList; // @synthesize recentRenderFullLoadTimeRangeList=_recentRenderFullLoadTimeRangeList;
+@property(nonatomic) _Bool isClearingPreEnvRes; // @synthesize isClearingPreEnvRes=_isClearingPreEnvRes;
+@property(nonatomic) long long renderEnv; // @synthesize renderEnv=_renderEnv;
+@property(nonatomic) __weak MMWeEffectManager *renderWeffectManager; // @synthesize renderWeffectManager=_renderWeffectManager;
+@property(nonatomic) long long currMaxRunningTaskCnt; // @synthesize currMaxRunningTaskCnt=_currMaxRunningTaskCnt;
+@property(retain, nonatomic) NSMutableArray *operatingScriptList; // @synthesize operatingScriptList=_operatingScriptList;
+@property(retain, nonatomic) NSMutableDictionary *attackRecordDict; // @synthesize attackRecordDict=_attackRecordDict;
+@property(retain, nonatomic) NSMutableDictionary *renderTimeRecordDict; // @synthesize renderTimeRecordDict=_renderTimeRecordDict;
+@property(retain, nonatomic) NSMutableDictionary *reusedRenderScriptIdDict; // @synthesize reusedRenderScriptIdDict=_reusedRenderScriptIdDict;
+@property(retain, nonatomic) NSMutableDictionary *standardRenderScriptIdDict; // @synthesize standardRenderScriptIdDict=_standardRenderScriptIdDict;
+@property(retain, nonatomic) NSMutableDictionary *recyclingTaskDict; // @synthesize recyclingTaskDict=_recyclingTaskDict;
+@property(retain, nonatomic) NSMutableDictionary *taskDict; // @synthesize taskDict=_taskDict;
+@property(retain, nonatomic) NSMutableArray *runningTaskList; // @synthesize runningTaskList=_runningTaskList;
+@property(retain, nonatomic) NSMutableArray *pendingTaskList; // @synthesize pendingTaskList=_pendingTaskList;
+@property(nonatomic) _Bool isAllOperationsEnd; // @synthesize isAllOperationsEnd=_isAllOperationsEnd;
+@property(nonatomic) _Bool isAllTaskRenderEnd; // @synthesize isAllTaskRenderEnd=_isAllTaskRenderEnd;
+@property(nonatomic) _Bool isOverDelayAfterRenderEnd; // @synthesize isOverDelayAfterRenderEnd=_isOverDelayAfterRenderEnd;
+@property(nonatomic) int currIdentifierNum; // @synthesize currIdentifierNum=_currIdentifierNum;
+@property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
+@property(copy, nonatomic) CDUnknownBlockType singleRenderTaskDidFinishCallback; // @synthesize singleRenderTaskDidFinishCallback=_singleRenderTaskDidFinishCallback;
+@property(copy, nonatomic) CDUnknownBlockType singleRenderTaskWillStartCallback; // @synthesize singleRenderTaskWillStartCallback=_singleRenderTaskWillStartCallback;
+@property(copy, nonatomic) CDUnknownBlockType allOperationsEndCallback; // @synthesize allOperationsEndCallback=_allOperationsEndCallback;
+@property(copy, nonatomic) CDUnknownBlockType getRenderWeffectMgrCallback; // @synthesize getRenderWeffectMgrCallback=_getRenderWeffectMgrCallback;
+@property(copy, nonatomic) CDUnknownBlockType renderEndCallback; // @synthesize renderEndCallback=_renderEndCallback;
+@property(copy, nonatomic) CDUnknownBlockType willPlayCallback; // @synthesize willPlayCallback=_willPlayCallback;
+@property(copy, nonatomic) CDUnknownBlockType prepareToPlayCallback; // @synthesize prepareToPlayCallback=_prepareToPlayCallback;
+- (void)logForStandardScriptCacheAction:(id)arg1;
+- (void)logForCurrentScriptCacheWithPrefix:(id)arg1;
+- (void)checkTargetUsersExistForStandardScriptCache:(id)arg1;
+- (void)onLiveTask:(id)arg1 micUsersInfoChanged:(id)arg2;
+- (void)onLiveTask:(id)arg1 liveViewConnectMicStateChanged:(_Bool)arg2;
+- (void)didBecomeActive;
+- (void)onResignActive;
+- (unsigned long long)getOperatingScriptListCnt;
+- (_Bool)isFullLoadTimeRange:(id)arg1 intersectWithBeginTime:(double)arg2 endTime:(double)arg3;
+- (void)checkRenderFullLoadTimeRangeCacheOverLimit;
+- (id)getLatestFullLoadTimeRange;
+- (id)getNewFullLoadTimeRange;
+- (void)checkCurrentFullLoadStateWithAutoBegin:(_Bool)arg1;
+- (id)getRegisterRecordWithcomboId:(id)arg1;
+- (id)getRegisterRecordWithKey:(id)arg1;
+- (void)unRegisterAttackRecordWithKey:(id)arg1;
+- (void)registerAttackRecord:(id)arg1;
+- (id)getRecyclingTaskWithKey:(id)arg1;
+- (void)clearRecyclingTaskWithKey:(id)arg1;
+- (void)cacheRecyclingTask:(id)arg1;
+- (id)getRegisterTaskWithKey:(id)arg1;
+- (void)unRegisterTaskWithKey:(id)arg1;
+- (void)registerTask:(id)arg1;
+- (_Bool)isContainPendingTask:(id)arg1;
+- (void)removePendingTask:(id)arg1;
+- (void)addPendingTask:(id)arg1;
+- (unsigned long long)getPendingTaskCount;
+- (void)checkCurrRunningTaskIsOverMaxLimit;
+- (_Bool)isContainRunningTaskWithAnimationId:(id)arg1;
+- (_Bool)isContainRunningTask:(id)arg1;
+- (void)removeRunningTask:(id)arg1;
+- (void)addRunningTask:(id)arg1;
+- (unsigned long long)getRunningTaskCount;
+@property(readonly, nonatomic) MMFinderLiveTask *finderLiveTask;
+- (unsigned int)getFaceTrackSkipFrameCntWithLevel:(long long)arg1;
+- (double)getRecentAverageFootPrintMemoryPercent:(id)arg1;
+- (unsigned long long)maxSumResuedScriptIdCnt;
+- (unsigned long long)getMaxResuedScriptIdCntForAnimationId:(id)arg1;
+@property(readonly, nonatomic) unsigned long long maxResuedScriptIdCnt;
+- (long long)currMaxRunningTaskCntWithHighLoad;
+@property(readonly, nonatomic) unsigned long long maxRunningTaskCnt;
+- (_Bool)tryDecreaseWeEffectFaceTrackFreqToLevel:(long long)arg1;
+- (_Bool)isCurrWeEffectFaceTrackFreqPriorToLevel:(long long)arg1;
+- (_Bool)tryIncreaseWeEffectFaceTrackFreqToLevel:(long long)arg1;
+- (double)getCurrAutoEndDuration;
+- (unsigned long long)getCurrMaxRunningTaskCntToLimit;
+- (id)getHighLoadAnimationId;
+- (_Bool)tryDecreaseCurrMaxRunningTaskCnt;
+- (_Bool)tryIncreaseCurrMaxRunningTaskCnt;
+- (id)getSortedRenderTimeRecordList;
+- (void)onGiftAttackAnimationWillStart:(id)arg1;
+- (void)recordGiftAttackAnimationTime:(id)arg1;
+- (id)getRenderTimeRecordForAnimationId:(id)arg1 autoCreateIfNotExist:(_Bool)arg2;
+- (void)clearAllOperatingScriptsResource;
+- (void)clearAllScriptsDirectly;
+- (_Bool)clearResourcesIfNeeded:(id)arg1;
+- (unsigned long long)currCachedRenderScriptCount;
+- (void)onAllScriptsOperatingEnd;
+- (void)onScriptsOperatingEnd:(id)arg1;
+- (void)onScriptsOperatingBegin:(id)arg1;
+- (void)removeScriptAndClearSrc:(id)arg1 withWeffectMgr:(id)arg2;
+- (void)removeScriptListWithClearSrc:(id)arg1;
+- (_Bool)tryClearRecentUnUsedAnimationScriptBeforeAnimation:(id)arg1;
+- (void)clearRecentUnUsedAnimationScriptForOverLimitIfNeed;
+- (id)getRenderScriptToReuseWithAnimationId:(id)arg1;
+- (_Bool)tryAddRenderScriptIdToReuse:(long long)arg1 resPath:(id)arg2 forAnimationId:(id)arg3;
+- (id)getReusedRenderScriptIdListWithAnimationId:(id)arg1 autoCreateIfNotExist:(_Bool)arg2;
+- (long long)getRenderTaskStandardScriptState:(id)arg1;
+- (id)getStandardScriptWithAnimationId:(id)arg1 targetUser:(id)arg2;
+- (_Bool)cacheStandardRenderScript:(long long)arg1 resPath:(id)arg2 forAnimationId:(id)arg3 targetUser:(id)arg4;
+- (_Bool)prepareStandardRenderScriptWithAnimationId:(id)arg1 targetUser:(id)arg2;
+- (id)inner_getStandardRenderScriptDictWithTargetUser:(id)arg1 autoCreateIfNotExist:(_Bool)arg2;
+- (_Bool)checkRenderEnvNeedUpdate:(long long)arg1;
+- (_Bool)checkRenderWeffectManagerNeedUpdate:(id)arg1;
+- (void)changePreEnvResClearState:(_Bool)arg1;
+- (void)updateRenderWeffectManager:(id)arg1 renderEnv:(long long)arg2;
+- (id)getAttackRecordWithComboId:(id)arg1;
+- (void)endAllGiftAttackRunningRecordsWithResult:(long long)arg1;
+- (void)endAllGiftAttackRecordsWithResult:(long long)arg1;
+- (void)endGiftAttackRecordWithComboId:(id)arg1 result:(long long)arg2;
+- (void)addGiftAttackRecordWithPlayItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)overDelayAfterRenderEnd;
+- (void)cancelOverDelayCheckAfterRenderEnd;
+- (void)startOverDelayCheckAfterRenderEnd;
+- (_Bool)isCurrAllOperationsEnd;
+- (void)checkAllOperationsIsEnd;
+- (void)checkAllTasksRenderIsEnd;
+- (void)clearAllRunningTasksDirectly;
+- (void)cancelAllGiftAttackPlayingRewardsDirectly;
+- (id)getPreviousFaceEffectRenderEnableTasksExceptAnimationId:(id)arg1 forAttacker:(id)arg2 beforeTask:(id)arg3;
+- (id)getPreviousReusableFaceEffectRenderEnableTaskWithAnimationId:(id)arg1 forAttacker:(id)arg2 beforeTask:(id)arg3;
+- (id)checkPlayTaskPrepareReadyToPlayReward:(id)arg1;
+- (id)getAttackTaskListWithComboId:(id)arg1;
+- (void)onPlayTaskAnimationStop:(id)arg1;
+- (void)cancelGiftAttackPlayTask:(id)arg1 force:(_Bool)arg2;
+- (id)getNextPlayTaskToRun;
+- (void)clearPlayTask:(id)arg1;
+- (_Bool)checkPlayTaskCanStart:(id)arg1;
+- (void)tryStartNextPlayTask;
+- (void)addPlayTaskWithPlayItem:(id)arg1;
+- (_Bool)isUserHasRunningTaskAsRecipientUser:(id)arg1;
+- (_Bool)isUserHasRunningTaskAsAttacker:(id)arg1;
+- (id)currRunningTaskList;
+- (long long)currRenderEnv;
+- (_Bool)currAllOperationsEnd;
+- (_Bool)checkTimeRangeIsFullLoadWithBeginTime:(double)arg1 endTime:(double)arg2;
+- (_Bool)decreasePerformanceLevel;
+- (_Bool)increasePerformanceLevel;
+- (_Bool)checkIsCurrTopPerformanceLevel;
+- (void)onRenderEnviromentDestroy:(long long)arg1 weeffectMgr:(id)arg2;
+- (_Bool)isContainGiftAttackRewardWithComboId:(id)arg1;
+- (unsigned long long)remainGiftAttackRecordCnt;
+- (unsigned long long)remainGiftAttackRenderTaskCntForAttacker:(id)arg1;
+- (unsigned long long)remainGiftAttackRunningTaskCnt;
+- (unsigned long long)remainGiftAttackRewardCnt;
+- (_Bool)processLuaScriptJsonMessage:(id)arg1 fromSourceId:(int)arg2;
+- (void)clearAllPlayingGiftAttackEffects;
+- (void)cancelAllGiftAttackRewards;
+- (void)cancelGiftAttackReward:(id)arg1 force:(_Bool)arg2;
+- (void)playGiftAttackReward:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)unRegisterExtensions;
+- (void)registerExtensions;
+- (void)initNotifications;
+- (void)increaseIdentifierNum;
+- (void)initDefaultData;
+- (void)dealloc;
+- (id)initWithTaskId:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

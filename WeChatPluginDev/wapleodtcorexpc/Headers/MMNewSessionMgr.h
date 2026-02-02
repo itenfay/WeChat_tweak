@@ -1,0 +1,194 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class MMChatContentUploadLogic, MMSessionDB, NSArray, NSMutableArray, NSMutableDictionary, NSString, SessionForwardRecordLogic, SessionSortLogic;
+
+@interface MMNewSessionMgr
+{
+    NSMutableArray *m_arrSession;
+    MMSessionDB *m_sessionStorage;
+    NSString *m_nsActiveUserName;
+    SessionSortLogic *m_oSessionSortLogic;
+    unsigned int m_uiTotalUnReadCount;
+    unsigned int m_appIconTotalUnreadCount;
+    NSMutableDictionary *m_dicAtMeCount;
+    NSMutableDictionary *m_dicNewInvCount;
+    NSMutableDictionary *m_dicTransferCount;
+    NSMutableDictionary *m_dictAACount;
+    NSMutableDictionary *m_dictExclusiveHbCount;
+    NSMutableDictionary *m_dictUpdatableMsgDigest;
+    NSMutableDictionary *m_dicGroupUndoneCount;
+    MMChatContentUploadLogic *m_chatUploadLogic;
+    NSArray *m_sessionFilterArray;
+    _Bool m_shouldReload;
+    _Bool m_shouldChangeUnreadCount;
+    NSMutableArray *m_notifySessionChangeArray;
+    NSMutableArray *m_notifyNewMsgArrivingArray;
+    _Bool m_bNotifySound;
+    SessionForwardRecordLogic *m_forwardRecordLogic;
+    NSMutableDictionary *m_dicAtMeType;
+    _Bool _recoverViewControllerShown;
+}
+
++ (id)getSessionName:(id)arg1;
+- (void).cxx_destruct;
+@property _Bool recoverViewControllerShown; // @synthesize recoverViewControllerShown=_recoverViewControllerShown;
+- (void)updateSession:(id)arg1 lastMsgSvrId:(long long)arg2;
+- (void)modifySessionWithoutNotify:(id)arg1;
+- (void)setTimeOfLastSessionListFix;
+- (unsigned int)getTimeElapsedSinceLastSessionListFix;
+- (void)onRecovered:(_Bool)arg1;
+- (void)ModifySessionOpenImChatRoomMigrateWithOpenIMChatRoomUserName:(id)arg1 andAssociateChatRoomUserName:(id)arg2;
+- (void)disableGroupUndoneSessionFlagForRoom:(id)arg1;
+- (void)updateGroupUndoneSessionFlagForRoom:(id)arg1;
+- (unsigned int)GetUnReadCountExcludingActiveUser:(id)arg1;
+- (void)rebuildAndUpdateSessionInfo;
+- (void)checkAndMergeTopFlag;
+- (void)onContactListUpdate:(unsigned int)arg1;
+- (void)OnChangeNotifyStatus:(id)arg1 withStatus:(_Bool)arg2;
+- (void)onDeleteContactIsShouldKeep:(id)arg1;
+- (void)onDeleteContact:(id)arg1;
+- (void)addContact:(id)arg1 AtUser:(id)arg2;
+- (void)setContact:(id)arg1 AtUserList:(id)arg2;
+- (void)deleteAtUserList:(id)arg1;
+- (void)onModifyDraft:(id)arg1 draft:(id)arg2 referMsgSvrId:(long long)arg3 draftTime:(unsigned int)arg4;
+- (void)onGetDraft:(id)arg1 draft:(id)arg2 referMsgSvrId:(long long *)arg3;
+- (void)onModifyContact:(id)arg1;
+- (void)onGetEmoticonDesc:(id)arg1 descList:(id)arg2;
+- (void)onAddMsgDigetstForSession:(id)arg1;
+- (void)checkSessionTopWithContact:(id)arg1;
+- (void)checkSessionTop:(id)arg1 contact:(id)arg2;
+- (void)OnUnReadCountChange:(id)arg1;
+- (void)OnDelMsg:(id)arg1 MsgWrap:(id)arg2;
+- (void)OnDelMsg:(id)arg1;
+- (void)OnModMsg:(id)arg1 MsgWrap:(id)arg2;
+- (void)updateSessions:(id)arg1 NotifyUsrName:(id)arg2;
+- (void)OnAddMsgListForSession:(id)arg1 NotifyUsrName:(id)arg2;
+- (void)OnAddMsg:(id)arg1 MsgWrap:(id)arg2;
+- (void)OnMsgNotAddDBNotify:(id)arg1 MsgWrap:(id)arg2;
+- (id)GetSessionDeleteInfo:(id)arg1;
+- (_Bool)InsertOrUpdateSessionDeleteInfo:(id)arg1;
+- (void)checkAutoClearUnreadForSession:(id)arg1;
+- (void)recountUnReadCountAndFireExtension;
+- (void)recountUnReadCount;
+- (void)fulFillSession:(id)arg1 loadDetails:(_Bool)arg2;
+- (void)fulFillSession:(id)arg1;
+- (unsigned int)getSessionIndexOfUser:(id)arg1;
+- (void)deleteSessionsAtIndexes:(id)arg1;
+- (_Bool)isNeedCallNewMsgArrival:(id)arg1;
+- (void)processOnAddMsgWithNotifyFlag:(long long)arg1 UsrName:(id)arg2;
+- (_Bool)isNeedSaveSessionInfo:(id)arg1;
+- (_Bool)isMsgNeedProcess:(id)arg1;
+- (_Bool)isUserNeedProcess:(id)arg1;
+- (void)executeContactVerifyBanner;
+- (_Bool)checkContactVerifySysmsgSwitch;
+- (_Bool)realCheckStrangerFirstChat:(id)arg1;
+- (_Bool)checkStrangerFirstChat:(id)arg1;
+- (void)processContactWhenAddMsg:(id)arg1;
+- (id)getContactByNameForce:(id)arg1;
+- (void)tryGetContactImage:(id)arg1;
+- (void)resortSessions;
+- (void)filterSessionDeleted:(id)arg1 modified:(id)arg2;
+- (void)fixUnreadCountForLastSession;
+- (void)checkLoadData;
+- (void)showWCDBSpecifiedRecoverVCAndReport;
+- (_Bool)checkIfSessionsCorrupted:(id)arg1;
+- (_Bool)checkWhetherTheSessionIsAbnormal:(id)arg1;
+- (void)p_buildSession:(_Bool)arg1;
+- (void)appFirstBecomeActive;
+- (void)tryToBuildSession:(_Bool)arg1;
+- (id)genSessionInfoByContact:(id)arg1 allowEmptyLastMsg:(_Bool)arg2;
+- (id)genSessionInfoByContact:(id)arg1;
+- (id)genSessionInfoByUserName:(id)arg1;
+- (_Bool)shouldUnfoldSessionForNewMsgWrap:(id)arg1;
+- (_Bool)isSelfToSelfSession:(id)arg1;
+- (_Bool)shouldFoldSession:(id)arg1;
+- (_Bool)isFoldTopSession;
+- (long long)foldSessionCount;
+- (void)foldSessionByNames:(id)arg1;
+- (void)unfoldAllSessions;
+- (void)unfoldSessionByName:(id)arg1;
+- (void)AddSessionToTop:(id)arg1;
+- (_Bool)isSessionTopable:(id)arg1;
+- (_Bool)IsTopSessionCountExceed;
+- (void)UntopSessionByName:(id)arg1;
+- (void)TopSessionByName:(id)arg1;
+- (_Bool)checkContactHasSession:(id)arg1;
+- (void)deleteExpiredSessionForwardRecord;
+- (id)recentForwardSessions;
+- (_Bool)IsSessionWithNullMsg:(id)arg1;
+- (void)temporaryTopSessionByContact:(id)arg1;
+- (_Bool)IsSessionNeedDelayLoad;
+- (unsigned int)GetSessionModifyTimeInSeconds:(id)arg1;
+- (unsigned int)GenSendMsgTime;
+- (_Bool)HasActiveUser;
+- (id)GetActiveUser;
+- (_Bool)IsActiveUser:(id)arg1;
+- (void)SetActiveSession:(id)arg1;
+- (id)GetSyncUserNamesOnSessionListWithMaxCount:(unsigned int)arg1;
+- (id)GetUserNamesOnSessionList;
+- (void)DeleteMsgButKeepSession:(id)arg1;
+- (void)p_batchDeleteSessions;
+- (void)DeleteAllSession;
+- (void)hideSession:(id)arg1;
+- (void)DeleteSessionWithoutDeleteMessage:(id)arg1;
+- (void)DeleteSessionOfUsernames:(id)arg1;
+- (void)DeleteSessionOfUser:(id)arg1;
+- (void)clearChatRoomSpecialAttentionFlag:(id)arg1;
+- (void)clearGroupUndoneSessionFlag:(id)arg1;
+- (void)clearNeedContactVerifyFlag:(id)arg1;
+- (void)clearUpdatableMsgNotify:(id)arg1;
+- (void)clearExclusiveHbMessageCount:(id)arg1;
+- (void)clearAAMessageCount:(id)arg1;
+- (void)clearTransferCount:(id)arg1;
+- (void)clearNewInvApprove:(id)arg1;
+- (void)clearNewInvCount:(id)arg1;
+- (void)clearAtMeCount:(id)arg1;
+- (void)ChangeSessionUnReadCount:(id)arg1 to:(unsigned int)arg2;
+- (void)updateTimeForSessionByUserName:(id)arg1;
+- (void)AddOrModifySession:(id)arg1 targetContactUserName:(id)arg2 withNotifyFlag:(long long)arg3 immediateRefresh:(_Bool)arg4;
+- (void)AddOrModifySession:(id)arg1 targetContactUserName:(id)arg2 withNotifyFlag:(long long)arg3;
+- (void)AddOrModifySession:(id)arg1 withNotifyFlag:(long long)arg2 immediateRefresh:(_Bool)arg3;
+- (void)AddOrModifySession:(id)arg1 withNotifyFlag:(long long)arg2;
+- (id)SessionNewArray;
+- (id)mainSessionEnumerator;
+- (id)SessionEnumerator;
+- (unsigned int)GetActiveUserUnreadCount;
+- (unsigned int)GetTotalUnreadCountForAppIcon;
+- (unsigned int)GetTotalUnreadCount;
+- (long long)GetSessionIndexByUserName:(id)arg1;
+- (id)GetSessionByUserName:(id)arg1;
+- (long long)getUnreadCountInSession:(id)arg1;
+- (void)SyncFulFillSession:(id)arg1;
+- (void)AsyncFulFillSession:(id)arg1;
+- (void)CleanupPreLoadSessionCache;
+- (id)GetSessionInfoList;
+- (id)GetFirstUntopSessionUserName;
+- (id)GetSessionUserNameAtIndex:(unsigned int)arg1;
+- (id)GetSessionAtIndex:(unsigned int)arg1;
+- (unsigned int)GetSessionCount;
+- (void)p_notifyNewMsg:(id)arg1 withNotifyFlag:(long long)arg2;
+- (void)p_notifySessionChangeArrayAddObject:(id)arg1;
+- (void)p_refreshNewSessionMgr;
+- (void)refreshServiceTriggerToRefresh:(id)arg1;
+- (void)onServiceClearData;
+- (void)dealloc;
+- (void)onServiceInit;
+- (id)isUserHasSpecalSessionInfo:(id)arg1;
+- (_Bool)isMessageShouldHandled:(id)arg1;
+- (_Bool)isUserShouldHandled:(id)arg1;
+- (id)getSessionFilterArray;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

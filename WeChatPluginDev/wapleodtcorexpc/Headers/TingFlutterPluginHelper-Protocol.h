@@ -1,0 +1,14 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import "NSObject-Protocol.h"
+#import "UnitRCBaseProtocol-Protocol.h"
+
+@protocol TingFlutterPluginHelper <NSObject, UnitRCBaseProtocol>
+- (void)waitForPluginAttached:(long long)arg1 callback:(void (^)(void))arg2;
+- (_Bool)getPluginAttached;
+- (void)setPluginAttached:(_Bool)arg1;
+@end
+

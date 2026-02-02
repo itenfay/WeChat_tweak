@@ -12,7 +12,7 @@ TWEAK_NAME = wapleodtcorexpc
 $(TWEAK_NAME)_FILES = $(wildcard src/*.m) src/Tweak.xm
 $(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation UniformTypeIdentifiers
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
-$(TWEAK_NAME)_CFLAGS = -fno-modules
+$(TWEAK_NAME)_CFLAGS = -fno-modules -IHeaders
 
 src/WCPLAVManager.m_CFLAGS = -fobjc-arc -fno-modules
 src/WCPLBaseViewController.m_CFLAGS = -fobjc-arc -fno-modules

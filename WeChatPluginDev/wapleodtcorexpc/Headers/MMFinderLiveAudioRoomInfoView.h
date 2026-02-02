@@ -1,0 +1,212 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import <UIKit/UIView.h>
+
+@class MMFinderLiveAudioRoomCurrentAnchorView, MMFinderLiveConnectMicPkProgressTimeIndicator, MMFinderLiveConnectMicUsersInfo, MMFinderLiveKTVBox, MMFinderLiveKTVMusicContainerView, MMFinderLiveKTVSingleIconView, MMFinderLivePkTaskedBonusBarBackgroundFrenzyView, MMFinderLiveTaskId, MMLiveConnectMicUserLocationDisplayLogic, MMLiveFeedPreviewTaskId, MMLiveGradientLayerView, NSMutableDictionary, NSString, PAGView, UIColor, UIImage, UIImageView, UILabel, UIScrollView, WCFinderContact, WCFinderDataItem;
+@protocol MMFinderLiveAudioRoomInfoLogicDelegate, MMFinderLiveAudioRoomInfoViewDelegate, MMFinderLiveAudioRoomInfoViewGiftNotificationDelegate, MMLiveUniqueTaskId;
+
+@interface MMFinderLiveAudioRoomInfoView : UIView
+{
+    _Bool _anchorIsTalking;
+    _Bool _isInSuperfanPKStyle;
+    _Bool _hasHandledJoinLiveFinished;
+    _Bool _needSpecialProcessKTV;
+    _Bool _isKTVMode;
+    id <MMFinderLiveAudioRoomInfoViewDelegate> _actionDelegate;
+    id <MMFinderLiveAudioRoomInfoViewGiftNotificationDelegate> _giftNotificationDelegate;
+    id <MMFinderLiveAudioRoomInfoLogicDelegate> _logicDelegate;
+    unsigned long long _viewScene;
+    MMFinderLiveTaskId *_finderLiveTaskId;
+    MMLiveFeedPreviewTaskId *_previewTaskId;
+    WCFinderDataItem *_finderDataItem;
+    WCFinderContact *_anchorContact;
+    double _lastSafeAreaInsetTop;
+    UIImage *_backgroundImage;
+    UIImageView *_backgroundImageView;
+    UIColor *_audioWaveColor;
+    UIView *_userInfoContainerView;
+    UIScrollView *_ktvUserContainerView;
+    UIView *_pkGlobalAnimationContainerView;
+    MMFinderLiveAudioRoomCurrentAnchorView *_anchorUserView;
+    MMFinderLiveConnectMicUsersInfo *_micUsersInfo;
+    NSMutableDictionary *_micUserViewDict;
+    NSMutableDictionary *_micSeatViewDict;
+    MMLiveGradientLayerView *_leftTeamBackgroundView;
+    MMLiveGradientLayerView *_rightTeamBackgroundView;
+    UIImageView *_pkTimeIndicatorContainerView;
+    MMFinderLiveConnectMicPkProgressTimeIndicator *_pkTimeIndicatorView;
+    UIView *_topPkProgressView;
+    MMLiveGradientLayerView *_topPkLeftProgressBar;
+    MMLiveGradientLayerView *_topPkRightProgressBar;
+    PAGView *_topPkProgressIndicator;
+    UIImageView *_topPkLeftRewardIcon;
+    UIImageView *_topPkRightRewardIcon;
+    UILabel *_topPkLeftRewardLabel;
+    UILabel *_topPkRightRewardLabel;
+    MMFinderLivePkTaskedBonusBarBackgroundFrenzyView *_pkFrenzyView;
+    PAGView *_drawAnimationView;
+    UIImageView *_multiAnchorsPkStartAnimationView;
+    unsigned long long _lastPkState;
+    NSString *_waitResultOriginalImageUrlString;
+    MMLiveConnectMicUserLocationDisplayLogic *_locationDisplayLogic;
+    MMFinderLiveKTVSingleIconView *_ktvSingleIconView;
+    MMFinderLiveKTVMusicContainerView *_ktvMusicContainerView;
+    MMFinderLiveKTVBox *_ktvBox;
+    unsigned long long _audioRoomScene;
+}
+
+- (void).cxx_destruct;
+@property(nonatomic) unsigned long long audioRoomScene; // @synthesize audioRoomScene=_audioRoomScene;
+@property(readonly, nonatomic) MMFinderLiveKTVBox *ktvBox; // @synthesize ktvBox=_ktvBox;
+@property(readonly, nonatomic) _Bool isKTVMode; // @synthesize isKTVMode=_isKTVMode;
+@property(readonly, nonatomic) _Bool needSpecialProcessKTV; // @synthesize needSpecialProcessKTV=_needSpecialProcessKTV;
+@property(retain, nonatomic) MMFinderLiveKTVMusicContainerView *ktvMusicContainerView; // @synthesize ktvMusicContainerView=_ktvMusicContainerView;
+@property(retain, nonatomic) MMFinderLiveKTVSingleIconView *ktvSingleIconView; // @synthesize ktvSingleIconView=_ktvSingleIconView;
+@property(nonatomic) _Bool hasHandledJoinLiveFinished; // @synthesize hasHandledJoinLiveFinished=_hasHandledJoinLiveFinished;
+@property(retain, nonatomic) MMLiveConnectMicUserLocationDisplayLogic *locationDisplayLogic; // @synthesize locationDisplayLogic=_locationDisplayLogic;
+@property(copy, nonatomic) NSString *waitResultOriginalImageUrlString; // @synthesize waitResultOriginalImageUrlString=_waitResultOriginalImageUrlString;
+@property(nonatomic) unsigned long long lastPkState; // @synthesize lastPkState=_lastPkState;
+@property(retain, nonatomic) UIImageView *multiAnchorsPkStartAnimationView; // @synthesize multiAnchorsPkStartAnimationView=_multiAnchorsPkStartAnimationView;
+@property(retain, nonatomic) PAGView *drawAnimationView; // @synthesize drawAnimationView=_drawAnimationView;
+@property(nonatomic) _Bool isInSuperfanPKStyle; // @synthesize isInSuperfanPKStyle=_isInSuperfanPKStyle;
+@property(retain, nonatomic) MMFinderLivePkTaskedBonusBarBackgroundFrenzyView *pkFrenzyView; // @synthesize pkFrenzyView=_pkFrenzyView;
+@property(retain, nonatomic) UILabel *topPkRightRewardLabel; // @synthesize topPkRightRewardLabel=_topPkRightRewardLabel;
+@property(retain, nonatomic) UILabel *topPkLeftRewardLabel; // @synthesize topPkLeftRewardLabel=_topPkLeftRewardLabel;
+@property(retain, nonatomic) UIImageView *topPkRightRewardIcon; // @synthesize topPkRightRewardIcon=_topPkRightRewardIcon;
+@property(retain, nonatomic) UIImageView *topPkLeftRewardIcon; // @synthesize topPkLeftRewardIcon=_topPkLeftRewardIcon;
+@property(retain, nonatomic) PAGView *topPkProgressIndicator; // @synthesize topPkProgressIndicator=_topPkProgressIndicator;
+@property(retain, nonatomic) MMLiveGradientLayerView *topPkRightProgressBar; // @synthesize topPkRightProgressBar=_topPkRightProgressBar;
+@property(retain, nonatomic) MMLiveGradientLayerView *topPkLeftProgressBar; // @synthesize topPkLeftProgressBar=_topPkLeftProgressBar;
+@property(retain, nonatomic) UIView *topPkProgressView; // @synthesize topPkProgressView=_topPkProgressView;
+@property(retain, nonatomic) MMFinderLiveConnectMicPkProgressTimeIndicator *pkTimeIndicatorView; // @synthesize pkTimeIndicatorView=_pkTimeIndicatorView;
+@property(retain, nonatomic) UIImageView *pkTimeIndicatorContainerView; // @synthesize pkTimeIndicatorContainerView=_pkTimeIndicatorContainerView;
+@property(retain, nonatomic) MMLiveGradientLayerView *rightTeamBackgroundView; // @synthesize rightTeamBackgroundView=_rightTeamBackgroundView;
+@property(retain, nonatomic) MMLiveGradientLayerView *leftTeamBackgroundView; // @synthesize leftTeamBackgroundView=_leftTeamBackgroundView;
+@property(retain, nonatomic) NSMutableDictionary *micSeatViewDict; // @synthesize micSeatViewDict=_micSeatViewDict;
+@property(retain, nonatomic) NSMutableDictionary *micUserViewDict; // @synthesize micUserViewDict=_micUserViewDict;
+@property(retain, nonatomic) MMFinderLiveConnectMicUsersInfo *micUsersInfo; // @synthesize micUsersInfo=_micUsersInfo;
+@property(retain, nonatomic) MMFinderLiveAudioRoomCurrentAnchorView *anchorUserView; // @synthesize anchorUserView=_anchorUserView;
+@property(retain, nonatomic) UIView *pkGlobalAnimationContainerView; // @synthesize pkGlobalAnimationContainerView=_pkGlobalAnimationContainerView;
+@property(retain, nonatomic) UIScrollView *ktvUserContainerView; // @synthesize ktvUserContainerView=_ktvUserContainerView;
+@property(retain, nonatomic) UIView *userInfoContainerView; // @synthesize userInfoContainerView=_userInfoContainerView;
+@property(retain, nonatomic) UIColor *audioWaveColor; // @synthesize audioWaveColor=_audioWaveColor;
+@property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
+@property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
+@property(nonatomic) double lastSafeAreaInsetTop; // @synthesize lastSafeAreaInsetTop=_lastSafeAreaInsetTop;
+@property(nonatomic) _Bool anchorIsTalking; // @synthesize anchorIsTalking=_anchorIsTalking;
+@property(retain, nonatomic) WCFinderContact *anchorContact; // @synthesize anchorContact=_anchorContact;
+@property(retain, nonatomic) WCFinderDataItem *finderDataItem; // @synthesize finderDataItem=_finderDataItem;
+@property(retain, nonatomic) MMLiveFeedPreviewTaskId *previewTaskId; // @synthesize previewTaskId=_previewTaskId;
+@property(retain, nonatomic) MMFinderLiveTaskId *finderLiveTaskId; // @synthesize finderLiveTaskId=_finderLiveTaskId;
+@property(nonatomic) unsigned long long viewScene; // @synthesize viewScene=_viewScene;
+@property(nonatomic) __weak id <MMFinderLiveAudioRoomInfoLogicDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;
+@property(nonatomic) __weak id <MMFinderLiveAudioRoomInfoViewGiftNotificationDelegate> giftNotificationDelegate; // @synthesize giftNotificationDelegate=_giftNotificationDelegate;
+@property(nonatomic) __weak id <MMFinderLiveAudioRoomInfoViewDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
+- (void)onLiveConnectMicUserLocationDisplayEndedWithUserIdList:(id)arg1;
+- (void)onLiveConnectMicAnchorUserLocationDisplayEnded;
+- (void)onLiveTaskId:(id)arg1 ktvState:(id)arg2 singerUserIdChanged:(id)arg3;
+- (void)onFinderLiveAudioRoomBackgroundImageInfoUpdated:(id)arg1 originalUrlString:(id)arg2;
+- (void)onMMFinderLiveAudioRoomMicUserViewTappedMicMutedButtonWithUserInfo:(id)arg1;
+- (void)onMMFinderLiveAudioRoomMicUserViewLoadAvatarImageFinished:(id)arg1 image:(id)arg2 urlString:(id)arg3;
+- (void)onMMFinderLiveAudioRoomMicUserViewTappedWithUserInfo:(id)arg1 micSeatInfo:(id)arg2 targetView:(id)arg3;
+- (void)updateAudioRoomModeGiftNotificationContainerViews;
+- (void)updateBackgroundImage:(id)arg1 andWaveColor:(id)arg2;
+- (void)layoutTopPkProgressView;
+- (void)updatePkAtmosphereBackgroundIfNeeded;
+- (_Bool)isTimeIndicatorPermanentInPk;
+- (void)layoutTeamingBackgroundView;
+- (void)layoutPkTimeIndicatorView;
+- (void)layoutStartPkAnimationView;
+- (void)layoutDrawAnimationView;
+- (void)layoutPkViews;
+- (_Bool)showTopProgress;
+- (_Bool)isFeedStreamTask;
+- (id)getTopPKProgressIndicatorPAGPath;
+- (id)rightPkTeam;
+- (id)leftPkTeam;
+- (void)updateTopPkProgressView;
+- (void)configureTopPkProgressView;
+- (void)configureTeamingBackgroundView;
+- (void)configurePkTimeIndicatorView;
+- (void)configureStartPkAnimationView;
+- (void)configureDrawAnimationView;
+- (void)updateUserPkViews;
+- (void)updateViewsAfterMicMutedStateChanged;
+- (void)updateAnchorIsTalking:(_Bool)arg1;
+- (void)updateAllMicViewsAfterAudioWaveColorChanged;
+- (void)updateViewsWithUIChangeType:(unsigned long long)arg1;
+- (void)clearMicSeatViewDict;
+- (void)clearMicUserViewDict;
+- (void)clearConnectMicViewsAndDict;
+- (void)updateConnectMicViewsAndDict;
+- (void)realUpdateItemViewFrame:(id)arg1 withMicIndex:(unsigned long long)arg2;
+- (void)updateMicItemViewFrame:(id)arg1;
+- (void)layoutConnectMicUsersView;
+- (struct CGRect)getFocusedItemViewFrame;
+- (void)layoutAnchorUserView;
+- (void)attachUserInfoView:(id)arg1;
+- (void)layoutKtvUserContainerView;
+- (void)configKtvUserContainerView;
+- (void)updateKTVContainerViewHidden;
+- (void)layoutKTVMusicContainerView;
+- (void)configKTVMusicContainerView;
+- (void)layoutKTVSingleIconView;
+- (void)configKTVSingleIconView;
+- (void)layoutUserInfoContainerView;
+- (void)configUserInfoContainerView;
+- (double)getTopControlWidgetTopMarginOutOfLiveRoom;
+- (double)getKTVContentTop;
+- (double)getContentTop;
+- (void)layoutBackgroundImageView;
+- (void)configBackgroundImageView;
+- (void)configUI;
+- (void)layoutUI;
+- (void)layoutSubviews;
+- (id)getAnchorSdkUserId;
+@property(readonly, nonatomic) id <MMLiveUniqueTaskId> uniqueTaskId;
+- (id)minimizeSrcView;
+- (void)handleForLivePauseViewShowChanged:(_Bool)arg1;
+- (void)handleDataItemUpdated;
+- (void)onEnterLive;
+- (void)handleJoinLiveFinished;
+- (void)clearForceHideSeatNameLabelFlag;
+- (void)forceHideTagViewsForUserInfo:(id)arg1;
+- (double)getContentBottom;
+- (void)updateLiveHeatValueForUserId:(id)arg1;
+- (void)updateUserPkState;
+- (id)generateGiftNotificationContainerViewsDict;
+- (void)updateMicLocation;
+- (void)updateWithConnectMicUsersInfo:(id)arg1;
+- (void)updateAudioRoomScene:(unsigned long long)arg1;
+- (_Bool)isViewSceneInLiveRoom;
+- (id)getFinderLiveTask;
+- (id)getLiveTask;
+- (void)unRegisterExtensions;
+- (void)registerExtensions;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)clearDatasForExit;
+- (void)dealloc;
+- (void)initDefaultData;
+- (id)initWithDataItem:(id)arg1 viewScene:(unsigned long long)arg2;
+- (id)initWithTaskId:(id)arg1 viewScene:(unsigned long long)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 viewScene:(unsigned long long)arg2 andTaskId:(id)arg3;
+- (void)createKTVModels;
+- (void)onKTVModeChanged;
+- (void)clearKTVDatasForExit;
+- (void)processSEIPBForKTVSyncRecv:(id)arg1;
+- (void)onAudioRoomSceneChangeFrom:(unsigned long long)arg1 to:(unsigned long long)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

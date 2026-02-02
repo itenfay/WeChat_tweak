@@ -1,0 +1,190 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class LiteAppEmbedViewController, LiteAppJsApiPluginScheduler, LiteAppJsApiPlugin_LocalJSAgent, LiteAppViewController, MMLiteAppJsApiLogicImpl, MMLiteAppModalTransitionAnimator, MMLiteAppPlatformView, MMLiteAppVCView, MMLiteAppViewControllerTransitionMgr, NSMutableDictionary, NSString, UIPanGestureRecognizer, WSWebViewPluginScheduler, WebViewA8KeyLogicImpl;
+@protocol LiteAppLifeCycleCallbackDelegate, UIViewControllerTransitioningDelegate, WXCustomWebViewControllerDelegate;
+
+@interface MMLiteAppViewController
+{
+    id <WXCustomWebViewControllerDelegate> m_delegate;
+    _Bool _forbidRightGesture;
+    _Bool _isPopGestureEnable;
+    _Bool _canOverScroll;
+    _Bool _forbidAutoresizingMask;
+    _Bool _isTransparent;
+    _Bool _isLiteVcDidAppear;
+    _Bool _sizeChangeSnapshot;
+    LiteAppViewController *_liteAppView;
+    LiteAppEmbedViewController *_liteAppEmbedView;
+    id <UIViewControllerTransitioningDelegate> _preTransitionDelegate;
+    MMLiteAppViewControllerTransitionMgr *_transitionMgr;
+    LiteAppJsApiPluginScheduler *_jsApiPluginScheduler;
+    WebViewA8KeyLogicImpl *_m_a8KeyLogicImpl;
+    NSMutableDictionary *_extraData;
+    MMLiteAppModalTransitionAnimator *_animator;
+    CDUnknownBlockType _closedCallback;
+    CDUnknownBlockType _willDisappearCallback;
+    CDUnknownBlockType _didDisappearCallback;
+    CDUnknownBlockType _willAppearCallback;
+    CDUnknownBlockType _didAppearCallback;
+    CDUnknownBlockType _onBodySizeChange;
+    MMLiteAppPlatformView *_platformView;
+    double _delayTime;
+    id _host;
+    id <LiteAppLifeCycleCallbackDelegate> _lifeCycleDelegate;
+    long long _storeUiStatusBarStyle;
+    MMLiteAppJsApiLogicImpl *_liteAppJsApilogicImpl;
+    MMLiteAppVCView *_customView;
+    UIPanGestureRecognizer *_halfScreenPanGestureRecognizer;
+}
+
++ (_Bool)resolveInstanceMethod:(SEL)arg1;
+- (void).cxx_destruct;
+@property(retain, nonatomic) UIPanGestureRecognizer *halfScreenPanGestureRecognizer; // @synthesize halfScreenPanGestureRecognizer=_halfScreenPanGestureRecognizer;
+@property(retain, nonatomic) MMLiteAppVCView *customView; // @synthesize customView=_customView;
+@property(nonatomic) _Bool sizeChangeSnapshot; // @synthesize sizeChangeSnapshot=_sizeChangeSnapshot;
+@property(nonatomic) _Bool isLiteVcDidAppear; // @synthesize isLiteVcDidAppear=_isLiteVcDidAppear;
+@property(nonatomic) _Bool isTransparent; // @synthesize isTransparent=_isTransparent;
+@property(retain, nonatomic) MMLiteAppJsApiLogicImpl *liteAppJsApilogicImpl; // @synthesize liteAppJsApilogicImpl=_liteAppJsApilogicImpl;
+@property(nonatomic) long long storeUiStatusBarStyle; // @synthesize storeUiStatusBarStyle=_storeUiStatusBarStyle;
+@property(nonatomic) __weak id <LiteAppLifeCycleCallbackDelegate> lifeCycleDelegate; // @synthesize lifeCycleDelegate=_lifeCycleDelegate;
+@property(nonatomic) __weak id host; // @synthesize host=_host;
+@property(nonatomic) _Bool forbidAutoresizingMask; // @synthesize forbidAutoresizingMask=_forbidAutoresizingMask;
+@property(nonatomic) double delayTime; // @synthesize delayTime=_delayTime;
+@property(nonatomic) __weak MMLiteAppPlatformView *platformView; // @synthesize platformView=_platformView;
+@property(nonatomic) _Bool canOverScroll; // @synthesize canOverScroll=_canOverScroll;
+@property(copy, nonatomic) CDUnknownBlockType onBodySizeChange; // @synthesize onBodySizeChange=_onBodySizeChange;
+@property(copy, nonatomic) CDUnknownBlockType didAppearCallback; // @synthesize didAppearCallback=_didAppearCallback;
+@property(copy, nonatomic) CDUnknownBlockType willAppearCallback; // @synthesize willAppearCallback=_willAppearCallback;
+@property(copy, nonatomic) CDUnknownBlockType didDisappearCallback; // @synthesize didDisappearCallback=_didDisappearCallback;
+@property(copy, nonatomic) CDUnknownBlockType willDisappearCallback; // @synthesize willDisappearCallback=_willDisappearCallback;
+@property(copy, nonatomic) CDUnknownBlockType closedCallback; // @synthesize closedCallback=_closedCallback;
+@property(nonatomic) _Bool isPopGestureEnable; // @synthesize isPopGestureEnable=_isPopGestureEnable;
+@property(nonatomic) _Bool forbidRightGesture; // @synthesize forbidRightGesture=_forbidRightGesture;
+@property(retain, nonatomic) MMLiteAppModalTransitionAnimator *animator; // @synthesize animator=_animator;
+@property(retain, nonatomic) NSMutableDictionary *extraData; // @synthesize extraData=_extraData;
+@property(retain, nonatomic) WebViewA8KeyLogicImpl *m_a8KeyLogicImpl; // @synthesize m_a8KeyLogicImpl=_m_a8KeyLogicImpl;
+@property(retain, nonatomic) LiteAppJsApiPluginScheduler *jsApiPluginScheduler; // @synthesize jsApiPluginScheduler=_jsApiPluginScheduler;
+@property(retain, nonatomic) MMLiteAppViewControllerTransitionMgr *transitionMgr; // @synthesize transitionMgr=_transitionMgr;
+@property(retain, nonatomic) id <UIViewControllerTransitioningDelegate> preTransitionDelegate; // @synthesize preTransitionDelegate=_preTransitionDelegate;
+@property(retain, nonatomic) LiteAppEmbedViewController *liteAppEmbedView; // @synthesize liteAppEmbedView=_liteAppEmbedView;
+@property(retain, nonatomic) LiteAppViewController *liteAppView; // @synthesize liteAppView=_liteAppView;
+- (void)setM_delegate:(id)arg1;
+- (id)m_delegate;
+- (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)setTitleBackgroundColor:(unsigned long long)arg1 darkMode:(_Bool)arg2 pageId:(unsigned long long)arg3;
+- (id)getPageConfig;
+- (void)screenCapturedDidChange:(id)arg1;
+- (void)setPresentsWithTransaction:(_Bool)arg1;
+- (void)setNeedKeepAlive:(_Bool)arg1;
+- (void)resumeView;
+- (void)pauseView;
+- (id)captureScreenshotInRect:(struct CGRect)arg1;
+- (void)onCheckLiteAppVersionError:(id)arg1 errorCode:(unsigned int)arg2;
+- (void)onCheckBaseLibSumFail:(id)arg1;
+- (void)onCheckSumFail:(id)arg1;
+- (void)disableScroll:(_Bool)arg1;
+- (void)setContentOffset:(double)arg1;
+- (void)updateSize:(struct CGSize)arg1;
+- (void)handlePlatformViewPopGesture;
+- (void)setForbidRightGestureEnable:(_Bool)arg1;
+- (void)onLayoutComplete:(id)arg1 appUuid:(unsigned int)arg2 pageId:(unsigned long long)arg3 width:(float)arg4 height:(float)arg5;
+- (void)onBodySizeChange:(id)arg1 appUuid:(unsigned int)arg2 pageId:(unsigned long long)arg3 width:(float)arg4 height:(float)arg5;
+- (id)mmNavigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
+- (id)pluginScheduler;
+- (void)logUseWebviewSchemeToJumpWithUrl:(id)arg1;
+- (void)stopForcedRotationToPortrait;
+- (_Bool)isKindOfClass:(Class)arg1;
+- (void)goToURL:(id)arg1;
+- (_Bool)m_bIsJsapiUploadVideoUploading;
+- (id)webView;
+- (_Bool)m_bOfflinePage;
+- (id)m_jsLogicImpl;
+- (id)m_extraInfo;
+- (id)m_initUrl;
+- (void)setWebViewContentSize:(struct CGSize)arg1;
+- (void)startupPreVerifyJSAPI:(id)arg1 failHandleBlock:(CDUnknownBlockType)arg2;
+- (void)setDisableWebAlertView:(_Bool)arg1;
+- (void)sendEventToJSBridge:(id)arg1 Param:(id)arg2;
+- (id)getShareUrl;
+- (unsigned char)getPermissionWithName:(id)arg1;
+- (id)getCurrentUrl;
+- (unsigned int)getCurrentScene;
+- (id)getCurrentAppId;
+- (void)forceShowCloseButton;
+- (id)extraInfo;
+- (void)enableWebContentImageLongPressingTag;
+- (void)doJsApiInitEvent;
+- (_Bool)allowShareByImage;
+- (_Bool)allowScanQRCodeByImage;
+- (_Bool)allowImagePreview;
+- (_Bool)allowFayByImage;
+- (id)getInitUrl;
+- (_Bool)useTransparentNavibar;
+- (void)checkTransition;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillPop:(_Bool)arg1;
+- (void)viewWillPresent:(_Bool)arg1;
+- (void)viewWillPush:(_Bool)arg1;
+- (void)viewWillBeDismissed:(_Bool)arg1;
+- (void)viewWillBePoped:(_Bool)arg1;
+- (void)viewWillBePushed:(_Bool)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)handleNavigationBarForMiniAppOnWillDisappearIfNeeded;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
+- (void)viewWillLayoutSubviews;
+- (void)dealloc;
+- (void)loadView;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (void)handleScreenEdgePanGesture:(id)arg1;
+- (void)viewDidLoad;
+- (_Bool)shouldSkipNavInteractiveGesture;
+- (id)childViewControllerForHomeIndicatorAutoHidden;
+- (long long)preferredStatusBarStyle;
+- (_Bool)prefersStatusBarHidden;
+- (long long)preferredInterfaceOrientationForPresentation;
+- (unsigned long long)supportedInterfaceOrientations;
+- (_Bool)shouldAutorotate;
+- (void)publishNodeEvent:(int)arg1 event:(id)arg2 params:(id)arg3;
+- (void)publishGlobalEvent:(id)arg1 params:(id)arg2;
+- (void)publishGlobalEventToPage:(unsigned long long)arg1 event:(id)arg2 params:(id)arg3;
+- (unsigned int)getLiteAppUuid;
+- (id)getLiteAppId;
+- (void)didTakeScreenshot;
+- (void)initForPluginScheduler;
+- (id)initForEmbedViewWithParams:(id)arg1 path:(id)arg2 page:(id)arg3 query:(id)arg4 referrerInfo:(id)arg5 signatureKey:(id)arg6 isTransparent:(_Bool)arg7 pipMode:(_Bool)arg8 sizeChangeSnapshot:(_Bool)arg9 startReport:(id)arg10 reporter:(id)arg11;
+- (void)setSource:(id)arg1 enableActions:(id)arg2 enableViews:(id)arg3;
+- (void)setStore:(id)arg1;
+- (id)getStore;
+- (id)reporter;
+- (void)setupEngine;
+- (void)reopen:(id)arg1;
+- (id)initWithParams:(id)arg1 path:(id)arg2 page:(id)arg3 query:(id)arg4 referrerInfo:(id)arg5 signatureKey:(id)arg6 openWithNewTab:(_Bool)arg7 isHalfScreen:(_Bool)arg8 isTransparent:(_Bool)arg9 startReport:(id)arg10 reporter:(id)arg11;
+- (id)initWithParams:(id)arg1 path:(id)arg2 page:(id)arg3 query:(id)arg4 signatureKey:(id)arg5 openWithNewTab:(_Bool)arg6 isHalfScreen:(_Bool)arg7 isTransparent:(_Bool)arg8 startReport:(id)arg9 reporter:(id)arg10;
+- (id)initWithParams:(id)arg1 path:(id)arg2 page:(id)arg3 query:(id)arg4 signatureKey:(id)arg5 openWithNewTab:(_Bool)arg6 startReport:(id)arg7 reporter:(id)arg8;
+- (void)doneSnapshot;
+- (void)willSnapshot;
+- (id)interactionControllerForDismissal:(id)arg1;
+- (id)animationControllerForDismissedController:(id)arg1;
+- (void)checkTransition;
+- (void)handlePanGesture:(id)arg1;
+- (void)addPopBackInteractivePopGesture;
+@property(nonatomic, readonly) WSWebViewPluginScheduler *wsPluginScheduler;
+@property(nonatomic, readonly) LiteAppJsApiPlugin_LocalJSAgent *localJSAgentPlugin;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

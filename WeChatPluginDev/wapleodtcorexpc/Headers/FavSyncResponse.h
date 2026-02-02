@@ -1,0 +1,23 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import <ProtobufLite/WXPBGeneratedMessage.h>
+
+@class CmdList, SKBuiltinBuffer_t;
+
+@interface FavSyncResponse : WXPBGeneratedMessage
+{
+}
+
++ (void)initialize;
+
+// Remaining properties
+@property(retain, nonatomic) CmdList *cmdList; // @dynamic cmdList;
+@property(nonatomic) unsigned int continueFlag; // @dynamic continueFlag;
+@property(retain, nonatomic) SKBuiltinBuffer_t *keyBuf; // @dynamic keyBuf;
+@property(nonatomic) int ret; // @dynamic ret;
+
+@end
+

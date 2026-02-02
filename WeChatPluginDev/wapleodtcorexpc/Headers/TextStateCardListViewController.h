@@ -1,0 +1,195 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class MMUIButton, MultipleTextStateCardCollectionCell, MultipleTextStateCardView, NSIndexPath, NSString, TextStateCardListCollectionView, TextStateCardListFooterView, TextStateCardListSlidingWindowRefreshTask, TextStateModel, TextStateMusicPlayerCoordinator, TextStatePrivacyMgr, UICollectionViewFlowLayout, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UITapGestureRecognizer, UIView, UIViewPropertyAnimator, _TtC6WeChat31TextStateFriendSquareTransition;
+@protocol TextStateCardListDataProvider, TextStateCardListDelegate;
+
+@interface TextStateCardListViewController
+{
+    _Bool _showFooter;
+    _Bool _showPublishEntryWhenNoValidTextState;
+    _Bool _enableDoubleTapFavorite;
+    _Bool _popupCommentPageAtBeginning;
+    _Bool _popupFavoritePageAtBeginning;
+    _Bool _isShowingFooterView;
+    _Bool _needShowGuide;
+    _Bool _needShowDoubleTapFavoriteGuide;
+    _Bool _dismissing;
+    _Bool _isPlayingMusicWhenAppear;
+    _Bool _enableSlidingWindow;
+    id <TextStateCardListDataProvider> _dataProvider;
+    id <TextStateCardListDelegate> _delegate;
+    NSString *_sceneSessionId;
+    NSString *_sessionId;
+    NSString *_footnote;
+    _TtC6WeChat31TextStateFriendSquareTransition *_transition;
+    unsigned long long _refCommentID;
+    MMUIButton *_closeButton;
+    TextStateCardListCollectionView *_collectionView;
+    UICollectionViewFlowLayout *_collectionViewLayout;
+    TextStateCardListFooterView *_footerView;
+    UITapGestureRecognizer *_tapGesture;
+    NSString *_cardListId;
+    NSIndexPath *_indexPath;
+    MultipleTextStateCardView *_currentCardView;
+    NSIndexPath *_currentIndexPath;
+    CDUnknownBlockType _changeItemCompletion;
+    TextStateMusicPlayerCoordinator *_musicPlayerCoordinator;
+    TextStateModel *_browsingTextState;
+    UIScreenEdgePanGestureRecognizer *_screenEdgePanGesture;
+    UIPanGestureRecognizer *_panGesture;
+    MultipleTextStateCardView *_presentFakeCardView;
+    UIView *_dismissFakeCardView;
+    UIViewPropertyAnimator *_internalDismissCancelAnimator;
+    double _internalDismissProgress;
+    TextStateCardListSlidingWindowRefreshTask *_delayTask;
+    MultipleTextStateCardCollectionCell *_lastCell;
+    TextStatePrivacyMgr *_shareScopeMgr;
+    struct CGPoint _dismissFakeCardStartPoint;
+    struct CGPoint _internalDismissStartPoint;
+}
+
++ (double)targetItemAlphaForProgress:(double)arg1;
++ (double)cardBottomPaddingForNeedShowGuide:(_Bool)arg1 isSingle:(_Bool)arg2;
++ (id)generateSnapshotViewForView:(id)arg1;
+- (void).cxx_destruct;
+@property(retain, nonatomic) TextStatePrivacyMgr *shareScopeMgr; // @synthesize shareScopeMgr=_shareScopeMgr;
+@property(retain, nonatomic) MultipleTextStateCardCollectionCell *lastCell; // @synthesize lastCell=_lastCell;
+@property(retain, nonatomic) TextStateCardListSlidingWindowRefreshTask *delayTask; // @synthesize delayTask=_delayTask;
+@property(nonatomic) _Bool enableSlidingWindow; // @synthesize enableSlidingWindow=_enableSlidingWindow;
+@property(nonatomic) _Bool isPlayingMusicWhenAppear; // @synthesize isPlayingMusicWhenAppear=_isPlayingMusicWhenAppear;
+@property(nonatomic) double internalDismissProgress; // @synthesize internalDismissProgress=_internalDismissProgress;
+@property(nonatomic) struct CGPoint internalDismissStartPoint; // @synthesize internalDismissStartPoint=_internalDismissStartPoint;
+@property(retain, nonatomic) UIViewPropertyAnimator *internalDismissCancelAnimator; // @synthesize internalDismissCancelAnimator=_internalDismissCancelAnimator;
+@property(nonatomic, getter=isDismissing) _Bool dismissing; // @synthesize dismissing=_dismissing;
+@property(nonatomic) struct CGPoint dismissFakeCardStartPoint; // @synthesize dismissFakeCardStartPoint=_dismissFakeCardStartPoint;
+@property(retain, nonatomic) UIView *dismissFakeCardView; // @synthesize dismissFakeCardView=_dismissFakeCardView;
+@property(retain, nonatomic) MultipleTextStateCardView *presentFakeCardView; // @synthesize presentFakeCardView=_presentFakeCardView;
+@property(retain, nonatomic) UIPanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;
+@property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *screenEdgePanGesture; // @synthesize screenEdgePanGesture=_screenEdgePanGesture;
+@property(retain, nonatomic) TextStateModel *browsingTextState; // @synthesize browsingTextState=_browsingTextState;
+@property(retain, nonatomic) TextStateMusicPlayerCoordinator *musicPlayerCoordinator; // @synthesize musicPlayerCoordinator=_musicPlayerCoordinator;
+@property(copy, nonatomic) CDUnknownBlockType changeItemCompletion; // @synthesize changeItemCompletion=_changeItemCompletion;
+@property(retain, nonatomic) NSIndexPath *currentIndexPath; // @synthesize currentIndexPath=_currentIndexPath;
+@property(retain, nonatomic) MultipleTextStateCardView *currentCardView; // @synthesize currentCardView=_currentCardView;
+@property(nonatomic) _Bool needShowDoubleTapFavoriteGuide; // @synthesize needShowDoubleTapFavoriteGuide=_needShowDoubleTapFavoriteGuide;
+@property(nonatomic) _Bool needShowGuide; // @synthesize needShowGuide=_needShowGuide;
+@property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
+@property(retain, nonatomic) NSString *cardListId; // @synthesize cardListId=_cardListId;
+@property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
+@property(nonatomic) _Bool isShowingFooterView; // @synthesize isShowingFooterView=_isShowingFooterView;
+@property(retain, nonatomic) TextStateCardListFooterView *footerView; // @synthesize footerView=_footerView;
+@property(retain, nonatomic) UICollectionViewFlowLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
+@property(retain, nonatomic) TextStateCardListCollectionView *collectionView; // @synthesize collectionView=_collectionView;
+@property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
+@property(nonatomic) _Bool popupFavoritePageAtBeginning; // @synthesize popupFavoritePageAtBeginning=_popupFavoritePageAtBeginning;
+@property(nonatomic) _Bool popupCommentPageAtBeginning; // @synthesize popupCommentPageAtBeginning=_popupCommentPageAtBeginning;
+@property(nonatomic) unsigned long long refCommentID; // @synthesize refCommentID=_refCommentID;
+@property(retain, nonatomic) _TtC6WeChat31TextStateFriendSquareTransition *transition; // @synthesize transition=_transition;
+@property(nonatomic) _Bool enableDoubleTapFavorite; // @synthesize enableDoubleTapFavorite=_enableDoubleTapFavorite;
+@property(nonatomic) _Bool showPublishEntryWhenNoValidTextState; // @synthesize showPublishEntryWhenNoValidTextState=_showPublishEntryWhenNoValidTextState;
+@property(retain, nonatomic) NSString *footnote; // @synthesize footnote=_footnote;
+@property(nonatomic) _Bool showFooter; // @synthesize showFooter=_showFooter;
+@property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
+@property(retain, nonatomic) NSString *sceneSessionId; // @synthesize sceneSessionId=_sceneSessionId;
+@property(nonatomic) __weak id <TextStateCardListDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <TextStateCardListDataProvider> dataProvider; // @synthesize dataProvider=_dataProvider;
+- (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (_Bool)collectionView:(id)arg1 shouldBeginPanGesture:(id)arg2;
+- (void)onLongPress:(id)arg1 isDown:(_Bool)arg2;
+- (void)onTapRedEnvelopeButton:(id)arg1;
+- (void)onTapTopic:(id)arg1 cardContentView:(id)arg2;
+- (void)doHeadImageAction:(id)arg1;
+- (void)doSourceAction:(id)arg1;
+- (void)onTapSelfFavoriteButton:(id)arg1;
+- (void)showCommentListWith:(id)arg1 refCommentId:(unsigned long long)arg2 cardContentView:(id)arg3;
+- (void)onTapCommentButton:(id)arg1;
+- (void)onTapFavoriteButton:(id)arg1 isSelected:(_Bool)arg2;
+- (void)onTapPositionButton:(id)arg1;
+- (void)onMultipleTextStateCard:(id)arg1 didMoveFromCard:(id)arg2 toCard:(id)arg3;
+- (void)onMultipleTextStateCard:(id)arg1 willDisplayCard:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (void)onWCStatusViewShowGroup:(id)arg1 view:(id)arg2;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (void)checkCardExceed;
+- (void)refreshCardListId;
+- (id)currentCardMediaView;
+- (id)currentCardContentView;
+- (unsigned long long)beginIndex;
+- (void)handleScreenEdgePanGesture:(id)arg1;
+- (void)onTap:(id)arg1;
+- (double)cardBottomPaddingForMultipleCardView:(id)arg1;
+- (void)configureMultipleCardView:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)clearBrowsingTextState;
+- (void)reloadData;
+- (void)reloadCurrentItem;
+- (void)removeItemAtIndex:(unsigned long long)arg1;
+- (void)scrollToBottomItemAnimated:(_Bool)arg1;
+- (void)changeToItemAtIndex:(unsigned long long)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)updateCurrentCardViewWithContentOffset:(struct CGPoint)arg1;
+- (void)updateCurrentCardView;
+- (void)setCurrentCardView:(id)arg1 currentIndexPath:(id)arg2;
+- (_Bool)shouldInteractiveDismiss;
+- (id)navigationBarBackgroundColor;
+- (_Bool)disableScrollViewBottomInsetAdjustment;
+- (void)viewDidTransitionToNewSize;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidBePopedOrDismissed:(_Bool)arg1;
+- (void)viewDidBePushOrPresent:(_Bool)arg1;
+- (void)viewWillBePushOrPresent:(_Bool)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
+- (void)initReport;
+- (void)initData;
+- (void)initGesture;
+- (void)initView;
+- (void)registerYReportSdk;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (id)init;
+- (id)cardView;
+- (id)headImageView;
+- (double)beginDismissProgress;
+- (void)onFinishDismissal;
+- (void)prepareForDismissal;
+- (void)onFinishPresentation;
+- (void)prepareForPresentation;
+- (id)generateFakeCardViewAtIndex:(unsigned long long)arg1;
+- (void)cancelInternalDismiss;
+- (void)prepareInternalDismiss;
+- (void)endToDismissWithIsCancelled:(_Bool)arg1;
+- (void)startToDismiss;
+- (_Bool)shouldBeginPanGesture;
+- (void)handleInternalDismissFinish:(id)arg1;
+- (void)handleInternalDismissChange:(id)arg1;
+- (void)handleTransitionGesture:(id)arg1;
+- (void)initTransitionGesture;
+- (id)adjustIndexPathFromTask:(id)arg1;
+- (void)updateCurrentIndexPathAndCompleteTask:(id)arg1;
+- (void)refreshSlidingWindowWithTask:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

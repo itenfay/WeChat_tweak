@@ -1,0 +1,190 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class AVMutableComposition, AVMutableVideoComposition, AVPictureInPictureController, AVPlayer, AVPlayerItem, AVPlayerLayer, NSMutableDictionary, NSString, TXPIPRenderView, WCPIPCustomHandleLogic;
+
+@interface TXPIPManager
+{
+    _Bool _isOpenPIP;
+    _Bool _isClosedCompletely;
+    _Bool _hasStartedPIPInBackground;
+    _Bool _isManualStartPictureInPicture;
+    _Bool _isStartCustomPixelTransfer;
+    _Bool _isPIPActive;
+    _Bool _isInBackground;
+    _Bool _startPIPAutomaticallyFromInlineAbility;
+    _Bool _isRestoreUserInterface;
+    _Bool _isObserverPIPPossible;
+    _Bool _needRestartPIPTrackingForOuterPause;
+    _Bool _needAutoStopPIP;
+    unsigned int _currentRenderFPS;
+    int _sourceIndex;
+    int _lastLogSourceIndex;
+    int _lastLogSourceUpdateIndex;
+    int _unvalidSourceCnt;
+    unsigned long long _currentState;
+    WCPIPCustomHandleLogic *_handleLogic;
+    AVPictureInPictureController *_pip;
+    AVPlayer *_player;
+    AVPlayerLayer *_playerLayer;
+    AVMutableComposition *_mixComposition;
+    AVPlayerItem *_playerItem;
+    AVMutableVideoComposition *_videoComposition;
+    TXPIPRenderView *_renderView;
+    NSMutableDictionary *_videoFrameDict;
+    unsigned long long _lastState;
+    unsigned long long _logCnt;
+    unsigned long long _sourceUpdateLogCnt;
+    unsigned long long _lastRefreshSourceTime;
+    unsigned long long _currentVideoCondition;
+    CDUnknownBlockType _actionBlock;
+}
+
+- (void).cxx_destruct;
+@property(nonatomic) _Bool needAutoStopPIP; // @synthesize needAutoStopPIP=_needAutoStopPIP;
+@property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
+@property(nonatomic) unsigned long long currentVideoCondition; // @synthesize currentVideoCondition=_currentVideoCondition;
+@property(nonatomic) _Bool needRestartPIPTrackingForOuterPause; // @synthesize needRestartPIPTrackingForOuterPause=_needRestartPIPTrackingForOuterPause;
+@property unsigned long long lastRefreshSourceTime; // @synthesize lastRefreshSourceTime=_lastRefreshSourceTime;
+@property int unvalidSourceCnt; // @synthesize unvalidSourceCnt=_unvalidSourceCnt;
+@property(nonatomic) unsigned long long sourceUpdateLogCnt; // @synthesize sourceUpdateLogCnt=_sourceUpdateLogCnt;
+@property(nonatomic) int lastLogSourceUpdateIndex; // @synthesize lastLogSourceUpdateIndex=_lastLogSourceUpdateIndex;
+@property(nonatomic) unsigned long long logCnt; // @synthesize logCnt=_logCnt;
+@property(nonatomic) int lastLogSourceIndex; // @synthesize lastLogSourceIndex=_lastLogSourceIndex;
+@property int sourceIndex; // @synthesize sourceIndex=_sourceIndex;
+@property(nonatomic) unsigned int currentRenderFPS; // @synthesize currentRenderFPS=_currentRenderFPS;
+@property(nonatomic) _Bool isObserverPIPPossible; // @synthesize isObserverPIPPossible=_isObserverPIPPossible;
+@property(nonatomic) _Bool isRestoreUserInterface; // @synthesize isRestoreUserInterface=_isRestoreUserInterface;
+@property(nonatomic) unsigned long long lastState; // @synthesize lastState=_lastState;
+@property(retain, nonatomic) NSMutableDictionary *videoFrameDict; // @synthesize videoFrameDict=_videoFrameDict;
+@property(retain, nonatomic) TXPIPRenderView *renderView; // @synthesize renderView=_renderView;
+@property(retain, nonatomic) AVMutableVideoComposition *videoComposition; // @synthesize videoComposition=_videoComposition;
+@property(retain, nonatomic) AVPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
+@property(retain, nonatomic) AVMutableComposition *mixComposition; // @synthesize mixComposition=_mixComposition;
+@property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
+@property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
+@property(retain, nonatomic) AVPictureInPictureController *pip; // @synthesize pip=_pip;
+@property(nonatomic) _Bool startPIPAutomaticallyFromInlineAbility; // @synthesize startPIPAutomaticallyFromInlineAbility=_startPIPAutomaticallyFromInlineAbility;
+@property(nonatomic) _Bool isInBackground; // @synthesize isInBackground=_isInBackground;
+@property(nonatomic) _Bool isPIPActive; // @synthesize isPIPActive=_isPIPActive;
+@property(nonatomic) _Bool isStartCustomPixelTransfer; // @synthesize isStartCustomPixelTransfer=_isStartCustomPixelTransfer;
+@property(retain, nonatomic) WCPIPCustomHandleLogic *handleLogic; // @synthesize handleLogic=_handleLogic;
+@property(nonatomic) _Bool isManualStartPictureInPicture; // @synthesize isManualStartPictureInPicture=_isManualStartPictureInPicture;
+@property(nonatomic) _Bool hasStartedPIPInBackground; // @synthesize hasStartedPIPInBackground=_hasStartedPIPInBackground;
+@property(nonatomic) _Bool isClosedCompletely; // @synthesize isClosedCompletely=_isClosedCompletely;
+@property(nonatomic) _Bool isOpenPIP; // @synthesize isOpenPIP=_isOpenPIP;
+@property(nonatomic) unsigned long long currentState; // @synthesize currentState=_currentState;
+@property(readonly, nonatomic) _Bool needCollectSrcPixelBuffer;
+@property(readonly, nonatomic) _Bool isPIPPossible;
+@property(readonly, nonatomic) _Bool isPIPPrepared;
+@property(readonly, nonatomic) _Bool isCurrentVideoEnabled;
+- (void)updateDisplayVideo;
+- (void)unableDisplayVideo:(unsigned long long)arg1;
+- (void)enableDisplayVideo:(unsigned long long)arg1;
+- (void)checkAndUpdatePIPState;
+- (void)updateHandleLogic:(id)arg1;
+- (id)currentRenderIdList;
+- (id)currentRenderObjDict;
+@property(readonly) _Bool isAttachWidgetChanged;
+@property(readonly) _Bool isSourcePixelBufferChanged;
+@property(readonly, nonatomic) _Bool isManualFitSize;
+@property(readonly, nonatomic) _Bool isStartPIP;
+- (void)pictureInPictureController:(id)arg1 restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)pictureInPictureControllerDidStopPictureInPicture:(id)arg1;
+- (void)pictureInPictureControllerWillStopPictureInPicture:(id)arg1;
+- (void)pictureInPictureController:(id)arg1 failedToStartPictureInPictureWithError:(id)arg2;
+- (void)pictureInPictureControllerDidStartPictureInPicture:(id)arg1;
+- (void)pictureInPictureControllerWillStartPictureInPicture:(id)arg1;
+- (void)checkPIPPreparedState;
+- (void)onPictureInPicturePossibleChange:(id)arg1;
+- (void)audioSessionRouteChange:(id)arg1;
+- (void)ensurePIPPlayerPlaying;
+- (void)checkAndInvokeRestartPlayer;
+- (void)onPlaybackBufferEmptyChange;
+- (void)onStatusChange:(id)arg1;
+- (void)onTimeControlStatus:(id)arg1;
+- (void)didEnterBackground:(id)arg1;
+- (void)willEnterForeground:(id)arg1;
+- (void)playbackFinished:(id)arg1;
+- (void)onStopCustomPixelTransfer;
+- (void)onStartCustomPixelTransfer;
+- (unsigned int)getHandledFPS:(unsigned int)arg1;
+- (void)tagAttachWidgetRenderCompleted;
+- (void)tagPixelBufferRenderCompleted;
+- (void)releasePixelBufferSource;
+- (_Bool)ignoreClearPlayerItem;
+- (void)releasePIPPLayer;
+- (void)addListenToPlayer;
+- (void)resetPIPPlayer;
+- (void)resetState;
+- (void)manualStartPictureInPicture;
+- (void)stopPictureInPicture;
+- (void)unObserverPIPPossibleState;
+- (void)observerPIPossibleState;
+- (void)invokePIPPreparedStateCheck;
+- (void)clearPIPControllerRecordTags;
+- (_Bool)updatePIPCanStartPictureInPictureAutomaticallyFromInline;
+- (void)tryCreatePipController;
+- (void)startPictureInPicture;
+- (id)actual_createVideoCompositionWithAsset:(id)arg1;
+- (id)createVideoCompositionWithAsset:(id)arg1;
+- (void)initTemplateVideoSrcAsync:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)initPIPVideoCompositionWithCompletion:(CDUnknownBlockType)arg1;
+- (void)initTemplateVideoSrc;
+- (void)attachRenderView;
+- (void)initRenderView;
+- (long long)getPIPPlayerControlStatus;
+- (_Bool)resumePIPPlayer;
+- (void)pausePIPPlayer;
+- (void)pausePIPPlayerWithStopPIP:(_Bool)arg1;
+- (void)removeActiveTaskInMode:(unsigned long long)arg1;
+- (void)checkNeedInvokeAction;
+- (void)invokeAction:(CDUnknownBlockType)arg1 mostDelayDuration:(double)arg2 loading:(_Bool)arg3;
+- (void)invokeAction:(CDUnknownBlockType)arg1 mostDelayDuration:(double)arg2;
+- (void)invokeAction:(CDUnknownBlockType)arg1;
+- (void)recoverPIPState;
+- (void)transferPIPStateToPending;
+- (void)makePIPPending;
+- (void)clearRestartPIPTrackingTag;
+- (void)checkAndRestartPIPTracking;
+- (void)startPIPTracking;
+- (void)updateRenderFPS:(unsigned int)arg1;
+- (struct CGSize)getCurrentRenderSize;
+- (void)updateRenderSize:(struct CGSize)arg1;
+- (void)refresh:(id)arg1 sourceId:(id)arg2;
+- (void)reAttachRenderView;
+- (void)deAttachRenderView;
+- (void)clear;
+- (void)stopWithAutoRestart;
+- (void)stopCompletely:(_Bool)arg1;
+- (void)stop;
+- (void)start;
+- (id)pipRenderView;
+- (void)prepareForStartPictureInPicture;
+- (id)getCurrentBusinessId;
+- (void)initNotifications;
+- (id)init;
+- (void)onServiceClearData;
+- (void)onServiceInit;
+- (void)onEndRenderBuffer:(struct CGSize)arg1;
+- (void)onBeginRenderBuffer;
+- (void)onEndAttachWidgets:(unsigned long long)arg1;
+- (void)onBeginAttachWidgets;
+- (void)onEndNewRenderBuffer:(struct CGSize)arg1;
+- (void)onBeginNewRenderBuffer;
+- (void)onEndRenderPixel;
+- (void)onBeginRenderPixel;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

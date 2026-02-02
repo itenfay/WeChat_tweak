@@ -1,0 +1,32 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class NSMutableDictionary, NSString, WCPayJSOpenOfflinePayControlLogic;
+
+@interface WAJSEventHandler_openOfflinePayView
+{
+    NSMutableDictionary *_params;
+    WCPayJSOpenOfflinePayControlLogic *_openOfflinePayLogic;
+}
+
+- (void).cxx_destruct;
+@property(retain, nonatomic) WCPayJSOpenOfflinePayControlLogic *openOfflinePayLogic; // @synthesize openOfflinePayLogic=_openOfflinePayLogic;
+@property(retain, nonatomic) NSMutableDictionary *params; // @synthesize params=_params;
+- (void)returnToOfflinePayView;
+- (void)failToStartOpenOfflinePayLogic;
+- (void)succToOpenOfflinePayLogic;
+- (void)handleJSEvent:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

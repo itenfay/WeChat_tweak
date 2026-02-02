@@ -1,0 +1,16 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import "NSObject-Protocol.h"
+
+@class NSArray, NSString, SnsTimeLineRequest;
+
+@protocol WCPreloadProviderDelegate <NSObject>
+
+@optional
+- (void)onDataUpdatedForPreload:(NSString *)arg1 andData:(NSArray *)arg2;
+- (void)onPreloadPageRequestPrepared:(SnsTimeLineRequest *)arg1;
+@end
+

@@ -1,0 +1,145 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class UIImageView, UILabel, UIView, VoIPMPUIScreenWindowView;
+
+@interface VoIPMPUIScreenView
+{
+    _Bool _isOrientationServiceEnable;
+    _Bool _isVideoMode;
+    _Bool _isCleared;
+    _Bool _isTalking;
+    _Bool _isMiniInAppActived;
+    _Bool _isMainLocal;
+    _Bool _isLocalCoveringRemote;
+    _Bool _isSplit;
+    _Bool _isSplitPrepartion;
+    _Bool _isAnimatingForSplit;
+    _Bool _isAnimatingForSplitPrepartion;
+    _Bool _isAnimatingForSplitTips;
+    _Bool _isWindowViewSubZoomingIn;
+    _Bool _isWindowViewSubDragging;
+    _Bool _isWindowViewSubCenterSetuped;
+    _Bool _isWindowViewSubSizeSetuped;
+    _Bool _isUsingHalfContentHeightAsSplitActiveRegionHeight;
+    _Bool _isWindowViewSubDraggingFromSplit;
+    _Bool _isWindowViewSubDraggingFromTopHalf;
+    _Bool _isSplitTopTipsHidden;
+    _Bool _isSplitBottomTipsHidden;
+    double _screenSplitDraggableAreaHeight;
+    VoIPMPUIScreenWindowView *_remoteWindowView;
+    VoIPMPUIScreenWindowView *_localWindowView;
+    double _topBarHeight;
+    double _panelHeight;
+    CDUnknownBlockType _onWindowViewTapEvent;
+    CDUnknownBlockType _onWindowViewMoveEvent;
+    UIView *_contentView;
+    double _startEnteringSplitActiveRegionTimestamp;
+    double _splitTipsActiveRegionHeight;
+    unsigned long long _splitTipsLocation;
+    unsigned long long _splitTopTipsStatus;
+    double _splitTopTipsViewHeight;
+    UIView *_splitTopTipsView;
+    UIImageView *_splitTopTipsBackgroundImageView;
+    UIView *_splitTopTipsContainerView;
+    UIImageView *_splitTopTipsIconImageView;
+    UILabel *_splitTopTipsLabel;
+    unsigned long long _splitBottomTipsStatus;
+    double _splitBottomTipsViewHeight;
+    UIView *_splitBottomTipsView;
+    UIImageView *_splitBottomTipsBackgroundImageView;
+    UIView *_splitBottomTipsContainerView;
+    UIImageView *_splitBottomTipsIconImageView;
+    UILabel *_splitBottomTipsLabel;
+    UIImageView *_splitBackgroundImageView;
+    CDUnknownBlockType _dismissingSplitTipsBlock;
+    CDUnknownBlockType _detectSplitPreprationBlock;
+    struct CGPoint _switchToSplitPrepartionWindowViewSubDragToCenter;
+    struct CGPoint _windowViewSubCenter;
+    struct CGSize _windowViewSubSize;
+    struct CGSize _windowViewSubDefaultSize;
+    struct CGSize _windowViewSubMinScaleSize;
+    struct CGPoint _windowViewSubBeforeSplitCenter;
+    struct CGSize _windowViewSubBeforeSplitSize;
+}
+
+- (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType detectSplitPreprationBlock; // @synthesize detectSplitPreprationBlock=_detectSplitPreprationBlock;
+@property(copy, nonatomic) CDUnknownBlockType dismissingSplitTipsBlock; // @synthesize dismissingSplitTipsBlock=_dismissingSplitTipsBlock;
+@property(retain, nonatomic) UIImageView *splitBackgroundImageView; // @synthesize splitBackgroundImageView=_splitBackgroundImageView;
+@property(retain, nonatomic) UILabel *splitBottomTipsLabel; // @synthesize splitBottomTipsLabel=_splitBottomTipsLabel;
+@property(retain, nonatomic) UIImageView *splitBottomTipsIconImageView; // @synthesize splitBottomTipsIconImageView=_splitBottomTipsIconImageView;
+@property(retain, nonatomic) UIView *splitBottomTipsContainerView; // @synthesize splitBottomTipsContainerView=_splitBottomTipsContainerView;
+@property(retain, nonatomic) UIImageView *splitBottomTipsBackgroundImageView; // @synthesize splitBottomTipsBackgroundImageView=_splitBottomTipsBackgroundImageView;
+@property(retain, nonatomic) UIView *splitBottomTipsView; // @synthesize splitBottomTipsView=_splitBottomTipsView;
+@property(nonatomic) double splitBottomTipsViewHeight; // @synthesize splitBottomTipsViewHeight=_splitBottomTipsViewHeight;
+@property(nonatomic) _Bool isSplitBottomTipsHidden; // @synthesize isSplitBottomTipsHidden=_isSplitBottomTipsHidden;
+@property(nonatomic) unsigned long long splitBottomTipsStatus; // @synthesize splitBottomTipsStatus=_splitBottomTipsStatus;
+@property(retain, nonatomic) UILabel *splitTopTipsLabel; // @synthesize splitTopTipsLabel=_splitTopTipsLabel;
+@property(retain, nonatomic) UIImageView *splitTopTipsIconImageView; // @synthesize splitTopTipsIconImageView=_splitTopTipsIconImageView;
+@property(retain, nonatomic) UIView *splitTopTipsContainerView; // @synthesize splitTopTipsContainerView=_splitTopTipsContainerView;
+@property(retain, nonatomic) UIImageView *splitTopTipsBackgroundImageView; // @synthesize splitTopTipsBackgroundImageView=_splitTopTipsBackgroundImageView;
+@property(retain, nonatomic) UIView *splitTopTipsView; // @synthesize splitTopTipsView=_splitTopTipsView;
+@property(nonatomic) double splitTopTipsViewHeight; // @synthesize splitTopTipsViewHeight=_splitTopTipsViewHeight;
+@property(nonatomic) _Bool isSplitTopTipsHidden; // @synthesize isSplitTopTipsHidden=_isSplitTopTipsHidden;
+@property(nonatomic) unsigned long long splitTopTipsStatus; // @synthesize splitTopTipsStatus=_splitTopTipsStatus;
+@property(nonatomic) unsigned long long splitTipsLocation; // @synthesize splitTipsLocation=_splitTipsLocation;
+@property(nonatomic) _Bool isWindowViewSubDraggingFromTopHalf; // @synthesize isWindowViewSubDraggingFromTopHalf=_isWindowViewSubDraggingFromTopHalf;
+@property(nonatomic) _Bool isWindowViewSubDraggingFromSplit; // @synthesize isWindowViewSubDraggingFromSplit=_isWindowViewSubDraggingFromSplit;
+@property(nonatomic) _Bool isUsingHalfContentHeightAsSplitActiveRegionHeight; // @synthesize isUsingHalfContentHeightAsSplitActiveRegionHeight=_isUsingHalfContentHeightAsSplitActiveRegionHeight;
+@property(nonatomic) struct CGSize windowViewSubBeforeSplitSize; // @synthesize windowViewSubBeforeSplitSize=_windowViewSubBeforeSplitSize;
+@property(nonatomic) struct CGPoint windowViewSubBeforeSplitCenter; // @synthesize windowViewSubBeforeSplitCenter=_windowViewSubBeforeSplitCenter;
+@property(nonatomic) struct CGSize windowViewSubMinScaleSize; // @synthesize windowViewSubMinScaleSize=_windowViewSubMinScaleSize;
+@property(nonatomic) struct CGSize windowViewSubDefaultSize; // @synthesize windowViewSubDefaultSize=_windowViewSubDefaultSize;
+@property(nonatomic) _Bool isWindowViewSubSizeSetuped; // @synthesize isWindowViewSubSizeSetuped=_isWindowViewSubSizeSetuped;
+@property(nonatomic) struct CGSize windowViewSubSize; // @synthesize windowViewSubSize=_windowViewSubSize;
+@property(nonatomic) _Bool isWindowViewSubCenterSetuped; // @synthesize isWindowViewSubCenterSetuped=_isWindowViewSubCenterSetuped;
+@property(nonatomic) struct CGPoint windowViewSubCenter; // @synthesize windowViewSubCenter=_windowViewSubCenter;
+@property(nonatomic) _Bool isWindowViewSubDragging; // @synthesize isWindowViewSubDragging=_isWindowViewSubDragging;
+@property(nonatomic) _Bool isWindowViewSubZoomingIn; // @synthesize isWindowViewSubZoomingIn=_isWindowViewSubZoomingIn;
+@property(nonatomic) double splitTipsActiveRegionHeight; // @synthesize splitTipsActiveRegionHeight=_splitTipsActiveRegionHeight;
+@property(nonatomic) _Bool isAnimatingForSplitTips; // @synthesize isAnimatingForSplitTips=_isAnimatingForSplitTips;
+@property(nonatomic) _Bool isAnimatingForSplitPrepartion; // @synthesize isAnimatingForSplitPrepartion=_isAnimatingForSplitPrepartion;
+@property(nonatomic) double startEnteringSplitActiveRegionTimestamp; // @synthesize startEnteringSplitActiveRegionTimestamp=_startEnteringSplitActiveRegionTimestamp;
+@property(nonatomic) _Bool isAnimatingForSplit; // @synthesize isAnimatingForSplit=_isAnimatingForSplit;
+@property(nonatomic) struct CGPoint switchToSplitPrepartionWindowViewSubDragToCenter; // @synthesize switchToSplitPrepartionWindowViewSubDragToCenter=_switchToSplitPrepartionWindowViewSubDragToCenter;
+@property(nonatomic) _Bool isSplitPrepartion; // @synthesize isSplitPrepartion=_isSplitPrepartion;
+@property(nonatomic) _Bool isSplit; // @synthesize isSplit=_isSplit;
+@property(nonatomic) _Bool isLocalCoveringRemote; // @synthesize isLocalCoveringRemote=_isLocalCoveringRemote;
+@property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
+@property(nonatomic) _Bool isMainLocal; // @synthesize isMainLocal=_isMainLocal;
+@property(nonatomic) _Bool isMiniInAppActived; // @synthesize isMiniInAppActived=_isMiniInAppActived;
+@property(copy, nonatomic) CDUnknownBlockType onWindowViewMoveEvent; // @synthesize onWindowViewMoveEvent=_onWindowViewMoveEvent;
+@property(copy, nonatomic) CDUnknownBlockType onWindowViewTapEvent; // @synthesize onWindowViewTapEvent=_onWindowViewTapEvent;
+@property(nonatomic) double panelHeight; // @synthesize panelHeight=_panelHeight;
+@property(nonatomic) double topBarHeight; // @synthesize topBarHeight=_topBarHeight;
+@property(retain, nonatomic) VoIPMPUIScreenWindowView *localWindowView; // @synthesize localWindowView=_localWindowView;
+@property(retain, nonatomic) VoIPMPUIScreenWindowView *remoteWindowView; // @synthesize remoteWindowView=_remoteWindowView;
+@property(nonatomic) _Bool isTalking; // @synthesize isTalking=_isTalking;
+@property(nonatomic) double screenSplitDraggableAreaHeight; // @synthesize screenSplitDraggableAreaHeight=_screenSplitDraggableAreaHeight;
+@property(nonatomic) _Bool isCleared; // @synthesize isCleared=_isCleared;
+@property(nonatomic) _Bool isVideoMode; // @synthesize isVideoMode=_isVideoMode;
+@property(nonatomic) _Bool isOrientationServiceEnable; // @synthesize isOrientationServiceEnable=_isOrientationServiceEnable;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (void)layoutSplitBackgroundImageView;
+- (void)layoutSplitTopTips;
+- (void)layoutSplitBottomTips;
+- (void)layoutWindowViewSubWithLastWindowViewSubFrame:(struct CGRect)arg1 isWindowViewSubInScreenSplitActiveRegionTop:(_Bool)arg2 isWindowViewSubInScreenSplitActiveRegionBottom:(_Bool)arg3;
+- (void)layoutWindowViewMainWithIsWindowViewSubInScreenSplitActiveRegionTop:(_Bool)arg1 isWindowViewSubInScreenSplitActiveRegionBottom:(_Bool)arg2;
+- (_Bool)isWindowViewSubInScreenSplitActiveRegionBottom;
+- (_Bool)isWindowViewSubInScreenSplitActiveRegionTop;
+- (_Bool)isWindowViewSubInPreSplitDraggableAreaBottom;
+- (_Bool)isWindowViewSubInPreSplitDraggableAreaTop;
+- (void)setupSplit:(_Bool)arg1 forcibly:(_Bool)arg2;
+- (void)cancelAllWindowViewAnimation;
+- (id)windowViewSub;
+- (id)windowViewMain;
+- (void)zoomWindowViewSubWithInCompletion:(CDUnknownBlockType)arg1 outCompletion:(CDUnknownBlockType)arg2;
+- (void)restore;
+- (void)moveWindowViewSubToOrigin:(struct CGPoint)arg1 withSize:(struct CGSize)arg2;
+
+@end
+

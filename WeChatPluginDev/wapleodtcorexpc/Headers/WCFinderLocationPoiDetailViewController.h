@@ -1,0 +1,196 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class CALayer, FavoritesItem, ForwardMessageLogicController, MMLocatingPoiDataLogic, MMLocationPoiDetailModel, MMLocationPoiHeadView, NSMutableDictionary, NSString, POIInfo, TakeCarServiceDataLogic, UIScreenEdgePanGestureRecognizer, UIView, WCFinderFeedFlowView, WCFinderLocationPoiDetailDelegateObj, WCFinderPOIParamsModel, WCFinderPOIRelatedStreamViewModel, WCFinderPoiBasicInfo, WCFinderPoiHeadView, WCFinderStreamProfileDragBarView, WCFinderTabPageView;
+@protocol WCFinderLocationPoiDetailViewDelegate;
+
+@interface WCFinderLocationPoiDetailViewController
+{
+    MMLocationPoiDetailModel *_poiDetailModel;
+    WCFinderPOIParamsModel *_paramsModel;
+    WCFinderPOIRelatedStreamViewModel *_poiStreamModel;
+    WCFinderLocationPoiDetailDelegateObj *_delegateObj;
+    NSMutableDictionary *_pageViewManagerDict;
+    WCFinderFeedFlowView *_defaultFlowView;
+    _Bool _isExpand;
+    _Bool _isFeedFlowEmpty;
+    _Bool _isDragging;
+    _Bool _enableFollowScroll;
+    unsigned long long _enterTime;
+    unsigned long long _halfScreenStartTime;
+    unsigned long long _halfScreenStayTime;
+    unsigned long long _halfScreenExpCnt;
+    _Bool _needBkgDragAnimation;
+    _Bool _showTakeCarBtn;
+    _Bool _showPoiDetail;
+    _Bool _shouldPrefetchStream;
+    _Bool _isHoldHalfScreen;
+    _Bool _isFinderHalfScreen;
+    _Bool _usePoiBasicInfoCgi;
+    _Bool _canForward;
+    unsigned int _reportScene;
+    int _enterScene;
+    int _commentScene;
+    id <WCFinderLocationPoiDetailViewDelegate> _delegate;
+    unsigned long long _tabPageScene;
+    NSString *_groupBuyBypassData;
+    MMLocationPoiHeadView *_headView;
+    WCFinderTabPageView *_tabPageView;
+    CALayer *_tabPageViewContentLayer;
+    MMLocatingPoiDataLogic *_dataLogic;
+    UIView *_contentContainer;
+    UIView *_halfScreenBkgBtn;
+    WCFinderPoiHeadView *_finderPoiheadView;
+    POIInfo *_poiInfo;
+    WCFinderPoiBasicInfo *_poiBasicInfo;
+    WCFinderStreamProfileDragBarView *_dragBarView;
+    FavoritesItem *_favItem;
+    ForwardMessageLogicController *_forwardLogicController;
+    TakeCarServiceDataLogic *_takeCarDataLogic;
+    UIScreenEdgePanGestureRecognizer *_edgeRecognizer;
+    unsigned long long _flowLoadingTime;
+    struct CGPoint _originalContentOffset;
+}
+
+- (void).cxx_destruct;
+@property(nonatomic) unsigned long long flowLoadingTime; // @synthesize flowLoadingTime=_flowLoadingTime;
+@property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *edgeRecognizer; // @synthesize edgeRecognizer=_edgeRecognizer;
+@property(retain, nonatomic) TakeCarServiceDataLogic *takeCarDataLogic; // @synthesize takeCarDataLogic=_takeCarDataLogic;
+@property(retain, nonatomic) ForwardMessageLogicController *forwardLogicController; // @synthesize forwardLogicController=_forwardLogicController;
+@property(nonatomic) _Bool canForward; // @synthesize canForward=_canForward;
+@property(retain, nonatomic) FavoritesItem *favItem; // @synthesize favItem=_favItem;
+@property(retain, nonatomic) WCFinderStreamProfileDragBarView *dragBarView; // @synthesize dragBarView=_dragBarView;
+@property(retain, nonatomic) WCFinderPoiBasicInfo *poiBasicInfo; // @synthesize poiBasicInfo=_poiBasicInfo;
+@property(retain, nonatomic) POIInfo *poiInfo; // @synthesize poiInfo=_poiInfo;
+@property(nonatomic) struct CGPoint originalContentOffset; // @synthesize originalContentOffset=_originalContentOffset;
+@property(retain, nonatomic) WCFinderPoiHeadView *finderPoiheadView; // @synthesize finderPoiheadView=_finderPoiheadView;
+@property(nonatomic) _Bool usePoiBasicInfoCgi; // @synthesize usePoiBasicInfoCgi=_usePoiBasicInfoCgi;
+@property(retain, nonatomic) UIView *halfScreenBkgBtn; // @synthesize halfScreenBkgBtn=_halfScreenBkgBtn;
+@property(retain, nonatomic) UIView *contentContainer; // @synthesize contentContainer=_contentContainer;
+@property(retain, nonatomic) MMLocatingPoiDataLogic *dataLogic; // @synthesize dataLogic=_dataLogic;
+@property(retain, nonatomic) CALayer *tabPageViewContentLayer; // @synthesize tabPageViewContentLayer=_tabPageViewContentLayer;
+@property(retain, nonatomic) WCFinderTabPageView *tabPageView; // @synthesize tabPageView=_tabPageView;
+@property(retain, nonatomic) MMLocationPoiHeadView *headView; // @synthesize headView=_headView;
+@property(copy, nonatomic) NSString *groupBuyBypassData; // @synthesize groupBuyBypassData=_groupBuyBypassData;
+@property(retain, nonatomic) WCFinderPOIParamsModel *paramsModel; // @synthesize paramsModel=_paramsModel;
+@property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
+@property(nonatomic) int enterScene; // @synthesize enterScene=_enterScene;
+@property(nonatomic) unsigned int reportScene; // @synthesize reportScene=_reportScene;
+@property(nonatomic) _Bool isFinderHalfScreen; // @synthesize isFinderHalfScreen=_isFinderHalfScreen;
+@property(nonatomic) _Bool isHoldHalfScreen; // @synthesize isHoldHalfScreen=_isHoldHalfScreen;
+@property(nonatomic) _Bool shouldPrefetchStream; // @synthesize shouldPrefetchStream=_shouldPrefetchStream;
+@property(nonatomic) _Bool showPoiDetail; // @synthesize showPoiDetail=_showPoiDetail;
+@property(nonatomic) _Bool showTakeCarBtn; // @synthesize showTakeCarBtn=_showTakeCarBtn;
+@property(readonly, nonatomic) _Bool needBkgDragAnimation; // @synthesize needBkgDragAnimation=_needBkgDragAnimation;
+@property(nonatomic) unsigned long long tabPageScene; // @synthesize tabPageScene=_tabPageScene;
+@property(nonatomic) __weak id <WCFinderLocationPoiDetailViewDelegate> delegate; // @synthesize delegate=_delegate;
+- (id)pageEventReportDictWithEventId:(id)arg1;
+- (void)registerYReportSdk;
+- (void)reportCustomPageEventWithId:(id)arg1;
+- (id)getCurMediaListObject;
+- (int)fromViewControllerScene;
+- (unsigned long long)feedViewerScene;
+- (int)feedViewControllerScene;
+- (id)getHalfContainerView;
+- (void)OnDelFavoritesItems:(id)arg1;
+- (void)OnAddNewFavoritesItems:(id)arg1;
+- (void)onGPSLocationChanged:(id)arg1 withTag:(unsigned long long)arg2;
+- (void)onLocationAuthorizationStatusUpdatedWithAccuracyAuthorization:(long long)arg1;
+- (void)updateUserLocation;
+- (id)dataReportParamDict;
+- (void)onTapMoreGroupBuyEnrance;
+- (void)onTapGroupBuyButton:(id)arg1;
+- (void)onTapGroupBuyView:(id)arg1;
+- (void)onTapRecommendDishes;
+- (void)onTapAddressEntrance;
+- (void)onTapPoiHeadView:(id)arg1 descViewExpandButton:(id)arg2;
+- (id)getCurrentViewController;
+- (unsigned long long)reportType;
+- (void)reportCustomActionSheetClickWithIndex:(unsigned long long)arg1;
+- (void)forwardLocationMsg:(id)arg1;
+- (void)onTapForwardBtn:(id)arg1;
+- (_Bool)isCurrentPOIFavorite;
+- (void)changeFavSelected:(_Bool)arg1;
+- (void)onUpdateFavSelected:(_Bool)arg1;
+- (void)onTapPhoneNumberLink:(id)arg1;
+- (void)onTapSwitchBtn:(id)arg1;
+- (void)onTapTakeCarBtn;
+- (void)onNavigateToPOI:(id)arg1;
+- (unsigned long long)scaleLevelToFit;
+- (struct CGSize)contentContainerSize;
+- (void)refreshPOIView;
+- (void)requestPoiDetail;
+- (void)requestPoiStream;
+- (void)prefetchPoiStream;
+- (id)tabPageView:(id)arg1 filterNameArrayAtIndex:(unsigned long long)arg2;
+- (void)updateDefaultEmptyTipsOffset;
+- (double)finderTabPageView:(id)arg1 heightForTabViewAtIndex:(unsigned long long)arg2;
+- (id)currentFeedFlowView;
+- (void)finderTabPageView:(id)arg1 willSelectFilterAtIndex:(unsigned long long)arg2;
+- (id)finderTabPageView:(id)arg1 pageViewAtIndex:(unsigned long long)arg2;
+- (struct UIEdgeInsets)marginForTabContainerInFinderTabPageView:(id)arg1;
+- (id)finderTabPageView:(id)arg1 tabViewAtIndex:(unsigned long long)arg2;
+- (void)finderTabPageView:(id)arg1 alphaOfTabContainerChanged:(double)arg2;
+- (id)finderTabPageView:(id)arg1 tabNameAtIndex:(unsigned long long)arg2;
+- (long long)numberOfTabPageInFinderTabPageView:(id)arg1;
+- (id)headerViewInFinderTabPageView:(id)arg1;
+- (double)heightForHeaderViewChangeAlphaInFinderTabPageView:(id)arg1;
+- (double)heightForHeaderViewInFinderTabPageView:(id)arg1;
+- (void)finderFeedFlowViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
+- (unsigned long long)finderFeedFlowViewState:(id)arg1;
+- (id)finderFeedFlowViewCurrentViewController:(id)arg1;
+- (void)finderTabPageView:(id)arg1 switchFromIndex:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;
+- (double)dragBarViewExpandMinHeight:(id)arg1;
+- (double)dragBarViewExpandMaxHeight:(id)arg1;
+- (double)bottomGradientLayerHeight;
+- (double)shrinkContentHeight;
+- (double)topValueOnShrink;
+- (double)topValueOnExpand;
+- (void)copyAddressString;
+- (id)feedFlowViewAtPage:(unsigned long long)arg1;
+- (void)setEnableFollowScroll:(_Bool)arg1;
+- (void)closeHalfScreen;
+- (void)updateContentAreaAlpha:(double)arg1;
+- (void)updateDragProgress:(_Bool)arg1;
+- (void)setWcOrigin:(struct CGPoint)arg1;
+@property(readonly, nonatomic) UIView *view;
+- (void)setIsExpand:(_Bool)arg1;
+- (void)updateFavSelected:(_Bool)arg1;
+- (void)holdHalfScreenPOIView;
+- (void)expandPOIView;
+- (void)shrinkPOIView;
+- (_Bool)isFromNearbyLife;
+- (_Bool)isExpand;
+@property(readonly, nonatomic) _Bool isDragging;
+- (void)handleFinderEdgeGesture:(id)arg1;
+- (void)handleFinderPanGesture:(id)arg1;
+- (void)handlePanGesture:(id)arg1;
+- (void)viewDidLayoutSubviews;
+- (_Bool)shouldNavigationBarAccessibilityHidden;
+- (_Bool)useTransparentNavibar;
+- (void)initView;
+- (void)initData;
+- (void)viewDidBePopedOrDismissed:(_Bool)arg1;
+- (void)viewWillBePushOrPresent:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
+- (void)dealloc;
+- (id)initWithParams:(id)arg1;
+- (id)initWith:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

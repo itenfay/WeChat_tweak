@@ -1,0 +1,197 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class CMessageWrap, FavDataItemWrap, FavoritesItem, FavoritesItemDataField, NSMutableArray, NSNumber, NSString, RTESectionMgr, RTETextView, WCDataItem, WNContentStorage, WNContentStorageBuilder;
+@protocol WeNoteDataControllerDelegate><WNTextViewOperationDelegate;
+
+@interface WeNoteDataController
+{
+    WNContentStorageBuilder *m_contentBuilder;
+    unsigned int m_maxObjectId;
+    _Bool m_didScroll;
+    _Bool m_enableRecordScroll;
+    NSMutableArray *m_operationRecord;
+    int m_operationIndex;
+    _Bool m_isPreDelete;
+    NSString *m_downloadingHtmlUrl;
+    _Bool m_hasMoreContent;
+    _Bool m_waitForUpload;
+    _Bool m_onDelete;
+    _Bool m_onDeleteAttachView;
+    _Bool m_lastLanguageIsCN;
+    NSMutableArray *m_lazyDownloadDatas;
+    _Bool m_enableLazyDownload;
+    FavoritesItemDataField *m_openingData;
+    _Bool _bEditable;
+    _Bool _bEdited;
+    _Bool _bFromPreView;
+    _Bool _hasReportedTextEditOperation;
+    FavDataItemWrap *_dataWrap;
+    FavoritesItem *_favItem;
+    CMessageWrap *_messageWrap;
+    WCDataItem *_wcDataItem;
+    WNContentStorage *_contentStorage;
+    WNContentStorage *_oldContentStorage;
+    RTESectionMgr *_sectionMgr;
+    RTETextView *_firstResponder;
+    id <WeNoteDataControllerDelegate><WNTextViewOperationDelegate> _delegate;
+    NSNumber *_boldOnNextInput;
+    NSNumber *_highlightOnNextInput;
+    long long _locationForDeleteFrontBR;
+    long long _locationForDeleteForwardBR;
+    struct _NSRange _selectedRange;
+}
+
+- (void).cxx_destruct;
+@property(nonatomic) long long locationForDeleteForwardBR; // @synthesize locationForDeleteForwardBR=_locationForDeleteForwardBR;
+@property(nonatomic) long long locationForDeleteFrontBR; // @synthesize locationForDeleteFrontBR=_locationForDeleteFrontBR;
+@property(retain, nonatomic) NSNumber *highlightOnNextInput; // @synthesize highlightOnNextInput=_highlightOnNextInput;
+@property(retain, nonatomic) NSNumber *boldOnNextInput; // @synthesize boldOnNextInput=_boldOnNextInput;
+@property(nonatomic) __weak id <WeNoteDataControllerDelegate><WNTextViewOperationDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool hasReportedTextEditOperation; // @synthesize hasReportedTextEditOperation=_hasReportedTextEditOperation;
+@property(nonatomic) __weak RTETextView *firstResponder; // @synthesize firstResponder=_firstResponder;
+@property(retain, nonatomic) RTESectionMgr *sectionMgr; // @synthesize sectionMgr=_sectionMgr;
+@property(retain, nonatomic) WNContentStorage *oldContentStorage; // @synthesize oldContentStorage=_oldContentStorage;
+@property(retain, nonatomic) WNContentStorage *contentStorage; // @synthesize contentStorage=_contentStorage;
+@property(readonly, nonatomic) WCDataItem *wcDataItem; // @synthesize wcDataItem=_wcDataItem;
+@property(readonly, nonatomic) CMessageWrap *messageWrap; // @synthesize messageWrap=_messageWrap;
+@property(retain, nonatomic) FavoritesItem *favItem; // @synthesize favItem=_favItem;
+@property(nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
+@property(nonatomic) _Bool bFromPreView; // @synthesize bFromPreView=_bFromPreView;
+@property(nonatomic) _Bool bEdited; // @synthesize bEdited=_bEdited;
+@property(nonatomic) _Bool bEditable; // @synthesize bEditable=_bEditable;
+- (id)getAttachmentViewProviderForSquareImageUtilWithTransparentMode;
+- (id)getAttachmentViewProviderForSquareImageUtilWithLightMode;
+- (id)getAttachmentViewProviderForSquareImageUtilWithDarkMode;
+- (id)getAttachmentViewProviderForLongImageUtilWithTransparentMode;
+- (id)getAttachmentViewProviderForLongImageUtilWithLightMode;
+- (id)getAttachmentViewProviderForLongImageUtilWithDarkMode;
+- (void)reBuildContentWithNewContentStorage:(id)arg1 saveOld:(_Bool)arg2;
+- (void)addAttachmentInfoTo:(id)arg1 with:(id)arg2;
+- (void)findMatchLocationsWith:(id)arg1 query:(id)arg2 content:(id)arg3 isFromDesc:(_Bool)arg4;
+- (id)searchContentWith:(id)arg1;
+- (void)matchQuery:(id)arg1 onAttachmentWithRange:(struct _NSRange)arg2 searchResultInfoArr:(id)arg3;
+- (void)onGroupNoticeDownloadItem:(id)arg1 retCode:(int)arg2;
+- (void)OnMsgDownloadAppAttachSuccess:(id)arg1 MsgWrap:(id)arg2;
+- (void)onChatNewMsgSent:(id)arg1;
+- (void)onRepairCheckFavItemAvailable:(unsigned int)arg1 occupied:(_Bool *)arg2;
+- (void)OnDownloadRecordMessageFail:(id)arg1 DataId:(id)arg2 failRetCode:(int)arg3;
+- (void)OnDownloadRecordMessageExpired:(id)arg1 DataId:(id)arg2;
+- (void)OnDownloadRecordMessageOK:(id)arg1 DataId:(id)arg2 bThumb:(_Bool)arg3;
+- (void)downloadResourceNone:(unsigned int)arg1;
+- (void)downloadResourceFail:(unsigned int)arg1;
+- (void)downloadResourceSuccess:(unsigned int)arg1;
+- (void)OnNoteSecurityCheck:(unsigned int)arg1 isSuccess:(_Bool)arg2;
+- (void)OnDelFavoritesItems:(id)arg1;
+- (void)OnUpdateItems:(id)arg1;
+- (void)OnAddNewFavoritesItems:(id)arg1;
+- (_Bool)chectHTMLWithDataId:(id)arg1 isSuccess:(_Bool)arg2;
+- (void)OnFavCdnDownload:(id)arg1 RetCode:(int)arg2;
+- (void)onGenerationFinish;
+- (void)onGenerateContentStorage:(id)arg1;
+- (void)onSetHeadAttribute:(id)arg1;
+- (id)creatRTETextViewWithCustomFrame:(struct CGRect)arg1 andTextContainerInset:(struct UIEdgeInsets)arg2;
+- (id)creatRTETextViewWithCustomFrame:(struct CGRect)arg1;
+- (id)creatRTETextView;
+- (void)onSectionAtIndex:(unsigned long long)arg1 heightIncreased:(double)arg2;
+- (void)tryToCheckLinkWith:(id)arg1;
+- (_Bool)textViewShouldEndEditing:(id)arg1;
+- (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
+- (void)textViewDidChangeSelection:(id)arg1;
+- (void)textViewDidBeginEditing:(id)arg1;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (unsigned int)enterNoteScene;
+- (void)didControllerAppear;
+- (void)onOpenAttachmentWith:(id)arg1;
+- (_Bool)isDataNeedLazyDownload:(id)arg1;
+- (void)tryToDownloadLargeFileWith:(id)arg1;
+- (void)clearLocationForDeleteBR;
+- (void)setOnDelete;
+- (void)resetOnDelete;
+- (double)getTotalSectionHeight;
+- (_Bool)checkDidScroll;
+- (void)beginRecordScrollState;
+- (_Bool)hasMoreData;
+- (_Bool)isEmpty;
+- (void)saveWithHandler:(CDUnknownBlockType)arg1;
+- (void)tryStartParseHtml;
+- (_Bool)checkMsgFile;
+- (void)loadFavItem:(id)arg1 withContent:(id)arg2 withSectionMgr:(id)arg3;
+@property(readonly, nonatomic) FavDataItemWrap *dataWrap; // @synthesize dataWrap=_dataWrap;
+- (void)configFavItem:(id)arg1;
+- (void)configGroupNoticeItem:(id)arg1;
+- (void)configWithDataWrap:(id)arg1;
+- (void)configWCDataItem:(id)arg1;
+- (void)configWithMsg:(id)arg1 andData:(id)arg2;
+- (void)configMsg:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (_Bool)canRedo;
+- (_Bool)canUndo;
+- (void)onRedo;
+- (void)onUndo;
+- (void)endEditRange:(struct _NSRange)arg1;
+- (void)startEditRange:(struct _NSRange)arg1;
+- (void)OnEndWNAudioRecordWithObj:(id)arg1 FilePath:(id)arg2 VoiceTime:(float)arg3 VoiceFmt:(unsigned int)arg4;
+- (_Bool)checkNeedCancelListStyle;
+- (void)insertContentStorage:(id)arg1;
+- (id)getWCDataItem;
+- (id)getFavItem;
+- (id)getMessageWrap;
+- (_Bool)isNomalLineHeightAtPosition:(id)arg1 with:(id)arg2;
+- (void)onOpenTopicWithUrl:(id)arg1;
+- (void)onAccessiblityBecomeFocus:(id)arg1;
+- (id)getCurrentViewController;
+- (void)handleSectionChange:(id)arg1 withNewSelectionRange:(struct _NSRange)arg2;
+- (id)setSmallImageMode:(_Bool)arg1 onContent:(id)arg2;
+- (void)setSmallImageEnable:(_Bool)arg1;
+- (void)confirmAttachmentSeperationInRange:(struct _NSRange)arg1 withText:(id)arg2 leftInserted:(_Bool *)arg3 rightInserted:(_Bool *)arg4;
+- (void)onEditOrderListWith:(id)arg1;
+- (id)findNextOrderListHeadIfNeedHandleWithRange:(struct _NSRange)arg1;
+- (_Bool)needSetHeadIndexTo1WhenInsertOrderListNodesAt:(unsigned long long)arg1;
+- (void)handleReplaceListContentInRange:(struct _NSRange)arg1 withText:(id)arg2;
+- (_Bool)needHandleListContentChangeInRange:(struct _NSRange)arg1 withText:(id)arg2;
+- (void)insertAttributes:(id)arg1;
+- (id)generateContentStorageWithAttributes:(id)arg1;
+- (void)insertText:(id)arg1;
+- (_Bool)setListType:(unsigned int)arg1 isEnable:(_Bool)arg2 onParagraphRange:(struct _NSRange)arg3 withChangeLength:(int *)arg4;
+- (void)setListType:(unsigned int)arg1 isEnable:(_Bool)arg2;
+- (void)editSelectedContent;
+- (void)moveContentAtRange:(struct _NSRange)arg1;
+- (void)pasteContent:(id)arg1 withSession:(id)arg2;
+- (void)pasteSelectedContent;
+- (void)deleteSelectedContent;
+- (void)cutSelectedContent;
+- (void)copySelectedContent;
+- (void)updateTypingAttribute;
+- (void)setHighlightEnableOnSelectedContent:(_Bool)arg1;
+- (void)setBoldEnableOnSelectedContent:(_Bool)arg1;
+- (void)selectAll;
+- (_Bool)canSelectAll;
+- (_Bool)containBackgroundColorForNewLineInRange:(struct _NSRange)arg1 withText:(id)arg2 inTextView:(id)arg3;
+- (_Bool)updateBoldOrHighlightOnRange:(struct _NSRange)arg1;
+- (void)onReplaceTextInRange:(struct _NSRange)arg1 withText:(id)arg2 inTextView:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

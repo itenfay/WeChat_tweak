@@ -1,0 +1,36 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class NSString;
+
+@interface FavAddItemHelper
+{
+}
+
++ (void)freeFavAddHelper;
++ (id)getFavAddHelper;
+- (void)onClickTipsBtn:(id)arg1 Index:(long long)arg2 withText:(id)arg3 withTipsVC:(id)arg4;
+- (void)checkShowFavIntro:(id)arg1 customTips:(id)arg2;
+- (void)webReport:(id)arg1;
+- (void)realAddFavItem:(id)arg1 successTips:(id)arg2;
+- (void)realAddFavItem:(id)arg1;
+- (_Bool)addFavItemButShowWarningTip:(id)arg1 withTip:(id)arg2;
+- (_Bool)addFavItemButShowExpireOrBigFileTip:(id)arg1;
+- (_Bool)addFavItemButShowCapacityTip:(id)arg1;
+- (void)addFavItem:(id)arg1 withTipWording:(id)arg2;
+- (void)addFavItem:(id)arg1 withSuccessTips:(id)arg2;
+- (void)addFavItem:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

@@ -1,0 +1,213 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+#import <UIKit/UIView.h>
+
+@class MMScrollActionSheetContainerView, MMUIButton, MMUILabel, MMWebImageView, NSArray, NSMutableArray, NSNumber, NSString, UIButton, UIColor, UIFont, UIImage, UIImageView, UIViewController, WCTagsView;
+@protocol IWCRichTextLabelProtocol, IWCUIKitRichTextProxyService, MMScrollActionSheetDelegate;
+
+@interface MMScrollActionSheet : UIView
+{
+    _Bool _moveRight;
+    double _moveRightHeightItv;
+    double _topRowOffsetY;
+    double _layoutOffsetY;
+    double _layoutWidth;
+    UIViewController *_popoverControllerNew;
+    _Bool _isConstraintByParent;
+    _Bool _landscapeMoveRight;
+    _Bool _dismissSelfAtClickItem;
+    _Bool _isShowed;
+    _Bool _displayTopRightArrow;
+    _Bool _isChangeFooterView;
+    NSArray *_itemArray;
+    NSString *_descriptionTitle;
+    NSString *_descriptionSub;
+    NSString *_cancelTitle;
+    NSArray *_bottomDataAry;
+    UIImage *_topIconDefault;
+    NSString *_topIconUrl;
+    NSString *_topTitle;
+    NSString *_topTitleSub;
+    NSString *_topTitleDesc;
+    NSNumber *_topTitleLabelAlpha;
+    NSString *_centerTopTitle;
+    UIImage *_topRightImage;
+    NSString *_topRightWording;
+    UIColor *_topRightBgColor;
+    id <MMScrollActionSheetDelegate> _delegate;
+    NSArray *_tagsArray;
+    id _userInfo;
+    UIFont *_topTitleFont;
+    UIView *_displayDragBarView;
+    UIView *_recentForwardScrollView;
+    UIView *_transparentView;
+    MMScrollActionSheetContainerView *_containerView;
+    UIView *_bottomPaddingView;
+    MMUILabel *_titleLabel;
+    MMUILabel<IWCRichTextLabelProtocol> *_subtitleLabel;
+    id <IWCUIKitRichTextProxyService> _richTextProxy;
+    UIButton *_cancelButton;
+    MMWebImageView *_topIconView;
+    MMUILabel *_topTitleLabel;
+    MMUILabel *_topTitleSubLabel;
+    MMUILabel *_topTitleDescLabel;
+    MMUILabel *_centerTopTitleLabel;
+    UIImageView *_topArrowView;
+    MMUIButton *_topButton;
+    UIView *_topSeperatorView;
+    UIView *_topPrivacyView;
+    WCTagsView *_tagsView;
+    UIView *_topRightView;
+    NSMutableArray *_rowScrollViewArray;
+    NSMutableArray *_seperatorViewArray;
+    NSMutableArray *_bottomButtonArray;
+    NSMutableArray *_bottomSeperatorArray;
+    UIView *_bodyFooterViewSeperatorView;
+    id _rotationNotification;
+    UIView *_fromView;
+}
+
++ (double)itemDisplayWidth;
++ (double)containerWidth;
+- (void).cxx_destruct;
+@property(retain, nonatomic) UIView *fromView; // @synthesize fromView=_fromView;
+@property(nonatomic) _Bool isChangeFooterView; // @synthesize isChangeFooterView=_isChangeFooterView;
+@property(nonatomic) __weak id rotationNotification; // @synthesize rotationNotification=_rotationNotification;
+@property(retain, nonatomic) UIView *bodyFooterViewSeperatorView; // @synthesize bodyFooterViewSeperatorView=_bodyFooterViewSeperatorView;
+@property(retain, nonatomic) NSMutableArray *bottomSeperatorArray; // @synthesize bottomSeperatorArray=_bottomSeperatorArray;
+@property(retain, nonatomic) NSMutableArray *bottomButtonArray; // @synthesize bottomButtonArray=_bottomButtonArray;
+@property(retain, nonatomic) NSMutableArray *seperatorViewArray; // @synthesize seperatorViewArray=_seperatorViewArray;
+@property(retain, nonatomic) NSMutableArray *rowScrollViewArray; // @synthesize rowScrollViewArray=_rowScrollViewArray;
+@property(retain, nonatomic) UIView *topRightView; // @synthesize topRightView=_topRightView;
+@property(retain, nonatomic) WCTagsView *tagsView; // @synthesize tagsView=_tagsView;
+@property(retain, nonatomic) UIView *topPrivacyView; // @synthesize topPrivacyView=_topPrivacyView;
+@property(retain, nonatomic) UIView *topSeperatorView; // @synthesize topSeperatorView=_topSeperatorView;
+@property(retain, nonatomic) MMUIButton *topButton; // @synthesize topButton=_topButton;
+@property(retain, nonatomic) UIImageView *topArrowView; // @synthesize topArrowView=_topArrowView;
+@property(retain, nonatomic) MMUILabel *centerTopTitleLabel; // @synthesize centerTopTitleLabel=_centerTopTitleLabel;
+@property(retain, nonatomic) MMUILabel *topTitleDescLabel; // @synthesize topTitleDescLabel=_topTitleDescLabel;
+@property(retain, nonatomic) MMUILabel *topTitleSubLabel; // @synthesize topTitleSubLabel=_topTitleSubLabel;
+@property(retain, nonatomic) MMUILabel *topTitleLabel; // @synthesize topTitleLabel=_topTitleLabel;
+@property(retain, nonatomic) MMWebImageView *topIconView; // @synthesize topIconView=_topIconView;
+@property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property(retain, nonatomic) id <IWCUIKitRichTextProxyService> richTextProxy; // @synthesize richTextProxy=_richTextProxy;
+@property(retain, nonatomic) MMUILabel<IWCRichTextLabelProtocol> *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
+@property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) UIView *bottomPaddingView; // @synthesize bottomPaddingView=_bottomPaddingView;
+@property(retain, nonatomic) MMScrollActionSheetContainerView *containerView; // @synthesize containerView=_containerView;
+@property(retain, nonatomic) UIView *transparentView; // @synthesize transparentView=_transparentView;
+@property(retain, nonatomic) UIView *recentForwardScrollView; // @synthesize recentForwardScrollView=_recentForwardScrollView;
+@property(retain, nonatomic) UIView *displayDragBarView; // @synthesize displayDragBarView=_displayDragBarView;
+@property(retain, nonatomic) UIFont *topTitleFont; // @synthesize topTitleFont=_topTitleFont;
+@property(nonatomic) _Bool displayTopRightArrow; // @synthesize displayTopRightArrow=_displayTopRightArrow;
+@property(nonatomic) _Bool isShowed; // @synthesize isShowed=_isShowed;
+@property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
+@property(retain, nonatomic) NSArray *tagsArray; // @synthesize tagsArray=_tagsArray;
+@property(nonatomic) __weak id <MMScrollActionSheetDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool dismissSelfAtClickItem; // @synthesize dismissSelfAtClickItem=_dismissSelfAtClickItem;
+@property(retain, nonatomic) UIColor *topRightBgColor; // @synthesize topRightBgColor=_topRightBgColor;
+@property(retain, nonatomic) NSString *topRightWording; // @synthesize topRightWording=_topRightWording;
+@property(retain, nonatomic) UIImage *topRightImage; // @synthesize topRightImage=_topRightImage;
+@property(retain, nonatomic) NSString *centerTopTitle; // @synthesize centerTopTitle=_centerTopTitle;
+@property(retain, nonatomic) NSNumber *topTitleLabelAlpha; // @synthesize topTitleLabelAlpha=_topTitleLabelAlpha;
+@property(retain, nonatomic) NSString *topTitleDesc; // @synthesize topTitleDesc=_topTitleDesc;
+@property(retain, nonatomic) NSString *topTitleSub; // @synthesize topTitleSub=_topTitleSub;
+@property(retain, nonatomic) NSString *topTitle; // @synthesize topTitle=_topTitle;
+@property(retain, nonatomic) NSString *topIconUrl; // @synthesize topIconUrl=_topIconUrl;
+@property(retain, nonatomic) UIImage *topIconDefault; // @synthesize topIconDefault=_topIconDefault;
+@property(nonatomic) _Bool landscapeMoveRight; // @synthesize landscapeMoveRight=_landscapeMoveRight;
+@property(retain, nonatomic) NSArray *bottomDataAry; // @synthesize bottomDataAry=_bottomDataAry;
+@property(retain, nonatomic) NSString *cancelTitle; // @synthesize cancelTitle=_cancelTitle;
+@property(retain, nonatomic) NSString *descriptionSub; // @synthesize descriptionSub=_descriptionSub;
+@property(retain, nonatomic) NSString *descriptionTitle; // @synthesize descriptionTitle=_descriptionTitle;
+@property(retain, nonatomic) NSArray *itemArray; // @synthesize itemArray=_itemArray;
+- (_Bool)accessibilityPerformEscape;
+- (void)onRichTextViewLinkClicked:(id)arg1 rect:(struct CGRect)arg2;
+- (_Bool)isItemValidWithTitle:(id)arg1;
+- (_Bool)disableScrollSheetItem:(long long)arg1;
+- (id)seperatorBackgroundColor;
+- (id)containerViewBlurBackgroundColor;
+- (id)cancelButtonTitleColor;
+- (id)titleLabelColor;
+- (id)bottomPadddingViewBackgroundColor;
+- (id)transparentViewBackgroundColor;
+- (void)relayoutElements:(_Bool)arg1 fixedWidth:(double)arg2 duration:(double)arg3;
+- (void)relayoutElements:(_Bool)arg1 fixedWidth:(double)arg2;
+- (void)relayoutElements:(_Bool)arg1;
+- (void)preferredActionInReloadAnimation;
+- (void)reloadActionSheet:(_Bool)arg1 withAnimationDuration:(double)arg2;
+- (void)reloadActionSheet:(_Bool)arg1;
+- (id)customItems;
+- (void)dismissAnimated:(_Bool)arg1;
+- (_Bool)popoverPresentationControllerShouldDismissPopover:(id)arg1;
+- (void)onClickContainerVoiceOverExitButton;
+- (void)onContainerWidthChanged:(double)arg1;
+- (void)showInView:(id)arg1 isConstraintByParent:(_Bool)arg2;
+- (void)showInView:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
+- (void)onSubSceneSizeChangedFrom:(struct CGSize)arg1 to:(struct CGSize)arg2;
+- (void)onTabBarRootViewControllerDidAppear;
+- (void)onMainWindowFrameChanged;
+- (void)_internalTapClose;
+- (void)handleTap:(id)arg1;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
+- (void)onCustomBtnClicked:(id)arg1;
+- (void)onCancelBtnClicked;
+- (void)onActionSheetIconView:(id)arg1 didTapedWithDisableItem:(id)arg2;
+- (void)onActionSheetIconView:(id)arg1 didTapedWithItem:(id)arg2;
+- (double)extraItemViewSpacingForScrollView:(id)arg1;
+- (void)onCreateItemView:(id)arg1 forItem:(id)arg2;
+- (id)customViewForItem:(id)arg1;
+- (void)fixContainerPosition;
+- (void)fixLayoutWithSafeArea;
+- (void)setupCancelButtonIfNeeded:(_Bool)arg1;
+- (void)setupBottomButtonsIfNeeded:(_Bool)arg1;
+- (void)configItemView:(id)arg1 withItem:(id)arg2;
+- (void)configScrollActionSheet:(id)arg1 rowIndex:(unsigned long long)arg2;
+- (void)setupScrollViews:(_Bool)arg1;
+- (void)setupTopDragBar;
+- (void)addRedpointForViewWithTitle:(id)arg1;
+- (void)highLightIconViewWithTitle:(id)arg1;
+- (void)setupTitleIfNeeded:(_Bool)arg1;
+- (void)onPrivacyTaped;
+- (void)onTopTaped;
+- (void)setupTopIconText:(_Bool)arg1;
+- (void)setupCenterTopTitle:(_Bool)arg1;
+- (void)adjustContainerViewSize;
+- (double)customIconMargin;
+- (double)getMaxHeight;
+- (void)setupBodyFooterViewWithLandScape:(_Bool)arg1;
+- (void)setupFooterViewWithLandScape:(_Bool)arg1;
+- (void)setupHeaderViewWithLandScape:(_Bool)arg1;
+- (void)setupMaskView;
+- (void)setupContainerViewIfNeeded;
+- (void)setupContainerViewBlurBackgroundColor;
+- (void)setupContainerRoundCorner;
+- (void)setupTransparentViewIfNeeded;
+- (id)getAllItemView;
+- (id)getItemViewForItem:(id)arg1;
+- (_Bool)hasSubtitleLinks;
+- (void)setTopRowOffsetWhenNonTitle:(double)arg1;
+- (void)setBodyFooterView:(id)arg1;
+- (void)relayoutView;
+- (void)setFooterView:(id)arg1;
+- (void)setHeaderView:(id)arg1;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (void)relayoutScrollSheet;
+- (void)clickRFItemCallBack:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+// Preceding property had unknown attributes: ?
+// Original attribute string: T@"NSString",?,R,C
+
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+@end
+

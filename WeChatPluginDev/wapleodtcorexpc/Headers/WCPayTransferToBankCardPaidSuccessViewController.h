@@ -1,0 +1,141 @@
+//
+// ClassDump By HuangBai Private
+//  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
+//
+
+@class UIButton, UIImageView, UILabel, UIScrollView, UIView;
+@protocol WCPayTransferToBankCardPaidSuccessViewControllerDelegate;
+
+@interface WCPayTransferToBankCardPaidSuccessViewController
+{
+    id <WCPayTransferToBankCardPaidSuccessViewControllerDelegate> m_delegate;
+    unsigned long long _vcType;
+    UILabel *_m_statusLabel;
+    UILabel *_m_arriveStatusLabel;
+    UIView *_m_statusDetailView;
+    UIView *_m_topLineView;
+    UIView *_m_bottomLineView;
+    UIView *_m_amountLabelView;
+    UILabel *_m_amountLabel;
+    UILabel *_m_amountValueLabel;
+    UIView *_m_chargeFeeLabelView;
+    UILabel *_m_chargeFeeLabel;
+    UILabel *_m_chargeFeeValueLabel;
+    UIView *_m_receiverLabelView;
+    UILabel *_m_receiverLabel;
+    UILabel *_m_receiverValueLabel;
+    UIView *_m_receiverAccountLabelView;
+    UILabel *_m_receiverAccountLabel;
+    UILabel *_m_receiverAccountValueLabel;
+    UIView *_m_transferDescLabelView;
+    UILabel *_m_transferDescLabel;
+    UILabel *_m_transferDescValueLabel;
+    UIView *_m_transferTimeLabelView;
+    UILabel *_m_transferTimeLabel;
+    UILabel *_m_transferTimeValueLabel;
+    UIView *_m_arriveTimeLabelView;
+    UILabel *_m_arriveTimeLabel;
+    UILabel *_m_arriveTimeValueLabel;
+    UIView *_m_noticeLabelView;
+    UILabel *_m_noticeLabel;
+    UILabel *_m_noticeValueLabel;
+    UIView *_m_statusBriefView;
+    UIView *_m_statusImageView;
+    UIImageView *_m_statusIconView;
+    UILabel *_m_statusFirstLabel;
+    UILabel *_m_statusSecondLabel;
+    UILabel *_m_statusSecondDescLabel;
+    UILabel *_m_statusThirdLabel;
+    UILabel *_m_currentStatusLabel;
+    double _detailTitleWidth;
+    UIView *_lastLabelView;
+    UIButton *_m_doneButton;
+    UIScrollView *_m_backgroundView;
+    double _m_finalDetailTitleWidth;
+}
+
+- (void).cxx_destruct;
+@property(nonatomic) double m_finalDetailTitleWidth; // @synthesize m_finalDetailTitleWidth=_m_finalDetailTitleWidth;
+@property(retain, nonatomic) UIScrollView *m_backgroundView; // @synthesize m_backgroundView=_m_backgroundView;
+@property(retain, nonatomic) UIButton *m_doneButton; // @synthesize m_doneButton=_m_doneButton;
+@property(retain) UIView *lastLabelView; // @synthesize lastLabelView=_lastLabelView;
+@property(nonatomic) double detailTitleWidth; // @synthesize detailTitleWidth=_detailTitleWidth;
+@property(retain, nonatomic) UILabel *m_currentStatusLabel; // @synthesize m_currentStatusLabel=_m_currentStatusLabel;
+@property(retain, nonatomic) UILabel *m_statusThirdLabel; // @synthesize m_statusThirdLabel=_m_statusThirdLabel;
+@property(retain, nonatomic) UILabel *m_statusSecondDescLabel; // @synthesize m_statusSecondDescLabel=_m_statusSecondDescLabel;
+@property(retain, nonatomic) UILabel *m_statusSecondLabel; // @synthesize m_statusSecondLabel=_m_statusSecondLabel;
+@property(retain, nonatomic) UILabel *m_statusFirstLabel; // @synthesize m_statusFirstLabel=_m_statusFirstLabel;
+@property(retain, nonatomic) UIImageView *m_statusIconView; // @synthesize m_statusIconView=_m_statusIconView;
+@property(retain, nonatomic) UIView *m_statusImageView; // @synthesize m_statusImageView=_m_statusImageView;
+@property(retain, nonatomic) UIView *m_statusBriefView; // @synthesize m_statusBriefView=_m_statusBriefView;
+@property(retain, nonatomic) UILabel *m_noticeValueLabel; // @synthesize m_noticeValueLabel=_m_noticeValueLabel;
+@property(retain, nonatomic) UILabel *m_noticeLabel; // @synthesize m_noticeLabel=_m_noticeLabel;
+@property(retain, nonatomic) UIView *m_noticeLabelView; // @synthesize m_noticeLabelView=_m_noticeLabelView;
+@property(retain, nonatomic) UILabel *m_arriveTimeValueLabel; // @synthesize m_arriveTimeValueLabel=_m_arriveTimeValueLabel;
+@property(retain, nonatomic) UILabel *m_arriveTimeLabel; // @synthesize m_arriveTimeLabel=_m_arriveTimeLabel;
+@property(retain, nonatomic) UIView *m_arriveTimeLabelView; // @synthesize m_arriveTimeLabelView=_m_arriveTimeLabelView;
+@property(retain, nonatomic) UILabel *m_transferTimeValueLabel; // @synthesize m_transferTimeValueLabel=_m_transferTimeValueLabel;
+@property(retain, nonatomic) UILabel *m_transferTimeLabel; // @synthesize m_transferTimeLabel=_m_transferTimeLabel;
+@property(retain, nonatomic) UIView *m_transferTimeLabelView; // @synthesize m_transferTimeLabelView=_m_transferTimeLabelView;
+@property(retain, nonatomic) UILabel *m_transferDescValueLabel; // @synthesize m_transferDescValueLabel=_m_transferDescValueLabel;
+@property(retain, nonatomic) UILabel *m_transferDescLabel; // @synthesize m_transferDescLabel=_m_transferDescLabel;
+@property(retain, nonatomic) UIView *m_transferDescLabelView; // @synthesize m_transferDescLabelView=_m_transferDescLabelView;
+@property(retain, nonatomic) UILabel *m_receiverAccountValueLabel; // @synthesize m_receiverAccountValueLabel=_m_receiverAccountValueLabel;
+@property(retain, nonatomic) UILabel *m_receiverAccountLabel; // @synthesize m_receiverAccountLabel=_m_receiverAccountLabel;
+@property(retain, nonatomic) UIView *m_receiverAccountLabelView; // @synthesize m_receiverAccountLabelView=_m_receiverAccountLabelView;
+@property(retain, nonatomic) UILabel *m_receiverValueLabel; // @synthesize m_receiverValueLabel=_m_receiverValueLabel;
+@property(retain, nonatomic) UILabel *m_receiverLabel; // @synthesize m_receiverLabel=_m_receiverLabel;
+@property(retain, nonatomic) UIView *m_receiverLabelView; // @synthesize m_receiverLabelView=_m_receiverLabelView;
+@property(retain, nonatomic) UILabel *m_chargeFeeValueLabel; // @synthesize m_chargeFeeValueLabel=_m_chargeFeeValueLabel;
+@property(retain, nonatomic) UILabel *m_chargeFeeLabel; // @synthesize m_chargeFeeLabel=_m_chargeFeeLabel;
+@property(retain, nonatomic) UIView *m_chargeFeeLabelView; // @synthesize m_chargeFeeLabelView=_m_chargeFeeLabelView;
+@property(retain, nonatomic) UILabel *m_amountValueLabel; // @synthesize m_amountValueLabel=_m_amountValueLabel;
+@property(retain, nonatomic) UILabel *m_amountLabel; // @synthesize m_amountLabel=_m_amountLabel;
+@property(retain, nonatomic) UIView *m_amountLabelView; // @synthesize m_amountLabelView=_m_amountLabelView;
+@property(retain, nonatomic) UIView *m_bottomLineView; // @synthesize m_bottomLineView=_m_bottomLineView;
+@property(retain, nonatomic) UIView *m_topLineView; // @synthesize m_topLineView=_m_topLineView;
+@property(retain, nonatomic) UIView *m_statusDetailView; // @synthesize m_statusDetailView=_m_statusDetailView;
+@property(retain, nonatomic) UILabel *m_arriveStatusLabel; // @synthesize m_arriveStatusLabel=_m_arriveStatusLabel;
+@property(retain, nonatomic) UILabel *m_statusLabel; // @synthesize m_statusLabel=_m_statusLabel;
+@property(nonatomic) unsigned long long vcType; // @synthesize vcType=_vcType;
+- (void)onDone;
+- (void)initNavigationBar;
+- (id)navigationBarBackgroundColor;
+- (_Bool)useBlackStatusbar;
+- (_Bool)useTransparentNavibar;
+- (void)updateNoticeValueLabel;
+- (void)updateNoticeLabel;
+- (void)updateArriveTimeValueLabel;
+- (void)updateArriveTimeLabel;
+- (void)updateTransTimeValueLabel;
+- (void)updateTransTimeLabel;
+- (void)updateTransferDescValueLabel;
+- (void)updateTransferDescLabel;
+- (void)updateReceiverAccountValueLabel;
+- (void)updateReceiverAccountLabel;
+- (void)updateReceiverValueLabel;
+- (void)updateReceiverLabel;
+- (void)updateChargeFeeValueLabel;
+- (void)updateChargeFeeLabel;
+- (void)updateAmountValueLabel;
+- (void)updateAmountLabel;
+- (void)updateBottomLineView;
+- (void)updateTopLineView;
+- (void)updateDoneBtn;
+- (void)updateTransToBankCardDetailView;
+- (id)getStatusImage:(unsigned int)arg1;
+- (id)getStatusBarColor:(unsigned int)arg1;
+- (id)getSecondLabelTitle:(unsigned int)arg1;
+- (void)updateStatusLabelView;
+- (void)updateSuccessStatusImageView;
+- (void)updateStausImageView;
+- (void)updateStatusBriefView;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)updateBackgroundView;
+- (void)refreshViewWithData:(id)arg1;
+- (void)viewDidLoad;
+- (void)setDelegate:(id)arg1;
+
+@end
+
