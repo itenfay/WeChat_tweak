@@ -609,6 +609,12 @@
 
 @end
 
+#pragma mark - ContactSettingViewController
+
+@interface ContactSettingViewController : MMUIViewController
+
+@end
+
 #pragma mark - MultiSelectContactsViewControllerDelegate
 
 @protocol MultiSelectContactsViewControllerDelegate <NSObject>

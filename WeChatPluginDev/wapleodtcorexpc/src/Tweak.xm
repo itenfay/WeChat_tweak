@@ -1404,6 +1404,88 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
 
 %end
 
+// Hook 好友设置页面（从好友资料页点击"设置"进入的页面）
+%hook ContactSettingViewController
+
+- (void)viewWillAppear:(_Bool)arg1 {
+    %orig;
+
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    if (!config.userIgnoreEnable) {
+        return;
+    }
+
+    // 获取联系人
+    CContact *contact = MSHookIvar<CContact *>(self, "m_contact");
+    NSString *usrName = contact.m_nsUsrName;
+    if (usrName.length == 0) {
+        return;
+    }
+    // 排除群聊
+    if ([usrName rangeOfString:@"@chatroom"].location != NSNotFound) {
+        return;
+    }
+
+    // 检查是否已经添加过（避免重复添加）
+    static const void *kWCPLIgnoreSectionAddedKey = &kWCPLIgnoreSectionAddedKey;
+    if (objc_getAssociatedObject(self, kWCPLIgnoreSectionAddedKey)) {
+        return;
+    }
+
+    // 获取 m_tableViewInfo
+    MMTableViewInfo *tableViewInfo = MSHookIvar<MMTableViewInfo *>(self, "m_tableViewInfo");
+    if (!tableViewInfo || ![tableViewInfo respondsToSelector:@selector(insertSection:At:)] || ![tableViewInfo respondsToSelector:@selector(getTableView)]) {
+        NSLog(@"[WCPL] ContactSettingViewController: Failed to get m_tableViewInfo");
+        return;
+    }
+
+    // 创建消息屏蔽 section
+    WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoHeader:@"消息屏蔽"];
+    WCTableViewNormalCellManager *ignoreCell = [%c(WCTableViewNormalCellManager) switchCellForSel:@selector(wcpl_handleIgnoreUserInSetting:) target:self title:@"屏蔽此人消息" on:config.userIgnoreInfo[usrName].boolValue];
+    [sectionMgr addCell:ignoreCell];
+
+    // 插入到第0个位置（最顶部，在编辑备注之前）
+    [tableViewInfo insertSection:sectionMgr At:0];
+
+    // 标记已添加
+    objc_setAssociatedObject(self, kWCPLIgnoreSectionAddedKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+    // 刷新表格
+    MMTableView *tableView = [tableViewInfo getTableView];
+    [tableView reloadData];
+}
+
+%new
+- (void)wcpl_handleIgnoreUserInSetting:(UISwitch *)sender {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    if (!config.userIgnoreEnable) {
+        sender.on = NO;
+        return;
+    }
+
+    CContact *contact = MSHookIvar<CContact *>(self, "m_contact");
+    NSString *usrName = contact.m_nsUsrName;
+    if (usrName.length == 0) {
+        sender.on = NO;
+        return;
+    }
+    if ([usrName rangeOfString:@"@chatroom"].location != NSNotFound) {
+        sender.on = NO;
+        return;
+    }
+
+    if (sender.on) {
+        config.userIgnoreInfo[usrName] = @(YES);
+    } else {
+        NSMutableDictionary *igDict = config.userIgnoreInfo;
+        [igDict removeObjectForKey:usrName];
+        config.userIgnoreInfo = igDict;
+    }
+    [config saveUserIgnoreNameListToLocalFile];
+}
+
+%end
+
 /*
 %hook SeePeopleNearByLogicController
 

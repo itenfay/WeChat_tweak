@@ -758,6 +758,11 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     @try {
         if (!msgWrap) return NO;
 
+        // 只在别人发送的消息上显示复读按钮
+        if (![self isMessageFromOther:msgWrap]) {
+            return NO;
+        }
+
         // 获取消息类型
         // 1 = 文本消息
         // 3 = 图片消息
