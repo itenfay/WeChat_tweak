@@ -15,7 +15,6 @@
 + (id)cellIdentifier;
 + (double)cellWidthWithContainerModel:(id)arg1 inWidth:(double)arg2;
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveGenericFeedVM *feedVM; // @synthesize feedVM=_feedVM;
 @property(retain, nonatomic) MMWebImageView *coverRightImageView; // @synthesize coverRightImageView=_coverRightImageView;
 @property(retain, nonatomic) MMWebImageView *coverLeftImageView; // @synthesize coverLeftImageView=_coverLeftImageView;

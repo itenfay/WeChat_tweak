@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderUtilsCGI
@@ -17,7 +19,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType sucBlock; // @synthesize sucBlock=_sucBlock;
 @property(retain, nonatomic) NSData *cmdBuf; // @synthesize cmdBuf=_cmdBuf;
@@ -33,4 +34,3 @@
 - (id)initWithUsername:(id)arg1 parseUtilType:(unsigned long long)arg2 parseUrl:(id)arg3 liveArticile:(_Bool)arg4 successBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 
 @end
-

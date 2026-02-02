@@ -25,7 +25,6 @@
     NSString *_liteAppExpKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *liteAppExpKey; // @synthesize liteAppExpKey=_liteAppExpKey;
 @property(retain, nonatomic) WSReddot *entranceRedDotInfo; // @synthesize entranceRedDotInfo=_entranceRedDotInfo;
 @property(copy, nonatomic) NSString *liteAppPage; // @synthesize liteAppPage=_liteAppPage;

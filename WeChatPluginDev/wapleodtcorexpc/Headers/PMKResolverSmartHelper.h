@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface PMKResolverSmartHelper : NSObject
 {
@@ -11,11 +12,9 @@
     CDUnknownBlockType _resolver;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool resolved; // @synthesize resolved=_resolved;
 @property(copy, nonatomic) CDUnknownBlockType resolver; // @synthesize resolver=_resolver;
 - (void)dealloc;
 - (void)resolver:(id)arg1;
 
 @end
-

@@ -18,7 +18,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_finderLiveItem;
 + (void)PBArrayAdd_enabled;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveShareItem *specifiedFinderLiveItem; // @synthesize specifiedFinderLiveItem=_specifiedFinderLiveItem;
 @property(retain, nonatomic) WCFinderLiveShareItem *finderLiveItem; // @synthesize finderLiveItem=_finderLiveItem;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;

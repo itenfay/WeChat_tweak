@@ -10,7 +10,6 @@
     JSEvent *_m_curEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEvent *m_curEvent; // @synthesize m_curEvent=_m_curEvent;
 - (void)onConfirmFav;
 - (void)onCancelFav;

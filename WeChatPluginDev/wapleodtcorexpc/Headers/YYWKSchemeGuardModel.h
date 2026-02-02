@@ -20,7 +20,6 @@
     double _lastDisableTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastDisableTime; // @synthesize lastDisableTime=_lastDisableTime;
 @property(retain, nonatomic) NSString *nonGameHostReourceUrl; // @synthesize nonGameHostReourceUrl=_nonGameHostReourceUrl;
 @property(retain, nonatomic) NSString *nonGameHostMainUrl; // @synthesize nonGameHostMainUrl=_nonGameHostMainUrl;

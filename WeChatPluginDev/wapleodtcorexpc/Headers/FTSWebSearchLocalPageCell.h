@@ -18,7 +18,6 @@
 
 + (double)heightForData:(id)arg1 width:(double)arg2;
 + (id)GenHStackWith:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableCardStyle; // @synthesize enableCardStyle=_enableCardStyle;
 @property(nonatomic) unsigned long long localSearchId; // @synthesize localSearchId=_localSearchId;
 @property(nonatomic) __weak id <WebSearchLocalPageCellDelegate> delegate; // @synthesize delegate=_delegate;

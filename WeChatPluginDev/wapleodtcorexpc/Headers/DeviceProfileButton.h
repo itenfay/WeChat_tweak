@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_nsUrl;
 + (void)PBArrayAdd_uiTitle;
 + (void)PBArrayAdd_uiIcon;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *uiIcon; // @synthesize uiIcon=_uiIcon;
 @property(copy, nonatomic) NSString *nsUrl; // @synthesize nsUrl=_nsUrl;
 @property(copy, nonatomic) NSString *uiTitle; // @synthesize uiTitle=_uiTitle;

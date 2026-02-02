@@ -40,7 +40,6 @@
 + (int)convertClientCodeToReportCode:(long long)arg1;
 + (int)getReportScene:(unsigned int)arg1;
 + (void)reportFaceDetectVideoUploadResult:(id)arg1 errorType:(unsigned int)arg2 errorCode:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sdkStateList; // @synthesize sdkStateList=_sdkStateList;
 @property(retain, nonatomic) NSMutableArray *stateList; // @synthesize stateList=_stateList;
 @property(nonatomic) long long faceRecogTime; // @synthesize faceRecogTime=_faceRecogTime;

@@ -12,7 +12,6 @@
     LiteAppConfigShareModel *_share;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LiteAppConfigShareModel *share; // @synthesize share=_share;
 - (id)init;
 

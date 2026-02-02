@@ -30,7 +30,6 @@
     NSString *_annoTextStrokeColor;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *annoTextStrokeColor; // @synthesize annoTextStrokeColor=_annoTextStrokeColor;
 @property(nonatomic) double annoTextStrokeWidth; // @synthesize annoTextStrokeWidth=_annoTextStrokeWidth;
 @property(nonatomic) double annoTextImgHeight; // @synthesize annoTextImgHeight=_annoTextImgHeight;

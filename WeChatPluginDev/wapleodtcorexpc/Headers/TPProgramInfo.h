@@ -17,7 +17,6 @@
 }
 
 + (id)programWithProgramId:(long long)arg1 bandwidth:(long long)arg2 resolution:(id)arg3 url:(id)arg4 actived:(_Bool)arg5;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *resolution; // @synthesize resolution=_resolution;
 @property(nonatomic) long long bandwidth; // @synthesize bandwidth=_bandwidth;

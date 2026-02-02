@@ -22,7 +22,6 @@
 }
 
 + (_Bool)canUseInSafemode;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int axTicketAutoRetry; // @synthesize axTicketAutoRetry=_axTicketAutoRetry;
 @property(nonatomic) unsigned int axTicketExpireTime; // @synthesize axTicketExpireTime=_axTicketExpireTime;
 @property(nonatomic) unsigned int authStartTime; // @synthesize authStartTime=_authStartTime;

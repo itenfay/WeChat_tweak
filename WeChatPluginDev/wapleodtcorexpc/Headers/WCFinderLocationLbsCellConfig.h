@@ -16,7 +16,6 @@
     FinderLbsResponse *_lbsInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) FinderLbsResponse *lbsInfo; // @synthesize lbsInfo=_lbsInfo;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;

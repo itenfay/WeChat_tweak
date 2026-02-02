@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderModPIPCgi
@@ -13,7 +15,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) unsigned int opType; // @synthesize opType=_opType;
@@ -24,4 +25,3 @@
 - (id)initWithOpType:(unsigned int)arg1 successful:(CDUnknownBlockType)arg2 failure:(CDUnknownBlockType)arg3;
 
 @end
-

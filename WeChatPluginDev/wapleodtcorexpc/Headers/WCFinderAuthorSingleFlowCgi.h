@@ -3,13 +3,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderAuthorSingleFlowCgi
 {
     CDUnknownBlockType _successfulBlock;
     CDUnknownBlockType _failedBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(copy, nonatomic) CDUnknownBlockType successfulBlock; // @synthesize successfulBlock=_successfulBlock;
 - (void)finderCgiDidFailWithError:(id)arg1 response:(id)arg2;
@@ -18,4 +19,3 @@
 - (id)initWithLastBuffer:(id)arg1 feedid:(id)arg2 nonceId:(id)arg3 tabType:(int)arg4 commentScene:(int)arg5 params:(id)arg6 successful:(CDUnknownBlockType)arg7 failed:(CDUnknownBlockType)arg8;
 
 @end
-

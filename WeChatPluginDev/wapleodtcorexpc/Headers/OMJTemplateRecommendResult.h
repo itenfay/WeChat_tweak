@@ -16,7 +16,6 @@
     NSArray *_additionTemplateInfos;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *additionTemplateInfos; // @synthesize additionTemplateInfos=_additionTemplateInfos;
 @property(readonly, nonatomic) _Bool enableSingleTemplateMusicRec; // @synthesize enableSingleTemplateMusicRec=_enableSingleTemplateMusicRec;
 @property(readonly, nonatomic) NSString *pagingContext; // @synthesize pagingContext=_pagingContext;

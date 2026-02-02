@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_oPLogId;
 + (void)PBArrayAdd_oPLogData;
 + (void)PBArrayAdd_oPLogType;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNeedSync; // @synthesize isNeedSync=_isNeedSync;
 @property(retain, nonatomic) NSString *oPLogId; // @synthesize oPLogId=_oPLogId;
 @property(retain, nonatomic) NSData *oPLogData; // @synthesize oPLogData=_oPLogData;

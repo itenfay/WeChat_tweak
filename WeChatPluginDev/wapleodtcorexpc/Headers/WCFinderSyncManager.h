@@ -13,7 +13,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(retain, nonatomic) FinderSyncRequest *currentSyncRequest; // @synthesize currentSyncRequest=_currentSyncRequest;
 @property(retain, nonatomic) NSMutableArray *syncRequestArray; // @synthesize syncRequestArray=_syncRequestArray;

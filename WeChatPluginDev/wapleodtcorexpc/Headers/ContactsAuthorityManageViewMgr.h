@@ -18,7 +18,6 @@
     ContactsDataLogic *m_contactsDataLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactsDataLogic *m_contactsDataLogic; // @synthesize m_contactsDataLogic;
 - (_Bool)checkIsValidContact:(id)arg1;
 - (unsigned int)getContactsAuthorityManageAuthTypeWithAuthorityID:(unsigned int)arg1;

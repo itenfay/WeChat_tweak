@@ -19,7 +19,6 @@
 }
 
 + (id)defaultParams;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasAutoDestinated; // @synthesize hasAutoDestinated=_hasAutoDestinated;
 @property(nonatomic) _Bool shouldUserAuthorScene; // @synthesize shouldUserAuthorScene=_shouldUserAuthorScene;
 @property(nonatomic) __weak id <WCFinderCollectionFeedListViewControllerDelegate> vcDelegate; // @synthesize vcDelegate=_vcDelegate;

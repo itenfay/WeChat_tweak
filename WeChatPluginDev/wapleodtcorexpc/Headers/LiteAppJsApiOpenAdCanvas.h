@@ -11,7 +11,6 @@
     MMLoadingView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) WCAdOpenAdCanvasJsLogic *openAdCanvasJsLogic; // @synthesize openAdCanvasJsLogic=_openAdCanvasJsLogic;
 - (void)showLoading:(_Bool)arg1;

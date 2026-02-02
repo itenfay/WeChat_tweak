@@ -14,7 +14,6 @@
     id <MinimizationNewTransitionDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInteracting; // @synthesize isInteracting=_isInteracting;
 @property(nonatomic) __weak id <MinimizationNewTransitionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)animateTransition:(id)arg1;

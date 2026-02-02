@@ -14,7 +14,6 @@
 }
 
 + (id)typeForData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonBoardView *emoticonBoardView; // @synthesize emoticonBoardView=_emoticonBoardView;
 @property(retain, nonatomic) MMEmoticonBoardNativeViewContext *context; // @synthesize context=_context;
 - (void)onSearchEmoticonViewControllerSendEmoticon:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImage;
 
@@ -16,7 +17,6 @@
     UIImage *_CheckBoxImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *CheckBoxImage; // @synthesize CheckBoxImage=_CheckBoxImage;
 @property(nonatomic) _Bool isOverlay; // @synthesize isOverlay=_isOverlay;
 @property(nonatomic) unsigned long long imageIconViewSizeType; // @synthesize imageIconViewSizeType=_imageIconViewSizeType;
@@ -31,4 +31,3 @@
 - (id)init;
 
 @end
-

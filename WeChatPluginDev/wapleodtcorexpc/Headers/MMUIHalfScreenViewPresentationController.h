@@ -17,7 +17,6 @@
     UIView *_coverView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isResetPresentedViewFrame; // @synthesize isResetPresentedViewFrame=_isResetPresentedViewFrame;
 @property(nonatomic) _Bool isHideBackgroupMask; // @synthesize isHideBackgroupMask=_isHideBackgroupMask;
 @property(retain, nonatomic) UIView *coverView; // @synthesize coverView=_coverView;

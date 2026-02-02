@@ -15,7 +15,6 @@
     id <MMDropDelegate> _dropDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMDropDelegate> dropDelegate; // @synthesize dropDelegate=_dropDelegate;
 @property(retain, nonatomic) CContact *m_contact; // @synthesize m_contact=_m_contact;
 - (id)videoMsgWith:(id)arg1;

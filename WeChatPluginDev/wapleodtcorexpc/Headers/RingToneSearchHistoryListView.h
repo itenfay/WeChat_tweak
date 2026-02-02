@@ -15,7 +15,6 @@
     RingToneSearchHistoryViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RingToneSearchHistoryViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <RingToneSearchHistoryListViewDelegate> delegate; // @synthesize delegate=_delegate;

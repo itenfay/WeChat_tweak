@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_whiteListThreads;
 + (void)PBArrayAdd_strategy;
 + (void)PBArrayAdd_enabled;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *blackListThreads; // @synthesize blackListThreads=_blackListThreads;
 @property(retain, nonatomic) NSMutableArray *whiteListThreads; // @synthesize whiteListThreads=_whiteListThreads;
 @property(nonatomic) int strategy; // @synthesize strategy=_strategy;

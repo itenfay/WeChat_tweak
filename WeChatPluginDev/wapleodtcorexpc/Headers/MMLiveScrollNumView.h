@@ -23,7 +23,6 @@
 
 + (unsigned long long)sizeFromNum:(unsigned long long)arg1;
 + (unsigned long long)digitFromNum:(unsigned long long)arg1 withIndex:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long randomLength; // @synthesize randomLength=_randomLength;
 @property(retain, nonatomic) NSMutableArray *numberViews; // @synthesize numberViews=_numberViews;
 @property(retain, nonatomic) UIFont *digitFont; // @synthesize digitFont=_digitFont;

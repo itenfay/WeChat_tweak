@@ -11,7 +11,6 @@
     NSMutableSet *_statusChangedDevice;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *statusChangedDevice; // @synthesize statusChangedDevice=_statusChangedDevice;
 @property(retain, nonatomic) NSArray *deviceList; // @synthesize deviceList=_deviceList;
 - (void)viewDidDisappear:(_Bool)arg1;

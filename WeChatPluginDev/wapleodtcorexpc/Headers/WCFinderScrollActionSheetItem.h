@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary;
 
 @interface WCFinderScrollActionSheetItem
@@ -17,7 +19,6 @@
 + (id)playBackInfoKey;
 + (id)baseKey;
 + (id)itemForFlag:(unsigned long long)arg1 withContentVM:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reportSetter; // @synthesize reportSetter=_reportSetter;
 @property(nonatomic) long long sectionType; // @synthesize sectionType=_sectionType;
 @property(retain, nonatomic) NSMutableDictionary *finderUserInfoDict; // @synthesize finderUserInfoDict=_finderUserInfoDict;
@@ -33,4 +34,3 @@
 - (id)reportEid;
 
 @end
-

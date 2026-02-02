@@ -19,7 +19,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 - (id)bottomStr;
 - (unsigned int)maxContentLineNum;
 - (long long)lineCount;

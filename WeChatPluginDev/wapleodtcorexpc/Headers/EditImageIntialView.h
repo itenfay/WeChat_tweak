@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageCropGridView, EditImageCropOverlayView, EditImageCropToolBarView, EditImageEmotionToolAttrView, EditImageMosaicToolAttrView, EditImagePenToolAttrView, EditImageSNSBorderView, EditImageScrollView, MMMusicFadeOutLayer, MMTimer, MMUIButton, MMUIImageView, NSMutableArray, NSString, UIButton, UIImage, UIImageView, UILabel, UIPanGestureRecognizer, UIView, WCEditViewControllerUIConfig;
 @protocol EditImageInitialViewDelegate;
 
@@ -85,7 +87,6 @@
     struct CGRect _cropFrameBeforeEnterCropview;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStartingCrop; // @synthesize isStartingCrop=_isStartingCrop;
 @property(retain, nonatomic) UIView *voiceOverGesView; // @synthesize voiceOverGesView=_voiceOverGesView;
 @property(retain, nonatomic) MMMusicFadeOutLayer *imageMaskLayer; // @synthesize imageMaskLayer=_imageMaskLayer;
@@ -278,4 +279,3 @@
 @property(readonly) Class superclass;
 
 @end
-

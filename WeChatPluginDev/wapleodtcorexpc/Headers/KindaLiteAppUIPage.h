@@ -20,7 +20,6 @@
     MMLiteAppViewController *_liteappVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
 @property(nonatomic) __weak MMLiteAppViewController *liteappVC; // @synthesize liteappVC=_liteappVC;
 @property(nonatomic) __weak MMUIViewController *loadingViewController; // @synthesize loadingViewController=_loadingViewController;

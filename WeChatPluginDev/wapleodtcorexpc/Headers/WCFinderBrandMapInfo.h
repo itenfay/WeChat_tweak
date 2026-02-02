@@ -30,7 +30,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cacheTime; // @synthesize cacheTime=_cacheTime;
 @property(copy, nonatomic) NSString *bizUsername; // @synthesize bizUsername=_bizUsername;
 @property(copy, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;

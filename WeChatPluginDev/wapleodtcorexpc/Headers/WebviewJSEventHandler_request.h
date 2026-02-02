@@ -10,7 +10,6 @@
     NSURLSession *_urlSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 - (id)headerDictionaryFromResponse:(id)arg1;
 - (void)setupNSURLSession;

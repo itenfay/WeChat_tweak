@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface GameVideoGalleryShareMenuViewController2
@@ -10,7 +12,6 @@
     CDUnknownBlockType _clickItemBlock;
 }
 
-- (void).cxx_destruct;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)show:(id)arg1;
 - (id)initWithClickItemBlock:(CDUnknownBlockType)arg1;
@@ -25,4 +26,3 @@
 @property(readonly) Class superclass;
 
 @end
-

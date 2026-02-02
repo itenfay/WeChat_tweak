@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MagicBrushDemoLogic, MagicBrushViewDelegateProxy, UIButton, UIView;
 
 @interface MagicBrushDemoViewController
@@ -17,7 +19,6 @@
     MagicBrushViewDelegateProxy *_viewDelegateProxy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MagicBrushViewDelegateProxy *viewDelegateProxy; // @synthesize viewDelegateProxy=_viewDelegateProxy;
 @property(retain, nonatomic) MagicBrushDemoLogic *logic; // @synthesize logic=_logic;
 @property(retain, nonatomic) UIButton *testExternalView; // @synthesize testExternalView=_testExternalView;
@@ -32,4 +33,3 @@
 - (id)createButton:(id)arg1 eventTouchUpInside:(CDUnknownBlockType)arg2;
 
 @end
-

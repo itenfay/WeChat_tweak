@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
@@ -14,7 +15,6 @@
 }
 
 + (id)observerForView:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType notifyBlock; // @synthesize notifyBlock=_notifyBlock;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
@@ -23,4 +23,3 @@
 - (void)addToKeyboardView:(id)arg1;
 
 @end
-

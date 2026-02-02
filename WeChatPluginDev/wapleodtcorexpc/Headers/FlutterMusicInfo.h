@@ -30,7 +30,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithMusicId:(id)arg1 songName:(id)arg2 singer:(id)arg3 dataUrl:(id)arg4 appid:(id)arg5 webUrl:(id)arg6 coverUrl:(id)arg7 duration:(id)arg8 mid:(id)arg9 lyric:(id)arg10 sourceType:(id)arg11 voiceId:(id)arg12 bizUsername:(id)arg13 tid:(id)arg14 nonceId:(id)arg15 voiceType:(id)arg16;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *voiceType; // @synthesize voiceType=_voiceType;
 @property(copy, nonatomic) NSString *nonceId; // @synthesize nonceId=_nonceId;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;

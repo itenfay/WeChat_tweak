@@ -14,7 +14,6 @@
     MISSING_TYPE *$__lazy_storage_$_emoticonBoardView;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) EmoticonBoardView *emoticonBoardView;
 - (double)ajustedAnimateDuration:(double)arg1;

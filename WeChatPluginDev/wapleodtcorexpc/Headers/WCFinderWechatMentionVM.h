@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MentionListLastReadInfo, NSData, NSDiffableDataSourceSnapshot, NSMutableArray, NSMutableSet, WCFinderListLoadingStateModel;
 @protocol WCFinderWechatMentionVMDelegate;
@@ -25,7 +26,6 @@
     NSDiffableDataSourceSnapshot *_currentSnapshot;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowIgnoreTips; // @synthesize shouldShowIgnoreTips=_shouldShowIgnoreTips;
 @property(retain, nonatomic) NSDiffableDataSourceSnapshot *currentSnapshot; // @synthesize currentSnapshot=_currentSnapshot;
 @property(nonatomic) double cacheContainerWidth; // @synthesize cacheContainerWidth=_cacheContainerWidth;
@@ -60,4 +60,3 @@
 - (id)initWithTabType:(unsigned long long)arg1;
 
 @end
-

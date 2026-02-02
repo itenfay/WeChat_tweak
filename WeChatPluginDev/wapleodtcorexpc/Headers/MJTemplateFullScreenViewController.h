@@ -20,7 +20,6 @@
     WCMomentsScrollActionSheet *_actionSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsScrollActionSheet *actionSheet; // @synthesize actionSheet=_actionSheet;
 @property(retain, nonatomic) WXFullScreenGestureRecognizer *fullScreenGesture; // @synthesize fullScreenGesture=_fullScreenGesture;
 @property(retain, nonatomic) MJTemplateFullScreenControlView *controlView; // @synthesize controlView=_controlView;

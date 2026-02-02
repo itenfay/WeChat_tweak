@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,9 +14,7 @@
     NSString *_uniqueID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 
 @end
-

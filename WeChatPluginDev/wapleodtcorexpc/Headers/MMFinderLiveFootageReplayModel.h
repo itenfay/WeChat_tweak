@@ -21,7 +21,6 @@
     NSString *_reportSongName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportSongName; // @synthesize reportSongName=_reportSongName;
 @property(retain, nonatomic) NSString *reportSongId; // @synthesize reportSongId=_reportSongId;
 @property(retain, nonatomic) NSString *replayObjectNonceId; // @synthesize replayObjectNonceId=_replayObjectNonceId;

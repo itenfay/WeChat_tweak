@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, UIScrollView, ZZFLEXSectionModel;
 @protocol ZZFLEXViewModelDelegate;
@@ -26,7 +27,6 @@
     struct CGSize _itemViewSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize itemViewSize; // @synthesize itemViewSize=_itemViewSize;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
 @property(copy, nonatomic) CDUnknownBlockType itemsConfigAction; // @synthesize itemsConfigAction=_itemsConfigAction;
@@ -56,4 +56,3 @@
 - (id)initWithHostView:(id)arg1 viewClass:(Class)arg2 vmDelegate:(id)arg3 listData:(id)arg4 xib:(_Bool)arg5;
 
 @end
-

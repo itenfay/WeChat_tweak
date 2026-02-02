@@ -17,7 +17,6 @@
     MISSING_TYPE *delegate;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onLoadMore:(id)arg1;
 - (void)onReloadItems:(id)arg1;

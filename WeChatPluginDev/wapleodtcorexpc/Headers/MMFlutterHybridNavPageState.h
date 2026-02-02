@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterBasicMessageChannel;
 
@@ -12,7 +13,6 @@
     FlutterBasicMessageChannel *_pageStateChannel;
 }
 
-- (void).cxx_destruct;
 - (void)onEngineExit:(CDUnknownBlockType)arg1;
 - (void)onPageExit:(CDUnknownBlockType)arg1;
 - (void)onPageDetached:(CDUnknownBlockType)arg1;
@@ -32,4 +32,3 @@
 - (id)initWithMessenger:(id)arg1;
 
 @end
-

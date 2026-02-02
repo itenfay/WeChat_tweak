@@ -12,7 +12,6 @@
     id <MMUICollectionViewGestureRecognizerDelegate> _gestureDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMUICollectionViewGestureRecognizerDelegate> gestureDelegate; // @synthesize gestureDelegate=_gestureDelegate;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 

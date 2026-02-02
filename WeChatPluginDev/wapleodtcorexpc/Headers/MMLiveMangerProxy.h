@@ -13,7 +13,6 @@
 }
 
 + (Class)class;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveManger *liveManager; // @synthesize liveManager=_liveManager;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

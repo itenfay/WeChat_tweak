@@ -52,7 +52,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *locationType; // @synthesize locationType=_locationType;
 @property(nonatomic) _Bool needLocation; // @synthesize needLocation=_needLocation;
 @property(copy, nonatomic) NSString *headImageStatus; // @synthesize headImageStatus=_headImageStatus;

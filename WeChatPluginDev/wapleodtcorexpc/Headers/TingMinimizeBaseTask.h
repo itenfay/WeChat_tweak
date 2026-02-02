@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class TingMinimizeStayStatics, TingTapePlayingInfo;
 @protocol TingMinimizeTaskDelegate;
@@ -18,7 +19,6 @@
     TingMinimizeStayStatics *_statics;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingMinimizeStayStatics *statics; // @synthesize statics=_statics;
 @property(nonatomic) _Bool disableOpenMinimizeTask; // @synthesize disableOpenMinimizeTask=_disableOpenMinimizeTask;
 @property(retain, nonatomic) TingTapePlayingInfo *playingInfo; // @synthesize playingInfo=_playingInfo;
@@ -64,4 +64,3 @@
 - (void)reportTaskFoldStateChangedForReason:(long long)arg1;
 
 @end
-

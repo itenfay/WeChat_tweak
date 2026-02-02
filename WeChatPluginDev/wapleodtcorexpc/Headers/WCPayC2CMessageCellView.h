@@ -22,7 +22,6 @@
     WCPayWebPagView *_atmospherePagView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayWebPagView *atmospherePagView; // @synthesize atmospherePagView=_atmospherePagView;
 @property(retain, nonatomic) CAShapeLayer *skinMaskLayer; // @synthesize skinMaskLayer=_skinMaskLayer;
 @property(retain, nonatomic) WCPayWebPagView *pagView; // @synthesize pagView=_pagView;

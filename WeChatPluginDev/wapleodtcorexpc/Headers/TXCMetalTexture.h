@@ -13,7 +13,6 @@
     struct __CVBuffer *_pixelBuffer;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
 @property(readonly, nonatomic) id <MTLTexture> texture; // @synthesize texture=_texture;
 - (void)dealloc;

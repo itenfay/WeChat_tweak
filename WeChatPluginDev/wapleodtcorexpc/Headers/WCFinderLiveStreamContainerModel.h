@@ -26,7 +26,6 @@
 }
 
 + (id)finderLiveStreamContainerModelFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int nextPagePullType; // @synthesize nextPagePullType=_nextPagePullType;
 @property(nonatomic) _Bool enableDoubleFlowStyle; // @synthesize enableDoubleFlowStyle=_enableDoubleFlowStyle;
 @property(retain, nonatomic) FinderLiveTabListContainerInfo *liveTabListContainerInfo; // @synthesize liveTabListContainerInfo=_liveTabListContainerInfo;

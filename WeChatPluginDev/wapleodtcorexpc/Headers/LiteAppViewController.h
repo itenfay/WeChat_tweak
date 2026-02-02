@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class LiteAppPageConfig, LiteAppReferrerInfo, LiteAppStore, LiteAppViewConsumer, LiteAppWindow, MMLiteAppReporter, NSMutableDictionary, NSString, UIColor, UIImage, UIViewController, WxaLiteAppStartReport;
 @protocol LiteAppParentViewControllerDelegate, UIGestureRecognizerDelegate;
 
@@ -56,7 +58,6 @@
 
 + (_Bool)isiPhone;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCheckCoreText; // @synthesize hasCheckCoreText=_hasCheckCoreText;
 @property(nonatomic) struct CGSize delayUpdateSize; // @synthesize delayUpdateSize=_delayUpdateSize;
 @property(nonatomic) _Bool isNeedShowNavBar; // @synthesize isNeedShowNavBar=_isNeedShowNavBar;
@@ -159,4 +160,3 @@
 @property(readonly) Class superclass;
 
 @end
-

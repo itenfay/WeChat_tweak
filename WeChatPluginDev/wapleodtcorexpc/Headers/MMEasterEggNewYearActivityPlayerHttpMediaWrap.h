@@ -10,7 +10,6 @@
     NSString *_resourceURL;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *resourceURL; // @synthesize resourceURL=_resourceURL;
 - (id)getCacheDirectory;
 - (id)getFormatVideoPath;

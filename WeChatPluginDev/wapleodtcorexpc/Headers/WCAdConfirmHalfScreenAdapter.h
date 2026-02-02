@@ -21,7 +21,6 @@
     NSDictionary *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extInfo; // @synthesize extInfo=_extInfo;
 @property(retain, nonatomic) NSString *confirmEmptyDesc; // @synthesize confirmEmptyDesc=_confirmEmptyDesc;
 @property(retain, nonatomic) NSString *confirmDesc; // @synthesize confirmDesc=_confirmDesc;

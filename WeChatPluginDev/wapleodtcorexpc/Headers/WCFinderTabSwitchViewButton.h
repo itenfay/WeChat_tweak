@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSNumber, UIFont, UILabel, UIView, WCFinderTabSwitchCustomViewInfo;
 
 @interface WCFinderTabSwitchViewButton
@@ -19,7 +21,6 @@
     struct CGSize _expandSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *redDotLabel; // @synthesize redDotLabel=_redDotLabel;
 @property(nonatomic) struct CGSize expandSize; // @synthesize expandSize=_expandSize;
 @property(copy, nonatomic) CDUnknownBlockType customLayout; // @synthesize customLayout=_customLayout;
@@ -40,4 +41,3 @@
 - (void)setSelected:(_Bool)arg1;
 
 @end
-

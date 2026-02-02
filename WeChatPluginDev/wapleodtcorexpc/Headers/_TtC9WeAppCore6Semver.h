@@ -17,7 +17,6 @@
     MISSING_TYPE *$__lazy_storage_$_patch;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (_Bool)isSatisfiedBy:(id)arg1;
 - (id)initWithVersionStr:(id)arg1;

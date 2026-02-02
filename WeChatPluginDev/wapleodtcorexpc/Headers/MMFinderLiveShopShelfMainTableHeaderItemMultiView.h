@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIButton, UIImageView, UILabel, UIView;
 
 @interface MMFinderLiveShopShelfMainTableHeaderItemMultiView
@@ -14,7 +16,6 @@
     UIImageView *_tailIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *tailIcon; // @synthesize tailIcon=_tailIcon;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UIView *line; // @synthesize line=_line;
@@ -32,4 +33,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

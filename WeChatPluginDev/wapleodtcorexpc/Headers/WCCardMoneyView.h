@@ -10,7 +10,6 @@
     id <WCCardDataSource> _cardDataSource;
 }
 
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithCardDataSource:(id)arg1;
 - (void)dealloc;

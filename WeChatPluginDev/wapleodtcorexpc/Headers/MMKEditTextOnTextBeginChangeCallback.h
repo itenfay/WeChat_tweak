@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onTextBeginChange:(id)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

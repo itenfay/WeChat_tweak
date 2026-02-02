@@ -20,7 +20,6 @@
     WAScrollViewAnimView *_animView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAScrollViewAnimView *animView; // @synthesize animView=_animView;
 @property(nonatomic) __weak id <UIScrollViewDelegate> realDelegate; // @synthesize realDelegate=_realDelegate;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;

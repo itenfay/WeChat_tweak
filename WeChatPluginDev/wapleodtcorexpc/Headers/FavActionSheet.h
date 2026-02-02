@@ -16,7 +16,6 @@
     id <FavActionSheetDelegate> _favDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavActionSheetDelegate> favDelegate; // @synthesize favDelegate=_favDelegate;
 - (void)onQRCodeScansFinished;
 - (void)onQRCodeRowViewBanned;

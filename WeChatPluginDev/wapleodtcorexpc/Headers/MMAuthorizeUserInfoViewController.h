@@ -35,7 +35,6 @@
     NSString *_cloudGameScopeWording;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cloudGameScopeWording; // @synthesize cloudGameScopeWording=_cloudGameScopeWording;
 @property(nonatomic) _Bool canAddNewAvatar; // @synthesize canAddNewAvatar=_canAddNewAvatar;
 @property(nonatomic) unsigned int defaultAvatarId; // @synthesize defaultAvatarId=_defaultAvatarId;

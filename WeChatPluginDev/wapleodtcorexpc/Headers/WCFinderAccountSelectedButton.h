@@ -12,7 +12,6 @@
     UIView *_redDotView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *redDotView; // @synthesize redDotView=_redDotView;
 @property(nonatomic) __weak UILabel *selectedLabel; // @synthesize selectedLabel=_selectedLabel;
 @property(nonatomic) __weak UIImageView *leftImageView; // @synthesize leftImageView=_leftImageView;

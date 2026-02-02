@@ -11,7 +11,6 @@
     WxaUseUserInfo *_useUserInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WxaUseUserInfo *useUserInfo; // @synthesize useUserInfo=_useUserInfo;
 @property(retain, nonatomic) NSArray *authInfoList; // @synthesize authInfoList=_authInfoList;
 

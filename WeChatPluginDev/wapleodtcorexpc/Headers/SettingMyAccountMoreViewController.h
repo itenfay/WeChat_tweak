@@ -10,7 +10,6 @@
     MMTableViewInfo *m_tableViewInfo;
 }
 
-- (void).cxx_destruct;
 - (void)onTipsShowInfoChangeWithPathKey:(id)arg1;
 - (void)setupDeepLinkConfig;
 - (void)onAppleIDBindStatusChange;

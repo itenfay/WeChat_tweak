@@ -26,7 +26,6 @@
 + (id)reportKVDictWithComment:(id)arg1;
 + (unsigned long long)commentOvertTypeWithComment:(id)arg1;
 + (unsigned long long)commentPrefixTypeWithComment:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) WCFinderDynamicRichTextView *suffixDescLabel; // @synthesize suffixDescLabel=_suffixDescLabel;
 @property(retain, nonatomic) UIImageView *suffixIconImageView; // @synthesize suffixIconImageView=_suffixIconImageView;

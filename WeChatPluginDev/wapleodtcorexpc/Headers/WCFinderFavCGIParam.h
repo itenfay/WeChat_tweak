@@ -18,7 +18,6 @@
     FinderFavNewLifeReportInfo *_newlifeReportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderFavNewLifeReportInfo *newlifeReportInfo; // @synthesize newlifeReportInfo=_newlifeReportInfo;
 @property(copy, nonatomic) NSDictionary *clientUdfKv; // @synthesize clientUdfKv=_clientUdfKv;
 @property(nonatomic) int sourceType; // @synthesize sourceType=_sourceType;

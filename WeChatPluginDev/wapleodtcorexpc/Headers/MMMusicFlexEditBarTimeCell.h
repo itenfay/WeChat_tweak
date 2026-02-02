@@ -14,7 +14,6 @@
     UILabel *_endTimeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *endTimeLabel; // @synthesize endTimeLabel=_endTimeLabel;
 @property(retain, nonatomic) UILabel *startTimeLabel; // @synthesize startTimeLabel=_startTimeLabel;
 - (void)setStartTimeSec:(double)arg1 endTimeSec:(double)arg2;

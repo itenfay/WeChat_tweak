@@ -15,7 +15,6 @@
     UIView *_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRelease; // @synthesize shouldRelease=_shouldRelease;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;

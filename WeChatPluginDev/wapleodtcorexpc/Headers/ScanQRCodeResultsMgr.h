@@ -14,7 +14,6 @@
 
 + (id)scanResultRepotInfoFromMsgHistoryItem:(id)arg1;
 + (id)msgScanHistoryItemFromScanResultInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *sourceViewController; // @synthesize sourceViewController=_sourceViewController;
 @property(retain, nonatomic) ScanQRCodeLogicController *scanLogicController; // @synthesize scanLogicController=_scanLogicController;
 @property(retain, nonatomic) NSMutableArray *offlineResults; // @synthesize offlineResults=_offlineResults;

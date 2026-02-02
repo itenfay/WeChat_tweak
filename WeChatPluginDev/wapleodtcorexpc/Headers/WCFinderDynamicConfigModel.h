@@ -143,7 +143,6 @@
     NSString *_createRedPacketMiniAppId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *createRedPacketMiniAppId; // @synthesize createRedPacketMiniAppId=_createRedPacketMiniAppId;
 @property(copy, nonatomic) NSString *promotionShopAppPath; // @synthesize promotionShopAppPath=_promotionShopAppPath;
 @property(copy, nonatomic) NSString *promotionShopAppId; // @synthesize promotionShopAppId=_promotionShopAppId;

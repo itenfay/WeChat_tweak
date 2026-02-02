@@ -17,7 +17,6 @@
     NSString *_appid;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)releaseContext;
 - (void)setLogDelegate:(id)arg1;

@@ -14,7 +14,6 @@
     id <InviteFriendViewDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)onDownloadQRCodeFinish:(id)arg1 FooterWording:(id)arg2;
 - (void)onRight;
 - (void)onLeft;

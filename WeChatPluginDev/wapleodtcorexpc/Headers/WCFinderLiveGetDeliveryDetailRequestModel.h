@@ -19,7 +19,6 @@
     NSData *_reqBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *reqBuffer; // @synthesize reqBuffer=_reqBuffer;
 @property(nonatomic) unsigned int cmdId; // @synthesize cmdId=_cmdId;
 @property(retain, nonatomic) NSString *objectNonceId; // @synthesize objectNonceId=_objectNonceId;

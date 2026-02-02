@@ -18,7 +18,6 @@
     NSString *_titleText;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(retain, nonatomic) MMUIButton *ticketButton; // @synthesize ticketButton=_ticketButton;

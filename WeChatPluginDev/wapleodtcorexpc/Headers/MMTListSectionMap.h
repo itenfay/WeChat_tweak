@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMapTable, NSMutableArray;
 
@@ -14,7 +15,6 @@
     NSMapTable *_sectionControllerToSectionMap;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *sectionControllerToSectionMap; // @synthesize sectionControllerToSectionMap=_sectionControllerToSectionMap;
 @property(readonly, nonatomic) NSMapTable *objectToSectionControllerMap; // @synthesize objectToSectionControllerMap=_objectToSectionControllerMap;
 @property(retain, nonatomic) NSMutableArray *mObjects; // @synthesize mObjects=_mObjects;
@@ -32,4 +32,3 @@
 - (id)init;
 
 @end
-

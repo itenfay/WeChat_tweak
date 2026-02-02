@@ -19,7 +19,6 @@
 
 + (id)createPIPBusinessAttachId:(id)arg1;
 + (id)createPIPBusinessId:(id)arg1 withBusinessName:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRootViewAppear; // @synthesize isRootViewAppear=_isRootViewAppear;
 @property(nonatomic) _Bool isInForeground; // @synthesize isInForeground=_isInForeground;
 @property(nonatomic) long long type; // @synthesize type=_type;

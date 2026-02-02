@@ -14,7 +14,6 @@
     NSString *_finderUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
 @property(retain, nonatomic) NSString *objectNonceId; // @synthesize objectNonceId=_objectNonceId;
 @property(retain, nonatomic) NSString *exportId; // @synthesize exportId=_exportId;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonVideoConvertConfig, EmoticonVideoInput;
 @protocol OS_dispatch_queue;
@@ -17,7 +18,6 @@
     EmoticonVideoInput *_videoInput;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonVideoInput *videoInput; // @synthesize videoInput=_videoInput;
 @property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 @property(retain, nonatomic) EmoticonVideoConvertConfig *config; // @synthesize config=_config;
@@ -34,4 +34,3 @@
 - (id)initWithQueue:(id)arg1;
 
 @end
-

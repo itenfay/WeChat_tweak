@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageAttr, EditImageLogicController, NSURL, UIImage;
 
 @interface MMAssetForFakeFastSend
@@ -15,7 +17,6 @@
 }
 
 + (_Bool)isAsset:(id)arg1 CreateWithInSecond:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *screenShotUrl; // @synthesize screenShotUrl=_screenShotUrl;
 @property(nonatomic) __weak EditImageLogicController *editImageLogicController; // @synthesize editImageLogicController=_editImageLogicController;
 @property(retain, nonatomic) EditImageAttr *editImageAttr; // @synthesize editImageAttr=_editImageAttr;
@@ -48,4 +49,3 @@
 - (id)initWithUrl:(id)arg1 withImg:(id)arg2 IsNeedOrigin:(_Bool)arg3;
 
 @end
-

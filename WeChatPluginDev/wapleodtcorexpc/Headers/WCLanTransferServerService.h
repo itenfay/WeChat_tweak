@@ -14,7 +14,6 @@
 }
 
 + (_Bool)canUseLanTransfer:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *serverTaskInfo; // @synthesize serverTaskInfo=_serverTaskInfo;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *lanTransferServerQueue; // @synthesize lanTransferServerQueue=_lanTransferServerQueue;
 @property(retain, nonatomic) WCLanTransferSSSQueue *sssQueue; // @synthesize sssQueue=_sssQueue;

@@ -17,7 +17,6 @@
     NSString *_errorMessage;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(nonatomic) long long fps; // @synthesize fps=_fps;
 @property(nonatomic) double fileDuration; // @synthesize fileDuration=_fileDuration;

@@ -16,7 +16,6 @@
     NSString *_background_color_dark;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *background_color_dark; // @synthesize background_color_dark=_background_color_dark;
 @property(retain, nonatomic) NSString *background_color; // @synthesize background_color=_background_color;
 @property(retain, nonatomic) NSString *text_color_dark; // @synthesize text_color_dark=_text_color_dark;

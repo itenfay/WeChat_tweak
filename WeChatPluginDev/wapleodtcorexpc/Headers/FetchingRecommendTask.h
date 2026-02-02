@@ -16,7 +16,6 @@
     NSArray *_fetchRelatedList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *fetchRelatedList; // @synthesize fetchRelatedList=_fetchRelatedList;
 @property(retain, nonatomic) WCFinderBaseCgi *fetchRelatedListCgi; // @synthesize fetchRelatedListCgi=_fetchRelatedListCgi;
 @property(retain, nonatomic) NSString *tid; // @synthesize tid=_tid;

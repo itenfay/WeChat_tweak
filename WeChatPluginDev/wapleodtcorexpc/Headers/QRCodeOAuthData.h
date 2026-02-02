@@ -17,7 +17,6 @@
     NSData *_qrCodeData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lpInterval; // @synthesize lpInterval=_lpInterval;
 @property(nonatomic) unsigned int lpTimeout; // @synthesize lpTimeout=_lpTimeout;
 @property(copy, nonatomic) NSData *qrCodeData; // @synthesize qrCodeData=_qrCodeData;

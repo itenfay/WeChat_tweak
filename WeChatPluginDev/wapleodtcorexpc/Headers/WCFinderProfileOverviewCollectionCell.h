@@ -19,7 +19,6 @@
     struct UIEdgeInsets _contentInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
 @property(nonatomic) _Bool showSeparatorLine; // @synthesize showSeparatorLine=_showSeparatorLine;
 @property(retain, nonatomic) WCFinderDetailTimeStringConfig *timeStringConfig; // @synthesize timeStringConfig=_timeStringConfig;

@@ -13,7 +13,6 @@
     NSString *_username;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 - (void)onFinderContactUpdate:(id)arg1;

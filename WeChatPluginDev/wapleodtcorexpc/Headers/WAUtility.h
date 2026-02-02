@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WAUtility : NSObject
 {
@@ -176,4 +177,3 @@
 + (id)genNewInstanceIdWithHostScene:(int)arg1 currentTimeInMs:(unsigned long long)arg2;
 
 @end
-

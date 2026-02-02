@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -12,7 +13,6 @@
     NSMutableArray *_allSectionModelList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *allSectionModelList; // @synthesize allSectionModelList=_allSectionModelList;
 - (id)findSectionModelById:(id)arg1;
 - (id)ensureSectionModelByIndex:(long long)arg1 withId:(id)arg2 title:(id)arg3;
@@ -45,4 +45,3 @@
 - (id)initWithSectionModel:(id)arg1;
 
 @end
-

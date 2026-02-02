@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSMutableArray;
 
 @interface FinderLiveAudienceOpLogCGI
@@ -12,7 +14,6 @@
     NSArray *_unmutableCmdItemRequestWrapList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *unmutableCmdItemRequestWrapList; // @synthesize unmutableCmdItemRequestWrapList=_unmutableCmdItemRequestWrapList;
 @property(retain, nonatomic) NSMutableArray *cmdItemRequestWrapList; // @synthesize cmdItemRequestWrapList=_cmdItemRequestWrapList;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
@@ -24,4 +25,3 @@
 - (id)initWithScene:(unsigned int)arg1;
 
 @end
-

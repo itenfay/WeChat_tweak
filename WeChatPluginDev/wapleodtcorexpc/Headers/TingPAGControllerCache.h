@@ -12,7 +12,6 @@
     NSMutableDictionary *_dictControllerCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictControllerCache; // @synthesize dictControllerCache=_dictControllerCache;
 - (id)getOrCreatePAGCoverController:(id)arg1;
 - (_Bool)canUsePAGCover:(id)arg1;

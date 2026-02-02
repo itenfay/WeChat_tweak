@@ -14,7 +14,6 @@
     NSMutableSet *_activeBadges;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *activeBadges; // @synthesize activeBadges=_activeBadges;
 @property(retain, nonatomic) NSMutableDictionary *containedBadges; // @synthesize containedBadges=_containedBadges;
 @property(retain, nonatomic) NSString *collectionId; // @synthesize collectionId=_collectionId;

@@ -27,7 +27,6 @@
 }
 
 + (id)sharedManager;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned short fps; // @synthesize fps=_fps;
 @property long long orientation; // @synthesize orientation=_orientation;
 @property int serviceConfigIndex; // @synthesize serviceConfigIndex=_serviceConfigIndex;

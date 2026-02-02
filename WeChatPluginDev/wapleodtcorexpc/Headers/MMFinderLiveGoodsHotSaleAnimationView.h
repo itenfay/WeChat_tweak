@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, PAGFile, PAGView, UILabel;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _salesUpdatingCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType salesUpdatingCompletion; // @synthesize salesUpdatingCompletion=_salesUpdatingCompletion;
 @property(retain, nonatomic) PAGView *hotSaleBackgroundView; // @synthesize hotSaleBackgroundView=_hotSaleBackgroundView;
 @property(retain, nonatomic) UILabel *hotSaleCountLabel; // @synthesize hotSaleCountLabel=_hotSaleCountLabel;
@@ -44,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -22,7 +22,6 @@
     NSString *nextTipIndex;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSnsABTestTitle *abtestTitle; // @synthesize abtestTitle;
 @property(retain, nonatomic) NSString *nextTipIndex; // @synthesize nextTipIndex;
 @property(retain, nonatomic) NSString *jumpUrl; // @synthesize jumpUrl;

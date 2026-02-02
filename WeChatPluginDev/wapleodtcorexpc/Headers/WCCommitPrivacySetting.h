@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_selectTags;
 + (void)PBArrayAdd_selectContacts;
 + (void)PBArrayAdd_privacy;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDynamicTagEnabled; // @synthesize isDynamicTagEnabled=_isDynamicTagEnabled;
 @property(retain, nonatomic) NSArray *recentSelectedChatroom; // @synthesize recentSelectedChatroom=_recentSelectedChatroom;
 @property(retain, nonatomic) NSArray *selectTags; // @synthesize selectTags=_selectTags;

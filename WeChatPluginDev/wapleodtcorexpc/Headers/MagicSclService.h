@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MBCommonAdapter, NSMutableDictionary, NSString, _TtC6WeChat20MagicSclJsApiContext, _TtC6WeChat25MagicSclServicePkgManager;
 @protocol IMBPublicServiceDispatcher;
@@ -17,7 +18,6 @@
     id <IMBPublicServiceDispatcher> _dispatcher;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMBPublicServiceDispatcher> dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(retain, nonatomic) NSMutableDictionary *canvasIdToBizName; // @synthesize canvasIdToBizName=_canvasIdToBizName;
 @property(retain, nonatomic) _TtC6WeChat25MagicSclServicePkgManager *pkgMgr; // @synthesize pkgMgr=_pkgMgr;
@@ -63,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

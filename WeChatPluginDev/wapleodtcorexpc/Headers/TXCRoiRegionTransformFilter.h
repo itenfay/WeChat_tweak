@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSValue, TXCDispatchQueue, TXCVideoFrameCoords;
 
 @interface TXCRoiRegionTransformFilter
@@ -15,7 +17,6 @@
     NSArray *_roiConfigArray;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *roiConfigArray; // @synthesize roiConfigArray=_roiConfigArray;
 @property(retain, nonatomic) TXCDispatchQueue *queue; // @synthesize queue=_queue;
 @property(nonatomic) _Bool shouldSkipRoiRegionTransform; // @synthesize shouldSkipRoiRegionTransform=_shouldSkipRoiRegionTransform;
@@ -29,4 +30,3 @@
 - (id)initWithQueue:(id)arg1;
 
 @end
-

@@ -17,7 +17,6 @@
     LinkWeAppJumpWrap *_weappJumpWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LinkWeAppJumpWrap *weappJumpWrap; // @synthesize weappJumpWrap=_weappJumpWrap;
 @property(nonatomic) unsigned long long jumpType; // @synthesize jumpType=_jumpType;
 @property(retain, nonatomic) UIColor *oHighlightedColor; // @synthesize oHighlightedColor=_oHighlightedColor;

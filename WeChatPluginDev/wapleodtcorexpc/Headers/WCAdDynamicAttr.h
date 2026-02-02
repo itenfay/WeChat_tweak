@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdBulletScreenInfo *adBulletScreenInfo; // @synthesize adBulletScreenInfo=_adBulletScreenInfo;
 @property(retain, nonatomic) WCAdDynamicFeedInfluentDataInfo *influentData; // @synthesize influentData=_influentData;
 @property(retain, nonatomic) WCAdCommonConfig *commonConfig; // @synthesize commonConfig=_commonConfig;

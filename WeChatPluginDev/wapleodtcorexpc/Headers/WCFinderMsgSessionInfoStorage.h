@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableOrderedSet, NSMutableSet, NSString, WCFinderMsgSessionInfo, WCFinderMsgSessionOwnerInfo, WCTableSessionStorage;
 
@@ -22,7 +23,6 @@
     NSMutableSet *_validMyAccountUsernames;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *validMyAccountUsernames; // @synthesize validMyAccountUsernames=_validMyAccountUsernames;
 @property(retain, nonatomic) WCFinderMsgSessionOwnerInfo *ownerInfo; // @synthesize ownerInfo=_ownerInfo;
 @property(nonatomic) _Bool needUpdateGreetMsgSession; // @synthesize needUpdateGreetMsgSession=_needUpdateGreetMsgSession;
@@ -77,4 +77,3 @@
 - (id)initWithNormalSessionType:(id)arg1 logName:(id)arg2 baseStorageDelagate:(id)arg3;
 
 @end
-

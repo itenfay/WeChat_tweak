@@ -15,7 +15,6 @@
     NSString *_manualSingerName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *manualSingerName; // @synthesize manualSingerName=_manualSingerName;
 @property(copy, nonatomic) NSString *manualSongName; // @synthesize manualSongName=_manualSongName;
 @property(copy, nonatomic) NSString *singerName; // @synthesize singerName=_singerName;

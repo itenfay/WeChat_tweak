@@ -15,7 +15,6 @@
     UIView<MFBanner> *_banner;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool editable; // @synthesize editable=_editable;
 @property(nonatomic) unsigned int index; // @synthesize index=_index;
 @property(retain, nonatomic) UIView<MFBanner> *banner; // @synthesize banner=_banner;

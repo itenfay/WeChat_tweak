@@ -26,7 +26,6 @@
     NSString *_formatVideoPath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDownloadSuccess; // @synthesize isDownloadSuccess=_isDownloadSuccess;
 @property(retain, nonatomic) NSString *formatVideoPath; // @synthesize formatVideoPath=_formatVideoPath;
 @property(retain, nonatomic) NSString *curDownloadTid; // @synthesize curDownloadTid=_curDownloadTid;

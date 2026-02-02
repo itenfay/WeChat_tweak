@@ -13,7 +13,6 @@
     BrandTemplateMsgContentViewController *_templateVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandTemplateMsgContentViewController *templateVC; // @synthesize templateVC=_templateVC;
 @property(retain, nonatomic) TemplateMsgSubLogicEnterParams *enterParams; // @synthesize enterParams=_enterParams;
 @property(retain, nonatomic) NSString *templateSessionId; // @synthesize templateSessionId=_templateSessionId;

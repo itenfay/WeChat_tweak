@@ -16,7 +16,6 @@
 + (double)collectionCellHeight;
 + (double)collectionCellWidth;
 + (double)collectionCellSpacing;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *anchorTaskImgView; // @synthesize anchorTaskImgView=_anchorTaskImgView;
 @property(retain, nonatomic) FinderLiveQuestActivity *activity; // @synthesize activity=_activity;
 - (void)onLoadImageOK:(id)arg1;

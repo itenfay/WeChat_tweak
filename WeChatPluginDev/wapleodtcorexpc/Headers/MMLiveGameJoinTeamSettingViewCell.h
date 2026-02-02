@@ -15,7 +15,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int joinTeamMode; // @synthesize joinTeamMode=_joinTeamMode;
 @property(retain, nonatomic) MMCPLabel *joinTeamModeNameLabel; // @synthesize joinTeamModeNameLabel=_joinTeamModeNameLabel;
 @property(retain, nonatomic) UILabel *coinValueLabel; // @synthesize coinValueLabel=_coinValueLabel;

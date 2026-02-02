@@ -15,7 +15,6 @@
 + (id)trimSingerNameWithDataItem:(id)arg1;
 + (id)musicTitleWithDataItem:(id)arg1;
 + (double)calculateHeightWithGroup:(id)arg1 groupItem:(id)arg2 width:(double)arg3 isFirstOneInsection:(_Bool)arg4 isLastOneInSection:(_Bool)arg5;
-- (void).cxx_destruct;
 - (id)customAccessibilityComponents;
 - (void)updateAccessibility;
 - (void)onClickToPlayMusic:(id)arg1 playState:(long long)arg2 clickedOnBtn:(_Bool)arg3;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MISSING_TYPE, UIColor, UIFont;
 
 @interface _TtC6WeChat17WCSearchTextField
@@ -15,7 +17,6 @@
     MISSING_TYPE *$__lazy_storage_$_rightGradientView;
 }
 
-- (void).cxx_destruct;
 - (void)onTextFieldEditingDidEnd:(id)arg1;
 - (void)onTextFieldEditingDidBegin:(id)arg1;
 - (void)onTextFieldChanged:(id)arg1;
@@ -29,4 +30,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

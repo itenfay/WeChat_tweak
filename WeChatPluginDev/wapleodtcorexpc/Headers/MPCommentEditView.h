@@ -49,7 +49,6 @@
     MMUIButton *_collapseBtn;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMultiReplySwitchOn; // @synthesize isMultiReplySwitchOn=_isMultiReplySwitchOn;
 @property(retain, nonatomic) MMUIButton *collapseBtn; // @synthesize collapseBtn=_collapseBtn;
 @property(retain, nonatomic) MMUIButton *expressionBtn; // @synthesize expressionBtn=_expressionBtn;

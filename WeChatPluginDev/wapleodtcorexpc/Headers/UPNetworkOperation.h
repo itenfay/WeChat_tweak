@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableData, NSURLConnection, NSURLResponse;
 
@@ -22,7 +23,6 @@
 @property(retain, nonatomic) NSMutableData *mutableData; // @synthesize mutableData=_mutableData;
 @property(retain, nonatomic) NSURLResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) NSURLConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -30,4 +30,3 @@
 - (void)setCompletionBlockWithSuccess:(CDUnknownBlockType)arg1 failure:(CDUnknownBlockType)arg2;
 
 @end
-

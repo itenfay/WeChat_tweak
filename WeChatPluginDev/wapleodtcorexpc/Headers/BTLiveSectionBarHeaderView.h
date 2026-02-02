@@ -16,7 +16,6 @@
     MMUILabel *_brandCountLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *brandCountLabel; // @synthesize brandCountLabel=_brandCountLabel;
 @property(retain, nonatomic) UIImageView *liveImageView; // @synthesize liveImageView=_liveImageView;
 @property(retain, nonatomic) UIView *arrowContainerView; // @synthesize arrowContainerView=_arrowContainerView;

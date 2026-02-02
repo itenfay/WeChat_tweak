@@ -25,7 +25,6 @@
     UIButton *_replayButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *replayButton; // @synthesize replayButton=_replayButton;
 @property(retain, nonatomic) MMUILabel *replayStatusTips; // @synthesize replayStatusTips=_replayStatusTips;
 @property(retain, nonatomic) MMUILabel *replayStatusTitle; // @synthesize replayStatusTitle=_replayStatusTitle;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSString;
 @protocol OS_dispatch_queue;
@@ -20,7 +21,6 @@
     NSObject<OS_dispatch_queue> *_buildingQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *buildingQueue; // @synthesize buildingQueue=_buildingQueue;
 @property(retain, nonatomic) NSMutableSet *blackSet; // @synthesize blackSet=_blackSet;
 @property(retain, nonatomic) NSMutableSet *whiteInfoSet; // @synthesize whiteInfoSet=_whiteInfoSet;
@@ -49,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol OS_dispatch_queue;
@@ -16,7 +17,6 @@
 }
 
 + (id)instance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *directory; // @synthesize directory=_directory;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) NSString *encryptKey; // @synthesize encryptKey=_encryptKey;
@@ -28,4 +28,3 @@
 - (id)init;
 
 @end
-

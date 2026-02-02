@@ -4,8 +4,8 @@
 //
 
 #import <UIKit/UICollectionViewLayout.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UICollectionViewLayout (MJExt)
 - (void)mj_enumerateItems:(CDUnknownBlockType)arg1;
 @end
-

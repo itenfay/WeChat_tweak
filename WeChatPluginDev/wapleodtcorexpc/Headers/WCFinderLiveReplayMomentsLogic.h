@@ -12,7 +12,6 @@
     NSArray *_greateTimeList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *greateTimeList; // @synthesize greateTimeList=_greateTimeList;
 
 @end

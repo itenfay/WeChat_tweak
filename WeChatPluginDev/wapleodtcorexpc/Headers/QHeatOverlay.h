@@ -20,7 +20,6 @@
     double _minIntensity;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useUserIntensity; // @synthesize useUserIntensity=_useUserIntensity;
 @property(nonatomic) double minIntensity; // @synthesize minIntensity=_minIntensity;
 @property(nonatomic) double maxIntensity; // @synthesize maxIntensity=_maxIntensity;

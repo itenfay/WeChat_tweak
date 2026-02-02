@@ -10,7 +10,6 @@
     FTSTalkerEntryInfo *_info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSTalkerEntryInfo *info; // @synthesize info=_info;
 - (long long)topNotSearchItemCount;
 - (unsigned long long)clickTypeForIndex:(long long)arg1;

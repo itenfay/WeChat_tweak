@@ -13,7 +13,6 @@
     _Bool _isRound;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRound; // @synthesize isRound=_isRound;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1;

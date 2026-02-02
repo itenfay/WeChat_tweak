@@ -13,7 +13,6 @@
     MMFinderLiveCouponItem *_coupon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveCouponItem *coupon; // @synthesize coupon=_coupon;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskID; // @synthesize taskID=_taskID;
 @property(readonly, nonatomic) _Bool needActionButton;

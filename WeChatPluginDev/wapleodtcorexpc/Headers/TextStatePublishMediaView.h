@@ -20,7 +20,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerPlayArgs *livePlayerInfo; // @synthesize livePlayerInfo=_livePlayerInfo;
 @property(retain, nonatomic) WCPlayerConfigControlView *controlView; // @synthesize controlView=_controlView;
 @property(retain, nonatomic) WCPlayerPlayArgs *playerInfo; // @synthesize playerInfo=_playerInfo;

@@ -12,7 +12,6 @@
     MMUIButton *_emailOperateButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showFullEmail; // @synthesize showFullEmail=_showFullEmail;
 @property(retain, nonatomic) MMUIButton *emailOperateButton; // @synthesize emailOperateButton=_emailOperateButton;
 @property(retain, nonatomic) MMUILabel *emailLabel; // @synthesize emailLabel=_emailLabel;

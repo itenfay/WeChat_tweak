@@ -20,7 +20,6 @@
 + (id)createWithParam:(id)arg1 openParam:(id)arg2 player:(id)arg3;
 + (id)extraPlugins;
 + (id)routeName;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *updatedSessionId; // @synthesize updatedSessionId=_updatedSessionId;
 @property(retain, nonatomic) UIView *pushAnimationChannelListSnapshot; // @synthesize pushAnimationChannelListSnapshot=_pushAnimationChannelListSnapshot;
 @property(retain, nonatomic) UIView *pushAnimationCardSnapshot; // @synthesize pushAnimationCardSnapshot=_pushAnimationCardSnapshot;

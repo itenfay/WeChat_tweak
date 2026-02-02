@@ -32,7 +32,6 @@
 + (void)MMLiveReportFieldAdd_audienceUin;
 + (void)MMLiveReportFieldAdd_liveId;
 + (void)MMLiveReportFieldAdd_roomId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int audienceCount; // @synthesize audienceCount;
 @property(retain, nonatomic) NSString *anchorusername; // @synthesize anchorusername;
 @property(retain, nonatomic) NSString *audienceUserName; // @synthesize audienceUserName;

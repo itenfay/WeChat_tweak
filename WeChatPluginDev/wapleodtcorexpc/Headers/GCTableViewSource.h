@@ -12,7 +12,6 @@
     NSMutableArray *_sectionModelArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sectionModelArray; // @synthesize sectionModelArray=_sectionModelArray;
 
 @end

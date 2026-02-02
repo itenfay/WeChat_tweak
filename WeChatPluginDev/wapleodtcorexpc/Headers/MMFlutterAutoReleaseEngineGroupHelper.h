@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFlutterEngineGroup;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _releaseCallback;
 }
 
-- (void).cxx_destruct;
 - (void)releaseEngineGroupRecreate:(_Bool)arg1;
 - (void)releaseEngineGroup;
 - (void)removeDelayReleaseEngineGroup;
@@ -24,4 +24,3 @@
 - (id)initWithEngineGroup:(id)arg1 autoReleaseInterval:(long long)arg2 releaseEngineGroup:(_Bool)arg3 recreateEngineGroup:(_Bool)arg4 releaseCallback:(CDUnknownBlockType)arg5;
 
 @end
-

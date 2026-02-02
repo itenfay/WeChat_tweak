@@ -19,7 +19,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

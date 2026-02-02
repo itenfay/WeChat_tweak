@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_searchID;
 + (void)PBArrayAdd_json;
 + (void)PBArrayAdd_expiredTime;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPreloadData; // @synthesize isPreloadData=_isPreloadData;
 @property(retain, nonatomic) NSString *searchID; // @synthesize searchID=_searchID;
 @property(retain, nonatomic) NSString *json; // @synthesize json=_json;

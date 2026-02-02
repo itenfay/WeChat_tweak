@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderComment;
 
 @interface WCFinderCommentTopCGI
@@ -15,7 +17,6 @@
     NSString *_tid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
 @property(copy, nonatomic) NSString *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
@@ -28,4 +29,3 @@
 - (id)initWithComment:(id)arg1 tid:(id)arg2 userName:(id)arg3 scene:(unsigned long long)arg4 commentScene:(int)arg5 sessionBuffer:(id)arg6 successBlock:(CDUnknownBlockType)arg7 failBlock:(CDUnknownBlockType)arg8;
 
 @end
-

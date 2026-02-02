@@ -14,7 +14,6 @@
     NSString *_dq;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dq; // @synthesize dq=_dq;
 @property(retain, nonatomic) NSString *p; // @synthesize p=_p;
 @property(retain, nonatomic) NSArray *sec; // @synthesize sec=_sec;

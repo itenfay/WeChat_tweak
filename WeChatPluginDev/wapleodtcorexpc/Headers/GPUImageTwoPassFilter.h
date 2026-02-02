@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GLProgram, GPUImageFramebuffer, NSMutableDictionary;
 
 @interface GPUImageTwoPassFilter
@@ -16,7 +18,6 @@
     NSMutableDictionary *secondProgramUniformStateRestorationBlocks;
 }
 
-- (void).cxx_destruct;
 - (void)setUniformsForProgramAtIndex:(unsigned long long)arg1;
 - (void)setAndExecuteUniformStateCallbackAtIndex:(int)arg1 forProgram:(id)arg2 toBlock:(CDUnknownBlockType)arg3;
 - (void)destroyFrameBuffer;
@@ -29,4 +30,3 @@
 - (id)initWithFirstStageVertexShaderFromString:(id)arg1 firstStageFragmentShaderFromString:(id)arg2 secondStageVertexShaderFromString:(id)arg3 secondStageFragmentShaderFromString:(id)arg4;
 
 @end
-

@@ -28,7 +28,6 @@
     NSMutableArray *_m_richLabelArray;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSMutableArray *m_richLabelArray; // @synthesize m_richLabelArray=_m_richLabelArray;
 @property(retain) RouteInfo *m_confirmRoute; // @synthesize m_confirmRoute=_m_confirmRoute;
 @property(retain) UIButton *m_confirmButton; // @synthesize m_confirmButton=_m_confirmButton;

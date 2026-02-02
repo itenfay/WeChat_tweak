@@ -12,7 +12,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMProgressViewEx *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) WCPanoramaImageView *panoramaImageView; // @synthesize panoramaImageView=_panoramaImageView;
 - (void)ImageDidLoadWithData:(id)arg1 Url:(id)arg2;

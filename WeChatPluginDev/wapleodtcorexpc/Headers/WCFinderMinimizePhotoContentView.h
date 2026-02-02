@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIView, WCFinderBGMPlayer;
 
 @interface WCFinderMinimizePhotoContentView
@@ -16,7 +18,6 @@
     struct CGSize _originSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needResetSeek; // @synthesize needResetSeek=_needResetSeek;
 @property(retain, nonatomic) UIView *currentView; // @synthesize currentView=_currentView;
 @property(nonatomic) long long currentIdx; // @synthesize currentIdx=_currentIdx;
@@ -46,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

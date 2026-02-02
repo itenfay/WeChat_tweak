@@ -13,7 +13,6 @@
     MagicSclFrameSetView *_frameSetView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MagicSclFrameSetView *frameSetView; // @synthesize frameSetView=_frameSetView;
 @property(retain, nonatomic) NSString *dynamicCardRootId; // @synthesize dynamicCardRootId=_dynamicCardRootId;
 @property(retain, nonatomic) GameDynamicBubbleContent *gamePlayTogetherDynamicContent; // @synthesize gamePlayTogetherDynamicContent=_gamePlayTogetherDynamicContent;

@@ -14,7 +14,6 @@
     double m_cacheWidth;
 }
 
-- (void).cxx_destruct;
 - (id)getFavForawrdViewController;
 - (void)onWeAppMPShortLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

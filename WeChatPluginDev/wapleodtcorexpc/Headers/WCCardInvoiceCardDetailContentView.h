@@ -14,7 +14,6 @@
     WCShareCardInvoiceHeaderView *_invoiceCardHeaderView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCShareCardInvoiceHeaderView *invoiceCardHeaderView; // @synthesize invoiceCardHeaderView=_invoiceCardHeaderView;
 @property(nonatomic) _Bool bIsShareCardMode; // @synthesize bIsShareCardMode=_bIsShareCardMode;
 @property(nonatomic) __weak id <WCCardInvoiceCardContentViewDelegate> delegte; // @synthesize delegte=_delegte;

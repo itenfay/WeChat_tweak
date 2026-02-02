@@ -15,7 +15,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *ParameterCurveControlPoints; // @synthesize ParameterCurveControlPoints=_ParameterCurveControlPoints;
 @property(copy, nonatomic) NSString *ParameterID; // @synthesize ParameterID=_ParameterID;
 @property(nonatomic) double Time; // @synthesize Time=_Time;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface BrandFlowListUtil : NSObject
 {
@@ -23,4 +24,3 @@
 + (void)preloadArticleDataIfNeededWithUrls:(id)arg1;
 
 @end
-

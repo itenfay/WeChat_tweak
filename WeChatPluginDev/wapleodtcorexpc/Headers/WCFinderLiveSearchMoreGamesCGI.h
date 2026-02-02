@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderLiveSearchMoreGamesCGI
@@ -13,7 +15,6 @@
     NSString *_nextOffset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nextOffset; // @synthesize nextOffset=_nextOffset;
 @property(retain, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
@@ -25,4 +26,3 @@
 - (id)initWithSearchText:(id)arg1 nextOffset:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failBlock:(CDUnknownBlockType)arg4;
 
 @end
-

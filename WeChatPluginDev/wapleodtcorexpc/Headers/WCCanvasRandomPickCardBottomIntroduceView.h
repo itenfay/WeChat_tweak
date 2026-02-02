@@ -17,7 +17,6 @@
 
 + (struct CGSize)calcLabelSizeWithFont:(id)arg1 text:(id)arg2;
 + (struct CGSize)calcIntroduceViewSizeWithEncoreInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *suffixLabel; // @synthesize suffixLabel=_suffixLabel;
 @property(retain, nonatomic) UILabel *countLabel; // @synthesize countLabel=_countLabel;
 @property(retain, nonatomic) UILabel *prefixLabel; // @synthesize prefixLabel=_prefixLabel;

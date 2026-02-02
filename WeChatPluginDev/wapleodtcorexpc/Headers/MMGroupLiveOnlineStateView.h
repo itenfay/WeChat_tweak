@@ -13,7 +13,6 @@
     RichTextView *_noUserLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *noUserLabel; // @synthesize noUserLabel=_noUserLabel;
 @property(retain, nonatomic) NSMutableArray *userList; // @synthesize userList=_userList;
 @property(retain, nonatomic) UICollectionView *onlineUsersCollectionView; // @synthesize onlineUsersCollectionView=_onlineUsersCollectionView;

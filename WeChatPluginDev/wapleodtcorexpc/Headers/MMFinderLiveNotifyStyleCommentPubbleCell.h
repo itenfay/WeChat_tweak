@@ -11,7 +11,6 @@
     NSString *_selfAccessibilityStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *selfAccessibilityStr; // @synthesize selfAccessibilityStr=_selfAccessibilityStr;
 @property(retain, nonatomic) RichTextView *nickLabel; // @synthesize nickLabel=_nickLabel;
 - (void)updateSelfAccessibility;

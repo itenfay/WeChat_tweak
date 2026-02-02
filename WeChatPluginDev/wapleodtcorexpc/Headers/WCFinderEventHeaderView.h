@@ -37,7 +37,6 @@
 + (id)getDescriptionWithEventInfo:(id)arg1;
 + (struct CGSize)joinButtonSizeWithEventInfo:(id)arg1;
 + (double)heightWithEventInfo:(id)arg1 andViewWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderEventMiniTaskView *miniTaskContainer; // @synthesize miniTaskContainer=_miniTaskContainer;
 @property(retain, nonatomic) MMUIButton *joinButton; // @synthesize joinButton=_joinButton;
 @property(retain, nonatomic) UILabel *memberNumTipsLabel; // @synthesize memberNumTipsLabel=_memberNumTipsLabel;

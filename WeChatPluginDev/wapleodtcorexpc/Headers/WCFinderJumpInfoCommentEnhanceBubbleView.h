@@ -20,7 +20,6 @@
     UILabel *_linkLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *linkLabel; // @synthesize linkLabel=_linkLabel;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;

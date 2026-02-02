@@ -54,7 +54,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ext; // @synthesize ext=_ext;
 @property(retain, nonatomic) NSString *sessionKey; // @synthesize sessionKey=_sessionKey;
 @property(nonatomic) unsigned int invalid; // @synthesize invalid=_invalid;

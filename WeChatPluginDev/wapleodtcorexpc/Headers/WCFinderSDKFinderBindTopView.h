@@ -22,7 +22,6 @@
     MMUILabel *_detailLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) MMUILabel *scopeLabel; // @synthesize scopeLabel=_scopeLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

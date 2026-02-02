@@ -13,7 +13,6 @@
     UIView *_hightLightMaskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *hightLightMaskView; // @synthesize hightLightMaskView=_hightLightMaskView;
 @property(retain, nonatomic) UILabel *centerLabel; // @synthesize centerLabel=_centerLabel;
 @property(retain, nonatomic) UIImageView *rightImageView; // @synthesize rightImageView=_rightImageView;

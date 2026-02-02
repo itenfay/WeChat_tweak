@@ -12,7 +12,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_subCardInfos;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *subCardInfos; // @synthesize subCardInfos=_subCardInfos;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

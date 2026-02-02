@@ -14,7 +14,6 @@
     NSNumber<QTCOptional> *_intensity;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber<QTCOptional> *intensity; // @synthesize intensity=_intensity;
 @property(retain, nonatomic) QGPVector3<QTCOptional> *direction; // @synthesize direction=_direction;
 @property(retain, nonatomic) QGPColor<QTCOptional> *color; // @synthesize color=_color;

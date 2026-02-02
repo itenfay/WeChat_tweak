@@ -39,7 +39,6 @@
 + (id)titleFont;
 + (id)identifier;
 + (_Bool)allowMoreLines;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGoodsPromotionReplayFloatView *replayFloatView; // @synthesize replayFloatView=_replayFloatView;
 @property(retain, nonatomic) MMFinderLiveGoodsSKUSelectView *skuSelectView; // @synthesize skuSelectView=_skuSelectView;
 @property(retain, nonatomic) MMFinderLiveMultiPriceView *priceView; // @synthesize priceView=_priceView;

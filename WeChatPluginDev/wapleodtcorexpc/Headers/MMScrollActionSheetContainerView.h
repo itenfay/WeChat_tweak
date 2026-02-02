@@ -19,7 +19,6 @@
     id <MMScrollActionSheetContainerViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMScrollActionSheetContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIButton *voiceoverExitButton; // @synthesize voiceoverExitButton=_voiceoverExitButton;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;

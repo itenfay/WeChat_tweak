@@ -10,7 +10,6 @@
     WCAccountBindPhoneControlLogic *_logic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAccountBindPhoneControlLogic *logic; // @synthesize logic=_logic;
 - (void)onWCAccountBindPhoneControlLogicCheckOK:(id)arg1;
 - (void)onWCAccountBindPhoneControlLogicStop:(id)arg1;

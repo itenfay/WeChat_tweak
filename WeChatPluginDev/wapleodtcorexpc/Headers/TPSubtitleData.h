@@ -15,7 +15,6 @@
     long long _trackIndex;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long trackIndex; // @synthesize trackIndex=_trackIndex;
 @property(readonly, nonatomic) long long startPositionMs; // @synthesize startPositionMs=_startPositionMs;
 @property(readonly, nonatomic) long long durationMs; // @synthesize durationMs=_durationMs;

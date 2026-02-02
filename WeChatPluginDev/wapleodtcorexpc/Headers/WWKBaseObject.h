@@ -15,7 +15,6 @@
 }
 
 + (id)deserializeWithData:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sequence; // @synthesize sequence=_sequence;
 @property(copy, nonatomic) NSString *bundleName; // @synthesize bundleName=_bundleName;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;

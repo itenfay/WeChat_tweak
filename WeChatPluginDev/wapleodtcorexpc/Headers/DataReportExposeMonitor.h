@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class DataReportViewExposeVisiableTools, NSArray, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSNumber, NSString, UIViewController;
 
 @interface DataReportExposeMonitor
@@ -33,7 +35,6 @@
     NSMutableArray *m_removeViewControllers;
 }
 
-- (void).cxx_destruct;
 - (void)removeFirstViewId:(id)arg1;
 - (void)clearViewId:(id)arg1;
 - (void)statCountOfViewId:(id)arg1;
@@ -104,4 +105,3 @@
 @property(readonly) Class superclass;
 
 @end
-

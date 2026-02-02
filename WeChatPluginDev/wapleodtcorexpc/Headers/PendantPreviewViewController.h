@@ -20,7 +20,6 @@
     PreviewBottomButton *_sceneButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PreviewBottomButton *sceneButton; // @synthesize sceneButton=_sceneButton;
 @property(retain, nonatomic) PreviewBottomButton *cameraButton; // @synthesize cameraButton=_cameraButton;
 @property(nonatomic) _Bool isInterrupt; // @synthesize isInterrupt=_isInterrupt;

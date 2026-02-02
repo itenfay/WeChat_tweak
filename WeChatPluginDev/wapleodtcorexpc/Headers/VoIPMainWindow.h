@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIImageView;
 @protocol VoIPMainWindowDelegate;
 
@@ -17,7 +19,6 @@
     unsigned long long _animateStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_hasStartQuitAnimation; // @synthesize m_hasStartQuitAnimation=_m_hasStartQuitAnimation;
 @property(nonatomic) _Bool shouldIgnoreExtendFromCollapseFirstStepAnimation; // @synthesize shouldIgnoreExtendFromCollapseFirstStepAnimation=_shouldIgnoreExtendFromCollapseFirstStepAnimation;
 @property(nonatomic) unsigned long long animateStatus; // @synthesize animateStatus=_animateStatus;
@@ -66,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

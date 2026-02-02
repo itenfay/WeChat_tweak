@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LOTAnimationView, MMFinderLiveLotteryPacketDisplayLogic, MMTimerLabel, NSDateComponentsFormatter, UIImageView;
 
@@ -25,7 +26,6 @@
     MMFinderLiveLotteryPacketDisplayLogic *_logic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveLotteryPacketDisplayLogic *logic; // @synthesize logic=_logic;
 @property(nonatomic) _Bool isStaticStyle; // @synthesize isStaticStyle=_isStaticStyle;
 @property(nonatomic) double tipLabelHeightForStaticStyle; // @synthesize tipLabelHeightForStaticStyle=_tipLabelHeightForStaticStyle;
@@ -66,4 +66,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, UIView;
 
 @interface MMLiveHiddenAudienceNameTipsView
@@ -14,7 +16,6 @@
     MMUIButton *_okButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *okButton; // @synthesize okButton=_okButton;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -26,4 +27,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

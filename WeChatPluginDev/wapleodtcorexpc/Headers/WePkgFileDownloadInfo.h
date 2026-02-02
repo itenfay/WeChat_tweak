@@ -20,7 +20,6 @@
     unsigned long long _downloadDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long downloadDuration; // @synthesize downloadDuration=_downloadDuration;
 @property(nonatomic) _Bool isPatchFile; // @synthesize isPatchFile=_isPatchFile;
 @property(nonatomic) _Bool isAtomicPart; // @synthesize isAtomicPart=_isAtomicPart;

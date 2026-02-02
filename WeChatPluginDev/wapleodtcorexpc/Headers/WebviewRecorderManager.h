@@ -17,7 +17,6 @@
     long long _recordTimeoutValue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastFilePath; // @synthesize lastFilePath=_lastFilePath;
 - (void)OnFavFinishRecord:(id)arg1 VoiceFmt:(unsigned int)arg2;
 - (void)OnFavBeginRecording:(int)arg1;

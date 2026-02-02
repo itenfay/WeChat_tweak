@@ -24,7 +24,6 @@
     WCAdFullCardContentContainerView *_contentContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdFullCardContentContainerView *contentContainerView; // @synthesize contentContainerView=_contentContainerView;
 @property(retain, nonatomic) WCAdInteractionCoverView *interactionCoverView; // @synthesize interactionCoverView=_interactionCoverView;
 @property(retain, nonatomic) WCAdInteractionView *twistView; // @synthesize twistView=_twistView;

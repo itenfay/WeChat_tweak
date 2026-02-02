@@ -16,7 +16,6 @@
     UIView *_sepelateLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sepelateLine; // @synthesize sepelateLine=_sepelateLine;
 @property(copy, nonatomic) NSMutableArray *itemHeightArray; // @synthesize itemHeightArray=_itemHeightArray;
 @property(copy, nonatomic) NSMutableArray *itemArray; // @synthesize itemArray=_itemArray;

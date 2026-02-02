@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveResourceFetcherFanoutFlowAction, MMUIButton, NSArray, NSMutableArray, NSString, WCElasticLayoutView;
 @protocol MMSightCameraFilterOptionDelegate;
@@ -21,7 +22,6 @@
     struct CGRect _containerFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveResourceFetcherFanoutFlowAction *resourceFetcher; // @synthesize resourceFetcher=_resourceFetcher;
 @property(nonatomic) long long currentOrientation; // @synthesize currentOrientation=_currentOrientation;
 @property(nonatomic) long long currentSelectIndex; // @synthesize currentSelectIndex=_currentSelectIndex;
@@ -53,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -11,7 +11,6 @@
     id <MagicBrushCVPixelBufferRTDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MagicBrushCVPixelBufferRTDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onFrameAvailable:(struct __CVBuffer *)arg1;
 - (id)initForCanvas:(int)arg1 delegate:(id)arg2 inRuntime:(id)arg3;

@@ -17,7 +17,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) MMUILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

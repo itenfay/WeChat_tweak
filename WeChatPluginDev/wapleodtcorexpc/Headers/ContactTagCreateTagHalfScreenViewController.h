@@ -22,7 +22,6 @@
     id <ContactTagCreateTagHalfScreenViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ContactTagCreateTagHalfScreenViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) NSString *targetTagName; // @synthesize targetTagName=_targetTagName;
 @property(retain, nonatomic) NSString *oldTagName; // @synthesize oldTagName=_oldTagName;

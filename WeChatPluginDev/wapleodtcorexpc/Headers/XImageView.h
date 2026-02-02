@@ -19,7 +19,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableOpaqueRender; // @synthesize disableOpaqueRender=_disableOpaqueRender;
 @property(nonatomic) unsigned long long videoContentMode; // @synthesize videoContentMode=_videoContentMode;
 @property(retain, nonatomic) XImageMetalView *metalView; // @synthesize metalView=_metalView;

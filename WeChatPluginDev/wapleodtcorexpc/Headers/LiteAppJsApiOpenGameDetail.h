@@ -10,7 +10,6 @@
     GameCgiGetInfoAndJump *_launchGame;
 }
 
-- (void).cxx_destruct;
 - (void)invokeJsApi:(id)arg1 param:(id)arg2 isFromView:(_Bool)arg3;
 
 @end

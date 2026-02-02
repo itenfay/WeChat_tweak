@@ -30,7 +30,6 @@
 + (id)freezeRateOfRecords:(id)arg1;
 + (id)smoothRateOfRecords:(id)arg1;
 + (id)scoresOfRecords:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) float freezeRate; // @synthesize freezeRate=_freezeRate;
 @property(nonatomic) float smoothRate; // @synthesize smoothRate=_smoothRate;
 @property(nonatomic) int miss5OrMoreFrameCount; // @synthesize miss5OrMoreFrameCount=_miss5OrMoreFrameCount;

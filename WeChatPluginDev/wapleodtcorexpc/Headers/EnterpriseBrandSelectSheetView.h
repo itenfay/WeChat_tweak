@@ -25,7 +25,6 @@
     id <EnterpriseBrandSelectSheetViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EnterpriseBrandSelectSheetViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)onIconClicked:(id)arg1;

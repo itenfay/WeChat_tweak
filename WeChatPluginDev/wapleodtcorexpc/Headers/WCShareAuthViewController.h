@@ -29,7 +29,6 @@
     OpenApiParameter *_openParam;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenApiParameter *openParam; // @synthesize openParam=_openParam;
 @property(retain, nonatomic) UIButton *backBtn; // @synthesize backBtn=_backBtn;
 @property(retain, nonatomic) MMUILabel *detailLabel; // @synthesize detailLabel=_detailLabel;

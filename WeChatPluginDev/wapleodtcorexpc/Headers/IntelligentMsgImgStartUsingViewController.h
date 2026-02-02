@@ -26,7 +26,6 @@
     NSString *_m_nsChatName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isDarkMode; // @synthesize m_isDarkMode=_m_isDarkMode;
 @property(retain, nonatomic) NSString *m_nsChatName; // @synthesize m_nsChatName=_m_nsChatName;
 @property(retain, nonatomic) NSString *m_sessionId; // @synthesize m_sessionId=_m_sessionId;

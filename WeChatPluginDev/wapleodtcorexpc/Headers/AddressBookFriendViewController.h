@@ -23,7 +23,6 @@
     WCSearcher *_searcher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSearcher *searcher; // @synthesize searcher=_searcher;
 @property(retain, nonatomic) ContactInfoViewController *m_CurrentFriendItemView; // @synthesize m_CurrentFriendItemView;
 @property(retain, nonatomic) AddressBookFriend *m_oCurrentFriendWrap; // @synthesize m_oCurrentFriendWrap;

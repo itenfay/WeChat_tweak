@@ -29,7 +29,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long date; // @synthesize date=_date;
 @property(copy, nonatomic) NSString *shareItemXML; // @synthesize shareItemXML=_shareItemXML;
 @property(copy, nonatomic) NSString *commodityInStockCount; // @synthesize commodityInStockCount=_commodityInStockCount;

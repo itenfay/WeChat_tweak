@@ -23,7 +23,6 @@
 + (double)heightOfSingleAuthorView;
 + (id)getFriendDataStringByFriendData:(id)arg1;
 + (id)buildFriendDescLabel:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomSeparateLine; // @synthesize bottomSeparateLine=_bottomSeparateLine;
 @property(retain, nonatomic) UIView *topSeparateLine; // @synthesize topSeparateLine=_topSeparateLine;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;

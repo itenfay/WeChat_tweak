@@ -30,7 +30,6 @@
     struct CGRect _simulatedNativeAnimationScreenRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInForceDismissAndPresentAnimationOnce; // @synthesize isInForceDismissAndPresentAnimationOnce=_isInForceDismissAndPresentAnimationOnce;
 @property(retain, nonatomic) WASheetPresentationController *sheetPresentationController; // @synthesize sheetPresentationController=_sheetPresentationController;
 @property(nonatomic) unsigned int miniPinedGestureType; // @synthesize miniPinedGestureType=_miniPinedGestureType;

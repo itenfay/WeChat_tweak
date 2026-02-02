@@ -34,7 +34,6 @@
     long long m_lastDumpTimestamp;
 }
 
-- (void).cxx_destruct;
 - (id)onMemoryStatPluginGetCustomInfo:(id)arg1;
 - (void)onMemoryStatPlugin:(id)arg1 hasError:(int)arg2;
 - (unsigned int)currUin;

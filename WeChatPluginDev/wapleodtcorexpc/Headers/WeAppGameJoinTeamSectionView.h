@@ -13,7 +13,6 @@
     MMUIImageView *_rightIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIImageView *rightIconView; // @synthesize rightIconView=_rightIconView;
 @property(retain, nonatomic) MMUILabel *conditionLable; // @synthesize conditionLable=_conditionLable;
 @property(retain, nonatomic) MMUILabel *wordingLable; // @synthesize wordingLable=_wordingLable;

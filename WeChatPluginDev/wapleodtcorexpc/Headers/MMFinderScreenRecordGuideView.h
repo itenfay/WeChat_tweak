@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, UIButton, UIImageView, UIView;
 
 @interface MMFinderScreenRecordGuideView
@@ -19,7 +21,6 @@
     unsigned long long _actionType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMUIButton *detailButton; // @synthesize detailButton=_detailButton;
@@ -43,4 +44,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

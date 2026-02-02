@@ -20,7 +20,6 @@
 + (double)cellHeightWithConfig:(id)arg1;
 + (id)stringWithCustomLink:(id)arg1 searchString:(id)arg2;
 + (double)textAreaMaxWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) RichTextView *dividerTextView; // @synthesize dividerTextView=_dividerTextView;

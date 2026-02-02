@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView, ZZMultiButtonChainModel;
 
 @interface MMMultiButton
@@ -13,7 +15,6 @@
 }
 
 + (CDUnknownBlockType)zz_create;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *touchDownView; // @synthesize touchDownView=_touchDownView;
 @property(retain, nonatomic) UIView *normalView; // @synthesize normalView=_normalView;
 @property(nonatomic) long long multiButtonState; // @synthesize multiButtonState=_multiButtonState;
@@ -25,4 +26,3 @@
 @property(readonly, copy, nonatomic) ZZMultiButtonChainModel *zz_setup;
 
 @end
-

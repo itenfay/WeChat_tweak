@@ -35,7 +35,6 @@
     TextStatePrivacyMgr *_shareScopeMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStatePrivacyMgr *shareScopeMgr; // @synthesize shareScopeMgr=_shareScopeMgr;
 @property(retain, nonatomic) TextStateProfileDragAnimateHelper *textStateAnimationUtil; // @synthesize textStateAnimationUtil=_textStateAnimationUtil;
 @property(nonatomic) double textStateDetailFittingHeight; // @synthesize textStateDetailFittingHeight=_textStateDetailFittingHeight;

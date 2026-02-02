@@ -11,7 +11,6 @@
     CAGradientLayer *_maskLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(retain, nonatomic) BTFinderRecommendRedPacketView *redPacketView; // @synthesize redPacketView=_redPacketView;
 - (void)layoutCoverContainerView:(id)arg1;

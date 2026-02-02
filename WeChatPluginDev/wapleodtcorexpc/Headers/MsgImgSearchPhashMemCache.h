@@ -11,7 +11,6 @@
     NSMutableDictionary *_localID2MemItemMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *localID2MemItemMap; // @synthesize localID2MemItemMap=_localID2MemItemMap;
 @property(retain, nonatomic) NSMutableSet *isGetingPhashStrSet; // @synthesize isGetingPhashStrSet=_isGetingPhashStrSet;
 - (id)getPhashStrForLocalID:(unsigned long long)arg1;

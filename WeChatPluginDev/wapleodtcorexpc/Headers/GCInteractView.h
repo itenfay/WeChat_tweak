@@ -28,7 +28,6 @@
     UILabel *_markLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *markLabel; // @synthesize markLabel=_markLabel;
 @property(retain, nonatomic) UILabel *wechatNickLabel; // @synthesize wechatNickLabel=_wechatNickLabel;
 @property(retain, nonatomic) RichTextView *quotoRichTextView; // @synthesize quotoRichTextView=_quotoRichTextView;

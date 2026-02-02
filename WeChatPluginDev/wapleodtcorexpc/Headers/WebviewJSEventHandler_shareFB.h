@@ -11,7 +11,6 @@
     NSDictionary *m_eventParamsDic;
 }
 
-- (void).cxx_destruct;
 - (id)getViewController;
 - (void)OnFacebookBinded;
 - (void)onBindFacebook;

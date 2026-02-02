@@ -19,7 +19,6 @@
     struct CGSize _cacheSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) UIView *topLine; // @synthesize topLine=_topLine;
 @property(nonatomic) struct CGSize cacheSize; // @synthesize cacheSize=_cacheSize;

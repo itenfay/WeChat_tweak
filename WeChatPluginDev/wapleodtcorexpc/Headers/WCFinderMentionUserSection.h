@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString;
 
@@ -19,7 +20,6 @@
     CDUnknownBlockType _fetchNext;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fetchNext; // @synthesize fetchNext=_fetchNext;
 @property(nonatomic) _Bool isFold; // @synthesize isFold=_isFold;
 @property(nonatomic) _Bool hasMore; // @synthesize hasMore=_hasMore;
@@ -31,4 +31,3 @@
 - (id)init;
 
 @end
-

@@ -25,7 +25,6 @@
 + (id)LoadDataFromPathEx:(id)arg1 Offset:(unsigned long long)arg2 MaxLen:(unsigned long long)arg3;
 + (long long)GetFileSize:(id)arg1;
 + (_Bool)FileExist:(id)arg1;
-- (void).cxx_destruct;
 - (_Bool)WriteLargeData:(id)arg1;
 - (_Bool)WriteData:(id)arg1;
 - (unsigned long long)SeekToEndOfFile;

@@ -11,7 +11,6 @@
     UIView *_m_tipsMaskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *m_tipsMaskView; // @synthesize m_tipsMaskView=_m_tipsMaskView;
 @property(nonatomic) _Bool isAudioMode; // @synthesize isAudioMode=_isAudioMode;
 - (void)reset;

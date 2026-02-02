@@ -12,7 +12,6 @@
     NSMutableSet *_downloadCdnFailSvrId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *downloadCdnFailSvrId; // @synthesize downloadCdnFailSvrId=_downloadCdnFailSvrId;
 @property(retain, nonatomic) DownloadVoiceCDNMgr *cdnDownloader; // @synthesize cdnDownloader=_cdnDownloader;
 @property(retain, nonatomic) CDownloadVoiceMgr *cgiDownloader; // @synthesize cgiDownloader=_cgiDownloader;

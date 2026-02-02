@@ -17,7 +17,6 @@
     NSObject *_dataObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *dataObj; // @synthesize dataObj=_dataObj;
 @property(nonatomic) long long batchIndex; // @synthesize batchIndex=_batchIndex;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;

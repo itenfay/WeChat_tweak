@@ -23,7 +23,6 @@
     NSString *_nonceId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nonceId; // @synthesize nonceId=_nonceId;
 @property(nonatomic) unsigned long long mvId; // @synthesize mvId=_mvId;
 @property(retain, nonatomic) NSString *mvPostNickname; // @synthesize mvPostNickname=_mvPostNickname;

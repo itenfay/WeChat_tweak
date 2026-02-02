@@ -16,7 +16,6 @@
 
 + (void)doReportWithDataItem:(id)arg1 presentingVC:(id)arg2 didClickModifyShareScope:(_Bool)arg3;
 + (void)doReportWithDataItem:(id)arg1 exposureScene:(unsigned long long)arg2 didClickModifyShareScope:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didClickModifyShareScope; // @synthesize didClickModifyShareScope=_didClickModifyShareScope;
 @property(nonatomic) unsigned long long exposureScene; // @synthesize exposureScene=_exposureScene;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;

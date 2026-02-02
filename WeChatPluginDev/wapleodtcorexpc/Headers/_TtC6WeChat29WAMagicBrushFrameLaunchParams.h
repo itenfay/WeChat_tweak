@@ -11,7 +11,6 @@
     MISSING_TYPE *host;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, copy) NSString *host;
 @property(nonatomic) unsigned int bizType; // @synthesize bizType;

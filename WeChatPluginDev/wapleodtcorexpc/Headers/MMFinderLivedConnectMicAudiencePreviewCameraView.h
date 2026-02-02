@@ -16,7 +16,6 @@
     struct CGRect _clearArea;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *passivePreviewView; // @synthesize passivePreviewView=_passivePreviewView;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(nonatomic) struct CGRect clearArea; // @synthesize clearArea=_clearArea;

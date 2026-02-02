@@ -16,7 +16,6 @@
 }
 
 + (id)convertFromGainsInfoList:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long paidTime; // @synthesize paidTime=_paidTime;
 @property(nonatomic) unsigned int paidAmountInWecoin; // @synthesize paidAmountInWecoin=_paidAmountInWecoin;
 @property(retain, nonatomic) WCFinderContact *refContact; // @synthesize refContact=_refContact;

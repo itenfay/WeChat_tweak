@@ -14,7 +14,6 @@
     NSString *_m_userName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_userName; // @synthesize m_userName=_m_userName;
 @property(retain, nonatomic) NSString *m_commextrainfo; // @synthesize m_commextrainfo=_m_commextrainfo;
 @property(retain, nonatomic) NSMutableDictionary *m_fileInfos; // @synthesize m_fileInfos=_m_fileInfos;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, RichTextView, UIImageView, UILabel, UIView;
 
 @interface WCFinderMJSetBriefCardView
@@ -16,7 +18,6 @@
 
 + (double)height;
 + (id)buildTitleTextView:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
 @property(retain, nonatomic) RichTextView *titleTextView; // @synthesize titleTextView=_titleTextView;
@@ -30,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

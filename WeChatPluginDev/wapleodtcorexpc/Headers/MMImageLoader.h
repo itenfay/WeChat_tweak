@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSRecursiveLock, NSString;
 
 @interface MMImageLoader
@@ -15,7 +17,6 @@
 + (id)DeprecatedCacheBaseDirectory;
 + (unsigned long long)preCleanGetCacheSize;
 + (unsigned long long)cleanCacheMgrMakeToClean;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSRecursiveLock *lockRequest; // @synthesize lockRequest=_lockRequest;
 - (void)saveImage:(id)arg1 imageData:(id)arg2;
 - (void)removeCacheForURL:(id)arg1;
@@ -55,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

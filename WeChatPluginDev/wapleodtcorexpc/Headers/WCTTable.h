@@ -15,7 +15,6 @@
 }
 
 + (void)swizzleCRUDMethod;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) Class tableClass; // @synthesize tableClass=_tableClass;
 @property(readonly, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 - (id)error;

@@ -15,7 +15,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *wording; // @synthesize wording=_wording;
 @property(copy, nonatomic) NSString *recommendReason; // @synthesize recommendReason=_recommendReason;
 @property(copy, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;

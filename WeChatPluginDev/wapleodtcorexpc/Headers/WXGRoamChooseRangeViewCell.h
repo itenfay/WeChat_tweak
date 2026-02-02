@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel, UIView;
 
@@ -29,7 +30,6 @@
     unsigned long long _cellIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cellIndex; // @synthesize cellIndex=_cellIndex;
 @property(nonatomic) double cellWidth; // @synthesize cellWidth=_cellWidth;
 @property(nonatomic) double cellHeight; // @synthesize cellHeight=_cellHeight;
@@ -57,4 +57,3 @@
 - (void)setWidth:(double)arg1;
 
 @end
-

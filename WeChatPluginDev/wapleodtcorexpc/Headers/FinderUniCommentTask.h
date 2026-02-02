@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderUniCommentRequest, NSMutableArray, NSString, WCFinderComment;
 
@@ -18,7 +19,6 @@
     unsigned long long _uploadFinishCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long uploadFinishCount; // @synthesize uploadFinishCount=_uploadFinishCount;
 @property(nonatomic) unsigned long long processFinishCount; // @synthesize processFinishCount=_processFinishCount;
 @property(retain, nonatomic) FinderUniCommentRequest *resultRequest; // @synthesize resultRequest=_resultRequest;
@@ -42,4 +42,3 @@
 - (id)initWithComment:(id)arg1 localDirectory:(id)arg2;
 
 @end
-

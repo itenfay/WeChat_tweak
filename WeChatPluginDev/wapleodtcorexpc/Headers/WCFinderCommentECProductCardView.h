@@ -18,7 +18,6 @@
 + (double)imageToShopView;
 + (struct CGSize)imageSize;
 + (struct UIEdgeInsets)padding;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMECSimpleShopView *shopView; // @synthesize shopView=_shopView;
 @property(retain, nonatomic) MMFinderLiveMultiPriceView *priceView; // @synthesize priceView=_priceView;
 @property(retain, nonatomic) MMECProductShowBoxItemsView *showBoxItemsView; // @synthesize showBoxItemsView=_showBoxItemsView;

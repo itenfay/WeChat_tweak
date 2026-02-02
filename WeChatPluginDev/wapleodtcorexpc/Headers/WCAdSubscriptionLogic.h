@@ -19,7 +19,6 @@
     WCAdConfirmHalfScreenBaseView *_halfScreenView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool btnHasBeenClicked; // @synthesize btnHasBeenClicked=_btnHasBeenClicked;
 @property(retain, nonatomic) WCAdConfirmHalfScreenBaseView *halfScreenView; // @synthesize halfScreenView=_halfScreenView;
 @property(retain, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;

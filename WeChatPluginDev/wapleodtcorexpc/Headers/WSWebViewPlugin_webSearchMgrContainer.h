@@ -10,7 +10,6 @@
     FTSWebSearchMgr *_webSearchMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSWebSearchMgr *webSearchMgr; // @synthesize webSearchMgr=_webSearchMgr;
 - (void)onUpdateLocalImage:(id)arg1;
 

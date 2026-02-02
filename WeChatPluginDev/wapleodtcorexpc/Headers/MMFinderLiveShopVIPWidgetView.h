@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class PAGFile, PAGView, UILabel;
 
@@ -18,7 +19,6 @@
     UILabel *_textView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isWeakState; // @synthesize isWeakState=_isWeakState;
 @property(retain, nonatomic) UILabel *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
@@ -34,4 +34,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -17,7 +17,6 @@
     UIColor *_detailColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *detailColor; // @synthesize detailColor=_detailColor;
 @property(retain, nonatomic) UIColor *displayColor; // @synthesize displayColor=_displayColor;
 @property(nonatomic) _Bool bIsMemberCard; // @synthesize bIsMemberCard=_bIsMemberCard;

@@ -19,7 +19,6 @@
     NSMutableArray *_historyList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsLoadNewDataEnd; // @synthesize bIsLoadNewDataEnd=_bIsLoadNewDataEnd;
 @property(nonatomic) _Bool bIsLoadMoreDataEnd; // @synthesize bIsLoadMoreDataEnd=_bIsLoadMoreDataEnd;
 @property(nonatomic) _Bool bIsLoadingMoreNew; // @synthesize bIsLoadingMoreNew=_bIsLoadingMoreNew;

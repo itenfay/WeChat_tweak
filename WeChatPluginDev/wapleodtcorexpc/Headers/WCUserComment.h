@@ -83,7 +83,6 @@
 + (void)PBArrayAdd_username;
 + (void)PBArrayAdd_comment64ID;
 + (void)PBArrayAdd_commentID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsDragonCommentInfo *dragonCommentInfo; // @synthesize dragonCommentInfo=_dragonCommentInfo;
 @property(retain, nonatomic) NSString *discoveryContent; // @synthesize discoveryContent=_discoveryContent;
 @property(nonatomic) unsigned int adAdvertiserFirstCommentDisplayTime; // @synthesize adAdvertiserFirstCommentDisplayTime=_adAdvertiserFirstCommentDisplayTime;

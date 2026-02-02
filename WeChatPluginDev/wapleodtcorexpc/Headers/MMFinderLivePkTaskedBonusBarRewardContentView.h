@@ -18,7 +18,6 @@
     double _pointOfInterestInLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double pointOfInterestInLabel; // @synthesize pointOfInterestInLabel=_pointOfInterestInLabel;
 @property(retain, nonatomic) NSNumberFormatter *multiplierFormatter; // @synthesize multiplierFormatter=_multiplierFormatter;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;

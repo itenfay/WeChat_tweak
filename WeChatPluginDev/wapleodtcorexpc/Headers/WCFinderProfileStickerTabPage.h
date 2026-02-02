@@ -20,7 +20,6 @@
     unsigned long long _enterTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
 @property(retain, nonatomic) NSString *sdkRequestID; // @synthesize sdkRequestID=_sdkRequestID;
 @property(nonatomic) _Bool didScrollToSingleEmoji; // @synthesize didScrollToSingleEmoji=_didScrollToSingleEmoji;

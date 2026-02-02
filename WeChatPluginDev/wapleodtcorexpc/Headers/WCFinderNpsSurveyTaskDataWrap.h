@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_surveyStatus;
 + (void)PBArrayAdd_surveyInfo;
 + (void)PBArrayAdd_surveyTaskConf;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectTimestamp; // @synthesize selectTimestamp=_selectTimestamp;
 @property(nonatomic) unsigned long long showTimestamp; // @synthesize showTimestamp=_showTimestamp;
 @property(nonatomic) unsigned long long endShowTimestamp; // @synthesize endShowTimestamp=_endShowTimestamp;

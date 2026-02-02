@@ -14,7 +14,6 @@
     MMUILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) WCFinderAuthInfoIconView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) WCFinderMsgSessionBadgeGroupView *badgeGroupView; // @synthesize badgeGroupView=_badgeGroupView;

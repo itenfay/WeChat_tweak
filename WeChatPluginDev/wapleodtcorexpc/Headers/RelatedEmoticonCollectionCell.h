@@ -23,7 +23,6 @@
     struct CGSize _emoticonSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SightIconView *sightIconView; // @synthesize sightIconView=_sightIconView;
 @property(retain, nonatomic) UILabel *purchaseLabel; // @synthesize purchaseLabel=_purchaseLabel;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;

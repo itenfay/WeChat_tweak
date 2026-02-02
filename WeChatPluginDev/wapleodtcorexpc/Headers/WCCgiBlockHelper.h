@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCBaseCgi;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)helperWithInitBlock:(CDUnknownBlockType)arg1 startBlock:(CDUnknownBlockType)arg2 successBlock:(CDUnknownBlockType)arg3 failBlock:(CDUnknownBlockType)arg4;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) WCBaseCgi *baseCgi; // @synthesize baseCgi=_baseCgi;
@@ -36,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

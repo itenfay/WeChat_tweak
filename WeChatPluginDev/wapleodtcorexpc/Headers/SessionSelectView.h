@@ -72,7 +72,6 @@
     long long _selectedTopSessionCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long selectedTopSessionCount; // @synthesize selectedTopSessionCount=_selectedTopSessionCount;
 @property(nonatomic) double recentChatHeaderFloatingOffset; // @synthesize recentChatHeaderFloatingOffset=_recentChatHeaderFloatingOffset;
 @property(nonatomic) double bizChatHeaderFloatingOffset; // @synthesize bizChatHeaderFloatingOffset=_bizChatHeaderFloatingOffset;

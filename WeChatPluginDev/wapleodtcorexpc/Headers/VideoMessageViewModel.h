@@ -12,7 +12,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize thumbImageSize; // @synthesize thumbImageSize=m_thumbImageSize;
 @property(readonly, nonatomic) NSString *videoPath; // @synthesize videoPath=m_videoPath;
 - (_Bool)contentExists;

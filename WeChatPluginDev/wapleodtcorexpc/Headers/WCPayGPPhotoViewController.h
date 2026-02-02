@@ -16,7 +16,6 @@
     struct CGRect _originRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) UIImageView *animateImageView; // @synthesize animateImageView=_animateImageView;
 @property(retain, nonatomic) ImageScrollView *imageView; // @synthesize imageView=_imageView;

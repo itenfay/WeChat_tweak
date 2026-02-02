@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class StatusFooterJumpFinderFeed, WCFinderDataItem;
 
 @interface TextState3rdPartyFinderHandler
@@ -12,7 +14,6 @@
     StatusFooterJumpFinderFeed *_jumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StatusFooterJumpFinderFeed *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(nonatomic) unsigned long long dataStatus; // @synthesize dataStatus=_dataStatus;
@@ -47,4 +48,3 @@
 - (_Bool)supportCustomMedia;
 
 @end
-

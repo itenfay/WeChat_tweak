@@ -10,7 +10,6 @@
     MISSING_TYPE *dicRuntime;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onServiceInit;
 

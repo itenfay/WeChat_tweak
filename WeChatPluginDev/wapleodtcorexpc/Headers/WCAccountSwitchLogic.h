@@ -12,7 +12,6 @@
     id <WCAccountSwitchLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAccountSwitchLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onAccountLogoutLogicDidQuit;
 - (void)onAccountLogoutLogicCheckOK;

@@ -48,7 +48,6 @@
 + (void)PBArrayAdd_thumbUrl;
 + (void)PBArrayAdd_url;
 + (void)PBArrayAdd_md5;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize wxamImageSizeToCheck; // @synthesize wxamImageSizeToCheck=_wxamImageSizeToCheck;
 @property(retain, nonatomic) NSString *authkey; // @synthesize authkey=_authkey;
 @property(retain, nonatomic) NSString *tpUrlString; // @synthesize tpUrlString=_tpUrlString;

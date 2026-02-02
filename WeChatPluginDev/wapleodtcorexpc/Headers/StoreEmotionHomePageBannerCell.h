@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class InfiniteLoopContainerView, MMTimer, NSArray, NSString;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _tapItemHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tapItemHandler; // @synthesize tapItemHandler=_tapItemHandler;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) InfiniteLoopContainerView *pageLoopView; // @synthesize pageLoopView=_pageLoopView;
@@ -38,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

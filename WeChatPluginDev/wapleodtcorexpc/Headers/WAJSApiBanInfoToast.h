@@ -12,7 +12,6 @@
     NSString *_jsapiName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *jsapiName; // @synthesize jsapiName=_jsapiName;
 - (void)layoutSubviews;
 - (void)initJsApiNameMap;

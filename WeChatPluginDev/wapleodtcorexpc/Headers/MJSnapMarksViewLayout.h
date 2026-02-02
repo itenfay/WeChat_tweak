@@ -16,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect timelineVisibleRect; // @synthesize timelineVisibleRect=_timelineVisibleRect;
 @property(retain, nonatomic) NSArray *snapTimes; // @synthesize snapTimes=_snapTimes;
 @property(readonly, nonatomic) OMCSegmentSequenceTimeOffsetMapper *timelineTimeOffsetMapper; // @synthesize timelineTimeOffsetMapper=_timelineTimeOffsetMapper;

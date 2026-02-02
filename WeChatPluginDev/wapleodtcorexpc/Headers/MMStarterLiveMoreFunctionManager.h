@@ -23,7 +23,6 @@
 + (_Bool)isMicEnable:(id)arg1;
 + (_Bool)isFreeTalkEnabled:(id)arg1;
 + (id)getMoreFunctionItemsWithTaskId:(id)arg1 viewType:(unsigned long long)arg2 isGameLive:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveStarterReporter *starterReporter; // @synthesize starterReporter=_starterReporter;
 - (void)onReportOperationViewDidSelect:(unsigned long long)arg1 item:(id)arg2;
 - (void)reportAnchorActionSheetItems:(id)arg1;

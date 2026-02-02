@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSRecursiveLock, NSString, WCStoryCommentUploadMgr, WCStoryDataMgr, WCStoryDownloadImageCdnMgr, WCStoryDownloadVideoCdnMgr, WCStoryPostLimitObj, WCStorySetting, WCStoryUploadCdnMgr;
 
 @interface WCStoryFacade
@@ -19,7 +21,6 @@
 
 + (unsigned long long)preCleanGetCacheSize;
 + (unsigned long long)cleanCacheMgrMakeToClean;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) WCStorySetting *storySetting; // @synthesize storySetting=_storySetting;
 @property(retain, nonatomic) WCStoryPostLimitObj *limitObj; // @synthesize limitObj=_limitObj;
@@ -181,4 +182,3 @@
 @property(readonly) Class superclass;
 
 @end
-

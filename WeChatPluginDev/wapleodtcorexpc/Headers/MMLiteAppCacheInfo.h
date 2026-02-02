@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiteAppViewController, OpenLiteAppInfo;
 
@@ -14,11 +15,9 @@
     CDUnknownBlockType _block;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain, nonatomic) OpenLiteAppInfo *openInfo; // @synthesize openInfo=_openInfo;
 @property(retain, nonatomic) MMLiteAppViewController *vc; // @synthesize vc=_vc;
 - (_Bool)isHitCache:(id)arg1;
 
 @end
-

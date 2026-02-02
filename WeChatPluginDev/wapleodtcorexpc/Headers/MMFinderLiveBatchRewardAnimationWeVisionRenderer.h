@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveBatchRewardWeVisionRenderTask, MMFinderLiveTaskId, NSMutableArray, NSString;
 @protocol MMFinderLiveBatchRewardAnimationRenderingDelegate;
@@ -17,7 +18,6 @@
     MMFinderLiveBatchRewardWeVisionRenderTask *_currentRenderTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveBatchRewardWeVisionRenderTask *currentRenderTask; // @synthesize currentRenderTask=_currentRenderTask;
 @property(retain, nonatomic) NSMutableArray *waitingTaskQueue; // @synthesize waitingTaskQueue=_waitingTaskQueue;
 @property(retain, nonatomic) NSMutableArray *renderTaskQueue; // @synthesize renderTaskQueue=_renderTaskQueue;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

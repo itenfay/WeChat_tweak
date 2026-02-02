@@ -14,7 +14,6 @@
     VibrationRepeatObject *_vibrationPlayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VibrationRepeatObject *vibrationPlayer; // @synthesize vibrationPlayer=_vibrationPlayer;
 @property(retain, nonatomic) RingBackSoundCoordinator *ringCoordinator; // @synthesize ringCoordinator=_ringCoordinator;
 @property(retain, nonatomic) WACampusVoipNotiView *notiView; // @synthesize notiView=_notiView;

@@ -11,7 +11,6 @@
     _Bool _forNativeWeApp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forNativeWeApp; // @synthesize forNativeWeApp=_forNativeWeApp;
 - (void)onWAShareAppMessageForwardLogicControllerComponent_ConfirmCanceled:(id)arg1;
 - (void)onWAShareAppMessageForwardLogicControllerComponent_MessageSend:(id)arg1;

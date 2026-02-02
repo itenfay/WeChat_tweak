@@ -10,7 +10,6 @@
     MISSING_TYPE *snsTimelineBiz;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)destroyBiz;
 - (void)triggerFireWorkWithInfo:(id)arg1;

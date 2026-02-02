@@ -11,7 +11,6 @@
     NSCache *_originContactsHeadImgCache;
 }
 
-- (void).cxx_destruct;
 - (void)cleanupTempMemoryCache:(id)arg1;
 - (void)saveHeadImgToMemoryCacheIfNeed:(const struct HeadImgUseSceneConfig *)arg1 usrName:(id)arg2 headImg:(id)arg3;
 - (id)memoryCacheForUseScene:(unsigned char)arg1;

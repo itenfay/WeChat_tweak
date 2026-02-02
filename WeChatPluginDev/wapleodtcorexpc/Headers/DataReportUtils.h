@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface DataReportUtils : NSObject
 {
@@ -66,4 +67,3 @@
 + (_Bool)isDebug;
 
 @end
-

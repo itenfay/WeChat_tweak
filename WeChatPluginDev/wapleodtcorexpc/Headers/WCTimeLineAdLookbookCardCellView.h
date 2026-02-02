@@ -20,7 +20,6 @@
     WCTimeLineAdLookbookCardMediaView *_mediaView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTimeLineAdLookbookCardMediaView *mediaView; // @synthesize mediaView=_mediaView;
 @property(retain, nonatomic) MMUIView *mediaHolderView; // @synthesize mediaHolderView=_mediaHolderView;
 @property(retain, nonatomic) MMUIButton *coverButton; // @synthesize coverButton=_coverButton;

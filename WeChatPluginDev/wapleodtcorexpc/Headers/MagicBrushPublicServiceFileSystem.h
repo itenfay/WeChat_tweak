@@ -13,7 +13,6 @@
     NSMutableSet *_mBizNameList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *mBizNameList; // @synthesize mBizNameList=_mBizNameList;
 @property(retain, nonatomic) id <IMBFileSystem> mWxaPkgFS; // @synthesize mWxaPkgFS=_mWxaPkgFS;
 @property(retain, nonatomic) id <IMBFileSystem> mAssetsFS; // @synthesize mAssetsFS=_mAssetsFS;

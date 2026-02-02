@@ -21,7 +21,6 @@
 
 + (long long)wcPostPrivacy2StatusPrivacy:(long long)arg1;
 + (long long)statusPrivacy2WCPostPrivacy:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isModifyFromShareScopeVC; // @synthesize isModifyFromShareScopeVC=_isModifyFromShareScopeVC;
 @property(nonatomic) _Bool isRequestContactDataForModifying; // @synthesize isRequestContactDataForModifying=_isRequestContactDataForModifying;
 @property(retain, nonatomic) WCMomentsPrivacyViewController *privacyVC; // @synthesize privacyVC=_privacyVC;

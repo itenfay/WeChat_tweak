@@ -18,7 +18,6 @@
     NSString *_data;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSString *cloudId; // @synthesize cloudId=_cloudId;
 @property(copy, nonatomic) NSString *iv; // @synthesize iv=_iv;

@@ -35,7 +35,6 @@
     MMUILabel *_displayAuxTitleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *displayAuxTitleLabel; // @synthesize displayAuxTitleLabel=_displayAuxTitleLabel;
 @property(retain, nonatomic) MMUILabel *displaySubTitleLabel; // @synthesize displaySubTitleLabel=_displaySubTitleLabel;
 @property(retain, nonatomic) UIImage *disableBgImg; // @synthesize disableBgImg=_disableBgImg;

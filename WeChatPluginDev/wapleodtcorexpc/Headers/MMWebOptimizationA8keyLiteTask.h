@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWebOptimizationA8keyLiteTaskRequest, NSMutableSet;
 
 @interface MMWebOptimizationA8keyLiteTask
@@ -15,7 +17,6 @@
 
 + (id)netTypeString;
 + (unsigned int)generateSendSequence;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCancel; // @synthesize isCancel=_isCancel;
 @property(retain, nonatomic) NSMutableSet *setA8keyLiteRequestingUrlString; // @synthesize setA8keyLiteRequestingUrlString=_setA8keyLiteRequestingUrlString;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -36,4 +37,3 @@
 - (id)initWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end
-

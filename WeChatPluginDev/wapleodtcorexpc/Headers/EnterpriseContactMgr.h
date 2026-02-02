@@ -22,7 +22,6 @@
     NSObject<OS_dispatch_queue> *m_dispatchQueue;
 }
 
-- (void).cxx_destruct;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)onModifyContact:(id)arg1;

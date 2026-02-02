@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveContact, FinderLiveInfo, MMTimer, NSString, WCPlayLiveWithoutLoginCheckQRCodeStatusCGI, WCPlayLiveWithoutLoginGetQRCodeCGI, WCPlayLiveWithoutLoginQRCodeViewController, WCPlayLiveWithoutLoginViewController;
 
 @interface WCPlayLiveWithoutLoginControlLogic
@@ -20,7 +22,6 @@
     CDUnknownBlockType _refreshTokenCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType refreshTokenCompletion; // @synthesize refreshTokenCompletion=_refreshTokenCompletion;
 @property(retain, nonatomic) FinderLiveInfo *liveInfo; // @synthesize liveInfo=_liveInfo;
 @property(retain, nonatomic) FinderLiveContact *anchorLiveContact; // @synthesize anchorLiveContact=_anchorLiveContact;
@@ -53,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -13,7 +13,6 @@
     NSString *m_nsBrandUserName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsBrandUserName; // @synthesize m_nsBrandUserName;
 @property(retain, nonatomic) NSString *m_nsSessionKey; // @synthesize m_nsSessionKey;
 

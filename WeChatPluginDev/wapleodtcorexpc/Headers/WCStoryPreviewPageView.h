@@ -35,7 +35,6 @@
     UIView *_visitBluePointView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *visitBluePointView; // @synthesize visitBluePointView=_visitBluePointView;
 @property(retain, nonatomic) UIView *commentBluePointView; // @synthesize commentBluePointView=_commentBluePointView;
 @property(retain, nonatomic) UILabel *commentTipsLabel; // @synthesize commentTipsLabel=_commentTipsLabel;

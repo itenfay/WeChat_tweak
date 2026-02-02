@@ -20,7 +20,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_cacheVersion;
 + (void)PBArrayAdd_dicFileInfo;
-- (void).cxx_destruct;
 @property(nonatomic) long long cacheVersion; // @synthesize cacheVersion=_cacheVersion;
 @property(retain, nonatomic) NSMutableDictionary *dicFileInfo; // @synthesize dicFileInfo=_dicFileInfo;
 - (id)getFileCacheWithKey:(id)arg1;

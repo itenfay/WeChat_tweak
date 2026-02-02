@@ -14,7 +14,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WeMediaDelegate> delegate; // @synthesize delegate=_delegate;
 - (int)getLoglvl;
 - (void)setLoglvl:(int)arg1;

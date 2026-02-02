@@ -13,7 +13,6 @@
     UIImageView *m_blurView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_hasStartQuitAnimation; // @synthesize m_hasStartQuitAnimation=_m_hasStartQuitAnimation;
 @property(retain, nonatomic) UIImageView *m_blurView; // @synthesize m_blurView;
 @property(nonatomic) __weak id <MMVoipCSMainWindowDelegate> m_mainWindowDelegate; // @synthesize m_mainWindowDelegate;

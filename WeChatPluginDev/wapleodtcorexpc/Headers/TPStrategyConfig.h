@@ -15,7 +15,6 @@
 }
 
 + (id)configWithParams:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long playerScene; // @synthesize playerScene=_playerScene;
 @property(retain, nonatomic) NSArray *playerTypeList; // @synthesize playerTypeList=_playerTypeList;
 @property(nonatomic) long long decoderStrategy; // @synthesize decoderStrategy=_decoderStrategy;

@@ -10,7 +10,6 @@
     SecurityInfoAuthrizeLogic *_authLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SecurityInfoAuthrizeLogic *authLogic; // @synthesize authLogic=_authLogic;
 - (_Bool)shouldShowWxPayAlert:(id)arg1;
 - (void)checkWxPay:(id)arg1 response:(id)arg2 contact:(id)arg3;

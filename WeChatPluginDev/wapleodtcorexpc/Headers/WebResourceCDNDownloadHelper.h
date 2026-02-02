@@ -14,7 +14,6 @@
     WebviewLocalResItem *_curDownloadingItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WebResourceCDNDownloadHelperDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)OnCdnDownload:(id)arg1;
 - (void)OnCdnDownloadProgress:(id)arg1;

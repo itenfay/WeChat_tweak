@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class HKHealthStore, NSMutableDictionary, NSMutableSet, NSString;
 @protocol WCHKWorkoutLogicDelegate;
@@ -18,7 +19,6 @@
     NSMutableSet *_hadUploadActivity;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *hadUploadActivity; // @synthesize hadUploadActivity=_hadUploadActivity;
 @property(retain, nonatomic) NSMutableDictionary *dicActivityType; // @synthesize dicActivityType=_dicActivityType;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
@@ -47,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

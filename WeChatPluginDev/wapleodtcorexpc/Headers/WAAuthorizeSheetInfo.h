@@ -23,7 +23,6 @@
 }
 
 + (id)createWithUserIdPageSheetInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAuthorizePageSheetReportItem *reportItem; // @synthesize reportItem=_reportItem;
 @property(retain, nonatomic) WAAuthorizeSheetPrivacyProtectInfo *privacyProtectInfo; // @synthesize privacyProtectInfo=_privacyProtectInfo;
 @property(retain, nonatomic) NSString *rejectWording; // @synthesize rejectWording=_rejectWording;

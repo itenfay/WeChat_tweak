@@ -12,7 +12,6 @@
     TPAssetResourceLoadingRequest *_loadingRequest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPAssetResourceLoadingRequest *loadingRequest; // @synthesize loadingRequest=_loadingRequest;
 @property(nonatomic) _Bool bUseNotifyMode; // @synthesize bUseNotifyMode=_bUseNotifyMode;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

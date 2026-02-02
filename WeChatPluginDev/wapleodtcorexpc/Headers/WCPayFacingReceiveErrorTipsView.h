@@ -17,7 +17,6 @@
     MMUILabel *_errorLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *errorLabel; // @synthesize errorLabel=_errorLabel;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) MMUILabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;

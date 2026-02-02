@@ -12,7 +12,6 @@
     WCFinderAlbumScrollViewParamModel *_previewScrollViewParamModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAlbumScrollViewParamModel *previewScrollViewParamModel; // @synthesize previewScrollViewParamModel=_previewScrollViewParamModel;
 @property(nonatomic) double stageFrameY; // @synthesize stageFrameY=_stageFrameY;
 @property(nonatomic) _Bool hiddenCropBtn; // @synthesize hiddenCropBtn=_hiddenCropBtn;

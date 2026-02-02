@@ -12,7 +12,6 @@
     GameRecommendVideoListView *_recommendListView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameRecommendVideoListView *recommendListView; // @synthesize recommendListView=_recommendListView;
 
 @end

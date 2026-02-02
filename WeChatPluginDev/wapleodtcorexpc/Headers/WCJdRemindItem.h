@@ -56,7 +56,6 @@
 + (void)PBArrayAdd_nsActivityId;
 + (void)PBArrayAdd_uiBizType;
 + (void)PBArrayAdd_ui64SvrMsgId;
-- (void).cxx_destruct;
 @property(nonatomic) long long nsJumpWeappVersion; // @synthesize nsJumpWeappVersion;
 @property(retain, nonatomic) NSString *nsJumpWeappPath; // @synthesize nsJumpWeappPath;
 @property(retain, nonatomic) NSString *nsJumpWeapp; // @synthesize nsJumpWeapp;

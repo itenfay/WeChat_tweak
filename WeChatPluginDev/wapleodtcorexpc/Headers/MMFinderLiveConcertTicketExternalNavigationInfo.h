@@ -16,7 +16,6 @@
     NSString *_iconUri;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *iconUri; // @synthesize iconUri=_iconUri;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;

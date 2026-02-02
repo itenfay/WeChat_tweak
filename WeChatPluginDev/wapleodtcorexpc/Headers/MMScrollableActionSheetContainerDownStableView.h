@@ -13,7 +13,6 @@
     CAGradientLayer *_gradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(nonatomic) __weak id <MMScrollableActionSheetContainerDownStableViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;

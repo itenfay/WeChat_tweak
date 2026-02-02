@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray;
 
 @interface StoreEmotionBatchEmojiDownLoadCgi
@@ -13,7 +15,6 @@
     NSMutableArray *_emojiInfoList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *emojiInfoList; // @synthesize emojiInfoList=_emojiInfoList;
 @property(retain, nonatomic) NSMutableArray *waitForRequestMd5List; // @synthesize waitForRequestMd5List=_waitForRequestMd5List;
 @property(nonatomic) unsigned int maxCountPerRequest; // @synthesize maxCountPerRequest=_maxCountPerRequest;
@@ -25,4 +26,3 @@
 - (id)init;
 
 @end
-

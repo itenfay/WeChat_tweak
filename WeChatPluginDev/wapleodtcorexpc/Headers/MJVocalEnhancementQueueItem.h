@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)vocalEnhancementItemWithAudioID:(id)arg1 roleID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSString *roleID; // @synthesize roleID=_roleID;
 @property(readonly, nonatomic) NSString *audioID; // @synthesize audioID=_audioID;
@@ -24,4 +24,3 @@
 - (id)initWithAudioID:(id)arg1 roleID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end
-

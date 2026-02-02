@@ -10,7 +10,6 @@
     EditImageMusicLyricsWidgetTool *_musicLyricsWidget;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EditImageMusicLyricsWidgetTool *musicLyricsWidget; // @synthesize musicLyricsWidget=_musicLyricsWidget;
 - (_Bool)isTextToolType:(int)arg1;
 - (void)useImageTool:(int)arg1;

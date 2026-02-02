@@ -13,7 +13,6 @@
     NSArray *_viewModels;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *viewModels; // @synthesize viewModels=_viewModels;
 @property(retain, nonatomic) NSArray *giftViews; // @synthesize giftViews=_giftViews;
 - (void)clearAll;

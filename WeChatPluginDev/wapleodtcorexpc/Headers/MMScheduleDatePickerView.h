@@ -20,7 +20,6 @@
     NSMutableArray *_normalMinuteComponents;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *normalMinuteComponents; // @synthesize normalMinuteComponents=_normalMinuteComponents;
 @property(retain, nonatomic) NSMutableArray *normalHourComponents; // @synthesize normalHourComponents=_normalHourComponents;
 @property(retain, nonatomic) NSMutableArray *firstHourMinuteComponents; // @synthesize firstHourMinuteComponents=_firstHourMinuteComponents;

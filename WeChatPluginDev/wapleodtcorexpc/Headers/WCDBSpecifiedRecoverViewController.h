@@ -18,7 +18,6 @@
     NSObject<WCDBSpecifiedRecoverViewControllerDelegate> *_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isManuallyRestore; // @synthesize isManuallyRestore=_isManuallyRestore;
 @property(nonatomic) __weak NSObject<WCDBSpecifiedRecoverViewControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;

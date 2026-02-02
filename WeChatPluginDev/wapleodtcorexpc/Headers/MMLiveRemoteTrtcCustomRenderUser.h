@@ -16,7 +16,6 @@
 }
 
 + (id)genCustomRenderUserWithUserId:(id)arg1 userName:(id)arg2 renderSrc:(unsigned long long)arg3 normalizeFrame:(struct CGRect)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(nonatomic) struct CGRect normalizeFrame; // @synthesize normalizeFrame=_normalizeFrame;
 @property(retain, nonatomic) NSString *sdkUserId; // @synthesize sdkUserId=_sdkUserId;

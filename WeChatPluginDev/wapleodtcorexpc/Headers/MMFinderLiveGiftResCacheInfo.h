@@ -15,7 +15,6 @@
     NSString *_fileMd5;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool usageFlag; // @synthesize usageFlag=_usageFlag;
 @property(nonatomic) _Bool purgeIfUnused; // @synthesize purgeIfUnused=_purgeIfUnused;
 @property(retain, nonatomic) NSString *fileMd5; // @synthesize fileMd5=_fileMd5;

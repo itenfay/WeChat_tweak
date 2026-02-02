@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, UIView;
 
 @interface WCFinderLiveStarterThemeGuideView
@@ -15,7 +17,6 @@
     unsigned long long _type;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMUIButton *editButton; // @synthesize editButton=_editButton;
@@ -33,4 +34,3 @@
 - (void)updateWithTitle:(id)arg1 type:(unsigned long long)arg2;
 
 @end
-

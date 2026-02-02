@@ -16,7 +16,6 @@
     WAAllTouchRecognizer *_allTouchGesgure;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAllTouchRecognizer *allTouchGesgure; // @synthesize allTouchGesgure=_allTouchGesgure;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSDictionary *style; // @synthesize style=_style;

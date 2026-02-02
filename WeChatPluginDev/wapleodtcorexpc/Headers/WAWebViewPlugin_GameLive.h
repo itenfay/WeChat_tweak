@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMGameAudioMixWrapper, MMGameOffTexture, NSString;
 
 @interface WAWebViewPlugin_GameLive
@@ -27,7 +29,6 @@
     MMGameOffTexture *_offTexture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMGameOffTexture *offTexture; // @synthesize offTexture=_offTexture;
 @property(retain, nonatomic) MMGameAudioMixWrapper *mixWrapper; // @synthesize mixWrapper=_mixWrapper;
 @property(copy, nonatomic) CDUnknownBlockType closeBlock; // @synthesize closeBlock=_closeBlock;
@@ -77,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

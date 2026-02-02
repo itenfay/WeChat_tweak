@@ -76,7 +76,6 @@
     WCPayBindCardYHTInfoMinimchInfo *_minimch_info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBindCardYHTInfoMinimchInfo *minimch_info; // @synthesize minimch_info=_minimch_info;
 @property(retain, nonatomic) WCPayBindCardYHTInfo *yht_info; // @synthesize yht_info=_yht_info;
 @property(retain, nonatomic) NSArray *fetch_limit_recommend_bind_serial; // @synthesize fetch_limit_recommend_bind_serial=_fetch_limit_recommend_bind_serial;

@@ -14,7 +14,6 @@
     BrandFinderLiveInfo *_redDotLiveInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandFinderLiveInfo *redDotLiveInfo; // @synthesize redDotLiveInfo=_redDotLiveInfo;
 @property(nonatomic) _Bool isLiveBarExpand; // @synthesize isLiveBarExpand=_isLiveBarExpand;
 @property(nonatomic) __weak BTLiveSectionBarCellView *cellView; // @synthesize cellView=_cellView;

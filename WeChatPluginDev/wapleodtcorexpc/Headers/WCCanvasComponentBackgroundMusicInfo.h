@@ -12,7 +12,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int autoPlayType; // @synthesize autoPlayType=_autoPlayType;
 @property(retain, nonatomic) NSString *voiceUrl; // @synthesize voiceUrl=_voiceUrl;
 - (_Bool)isValid;

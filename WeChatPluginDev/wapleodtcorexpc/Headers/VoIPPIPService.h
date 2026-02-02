@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVPictureInPictureController, AVPictureInPictureVideoCallViewController, NSObject, NSString, VoIPCanvas, VoIPPIPView;
 @protocol MTLBuffer, MTLDepthStencilState, MTLDevice, MTLRenderPipelineState, OS_dispatch_queue;
 
@@ -37,7 +39,6 @@
 
 + (id)renderPipelineStateWithFragmentFunction:(id)arg1 device:(id)arg2 library:(id)arg3;
 + (struct CGSize)defaultContentSize;
-- (void).cxx_destruct;
 @property(nonatomic) float smallWindowVertexByteBottom; // @synthesize smallWindowVertexByteBottom=_smallWindowVertexByteBottom;
 @property(nonatomic) float smallWindowVertexByteTop; // @synthesize smallWindowVertexByteTop=_smallWindowVertexByteTop;
 @property(nonatomic) float smallWindowVertexByteRight; // @synthesize smallWindowVertexByteRight=_smallWindowVertexByteRight;
@@ -113,4 +114,3 @@
 @property(readonly) Class superclass;
 
 @end
-

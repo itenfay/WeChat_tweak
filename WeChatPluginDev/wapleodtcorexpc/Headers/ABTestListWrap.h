@@ -11,7 +11,6 @@
     NSArray *_aryABTestExpKeyItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *aryABTestExpKeyItems; // @synthesize aryABTestExpKeyItems=_aryABTestExpKeyItems;
 @property(retain, nonatomic) NSArray *aryABTestItems; // @synthesize aryABTestItems=_aryABTestItems;
 

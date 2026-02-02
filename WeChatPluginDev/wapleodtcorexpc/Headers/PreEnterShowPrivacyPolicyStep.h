@@ -12,7 +12,6 @@
     _Bool m_bSendChoice;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)sendPrivacyPolicyChoice:(_Bool)arg1;
 - (void)onWCPrivacyPolicyControlLogicClickDiagree;

@@ -15,7 +15,6 @@
 + (id)instance;
 + (void)initialize;
 + (void)PBArrayAdd_pids;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pids; // @synthesize pids=_pids;
 - (void)addFirstPid:(id)arg1;
 - (void)deletePid:(id)arg1;

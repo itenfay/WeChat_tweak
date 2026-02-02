@@ -13,7 +13,6 @@
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
 + (id)createAttrTitle:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)setupUI;

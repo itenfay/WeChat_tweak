@@ -14,7 +14,6 @@
     NSString *_bottomFeedId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bottomFeedId; // @synthesize bottomFeedId=_bottomFeedId;
 @property(retain, nonatomic) NSString *topFeedId; // @synthesize topFeedId=_topFeedId;
 @property(nonatomic) unsigned int groupId; // @synthesize groupId=_groupId;

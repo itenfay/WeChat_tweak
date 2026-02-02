@@ -21,7 +21,6 @@
     MMUIButton *_trailBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *trailBtn; // @synthesize trailBtn=_trailBtn;
 @property(retain, nonatomic) MMUIButton *cancelBtn; // @synthesize cancelBtn=_cancelBtn;
 @property(retain, nonatomic) RichTextView *ruleTextView; // @synthesize ruleTextView=_ruleTextView;

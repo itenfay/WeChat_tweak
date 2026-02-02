@@ -18,7 +18,6 @@
     unsigned long long _accumulatedCount;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long accumulatedCount; // @synthesize accumulatedCount=_accumulatedCount;
 @property(readonly, nonatomic) double minDuration; // @synthesize minDuration=_minDuration;
 @property(readonly, nonatomic) double maxDuration; // @synthesize maxDuration=_maxDuration;

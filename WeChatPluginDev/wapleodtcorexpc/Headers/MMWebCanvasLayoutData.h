@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_layoutStr;
 + (void)PBArrayAdd_frame;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *layoutStr; // @synthesize layoutStr=_layoutStr;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(readonly, copy) NSString *description;

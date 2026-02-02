@@ -13,7 +13,6 @@
     UIImageView *_chevronView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *chevronView; // @synthesize chevronView=_chevronView;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UIView *loadingBkgView; // @synthesize loadingBkgView=_loadingBkgView;

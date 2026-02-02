@@ -13,7 +13,6 @@
     UIColor *_color;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) double offset; // @synthesize offset=_offset;
 - (id)init;

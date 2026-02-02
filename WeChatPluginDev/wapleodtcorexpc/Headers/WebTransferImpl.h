@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WebTransferImpl : NSObject
 {
@@ -12,4 +13,3 @@
 + (void)handle:(id)arg1 callback:(CDUnknownBlockType)arg2;
 
 @end
-

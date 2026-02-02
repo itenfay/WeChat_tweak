@@ -18,7 +18,6 @@
     NSString *_coverMd5;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *coverMd5; // @synthesize coverMd5=_coverMd5;
 @property(copy, nonatomic) NSString *coverUrl; // @synthesize coverUrl=_coverUrl;
 @property(nonatomic) int retCode; // @synthesize retCode=_retCode;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OMJExportManagerDelegate, OS_dispatch_queue;
 
@@ -16,7 +17,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) SharedPtr_9102e06d backingManager; // @synthesize backingManager=_backingManager;
 @property(nonatomic) SharedPtr_c67bd272 thumbnailLoader; // @synthesize thumbnailLoader=_thumbnailLoader;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -37,4 +37,3 @@
 - (id)initWithBackingManager:(const void *)arg1;
 
 @end
-

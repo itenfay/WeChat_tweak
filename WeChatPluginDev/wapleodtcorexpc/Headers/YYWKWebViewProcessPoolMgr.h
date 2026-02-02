@@ -10,7 +10,6 @@
     WKProcessPool *m_processPool;
 }
 
-- (void).cxx_destruct;
 - (void)onCacheMgrCleanCacheWarning;
 - (id)processPool;
 - (void)onServiceClearData;

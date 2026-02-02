@@ -14,7 +14,6 @@
     unsigned long long _statusFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long statusFlag; // @synthesize statusFlag=_statusFlag;
 @property(retain, nonatomic) NSString *sdkUserId; // @synthesize sdkUserId=_sdkUserId;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;

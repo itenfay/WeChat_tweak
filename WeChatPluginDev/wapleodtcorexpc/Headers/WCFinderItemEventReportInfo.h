@@ -17,7 +17,6 @@
     NSDictionary *_udfKV;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int refCommentScene; // @synthesize refCommentScene=_refCommentScene;
 @property(retain, nonatomic) NSDictionary *udfKV; // @synthesize udfKV=_udfKV;
 @property(copy, nonatomic) NSString *eId; // @synthesize eId=_eId;

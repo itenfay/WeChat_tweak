@@ -30,7 +30,6 @@
     NSString *_itemContext;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *itemContext; // @synthesize itemContext=_itemContext;
 @property(copy, nonatomic) NSString *singerBaikeURL; // @synthesize singerBaikeURL=_singerBaikeURL;
 @property(copy, nonatomic) NSString *singerFinderUserName; // @synthesize singerFinderUserName=_singerFinderUserName;

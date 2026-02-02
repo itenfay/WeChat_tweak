@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface _TtC6WeChat12BrandEcsUtil : NSObject
 {
@@ -13,4 +14,3 @@
 - (id)init;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class InteractionLabel, NSString, UIButton, UIImageView, WCFinderFeedContentTouchExpandTextView, WCFinderFeedContentVM;
 @protocol WCFinderContentTableViewCellDelegate;
 
@@ -26,7 +28,6 @@
 + (struct CGSize)cellIconSize;
 + (double)constTextHeightWith:(id)arg1 width:(double)arg2;
 + (double)cellHeightWith:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType delayRefreshWork; // @synthesize delayRefreshWork=_delayRefreshWork;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) UIImageView *linkImageView; // @synthesize linkImageView=_linkImageView;
@@ -76,4 +77,3 @@
 @property(readonly) Class superclass;
 
 @end
-

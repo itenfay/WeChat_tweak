@@ -12,7 +12,6 @@
     struct CGRect _contentCropRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect contentCropRect; // @synthesize contentCropRect=_contentCropRect;
 @property(retain, nonatomic) OMJContentSpatialDesc *contentSpatialDesc; // @synthesize contentSpatialDesc=_contentSpatialDesc;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 duration; // @synthesize duration=_duration;

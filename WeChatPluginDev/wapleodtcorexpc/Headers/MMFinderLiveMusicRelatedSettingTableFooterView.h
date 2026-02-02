@@ -17,7 +17,6 @@
     UIView *_customSeparatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *customSeparatorView; // @synthesize customSeparatorView=_customSeparatorView;
 @property(retain, nonatomic) UIImageView *centerDot; // @synthesize centerDot=_centerDot;
 @property(retain, nonatomic) UIView *rightEndLine; // @synthesize rightEndLine=_rightEndLine;

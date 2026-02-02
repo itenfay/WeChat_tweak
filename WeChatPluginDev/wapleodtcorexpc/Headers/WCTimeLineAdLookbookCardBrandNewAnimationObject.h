@@ -20,7 +20,6 @@
     struct CGSize _toSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) struct CGSize toSize; // @synthesize toSize=_toSize;
 @property(nonatomic) struct CGSize fromSize; // @synthesize fromSize=_fromSize;

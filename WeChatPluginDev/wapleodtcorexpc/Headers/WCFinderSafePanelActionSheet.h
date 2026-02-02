@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSMutableArray, NSString, UIButton, UILabel, UIView;
 
 @interface WCFinderSafePanelActionSheet
@@ -26,7 +28,6 @@
 + (id)genClickButtonMaxWidth:(double)arg1 buttonStyle:(unsigned long long)arg2 title:(id)arg3 clickBlock:(CDUnknownBlockType)arg4;
 + (id)buildActionSheetByTitle:(id)arg1 subTitle:(id)arg2 clickSubTitleAction:(CDUnknownBlockType)arg3 buttonModelArray:(id)arg4;
 + (id)buildActionSheetByTitle:(id)arg1 subTitle:(id)arg2 clickSubTitleAction:(CDUnknownBlockType)arg3 rightButtonMsg:(id)arg4 clickRightButtonBlock:(CDUnknownBlockType)arg5 leftButtonMsg:(id)arg6 clickLeftButtonBlock:(CDUnknownBlockType)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *buttonArray; // @synthesize buttonArray=_buttonArray;
 @property(retain, nonatomic) UIButton *bottomBtn; // @synthesize bottomBtn=_bottomBtn;
 @property(retain, nonatomic) UIButton *leftBtn; // @synthesize leftBtn=_leftBtn;
@@ -49,4 +50,3 @@
 - (double)heightOfWholeSheet;
 
 @end
-

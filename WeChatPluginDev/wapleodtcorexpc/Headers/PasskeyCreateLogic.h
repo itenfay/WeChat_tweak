@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, PasskeyEntitlementProvider;
 @protocol PasskeyCreateDelegate;
 
@@ -17,7 +19,6 @@
     NSString *_verifyID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *verifyID; // @synthesize verifyID=_verifyID;
 @property(retain, nonatomic) PasskeyEntitlementProvider *provider; // @synthesize provider=_provider;
 @property(retain, nonatomic) NSString *passkeyUserName; // @synthesize passkeyUserName=_passkeyUserName;
@@ -37,4 +38,3 @@
 - (id)init;
 
 @end
-

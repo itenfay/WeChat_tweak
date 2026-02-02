@@ -14,7 +14,6 @@
     NSString *_bypassData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int prefetchType; // @synthesize prefetchType=_prefetchType;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(copy, nonatomic) NSString *bypassData; // @synthesize bypassData=_bypassData;

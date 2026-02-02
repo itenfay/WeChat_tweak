@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_lastUnsafeTime;
 + (void)PBArrayAdd_meaning;
 + (void)PBArrayAdd_resultVersion;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastUnsafeTime; // @synthesize lastUnsafeTime=_lastUnsafeTime;
 @property(nonatomic) unsigned int resultVersion; // @synthesize resultVersion=_resultVersion;
 @property(retain, nonatomic) EmojiInfoObj *emojiInfoObj; // @synthesize emojiInfoObj=_emojiInfoObj;

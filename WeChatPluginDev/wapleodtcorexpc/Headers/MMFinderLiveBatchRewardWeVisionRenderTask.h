@@ -18,7 +18,6 @@
     NSString *_animationImgPath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool started; // @synthesize started=_started;
 @property(retain, nonatomic) NSString *animationImgPath; // @synthesize animationImgPath=_animationImgPath;
 @property(nonatomic) unsigned int animationImgNum; // @synthesize animationImgNum=_animationImgNum;

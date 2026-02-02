@@ -12,7 +12,6 @@
 
 + (void)setupRegister:(id)arg1;
 + (id)sectionDefines;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *dataList; // @synthesize dataList=_dataList;
 - (void)onFinderDataItemDelete:(id)arg1;
 - (void)onNewLifePostSessionUpLoadSuccessful:(id)arg1;

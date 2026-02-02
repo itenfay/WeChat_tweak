@@ -16,7 +16,6 @@
     UIImageView *_arrowImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImage; // @synthesize arrowImage=_arrowImage;
 @property(retain, nonatomic) NSMutableArray *headImageViews; // @synthesize headImageViews=_headImageViews;
 @property(retain, nonatomic) MMUILabel *onlineCountLabel; // @synthesize onlineCountLabel=_onlineCountLabel;

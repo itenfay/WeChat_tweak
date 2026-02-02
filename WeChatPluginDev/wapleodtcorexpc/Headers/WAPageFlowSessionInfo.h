@@ -22,7 +22,6 @@
     NSString *_referAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *referAction; // @synthesize referAction=_referAction;
 @property(copy, nonatomic) NSString *targetActionNote; // @synthesize targetActionNote=_targetActionNote;
 @property(nonatomic) unsigned long long targetActionType; // @synthesize targetActionType=_targetActionType;

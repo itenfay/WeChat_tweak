@@ -14,7 +14,6 @@
     NSMutableData *_vertexData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *vertexData; // @synthesize vertexData=_vertexData;
 @property(nonatomic) _Bool vboUpdated; // @synthesize vboUpdated=_vboUpdated;
 @property(nonatomic) unsigned long long geometryType; // @synthesize geometryType=_geometryType;

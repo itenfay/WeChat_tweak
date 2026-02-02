@@ -16,7 +16,6 @@
 }
 
 + (unsigned long long)GenReddotVisionTypeFromCategoryNum:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeSwitchLogic *newlifeSwiftLogic; // @synthesize newlifeSwiftLogic=_newlifeSwiftLogic;
 @property(retain, nonatomic) WCFinderRedDotCtrlInfo *reddotTriggerJumpColumnCtrlInfo; // @synthesize reddotTriggerJumpColumnCtrlInfo=_reddotTriggerJumpColumnCtrlInfo;
 @property(retain, nonatomic) WCFinderRedDotTipsShowInfo *reddotTriggerJumpColumnShowInfo; // @synthesize reddotTriggerJumpColumnShowInfo=_reddotTriggerJumpColumnShowInfo;

@@ -17,7 +17,6 @@
     NSMutableArray *_adIconViewList;
 }
 
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)initView;
 - (id)initWithLbsRecommendPoiItem:(id)arg1 withSize:(struct CGSize)arg2;

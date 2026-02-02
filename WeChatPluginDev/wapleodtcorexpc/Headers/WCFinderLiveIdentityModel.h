@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_aliasRoleModAvailableTime;
 + (void)PBArrayAdd_aliasInfoArray;
 + (void)PBArrayAdd_currentAliasRoleType;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long aliasRoleModAvailableTime; // @synthesize aliasRoleModAvailableTime=_aliasRoleModAvailableTime;
 @property(nonatomic) unsigned long long currentAliasRoleType; // @synthesize currentAliasRoleType=_currentAliasRoleType;
 @property(copy, nonatomic) NSArray *aliasInfoArray; // @synthesize aliasInfoArray=_aliasInfoArray;

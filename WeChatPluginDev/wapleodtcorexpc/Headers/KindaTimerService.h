@@ -15,7 +15,6 @@
     MMTimer *_m_timer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needThrottle; // @synthesize needThrottle=_needThrottle;
 @property(retain, nonatomic) MMTimer *m_timer; // @synthesize m_timer=_m_timer;
 @property(retain, nonatomic) MMVoidCallback *m_timeCheckCallback; // @synthesize m_timeCheckCallback=_m_timeCheckCallback;

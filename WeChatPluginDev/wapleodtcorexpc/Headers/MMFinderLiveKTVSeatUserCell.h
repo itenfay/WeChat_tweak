@@ -13,7 +13,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveKTVSeatUserView *userView; // @synthesize userView=_userView;
 - (void)updateUserInfo:(id)arg1;
 - (void)layoutUserView;

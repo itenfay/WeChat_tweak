@@ -12,7 +12,6 @@
     WAWebSocketTask *_task;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAWebSocketTask *task; // @synthesize task=_task;
 
 @end

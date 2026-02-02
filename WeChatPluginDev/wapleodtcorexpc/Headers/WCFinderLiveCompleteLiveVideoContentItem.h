@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderDataItem, WCFinderFeedStaticCoverView;
 
@@ -14,7 +15,6 @@
     CDUnknownBlockType _action;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(retain, nonatomic) WCFinderFeedStaticCoverView *coverView; // @synthesize coverView=_coverView;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
@@ -25,4 +25,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

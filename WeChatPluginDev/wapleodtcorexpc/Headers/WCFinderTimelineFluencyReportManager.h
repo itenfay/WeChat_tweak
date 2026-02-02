@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, WCFinderFluencyReportCenter;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)genSceneKeyWithCommentScene:(int)arg1 andPullType:(unsigned long long)arg2 timestamp:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *infoBuffer; // @synthesize infoBuffer=_infoBuffer;
 @property(copy, nonatomic) CDUnknownBlockType reportBlock; // @synthesize reportBlock=_reportBlock;
 @property(retain, nonatomic) WCFinderFluencyReportCenter *reportCenter; // @synthesize reportCenter=_reportCenter;
@@ -47,4 +47,3 @@
 - (id)initWithReportCenter:(id)arg1;
 
 @end
-

@@ -11,7 +11,6 @@
     NSString *_privateKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *privateKey; // @synthesize privateKey=_privateKey;
 @property(retain, nonatomic) NSString *publicKey; // @synthesize publicKey=_publicKey;
 - (void)genRsaKeyPair;

@@ -17,7 +17,6 @@
     NSString *_sceneID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 - (void)onSessionNotifyUpdate;
 - (void)checkAndSendNotifyOperationToServer;

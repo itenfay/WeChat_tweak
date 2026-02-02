@@ -58,7 +58,6 @@
     NSString *_centerButtonConfirmTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *centerButtonConfirmTitle; // @synthesize centerButtonConfirmTitle=_centerButtonConfirmTitle;
 @property(retain, nonatomic) NSString *centerButtonAppPath; // @synthesize centerButtonAppPath=_centerButtonAppPath;
 @property(retain, nonatomic) NSString *centerButtonAppUsername; // @synthesize centerButtonAppUsername=_centerButtonAppUsername;

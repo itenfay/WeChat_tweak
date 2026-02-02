@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveManger, NSString;
 @protocol MMLiveCaptureAdapterDelegate;
@@ -14,7 +15,6 @@
     MMLiveManger *_liveCapture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveManger *liveCapture; // @synthesize liveCapture=_liveCapture;
 @property(nonatomic) __weak id <MMLiveCaptureAdapterDelegate> captureDelegate; // @synthesize captureDelegate=_captureDelegate;
 - (void)liveManager:(id)arg1 didRenderRotateTransitingChanged:(_Bool)arg2;
@@ -66,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

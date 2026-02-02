@@ -11,7 +11,6 @@
     UIView *_headerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) NSArray *headerArr; // @synthesize headerArr=_headerArr;
 - (void)onCloseMenu:(id)arg1;

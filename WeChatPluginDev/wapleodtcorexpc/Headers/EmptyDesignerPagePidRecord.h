@@ -14,7 +14,6 @@
 + (id)getSaveRootDir;
 + (void)initialize;
 + (void)PBArrayAdd_recordSet;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *recordSet; // @synthesize recordSet=_recordSet;
 - (id)init;
 - (id)getPBPropertyTable;

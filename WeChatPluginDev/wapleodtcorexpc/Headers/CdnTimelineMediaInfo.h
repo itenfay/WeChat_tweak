@@ -20,7 +20,6 @@
     NSDictionary *_customRequestHeaders;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *customRequestHeaders; // @synthesize customRequestHeaders=_customRequestHeaders;
 @property(nonatomic) _Bool m_bUseWxam; // @synthesize m_bUseWxam=_m_bUseWxam;
 @property(nonatomic) int m_cdnMediaType; // @synthesize m_cdnMediaType;

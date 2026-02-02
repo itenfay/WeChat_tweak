@@ -17,7 +17,6 @@
     UIViewPropertyAnimator *_blurAnimator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *blurAnimator; // @synthesize blurAnimator=_blurAnimator;
 @property(retain, nonatomic) UIVisualEffectView *blurView; // @synthesize blurView=_blurView;
 @property(retain, nonatomic) UIView *blurContainerView; // @synthesize blurContainerView=_blurContainerView;

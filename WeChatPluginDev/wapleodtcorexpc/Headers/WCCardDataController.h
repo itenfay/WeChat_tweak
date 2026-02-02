@@ -32,7 +32,6 @@
     ShareMessageConfirmLogicHelper *_SendAppMsgHelper;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isReadyToLoad; // @synthesize isReadyToLoad=_isReadyToLoad;
 @property(nonatomic) _Bool hasMoreData; // @synthesize hasMoreData=_hasMoreData;
 @property(nonatomic) __weak id <WCCardDataControllerDelegate> delegate; // @synthesize delegate=_delegate;

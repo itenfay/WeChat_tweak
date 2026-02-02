@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WXPBGeneratedMessage;
 
 @interface WCFinderLiveTransferCGI
@@ -14,7 +16,6 @@
     CDUnknownBlockType _failureBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) Class responseObjectClass; // @synthesize responseObjectClass=_responseObjectClass;
@@ -26,4 +27,3 @@
 - (id)initWithLiveTaskId:(id)arg1 cgiNumber:(unsigned int)arg2 requestObject:(id)arg3 responseObjectClass:(Class)arg4 successBlock:(CDUnknownBlockType)arg5 failureBlock:(CDUnknownBlockType)arg6;
 
 @end
-

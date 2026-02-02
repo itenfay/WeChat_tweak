@@ -42,7 +42,6 @@
 + (id)musicTopicWithDataItem:(id)arg1 commentScene:(int)arg2;
 + (id)poiTopicWithDataItem:(id)arg1 commentScene:(int)arg2;
 + (id)tagTopicWithName:(id)arg1 commentScene:(int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *jumpInfoToPoiStreamBypass; // @synthesize jumpInfoToPoiStreamBypass=_jumpInfoToPoiStreamBypass;
 @property(nonatomic) int getTopicInfoFlag; // @synthesize getTopicInfoFlag=_getTopicInfoFlag;
 @property(retain, nonatomic) NSData *topicInfoPassbuff; // @synthesize topicInfoPassbuff=_topicInfoPassbuff;

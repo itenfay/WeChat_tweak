@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderContact, WCFinderFeedContentVM;
 @protocol WCFinderPhotoFeedDetailViewModelDelegate;
@@ -23,7 +24,6 @@
     NSString *_nonceID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPhotoFeed; // @synthesize isPhotoFeed=_isPhotoFeed;
 @property(copy, nonatomic) NSString *nonceID; // @synthesize nonceID=_nonceID;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
@@ -48,4 +48,3 @@
 - (id)initWithTid:(id)arg1 nonceID:(id)arg2 customScene:(int)arg3;
 
 @end
-

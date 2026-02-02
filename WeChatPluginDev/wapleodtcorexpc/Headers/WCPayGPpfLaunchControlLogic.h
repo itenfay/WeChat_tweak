@@ -17,7 +17,6 @@
     WCPayGppfQueryInfoCgi *_queryPfInfoCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayGppfQueryInfoCgi *queryPfInfoCgi; // @synthesize queryPfInfoCgi=_queryPfInfoCgi;
 @property(retain, nonatomic) CContact *launchContact; // @synthesize launchContact=_launchContact;
 @property(nonatomic) _Bool bIsLaunchSucc; // @synthesize bIsLaunchSucc=_bIsLaunchSucc;

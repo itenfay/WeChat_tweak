@@ -15,7 +15,6 @@
     unsigned long long _imageDisplayStyle;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long imageDisplayStyle; // @synthesize imageDisplayStyle=_imageDisplayStyle;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;

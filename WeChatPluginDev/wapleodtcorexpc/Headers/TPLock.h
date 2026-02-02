@@ -13,7 +13,6 @@
     NSObject<OS_dispatch_semaphore> *_semaphore;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 - (void)unlock;
 - (void)lock;

@@ -21,7 +21,6 @@
     struct CGSize _thumbSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeShareCoverImageViewModel *newlifeViewModel; // @synthesize newlifeViewModel=_newlifeViewModel;
 @property(retain, nonatomic) WCFinderShareToMomentsItem *shareItem; // @synthesize shareItem=_shareItem;
 @property(nonatomic) unsigned int totalDuration; // @synthesize totalDuration=_totalDuration;

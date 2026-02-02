@@ -12,7 +12,6 @@
     WADeviceVoipAuthDeviceItem *_deviceItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WADeviceVoipAuthDeviceItem *deviceItem; // @synthesize deviceItem=_deviceItem;
 @property(nonatomic) __weak id <WADeviceVoipAuthModCgiDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;

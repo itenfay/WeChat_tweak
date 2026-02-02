@@ -20,7 +20,6 @@
     UIView *m_imageMaskView;
 }
 
-- (void).cxx_destruct;
 - (void)animateShowComponentWithDuration:(double)arg1;
 - (void)showComponent;
 - (void)hideComponent;

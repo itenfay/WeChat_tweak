@@ -17,7 +17,6 @@
 }
 
 + (id)genInFrameUnit:(id)arg1 channels:(int)arg2 sampleRate:(int)arg3 frameDuration:(int)arg4 audioFormat:(unsigned long long)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *inBufferData; // @synthesize inBufferData=_inBufferData;
 @property(nonatomic) unsigned long long audioFormat; // @synthesize audioFormat=_audioFormat;
 @property(nonatomic) int frameDuration; // @synthesize frameDuration=_frameDuration;

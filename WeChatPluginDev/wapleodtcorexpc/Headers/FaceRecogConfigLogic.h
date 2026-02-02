@@ -22,7 +22,6 @@
     NSDictionary *_liveSelect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *liveSelect; // @synthesize liveSelect=_liveSelect;
 @property(nonatomic) int idcRedirectCount; // @synthesize idcRedirectCount=_idcRedirectCount;
 @property(retain, nonatomic) NSString *configBuffer; // @synthesize configBuffer=_configBuffer;

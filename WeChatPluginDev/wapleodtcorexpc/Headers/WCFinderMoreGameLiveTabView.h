@@ -24,7 +24,6 @@
     MMWebImageView *_iconImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic) unsigned int bindTabId; // @synthesize bindTabId=_bindTabId;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;

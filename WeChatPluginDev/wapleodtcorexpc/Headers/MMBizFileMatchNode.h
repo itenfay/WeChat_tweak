@@ -22,7 +22,6 @@
 }
 
 + (id)nodeWithText:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long m_storeTimeType; // @synthesize m_storeTimeType;
 @property(nonatomic) long long m_pathPrefixType; // @synthesize m_pathPrefixType;
 @property(retain, nonatomic) NSMutableArray *m_arrRegexBizMatchNode; // @synthesize m_arrRegexBizMatchNode;

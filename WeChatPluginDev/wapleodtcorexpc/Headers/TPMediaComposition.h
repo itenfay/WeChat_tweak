@@ -17,7 +17,6 @@
     NSMutableArray *_innerTracks;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int avSequence; // @synthesize avSequence=_avSequence;
 @property(nonatomic) int audioSequence; // @synthesize audioSequence=_audioSequence;
 @property(nonatomic) int videoSequence; // @synthesize videoSequence=_videoSequence;

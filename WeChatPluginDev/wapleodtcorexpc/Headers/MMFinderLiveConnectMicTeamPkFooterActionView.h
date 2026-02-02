@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionReusableView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveConnectMicPKInfo, MMLiveIconButton, UIButton, UILabel;
 
@@ -19,7 +20,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isApplicant; // @synthesize isApplicant=_isApplicant;
 @property(retain, nonatomic) MMFinderLiveConnectMicPKInfo *pkInfo; // @synthesize pkInfo=_pkInfo;
 @property(retain, nonatomic) UILabel *waitPkStartLabel; // @synthesize waitPkStartLabel=_waitPkStartLabel;
@@ -36,4 +36,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

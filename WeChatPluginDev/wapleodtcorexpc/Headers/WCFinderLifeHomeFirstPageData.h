@@ -15,7 +15,6 @@
     unsigned long long _extFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long extFlag; // @synthesize extFlag=_extFlag;
 @property(nonatomic) long long defaultSelectedIdx; // @synthesize defaultSelectedIdx=_defaultSelectedIdx;
 @property(retain, nonatomic) NSArray *rootTags; // @synthesize rootTags=_rootTags;

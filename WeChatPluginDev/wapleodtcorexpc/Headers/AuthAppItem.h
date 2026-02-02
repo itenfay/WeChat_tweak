@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_appTypeList;
 + (void)PBArrayAdd_appIconURL;
 + (void)PBArrayAdd_appID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(retain, nonatomic) NSString *authInfo; // @synthesize authInfo=_authInfo;
 @property(retain, nonatomic) NSString *devInfo; // @synthesize devInfo=_devInfo;

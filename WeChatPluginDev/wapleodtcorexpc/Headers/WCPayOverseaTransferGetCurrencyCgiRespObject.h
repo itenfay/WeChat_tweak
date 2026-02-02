@@ -17,7 +17,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_noticeUrl; // @synthesize m_noticeUrl=_m_noticeUrl;
 @property(retain, nonatomic) NSString *m_notice; // @synthesize m_notice=_m_notice;
 @property(retain, nonatomic) NSString *m_currencyWording; // @synthesize m_currencyWording=_m_currencyWording;

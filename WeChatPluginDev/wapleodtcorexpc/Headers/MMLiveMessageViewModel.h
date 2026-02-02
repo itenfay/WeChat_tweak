@@ -17,7 +17,6 @@
 
 + (id)summayText:(id)arg1;
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isLiveEnded; // @synthesize isLiveEnded=_isLiveEnded;
 @property(readonly, nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;
 @property(readonly, nonatomic) NSString *liveStatus; // @synthesize liveStatus=_liveStatus;

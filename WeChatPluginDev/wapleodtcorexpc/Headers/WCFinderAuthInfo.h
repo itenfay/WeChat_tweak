@@ -34,7 +34,6 @@
 + (void)PBArrayAdd_authProfession;
 + (void)PBArrayAdd_authIconType;
 + (void)PBArrayAdd_realName;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long verifyStatus; // @synthesize verifyStatus=_verifyStatus;
 @property(nonatomic) unsigned long long authVerifyIdentity; // @synthesize authVerifyIdentity=_authVerifyIdentity;
 @property(copy, nonatomic) NSString *authIconUrl; // @synthesize authIconUrl=_authIconUrl;

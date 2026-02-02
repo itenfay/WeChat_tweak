@@ -15,7 +15,6 @@
     NSString *_appleRegisterTicket;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appleRegisterTicket; // @synthesize appleRegisterTicket=_appleRegisterTicket;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;

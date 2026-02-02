@@ -17,7 +17,6 @@
     MISSING_TYPE *msgSvrId;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 - (id)initWithFinderData:(id)arg1;

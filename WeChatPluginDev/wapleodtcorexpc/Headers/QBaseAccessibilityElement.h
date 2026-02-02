@@ -13,7 +13,6 @@
     QMapView *_baseMapView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int flickcount; // @synthesize flickcount=_flickcount;
 @property(nonatomic) __weak QMapView *baseMapView; // @synthesize baseMapView=_baseMapView;
 - (void)resetFlickCount;

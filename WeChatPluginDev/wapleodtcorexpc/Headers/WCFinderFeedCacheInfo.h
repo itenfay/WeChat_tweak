@@ -19,7 +19,6 @@
 + (void)PBArrayAdd_fileSize;
 + (void)PBArrayAdd_tid;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;

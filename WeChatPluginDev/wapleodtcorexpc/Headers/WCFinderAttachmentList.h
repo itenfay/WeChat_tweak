@@ -33,7 +33,6 @@
 + (void)PBArrayAdd_attachments;
 + (void)PBArrayAdd_cacheTime;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAttachmentListAttachmentsMutableArray *attachments; // @synthesize attachments=_attachments;
 @property(nonatomic) unsigned long long cacheTime; // @synthesize cacheTime=_cacheTime;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;

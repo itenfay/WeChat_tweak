@@ -18,7 +18,6 @@
 + (id)getBakChatMsgList:(id)arg1;
 + (id)msgWrapFromMsgItem:(id)arg1;
 + (void)finishAndUpdateSession;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *folderPath; // @synthesize folderPath=_folderPath;
 @property(retain, nonatomic) NSMutableDictionary *mediaPathMapTable; // @synthesize mediaPathMapTable=_mediaPathMapTable;
 @property(retain, nonatomic) NSMutableSet *setChatName; // @synthesize setChatName=_setChatName;

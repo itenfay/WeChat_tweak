@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterNavigatorCallback, MMFlutterEngineGroup, MMFlutterViewController, NSMutableArray, NSString;
 @protocol FlutterNavigatorDelegate;
@@ -17,7 +18,6 @@
     NSMutableArray *_enginePlugins;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *enginePlugins; // @synthesize enginePlugins=_enginePlugins;
 @property(retain, nonatomic) MMFlutterEngineGroup *engineGroup; // @synthesize engineGroup=_engineGroup;
 @property(retain, nonatomic) FlutterNavigatorCallback *callback; // @synthesize callback=_callback;
@@ -44,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -12,7 +12,6 @@
     MMLiveCommentPubbleCell *_displayPubbleCell;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveCommentPubbleCell *displayPubbleCell; // @synthesize displayPubbleCell=_displayPubbleCell;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;

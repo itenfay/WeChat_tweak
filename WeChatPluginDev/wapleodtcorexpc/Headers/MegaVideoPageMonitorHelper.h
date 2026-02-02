@@ -19,7 +19,6 @@
 + (id)ViewIdMainFeed;
 + (id)CgiRelatedList;
 + (id)CgiMainFeedList;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasEnter; // @synthesize hasEnter=_hasEnter;
 @property(readonly, nonatomic) _Bool hasInit; // @synthesize hasInit=_hasInit;
 @property(readonly, nonatomic) id <MegaVideoObjcPageMonitor> pageMonitor; // @synthesize pageMonitor=_pageMonitor;

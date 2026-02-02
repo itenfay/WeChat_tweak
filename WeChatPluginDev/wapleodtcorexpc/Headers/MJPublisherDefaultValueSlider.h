@@ -18,7 +18,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *defaultValueMarkLayer; // @synthesize defaultValueMarkLayer=_defaultValueMarkLayer;
 @property(retain, nonatomic) UISelectionFeedbackGenerator *snapFeedbackGenerator; // @synthesize snapFeedbackGenerator=_snapFeedbackGenerator;
 @property(nonatomic) _Bool isSnapFeedbackEnabled; // @synthesize isSnapFeedbackEnabled=_isSnapFeedbackEnabled;

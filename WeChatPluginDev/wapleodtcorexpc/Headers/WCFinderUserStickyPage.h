@@ -34,7 +34,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) unsigned long long stickyTime; // @synthesize stickyTime=_stickyTime;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;

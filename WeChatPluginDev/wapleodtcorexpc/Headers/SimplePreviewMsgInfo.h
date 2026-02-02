@@ -10,7 +10,6 @@
     NSString *_imagePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *imagePath; // @synthesize imagePath=_imagePath;
 - (_Bool)isVideoMsg;
 - (_Bool)isImgMsg;

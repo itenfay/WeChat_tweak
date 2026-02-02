@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, CALayer, MMFinderLiveFansGroupSignView, MMFinderLiveGlobalRankSignView, MMFinderLiveLiveRoleSignView, MMFinderLiveNormalTextSignView, MMUIImageView, MMUILabel, MMUIView, NSArray, NSMutableArray, NSString, UIImageView, UIView;
 
 @interface MMFinderLiveNotifyStyleCommentPubbleSingleHeadViewCell
@@ -36,7 +38,6 @@
     CALayer *_borderShineLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *borderShineLayer; // @synthesize borderShineLayer=_borderShineLayer;
 @property(retain, nonatomic) NSArray *shiningConfigArray; // @synthesize shiningConfigArray=_shiningConfigArray;
 @property(retain, nonatomic) NSMutableArray *shiningStarImageViews; // @synthesize shiningStarImageViews=_shiningStarImageViews;
@@ -126,4 +127,3 @@
 @property(readonly) Class superclass;
 
 @end
-

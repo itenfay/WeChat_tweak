@@ -17,7 +17,6 @@
     struct UIEdgeInsets _sectionInset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool segmentHasMultiSubtitles; // @synthesize segmentHasMultiSubtitles=_segmentHasMultiSubtitles;
 @property(nonatomic) struct UIEdgeInsets sectionInset; // @synthesize sectionInset=_sectionInset;
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;

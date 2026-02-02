@@ -19,7 +19,6 @@
 }
 
 + (void)onCalculatLayoutInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *imgContentView; // @synthesize imgContentView=_imgContentView;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)removeICloudIcon;

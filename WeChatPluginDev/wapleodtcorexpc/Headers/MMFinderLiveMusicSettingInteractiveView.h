@@ -17,7 +17,6 @@
     long long _currentInteractiveState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long currentInteractiveState; // @synthesize currentInteractiveState=_currentInteractiveState;
 @property(nonatomic) double guideSizeScale; // @synthesize guideSizeScale=_guideSizeScale;
 @property(retain, nonatomic) MMUILabel *guideLabel; // @synthesize guideLabel=_guideLabel;

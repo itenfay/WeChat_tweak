@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TingPlayerManager;
 
@@ -14,7 +15,6 @@
 
 + (id)plugins;
 + (id)defaultRouterParams;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingPlayerManager *playTaskController; // @synthesize playTaskController=_playTaskController;
 - (void)pushFromViewController:(id)arg1 plugin:(id)arg2 route:(id)arg3 arguments:(id)arg4;
 - (id)pushNewPageWithRoute:(id)arg1 arguments:(id)arg2 completioin:(CDUnknownBlockType)arg3;
@@ -34,4 +34,3 @@
 @property(readonly) Class superclass;
 
 @end
-

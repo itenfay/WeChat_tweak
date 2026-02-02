@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary;
 
@@ -21,7 +22,6 @@
     struct CGSize _lastLayoutSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastLayoutSize; // @synthesize lastLayoutSize=_lastLayoutSize;
 @property(nonatomic) unsigned long long oldLayoutHash; // @synthesize oldLayoutHash=_oldLayoutHash;
 @property(retain, nonatomic) NSMutableDictionary *reuseMap; // @synthesize reuseMap=_reuseMap;
@@ -45,4 +45,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

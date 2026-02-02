@@ -15,7 +15,6 @@
     unsigned long long _format;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long format; // @synthesize format=_format;
 @property(readonly, nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(readonly, nonatomic) unsigned long long width; // @synthesize width=_width;

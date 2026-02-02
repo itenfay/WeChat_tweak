@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface MMLiveFlowRetryAction
 {
     unsigned long long _maximumRetryCount;
@@ -13,7 +15,6 @@
 + (id)createWithMaximumRetryCount:(unsigned long long)arg1 exponentialBackoffBase:(double)arg2 initialDelay:(double)arg3 maximumRandomJitterRatio:(double)arg4;
 + (id)createDefaultExponentialBackoffWithMaximumRetryCount:(unsigned long long)arg1;
 + (id)createWithMaximumRetryCount:(unsigned long long)arg1 fixedBackoffDelay:(double)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType backoffDelayFunction; // @synthesize backoffDelayFunction=_backoffDelayFunction;
 @property(nonatomic) unsigned long long maximumRetryCount; // @synthesize maximumRetryCount=_maximumRetryCount;
 - (void)dispatchInvocation:(CDUnknownBlockType)arg1 flowInvocationContext:(id)arg2 actionInvocationContext:(id)arg3;
@@ -23,4 +24,3 @@
 - (id)initWithMaximumRetryCount:(unsigned long long)arg1 backoffDelayFunction:(CDUnknownBlockType)arg2;
 
 @end
-

@@ -14,7 +14,6 @@
     WCFinderJumpInfo *_jumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int showPosition; // @synthesize showPosition=_showPosition;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(nonatomic) _Bool needHighlight; // @synthesize needHighlight=_needHighlight;

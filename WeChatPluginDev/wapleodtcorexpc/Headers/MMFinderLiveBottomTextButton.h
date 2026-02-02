@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface MMFinderLiveBottomTextButton
@@ -15,7 +17,6 @@
     CDUnknownBlockType _shouldShouldRedDotPredicate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideServerRedDot; // @synthesize hideServerRedDot=_hideServerRedDot;
 @property(copy, nonatomic) CDUnknownBlockType shouldShouldRedDotPredicate; // @synthesize shouldShouldRedDotPredicate=_shouldShouldRedDotPredicate;
 @property(nonatomic) _Bool exposed; // @synthesize exposed=_exposed;
@@ -30,4 +31,3 @@
 - (void)reloadRedDot;
 
 @end
-

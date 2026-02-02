@@ -21,7 +21,6 @@
 + (void)deleteDraft:(id)arg1;
 + (_Bool)writeAllDraft:(id)arg1 mailID:(id)arg2;
 + (id)readAllDraft:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_storedMailAttachments; // @synthesize m_storedMailAttachments;
 @property(retain, nonatomic) NSString *m_content; // @synthesize m_content;
 @property(retain, nonatomic) NSString *m_topic; // @synthesize m_topic;

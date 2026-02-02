@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAShapeLayer, MMUILabel, UIButton, UIView;
 @protocol MMHalfScreenGuideViewDelegate;
 
@@ -32,7 +34,6 @@
     CAShapeLayer *_shapeLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) double buttonMarginTopFollowedCustomizedContent; // @synthesize buttonMarginTopFollowedCustomizedContent=_buttonMarginTopFollowedCustomizedContent;
@@ -70,4 +71,3 @@
 - (id)init;
 
 @end
-

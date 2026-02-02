@@ -20,7 +20,6 @@
     FinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) UILabel *friendFollowLabel; // @synthesize friendFollowLabel=_friendFollowLabel;
 @property(retain, nonatomic) WCFinderFittingWidthRichView *richTextView; // @synthesize richTextView=_richTextView;

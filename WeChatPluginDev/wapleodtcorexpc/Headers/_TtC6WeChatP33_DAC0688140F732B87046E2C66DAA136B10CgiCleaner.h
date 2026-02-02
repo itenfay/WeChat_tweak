@@ -10,7 +10,6 @@
     MISSING_TYPE *cleanActions;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onServiceClearData;
 

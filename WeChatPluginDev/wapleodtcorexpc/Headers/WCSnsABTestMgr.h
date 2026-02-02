@@ -20,7 +20,6 @@
     NSMutableDictionary *dicDocSnRepeatUrlHiddenInfo;
 }
 
-- (void).cxx_destruct;
 - (void)onServiceMemoryWarning;
 - (void)onServiceTerminate;
 - (void)onServiceEnterBackground;

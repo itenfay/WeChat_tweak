@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_showNum;
 + (void)PBArrayAdd_subtitle;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rows; // @synthesize rows=_rows;
 @property(nonatomic) unsigned int showNum; // @synthesize showNum=_showNum;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;

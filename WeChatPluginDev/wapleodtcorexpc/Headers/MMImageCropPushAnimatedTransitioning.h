@@ -14,7 +14,6 @@
     id <MMImageCropVCAnimatedTransitionDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMImageCropVCAnimatedTransitionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMImageCropPushTransitionContext *context; // @synthesize context=_context;
 - (void)animateTransition:(id)arg1;

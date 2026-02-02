@@ -19,7 +19,6 @@
     NSData *_qualityTagCacheBuf;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int currentQualityTag; // @synthesize currentQualityTag=_currentQualityTag;
 @property(nonatomic) int playerEventId; // @synthesize playerEventId=_playerEventId;
 @property(nonatomic) _Bool hasManuallySwitchedStream; // @synthesize hasManuallySwitchedStream=_hasManuallySwitchedStream;

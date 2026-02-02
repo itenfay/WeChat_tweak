@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLimitedModeDataPB, NSString;
 
 @interface MMLimitedModeMgr
@@ -27,7 +29,6 @@
 + (_Bool)isFinderLimitModeLevelBlock;
 + (_Bool)isFinderLimitModeLevelAllow;
 + (long long)finderLimitModeLevel;
-- (void).cxx_destruct;
 @property(nonatomic) long long syncLevel; // @synthesize syncLevel=_syncLevel;
 @property(nonatomic) long long syncBizType; // @synthesize syncBizType=_syncBizType;
 @property(nonatomic) _Bool syncSwitch; // @synthesize syncSwitch=_syncSwitch;
@@ -109,4 +110,3 @@
 @property(readonly) Class superclass;
 
 @end
-

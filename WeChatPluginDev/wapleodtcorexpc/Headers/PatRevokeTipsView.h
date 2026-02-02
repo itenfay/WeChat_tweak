@@ -25,7 +25,6 @@
     struct CGRect _headImageFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *bubbleLayer; // @synthesize bubbleLayer=_bubbleLayer;
 @property(retain, nonatomic) MMUIButton *revokeButton; // @synthesize revokeButton=_revokeButton;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;

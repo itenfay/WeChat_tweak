@@ -14,7 +14,6 @@
     UIImageView *_backgroundImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needsResumePlay; // @synthesize needsResumePlay=_needsResumePlay;
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) MJTemplateCompositeTask *compositeTask; // @synthesize compositeTask=_compositeTask;

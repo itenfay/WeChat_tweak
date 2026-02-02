@@ -21,7 +21,6 @@
     WCPayInterceptWinLogic *_interceptWinLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayInterceptWinLogic *interceptWinLogic; // @synthesize interceptWinLogic=_interceptWinLogic;
 @property(nonatomic) __weak id <WCRedEnvWeAppDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;
 @property(retain, nonatomic) NSError *m_error; // @synthesize m_error;

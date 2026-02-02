@@ -4,8 +4,8 @@
 //
 
 #import <Foundation/NSString.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSString (SearchWithKeyWord)
 - (void)searchWithKeyWord:(id)arg1 UsingBlock:(CDUnknownBlockType)arg2;
 @end
-

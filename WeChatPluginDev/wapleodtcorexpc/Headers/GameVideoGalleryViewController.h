@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GameHaowanMediaWrap, MMAlbumForGameHaowan, MMProgressViewEx, NSString, UICollectionView, WCPlayerPlayArgs, WCPlayerView;
 @protocol GameVideoGalleryViewControllerDelagate;
 
@@ -20,7 +22,6 @@
     MMProgressViewEx *_progressView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMProgressViewEx *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <GameVideoGalleryViewControllerDelagate> delegate; // @synthesize delegate=_delegate;
@@ -65,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -12,7 +12,6 @@
     RankExtInfo *_rankExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RankExtInfo *rankExtInfo; // @synthesize rankExtInfo=_rankExtInfo;
 @property(readonly, nonatomic) NSString *displayText;
 

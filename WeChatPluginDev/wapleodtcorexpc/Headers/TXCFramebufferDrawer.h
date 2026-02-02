@@ -15,7 +15,6 @@
     TXCGLDrawer *_drawer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCGLDrawer *drawer; // @synthesize drawer=_drawer;
 @property(readonly, nonatomic) TXCVideoFrameCoords *coords; // @synthesize coords=_coords;
 @property(readonly, nonatomic) id <TXIGlContext> context; // @synthesize context=_context;

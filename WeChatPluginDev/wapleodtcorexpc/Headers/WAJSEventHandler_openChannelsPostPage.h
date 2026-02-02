@@ -12,7 +12,6 @@
     unsigned long long _enterScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(retain, nonatomic) MMAsset *finderAsset; // @synthesize finderAsset=_finderAsset;
 @property(retain, nonatomic) WCFinderCreateCoordinator *createCoordinator; // @synthesize createCoordinator=_createCoordinator;

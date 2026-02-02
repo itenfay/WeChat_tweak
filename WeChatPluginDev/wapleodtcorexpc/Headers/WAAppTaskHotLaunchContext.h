@@ -16,7 +16,6 @@
     UINavigationController *_presentingNavigationController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool keepContextPage; // @synthesize keepContextPage=_keepContextPage;
 @property(nonatomic) __weak UINavigationController *presentingNavigationController; // @synthesize presentingNavigationController=_presentingNavigationController;
 @property(nonatomic) unsigned long long oldTaskRunningState; // @synthesize oldTaskRunningState=_oldTaskRunningState;

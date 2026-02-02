@@ -15,7 +15,6 @@
     TemplateReaderMessageFolder *_templateMessageFolder;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak TemplateReaderMessageFolder *templateMessageFolder; // @synthesize templateMessageFolder=_templateMessageFolder;
 @property(nonatomic) __weak ReaderMessageFolder *messageFolder; // @synthesize messageFolder=_messageFolder;
 @property(retain, nonatomic) NSString *rightButtonStr; // @synthesize rightButtonStr=_rightButtonStr;

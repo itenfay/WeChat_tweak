@@ -12,7 +12,6 @@
     WCPayOfflinePayEnablePageData *_viewData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayOfflinePayEnablePageData *viewData; // @synthesize viewData=_viewData;
 @property(nonatomic) __weak id <WCPayOfflineEnablePageTipsViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)verifyBtnClick;

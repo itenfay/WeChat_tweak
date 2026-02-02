@@ -12,7 +12,6 @@
     NSObject<WAWebViewPlugin_ApiQueueProtocol> *_runningEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSObject<WAWebViewPlugin_ApiQueueProtocol> *runningEvent; // @synthesize runningEvent=_runningEvent;
 @property(retain) NSMutableArray *arrEvent; // @synthesize arrEvent=_arrEvent;
 - (void)removeApiEvent:(id)arg1;

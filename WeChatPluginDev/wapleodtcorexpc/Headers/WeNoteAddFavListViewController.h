@@ -14,7 +14,6 @@
     id <WeNoteAddFavListViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFlutterNote; // @synthesize isFlutterNote=_isFlutterNote;
 @property(nonatomic) __weak id <WeNoteAddFavListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

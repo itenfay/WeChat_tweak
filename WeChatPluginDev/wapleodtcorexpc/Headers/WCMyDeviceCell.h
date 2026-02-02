@@ -15,7 +15,6 @@
     UILabel *_deviceDetailLbl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *deviceDetailLbl; // @synthesize deviceDetailLbl=_deviceDetailLbl;
 @property(retain, nonatomic) UILabel *deviceNameLbl; // @synthesize deviceNameLbl=_deviceNameLbl;
 @property(retain, nonatomic) MMDeviceHeadImageView *headImageView; // @synthesize headImageView=_headImageView;

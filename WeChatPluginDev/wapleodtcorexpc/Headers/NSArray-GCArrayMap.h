@@ -4,8 +4,8 @@
 //
 
 #import <Foundation/NSArray.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSArray (GCArrayMap)
 - (id)gcMapObjectsUsingBlock:(CDUnknownBlockType)arg1;
 @end
-

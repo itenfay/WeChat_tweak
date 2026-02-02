@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, UIImageView, WCFinderHeadImageView;
 
 @interface MMFinderLiveSuperfanInvalidRoleFullScreenView
@@ -13,7 +15,6 @@
     WCFinderHeadImageView *_headImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
 @property(retain, nonatomic) MMUILabel *nickLabel; // @synthesize nickLabel=_nickLabel;
 @property(retain, nonatomic) UIImageView *infoImageView; // @synthesize infoImageView=_infoImageView;
@@ -30,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 liveTask:(id)arg2;
 
 @end
-

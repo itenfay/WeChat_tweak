@@ -24,7 +24,6 @@
     unsigned long long _recordCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long recordCount; // @synthesize recordCount=_recordCount;
 @property(nonatomic) unsigned long long fileCount; // @synthesize fileCount=_fileCount;
 @property(nonatomic) unsigned long long videoCount; // @synthesize videoCount=_videoCount;

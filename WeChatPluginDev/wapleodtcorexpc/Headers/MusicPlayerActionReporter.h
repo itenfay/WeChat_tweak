@@ -14,7 +14,6 @@
     double _playRate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double playRate; // @synthesize playRate=_playRate;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(retain, nonatomic) MMMusicInfo *musicInfo; // @synthesize musicInfo=_musicInfo;

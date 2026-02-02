@@ -21,7 +21,6 @@
 }
 
 + (unsigned int)getUrgentLevel;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldReport; // @synthesize shouldReport=_shouldReport;
 @property(nonatomic) _Bool shouldToScan; // @synthesize shouldToScan=_shouldToScan;
 @property(retain, nonatomic) MMDiskCommonUsageScanner *appGroupScanner; // @synthesize appGroupScanner=_appGroupScanner;

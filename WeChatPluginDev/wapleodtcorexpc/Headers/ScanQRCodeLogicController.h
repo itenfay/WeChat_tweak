@@ -79,7 +79,6 @@
 + (id)tryCompressReportingImage:(id)arg1 withMaxLength:(unsigned long long)arg2;
 + (id)getDataUsedInExtInfoWithScanImageSize:(struct CGSize)arg1 AndWithLongPressPoint:(struct CGPoint)arg2 AndWithImageViewSize:(struct CGSize)arg3 AndWithContentOffset:(struct CGPoint)arg4 AndWithImageViewRect:(struct CGRect)arg5;
 + (id)shareScanOnePicSerialQueue;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewQRCodeScanner *scanner; // @synthesize scanner=_scanner;
 @property(nonatomic) unsigned long long perloadCount; // @synthesize perloadCount=_perloadCount;
 @property(retain, nonatomic) NSMutableDictionary *dictHalfScreenVC; // @synthesize dictHalfScreenVC=_dictHalfScreenVC;

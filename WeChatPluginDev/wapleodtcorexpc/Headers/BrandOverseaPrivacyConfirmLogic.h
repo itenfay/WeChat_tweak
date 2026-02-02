@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface BrandOverseaPrivacyConfirmLogic
@@ -13,7 +15,6 @@
 
 + (_Bool)shouldShowCloseOverseaPrivacyConfirm;
 + (_Bool)isNeedOverseaPrivacyConfirm;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType closeBlock; // @synthesize closeBlock=_closeBlock;
 @property(copy, nonatomic) CDUnknownBlockType openBlock; // @synthesize openBlock=_openBlock;
 - (void)onCancelServiceAuth;
@@ -32,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

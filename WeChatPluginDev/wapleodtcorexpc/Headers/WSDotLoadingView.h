@@ -14,7 +14,6 @@
     struct CGSize _dotSize;
 }
 
-- (void).cxx_destruct;
 - (void)stopLoading;
 - (void)startLoading;
 - (_Bool)isDotAnimationRemoved;

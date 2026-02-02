@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSString, WCFinderRedDotThreadSafeSet;
 
@@ -16,7 +17,6 @@
     WCFinderRedDotThreadSafeSet *_gcdSafeUuidSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRedDotThreadSafeSet *gcdSafeUuidSet; // @synthesize gcdSafeUuidSet=_gcdSafeUuidSet;
 @property(retain, nonatomic) NSMutableSet *tipsUuidSet; // @synthesize tipsUuidSet=_tipsUuidSet;
 @property(nonatomic) _Bool optimizeContainerUseGCDSafeThreadStrategy; // @synthesize optimizeContainerUseGCDSafeThreadStrategy=_optimizeContainerUseGCDSafeThreadStrategy;
@@ -33,4 +33,3 @@
 - (id)init;
 
 @end
-

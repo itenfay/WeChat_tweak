@@ -19,7 +19,6 @@
     unsigned long long _version;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int subBizScene; // @synthesize subBizScene=_subBizScene;
 @property(nonatomic) unsigned int bizScene; // @synthesize bizScene=_bizScene;
 @property(nonatomic) unsigned int prefetchResOption; // @synthesize prefetchResOption=_prefetchResOption;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLbsLocation, NSData, NSString;
 
 @interface WCFinderGetLbsListCgi
@@ -18,7 +20,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) FinderLbsLocation *materialLbsLocation; // @synthesize materialLbsLocation=_materialLbsLocation;
@@ -34,4 +35,3 @@
 - (id)initWithRequestScene:(int)arg1 lastBuffer:(id)arg2 lbsLocation:(id)arg3 keyword:(id)arg4 entryTime:(long long)arg5 isAutoQuery:(long long)arg6 materialLbsLocation:(id)arg7 successBlock:(CDUnknownBlockType)arg8 failBlock:(CDUnknownBlockType)arg9;
 
 @end
-

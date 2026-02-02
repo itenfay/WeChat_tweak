@@ -37,7 +37,6 @@
 }
 
 + (id)calcuatePhashMemInfoForPicture:(id)arg1 confStr:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int scanSessionIDForReport; // @synthesize scanSessionIDForReport=_scanSessionIDForReport;
 @property(nonatomic) unsigned int tabSessionIDForReport; // @synthesize tabSessionIDForReport=_tabSessionIDForReport;
 @property(nonatomic) _Bool hasReportWhenOpenHalfScreenPage; // @synthesize hasReportWhenOpenHalfScreenPage=_hasReportWhenOpenHalfScreenPage;

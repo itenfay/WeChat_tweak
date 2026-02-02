@@ -12,7 +12,6 @@
     WCPayTableCellViewDataView *_dataView;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCPayTableCellViewDataView *dataView; // @synthesize dataView=_dataView;
 - (id)getAccessibilityLabelString;
 - (void)updateViewData:(id)arg1 RedDot:(id)arg2 delegate:(id)arg3;

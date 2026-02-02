@@ -16,7 +16,6 @@
     NSMutableArray *m_arrAddressSubStageData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsAddressStageName; // @synthesize m_nsAddressStageName;
 @property(retain, nonatomic) NSString *m_nsAddressStageID; // @synthesize m_nsAddressStageID;
 @property(retain, nonatomic) NSString *m_nsAddressPostCode; // @synthesize m_nsAddressPostCode;

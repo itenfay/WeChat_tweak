@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFrequencyChecker, NSMutableArray, NSMutableSet, NSString, SystemAuthConfigurator;
 
 @interface MMSystemAuthManager
@@ -26,7 +28,6 @@
 + (void)VoIP_requestMicrophoneAuthWithCompletion:(CDUnknownBlockType)arg1;
 + (void)VoIPMP_requestCameraAuthWithCompletion:(CDUnknownBlockType)arg1;
 + (void)VoIPMP_requestMicrophoneAuthWithCompletion:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *rejectedSessionMap; // @synthesize rejectedSessionMap=_rejectedSessionMap;
 @property(retain, nonatomic) SystemAuthConfigurator *configurator; // @synthesize configurator=_configurator;
 @property(retain, nonatomic) MMFrequencyChecker *frequencyChecker; // @synthesize frequencyChecker=_frequencyChecker;
@@ -62,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

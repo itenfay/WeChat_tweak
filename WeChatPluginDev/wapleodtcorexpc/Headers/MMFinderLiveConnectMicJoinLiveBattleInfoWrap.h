@@ -15,7 +15,6 @@
     NSString *_vroomId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *vroomId; // @synthesize vroomId=_vroomId;
 @property(retain, nonatomic) NSString *micSessionId; // @synthesize micSessionId=_micSessionId;
 @property(nonatomic) unsigned int receiveBattleInfoTime; // @synthesize receiveBattleInfoTime=_receiveBattleInfoTime;

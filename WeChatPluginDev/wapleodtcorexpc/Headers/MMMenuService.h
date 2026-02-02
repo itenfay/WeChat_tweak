@@ -10,7 +10,6 @@
     MMMenuController *_menuController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMenuController *menuController; // @synthesize menuController=_menuController;
 - (void)onServiceClearData;
 - (id)getMenuController;

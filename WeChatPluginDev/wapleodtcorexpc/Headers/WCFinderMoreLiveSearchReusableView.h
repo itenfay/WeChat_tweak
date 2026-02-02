@@ -12,7 +12,6 @@
     UILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -27,7 +27,6 @@
     NSRecursiveLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) EmoticonLensPackage *lensPackage; // @synthesize lensPackage=_lensPackage;
 @property(nonatomic) _Bool reloadEffectFinish; // @synthesize reloadEffectFinish=_reloadEffectFinish;

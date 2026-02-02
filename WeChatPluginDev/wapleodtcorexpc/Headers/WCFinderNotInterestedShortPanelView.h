@@ -11,7 +11,6 @@
     UILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(nonatomic, getter=isHighLight) _Bool highLight; // @synthesize highLight=_highLight;
 - (id)getTipsLabelText;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class JITBindingState, JITRuntimeJsApiHandler, JITRuntimeNativeBufferMgr, JITRuntimeView, MagicBrushCore, NSMutableArray, NSMutableDictionary, NSString, NSThread, NSURLCache;
 @protocol JITRuntimeBindingDelegate, JITRuntimeDataTransferDelegate, JITRuntimeDelegate, JITRuntimeJsApiHandlerDelegate, JITRuntimeNativeRenderDelegate;
@@ -44,7 +45,6 @@
 }
 
 + (id)getBundleData:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *WX_SUBCONTEXT_FRAME; // @synthesize WX_SUBCONTEXT_FRAME=_WX_SUBCONTEXT_FRAME;
 @property(copy, nonatomic) NSString *WX_GET_BUFFER; // @synthesize WX_GET_BUFFER=_WX_GET_BUFFER;
 @property(copy, nonatomic) NSString *WX_XHR_JSAPI_COMMAND_BUFFER; // @synthesize WX_XHR_JSAPI_COMMAND_BUFFER=_WX_XHR_JSAPI_COMMAND_BUFFER;
@@ -134,4 +134,3 @@
 @property(readonly) Class superclass;
 
 @end
-

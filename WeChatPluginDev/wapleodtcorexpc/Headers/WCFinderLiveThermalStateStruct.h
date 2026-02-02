@@ -33,7 +33,6 @@
     NSString *_energyRuleID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int downloadingTaskCount; // @synthesize downloadingTaskCount=_downloadingTaskCount;
 @property(nonatomic) unsigned int backgroundWeAppTaskCount; // @synthesize backgroundWeAppTaskCount=_backgroundWeAppTaskCount;
 @property(copy, nonatomic) NSString *energyRuleID; // @synthesize energyRuleID=_energyRuleID;

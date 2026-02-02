@@ -14,7 +14,6 @@
 }
 
 + (double)getAspectHeightWithContentW:(double)arg1 itemCnt:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSArray *reverbItems; // @synthesize reverbItems=_reverbItems;
 @property(retain, nonatomic) MMUIView *contentView; // @synthesize contentView=_contentView;

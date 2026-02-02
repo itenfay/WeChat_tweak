@@ -19,7 +19,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) MMWebImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) unsigned long long currentIndex; // @synthesize currentIndex=_currentIndex;

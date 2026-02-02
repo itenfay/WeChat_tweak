@@ -18,7 +18,6 @@
     NSString *_curMusicID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *curMusicID; // @synthesize curMusicID=_curMusicID;
 @property(retain, nonatomic) MMTimer *musicProgressTimer; // @synthesize musicProgressTimer=_musicProgressTimer;
 @property(retain, nonatomic) MMUILabel *totalTimeLabel; // @synthesize totalTimeLabel=_totalTimeLabel;

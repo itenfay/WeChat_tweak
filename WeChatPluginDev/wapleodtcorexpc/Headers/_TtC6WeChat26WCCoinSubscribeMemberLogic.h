@@ -12,7 +12,6 @@
     MISSING_TYPE *parameter;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)startWithCompletionHandler:(void (^)(_TtC6WeChat27WCCoinSubscribeMemberResult *))arg1;
 - (id)initWithParameter:(id)arg1;

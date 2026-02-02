@@ -24,7 +24,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithUserName:(id)arg1 postalCode:(id)arg2 nationalCode:(id)arg3 telNumber:(id)arg4 province:(id)arg5 city:(id)arg6 county:(id)arg7 street:(id)arg8 detail:(id)arg9 houseNum:(id)arg10;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *houseNum; // @synthesize houseNum=_houseNum;
 @property(copy, nonatomic) NSString *detail; // @synthesize detail=_detail;
 @property(copy, nonatomic) NSString *street; // @synthesize street=_street;

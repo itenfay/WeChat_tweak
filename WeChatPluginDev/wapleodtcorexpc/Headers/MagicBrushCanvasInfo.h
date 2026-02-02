@@ -17,7 +17,6 @@
     struct NativeRenderCanvasHost *_nativeRenderCanvasHost;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct NativeRenderCanvasHost *nativeRenderCanvasHost; // @synthesize nativeRenderCanvasHost=_nativeRenderCanvasHost;
 @property(nonatomic) _Bool onscreen; // @synthesize onscreen=_onscreen;
 @property(nonatomic) int contextId; // @synthesize contextId=_contextId;

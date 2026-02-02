@@ -15,7 +15,6 @@
     _TtC6WeChat25WSWebviewExceptionCatcher *_eCatcher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC6WeChat25WSWebviewExceptionCatcher *eCatcher; // @synthesize eCatcher=_eCatcher;
 @property(retain, nonatomic) NSNumber *categoryId; // @synthesize categoryId=_categoryId;
 @property(retain, nonatomic) WKWebSearchView *webview; // @synthesize webview=_webview;

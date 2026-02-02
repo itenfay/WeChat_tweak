@@ -17,7 +17,6 @@
     int mrate;
 }
 
-- (void).cxx_destruct;
 - (unsigned int)process:(unsigned int)arg1 width:(int)arg2 height:(int)arg3 mode:(long long)arg4 sharpenratio:(float)arg5;
 - (unsigned int)process:(unsigned int)arg1 width:(int)arg2 height:(int)arg3 mode:(long long)arg4;
 - (void)setrate:(int)arg1;

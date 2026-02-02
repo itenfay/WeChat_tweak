@@ -18,7 +18,6 @@
     MJPageViewConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJPageViewConfig *config; // @synthesize config=_config;
 @property(readonly, nonatomic) MJPageViewLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) long long pageCount; // @synthesize pageCount=_pageCount;

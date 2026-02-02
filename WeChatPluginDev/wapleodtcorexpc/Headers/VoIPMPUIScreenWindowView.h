@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, NSString, UIImageView, UILabel, VoIPMPUIScreenProfileView, VoIPMPUITouchAlgorithm, XImageViewRenderer;
 
@@ -36,7 +37,6 @@
     unsigned long long _foldEdge;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSuspend; // @synthesize isSuspend=_isSuspend;
 @property(nonatomic) unsigned long long foldEdge; // @synthesize foldEdge=_foldEdge;
 @property(retain, nonatomic) CAShapeLayer *arrowLayer; // @synthesize arrowLayer=_arrowLayer;
@@ -94,4 +94,3 @@
 @property(readonly) Class superclass;
 
 @end
-

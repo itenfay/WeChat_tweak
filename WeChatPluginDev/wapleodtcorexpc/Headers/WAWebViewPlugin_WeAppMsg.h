@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDictionary, NSString, WAShareAppMessageInnerPermanentModel, WAShareAppMessageInnerTemporaryModel;
 @protocol WeAppMsgHandleDelegate;
 
@@ -16,7 +18,6 @@
 
 + (unsigned long long)_generateShareTypeWithIsNativeMessage:(_Bool)arg1 isWeiShiMessage:(_Bool)arg2 isRecordVideoMessage:(_Bool)arg3 isURLMessage:(_Bool)arg4;
 + (int)convertStringToCardType:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *customParams; // @synthesize customParams=_customParams;
 @property(nonatomic) __weak id <WeAppMsgHandleDelegate> msgDelegate; // @synthesize msgDelegate=_msgDelegate;
 @property(retain, nonatomic) WAShareAppMessageInnerTemporaryModel *temporaryModel; // @synthesize temporaryModel=_temporaryModel;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

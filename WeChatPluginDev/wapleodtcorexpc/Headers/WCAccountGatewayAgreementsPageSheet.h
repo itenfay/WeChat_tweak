@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, NSMutableArray, NSString;
 
 @interface WCAccountGatewayAgreementsPageSheet
@@ -12,7 +14,6 @@
     NSMutableArray *_agreementCheckBoxes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *agreementCheckBoxes; // @synthesize agreementCheckBoxes=_agreementCheckBoxes;
 @property(retain, nonatomic) MMUILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 @property(copy, nonatomic) CDUnknownBlockType onGoNextBlock; // @synthesize onGoNextBlock=_onGoNextBlock;
@@ -31,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

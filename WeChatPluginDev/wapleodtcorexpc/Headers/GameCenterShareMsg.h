@@ -10,7 +10,6 @@
     GameCenterMsgShareInfo *_shareInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameCenterMsgShareInfo *shareInfo; // @synthesize shareInfo=_shareInfo;
 - (id)getMsgCenterContent;
 - (id)initWithXmlNode:(struct XmlReaderNode_t *)arg1;

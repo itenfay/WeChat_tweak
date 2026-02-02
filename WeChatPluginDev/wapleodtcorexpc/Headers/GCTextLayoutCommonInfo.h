@@ -14,7 +14,6 @@
     double _sysTitleToContentMargin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double sysTitleToContentMargin; // @synthesize sysTitleToContentMargin=_sysTitleToContentMargin;
 @property(nonatomic) double sysTitleMarginWidth; // @synthesize sysTitleMarginWidth=_sysTitleMarginWidth;
 @property(nonatomic) double sysTitleTopOffset; // @synthesize sysTitleTopOffset=_sysTitleTopOffset;

@@ -22,7 +22,6 @@
 }
 
 + (void)registerWithRegistrar:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *liteAppWidgetAdapterMap; // @synthesize liteAppWidgetAdapterMap=_liteAppWidgetAdapterMap;
 @property(retain, nonatomic) WxaRouterPlugin *routerPlugin; // @synthesize routerPlugin=_routerPlugin;
 @property(retain, nonatomic) NSNumber *engineId; // @synthesize engineId=_engineId;

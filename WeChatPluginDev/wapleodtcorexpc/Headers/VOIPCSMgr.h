@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AUAudioDevice, AVVideoDevice, CContact, CMMotionManager, MMTimer, NSArray, NSData, NSRecursiveLock, NSString, VOIPComponent, VOIPDialData, VOIPVideoRender;
 @protocol IVOIPVideoDeviceDelegate;
 
@@ -147,7 +149,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType m_endEventBlock; // @synthesize m_endEventBlock=_m_endEventBlock;
 @property _Bool bForceKeyFrame; // @synthesize bForceKeyFrame=_bForceKeyFrame;
 @property int mLeftHWEncFrms; // @synthesize mLeftHWEncFrms=_mLeftHWEncFrms;
@@ -352,4 +353,3 @@
 @property(readonly) Class superclass;
 
 @end
-

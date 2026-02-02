@@ -15,7 +15,6 @@
 }
 
 + (id)fileNameFromUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long retryTimes; // @synthesize retryTimes=_retryTimes;
 @property(copy, nonatomic) NSString *pageIdentity; // @synthesize pageIdentity=_pageIdentity;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;

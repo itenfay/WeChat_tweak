@@ -19,7 +19,6 @@
     WAPrefetchRegisterationMark *_registerationMark;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPrefetchRegisterationMark *registerationMark; // @synthesize registerationMark=_registerationMark;
 @property(retain, nonatomic) NSMutableDictionary *prefetchOpenMarks; // @synthesize prefetchOpenMarks=_prefetchOpenMarks;
 @property(retain, nonatomic) NSMutableDictionary *prefetchFirstOpenMarks; // @synthesize prefetchFirstOpenMarks=_prefetchFirstOpenMarks;

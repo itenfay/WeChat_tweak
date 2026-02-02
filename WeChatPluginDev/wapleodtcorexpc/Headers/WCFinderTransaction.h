@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderTransaction : NSObject
 {
@@ -16,7 +17,6 @@
 
 + (id)transactionAction:(CDUnknownBlockType)arg1;
 + (id)transactionAction:(CDUnknownBlockType)arg1 autoCommit:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain, nonatomic) id extObj1; // @synthesize extObj1=_extObj1;
 @property(nonatomic) long long state; // @synthesize state=_state;
@@ -33,4 +33,3 @@
 - (void)dealloc;
 
 @end
-

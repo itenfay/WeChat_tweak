@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMTimer, NSHashTable, NSString, PicStats, UIColor, UIImage, WCFinderBGMPlayer, WCFinderDataItem, WCFinderFeedBottomRedPacketView, WCFinderFeedContentVM, WCFinderPageControl, WCFinderPinchContentView, WCFinderPinchLogicScrollView, WCFinderProgressBarStatusInfo;
 @protocol WCFinderFeedContentMediaActionProtocol, WCFinderFullNewMultiMediaViewDelegate, WCFinderHalfScreenListenProtocol;
@@ -44,7 +45,6 @@
 + (double)bottomProgressBlankHeight;
 + (_Bool)isHiddenOriginalContactWithContentVM:(id)arg1;
 + (id)mediaWithContentVM:(id)arg1 width:(double)arg2 height:(double)arg3 currentSelectIndex:(unsigned long long)arg4 isSubScene:(_Bool)arg5 delegate:(id)arg6 halfScreenDelegate:(id)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPinchLogicScrollView *contentPinchScrollView; // @synthesize contentPinchScrollView=_contentPinchScrollView;
 @property(retain, nonatomic) PicStats *picStats; // @synthesize picStats=_picStats;
 @property(nonatomic) _Bool isSubScene; // @synthesize isSubScene=_isSubScene;
@@ -190,4 +190,3 @@
 @property(readonly) Class superclass;
 
 @end
-

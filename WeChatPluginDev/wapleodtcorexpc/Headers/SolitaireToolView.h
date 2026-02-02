@@ -13,7 +13,6 @@
     UIView *_buttonContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *buttonContainerView; // @synthesize buttonContainerView=_buttonContainerView;
 @property(nonatomic) __weak id <SolitaireToolViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)getButtonHLImage:(int)arg1;

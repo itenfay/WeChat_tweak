@@ -14,7 +14,6 @@
     NSString *_externInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int msgType; // @synthesize msgType=_msgType;
 @property(retain, nonatomic) NSString *externInfo; // @synthesize externInfo=_externInfo;
 @property(retain, nonatomic) GameLifeConversation *conversation; // @synthesize conversation=_conversation;

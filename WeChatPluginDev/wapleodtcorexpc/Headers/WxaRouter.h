@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterEngine, NSMutableArray, NSMutableDictionary, WxaRouterConfig;
 @protocol WxaRouterFlutterEngineDelegate;
@@ -22,7 +23,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *destroyingEngines; // @synthesize destroyingEngines=_destroyingEngines;
 @property(nonatomic) _Bool isDefaultEngineUsed; // @synthesize isDefaultEngineUsed=_isDefaultEngineUsed;
 @property(nonatomic) int defaultEngineId; // @synthesize defaultEngineId=_defaultEngineId;
@@ -56,4 +56,3 @@
 - (id)init;
 
 @end
-

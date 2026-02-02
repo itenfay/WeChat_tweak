@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVPictureInPictureController, AVPlayerLayer, NSString;
 @protocol TPPictureInPictureDelegate;
@@ -19,7 +20,6 @@
 }
 
 + (_Bool)isPictureInPictureSupported;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool preloadAVPIPController; // @synthesize preloadAVPIPController=_preloadAVPIPController;
 @property(nonatomic) long long pictureInPictureStartDelayMs; // @synthesize pictureInPictureStartDelayMs=_pictureInPictureStartDelayMs;
 @property(nonatomic) __weak id <TPPictureInPictureDelegate> delegate; // @synthesize delegate=_delegate;
@@ -49,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

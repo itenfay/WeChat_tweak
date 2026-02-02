@@ -24,7 +24,6 @@
     UILabel *_sexTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *sexTipsLabel; // @synthesize sexTipsLabel=_sexTipsLabel;
 @property(retain, nonatomic) NSMutableArray *tableModels; // @synthesize tableModels=_tableModels;
 @property(nonatomic) long long maxIndexOfUsersExposed; // @synthesize maxIndexOfUsersExposed=_maxIndexOfUsersExposed;

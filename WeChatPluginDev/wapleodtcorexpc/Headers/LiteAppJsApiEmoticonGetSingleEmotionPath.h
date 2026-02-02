@@ -10,7 +10,6 @@
     EmoticonLiteAppSingleDownloadLogic *_downloadLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonLiteAppSingleDownloadLogic *downloadLogic; // @synthesize downloadLogic=_downloadLogic;
 - (void)invokeJsApi:(id)arg1 param:(id)arg2 isFromView:(_Bool)arg3;
 

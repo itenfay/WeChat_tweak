@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, NSURLRequest, UIScrollView, YYQBWebViewScriptMessageHandler;
 @protocol YYWebViewDelegate;
 
@@ -16,7 +18,6 @@
 }
 
 + (void)checkIfCurrentUserNeedNewProcessPool:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *customScriptHandlerArray; // @synthesize customScriptHandlerArray=_customScriptHandlerArray;
 @property(retain, nonatomic) YYQBWebViewScriptMessageHandler *scriptMessageHandler; // @synthesize scriptMessageHandler=_scriptMessageHandler;
 @property(nonatomic) _Bool bDisablePopup; // @synthesize bDisablePopup=_bDisablePopup;
@@ -69,4 +70,3 @@
 @property(readonly) Class superclass;
 
 @end
-

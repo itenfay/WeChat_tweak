@@ -15,7 +15,6 @@
     FavActionSheet *m_favActionSheet;
 }
 
-- (void).cxx_destruct;
 - (id)getFavForawrdViewController;
 - (void)OnFavoritesItemDownloadFinished:(id)arg1 ErrCode:(int)arg2;
 - (void)viewDidTransitionToNewSize;

@@ -283,7 +283,6 @@
 + (void)PBArrayAdd_username;
 + (unsigned long long)columnType;
 + (id)unarchiveWithWCTValue:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *topRecommendDisplayName; // @synthesize topRecommendDisplayName=_topRecommendDisplayName;
 @property(copy, nonatomic) NSString *recommendTopCacheName; // @synthesize recommendTopCacheName=_recommendTopCacheName;
 @property(retain, nonatomic) NSString *replacedContent; // @synthesize replacedContent=_replacedContent;

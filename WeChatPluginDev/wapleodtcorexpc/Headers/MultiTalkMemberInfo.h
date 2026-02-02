@@ -13,7 +13,6 @@
     NSString *_remoteSourceDevice;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *remoteSourceDevice; // @synthesize remoteSourceDevice=_remoteSourceDevice;
 @property(nonatomic) unsigned int remoteWxVer; // @synthesize remoteWxVer=_remoteWxVer;
 

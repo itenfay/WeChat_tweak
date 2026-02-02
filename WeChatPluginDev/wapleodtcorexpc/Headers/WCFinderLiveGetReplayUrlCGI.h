@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderLiveGetReplayUrlCGI
 {
     unsigned long long _replayId;
@@ -10,7 +12,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) unsigned long long replayId; // @synthesize replayId=_replayId;
@@ -20,4 +21,3 @@
 - (id)initWithReplayId:(unsigned long long)arg1 successBlock:(CDUnknownBlockType)arg2 failBlock:(CDUnknownBlockType)arg3;
 
 @end
-

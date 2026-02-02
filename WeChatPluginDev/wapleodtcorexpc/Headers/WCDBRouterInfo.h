@@ -18,7 +18,6 @@
 }
 
 + (id)infoWithTag:(int)arg1 name:(id)arg2 database:(id)arg3 associatedPaths:(id)arg4 critical:(_Bool)arg5;
-- (void).cxx_destruct;
 @property _Bool critical; // @synthesize critical=_critical;
 @property(retain, nonatomic) NSString *curDBPath; // @synthesize curDBPath=_curDBPath;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCTableViewCellNormalConfig;
 
 @interface WCTableViewNormalCellManager
@@ -31,7 +33,6 @@
 + (id)normalCellForSel:(SEL)arg1 target:(id)arg2 title:(id)arg3 rightValue:(id)arg4 accessoryType:(long long)arg5;
 + (id)cellForMakeSel:(SEL)arg1 makeTarget:(id)arg2 height:(double)arg3 userInfo:(id)arg4;
 + (unsigned long long)accessoryType:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool dr_isRtReport; // @synthesize dr_isRtReport=_dr_isRtReport;
 @property(nonatomic) unsigned long long dr_routeRule; // @synthesize dr_routeRule=_dr_routeRule;
 @property(nonatomic) unsigned long long dr_reportPolicy; // @synthesize dr_reportPolicy=_dr_reportPolicy;
@@ -65,4 +66,3 @@
 @property(retain, nonatomic) WCTableViewCellNormalConfig *cellConfig; // @dynamic cellConfig;
 
 @end
-

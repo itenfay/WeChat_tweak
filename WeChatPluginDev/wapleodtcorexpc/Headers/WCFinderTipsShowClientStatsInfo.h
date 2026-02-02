@@ -35,7 +35,6 @@
 + (void)PBArrayAdd_firstExposeTime;
 + (void)PBArrayAdd_oob;
 + (void)PBArrayAdd_exposeCount;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastReportExposeInterval; // @synthesize lastReportExposeInterval=_lastReportExposeInterval;
 @property(nonatomic) unsigned long long exposeInterval; // @synthesize exposeInterval=_exposeInterval;
 @property(nonatomic) unsigned long long lastReportTimeStamp; // @synthesize lastReportTimeStamp=_lastReportTimeStamp;

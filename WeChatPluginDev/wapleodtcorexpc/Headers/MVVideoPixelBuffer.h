@@ -19,7 +19,6 @@
     MAVVLogInputTexture *_inputTexture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MAVVLogInputTexture *inputTexture; // @synthesize inputTexture=_inputTexture;
 @property(nonatomic) long long originalPts; // @synthesize originalPts=_originalPts;
 @property(nonatomic) long long videoId; // @synthesize videoId=_videoId;

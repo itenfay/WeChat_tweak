@@ -19,7 +19,6 @@
 }
 
 + (_Bool)supportsSecureCoding;
-- (void).cxx_destruct;
 @property(nonatomic) double distance; // @synthesize distance=_distance;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;

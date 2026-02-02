@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderClickEventProxy : NSObject
 {
@@ -11,11 +12,9 @@
 }
 
 + (id)proxyWithBlock:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void)onClick;
 - (void)addClickActionToButton:(id)arg1;
 - (void)addTapGestureToView:(id)arg1;
 
 @end
-

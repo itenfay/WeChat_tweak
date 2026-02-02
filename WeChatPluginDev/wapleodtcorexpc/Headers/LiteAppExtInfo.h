@@ -11,7 +11,6 @@
     NSString *_liteAppBizData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) NSString *liteAppBizData; // @synthesize liteAppBizData=_liteAppBizData;
 - (id)toXML;

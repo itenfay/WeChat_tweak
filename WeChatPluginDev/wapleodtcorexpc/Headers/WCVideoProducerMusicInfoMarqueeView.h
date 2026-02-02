@@ -16,7 +16,6 @@
     WCMarqueeTextView *_marqueeTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMarqueeTextView *marqueeTextView; // @synthesize marqueeTextView=_marqueeTextView;
 @property(retain, nonatomic) UIImageView *arrowIconView; // @synthesize arrowIconView=_arrowIconView;
 @property(retain, nonatomic) UIImageView *musicIconView; // @synthesize musicIconView=_musicIconView;

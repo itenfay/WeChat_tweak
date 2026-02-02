@@ -17,7 +17,6 @@
     WCFinderFeedListView *_feedListView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool viewWillDisappearFlag; // @synthesize viewWillDisappearFlag=_viewWillDisappearFlag;
 @property(nonatomic) _Bool disableResume; // @synthesize disableResume=_disableResume;
 @property(nonatomic) _Bool hadAppeared; // @synthesize hadAppeared=_hadAppeared;

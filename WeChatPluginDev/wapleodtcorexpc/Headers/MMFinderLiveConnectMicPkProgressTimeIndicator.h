@@ -20,7 +20,6 @@
     unsigned long long _lastPkState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastDisplayedTime; // @synthesize lastDisplayedTime=_lastDisplayedTime;
 @property(nonatomic) unsigned long long lastPkState; // @synthesize lastPkState=_lastPkState;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;

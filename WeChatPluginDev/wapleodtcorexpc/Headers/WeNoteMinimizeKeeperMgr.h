@@ -11,7 +11,6 @@
     OrderedDictionary *_vcDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderedDictionary *vcDic; // @synthesize vcDic=_vcDic;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 - (void)onHomepageUpdate:(long long)arg1 withAdded:(id)arg2 andChanged:(id)arg3 andDeleted:(id)arg4 andTip:(id)arg5;

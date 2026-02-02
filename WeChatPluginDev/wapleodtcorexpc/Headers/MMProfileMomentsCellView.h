@@ -13,7 +13,6 @@
     NSArray *_displayedImageViews;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *displayedImageViews; // @synthesize displayedImageViews=_displayedImageViews;
 @property(copy, nonatomic) NSArray *displayedMediaItems; // @synthesize displayedMediaItems=_displayedMediaItems;
 - (void)removeDisplayedImageViews;

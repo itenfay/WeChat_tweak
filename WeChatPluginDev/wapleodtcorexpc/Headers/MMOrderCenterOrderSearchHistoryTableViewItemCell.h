@@ -18,7 +18,6 @@
     UIView *_separatorBarView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorBarView; // @synthesize separatorBarView=_separatorBarView;
 @property(retain, nonatomic) UIButton *removeView; // @synthesize removeView=_removeView;
 @property(retain, nonatomic) UILabel *keywordView; // @synthesize keywordView=_keywordView;

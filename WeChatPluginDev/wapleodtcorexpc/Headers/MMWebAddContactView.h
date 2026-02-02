@@ -20,7 +20,6 @@
     NSString *_finderBuffer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *finderBuffer; // @synthesize finderBuffer=_finderBuffer;
 @property(copy, nonatomic) NSString *scenenote; // @synthesize scenenote=_scenenote;
 @property(retain, nonatomic) NSString *reportInfo; // @synthesize reportInfo=_reportInfo;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveGoodsManagerViewBottomActionView, MMFinderLiveTaskId, MMTableView, NSMutableArray, NSString;
 @protocol MMFinderLiveGoodsManagerViewControllerDelegate;
 
@@ -17,7 +19,6 @@
 }
 
 + (void)loadWithTaskId:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGoodsManagerViewBottomActionView *bottomEdittingView; // @synthesize bottomEdittingView=_bottomEdittingView;
 @property(retain, nonatomic) NSMutableArray *goodsViewModels; // @synthesize goodsViewModels=_goodsViewModels;
 @property(retain, nonatomic) NSMutableArray *selectedGoodsViewModels; // @synthesize selectedGoodsViewModels=_selectedGoodsViewModels;
@@ -61,4 +62,3 @@
 @property(readonly) Class superclass;
 
 @end
-

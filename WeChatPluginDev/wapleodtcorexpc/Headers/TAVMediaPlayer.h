@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVPlayer, AVPlayerItem, NSError, NSHashTable, NSLock, NSMutableArray;
 
@@ -38,7 +39,6 @@
 + (void)setAdvancedRefreshEnabled:(_Bool)arg1;
 + (_Bool)isAdvancedRefreshEnabled;
 + (id)playerWithPlayerItem:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isRefreshing) _Bool refreshing; // @synthesize refreshing=_refreshing;
 @property(nonatomic) CDStruct_1b6d18a9 targetTime; // @synthesize targetTime=_targetTime;
 @property(nonatomic) _Bool isSeeking; // @synthesize isSeeking=_isSeeking;
@@ -114,4 +114,3 @@
 - (id)init;
 
 @end
-

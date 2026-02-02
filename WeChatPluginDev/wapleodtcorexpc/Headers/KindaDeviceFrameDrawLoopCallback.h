@@ -13,7 +13,6 @@
     MMVoidI64Callback *frameDrawCallback;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)onFrameDraw;
 - (void)stopListener;

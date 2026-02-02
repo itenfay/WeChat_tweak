@@ -32,7 +32,6 @@
     NSString *_emoticonSvrDescStr;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *emoticonSvrDescStr; // @synthesize emoticonSvrDescStr=_emoticonSvrDescStr;
 @property(copy, nonatomic) NSString *lensId; // @synthesize lensId=_lensId;
 @property(copy, nonatomic) NSString *attachedTextColor; // @synthesize attachedTextColor=_attachedTextColor;

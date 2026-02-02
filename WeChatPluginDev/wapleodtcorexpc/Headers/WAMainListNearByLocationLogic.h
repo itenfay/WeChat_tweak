@@ -13,7 +13,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) WALocationGetter *locationGetter; // @synthesize locationGetter=_locationGetter;
 @property(nonatomic) __weak id <WAMainListNearByLocationLogicDelegate> delegate; // @synthesize delegate=_delegate;

@@ -14,7 +14,6 @@
 }
 
 + (id)genRoundedCapsuleButton;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *iconWhenDisabled; // @synthesize iconWhenDisabled=_iconWhenDisabled;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(nonatomic) _Bool isDisabled; // @synthesize isDisabled=_isDisabled;

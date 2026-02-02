@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveBuyTicketHandle, MMFinderLiveNoticeInfoViewItem, MMFinderLiveNoticeListViewModel, MMUIButton, NSIndexPath, NSString, UILabel, UITableView;
 
 @interface MMFinderLiveNoticeListViewController
@@ -22,7 +24,6 @@
     MMFinderLiveBuyTicketHandle *_ticketHandle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveBuyTicketHandle *ticketHandle; // @synthesize ticketHandle=_ticketHandle;
 @property(retain, nonatomic) MMUIButton *operateAllButton; // @synthesize operateAllButton=_operateAllButton;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -92,4 +93,3 @@
 @property(readonly) Class superclass;
 
 @end
-

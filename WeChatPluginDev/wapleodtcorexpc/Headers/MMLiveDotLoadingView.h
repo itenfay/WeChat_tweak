@@ -16,7 +16,6 @@
     UIView *_dotContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *dotContainerView; // @synthesize dotContainerView=_dotContainerView;
 @property(retain, nonatomic) NSMutableArray *animationDots; // @synthesize animationDots=_animationDots;
 @property(retain, nonatomic) MMTimer *animationTimer; // @synthesize animationTimer=_animationTimer;

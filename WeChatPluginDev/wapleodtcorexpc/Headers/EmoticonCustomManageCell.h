@@ -17,7 +17,6 @@
     double _currentWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowDvider; // @synthesize shouldShowDvider=_shouldShowDvider;
 @property(nonatomic) _Bool isScaled; // @synthesize isScaled=_isScaled;
 @property(nonatomic) double currentWidth; // @synthesize currentWidth=_currentWidth;

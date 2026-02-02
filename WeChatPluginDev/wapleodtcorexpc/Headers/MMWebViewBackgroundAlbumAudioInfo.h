@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_durantion;
 + (void)PBArrayAdd_audioId;
 + (void)PBArrayAdd_albumId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebViewBackgroundAlbumAudioExtInfo *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) unsigned int offset; // @synthesize offset=_offset;
 @property(nonatomic) unsigned int durantion; // @synthesize durantion=_durantion;

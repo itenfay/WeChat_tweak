@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveFansGroupAnchorEditFansNoticeInfo, MMFinderLiveFansGroupNoticeVisibilitySheet, MMFinderLiveTaskId, MMTextView, MMUIButton, MMUILabel, MMWebImageView, NSArray, NSString, UIImage, UIImageView, UIScrollView, UIView;
 @protocol MMFinderLiveFansGroupFansNoticeModifyPanelDelegate, MMFinderLiveFansGroupOperationReportDelegate;
 
@@ -32,7 +34,6 @@
     MMFinderLiveFansGroupNoticeVisibilitySheet *_visibilityPageSheet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveFansGroupNoticeVisibilitySheet *visibilityPageSheet; // @synthesize visibilityPageSheet=_visibilityPageSheet;
 @property(retain, nonatomic) NSArray *levelTitles; // @synthesize levelTitles=_levelTitles;
 @property(retain, nonatomic) UIImage *latestNoticeImage; // @synthesize latestNoticeImage=_latestNoticeImage;
@@ -108,4 +109,3 @@
 @property(readonly) Class superclass;
 
 @end
-

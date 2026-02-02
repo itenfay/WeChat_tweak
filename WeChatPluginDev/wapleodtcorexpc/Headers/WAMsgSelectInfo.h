@@ -17,7 +17,6 @@
     MsgDataDownloadLogic *_downloadLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MsgDataDownloadLogic *downloadLogic; // @synthesize downloadLogic=_downloadLogic;
 @property(nonatomic) double percent; // @synthesize percent=_percent;
 @property(nonatomic) _Bool showPercent; // @synthesize showPercent=_showPercent;

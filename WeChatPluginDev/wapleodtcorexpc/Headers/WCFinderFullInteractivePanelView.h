@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class InteractionLabel, MMFinderFeedNoticeLogic, MMTimer, MMUIButton, NSHashTable, NSMutableDictionary, NSMutableSet, NSString, UIImageView, UILabel, UILongPressGestureRecognizer, WCFinderCommonBottomSuspendView, WCFinderFeedBubbleView, WCFinderFeedContentTextView, WCFinderFeedMembershipInfo, WCFinderFeedWarningTipsView, WCFinderFriendLikeToolbarView, WCFinderFullScrollTextView, WCFinderFullToolbarView, WCFinderImageTextContainerView, WCFinderInteractiveCarouselView, WCFinderInteractivePanelConfigParamsModel, WCFinderLiveAudienceNoticeReporter, WCFinderOperateEntranceTipsView, WCFinderPanelJumpInfoCarouselView, WCFinderPanelThumbEnhanceBubbleView, WCFinderShadowBubbleView, WCFinderShadowTipsView;
 @protocol WCFinderFullInteractivePanelViewDelegate, WCFinderHeadInfoViewProtocol><WCFinderJumpInfoViewProtocol;
@@ -59,7 +60,6 @@
 
 + (id)dateFormatter;
 + (id)buildMemberFlagButton;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGes; // @synthesize longPressGes=_longPressGes;
 @property(retain, nonatomic) WCFinderOperateEntranceTipsView *creatorEntraceDataTips; // @synthesize creatorEntraceDataTips=_creatorEntraceDataTips;
 @property(nonatomic) _Bool liveFeedHideAllWidgets; // @synthesize liveFeedHideAllWidgets=_liveFeedHideAllWidgets;
@@ -333,4 +333,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJActionPanelMainMenuView, MJAudioExtractor, MJPlaybackViewModel, MJTimelineViewController, MJTimelineViewModel, MMTimer, MMUIButton, MMUIImageView, MMUILabel, MMUIView, NSString, WCProgressCircleView;
 @protocol MJMovieTextOSTRecognitionViewControllerDelegate;
@@ -36,7 +37,6 @@
 + (void)extractCaptionItemsFromAudioData:(id)arg1 audioID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (_Bool)isSegmentCaptionExtractable:(id)arg1;
 + (id)genSessionID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJAudioExtractor *audioExtractor; // @synthesize audioExtractor=_audioExtractor;
 @property(retain, nonatomic) MJActionPanelMainMenuView *menuView; // @synthesize menuView=_menuView;
 @property(retain, nonatomic) MMUIView *backgroundViewSucceed; // @synthesize backgroundViewSucceed=_backgroundViewSucceed;
@@ -118,4 +118,3 @@
 @property(readonly) Class superclass;
 
 @end
-

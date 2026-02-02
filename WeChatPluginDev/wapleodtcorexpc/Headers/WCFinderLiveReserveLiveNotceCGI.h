@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderLiveReserveLiveNotceCGI
 {
     int _scene;
@@ -12,7 +14,6 @@
     long long _innerScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long innerScene; // @synthesize innerScene=_innerScene;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
@@ -24,4 +25,3 @@
 - (id)initWithTaskId:(id)arg1 scene:(int)arg2 innerScene:(long long)arg3 opType:(int)arg4 successBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 
 @end
-

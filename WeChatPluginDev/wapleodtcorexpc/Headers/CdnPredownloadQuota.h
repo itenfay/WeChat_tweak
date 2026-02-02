@@ -13,7 +13,6 @@
     NSDate *_expiredDate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *expiredDate; // @synthesize expiredDate=_expiredDate;
 @property(nonatomic) long long sizeInBytes; // @synthesize sizeInBytes=_sizeInBytes;
 

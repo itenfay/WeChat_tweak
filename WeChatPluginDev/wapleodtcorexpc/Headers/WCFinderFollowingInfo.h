@@ -28,7 +28,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long oneTimeFlag; // @synthesize oneTimeFlag=_oneTimeFlag;
 @property(nonatomic) unsigned long long followIndex; // @synthesize followIndex=_followIndex;
 @property(copy, nonatomic) NSString *followingUsername; // @synthesize followingUsername=_followingUsername;

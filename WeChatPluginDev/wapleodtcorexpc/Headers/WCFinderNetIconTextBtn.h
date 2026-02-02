@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebImageView, UILabel;
 
@@ -15,7 +16,6 @@
     double _leftRightMargin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double leftRightMargin; // @synthesize leftRightMargin=_leftRightMargin;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
@@ -31,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

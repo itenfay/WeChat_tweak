@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class JSContext, NSMutableDictionary, NSRecursiveLock, NSThread;
 @protocol OS_dispatch_queue;
@@ -19,7 +20,6 @@
     NSRecursiveLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool addRunloopCommonMode; // @synthesize addRunloopCommonMode=_addRunloopCommonMode;
 @property _Bool hasStopped; // @synthesize hasStopped=_hasStopped;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
@@ -39,4 +39,3 @@
 - (id)init;
 
 @end
-

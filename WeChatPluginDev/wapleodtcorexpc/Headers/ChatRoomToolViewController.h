@@ -16,7 +16,6 @@
     UICollectionView *_collectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) _Bool isShowInPageSheetMode; // @synthesize isShowInPageSheetMode=_isShowInPageSheetMode;
 @property(retain, nonatomic) CContact *chatRoomContact; // @synthesize chatRoomContact=_chatRoomContact;

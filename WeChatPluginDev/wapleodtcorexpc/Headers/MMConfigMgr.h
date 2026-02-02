@@ -21,7 +21,6 @@
 }
 
 + (_Bool)isAutoDownloadCloseForValue:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *m_dicCacheConfigSeperator; // @synthesize m_dicCacheConfigSeperator;
 - (_Bool)isAutoDownloadCloseForKey:(id)arg1;
 - (_Bool)isCurrentTimeInRangeForKey:(id)arg1;

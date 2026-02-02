@@ -12,7 +12,6 @@
 }
 
 + (double)getHeightWithViewModel:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(nonatomic) __weak WCFinderCustomImageRichTextView *contentTextView; // @synthesize contentTextView=_contentTextView;
 - (void)onPrivateAccountFollowStateChanged;

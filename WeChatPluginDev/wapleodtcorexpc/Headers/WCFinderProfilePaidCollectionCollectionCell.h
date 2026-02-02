@@ -14,7 +14,6 @@
 
 + (double)inlineSeperatorLeftInset;
 + (double)cellHeightWithPaidCollection:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProfilePaidCollectionCellContentView *courseContentView; // @synthesize courseContentView=_courseContentView;
 - (void)updateWithPaidCollectin:(id)arg1;
 - (void)layoutSubviews;

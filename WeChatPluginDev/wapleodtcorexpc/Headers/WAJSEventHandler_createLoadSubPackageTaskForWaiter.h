@@ -11,7 +11,6 @@
 }
 
 + (id)getAwaitTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WAJSContextPlugin_SyncWaiter *syncWaiter; // @synthesize syncWaiter=_syncWaiter;
 - (void)onLoadReuslt:(id)arg1 result:(id)arg2;
 - (void)doBeforeTask:(id)arg1;

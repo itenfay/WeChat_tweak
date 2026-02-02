@@ -12,7 +12,6 @@
     NSMutableDictionary *dicJSMenuDataForUrl;
 }
 
-- (void).cxx_destruct;
 - (id)getJSCutomWebViewMenuDataForMainUrl:(id)arg1;
 - (void)setJSCustomMenuData:(id)arg1 forMainUrl:(id)arg2;
 - (id)getArrDynamicConfigWebViewMenuData;

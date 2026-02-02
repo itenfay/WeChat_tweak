@@ -21,7 +21,6 @@
 }
 
 + (id)weeffectType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *queueCustomEffect; // @synthesize queueCustomEffect=_queueCustomEffect;
 @property(retain, nonatomic) NSMutableArray *zipFetchArray; // @synthesize zipFetchArray=_zipFetchArray;
 @property(retain, nonatomic) NSMutableArray *imgFetchArray; // @synthesize imgFetchArray=_imgFetchArray;

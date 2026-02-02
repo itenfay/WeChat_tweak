@@ -21,7 +21,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) UILabel *pickerTitleView; // @synthesize pickerTitleView=_pickerTitleView;
 @property(retain) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;

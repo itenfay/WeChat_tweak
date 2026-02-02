@@ -14,7 +14,6 @@
     long long _operationType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long operationType; // @synthesize operationType=_operationType;
 @property(nonatomic) __weak id <WAMenuAnimatedTransitionProtocol> transitionDelegate; // @synthesize transitionDelegate=_transitionDelegate;
 - (void)animateTransition:(id)arg1;

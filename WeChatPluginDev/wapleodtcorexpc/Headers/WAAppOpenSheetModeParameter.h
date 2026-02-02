@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIColor;
 
 @interface WAAppOpenSheetModeParameter
@@ -33,7 +35,6 @@
     struct CGSize _m_fSizeInLandscape;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType m_headerTipsDidClickCloseBlock; // @synthesize m_headerTipsDidClickCloseBlock=_m_headerTipsDidClickCloseBlock;
 @property(copy, nonatomic) CDUnknownBlockType m_headerTipsDidShowBlock; // @synthesize m_headerTipsDidShowBlock=_m_headerTipsDidShowBlock;
 @property(copy, nonatomic) NSString *m_nsHeaderTipsText; // @synthesize m_nsHeaderTipsText=_m_nsHeaderTipsText;
@@ -60,4 +61,3 @@
 @property(nonatomic) _Bool m_bEmbedModeAllowFullScreen; // @synthesize m_bEmbedModeAllowFullScreen=_m_bEmbedModeAllowFullScreen;
 
 @end
-

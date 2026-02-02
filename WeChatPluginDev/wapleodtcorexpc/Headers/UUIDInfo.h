@@ -12,7 +12,6 @@
     NSString *_WeChatUUID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *WeChatUUID; // @synthesize WeChatUUID=_WeChatUUID;
 - (_Bool)isMatch:(id)arg1;
 

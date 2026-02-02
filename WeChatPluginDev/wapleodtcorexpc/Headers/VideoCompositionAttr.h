@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVMutableVideoComposition, CALayer, NSMutableDictionary, NSString, UIImage;
 
 @interface VideoCompositionAttr
@@ -27,7 +29,6 @@
 }
 
 + (id)createFromEditVideoAttr:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
 @property(nonatomic) _Bool canCompositeSameVideo; // @synthesize canCompositeSameVideo=_canCompositeSameVideo;
 @property(nonatomic) _Bool isVideoEdited; // @synthesize isVideoEdited=_isVideoEdited;
@@ -50,4 +51,3 @@
 - (void)encodeWithCoder:(id)arg1;
 
 @end
-

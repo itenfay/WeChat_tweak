@@ -15,7 +15,6 @@
     NSMutableArray *_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *data; // @synthesize data=_data;
 @property(nonatomic) _Bool show; // @synthesize show=_show;
 @property(nonatomic) _Bool isExpand; // @synthesize isExpand=_isExpand;

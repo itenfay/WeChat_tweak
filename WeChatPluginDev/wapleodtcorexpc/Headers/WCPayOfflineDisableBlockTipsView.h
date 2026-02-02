@@ -13,7 +13,6 @@
     WCPayOfflinePayDisableBlockLayerTextInfo *_curTextInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayOfflinePayDisableBlockLayerTextInfo *curTextInfo; // @synthesize curTextInfo=_curTextInfo;
 @property(retain, nonatomic) WCPayOfflinePayDisableBlockLayer *viewData; // @synthesize viewData=_viewData;
 @property(nonatomic) __weak id <WCPayOfflineDisableBlockTipsViewDelegate> delegate; // @synthesize delegate=_delegate;

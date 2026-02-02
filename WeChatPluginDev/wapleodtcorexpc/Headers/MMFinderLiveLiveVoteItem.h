@@ -15,7 +15,6 @@
     unsigned long long _timeLimit;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allowMultipleSelection; // @synthesize allowMultipleSelection=_allowMultipleSelection;
 @property(nonatomic) unsigned long long timeLimit; // @synthesize timeLimit=_timeLimit;
 @property(retain, nonatomic) NSMutableArray *choices; // @synthesize choices=_choices;

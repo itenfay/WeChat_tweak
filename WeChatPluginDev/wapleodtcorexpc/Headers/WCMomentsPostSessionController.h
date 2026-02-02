@@ -26,7 +26,6 @@
 + (_Bool)willSelectMultiVideosIfAdd:(id)arg1 with:(id)arg2;
 + (_Bool)willSelectHybridAssetsIfAdd:(id)arg1 with:(id)arg2;
 + (long long)minDurationForVideoAsset;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsTemplateShareInfo *currentShareInfo; // @synthesize currentShareInfo=_currentShareInfo;
 @property(nonatomic) __weak MMUIViewController<WCCommitViewAnimationDelegate> *hostViewController; // @synthesize hostViewController=_hostViewController;
 @property(retain, nonatomic) WCMomentsPostReportSession *postReportSession; // @synthesize postReportSession=_postReportSession;

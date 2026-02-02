@@ -32,7 +32,6 @@
 + (void)PBArrayAdd_pagePathUnits;
 + (void)PBArrayAdd_pagePathId;
 + (void)PBArrayAdd_sid;
-- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *viewOperationsDicForViewID; // @synthesize viewOperationsDicForViewID=_viewOperationsDicForViewID;
 @property(retain) NSMutableDictionary *viewOperationsDicForKey; // @synthesize viewOperationsDicForKey=_viewOperationsDicForKey;
 @property(retain, nonatomic) NSString *originalJson; // @synthesize originalJson=_originalJson;

@@ -14,7 +14,6 @@
     UIView *_rightLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *rightLine; // @synthesize rightLine=_rightLine;
 @property(retain, nonatomic) UIView *leftLine; // @synthesize leftLine=_leftLine;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;

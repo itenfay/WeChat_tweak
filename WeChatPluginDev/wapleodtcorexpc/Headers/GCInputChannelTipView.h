@@ -13,7 +13,6 @@
     UIButton *_deSelectBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *deSelectBtn; // @synthesize deSelectBtn=_deSelectBtn;
 @property(retain, nonatomic) UIButton *titleBtn; // @synthesize titleBtn=_titleBtn;
 - (void)layoutSubviews;

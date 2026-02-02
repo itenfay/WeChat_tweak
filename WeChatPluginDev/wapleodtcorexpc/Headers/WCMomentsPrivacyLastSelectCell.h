@@ -13,7 +13,6 @@
 
 + (double)heightForTitle:(id)arg1 cellWidth:(double)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)layoutSubviews;

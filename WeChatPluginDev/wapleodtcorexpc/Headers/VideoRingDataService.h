@@ -22,7 +22,6 @@
     VideoRingNetProvider *_provider;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VideoRingNetProvider *provider; // @synthesize provider=_provider;
 @property(retain, nonatomic) NSMutableSet *requestedVibrateFileIDSet; // @synthesize requestedVibrateFileIDSet=_requestedVibrateFileIDSet;
 @property(retain, nonatomic) VideoRingDataBase *dataBase; // @synthesize dataBase=_dataBase;

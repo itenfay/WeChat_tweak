@@ -13,7 +13,6 @@
     WCVideoRender *_videoRender;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCVideoRender *videoRender; // @synthesize videoRender=_videoRender;
 @property(retain, nonatomic) MMConfSDKTalkingInfo *talkingInfo; // @synthesize talkingInfo=_talkingInfo;
 - (id)description;

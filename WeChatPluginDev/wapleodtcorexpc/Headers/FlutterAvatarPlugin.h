@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterEventChannel, NSString;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _m_avatar_changed_event_sink;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType m_avatar_changed_event_sink; // @synthesize m_avatar_changed_event_sink=_m_avatar_changed_event_sink;
 @property(retain, nonatomic) FlutterEventChannel *m_avatar_changed_event_channel; // @synthesize m_avatar_changed_event_channel=_m_avatar_changed_event_channel;
 - (void)onHeadImageChange:(id)arg1;
@@ -32,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

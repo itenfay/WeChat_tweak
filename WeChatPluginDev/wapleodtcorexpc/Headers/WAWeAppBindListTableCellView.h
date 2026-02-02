@@ -20,7 +20,6 @@
 + (long long)descLabelLineBreakMode;
 + (id)descLabelFont;
 + (double)cellHeightWith:(id)arg1 viewWidth:(double)arg2;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)initDescLabel;
 - (void)initSeperateLine;

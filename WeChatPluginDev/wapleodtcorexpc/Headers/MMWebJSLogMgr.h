@@ -12,7 +12,6 @@
     _Bool cgiRunning;
 }
 
-- (void).cxx_destruct;
 - (void)ReachabilityChange:(unsigned int)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (unsigned int)getMaxSendSize;

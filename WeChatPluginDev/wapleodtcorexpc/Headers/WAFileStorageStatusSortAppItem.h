@@ -13,7 +13,6 @@
     WAFileSpaceStatusAppItem *_appItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAFileSpaceStatusAppItem *appItem; // @synthesize appItem=_appItem;
 @property(retain, nonatomic) NSString *appID; // @synthesize appID=_appID;
 - (long long)compare:(id)arg1;

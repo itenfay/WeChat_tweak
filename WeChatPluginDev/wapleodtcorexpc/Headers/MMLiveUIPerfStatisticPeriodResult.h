@@ -21,7 +21,6 @@
 + (double)getMaxComposeAreaPercentInPeriod:(double)arg1 fromStatResults:(id)arg2;
 + (double)getPersistTimePercentInPeriod:(double)arg1 fromStatResults:(id)arg2;
 + (int)getMaxRecordCntInPeriod:(double)arg1 fromStatResults:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pagAnimPerfStatResultList; // @synthesize pagAnimPerfStatResultList=_pagAnimPerfStatResultList;
 @property(retain, nonatomic) NSArray *uiAnimPerfStatResultList; // @synthesize uiAnimPerfStatResultList=_uiAnimPerfStatResultList;
 @property(retain, nonatomic) NSArray *blurPerfStatResultList; // @synthesize blurPerfStatResultList=_blurPerfStatResultList;

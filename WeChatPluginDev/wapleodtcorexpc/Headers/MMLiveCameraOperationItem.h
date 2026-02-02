@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage;
 
@@ -19,7 +20,6 @@
     NSString *_alternativeRedDotPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *alternativeRedDotPath; // @synthesize alternativeRedDotPath=_alternativeRedDotPath;
 @property(retain, nonatomic) NSString *redDotPath; // @synthesize redDotPath=_redDotPath;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
@@ -30,4 +30,3 @@
 @property(nonatomic) _Bool disabled; // @synthesize disabled=_disabled;
 
 @end
-

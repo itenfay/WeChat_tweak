@@ -16,7 +16,6 @@
     struct CGSize _selfSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize selfSize; // @synthesize selfSize=_selfSize;
 @property(retain, nonatomic) MMFinderLiveNewCustomGiftComponent *currentConflictComponent; // @synthesize currentConflictComponent=_currentConflictComponent;
 @property(retain, nonatomic) RichTextView *unsupportTipLabel; // @synthesize unsupportTipLabel=_unsupportTipLabel;

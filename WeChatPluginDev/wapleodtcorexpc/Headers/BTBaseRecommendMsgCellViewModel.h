@@ -11,7 +11,6 @@
     BTRecommendSectionData *_sectionData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int itemIndex; // @synthesize itemIndex=_itemIndex;
 @property(nonatomic) __weak BTRecommendSectionData *sectionData; // @synthesize sectionData=_sectionData;
 - (double)separateLineWidth;

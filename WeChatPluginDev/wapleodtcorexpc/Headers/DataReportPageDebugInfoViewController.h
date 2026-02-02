@@ -12,7 +12,6 @@
     MMTableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSMutableArray *debugPageParams; // @synthesize debugPageParams=_debugPageParams;
 @property(nonatomic) __weak MMUIViewController *debugViewController; // @synthesize debugViewController=_debugViewController;

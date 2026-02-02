@@ -13,7 +13,6 @@
     UIImageView *_liveImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowBtn; // @synthesize isShowBtn=_isShowBtn;
 @property(retain, nonatomic) UIImageView *liveImageView; // @synthesize liveImageView=_liveImageView;
 @property(retain, nonatomic) MMUILabel *liveTextLabel; // @synthesize liveTextLabel=_liveTextLabel;

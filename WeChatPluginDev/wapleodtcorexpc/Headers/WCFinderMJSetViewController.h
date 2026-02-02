@@ -20,7 +20,6 @@
     WCFinderScrollActionSheet *_moreActionSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderScrollActionSheet *moreActionSheet; // @synthesize moreActionSheet=_moreActionSheet;
 @property(retain, nonatomic) WCFinderMJSetBriefCardView *cardBriefView; // @synthesize cardBriefView=_cardBriefView;
 @property(retain, nonatomic) WCFinderMJSetInitParams *params; // @synthesize params=_params;

@@ -12,7 +12,6 @@
     QArcOverlayAnimation *_animation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QArcOverlayAnimation *animation; // @synthesize animation=_animation;
 @property(copy, nonatomic) NSArray *lines; // @synthesize lines=_lines;
 @property(retain, nonatomic) QArcStyle *style; // @synthesize style=_style;

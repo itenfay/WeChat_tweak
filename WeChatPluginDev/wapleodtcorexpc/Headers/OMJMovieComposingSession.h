@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OMJMovieComposingSession : NSObject
 {
@@ -11,11 +12,9 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) SharedPtr_d86e1db6 backingSession; // @synthesize backingSession=_backingSession;
 - (void)teardownWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startupWithcompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithBackingSession:(const void *)arg1;
 
 @end
-

@@ -13,7 +13,6 @@
 }
 
 + (id)buildTextViewWithFont:(id)arg1 maximumNumberOfLines:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITextView *placeholderView; // @synthesize placeholderView=_placeholderView;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;

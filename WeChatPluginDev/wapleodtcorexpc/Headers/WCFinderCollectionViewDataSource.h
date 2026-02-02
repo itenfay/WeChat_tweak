@@ -12,7 +12,6 @@
     NSDiffableDataSourceSnapshot *_currentSnapshot;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDiffableDataSourceSnapshot *currentSnapshot; // @synthesize currentSnapshot=_currentSnapshot;
 - (void)applySnapshot:(id)arg1 animatingDifferences:(_Bool)arg2;
 

@@ -16,7 +16,6 @@
     MMLiveRewardGiftSendingMoreBubbleView *_sendMoreBubbleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveRewardGiftSendingMoreBubbleView *sendMoreBubbleView; // @synthesize sendMoreBubbleView=_sendMoreBubbleView;
 @property(nonatomic) __weak id <MMLiveRewardGiftSendingMoreLogicDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;
 @property(retain, nonatomic) MMLiveRewardGiftSendingMoreButton *quickSendGiftButton; // @synthesize quickSendGiftButton=_quickSendGiftButton;

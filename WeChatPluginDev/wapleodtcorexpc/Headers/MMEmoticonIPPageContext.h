@@ -11,7 +11,6 @@
     StoreEmotionAllListReportInfo *_reportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StoreEmotionAllListReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property(retain, nonatomic) EmotionBannerSet *bannerSet; // @synthesize bannerSet=_bannerSet;
 - (_Bool)allowsInEmoticonLimited;

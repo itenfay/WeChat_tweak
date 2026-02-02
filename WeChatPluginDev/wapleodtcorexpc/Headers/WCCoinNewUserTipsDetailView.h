@@ -12,7 +12,6 @@
     WecoinNewUserTips *_tips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WecoinNewUserTips *tips; // @synthesize tips=_tips;
 - (void)done;
 - (void)layoutSubviews;

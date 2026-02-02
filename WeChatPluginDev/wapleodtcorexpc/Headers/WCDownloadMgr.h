@@ -26,7 +26,6 @@
     id <WCDownloadMgrDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCDownloadMgrDelegate> m_delegate; // @synthesize m_delegate;
 - (_Bool)isDownloadingSnsImageForUrl:(id)arg1;
 - (id)urlSuffixWithToken:(id)arg1 encIdx:(unsigned int)arg2;

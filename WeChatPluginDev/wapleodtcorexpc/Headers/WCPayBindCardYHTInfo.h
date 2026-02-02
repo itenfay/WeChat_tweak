@@ -16,7 +16,6 @@
     NSString *_yht_ext_msg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *yht_ext_msg; // @synthesize yht_ext_msg=_yht_ext_msg;
 @property(nonatomic) int yht_system_state; // @synthesize yht_system_state=_yht_system_state;
 @property(nonatomic) int yht_user_state; // @synthesize yht_user_state=_yht_user_state;

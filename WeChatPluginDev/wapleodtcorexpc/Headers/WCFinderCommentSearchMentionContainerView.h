@@ -15,7 +15,6 @@
     WCFinderCommentContactSelectView *_contactSelectView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCommentContactSelectView *contactSelectView; // @synthesize contactSelectView=_contactSelectView;
 @property(retain, nonatomic) WCFinderCommentSearchMentionHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic) __weak id <WCFinderCommentSearchMentionContainerViewDelegate> delegate; // @synthesize delegate=_delegate;

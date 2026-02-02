@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMAcceptAgreementCommonHeadView, WCButtonListView;
 
 @interface SettingModifyEmailOnVerifyViewController
@@ -13,7 +15,6 @@
     WCButtonListView *_buttonListView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCButtonListView *buttonListView; // @synthesize buttonListView=_buttonListView;
 @property(copy, nonatomic) CDUnknownBlockType onChangeEmail; // @synthesize onChangeEmail=_onChangeEmail;
 @property(copy, nonatomic) CDUnknownBlockType onSendVerifyEmail; // @synthesize onSendVerifyEmail=_onSendVerifyEmail;
@@ -23,4 +24,3 @@
 - (void)viewDidLoad;
 
 @end
-

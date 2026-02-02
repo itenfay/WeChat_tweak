@@ -14,7 +14,6 @@
     NSString *_snsId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *snsId; // @synthesize snsId=_snsId;
 @property(retain, nonatomic) WCAdvertiseInfo *adInfo; // @synthesize adInfo=_adInfo;

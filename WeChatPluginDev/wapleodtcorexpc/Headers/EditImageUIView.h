@@ -13,7 +13,6 @@
     unsigned long long _editImageUIStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int fromEntrance; // @synthesize fromEntrance=_fromEntrance;
 @property(nonatomic) unsigned long long editImageUIStyle; // @synthesize editImageUIStyle=_editImageUIStyle;
 @property(nonatomic) int _toolType; // @synthesize _toolType;

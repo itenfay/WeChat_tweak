@@ -15,7 +15,6 @@
     CDStruct_34734122 _point;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_c3b9c2ee point; // @synthesize point=_point;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

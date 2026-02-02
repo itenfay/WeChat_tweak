@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderUploadCoverHelper : NSObject
 {
@@ -16,4 +17,3 @@
 + (_Bool)uploadImage:(id)arg1 successful:(CDUnknownBlockType)arg2 failure:(CDUnknownBlockType)arg3;
 
 @end
-

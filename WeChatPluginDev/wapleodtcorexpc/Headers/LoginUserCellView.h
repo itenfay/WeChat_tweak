@@ -21,7 +21,6 @@
     UILabel *_errorInfoLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoginStateViewShowing; // @synthesize isLoginStateViewShowing=_isLoginStateViewShowing;
 @property(retain, nonatomic) UILabel *errorInfoLabel; // @synthesize errorInfoLabel=_errorInfoLabel;
 @property(retain, nonatomic) MMUILabel *loginLoadingLabel; // @synthesize loginLoadingLabel=_loginLoadingLabel;

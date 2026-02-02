@@ -18,7 +18,6 @@
     NSMutableArray *_anchorCustomizeRewardItemMutableArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *anchorCustomizeRewardItemMutableArray; // @synthesize anchorCustomizeRewardItemMutableArray=_anchorCustomizeRewardItemMutableArray;
 @property(retain, nonatomic) MMFinderLiveFansGroupAnchorEditViewModel *fansGroupCustomizeRewardViewModel; // @synthesize fansGroupCustomizeRewardViewModel=_fansGroupCustomizeRewardViewModel;
 @property _Bool isAnchorCustomizeDataAvailable; // @synthesize isAnchorCustomizeDataAvailable=_isAnchorCustomizeDataAvailable;

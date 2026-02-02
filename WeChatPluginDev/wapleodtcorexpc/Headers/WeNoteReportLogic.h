@@ -17,7 +17,6 @@
     int m_viewImageCount;
 }
 
-- (void).cxx_destruct;
 - (void)reportSaveNoteImageWidth:(unsigned long long)arg1 Height:(unsigned long long)arg2 Length:(unsigned long long)arg3 errorCode:(unsigned int)arg4 Editable:(unsigned long long)arg5;
 - (void)reportOnTop:(unsigned int)arg1 onTop:(_Bool)arg2;
 - (void)reportTranslationWithFromTitleBtn:(_Bool)arg1 result:(unsigned int)arg2;

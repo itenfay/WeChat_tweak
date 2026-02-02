@@ -22,7 +22,6 @@
     MISSING_TYPE *userInfo;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithTitle:(id)arg1 price:(unsigned int)arg2 type:(long long)arg3 delegate:(id)arg4 bottomDesc:(id)arg5;
 @property(nonatomic, retain) NSObject *userInfo; // @synthesize userInfo;

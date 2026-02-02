@@ -15,7 +15,6 @@
     NSString *_irFilesDirPath;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *irFilesDirPath; // @synthesize irFilesDirPath=_irFilesDirPath;
 @property(readonly, nonatomic) unsigned long long channels; // @synthesize channels=_channels;
 @property(readonly, nonatomic) unsigned long long maximumBlockSize; // @synthesize maximumBlockSize=_maximumBlockSize;

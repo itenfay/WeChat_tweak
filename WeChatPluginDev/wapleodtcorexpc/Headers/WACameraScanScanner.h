@@ -31,7 +31,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) double lastScanTime; // @synthesize lastScanTime=_lastScanTime;
 @property(nonatomic) unsigned int scanIndex; // @synthesize scanIndex=_scanIndex;
 @property(nonatomic) struct CGRect cameraViewRect; // @synthesize cameraViewRect=_cameraViewRect;

@@ -16,7 +16,6 @@
 }
 
 + (void)handleJumpPlugin:(id)arg1 params:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCTableViewNormalCellManager *pluginCellInfo; // @synthesize pluginCellInfo=_pluginCellInfo;
 - (void)onSetElderModeOn:(_Bool)arg1 success:(_Bool)arg2;
 - (void)registerYReportSdk;

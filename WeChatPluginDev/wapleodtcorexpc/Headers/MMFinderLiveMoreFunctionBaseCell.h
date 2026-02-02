@@ -19,7 +19,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool layoutInFullWidth; // @synthesize layoutInFullWidth=_layoutInFullWidth;
 @property(nonatomic) __weak id <MMFinderLiveMoreFunctionBaseCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool showRedDot; // @synthesize showRedDot=_showRedDot;

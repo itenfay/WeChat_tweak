@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CMMotionManager, NSMutableArray, NSOperationQueue, NSString;
 
@@ -21,7 +22,6 @@
 
 + (void)postflightTrack;
 + (void)preflightTrack;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(nonatomic) double timeBeganTracking; // @synthesize timeBeganTracking=_timeBeganTracking;
 @property(retain, nonatomic) NSMutableArray *motionItems; // @synthesize motionItems=_motionItems;
@@ -46,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

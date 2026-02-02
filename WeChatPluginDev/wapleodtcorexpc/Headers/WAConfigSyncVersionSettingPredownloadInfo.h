@@ -13,7 +13,6 @@
     NSArray *_appidList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *appidList; // @synthesize appidList=_appidList;
 @property(nonatomic) unsigned int usedTime; // @synthesize usedTime=_usedTime;
 

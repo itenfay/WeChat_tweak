@@ -14,7 +14,6 @@
     UIGestureRecognizer *_actionGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIGestureRecognizer *actionGestureRecognizer; // @synthesize actionGestureRecognizer=_actionGestureRecognizer;
 @property(retain, nonatomic) id <MMLiveObjectManipulationViewCornerAction> actionDescriptor; // @synthesize actionDescriptor=_actionDescriptor;
 @property(nonatomic) __weak id <MMLiveObjectManipulationViewCornerActionButtonDelegate> delegate; // @synthesize delegate=_delegate;

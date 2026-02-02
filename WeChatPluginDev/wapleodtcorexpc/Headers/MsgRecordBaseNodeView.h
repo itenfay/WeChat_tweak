@@ -11,7 +11,6 @@
 }
 
 + (_Bool)useMsgStyle:(int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BaseMessageCellView *cellView; // @synthesize cellView=_cellView;
 - (_Bool)tryHandleMenu:(long long)arg1 withViewModel:(id)arg2;
 - (void)tapAppNodeView:(id)arg1;

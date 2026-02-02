@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UILabel.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMTimerLabel : UILabel
 {
@@ -19,7 +20,6 @@
     CDUnknownBlockType _handleTextBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handleTextBlock; // @synthesize handleTextBlock=_handleTextBlock;
 @property(copy, nonatomic) CDUnknownBlockType countDownRemainTimeCallback; // @synthesize countDownRemainTimeCallback=_countDownRemainTimeCallback;
 @property(copy, nonatomic) CDUnknownBlockType countDownCompleteCallback; // @synthesize countDownCompleteCallback=_countDownCompleteCallback;
@@ -40,4 +40,3 @@
 - (void)updateLabel;
 
 @end
-

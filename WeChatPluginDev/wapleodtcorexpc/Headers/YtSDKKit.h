@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class YtSDKKitConfig;
 
@@ -18,7 +19,6 @@
 
 + (void)clearInstance;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType networkProcessBlock; // @synthesize networkProcessBlock=_networkProcessBlock;
 @property(copy, nonatomic) CDUnknownBlockType processFailedBlock; // @synthesize processFailedBlock=_processFailedBlock;
 @property(copy, nonatomic) CDUnknownBlockType processSucceedBlock; // @synthesize processSucceedBlock=_processSucceedBlock;
@@ -38,4 +38,3 @@
 - (id)sdkVersion;
 
 @end
-

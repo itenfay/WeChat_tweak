@@ -13,7 +13,6 @@
     NSString *_emojiKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *emojiKey; // @synthesize emojiKey=_emojiKey;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) UIButton *previewView; // @synthesize previewView=_previewView;

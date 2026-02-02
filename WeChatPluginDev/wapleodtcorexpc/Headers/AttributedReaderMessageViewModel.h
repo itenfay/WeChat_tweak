@@ -13,7 +13,6 @@
 
 + (id)getMessageFTSText:(id)arg1;
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceHideRightCoverImage; // @synthesize forceHideRightCoverImage=_forceHideRightCoverImage;
 - (void)onLoadImageFail:(id)arg1 extraInfo:(id)arg2;
 - (double)messageNodeViewHeight;

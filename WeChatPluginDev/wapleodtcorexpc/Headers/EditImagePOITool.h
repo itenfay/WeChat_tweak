@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIView, WCLocationInfo, WCTimelinePOIPickerViewController;
 
 @interface EditImagePOITool
@@ -14,7 +16,6 @@
     CDUnknownBlockType _hiddenStateChangeBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType hiddenStateChangeBlock; // @synthesize hiddenStateChangeBlock=_hiddenStateChangeBlock;
 @property(retain, nonatomic) WCTimelinePOIPickerViewController *poiPickerViewController; // @synthesize poiPickerViewController=_poiPickerViewController;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
@@ -51,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -34,7 +34,6 @@
     NSString *_fakeSignature;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fakeSignature; // @synthesize fakeSignature=_fakeSignature;
 @property(retain, nonatomic) NSString *fakeAeskey; // @synthesize fakeAeskey=_fakeAeskey;
 @property(retain, nonatomic) NSString *signature; // @synthesize signature=_signature;

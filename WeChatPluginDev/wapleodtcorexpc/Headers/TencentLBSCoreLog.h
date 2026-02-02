@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDateFormatter;
 
@@ -14,11 +15,9 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateFormatter *dateFormtter; // @synthesize dateFormtter=_dateFormtter;
 @property(copy, nonatomic) CDUnknownBlockType innerCoreLogBlock; // @synthesize innerCoreLogBlock=_innerCoreLogBlock;
 - (void)printwithTag:(id)arg1 withDate:(id)arg2 withLog:(id)arg3;
 - (id)init;
 
 @end
-

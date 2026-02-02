@@ -13,7 +13,6 @@
 + (_Bool)needECCVerifiedFor:(unsigned int)arg1;
 + (_Bool)savedAsDecryptFor:(unsigned int)arg1;
 + (id)autoUpdateTypeArray;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

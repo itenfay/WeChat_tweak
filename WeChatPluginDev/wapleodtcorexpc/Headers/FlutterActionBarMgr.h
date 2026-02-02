@@ -18,7 +18,6 @@
 + (id)getWithId:(id)arg1;
 + (void)putWithId:(id)arg1 helper:(id)arg2;
 + (id)instance;
-- (void).cxx_destruct;
 @property(nonatomic) double navigationBarMargin; // @synthesize navigationBarMargin=_navigationBarMargin;
 @property(nonatomic) double statusBarHeight; // @synthesize statusBarHeight=_statusBarHeight;
 @property(retain, nonatomic) NSMapTable *map; // @synthesize map=_map;

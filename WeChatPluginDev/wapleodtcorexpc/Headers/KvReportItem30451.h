@@ -13,7 +13,6 @@
     NSString *_systemMessage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int opType; // @synthesize opType=_opType;
 @property(nonatomic) unsigned int blueLinkRedirectionType; // @synthesize blueLinkRedirectionType=_blueLinkRedirectionType;
 @property(copy, nonatomic) NSString *systemMessage; // @synthesize systemMessage=_systemMessage;

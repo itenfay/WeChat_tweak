@@ -16,7 +16,6 @@
     MMResDecryptUrlInfo *_resDecryptInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMResDecryptUrlInfo *resDecryptInfo; // @synthesize resDecryptInfo=_resDecryptInfo;
 @property(nonatomic) unsigned int reportId; // @synthesize reportId=_reportId;
 @property(retain, nonatomic) NSString *sampleId; // @synthesize sampleId=_sampleId;

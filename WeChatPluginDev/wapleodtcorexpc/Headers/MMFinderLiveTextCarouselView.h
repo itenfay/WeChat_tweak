@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSArray, UILabel;
 @protocol MMFinderLiveTextCarouselViewDelegate;
@@ -27,7 +28,6 @@
 }
 
 + (double)labelHeight;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long remainingCount; // @synthesize remainingCount=_remainingCount;
 @property(nonatomic) unsigned long long repeatCount; // @synthesize repeatCount=_repeatCount;
 @property(retain, nonatomic) UILabel *nextLabel; // @synthesize nextLabel=_nextLabel;
@@ -55,4 +55,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

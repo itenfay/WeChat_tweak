@@ -15,7 +15,6 @@
     double _failedTimeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) double failedTimeStamp; // @synthesize failedTimeStamp=_failedTimeStamp;
 @property(nonatomic) int retryTimes; // @synthesize retryTimes=_retryTimes;

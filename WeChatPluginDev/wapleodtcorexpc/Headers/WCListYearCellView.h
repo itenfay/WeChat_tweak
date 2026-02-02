@@ -11,7 +11,6 @@
 }
 
 + (double)heightOfCellWithYear:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *yearLabel; // @synthesize yearLabel=_yearLabel;
 - (void)configureWithYear:(long long)arg1;
 - (void)layoutSubviews;

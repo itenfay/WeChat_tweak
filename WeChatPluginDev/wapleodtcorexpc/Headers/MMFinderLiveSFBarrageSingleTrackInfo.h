@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveSFBarrageItemInfo, NSMutableArray;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _hasBarrageMovingCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType hasBarrageMovingCallback; // @synthesize hasBarrageMovingCallback=_hasBarrageMovingCallback;
 @property(retain, nonatomic) NSMutableArray *currVisibleBarrageItemList; // @synthesize currVisibleBarrageItemList=_currVisibleBarrageItemList;
 @property(nonatomic) double positionYPercent; // @synthesize positionYPercent=_positionYPercent;
@@ -31,4 +31,3 @@
 @property(readonly, nonatomic) MMFinderLiveSFBarrageItemInfo *lastBarrageItemInfo;
 
 @end
-

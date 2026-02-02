@@ -22,7 +22,6 @@
     double _maxWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(retain, nonatomic) UIButton *complainButton; // @synthesize complainButton=_complainButton;
 @property(retain, nonatomic) UIView *separateLine; // @synthesize separateLine=_separateLine;

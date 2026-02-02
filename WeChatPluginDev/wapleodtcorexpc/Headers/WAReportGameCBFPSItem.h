@@ -15,7 +15,6 @@
     long long _fps;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long fps; // @synthesize fps=_fps;
 @property(nonatomic) long long time; // @synthesize time=_time;
 @property(nonatomic) long long drawCall; // @synthesize drawCall=_drawCall;

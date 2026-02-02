@@ -32,7 +32,6 @@
     UIColor *_truncatedTrailingLinkColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *truncatedTrailingLinkColor; // @synthesize truncatedTrailingLinkColor=_truncatedTrailingLinkColor;
 @property(retain, nonatomic) NSString *truncatedTrailingLinkUrl; // @synthesize truncatedTrailingLinkUrl=_truncatedTrailingLinkUrl;
 @property(retain, nonatomic) NSString *truncatedTrailingLinkText; // @synthesize truncatedTrailingLinkText=_truncatedTrailingLinkText;

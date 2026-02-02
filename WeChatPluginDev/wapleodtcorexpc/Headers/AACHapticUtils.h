@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface AACHapticUtils : NSObject
 {
@@ -44,4 +45,3 @@
 + (_Bool)supportRichTap;
 
 @end
-

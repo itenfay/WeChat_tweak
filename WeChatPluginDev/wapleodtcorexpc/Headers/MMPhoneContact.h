@@ -17,7 +17,6 @@
 }
 
 + (id)polyPhones;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *phoneToMd5Dic; // @synthesize phoneToMd5Dic=m_phoneToMd5Dic;
 @property(readonly, nonatomic) NSDictionary *phoneWithLabels; // @synthesize phoneWithLabels=m_phoneWithLabels;
 @property(readonly, nonatomic) NSString *nicknamePinYinShort; // @synthesize nicknamePinYinShort=m_nicknamePinYinShort;

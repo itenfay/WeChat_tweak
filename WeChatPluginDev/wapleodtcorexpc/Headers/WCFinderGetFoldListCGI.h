@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderGetFoldListCGI
@@ -15,7 +17,6 @@
     NSData *_lastBuff;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuff; // @synthesize lastBuff=_lastBuff;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
@@ -28,4 +29,3 @@
 - (id)initWithLastBuff:(id)arg1 friendUsername:(id)arg2 objectID:(id)arg3 nonceID:(id)arg4 successful:(CDUnknownBlockType)arg5 failure:(CDUnknownBlockType)arg6;
 
 @end
-

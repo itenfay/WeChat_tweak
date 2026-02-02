@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -12,11 +13,9 @@
     NSMutableDictionary *_dicStyleRule;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicStyleRule; // @synthesize dicStyleRule=_dicStyleRule;
 - (void)applyRuleWithTarget:(id)arg1 value:(id)arg2 PropertySetter:(CDUnknownBlockType)arg3;
 - (void)executeWithTarget:(id)arg1 cssStyles:(id)arg2;
 - (id)init;
 
 @end
-

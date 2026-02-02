@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUINavigationBar, NSMutableArray, UIView, UIViewController, WAMenuPopInteractiveTransition;
 @protocol WAUINavigationControllerDelegate;
 
@@ -28,7 +30,6 @@
 }
 
 + (_Bool)shouldUseCustomeNavigationBar;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *weakTopVC; // @synthesize weakTopVC=_weakTopVC;
 @property(retain, nonatomic) NSMutableArray *arrAppearAction; // @synthesize arrAppearAction=_arrAppearAction;
 @property(nonatomic) double lastScreenWidth; // @synthesize lastScreenWidth=_lastScreenWidth;
@@ -86,4 +87,3 @@
 - (id)initWithRootViewController:(id)arg1;
 
 @end
-

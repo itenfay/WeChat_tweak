@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EAGLContext, NSMutableArray, NSString, QEngineResourceManager, QGraphicsTool, QStatisticer, TBImagePool, TBIndoorBuilding;
 @protocol QMapContextUIDelegate;
@@ -40,7 +41,6 @@
 + (id)constructKeyForUIImage:(id)arg1;
 + (id)extractKeyFromImageInstruction:(id)arg1;
 + (id)constructImageInstructionWithKey:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak QStatisticer *statistics; // @synthesize statistics=_statistics;
 @property(retain, nonatomic) NSString *latestErrorLog; // @synthesize latestErrorLog=_latestErrorLog;
 @property(retain, nonatomic) QEngineResourceManager *resourceManager; // @synthesize resourceManager=_resourceManager;
@@ -304,4 +304,3 @@
 - (id)getStatistics;
 
 @end
-

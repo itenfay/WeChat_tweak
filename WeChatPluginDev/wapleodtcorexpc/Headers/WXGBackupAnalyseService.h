@@ -15,7 +15,6 @@
 }
 
 + (id)briefForAnalyseInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPause; // @synthesize hasPause=_hasPause;
 @property(retain, nonatomic) WXGImportAnalyseInfo *importInfo; // @synthesize importInfo=_importInfo;
 @property(retain, nonatomic) WXGBackupRecoverAnalyseInfo *recoverInfo; // @synthesize recoverInfo=_recoverInfo;

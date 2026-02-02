@@ -14,7 +14,6 @@
     UILabel *_weAppOpLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *weAppOpLabel; // @synthesize weAppOpLabel=_weAppOpLabel;
 @property(retain, nonatomic) UIView *weAppSheetView; // @synthesize weAppSheetView=_weAppSheetView;
 @property(retain, nonatomic) NSMutableArray *m_WeAppIconList; // @synthesize m_WeAppIconList=_m_WeAppIconList;

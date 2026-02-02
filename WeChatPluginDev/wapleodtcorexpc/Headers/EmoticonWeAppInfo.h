@@ -15,7 +15,6 @@
     NSString *_weAppID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *weAppID; // @synthesize weAppID=_weAppID;
 @property(retain, nonatomic) NSString *actionDesc; // @synthesize actionDesc=_actionDesc;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

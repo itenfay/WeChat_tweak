@@ -4,15 +4,14 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMFinderLivePIPMinimizeIndicatorView : UIView
 {
     CDUnknownBlockType _layoutBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType layoutBlock; // @synthesize layoutBlock=_layoutBlock;
 - (void)layoutSubviews;
 
 @end
-

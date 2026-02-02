@@ -11,7 +11,6 @@
     UIView *_opaqueBgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *opaqueBgView; // @synthesize opaqueBgView=_opaqueBgView;
 @property(nonatomic) _Bool forceSetHighlight; // @synthesize forceSetHighlight=_forceSetHighlight;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

@@ -12,7 +12,6 @@
     UIViewController *_sourceViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *sourceViewController; // @synthesize sourceViewController=_sourceViewController;
 - (void)dismissalTransitionDidEnd:(_Bool)arg1;
 - (void)dismissalTransitionWillBegin;

@@ -16,7 +16,6 @@
     CheckQRCodeLoginCGI *_checkQRCodeCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CheckQRCodeLoginCGI *checkQRCodeCgi; // @synthesize checkQRCodeCgi=_checkQRCodeCgi;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

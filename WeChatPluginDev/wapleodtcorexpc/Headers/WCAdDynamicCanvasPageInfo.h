@@ -43,7 +43,6 @@
     WCAdDynamicCanvasDSLData *_parsedCanvasDSLData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicCanvasDSLData *parsedCanvasDSLData; // @synthesize parsedCanvasDSLData=_parsedCanvasDSLData;
 @property(nonatomic) _Bool forbidBackToBizApp; // @synthesize forbidBackToBizApp=_forbidBackToBizApp;
 @property(nonatomic) double halfScreenPageHeight; // @synthesize halfScreenPageHeight=_halfScreenPageHeight;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CBaseContact, CMessageWrap, EmoticonBoardView, MMEmoticonView, MMGrowTextView, MMHeadImageView, MMInputMsgReferView, MMQuickSendEmoticonView, MMTransparentButton, MMUIButton, MsgFullScreenInputAnimationController, MsgFullScreenInputViewController, MsgSendOpEntry, NSSet, NSString, NewEmoticonSearchViewController, RecordAdapterView, RelatedEmoticonHalfScreenViewController, SelectAttachmentView, SelectAttachmentViewController, SolitaireTipsView, TranslateToolView, UIButton, UIImageView, UIImpactFeedbackGenerator, UIView, UIViewPropertyAnimator, WASendSessionMsgView, WCGroupUndoneActionBar, WWKFCustomToolBar;
 @protocol MMInputToolViewCustomizationDelegate, MMInputToolViewDelegate;
 
@@ -87,7 +89,6 @@
     struct CGPoint _pointInScreen;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool presentingFullScreenInput; // @synthesize presentingFullScreenInput=_presentingFullScreenInput;
 @property(retain, nonatomic) MMUIButton *fullScreenButton; // @synthesize fullScreenButton=_fullScreenButton;
 @property(nonatomic) _Bool bEnableTopicSearchInteraction; // @synthesize bEnableTopicSearchInteraction=_bEnableTopicSearchInteraction;
@@ -429,4 +430,3 @@
 @property(readonly) Class superclass;
 
 @end
-

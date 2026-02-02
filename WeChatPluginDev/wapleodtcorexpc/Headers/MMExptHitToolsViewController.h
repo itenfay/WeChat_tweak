@@ -15,7 +15,6 @@
     UITextView *exptInfoTv;
 }
 
-- (void).cxx_destruct;
 - (void)showToast:(id)arg1;
 - (id)getExptItem:(id)arg1;
 - (void)checkExptHit:(unsigned int)arg1;

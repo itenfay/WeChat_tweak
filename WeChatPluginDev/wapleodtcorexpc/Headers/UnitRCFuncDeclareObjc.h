@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -17,7 +18,6 @@
 + (id)from_Void_Uint32Uint32String_Block:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)to_Void_Empty_Block:(id)arg1;
 + (id)from_Void_Empty_Block:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType Void_Uint32Uint32String_Block; // @synthesize Void_Uint32Uint32String_Block=_Void_Uint32Uint32String_Block;
 @property(readonly, copy, nonatomic) CDUnknownBlockType Void_Empty_Block; // @synthesize Void_Empty_Block=_Void_Empty_Block;
 - (void)Void_Uint32Uint32String:(unsigned int)arg1 errorType:(unsigned int)arg2 msg:(id)arg3;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

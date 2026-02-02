@@ -15,7 +15,6 @@
     NSString *_openId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int viewType; // @synthesize viewType=_viewType;
 @property(retain, nonatomic) NSString *openId; // @synthesize openId=_openId;
 @property(nonatomic) int memberId; // @synthesize memberId=_memberId;

@@ -23,7 +23,6 @@
     double _collectionViewItemPerRow;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double collectionViewItemPerRow; // @synthesize collectionViewItemPerRow=_collectionViewItemPerRow;
 @property(nonatomic) double collectionViewWidth; // @synthesize collectionViewWidth=_collectionViewWidth;
 @property(nonatomic) double itemSpacing; // @synthesize itemSpacing=_itemSpacing;

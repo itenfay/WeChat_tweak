@@ -14,7 +14,6 @@
     EmoticonPreviewWindowViewController *_previewVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonPreviewWindowViewController *previewVC; // @synthesize previewVC=_previewVC;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(retain, nonatomic) EmojiInfo *emojiInfo; // @synthesize emojiInfo=_emojiInfo;

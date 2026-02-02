@@ -14,7 +14,6 @@
 }
 
 + (id)concatEnumrators:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long currIndex; // @synthesize currIndex=_currIndex;
 @property(retain, nonatomic) NSArray *enumerators; // @synthesize enumerators=_enumerators;
 - (id)nextObject;

@@ -16,7 +16,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *appContact; // @synthesize appContact=_appContact;
 - (id)getReferImage;
 - (id)thumbImage;

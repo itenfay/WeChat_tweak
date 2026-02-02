@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *helpers; // @synthesize helpers=_helpers;
 - (void)onApiSendEvent:(id)arg1 Name:(id)arg2 Param:(id)arg3;
 - (void)onApiEndResult:(id)arg1 Name:(id)arg2 Param:(id)arg3 CallbackId:(unsigned int)arg4;

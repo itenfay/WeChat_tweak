@@ -34,7 +34,6 @@
 }
 
 + (_Bool)deviceDenied;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVCaptureSession *captureSession; // @synthesize captureSession=_captureSession;
 @property(nonatomic) _Bool isCustomExposureSupported; // @synthesize isCustomExposureSupported=_isCustomExposureSupported;
 @property(nonatomic) CDStruct_1b6d18a9 DeviceExposureDuration; // @synthesize DeviceExposureDuration=_DeviceExposureDuration;

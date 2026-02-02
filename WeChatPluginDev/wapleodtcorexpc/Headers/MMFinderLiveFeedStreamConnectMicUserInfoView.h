@@ -12,7 +12,6 @@
     NSString *_currentPkSessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentPkSessionId; // @synthesize currentPkSessionId=_currentPkSessionId;
 @property(nonatomic) __weak UIImageView *connectMicPkAtmosphereBackgroundView; // @synthesize connectMicPkAtmosphereBackgroundView=_connectMicPkAtmosphereBackgroundView;
 @property(retain, nonatomic) MMFinderLiveConnectMicAllUserInfoView *connectMicAllUserInfoView; // @synthesize connectMicAllUserInfoView=_connectMicAllUserInfoView;

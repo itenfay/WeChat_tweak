@@ -13,7 +13,6 @@
     ChatRoomFamilyEdcationDataPB *m_chatRoomFamilyEdcationData;
 }
 
-- (void).cxx_destruct;
 - (void)onUpdateChatRoomtToolWeAppInfoListWithUserName:(id)arg1 roomToolsWxApps:(id)arg2 withResult:(unsigned int)arg3 errorMsg:(id)arg4;
 - (long long)getGroupRoleWithGroupUserName:(id)arg1;
 - (void)reportChatRoomToolEditWithGroupUserName:(id)arg1 andExitType:(unsigned long long)arg2 andTopBefore:(long long)arg3 andTopAfter:(long long)arg4;

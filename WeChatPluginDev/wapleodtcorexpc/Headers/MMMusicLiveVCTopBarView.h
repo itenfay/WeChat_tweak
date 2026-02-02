@@ -22,7 +22,6 @@
     double _titleMaxWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double titleMaxWidth; // @synthesize titleMaxWidth=_titleMaxWidth;
 @property(retain, nonatomic) MusicLiveGetSongStatusResp_MusicianInfo *musician; // @synthesize musician=_musician;
 @property(retain, nonatomic) MusicSourceViewInfo *musicSourceViewInfo; // @synthesize musicSourceViewInfo=_musicSourceViewInfo;

@@ -16,7 +16,6 @@
     id <MMDragDelegate> _dragDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMDragDelegate> dragDelegate; // @synthesize dragDelegate=_dragDelegate;
 @property(nonatomic) int documentType; // @synthesize documentType=_documentType;
 @property(retain, nonatomic) NSURL *dragVideoUrl; // @synthesize dragVideoUrl=_dragVideoUrl;

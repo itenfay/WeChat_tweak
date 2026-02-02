@@ -10,7 +10,6 @@
     MemoryMappedKV *_mmkv;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mmkv; // @synthesize mmkv=_mmkv;
 - (void)report11608:(id)arg1 userName:(id)arg2 actionType:(unsigned long long)arg3 containerType:(unsigned int)arg4 sessionId:(unsigned int)arg5;
 - (_Bool)wasReaderFooterClicked:(id)arg1 localId:(unsigned int)arg2;

@@ -18,7 +18,6 @@
     unsigned long long _currentMaxIndexNum;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentMaxIndexNum; // @synthesize currentMaxIndexNum=_currentMaxIndexNum;
 @property(nonatomic) unsigned long long currentAvgIndexNum; // @synthesize currentAvgIndexNum=_currentAvgIndexNum;
 @property(nonatomic) unsigned long long indexNumOnInit; // @synthesize indexNumOnInit=_indexNumOnInit;

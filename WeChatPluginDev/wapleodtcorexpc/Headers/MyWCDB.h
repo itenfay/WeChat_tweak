@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCTDatabase, WCTTable;
 
@@ -30,7 +31,6 @@
 }
 
 + (void)initialize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *m_tableNewLifeShareRecord; // @synthesize m_tableNewLifeShareRecord;
 @property(retain, nonatomic) WCTTable *m_tableFinderShareRecord; // @synthesize m_tableFinderShareRecord;
 @property(retain, nonatomic) WCTTable *m_tableStarGuideRecord; // @synthesize m_tableStarGuideRecord;
@@ -222,4 +222,3 @@
 - (void)cleanupTimelineTableWithBlockOnceOp:(unsigned int)arg1 maxCleanPerLoop:(unsigned int)arg2 commitThreshold:(unsigned int)arg3 block:(CDUnknownBlockType)arg4;
 
 @end
-

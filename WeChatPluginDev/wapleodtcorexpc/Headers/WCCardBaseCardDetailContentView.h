@@ -14,7 +14,6 @@
     UIColor *_cellColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *cellColor; // @synthesize cellColor=_cellColor;
 @property(retain, nonatomic) UIButton *deeplinkBtn; // @synthesize deeplinkBtn=_deeplinkBtn;
 @property(nonatomic) _Bool bIsSelectFollowContact; // @synthesize bIsSelectFollowContact=_bIsSelectFollowContact;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WAPackageSweeperRegisterationMark, WAThreadSafeMutableDictionary;
 
@@ -18,7 +19,6 @@
     WAPackageSweeperRegisterationMark *_registerationMark;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPackageSweeperRegisterationMark *registerationMark; // @synthesize registerationMark=_registerationMark;
 @property(retain, nonatomic) WAThreadSafeMutableDictionary *sweeperIgnoreVersionMapDic; // @synthesize sweeperIgnoreVersionMapDic=_sweeperIgnoreVersionMapDic;
 @property(nonatomic) unsigned long long processEndTimeInMs; // @synthesize processEndTimeInMs=_processEndTimeInMs;
@@ -108,4 +108,3 @@
 - (id)init;
 
 @end
-

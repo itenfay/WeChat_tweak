@@ -17,7 +17,6 @@
     UIView *_separator;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsAutoFill; // @synthesize bIsAutoFill=_bIsAutoFill;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;
 @property(retain, nonatomic) UILabel *plusLabel; // @synthesize plusLabel=_plusLabel;

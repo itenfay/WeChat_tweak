@@ -18,7 +18,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdBreakFramePlayStateItem *cancelLikeState; // @synthesize cancelLikeState=_cancelLikeState;
 @property(retain, nonatomic) WCAdBreakFramePlayStateItem *commentState; // @synthesize commentState=_commentState;
 @property(retain, nonatomic) WCAdBreakFramePlayStateItem *likeState; // @synthesize likeState=_likeState;

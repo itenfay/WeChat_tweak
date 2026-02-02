@@ -13,7 +13,6 @@
     MMLiveSEIConnectMicMsg *_seiMicMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveSEIConnectMicMsg *seiMicMsg; // @synthesize seiMicMsg=_seiMicMsg;
 @property(nonatomic) _Bool isCdn; // @synthesize isCdn=_isCdn;
 

@@ -13,7 +13,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_e83c9415 timeRange; // @synthesize timeRange=_timeRange;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 - (id)description;

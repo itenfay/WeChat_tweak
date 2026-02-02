@@ -16,7 +16,6 @@
 
 + (double)displayHeightWithWidth:(double)arg1 edgeInsets:(struct UIEdgeInsets)arg2;
 + (id)dequeCell:(id)arg1 fromView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCarouselView *carouselView; // @synthesize carouselView=_carouselView;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(nonatomic) __weak id <WCFinderCarouselDatasource> datasource;

@@ -13,7 +13,6 @@
 }
 
 + (void)calculateLayoutIfNeed:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak GCBaseCellModel *bindCellModel; // @synthesize bindCellModel=_bindCellModel;
 - (void)configureWithCellModel:(id)arg1;
 

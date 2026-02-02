@@ -19,7 +19,6 @@
 }
 
 + (double)iconWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *shadowGradientLayer; // @synthesize shadowGradientLayer=_shadowGradientLayer;
 @property(retain, nonatomic) CAGradientLayer *mainColorGradientLayer; // @synthesize mainColorGradientLayer=_mainColorGradientLayer;
 @property(retain, nonatomic) MMWebImageView *liveImageView; // @synthesize liveImageView=_liveImageView;

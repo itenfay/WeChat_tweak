@@ -17,7 +17,6 @@
     WCAdInteractionDeviceMotionEventHandlePlugin *_deviceMotionPlugin;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdInteractionDeviceMotionEventHandlePlugin *deviceMotionPlugin; // @synthesize deviceMotionPlugin=_deviceMotionPlugin;
 @property(retain, nonatomic) NSString *determinationId; // @synthesize determinationId=_determinationId;
 @property(nonatomic) double triggerTime; // @synthesize triggerTime=_triggerTime;

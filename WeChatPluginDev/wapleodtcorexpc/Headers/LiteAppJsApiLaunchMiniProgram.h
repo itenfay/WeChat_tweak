@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDictionary, NSMutableArray, WAAppIdToUsernameTransfer;
 
 @interface LiteAppJsApiLaunchMiniProgram
@@ -12,7 +14,6 @@
     NSDictionary *_extraParamInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extraParamInfo; // @synthesize extraParamInfo=_extraParamInfo;
 @property(retain, nonatomic) NSMutableArray *widgetParameters; // @synthesize widgetParameters=_widgetParameters;
 - (CDUnknownBlockType)getShareAction;
@@ -22,4 +23,3 @@
 - (id)init;
 
 @end
-

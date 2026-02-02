@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UIImageView, UILabel, UIView;
 
@@ -21,7 +22,6 @@
 
 + (double)cellHeightUsers;
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reloadBlock; // @synthesize reloadBlock=_reloadBlock;
 @property(nonatomic) unsigned long long cellType; // @synthesize cellType=_cellType;
 @property(nonatomic) long long cellRangeIndex; // @synthesize cellRangeIndex=_cellRangeIndex;
@@ -35,4 +35,3 @@
 - (void)setCellWidth:(double)arg1 type:(unsigned long long)arg2 cellRangeIndex:(long long)arg3;
 
 @end
-

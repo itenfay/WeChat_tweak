@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor;
 
@@ -17,7 +18,6 @@
     struct CGSize _size;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType itemViewCreateAction; // @synthesize itemViewCreateAction=_itemViewCreateAction;
 @property(copy, nonatomic) CDUnknownBlockType imageCreateAction; // @synthesize imageCreateAction=_imageCreateAction;
 @property(retain, nonatomic) UIColor *imageColor; // @synthesize imageColor=_imageColor;
@@ -32,4 +32,3 @@
 - (id)initWithType:(long long)arg1 size:(struct CGSize)arg2;
 
 @end
-

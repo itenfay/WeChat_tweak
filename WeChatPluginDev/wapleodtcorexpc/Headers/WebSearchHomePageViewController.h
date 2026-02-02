@@ -26,7 +26,6 @@
 + (void)removeCache;
 + (id)getPreloadInstance;
 + (void)preHeatSearchHomePage;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(retain, nonatomic) WCWebSearchInputProvider *inputProvider; // @synthesize inputProvider=_inputProvider;
 @property(retain, nonatomic) WSLocalTemplateController *webviewController; // @synthesize webviewController=_webviewController;

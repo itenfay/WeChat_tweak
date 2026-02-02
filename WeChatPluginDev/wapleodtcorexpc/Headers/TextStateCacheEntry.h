@@ -13,7 +13,6 @@
     NSMutableArray *_privateTextStateList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *privateTextStateList; // @synthesize privateTextStateList=_privateTextStateList;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 - (id)mostRecentTextState;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, MMUITextField, NSString, UIColor, UIImageView, UISwitch, UIView;
 @protocol WCFinderLiveStartLotteryItemViewDelegate;
 
@@ -33,7 +35,6 @@
     UIColor *_switchOnColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool unableTextField; // @synthesize unableTextField=_unableTextField;
 @property(nonatomic) _Bool unableSelection; // @synthesize unableSelection=_unableSelection;
 @property(retain, nonatomic) UIColor *switchOnColor; // @synthesize switchOnColor=_switchOnColor;
@@ -88,4 +89,3 @@
 @property(readonly) Class superclass;
 
 @end
-

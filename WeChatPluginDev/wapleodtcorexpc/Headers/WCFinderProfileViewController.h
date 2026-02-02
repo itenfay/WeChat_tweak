@@ -20,7 +20,6 @@
     NSString *_sourceFeedId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceFeedId; // @synthesize sourceFeedId=_sourceFeedId;
 @property(retain, nonatomic) NSString *traceId; // @synthesize traceId=_traceId;
 @property(retain, nonatomic) WCFinderShareCustomTransition *animator; // @synthesize animator=_animator;

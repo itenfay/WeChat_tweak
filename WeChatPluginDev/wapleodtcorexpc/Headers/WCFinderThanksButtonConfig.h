@@ -17,7 +17,6 @@
     struct UIEdgeInsets _buttonContentInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int iconType; // @synthesize iconType=_iconType;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) double buttonHeight; // @synthesize buttonHeight=_buttonHeight;

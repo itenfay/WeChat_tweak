@@ -15,7 +15,6 @@
     WCPayEntrustPayInfo *_entrustPayInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayEntrustPayInfo *entrustPayInfo; // @synthesize entrustPayInfo=_entrustPayInfo;
 @property(retain, nonatomic) WCPayOrderDetail *order; // @synthesize order=_order;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;

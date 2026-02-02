@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,7 +15,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType initCompleteHandle; // @synthesize initCompleteHandle=_initCompleteHandle;
 @property(retain, nonatomic) NSString *moduleName; // @synthesize moduleName=_moduleName;
 - (void)readyNotify;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

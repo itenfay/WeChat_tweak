@@ -15,7 +15,6 @@
 }
 
 + (_Bool)isAppleIDBound;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ASAuthorizationAppleIDCredential *appleIDCredential; // @synthesize appleIDCredential=_appleIDCredential;
 @property(nonatomic) __weak id <AppleIDBindLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)generateAppleIDErrorFromError:(id)arg1 andResponse:(id)arg2;

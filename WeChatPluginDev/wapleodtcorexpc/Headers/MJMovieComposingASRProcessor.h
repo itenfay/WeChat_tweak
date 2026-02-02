@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class OMCASRProcessor;
 
@@ -21,7 +22,6 @@
 + (id)fetchModelConfigFilesWithVersion:(id)arg1 destPath:(id)arg2;
 + (id)fetchModelConfigFilesPathInDirectoryAtPath:(id)arg1;
 + (id)fetchModelZipFile;
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMCASRProcessor *backingProcessor; // @synthesize backingProcessor=_backingProcessor;
 - (void)requestSpeechRecognitionWithStoryElementSegmentVMs:(id)arg1 inHybridMode:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)initBackingProcessorIfNeeded;
@@ -29,4 +29,3 @@
 - (id)init;
 
 @end
-

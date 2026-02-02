@@ -12,7 +12,6 @@
     UITableView *_view;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *view; // @synthesize view=_view;
 - (id)indexPathForCell:(id)arg1;
 - (id)listVisiableCells;

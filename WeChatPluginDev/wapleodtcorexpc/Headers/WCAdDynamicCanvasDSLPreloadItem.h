@@ -16,7 +16,6 @@
     NSString *_materialId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *materialId; // @synthesize materialId=_materialId;
 @property(nonatomic) long long size; // @synthesize size=_size;
 @property(nonatomic) long long type; // @synthesize type=_type;

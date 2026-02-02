@@ -13,7 +13,6 @@
     NSString *_transitionPagPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *transitionPagPath; // @synthesize transitionPagPath=_transitionPagPath;
 @property(retain, nonatomic) NSString *transitionPreviewPath; // @synthesize transitionPreviewPath=_transitionPreviewPath;
 @property(retain, nonatomic) NSString *transitionName; // @synthesize transitionName=_transitionName;

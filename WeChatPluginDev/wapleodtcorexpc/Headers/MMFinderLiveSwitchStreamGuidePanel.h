@@ -16,7 +16,6 @@
     UIButton *_switchVideoStreamButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *switchVideoStreamButton; // @synthesize switchVideoStreamButton=_switchVideoStreamButton;
 @property(retain, nonatomic) UIButton *localAudioModeButton; // @synthesize localAudioModeButton=_localAudioModeButton;
 @property(retain, nonatomic) UILabel *tipLabel; // @synthesize tipLabel=_tipLabel;

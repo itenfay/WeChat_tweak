@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCProgressViewHideAction
 {
     _Bool _needShowInfo;
@@ -11,7 +13,6 @@
     CDUnknownBlockType _currentCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType currentCompletion; // @synthesize currentCompletion=_currentCompletion;
 @property(nonatomic) unsigned long long currentDelayTimeMS; // @synthesize currentDelayTimeMS=_currentDelayTimeMS;
 @property(nonatomic) long long currentInfoType; // @synthesize currentInfoType=_currentInfoType;
@@ -24,4 +25,3 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType progress;
 
 @end
-

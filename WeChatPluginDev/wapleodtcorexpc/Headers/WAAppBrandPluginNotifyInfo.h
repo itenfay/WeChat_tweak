@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_debugDevKey;
 + (void)PBArrayAdd_isAlreadyDownload;
 + (void)PBArrayAdd_appid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *versionDesc; // @synthesize versionDesc=_versionDesc;
 @property(nonatomic) unsigned int debugDevKey; // @synthesize debugDevKey=_debugDevKey;
 @property(nonatomic) _Bool isAlreadyDownload; // @synthesize isAlreadyDownload=_isAlreadyDownload;

@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_videoQualityLevelDesc;
 + (void)PBArrayAdd_tagName;
 + (void)PBArrayAdd_liveTaskId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int videoQualityLevel; // @synthesize videoQualityLevel=_videoQualityLevel;
 @property(nonatomic) unsigned int mediaType; // @synthesize mediaType=_mediaType;
 @property(nonatomic) unsigned int currentUin; // @synthesize currentUin=_currentUin;

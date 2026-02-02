@@ -36,7 +36,6 @@
     NSData *_byPassInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int getTopicInfoFlag; // @synthesize getTopicInfoFlag=_getTopicInfoFlag;
 @property(retain, nonatomic) NSData *byPassInfo; // @synthesize byPassInfo=_byPassInfo;
 @property(retain, nonatomic) NSMutableSet *feedIdSet; // @synthesize feedIdSet=_feedIdSet;

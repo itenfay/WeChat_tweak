@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSIndexPath, UIGestureRecognizer, WCGeneralMonitor, ZZCollectionViewChainModel;
 @protocol WCGeneralMonitorDelegate;
@@ -53,4 +54,3 @@
 - (void)ls_interuptUserAction;
 @property(readonly, copy, nonatomic) ZZCollectionViewChainModel *zz_setup;
 @end
-

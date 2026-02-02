@@ -11,7 +11,6 @@
     CAGradientLayer *_maskLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(retain, nonatomic) UILabel *videoDurationLabel; // @synthesize videoDurationLabel=_videoDurationLabel;
 - (id)accessibilityLabel;

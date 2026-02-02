@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TingPlayerHelper : NSObject
 {
@@ -33,4 +34,3 @@
 + (void)playWithMusicInfo:(id)arg1 scene:(int)arg2;
 
 @end
-

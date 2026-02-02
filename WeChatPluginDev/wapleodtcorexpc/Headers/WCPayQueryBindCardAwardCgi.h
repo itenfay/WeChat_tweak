@@ -12,7 +12,6 @@
     id <WCPayQueryBindCardAwardCgiDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayQueryBindCardAwardCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) WCPayQueryBindCardAwardCgiRequest *m_queryRequest; // @synthesize m_queryRequest=_m_queryRequest;
 - (void)didFailWithError:(id)arg1;

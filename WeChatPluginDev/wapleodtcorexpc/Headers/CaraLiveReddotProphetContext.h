@@ -18,7 +18,6 @@
     NSString *_anchor;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float predictProbThreshold; // @synthesize predictProbThreshold=_predictProbThreshold;
 @property(readonly, nonatomic) _Bool isHomePageLoaded; // @synthesize isHomePageLoaded=_isHomePageLoaded;
 @property(readonly, nonatomic) int enterAction; // @synthesize enterAction=_enterAction;

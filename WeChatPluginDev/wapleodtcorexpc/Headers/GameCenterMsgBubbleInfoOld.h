@@ -15,7 +15,6 @@
     NSString *_url;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(nonatomic) int action; // @synthesize action=_action;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;

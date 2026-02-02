@@ -18,7 +18,6 @@
     NSArray *_userNames;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool migrationAllFinish; // @synthesize migrationAllFinish=_migrationAllFinish;
 @property(nonatomic) _Bool createTableError; // @synthesize createTableError=_createTableError;
 @property(retain, nonatomic) NSArray *userNames; // @synthesize userNames=_userNames;

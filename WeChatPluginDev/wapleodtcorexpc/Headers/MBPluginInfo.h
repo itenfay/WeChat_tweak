@@ -14,7 +14,6 @@
     NSString *_version;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *version; // @synthesize version=_version;
 @property(copy, nonatomic) NSString *provider; // @synthesize provider=_provider;
 @property(copy, nonatomic) NSString *alias; // @synthesize alias=_alias;

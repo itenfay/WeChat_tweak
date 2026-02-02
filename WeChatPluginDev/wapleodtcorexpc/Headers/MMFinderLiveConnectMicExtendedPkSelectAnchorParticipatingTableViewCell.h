@@ -18,7 +18,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorBar; // @synthesize separatorBar=_separatorBar;
 @property(retain, nonatomic) UISwitch *toggleSwitch; // @synthesize toggleSwitch=_toggleSwitch;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

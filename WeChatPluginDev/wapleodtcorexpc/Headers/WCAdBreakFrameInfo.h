@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdBreakFrameClickInfo *clickInfo; // @synthesize clickInfo=_clickInfo;
 @property(retain, nonatomic) WCAdBreakFrameAlphaVideoInfo *alphaVideoInfo; // @synthesize alphaVideoInfo=_alphaVideoInfo;
 @property(nonatomic) int mediaType; // @synthesize mediaType=_mediaType;

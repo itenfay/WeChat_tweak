@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;

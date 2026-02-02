@@ -13,7 +13,6 @@
     NSString *_nsPunctuation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsPunctuation; // @synthesize nsPunctuation=_nsPunctuation;
 @property(nonatomic) unsigned long long editScene; // @synthesize editScene=_editScene;
 @property(nonatomic) unsigned int removeCount; // @synthesize removeCount=_removeCount;

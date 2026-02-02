@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_value;
 + (void)PBArrayAdd_key;
 + (void)PBArrayAdd_ID;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isKeyLog; // @synthesize isKeyLog=_isKeyLog;
 @property(nonatomic) _Bool isReportNow; // @synthesize isReportNow=_isReportNow;
 @property(retain, nonatomic) NSString *ext; // @synthesize ext=_ext;

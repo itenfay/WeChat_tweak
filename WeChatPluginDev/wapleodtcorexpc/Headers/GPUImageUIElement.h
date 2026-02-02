@@ -14,7 +14,6 @@
     double actualTimeOfLastUpdate;
 }
 
-- (void).cxx_destruct;
 - (void)updateWithTimestamp:(CDStruct_1b6d18a9)arg1;
 - (void)updateUsingCurrentTime;
 - (void)update;

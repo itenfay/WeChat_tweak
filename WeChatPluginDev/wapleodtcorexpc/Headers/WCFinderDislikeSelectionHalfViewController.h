@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSMutableArray, NSMutableSet, NSString, UIButton, UILabel, UITableView, WCFinderAnimationLoadingView, WCFinderFeedContentVM;
 
 @interface WCFinderDislikeSelectionHalfViewController
@@ -22,7 +24,6 @@
     CDUnknownBlockType _dislikeActionCompleteBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dislikeActionCompleteBlock; // @synthesize dislikeActionCompleteBlock=_dislikeActionCompleteBlock;
 @property(nonatomic) _Bool selectionWithoutConfirm; // @synthesize selectionWithoutConfirm=_selectionWithoutConfirm;
 @property(retain, nonatomic) NSMutableSet *exposedEntries; // @synthesize exposedEntries=_exposedEntries;
@@ -79,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

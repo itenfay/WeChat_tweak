@@ -12,7 +12,6 @@
     id <RingToneContactSelectViewController> _liveContactDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <RingToneContactSelectViewController> liveContactDelegate; // @synthesize liveContactDelegate=_liveContactDelegate;
 @property(retain, nonatomic) MMLiveContactSelectView *selectView; // @synthesize selectView=_selectView;
 - (void)dismissLiveContactSelect;

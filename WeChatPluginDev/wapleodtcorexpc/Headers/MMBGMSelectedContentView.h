@@ -21,7 +21,6 @@
     id <MMBGMSelectedMusicDataProtocol> _currentMusicData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMBGMSelectedMusicDataProtocol> currentMusicData; // @synthesize currentMusicData=_currentMusicData;
 @property(nonatomic) unsigned long long currentTabIndex; // @synthesize currentTabIndex=_currentTabIndex;
 @property(retain, nonatomic) MMBGMCategoryDetailView *categoryDetailView; // @synthesize categoryDetailView=_categoryDetailView;

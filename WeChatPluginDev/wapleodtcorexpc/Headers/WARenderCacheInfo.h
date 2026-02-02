@@ -46,7 +46,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastAccessTime; // @synthesize lastAccessTime=_lastAccessTime;
 @property(nonatomic) unsigned long long cacheSize; // @synthesize cacheSize=_cacheSize;
 @property(retain, nonatomic) NSString *pubVersion; // @synthesize pubVersion=_pubVersion;

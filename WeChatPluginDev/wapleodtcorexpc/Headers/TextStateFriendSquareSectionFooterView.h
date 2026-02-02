@@ -13,7 +13,6 @@
     UIView *_separatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) double beginX; // @synthesize beginX=_beginX;
 - (void)layoutSubviews;

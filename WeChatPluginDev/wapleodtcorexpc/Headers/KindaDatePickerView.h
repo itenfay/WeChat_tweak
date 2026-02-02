@@ -12,7 +12,6 @@
     WCPaySelectDateItem *_dateItem;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCPaySelectDateItem *dateItem; // @synthesize dateItem=_dateItem;
 - (void)WCBaseInfoItemEndEdit:(id)arg1;
 - (id)currentDate;

@@ -15,7 +15,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *weAppPreloadWebStoreDict; // @synthesize weAppPreloadWebStoreDict=_weAppPreloadWebStoreDict;
 @property(retain, nonatomic) NSMutableDictionary *preloadedWebStoreDict; // @synthesize preloadedWebStoreDict=_preloadedWebStoreDict;
 @property(retain, nonatomic) NSMutableDictionary *preloadingWebStoreDict; // @synthesize preloadingWebStoreDict=_preloadingWebStoreDict;

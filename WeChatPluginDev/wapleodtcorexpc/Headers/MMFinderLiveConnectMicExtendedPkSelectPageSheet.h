@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveBattleDurationItem, MMFinderLiveConnectMicPkSelectionModel, MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMUIButton, NSMutableArray, NSString, UITableView;
 
 @interface MMFinderLiveConnectMicExtendedPkSelectPageSheet
@@ -25,7 +27,6 @@
     NSMutableArray *_pkSettingSectionItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pkSettingSectionItems; // @synthesize pkSettingSectionItems=_pkSettingSectionItems;
 @property(retain, nonatomic) NSMutableArray *playModeSectionItems; // @synthesize playModeSectionItems=_playModeSectionItems;
 @property(retain, nonatomic) MMFinderLiveBattleDurationItem *selectedDuration; // @synthesize selectedDuration=_selectedDuration;
@@ -94,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -49,7 +49,6 @@
     NSData *mEncryptKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int mCallFlag; // @synthesize mCallFlag;
 @property(nonatomic) unsigned int mKeypadNumberClickCount; // @synthesize mKeypadNumberClickCount;
 @property(retain, nonatomic) NSData *mEncryptKey; // @synthesize mEncryptKey;

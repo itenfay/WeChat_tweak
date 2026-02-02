@@ -14,7 +14,6 @@
     MJAssetAnalysisReportInfo *_reportInfo;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJAssetAnalysisReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property(readonly, nonatomic) _Bool isScreenshot; // @synthesize isScreenshot=_isScreenshot;
 @property(readonly, nonatomic) _Bool isEdited; // @synthesize isEdited=_isEdited;

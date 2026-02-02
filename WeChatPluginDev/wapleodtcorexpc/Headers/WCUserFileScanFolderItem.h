@@ -14,7 +14,6 @@
     unsigned long long _depth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long depth; // @synthesize depth=_depth;
 @property(nonatomic) unsigned long long scanFileType; // @synthesize scanFileType=_scanFileType;
 @property(copy, nonatomic) NSString *parentPath; // @synthesize parentPath=_parentPath;

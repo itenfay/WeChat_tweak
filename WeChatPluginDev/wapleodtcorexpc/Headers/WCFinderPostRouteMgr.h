@@ -20,7 +20,6 @@
 
 + (_Bool)isExitCustomKey:(id)arg1;
 + (unsigned long long)convertVideoSourceToType:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long postSourceType; // @synthesize postSourceType=_postSourceType;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(nonatomic) int actionType; // @synthesize actionType=_actionType;

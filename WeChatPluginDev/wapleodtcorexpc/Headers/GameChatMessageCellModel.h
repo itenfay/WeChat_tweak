@@ -20,7 +20,6 @@
     double _itemSpace;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double itemSpace; // @synthesize itemSpace=_itemSpace;
 @property(nonatomic) double lastMessageUpdateTime; // @synthesize lastMessageUpdateTime=_lastMessageUpdateTime;
 @property(nonatomic) long long conversationIndex; // @synthesize conversationIndex=_conversationIndex;

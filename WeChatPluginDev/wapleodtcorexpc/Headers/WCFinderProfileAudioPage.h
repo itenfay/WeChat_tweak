@@ -10,7 +10,6 @@
     WCFinderStreamFooterView *_footerView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderStreamFooterView *footerView; // @synthesize footerView=_footerView;
 - (void)onReceiveAudioEventRefreshList;
 - (void)onLaunchManageMusicLiteApp;

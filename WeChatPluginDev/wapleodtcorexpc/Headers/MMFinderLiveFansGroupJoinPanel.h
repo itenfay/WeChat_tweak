@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveFansGroupInterestsCell, MMFinderLiveRewardGiftItem, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMUIButton, MMUILabel, MMUIMaskContainerView, NSString, UIImageView, UIScrollView, UIView, WCFinderHeadImageView;
 
 @interface MMFinderLiveFansGroupJoinPanel
@@ -28,7 +30,6 @@
     MMUIMaskContainerView *_scrollViewContainerView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needPurchase; // @synthesize needPurchase=_needPurchase;
 @property(retain, nonatomic) MMUIMaskContainerView *scrollViewContainerView; // @synthesize scrollViewContainerView=_scrollViewContainerView;
 @property(retain, nonatomic) UIImageView *payWecoinIcon; // @synthesize payWecoinIcon=_payWecoinIcon;
@@ -94,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

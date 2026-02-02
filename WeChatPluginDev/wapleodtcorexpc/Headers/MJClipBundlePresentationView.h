@@ -17,7 +17,6 @@
     UIImageView *_transitionImageViewTwo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *transitionImageViewTwo; // @synthesize transitionImageViewTwo=_transitionImageViewTwo;
 @property(retain, nonatomic) UIImageView *transitionImageViewOne; // @synthesize transitionImageViewOne=_transitionImageViewOne;
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;

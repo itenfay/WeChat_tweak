@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderLiveGetShareGoodsInfoCGI
@@ -18,7 +20,6 @@
     NSString *_productCardKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productCardKey; // @synthesize productCardKey=_productCardKey;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
@@ -35,4 +36,3 @@
 - (id)initWithObjctId:(unsigned long long)arg1 productId:(unsigned long long)arg2 finderUsername:(id)arg3 ecSource:(id)arg4 reqType:(unsigned int)arg5 productCardKey:(id)arg6 scene:(int)arg7 successBlock:(CDUnknownBlockType)arg8 failureBlock:(CDUnknownBlockType)arg9;
 
 @end
-

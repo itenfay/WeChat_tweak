@@ -14,7 +14,6 @@
     NSString *_FbContent_23;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int Pos_25; // @synthesize Pos_25=_Pos_25;
 @property(nonatomic) unsigned int SessionId_24; // @synthesize SessionId_24=_SessionId_24;
 @property(copy, nonatomic) NSString *FbContent_23; // @synthesize FbContent_23=_FbContent_23;

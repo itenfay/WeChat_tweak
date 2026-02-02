@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_clearedNumSeq;
 + (void)PBArrayAdd_redPointArr;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *redPointArr; // @synthesize redPointArr=_redPointArr;
 @property(nonatomic) unsigned long long clearedNumSeq; // @synthesize clearedNumSeq=_clearedNumSeq;
 - (id)dictInfo;

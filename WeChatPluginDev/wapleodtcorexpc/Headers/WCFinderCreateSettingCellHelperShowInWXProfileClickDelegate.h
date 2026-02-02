@@ -14,7 +14,6 @@
 
 + (id)jumpWXProfileHref;
 + (id)instanceWithNavVC:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UINavigationController *navVC; // @synthesize navVC=_navVC;
 - (void)openSelfContactInfo;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

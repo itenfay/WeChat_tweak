@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WXPNetworkServiceImpl;
 
@@ -12,7 +13,6 @@
     WXPNetworkServiceImpl *_networkService;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXPNetworkServiceImpl *networkService; // @synthesize networkService=_networkService;
 - (void)onRequestCompleteWithErrType:(int)arg1 responseData:(id)arg2 extraInfo:(id)arg3 callback:(CDUnknownBlockType)arg4;
 - (void)onRequestError:(id)arg1 callback:(CDUnknownBlockType)arg2;
@@ -21,4 +21,3 @@
 - (id)init;
 
 @end
-

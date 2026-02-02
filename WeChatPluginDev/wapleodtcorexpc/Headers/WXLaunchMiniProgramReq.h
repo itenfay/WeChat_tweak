@@ -15,7 +15,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *extDic; // @synthesize extDic=_extDic;
 @property(retain, nonatomic) NSString *extMsg; // @synthesize extMsg=_extMsg;
 @property(nonatomic) unsigned long long miniProgramType; // @synthesize miniProgramType=_miniProgramType;

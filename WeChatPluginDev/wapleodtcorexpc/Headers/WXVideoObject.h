@@ -14,7 +14,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *videoLowBandUrl; // @synthesize videoLowBandUrl;
 @property(retain, nonatomic) NSString *videoUrl; // @synthesize videoUrl;
 - (id)init;

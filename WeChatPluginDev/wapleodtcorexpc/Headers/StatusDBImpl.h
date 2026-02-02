@@ -11,7 +11,6 @@
 }
 
 + (id)checkTextStateForAddOrModify:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mmkv; // @synthesize mmkv=_mmkv;
 - (id)getSelfStateInteractData:(id)arg1;
 - (id)getStatusInfoListCache;

@@ -10,7 +10,6 @@
     QGPRotation *_value;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPRotation *value; // @synthesize value=_value;
 
 @end

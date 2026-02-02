@@ -16,7 +16,6 @@
     NSString *_showMoreWording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *showMoreWording; // @synthesize showMoreWording=_showMoreWording;
 @property(nonatomic) unsigned long long mentionType; // @synthesize mentionType=_mentionType;
 @property(nonatomic) long long moreState; // @synthesize moreState=_moreState;

@@ -36,7 +36,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sql; // @synthesize sql=_sql;
 @property(nonatomic) int rootpage; // @synthesize rootpage=_rootpage;
 @property(retain, nonatomic) NSString *tblName; // @synthesize tblName=_tblName;

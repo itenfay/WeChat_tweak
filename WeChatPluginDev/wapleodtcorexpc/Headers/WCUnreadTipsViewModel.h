@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -13,11 +14,9 @@
     NSMutableArray *_feedIds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *feedIds; // @synthesize feedIds=_feedIds;
 @property(retain, nonatomic) NSMutableArray *userNames; // @synthesize userNames=_userNames;
 - (void)fetchUserName:(CDUnknownBlockType)arg1;
 - (id)initWithUnreadLayer:(id)arg1;
 
 @end
-

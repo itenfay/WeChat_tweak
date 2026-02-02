@@ -13,7 +13,6 @@
     double _fontSize;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(readonly, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
 - (id)calcFontNameWithFamilyName:(id)arg1 fontWeight:(unsigned long long)arg2;

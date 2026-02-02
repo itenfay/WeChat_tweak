@@ -25,7 +25,6 @@
     struct CGAffineTransform _pTransform;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *_pTextColor; // @synthesize _pTextColor;
 @property(nonatomic) unsigned long long _pOrientation; // @synthesize _pOrientation;
 @property(nonatomic) unsigned int _pViewIndex; // @synthesize _pViewIndex;

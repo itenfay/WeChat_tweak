@@ -15,7 +15,6 @@
     UIView *_highlightedCoverView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightedCoverView; // @synthesize highlightedCoverView=_highlightedCoverView;
 @property(retain, nonatomic) WCAdDynamicFeedBackgroundButton *backgroundButton; // @synthesize backgroundButton=_backgroundButton;
 @property(nonatomic) __weak id <WCAdDynamicFeedEmptyLayoutViewDelegate> delegate; // @synthesize delegate=_delegate;

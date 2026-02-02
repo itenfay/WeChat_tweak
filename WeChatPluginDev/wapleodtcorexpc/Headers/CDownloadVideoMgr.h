@@ -15,7 +15,6 @@
     unsigned int m_uiCurDownloadEventID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *m_wrapCurDownloadMsg; // @synthesize m_wrapCurDownloadMsg;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)OnDownloadPartOK:(id)arg1 messageWrap:(id)arg2;

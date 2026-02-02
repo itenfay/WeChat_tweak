@@ -74,7 +74,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int LastChatTime; // @synthesize LastChatTime=_LastChatTime;
 @property(retain, nonatomic) NSString *draft; // @synthesize draft=_draft;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;

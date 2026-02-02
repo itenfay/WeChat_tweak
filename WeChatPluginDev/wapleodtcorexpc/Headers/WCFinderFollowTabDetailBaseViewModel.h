@@ -17,7 +17,6 @@
     NSString *_noDataTips;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *noDataTips; // @synthesize noDataTips=_noDataTips;
 @property(copy, nonatomic) NSString *noMoreDataTips; // @synthesize noMoreDataTips=_noMoreDataTips;
 @property(nonatomic) _Bool postFeedInsertMachineTab; // @synthesize postFeedInsertMachineTab=_postFeedInsertMachineTab;

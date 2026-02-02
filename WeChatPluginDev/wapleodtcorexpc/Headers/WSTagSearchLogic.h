@@ -20,7 +20,6 @@
     NSString *_normalText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *normalText; // @synthesize normalText=_normalText;
 @property(retain, nonatomic) NSString *tagText; // @synthesize tagText=_tagText;
 @property(retain, nonatomic) NSMutableArray *tagList; // @synthesize tagList=_tagList;

@@ -12,7 +12,6 @@
     WxaLiteAppWidgetAdapter *_liteAppWidgetAdapter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WxaLiteAppWidgetAdapter *liteAppWidgetAdapter; // @synthesize liteAppWidgetAdapter=_liteAppWidgetAdapter;
 - (id)consume:(id)arg1;
 

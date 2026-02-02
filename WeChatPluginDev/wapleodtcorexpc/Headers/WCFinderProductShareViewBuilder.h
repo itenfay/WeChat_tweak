@@ -13,7 +13,6 @@
     WCFinderLiveProductShareItem *_item;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveProductShareItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) WCFinderProductShareViewBuildConfig *config; // @synthesize config=_config;
 - (double)estimateHeightForWidth:(double)arg1;

@@ -15,7 +15,6 @@
     struct _NSRange _displayedRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long componentTag; // @synthesize componentTag=_componentTag;
 @property(nonatomic) struct _NSRange displayedRange; // @synthesize displayedRange=_displayedRange;
 @property(nonatomic) struct _NSRange componentRange; // @synthesize componentRange=_componentRange;

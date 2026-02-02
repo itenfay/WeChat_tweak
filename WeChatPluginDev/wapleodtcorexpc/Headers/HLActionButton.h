@@ -4,15 +4,14 @@
 //
 
 #import <UIKit/UIButton.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface HLActionButton : UIButton
 {
     CDUnknownBlockType _action;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 - (void)setHighlighted:(_Bool)arg1;
 
 @end
-

@@ -15,7 +15,6 @@
     double _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) _Bool reverse; // @synthesize reverse=_reverse;
 @property(nonatomic) __weak id <TransitioningAnimationDelegate> delegate; // @synthesize delegate=m_delegate;

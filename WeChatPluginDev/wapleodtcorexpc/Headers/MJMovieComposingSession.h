@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class OMJMovieComposingSession;
 
 @interface MJMovieComposingSession
@@ -16,7 +18,6 @@
 + (id)getOrCreateCamResourceManager;
 + (id)getOrCreateMaterialManager;
 + (id)createRenderView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMJMovieComposingSession *movieComposingSession; // @synthesize movieComposingSession=_movieComposingSession;
 - (void)_destroyMovieComposingSessionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_tearDownMovieComposingSessionWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -25,4 +26,3 @@
 - (_Bool)createMaasSession;
 
 @end
-

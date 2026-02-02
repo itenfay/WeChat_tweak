@@ -13,7 +13,6 @@
     _Bool m_bRealLen;
 }
 
-- (void).cxx_destruct;
 - (void)textViewDidChange:(id)arg1;
 - (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
 - (void)textViewDidEndEditing:(id)arg1;

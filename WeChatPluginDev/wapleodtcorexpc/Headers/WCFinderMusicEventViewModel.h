@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderVideoTemplateInfo, ForwardMessageLogicController, MMListenLikeResponse, MusicRelatedRecommendInfo, NSArray, NSString, RecommendedMusicInfo, WCFinderTopicInfo, WCFinderTopicRouteParams;
 @protocol WCFinderMusicEventViewModelDelegate;
@@ -33,7 +34,6 @@
     MusicRelatedRecommendInfo *_relatedMusicInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int getTopicInfoFlag; // @synthesize getTopicInfoFlag=_getTopicInfoFlag;
 @property(retain, nonatomic) MusicRelatedRecommendInfo *relatedMusicInfo; // @synthesize relatedMusicInfo=_relatedMusicInfo;
 @property(retain, nonatomic) WCFinderTopicRouteParams *params; // @synthesize params=_params;
@@ -95,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

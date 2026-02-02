@@ -12,7 +12,6 @@
     NSData *_m_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *m_data; // @synthesize m_data=_m_data;
 - (unsigned int)getLength;
 - (_Bool)readBytes:(unsigned int)arg1 len:(unsigned int *)arg2 buffer:(void *)arg3;

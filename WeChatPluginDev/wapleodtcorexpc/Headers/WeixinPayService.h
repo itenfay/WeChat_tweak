@@ -46,7 +46,6 @@
 + (id)liteapp_export_method_async_55;
 + (id)liteapp_export_method_async_54;
 + (id)liteapp_export_method_async_53;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXPLiteAppNewyearHbService *newyearHbService; // @synthesize newyearHbService=_newyearHbService;
 @property(retain, nonatomic) WXPLiteAppLuckyMoneyPickEnvelopeService *luckyMoneyPickEnvelopeService; // @synthesize luckyMoneyPickEnvelopeService=_luckyMoneyPickEnvelopeService;
 @property(retain, nonatomic) WXPLiteAppBiometricVerifyService *biometricVerifyService; // @synthesize biometricVerifyService=_biometricVerifyService;

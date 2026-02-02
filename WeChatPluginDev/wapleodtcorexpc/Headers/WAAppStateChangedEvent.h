@@ -14,7 +14,6 @@
     unsigned long long _closeReason;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long closeReason; // @synthesize closeReason=_closeReason;
 @property(nonatomic) unsigned long long sharedResourceType; // @synthesize sharedResourceType=_sharedResourceType;
 @property(nonatomic) unsigned long long resourceType; // @synthesize resourceType=_resourceType;

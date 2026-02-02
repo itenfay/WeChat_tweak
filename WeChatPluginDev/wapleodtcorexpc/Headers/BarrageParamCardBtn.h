@@ -10,7 +10,6 @@
     BarrageParamCard *_paramCard;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BarrageParamCard *paramCard; // @synthesize paramCard=_paramCard;
 - (void)updateBackgroundColor;
 - (id)getTitleColor;

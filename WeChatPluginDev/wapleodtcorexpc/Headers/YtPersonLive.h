@@ -20,7 +20,6 @@
     NSDictionary *_select_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *select_data; // @synthesize select_data=_select_data;
 @property(retain, nonatomic) NSString *client_version; // @synthesize client_version=_client_version;
 @property(nonatomic) int platform; // @synthesize platform=_platform;

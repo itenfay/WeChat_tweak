@@ -81,7 +81,6 @@
     long long _backEntranceValue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long backEntranceValue; // @synthesize backEntranceValue=_backEntranceValue;
 @property(retain, nonatomic) MMCommonActionSheetPicker *mchShopPicker; // @synthesize mchShopPicker=_mchShopPicker;
 @property(nonatomic) unsigned long long selectedMchShopId; // @synthesize selectedMchShopId=_selectedMchShopId;

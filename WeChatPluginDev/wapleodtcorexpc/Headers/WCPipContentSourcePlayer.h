@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVPictureInPictureControllerContentSource, NSString, UIView, WCPlayerPlayArgs, WCPlayerPlaybackInfo, WCPlayerView;
 @protocol WCPipContentSourcePlayerDelegate;
@@ -30,7 +31,6 @@
     struct CGSize _size;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long displayStopReason; // @synthesize displayStopReason=_displayStopReason;
 @property(nonatomic) _Bool ignoreUpdateDisplayLayerViewFrame; // @synthesize ignoreUpdateDisplayLayerViewFrame=_ignoreUpdateDisplayLayerViewFrame;
 @property(nonatomic) _Bool isPauseMainPlayerWhenNotStartPip; // @synthesize isPauseMainPlayerWhenNotStartPip=_isPauseMainPlayerWhenNotStartPip;
@@ -103,4 +103,3 @@
 @property(readonly) Class superclass;
 
 @end
-

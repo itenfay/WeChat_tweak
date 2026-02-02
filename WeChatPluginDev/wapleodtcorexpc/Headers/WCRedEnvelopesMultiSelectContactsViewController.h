@@ -32,7 +32,6 @@
     unsigned int m_uiMaxCountSelect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bShowAllTags; // @synthesize m_bShowAllTags=_m_bShowAllTags;
 @property(nonatomic) unsigned int m_uiMaxCountSelect; // @synthesize m_uiMaxCountSelect;
 @property(nonatomic) unsigned long long m_memberCountLimit; // @synthesize m_memberCountLimit;

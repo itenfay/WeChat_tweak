@@ -27,7 +27,6 @@
     MJTemplatePlayerView *_templatePlayerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJTemplatePlayerView *templatePlayerView; // @synthesize templatePlayerView=_templatePlayerView;
 @property(retain, nonatomic) SightDraft *sightDraft; // @synthesize sightDraft=_sightDraft;
 @property(nonatomic) __weak id <WCMultiImageScannerDelegate> scannerDelegate; // @synthesize scannerDelegate=_scannerDelegate;

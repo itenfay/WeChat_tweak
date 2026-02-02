@@ -19,7 +19,6 @@
 + (void)PBArrayAdd_selectTags;
 + (void)PBArrayAdd_selectUserNames;
 + (void)PBArrayAdd_privacy;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *selectContacts; // @synthesize selectContacts=_selectContacts;
 @property(retain, nonatomic) NSArray *recentSelectedChatroom; // @synthesize recentSelectedChatroom=_recentSelectedChatroom;
 @property(retain, nonatomic) NSArray *selectTags; // @synthesize selectTags=_selectTags;

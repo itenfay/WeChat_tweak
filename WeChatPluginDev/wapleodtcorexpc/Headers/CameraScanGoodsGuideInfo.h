@@ -13,7 +13,6 @@
     NSString *_subtitleStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subtitleStr; // @synthesize subtitleStr=_subtitleStr;
 @property(retain, nonatomic) NSString *titleStr; // @synthesize titleStr=_titleStr;
 

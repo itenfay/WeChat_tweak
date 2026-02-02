@@ -31,7 +31,6 @@
 }
 
 + (id)getDefaultFooterViewWithSize:(struct CGSize)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dataWrapList; // @synthesize dataWrapList=_dataWrapList;
 @property(nonatomic) _Bool supportToLocateToMsg; // @synthesize supportToLocateToMsg=_supportToLocateToMsg;
 @property(retain, nonatomic) CBaseContact *contact; // @synthesize contact=_contact;

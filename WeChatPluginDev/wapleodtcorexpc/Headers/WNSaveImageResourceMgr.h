@@ -14,7 +14,6 @@
     NSArray *_arrBkgImageInfos;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int localId; // @synthesize localId=_localId;
 @property(nonatomic) _Bool bDownload; // @synthesize bDownload=_bDownload;
 @property(retain, nonatomic) NSArray *arrBkgImageInfos; // @synthesize arrBkgImageInfos=_arrBkgImageInfos;

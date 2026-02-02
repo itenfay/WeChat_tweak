@@ -16,7 +16,6 @@
     ClientSpecificConfig *_clientSpecConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int nextPagePullType; // @synthesize nextPagePullType=_nextPagePullType;
 @property(retain, nonatomic) ClientSpecificConfig *clientSpecConfig; // @synthesize clientSpecConfig=_clientSpecConfig;
 @property(nonatomic) unsigned long long homePageScene; // @synthesize homePageScene=_homePageScene;

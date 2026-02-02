@@ -13,7 +13,6 @@
     NSArray *_captionItems;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *captionItems; // @synthesize captionItems=_captionItems;
 @property(readonly, nonatomic) NSString *launguage; // @synthesize launguage=_launguage;
 - (id)description;

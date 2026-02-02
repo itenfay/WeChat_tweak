@@ -12,7 +12,6 @@
     MISSING_TYPE *fileSystem;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic) __weak id <IMBFileSystem> fileSystem; // @synthesize fileSystem;
 @property(nonatomic) __weak id <_TtP6WeChat28MagicSclJsApiContextDelegate_> sclDelegate; // @synthesize sclDelegate;

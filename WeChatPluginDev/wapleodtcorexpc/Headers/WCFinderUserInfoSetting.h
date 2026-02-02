@@ -46,7 +46,6 @@
 + (void)PBArrayAdd_userMessage;
 + (void)PBArrayAdd_mentionModel;
 + (void)PBArrayAdd_unreadMessageCount;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPostRealName; // @synthesize hasPostRealName=_hasPostRealName;
 @property(nonatomic) unsigned long long requestFansCacheDate; // @synthesize requestFansCacheDate=_requestFansCacheDate;
 @property(retain, nonatomic) NSArray *slideUpGuideConfigArr; // @synthesize slideUpGuideConfigArr=_slideUpGuideConfigArr;

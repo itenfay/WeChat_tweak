@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSMutableArray, NSString;
 
 @interface WCFinderLiveGetExtraInfoCGI
@@ -17,7 +19,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) NSMutableArray *reqlist; // @synthesize reqlist=_reqlist;
@@ -32,4 +33,3 @@
 - (id)initWithAnchorFinderusername:(id)arg1 audiencefinderusername:(id)arg2 liveCookies:(id)arg3 taskId:(id)arg4 objectId:(unsigned long long)arg5 liveId:(unsigned long long)arg6 reqlist:(id)arg7 successBlock:(CDUnknownBlockType)arg8 failBlock:(CDUnknownBlockType)arg9;
 
 @end
-

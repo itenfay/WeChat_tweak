@@ -24,7 +24,6 @@
     WANearByPreViewItem *_nearByEntry;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WANearByPreViewItem *nearByEntry; // @synthesize nearByEntry=_nearByEntry;
 @property(nonatomic) _Bool openWxa; // @synthesize openWxa=_openWxa;
 @property(nonatomic) _Bool disappearOneClick; // @synthesize disappearOneClick=_disappearOneClick;

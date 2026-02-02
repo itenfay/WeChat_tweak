@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSString, RichTextView;
 
 @interface MMFinderLivePaidConnectMicAudiencePayConfirmSheetView
@@ -16,7 +18,6 @@
     MMUIButton *_agreementCheckbox;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *agreementCheckbox; // @synthesize agreementCheckbox=_agreementCheckbox;
 @property(retain, nonatomic) RichTextView *agreementTextView; // @synthesize agreementTextView=_agreementTextView;
 @property(nonatomic) _Bool wecoinEnough; // @synthesize wecoinEnough=_wecoinEnough;
@@ -52,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -13,7 +13,6 @@
     BrandProfileTopicViewModel *_topicViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandProfileTopicViewModel *topicViewModel; // @synthesize topicViewModel=_topicViewModel;
 @property(retain, nonatomic) BrandProfileTopicView *topicView; // @synthesize topicView=_topicView;
 @property(nonatomic) __weak id <BrandProfileMsgTabViewControllerDelegate> msgTabDelegate; // @synthesize msgTabDelegate=_msgTabDelegate;

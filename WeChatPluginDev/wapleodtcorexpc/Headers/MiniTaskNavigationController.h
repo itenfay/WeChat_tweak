@@ -16,7 +16,6 @@
     MiniTaskNavEdgeGestureHandler *_rightEdgeGestureHandler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAutoRotate; // @synthesize shouldAutoRotate=_shouldAutoRotate;
 @property(retain, nonatomic) MiniTaskNavEdgeGestureHandler *rightEdgeGestureHandler; // @synthesize rightEdgeGestureHandler=_rightEdgeGestureHandler;
 @property(retain, nonatomic) MiniTaskNavEdgeGestureHandler *leftEdgeGestureHandler; // @synthesize leftEdgeGestureHandler=_leftEdgeGestureHandler;

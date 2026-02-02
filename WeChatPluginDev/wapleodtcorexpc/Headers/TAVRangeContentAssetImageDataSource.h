@@ -15,7 +15,6 @@
     struct CGSize _imageSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TAVCachedAssetImageGenerator *imageGenerator; // @synthesize imageGenerator=_imageGenerator;
 @property(nonatomic) double widthPerSecond; // @synthesize widthPerSecond=_widthPerSecond;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;

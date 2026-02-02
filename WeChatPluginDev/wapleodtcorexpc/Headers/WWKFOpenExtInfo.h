@@ -15,7 +15,6 @@
     NSString *_finderContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderContext; // @synthesize finderContext=_finderContext;
 @property(nonatomic) _Bool showPageSheet; // @synthesize showPageSheet=_showPageSheet;
 @property(retain, nonatomic) NSData *spamContext; // @synthesize spamContext=_spamContext;

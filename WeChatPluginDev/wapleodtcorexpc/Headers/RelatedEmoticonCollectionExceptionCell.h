@@ -15,7 +15,6 @@
     UILabel *_wordingLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *wordingLabel; // @synthesize wordingLabel=_wordingLabel;
 @property(retain, nonatomic) MMUIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;

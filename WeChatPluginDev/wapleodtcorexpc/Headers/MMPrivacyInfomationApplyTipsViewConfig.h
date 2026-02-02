@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage;
 
@@ -18,7 +19,6 @@
     CDUnknownBlockType _disallowAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType disallowAction; // @synthesize disallowAction=_disallowAction;
 @property(copy, nonatomic) CDUnknownBlockType allowAction; // @synthesize allowAction=_allowAction;
 @property(retain, nonatomic) NSString *descHint; // @synthesize descHint=_descHint;
@@ -28,4 +28,3 @@
 @property(retain, nonatomic) UIImage *bussinessIcon; // @synthesize bussinessIcon=_bussinessIcon;
 
 @end
-

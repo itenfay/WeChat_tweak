@@ -15,7 +15,6 @@
     GCMinContentSizeFlowLayout *_layout;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCMinContentSizeFlowLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) double notificationBarHeight; // @synthesize notificationBarHeight=_notificationBarHeight;
 @property(retain, nonatomic) GCCollectionView *messageCollectionView; // @synthesize messageCollectionView=_messageCollectionView;

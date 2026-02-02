@@ -21,7 +21,6 @@
     unsigned long long _videoTotalTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool playOver1sCountFlag; // @synthesize playOver1sCountFlag=_playOver1sCountFlag;
 @property(nonatomic) unsigned long long videoTotalTime; // @synthesize videoTotalTime=_videoTotalTime;
 @property(nonatomic) unsigned long long maxPlayTime; // @synthesize maxPlayTime=_maxPlayTime;

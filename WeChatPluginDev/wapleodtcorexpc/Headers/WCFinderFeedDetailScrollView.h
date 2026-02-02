@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIScrollView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -12,7 +13,6 @@
     CDUnknownBlockType _mediaViewGetter;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType mediaViewGetter; // @synthesize mediaViewGetter=_mediaViewGetter;
 - (id)getListenHalfAnimView;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
@@ -27,4 +27,3 @@
 @property(readonly) Class superclass;
 
 @end
-

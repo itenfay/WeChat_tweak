@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_redDotId;
 + (void)PBArrayAdd_businessType;
 + (void)PBArrayAdd_path;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isIgnore; // @synthesize isIgnore=_isIgnore;
 @property(copy, nonatomic) NSString *redDotId; // @synthesize redDotId=_redDotId;
 @property(nonatomic) unsigned long long businessType; // @synthesize businessType=_businessType;

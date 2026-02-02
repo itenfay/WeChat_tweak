@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, VoicePrintMgr;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) VoicePrintMgr *voicePrintManager; // @synthesize voicePrintManager=_voicePrintManager;
 @property(nonatomic, getter=hasFinished) _Bool finished; // @synthesize finished=_finished;
@@ -40,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

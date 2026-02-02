@@ -15,7 +15,6 @@
     NSDate *_lastAccessDate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastAccessDate; // @synthesize lastAccessDate=_lastAccessDate;
 @property(nonatomic) unsigned long long totalBytes; // @synthesize totalBytes=_totalBytes;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

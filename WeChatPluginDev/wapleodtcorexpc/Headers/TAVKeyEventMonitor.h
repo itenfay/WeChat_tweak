@@ -14,7 +14,6 @@
 }
 
 + (id)shared;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TAVKeyEventMonitorObserver> observer; // @synthesize observer=_observer;
 @property(nonatomic) _Bool enableAutoReport; // @synthesize enableAutoReport=_enableAutoReport;
 - (id)init;

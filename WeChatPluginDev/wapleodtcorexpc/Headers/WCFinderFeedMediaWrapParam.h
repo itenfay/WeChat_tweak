@@ -23,7 +23,6 @@
 }
 
 + (id)defaultParamWithMediaInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreHDR; // @synthesize ignoreHDR=_ignoreHDR;
 @property(nonatomic) _Bool forceUpdateMultiLevel; // @synthesize forceUpdateMultiLevel=_forceUpdateMultiLevel;
 @property(nonatomic) int setMaxBitrate; // @synthesize setMaxBitrate=_setMaxBitrate;

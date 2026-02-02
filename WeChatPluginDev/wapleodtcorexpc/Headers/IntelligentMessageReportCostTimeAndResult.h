@@ -15,7 +15,6 @@
     unsigned long long _m_searchEndTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isHadReportSearchResult; // @synthesize m_isHadReportSearchResult=_m_isHadReportSearchResult;
 @property(nonatomic) _Bool m_isSearchStartHadPriorityBuildIndex; // @synthesize m_isSearchStartHadPriorityBuildIndex=_m_isSearchStartHadPriorityBuildIndex;
 @property(nonatomic) unsigned long long m_searchEndTime; // @synthesize m_searchEndTime=_m_searchEndTime;

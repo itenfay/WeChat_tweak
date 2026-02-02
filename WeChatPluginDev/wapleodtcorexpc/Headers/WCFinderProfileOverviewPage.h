@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, WCFinderCollectionViewDataSource, WCFinderFeedStaticCoverCollectionViewCell, WCFinderStreamFooterView;
 
 @interface WCFinderProfileOverviewPage
@@ -14,7 +16,6 @@
     WCFinderFeedStaticCoverCollectionViewCell *_checkedJustWatchCell;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderFeedStaticCoverCollectionViewCell *checkedJustWatchCell; // @synthesize checkedJustWatchCell=_checkedJustWatchCell;
 @property(retain, nonatomic) WCFinderCollectionViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSMutableDictionary *exposeObjectMap; // @synthesize exposeObjectMap=_exposeObjectMap;
@@ -117,4 +118,3 @@
 @property(readonly) Class superclass;
 
 @end
-

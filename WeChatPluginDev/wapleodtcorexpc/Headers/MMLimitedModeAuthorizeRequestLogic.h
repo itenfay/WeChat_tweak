@@ -23,7 +23,6 @@
     MMUIViewController *_vc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *vc; // @synthesize vc=_vc;
 @property(nonatomic) long long m_bizType; // @synthesize m_bizType=_m_bizType;
 @property(retain, nonatomic) NSString *m_bizKey; // @synthesize m_bizKey=_m_bizKey;

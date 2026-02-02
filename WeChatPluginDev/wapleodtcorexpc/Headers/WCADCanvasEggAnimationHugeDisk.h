@@ -16,7 +16,6 @@
 
 + (id)fromAdInfo:(id)arg1;
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *transitionColorRGBA; // @synthesize transitionColorRGBA=_transitionColorRGBA;
 @property(nonatomic) double transitionColorAlpha; // @synthesize transitionColorAlpha=_transitionColorAlpha;
 @property(retain, nonatomic) NSString *transitionColor; // @synthesize transitionColor=_transitionColor;

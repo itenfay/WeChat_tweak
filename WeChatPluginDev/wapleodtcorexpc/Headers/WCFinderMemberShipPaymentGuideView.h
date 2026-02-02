@@ -20,7 +20,6 @@
     UILabel *_confirmLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *confirmLabel; // @synthesize confirmLabel=_confirmLabel;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) MMUILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;

@@ -17,7 +17,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;
 @property(retain, nonatomic) ContactTagData *tagData; // @synthesize tagData=_tagData;
 @property(retain, nonatomic) MMUILabel *memberCountLabel; // @synthesize memberCountLabel=_memberCountLabel;

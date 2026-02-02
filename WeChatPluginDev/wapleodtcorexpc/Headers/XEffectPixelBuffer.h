@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface XEffectPixelBuffer : NSObject
 {
@@ -13,7 +14,6 @@
 }
 
 + (id)bufferWithPixel:(struct __CVBuffer *)arg1 snapshotRect:(struct CGRect)arg2 cleanup:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cleanup; // @synthesize cleanup=_cleanup;
 @property(nonatomic) struct CGRect pixelBufferSize; // @synthesize pixelBufferSize=_pixelBufferSize;
 @property(nonatomic) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
@@ -21,4 +21,3 @@
 - (id)clone;
 
 @end
-

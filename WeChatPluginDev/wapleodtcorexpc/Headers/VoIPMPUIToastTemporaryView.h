@@ -12,7 +12,6 @@
     UILabel *_labelTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *labelTitle; // @synthesize labelTitle=_labelTitle;
 - (id)initWithText:(id)arg1;
 - (void)layoutSubviews;

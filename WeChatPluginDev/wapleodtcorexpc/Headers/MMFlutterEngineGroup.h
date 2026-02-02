@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterEngineGroup, FlutterHostEvent, FlutterMemoryPlugin, MMFlutterEngine, NSMapTable, NSMutableArray, NSString;
 @protocol OS_dispatch_queue;
@@ -29,7 +30,6 @@
 }
 
 + (id)defaultGroup;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterMemoryPlugin *memoryPlugin; // @synthesize memoryPlugin=_memoryPlugin;
 @property(retain, nonatomic) NSString *subEngineKey; // @synthesize subEngineKey=_subEngineKey;
 @property(nonatomic) unsigned long long groupUserCount; // @synthesize groupUserCount=_groupUserCount;
@@ -82,4 +82,3 @@
 @property(readonly) Class superclass;
 
 @end
-

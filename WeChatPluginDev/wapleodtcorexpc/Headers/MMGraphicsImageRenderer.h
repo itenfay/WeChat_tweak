@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIGraphicsImageRendererFormat;
 
@@ -15,7 +16,6 @@
     struct CGRect _bounds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIGraphicsImageRendererFormat *format; // @synthesize format=_format;
 @property(nonatomic) _Bool useBounds; // @synthesize useBounds=_useBounds;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
@@ -31,4 +31,3 @@
 - (id)initWithSize:(struct CGSize)arg1;
 
 @end
-

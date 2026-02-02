@@ -31,7 +31,6 @@
     double _cellTitleMaxWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cellTitleMaxWidth; // @synthesize cellTitleMaxWidth=_cellTitleMaxWidth;
 @property(retain) WCPayTransferDelayOptionView *delayOption; // @synthesize delayOption=_delayOption;
 @property(retain) WCPayNavigationView *navigationView; // @synthesize navigationView=_navigationView;

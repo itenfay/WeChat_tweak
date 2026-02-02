@@ -13,7 +13,6 @@
     NSString *_prefix;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(nonatomic) double begin; // @synthesize begin=_begin;
 - (double)showTimeStep:(id)arg1;

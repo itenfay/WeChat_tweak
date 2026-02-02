@@ -25,7 +25,6 @@
 
 + (void)reportActionType:(unsigned long long)arg1 withScene:(unsigned long long)arg2 andEntrance:(unsigned long long)arg3 andSessionId:(id)arg4 andActionValue:(id)arg5;
 + (unsigned long long)getSearchSceneFromScene:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *debugMessages; // @synthesize debugMessages=_debugMessages;
 @property(nonatomic) unsigned long long debugBeginTime; // @synthesize debugBeginTime=_debugBeginTime;
 @property(readonly, nonatomic) NSMutableDictionary *context; // @synthesize context=_context;

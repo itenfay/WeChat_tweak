@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIColor;
 
@@ -28,7 +29,6 @@
 + (CDUnknownBlockType)fixWidthSizeCalculationWithWidth:(double)arg1;
 + (id)forwardPreviewSheetStyle;
 + (id)forwardPreviewStyle;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sizeCalculation; // @synthesize sizeCalculation=_sizeCalculation;
 @property(readonly, nonatomic) double gradientHeight; // @synthesize gradientHeight=_gradientHeight;
 @property(retain, nonatomic) UIColor *bgColor; // @synthesize bgColor=_bgColor;
@@ -44,4 +44,3 @@
 - (id)initWithBigPicEdgeInset:(double)arg1 avatarSize:(double)arg2 iconNameSpacing:(double)arg3 nameFontSize:(double)arg4 picCountFontSize:(double)arg5 picCountIconSize:(double)arg6 titleFontSize:(double)arg7 titleEdgeInset:(double)arg8 bgColor:(id)arg9 gradientHeight:(double)arg10 sizeCalculation:(CDUnknownBlockType)arg11;
 
 @end
-

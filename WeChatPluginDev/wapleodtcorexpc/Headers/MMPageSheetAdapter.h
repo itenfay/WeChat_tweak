@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMPageSheetConfig, NSString, UIView, UIViewController;
 @protocol MMPageSheetAdapterDelegate, MMPageSheetContainer;
@@ -20,7 +21,6 @@
 
 + (id)adatperWithView:(id)arg1 height:(double)arg2;
 + (id)adapterWithViewController:(id)arg1 height:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *hostView; // @synthesize hostView=_hostView;
 @property(retain, nonatomic) UIViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 @property(nonatomic) double contentHeight; // @synthesize contentHeight=_contentHeight;
@@ -81,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

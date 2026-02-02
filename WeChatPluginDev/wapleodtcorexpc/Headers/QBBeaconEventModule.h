@@ -18,7 +18,6 @@
 @property(retain) QBBeaconModuleStrategy *moduleStrategy; // @synthesize moduleStrategy;
 @property(nonatomic) _Bool beaconStatisReportEnabled; // @synthesize beaconStatisReportEnabled;
 @property(nonatomic) _Bool userEnabled; // @synthesize userEnabled;
-- (void).cxx_destruct;
 - (void)refreshNetInfo;
 - (void)initBeaconProperties;
 - (void)appEnterBack;

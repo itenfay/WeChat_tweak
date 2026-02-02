@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MyWCDB, NSMutableArray, NSMutableDictionary, WCTimelineBatchGetFeedsCGI;
 @protocol WCMicroMerchantFeedsMgrDelegate;
@@ -21,7 +22,6 @@
     WCTimelineBatchGetFeedsCGI *_batchGetFeedsCGI;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTimelineBatchGetFeedsCGI *batchGetFeedsCGI; // @synthesize batchGetFeedsCGI=_batchGetFeedsCGI;
 @property(nonatomic) unsigned int foldSectionSize; // @synthesize foldSectionSize=_foldSectionSize;
 @property(retain, nonatomic) NSMutableDictionary *microMerchantFeedsDataItemDict; // @synthesize microMerchantFeedsDataItemDict=_microMerchantFeedsDataItemDict;
@@ -83,4 +83,3 @@
 - (id)initWithDatabase:(id)arg1;
 
 @end
-

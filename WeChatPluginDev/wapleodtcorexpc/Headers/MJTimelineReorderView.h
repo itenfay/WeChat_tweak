@@ -19,7 +19,6 @@
     OMCBatchThumbnailProvider *_batchThumbnailProvider;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMCBatchThumbnailProvider *batchThumbnailProvider; // @synthesize batchThumbnailProvider=_batchThumbnailProvider;
 @property(retain, nonatomic) NSArray *initialOrder; // @synthesize initialOrder=_initialOrder;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

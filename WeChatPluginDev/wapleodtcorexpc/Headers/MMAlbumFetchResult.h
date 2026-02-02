@@ -15,7 +15,6 @@
 }
 
 + (id)fetchResult:(id)arg1 locationFilter:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *prefetchAssets; // @synthesize prefetchAssets=_prefetchAssets;
 @property(nonatomic) _Bool onlyShowAssetWithLocation; // @synthesize onlyShowAssetWithLocation=_onlyShowAssetWithLocation;
 @property(retain, nonatomic) PHFetchResult *systemFetchResult; // @synthesize systemFetchResult=_systemFetchResult;

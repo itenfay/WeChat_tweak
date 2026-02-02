@@ -11,7 +11,6 @@
     id <WCCardPkgBackTableViewDelegate> _wx_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCardPkgBackTableViewDelegate> wx_delegate; // @synthesize wx_delegate=_wx_delegate;
 @property(nonatomic) double maxHeight; // @synthesize maxHeight=_maxHeight;
 - (void)updateLayout;

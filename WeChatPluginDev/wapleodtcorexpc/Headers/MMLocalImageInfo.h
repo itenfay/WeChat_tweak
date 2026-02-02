@@ -13,7 +13,6 @@
     UIImage *_image;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) long long imageDataType; // @synthesize imageDataType=_imageDataType;
 

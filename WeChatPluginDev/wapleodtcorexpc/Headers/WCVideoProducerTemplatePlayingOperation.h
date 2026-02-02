@@ -25,7 +25,6 @@
     CDStruct_1b6d18a9 _videoDuration;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderedDictionary *showedMusicListMap; // @synthesize showedMusicListMap=_showedMusicListMap;
 @property(retain, nonatomic) WCVideoProducerEditSegmentOperation *currentEditSegmentOperation; // @synthesize currentEditSegmentOperation=_currentEditSegmentOperation;
 @property(retain, nonatomic) WCVideoProducerMusicSearchingOperation *currentMusicSearchingOperation; // @synthesize currentMusicSearchingOperation=_currentMusicSearchingOperation;

@@ -38,7 +38,6 @@
 @property _Bool hadGetIPList; // @synthesize hadGetIPList=_hadGetIPList;
 @property _Bool isDefaultUseProxy; // @synthesize isDefaultUseProxy=_isDefaultUseProxy;
 @property int spdy_bProxy; // @synthesize spdy_bProxy=_spdy_bProxy;
-- (void).cxx_destruct;
 - (id)getWupProxyServer;
 - (id)getSPDYServer;
 - (_Bool)failCurrentIpOfType:(int)arg1;

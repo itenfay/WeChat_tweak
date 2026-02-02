@@ -18,7 +18,6 @@
     unsigned long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 - (void)onHelpBtnClicked:(id)arg1;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

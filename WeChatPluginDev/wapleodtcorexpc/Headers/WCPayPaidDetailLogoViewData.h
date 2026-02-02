@@ -13,7 +13,6 @@
     NSString *_dark_model_url;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dark_model_url; // @synthesize dark_model_url=_dark_model_url;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 

@@ -22,7 +22,6 @@
     unsigned long long _hasAddViewFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long hasAddViewFlag; // @synthesize hasAddViewFlag=_hasAddViewFlag;
 @property(retain, nonatomic) UIView<WCFinderTabPageViewBasicProtocol> *tabView; // @synthesize tabView=_tabView;
 @property(nonatomic) __weak MMScrollView *tabScrollView; // @synthesize tabScrollView=_tabScrollView;

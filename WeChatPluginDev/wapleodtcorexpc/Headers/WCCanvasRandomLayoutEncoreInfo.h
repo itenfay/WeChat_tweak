@@ -14,7 +14,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double triggerGForce; // @synthesize triggerGForce=_triggerGForce;
 @property(retain, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

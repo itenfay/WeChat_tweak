@@ -11,7 +11,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSMutableDictionary *infoDic; // @synthesize infoDic=_infoDic;
 - (void)notifyLyricChanged:(id)arg1;

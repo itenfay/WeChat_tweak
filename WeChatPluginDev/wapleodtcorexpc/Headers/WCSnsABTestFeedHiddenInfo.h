@@ -12,7 +12,6 @@
     NSMutableDictionary *dicLayerIdHiddenFeeds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicLayerIdHiddenFeeds; // @synthesize dicLayerIdHiddenFeeds;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -29,7 +29,6 @@
     NSError *_error;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long result; // @synthesize result=_result;
 @property(retain, nonatomic) NSDate *templateSwitchingEndTime; // @synthesize templateSwitchingEndTime=_templateSwitchingEndTime;

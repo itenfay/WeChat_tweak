@@ -15,7 +15,6 @@
     UIImageView *playingImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FavAudioInfo *m_audioInfo; // @synthesize m_audioInfo;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _handler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) NSString *toUsername; // @synthesize toUsername=_toUsername;
 - (id)getChatUserNameWithError:(id *)arg1;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

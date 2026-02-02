@@ -25,7 +25,6 @@
 }
 
 + (double)getFooterViewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *recEndViewBtn; // @synthesize recEndViewBtn=_recEndViewBtn;
 @property(retain, nonatomic) UILabel *recEndViewLabel; // @synthesize recEndViewLabel=_recEndViewLabel;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;

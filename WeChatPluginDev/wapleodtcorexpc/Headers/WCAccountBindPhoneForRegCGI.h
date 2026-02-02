@@ -21,7 +21,6 @@
 }
 
 + (void)setRequest:(id)arg1 FromAccountData:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *mmtlsSetCount; // @synthesize mmtlsSetCount=_mmtlsSetCount;
 @property(retain, nonatomic) NSNumber *idcRedirectCount; // @synthesize idcRedirectCount=_idcRedirectCount;
 @property(nonatomic) unsigned int eventId; // @synthesize eventId=_eventId;

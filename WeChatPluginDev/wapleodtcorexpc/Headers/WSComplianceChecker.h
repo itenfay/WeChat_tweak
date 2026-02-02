@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WSComplianceChecker : NSObject
 {
@@ -16,4 +17,3 @@
 - (void)requestAuthorizationForInteraction:(unsigned long long)arg1 scene:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 
 @end
-

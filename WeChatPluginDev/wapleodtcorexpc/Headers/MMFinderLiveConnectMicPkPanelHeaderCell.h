@@ -19,7 +19,6 @@
 
 + (double)cellHeight;
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

@@ -16,7 +16,6 @@
     NSString *_m_nsISOCountryCodes;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiCountryNamesChineseStrokesCount; // @synthesize m_uiCountryNamesChineseStrokesCount=_m_uiCountryNamesChineseStrokesCount;
 @property(retain, nonatomic) NSString *m_nsISOCountryCodes; // @synthesize m_nsISOCountryCodes=_m_nsISOCountryCodes;
 @property(retain, nonatomic) NSString *m_nsCountryCode; // @synthesize m_nsCountryCode=_m_nsCountryCode;

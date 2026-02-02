@@ -10,7 +10,6 @@
     UIImageView *_bubbleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *bubbleView; // @synthesize bubbleView=_bubbleView;
 - (_Bool)shouldLayoutIfNeeded;
 - (void)setHighlighted:(_Bool)arg1;

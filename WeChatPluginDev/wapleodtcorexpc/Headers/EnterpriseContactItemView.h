@@ -17,7 +17,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EnterpriseContactItemViewDelegate> delegate; // @synthesize delegate;
 - (void)onRightBtnClicked;
 - (struct CGRect)calcRightButtonFrame:(id)arg1;

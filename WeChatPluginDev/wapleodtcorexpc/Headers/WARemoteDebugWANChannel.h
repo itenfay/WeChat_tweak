@@ -11,7 +11,6 @@
 }
 
 + (id)sharedQueue;
-- (void).cxx_destruct;
 - (void)webSocket:(id)arg1 didReceiveMessageWithData:(id)arg2;
 - (void)webSocket:(id)arg1 didCloseWithCode:(long long)arg2 reason:(id)arg3 wasClean:(_Bool)arg4;
 - (void)webSocket:(id)arg1 didFailWithError:(id)arg2;

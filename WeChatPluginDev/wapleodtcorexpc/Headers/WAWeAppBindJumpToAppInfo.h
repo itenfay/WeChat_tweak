@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_jumpToUserName;
 + (void)PBArrayAdd_jumpToAppID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *jumpToUserName; // @synthesize jumpToUserName=_jumpToUserName;
 @property(retain, nonatomic) NSString *jumpToAppID; // @synthesize jumpToAppID=_jumpToAppID;
 @property(readonly, copy) NSString *description;

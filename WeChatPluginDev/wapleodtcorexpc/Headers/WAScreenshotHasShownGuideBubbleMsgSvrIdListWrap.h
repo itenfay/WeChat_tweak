@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_msgSvrIdList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *msgSvrIdList; // @synthesize msgSvrIdList=_msgSvrIdList;
 - (id)getPBPropertyTable;
 

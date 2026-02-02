@@ -22,7 +22,6 @@
     id <WCRedEnvelopeFlowViewDetailViewDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCRedEnvelopeFlowViewDetailViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) HbEnvelopSource *hbShowResource; // @synthesize hbShowResource=_hbShowResource;
 @property(retain, nonatomic) WCRedEnvelopesReceiveHomeTemplateView *templateItemView; // @synthesize templateItemView=_templateItemView;

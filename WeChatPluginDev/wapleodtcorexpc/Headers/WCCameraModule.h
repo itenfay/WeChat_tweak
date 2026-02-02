@@ -13,7 +13,6 @@
     NSObject *_userData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *userData; // @synthesize userData=_userData;
 @property(nonatomic) __weak id <WCCameraModuleDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;

@@ -20,7 +20,6 @@
 }
 
 + (id)itemWithTitle:(id)arg1 subtitle:(id)arg2 visibility:(int)arg3 cellCls:(Class)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) int visibility; // @synthesize visibility=_visibility;
 @property(nonatomic) __weak MMFinderLiveFansGroupNoticeVisibilityItem *expandLinkedItem; // @synthesize expandLinkedItem=_expandLinkedItem;
 @property(retain, nonatomic) Class cellCls; // @synthesize cellCls=_cellCls;

@@ -26,7 +26,6 @@
 + (_Bool)isSpecialRenderModeOn;
 + (_Bool)isElderModeOn;
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *oplogInfos; // @synthesize oplogInfos=_oplogInfos;
 - (void)oplogRet:(int)arg1 errMsg:(id)arg2 eventID:(unsigned int)arg3 cgiWrap:(id)arg4;
 - (void)setSilentModeOn:(_Bool)arg1;

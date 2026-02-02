@@ -19,7 +19,6 @@
     NSString *_togetherFriendsCountText;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool canClickFriendsInfo; // @synthesize canClickFriendsInfo=_canClickFriendsInfo;
 @property(readonly, copy, nonatomic) NSString *togetherFriendsCountText; // @synthesize togetherFriendsCountText=_togetherFriendsCountText;
 @property(readonly, copy, nonatomic) NSString *togetherFriendsNameText; // @synthesize togetherFriendsNameText=_togetherFriendsNameText;

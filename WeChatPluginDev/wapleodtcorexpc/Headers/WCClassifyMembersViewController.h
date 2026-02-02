@@ -24,7 +24,6 @@
     WCSnsPrivacyReporter *m_snsReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicGroupOutsiderMember; // @synthesize dicGroupOutsiderMember=_dicGroupOutsiderMember;
 @property(retain, nonatomic) NSString *tempGroupName; // @synthesize tempGroupName=_tempGroupName;
 @property(retain, nonatomic) WCGroup *group; // @synthesize group=_group;

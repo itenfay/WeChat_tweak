@@ -15,7 +15,6 @@
 }
 
 + (id)showTipWithDelegate:(id)arg1 parentView:(id)arg2 content:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showTipNow; // @synthesize showTipNow=_showTipNow;
 @property(nonatomic) __weak id <WCTimelineTipViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)showTipView:(double)arg1 withAnimationTimes:(id)arg2 AnimationValues:(id)arg3;

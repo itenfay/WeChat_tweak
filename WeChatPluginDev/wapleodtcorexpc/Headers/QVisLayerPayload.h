@@ -21,7 +21,6 @@
     long long _displayLevel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enable3D; // @synthesize enable3D=_enable3D;
 @property(nonatomic) _Bool isAnimated; // @synthesize isAnimated=_isAnimated;
 @property(nonatomic) int zIndex; // @synthesize zIndex=_zIndex;

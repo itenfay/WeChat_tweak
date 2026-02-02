@@ -13,7 +13,6 @@
     UIButton *_closeButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UIView *tipsView; // @synthesize tipsView=_tipsView;
 @property(nonatomic) __weak id <SetTrustedFriendTipsViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

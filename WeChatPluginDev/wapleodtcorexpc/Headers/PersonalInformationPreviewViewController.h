@@ -16,7 +16,6 @@
     GetSafetyInfoLogic *_getSafetyInfoLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GetSafetyInfoLogic *getSafetyInfoLogic; // @synthesize getSafetyInfoLogic=_getSafetyInfoLogic;
 @property(retain, nonatomic) NSArray *arrAddress; // @synthesize arrAddress=_arrAddress;
 @property(retain, nonatomic) NSURL *exportUrl; // @synthesize exportUrl=_exportUrl;

@@ -16,7 +16,6 @@
     id <OpenDownloadCDNMgrDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bLargeFile; // @synthesize bLargeFile=_bLargeFile;
 @property(nonatomic) __weak id <OpenDownloadCDNMgrDelegate> m_delegate; // @synthesize m_delegate;
 - (void)OnCdnDownload:(id)arg1;

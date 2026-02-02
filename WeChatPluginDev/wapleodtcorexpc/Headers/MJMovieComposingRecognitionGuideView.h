@@ -17,7 +17,6 @@
     MMUIButton *_cancelButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) MMUIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) MMUILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;

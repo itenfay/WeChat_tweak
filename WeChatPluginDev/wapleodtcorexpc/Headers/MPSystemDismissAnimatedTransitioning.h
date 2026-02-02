@@ -13,7 +13,6 @@
     UIViewController *animatedTransitionRespondViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInteracting; // @synthesize isInteracting=_isInteracting;
 @property(nonatomic) __weak UIViewController *animatedTransitionRespondViewController; // @synthesize animatedTransitionRespondViewController;
 - (void)animateTransition:(id)arg1;

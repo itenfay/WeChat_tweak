@@ -12,7 +12,6 @@
     TLRecFinderCardData *_recFinderCardData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TLRecFinderCardData *recFinderCardData; // @synthesize recFinderCardData=_recFinderCardData;
 
 @end

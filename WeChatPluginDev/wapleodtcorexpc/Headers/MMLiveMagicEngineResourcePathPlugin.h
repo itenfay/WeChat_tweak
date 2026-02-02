@@ -13,7 +13,6 @@
     NSString *_suffixName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *suffixName; // @synthesize suffixName=_suffixName;
 @property(retain, nonatomic) NSString *rootId; // @synthesize rootId=_rootId;
 - (id)zipPath:(id)arg1;

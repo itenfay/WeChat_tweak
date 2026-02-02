@@ -37,7 +37,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int updateTime; // @synthesize updateTime;
 @property(retain, nonatomic) NSData *configData; // @synthesize configData;
 @property(nonatomic) unsigned int version; // @synthesize version;

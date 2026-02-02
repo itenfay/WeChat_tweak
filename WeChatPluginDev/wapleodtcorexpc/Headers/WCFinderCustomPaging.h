@@ -18,7 +18,6 @@
     struct CGPoint _targetContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *beginDraggingIndexPath; // @synthesize beginDraggingIndexPath=_beginDraggingIndexPath;
 @property(nonatomic) _Bool footerViewDisplayed; // @synthesize footerViewDisplayed=_footerViewDisplayed;
 @property(nonatomic) _Bool magicAdjustDecelerating; // @synthesize magicAdjustDecelerating=_magicAdjustDecelerating;

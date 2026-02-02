@@ -19,7 +19,6 @@
     MMFinderLiveShopShelfCoordinator *_coordinator;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveShopShelfCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property(retain, nonatomic) MMUIButton *addGoodsButton; // @synthesize addGoodsButton=_addGoodsButton;
 @property(retain, nonatomic) MMUIButton *manageButton; // @synthesize manageButton=_manageButton;

@@ -13,7 +13,6 @@
     struct CGSize _size;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enable3D; // @synthesize enable3D=_enable3D;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) NSArray *icons; // @synthesize icons=_icons;

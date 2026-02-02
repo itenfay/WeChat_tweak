@@ -25,7 +25,6 @@
     long long _lastContinueFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lastContinueFlag; // @synthesize lastContinueFlag=_lastContinueFlag;
 @property(retain, nonatomic) NSData *lastPageBuf; // @synthesize lastPageBuf=_lastPageBuf;
 @property(nonatomic) _Bool isFetching; // @synthesize isFetching=_isFetching;

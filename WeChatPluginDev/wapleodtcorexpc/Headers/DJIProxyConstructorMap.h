@@ -14,7 +14,6 @@
 }
 
 + (id)get;
-- (void).cxx_destruct;
 @property(retain) NSMapTable *interfaceClassMapping; // @synthesize interfaceClassMapping=_interfaceClassMapping;
 - (id)createObject:(id)arg1;
 - (void)mapConstructor:(id)arg1 interface:(id)arg2;

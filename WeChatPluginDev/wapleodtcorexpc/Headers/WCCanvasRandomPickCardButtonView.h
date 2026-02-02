@@ -13,7 +13,6 @@
 }
 
 + (struct CGSize)calcButtonViewSizeWithEncoreInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CustomVisualEffectView *blurView; // @synthesize blurView=_blurView;
 @property(retain, nonatomic) UIView *highlightedCoverView; // @synthesize highlightedCoverView=_highlightedCoverView;
 @property(retain, nonatomic) WCCanvasRandomLayoutEncorePickInfo *encoreInfo; // @synthesize encoreInfo=_encoreInfo;

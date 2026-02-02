@@ -13,7 +13,6 @@
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)getBoolSync:(id)arg1 key:(id)arg2 defValue:(_Bool)arg3;
 - (_Bool)setBoolSync:(id)arg1 key:(id)arg2 value:(_Bool)arg3;

@@ -17,7 +17,6 @@
     NSMutableDictionary *_dicUploadingComments;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicUploadingComments; // @synthesize dicUploadingComments=_dicUploadingComments;
 @property(retain, nonatomic) WCStoryComment *curTask; // @synthesize curTask=_curTask;
 @property(retain, nonatomic) NSMutableArray *failedQueue; // @synthesize failedQueue=_failedQueue;

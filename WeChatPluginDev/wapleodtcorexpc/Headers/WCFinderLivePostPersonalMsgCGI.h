@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveAppMsg, NSData, NSString, WCFinderDataItem;
 
 @interface WCFinderLivePostPersonalMsgCGI
@@ -19,7 +21,6 @@
 }
 
 + (_Bool)isErrorTypeNotNeedRetry:(int)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) NSString *finderUserName; // @synthesize finderUserName=_finderUserName;
@@ -36,4 +37,3 @@
 - (id)initWithLiveTaskId:(id)arg1 finderDataItem:(id)arg2 msgType:(unsigned int)arg3 sessionId:(id)arg4 liveCookies:(id)arg5 fromUser:(id)arg6 toUser:(id)arg7 content:(id)arg8 clientMsgId:(id)arg9 successBlock:(CDUnknownBlockType)arg10 failBlock:(CDUnknownBlockType)arg11;
 
 @end
-

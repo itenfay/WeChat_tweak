@@ -14,7 +14,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorBar; // @synthesize separatorBar=_separatorBar;
 @property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 - (void)layoutSubviews;

@@ -55,7 +55,6 @@
     unsigned long long _m_searchScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowChatRooJoinInfoSwitch; // @synthesize isShowChatRooJoinInfoSwitch=_isShowChatRooJoinInfoSwitch;
 @property(nonatomic) unsigned long long m_searchScene; // @synthesize m_searchScene=_m_searchScene;
 @property(nonatomic) _Bool m_bIsShowAnnouncementSectionIndexAtFirst; // @synthesize m_bIsShowAnnouncementSectionIndexAtFirst;

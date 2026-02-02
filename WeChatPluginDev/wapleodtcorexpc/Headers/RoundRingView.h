@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView;
 
@@ -17,7 +18,6 @@
     double _lastHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastHeight; // @synthesize lastHeight=_lastHeight;
 @property(nonatomic) double lastWidth; // @synthesize lastWidth=_lastWidth;
 @property(retain, nonatomic) UIView *dotRoundView; // @synthesize dotRoundView=_dotRoundView;
@@ -31,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

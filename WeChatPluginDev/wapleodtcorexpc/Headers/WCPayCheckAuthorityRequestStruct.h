@@ -25,7 +25,6 @@
     NSString *_commandWord;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *commandWord; // @synthesize commandWord=_commandWord;
 @property(nonatomic) unsigned int payChannel; // @synthesize payChannel=_payChannel;
 @property(nonatomic) int JsApiSource; // @synthesize JsApiSource=_JsApiSource;

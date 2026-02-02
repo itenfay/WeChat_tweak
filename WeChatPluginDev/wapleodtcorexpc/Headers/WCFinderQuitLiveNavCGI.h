@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderClientStatus, FinderLiveClientStatus, FinderLiveReportBaseInfo, NSData, NSString;
 
 @interface WCFinderQuitLiveNavCGI
@@ -22,7 +24,6 @@
     CDUnknownBlockType _failureBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) FinderLiveReportBaseInfo *liveReportBaseInfo; // @synthesize liveReportBaseInfo=_liveReportBaseInfo;
@@ -42,4 +43,3 @@
 - (id)initWithTaskId:(id)arg1 objectId:(unsigned long long)arg2 objectNonceId:(id)arg3 longitude:(float)arg4 latitude:(float)arg5 sessionBuffer:(id)arg6 liveCookies:(id)arg7 status:(id)arg8 liveStatus:(id)arg9 liveReportBaseInfo:(id)arg10 lastBuffer:(id)arg11 preload:(_Bool)arg12 successBlock:(CDUnknownBlockType)arg13 failureBlock:(CDUnknownBlockType)arg14;
 
 @end
-

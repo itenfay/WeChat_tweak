@@ -15,7 +15,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect currentBounds; // @synthesize currentBounds=_currentBounds;
 @property(nonatomic) map_247f78e2 labelsByCaptionItem; // @synthesize labelsByCaptionItem=_labelsByCaptionItem;
 @property(retain, nonatomic) NSArray *captionItems; // @synthesize captionItems=_captionItems;

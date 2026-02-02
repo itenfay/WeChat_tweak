@@ -14,7 +14,6 @@
     double _cornerRadius;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDragged; // @synthesize isDragged=_isDragged;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) UIImageView *decorateView; // @synthesize decorateView=_decorateView;

@@ -18,7 +18,6 @@
     struct CGRect _rectBoardFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(nonatomic) double beginTimeInterval; // @synthesize beginTimeInterval=_beginTimeInterval;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;

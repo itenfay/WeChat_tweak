@@ -13,7 +13,6 @@
     NSString *m_nsCheckPwdToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsCheckPwdTokenType; // @synthesize m_nsCheckPwdTokenType;
 @property(retain, nonatomic) NSString *m_nsCheckPwdToken; // @synthesize m_nsCheckPwdToken;
 

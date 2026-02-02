@@ -13,7 +13,6 @@
     NSString *_requestId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *requestId; // @synthesize requestId=_requestId;
 @property(retain, nonatomic) WXPBGeneratedMessage *pbRequest; // @synthesize pbRequest=_pbRequest;
 

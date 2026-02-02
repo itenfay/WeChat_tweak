@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TXCRetrier : NSObject
 {
@@ -17,4 +18,3 @@
 - (void)retry:(CDUnknownBlockType)arg1 onReachLimit:(CDUnknownBlockType)arg2;
 
 @end
-

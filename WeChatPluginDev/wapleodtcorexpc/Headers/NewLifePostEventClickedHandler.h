@@ -10,7 +10,6 @@
     FinderEventInfo *_selectedEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderEventInfo *selectedEvent; // @synthesize selectedEvent=_selectedEvent;
 - (void)eventPosterViewController:(id)arg1 didSelectEvent:(id)arg2;
 - (void)eventPosterViewController:(id)arg1 didExitEvent:(id)arg2;

@@ -14,7 +14,6 @@
     UILabel *_labelView;
 }
 
-- (void).cxx_destruct;
 - (void)updateView;
 - (id)initWithTitle:(id)arg1;
 

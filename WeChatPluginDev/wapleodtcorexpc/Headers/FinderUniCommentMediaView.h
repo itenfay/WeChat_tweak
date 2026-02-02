@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, FinderUniCommentImageView, FinderUniCommentMediaItem, MMUIButton, MMUILabel, SightIconView;
 
 @interface FinderUniCommentMediaView
@@ -19,7 +21,6 @@
     CAGradientLayer *_durationGradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *durationGradientLayer; // @synthesize durationGradientLayer=_durationGradientLayer;
 @property(retain, nonatomic) MMUILabel *durationLabel; // @synthesize durationLabel=_durationLabel;
 @property(retain, nonatomic) MMUIButton *backgroundButton; // @synthesize backgroundButton=_backgroundButton;
@@ -41,4 +42,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -17,7 +17,6 @@
     NSMutableSet *_children;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool visited; // @synthesize visited=_visited;
 @property(nonatomic) _Bool hasParent; // @synthesize hasParent=_hasParent;
 @property(retain, nonatomic) NSMutableSet *children; // @synthesize children=_children;

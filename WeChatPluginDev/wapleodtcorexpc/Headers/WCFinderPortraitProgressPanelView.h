@@ -19,7 +19,6 @@
     struct CGPoint _pauseButtonCenter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint pauseButtonCenter; // @synthesize pauseButtonCenter=_pauseButtonCenter;
 @property(retain, nonatomic) TextStateBlurButton *exitPinchInButton; // @synthesize exitPinchInButton=_exitPinchInButton;
 @property(retain, nonatomic) WCFinderPortraitProgressBar *immersiveProgressBar; // @synthesize immersiveProgressBar=_immersiveProgressBar;

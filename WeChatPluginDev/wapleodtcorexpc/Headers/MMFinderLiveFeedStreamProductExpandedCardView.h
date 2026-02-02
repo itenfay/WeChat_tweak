@@ -18,7 +18,6 @@
 }
 
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *promotingGradientLayer; // @synthesize promotingGradientLayer=_promotingGradientLayer;
 @property(retain, nonatomic) UILabel *promotingLabel; // @synthesize promotingLabel=_promotingLabel;
 @property(retain, nonatomic) UILabel *priceLabel; // @synthesize priceLabel=_priceLabel;

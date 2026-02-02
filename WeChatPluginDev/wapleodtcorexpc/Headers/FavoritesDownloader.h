@@ -16,7 +16,6 @@
     int _downloadRetCode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavoritesDownloaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)OnFavCdnDownload:(id)arg1 RetCode:(int)arg2;
 - (void)tryStartNextData;

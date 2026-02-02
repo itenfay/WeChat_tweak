@@ -22,7 +22,6 @@
     _Bool _playing;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool playing; // @synthesize playing=_playing;
 @property(readonly, nonatomic) _Bool recording; // @synthesize recording=_recording;
 - (void)OnEarTip;

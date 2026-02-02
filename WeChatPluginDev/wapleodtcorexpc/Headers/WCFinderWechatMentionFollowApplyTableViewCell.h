@@ -24,7 +24,6 @@
 }
 
 + (double)calculateCellHeightWithViewModel:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderHeadImageView *backHeadImageView; // @synthesize backHeadImageView=_backHeadImageView;
 @property(nonatomic) __weak WCFinderHeadImageView *frontHeadImageView; // @synthesize frontHeadImageView=_frontHeadImageView;
 @property(nonatomic) __weak UIView *multiHeadImageView; // @synthesize multiHeadImageView=_multiHeadImageView;

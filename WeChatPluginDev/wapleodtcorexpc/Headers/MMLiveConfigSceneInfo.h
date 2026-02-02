@@ -13,7 +13,6 @@
     NSString *_sceneName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int isToast; // @synthesize isToast=_isToast;
 @property(copy, nonatomic) NSString *sceneName; // @synthesize sceneName=_sceneName;
 

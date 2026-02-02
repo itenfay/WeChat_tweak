@@ -12,7 +12,6 @@
     MMWebImageView *_bgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *bgView; // @synthesize bgView=_bgView;
 - (void)onLoadImageOK:(id)arg1;
 - (void)layoutBgView;

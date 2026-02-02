@@ -16,7 +16,6 @@
     CameraReflectDevice *_lightDetector;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CameraReflectDevice *lightDetector; // @synthesize lightDetector=_lightDetector;
 @property(nonatomic) _Bool hasCheckBrightness; // @synthesize hasCheckBrightness=_hasCheckBrightness;
 @property(nonatomic) float lightThreshold; // @synthesize lightThreshold=_lightThreshold;

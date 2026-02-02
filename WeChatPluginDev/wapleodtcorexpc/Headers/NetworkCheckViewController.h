@@ -23,7 +23,6 @@
     NSString *m_kvString;
 }
 
-- (void).cxx_destruct;
 - (void)onGPSLocationError:(int)arg1 withTag:(unsigned long long)arg2;
 - (void)onGPSLocationChanged:(id)arg1 withTag:(unsigned long long)arg2;
 - (void)onCancelBtnClicked;

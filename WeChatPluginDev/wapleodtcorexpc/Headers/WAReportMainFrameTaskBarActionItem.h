@@ -45,7 +45,6 @@
     NSString *_openSession;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *openSession; // @synthesize openSession=_openSession;
 @property(nonatomic) unsigned int countPerLine; // @synthesize countPerLine=_countPerLine;
 @property(nonatomic) unsigned long long recentCurrentShowLines; // @synthesize recentCurrentShowLines=_recentCurrentShowLines;

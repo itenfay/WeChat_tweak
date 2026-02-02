@@ -15,7 +15,6 @@
 }
 
 + (double)cellHeightWithPaidCollection:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLastCell; // @synthesize isLastCell=_isLastCell;
 @property(retain, nonatomic) UIView *bottomSeperator; // @synthesize bottomSeperator=_bottomSeperator;
 @property(retain, nonatomic) WCFinderProfilePaidCollectionCellContentView *courseContentView; // @synthesize courseContentView=_courseContentView;

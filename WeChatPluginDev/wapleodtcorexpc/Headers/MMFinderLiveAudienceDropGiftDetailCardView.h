@@ -24,7 +24,6 @@
     UIColor *_subDescColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *subDescColor; // @synthesize subDescColor=_subDescColor;
 @property(retain, nonatomic) UIColor *coinSumColor; // @synthesize coinSumColor=_coinSumColor;
 @property(retain, nonatomic) UIColor *descColor; // @synthesize descColor=_descColor;

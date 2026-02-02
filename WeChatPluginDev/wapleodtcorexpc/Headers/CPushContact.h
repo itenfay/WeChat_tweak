@@ -27,7 +27,6 @@
 }
 
 + (id)thread_GetContactDetailFromMsg:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_safetyWarningDetail; // @synthesize m_safetyWarningDetail;
 @property(retain, nonatomic) NSString *m_safetyWarning; // @synthesize m_safetyWarning;
 @property(nonatomic) _Bool m_bSuspiciousUser; // @synthesize m_bSuspiciousUser;

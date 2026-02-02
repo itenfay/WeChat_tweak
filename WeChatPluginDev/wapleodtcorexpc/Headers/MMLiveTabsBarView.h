@@ -17,7 +17,6 @@
     double _currentIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) UIView *tabIndicatorView; // @synthesize tabIndicatorView=_tabIndicatorView;
 @property(retain, nonatomic) NSArray *tabButtons; // @synthesize tabButtons=_tabButtons;

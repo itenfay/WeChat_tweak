@@ -16,7 +16,6 @@
     WCFinderInteractiveSearchStore *_store;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderInteractiveSearchStore *store; // @synthesize store=_store;
 @property(retain, nonatomic) NSString *dataScene; // @synthesize dataScene=_dataScene;
 @property(nonatomic) __weak id <WCFinderInteractiveSearchViewModelDelegate> delegate; // @synthesize delegate=_delegate;

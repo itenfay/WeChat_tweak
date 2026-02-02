@@ -14,7 +14,6 @@
     NSObject<OS_dispatch_queue> *_workerThread;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workerThread; // @synthesize workerThread=_workerThread;
 @property(retain, nonatomic) WCPayGetCollAssistMenuCgi *getCollAssistMenuCgi; // @synthesize getCollAssistMenuCgi=_getCollAssistMenuCgi;
 - (_Bool)isLanguageChanged;

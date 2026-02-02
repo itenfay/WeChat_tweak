@@ -18,7 +18,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *objHotwordInfoBuff; // @synthesize objHotwordInfoBuff=_objHotwordInfoBuff;
 @property(copy, nonatomic) NSString *objHotwordInfoBuffString; // @synthesize objHotwordInfoBuffString=_objHotwordInfoBuffString;
 @property(retain, nonatomic) WCFinderJumpNativeHotWord *objectHotWord; // @synthesize objectHotWord=_objectHotWord;

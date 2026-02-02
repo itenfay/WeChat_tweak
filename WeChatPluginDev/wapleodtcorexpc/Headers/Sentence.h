@@ -18,7 +18,6 @@
     NSMutableArray *_segmentsArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *segmentsArray; // @synthesize segmentsArray=_segmentsArray;
 @property(retain, nonatomic) NSMutableDictionary *textWidthDic; // @synthesize textWidthDic=_textWithDic;
 @property(nonatomic) long long since; // @synthesize since=_since;

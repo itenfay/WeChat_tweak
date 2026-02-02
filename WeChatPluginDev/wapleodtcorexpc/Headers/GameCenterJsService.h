@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GameCenterJSEventLogicHandler, JSContext, JSVirtualMachine, NSMutableDictionary, NSString, NSThread;
 
 @interface GameCenterJsService
@@ -15,7 +17,6 @@
     NSThread *_thread;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSThread *thread; // @synthesize thread=_thread;
 @property(retain) NSMutableDictionary *timerObjs; // @synthesize timerObjs=_timerObjs;
 @property(retain, nonatomic) JSVirtualMachine *jsVirtualMachine; // @synthesize jsVirtualMachine=_jsVirtualMachine;
@@ -58,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

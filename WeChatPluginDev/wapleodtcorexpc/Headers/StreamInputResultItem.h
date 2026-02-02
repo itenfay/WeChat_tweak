@@ -15,7 +15,6 @@
     NSArray *_keywordList;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *keywordList; // @synthesize keywordList=_keywordList;
 @property(nonatomic) unsigned int m_uiEndFlag; // @synthesize m_uiEndFlag=_m_uiEndFlag;
 @property(nonatomic) unsigned int m_uiSequence; // @synthesize m_uiSequence=_m_uiSequence;

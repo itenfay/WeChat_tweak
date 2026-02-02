@@ -17,7 +17,6 @@
     NSString *_packageFilePath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *packageFilePath; // @synthesize packageFilePath=_packageFilePath;
 @property(retain, nonatomic) WAPackageUnpackLib *pkgLib; // @synthesize pkgLib;
 @property(nonatomic) unsigned long long size; // @synthesize size;

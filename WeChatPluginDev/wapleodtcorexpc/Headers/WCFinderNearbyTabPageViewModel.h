@@ -12,7 +12,6 @@
     id <WCFinderNearbyTabPageViewModelDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderNearbyTabPageViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) FinderLiveLbsInfo *nearbyVideoTabInfo; // @synthesize nearbyVideoTabInfo=_nearbyVideoTabInfo;
 - (id)queryCityTabInfoFromList;

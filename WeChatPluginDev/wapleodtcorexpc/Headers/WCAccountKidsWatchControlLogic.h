@@ -13,7 +13,6 @@
     WCAccountKidsWatchRegisterControlLogic *_registerLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAccountKidsWatchRegisterControlLogic *registerLogic; // @synthesize registerLogic=_registerLogic;
 @property(retain, nonatomic) KidsWatchLoginReportObject *reportObject; // @synthesize reportObject=_reportObject;
 @property(nonatomic) unsigned int sessionListMaxCount; // @synthesize sessionListMaxCount=_sessionListMaxCount;

@@ -19,7 +19,6 @@
     NSMutableString *_preZoomlevel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *preZoomlevel; // @synthesize preZoomlevel=_preZoomlevel;
 @property(retain, nonatomic) NSMutableArray *preItems; // @synthesize preItems=_preItems;
 @property(nonatomic) __weak NSMutableSet *items; // @synthesize items=_items;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UINavigationBar.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
@@ -16,7 +17,6 @@
     long long _lastUpdateStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lastUpdateStyle; // @synthesize lastUpdateStyle=_lastUpdateStyle;
 @property(retain, nonatomic) UIView *effectSubview; // @synthesize effectSubview=_effectSubview;
 @property(copy, nonatomic) CDUnknownBlockType onLayoutSubviews; // @synthesize onLayoutSubviews=_onLayoutSubviews;
@@ -42,4 +42,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

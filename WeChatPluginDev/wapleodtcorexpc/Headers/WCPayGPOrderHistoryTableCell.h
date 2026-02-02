@@ -18,7 +18,6 @@
     UIView *_sepLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sepLine; // @synthesize sepLine=_sepLine;
 @property(retain, nonatomic) MMUILabel *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property(retain, nonatomic) MMUILabel *moneyUnitLabel; // @synthesize moneyUnitLabel=_moneyUnitLabel;

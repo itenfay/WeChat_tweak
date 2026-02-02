@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSOperationQueue, NSString, NSURL, QBProtocolCallback, QBScriptMessageHandler;
 @protocol WKNavigationDelegate, WKUIDelegate;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool needInjectJsInNetwork; // @synthesize needInjectJsInNetwork=_needInjectJsInNetwork;
 @property(nonatomic) __weak id <WKUIDelegate> UIDelegate; // @synthesize UIDelegate=_UIDelegate;
 @property(nonatomic) __weak id <WKNavigationDelegate> navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
-- (void).cxx_destruct;
 - (_Bool)isMainRequest:(id)arg1 navigationType:(long long)arg2;
 - (void)processForXhr:(id)arg1 inWkWebView:(id)arg2 forFrameInfo:(id)arg3;
 - (id)absoluteURLFromPostURLString:(id)arg1 baseURL:(id)arg2 locationString:(id)arg3 frameURL:(id)arg4;
@@ -69,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

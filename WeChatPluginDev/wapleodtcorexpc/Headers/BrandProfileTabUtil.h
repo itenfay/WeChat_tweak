@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface BrandProfileTabUtil : NSObject
 {
@@ -15,4 +16,3 @@
 + (void)fetchFinderAudioUserPageData:(id)arg1 lastBuffer:(id)arg2 successful:(CDUnknownBlockType)arg3 failure:(CDUnknownBlockType)arg4;
 
 @end
-

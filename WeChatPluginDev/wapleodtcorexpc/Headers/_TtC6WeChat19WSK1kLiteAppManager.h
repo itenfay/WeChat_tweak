@@ -12,7 +12,6 @@
 + (void)releaseK1kLiteAppWithCategory:(long long)arg1;
 + (void)preloadK1kLiteAppWithCategory:(long long)arg1;
 + (void)preloadK1kAllLiteApp;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

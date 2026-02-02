@@ -10,7 +10,6 @@
     LocationRetriever *_locationRetriever;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LocationRetriever *locationRetriever; // @synthesize locationRetriever=_locationRetriever;
 - (unsigned long long)eventAuthScene;
 - (void)onRetrieveLocationCallbackTimeOut:(id)arg1;

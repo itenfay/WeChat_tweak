@@ -26,7 +26,6 @@
     NSString *_familyName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float verticalMargin; // @synthesize verticalMargin=_verticalMargin;
 @property(nonatomic) float endMargin; // @synthesize endMargin=_endMargin;
 @property(nonatomic) float startMargin; // @synthesize startMargin=_startMargin;

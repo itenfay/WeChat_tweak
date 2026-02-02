@@ -18,7 +18,6 @@
     NSMutableArray *_sections;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) Class customizedCellType; // @synthesize customizedCellType=_customizedCellType;
 @property(nonatomic) _Bool disableEditingStyle; // @synthesize disableEditingStyle=_disableEditingStyle;

@@ -19,7 +19,6 @@
     CDStruct_f583c974 _tile;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tileSignature; // @synthesize tileSignature=_tileSignature;
 @property(retain, nonatomic) NSString *tileVersion; // @synthesize tileVersion=_tileVersion;
 @property(retain, nonatomic) NSString *cacheVersion; // @synthesize cacheVersion=_cacheVersion;

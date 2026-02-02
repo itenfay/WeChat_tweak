@@ -38,7 +38,6 @@
     unsigned long long _cgiFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cgiFlag; // @synthesize cgiFlag=_cgiFlag;
 @property(nonatomic) unsigned int direction; // @synthesize direction=_direction;
 @property(copy, nonatomic) NSString *openSDKAPPID; // @synthesize openSDKAPPID=_openSDKAPPID;

@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSOperation.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCFileBrowseInfoDB;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _buildIndexCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType buildIndexCompletion; // @synthesize buildIndexCompletion=_buildIndexCompletion;
 @property(retain, nonatomic) WCFileBrowseInfoDB *browseInfoDB; // @synthesize browseInfoDB=_browseInfoDB;
 - (void)p_buildFileBrowseWithDataInfo:(id)arg1 withType:(unsigned long long)arg2;
@@ -23,4 +23,3 @@
 - (id)initWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
-

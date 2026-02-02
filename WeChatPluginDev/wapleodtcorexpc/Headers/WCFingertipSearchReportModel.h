@@ -18,7 +18,6 @@
     unsigned long long _matchResult;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long matchResult; // @synthesize matchResult=_matchResult;
 @property(nonatomic) unsigned long long msgContentLength; // @synthesize msgContentLength=_msgContentLength;
 @property(copy, nonatomic) NSString *matchTypeList; // @synthesize matchTypeList=_matchTypeList;

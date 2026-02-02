@@ -15,7 +15,6 @@
 
 + (void)unconsume:(id)arg1;
 + (void)consume:(id)arg1;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

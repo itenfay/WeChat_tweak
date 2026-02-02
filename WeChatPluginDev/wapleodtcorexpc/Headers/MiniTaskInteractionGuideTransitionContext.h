@@ -13,7 +13,6 @@
     MMUILabel *_guideVCSwipeLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUILabel *guideVCSwipeLabel; // @synthesize guideVCSwipeLabel=_guideVCSwipeLabel;
 @property(retain, nonatomic) UIImage *wechatPageSnapshot; // @synthesize wechatPageSnapshot=_wechatPageSnapshot;
 

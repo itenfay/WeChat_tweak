@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSAttributedString, NSString, UIColor, UIFont, UILabel;
 
@@ -13,7 +14,6 @@
     UILabel *_alternativeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *alternativeLabel; // @synthesize alternativeLabel=_alternativeLabel;
 @property(retain, nonatomic) UILabel *primaryLabel; // @synthesize primaryLabel=_primaryLabel;
 - (void)layoutSubviews;
@@ -30,4 +30,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

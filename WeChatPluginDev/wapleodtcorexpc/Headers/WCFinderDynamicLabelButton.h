@@ -13,7 +13,6 @@
     UILabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 - (void)updateImageWithNormal:(id)arg1 selected:(id)arg2 liked:(_Bool)arg3;

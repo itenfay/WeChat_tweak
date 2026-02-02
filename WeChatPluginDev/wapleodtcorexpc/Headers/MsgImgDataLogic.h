@@ -29,7 +29,6 @@
     id <MsgImgDataLogicDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bNeedFullMessage; // @synthesize m_bNeedFullMessage=_m_bNeedFullMessage;
 @property(nonatomic) __weak id <MsgImgDataLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) NSString *m_enterpriseBrandUserName; // @synthesize m_enterpriseBrandUserName=_m_enterpriseBrandUserName;

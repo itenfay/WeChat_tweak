@@ -14,7 +14,6 @@
     _Bool _bGettingLayout;
 }
 
-- (void).cxx_destruct;
 - (void)logHomePageList;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)saveLayoutStg;

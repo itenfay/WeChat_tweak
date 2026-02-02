@@ -12,7 +12,6 @@
     long long _remainedErrorRetryCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long remainedErrorRetryCount; // @synthesize remainedErrorRetryCount=_remainedErrorRetryCount;
 @property(retain, nonatomic) MMListenTTSInfo *ttsInfo; // @synthesize ttsInfo=_ttsInfo;
 @property(retain, nonatomic) WCAudioPlayer *player; // @synthesize player=_player;

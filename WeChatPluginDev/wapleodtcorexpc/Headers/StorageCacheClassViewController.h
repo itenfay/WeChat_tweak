@@ -23,7 +23,6 @@
 }
 
 + (id)arrageTheWeAppChildClass:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *selectedWeAppClassification; // @synthesize selectedWeAppClassification=_selectedWeAppClassification;
 @property(retain, nonatomic) NSMutableArray *selectedClassification; // @synthesize selectedClassification=_selectedClassification;
 @property(retain, nonatomic) NSMutableArray *weAppDataArray; // @synthesize weAppDataArray=_weAppDataArray;

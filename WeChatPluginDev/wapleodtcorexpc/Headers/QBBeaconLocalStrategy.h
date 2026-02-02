@@ -27,7 +27,6 @@
 @property(retain, nonatomic) NSString *encKey; // @synthesize encKey;
 @property(nonatomic) int encAlg; // @synthesize encAlg;
 @property(nonatomic) int zipAlg; // @synthesize zipAlg;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)getStrategyForKey:(int)arg1;
 - (_Bool)addModuleStrategy:(id)arg1;

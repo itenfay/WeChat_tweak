@@ -15,7 +15,6 @@
     MMUIButton *_brandLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIButton *brandLabel; // @synthesize brandLabel=_brandLabel;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) __weak UIView *contactContainerView; // @synthesize contactContainerView=_contactContainerView;

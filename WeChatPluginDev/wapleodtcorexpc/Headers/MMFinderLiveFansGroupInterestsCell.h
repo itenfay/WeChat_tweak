@@ -16,7 +16,6 @@
     WCFinderLiveFansGroupInterestsInfo *_interestsInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAdaptToDarkLight; // @synthesize shouldAdaptToDarkLight=_shouldAdaptToDarkLight;
 @property(retain, nonatomic) WCFinderLiveFansGroupInterestsInfo *interestsInfo; // @synthesize interestsInfo=_interestsInfo;
 @property(retain, nonatomic) MMUILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;

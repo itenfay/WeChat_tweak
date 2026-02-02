@@ -12,7 +12,6 @@
     id <NewTipsNetworkLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <NewTipsNetworkLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)handlePushNewTipsResponse:(id)arg1;

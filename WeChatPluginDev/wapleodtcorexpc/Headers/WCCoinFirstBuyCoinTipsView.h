@@ -12,7 +12,6 @@
     id <WCCoinFirstBuyCoinTipsViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCoinFirstBuyCoinTipsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool alwaysDarkMode; // @synthesize alwaysDarkMode=_alwaysDarkMode;
 - (void)didClickDone;

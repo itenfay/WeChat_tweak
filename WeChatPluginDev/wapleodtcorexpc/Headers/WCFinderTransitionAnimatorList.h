@@ -15,7 +15,6 @@
 }
 
 + (id)newWithCount:(long long)arg1 animators:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *animators; // @synthesize animators=_animators;
 @property(retain, nonatomic) WCFinderTransitionUserInfo *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) long long animateType; // @synthesize animateType=_animateType;

@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_showAsRedDot;
 + (void)PBArrayAdd_mainUnReadCount;
 + (void)PBArrayAdd_mainSession;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int mainAtAllCount; // @synthesize mainAtAllCount=_mainAtAllCount;
 @property(nonatomic) unsigned int mainAtMeCount; // @synthesize mainAtMeCount=_mainAtMeCount;
 @property(nonatomic) unsigned int mainMuteUnReadCount; // @synthesize mainMuteUnReadCount=_mainMuteUnReadCount;

@@ -22,7 +22,6 @@
 
 + (struct CGSize)getCellSize;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) UIView *adjustLogo; // @synthesize adjustLogo=_adjustLogo;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;

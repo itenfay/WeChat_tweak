@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WeNoteCPPInstance : NSObject
 {
@@ -14,7 +15,6 @@
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2 refCntManager:(void *)arg3;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)endEditAttachment:(id)arg1;
 - (void)beginEditAttachment:(id)arg1;
@@ -34,4 +34,3 @@
 - (shared_ptr_01c9df31)getDispatcher;
 
 @end
-

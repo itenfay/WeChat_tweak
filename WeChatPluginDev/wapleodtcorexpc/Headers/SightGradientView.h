@@ -12,7 +12,6 @@
     CAGradientLayer *_gradientMaskLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientMaskLayer; // @synthesize gradientMaskLayer=_gradientMaskLayer;
 - (void)_relayoutGradientLayer;
 - (void)layoutSubviews;

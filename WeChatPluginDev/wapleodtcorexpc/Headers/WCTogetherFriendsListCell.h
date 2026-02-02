@@ -17,7 +17,6 @@
 + (double)heightForViewItem:(id)arg1 inTableView:(id)arg2;
 + (id)createTitleLabel;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) InteractionLabel *friendsCountLabel; // @synthesize friendsCountLabel=_friendsCountLabel;
 @property(retain, nonatomic) InteractionLabel *friendsNameLabel; // @synthesize friendsNameLabel=_friendsNameLabel;

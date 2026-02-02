@@ -18,7 +18,6 @@
 }
 
 + (id)middleSquareImage:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCLogicMgr *logicMgr; // @synthesize logicMgr=_logicMgr;
 @property(nonatomic) _Bool videoCoverEnabled; // @synthesize videoCoverEnabled=_videoCoverEnabled;
 @property(nonatomic) __weak id <WCBGImgLogicNotity> m_delFacade; // @synthesize m_delFacade;

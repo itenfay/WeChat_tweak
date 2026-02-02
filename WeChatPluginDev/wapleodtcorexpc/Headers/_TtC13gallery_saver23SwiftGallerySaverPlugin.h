@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
@@ -14,9 +15,7 @@
 }
 
 + (void)registerWithRegistrar:(id)arg1;
-- (void).cxx_destruct;
 - (id)init;
 - (void)handleMethodCall:(id)arg1 result:(CDUnknownBlockType)arg2;
 
 @end
-

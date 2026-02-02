@@ -16,7 +16,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSThread *thread; // @synthesize thread=_thread;
 @property(retain, nonatomic) WCOSLogger *logger; // @synthesize logger=_logger;
 - (void)processBuffer:(const char *)arg1 size:(unsigned long long)arg2;

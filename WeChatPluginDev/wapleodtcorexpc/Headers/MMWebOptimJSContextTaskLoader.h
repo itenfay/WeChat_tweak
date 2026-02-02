@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSString, NSURLSession;
 
 @interface MMWebOptimJSContextTaskLoader
@@ -16,7 +18,6 @@
     NSURLSession *_urlSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(retain, nonatomic) NSMutableDictionary *notifyQueueMap; // @synthesize notifyQueueMap=_notifyQueueMap;
 @property(retain, nonatomic) NSMutableArray *downloadTaskArr; // @synthesize downloadTaskArr=_downloadTaskArr;
@@ -45,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -44,7 +44,6 @@
     MusicDefualtImageView *_defaultImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableNextTransition; // @synthesize disableNextTransition=_disableNextTransition;
 @property(nonatomic) _Bool shouldClearDisplay; // @synthesize shouldClearDisplay=_shouldClearDisplay;
 @property(retain, nonatomic) MusicDefualtImageView *defaultImageView; // @synthesize defaultImageView=_defaultImageView;

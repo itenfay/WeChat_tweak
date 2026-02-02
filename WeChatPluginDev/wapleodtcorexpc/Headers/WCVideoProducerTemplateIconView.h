@@ -27,7 +27,6 @@
 + (struct CGSize)iconSize;
 + (id)headerIdentifier;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCProgressMaskView *progressMaskView; // @synthesize progressMaskView=_progressMaskView;
 @property(retain, nonatomic) UIView *selectedEditableView; // @synthesize selectedEditableView=_selectedEditableView;
 @property(retain, nonatomic) UIView *selectedDefaultView; // @synthesize selectedDefaultView=_selectedDefaultView;

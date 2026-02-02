@@ -15,7 +15,6 @@
     NSRecursiveLock *m_lock;
 }
 
-- (void).cxx_destruct;
 - (void)clearData;
 - (_Bool)writeData:(id)arg1 flushToDisk:(_Bool)arg2;
 - (id)data;

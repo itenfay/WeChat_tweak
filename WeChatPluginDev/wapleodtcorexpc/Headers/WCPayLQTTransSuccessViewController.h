@@ -12,7 +12,6 @@
     id <WCPayLQTTransSuccessViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasResportGuideCell; // @synthesize hasResportGuideCell=_hasResportGuideCell;
 @property(nonatomic) __weak id <WCPayLQTTransSuccessViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)reportGuideCellExposureInfo;

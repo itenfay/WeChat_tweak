@@ -17,7 +17,6 @@
     OMJID *_resultID;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) OMJID *resultID; // @synthesize resultID=_resultID;
 @property(readonly, nonatomic) NSArray *recommendedMusicInfos; // @synthesize recommendedMusicInfos=_recommendedMusicInfos;
 @property(readonly, nonatomic) NSArray *templateMusicInfos; // @synthesize templateMusicInfos=_templateMusicInfos;

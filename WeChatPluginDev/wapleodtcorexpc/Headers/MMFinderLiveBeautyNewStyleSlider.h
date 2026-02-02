@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMLiveBeautySlider, UILabel, UITapGestureRecognizer;
 
@@ -34,7 +35,6 @@
     UITapGestureRecognizer *_disableDragStatusHandler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool impactOnReachingDefault; // @synthesize impactOnReachingDefault=_impactOnReachingDefault;
 @property(nonatomic) _Bool isZoom; // @synthesize isZoom=_isZoom;
 @property(retain, nonatomic) UITapGestureRecognizer *disableDragStatusHandler; // @synthesize disableDragStatusHandler=_disableDragStatusHandler;
@@ -77,4 +77,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

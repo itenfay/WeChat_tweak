@@ -20,7 +20,6 @@
 }
 
 + (id)defaultNoopItem;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long order; // @synthesize order=_order;
 @property(retain, nonatomic) MMLiveBeautyBadgeCollection *itemBadges; // @synthesize itemBadges=_itemBadges;
 @property(retain, nonatomic) MMLiveBeautyBadgeItem *badge; // @synthesize badge=_badge;

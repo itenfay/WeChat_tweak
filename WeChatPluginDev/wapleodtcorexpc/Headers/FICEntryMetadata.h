@@ -18,7 +18,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_LRUFactor;
 + (void)PBArrayAdd_entityIndex;
-- (void).cxx_destruct;
 @property(nonatomic) int entityUsedCount; // @synthesize entityUsedCount=_entityUsedCount;
 @property(nonatomic) unsigned int LRUFactor; // @synthesize LRUFactor=_LRUFactor;
 @property(nonatomic) unsigned int entityIndex; // @synthesize entityIndex=_entityIndex;

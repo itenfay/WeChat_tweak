@@ -22,7 +22,6 @@
     struct CGRect _transitionImageStartRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pageInitialIndex; // @synthesize pageInitialIndex=_pageInitialIndex;
 @property(nonatomic) unsigned long long currentPage; // @synthesize currentPage=_currentPage;
 @property(nonatomic) _Bool isRotating; // @synthesize isRotating=_isRotating;

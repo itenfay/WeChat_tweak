@@ -24,7 +24,6 @@
     unsigned long long _updateTimerCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long updateTimerCount; // @synthesize updateTimerCount=_updateTimerCount;
 @property(nonatomic) double totalTime; // @synthesize totalTime=_totalTime;
 @property(nonatomic) _Bool isSliderScrubbing; // @synthesize isSliderScrubbing=_isSliderScrubbing;

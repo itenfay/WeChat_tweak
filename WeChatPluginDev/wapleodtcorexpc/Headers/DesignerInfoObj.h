@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_designer;
 + (void)PBArrayAdd_updateTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) PersonalDesigner *designer; // @synthesize designer=_designer;
 @property(nonatomic) unsigned long long updateTime; // @synthesize updateTime=_updateTime;
 - (id)copyWithZone:(struct _NSZone *)arg1;

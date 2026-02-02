@@ -16,7 +16,6 @@
     WCFinderChooseFeedTabViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderChooseFeedTabViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) WCFinderFeedFlowView *feedFlowView; // @synthesize feedFlowView=_feedFlowView;
 @property(retain, nonatomic) WCFinderChooseFeedTabControllerConfig *config; // @synthesize config=_config;

@@ -17,7 +17,6 @@
 
 + (id)cellIdentifier;
 + (double)cellHeightWithFunctions:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveCreatorFunctions *functions; // @synthesize functions=_functions;
 @property(retain, nonatomic) WCTableViewManager *tableViewManager; // @synthesize tableViewManager=_tableViewManager;
 @property(nonatomic) __weak id <WCFinderLivePersonalCenterCreatorFunctionSectionCellDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;

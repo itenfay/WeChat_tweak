@@ -16,7 +16,6 @@
     NSString *_webviewKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *webviewKey; // @synthesize webviewKey=_webviewKey;
 @property(retain, nonatomic) NSURLResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) NSMutableData *data; // @synthesize data=_data;

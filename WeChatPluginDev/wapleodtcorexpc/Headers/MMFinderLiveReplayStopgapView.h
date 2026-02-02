@@ -29,7 +29,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize videoSize; // @synthesize videoSize=_videoSize;
 @property(retain, nonatomic) UILabel *countdownDescriptionLabel; // @synthesize countdownDescriptionLabel=_countdownDescriptionLabel;
 @property(retain, nonatomic) UILabel *countdownLabel; // @synthesize countdownLabel=_countdownLabel;

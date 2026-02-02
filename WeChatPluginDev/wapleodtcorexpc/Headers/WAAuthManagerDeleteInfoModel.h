@@ -15,7 +15,6 @@
     WxaUseUserInfoItem_ScopeItem *_scopeItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFormPlugin; // @synthesize isFormPlugin=_isFormPlugin;
 @property(retain, nonatomic) WxaUseUserInfoItem_ScopeItem *scopeItem; // @synthesize scopeItem=_scopeItem;
 @property(retain, nonatomic) WxaUseUserInfoItem *userInfoItem; // @synthesize userInfoItem=_userInfoItem;

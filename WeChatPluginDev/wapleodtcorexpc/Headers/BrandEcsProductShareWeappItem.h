@@ -23,7 +23,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithAppid:(id)arg1 usrname:(id)arg2 iconUrl:(id)arg3 sourceDisplayName:(id)arg4 path:(id)arg5 bizType:(id)arg6 title:(id)arg7 desc:(id)arg8 imageUrl:(id)arg9;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;
 @property(copy, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

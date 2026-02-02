@@ -13,7 +13,6 @@
     id <MMWebCanvasViewEventDelegate> _eventDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMWebCanvasViewEventDelegate> eventDelegate; // @synthesize eventDelegate=_eventDelegate;
 @property(nonatomic) __weak id <MMWebCanvasViewDataDelegate> dataDelegate; // @synthesize dataDelegate=_dataDelegate;
 @property(nonatomic) __weak MMWebCanvasView *canvasView; // @synthesize canvasView=_canvasView;

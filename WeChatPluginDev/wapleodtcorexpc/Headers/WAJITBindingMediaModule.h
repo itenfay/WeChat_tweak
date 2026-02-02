@@ -16,7 +16,6 @@
     WeMediaApi *_wemedia_api;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAudioInterrupt; // @synthesize isAudioInterrupt=_isAudioInterrupt;
 @property(nonatomic) _Bool isBackground; // @synthesize isBackground=_isBackground;
 @property(retain, nonatomic) WeMediaApi *wemedia_api; // @synthesize wemedia_api=_wemedia_api;

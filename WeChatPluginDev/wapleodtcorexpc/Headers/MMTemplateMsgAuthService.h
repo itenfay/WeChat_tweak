@@ -11,7 +11,6 @@
     NSMutableArray *_pendingScopeItemWrapQueue;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isMsgItemValid:(id)arg1;
 - (_Bool)removeMsgItemWrapFromQueue:(id)arg1;
 - (_Bool)addMsgItemWrapToQueue:(id)arg1;

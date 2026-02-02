@@ -14,7 +14,6 @@
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowInPanel; // @synthesize isShowInPanel=_isShowInPanel;
 @property(retain, nonatomic) MVVideoTransitionResourceConfigModelName *transitionName; // @synthesize transitionName=_transitionName;
 @property(retain, nonatomic) NSString *transitionId; // @synthesize transitionId=_transitionId;

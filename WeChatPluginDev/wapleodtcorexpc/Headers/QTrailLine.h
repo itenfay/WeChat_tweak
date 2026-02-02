@@ -12,7 +12,6 @@
     NSArray *_nodes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *nodes; // @synthesize nodes=_nodes;
 
 @end

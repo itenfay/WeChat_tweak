@@ -36,7 +36,6 @@
 + (void)PBArrayAdd_m_dicBizStat;
 + (void)PBArrayAdd_m_totalFileSize;
 + (void)PBArrayAdd_m_totalFileNum;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_totalDelFileSize; // @synthesize m_totalDelFileSize=_m_totalDelFileSize;
 @property(nonatomic) unsigned int m_totalDelFileNum; // @synthesize m_totalDelFileNum=_m_totalDelFileNum;
 @property(nonatomic) unsigned int m_scanCount; // @synthesize m_scanCount=_m_scanCount;

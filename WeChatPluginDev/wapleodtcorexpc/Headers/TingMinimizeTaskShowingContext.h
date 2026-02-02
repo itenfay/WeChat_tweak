@@ -14,7 +14,6 @@
 }
 
 + (id)contextWithNextVC:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bJustReload; // @synthesize bJustReload=_bJustReload;
 @property(nonatomic) __weak UIViewController *nextVC; // @synthesize nextVC=_nextVC;
 

@@ -12,7 +12,6 @@
     NSMutableDictionary *_httpHeaders;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *httpHeaders; // @synthesize httpHeaders=_httpHeaders;
 @property(copy, nonatomic) NSString *fullUrl; // @synthesize fullUrl=_fullUrl;
 @property(retain, nonatomic) NSData *permissionData; // @synthesize permissionData=_permissionData;

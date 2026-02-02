@@ -11,7 +11,6 @@
     SEL _labelGenerator;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) SEL labelGenerator; // @synthesize labelGenerator=_labelGenerator;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 - (id)accessibilityLabel;

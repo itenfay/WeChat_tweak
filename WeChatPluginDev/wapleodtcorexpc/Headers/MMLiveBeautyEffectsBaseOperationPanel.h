@@ -23,7 +23,6 @@
     MMLiveEffectsBaseDataItem *_downloadingItemWaitingForApplyEffect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveEffectsBaseDataItem *downloadingItemWaitingForApplyEffect; // @synthesize downloadingItemWaitingForApplyEffect=_downloadingItemWaitingForApplyEffect;
 @property(nonatomic) _Bool isShowing; // @synthesize isShowing=_isShowing;
 @property(retain, nonatomic) id <MMLiveBeautyLogicProvider> beautyLogicProvider; // @synthesize beautyLogicProvider=_beautyLogicProvider;

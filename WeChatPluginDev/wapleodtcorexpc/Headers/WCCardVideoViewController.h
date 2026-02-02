@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIWindow, NSString, SightIconView, SightView, UIImageView;
 
 @interface WCCardVideoViewController
@@ -15,7 +17,6 @@
     CDUnknownBlockType _closeBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType closeBlock; // @synthesize closeBlock=_closeBlock;
 @property(retain, nonatomic) NSString *videoPath; // @synthesize videoPath=_videoPath;
 @property(nonatomic) __weak MMUIWindow *fullScreenWindow; // @synthesize fullScreenWindow=_fullScreenWindow;
@@ -47,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

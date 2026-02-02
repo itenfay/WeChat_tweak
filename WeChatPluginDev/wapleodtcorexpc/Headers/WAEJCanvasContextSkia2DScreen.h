@@ -15,7 +15,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int viewFramebuffer; // @synthesize viewFramebuffer=_viewFramebuffer;
 @property(nonatomic) unsigned int viewRenderbuffer; // @synthesize viewRenderbuffer=_viewRenderbuffer;
 @property(nonatomic) sk_sp_ce222020 onscreenSurface; // @synthesize onscreenSurface=_onscreenSurface;

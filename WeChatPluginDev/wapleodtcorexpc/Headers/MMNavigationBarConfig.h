@@ -21,7 +21,6 @@
 }
 
 + (id)NavigationBarConfigWithBackgroundColor:(id)arg1 useBlackStatusbar:(_Bool)arg2 barTitle:(id)arg3 titleColor:(id)arg4 leftBarButtonType:(long long)arg5 leftButtonColor:(id)arg6 rightButtonTitle:(id)arg7 rightButtonImage:(id)arg8 rightButtonColor:(id)arg9;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMDynamicColor *rightButtonColor; // @synthesize rightButtonColor=_rightButtonColor;
 @property(readonly, nonatomic) NSString *rightButtonImage; // @synthesize rightButtonImage=_rightButtonImage;
 @property(readonly, nonatomic) NSString *rightButtonTitle; // @synthesize rightButtonTitle=_rightButtonTitle;

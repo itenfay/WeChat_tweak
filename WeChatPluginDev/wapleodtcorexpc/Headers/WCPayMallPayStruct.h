@@ -16,7 +16,6 @@
     NSString *m_nsTecket;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsTecket; // @synthesize m_nsTecket;
 @property(retain, nonatomic) NSMutableDictionary *m_dicRemarks; // @synthesize m_dicRemarks;
 @property(retain, nonatomic) NSString *m_nsPayProductId; // @synthesize m_nsPayProductId;

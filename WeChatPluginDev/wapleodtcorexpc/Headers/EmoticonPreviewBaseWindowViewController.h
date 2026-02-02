@@ -17,7 +17,6 @@
     unsigned long long _startLoadingTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoadLocally; // @synthesize isLoadLocally=_isLoadLocally;
 @property(nonatomic) unsigned long long startLoadingTime; // @synthesize startLoadingTime=_startLoadingTime;
 @property(retain, nonatomic) MMUIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;

@@ -11,7 +11,6 @@
     NSMutableArray *arrLocalIDs;
 }
 
-- (void).cxx_destruct;
 - (void)doDelayCancel;
 - (void)onLocalResourceUploadFinished:(id)arg1 SvrId:(id)arg2 ErrCode:(int)arg3;
 - (void)onLocalResourceUploadProgress:(int)arg1 LocalId:(id)arg2;

@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_syncBuf;
 + (void)PBArrayAdd_lastUpdateTime;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *syncBuf; // @synthesize syncBuf=_syncBuf;
 @property(nonatomic) unsigned long long lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;

@@ -13,7 +13,6 @@
     NSString *_productExtra;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *productExtra; // @synthesize productExtra=_productExtra;
 @property(nonatomic) unsigned long long productId; // @synthesize productId=_productId;
 

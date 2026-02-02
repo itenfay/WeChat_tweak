@@ -24,7 +24,6 @@
     NSString *_requestId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *requestId; // @synthesize requestId=_requestId;
 @property(nonatomic) __weak id <WCFinderSearchDataProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WCFinderSearchKVReporter *reporter; // @synthesize reporter=_reporter;

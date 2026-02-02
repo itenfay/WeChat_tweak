@@ -15,7 +15,6 @@
     id <CustomSubMenuFloatViewDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_btnList; // @synthesize m_btnList;
 @property(retain, nonatomic) UIView *m_contentView; // @synthesize m_contentView;
 @property(nonatomic) __weak id <CustomSubMenuFloatViewDelegate> m_delegate; // @synthesize m_delegate;

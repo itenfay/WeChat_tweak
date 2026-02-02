@@ -11,7 +11,6 @@
     NSString *_roleID;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *roleID; // @synthesize roleID=_roleID;
 @property(readonly, nonatomic) MJSpeechAudioData *audioData; // @synthesize audioData=_audioData;
 - (id)description;

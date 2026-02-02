@@ -13,7 +13,6 @@
     id <WCFinderStatReportShim> _shim;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool customFilter; // @synthesize customFilter=_customFilter;
 @property(readonly, nonatomic) __weak id <WCFinderStatReportShim> shim; // @synthesize shim=_shim;
 - (void)update:(id)arg1;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveGiftNewCustomizationModel, MMFinderLiveRewardGiftItem, MMUILabel;
 
 @interface MMLiveRewardGiftNewCustomizationTipView
@@ -15,7 +17,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGiftNewCustomizationModel *customizationModel; // @synthesize customizationModel=_customizationModel;
 @property(retain, nonatomic) MMFinderLiveRewardGiftItem *giftItem; // @synthesize giftItem=_giftItem;
 @property(retain, nonatomic) MMUILabel *tipLabel; // @synthesize tipLabel=_tipLabel;
@@ -36,4 +37,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 orientation:(long long)arg2;
 
 @end
-

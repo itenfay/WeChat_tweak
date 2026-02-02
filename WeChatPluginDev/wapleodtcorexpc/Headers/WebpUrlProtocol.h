@@ -27,7 +27,6 @@
 + (_Bool)isWebpUrlRequest:(id)arg1;
 + (void)wa_web_unregisterWebpScheme;
 + (void)wa_web_registerWebpScheme;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cancel; // @synthesize cancel=_cancel;
 @property(nonatomic) double timeFinish; // @synthesize timeFinish=_timeFinish;
 @property(nonatomic) double timeDecode; // @synthesize timeDecode=_timeDecode;

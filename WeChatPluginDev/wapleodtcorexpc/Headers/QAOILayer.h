@@ -19,7 +19,6 @@
     QAOIMarkerManager *_manager;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak QAOIMarkerManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) QAOILayerPolygonView *polygonView; // @synthesize polygonView=_polygonView;
 @property(retain, nonatomic) NSMutableArray *markers; // @synthesize markers=_markers;

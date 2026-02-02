@@ -13,7 +13,6 @@
     WCEditImageSafeAreaScrollView *_eIScrollView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCEditImageSafeAreaScrollView *eIScrollView; // @synthesize eIScrollView=_eIScrollView;
 @property(nonatomic) __weak WCFinderCoverBasePreviewView *previewView; // @synthesize previewView=_previewView;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

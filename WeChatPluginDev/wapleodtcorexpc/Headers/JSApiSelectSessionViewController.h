@@ -20,7 +20,6 @@
     NSString *_navTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *navTitle; // @synthesize navTitle=_navTitle;
 @property(nonatomic) _Bool m_isSession; // @synthesize m_isSession;
 @property(nonatomic) _Bool m_bSupportSectionIndex; // @synthesize m_bSupportSectionIndex;

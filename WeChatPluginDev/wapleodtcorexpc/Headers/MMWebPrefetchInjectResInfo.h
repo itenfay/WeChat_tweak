@@ -11,7 +11,6 @@
     NSDictionary *_respHeaderFields;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *respHeaderFields; // @synthesize respHeaderFields=_respHeaderFields;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 

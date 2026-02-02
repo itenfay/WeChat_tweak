@@ -16,7 +16,6 @@
     _Bool m_isRanging;
 }
 
-- (void).cxx_destruct;
 - (id)genBeaconKey:(id)arg1;
 - (void)onDidRangeBeacons:(id)arg1 inRegion:(id)arg2 withTag:(unsigned long long)arg3;
 - (void)onRangingBeaconsDidFailForRegion:(id)arg1 withError:(id)arg2 withTag:(unsigned long long)arg3;

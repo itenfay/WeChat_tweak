@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ConcurrentDictionary, NSMapTable;
 
@@ -22,7 +23,6 @@
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)hasInit;
 - (void)callOnDeleteNoti:(unsigned long long)arg1 username:(id)arg2 svrId:(unsigned long long)arg3;
@@ -62,4 +62,3 @@
 - (void)attachClientInvoker:(const void *)arg1;
 
 @end
-

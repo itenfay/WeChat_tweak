@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _onInputViewRemoved;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onInputViewRemoved; // @synthesize onInputViewRemoved=_onInputViewRemoved;
 @property(copy, nonatomic) CDUnknownBlockType onInputViewAdded; // @synthesize onInputViewAdded=_onInputViewAdded;
 @property(copy, nonatomic) CDUnknownBlockType onKeyboardHeightChange; // @synthesize onKeyboardHeightChange=_onKeyboardHeightChange;
@@ -27,4 +27,3 @@
 - (void)didMoveToWindow;
 
 @end
-

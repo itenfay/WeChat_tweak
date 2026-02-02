@@ -17,7 +17,6 @@
     FinderCommonReddotSyncRequest *_request;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderCommonReddotSyncRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSString *contextId; // @synthesize contextId=_contextId;
 @property(retain, nonatomic) NSData *reliableNotifyBuff; // @synthesize reliableNotifyBuff=_reliableNotifyBuff;

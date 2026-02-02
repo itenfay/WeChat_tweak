@@ -23,7 +23,6 @@
     NSArray *_attackFinderUsernameList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *attackFinderUsernameList; // @synthesize attackFinderUsernameList=_attackFinderUsernameList;
 @property(nonatomic) unsigned long long sceneFlag; // @synthesize sceneFlag=_sceneFlag;
 @property(nonatomic) unsigned int prepareRewardProductCount; // @synthesize prepareRewardProductCount=_prepareRewardProductCount;

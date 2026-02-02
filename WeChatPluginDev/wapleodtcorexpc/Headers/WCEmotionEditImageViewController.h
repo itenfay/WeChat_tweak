@@ -10,7 +10,6 @@
     WCEditVideoPushPopTransition *_customTransitionDelegate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCEditVideoPushPopTransition *customTransitionDelegate; // @synthesize customTransitionDelegate=_customTransitionDelegate;
 - (void)setupTransitioningDelegate;
 - (void)showEditImageViewOn;

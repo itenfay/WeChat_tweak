@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, NSURLSessionDataTask;
 
 @interface LiteAppJsApiOpenCustomerServiceChatForFakeNative
@@ -17,7 +19,6 @@
     NSURLSessionDataTask *m_dataTask;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (CDUnknownBlockType)getOnClickQuickSendBtnHandleBlockWithAppId:(id)arg1 title:(id)arg2 path:(id)arg3;
 - (void)openCustomerServiceChat:(id)arg1;
@@ -26,4 +27,3 @@
 - (id)init;
 
 @end
-

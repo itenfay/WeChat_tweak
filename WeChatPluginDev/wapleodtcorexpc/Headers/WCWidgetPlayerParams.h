@@ -19,7 +19,6 @@
     NSString *_audioModuleIdentifier;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAudioModuleEnabled; // @synthesize isAudioModuleEnabled=_isAudioModuleEnabled;
 @property(retain, nonatomic) NSString *audioModuleIdentifier; // @synthesize audioModuleIdentifier=_audioModuleIdentifier;
 @property(retain, nonatomic) CALayer *overlayViewLayer; // @synthesize overlayViewLayer=_overlayViewLayer;

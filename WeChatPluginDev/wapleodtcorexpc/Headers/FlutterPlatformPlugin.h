@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UITextField;
 
@@ -15,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableViewControllerBasedStatusBarAppearance; // @synthesize enableViewControllerBasedStatusBarAppearance=_enableViewControllerBasedStatusBarAppearance;
 - (void)dealloc;
 - (id)textField;
@@ -39,4 +39,3 @@
 - (id)initWithEngine:(WeakNSObject_ed46922b)arg1;
 
 @end
-

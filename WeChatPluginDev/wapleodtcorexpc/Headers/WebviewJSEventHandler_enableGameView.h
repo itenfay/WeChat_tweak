@@ -13,7 +13,6 @@
     _Bool m_hideBottomBar;
 }
 
-- (void).cxx_destruct;
 - (void)webViewReturn:(id)arg1;
 - (void)onGameViewClosed;
 - (void)enterGame;

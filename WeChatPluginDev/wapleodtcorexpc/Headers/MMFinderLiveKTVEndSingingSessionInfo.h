@@ -14,7 +14,6 @@
     unsigned long long _tryCloseCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long tryCloseCount; // @synthesize tryCloseCount=_tryCloseCount;
 @property(nonatomic) _Bool isWaitingResult; // @synthesize isWaitingResult=_isWaitingResult;
 @property(copy, nonatomic) NSString *songUniqueId; // @synthesize songUniqueId=_songUniqueId;

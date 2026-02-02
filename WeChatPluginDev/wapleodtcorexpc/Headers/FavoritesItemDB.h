@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MyFavoritesDB;
 
@@ -12,7 +13,6 @@
     MyFavoritesDB *_mmDB;
 }
 
-- (void).cxx_destruct;
 - (unsigned int)getLastFavItemLocalId;
 - (id)getUnsyncFavoritesItemFrom:(unsigned int)arg1 Limit:(int)arg2;
 - (id)getFavoritesItemFromUpdateSeq:(unsigned int)arg1 Limit:(int)arg2;
@@ -63,4 +63,3 @@
 - (id)init;
 
 @end
-

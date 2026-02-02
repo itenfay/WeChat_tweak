@@ -18,7 +18,6 @@
     NSDictionary *_fontWeightMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *fontWeightMap; // @synthesize fontWeightMap=_fontWeightMap;
 @property(nonatomic) __weak id <MMCanvasJsApiHandlerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double windowWidth; // @synthesize windowWidth=_windowWidth;

@@ -12,7 +12,6 @@
     FinderNavLiveStreamRequest *_request;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderNavLiveStreamRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) WCFinderPrefetchCache *prefetchCache; // @synthesize prefetchCache=_prefetchCache;
 @property(retain, nonatomic) FinderNavLiveStreamResponse *resp; // @synthesize resp=_resp;

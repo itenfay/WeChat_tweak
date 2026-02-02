@@ -39,7 +39,6 @@
     id <WXGMigrationClientLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bProcessFinish; // @synthesize bProcessFinish=_bProcessFinish;
 @property(nonatomic) __weak id <WXGMigrationClientLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)getConnectDebugInfo;

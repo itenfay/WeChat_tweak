@@ -18,7 +18,6 @@
     UIColor *_invalidSelectedBorderColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool invalid; // @synthesize invalid=_invalid;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) UIColor *invalidSelectedBorderColor; // @synthesize invalidSelectedBorderColor=_invalidSelectedBorderColor;

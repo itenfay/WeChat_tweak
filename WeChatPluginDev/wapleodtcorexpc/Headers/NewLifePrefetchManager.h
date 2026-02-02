@@ -14,7 +14,6 @@
     NewLifeMMKVKeyModel *_mmkvModel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool findPageVisible; // @synthesize findPageVisible=_findPageVisible;
 @property(retain, nonatomic) NewLifeMMKVKeyModel *mmkvModel; // @synthesize mmkvModel=_mmkvModel;
 @property(retain, nonatomic) NSMutableArray *configs; // @synthesize configs=_configs;

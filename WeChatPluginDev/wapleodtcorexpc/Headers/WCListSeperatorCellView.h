@@ -11,7 +11,6 @@
 }
 
 + (double)height;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperatorLine; // @synthesize seperatorLine=_seperatorLine;
 - (void)layoutSubviews;
 - (void)initView;

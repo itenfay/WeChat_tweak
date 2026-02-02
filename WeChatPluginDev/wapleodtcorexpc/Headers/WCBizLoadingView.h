@@ -17,7 +17,6 @@
     _Bool m_bIgnoringInteractionEventsWhenLoading;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bIgnoringInteractionEventsWhenLoading; // @synthesize m_bIgnoringInteractionEventsWhenLoading;
 - (id)insideGetCurrentViewController;
 - (void)stopLoading;

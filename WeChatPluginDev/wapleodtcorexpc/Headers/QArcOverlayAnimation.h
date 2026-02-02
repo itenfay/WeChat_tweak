@@ -11,7 +11,6 @@
     double _highlightDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double highlightDuration; // @synthesize highlightDuration=_highlightDuration;
 @property(retain, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 - (id)init;

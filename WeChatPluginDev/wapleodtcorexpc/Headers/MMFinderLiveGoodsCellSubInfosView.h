@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, UIFont, UIImageView;
 
@@ -22,7 +23,6 @@
 + (_Bool)willShowInWidth:(double)arg1 withRouterInfos:(id)arg2 normalInfos:(id)arg3 font:(id)arg4;
 + (void)setRouterInfos:(id *)arg1 normalInfos:(id *)arg2 forAnchorWithGoods:(id)arg3;
 + (_Bool)willShowInWidth:(double)arg1 withGoods:(id)arg2 font:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) NSArray *lines; // @synthesize lines=_lines;
 @property(retain, nonatomic) NSArray *labels; // @synthesize labels=_labels;
@@ -44,4 +44,3 @@
 - (void)updateForAnchorWithGoods:(id)arg1;
 
 @end
-

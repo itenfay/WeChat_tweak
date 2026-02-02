@@ -13,7 +13,6 @@
     NSString *_reportData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportData; // @synthesize reportData=_reportData;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;

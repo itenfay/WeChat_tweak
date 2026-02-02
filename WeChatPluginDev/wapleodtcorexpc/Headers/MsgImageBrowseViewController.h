@@ -21,7 +21,6 @@
     _Bool _m_bSupportLocateToMsg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bSupportLocateToMsg; // @synthesize m_bSupportLocateToMsg=_m_bSupportLocateToMsg;
 @property(nonatomic) _Bool m_saveMode; // @synthesize m_saveMode;
 @property(retain, nonatomic) id m_doubleTapGesture; // @synthesize m_doubleTapGesture;

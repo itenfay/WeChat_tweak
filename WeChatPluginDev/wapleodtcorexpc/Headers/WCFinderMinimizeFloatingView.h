@@ -29,7 +29,6 @@
 + (struct CGSize)fitMinimizeNotCutFloatingSize:(struct CGSize)arg1;
 + (double)cornerRaidus;
 + (double)displayCornerRadius;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMinimizeFloatingStateView *stateView; // @synthesize stateView=_stateView;
 @property(retain, nonatomic) NSMutableDictionary *reportUDFKV; // @synthesize reportUDFKV=_reportUDFKV;
 @property(retain, nonatomic) UIImage *coverImage; // @synthesize coverImage=_coverImage;

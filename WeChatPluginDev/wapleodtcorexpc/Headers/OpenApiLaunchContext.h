@@ -19,7 +19,6 @@
     NSString *_currentWeAppId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needWritePasteBoard; // @synthesize needWritePasteBoard=_needWritePasteBoard;
 @property(retain, nonatomic) NSString *currentWeAppId; // @synthesize currentWeAppId=_currentWeAppId;
 @property(retain, nonatomic) NSString *currentPageUrl; // @synthesize currentPageUrl=_currentPageUrl;

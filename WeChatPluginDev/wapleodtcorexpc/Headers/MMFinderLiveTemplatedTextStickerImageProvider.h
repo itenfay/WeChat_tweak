@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveStickerTextTemplateResourceRepository, NSString, OMJLowerThirdImageGenerator;
 
@@ -13,7 +14,6 @@
     MMFinderLiveStickerTextTemplateResourceRepository *_resources;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveStickerTextTemplateResourceRepository *resources; // @synthesize resources=_resources;
 @property(retain, nonatomic) OMJLowerThirdImageGenerator *generator; // @synthesize generator=_generator;
 - (void)createImageWithStickerItem:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
@@ -29,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
     WCTableViewCellCustomConfig *_customConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTableViewCellCustomConfig *customConfig; // @synthesize customConfig=_customConfig;
 @property(retain, nonatomic) WCTableViewCellRightConfig *rightConfig; // @synthesize rightConfig=_rightConfig;
 @property(retain, nonatomic) WCTableViewCellLeftConfig *leftConfig; // @synthesize leftConfig=_leftConfig;

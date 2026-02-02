@@ -21,7 +21,6 @@
     MMScrollViewZoomReporter *_zoomReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMScrollViewZoomReporter *zoomReporter; // @synthesize zoomReporter=_zoomReporter;
 @property(nonatomic) _Bool playGestureEnabled; // @synthesize playGestureEnabled=_playGestureEnabled;
 @property(nonatomic) long long browseScene; // @synthesize browseScene=_browseScene;

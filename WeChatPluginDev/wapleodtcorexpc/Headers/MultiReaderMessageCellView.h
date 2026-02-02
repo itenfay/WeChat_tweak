@@ -11,7 +11,6 @@
     NSMutableArray *m_itemViewArr;
 }
 
-- (void).cxx_destruct;
 - (void)multiReaderMessageCellViewRecommendReasonChangedForIndex:(unsigned int)arg1;
 - (void)multiReaderMessageCellViewReplayStatusChangedForIndex:(unsigned int)arg1;
 - (void)multiReaderMessageCellViewLiveStatusChangedForIndex:(unsigned int)arg1;

@@ -15,7 +15,6 @@
     NSString *_confirmText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *confirmText; // @synthesize confirmText=_confirmText;
 @property(retain, nonatomic) NSAttributedString *descAttr; // @synthesize descAttr=_descAttr;
 @property(retain, nonatomic) NSString *topTitle; // @synthesize topTitle=_topTitle;

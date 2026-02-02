@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonStoreItem, MMEmoticonStoreDownloadLogic, MMWebImageView, NSString, UIView;
 
 @interface MMStoreEmotionBaseAllCell
@@ -19,7 +21,6 @@
     UIView *_lastCellLineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lastCellLineView; // @synthesize lastCellLineView=_lastCellLineView;
 @property(copy, nonatomic) CDUnknownBlockType downloadViewSDKReportSetter; // @synthesize downloadViewSDKReportSetter=_downloadViewSDKReportSetter;
 @property(nonatomic) _Bool layoutStaticBtnWidth; // @synthesize layoutStaticBtnWidth=_layoutStaticBtnWidth;
@@ -61,4 +62,3 @@
 @property(readonly) Class superclass;
 
 @end
-

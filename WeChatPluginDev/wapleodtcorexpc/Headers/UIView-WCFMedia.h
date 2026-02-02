@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (WCFMedia)
 - (void)wcfPreloadImageWithMedia:(id)arg1 type:(long long)arg2 scaleToSize:(struct CGSize)arg3 options:(long long)arg4 completion:(CDUnknownBlockType)arg5;
@@ -21,4 +22,3 @@
 - (void)wcfSetMediaTid:(id)arg1;
 - (id)wcfMediaTid;
 @end
-

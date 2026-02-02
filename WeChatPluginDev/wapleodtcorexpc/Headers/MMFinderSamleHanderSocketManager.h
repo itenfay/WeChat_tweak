@@ -35,7 +35,6 @@
 }
 
 + (id)sharedManager;
-- (void).cxx_destruct;
 @property _Bool pausedByMainApp; // @synthesize pausedByMainApp=_pausedByMainApp;
 @property(retain, nonatomic) NSDictionary *currentPacketHead; // @synthesize currentPacketHead=_currentPacketHead;
 @property(nonatomic) CDStruct_5dc35ee3 config; // @synthesize config=_config;

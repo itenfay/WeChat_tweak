@@ -19,7 +19,6 @@
     struct UIEdgeInsets _sectionInsets;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *itemsArray; // @synthesize itemsArray=_itemsArray;
 @property(nonatomic) struct UIEdgeInsets sectionInsets; // @synthesize sectionInsets=_sectionInsets;
 @property(nonatomic) double minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_minimumInteritemSpacing;

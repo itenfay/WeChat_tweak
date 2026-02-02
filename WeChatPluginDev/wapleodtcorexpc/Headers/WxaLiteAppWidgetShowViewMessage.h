@@ -25,7 +25,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithAppId:(id)arg1 page:(id)arg2 query:(id)arg3 referrerInfo:(id)arg4 path:(id)arg5 signatureKey:(id)arg6 appUuid:(long long)arg7 isTransparent:(_Bool)arg8 sourceType:(id)arg9 enableActions:(id)arg10 enableViews:(id)arg11;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *enableViews; // @synthesize enableViews=_enableViews;
 @property(copy, nonatomic) NSArray *enableActions; // @synthesize enableActions=_enableActions;
 @property(copy, nonatomic) NSString *sourceType; // @synthesize sourceType=_sourceType;

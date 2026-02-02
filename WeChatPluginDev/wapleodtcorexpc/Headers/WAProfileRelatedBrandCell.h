@@ -17,7 +17,6 @@
 
 + (double)cellHeight;
 + (double)viewHeightByDataModel:(id)arg1;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)updateCellTitle;
 - (void)updateCellRelatedListWith:(id)arg1;

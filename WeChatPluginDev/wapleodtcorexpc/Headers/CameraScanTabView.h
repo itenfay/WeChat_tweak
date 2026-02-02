@@ -26,7 +26,6 @@
     NSMutableArray *_voiceOverElements;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *voiceOverElements; // @synthesize voiceOverElements=_voiceOverElements;
 @property(nonatomic) _Bool isForceUpdatingContentOffset; // @synthesize isForceUpdatingContentOffset=_isForceUpdatingContentOffset;
 @property(nonatomic) long long fromTabAction; // @synthesize fromTabAction=_fromTabAction;

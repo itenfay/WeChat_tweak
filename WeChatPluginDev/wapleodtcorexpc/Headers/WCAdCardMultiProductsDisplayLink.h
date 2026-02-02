@@ -13,7 +13,6 @@
     double _animationCurrentTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double animationCurrentTime; // @synthesize animationCurrentTime=_animationCurrentTime;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSMutableArray *animationObjects; // @synthesize animationObjects=_animationObjects;

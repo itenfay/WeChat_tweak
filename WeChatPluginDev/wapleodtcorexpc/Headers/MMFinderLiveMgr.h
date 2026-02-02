@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveGlobalRewardLevel, ForwardMessageLogicController, MMFinderLiveTaskId, MemoryMappedKV, NSArray, NSMutableArray, NSMutableDictionary, NSObject, NSOperationQueue, NSRecursiveLock, NSString, OrderedDictionary, WCFinderLiveAudienceComodityLogReporter;
 @protocol OS_dispatch_queue;
 
@@ -39,7 +41,6 @@
     NSMutableArray *_qosListForNetworkQuality;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUseRfxPag; // @synthesize isUseRfxPag=_isUseRfxPag;
 @property(nonatomic) unsigned int lastRecordQoSTime; // @synthesize lastRecordQoSTime=_lastRecordQoSTime;
 @property(retain, nonatomic) NSMutableArray *qosListForNetworkQuality; // @synthesize qosListForNetworkQuality=_qosListForNetworkQuality;
@@ -155,4 +156,3 @@
 @property(readonly) Class superclass;
 
 @end
-

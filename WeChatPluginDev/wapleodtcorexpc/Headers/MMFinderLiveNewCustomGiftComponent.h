@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString;
 
 @interface MMFinderLiveNewCustomGiftComponent
@@ -19,7 +21,6 @@
 
 + (_Bool)isComponentPBValid:(id)arg1 business:(id)arg2;
 + (id)transferFromComponentPB:(id)arg1 business:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType currSelectComponentKeyChangeCallback; // @synthesize currSelectComponentKeyChangeCallback=_currSelectComponentKeyChangeCallback;
 @property(retain, nonatomic) NSString *currentSelectComponentKey; // @synthesize currentSelectComponentKey=_currentSelectComponentKey;
 @property(nonatomic) unsigned long long uiStyle; // @synthesize uiStyle=_uiStyle;
@@ -38,4 +39,3 @@
 - (id)styleName;
 
 @end
-

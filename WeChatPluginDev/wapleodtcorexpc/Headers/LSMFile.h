@@ -21,7 +21,6 @@
     unsigned int _m_index;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_index; // @synthesize m_index=_m_index;
 - (_Bool)compactToFile:(id)arg1 handledKeys:(id)arg2;
 - (void)recaculateDeadStoreSize;

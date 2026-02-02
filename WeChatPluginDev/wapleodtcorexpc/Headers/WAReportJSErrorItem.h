@@ -16,7 +16,6 @@
     unsigned long long _launchStage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long launchStage; // @synthesize launchStage=_launchStage;
 @property(copy, nonatomic) NSString *strPublibUpdateTime; // @synthesize strPublibUpdateTime=_strPublibUpdateTime;
 @property(copy, nonatomic) NSString *strPublibCustomVersion; // @synthesize strPublibCustomVersion=_strPublibCustomVersion;

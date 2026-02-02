@@ -13,7 +13,6 @@
     WCPayTransBankItem *_m_bankItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayTransBankItem *m_bankItem; // @synthesize m_bankItem=_m_bankItem;
 @property(nonatomic) EnterTimeItem *m_arriveTimeItem; // @synthesize m_arriveTimeItem=_m_arriveTimeItem;
 @property(nonatomic) __weak id <WCPaySelectArriveTimeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

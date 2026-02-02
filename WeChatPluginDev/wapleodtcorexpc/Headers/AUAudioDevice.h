@@ -94,7 +94,6 @@
 + (_Bool)isUsingEarDeviceWithRoute:(id)arg1;
 + (_Bool)isStartTimeStatEnable;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) int mFramelenMs; // @synthesize mFramelenMs=_mFramelenMs;
 @property(nonatomic) int voipModeSessionCount; // @synthesize voipModeSessionCount=_voipModeSessionCount;
 @property(nonatomic) _Bool isUsingExternalAudioDevice; // @synthesize isUsingExternalAudioDevice=_isUsingExternalAudioDevice;

@@ -36,7 +36,6 @@
     WCPayLQTDepositPlanIndexCgi *_planIndexAfterModifyCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCPayLQTDepositPlanIndexCgi *planIndexAfterModifyCgi; // @synthesize planIndexAfterModifyCgi=_planIndexAfterModifyCgi;
 @property(retain) WCPayLQTDepositPlanIndexCgi *planIndexAfterManageCgi; // @synthesize planIndexAfterManageCgi=_planIndexAfterManageCgi;
 @property(retain) WCPayLQTDepositPreAddPlanCgi *preAddPlanAfterDeleteCgi; // @synthesize preAddPlanAfterDeleteCgi=_preAddPlanAfterDeleteCgi;

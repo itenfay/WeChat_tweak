@@ -18,7 +18,6 @@
     MISSING_TYPE *threshold;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithCtrlInfo:(id)arg1 reddotScore:(float)arg2 isReddotScoreValid:(_Bool)arg3 preloadControlFlag:(long long)arg4 isInHomePage:(_Bool)arg5 enterAction:(long long)arg6 threshold:(float)arg7;
 

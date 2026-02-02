@@ -16,7 +16,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *miniprogramPath; // @synthesize miniprogramPath=_miniprogramPath;
 @property(copy, nonatomic) NSString *miniprogramAppid; // @synthesize miniprogramAppid=_miniprogramAppid;
 @property(copy, nonatomic) NSString *imgDataHash; // @synthesize imgDataHash=_imgDataHash;

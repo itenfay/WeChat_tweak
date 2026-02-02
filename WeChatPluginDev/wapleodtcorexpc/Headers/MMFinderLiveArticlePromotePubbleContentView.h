@@ -13,7 +13,6 @@
     FinderLivePromoteInfoListMpArticleInfo *_articleInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLivePromoteInfoListMpArticleInfo *articleInfo; // @synthesize articleInfo=_articleInfo;
 @property(retain, nonatomic) MMUILabel *anchorLabel; // @synthesize anchorLabel=_anchorLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

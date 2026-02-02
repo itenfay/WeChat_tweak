@@ -11,7 +11,6 @@
     DownloadImageInfo *m_oCurInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DownloadImageInfo *m_oCurInfo; // @synthesize m_oCurInfo;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)DownloadFail:(int)arg1;

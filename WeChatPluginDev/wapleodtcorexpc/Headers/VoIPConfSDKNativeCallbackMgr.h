@@ -17,7 +17,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <VoIPConfSDKNativeCallbackMgrDelegate> callbackDelegate; // @synthesize callbackDelegate=_callbackDelegate;
 - (id)callbackImp:(int)arg1 errCode:(int)arg2 data:(void *)arg3 dataLength:(int)arg4;
 - (struct IWXConfCallback *)refreshCallback:(_Bool)arg1;

@@ -28,7 +28,6 @@
     VoipAutoUpdateLabel *_descriptionLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoipAutoUpdateLabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) MMUILabel *usrnameLabel; // @synthesize usrnameLabel=_usrnameLabel;
 @property(retain, nonatomic) VoipDescriptionButton *hangupDescriptionButton; // @synthesize hangupDescriptionButton=_hangupDescriptionButton;

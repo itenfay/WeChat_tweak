@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSHashTable, NSMutableArray, NSString, TingBizPlayer, TingPlayerCore;
 
@@ -17,7 +18,6 @@
     long long _seekTargetPosition;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long seekTargetPosition; // @synthesize seekTargetPosition=_seekTargetPosition;
 @property(nonatomic) _Bool isPlayerSeeking; // @synthesize isPlayerSeeking=_isPlayerSeeking;
 @property(retain, nonatomic) NSMutableArray *associatedPlayerListeners; // @synthesize associatedPlayerListeners=_associatedPlayerListeners;
@@ -63,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

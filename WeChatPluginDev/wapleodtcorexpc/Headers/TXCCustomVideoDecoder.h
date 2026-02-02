@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, TXCDispatchQueue, TXCPixelBufferPool, TXCVideoDecodeConfig, TXCVideoFrame;
 @protocol TXIVideoDecoderSupervisorInterface;
 
@@ -22,7 +24,6 @@
 + (int)convertFrameType:(int)arg1;
 + (void)copyData:(const char *)arg1 toPixelBuffer:(struct __CVBuffer *)arg2 planeIndex:(int)arg3 dataStride:(unsigned long long)arg4;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TXCPixelBufferPool *pool; // @synthesize pool=_pool;
 @property(readonly, nonatomic) _Bool isHevc; // @synthesize isHevc=_isHevc;
 @property(retain) TXCVideoFrame *originalFrame; // @synthesize originalFrame=_originalFrame;
@@ -48,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

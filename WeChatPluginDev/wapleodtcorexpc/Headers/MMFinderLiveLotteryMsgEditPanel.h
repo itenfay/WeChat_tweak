@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMGrowTextView, NSString, UILabel, UIView;
 
 @interface MMFinderLiveLotteryMsgEditPanel
@@ -16,7 +18,6 @@
     UILabel *_wordCountTips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *wordCountTips; // @synthesize wordCountTips=_wordCountTips;
 @property(retain, nonatomic) UIView *inputContentBackView; // @synthesize inputContentBackView=_inputContentBackView;
 @property(retain, nonatomic) MMGrowTextView *growTextView; // @synthesize growTextView=_growTextView;
@@ -48,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

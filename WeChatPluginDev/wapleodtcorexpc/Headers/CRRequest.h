@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSDictionary, NSString, NSURL;
 
@@ -17,7 +18,6 @@
 
 + (id)requestWithBuilderBlock:(CDUnknownBlockType)arg1;
 + (id)requestWithBuilder:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *body; // @synthesize body=_body;
 @property(copy, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
@@ -25,4 +25,3 @@
 - (id)initWithBuilder:(id)arg1;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveGoodsViewModel, MMTimerLabel, MMUIActivityIndicatorView, MMUILabel, MMUIView, UIImageView, UIView;
 
 @interface MMFinderLiveGoodsPromotionReplayButton
@@ -18,7 +20,6 @@
     MMFinderLiveGoodsViewModel *_goodsViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGoodsViewModel *goodsViewModel; // @synthesize goodsViewModel=_goodsViewModel;
 @property(retain, nonatomic) MMUIView *dotTipsView; // @synthesize dotTipsView=_dotTipsView;
 @property(retain, nonatomic) MMTimerLabel *timerLabel; // @synthesize timerLabel=_timerLabel;
@@ -42,4 +43,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

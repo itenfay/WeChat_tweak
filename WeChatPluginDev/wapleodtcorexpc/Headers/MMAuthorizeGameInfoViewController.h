@@ -22,7 +22,6 @@
     NSMutableArray *_arrShowingViewModels;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrShowingViewModels; // @synthesize arrShowingViewModels=_arrShowingViewModels;
 @property(retain, nonatomic) NSMutableArray *arrViewModels; // @synthesize arrViewModels=_arrViewModels;
 @property(retain, nonatomic) GetUserGrantInfoBuffer *getUserGrantInfoBuffer; // @synthesize getUserGrantInfoBuffer=_getUserGrantInfoBuffer;

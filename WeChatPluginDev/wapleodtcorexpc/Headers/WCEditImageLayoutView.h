@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageCropGridView, EditImageCropOverlayView, EditImageCropToolBarView, EditImageCropToolBarViewModel, EditImageEmotionToolAttrView, EditImageMosaicToolAttrView, EditImagePenToolAttrView, EditImageTextToolV2, EditVideoBGMView, EditVideoMusicController, MMBGMSelectHalfScreenViewController, MMBGMSelectedConfig, MMTimer, MMUIButton, MMUIImageView, NSArray, NSMutableArray, NSMutableDictionary, NSString, RecommendedMusicInfo, UIButton, UIImage, UIImageView, UILabel, UIPanGestureRecognizer, UIView, WCEditFilterToolAttrView, WCEditImageScrollView, WCEditLoadingModeButton, WCEditSelectedCollectionView, WCEditViewControllerUIConfig, WCFinderTemplateMusicSelectEntranceView;
 @protocol WCEditImageLayoutViewDelegate, WCFinderEditDataReportDelegate;
 
@@ -104,7 +106,6 @@
     struct CGRect _cropFrameBeforeEnterCropview;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderTemplateMusicSelectEntranceView *musicEntranceView; // @synthesize musicEntranceView=_musicEntranceView;
 @property(retain, nonatomic) MMBGMSelectHalfScreenViewController *bgmPanelVC; // @synthesize bgmPanelVC=_bgmPanelVC;
 @property(retain, nonatomic) MMBGMSelectedConfig *bgmPanelConfig; // @synthesize bgmPanelConfig=_bgmPanelConfig;
@@ -368,4 +369,3 @@
 @property(readonly) Class superclass;
 
 @end
-

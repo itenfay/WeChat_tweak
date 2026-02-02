@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MatrixBuilder *builder; // @synthesize builder=_builder;
 - (void)notifyAppWillSuspend;
 - (void)notifyAppBackgroundFetch;

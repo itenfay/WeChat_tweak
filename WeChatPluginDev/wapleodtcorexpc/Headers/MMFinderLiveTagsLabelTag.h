@@ -13,7 +13,6 @@
     struct CGSize _estimateSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize estimateSize; // @synthesize estimateSize=_estimateSize;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 

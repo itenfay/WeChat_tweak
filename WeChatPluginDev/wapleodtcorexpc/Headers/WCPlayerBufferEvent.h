@@ -21,7 +21,6 @@
     unsigned long long _exitType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float bufferedLen; // @synthesize bufferedLen=_bufferedLen;
 @property(nonatomic) unsigned long long exitType; // @synthesize exitType=_exitType;
 @property(nonatomic) unsigned long long bufferType; // @synthesize bufferType=_bufferType;

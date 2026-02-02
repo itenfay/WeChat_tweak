@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWebOptimizationPrefetchRequest, MMWebPrefetchDownloadTask, MMWebPrefetchInjectTask, MMWebPrefetchResPkgDownloadTask, NSMutableArray, NSURLSession;
 @protocol MMWebOptimizationPrefetchTaskDelegate;
 
@@ -26,7 +28,6 @@
 
 + (unsigned int)genSubTaskRequestId;
 + (unsigned int)genTaskId;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType pkgFetchCompletionHandler; // @synthesize pkgFetchCompletionHandler=_pkgFetchCompletionHandler;
 @property(nonatomic) __weak id <MMWebOptimizationPrefetchTaskDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isTaskCancel; // @synthesize isTaskCancel=_isTaskCancel;
@@ -74,4 +75,3 @@
 - (id)initWithRequest:(id)arg1 urlSession:(id)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 @end
-

@@ -37,7 +37,6 @@
     LocalSearchDynamicConfig *_dynConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useAPITestLocalH5; // @synthesize useAPITestLocalH5=_useAPITestLocalH5;
 @property(nonatomic) _Bool hasReportNoRedotExposeForSearch; // @synthesize hasReportNoRedotExposeForSearch=_hasReportNoRedotExposeForSearch;
 @property(retain, nonatomic) LocalSearchDynamicConfig *dynConfig; // @synthesize dynConfig=_dynConfig;

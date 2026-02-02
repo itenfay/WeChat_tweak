@@ -74,7 +74,6 @@
     FinderLiveRecommendPreloadInfo *_recommendPreloadInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveRecommendPreloadInfo *recommendPreloadInfo; // @synthesize recommendPreloadInfo=_recommendPreloadInfo;
 @property(retain, nonatomic) MMFinderLiveConcertInfo *liveConcertInfo; // @synthesize liveConcertInfo=_liveConcertInfo;
 @property(retain, nonatomic) NSString *respCookiesMd5; // @synthesize respCookiesMd5=_respCookiesMd5;

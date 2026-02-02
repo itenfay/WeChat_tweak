@@ -12,7 +12,6 @@
     CLLocation *_loc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *loc; // @synthesize loc=_loc;
 - (id)initWithTencentLBSLocation:(id)arg1;
 - (_Bool)isReachable:(id)arg1;

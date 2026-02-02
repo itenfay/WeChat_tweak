@@ -11,7 +11,6 @@
     MISSING_TYPE *$__lazy_storage_$__detailView;
 }
 
-- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewDidTransitionToNewSize;
 - (id)initWithCoder:(id)arg1;

@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *topLikeBackgroundImage; // @synthesize topLikeBackgroundImage=_topLikeBackgroundImage;
 @property(retain, nonatomic) NSString *topLikeTitle; // @synthesize topLikeTitle=_topLikeTitle;
 @property(retain, nonatomic) WCAdPagInfo *topLikePag; // @synthesize topLikePag=_topLikePag;

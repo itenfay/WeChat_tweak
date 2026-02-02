@@ -19,7 +19,6 @@
 }
 
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMAnimatedImagePlayObserver> observer; // @synthesize observer=_observer;
 @property(nonatomic) unsigned long long playEndBehavior; // @synthesize playEndBehavior=_playEndBehavior;
 @property(nonatomic) unsigned int animationRepeatCount; // @synthesize animationRepeatCount=_animationRepeatCount;

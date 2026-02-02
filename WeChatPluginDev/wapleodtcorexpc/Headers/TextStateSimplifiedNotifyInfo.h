@@ -15,7 +15,6 @@
     NSString *_headImageUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isContact; // @synthesize isContact=_isContact;
 @property(retain, nonatomic) NSString *headImageUrl; // @synthesize headImageUrl=_headImageUrl;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;

@@ -17,7 +17,6 @@
     WWKMsgForwarder *_weworkMsgForwarder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WWKMsgForwarder *weworkMsgForwarder; // @synthesize weworkMsgForwarder=_weworkMsgForwarder;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) NSMutableData *m_recData; // @synthesize m_recData=_m_recData;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface RoamTask : NSObject
 {
@@ -14,7 +15,6 @@
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (int)clearErrorLog;
 - (id)getErrorLog;
@@ -58,4 +58,3 @@
 - (shared_ptr_f523a40b)getDispatcher;
 
 @end
-

@@ -15,7 +15,6 @@
 }
 
 + (double)height;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCLabSettingDetailFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)initExposeButton;
 - (void)onClickExposeButton:(id)arg1;

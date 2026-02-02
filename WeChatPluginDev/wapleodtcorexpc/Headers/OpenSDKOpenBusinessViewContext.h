@@ -14,7 +14,6 @@
     WCBusinessJumpViewController *_jumpViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBusinessJumpViewController *jumpViewController; // @synthesize jumpViewController=_jumpViewController;
 @property(nonatomic) unsigned long long miniProgramType; // @synthesize miniProgramType=_miniProgramType;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;

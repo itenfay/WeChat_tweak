@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMWebImageView, UILabel, UIView;
 
@@ -21,7 +22,6 @@
     CDUnknownBlockType _videoTypeAction;
 }
 
-- (void).cxx_destruct;
 - (void)renderTagViews:(id)arg1;
 - (void)clickVideoType;
 - (void)updateVideoTypeState:(_Bool)arg1;
@@ -31,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

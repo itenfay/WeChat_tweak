@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_m_nsRecordEncryptSecret;
 + (void)PBArrayAdd_m_nsCommonEncryptSecret;
 + (void)PBArrayAdd_m_nsTextStateEncryptSecret;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsRecordEncryptSecret; // @synthesize m_nsRecordEncryptSecret=_m_nsRecordEncryptSecret;
 @property(retain, nonatomic) NSString *m_nsCommonEncryptSecret; // @synthesize m_nsCommonEncryptSecret=_m_nsCommonEncryptSecret;
 @property(retain, nonatomic) NSString *m_nsTextStateEncryptSecret; // @synthesize m_nsTextStateEncryptSecret=_m_nsTextStateEncryptSecret;

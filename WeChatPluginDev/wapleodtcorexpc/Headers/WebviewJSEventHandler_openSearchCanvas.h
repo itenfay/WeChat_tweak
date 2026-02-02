@@ -10,7 +10,6 @@
     WCCanvasDynamicDataLoader *_dataLoader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasDynamicDataLoader *dataLoader; // @synthesize dataLoader=_dataLoader;
 - (void)onUxCanvasDynamicXMLReturn:(id)arg1 error:(int)arg2 forCanvasId:(id)arg3;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;

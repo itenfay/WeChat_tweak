@@ -13,7 +13,6 @@
     RichTextView *_richTextView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak RichTextView *richTextView; // @synthesize richTextView=_richTextView;
 @property(copy, nonatomic) UIBezierPath *accessibilityPathInContainer; // @synthesize accessibilityPathInContainer=_accessibilityPathInContainer;
 - (id)accessibilityPath;

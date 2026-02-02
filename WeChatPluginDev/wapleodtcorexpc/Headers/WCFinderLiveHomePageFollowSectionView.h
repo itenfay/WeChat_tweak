@@ -13,7 +13,6 @@
 }
 
 + (double)viewHeight:(_Bool)arg1 styleInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveHomePageFooterView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) __weak id <WCFinderLiveHomePageFollowSectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onContainerSectionVMHomePageResetState;

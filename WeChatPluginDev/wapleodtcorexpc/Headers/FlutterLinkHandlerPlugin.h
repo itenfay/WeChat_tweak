@@ -12,7 +12,6 @@
     WAAppIdToUsernameTransfer *_appIdTransfer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAppIdToUsernameTransfer *appIdTransfer; // @synthesize appIdTransfer=_appIdTransfer;
 - (void)openLocationLinkWrap:(id)arg1 error:(id *)arg2;
 - (void)openWeAppLinkLinkWrap:(id)arg1 error:(id *)arg2;

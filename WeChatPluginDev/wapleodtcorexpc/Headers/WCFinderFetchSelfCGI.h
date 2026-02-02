@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData;
 
 @interface WCFinderFetchSelfCGI
@@ -12,7 +14,6 @@
     NSData *_syncBuffer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *syncBuffer; // @synthesize syncBuffer=_syncBuffer;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
@@ -22,4 +23,3 @@
 - (id)initWithSyncBuffer:(id)arg1 successful:(CDUnknownBlockType)arg2 failure:(CDUnknownBlockType)arg3;
 
 @end
-

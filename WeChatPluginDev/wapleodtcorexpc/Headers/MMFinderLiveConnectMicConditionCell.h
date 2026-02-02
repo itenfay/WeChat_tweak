@@ -12,7 +12,6 @@
     UIImageView *_checkIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *checkIconView; // @synthesize checkIconView=_checkIconView;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;
 @property(retain, nonatomic) UILabel *typeTitle; // @synthesize typeTitle=_typeTitle;

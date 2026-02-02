@@ -16,7 +16,6 @@
     NSString *_key;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

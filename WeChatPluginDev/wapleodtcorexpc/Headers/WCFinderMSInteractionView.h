@@ -15,7 +15,6 @@
     NSMutableArray *_interactionData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *interactionData; // @synthesize interactionData=_interactionData;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) UICollectionViewFlowLayout *collectionLayout; // @synthesize collectionLayout=_collectionLayout;

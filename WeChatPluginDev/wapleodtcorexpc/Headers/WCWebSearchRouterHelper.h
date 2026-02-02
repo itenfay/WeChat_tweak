@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCWebSearchRouterHelper : NSObject
 {
@@ -29,4 +30,3 @@
 + (void)PushVideoFlowVCWithVideoInfo:(id)arg1 initedParams:(id)arg2 curNavController:(id)arg3;
 
 @end
-

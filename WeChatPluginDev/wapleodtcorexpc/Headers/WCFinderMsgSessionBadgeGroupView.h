@@ -16,7 +16,6 @@
     WCFinderMsgSessionUserTagLabel *_userTagLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMsgSessionUserTagLabel *userTagLabel; // @synthesize userTagLabel=_userTagLabel;
 @property(retain, nonatomic) WCFinderMsgSessionBadgeLabel *badgeLabel; // @synthesize badgeLabel=_badgeLabel;
 @property(retain, nonatomic) MMFinderLiveNormalTextSignView *followerSignView; // @synthesize followerSignView=_followerSignView;

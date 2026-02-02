@@ -12,7 +12,6 @@
     struct CGRect _lastLayoutRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect lastLayoutRect; // @synthesize lastLayoutRect=_lastLayoutRect;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) FinderLiveVotingInfo *votingInfo; // @synthesize votingInfo=_votingInfo;

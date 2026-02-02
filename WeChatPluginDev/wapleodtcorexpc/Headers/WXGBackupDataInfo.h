@@ -29,7 +29,6 @@
     long long _mediaFormatSupport;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long mediaFormatSupport; // @synthesize mediaFormatSupport=_mediaFormatSupport;
 @property(nonatomic) _Bool filterMsgForChatSync; // @synthesize filterMsgForChatSync=_filterMsgForChatSync;
 @property(nonatomic) _Bool fromOldToNew; // @synthesize fromOldToNew=_fromOldToNew;

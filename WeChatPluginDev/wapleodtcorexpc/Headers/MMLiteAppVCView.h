@@ -11,7 +11,6 @@
     struct CGSize _lastSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *snapshot; // @synthesize snapshot=_snapshot;
 @property(nonatomic) struct CGSize lastSize; // @synthesize lastSize=_lastSize;
 - (void)genSnapshotIfNeeded;

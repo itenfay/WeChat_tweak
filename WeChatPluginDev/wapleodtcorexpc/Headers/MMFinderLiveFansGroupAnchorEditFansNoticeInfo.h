@@ -17,7 +17,6 @@
     UIImage *_image;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int visibility; // @synthesize visibility=_visibility;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *imageUrlString; // @synthesize imageUrlString=_imageUrlString;

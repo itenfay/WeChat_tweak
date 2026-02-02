@@ -18,7 +18,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_topic;
 + (void)PBArrayAdd_topicId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *topic; // @synthesize topic=_topic;
 @property(nonatomic) unsigned long long topicId; // @synthesize topicId=_topicId;
 - (id)converTopicInfo;

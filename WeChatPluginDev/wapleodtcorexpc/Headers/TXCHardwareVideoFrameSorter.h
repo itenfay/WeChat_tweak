@@ -14,7 +14,6 @@
     NSMutableArray *_sortedArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sortedArray; // @synthesize sortedArray=_sortedArray;
 @property(retain, nonatomic) NSMutableArray *waitingArray; // @synthesize waitingArray=_waitingArray;
 @property(nonatomic) unsigned long long maxNumRefFrames; // @synthesize maxNumRefFrames=_maxNumRefFrames;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CameraScanBlurEffectView, CameraScanGoodsPinView, NSMutableArray, UIImageView, UIView;
 @protocol CameraScanGoodsContentViewDelegate, CameraScanGoodsMarkDotViewInterface;
 
@@ -18,7 +20,6 @@
     UIImageView *_fullScreenBgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *fullScreenBgView; // @synthesize fullScreenBgView=_fullScreenBgView;
 @property(retain, nonatomic) CameraScanGoodsPinView *pinView; // @synthesize pinView=_pinView;
 @property(retain, nonatomic) NSMutableArray *scanDotViewList; // @synthesize scanDotViewList=_scanDotViewList;
@@ -48,4 +49,3 @@
 @property(nonatomic) __weak id <CameraScanGoodsContentViewDelegate> delegate; // @dynamic delegate;
 
 @end
-

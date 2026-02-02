@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSCache, NSMutableDictionary, NSString, QDataCacheWorldMap;
 
@@ -19,7 +20,6 @@
     NSMutableDictionary *_downloadingTasks;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *downloadingTasks; // @synthesize downloadingTasks=_downloadingTasks;
 @property(retain, nonatomic) NSArray *langCandidates; // @synthesize langCandidates=_langCandidates;
 @property(retain, nonatomic) QDataCacheWorldMap *dataCache; // @synthesize dataCache=_dataCache;
@@ -46,4 +46,3 @@
 - (id)init;
 
 @end
-

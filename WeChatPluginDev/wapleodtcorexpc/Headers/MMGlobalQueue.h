@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSOperationQueue;
 
@@ -22,4 +23,3 @@
 - (void)addOperationFromGlobalDispatchQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
 
 @end
-

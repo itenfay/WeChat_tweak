@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TingCgiManager : NSObject
 {
@@ -24,4 +25,3 @@
 + (void)likeOp:(_Bool)arg1 scene:(int)arg2 listenId:(id)arg3 completion:(CDUnknownBlockType)arg4;
 
 @end
-

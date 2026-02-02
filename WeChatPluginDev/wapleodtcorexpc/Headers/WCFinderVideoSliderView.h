@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, AVAssetImageGenerator, MMUIView, UIImage, UIImageView, UIImpactFeedbackGenerator;
 
 @interface WCFinderVideoSliderView
@@ -19,7 +21,6 @@
 }
 
 + (id)resizeImageForCGImage:(struct CGImage *)arg1 size:(struct CGSize)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(retain, nonatomic) UIImage *speciallyImage; // @synthesize speciallyImage=_speciallyImage;
 @property(retain, nonatomic) AVAsset *avAsset; // @synthesize avAsset=_avAsset;
@@ -43,4 +44,3 @@
 - (id)initWithHeight:(double)arg1 maxWidth:(double)arg2;
 
 @end
-

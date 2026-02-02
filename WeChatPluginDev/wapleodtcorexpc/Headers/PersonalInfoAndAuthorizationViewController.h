@@ -11,7 +11,6 @@
 }
 
 + (id)getAdManageUrl;
-- (void).cxx_destruct;
 - (void)showAgreementWebviewWithUrl:(id)arg1;
 - (void)showAppAuthManagementView;
 - (void)showPersonalInfoExport;

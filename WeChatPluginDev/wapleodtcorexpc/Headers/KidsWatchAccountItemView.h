@@ -18,7 +18,6 @@
     MMUILabel *_statusLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property(retain, nonatomic) CAShapeLayer *dotLayer; // @synthesize dotLayer=_dotLayer;
 @property(retain, nonatomic) MMUILabel *deviceLabel; // @synthesize deviceLabel=_deviceLabel;

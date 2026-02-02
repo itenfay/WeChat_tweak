@@ -16,7 +16,6 @@
 
 + (id)createModelWithMsgWrap:(id)arg1 viewWidth:(double)arg2;
 + (_Bool)canCreateViewModelWithMsgWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double viewWidth; // @synthesize viewWidth=_viewWidth;
 @property(nonatomic) _Bool hasBottomLine; // @synthesize hasBottomLine=_hasBottomLine;
 @property(retain, nonatomic) CMessageWrap *messageWrap; // @synthesize messageWrap=_messageWrap;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMusicFinderVideoTabView, MMMusicInfo, MMMusicMVModel, MMMusicSearchVideoController, MMScrollView, NSMutableArray, NSString;
 @protocol MMMusicPostVideoTabFinderControllerDataSource, MMMusicPostVideoTabFinderControllerDelegate;
 
@@ -21,7 +23,6 @@
     id <MMMusicPostVideoTabFinderControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canMultiSelect; // @synthesize canMultiSelect=_canMultiSelect;
 @property(nonatomic) __weak id <MMMusicPostVideoTabFinderControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MMMusicPostVideoTabFinderControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
@@ -64,4 +65,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
     NSString *_query;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int matchType; // @synthesize matchType=_matchType;
 @property(nonatomic) unsigned int resCount; // @synthesize resCount=_resCount;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;

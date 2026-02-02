@@ -26,7 +26,6 @@
     CDStruct_1b6d18a9 _retainOriginalMediaDurationThreshold;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *defaultTemplateIDs; // @synthesize defaultTemplateIDs=_defaultTemplateIDs;
 @property(nonatomic) CDStruct_1b6d18a9 retainOriginalMediaDurationThreshold; // @synthesize retainOriginalMediaDurationThreshold=_retainOriginalMediaDurationThreshold;
 @property(nonatomic) _Bool shouldRetainOriginalMediaDuration; // @synthesize shouldRetainOriginalMediaDuration=_shouldRetainOriginalMediaDuration;

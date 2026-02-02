@@ -16,7 +16,6 @@
     UIButton *_doneButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) MMUILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) WCAccountTextFieldItem *textFieldVerifyPwdItem; // @synthesize textFieldVerifyPwdItem=_textFieldVerifyPwdItem;

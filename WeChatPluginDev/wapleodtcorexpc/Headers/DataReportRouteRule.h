@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -17,7 +18,6 @@
     NSString *_callbackKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *callbackKey; // @synthesize callbackKey=_callbackKey;
 @property(copy, nonatomic) CDUnknownBlockType callbackBlock; // @synthesize callbackBlock=_callbackBlock;
 @property(nonatomic) _Bool isBatchReport; // @synthesize isBatchReport=_isBatchReport;
@@ -27,4 +27,3 @@
 - (id)toString;
 
 @end
-

@@ -22,7 +22,6 @@
     long long _operationPath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long operationPath; // @synthesize operationPath=_operationPath;
 @property(nonatomic) unsigned long long aliveTime; // @synthesize aliveTime=_aliveTime;
 @property(nonatomic) unsigned long long importTImestamp; // @synthesize importTImestamp=_importTImestamp;

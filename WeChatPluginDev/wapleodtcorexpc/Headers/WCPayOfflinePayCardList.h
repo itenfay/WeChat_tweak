@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_cardList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cardList; // @synthesize cardList=_cardList;
 - (id)getPBPropertyTable;
 

@@ -11,7 +11,6 @@
     MMUILabel *_timeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(copy, nonatomic) NSString *time; // @synthesize time=_time;
 - (void)updateNewHistoryInfo:(id)arg1;

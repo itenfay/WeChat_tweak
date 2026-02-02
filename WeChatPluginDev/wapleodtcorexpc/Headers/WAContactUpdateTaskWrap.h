@@ -13,7 +13,6 @@
     CommRequestSource *_requestSource;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CommRequestSource *requestSource; // @synthesize requestSource=_requestSource;
 @property(nonatomic) _Bool isForce; // @synthesize isForce=_isForce;
 @property(copy, nonatomic) NSString *updateKey; // @synthesize updateKey=_updateKey;

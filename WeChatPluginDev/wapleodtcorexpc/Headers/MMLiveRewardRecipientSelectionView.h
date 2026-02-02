@@ -22,7 +22,6 @@
     MMFinderLiveTaskId *_liveTaskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 @property(retain, nonatomic) MMCPLabel *footerCancelLabel; // @synthesize footerCancelLabel=_footerCancelLabel;
 @property(retain, nonatomic) MMUIView *footerCancelView; // @synthesize footerCancelView=_footerCancelView;

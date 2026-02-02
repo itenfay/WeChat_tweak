@@ -12,7 +12,6 @@
     NSString *_currentMd5;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentMd5; // @synthesize currentMd5=_currentMd5;
 @property(retain, nonatomic) NSString *currentUrl; // @synthesize currentUrl=_currentUrl;
 @property(retain, nonatomic) EmoticonCustomManageAddLogic *emoticonAddLogic; // @synthesize emoticonAddLogic=_emoticonAddLogic;

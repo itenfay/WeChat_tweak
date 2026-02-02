@@ -35,7 +35,6 @@
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) long long eventType; // @synthesize eventType=_eventType;
-- (void).cxx_destruct;
 - (id)validJSONUserInfo;
 - (id)eventName;
 - (id)JSONInfo;

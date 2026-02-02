@@ -14,7 +14,6 @@
 }
 
 + (void)registerWithRegistrar:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<FlutterBinaryMessenger> *messenger; // @synthesize messenger=_messenger;
 - (void)instanceRegisterWithRegistrar:(id)arg1;
 

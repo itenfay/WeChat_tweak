@@ -15,7 +15,6 @@
     double _shadowWidth;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double shadowWidth; // @synthesize shadowWidth=_shadowWidth;
 @property(readonly, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
 @property(readonly, nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;

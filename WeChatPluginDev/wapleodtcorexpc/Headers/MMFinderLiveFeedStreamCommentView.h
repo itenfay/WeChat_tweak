@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveFeedStreamCommentContentView, NSString;
 
 @interface MMFinderLiveFeedStreamCommentView
@@ -20,7 +22,6 @@
     double _currentLayoutFontScale;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLayoutFontScaleChanged; // @synthesize isLayoutFontScaleChanged=_isLayoutFontScaleChanged;
 @property(nonatomic) double currentLayoutFontScale; // @synthesize currentLayoutFontScale=_currentLayoutFontScale;
 @property(nonatomic) _Bool isLayoutStandardChanged; // @synthesize isLayoutStandardChanged=_isLayoutStandardChanged;
@@ -64,4 +65,3 @@
 @property(readonly) Class superclass;
 
 @end
-

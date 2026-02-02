@@ -15,7 +15,6 @@
     NSArray *_arrSimpleMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrSimpleMsg; // @synthesize arrSimpleMsg=_arrSimpleMsg;
 @property(retain, nonatomic) NSArray *arrMessage; // @synthesize arrMessage=_arrMessage;
 @property(nonatomic) unsigned int searchCount; // @synthesize searchCount=_searchCount;

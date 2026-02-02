@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, MMUILabel, MMWebImageView, NSString, UIButton;
 
 @interface MMLiveKTVLeaveGuideView
@@ -19,7 +21,6 @@
     MMUILabel *_minimizeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *minimizeLabel; // @synthesize minimizeLabel=_minimizeLabel;
 @property(retain, nonatomic) UIButton *leaveBtn; // @synthesize leaveBtn=_leaveBtn;
 @property(retain, nonatomic) UIButton *returnBtn; // @synthesize returnBtn=_returnBtn;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

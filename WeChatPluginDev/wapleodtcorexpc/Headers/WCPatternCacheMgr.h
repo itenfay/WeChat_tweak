@@ -14,7 +14,6 @@
     _Bool m_needLoadData;
 }
 
-- (void).cxx_destruct;
 - (void)tryGetWCDataItemPattern:(id)arg1;
 - (unsigned long long)onServiceCleanCache;
 - (void)onServiceMemoryWarning;

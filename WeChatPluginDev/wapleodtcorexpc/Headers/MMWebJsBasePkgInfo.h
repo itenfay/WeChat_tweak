@@ -23,7 +23,6 @@
 + (id)dataWithFileName:(id)arg1 unpackPkg:(void *)arg2;
 + (id)pkgWithFilePath:(id)arg1;
 + (id)pkgMetaInfoKey;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicTaskConfig2Path; // @synthesize dicTaskConfig2Path=_dicTaskConfig2Path;
 @property(retain, nonatomic) NSDictionary *dicAppConfigInfo; // @synthesize dicAppConfigInfo=_dicAppConfigInfo;
 @property(retain, nonatomic) NSDictionary *dicCacheFileInfo; // @synthesize dicCacheFileInfo=_dicCacheFileInfo;

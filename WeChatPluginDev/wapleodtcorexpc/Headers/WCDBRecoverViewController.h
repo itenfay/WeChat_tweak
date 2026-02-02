@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLoadingView, MMTableViewInfo, NSArray, WCDBRouterInfo;
 
 @interface WCDBRecoverViewController
@@ -14,7 +16,6 @@
     MMTableViewInfo *m_tableViewInfo;
 }
 
-- (void).cxx_destruct;
 - (void)doAsyncRecover;
 - (_Bool)shouldInteractivePop;
 - (void)didRecover:(_Bool)arg1;
@@ -42,4 +43,3 @@
 - (void)addCustomizationCellInSection:(id)arg1;
 
 @end
-

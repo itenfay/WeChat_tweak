@@ -20,7 +20,6 @@
     QIndicatorLayer *_indicator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QIndicatorLayer *indicator; // @synthesize indicator=_indicator;
 @property(retain, nonatomic) QIndoorBuilding *indoorBuilding; // @synthesize indoorBuilding=_indoorBuilding;
 @property(retain, nonatomic) UILabel *head; // @synthesize head=_head;

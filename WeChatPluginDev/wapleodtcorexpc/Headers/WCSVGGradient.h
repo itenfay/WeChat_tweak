@@ -18,7 +18,6 @@
     struct CGAffineTransform _gradientTransform;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *stops; // @synthesize stops=_stops;
 @property(nonatomic) double radius; // @synthesize radius=_radius;
 @property(nonatomic) struct CGPoint endPoint; // @synthesize endPoint=_endPoint;

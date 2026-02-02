@@ -14,7 +14,6 @@
     UILabel *m_detailLabel;
 }
 
-- (void).cxx_destruct;
 - (void)onClick;
 - (void)updateBkgImage:(_Bool)arg1;
 - (void)onTouchCancel;

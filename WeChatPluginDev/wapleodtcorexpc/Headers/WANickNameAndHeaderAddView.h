@@ -11,7 +11,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(retain, nonatomic) WANickNameAndHeaderAuthViewModel *viewDataModel; // @dynamic viewDataModel;

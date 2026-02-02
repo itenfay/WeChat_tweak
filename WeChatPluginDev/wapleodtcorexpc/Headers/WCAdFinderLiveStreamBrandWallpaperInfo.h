@@ -16,7 +16,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int verticalGravity; // @synthesize verticalGravity=_verticalGravity;
 @property(nonatomic) int horizontalGravity; // @synthesize horizontalGravity=_horizontalGravity;
 @property(retain, nonatomic) NSString *frontImageUrl; // @synthesize frontImageUrl=_frontImageUrl;

@@ -15,7 +15,6 @@
     long long _initSelectType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long initSelectType; // @synthesize initSelectType=_initSelectType;
 @property(nonatomic) __weak WCFinderWXInteractiveHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) WCFinderWXInteractiveFlowViewModel *flowViewModel; // @synthesize flowViewModel=_flowViewModel;

@@ -11,7 +11,6 @@
     MMLRUCache *_sdkCacheInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastGetSdkInfoTimeSec; // @synthesize lastGetSdkInfoTimeSec=_lastGetSdkInfoTimeSec;
 @property(retain, nonatomic) MMLRUCache *sdkCacheInfo; // @synthesize sdkCacheInfo=_sdkCacheInfo;
 - (unsigned int)checkIsInFinder:(id)arg1;

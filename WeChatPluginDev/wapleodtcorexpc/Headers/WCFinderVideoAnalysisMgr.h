@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAssetImageGenerator;
 
@@ -22,9 +23,7 @@
 + (id)getWeightedByRaw:(id)arg1 curFrequencyDic:(id)arg2 len:(unsigned long long)arg3;
 + (id)genNewImageGeneratorByVideoPath:(id)arg1;
 + (unsigned long long)getImageColorfulIndex:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAssetImageGenerator *coverGenerator; // @synthesize coverGenerator=_coverGenerator;
 - (void)getVideoLensCount:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
 
 @end
-

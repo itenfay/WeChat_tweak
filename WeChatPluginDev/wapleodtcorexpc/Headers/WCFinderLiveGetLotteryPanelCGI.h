@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderDataItem;
 
 @interface WCFinderLiveGetLotteryPanelCGI
@@ -14,7 +16,6 @@
     NSString *_anchorFinderUserName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *anchorFinderUserName; // @synthesize anchorFinderUserName=_anchorFinderUserName;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
@@ -26,4 +27,3 @@
 - (id)initWithLiveGetLotteryPanel:(id)arg1 anchorFinderUserName:(id)arg2 liveCookies:(id)arg3 successBlock:(CDUnknownBlockType)arg4 failBlock:(CDUnknownBlockType)arg5;
 
 @end
-

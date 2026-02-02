@@ -11,7 +11,6 @@
     struct CGRect _normalizedFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect normalizedFrame; // @synthesize normalizedFrame=_normalizedFrame;
 @property(retain, nonatomic) UIImageView *contentImageView; // @synthesize contentImageView=_contentImageView;
 - (id)contentView;

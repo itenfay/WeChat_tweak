@@ -19,7 +19,6 @@
     MMQuickSendEmoticonSearchCellView *_searchView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMQuickSendEmoticonSearchCellView *searchView; // @synthesize searchView=_searchView;
 @property(nonatomic) _Bool needPlayGif; // @synthesize needPlayGif=_needPlayGif;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;

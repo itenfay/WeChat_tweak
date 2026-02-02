@@ -30,7 +30,6 @@
     AVCaptureVideoPreviewLayer *_prevLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVCaptureVideoPreviewLayer *prevLayer; // @synthesize prevLayer=_prevLayer;
 @property(retain, nonatomic) AVCaptureSession *captureSession; // @synthesize captureSession=_captureSession;
 @property(nonatomic) __weak id <JSApiScanLicenceViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

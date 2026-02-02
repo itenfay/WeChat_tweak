@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString, NSTimer;
 
 @interface WCCardDynamicCodeGenerator
@@ -18,7 +20,6 @@
     CDUnknownBlockType _getCodeBlock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int refreshInteval; // @synthesize refreshInteval=_refreshInteval;
 @property(copy, nonatomic) CDUnknownBlockType getCodeBlock; // @synthesize getCodeBlock=_getCodeBlock;
 @property(readonly, nonatomic) unsigned int uiRefreshInteval; // @synthesize uiRefreshInteval=_uiRefreshInteval;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

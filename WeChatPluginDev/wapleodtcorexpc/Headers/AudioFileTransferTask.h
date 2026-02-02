@@ -12,7 +12,6 @@
     AudioFileTransferInfo *_info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AudioFileTransferInfo *info; // @synthesize info=_info;
 - (id)promiseTransferedFile;
 - (id)initWithInfo:(id)arg1;

@@ -17,7 +17,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *layerInstructions; // @synthesize layerInstructions=_layerInstructions;
 @property(readonly, nonatomic) int passthroughTrackID; // @synthesize passthroughTrackID=_passthroughTrackID;
 @property(readonly, nonatomic) NSArray *requiredSourceTrackIDs; // @synthesize requiredSourceTrackIDs=_requiredSourceTrackIDs;

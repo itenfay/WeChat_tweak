@@ -187,7 +187,6 @@
 + (_Bool)setItem:(id)arg1 value:(id)arg2 forDynamic:(id)arg3;
 + (id)dictionaryFromADDynamicInfo:(id)arg1;
 + (id)modelPropertyWhitelistForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidUpdateContact; // @synthesize forbidUpdateContact=_forbidUpdateContact;
 @property(retain, nonatomic) WCAdHotDiscussedBarInfo *adHotDiscussedBarInfo; // @synthesize adHotDiscussedBarInfo=_adHotDiscussedBarInfo;
 @property(retain, nonatomic) WCAdConsultBarCarouselInfo *adConsultBarCarouselInfo; // @synthesize adConsultBarCarouselInfo=_adConsultBarCarouselInfo;

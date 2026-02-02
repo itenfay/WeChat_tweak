@@ -15,7 +15,6 @@
     UIImageView *_tailCoverView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *tailCoverView; // @synthesize tailCoverView=_tailCoverView;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

@@ -12,7 +12,6 @@
 }
 
 + (struct CGRect)squareFrameForFrame:(struct CGRect)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *borderView; // @synthesize borderView=_borderView;
 @property(nonatomic) unsigned int notifyCount; // @synthesize notifyCount=_notifyCount;
 - (void)updateImage;

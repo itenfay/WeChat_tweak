@@ -13,7 +13,6 @@
     UIPercentDrivenInteractiveTransition *_animator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPercentDrivenInteractiveTransition *animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) WCFinderPlayBar *playBar; // @synthesize playBar=_playBar;
 @property(retain, nonatomic) WCPlayerView *playerView; // @synthesize playerView=_playerView;

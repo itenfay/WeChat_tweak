@@ -10,7 +10,6 @@
     NSMutableDictionary *m_dicUnReadCount;
 }
 
-- (void).cxx_destruct;
 - (void)onNewContact:(id)arg1;
 - (void)onRemoveContactFromAddressBook:(id)arg1;
 - (void)onDeleteContact:(id)arg1;

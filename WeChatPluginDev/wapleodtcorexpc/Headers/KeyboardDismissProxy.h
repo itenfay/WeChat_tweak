@@ -4,16 +4,15 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface KeyboardDismissProxy : NSObject
 {
     CDUnknownBlockType _block;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void)checkAndHideKeyboard;
 - (id)initWithExcuteBlock:(CDUnknownBlockType)arg1;
 
 @end
-

@@ -12,7 +12,6 @@
     NSString *_numberTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *numberTitle; // @synthesize numberTitle=_numberTitle;
 
 @end

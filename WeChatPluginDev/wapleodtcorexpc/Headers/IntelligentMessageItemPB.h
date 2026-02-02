@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_shouldUpdateModelKeyList;
 + (void)PBArrayAdd_hadUpdateFaceCluster;
 + (void)PBArrayAdd_hadUpdateModelKeyList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *shouldUpdateModelKeyList; // @synthesize shouldUpdateModelKeyList=_shouldUpdateModelKeyList;
 @property(nonatomic) _Bool hadUpdateFaceCluster; // @synthesize hadUpdateFaceCluster=_hadUpdateFaceCluster;
 @property(retain, nonatomic) NSMutableArray *hadUpdateModelKeyList; // @synthesize hadUpdateModelKeyList=_hadUpdateModelKeyList;

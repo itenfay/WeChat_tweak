@@ -26,7 +26,6 @@
     NSString *_clientMsgId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *clientMsgId; // @synthesize clientMsgId=_clientMsgId;
 @property(retain, nonatomic) NSMutableArray *prepareBuf; // @synthesize prepareBuf=_prepareBuf;
 @property(retain, nonatomic) NSData *rewardExtInfo; // @synthesize rewardExtInfo=_rewardExtInfo;

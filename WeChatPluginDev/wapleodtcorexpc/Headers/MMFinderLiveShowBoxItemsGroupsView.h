@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveShowBoxItemsGroupsViewTuple, MMFinderLiveShowBoxItemsViewConfig, NSArray, NSTimer;
 
@@ -17,7 +18,6 @@
     MMFinderLiveShowBoxItemsGroupsViewTuple *_current;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveShowBoxItemsGroupsViewTuple *current; // @synthesize current=_current;
 @property(retain, nonatomic) NSArray *tuples; // @synthesize tuples=_tuples;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
@@ -34,4 +34,3 @@
 - (void)updateWithGroups:(id)arg1;
 
 @end
-

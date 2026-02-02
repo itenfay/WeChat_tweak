@@ -11,7 +11,6 @@
     WCTTable *_downloadfileTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *downloadfileTable; // @synthesize downloadfileTable=_downloadfileTable;
 @property(retain, nonatomic) WCTDatabase *database; // @synthesize database=_database;
 - (id)MMAppMsgDownloadDBPath;

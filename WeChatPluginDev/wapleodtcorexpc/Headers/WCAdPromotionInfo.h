@@ -18,7 +18,6 @@
     NSString *_rightTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *rightTitle; // @synthesize rightTitle=_rightTitle;
 @property(retain, nonatomic) NSString *leftTitle; // @synthesize leftTitle=_leftTitle;
 @property(nonatomic) int leftTitleType; // @synthesize leftTitleType=_leftTitleType;

@@ -21,7 +21,6 @@
     NSMutableDictionary *_sceneCountDic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldReport; // @synthesize shouldReport=_shouldReport;
 @property(nonatomic) unsigned int performanceIndexReportGap; // @synthesize performanceIndexReportGap=_performanceIndexReportGap;
 @property(retain, nonatomic) NSMutableDictionary *sceneCountDic; // @synthesize sceneCountDic=_sceneCountDic;

@@ -24,7 +24,6 @@
     WCAdConfirmHalfScreenAdapter *_phoneNumAdapter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdConfirmHalfScreenAdapter *phoneNumAdapter; // @synthesize phoneNumAdapter=_phoneNumAdapter;
 @property(retain, nonatomic) WCAdCombineFollowLogic *combineFollowLogic; // @synthesize combineFollowLogic=_combineFollowLogic;
 @property(retain, nonatomic) WCAdFinderLiveNoticePolymericLogic *finderLiveNoticeLogic; // @synthesize finderLiveNoticeLogic=_finderLiveNoticeLogic;

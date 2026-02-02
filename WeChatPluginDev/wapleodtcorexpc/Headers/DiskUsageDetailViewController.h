@@ -22,7 +22,6 @@
 + (unsigned long long)sumFileSize:(id)arg1 ignoreDuplicate:(_Bool)arg2;
 + (id)getStringWithFileClass:(int)arg1;
 + (id)p_getDescriptionStringNum:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *m_tableView; // @synthesize m_tableView=_m_tableView;
 @property(nonatomic) _Bool ignoreDuplicateFile; // @synthesize ignoreDuplicateFile=_ignoreDuplicateFile;
 @property(nonatomic) _Bool showForMyself; // @synthesize showForMyself=_showForMyself;

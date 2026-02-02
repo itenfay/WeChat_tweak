@@ -13,7 +13,6 @@
     double _intensity;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double intensity; // @synthesize intensity=_intensity;
 @property(copy, nonatomic) UIColor *lightColor; // @synthesize lightColor=_lightColor;
 

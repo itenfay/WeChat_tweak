@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderFetchFinderSubscribeMemberShipPayBillCGI
@@ -16,7 +18,6 @@
     unsigned long long _entranceSource;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long entranceSource; // @synthesize entranceSource=_entranceSource;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
@@ -30,4 +31,3 @@
 - (id)initWithFinderUsername:(id)arg1 monthCount:(unsigned long long)arg2 subscriptionType:(unsigned long long)arg3 subscriptionExtInfo:(id)arg4 entranceSource:(unsigned long long)arg5 successful:(CDUnknownBlockType)arg6 failure:(CDUnknownBlockType)arg7;
 
 @end
-

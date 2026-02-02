@@ -12,7 +12,6 @@
     NSNumber *_dismissVCAnimated;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *dismissVCAnimated; // @synthesize dismissVCAnimated=_dismissVCAnimated;
 
 @end

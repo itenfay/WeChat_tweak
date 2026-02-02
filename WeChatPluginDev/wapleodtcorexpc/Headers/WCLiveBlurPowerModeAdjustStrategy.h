@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveTaskId, NSArray, NSString, WCLiveBlurPowerModeAdjustParam;
 
@@ -20,7 +21,6 @@
     unsigned long long _currAdjustedCheckNumIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currAdjustedCheckNumIndex; // @synthesize currAdjustedCheckNumIndex=_currAdjustedCheckNumIndex;
 @property(nonatomic) unsigned long long currOrdinaryScoreCnt; // @synthesize currOrdinaryScoreCnt=_currOrdinaryScoreCnt;
 @property(nonatomic) unsigned long long currBadScoreCnt; // @synthesize currBadScoreCnt=_currBadScoreCnt;
@@ -63,4 +63,3 @@
 - (id)initWithTaskId:(id)arg1 adjustParam:(id)arg2;
 
 @end
-

@@ -12,7 +12,6 @@
     NSNumber *_numberOfSteps;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *numberOfSteps; // @synthesize numberOfSteps=_numberOfSteps;
 
 @end

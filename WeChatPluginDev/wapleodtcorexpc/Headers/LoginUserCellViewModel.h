@@ -21,7 +21,6 @@
     SEL _clickDeleteBtnSelector;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) SEL clickDeleteBtnSelector; // @synthesize clickDeleteBtnSelector=_clickDeleteBtnSelector;
 @property(nonatomic) SEL clickCellSelector; // @synthesize clickCellSelector=_clickCellSelector;
 @property(nonatomic) __weak NSObject *target; // @synthesize target=_target;

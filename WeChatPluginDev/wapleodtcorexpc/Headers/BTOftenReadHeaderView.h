@@ -14,7 +14,6 @@
     double _titleSpacing;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double titleSpacing; // @synthesize titleSpacing=_titleSpacing;
 @property(retain, nonatomic) MMUILabel *secondTitleLabel; // @synthesize secondTitleLabel=_secondTitleLabel;
 @property(retain, nonatomic) MMUILabel *firstTitleLabel; // @synthesize firstTitleLabel=_firstTitleLabel;

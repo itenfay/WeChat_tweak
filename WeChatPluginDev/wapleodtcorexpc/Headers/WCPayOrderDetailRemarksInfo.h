@@ -13,7 +13,6 @@
     NSString *_remark_desc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *remark_desc; // @synthesize remark_desc=_remark_desc;
 @property(retain, nonatomic) NSString *remark_title; // @synthesize remark_title=_remark_title;
 

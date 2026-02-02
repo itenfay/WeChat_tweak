@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMFinderLiveSyncPromotionInfo, MMLiveTaskId, MMUILabel, PAGView, UIImageView;
 
@@ -21,7 +22,6 @@
     unsigned long long _lastPromotingState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastPromotingState; // @synthesize lastPromotingState=_lastPromotingState;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) MMFinderLiveSyncPromotionInfo *promotionInfo; // @synthesize promotionInfo=_promotionInfo;
@@ -43,4 +43,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 andTaskId:(id)arg2;
 
 @end
-

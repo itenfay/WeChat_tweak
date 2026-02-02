@@ -21,7 +21,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *upload_credit_url; // @synthesize upload_credit_url=_upload_credit_url;
 @property(nonatomic) _Bool is_upload_credid; // @synthesize is_upload_credid=_is_upload_credid;
 @property(retain, nonatomic) NSString *check_box_url; // @synthesize check_box_url=_check_box_url;

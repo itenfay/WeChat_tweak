@@ -18,7 +18,6 @@
     NSString *_byPassContent;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *byPassContent; // @synthesize byPassContent=_byPassContent;
 @property(nonatomic) unsigned long long bizType; // @synthesize bizType=_bizType;
 @property(nonatomic) __weak MMUIViewController *containerVC; // @synthesize containerVC=_containerVC;

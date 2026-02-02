@@ -38,7 +38,6 @@
 + (void)PBArrayAdd_fileSize;
 + (void)PBArrayAdd_fileNum;
 + (void)PBArrayAdd_lastScanTime;
-- (void).cxx_destruct;
 @property(nonatomic) long long cacheTime; // @synthesize cacheTime=_cacheTime;
 @property(nonatomic) unsigned long long puffyLogicFileSize; // @synthesize puffyLogicFileSize=_puffyLogicFileSize;
 @property(nonatomic) unsigned long long puffyFileSize; // @synthesize puffyFileSize=_puffyFileSize;

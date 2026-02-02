@@ -20,7 +20,6 @@
     MMUILabel *detailEnsureLabel;
 }
 
-- (void).cxx_destruct;
 - (void)callDelegatePay;
 - (double)calBalanceCellHeightWithForbidWord;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

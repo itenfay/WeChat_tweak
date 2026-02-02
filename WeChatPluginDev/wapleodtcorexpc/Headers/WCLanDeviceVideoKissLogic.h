@@ -17,7 +17,6 @@
     NSMutableArray *m_deviceWaitingDownloadArray;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isSightVideoExist;
 - (_Bool)cancelTaskWithDevice:(id)arg1;
 - (void)onKissDeviceProgressResponeWithProgress:(double)arg1 queueType:(unsigned long long)arg2;

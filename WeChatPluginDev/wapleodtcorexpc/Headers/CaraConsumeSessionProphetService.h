@@ -10,7 +10,6 @@
     CaraCppConsumeSessionProphet *_underlying;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CaraCppConsumeSessionProphet *underlying; // @synthesize underlying=_underlying;
 - (void)onConsumeSession:(id)arg1 stayTimeInterval:(float)arg2;
 - (void)onMainSessionReload;

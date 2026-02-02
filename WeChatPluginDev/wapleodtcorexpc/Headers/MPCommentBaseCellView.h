@@ -22,7 +22,6 @@
     id <MPCommentViewCellDelegate> _viewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MPCommentViewCellDelegate> viewDelegate; // @synthesize viewDelegate=_viewDelegate;
 @property(readonly, nonatomic) MPCommentBaseCellViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void)updateLikeBtn;

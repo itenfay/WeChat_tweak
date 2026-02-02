@@ -17,7 +17,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasHalfRandomSubCard *theChosenSubCardView; // @synthesize theChosenSubCardView=_theChosenSubCardView;
 @property(retain, nonatomic) WCCanvasComponentHalfRandomCardItemInfo *theChosenItemInfo; // @synthesize theChosenItemInfo=_theChosenItemInfo;
 @property(retain, nonatomic) WCAdURLImageView *animationImgView; // @synthesize animationImgView=_animationImgView;

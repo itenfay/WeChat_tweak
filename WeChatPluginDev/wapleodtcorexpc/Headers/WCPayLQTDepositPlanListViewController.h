@@ -28,7 +28,6 @@
     UILabel *_addLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain) UILabel *addLabel; // @synthesize addLabel=_addLabel;
 @property(retain) UIImageView *addIcon; // @synthesize addIcon=_addIcon;
 @property(retain) UIView *addView; // @synthesize addView=_addView;

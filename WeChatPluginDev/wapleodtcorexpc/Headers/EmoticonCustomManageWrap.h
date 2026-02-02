@@ -23,7 +23,6 @@
     unsigned long long _temporarySelectOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long temporarySelectOffset; // @synthesize temporarySelectOffset=_temporarySelectOffset;
 @property(nonatomic) unsigned long long reverseSelectIndex; // @synthesize reverseSelectIndex=_reverseSelectIndex;
 @property(nonatomic) unsigned long long selectIndex; // @synthesize selectIndex=_selectIndex;

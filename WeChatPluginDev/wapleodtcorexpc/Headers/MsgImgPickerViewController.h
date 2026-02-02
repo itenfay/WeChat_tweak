@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MsgDataSaveLogic, MsgFastBrowseView, MsgNewImgDataLogic, MultiSelectController, NSArray, NSMutableDictionary, NSMutableSet, NSString, UIButton, UIView;
 @protocol MsgImgPickerViewControllerDelegate;
 
@@ -28,7 +30,6 @@
     CDUnknownBlockType _downloadCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType downloadCompletion; // @synthesize downloadCompletion=_downloadCompletion;
 @property(retain, nonatomic) NSArray *originSelectedImgs; // @synthesize originSelectedImgs=_originSelectedImgs;
 @property(nonatomic) _Bool previewOriginSelectedImageOnly; // @synthesize previewOriginSelectedImageOnly=_previewOriginSelectedImageOnly;
@@ -104,4 +105,3 @@
 @property(readonly) Class superclass;
 
 @end
-

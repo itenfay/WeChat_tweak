@@ -15,7 +15,6 @@
     MMFinderLiveAnchorCustomizeRewardStyleSelectPanelOptionsView *_optionsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardStyleSelectPanelOptionsView *optionsView; // @synthesize optionsView=_optionsView;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardStyleSelectPanelTab *styleSelectTab; // @synthesize styleSelectTab=_styleSelectTab;
 @property(retain, nonatomic) WCActionSheet *chooseImageActionSheet; // @synthesize chooseImageActionSheet=_chooseImageActionSheet;

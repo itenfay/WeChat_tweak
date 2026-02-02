@@ -15,7 +15,6 @@
     NSMutableDictionary *_asyncMethods;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *asyncMethods; // @synthesize asyncMethods=_asyncMethods;
 @property(retain, nonatomic) NSMutableDictionary *syncMethods; // @synthesize syncMethods=_syncMethods;
 @property(copy, nonatomic) NSString *className; // @synthesize className=_className;

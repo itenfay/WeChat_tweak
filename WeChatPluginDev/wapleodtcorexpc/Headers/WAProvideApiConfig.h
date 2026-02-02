@@ -19,7 +19,6 @@
     id _userData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id userData; // @synthesize userData=_userData;
 @property(nonatomic) __weak MMUIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(nonatomic) __weak NSThread *thread; // @synthesize thread=_thread;

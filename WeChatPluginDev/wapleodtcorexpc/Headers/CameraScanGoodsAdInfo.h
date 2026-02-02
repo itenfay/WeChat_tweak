@@ -17,7 +17,6 @@
     NSURL *_bottomBgImageURL;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAllResourcesOK; // @synthesize isAllResourcesOK=_isAllResourcesOK;
 @property(copy, nonatomic) NSURL *bottomBgImageURL; // @synthesize bottomBgImageURL=_bottomBgImageURL;
 @property(copy, nonatomic) NSURL *introduceImageURL; // @synthesize introduceImageURL=_introduceImageURL;

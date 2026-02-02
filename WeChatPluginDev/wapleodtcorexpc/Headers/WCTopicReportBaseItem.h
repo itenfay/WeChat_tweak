@@ -27,7 +27,6 @@
     NSString *_senderUsername;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *senderUsername; // @synthesize senderUsername=_senderUsername;
 @property(copy, nonatomic) NSString *talkerUsername; // @synthesize talkerUsername=_talkerUsername;
 @property(copy, nonatomic) NSString *queryKey; // @synthesize queryKey=_queryKey;

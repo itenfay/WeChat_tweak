@@ -16,7 +16,6 @@
     UILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) MMTableView *m_tableView; // @synthesize m_tableView;
 @property(retain, nonatomic) NSMutableDictionary *m_userHeaderImageCache; // @synthesize m_userHeaderImageCache;

@@ -21,7 +21,6 @@
 }
 
 + (id)taskWithTaskId:(id)arg1 action:(SEL)arg2 obj:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *doneSubTasks; // @synthesize doneSubTasks=_doneSubTasks;
 @property(retain, nonatomic) NSMutableArray *subTasks; // @synthesize subTasks=_subTasks;
 @property(retain, nonatomic) id obj; // @synthesize obj=_obj;

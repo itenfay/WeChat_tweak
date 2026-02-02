@@ -35,7 +35,6 @@
     double _confirmBtnY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bKeyboardHasShown; // @synthesize m_bKeyboardHasShown=_m_bKeyboardHasShown;
 @property(nonatomic) double confirmBtnY; // @synthesize confirmBtnY=_confirmBtnY;
 @property(retain, nonatomic) WCPayBannerNotice *m_bannerNotice; // @synthesize m_bannerNotice=_m_bannerNotice;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderStreamLayoutInfo, NSArray, NSData, NSMutableArray, NSString, WCFinderAbstractTask;
 
@@ -24,7 +25,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderStreamLayoutInfo *layoutInfo; // @synthesize layoutInfo=_layoutInfo;
 @property(nonatomic) unsigned long long prefetchLastFeedCount; // @synthesize prefetchLastFeedCount=_prefetchLastFeedCount;
 @property(nonatomic) _Bool stopFetchNextPage; // @synthesize stopFetchNextPage=_stopFetchNextPage;
@@ -50,4 +50,3 @@
 - (void)resetMgrData;
 
 @end
-

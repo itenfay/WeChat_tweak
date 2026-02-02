@@ -12,7 +12,6 @@
     NSString *_prefixContent;
 }
 
-- (void).cxx_destruct;
 @property(copy) NSString *prefixContent; // @synthesize prefixContent=_prefixContent;
 @property(copy) NSString *suffixContent; // @synthesize suffixContent=_suffixContent;
 @property(retain, nonatomic) MMFinderLiveFollowNotifyMsgInfo *followNotifyMsgInfo; // @synthesize followNotifyMsgInfo=_followNotifyMsgInfo;

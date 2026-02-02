@@ -21,7 +21,6 @@
 
 + (id)borderWithFillColor:(id)arg1 cornerRadius:(double)arg2;
 + (id)borderWithLineStyle:(long long)arg1 lineWidth:(double)arg2 strokeColor:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(retain, nonatomic) YYTextShadow *shadow; // @synthesize shadow=_shadow;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;

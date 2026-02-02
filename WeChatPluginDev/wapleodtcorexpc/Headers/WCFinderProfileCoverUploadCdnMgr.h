@@ -14,7 +14,6 @@
     WCFinderProfileCoverUploadTask *_currentTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProfileCoverUploadTask *currentTask; // @synthesize currentTask=_currentTask;
 @property(nonatomic) __weak id <WCFinderProfileCoverUploadCdnMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)OnCdnUpload:(id)arg1;

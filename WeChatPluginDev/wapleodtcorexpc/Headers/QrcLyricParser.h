@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class Lyric;
 
@@ -15,7 +16,6 @@
 
 + (_Bool)hasValidSentencesWithQrcFilePath:(id)arg1;
 + (id)getSentencesWithQrcFilePath:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sentenceFilterBlock; // @synthesize sentenceFilterBlock=_sentenceFilterBlock;
 @property(retain, nonatomic) Lyric *qrcLyric; // @synthesize qrcLyric=_qrcLyric;
 - (_Bool)_isDigitString:(id)arg1;
@@ -35,4 +35,3 @@
 - (void)loadFile:(id)arg1;
 
 @end
-

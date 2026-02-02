@@ -17,7 +17,6 @@
     NSString *_photoToVideoGPSAssetId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRealShootContent; // @synthesize isRealShootContent=_isRealShootContent;
 @property(copy, nonatomic) NSString *photoToVideoGPSAssetId; // @synthesize photoToVideoGPSAssetId=_photoToVideoGPSAssetId;
 @property(retain, nonatomic) FinderMusicReportInfo *editMusicReportInfo; // @synthesize editMusicReportInfo=_editMusicReportInfo;

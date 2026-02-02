@@ -77,7 +77,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *region; // @synthesize region=_region;
 @property(retain, nonatomic) NSString *province; // @synthesize province=_province;
 @property(retain, nonatomic) NSString *country; // @synthesize country=_country;

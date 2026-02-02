@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *confirmButtonTitle; // @synthesize confirmButtonTitle=_confirmButtonTitle;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

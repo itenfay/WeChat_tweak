@@ -22,7 +22,6 @@
     id <IWSContainerReportDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IWSContainerReportDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableDictionary *eventIdDict; // @synthesize eventIdDict=_eventIdDict;
 @property(retain, nonatomic) NSNumber *toCategoryId; // @synthesize toCategoryId=_toCategoryId;

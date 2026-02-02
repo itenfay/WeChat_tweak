@@ -25,7 +25,6 @@
     NSString *_deletingMchID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int svrRetChangeRule; // @synthesize svrRetChangeRule=_svrRetChangeRule;
 @property(retain, nonatomic) NSString *deletingMchID; // @synthesize deletingMchID=_deletingMchID;
 @property(retain, nonatomic) NSString *deletingCardID; // @synthesize deletingCardID=_deletingCardID;

@@ -16,7 +16,6 @@
 }
 
 + (id)fromPurchaseConfig:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *availableBidPrices; // @synthesize availableBidPrices=_availableBidPrices;
 @property(retain, nonatomic) NSArray *availableConnectPrices; // @synthesize availableConnectPrices=_availableConnectPrices;
 @property(retain, nonatomic) NSArray *disconnectOptions; // @synthesize disconnectOptions=_disconnectOptions;

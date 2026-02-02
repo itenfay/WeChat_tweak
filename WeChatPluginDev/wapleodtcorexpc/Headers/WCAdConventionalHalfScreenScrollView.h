@@ -21,7 +21,6 @@
     struct CGPoint _beginDraggingOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isContentViewFullyVisible; // @synthesize isContentViewFullyVisible=_isContentViewFullyVisible;
 @property(nonatomic) struct CGPoint beginDraggingOffset; // @synthesize beginDraggingOffset=_beginDraggingOffset;
 @property(retain, nonatomic) WCAdConventionalHalfScreenWebViewController *webViewController; // @synthesize webViewController=_webViewController;

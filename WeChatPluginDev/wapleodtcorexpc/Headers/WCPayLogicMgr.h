@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, MMTipsViewController, NSCache, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, TenpayCertificate, WCPayApplePayAuthorizationLogic, WCPayAuthenticationPay, WCPayAuthenticationPayVerifySMSStruct, WCPayAvalibleBankCardBinInfo, WCPayBindCardInfo, WCPayBindInfo, WCPayBindInfoSMS, WCPayLocalCachedData, WCPayNetworkHelper, WCPayRealNameTipsViewController, WCPayResetPasswordInfo, WCRedEnvelopesSendControlLogic, WalletRequestInfo, WxSmCertUtil;
 
 @interface WCPayLogicMgr
@@ -89,7 +91,6 @@
 
 + (unsigned long long)preCleanGetCacheSize;
 + (unsigned long long)cleanCacheMgrMakeToClean;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayApplePayAuthorizationLogic *applePayAuthorizationLogic; // @synthesize applePayAuthorizationLogic=_applePayAuthorizationLogic;
 @property(retain, nonatomic) NSCache *miscellaneousCache; // @synthesize miscellaneousCache=_miscellaneousCache;
 @property(retain, nonatomic) NSMutableDictionary *showResourceDownloadDict; // @synthesize showResourceDownloadDict=_showResourceDownloadDict;
@@ -675,4 +676,3 @@
 @property(readonly) Class superclass;
 
 @end
-

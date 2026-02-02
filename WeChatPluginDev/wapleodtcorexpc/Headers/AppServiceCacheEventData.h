@@ -16,7 +16,6 @@
     unsigned long long _webviewID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long webviewID; // @synthesize webviewID=_webviewID;
 @property(retain, nonatomic) NSDictionary *dicParam; // @synthesize dicParam=_dicParam;
 @property(copy, nonatomic) NSString *jsStringEventName; // @synthesize jsStringEventName=_jsStringEventName;

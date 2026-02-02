@@ -18,7 +18,6 @@
     NSString *_searchMusicTag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int isOriginSoundOn; // @synthesize isOriginSoundOn=_isOriginSoundOn;
 @property(nonatomic) int isMusicOn; // @synthesize isMusicOn=_isMusicOn;
 @property(retain, nonatomic) NSString *searchMusicTag; // @synthesize searchMusicTag=_searchMusicTag;

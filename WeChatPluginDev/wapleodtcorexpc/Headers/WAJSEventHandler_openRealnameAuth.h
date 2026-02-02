@@ -10,7 +10,6 @@
     SecurityInfoAuthrizeLogic *_authLogic;
 }
 
-- (void).cxx_destruct;
 - (void)handleJSEvent:(id)arg1;
 
 @end

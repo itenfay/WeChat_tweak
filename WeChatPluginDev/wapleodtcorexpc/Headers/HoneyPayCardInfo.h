@@ -19,7 +19,6 @@
     NSString *_icon_url;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *icon_url; // @synthesize icon_url=_icon_url;
 @property(retain, nonatomic) NSString *card_type_name; // @synthesize card_type_name=_card_type_name;
 @property(nonatomic) unsigned long long card_type; // @synthesize card_type=_card_type;

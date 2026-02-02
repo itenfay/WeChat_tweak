@@ -29,7 +29,6 @@
     long long _currentLoadingRequestCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long currentLoadingRequestCount; // @synthesize currentLoadingRequestCount=_currentLoadingRequestCount;
 @property(nonatomic) long long lastLoadingRequestGroupTimestamp; // @synthesize lastLoadingRequestGroupTimestamp=_lastLoadingRequestGroupTimestamp;
 @property(retain, nonatomic) NSMutableArray *arrPendingMsg; // @synthesize arrPendingMsg=_arrPendingMsg;

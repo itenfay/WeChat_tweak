@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJAIAssetProcessor, MJAITemplateReporter, NSString, OMJMovieOptions, OMJMovieOutroInfo, OMJTemplateBuildResult;
 
 @interface MJTemplateMovieSessionOperation_BuildAndSwitchAI
@@ -22,7 +24,6 @@
     MJAITemplateReporter *_AITemplateReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJAITemplateReporter *AITemplateReporter; // @synthesize AITemplateReporter=_AITemplateReporter;
 @property(copy, nonatomic) CDUnknownBlockType buildCompletionHandler; // @synthesize buildCompletionHandler=_buildCompletionHandler;
 @property(retain, nonatomic) OMJTemplateBuildResult *buildResult; // @synthesize buildResult=_buildResult;
@@ -46,4 +47,3 @@
 - (id)initWithMaasSession:(id)arg1 sessionKey:(id)arg2 scene:(unsigned long long)arg3 templateID:(id)arg4 musicID:(id)arg5 AIModelType:(id)arg6 AIAssetProcessor:(id)arg7 options:(id)arg8 outroInfo:(id)arg9 buildResult:(id)arg10 buildCompletionHandler:(CDUnknownBlockType)arg11 progressHandler:(CDUnknownBlockType)arg12 completionHandler:(CDUnknownBlockType)arg13;
 
 @end
-

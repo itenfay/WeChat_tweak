@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebImageView, NSString, UIButton, UIColor, UIImageView, UILabel, WAAppTaskCapsuleMenu, WASheetHeaderTipsView;
 @protocol WABrandTitleBarDelegate;
@@ -43,7 +44,6 @@
     UILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UIView *gradientMaskView; // @synthesize gradientMaskView=_gradientMaskView;
 @property(retain, nonatomic) WASheetHeaderTipsView *tipsView; // @synthesize tipsView=_tipsView;
@@ -94,4 +94,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

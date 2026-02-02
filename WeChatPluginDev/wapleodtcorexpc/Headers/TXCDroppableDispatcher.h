@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -14,7 +15,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cachedObjects; // @synthesize cachedObjects=_cachedObjects;
 - (void)removeObject:(id)arg1;
 @property(readonly) long long cacheCount;
@@ -22,4 +22,3 @@
 - (id)init;
 
 @end
-

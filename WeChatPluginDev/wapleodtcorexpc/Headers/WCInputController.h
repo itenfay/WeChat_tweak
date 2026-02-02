@@ -31,7 +31,6 @@
     NSString *_lastPastedText;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *lastPastedText; // @synthesize lastPastedText=_lastPastedText;
 @property(nonatomic) _Bool bShouldDisableScrollWhenHideKeyboard; // @synthesize bShouldDisableScrollWhenHideKeyboard=_bShouldDisableScrollWhenHideKeyboard;
 @property(nonatomic) _Bool bInputViewShowing; // @synthesize bInputViewShowing=_bInputViewShowing;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveFansGroupOperationPanel, NSString, WCFinderFeedContentVM;
 
 @interface MMLiveOpenApiMgr
@@ -13,7 +15,6 @@
     MMFinderLiveFansGroupOperationPanel *_fansGroupOperationPanel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFansGroupOperationPanel *fansGroupOperationPanel; // @synthesize fansGroupOperationPanel=_fansGroupOperationPanel;
 @property _Bool joinTeamBusy; // @synthesize joinTeamBusy=_joinTeamBusy;
 @property(nonatomic) _Bool tempSwitchPause; // @synthesize tempSwitchPause=_tempSwitchPause;
@@ -81,4 +82,3 @@
 @property(readonly) Class superclass;
 
 @end
-

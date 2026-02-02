@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EAGLContext;
 @protocol OS_dispatch_queue;
@@ -25,7 +26,6 @@
 + (id)builtInShaderPath;
 + (id)context;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dispatchAsync:(CDUnknownBlockType)arg1;
 - (void)dispatchSync:(CDUnknownBlockType)arg1;
 - (struct __CVBuffer *)createPixelBuffer:(unsigned int)arg1 width:(int)arg2 height:(int)arg3;
@@ -49,4 +49,3 @@
 - (void)setup:(id)arg1;
 
 @end
-

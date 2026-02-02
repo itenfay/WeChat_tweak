@@ -13,7 +13,6 @@
     UIImage *_defaultImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *defaultImage; // @synthesize defaultImage=_defaultImage;
 @property(retain, nonatomic) MusicDefualtImageView *imageView; // @synthesize imageView=_imageView;
 - (void)setImageUrl:(id)arg1;

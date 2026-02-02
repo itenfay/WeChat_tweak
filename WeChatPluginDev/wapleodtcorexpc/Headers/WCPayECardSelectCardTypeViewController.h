@@ -14,7 +14,6 @@
     WCPayCardBinInfo *_selectedCardType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayCardBinInfo *selectedCardType; // @synthesize selectedCardType=_selectedCardType;
 @property(retain, nonatomic) UIButton *footerButton; // @synthesize footerButton=_footerButton;
 @property(retain, nonatomic) WCPayCardTypeItem *cardTypeItem; // @synthesize cardTypeItem=_cardTypeItem;

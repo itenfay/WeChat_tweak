@@ -60,7 +60,6 @@
     double _currentLayoutFontScale;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAntispamUnableCommentInQuestionBox; // @synthesize isAntispamUnableCommentInQuestionBox=_isAntispamUnableCommentInQuestionBox;
 @property(nonatomic) _Bool shouldRestoreInputAlphaAfterRotation; // @synthesize shouldRestoreInputAlphaAfterRotation=_shouldRestoreInputAlphaAfterRotation;
 @property(nonatomic) _Bool isLayoutFontScaleChanged; // @synthesize isLayoutFontScaleChanged=_isLayoutFontScaleChanged;

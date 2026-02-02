@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
@@ -15,7 +17,6 @@
     NSObject<OS_dispatch_queue> *_processQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processQueue; // @synthesize processQueue=_processQueue;
 @property(retain, nonatomic) NSMutableDictionary *uploadingMediaItemDict; // @synthesize uploadingMediaItemDict=_uploadingMediaItemDict;
 @property(retain, nonatomic) NSMutableDictionary *uploadingTaskDict; // @synthesize uploadingTaskDict=_uploadingTaskDict;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

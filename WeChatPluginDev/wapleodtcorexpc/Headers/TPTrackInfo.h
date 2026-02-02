@@ -20,7 +20,6 @@
     TPDashFormat *_dashFormat;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) TPDashFormat *dashFormat; // @synthesize dashFormat=_dashFormat;
 @property(copy, nonatomic) TPHlsTag *hlsTag; // @synthesize hlsTag=_hlsTag;
 @property(nonatomic) _Bool isExclusive; // @synthesize isExclusive=_isExclusive;

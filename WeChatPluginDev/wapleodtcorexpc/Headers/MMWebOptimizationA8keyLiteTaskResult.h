@@ -13,7 +13,6 @@
     NSArray *_arrPrefetchDomainInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int costTime; // @synthesize costTime=_costTime;
 @property(retain, nonatomic) NSArray *arrPrefetchDomainInfo; // @synthesize arrPrefetchDomainInfo=_arrPrefetchDomainInfo;
 @property(retain, nonatomic) NSArray *arrUrlResult; // @synthesize arrUrlResult=_arrUrlResult;

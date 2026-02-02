@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJFilterAdjustmentValueItem, NSArray, NSIndexPath, NSString;
 
 @interface MJSegmentFilterInspectorViewModel
@@ -14,7 +16,6 @@
     NSIndexPath *_selectedFilterIndexPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *selectedFilterIndexPath; // @synthesize selectedFilterIndexPath=_selectedFilterIndexPath;
 @property(retain, nonatomic) NSIndexPath *selectedTitleIndexPath; // @synthesize selectedTitleIndexPath=_selectedTitleIndexPath;
 @property(retain, nonatomic) MJFilterAdjustmentValueItem *originalItem; // @synthesize originalItem=_originalItem;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

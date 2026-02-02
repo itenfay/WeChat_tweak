@@ -13,7 +13,6 @@
     NSString *_tid;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int enterScene; // @synthesize enterScene=_enterScene;
 @property(retain, nonatomic) NSString *tid; // @synthesize tid=_tid;
 

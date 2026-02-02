@@ -10,7 +10,6 @@
     MMTableViewInfo *_mainTableViewInfo;
 }
 
-- (void).cxx_destruct;
 - (void)showCodePayManageViewAction;
 - (void)showQuickRepliesViewAction;
 - (void)showTipsViewAction;

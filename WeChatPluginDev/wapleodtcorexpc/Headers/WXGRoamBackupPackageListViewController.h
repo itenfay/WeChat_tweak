@@ -17,7 +17,6 @@
     MMLoadingView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UIView *emptyView; // @synthesize emptyView=_emptyView;
 @property(nonatomic) _Bool bNeedScrollToDetailIndex; // @synthesize bNeedScrollToDetailIndex=_bNeedScrollToDetailIndex;

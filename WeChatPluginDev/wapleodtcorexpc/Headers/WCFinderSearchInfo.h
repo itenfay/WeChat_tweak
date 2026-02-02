@@ -21,7 +21,6 @@
 }
 
 + (id)finderSearchInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *professionHightkeywords; // @synthesize professionHightkeywords=_professionHightkeywords;
 @property(retain, nonatomic) NSString *normalAuthProfession; // @synthesize normalAuthProfession=_normalAuthProfession;
 @property(nonatomic) unsigned long long friendFollowCount; // @synthesize friendFollowCount=_friendFollowCount;

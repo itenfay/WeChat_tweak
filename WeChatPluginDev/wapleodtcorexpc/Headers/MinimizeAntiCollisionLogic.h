@@ -14,7 +14,6 @@
     NSMutableArray *_trackedViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *trackedViews; // @synthesize trackedViews=_trackedViews;
 @property(nonatomic) __weak id <MinimizeAntiCollisionLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (struct CGPoint)checkCollision:(id)arg1 with:(id)arg2;

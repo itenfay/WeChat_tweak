@@ -29,7 +29,6 @@
     MMFinderLiveRewardLevelConfigs *_levelConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRewardLevelConfigs *levelConfig; // @synthesize levelConfig=_levelConfig;
 @property(nonatomic) unsigned int targetRank; // @synthesize targetRank=_targetRank;
 @property(retain, nonatomic) NSIndexPath *currentActiveIndexPath; // @synthesize currentActiveIndexPath=_currentActiveIndexPath;

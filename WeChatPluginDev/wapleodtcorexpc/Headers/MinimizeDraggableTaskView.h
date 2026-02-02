@@ -33,7 +33,6 @@
     struct CGRect _frameBeforeMove;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *innerBorderLayer; // @synthesize innerBorderLayer=_innerBorderLayer;
 @property(retain, nonatomic) CAShapeLayer *outterBorderLayer; // @synthesize outterBorderLayer=_outterBorderLayer;
 @property(retain, nonatomic) NSArray *passiveStateIconList; // @synthesize passiveStateIconList=_passiveStateIconList;

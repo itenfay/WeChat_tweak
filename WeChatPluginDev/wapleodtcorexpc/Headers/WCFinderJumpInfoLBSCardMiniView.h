@@ -21,7 +21,6 @@
     double _layoutWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(nonatomic) int showPosition; // @synthesize showPosition=_showPosition;

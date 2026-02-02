@@ -12,7 +12,6 @@
     MMLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 - (void)reportRemoteUserEvent:(unsigned long long)arg1 withUserId:(id)arg2;
 - (void)reportMicEndedWithUserId:(id)arg1 endType:(unsigned long long)arg2 reason:(long long)arg3 andRoleType:(unsigned long long)arg4;

@@ -4,15 +4,14 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCPayCustomHitTestView : UIView
 {
     CDUnknownBlockType _handleBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handleBlock; // @synthesize handleBlock=_handleBlock;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 @end
-

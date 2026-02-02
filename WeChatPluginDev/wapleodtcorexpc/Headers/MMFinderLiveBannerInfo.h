@@ -31,7 +31,6 @@
     NSString *_actionUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int remainClickTimes; // @synthesize remainClickTimes=_remainClickTimes;
 @property(retain, nonatomic) NSString *actionUrl; // @synthesize actionUrl=_actionUrl;
 @property(nonatomic) unsigned int actionType; // @synthesize actionType=_actionType;

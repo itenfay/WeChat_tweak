@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIActivityIndicatorView, NFCCardTipsUIViewData, UIButton, UIImageView, UILabel, UIView, WCPayWebImageView;
 @protocol WCPayNFCCardTipsViewControllerDelegate;
 
@@ -28,7 +30,6 @@
     MMUIActivityIndicatorView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;
 @property(copy, nonatomic) CDUnknownBlockType onDoneBlk; // @synthesize onDoneBlk=_onDoneBlk;
 @property(nonatomic) _Bool needCheckTime; // @synthesize needCheckTime=_needCheckTime;
@@ -71,4 +72,3 @@
 - (void)setOnDoneCallBack:(CDUnknownBlockType)arg1;
 
 @end
-

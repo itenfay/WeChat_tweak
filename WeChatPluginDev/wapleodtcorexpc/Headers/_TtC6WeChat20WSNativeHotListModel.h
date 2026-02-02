@@ -13,7 +13,6 @@
     MISSING_TYPE *data;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -15,7 +15,6 @@
     UILabel *_liveLabel;
 }
 
-- (void).cxx_destruct;
 - (void)onFeedLiveCoverInfoUpdate:(id)arg1;
 - (void)onFinderLiveCloseWithTid:(id)arg1;
 - (void)updateCoverSpamEffect;

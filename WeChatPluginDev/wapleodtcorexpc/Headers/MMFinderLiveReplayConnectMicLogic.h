@@ -10,7 +10,6 @@
     FinderLiveMicInfo *_lastLiveMicInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveMicInfo *lastLiveMicInfo; // @synthesize lastLiveMicInfo=_lastLiveMicInfo;
 - (void)tryGetMicUsersFromServer:(_Bool)arg1 getExtraAutoSwipeInfo:(_Bool)arg2;
 - (_Bool)receiveOldVersionSeiMsg:(id)arg1;

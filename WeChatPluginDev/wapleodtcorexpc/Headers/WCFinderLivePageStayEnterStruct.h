@@ -23,7 +23,6 @@
     NSMutableDictionary *_switchExtraDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *switchExtraDic; // @synthesize switchExtraDic=_switchExtraDic;
 @property(retain, nonatomic) NSString *commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) NSString *refPageId; // @synthesize refPageId=_refPageId;

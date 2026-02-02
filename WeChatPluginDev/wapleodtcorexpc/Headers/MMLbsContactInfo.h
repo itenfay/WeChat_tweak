@@ -36,7 +36,6 @@
     unsigned int _finderFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int finderFlag; // @synthesize finderFlag=_finderFlag;
 @property(retain, nonatomic) NSString *m_nsAntispamTicket; // @synthesize m_nsAntispamTicket;
 @property(copy, nonatomic) NSString *m_displayName; // @synthesize m_displayName;

@@ -31,7 +31,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *packageCheckSum; // @synthesize packageCheckSum=_packageCheckSum;
 @property(retain, nonatomic) NSString *customVersion; // @synthesize customVersion=_customVersion;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;

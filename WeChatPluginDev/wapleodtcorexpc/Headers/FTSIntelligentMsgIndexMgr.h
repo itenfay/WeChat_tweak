@@ -30,7 +30,6 @@
     NSMutableDictionary *_m_dicUnHadDownLoadMsgCache;
 }
 
-- (void).cxx_destruct;
 @property _Bool m_isHadreleaseInPauseBackground; // @synthesize m_isHadreleaseInPauseBackground=_m_isHadreleaseInPauseBackground;
 @property _Bool m_isPauseInBackground; // @synthesize m_isPauseInBackground=_m_isPauseInBackground;
 @property(nonatomic) _Bool isInitingIndex; // @synthesize isInitingIndex=_isInitingIndex;

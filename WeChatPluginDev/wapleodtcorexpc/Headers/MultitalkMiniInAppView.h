@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MultiTalkHDHeadView, MultitalkMiniInAppTalkingInfo, MultitalkMinimizeView, UIImageView, UILabel;
 
@@ -27,7 +28,6 @@
 
 + (id)miniInAppView;
 + (struct CGSize)preferredRenderViewSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultitalkMiniInAppTalkingInfo *talkingInfo; // @synthesize talkingInfo=_talkingInfo;
 @property(retain, nonatomic) UILabel *talkingNameLabel; // @synthesize talkingNameLabel=_talkingNameLabel;
 @property(retain, nonatomic) CAGradientLayer *talkingNameBackgroundGradientLayer; // @synthesize talkingNameBackgroundGradientLayer=_talkingNameBackgroundGradientLayer;
@@ -49,4 +49,3 @@
 - (void)cancelAutoResetTalkingInfoBlock;
 
 @end
-

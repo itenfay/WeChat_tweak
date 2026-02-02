@@ -20,7 +20,6 @@
     NSString *_tid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
 @property(nonatomic) _Bool isExpired; // @synthesize isExpired=_isExpired;
 @property(nonatomic) unsigned int adPosRelative; // @synthesize adPosRelative=_adPosRelative;

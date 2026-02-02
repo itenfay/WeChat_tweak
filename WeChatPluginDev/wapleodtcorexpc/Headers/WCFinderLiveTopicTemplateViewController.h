@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, FinderLiveEcGetLiveConfigResponse_ShowAnimation_HotSellingOptions, FinderThemeLiveStreamAppearance, FinderThemeLiveStreamResponse, FinderThemeLiveStreamShareInfo, ForwardMessageLogicController, MMFinderLiveFeedExtraInfoFetcher, MMLiveColorfulLabel, MMScrollActionSheet, MMTimer, MMWebImageView, NSData, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PAGFile, UIView, WCFinderEmptyTipsView, WCFinderLivePageStayReporter, WCFinderLiveStreamContainerModel, WCFinderLiveTopicTemplateHeaderView, WCFinderLiveTopicTemplateTabContainerView, WCFinderLiveTopicTemplateTabPageView;
 
 @interface WCFinderLiveTopicTemplateViewController
@@ -40,7 +42,6 @@
     ForwardMessageLogicController *_forwardLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogic; // @synthesize forwardLogic=_forwardLogic;
 @property(retain, nonatomic) MMScrollActionSheet *shareActionSheet; // @synthesize shareActionSheet=_shareActionSheet;
 @property(nonatomic) _Bool tilingSwitch; // @synthesize tilingSwitch=_tilingSwitch;
@@ -165,4 +166,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveGiftNewCustomizationModel, MMFinderLiveNewCustomGiftStyleObj, MMFinderLiveTask, MMLiveRewardGiftNewCustomizationEffectPreviewView, MMLiveRewardGiftNewCustomizationPriceDisplayView, MMLiveTaskId;
 
@@ -21,7 +22,6 @@
     MMLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(copy, nonatomic) CDUnknownBlockType selectStyleAutoChangeCallback; // @synthesize selectStyleAutoChangeCallback=_selectStyleAutoChangeCallback;
 @property(copy, nonatomic) CDUnknownBlockType currComponentKeyUpdateCallback; // @synthesize currComponentKeyUpdateCallback=_currComponentKeyUpdateCallback;
@@ -44,4 +44,3 @@
 - (id)initWithCustomizationModel:(id)arg1 taskId:(id)arg2;
 
 @end
-

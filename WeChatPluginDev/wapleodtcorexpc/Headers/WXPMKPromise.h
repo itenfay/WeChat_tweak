@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 @protocol OS_dispatch_queue;
@@ -27,7 +28,6 @@
 + (id)all:(id)arg1;
 + (id)when:(id)arg1;
 + (id)pause:(double)arg1;
-- (void).cxx_destruct;
 - (id)description;
 - (id)value;
 - (_Bool)rejected;
@@ -48,4 +48,3 @@
 - (CDUnknownBlockType)thenUnleashZalgo;
 
 @end
-

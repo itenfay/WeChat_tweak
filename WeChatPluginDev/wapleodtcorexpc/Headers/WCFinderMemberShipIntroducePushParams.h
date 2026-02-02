@@ -25,7 +25,6 @@
 }
 
 + (id)paramWithUsername:(id)arg1 redirectFeedID:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *fromSourceSceneForReport; // @synthesize fromSourceSceneForReport=_fromSourceSceneForReport;
 @property(nonatomic) _Bool isPreviewMode; // @synthesize isPreviewMode=_isPreviewMode;
 @property(nonatomic) _Bool unableShowLiveMinimizeWindow; // @synthesize unableShowLiveMinimizeWindow=_unableShowLiveMinimizeWindow;

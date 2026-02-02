@@ -19,7 +19,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_detailItemData;
 + (void)PBArrayAdd_type;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSData *detailItemData; // @synthesize detailItemData=_detailItemData;
 @property(retain, nonatomic) id <WCFinderShareItemProtocol> detailItem; // @synthesize detailItem=_detailItem;

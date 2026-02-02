@@ -14,7 +14,6 @@
     id <WCPayChangeOfflinePayLimitFeeViewControllerDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)OnSliderValueChanged:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)onNext;

@@ -17,7 +17,6 @@
     UILabel *_emptyTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *emptyTipsLabel; // @synthesize emptyTipsLabel=_emptyTipsLabel;
 @property(retain, nonatomic) ChatRoomInvitationContactProfileLogic *contactProfileLogic; // @synthesize contactProfileLogic=_contactProfileLogic;
 @property(retain, nonatomic) UIView *hasReadSectionHeaderView; // @synthesize hasReadSectionHeaderView=_hasReadSectionHeaderView;

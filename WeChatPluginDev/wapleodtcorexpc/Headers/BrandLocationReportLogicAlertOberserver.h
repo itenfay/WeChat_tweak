@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) __weak BrandServiceContinueLocationReportLogic *weakReportLogic; // @synthesize weakReportLogic;
 - (void)askIsAllowReportLocation:(id)arg1;
 

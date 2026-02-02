@@ -15,7 +15,6 @@
     double _fontSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int priority; // @synthesize priority=_priority;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;

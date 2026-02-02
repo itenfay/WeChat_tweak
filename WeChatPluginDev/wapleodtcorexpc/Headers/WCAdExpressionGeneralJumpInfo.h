@@ -20,7 +20,6 @@
     NSString *_weappPath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int miniProgramType; // @synthesize miniProgramType=_miniProgramType;
 @property(nonatomic) unsigned int weappVersion; // @synthesize weappVersion=_weappVersion;
 @property(retain, nonatomic) NSString *weappPath; // @synthesize weappPath=_weappPath;

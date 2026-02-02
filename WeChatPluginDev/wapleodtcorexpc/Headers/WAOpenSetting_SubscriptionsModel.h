@@ -13,7 +13,6 @@
     NSArray *_templatesInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *templatesInfo; // @synthesize templatesInfo=_templatesInfo;
 @property(nonatomic) _Bool mainSwitch; // @synthesize mainSwitch=_mainSwitch;
 

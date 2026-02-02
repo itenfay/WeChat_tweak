@@ -9,7 +9,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)offset:(const void *)arg1;
 - (id)limit:(const void *)arg1;
 - (id)orders:(const void *)arg1;

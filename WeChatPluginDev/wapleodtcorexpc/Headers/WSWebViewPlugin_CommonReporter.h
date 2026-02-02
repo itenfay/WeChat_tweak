@@ -11,7 +11,6 @@
     _TtC6WeChat23WSSearchProcessReporter *_processReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC6WeChat23WSSearchProcessReporter *processReporter; // @synthesize processReporter=_processReporter;
 @property(retain, nonatomic) WSViewStayTimeReporter *stayTimeReporter; // @synthesize stayTimeReporter=_stayTimeReporter;
 - (void)onDidFinishLoad;

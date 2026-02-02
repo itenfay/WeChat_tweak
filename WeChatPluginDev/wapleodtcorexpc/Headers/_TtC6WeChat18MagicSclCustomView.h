@@ -13,7 +13,6 @@
     MISSING_TYPE *$__lazy_storage_$_customBiz;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)destroy;
 - (void)onCustomJsEventWithJsEvent:(id)arg1;

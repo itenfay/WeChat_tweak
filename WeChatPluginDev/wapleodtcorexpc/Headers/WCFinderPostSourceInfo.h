@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_sourceSongId;
 + (void)PBArrayAdd_sourceFeedSessionBuffer;
 + (void)PBArrayAdd_sourceFeedId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sourceTemplateType; // @synthesize sourceTemplateType=_sourceTemplateType;
 @property(copy, nonatomic) NSString *sourceTemplateId; // @synthesize sourceTemplateId=_sourceTemplateId;
 @property(copy, nonatomic) NSString *sourceTopicName; // @synthesize sourceTopicName=_sourceTopicName;

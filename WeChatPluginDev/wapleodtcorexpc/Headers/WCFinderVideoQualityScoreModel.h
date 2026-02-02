@@ -18,7 +18,6 @@
     WCFinderCheckThumbModel *_coverModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCheckThumbModel *coverModel; // @synthesize coverModel=_coverModel;
 @property(nonatomic) _Bool hasStickers; // @synthesize hasStickers=_hasStickers;
 @property(nonatomic) double hdimgScore; // @synthesize hdimgScore=_hdimgScore;

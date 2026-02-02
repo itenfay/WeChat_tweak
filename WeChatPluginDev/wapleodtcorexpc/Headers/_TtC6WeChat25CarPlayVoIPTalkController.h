@@ -12,7 +12,6 @@
     MISSING_TYPE *durationLabel;
 }
 
-- (void).cxx_destruct;
 - (id)initWithContact:(id)arg1 toast:(id)arg2;
 - (void)safeSetDelegateWithDelegate:(id)arg1;
 - (void)updateButtonsWithIsMuted:(_Bool)arg1;

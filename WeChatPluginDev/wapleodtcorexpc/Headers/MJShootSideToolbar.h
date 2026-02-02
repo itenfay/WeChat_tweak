@@ -29,7 +29,6 @@
     UIImpactFeedbackGenerator *_feedbackGenerator;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTemplateShooting; // @synthesize isTemplateShooting=_isTemplateShooting;
 @property(nonatomic) _Bool isTemplatePanelShowing; // @synthesize isTemplatePanelShowing=_isTemplatePanelShowing;
 @property(nonatomic) _Bool isRecordingTimerEnabledByConfig; // @synthesize isRecordingTimerEnabledByConfig=_isRecordingTimerEnabledByConfig;

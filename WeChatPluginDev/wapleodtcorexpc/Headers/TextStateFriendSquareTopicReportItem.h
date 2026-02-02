@@ -16,7 +16,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long userCount; // @synthesize userCount=_userCount;
 @property(nonatomic) unsigned int iconType; // @synthesize iconType=_iconType;
 @property(retain, nonatomic) NSString *iconCustomDescription; // @synthesize iconCustomDescription=_iconCustomDescription;

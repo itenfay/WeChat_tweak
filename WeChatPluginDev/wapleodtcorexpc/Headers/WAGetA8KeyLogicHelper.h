@@ -14,7 +14,6 @@
     id <WAWAGetA8KeyLogicHelperDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAWAGetA8KeyLogicHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) GetA8KeyLogic *logic; // @synthesize logic=_logic;
 - (void)weappGetA8KeyWithCodeStr:(id)arg1 geta8keyScene:(long long)arg2;

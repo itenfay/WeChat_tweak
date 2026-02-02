@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface WCFinderJumpInfoAsyncLoadManager
@@ -10,7 +12,6 @@
     NSMutableDictionary *_records;
 }
 
-- (void).cxx_destruct;
 - (void)resetRecordForTid:(id)arg1;
 - (id)getOrCreateRecordForTid:(id)arg1;
 - (id)recordForTid:(id)arg1;
@@ -29,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

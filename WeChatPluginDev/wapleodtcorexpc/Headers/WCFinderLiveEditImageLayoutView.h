@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSString, UIImageView;
 
 @interface WCFinderLiveEditImageLayoutView
@@ -17,7 +19,6 @@
     struct CGSize _ratio;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool changingAspectRatio; // @synthesize changingAspectRatio=_changingAspectRatio;
 @property(retain, nonatomic) UIImageView *blurBackgroundView; // @synthesize blurBackgroundView=_blurBackgroundView;
 @property(nonatomic) _Bool restoreApsectRatioPostCrop; // @synthesize restoreApsectRatioPostCrop=_restoreApsectRatioPostCrop;
@@ -65,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

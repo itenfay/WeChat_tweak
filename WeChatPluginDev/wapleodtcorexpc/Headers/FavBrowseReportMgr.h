@@ -14,7 +14,6 @@
 }
 
 + (id)findScrollVeiwIn:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FavBrowseDetailData *currentBrowseData; // @synthesize currentBrowseData=_currentBrowseData;
 - (void)adaptClickStreamReportForVC:(id)arg1;
 - (void)endLogAndReport15508;

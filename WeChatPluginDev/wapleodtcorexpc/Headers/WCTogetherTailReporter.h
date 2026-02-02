@@ -13,7 +13,6 @@
     long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
 - (id)generateLogStringWithOperation:(id)arg1;
 - (void)report;

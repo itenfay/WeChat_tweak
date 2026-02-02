@@ -12,7 +12,6 @@
     PKAddPassesViewController *_retainAssesViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PKAddPassesViewController *retainAssesViewController; // @synthesize retainAssesViewController=_retainAssesViewController;
 @property(nonatomic) _Bool isPAPUIActionBlocked; // @synthesize isPAPUIActionBlocked=_isPAPUIActionBlocked;
 @property(nonatomic) _Bool isPAPUIOn; // @synthesize isPAPUIOn=_isPAPUIOn;

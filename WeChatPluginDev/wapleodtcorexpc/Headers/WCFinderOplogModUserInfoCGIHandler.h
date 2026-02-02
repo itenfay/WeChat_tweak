@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderOplogModUserInfoCGIHandler : NSObject
 {
@@ -12,9 +13,7 @@
 }
 
 + (id)handlerWithRespClass:(Class)arg1 handler:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) Class respoClass; // @synthesize respoClass=_respoClass;
 
 @end
-

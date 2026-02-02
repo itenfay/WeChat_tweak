@@ -25,7 +25,6 @@
     NSString *_feedId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
 @property(retain, nonatomic) NSString *liveId; // @synthesize liveId=_liveId;
 @property(retain, nonatomic) NSString *templateID; // @synthesize templateID=_templateID;

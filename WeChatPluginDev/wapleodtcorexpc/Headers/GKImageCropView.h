@@ -19,7 +19,6 @@
     double _faktoredHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double faktoredHeight; // @synthesize faktoredHeight=_faktoredHeight;
 @property(nonatomic) double faktoredWidth; // @synthesize faktoredWidth=_faktoredWidth;
 @property(nonatomic) double yOffset; // @synthesize yOffset;

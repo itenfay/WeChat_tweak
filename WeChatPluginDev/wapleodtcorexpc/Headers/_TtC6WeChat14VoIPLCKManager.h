@@ -23,7 +23,6 @@
     MISSING_TYPE *user;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)receiveCallWithContact:(id)arg1 roomID:(unsigned long long)arg2 roomKey:(unsigned long long)arg3 isVideo:(_Bool)arg4 isPushKit:(_Bool)arg5 ring:(id)arg6;
 - (_Bool)haveAnsweredCall;

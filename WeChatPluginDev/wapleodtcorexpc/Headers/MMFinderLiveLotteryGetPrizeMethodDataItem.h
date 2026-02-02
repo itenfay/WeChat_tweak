@@ -17,7 +17,6 @@
 }
 
 + (id)initLotteryMethodDataItemWithCellStyle:(unsigned long long)arg1 title:(id)arg2 stateTitle:(id)arg3 isSelect:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelect; // @synthesize isSelect=_isSelect;
 @property(retain, nonatomic) NSString *stateTitle; // @synthesize stateTitle=_stateTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

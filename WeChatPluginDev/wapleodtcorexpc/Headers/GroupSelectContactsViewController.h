@@ -23,7 +23,6 @@
     NSNumber *_m_leftBarButtonStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) NSNumber *m_leftBarButtonStyle; // @synthesize m_leftBarButtonStyle=_m_leftBarButtonStyle;
 @property(retain, nonatomic) NSString *m_rightBarButtonTitle; // @synthesize m_rightBarButtonTitle=_m_rightBarButtonTitle;
 @property(nonatomic) _Bool isInPageSheetMode; // @synthesize isInPageSheetMode=_isInPageSheetMode;

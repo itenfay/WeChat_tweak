@@ -10,7 +10,6 @@
     id <GetCoverSetRedDotInfoCgiDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <GetCoverSetRedDotInfoCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (unsigned long long)getCgiNewDNSBusinessType;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;

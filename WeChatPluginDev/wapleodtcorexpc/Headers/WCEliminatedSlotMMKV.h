@@ -13,7 +13,6 @@
     NSString *_slotMapId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int readBufferCount; // @synthesize readBufferCount=_readBufferCount;
 @property(nonatomic) unsigned int slotTimeSize; // @synthesize slotTimeSize=_slotTimeSize;
 @property(nonatomic) unsigned int slotCount; // @synthesize slotCount=_slotCount;

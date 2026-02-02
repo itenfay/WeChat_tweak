@@ -13,7 +13,6 @@
     NSString *_imageFilePath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *imageFilePath; // @synthesize imageFilePath=_imageFilePath;
 @property(retain, nonatomic) MMAsset *imageAsset; // @synthesize imageAsset=_imageAsset;
 

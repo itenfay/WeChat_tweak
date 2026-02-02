@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE, NSString;
 
@@ -19,7 +20,6 @@
     MISSING_TYPE *userScriptReadyCallback;
 }
 
-- (void).cxx_destruct;
 - (void)registerUserScriptReadyCallbackWithCallback:(CDUnknownBlockType)arg1;
 - (id)init;
 @property(nonatomic, copy) CDUnknownBlockType userScriptReadyCallback;
@@ -32,4 +32,3 @@
 @property(nonatomic, copy) NSString *username;
 
 @end
-

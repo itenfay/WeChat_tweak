@@ -13,7 +13,6 @@
     UILabel *_noFocusTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *noFocusTipsLabel; // @synthesize noFocusTipsLabel=_noFocusTipsLabel;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSMutableArray *arrFollowItems; // @synthesize arrFollowItems=_arrFollowItems;

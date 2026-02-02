@@ -16,7 +16,6 @@
     unsigned long long _page;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long page; // @synthesize page=_page;
 @property(nonatomic) unsigned long long pageType; // @synthesize pageType=_pageType;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;

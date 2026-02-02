@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveKTVBeginContentView, MMFinderLiveKTVEmptyContentView, MMFinderLiveKTVEndContentView, MMFinderLiveKTVSingingContentView, MMLiveKtvUserView, NSString, WCFinderLiveAnchorLogReporter;
 
 @interface MMFinderLiveKTVMusicContainerView
@@ -24,7 +26,6 @@
 
 + (unsigned long long)transferSingStateToUIState:(long long)arg1 lastUIState:(unsigned long long)arg2;
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveAnchorLogReporter *anchorReporter; // @synthesize anchorReporter=_anchorReporter;
 @property(nonatomic) _Bool isStateVisivilityChangeAnimating; // @synthesize isStateVisivilityChangeAnimating=_isStateVisivilityChangeAnimating;
 @property(nonatomic) _Bool isUserViewAnimating; // @synthesize isUserViewAnimating=_isUserViewAnimating;
@@ -96,4 +97,3 @@
 @property(readonly) Class superclass;
 
 @end
-

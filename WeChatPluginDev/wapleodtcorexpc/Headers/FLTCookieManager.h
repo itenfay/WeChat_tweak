@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WKHTTPCookieStore;
 
@@ -14,7 +15,6 @@
 
 + (void)registerWithRegistrar:(id)arg1;
 + (id)instance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WKHTTPCookieStore *httpCookieStore; // @synthesize httpCookieStore=_httpCookieStore;
 - (void)setCookieForResult:(CDUnknownBlockType)arg1 arguments:(id)arg2;
 - (void)setCookieForData:(id)arg1;
@@ -29,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

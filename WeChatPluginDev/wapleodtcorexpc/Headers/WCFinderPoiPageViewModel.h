@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderPoiStreamNearbyInfo, FinderPoiStreamTabList_FinderPoiStreamTabItem, NSData, NSMutableArray, NSMutableSet, NSString, WCFinderPOIParamsModel;
 @protocol WCFinderPoiPageViewModelDelegate;
@@ -31,7 +32,6 @@
     NSMutableSet *_containedTidSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *containedTidSet; // @synthesize containedTidSet=_containedTidSet;
 @property(nonatomic) unsigned long long prefetchCount; // @synthesize prefetchCount=_prefetchCount;
 @property(nonatomic) unsigned long long filterIndex; // @synthesize filterIndex=_filterIndex;
@@ -80,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

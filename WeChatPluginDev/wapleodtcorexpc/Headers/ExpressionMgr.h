@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AnimateEmojiConfig, DSMMatcher, NSArray, NSDictionary, NSMutableDictionary, NSString;
 
 @interface ExpressionMgr
@@ -25,7 +27,6 @@
     DSMMatcher *_expressionMatcher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DSMMatcher *expressionMatcher; // @synthesize expressionMatcher=_expressionMatcher;
 @property(retain, nonatomic) NSString *animateEmojiResDir; // @synthesize animateEmojiResDir=_animateEmojiResDir;
 @property(retain, nonatomic) AnimateEmojiConfig *animateEmojiConfig; // @synthesize animateEmojiConfig=_animateEmojiConfig;
@@ -79,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

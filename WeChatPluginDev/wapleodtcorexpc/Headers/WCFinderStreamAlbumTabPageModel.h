@@ -16,7 +16,6 @@
 
 + (int)tabId;
 + (_Bool)shouldDisplay:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderStreamProfileMusicPlaylist *section; // @synthesize section=_section;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) WCFinderStreamLoadingState *state; // @synthesize state=_state;

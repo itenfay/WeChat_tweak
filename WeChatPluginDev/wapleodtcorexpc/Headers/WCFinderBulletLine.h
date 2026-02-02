@@ -14,7 +14,6 @@
     NSMutableDictionary *_items;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *items; // @synthesize items=_items;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(nonatomic) WCFinderBulletConfig *config; // @synthesize config=_config;

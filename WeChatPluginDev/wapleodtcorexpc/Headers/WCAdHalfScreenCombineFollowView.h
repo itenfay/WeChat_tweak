@@ -18,7 +18,6 @@
     WCAdFollowItemView *_finderFollowItemView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdFollowItemView *finderFollowItemView; // @synthesize finderFollowItemView=_finderFollowItemView;
 @property(retain, nonatomic) WCAdFollowItemView *brandFollowItemView; // @synthesize brandFollowItemView=_brandFollowItemView;
 @property(retain, nonatomic) MMUILabel *headTitleLabel; // @synthesize headTitleLabel=_headTitleLabel;

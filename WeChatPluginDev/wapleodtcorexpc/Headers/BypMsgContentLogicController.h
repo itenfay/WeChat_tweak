@@ -11,7 +11,6 @@
     CBaseContact *_myRoleContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CBaseContact *myRoleContact; // @synthesize myRoleContact=_myRoleContact;
 @property(retain, nonatomic) CBaseContact *realChatContact; // @synthesize realChatContact=_realChatContact;
 - (void)CameraControllerDidTakeVideo:(id)arg1;

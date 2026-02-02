@@ -16,7 +16,6 @@
     _Bool m_bAnimating;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMWebViewFontFloatViewDelegate> m_delegate; // @synthesize m_delegate;
 - (void)layoutSubviews;
 - (void)dealloc;

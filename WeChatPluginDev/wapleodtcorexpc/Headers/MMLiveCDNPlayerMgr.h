@@ -21,7 +21,6 @@
     NSMutableArray *_streamStatusList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastReportStreamStatusTime; // @synthesize lastReportStreamStatusTime=_lastReportStreamStatusTime;
 @property(nonatomic) unsigned int nextReportStreamStatusInterval; // @synthesize nextReportStreamStatusInterval=_nextReportStreamStatusInterval;
 @property(retain, nonatomic) NSMutableArray *streamStatusList; // @synthesize streamStatusList=_streamStatusList;

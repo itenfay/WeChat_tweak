@@ -18,7 +18,6 @@
     NSMutableAttributedString *_attributedString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(retain, nonatomic) NSString *originString; // @synthesize originString=_originString;
 @property(nonatomic) _Bool hasStart; // @synthesize hasStart=_hasStart;

@@ -26,7 +26,6 @@
     MMLocatingCoordinateLogic *_locatingLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLocatingCoordinateLogic *locatingLogic; // @synthesize locatingLogic=_locatingLogic;
 @property(retain, nonatomic) MMUIButton *rightButton; // @synthesize rightButton=_rightButton;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;

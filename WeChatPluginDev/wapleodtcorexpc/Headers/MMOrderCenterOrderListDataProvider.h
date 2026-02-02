@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -20,7 +21,6 @@
 + (id)providerWithOrderType:(unsigned int)arg1;
 + (id)providerWithOrderType:(unsigned int)arg1 filteringAppId:(id)arg2;
 + (id)providerWithOrderType:(unsigned int)arg1 filteringAppId:(id)arg2 evaluationStatus:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filteringAppId; // @synthesize filteringAppId=_filteringAppId;
 @property(nonatomic) _Bool newFetch; // @synthesize newFetch=_newFetch;
 @property(nonatomic) _Bool hasMoreOrders; // @synthesize hasMoreOrders=_hasMoreOrders;
@@ -44,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

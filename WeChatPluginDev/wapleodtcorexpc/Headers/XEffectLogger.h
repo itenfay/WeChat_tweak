@@ -13,7 +13,6 @@
 }
 
 + (id)sharedLogger;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <XEffectLogAdapterDelegate> adapter; // @synthesize adapter=_adapter;
 - (void)setLogAdapter:(id)arg1;
 - (CDUnknownFunctionPointerType)getLogCallback;

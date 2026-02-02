@@ -19,7 +19,6 @@
     UIView *_headerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) WCPayDecimalKeyboardView *keyboardView; // @synthesize keyboardView=_keyboardView;
 @property(retain, nonatomic) WCUIAlertView *alertView; // @synthesize alertView=_alertView;

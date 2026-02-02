@@ -12,7 +12,6 @@
     MISSING_TYPE *$__lazy_storage_$_shadowLayer;
 }
 
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(nonatomic, retain) CAGradientLayer *shadowLayer;
 - (id)initWithCoder:(id)arg1;

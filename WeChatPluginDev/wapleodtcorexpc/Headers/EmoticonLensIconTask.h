@@ -13,7 +13,6 @@
     NSString *_tempPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tempPath; // @synthesize tempPath=_tempPath;
 @property(retain, nonatomic) NSString *targetPath; // @synthesize targetPath=_targetPath;
 @property(retain, nonatomic) NSString *lensId; // @synthesize lensId=_lensId;

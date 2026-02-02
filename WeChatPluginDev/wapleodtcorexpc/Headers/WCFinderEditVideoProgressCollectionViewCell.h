@@ -14,7 +14,6 @@
 }
 
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void)updateWithImage:(id)arg1;

@@ -10,7 +10,6 @@
     id <WCPayCheckPalmUserResouceCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayCheckPalmUserResouceCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;
 - (void)didGetResponse:(id)arg1;

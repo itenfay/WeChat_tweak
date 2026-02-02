@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString;
 
 @interface EmoticonOperateCgi
@@ -16,7 +18,6 @@
     NSString *_updatedVersionKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *updatedVersionKey; // @synthesize updatedVersionKey=_updatedVersionKey;
 @property(retain, nonatomic) NSString *versionKey; // @synthesize versionKey=_versionKey;
 @property(retain, nonatomic) NSMutableArray *md5List; // @synthesize md5List=_md5List;
@@ -34,4 +35,3 @@
 - (id)init;
 
 @end
-

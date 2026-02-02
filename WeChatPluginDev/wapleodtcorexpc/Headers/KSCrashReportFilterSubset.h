@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
@@ -13,7 +14,6 @@
 }
 
 + (id)filterWithKeys:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *keyPaths; // @synthesize keyPaths=_keyPaths;
 - (void)filterReports:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 - (id)initWithKeysArray:(id)arg1;
@@ -29,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

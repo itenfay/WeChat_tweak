@@ -10,7 +10,6 @@
     WCFinderLiveIconImageView *_statusView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveIconImageView *statusView; // @synthesize statusView=_statusView;
 - (void)refreshStatusViewWithShareItem:(id)arg1;
 - (void)reloadStatusViewIfNeededWithStyle:(unsigned long long)arg1;

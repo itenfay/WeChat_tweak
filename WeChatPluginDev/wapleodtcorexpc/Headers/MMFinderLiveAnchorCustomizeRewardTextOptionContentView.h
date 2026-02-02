@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, NSString, UITextField, UIView;
 
 @interface MMFinderLiveAnchorCustomizeRewardTextOptionContentView
@@ -19,7 +21,6 @@
     long long _maxTextLength;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool keyboardShowing; // @synthesize keyboardShowing=_keyboardShowing;
 @property(nonatomic) long long maxTextLength; // @synthesize maxTextLength=_maxTextLength;
 @property(retain, nonatomic) MMUILabel *alertMessageLabel; // @synthesize alertMessageLabel=_alertMessageLabel;
@@ -58,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

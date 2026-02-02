@@ -4,10 +4,10 @@
 //
 
 #import <UIKit/UIGestureRecognizer.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIGestureRecognizer (GCBlock)
 - (id)gcAllUIGestureRecognizerBlockTargets;
 - (void)gcRemoveAllActionBlocks;
 - (void)gcAddActionBlock:(CDUnknownBlockType)arg1;
 @end
-

@@ -3,8 +3,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BadRoomLogicController, BaseChatViewModel, CADisplayLink, CMessageWrap, ChatRoomHistoryShareStat, FirstUnReadTipView, MMDropManager, MMEdgeTipsView, MMInputMsgReferView, MMInputToolView, MMLoadingView, MMMsgContentNavBar, MMMsgMenuReporter, MMMultiSelectToolView, MMNewMsgContentNavBar, MMRichTextCoverView, MMScrollActionSheet, MMSpecialMsgSearchHelper, MMTableView, MMTimer, MMUIActivityIndicatorView, MMUIWindow, MessagePageSheetAdapter, MiniRecTransitionController, MsgImgFullScreenWindow, MsgSearchHelper, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, ReaderReporter, RichTextView, ShareMessageConfirmLogicHelper, SpeakTextLogicController, StreamVoiceInputViewController, UIColor, UIImageView, UIScreenEdgePanGestureRecognizer, UIView, VoiceTransTipsHelper;
-@protocol BaseMsgContentDelgate, MMMsgInputPresenter><MMRecordUIManager, UIViewControllerPreviewing;
+@protocol BaseMsgContentDelgate, MMMsgInputPresenter, MMRecordUIManager, UIViewControllerPreviewing;
 
 @interface BaseMsgContentViewController
 {
@@ -151,7 +153,6 @@
 }
 
 + (void)reload:(id)arg1 sections:(id)arg2 withRowAnimation:(long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAccessbilityBoldTextEnable; // @synthesize isAccessbilityBoldTextEnable=_isAccessbilityBoldTextEnable;
 @property(nonatomic) int tableScrollActionType; // @synthesize tableScrollActionType=_tableScrollActionType;
 @property(nonatomic) double autoTranslateAnchorMsgLastContentOffset; // @synthesize autoTranslateAnchorMsgLastContentOffset=_autoTranslateAnchorMsgLastContentOffset;
@@ -959,4 +960,3 @@
 @property(readonly) Class superclass;
 
 @end
-

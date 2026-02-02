@@ -13,7 +13,6 @@
 }
 
 + (id)getColorArray;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *colorMap; // @synthesize colorMap=_colorMap;
 - (void)setupDefaultColorMap;
 - (id)stokeStyleLayerColorWithMainColor:(id)arg1;

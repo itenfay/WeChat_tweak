@@ -38,7 +38,6 @@
     CameraScanCombineContentView *_goodCombineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CameraScanCombineContentView *goodCombineView; // @synthesize goodCombineView=_goodCombineView;
 @property(retain, nonatomic) MMUIButton *tipsIKnowButton; // @synthesize tipsIKnowButton=_tipsIKnowButton;
 @property(retain, nonatomic) MMUIButton *tryScanGoodsButton; // @synthesize tryScanGoodsButton=_tryScanGoodsButton;

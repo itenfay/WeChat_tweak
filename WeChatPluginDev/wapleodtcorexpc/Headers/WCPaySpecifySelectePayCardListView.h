@@ -16,7 +16,6 @@
     _Bool _openFieldArea;
 }
 
-- (void).cxx_destruct;
 @property _Bool openFieldArea; // @synthesize openFieldArea=_openFieldArea;
 - (_Bool)shouldPreventedAutorotateToInterfaceOrientation;
 - (void)closeView;

@@ -11,7 +11,6 @@
     WCTTable *_webRecordTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *webRecordTable; // @synthesize webRecordTable=_webRecordTable;
 @property(retain, nonatomic) WCTDatabase *db; // @synthesize db=_db;
 - (_Bool)db_tryDeleteOutOfDateLink;

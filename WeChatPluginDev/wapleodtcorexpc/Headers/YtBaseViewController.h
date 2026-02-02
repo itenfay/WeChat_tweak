@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface YtBaseViewController : UIViewController
 {
@@ -11,7 +12,6 @@
     CDUnknownBlockType _failedBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(copy, nonatomic) CDUnknownBlockType succeedBlock; // @synthesize succeedBlock=_succeedBlock;
 - (id)YtCreateImageWithColor:(id)arg1;
@@ -20,4 +20,3 @@
 - (void)viewWillAppear:(_Bool)arg1;
 
 @end
-

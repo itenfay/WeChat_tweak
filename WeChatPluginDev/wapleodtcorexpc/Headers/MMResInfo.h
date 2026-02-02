@@ -136,7 +136,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int consumeTime; // @synthesize consumeTime=_consumeTime;
 @property(nonatomic) unsigned long long cacheStatus; // @synthesize cacheStatus=_cacheStatus;
 @property(nonatomic) unsigned int clientVersion; // @synthesize clientVersion=_clientVersion;

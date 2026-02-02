@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVCaptureDeviceInput, AVCaptureSession, AVCaptureVideoDataOutput, CMMotionManager, NSMutableArray, NSObject, NSRecursiveLock, NSString, WeVisVoipEffectMgr, XImageContext;
 @protocol AVVideoDataSource, AVVideoDeviceDelegate, AVVideoDeviceFrameDelegate, AVVideoDeviceSessionDelegate, OS_dispatch_queue;
 
@@ -66,7 +68,6 @@
 }
 
 + (void)kvReportEffect:(id)arg1 roomID:(unsigned long long)arg2 roomKey:(long long)arg3 scene:(int)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) XImageContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *captureQueue; // @synthesize captureQueue=_captureQueue;
 @property(retain, nonatomic) CMMotionManager *motion; // @synthesize motion=_motion;
@@ -181,4 +182,3 @@
 @property(readonly) Class superclass;
 
 @end
-

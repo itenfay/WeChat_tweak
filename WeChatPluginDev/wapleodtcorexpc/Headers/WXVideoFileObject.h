@@ -14,7 +14,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
 @property(retain, nonatomic) NSData *videoFileData; // @synthesize videoFileData;
 - (id)init;

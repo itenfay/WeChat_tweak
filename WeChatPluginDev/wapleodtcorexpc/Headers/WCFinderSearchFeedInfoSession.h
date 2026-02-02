@@ -15,7 +15,6 @@
     NSString *_reqId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reqId; // @synthesize reqId=_reqId;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(retain, nonatomic) NSData *lastBuff; // @synthesize lastBuff=_lastBuff;

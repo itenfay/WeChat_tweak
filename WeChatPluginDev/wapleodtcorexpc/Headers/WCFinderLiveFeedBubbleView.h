@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveNoticeInfo, NSString, UITapGestureRecognizer, WCFinderFeedContentVM, WCFinderJumpInfo, WCFinderLiveNoticeCellViewModel;
 @protocol WCFinderJumpInfoViewBaseDelegate;
 
@@ -21,7 +23,6 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) int showPosition; // @synthesize showPosition=_showPosition;
 @property(copy, nonatomic) CDUnknownBlockType onClickNoticeDetailBlock; // @synthesize onClickNoticeDetailBlock=_onClickNoticeDetailBlock;
@@ -55,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

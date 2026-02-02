@@ -14,7 +14,6 @@
     NSError *_error;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;

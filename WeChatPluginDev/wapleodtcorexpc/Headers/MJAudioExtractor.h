@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MJAudioExtractor : NSObject
 {
@@ -18,4 +19,3 @@
 - (id)init;
 
 @end
-

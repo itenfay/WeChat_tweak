@@ -13,7 +13,6 @@
 }
 
 + (Class)class;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ILinkPusherBgmManagerAdaptor *ilinkPusherBgmManagerAdaptor; // @synthesize ilinkPusherBgmManagerAdaptor=_ilinkPusherBgmManagerAdaptor;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

@@ -12,7 +12,6 @@
     NSMutableDictionary *_dicDownloadConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicDownloadConfig; // @synthesize dicDownloadConfig=_dicDownloadConfig;
 @property(retain, nonatomic) NSMutableArray *arrWaitingCmd; // @synthesize arrWaitingCmd=_arrWaitingCmd;
 @property(retain, nonatomic) NSMutableArray *arrRequestingCmd; // @synthesize arrRequestingCmd=_arrRequestingCmd;

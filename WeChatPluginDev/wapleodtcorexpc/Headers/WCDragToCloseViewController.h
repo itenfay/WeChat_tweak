@@ -14,7 +14,6 @@
     long long _orientationWhenInit;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNavigationBarHiddenInAnimiation; // @synthesize isNavigationBarHiddenInAnimiation=_isNavigationBarHiddenInAnimiation;
 @property(nonatomic) long long orientationWhenInit; // @synthesize orientationWhenInit=_orientationWhenInit;
 @property(nonatomic) _Bool allowRotate; // @synthesize allowRotate=_allowRotate;

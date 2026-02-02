@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderLiveStartSelectLotteryTypeButton
 {
     int _lotteryType;
@@ -10,7 +12,6 @@
 }
 
 + (id)getSelectLotteryTypeButton;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType selectButtonBlock; // @synthesize selectButtonBlock=_selectButtonBlock;
 @property(nonatomic) int lotteryType; // @synthesize lotteryType=_lotteryType;
 - (void)updateWithType:(int)arg1;
@@ -18,4 +19,3 @@
 - (id)getTitleWithType:(int)arg1;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class BTMinimizeAnimationView, NSString, WCFinderTransitionUserInfo;
 
@@ -13,7 +14,6 @@
     WCFinderTransitionUserInfo *_userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderTransitionUserInfo *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) BTMinimizeAnimationView *animationView; // @synthesize animationView=_animationView;
 - (id)chooseAnimatorWithOther:(CDUnknownBlockType)arg1;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

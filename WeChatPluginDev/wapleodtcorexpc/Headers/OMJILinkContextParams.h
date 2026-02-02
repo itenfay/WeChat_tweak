@@ -13,7 +13,6 @@
     OMJILinkContextParamsExternalManaged *_paramsExternalManaged;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) OMJILinkContextParamsExternalManaged *paramsExternalManaged; // @synthesize paramsExternalManaged=_paramsExternalManaged;
 @property(readonly, nonatomic) OMJILinkContextParamsSelfManaged *paramsSelfManaged; // @synthesize paramsSelfManaged=_paramsSelfManaged;
 - (id)initWithParamsExternalManaged:(id)arg1;

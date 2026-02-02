@@ -10,7 +10,6 @@
     ChatroomMsgImgCard *_imgCard;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatroomMsgImgCard *imgCard; // @synthesize imgCard=_imgCard;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (Class)bindCellClass;

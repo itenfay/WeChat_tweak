@@ -10,7 +10,6 @@
     AVAsset *_emptyAsset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAsset *emptyAsset; // @synthesize emptyAsset=_emptyAsset;
 - (id)pcmBufferAtTimeRange:(CDStruct_e83c9415)arg1 audioFormat:(id)arg2;
 - (id)tracksForType:(id)arg1;

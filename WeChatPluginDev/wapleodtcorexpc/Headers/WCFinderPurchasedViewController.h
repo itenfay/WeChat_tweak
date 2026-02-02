@@ -13,7 +13,6 @@
     MMFinderLivePurchasedComposedViewControllerOpenParams *_composedOpenParam;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePurchasedComposedViewControllerOpenParams *composedOpenParam; // @synthesize composedOpenParam=_composedOpenParam;
 @property(nonatomic) _Bool shouldHideLiveTab; // @synthesize shouldHideLiveTab=_shouldHideLiveTab;
 @property(nonatomic) _Bool shouldHidePaidCollectionTab; // @synthesize shouldHidePaidCollectionTab=_shouldHidePaidCollectionTab;

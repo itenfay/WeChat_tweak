@@ -11,7 +11,6 @@
     WCPayUnionTransferQueryCgi *_unionQueryCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayUnionTransferQueryCgi *unionQueryCgi; // @synthesize unionQueryCgi=_unionQueryCgi;
 @property(nonatomic) _Bool bIsOpenIM; // @synthesize bIsOpenIM=_bIsOpenIM;
 - (id)getRevokeTips;

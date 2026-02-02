@@ -14,7 +14,6 @@
     TAVVideoTransitionRenderInfo *_renderInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TAVVideoTransitionRenderInfo *renderInfo; // @synthesize renderInfo=_renderInfo;
 @property(retain, nonatomic) id <TAVVideoTransition> transition; // @synthesize transition=_transition;
 

@@ -24,7 +24,6 @@
     WCFinderContextIdToken *_contextToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContextIdToken *contextToken; // @synthesize contextToken=_contextToken;
 @property(nonatomic) double playbackTime; // @synthesize playbackTime=_playbackTime;
 @property(nonatomic) double playProgress; // @synthesize playProgress=_playProgress;

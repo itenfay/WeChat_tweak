@@ -10,7 +10,6 @@
     MMPageSheetAdapter *_sheetAdapter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMPageSheetAdapter *sheetAdapter; // @synthesize sheetAdapter=_sheetAdapter;
 - (void)pageSheetDidClose:(id)arg1 isManualTrigger:(_Bool)arg2;
 - (void)ensureLiteAppHalfScreenDealloc;

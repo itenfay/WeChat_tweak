@@ -17,7 +17,6 @@
     MMFinderLiveAnchorCustomizeRewardResourceUrl *_thumbnailUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardResourceUrl *thumbnailUrl; // @synthesize thumbnailUrl=_thumbnailUrl;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardResourceUrl *previewAnimationUrl; // @synthesize previewAnimationUrl=_previewAnimationUrl;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardResourceUrl *animationUrl; // @synthesize animationUrl=_animationUrl;

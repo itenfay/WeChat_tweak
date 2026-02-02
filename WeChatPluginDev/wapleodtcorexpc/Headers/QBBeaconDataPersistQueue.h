@@ -15,7 +15,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)fetchAllObjectsAndClean;
 - (void)addToTailList:(id)arg1;

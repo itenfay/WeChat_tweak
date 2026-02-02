@@ -19,7 +19,6 @@
     struct CGSize _lastSizeThatFitSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastSizeThatFitSize; // @synthesize lastSizeThatFitSize=_lastSizeThatFitSize;
 @property(nonatomic) struct CGSize lastTestSize; // @synthesize lastTestSize=_lastTestSize;
 @property(nonatomic) long long columnCount; // @synthesize columnCount=_columnCount;

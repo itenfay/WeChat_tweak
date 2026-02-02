@@ -16,7 +16,6 @@
     NSString *_stylesIdentifier;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stylesIdentifier; // @synthesize stylesIdentifier=_stylesIdentifier;
 @property(copy, nonatomic) NSArray *styles; // @synthesize styles=_styles;
 @property(retain, nonatomic) NSDate *lastFetchingTime; // @synthesize lastFetchingTime=_lastFetchingTime;

@@ -23,7 +23,6 @@
     unsigned long long inputRotation;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)setFloat:(float)arg1 forUniform:(int)arg2;
 - (void)setInteger:(int)arg1 forUniform:(int)arg2;

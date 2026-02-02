@@ -14,7 +14,6 @@
 }
 
 + (void)postNotificationForEventName:(id)arg1 args:(id)arg2;
-- (void).cxx_destruct;
 - (id)initEventWithName:(id)arg1 args:(id)arg2;
 - (void)postNotification;
 

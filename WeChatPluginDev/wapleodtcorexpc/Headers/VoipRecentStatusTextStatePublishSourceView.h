@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, MMWebImageView, NSString, UITapGestureRecognizer, UIView;
 
 @interface VoipRecentStatusTextStatePublishSourceView
@@ -19,7 +21,6 @@
     UITapGestureRecognizer *_tapGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) MMUILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
@@ -40,4 +41,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

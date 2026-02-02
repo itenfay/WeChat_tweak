@@ -42,7 +42,6 @@
     NSString *_placeorderAttach;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int groupType; // @synthesize groupType=_groupType;
 @property(retain, nonatomic) NSString *placeorderAttach; // @synthesize placeorderAttach=_placeorderAttach;
 @property(nonatomic) unsigned int desc_has_address; // @synthesize desc_has_address=_desc_has_address;

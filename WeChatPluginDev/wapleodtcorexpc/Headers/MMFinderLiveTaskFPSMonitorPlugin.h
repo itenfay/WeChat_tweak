@@ -11,7 +11,6 @@
     _TtC6WeChat22MMFinderLiveFPSMonitor *_monitor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool started; // @synthesize started=_started;
 @property(retain, nonatomic) _TtC6WeChat22MMFinderLiveFPSMonitor *monitor; // @synthesize monitor=_monitor;
 - (void)createMonitorIfNeeded;

@@ -19,7 +19,6 @@
     struct CGPoint _gestureStartPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint gestureStartPoint; // @synthesize gestureStartPoint=_gestureStartPoint;
 @property(nonatomic) _Bool forbidTransition; // @synthesize forbidTransition=_forbidTransition;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;

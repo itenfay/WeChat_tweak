@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString;
 
@@ -28,7 +29,6 @@
     NSDictionary *_requestHeaderDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *requestHeaderDic; // @synthesize requestHeaderDic=_requestHeaderDic;
 @property(copy, nonatomic) NSString *passTicket; // @synthesize passTicket=_passTicket;
 @property(copy, nonatomic) NSString *a8KeyFullUrl; // @synthesize a8KeyFullUrl=_a8KeyFullUrl;
@@ -86,4 +86,3 @@
 @property(readonly) Class superclass;
 
 @end
-

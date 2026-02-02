@@ -17,7 +17,6 @@
     TPPluginManager *_pluginManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPluginManager *pluginManager; // @synthesize pluginManager=_pluginManager;
 @property(retain, nonatomic) TPPlayerLogContext *log; // @synthesize log=_log;
 @property(retain, nonatomic) id <ITPPlayerRichMediaProcessorWrapper> processor; // @synthesize processor=_processor;

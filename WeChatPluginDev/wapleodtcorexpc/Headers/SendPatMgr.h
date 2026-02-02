@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSMutableSet, NSString, OrderedDictionary, RevokePatReportObject, SendPatToastViewController, SendPatWrap;
 
 @interface SendPatMgr
@@ -27,7 +29,6 @@
 + (id)filePathForServerIdToReceivePatWrapMap;
 + (_Bool)isValidChatContact:(id)arg1;
 + (_Bool)isValidContact:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *onGoingTimerSet; // @synthesize onGoingTimerSet=_onGoingTimerSet;
 @property(retain, nonatomic) SendPatToastViewController *toastViewController; // @synthesize toastViewController=_toastViewController;
 @property(retain, nonatomic) RevokePatReportObject *revokePatReportObject; // @synthesize revokePatReportObject=_revokePatReportObject;
@@ -103,4 +104,3 @@
 @property(readonly) Class superclass;
 
 @end
-

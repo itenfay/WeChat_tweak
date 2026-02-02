@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLivePromoteMsgInfo, MMFinderLivePromotePubbleCustomContentEndView, MMFinderLiveTask, MMFinderLiveTaskId, NSString;
 @protocol MMFinderLiveOperationViewDelegate;
@@ -29,7 +30,6 @@
 
 + (void)reportForPromoteActions:(id)arg1 withLiveTask:(id)arg2;
 + (id)createPromotePubbleContentWithPromoteMsgInfo:(id)arg1 taskId:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePromotePubbleCustomContentEndView *customEndView; // @synthesize customEndView=_customEndView;
 @property(nonatomic) unsigned long long currentContentMode; // @synthesize currentContentMode=_currentContentMode;
 @property(copy, nonatomic) CDUnknownBlockType firstFrameRenderredCompletion; // @synthesize firstFrameRenderredCompletion=_firstFrameRenderredCompletion;
@@ -81,4 +81,3 @@
 - (id)initWithPromoteMsgInfo:(id)arg1 taskId:(id)arg2;
 
 @end
-

@@ -19,7 +19,6 @@
     NSMutableArray *_scopeItemList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int initialUpdatedTimeStamp; // @synthesize initialUpdatedTimeStamp=_initialUpdatedTimeStamp;
 @property(retain, nonatomic) NSMutableArray *scopeItemList; // @synthesize scopeItemList=_scopeItemList;
 @property(retain, nonatomic) MMUILabel *emptyContentLabel; // @synthesize emptyContentLabel=_emptyContentLabel;

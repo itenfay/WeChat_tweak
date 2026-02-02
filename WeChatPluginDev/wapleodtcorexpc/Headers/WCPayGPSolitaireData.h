@@ -18,7 +18,6 @@
     SolitaireObj *_solitaireOriginData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SolitaireObj *solitaireOriginData; // @synthesize solitaireOriginData=_solitaireOriginData;
 @property(retain, nonatomic) NSArray *launchSolitaireItems; // @synthesize launchSolitaireItems=_launchSolitaireItems;
 @property(retain, nonatomic) NSArray *confirmContactList; // @synthesize confirmContactList=_confirmContactList;

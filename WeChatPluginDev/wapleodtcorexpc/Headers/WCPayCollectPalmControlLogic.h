@@ -20,7 +20,6 @@
     NSString *_finalPalmResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finalPalmResult; // @synthesize finalPalmResult=_finalPalmResult;
 @property(nonatomic) unsigned int uploadCdnType; // @synthesize uploadCdnType=_uploadCdnType;
 @property(nonatomic) unsigned int palmCaptureMode; // @synthesize palmCaptureMode=_palmCaptureMode;

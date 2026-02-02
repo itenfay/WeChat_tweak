@@ -13,7 +13,6 @@
     UIColor *_lineColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;
 @property(retain, nonatomic) NSMutableDictionary *arrangeViewsDic; // @synthesize arrangeViewsDic=_arrangeViewsDic;
 - (void)layoutAddedSubviews;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class TextStateExperimentTable, TextStateIconStorage, TextStatePassthroughIconList, WCCgiBlockHelper;
 @protocol OS_dispatch_queue;
@@ -20,7 +21,6 @@
     CDUnknownBlockType _experimentUpdateHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType experimentUpdateHandler; // @synthesize experimentUpdateHandler=_experimentUpdateHandler;
 @property(retain, nonatomic) TextStateExperimentTable *experimentTable; // @synthesize experimentTable=_experimentTable;
 @property(retain, nonatomic) TextStatePassthroughIconList *passthroughIconList; // @synthesize passthroughIconList=_passthroughIconList;
@@ -40,4 +40,3 @@
 - (id)init;
 
 @end
-

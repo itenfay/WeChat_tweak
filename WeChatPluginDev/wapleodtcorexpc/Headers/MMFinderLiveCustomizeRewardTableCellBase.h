@@ -23,7 +23,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *coinIconView; // @synthesize coinIconView=_coinIconView;
 @property(retain, nonatomic) UILabel *rewardPriceLabel; // @synthesize rewardPriceLabel=_rewardPriceLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

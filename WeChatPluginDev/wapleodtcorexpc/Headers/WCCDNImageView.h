@@ -14,7 +14,6 @@
     NSString *_filePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int fileType; // @synthesize fileType=_fileType;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(retain, nonatomic) NSString *aeskey; // @synthesize aeskey=_aeskey;

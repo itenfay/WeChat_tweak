@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderVideoTemplateInfo, MJMovieComposingAssetsClassifyHelper, MJMusicDownloader, MJPublisherContext, MJPublisherPickerComposingButtonManager, MJTemplateComposingDelegateImpl, NSArray, NSString, OMJPublisherSessionMetrics;
 
@@ -28,7 +29,6 @@
 + (void)releasePublisherNamed:(id)arg1;
 + (void)registerPublisher:(id)arg1 named:(id)arg2;
 + (id)publisherNamed:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double videoClipStartTimeForRedPacket; // @synthesize videoClipStartTimeForRedPacket=_videoClipStartTimeForRedPacket;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(retain, nonatomic) FinderVideoTemplateInfo *templateInfo; // @synthesize templateInfo=_templateInfo;
@@ -59,4 +59,3 @@
 - (id)init;
 
 @end
-

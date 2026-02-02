@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UITextChecker;
 
@@ -19,4 +20,3 @@
 - (void)handleMethodCall:(id)arg1 result:(CDUnknownBlockType)arg2;
 
 @end
-

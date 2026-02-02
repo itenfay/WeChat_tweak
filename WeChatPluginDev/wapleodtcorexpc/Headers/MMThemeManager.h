@@ -21,7 +21,6 @@
 + (int)getIpadStyleType;
 + (id)CheckMarkDisabled;
 + (id)CheckMark;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasRegisterLazyInit; // @synthesize hasRegisterLazyInit=_hasRegisterLazyInit;
 @property(nonatomic) _Bool haveLazyInit; // @synthesize haveLazyInit;
 @property(retain, nonatomic) MMRuleSetList *ruleSetList; // @synthesize ruleSetList=m_ruleSetList;

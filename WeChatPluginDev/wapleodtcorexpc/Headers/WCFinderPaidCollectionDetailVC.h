@@ -24,7 +24,6 @@
     NSString *_targetTidWhenStartConsume;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *targetTidWhenStartConsume; // @synthesize targetTidWhenStartConsume=_targetTidWhenStartConsume;
 @property(retain, nonatomic) NSMutableSet *exposedFeedSet; // @synthesize exposedFeedSet=_exposedFeedSet;
 @property(retain, nonatomic) WCFinderPaidCollectionConsumeLogic *courseConsumeLogic; // @synthesize courseConsumeLogic=_courseConsumeLogic;

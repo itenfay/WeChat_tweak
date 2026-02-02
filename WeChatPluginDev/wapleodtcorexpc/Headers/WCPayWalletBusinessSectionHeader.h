@@ -14,7 +14,6 @@
     MMUILabel *_nameLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) WalletGroupInfo *headerData; // @synthesize headerData=_headerData;

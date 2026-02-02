@@ -21,7 +21,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int postToComment; // @synthesize postToComment=_postToComment;
 @property(nonatomic) int buttonAction; // @synthesize buttonAction=_buttonAction;
 @property(retain, nonatomic) NSArray *topics; // @synthesize topics=_topics;

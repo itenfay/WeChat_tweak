@@ -16,7 +16,6 @@
 
 + (_Bool)isCgiInfoInWhiteList:(id)arg1;
 + (_Bool)isCgiInfoValid:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *cgiRouteMap; // @synthesize cgiRouteMap=_cgiRouteMap;
 @property(nonatomic) unsigned int tokenExpiredtime; // @synthesize tokenExpiredtime=_tokenExpiredtime;
 @property(retain, nonatomic) NSMutableArray *waitingAuthQueue; // @synthesize waitingAuthQueue=_waitingAuthQueue;

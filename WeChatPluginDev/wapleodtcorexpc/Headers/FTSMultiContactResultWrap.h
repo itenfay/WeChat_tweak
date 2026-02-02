@@ -15,7 +15,6 @@
     NSDictionary *_dicSearchMatchTip;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dicSearchMatchTip; // @synthesize dicSearchMatchTip=_dicSearchMatchTip;
 @property(retain, nonatomic) NSArray *arrResultContact; // @synthesize arrResultContact=_arrResultContact;
 @property(retain, nonatomic) NSString *keyword; // @synthesize keyword=_keyword;

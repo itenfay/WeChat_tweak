@@ -13,7 +13,6 @@
     MMConfSDKMember *_member;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int voiceActivity; // @synthesize voiceActivity=_voiceActivity;
 @property(retain, nonatomic) MMConfSDKMember *member; // @synthesize member=_member;
 - (id)description;

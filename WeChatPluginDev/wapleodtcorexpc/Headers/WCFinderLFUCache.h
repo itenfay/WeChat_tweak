@@ -22,7 +22,6 @@
     NSRecursiveLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableDictionary *nodeDict; // @synthesize nodeDict=_nodeDict;
 @property(retain, nonatomic) WCFinderDoublyLinkedList *freqNodeList; // @synthesize freqNodeList=_freqNodeList;

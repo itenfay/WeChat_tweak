@@ -13,7 +13,6 @@
     NSArray *_sentenceTimeArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sentenceTimeArray; // @synthesize sentenceTimeArray=_sentenceTimeArray;
 @property(retain, nonatomic) NSData *noteData; // @synthesize noteData=_noteData;
 

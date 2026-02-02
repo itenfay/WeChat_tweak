@@ -19,7 +19,6 @@
     long long _btnViewStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long btnViewStatus; // @synthesize btnViewStatus=_btnViewStatus;
 @property(retain, nonatomic) UIImageView *imageArrowView; // @synthesize imageArrowView=_imageArrowView;
 @property(retain, nonatomic) UIImageView *imageIconView; // @synthesize imageIconView=_imageIconView;

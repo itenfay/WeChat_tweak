@@ -17,7 +17,6 @@
 
 + (double)cellHeightWidthWidth:(double)arg1;
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *unenableMask; // @synthesize unenableMask=_unenableMask;
 @property(retain, nonatomic) MMUILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) CAGradientLayer *maskLayer; // @synthesize maskLayer=_maskLayer;

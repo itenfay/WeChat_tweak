@@ -20,7 +20,6 @@
 
 + (id)defaultFireworkSizeList;
 + (struct CGPoint)generateRandomPointInRect:(struct CGRect)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *triggerTimer; // @synthesize triggerTimer=_triggerTimer;
 @property(retain, nonatomic) NSMutableArray *playingFireworkViews; // @synthesize playingFireworkViews=_playingFireworkViews;
 @property(nonatomic) _Bool isPlaying; // @synthesize isPlaying=_isPlaying;

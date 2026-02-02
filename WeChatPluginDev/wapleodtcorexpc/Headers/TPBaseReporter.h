@@ -26,7 +26,6 @@
 }
 
 + (long long)calcDrmCapability:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPDiskReadWrite *diskReadWrite; // @synthesize diskReadWrite=_diskReadWrite;
 @property(retain, nonatomic) TPPlayerLogContext *log; // @synthesize log=_log;
 @property(retain, nonatomic) id <ITPReportWrapper> beaconReporter; // @synthesize beaconReporter=_beaconReporter;

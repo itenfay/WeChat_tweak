@@ -17,7 +17,6 @@
     MMFinderLiveReplayMessagePage *_nextMoreRecentlyUsedPage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveReplayMessagePage *nextMoreRecentlyUsedPage; // @synthesize nextMoreRecentlyUsedPage=_nextMoreRecentlyUsedPage;
 @property(retain, nonatomic) MMFinderLiveReplayMessagePage *nextLessRecentlyUsedPage; // @synthesize nextLessRecentlyUsedPage=_nextLessRecentlyUsedPage;
 @property(retain, nonatomic) NSMutableArray *frames; // @synthesize frames=_frames;

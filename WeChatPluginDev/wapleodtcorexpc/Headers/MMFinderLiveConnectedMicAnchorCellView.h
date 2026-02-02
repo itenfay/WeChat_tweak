@@ -13,7 +13,6 @@
 }
 
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceDisableOperationButton; // @synthesize forceDisableOperationButton=_forceDisableOperationButton;
 @property(retain, nonatomic) MMWebImageView *authIconView; // @synthesize authIconView=_authIconView;
 @property(retain, nonatomic) WCFinderHeadImageView *avatarView; // @synthesize avatarView=_avatarView;

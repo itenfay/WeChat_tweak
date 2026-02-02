@@ -27,7 +27,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *listenCtxRecommendInfoBufferBase64; // @synthesize listenCtxRecommendInfoBufferBase64=_listenCtxRecommendInfoBufferBase64;
 @property(nonatomic) long long likeAction; // @synthesize likeAction=_likeAction;
 @property(retain, nonatomic) NSString *listenSimplePlayInfoBase64; // @synthesize listenSimplePlayInfoBase64=_listenSimplePlayInfoBase64;

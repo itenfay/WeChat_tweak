@@ -19,7 +19,6 @@
 
 + (id)finderLiveOPWrapWithJSON:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long uliveID; // @synthesize uliveID=_uliveID;
 @property(nonatomic) unsigned long long uFeedID; // @synthesize uFeedID=_uFeedID;
 @property(copy, nonatomic) NSString *forcePushInfo; // @synthesize forcePushInfo=_forcePushInfo;

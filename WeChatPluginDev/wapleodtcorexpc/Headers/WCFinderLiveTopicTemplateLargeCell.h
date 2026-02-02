@@ -20,7 +20,6 @@
     FinderLiveEcGetLiveConfigResponse_ShowAnimation_HotSellingOptions *_hotSellingOptions;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveEcGetLiveConfigResponse_ShowAnimation_HotSellingOptions *hotSellingOptions; // @synthesize hotSellingOptions=_hotSellingOptions;
 @property(retain, nonatomic) WCFinderLiveCardProductShowcase *curProductShowcase; // @synthesize curProductShowcase=_curProductShowcase;
 @property(retain, nonatomic) NSMutableArray *productViews; // @synthesize productViews=_productViews;

@@ -34,7 +34,6 @@
     WCMicroMerchantFoldMgr *_microMerchantFoldMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMicroMerchantFoldMgr *microMerchantFoldMgr; // @synthesize microMerchantFoldMgr=_microMerchantFoldMgr;
 @property(nonatomic) __weak id <WCPreloadLogicDelegate> m_delegate; // @synthesize m_delegate;
 - (void)setupMicroMerchantFoldInfoWithTimelineRequest:(id)arg1;

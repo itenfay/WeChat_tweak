@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSMutableArray, NSString, PackageResourceInfo_ProductBatchInfo, WCFinderDataItem;
 
 @interface WCFinderLiveRewardCGI
@@ -26,7 +28,6 @@
     PackageResourceInfo_ProductBatchInfo *_batchInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PackageResourceInfo_ProductBatchInfo *batchInfo; // @synthesize batchInfo=_batchInfo;
 @property(retain, nonatomic) NSMutableArray *prepareBuf; // @synthesize prepareBuf=_prepareBuf;
 @property(retain, nonatomic) NSData *rewardExtInfo; // @synthesize rewardExtInfo=_rewardExtInfo;
@@ -51,4 +52,3 @@
 - (id)initWithFinderTaskId:(id)arg1 rewardParams:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failBlock:(CDUnknownBlockType)arg4;
 
 @end
-

@@ -12,7 +12,6 @@
     GetTransferWordingResponse *_wordingResponse;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GetTransferWordingResponse *wordingResponse; // @synthesize wordingResponse=_wordingResponse;
 @property(retain, nonatomic) WCPayGetTransferWordingCgi *wordingCgi; // @synthesize wordingCgi=_wordingCgi;
 @property(nonatomic) unsigned long long fromScene; // @synthesize fromScene=_fromScene;

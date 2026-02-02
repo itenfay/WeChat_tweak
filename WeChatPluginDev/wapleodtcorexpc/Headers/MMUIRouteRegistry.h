@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMUIRouteRegistry : NSObject
 {
@@ -33,4 +34,3 @@
 + (void)initWCPayRoutes;
 
 @end
-

@@ -17,7 +17,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long unreadCount; // @synthesize unreadCount=_unreadCount;
 @property(nonatomic) long long subPos; // @synthesize subPos=_subPos;
 @property(nonatomic) long long position; // @synthesize position=_position;

@@ -10,7 +10,6 @@
     MMLiteAppView *_liteAppView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiteAppView *liteAppView; // @synthesize liteAppView=_liteAppView;
 - (void)viewDidLoad;
 - (id)loadView;

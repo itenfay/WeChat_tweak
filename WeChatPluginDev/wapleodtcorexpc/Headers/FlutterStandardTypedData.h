@@ -21,7 +21,6 @@
 + (id)typedDataWithInt64:(id)arg1;
 + (id)typedDataWithInt32:(id)arg1;
 + (id)typedDataWithBytes:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned char elementSize; // @synthesize elementSize=_elementSize;
 @property(readonly, nonatomic) unsigned int elementCount; // @synthesize elementCount=_elementCount;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, NSString;
 
 @interface WCFinderLiveSuspiciousVerifyCGI
@@ -17,7 +19,6 @@
     CDUnknownBlockType _failureBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
@@ -32,4 +33,3 @@
 - (id)initWithTaskId:(id)arg1 finderUsername:(id)arg2 objectId:(unsigned long long)arg3 liveId:(unsigned long long)arg4 scene:(unsigned int)arg5 verificationId:(id)arg6 successBlock:(CDUnknownBlockType)arg7 failureBlock:(CDUnknownBlockType)arg8;
 
 @end
-

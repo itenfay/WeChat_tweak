@@ -13,7 +13,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *pkLogoView; // @synthesize pkLogoView=_pkLogoView;
 - (void)layoutSubviews;
 - (void)initViews;

@@ -13,7 +13,6 @@
     UIImageView *_fakeSnapShotImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIImageView *fakeSnapShotImageView; // @synthesize fakeSnapShotImageView=_fakeSnapShotImageView;
 @property(nonatomic) __weak UIViewController *animatedTransitionRespondViewController; // @synthesize animatedTransitionRespondViewController;
 - (void)animateTransition:(id)arg1;

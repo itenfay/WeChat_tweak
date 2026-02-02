@@ -23,7 +23,6 @@
 
 + (struct CGSize)getCellSize;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SightIconView *stateView; // @synthesize stateView=_stateView;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
 @property(retain, nonatomic) CALayer *borderLayer; // @synthesize borderLayer=_borderLayer;

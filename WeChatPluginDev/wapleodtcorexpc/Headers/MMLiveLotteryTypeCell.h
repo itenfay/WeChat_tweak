@@ -18,7 +18,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enable; // @synthesize enable=_enable;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *optionName; // @synthesize optionName=_optionName;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class InteractionLabel, MMHeadImageView, MMUIButton, NSString, RichTextView, TextStateItemView, UIButton, UILabel, UIView, UrlLabel, WCActionAreaVM, WCAdActionLinkDetailView, WCAdBreakFrameTagView, WCAdBreakFrameView, WCAdCommonBarContainerView, WCAdContinuousLikeTagView, WCAdHeadStateView, WCAdHighlightTagView, WCAdInteractionLabelView, WCAdInteractionTagView, WCAdPreviewMaskView, WCAdRandomPickCardContainerView, WCAdSocialLikeCheerPlayerView, WCAdSocialLikeView, WCAdStateSettingBarView, WCAdTagButton, WCAdWeGameGiftTagView, WCDataItem, WCMomentsAnimatedFireworksView, WCMomentsPageContext, WCMomentsSpringTextContainerView, WCMomentsWeAppLogoNameView, WCTimelineErrTipsView;
 @protocol ILinkEventExt, WCTimeLineCellViewDelegate;
 
@@ -105,7 +107,6 @@
 + (double)heightForMedia:(id)arg1 fixMediaSize:(struct CGSize)arg2;
 + (double)heightForContentMedia:(id)arg1 pageContext:(id)arg2;
 + (double)heightForMedia:(id)arg1 pageContext:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdHeadStateView *adHeadStateView; // @synthesize adHeadStateView=_adHeadStateView;
 @property(retain, nonatomic) WCMomentsAnimatedFireworksView *animatedFireworksView; // @synthesize animatedFireworksView=_animatedFireworksView;
 @property(retain, nonatomic) WCAdCommonBarContainerView *adBarContainerView; // @synthesize adBarContainerView=_adBarContainerView;
@@ -316,4 +317,3 @@
 @property(readonly) Class superclass;
 
 @end
-

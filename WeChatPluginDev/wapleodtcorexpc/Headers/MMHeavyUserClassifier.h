@@ -25,7 +25,6 @@
 + (_Bool)isFileSpaceType:(unsigned long long)arg1;
 + (_Bool)isSessionType:(unsigned long long)arg1;
 + (_Bool)isContactsType:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMHeavyUserClassifierDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)checkLiveType;
 - (void)checkFinderType;

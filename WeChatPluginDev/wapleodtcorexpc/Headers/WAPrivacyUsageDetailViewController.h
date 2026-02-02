@@ -16,7 +16,6 @@
     UIView *_footerView;
 }
 
-- (void).cxx_destruct;
 - (id)navigationBarBackgroundColor;
 - (void)getPrivacyUsageDetailCgi:(id)arg1 didFailWithError:(id)arg2;
 - (void)getPrivacyUsageDetailCgi:(id)arg1 didGetUsageDetailRecordList:(id)arg2 hasNoMore:(_Bool)arg3;

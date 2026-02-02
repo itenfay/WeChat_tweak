@@ -13,7 +13,6 @@
     CAGradientLayer *m_gradientLayer;
 }
 
-- (void).cxx_destruct;
 - (struct CGRect)previewingSourceRectForLocation:(struct CGPoint)arg1 inCoordinateView:(id)arg2;
 - (void)addCoverMaskLayer;
 - (void)onLoadImageFail:(id)arg1 extraInfo:(id)arg2;

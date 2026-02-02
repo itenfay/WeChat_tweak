@@ -14,7 +14,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool reportClickEventByOwner; // @synthesize reportClickEventByOwner=_reportClickEventByOwner;
 @property(nonatomic) long long shareActionType; // @synthesize shareActionType=_shareActionType;
 @property(retain, nonatomic) NSString *fontColor; // @synthesize fontColor=_fontColor;

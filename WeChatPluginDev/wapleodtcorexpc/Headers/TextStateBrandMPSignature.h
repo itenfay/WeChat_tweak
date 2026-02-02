@@ -10,7 +10,6 @@
     NSString *_mpSignature;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mpSignature; // @synthesize mpSignature=_mpSignature;
 - (id)description;
 - (_Bool)isValid;

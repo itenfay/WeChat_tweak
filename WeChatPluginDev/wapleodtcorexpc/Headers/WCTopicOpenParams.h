@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TagCtrlInfo;
 
@@ -32,7 +33,6 @@
     CDUnknownBlockType _bizDidOpenBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType bizDidOpenBlock; // @synthesize bizDidOpenBlock=_bizDidOpenBlock;
 @property(nonatomic) int bizAddContactScene; // @synthesize bizAddContactScene=_bizAddContactScene;
 @property(copy, nonatomic) CDUnknownBlockType finderDidOpenBlock; // @synthesize finderDidOpenBlock=_finderDidOpenBlock;
@@ -56,4 +56,3 @@
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 
 @end
-

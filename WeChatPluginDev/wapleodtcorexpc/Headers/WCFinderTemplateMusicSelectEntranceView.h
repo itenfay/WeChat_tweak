@@ -21,7 +21,6 @@
 + (double)viewHeight;
 + (double)viewMargin;
 + (struct CGSize)viewSuggestSizeWithMaxW:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) UIView *gradientMaskView; // @synthesize gradientMaskView=_gradientMaskView;
 @property(retain, nonatomic) MMUIImageView *arrowView; // @synthesize arrowView=_arrowView;

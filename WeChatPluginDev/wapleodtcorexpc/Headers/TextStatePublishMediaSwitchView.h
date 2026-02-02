@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, TextStateMediaContainerView, TextStatePublishMediaInfo, TextStatePublishMediaView, TextStatePublishSourceInfo, UIImageView, UILongPressGestureRecognizer;
 
@@ -28,7 +29,6 @@
     UILongPressGestureRecognizer *_longPressRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPlayLiveByLongPress; // @synthesize isPlayLiveByLongPress=_isPlayLiveByLongPress;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressRecognizer; // @synthesize longPressRecognizer=_longPressRecognizer;
 @property(copy, nonatomic) CDUnknownBlockType mediaSwitchHandler; // @synthesize mediaSwitchHandler=_mediaSwitchHandler;
@@ -75,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

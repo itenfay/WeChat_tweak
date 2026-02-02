@@ -14,7 +14,6 @@
     NSSet *m_setIgnorePageIDs;
 }
 
-- (void).cxx_destruct;
 - (void)insertWithKey:(id)arg1 Value:(id)arg2;
 - (void)clearClickStreamReport;
 - (id)getClickStreamReport;

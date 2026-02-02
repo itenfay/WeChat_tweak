@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
@@ -17,7 +18,6 @@
     struct CGSize _imageSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
@@ -28,4 +28,3 @@
 - (id)initWithEmoticonMd5:(id)arg1;
 
 @end
-

@@ -18,7 +18,6 @@
     unsigned long long _version;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(retain, nonatomic) NSURL *cachePathURL; // @synthesize cachePathURL=_cachePathURL;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

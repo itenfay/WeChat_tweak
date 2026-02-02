@@ -25,7 +25,6 @@
     NSString *_snapShotLocalId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *snapShotLocalId; // @synthesize snapShotLocalId=_snapShotLocalId;
 @property(copy, nonatomic) NSString *hostAppid; // @synthesize hostAppid=_hostAppid;
 @property(nonatomic) _Bool needShowBottomFeedback; // @synthesize needShowBottomFeedback=_needShowBottomFeedback;

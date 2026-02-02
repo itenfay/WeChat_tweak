@@ -20,7 +20,6 @@
     NSTimer *_localRemainingTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *localRemainingTimer; // @synthesize localRemainingTimer=_localRemainingTimer;
 @property(retain, nonatomic) FinderLiveRedPacketInfo *redPacketInfo; // @synthesize redPacketInfo=_redPacketInfo;
 @property(nonatomic) unsigned int localRemainingTimeInterval; // @synthesize localRemainingTimeInterval=_localRemainingTimeInterval;

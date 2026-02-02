@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton, UIImageView, UILabel, UIView;
 
@@ -24,7 +25,6 @@
     NSString *_portablePath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *portablePath; // @synthesize portablePath=_portablePath;
 @property(copy, nonatomic) CDUnknownBlockType reloadBlock; // @synthesize reloadBlock=_reloadBlock;
 @property(retain, nonatomic) UIButton *removeBtn; // @synthesize removeBtn=_removeBtn;
@@ -42,4 +42,3 @@
 - (void)setupViews;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class IConfSDKRegisterableCallbackHolder, MMConfSDKVideoHWenc, MMOpenVoiceAudioMgr, MMOpenVoiceJoinRoomCGIImp, MMOpenVoiceMemberMgr, MMOpenVoiceNetworkMgr, MMOpenVoiceSessionMgr, MMOpenVoiceVideoMgr, NSObject, NSString, VoIPConfSDKNativeCallbackMgr;
 @protocol OS_dispatch_queue;
 
@@ -78,7 +80,6 @@
     _Bool _enableDirectRendering;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableDirectRendering; // @synthesize enableDirectRendering=_enableDirectRendering;
 @property(nonatomic) _Bool enable720pCapture; // @synthesize enable720pCapture=_enable720pCapture;
 - (void)OnConfEvent:(int)arg1 errCode:(int)arg2 data:(id)arg3 callbackData:(id)arg4;
@@ -161,4 +162,3 @@
 @property(readonly) Class superclass;
 
 @end
-

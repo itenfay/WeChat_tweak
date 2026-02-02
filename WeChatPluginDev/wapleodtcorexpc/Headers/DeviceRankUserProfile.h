@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_nsCoverUrl;
 + (void)PBArrayAdd_nsUsername;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsCoverUrl; // @synthesize nsCoverUrl=_nsCoverUrl;
 @property(retain, nonatomic) NSString *nsUsername; // @synthesize nsUsername=_nsUsername;
 - (id)getPBPropertyTable;

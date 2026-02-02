@@ -17,7 +17,6 @@
     long long _videoIdAfterTransition;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long videoIdAfterTransition; // @synthesize videoIdAfterTransition=_videoIdAfterTransition;
 @property(nonatomic) long long videoIdBeforeTransition; // @synthesize videoIdBeforeTransition=_videoIdBeforeTransition;
 @property(retain, nonatomic) NSString *transtionPath; // @synthesize transtionPath=_transtionPath;

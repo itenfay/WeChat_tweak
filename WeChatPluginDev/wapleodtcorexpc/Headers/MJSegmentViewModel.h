@@ -20,7 +20,6 @@
     MJSegmentPropertyAccessor *_accessor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJSegmentPropertyAccessor *accessor; // @synthesize accessor=_accessor;
 @property(nonatomic) unsigned long long segmentUIState; // @synthesize segmentUIState=_segmentUIState;
 @property(readonly, nonatomic) UBEmptySignal *segmentDidMutateSignal; // @synthesize segmentDidMutateSignal=_segmentDidMutateSignal;

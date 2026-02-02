@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIView, WCFinderAdCountdownBannerView, WCFinderAdDislikeReasonPanelView, WCFinderAdFeedbackPanelView, WCFinderFeedFriendsLikeListViewController, WCFinderFeedListView, WCFinderNearByDescriptionTableViewCell, WCFinderRewardAdViewModel, WCFinderShareCustomTransition, WCFinderShareListReportModel;
 
 @interface WCFinderRewardAdViewController
@@ -21,7 +23,6 @@
     WCFinderAdDislikeReasonPanelView *_adDislikeReasonPanelView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAdDislikeReasonPanelView *adDislikeReasonPanelView; // @synthesize adDislikeReasonPanelView=_adDislikeReasonPanelView;
 @property(retain, nonatomic) WCFinderAdFeedbackPanelView *adFeedbackView; // @synthesize adFeedbackView=_adFeedbackView;
 @property(nonatomic) long long adFeedsCountdownCount; // @synthesize adFeedsCountdownCount=_adFeedsCountdownCount;
@@ -138,4 +139,3 @@
 @property(readonly) Class superclass;
 
 @end
-

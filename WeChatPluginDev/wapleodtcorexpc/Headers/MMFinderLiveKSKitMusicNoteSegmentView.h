@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, NSMutableArray, UIColor;
 
@@ -20,7 +21,6 @@
     CDUnknownBlockType _moveCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType moveCompletion; // @synthesize moveCompletion=_moveCompletion;
 @property(retain, nonatomic) CADisplayLink *monitorDisplayLink; // @synthesize monitorDisplayLink=_monitorDisplayLink;
 @property(copy, nonatomic) CDUnknownBlockType moveOffsetChangeCallback; // @synthesize moveOffsetChangeCallback=_moveOffsetChangeCallback;
@@ -47,4 +47,3 @@
 - (id)initWithMusicNotes:(id)arg1;
 
 @end
-

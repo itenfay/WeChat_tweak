@@ -31,7 +31,6 @@
     unsigned long long m_status;
 }
 
-- (void).cxx_destruct;
 - (void)onDumpReporterUploadProgress:(double)arg1;
 - (void)onDumpReporterUploadResult:(_Bool)arg1;
 - (void)MMPickerViewDidChooseRow:(long long)arg1 atSession:(long long)arg2;

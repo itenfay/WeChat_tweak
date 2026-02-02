@@ -18,7 +18,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contextId; // @synthesize contextId=_contextId;
 @property(nonatomic) unsigned int userVersion; // @synthesize userVersion=_userVersion;
 @property(nonatomic) unsigned int commentScene; // @synthesize commentScene=_commentScene;

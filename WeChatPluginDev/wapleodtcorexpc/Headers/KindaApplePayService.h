@@ -14,7 +14,6 @@
     MMVoidCallback *_finishApplePayCallBack;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMVoidCallback *finishApplePayCallBack; // @synthesize finishApplePayCallBack=_finishApplePayCallBack;
 @property(retain, nonatomic) MMVoidITransmitKvDataCallback *callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) WCPayApplePayAuthorizationLogic *applePayAuthorizationLogic; // @synthesize applePayAuthorizationLogic=_applePayAuthorizationLogic;

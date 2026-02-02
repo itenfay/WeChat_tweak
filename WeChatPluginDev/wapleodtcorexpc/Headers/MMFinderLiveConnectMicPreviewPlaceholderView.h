@@ -14,7 +14,6 @@
     UILabel *_labelView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *labelView; // @synthesize labelView=_labelView;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;

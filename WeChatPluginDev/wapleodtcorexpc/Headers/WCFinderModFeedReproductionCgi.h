@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderModFeedReproductionCgi
@@ -13,7 +15,6 @@
     CDUnknownBlockType _failure;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType success; // @synthesize success=_success;
 @property(nonatomic) _Bool notReproduction; // @synthesize notReproduction=_notReproduction;
@@ -24,4 +25,3 @@
 - (id)initWithUsername:(id)arg1 notReproduction:(_Bool)arg2 success:(CDUnknownBlockType)arg3 failure:(CDUnknownBlockType)arg4;
 
 @end
-

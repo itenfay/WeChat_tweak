@@ -34,7 +34,6 @@
     int _pixelType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int pixelType; // @synthesize pixelType=_pixelType;
 @property(nonatomic) int pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 - (struct CGSize)outputImageSize;

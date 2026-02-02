@@ -15,7 +15,6 @@
     id <SmallCameraViewDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <SmallCameraViewDelegate> delegate; // @synthesize delegate;
 @property(retain, nonatomic) MoveWithTouchAlgorithm *m_moveAlgorithm; // @synthesize m_moveAlgorithm;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

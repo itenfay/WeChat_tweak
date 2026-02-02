@@ -48,7 +48,6 @@
     MMScrollActionSheet *_actionSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMScrollActionSheet *actionSheet; // @synthesize actionSheet=_actionSheet;
 @property(retain, nonatomic) MMMusicLocalFileDataInfo *fileLogicController; // @synthesize fileLogicController=_fileLogicController;
 @property(nonatomic) _Bool bClickJumpButton; // @synthesize bClickJumpButton=_bClickJumpButton;

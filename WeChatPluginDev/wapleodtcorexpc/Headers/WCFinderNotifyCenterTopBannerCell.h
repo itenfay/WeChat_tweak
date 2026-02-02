@@ -16,7 +16,6 @@
 
 + (double)cellHeight;
 + (_Bool)shouldShowWithBannerInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(retain, nonatomic) ThankRedPackageInfo *bannerInfo; // @synthesize bannerInfo=_bannerInfo;
 @property(retain, nonatomic) WCFinderCustomImageRichTextView *bannerTextView; // @synthesize bannerTextView=_bannerTextView;

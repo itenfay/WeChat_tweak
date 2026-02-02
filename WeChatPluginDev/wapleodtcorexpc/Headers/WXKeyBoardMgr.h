@@ -16,7 +16,6 @@
 }
 
 + (id)sharedFilePath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *supportMessageTypes; // @synthesize supportMessageTypes=_supportMessageTypes;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) __weak id <WXKeyBoardActiveReceiver> receiver; // @synthesize receiver=_receiver;

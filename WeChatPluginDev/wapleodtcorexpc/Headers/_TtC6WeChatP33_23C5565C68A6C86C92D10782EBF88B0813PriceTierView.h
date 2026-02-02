@@ -26,7 +26,6 @@
     MISSING_TYPE *UNSELECTED_BACKGROUND_COLOR;
 }
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

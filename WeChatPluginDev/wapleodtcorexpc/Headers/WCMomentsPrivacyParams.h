@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSDictionary, NSIndexPath, NSIndexSet, UIView;
 
@@ -22,7 +23,6 @@
     struct UIEdgeInsets _footerViewInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *indexPathToIndex; // @synthesize indexPathToIndex=_indexPathToIndex;
 @property(retain, nonatomic) NSDictionary *indexToIndexPath; // @synthesize indexToIndexPath=_indexToIndexPath;
 @property(retain, nonatomic) NSIndexSet *lastItemIndexSet; // @synthesize lastItemIndexSet=_lastItemIndexSet;
@@ -46,4 +46,3 @@
 - (id)initWithTable:(id)arg1 originSelectedIndexPath:(id)arg2;
 
 @end
-

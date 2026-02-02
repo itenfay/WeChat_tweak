@@ -16,7 +16,6 @@
     UILabel *_dateLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(retain, nonatomic) YYLabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) YYLabel *titleLabel; // @synthesize titleLabel=_titleLabel;

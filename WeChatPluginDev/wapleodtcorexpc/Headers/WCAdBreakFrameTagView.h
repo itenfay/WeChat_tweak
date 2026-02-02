@@ -16,7 +16,6 @@
     MMUIButton *_bgButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *bgButton; // @synthesize bgButton=_bgButton;
 @property(retain, nonatomic) WCAdTypewriterLabel *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) WCAdURLImageView *iconView; // @synthesize iconView=_iconView;

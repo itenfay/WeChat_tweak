@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FavFullScreenImageViewController, FavoritesItemDataField, MMPickLocationViewController, NSMutableArray, NSMutableDictionary, NSString, StreamVoiceInputViewController, UIView, WeNoteCPPInstance;
 @protocol WeNoteAffLogicDelegate;
@@ -29,7 +30,6 @@
     long long _canTranslateContent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long canTranslateContent; // @synthesize canTranslateContent=_canTranslateContent;
 @property(retain, nonatomic) WeNoteCPPInstance *cppInstance; // @synthesize cppInstance=_cppInstance;
 - (void)OnEndPlayWNAudio:(id)arg1;
@@ -128,4 +128,3 @@
 @property(readonly) Class superclass;
 
 @end
-

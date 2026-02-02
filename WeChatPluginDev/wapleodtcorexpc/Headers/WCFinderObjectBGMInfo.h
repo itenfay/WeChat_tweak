@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_hasBgm;
 + (void)PBArrayAdd_groupId;
 + (void)PBArrayAdd_musicInfo;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long postMusicType; // @synthesize postMusicType=_postMusicType;
 @property(nonatomic) unsigned int hasBgm; // @synthesize hasBgm=_hasBgm;
 @property(copy, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;

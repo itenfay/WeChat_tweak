@@ -23,7 +23,6 @@
     unsigned long long _totalCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(nonatomic) unsigned long long totalCount; // @synthesize totalCount=_totalCount;
 @property(retain, nonatomic) NSData *lastBuf; // @synthesize lastBuf=_lastBuf;

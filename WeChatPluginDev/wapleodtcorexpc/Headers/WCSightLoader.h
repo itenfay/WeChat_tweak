@@ -15,7 +15,6 @@
 
 + (unsigned long long)preCleanGetCacheSize;
 + (unsigned long long)cleanCacheMgrMakeToClean;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSCache *downloadItemCache; // @synthesize downloadItemCache=_downloadItemCache;
 @property(retain, nonatomic) NSCache *observerCache; // @synthesize observerCache=_observerCache;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;

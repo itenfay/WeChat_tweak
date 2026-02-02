@@ -22,7 +22,6 @@
     UIScreenEdgePanGestureRecognizer *_webviewScreenEdgePanGesture;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int needDeleteIndex; // @synthesize needDeleteIndex=_needDeleteIndex;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *webviewScreenEdgePanGesture; // @synthesize webviewScreenEdgePanGesture=_webviewScreenEdgePanGesture;
 @property(nonatomic) _Bool hasPreloadTemplateTypeCommonShare; // @synthesize hasPreloadTemplateTypeCommonShare=_hasPreloadTemplateTypeCommonShare;

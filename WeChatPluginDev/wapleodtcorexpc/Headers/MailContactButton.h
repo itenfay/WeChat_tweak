@@ -15,7 +15,6 @@
     UIButton *m_btnMailContactButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMailContact *m_oMailContact; // @synthesize m_oMailContact;
 @property(nonatomic) __weak id <MailContactButtonDelegate> m_delegate; // @synthesize m_delegate;
 - (_Bool)isHighlighted;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString;
 @protocol WCFinderStreamLoadingStateDelegate;
@@ -20,7 +21,6 @@
 }
 
 + (void)removeAllObserver:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
 @property(retain, nonatomic) NSMutableArray *waitBlocks; // @synthesize waitBlocks=_waitBlocks;
 @property(retain, nonatomic) NSData *nextBuff; // @synthesize nextBuff=_nextBuff;
@@ -39,4 +39,3 @@
 - (void)configFooterView:(id)arg1;
 
 @end
-

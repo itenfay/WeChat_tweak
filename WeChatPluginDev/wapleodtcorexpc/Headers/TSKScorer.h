@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSOperationQueue, NSString, TSKScoreResultSet, TSKScorerConfig;
 @protocol TSKScorerDelegate;
@@ -28,7 +29,6 @@
 
 + (long long)optionsForMidiScoreWithSampleRate:(int)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mapString; // @synthesize mapString=_mapString;
 @property(nonatomic) double reduceRatio; // @synthesize reduceRatio=_reduceRatio;
 @property(nonatomic) long long shiftValue; // @synthesize shiftValue=_shiftValue;
@@ -62,4 +62,3 @@
 - (id)newMidiCalculator;
 
 @end
-

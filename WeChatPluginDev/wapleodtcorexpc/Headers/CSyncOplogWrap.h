@@ -16,7 +16,6 @@
     unsigned int m_uiItemID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiItemID; // @synthesize m_uiItemID;
 @property(nonatomic) unsigned int m_uiRetryCount; // @synthesize m_uiRetryCount;
 @property(retain, nonatomic) NSMutableData *m_dtBuffer; // @synthesize m_dtBuffer;

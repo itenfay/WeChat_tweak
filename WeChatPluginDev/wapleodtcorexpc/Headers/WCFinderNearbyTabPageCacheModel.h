@@ -18,7 +18,6 @@
     unsigned long long _currentSelectedType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasAlreadyExposed; // @synthesize hasAlreadyExposed=_hasAlreadyExposed;
 @property(nonatomic) _Bool isLocationServiceAuthrized; // @synthesize isLocationServiceAuthrized=_isLocationServiceAuthrized;
 @property(nonatomic) unsigned long long currentSelectedType; // @synthesize currentSelectedType=_currentSelectedType;

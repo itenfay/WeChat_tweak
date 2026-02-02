@@ -12,7 +12,6 @@
     _Bool m_playing;
 }
 
-- (void).cxx_destruct;
 - (void)OnEndPlaying:(id)arg1 isForceStop:(_Bool)arg2;
 - (void)downloadAppData;
 - (void)stopPlayVoice;

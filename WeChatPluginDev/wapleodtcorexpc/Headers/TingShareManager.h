@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ForwardMessageLogicController, NSString, SendAppMsgHandler;
 
@@ -13,7 +14,6 @@
     ForwardMessageLogicController *_forwardLogicController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogicController; // @synthesize forwardLogicController=_forwardLogicController;
 @property(retain, nonatomic) SendAppMsgHandler *sendAppMsgHandler; // @synthesize sendAppMsgHandler=_sendAppMsgHandler;
 - (void)OnForwardMessageConfirmCanceled:(id)arg1;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

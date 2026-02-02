@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMBizCanvasJsApiHandler, MMCanvasJsApiHandler, MMCanvasLogicClientContextParams, MMClientJsApiHandler, MMPopupJsApiHandler, NSString;
 @protocol MMCanvasLogicClientContextDelegate;
 
@@ -18,7 +20,6 @@
     id <MMCanvasLogicClientContextDelegate> _contextDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMCanvasLogicClientContextDelegate> contextDelegate; // @synthesize contextDelegate=_contextDelegate;
 @property(retain, nonatomic) MMBizCanvasJsApiHandler *bizCanvasJsApiHandler; // @synthesize bizCanvasJsApiHandler=_bizCanvasJsApiHandler;
 @property(retain, nonatomic) MMPopupJsApiHandler *popupJsApiHandler; // @synthesize popupJsApiHandler=_popupJsApiHandler;
@@ -66,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -29,7 +29,6 @@
     UIFont *_shopLabelFont;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) UIFont *shopLabelFont; // @synthesize shopLabelFont=_shopLabelFont;
 @property(nonatomic) double bottomLogoLabelPadding; // @synthesize bottomLogoLabelPadding=_bottomLogoLabelPadding;
 @property(nonatomic) double brandLogoWidth; // @synthesize brandLogoWidth=_brandLogoWidth;

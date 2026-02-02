@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveActivityTaskId, MMFinderLiveBackgroundMusicLogic, MMFinderLiveEventInfo, MMFinderLiveWinterOlympicTorchInfo, MMFinderLiveWinterOlympicView, NSString;
 
 @interface MMFinderLiveActivityTask
@@ -17,7 +19,6 @@
 }
 
 + (id)activityResFilePathForDefaultVersion:(id)arg1 activityId:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLiveCdnPlayerMuted; // @synthesize isLiveCdnPlayerMuted=_isLiveCdnPlayerMuted;
 @property(retain, nonatomic) MMFinderLiveBackgroundMusicLogic *backgroundMusicLogic; // @synthesize backgroundMusicLogic=_backgroundMusicLogic;
 @property(retain, nonatomic) MMFinderLiveEventInfo *activityInfo; // @synthesize activityInfo=_activityInfo;
@@ -83,4 +84,3 @@
 @property(readonly) Class superclass;
 
 @end
-

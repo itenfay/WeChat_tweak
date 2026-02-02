@@ -10,7 +10,6 @@
     NSMutableDictionary *_dicRemindId;
 }
 
-- (void).cxx_destruct;
 - (void)OnAddMsg:(id)arg1 MsgWrap:(id)arg2;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)deleteRemindMsgs:(id)arg1;

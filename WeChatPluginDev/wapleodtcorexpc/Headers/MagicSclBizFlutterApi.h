@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol FlutterBinaryMessenger;
@@ -14,7 +15,6 @@
     NSString *_messageChannelSuffix;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *messageChannelSuffix; // @synthesize messageChannelSuffix=_messageChannelSuffix;
 @property(retain, nonatomic) NSObject<FlutterBinaryMessenger> *binaryMessenger; // @synthesize binaryMessenger=_binaryMessenger;
 - (void)invokeBizName:(id)arg1 apiName:(id)arg2 data:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -22,4 +22,3 @@
 - (id)initWithBinaryMessenger:(id)arg1;
 
 @end
-

@@ -17,7 +17,6 @@
     NSDictionary *_context;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSString *textTemplate; // @synthesize textTemplate=_textTemplate;
 @property(readonly, nonatomic) int layerID; // @synthesize layerID=_layerID;

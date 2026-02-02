@@ -14,7 +14,6 @@
     UIView *_highlightMaskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightMaskView; // @synthesize highlightMaskView=_highlightMaskView;
 @property(retain, nonatomic) UIImageView *arrowIcon; // @synthesize arrowIcon=_arrowIcon;
 @property(retain, nonatomic) MMUILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

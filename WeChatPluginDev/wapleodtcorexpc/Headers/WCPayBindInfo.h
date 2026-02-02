@@ -56,7 +56,6 @@
     UnderAgeDialog *_under_age_dialog;
 }
 
-- (void).cxx_destruct;
 @property unsigned int has_underage_alert; // @synthesize has_underage_alert=_has_underage_alert;
 @property(retain) UnderAgeDialog *under_age_dialog; // @synthesize under_age_dialog=_under_age_dialog;
 @property(retain) NSString *sessionId; // @synthesize sessionId=_sessionId;

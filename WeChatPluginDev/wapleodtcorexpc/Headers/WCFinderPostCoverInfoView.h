@@ -20,7 +20,6 @@
     WCFinderDataItem *_dataItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) MMUIButton *deleteMediaButton; // @synthesize deleteMediaButton=_deleteMediaButton;
 @property(retain, nonatomic) MMUIView *deleteBtn; // @synthesize deleteBtn=_deleteBtn;

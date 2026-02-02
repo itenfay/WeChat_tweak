@@ -13,7 +13,6 @@
     UIView *_innerContentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *innerContentView; // @synthesize innerContentView=_innerContentView;
 @property(retain, nonatomic) UIImageView *outerContentImgView; // @synthesize outerContentImgView=_outerContentImgView;
 - (void)layoutInnerContentView;

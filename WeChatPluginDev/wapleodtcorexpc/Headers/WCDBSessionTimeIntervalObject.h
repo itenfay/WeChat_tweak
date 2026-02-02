@@ -27,7 +27,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_msgEndTime; // @synthesize m_msgEndTime;
 @property(nonatomic) unsigned int m_msgBeginTime; // @synthesize m_msgBeginTime;
 @property(retain, nonatomic) NSString *m_sessionName; // @synthesize m_sessionName;

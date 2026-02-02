@@ -18,7 +18,6 @@
     MMUIView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) MMUIView *blurView; // @synthesize blurView=_blurView;
 @property(retain, nonatomic) MMUIView *borderView; // @synthesize borderView=_borderView;

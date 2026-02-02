@@ -29,7 +29,6 @@
 + (double)cellHeightWith:(id)arg1 width:(double)arg2 forceExpand:(_Bool)arg3;
 + (id)getContentWithComment:(id)arg1;
 + (_Bool)showMediaWithComment:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderUniCommentMediaView *mediaView; // @synthesize mediaView=_mediaView;
 @property(retain, nonatomic) WCCommentLikeView *dislikeView; // @synthesize dislikeView=_dislikeView;
 @property(nonatomic) _Bool isSelfPost; // @synthesize isSelfPost=_isSelfPost;

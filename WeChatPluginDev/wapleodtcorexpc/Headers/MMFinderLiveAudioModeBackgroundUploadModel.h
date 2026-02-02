@@ -19,7 +19,6 @@
 
 + (id)animatedBackgroundUploadModelWithVideoPath:(id)arg1 fallbackImageData:(id)arg2;
 + (id)staticBackgroundUploadModelWithImageData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *videoUri; // @synthesize videoUri=_videoUri;
 @property(retain, nonatomic) NSString *imageUri; // @synthesize imageUri=_imageUri;
 @property(retain, nonatomic) NSString *video; // @synthesize video=_video;

@@ -21,7 +21,6 @@
 }
 
 + (id)genFromDict:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int entrance_type; // @synthesize entrance_type=_entrance_type;
 @property(retain, nonatomic) NSString *tinyAppPath; // @synthesize tinyAppPath=_tinyAppPath;
 @property(retain, nonatomic) NSString *tinyAppUsername; // @synthesize tinyAppUsername=_tinyAppUsername;

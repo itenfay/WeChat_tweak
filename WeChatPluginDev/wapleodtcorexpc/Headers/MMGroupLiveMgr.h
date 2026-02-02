@@ -15,7 +15,6 @@
     MMGroupLiveWordingInfo *_startLiveTipInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMGroupLiveWordingInfo *startLiveTipInfo; // @synthesize startLiveTipInfo=_startLiveTipInfo;
 @property(retain, nonatomic) NSMutableDictionary *fetchingDict; // @synthesize fetchingDict=_fetchingDict;
 @property(retain, nonatomic) OrderedDictionary *fetchLiveInfoQueue; // @synthesize fetchLiveInfoQueue=_fetchLiveInfoQueue;

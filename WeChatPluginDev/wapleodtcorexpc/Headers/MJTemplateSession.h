@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJTemplateSessionExportOperation, MJTemplateSessionOperation, MMContext, NSMutableArray, NSString, OMJMaasCore;
 
@@ -22,7 +23,6 @@
     NSMutableArray *_pendingOperationQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingOperationQueue; // @synthesize pendingOperationQueue=_pendingOperationQueue;
 @property(retain, nonatomic) MJTemplateSessionOperation *currentOperation; // @synthesize currentOperation=_currentOperation;
 @property(readonly, nonatomic) MMContext *mmContext; // @synthesize mmContext=_mmContext;
@@ -73,4 +73,3 @@
 - (id)init;
 
 @end
-

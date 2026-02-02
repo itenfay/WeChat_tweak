@@ -11,7 +11,6 @@
     double m_rowHeight;
 }
 
-- (void).cxx_destruct;
 - (void)configSelectedIndex:(id)arg1;
 - (void)onClickBtn:(id)arg1;
 - (void)updateBtn:(id)arg1 selected:(_Bool)arg2;

@@ -12,7 +12,6 @@
     NSArray *_allowedShareAppIdList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *allowedShareAppIdList; // @synthesize allowedShareAppIdList=_allowedShareAppIdList;
 - (id)init;
 

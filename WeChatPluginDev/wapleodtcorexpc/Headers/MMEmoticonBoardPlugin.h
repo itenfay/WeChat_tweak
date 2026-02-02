@@ -16,7 +16,6 @@
 }
 
 + (id)plugin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMEmoticonBoardNativeViewFactory *viewFactory; // @synthesize viewFactory=_viewFactory;
 @property(nonatomic) __weak NSObject<FlutterPluginRegistrar> *registrar; // @synthesize registrar=_registrar;
 @property(nonatomic) __weak UIViewController *attachedViewController; // @synthesize attachedViewController=_attachedViewController;

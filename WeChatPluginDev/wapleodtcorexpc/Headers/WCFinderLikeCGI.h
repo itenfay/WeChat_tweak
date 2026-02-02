@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCFinderLikeCGIParam;
 
 @interface WCFinderLikeCGI
@@ -17,7 +19,6 @@
     unsigned long long _reportScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long reportScene; // @synthesize reportScene=_reportScene;
 @property(nonatomic) unsigned long long commentID; // @synthesize commentID=_commentID;
 @property(nonatomic) int likeFlag; // @synthesize likeFlag=_likeFlag;
@@ -35,4 +36,3 @@
 - (id)initFeedLikeCGIWithParam:(id)arg1 successBlock:(CDUnknownBlockType)arg2 failureBlock:(CDUnknownBlockType)arg3;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableSet;
 @protocol WCFinderCommentDetailTranslatorDelegate;
@@ -16,7 +17,6 @@
     NSMutableArray *_autoTranslateQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *autoTranslateQueue; // @synthesize autoTranslateQueue=_autoTranslateQueue;
 @property(retain, nonatomic) NSMutableSet *visiableComments; // @synthesize visiableComments=_visiableComments;
 @property(nonatomic) _Bool isFetchingTranslateComment; // @synthesize isFetchingTranslateComment=_isFetchingTranslateComment;
@@ -38,4 +38,3 @@
 - (_Bool)contentCanBeTranslated:(id)arg1;
 
 @end
-

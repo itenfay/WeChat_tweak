@@ -15,7 +15,6 @@
     double _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoadingState; // @synthesize isLoadingState=_isLoadingState;
 @property(nonatomic) _Bool animationReady; // @synthesize animationReady=_animationReady;
 @property(nonatomic) double duration; // @synthesize duration=_duration;

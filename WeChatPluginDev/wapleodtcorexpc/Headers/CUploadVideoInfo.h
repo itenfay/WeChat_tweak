@@ -20,7 +20,6 @@
     _Bool _isParallelUpload;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isParallelUpload; // @synthesize isParallelUpload=_isParallelUpload;
 @property(nonatomic) int m_nRetCode; // @synthesize m_nRetCode;
 @property(nonatomic) unsigned int m_uiOpType; // @synthesize m_uiOpType;

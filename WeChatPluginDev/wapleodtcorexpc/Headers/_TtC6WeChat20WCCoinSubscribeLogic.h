@@ -13,7 +13,6 @@
     MISSING_TYPE *interceptLogic;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)startWithCompletionHandler:(void (^)(_TtC6WeChat21WCCoinSubscribeResult *))arg1;
 - (id)initWithParameter:(id)arg1;

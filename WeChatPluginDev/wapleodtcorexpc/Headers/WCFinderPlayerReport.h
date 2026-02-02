@@ -28,7 +28,6 @@
     NSMutableArray *_bufferingInfoArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bufferingInfoArray; // @synthesize bufferingInfoArray=_bufferingInfoArray;
 @property(retain, nonatomic) WCFinderPlayBufferingInfo *bufferingInfo; // @synthesize bufferingInfo=_bufferingInfo;
 @property(nonatomic) _Bool hasFinderDataReported; // @synthesize hasFinderDataReported=_hasFinderDataReported;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol WCElasticLayoutViewDelegate;
 
@@ -20,7 +21,6 @@
 }
 
 + (struct CGRect)_getContainerFrameForAnchorView:(id)arg1 andFollowView:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect expandBounds; // @synthesize expandBounds=_expandBounds;
 @property(nonatomic) struct CGRect shrinkBounds; // @synthesize shrinkBounds=_shrinkBounds;
 @property(nonatomic) _Bool expandable; // @synthesize expandable=_expandable;
@@ -38,4 +38,3 @@
 - (id)initWithAnchorView:(id)arg1 followView:(id)arg2;
 
 @end
-

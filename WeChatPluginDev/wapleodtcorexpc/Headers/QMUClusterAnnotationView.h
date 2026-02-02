@@ -11,7 +11,6 @@
     UILabel *_displayText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *displayText; // @synthesize displayText=_displayText;
 @property(retain, nonatomic) UIImageView *background; // @synthesize background=_background;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;

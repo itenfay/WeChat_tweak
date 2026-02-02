@@ -12,7 +12,6 @@
     UILabel *_label;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (void)commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;

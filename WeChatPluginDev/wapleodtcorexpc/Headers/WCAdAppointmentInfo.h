@@ -30,7 +30,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *phoneNumberRequestName; // @synthesize phoneNumberRequestName=_phoneNumberRequestName;
 @property(retain, nonatomic) NSString *phoneNumberRequestIcon; // @synthesize phoneNumberRequestIcon=_phoneNumberRequestIcon;
 @property(nonatomic) _Bool requestPhoneNumber; // @synthesize requestPhoneNumber=_requestPhoneNumber;

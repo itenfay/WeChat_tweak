@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_banTimeStampArray;
 + (void)PBArrayAdd_exposeTimeStampArray;
 + (void)PBArrayAdd_path;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBanAsUseBusiness; // @synthesize isBanAsUseBusiness=_isBanAsUseBusiness;
 @property(nonatomic) long long accRedDotExpStartTime; // @synthesize accRedDotExpStartTime=_accRedDotExpStartTime;
 @property(retain, nonatomic) NSMutableArray *banTimeStampArray; // @synthesize banTimeStampArray=_banTimeStampArray;

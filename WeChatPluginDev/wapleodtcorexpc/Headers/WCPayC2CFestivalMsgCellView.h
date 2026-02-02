@@ -13,7 +13,6 @@
     MMUIView *_audioView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *audioView; // @synthesize audioView=_audioView;
 @property(retain, nonatomic) MMUILabel *bottomLabel; // @synthesize bottomLabel=_bottomLabel;
 - (void)onTouchUpInside;

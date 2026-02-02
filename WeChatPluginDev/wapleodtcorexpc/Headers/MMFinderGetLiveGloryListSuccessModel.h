@@ -13,7 +13,6 @@
     NSMutableArray *_liveContacts;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int liveContactsMaxDisplayCount; // @synthesize liveContactsMaxDisplayCount=_liveContactsMaxDisplayCount;
 @property(retain, nonatomic) NSMutableArray *liveContacts; // @synthesize liveContacts=_liveContacts;
 

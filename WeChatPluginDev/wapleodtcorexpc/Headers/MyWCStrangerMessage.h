@@ -65,7 +65,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *m_metaData; // @synthesize m_metaData=_m_metaData;
 @property(retain, nonatomic) NSString *m_content; // @synthesize m_content=_m_content;
 @property(retain, nonatomic) NSString *m_toNickname; // @synthesize m_toNickname=_m_toNickname;

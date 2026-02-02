@@ -19,7 +19,6 @@
 
 + (void)reportUploadFailedWithStartTime:(unsigned long long)arg1 errorType:(long long)arg2;
 + (void)reportComposeFailedWithStartTime:(unsigned long long)arg1 errorType:(long long)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *uploadErrorTypeStr; // @synthesize uploadErrorTypeStr=_uploadErrorTypeStr;
 @property(copy, nonatomic) NSString *composeErrorTypeStr; // @synthesize composeErrorTypeStr=_composeErrorTypeStr;
 @property(nonatomic) unsigned long long uploadErrorType; // @synthesize uploadErrorType=_uploadErrorType;

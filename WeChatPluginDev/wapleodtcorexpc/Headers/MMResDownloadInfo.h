@@ -69,7 +69,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int eid; // @synthesize eid;
 @property(retain, nonatomic) MMResDownloadUrlInfo *resUrlInfo; // @synthesize resUrlInfo;
 @property(retain, nonatomic) NSString *packageId; // @synthesize packageId;

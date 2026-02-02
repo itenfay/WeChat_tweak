@@ -12,7 +12,6 @@
     UIColor *_userColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *userColor; // @synthesize userColor=_userColor;
 - (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;

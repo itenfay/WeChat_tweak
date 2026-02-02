@@ -15,7 +15,6 @@
     NSString *_cancelContent;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cancelContent; // @synthesize cancelContent=_cancelContent;
 @property(copy, nonatomic) NSString *acceptContent; // @synthesize acceptContent=_acceptContent;
 @property(copy, nonatomic) NSString *desc; // @synthesize desc=_desc;

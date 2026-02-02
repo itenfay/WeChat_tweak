@@ -27,7 +27,6 @@
     WeToast *_toastVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WeToast *toastVC; // @synthesize toastVC=_toastVC;
 @property(retain, nonatomic) WCCardChoosePeopleLabelView *peopleLabelView; // @synthesize peopleLabelView=_peopleLabelView;
 @property(retain, nonatomic) NSString *privateWording; // @synthesize privateWording=_privateWording;

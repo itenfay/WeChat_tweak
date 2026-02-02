@@ -24,7 +24,6 @@
     struct CGRect _previousBounds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableHighlightDarkmode; // @synthesize disableHighlightDarkmode=_disableHighlightDarkmode;
 @property(nonatomic) struct CGRect previousBounds; // @synthesize previousBounds=_previousBounds;
 @property(nonatomic) _Bool enableHighlight; // @synthesize enableHighlight=_enableHighlight;

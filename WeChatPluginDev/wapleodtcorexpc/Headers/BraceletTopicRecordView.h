@@ -23,7 +23,6 @@
 }
 
 + (double)calculateHeightWithSportRecords:(id)arg1 sportGoals:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *brandIconView; // @synthesize brandIconView=_brandIconView;
 @property(retain, nonatomic) DeviceBrandJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(nonatomic) _Bool isHardware; // @synthesize isHardware=_isHardware;

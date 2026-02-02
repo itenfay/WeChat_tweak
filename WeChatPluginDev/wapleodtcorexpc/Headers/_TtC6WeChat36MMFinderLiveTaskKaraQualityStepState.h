@@ -19,7 +19,6 @@
     MISSING_TYPE *useSmoothSwitchStreamMode;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithQoS:(id)arg1 videoQualityLevel:(int)arg2 isH265:(_Bool)arg3 isEnhanceEnabled:(_Bool)arg4 isAutoSwitchStreamConfigEnabled:(_Bool)arg5 autoSwitchStreamMinInterval:(long long)arg6 autoSwitchStreamMaxCount:(long long)arg7 useSmoothSwitchStreamMode:(_Bool)arg8;
 @property(nonatomic) _Bool useSmoothSwitchStreamMode; // @synthesize useSmoothSwitchStreamMode;

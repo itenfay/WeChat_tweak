@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSMutableSet, NSString, WCFinderCachedLocation, WCFinderHomeLifeFilter;
 @protocol WCFinderLifeHomePageViewModelDelegate;
@@ -25,7 +26,6 @@
 }
 
 + (void)requestFirstPageCommentScene:(int)arg1 location:(id)arg2 complete:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long prefetchRemainCount; // @synthesize prefetchRemainCount=_prefetchRemainCount;
 @property(retain, nonatomic) WCFinderCachedLocation *cachedLocation; // @synthesize cachedLocation=_cachedLocation;
 @property(nonatomic) unsigned long long loadingState; // @synthesize loadingState=_loadingState;
@@ -70,4 +70,3 @@
 @property(readonly) Class superclass;
 
 @end
-

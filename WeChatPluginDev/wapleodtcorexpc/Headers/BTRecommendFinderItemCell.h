@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class BTFinderItemBlurView, BTFinderItemViewModel, BTRichTextTagView, BTScrollabelFinderItemCoverContainerView, BTScrollableFinderItemBackgroundImageView, MMUILabel, MMWebImageView, NSString, UIView;
 
@@ -30,7 +31,6 @@
 + (double)cellWidth;
 + (double)cellHeight;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceAutoBlurHeight; // @synthesize forceAutoBlurHeight=_forceAutoBlurHeight;
 @property(retain, nonatomic) MMUILabel *recommendLabel; // @synthesize recommendLabel=_recommendLabel;
 @property(retain, nonatomic) BTRichTextTagView *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -78,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

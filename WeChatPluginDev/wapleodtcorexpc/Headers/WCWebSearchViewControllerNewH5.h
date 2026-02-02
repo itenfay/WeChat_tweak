@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ForwardMessageLogicController, MMTagTextField, NSDictionary, NSMutableDictionary, NSString, UIButton, UIScreenEdgePanGestureRecognizer, UIView, WAAppDismissAnimateTransition, WCSearchPageState, WCSearchUIConfig, WCStoryDismissInteractiveTransition, WCWebSearchBar, WCWebSearchInputProvider, WCWebSearchPresenter, WSLocalTemplateController, WSTagSearchLogic, WSWebViewPluginScheduler, WebSearchContext, _TtC6WeChat21WSTextFieldInteractor, _TtC6WeChat25WSWebviewExceptionCatcher;
 
 @interface WCWebSearchViewControllerNewH5
@@ -34,7 +36,6 @@
 }
 
 + (_Bool)ftsNavBackToHomePage;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *popBackInteractivePopGesture; // @synthesize popBackInteractivePopGesture=_popBackInteractivePopGesture;
 @property(retain, nonatomic) WAAppDismissAnimateTransition *dismissAnimateTransition; // @synthesize dismissAnimateTransition=_dismissAnimateTransition;
 @property(retain, nonatomic) WCStoryDismissInteractiveTransition *dismissInteractiveTransition; // @synthesize dismissInteractiveTransition=_dismissInteractiveTransition;
@@ -212,4 +213,3 @@
 @property(readonly) Class superclass;
 
 @end
-

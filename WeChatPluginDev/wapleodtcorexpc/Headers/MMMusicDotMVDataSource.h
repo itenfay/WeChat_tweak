@@ -21,7 +21,6 @@
     NSString *_songId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int currTimeMs; // @synthesize currTimeMs=_currTimeMs;
 @property(nonatomic) unsigned int durationInMs; // @synthesize durationInMs=_durationInMs;
 @property(retain, nonatomic) NSString *songId; // @synthesize songId=_songId;

@@ -16,7 +16,6 @@
     MVVideoPixelBuffer *_previousVideoPixelBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MVVideoPixelBuffer *previousVideoPixelBuffer; // @synthesize previousVideoPixelBuffer=_previousVideoPixelBuffer;
 @property(retain, nonatomic) MVVideoPixelBuffer *currentVideoPixelBuffer; // @synthesize currentVideoPixelBuffer=_currentVideoPixelBuffer;
 @property(retain, nonatomic) MVVideoEffectRendererView *contentView; // @synthesize contentView=_contentView;

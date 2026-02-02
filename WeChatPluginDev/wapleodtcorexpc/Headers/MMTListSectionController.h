@@ -17,7 +17,6 @@
     long long _section;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLastSection; // @synthesize isLastSection=_isLastSection;
 @property(nonatomic) _Bool isFirstSection; // @synthesize isFirstSection=_isFirstSection;
 @property(nonatomic) long long section; // @synthesize section=_section;

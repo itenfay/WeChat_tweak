@@ -24,7 +24,6 @@
     VoipDescriptionButton *_hangupButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoipDescriptionButton *hangupButton; // @synthesize hangupButton=_hangupButton;
 @property(retain, nonatomic) MMUIActivityIndicatorView *acceptIndicatorView; // @synthesize acceptIndicatorView=_acceptIndicatorView;
 @property(retain, nonatomic) VoipDescriptionButton *acceptButton; // @synthesize acceptButton=_acceptButton;

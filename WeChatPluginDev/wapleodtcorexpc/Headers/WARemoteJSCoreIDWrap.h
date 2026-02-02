@@ -17,7 +17,6 @@
 
 + (id)jscNameForType:(unsigned int)arg1 jscIndex:(unsigned int)arg2;
 + (id)jscIDForType:(unsigned int)arg1 jscIndex:(unsigned int)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int jscIndex; // @synthesize jscIndex=_jscIndex;
 @property(nonatomic) unsigned int jscType; // @synthesize jscType=_jscType;
 @property(copy, nonatomic) NSString *jscName; // @synthesize jscName=_jscName;

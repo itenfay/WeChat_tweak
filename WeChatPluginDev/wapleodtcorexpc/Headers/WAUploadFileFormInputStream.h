@@ -23,7 +23,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setStreamError:(id)arg1;
 - (id)streamError;
 - (void)setStreamStatus:(unsigned long long)arg1;

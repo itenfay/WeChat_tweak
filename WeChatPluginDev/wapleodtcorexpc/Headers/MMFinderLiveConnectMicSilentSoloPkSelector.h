@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -12,7 +13,6 @@
     CDUnknownBlockType _selectAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType selectAction; // @synthesize selectAction=_selectAction;
 - (void)initiateSelection;
 - (void)updateWithModel:(id)arg1;
@@ -27,4 +27,3 @@
 @property(readonly) Class superclass;
 
 @end
-

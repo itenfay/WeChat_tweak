@@ -13,7 +13,6 @@
     unsigned long long _stayTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int clickCount; // @synthesize clickCount=_clickCount;
 @property(nonatomic) unsigned long long stayTime; // @synthesize stayTime=_stayTime;
 @property(nonatomic) unsigned int exposureCount; // @synthesize exposureCount=_exposureCount;

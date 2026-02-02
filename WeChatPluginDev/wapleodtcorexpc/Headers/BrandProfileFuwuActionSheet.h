@@ -13,7 +13,6 @@
     BrandProfileFuwuContainerView *_containerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandProfileFuwuContainerView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UIView *transparentView; // @synthesize transparentView=_transparentView;
 @property(nonatomic) __weak id <BrandProfileFuwuActionSheetDelegate> delegate; // @synthesize delegate=_delegate;

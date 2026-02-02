@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface BrandTimelineHelper : NSObject
 {
@@ -26,4 +27,3 @@
 + (void)openContactSession:(id)arg1 fromOftenRead:(_Bool)arg2 fromVC:(id)arg3;
 
 @end
-

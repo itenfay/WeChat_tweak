@@ -14,7 +14,6 @@
 
 + (id)verticalGuideLine;
 + (id)horizontalGuideLine;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double lineWeight;
 - (void)configWithGuideLineStyle:(id)arg1;
 - (void)commonInit;

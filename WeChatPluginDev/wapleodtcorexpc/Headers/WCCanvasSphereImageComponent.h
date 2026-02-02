@@ -14,7 +14,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didDelayShowScrollDownArea; // @synthesize didDelayShowScrollDownArea=_didDelayShowScrollDownArea;
 @property(retain, nonatomic) UIView *turnToExploreView; // @synthesize turnToExploreView=_turnToExploreView;
 @property(retain, nonatomic) MMProgressViewEx *loadingView; // @synthesize loadingView=_loadingView;

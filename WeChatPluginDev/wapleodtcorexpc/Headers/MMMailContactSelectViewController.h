@@ -21,7 +21,6 @@
     WCSearcher *_searcher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSearcher *searcher; // @synthesize searcher=_searcher;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) __weak id <MMMailContactSelectViewDelegate> m_delegate; // @synthesize m_delegate=_delegate;

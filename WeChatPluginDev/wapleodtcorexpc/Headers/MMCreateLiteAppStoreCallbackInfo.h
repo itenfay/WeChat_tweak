@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMCreateLiteAppStoreCallbackInfo : NSObject
 {
@@ -12,10 +13,8 @@
     CDUnknownBlockType _callback;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int aliveSeconds; // @synthesize aliveSeconds=_aliveSeconds;
 @property(nonatomic) unsigned int time; // @synthesize time=_time;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 
 @end
-

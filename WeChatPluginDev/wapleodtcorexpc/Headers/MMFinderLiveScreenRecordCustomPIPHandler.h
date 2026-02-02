@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderJumpInfo, MMGameLiveAccessoryTipView, MMLiteAppViewController, MMUIView, NSString;
 
 @interface MMFinderLiveScreenRecordCustomPIPHandler
@@ -19,7 +21,6 @@
 }
 
 + (_Bool)isPIPRenderSizeValid:(struct CGSize)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMGameLiveAccessoryTipView *gameLiveAccessoryTipView; // @synthesize gameLiveAccessoryTipView=_gameLiveAccessoryTipView;
 @property(nonatomic) unsigned long long gameLiveAccessoryRenderStyle; // @synthesize gameLiveAccessoryRenderStyle=_gameLiveAccessoryRenderStyle;
 @property(nonatomic) _Bool isAppResignActive; // @synthesize isAppResignActive=_isAppResignActive;
@@ -76,4 +77,3 @@
 @property(readonly) Class superclass;
 
 @end
-

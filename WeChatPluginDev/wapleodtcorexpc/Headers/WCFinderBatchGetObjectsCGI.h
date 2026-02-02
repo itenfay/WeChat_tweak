@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray;
 
 @interface WCFinderBatchGetObjectsCGI
@@ -13,7 +15,6 @@
     CDUnknownBlockType _failure;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
 @property(nonatomic) int batchLoadScene; // @synthesize batchLoadScene=_batchLoadScene;
@@ -23,4 +24,3 @@
 - (id)initWithObjectId:(id)arg1 scene:(int)arg2 batchLoadScene:(int)arg3 successful:(CDUnknownBlockType)arg4 failure:(CDUnknownBlockType)arg5;
 
 @end
-

@@ -37,7 +37,6 @@
     unsigned long long _patMusicPermission;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long patMusicPermission; // @synthesize patMusicPermission=_patMusicPermission;
 @property(nonatomic) int fromType; // @synthesize fromType=_fromType;
 @property(retain, nonatomic) FinderLocation *location; // @synthesize location=_location;

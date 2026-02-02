@@ -27,7 +27,6 @@
     WCTableViewCellManager *_voipNotifyRemindCellInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldHighlightVoipNotifyRemindSwitch; // @synthesize shouldHighlightVoipNotifyRemindSwitch=_shouldHighlightVoipNotifyRemindSwitch;
 @property(nonatomic) _Bool shouldHighlightNotifyRemindSwitch; // @synthesize shouldHighlightNotifyRemindSwitch=_shouldHighlightNotifyRemindSwitch;
 @property(retain, nonatomic) WCTableViewCellManager *voipNotifyRemindCellInfo; // @synthesize voipNotifyRemindCellInfo=_voipNotifyRemindCellInfo;

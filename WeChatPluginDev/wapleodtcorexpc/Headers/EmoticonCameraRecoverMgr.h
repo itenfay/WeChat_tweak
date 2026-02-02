@@ -14,7 +14,6 @@
     NSMutableArray *_m_notifyTaskList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_manageViewRecentUpdateTime; // @synthesize m_manageViewRecentUpdateTime=_m_manageViewRecentUpdateTime;
 @property(nonatomic) _Bool m_hasNotStartRecoverTaskInList; // @synthesize m_hasNotStartRecoverTaskInList=_m_hasNotStartRecoverTaskInList;
 @property(nonatomic) _Bool m_hasOnceStartRecover; // @synthesize m_hasOnceStartRecover=_m_hasOnceStartRecover;

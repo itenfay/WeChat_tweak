@@ -16,7 +16,6 @@
     WCFinderContact *_anchorContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *anchorContact; // @synthesize anchorContact=_anchorContact;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) _Bool hasRegisteredKeyExtensions; // @synthesize hasRegisteredKeyExtensions=_hasRegisteredKeyExtensions;

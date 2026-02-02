@@ -17,7 +17,6 @@
 }
 
 + (id)configFromFreeFloatMsgInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *guideWording; // @synthesize guideWording=_guideWording;
 @property(nonatomic) unsigned long long enableTimestamp; // @synthesize enableTimestamp=_enableTimestamp;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;

@@ -39,7 +39,6 @@
 + (id)buildFromVideoInfo:(id)arg1;
 + (id)buildFromString:(id)arg1;
 + (id)buildFromPlayerProperty:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long audioLevel; // @synthesize audioLevel=_audioLevel;
 @property(nonatomic) long long videoColorSpace; // @synthesize videoColorSpace=_videoColorSpace;
 @property(retain, nonatomic) TPGeneralPlayFlowParams *generalPlayFlowParams; // @synthesize generalPlayFlowParams=_generalPlayFlowParams;

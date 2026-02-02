@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_m_nsChatName;
 + (void)PBArrayAdd_m_uiAccessTime;
 + (void)PBArrayAdd_m_nsTempPath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsChatName; // @synthesize m_nsChatName=_m_nsChatName;
 @property(nonatomic) unsigned int m_uiAccessTime; // @synthesize m_uiAccessTime=_m_uiAccessTime;
 @property(retain, nonatomic) NSString *m_nsTempPath; // @synthesize m_nsTempPath=_m_nsTempPath;

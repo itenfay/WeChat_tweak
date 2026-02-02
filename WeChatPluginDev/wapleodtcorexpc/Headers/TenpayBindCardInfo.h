@@ -19,7 +19,6 @@
     NSString *m_nsToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsToken; // @synthesize m_nsToken;
 @property(retain, nonatomic) NSString *m_nsTelphone; // @synthesize m_nsTelphone;
 @property(retain, nonatomic) NSString *m_nsCardType; // @synthesize m_nsCardType;

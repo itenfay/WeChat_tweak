@@ -12,7 +12,6 @@
     UIPanGestureRecognizer *_rootPanGesture;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIPanGestureRecognizer *rootPanGesture; // @synthesize rootPanGesture=_rootPanGesture;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 

@@ -20,7 +20,6 @@
     WCFinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;

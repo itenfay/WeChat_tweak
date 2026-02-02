@@ -16,7 +16,6 @@
     struct UIEdgeInsets _contenInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize clearButtonSize; // @synthesize clearButtonSize=_clearButtonSize;
 @property(nonatomic) double clearButtonRightMargin; // @synthesize clearButtonRightMargin=_clearButtonRightMargin;
 @property(nonatomic) __weak id <MMUITextFieldDelegate> mmDelegate; // @synthesize mmDelegate=_mmDelegate;

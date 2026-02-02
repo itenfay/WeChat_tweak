@@ -19,7 +19,6 @@
     MMUILabel *_nameLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAdded; // @synthesize isAdded=_isAdded;
 @property(retain, nonatomic) MMUILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;

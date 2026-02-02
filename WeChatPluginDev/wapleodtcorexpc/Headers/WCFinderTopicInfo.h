@@ -84,7 +84,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long videoFeedCount; // @synthesize videoFeedCount=_videoFeedCount;
 @property(nonatomic) unsigned long long photoFeedCount; // @synthesize photoFeedCount=_photoFeedCount;
 @property(retain, nonatomic) FinderWordsTopicExtInfo *wordsTopicExt; // @synthesize wordsTopicExt=_wordsTopicExt;

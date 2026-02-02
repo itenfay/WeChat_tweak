@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderClientStatus, FinderLbsTabTipsInfo, FinderLiveBeforeJoinLiveRoomStatus, FinderLiveClientStatus, NSData, NSMutableArray, NSString, WCFinderLiveTabInfo;
 
 @interface WCFinderLbsLiveStreamCGI
@@ -28,7 +30,6 @@
 }
 
 + (id)prefetchCacheHashKey:(int)arg1 tabId:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cacheDurationInSeconds; // @synthesize cacheDurationInSeconds=_cacheDurationInSeconds;
 @property(nonatomic) unsigned long long relatedObjectId; // @synthesize relatedObjectId=_relatedObjectId;
 @property(retain, nonatomic) WCFinderLiveTabInfo *liveTabInfo; // @synthesize liveTabInfo=_liveTabInfo;
@@ -62,4 +63,3 @@
 - (id)initWithLastBuffer:(id)arg1 longitude:(double)arg2 latitude:(double)arg3 clientStatus:(id)arg4 liveClientStatus:(id)arg5 pullType:(unsigned long long)arg6 readStats:(id)arg7 markUnreadList:(id)arg8 fromScene:(int)arg9 commentScene:(int)arg10 tabTipsInfo:(id)arg11 byPass:(id)arg12 beforeJoinLiveStatus:(id)arg13 relatedObjectId:(unsigned long long)arg14 liveTabInfo:(id)arg15 onlyFollowFeed:(_Bool)arg16 cacheDurationInSeconds:(unsigned long long)arg17 successful:(CDUnknownBlockType)arg18 failure:(CDUnknownBlockType)arg19;
 
 @end
-

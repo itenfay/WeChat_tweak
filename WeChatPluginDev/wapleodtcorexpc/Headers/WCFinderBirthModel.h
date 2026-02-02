@@ -14,7 +14,6 @@
     NSDateComponents *_components;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *components; // @synthesize components=_components;
 @property(nonatomic) long long birthMonth; // @synthesize birthMonth=_birthMonth;
 @property(nonatomic) long long birthYear; // @synthesize birthYear=_birthYear;

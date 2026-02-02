@@ -13,7 +13,6 @@
     long long _deviceCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long deviceCount; // @synthesize deviceCount=_deviceCount;
 @property(retain, nonatomic) NSMutableArray *publicILinkDevices; // @synthesize publicILinkDevices=_publicILinkDevices;
 @property(retain, nonatomic) NSMutableArray *privateILinkDevices; // @synthesize privateILinkDevices=_privateILinkDevices;

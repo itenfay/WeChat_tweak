@@ -18,7 +18,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize videoSize; // @synthesize videoSize=_videoSize;
 @property(retain, nonatomic) CALayer *previewLayer; // @synthesize previewLayer=_previewLayer;
 @property(retain, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;

@@ -26,7 +26,6 @@
 }
 
 + (id)parseFromUxInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *wuid; // @synthesize wuid=_wuid;
 @property(retain, nonatomic) NSString *adSource; // @synthesize adSource=_adSource;
 @property(retain, nonatomic) NSString *siteSet; // @synthesize siteSet=_siteSet;

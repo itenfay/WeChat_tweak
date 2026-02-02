@@ -15,7 +15,6 @@
     MMFinderLiveGestureWeVisionRenderParams *_parameters;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGestureWeVisionRenderParams *parameters; // @synthesize parameters=_parameters;
 @property(nonatomic) _Bool started; // @synthesize started=_started;
 @property(nonatomic) long long animationResourceId; // @synthesize animationResourceId=_animationResourceId;

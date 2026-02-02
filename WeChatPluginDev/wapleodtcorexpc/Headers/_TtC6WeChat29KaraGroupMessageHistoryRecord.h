@@ -66,7 +66,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic) _Bool isWeComGroupChat; // @synthesize isWeComGroupChat;
 @property(nonatomic) _Bool isSenderWeComContact; // @synthesize isSenderWeComContact;

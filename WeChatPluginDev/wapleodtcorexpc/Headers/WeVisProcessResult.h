@@ -18,7 +18,6 @@
 }
 
 + (int)transferFaceTrackX3DRet:(int)arg1;
-- (void).cxx_destruct;
 @property double heightScaled; // @synthesize heightScaled=_heightScaled;
 @property double widthScaled; // @synthesize widthScaled=_widthScaled;
 @property double processCostTime; // @synthesize processCostTime=_processCostTime;

@@ -17,7 +17,6 @@
 + (double)additionalPaddingForVM:(id)arg1 commentIndex:(unsigned long long)arg2;
 + (struct CGSize)calculateDisplaySize:(struct CGSize)arg1 forVM:(id)arg2 cellIdentifier:(id)arg3 showSceneIntroduce:(_Bool)arg4;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderComment *currentComment; // @synthesize currentComment=_currentComment;
 @property(retain, nonatomic) UILabel *closureLabel; // @synthesize closureLabel=_closureLabel;
 @property(retain, nonatomic) RichTextView *contentLabel; // @synthesize contentLabel=_contentLabel;

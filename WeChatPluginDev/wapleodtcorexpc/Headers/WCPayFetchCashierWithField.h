@@ -16,7 +16,6 @@
 }
 
 + (id)GenFromDic:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) NSString *fetch_fee_symbol; // @synthesize fetch_fee_symbol=_fetch_fee_symbol;
 @property(retain) NSString *fetch_fee; // @synthesize fetch_fee=_fetch_fee;
 @property(retain) FieldAreaInfo *field_area_info; // @synthesize field_area_info=_field_area_info;

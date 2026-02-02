@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, OMCTransitionSegment;
 
 @interface MJTransitionInspectorViewModel
@@ -16,7 +18,6 @@
     CDStruct_1b6d18a9 _nonOverlappingTransitionDuration;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *originalTransitionID; // @synthesize originalTransitionID=_originalTransitionID;
 @property(retain, nonatomic) OMCTransitionSegment *transitionSegment; // @synthesize transitionSegment=_transitionSegment;
 @property(copy, nonatomic) CDUnknownBlockType updateSelectionHandler; // @synthesize updateSelectionHandler=_updateSelectionHandler;
@@ -45,4 +46,3 @@
 - (id)initWithSegment:(id)arg1 type:(unsigned long long)arg2;
 
 @end
-

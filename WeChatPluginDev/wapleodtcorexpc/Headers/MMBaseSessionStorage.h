@@ -21,7 +21,6 @@
 }
 
 + (void)processVersionUpdate;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ISessionStorageDelegate> delegate; // @synthesize delegate=m_delegate;
 - (void)resortSessions;
 - (void)initDB;

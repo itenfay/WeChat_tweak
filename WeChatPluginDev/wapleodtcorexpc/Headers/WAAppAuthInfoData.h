@@ -19,7 +19,6 @@
     NSString *_itemTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *itemTitle; // @synthesize itemTitle=_itemTitle;
 @property(retain, nonatomic) NSString *scopeSecDesc; // @synthesize scopeSecDesc=_scopeSecDesc;
 @property(retain, nonatomic) NSString *bottomDesc; // @synthesize bottomDesc=_bottomDesc;

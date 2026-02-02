@@ -11,7 +11,6 @@
 }
 
 + (id)getMonitorBlurViewKey:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *blurView; // @synthesize blurView=_blurView;
 - (id)getUniqueKey;
 - (id)getRecordDesc;

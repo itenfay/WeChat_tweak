@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, MMLiveAddBoardViewItem;
 
@@ -18,7 +19,6 @@
     CAShapeLayer *_shapeLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
 @property(retain, nonatomic) MMLiveAddBoardViewItem *remainSeeItem; // @synthesize remainSeeItem=_remainSeeItem;
 @property(nonatomic) _Bool isSendLocationItemEnable; // @synthesize isSendLocationItemEnable=_isSendLocationItemEnable;
@@ -33,4 +33,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -17,7 +17,6 @@
     NSString *_mobile;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mobile; // @synthesize mobile=_mobile;
 @property(retain, nonatomic) NSString *ticket; // @synthesize ticket=_ticket;
 @property(copy, nonatomic) NSString *payToken; // @synthesize payToken=_payToken;

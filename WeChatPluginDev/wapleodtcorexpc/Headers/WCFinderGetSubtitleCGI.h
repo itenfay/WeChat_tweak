@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCFinderGetSubtitleRequestParams;
 
 @interface WCFinderGetSubtitleCGI
@@ -12,7 +14,6 @@
     CDUnknownBlockType _failureBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) WCFinderGetSubtitleRequestParams *params; // @synthesize params=_params;
@@ -22,4 +23,3 @@
 - (id)initWithParams:(id)arg1 successBlock:(CDUnknownBlockType)arg2 failureBlock:(CDUnknownBlockType)arg3;
 
 @end
-

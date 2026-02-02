@@ -18,7 +18,6 @@
 }
 
 + (id)sharedDetector;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMMotionManager *motionMgr; // @synthesize motionMgr=_motionMgr;
 @property(retain, nonatomic) CMAccelerometerData *accelerometerData; // @synthesize accelerometerData=_accelerometerData;
 @property(nonatomic) double dividingWhenLandscapeOrientation; // @synthesize dividingWhenLandscapeOrientation=_dividingWhenLandscapeOrientation;

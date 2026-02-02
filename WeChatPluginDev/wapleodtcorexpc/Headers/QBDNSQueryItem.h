@@ -19,7 +19,6 @@
 @property long long status; // @synthesize status=_status;
 @property(copy) NSURL *originURL; // @synthesize originURL=_originURL;
 @property(retain) NSURLRequest *dnsRequest; // @synthesize dnsRequest=_dnsRequest;
-- (void).cxx_destruct;
 
 @end
 

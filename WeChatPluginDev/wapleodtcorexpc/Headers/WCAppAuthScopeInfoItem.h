@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_state;
 + (void)PBArrayAdd_scopeDesc;
 + (void)PBArrayAdd_scope;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUserEnable; // @synthesize isUserEnable=_isUserEnable;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *scopeDesc; // @synthesize scopeDesc=_scopeDesc;

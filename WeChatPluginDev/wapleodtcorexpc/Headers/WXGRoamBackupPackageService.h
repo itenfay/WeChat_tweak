@@ -32,7 +32,6 @@
     NSString *_curBindId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *curBindId; // @synthesize curBindId=_curBindId;
 @property(copy, nonatomic) NSString *workingBSSID; // @synthesize workingBSSID=_workingBSSID;
 @property(retain, nonatomic) NSMutableDictionary *modelMap; // @synthesize modelMap=_modelMap;

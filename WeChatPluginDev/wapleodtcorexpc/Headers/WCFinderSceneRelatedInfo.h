@@ -34,7 +34,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderSeeLaterInfo *seeLaterInfo; // @synthesize seeLaterInfo=_seeLaterInfo;
 @property(retain, nonatomic) FinderEnhanceTypeList *enhanceConfiguration; // @synthesize enhanceConfiguration=_enhanceConfiguration;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;

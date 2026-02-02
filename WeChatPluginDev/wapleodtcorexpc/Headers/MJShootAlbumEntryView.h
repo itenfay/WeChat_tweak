@@ -15,7 +15,6 @@
     unsigned long long _sizeMode;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long sizeMode; // @synthesize sizeMode=_sizeMode;
 @property(retain, nonatomic) UIImageView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
 @property(nonatomic) __weak id <MJShootAlbumEntryViewDelegate> delegate; // @synthesize delegate=_delegate;

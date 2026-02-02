@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_dicExtendKeepDurationMarks;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicExtendKeepDurationMarks; // @synthesize dicExtendKeepDurationMarks=_dicExtendKeepDurationMarks;
 - (id)getPBPropertyTable;
 

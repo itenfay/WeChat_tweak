@@ -12,7 +12,6 @@
 }
 
 + (double)heightWithItem:(id)arg1 maxWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *warningLabel; // @synthesize warningLabel=_warningLabel;
 @property(retain, nonatomic) MMFinderLiveSongItem *item; // @synthesize item=_item;
 - (void)textFieldDidChangeContent:(id)arg1;

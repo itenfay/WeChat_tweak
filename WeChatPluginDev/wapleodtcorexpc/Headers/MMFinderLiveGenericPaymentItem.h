@@ -18,7 +18,6 @@
 }
 
 + (id)paymentItemWithName:(id)arg1 price:(unsigned long long)arg2 type:(unsigned int)arg3 desc:(id)arg4 additionalDesc:(id)arg5 payTitle:(id)arg6;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *payButtonTitle; // @synthesize payButtonTitle=_payButtonTitle;
 @property(retain, nonatomic) NSString *additionalDesc; // @synthesize additionalDesc=_additionalDesc;

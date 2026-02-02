@@ -18,7 +18,6 @@
     NSString *logoImg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int flag; // @synthesize flag;
 @property(retain, nonatomic) NSString *logoImg; // @synthesize logoImg;
 @property(retain, nonatomic) NSString *contactWay; // @synthesize contactWay;

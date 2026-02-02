@@ -13,7 +13,6 @@
     NSArray *actionCellList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *actionCellList; // @synthesize actionCellList;
 @property(retain, nonatomic) NSString *groupTitle; // @synthesize groupTitle;
 

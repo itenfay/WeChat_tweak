@@ -22,7 +22,6 @@
     WCBackgroundTaskBasedQueue *_bgtQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBackgroundTaskBasedQueue *bgtQueue; // @synthesize bgtQueue=_bgtQueue;
 @property(nonatomic) _Bool backgroundTaskEnabled; // @synthesize backgroundTaskEnabled=_backgroundTaskEnabled;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;

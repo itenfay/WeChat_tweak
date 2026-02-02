@@ -36,7 +36,6 @@
 }
 
 + (id)flowViewIndexPathForVMIndexPath:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long followStyle; // @synthesize followStyle=_followStyle;
 @property(retain, nonatomic) WCFinderExtStatsReporter *extStatReporter; // @synthesize extStatReporter=_extStatReporter;
 @property(retain, nonatomic) WCFinderOpenTimelineParams *openTimelineParams; // @synthesize openTimelineParams=_openTimelineParams;

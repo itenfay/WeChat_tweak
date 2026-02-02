@@ -21,7 +21,6 @@
 }
 
 + (double)heightInFullScreenMode;
-- (void).cxx_destruct;
 @property(nonatomic) double heightRatio; // @synthesize heightRatio=_heightRatio;
 @property(nonatomic) unsigned long long jumpInfoPos; // @synthesize jumpInfoPos=_jumpInfoPos;
 @property(nonatomic) long long viewControllerCount; // @synthesize viewControllerCount=_viewControllerCount;

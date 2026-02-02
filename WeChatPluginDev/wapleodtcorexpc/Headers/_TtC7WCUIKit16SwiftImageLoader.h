@@ -23,7 +23,6 @@
 + (_Bool)enabledHead;
 + (_Bool)enabled;
 + (id)shared;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

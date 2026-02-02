@@ -30,7 +30,6 @@
     struct UIEdgeInsets _searchAreaContentEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) MMUIButton *leftBackButton; // @synthesize leftBackButton=_leftBackButton;
 @property(retain, nonatomic) UIView *searchHeaderBgView; // @synthesize searchHeaderBgView=_searchHeaderBgView;

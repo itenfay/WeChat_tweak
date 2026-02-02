@@ -72,7 +72,6 @@
 
 + (double)itemDisplayWidth;
 + (double)containerWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *fromView; // @synthesize fromView=_fromView;
 @property(nonatomic) _Bool isChangeFooterView; // @synthesize isChangeFooterView=_isChangeFooterView;
 @property(nonatomic) __weak id rotationNotification; // @synthesize rotationNotification=_rotationNotification;

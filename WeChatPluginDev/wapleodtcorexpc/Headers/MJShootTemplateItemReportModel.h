@@ -14,7 +14,6 @@
     MMCameraTemplateItem *_templateItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCameraTemplateItem *templateItem; // @synthesize templateItem=_templateItem;
 @property(nonatomic) unsigned long long position; // @synthesize position=_position;
 @property(nonatomic) unsigned long long tabID; // @synthesize tabID=_tabID;

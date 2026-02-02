@@ -60,7 +60,6 @@
 + (id)showWCDeviceTipsWithDelegate:(id)arg1 ParentView:(id)arg2 TextContent:(id)arg3 isError:(_Bool)arg4;
 + (id)showWebviewDangerousTips:(id)arg1 withTop:(double)arg2;
 + (void)showAutoSaveTips:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TipsViewAccessibilityElement *tipsViewAccessibilityElement; // @synthesize tipsViewAccessibilityElement=_tipsViewAccessibilityElement;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGesture; // @synthesize longPressGesture=_longPressGesture;
 @property(nonatomic) _Bool hasShown; // @synthesize hasShown=_hasShown;

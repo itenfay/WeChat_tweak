@@ -21,7 +21,6 @@
     unsigned long long _currentActiveLiteAppCellIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentActiveLiteAppCellIndex; // @synthesize currentActiveLiteAppCellIndex=_currentActiveLiteAppCellIndex;
 @property(retain, nonatomic) _TtC6WeChat21WSFlowListLiteAppCell *currentActiveLiteAppCell; // @synthesize currentActiveLiteAppCell=_currentActiveLiteAppCell;
 @property(nonatomic) _Bool hasLoadFirstLiteAppCell; // @synthesize hasLoadFirstLiteAppCell=_hasLoadFirstLiteAppCell;

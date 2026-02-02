@@ -21,7 +21,6 @@
     id <wxAudioCommonDelegate> _wxAudioCommonDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <wxAudioCommonDelegate> wxAudioCommonDelegate; // @synthesize wxAudioCommonDelegate=_wxAudioCommonDelegate;
 @property(nonatomic) __weak id <wxAudioStateDelegate> wxAudioStateDelegate; // @synthesize wxAudioStateDelegate=_wxAudioStateDelegate;
 @property(nonatomic) __weak id <wxAudioOutputDelegate> wxAudioOutputDelegate; // @synthesize wxAudioOutputDelegate=_wxAudioOutputDelegate;

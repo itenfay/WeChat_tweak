@@ -10,7 +10,6 @@
     TingPlayerAudioModuleHelper *_audioModuleHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingPlayerAudioModuleHelper *audioModuleHelper; // @synthesize audioModuleHelper=_audioModuleHelper;
 - (void)pause;
 - (void)resume;

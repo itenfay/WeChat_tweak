@@ -13,7 +13,6 @@
     FTSWebSearchMgr *_webSearchMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSWebSearchMgr *webSearchMgr; // @synthesize webSearchMgr=_webSearchMgr;
 @property(nonatomic) __weak id <FTSWebSearchDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <FTSJSEventDelegate> delegate; // @synthesize delegate=_delegate;

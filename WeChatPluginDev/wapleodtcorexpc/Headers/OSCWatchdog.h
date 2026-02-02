@@ -12,7 +12,6 @@
     OSCPingThread *_pingThread;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithThreashold:(double)arg1;
 

@@ -16,7 +16,6 @@
     NSArray *m_arrOrderAvailableCards;
 }
 
-- (void).cxx_destruct;
 - (void)WCBizPickerViewDidComplete:(id)arg1;
 - (void)WCBizPickerViewDidCancel;
 - (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;

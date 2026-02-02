@@ -22,7 +22,6 @@
 
 + (id)historyDataUnitWithDateKey:(id)arg1 dataCount:(unsigned long long)arg2 dataItemArray:(id)arg3;
 + (id)storyDataUnitWithContact:(id)arg1 dataCount:(unsigned long long)arg2 storyDataItemArray:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) long long cornerCount; // @synthesize cornerCount=_cornerCount;
 @property(nonatomic) _Bool chatRoomSyncChange; // @synthesize chatRoomSyncChange=_chatRoomSyncChange;
 @property(retain, nonatomic) NSMutableArray *arrTid; // @synthesize arrTid=_arrTid;

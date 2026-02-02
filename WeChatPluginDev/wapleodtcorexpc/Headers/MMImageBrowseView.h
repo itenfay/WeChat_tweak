@@ -16,7 +16,6 @@
     _Bool _isDisplayingNoImage;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isDisplayingNoImage; // @synthesize isDisplayingNoImage=_isDisplayingNoImage;
 @property(retain, nonatomic) MMEmoticonView *m_emoticonView; // @synthesize m_emoticonView;
 @property(nonatomic) __weak id <MMImgageBrowseViewDelegate> m_delegate; // @synthesize m_delegate;

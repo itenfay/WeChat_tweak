@@ -10,7 +10,6 @@
     PreEnterShowLimitedModeEntryConfig *_configObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PreEnterShowLimitedModeEntryConfig *configObj; // @synthesize configObj=_configObj;
 - (void)startStep;
 @property(readonly, nonatomic) _Bool isValid;

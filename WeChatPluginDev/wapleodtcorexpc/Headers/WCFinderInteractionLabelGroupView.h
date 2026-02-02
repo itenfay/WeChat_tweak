@@ -14,7 +14,6 @@
     NSMutableArray *_labelViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *labelViews; // @synthesize labelViews=_labelViews;
 @property(retain, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 @property(nonatomic) double fWidth; // @synthesize fWidth=_fWidth;

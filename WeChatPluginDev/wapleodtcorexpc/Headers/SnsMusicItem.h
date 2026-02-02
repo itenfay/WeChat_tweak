@@ -40,7 +40,6 @@
 + (void)PBArrayAdd_albumName;
 + (void)PBArrayAdd_singer;
 + (void)PBArrayAdd_musicName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *coverHDImageUrl; // @synthesize coverHDImageUrl=_coverHDImageUrl;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;

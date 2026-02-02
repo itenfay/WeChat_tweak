@@ -14,7 +14,6 @@
     NSString *_lqbOpenUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lqbOpenUrl; // @synthesize lqbOpenUrl=_lqbOpenUrl;
 @property(nonatomic) _Bool isOpenlqb; // @synthesize isOpenlqb=_isOpenlqb;
 @property(nonatomic) _Bool isShowlqbEntry; // @synthesize isShowlqbEntry=_isShowlqbEntry;

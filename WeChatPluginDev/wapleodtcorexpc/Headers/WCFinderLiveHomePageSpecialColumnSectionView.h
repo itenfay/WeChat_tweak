@@ -17,7 +17,6 @@
 
 + (double)defaultCellWidth;
 + (double)viewHeightInWidth:(double)arg1 styleInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveHomePageFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) WCFinderLiveHomePageRecommendGuideFooterView *recommendGuideView; // @synthesize recommendGuideView=_recommendGuideView;
 @property(nonatomic) double beginTouchPosX; // @synthesize beginTouchPosX=_beginTouchPosX;

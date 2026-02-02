@@ -46,7 +46,6 @@
     UILabel *_noticeDesc;
 }
 
-- (void).cxx_destruct;
 @property(retain) UILabel *noticeDesc; // @synthesize noticeDesc=_noticeDesc;
 @property(retain) UILabel *noticeTitle; // @synthesize noticeTitle=_noticeTitle;
 @property(nonatomic) _Bool m_expendAddress; // @synthesize m_expendAddress=_m_expendAddress;

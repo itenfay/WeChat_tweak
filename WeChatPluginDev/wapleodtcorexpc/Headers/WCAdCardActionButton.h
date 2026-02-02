@@ -13,7 +13,6 @@
     UIView *_highlightedCoverView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightedCoverView; // @synthesize highlightedCoverView=_highlightedCoverView;
 @property(nonatomic) long long animationState; // @synthesize animationState=_animationState;
 @property(retain, nonatomic) WCAdCardBtnInfo *buttonInfo; // @synthesize buttonInfo=_buttonInfo;

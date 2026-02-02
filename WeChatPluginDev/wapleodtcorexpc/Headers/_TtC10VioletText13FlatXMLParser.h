@@ -16,7 +16,6 @@
     MISSING_TYPE *attributesResolver;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;

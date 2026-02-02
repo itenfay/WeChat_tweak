@@ -16,7 +16,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorBar; // @synthesize separatorBar=_separatorBar;
 @property(retain, nonatomic) UIImageView *rightChevronView; // @synthesize rightChevronView=_rightChevronView;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;

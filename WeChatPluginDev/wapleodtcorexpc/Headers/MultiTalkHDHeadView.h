@@ -15,7 +15,6 @@
     NSString *_m_headImgUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_headImgUrl; // @synthesize m_headImgUrl=_m_headImgUrl;
 @property(retain, nonatomic) CBaseContact *m_contact; // @synthesize m_contact=_m_contact;
 @property(retain, nonatomic) UIImageView *m_headView; // @synthesize m_headView=_m_headView;

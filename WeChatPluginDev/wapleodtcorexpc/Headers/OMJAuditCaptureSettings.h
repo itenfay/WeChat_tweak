@@ -17,7 +17,6 @@
 }
 
 + (id)wcmj_defaultSettings;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *outputFilenameBase; // @synthesize outputFilenameBase=_outputFilenameBase;
 @property(readonly, copy, nonatomic) NSString *outputDirPath; // @synthesize outputDirPath=_outputDirPath;
 @property(readonly, nonatomic) long long outputType; // @synthesize outputType=_outputType;

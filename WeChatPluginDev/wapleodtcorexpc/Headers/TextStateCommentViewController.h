@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonBoardView, MMCustomTitleView, MMUILabel, NSArray, NSIndexPath, NSString, TextStateCardReporter, TextStateCommentViewModel, UIButton, UIImageView, UILabel, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UITableView, UITapGestureRecognizer, UIView, WCCommentDetailHeaderView, WCCommentEmotionBoardViewContainerView, WCCommentInputView, WCFinderAnimationLoadingView, WCFinderCommentDetailTextView, WCFinderCommentIdentityActionSheetView, WCFinderCommentListHeaderRefreshView, WCFinderPushFeedViewParams, WCFinderRefreshTableFooterView, WCInputController;
 
 @interface TextStateCommentViewController
@@ -67,7 +69,6 @@
     MMCustomTitleView *_tipContentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool popupKeyboardAtBeginingFlag; // @synthesize popupKeyboardAtBeginingFlag=_popupKeyboardAtBeginingFlag;
 @property(retain, nonatomic) MMCustomTitleView *tipContentView; // @synthesize tipContentView=_tipContentView;
 @property(retain, nonatomic) NSArray *rightButtons; // @synthesize rightButtons=_rightButtons;
@@ -284,4 +285,3 @@
 @property(readonly) Class superclass;
 
 @end
-

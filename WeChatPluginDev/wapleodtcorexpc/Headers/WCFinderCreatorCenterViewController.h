@@ -14,7 +14,6 @@
     WCTableViewManager *_tableViewManager;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasExposeAnchorTaskRedDot; // @synthesize hasExposeAnchorTaskRedDot=_hasExposeAnchorTaskRedDot;
 @property(nonatomic) _Bool hasExposeAnchorTaskEntrance; // @synthesize hasExposeAnchorTaskEntrance=_hasExposeAnchorTaskEntrance;
 @property(retain, nonatomic) WCTableViewManager *tableViewManager; // @synthesize tableViewManager=_tableViewManager;

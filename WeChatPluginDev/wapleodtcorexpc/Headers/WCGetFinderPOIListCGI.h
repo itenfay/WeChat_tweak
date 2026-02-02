@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCGetFinderPOIListCGI
@@ -16,7 +18,6 @@
     CDUnknownBlockType _failureBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
@@ -30,4 +31,3 @@
 - (id)initWithPullType:(unsigned int)arg1 lastBuffer:(id)arg2 finderUsername:(id)arg3 longitude:(float)arg4 latitude:(float)arg5 successBlock:(CDUnknownBlockType)arg6 failureBlock:(CDUnknownBlockType)arg7;
 
 @end
-

@@ -12,7 +12,6 @@
     JSEvent *_event;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEvent *event; // @synthesize event=_event;
 @property(retain, nonatomic) NSString *bindPhoneNum; // @synthesize bindPhoneNum=_bindPhoneNum;
 @property(retain, nonatomic) MMPageSheetAdapter *adapter; // @synthesize adapter=_adapter;

@@ -14,7 +14,6 @@
     unsigned int _uIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uIndex; // @synthesize uIndex=_uIndex;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 - (id)initWithHeight:(double)arg1;

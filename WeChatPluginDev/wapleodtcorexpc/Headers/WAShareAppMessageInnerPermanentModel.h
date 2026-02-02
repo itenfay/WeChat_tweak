@@ -18,7 +18,6 @@
     NSArray *_participant;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *participant; // @synthesize participant=_participant;
 @property(nonatomic) _Bool bInSharing; // @synthesize bInSharing=_bInSharing;
 @property(nonatomic) _Bool isPrivateMessage; // @synthesize isPrivateMessage=_isPrivateMessage;

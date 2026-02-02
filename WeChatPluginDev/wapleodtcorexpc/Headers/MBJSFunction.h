@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MBJSFunction : NSObject
 {
@@ -11,11 +12,9 @@
     CDUnknownBlockType _invokeCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType invokeCallback; // @synthesize invokeCallback=_invokeCallback;
 @property(nonatomic) unsigned long long handlerId; // @synthesize handlerId=_handlerId;
 - (void)invokeWithDict:(id)arg1;
 - (void)invoke:(id)arg1;
 
 @end
-

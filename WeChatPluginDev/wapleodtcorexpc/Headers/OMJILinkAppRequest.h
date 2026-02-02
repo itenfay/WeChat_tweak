@@ -18,7 +18,6 @@
     NSNumber *_netType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *netType; // @synthesize netType=_netType;
 @property(retain, nonatomic) NSNumber *limitFrequency; // @synthesize limitFrequency=_limitFrequency;
 @property(retain, nonatomic) NSNumber *limitFlow; // @synthesize limitFlow=_limitFlow;

@@ -13,7 +13,6 @@
     struct CGRect _bound;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect bound; // @synthesize bound=_bound;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 

@@ -49,7 +49,6 @@
 + (unsigned int)getCurrentTimeStamp;
 + (unsigned long long)getNetType;
 + (id)getUserAgent;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrWebviewJumpInfo; // @synthesize arrWebviewJumpInfo=_arrWebviewJumpInfo;
 @property(nonatomic) _Bool navigateActionMatchUniversalLinkAndConfirmed; // @synthesize navigateActionMatchUniversalLinkAndConfirmed=_navigateActionMatchUniversalLinkAndConfirmed;
 @property(nonatomic) unsigned int navigateActionMatchControlAction; // @synthesize navigateActionMatchControlAction=_navigateActionMatchControlAction;

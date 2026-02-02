@@ -31,7 +31,6 @@
     MMUILabel *_remainWordCountLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *remainWordCountLabel; // @synthesize remainWordCountLabel=_remainWordCountLabel;
 @property(retain, nonatomic) UIView *bottomBackGroundView; // @synthesize bottomBackGroundView=_bottomBackGroundView;
 @property(retain, nonatomic) EmoticonBoardView *emoticonBoardView; // @synthesize emoticonBoardView=_emoticonBoardView;

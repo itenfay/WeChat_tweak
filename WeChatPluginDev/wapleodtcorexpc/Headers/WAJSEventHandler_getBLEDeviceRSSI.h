@@ -10,7 +10,6 @@
     NSString *_deviceUUID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *deviceUUID; // @synthesize deviceUUID=_deviceUUID;
 - (void)onBLEDevice:(id)arg1 didReadRSSI:(id)arg2 errorCode:(int)arg3 errMsg:(id)arg4 appId:(id)arg5;
 - (void)handleJSEvent:(id)arg1;

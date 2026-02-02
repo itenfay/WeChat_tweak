@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MPChannelGetEntryDataReq;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) MPChannelGetEntryDataReq *request; // @synthesize request=_request;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
@@ -27,4 +27,3 @@
 - (id)initWithReq:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

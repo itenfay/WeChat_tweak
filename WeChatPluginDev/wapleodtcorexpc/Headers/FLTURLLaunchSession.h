@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NSURL, SFSafariViewController;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _didFinish;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didFinish; // @synthesize didFinish=_didFinish;
 @property(retain, nonatomic) SFSafariViewController *safari; // @synthesize safari=_safari;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
@@ -32,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

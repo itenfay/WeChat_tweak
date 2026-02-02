@@ -17,7 +17,6 @@
     NSString *_m_reason;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int m_currency; // @synthesize m_currency=_m_currency;
 @property(retain, nonatomic) NSString *m_reason; // @synthesize m_reason=_m_reason;
 @property(retain, nonatomic) NSString *m_recvNickname; // @synthesize m_recvNickname=_m_recvNickname;

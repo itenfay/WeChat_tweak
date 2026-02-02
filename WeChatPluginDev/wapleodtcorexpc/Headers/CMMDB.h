@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMDBMigrationInfos, MMTimer, NSArray, NSRecursiveLock, NewContactDB, OpLogDB, WCDBSharedLockCenter, WCTDatabase, WCTTable;
 
@@ -44,7 +45,6 @@
 + (id)brandMsgDBPathWithDocDir:(id)arg1 userName:(id)arg2;
 + (id)messageDBPathWithDocDir:(id)arg1 userName:(id)arg2 index:(int)arg3;
 + (_Bool)isSpecialUserNames:(id)arg1;
-- (void).cxx_destruct;
 @property unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) WCDBSharedLockCenter *lockCenter; // @synthesize lockCenter=_lockCenter;
 @property(retain) WCTTable *m_tableRoomHistory; // @synthesize m_tableRoomHistory=_m_tableRoomHistory;
@@ -223,4 +223,3 @@
 - (void)SetupOplogDBWithDocDir:(id)arg1 userName:(id)arg2;
 
 @end
-

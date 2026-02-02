@@ -22,7 +22,6 @@
     MMUIButton *_backgroundExitButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *backgroundExitButton; // @synthesize backgroundExitButton=_backgroundExitButton;
 @property(retain, nonatomic) MMUIButton *arrowButton; // @synthesize arrowButton=_arrowButton;
 @property(retain, nonatomic) UILabel *singGuideLabel; // @synthesize singGuideLabel=_singGuideLabel;

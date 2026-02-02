@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveBarragePubbleCellFrame, MMFinderLiveOlyBarragePubbleTravel, NSString, RichTextView, UIImageView;
 
@@ -20,7 +21,6 @@
     UIImageView *_starIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *starIconView; // @synthesize starIconView=_starIconView;
 @property(retain, nonatomic) RichTextView *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) UIView *pubbleBackView; // @synthesize pubbleBackView=_pubbleBackView;
@@ -62,4 +62,3 @@
 @property(readonly) Class superclass;
 
 @end
-

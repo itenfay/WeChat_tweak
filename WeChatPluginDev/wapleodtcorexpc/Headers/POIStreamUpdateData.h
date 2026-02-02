@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithFinderObjectPBDataArray:(id)arg1 nearbyInfoPBData:(id)arg2 containsNearby:(_Bool)arg3 isReload:(_Bool)arg4 prefetchCount:(long long)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) long long prefetchCount; // @synthesize prefetchCount=_prefetchCount;
 @property(nonatomic) _Bool isReload; // @synthesize isReload=_isReload;
 @property(nonatomic) _Bool containsNearby; // @synthesize containsNearby=_containsNearby;

@@ -33,7 +33,6 @@
     NSString *_mobileVerifyReqkey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mobileVerifyReqkey; // @synthesize mobileVerifyReqkey=_mobileVerifyReqkey;
 @property(retain, nonatomic) WCPayRealnameHalfPageSheetView *underAgeMidHalfPage; // @synthesize underAgeMidHalfPage=_underAgeMidHalfPage;
 @property _Bool shouldShowSuccessView; // @synthesize shouldShowSuccessView=_shouldShowSuccessView;

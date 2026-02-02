@@ -26,7 +26,6 @@
     NSMutableDictionary *_webViewEvaluateJsDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *webViewEvaluateJsDic; // @synthesize webViewEvaluateJsDic=_webViewEvaluateJsDic;
 @property(retain, nonatomic) NSMutableSet *webViewDidCommitSet; // @synthesize webViewDidCommitSet=_webViewDidCommitSet;
 @property(retain, nonatomic) NSMutableDictionary *reportSyncReloadOBjs; // @synthesize reportSyncReloadOBjs=_reportSyncReloadOBjs;

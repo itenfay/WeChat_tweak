@@ -14,7 +14,6 @@
     UIView *_bottomLineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;
 @property(retain, nonatomic) UIImageView *toggleImageView; // @synthesize toggleImageView=_toggleImageView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

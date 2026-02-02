@@ -37,7 +37,6 @@
 + (void)PBArrayAdd_name;
 + (void)PBArrayAdd_albumThumbUrl;
 + (void)PBArrayAdd_docId;
-- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSString *songId; // @synthesize songId=_songId;
 @property(nonatomic) unsigned int docType; // @synthesize docType=_docType;

@@ -13,7 +13,6 @@
     long long _faceGender;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long faceGender; // @synthesize faceGender=_faceGender;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)initWithTitle:(id)arg1 faceGender:(long long)arg2;

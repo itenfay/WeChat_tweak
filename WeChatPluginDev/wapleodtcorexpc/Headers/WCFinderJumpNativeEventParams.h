@@ -15,7 +15,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *byPassInfo; // @synthesize byPassInfo=_byPassInfo;
 @property(copy, nonatomic) NSString *byPassInfoString; // @synthesize byPassInfoString=_byPassInfoString;
 @property(copy, nonatomic) NSString *eventIdStr; // @synthesize eventIdStr=_eventIdStr;

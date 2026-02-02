@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMLiveFaceEncodeLogic, MMLiveStorageCleanupPinningToken, MMLiveTask, MMTimer, MMWeEffectManager, NSMutableArray, NSString;
 
@@ -43,7 +44,6 @@
 + (void)searchEveryPixelFroImage:(id)arg1;
 + (id)imageFromRGBATexture:(int)arg1 width:(int)arg2 height:(int)arg3;
 + (id)baseResourceDir;
-- (void).cxx_destruct;
 @property(nonatomic) double lastProcessBeginTime; // @synthesize lastProcessBeginTime=_lastProcessBeginTime;
 @property(retain, nonatomic) MMTimer *fpsScheduleCheckTimer; // @synthesize fpsScheduleCheckTimer=_fpsScheduleCheckTimer;
 @property(retain, nonatomic) NSMutableArray *recentProcessCostTimeList; // @synthesize recentProcessCostTimeList=_recentProcessCostTimeList;
@@ -165,4 +165,3 @@
 @property(readonly) Class superclass;
 
 @end
-

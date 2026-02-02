@@ -19,7 +19,6 @@
     _Bool _showFullPhoneNum;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showFullPhoneNum; // @synthesize showFullPhoneNum=_showFullPhoneNum;
 @property(nonatomic) unsigned int m_uiFromScene; // @synthesize m_uiFromScene;
 @property(nonatomic) __weak id <VerifyPhoneDelegate> m_delegate; // @synthesize m_delegate;

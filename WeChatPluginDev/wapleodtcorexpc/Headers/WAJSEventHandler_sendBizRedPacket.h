@@ -10,7 +10,6 @@
     NSDictionary *_dicParam;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dicParam; // @synthesize dicParam=_dicParam;
 - (void)onRedEnvFail:(id)arg1;
 - (void)onRedEnvCancel;

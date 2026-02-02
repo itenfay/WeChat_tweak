@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_queue> *m_thumbDownloadQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CdnTaskInfo *m_oCurTaskInfo; // @synthesize m_oCurTaskInfo;
 - (void)OnCdnDownload:(id)arg1;
 - (void)OnSetCdnDnsInfo;

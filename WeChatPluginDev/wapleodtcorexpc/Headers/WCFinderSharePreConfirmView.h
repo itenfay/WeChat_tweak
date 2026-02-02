@@ -15,7 +15,6 @@
     MMUIButton *_memberFlagButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *memberFlagButton; // @synthesize memberFlagButton=_memberFlagButton;
 @property(retain, nonatomic) SightIconView *playIconView; // @synthesize playIconView=_playIconView;
 @property(retain, nonatomic) WCFinderShareCoverImageView *coverImageView; // @synthesize coverImageView=_coverImageView;

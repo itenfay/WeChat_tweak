@@ -13,7 +13,6 @@
     id <MJTileStripViewManager> _tileStripViewManager;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSegmentInfoOverlayVisible; // @synthesize isSegmentInfoOverlayVisible=_isSegmentInfoOverlayVisible;
 @property(nonatomic) __weak id <MJTileStripViewManager> tileStripViewManager; // @synthesize tileStripViewManager=_tileStripViewManager;
 @property(retain, nonatomic) MJTileStripView *tileStripView; // @synthesize tileStripView=_tileStripView;

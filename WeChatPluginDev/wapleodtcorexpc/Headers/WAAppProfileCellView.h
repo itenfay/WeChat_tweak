@@ -15,7 +15,6 @@
     NSDate *_visibleDate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *visibleDate; // @synthesize visibleDate=_visibleDate;
 @property(retain, nonatomic) MMUILabel *scoreLabel; // @synthesize scoreLabel=_scoreLabel;
 @property(retain, nonatomic) WCTagsView *tagsView; // @synthesize tagsView=_tagsView;

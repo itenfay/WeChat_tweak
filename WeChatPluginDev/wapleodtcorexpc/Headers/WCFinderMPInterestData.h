@@ -43,7 +43,6 @@
 + (void)PBArrayAdd_dataItemArray;
 + (void)PBArrayAdd_finderSessionId;
 + (void)PBArrayAdd_mpSessionId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long expiredTime; // @synthesize expiredTime=_expiredTime;
 @property(nonatomic) unsigned long long cacheTime; // @synthesize cacheTime=_cacheTime;
 @property(retain, nonatomic) WCFinderDataItemMutableArray *dataItemArray; // @synthesize dataItemArray=_dataItemArray;

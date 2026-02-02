@@ -25,7 +25,6 @@
 + (void)setGlobalRequiredPixelBufferAttributesForRenderContext:(id)arg1;
 + (void)setGlobalSourcePixelBufferAttributes:(id)arg1;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TAVRenderReportData *renderReportData; // @synthesize renderReportData=_renderReportData;
 @property(retain, nonatomic) AVVideoCompositionRenderContext *renderContext; // @synthesize renderContext=_renderContext;
 @property(nonatomic) _Bool shouldCancelAllRequests; // @synthesize shouldCancelAllRequests=_shouldCancelAllRequests;

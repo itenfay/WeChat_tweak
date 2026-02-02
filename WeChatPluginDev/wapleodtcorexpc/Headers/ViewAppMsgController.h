@@ -18,7 +18,6 @@
     UIImageView *m_thumbImageVew;
 }
 
-- (void).cxx_destruct;
 - (void)onShareVideoToTimeline:(_Bool)arg1;
 - (void)onShareVideoToFriend:(id)arg1;
 - (void)onClickFavVideoMenu;

@@ -13,7 +13,6 @@
     unsigned long long _mode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)initWithTitle:(id)arg1 mode:(unsigned long long)arg2;

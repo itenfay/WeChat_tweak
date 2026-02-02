@@ -11,7 +11,6 @@
     UIImage *_symbolImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *symbolImage; // @synthesize symbolImage=_symbolImage;
 @property(retain, nonatomic) UIImage *styleTextureImage; // @synthesize styleTextureImage=_styleTextureImage;
 

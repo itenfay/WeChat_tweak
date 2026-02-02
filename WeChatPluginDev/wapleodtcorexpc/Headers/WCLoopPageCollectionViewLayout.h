@@ -12,7 +12,6 @@
     id <WCLoopPageCollectionViewLayoutDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCLoopPageCollectionViewLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 - (struct CGSize)collectionViewContentSize;
 

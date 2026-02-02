@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableSet, NSString, WCFinderUploadTask;
 @protocol OS_dispatch_queue, WCFinderUploadCdnMgrDelegate;
@@ -24,7 +25,6 @@
 }
 
 + (void)updateMentionedHistoryArray:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *ioQueue; // @synthesize ioQueue=_ioQueue;
 @property(nonatomic) __weak id <WCFinderUploadCdnMgrDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WCFinderUploadTask *currentTask; // @synthesize currentTask=_currentTask;
@@ -97,4 +97,3 @@
 - (id)initWithDelegate:(id)arg1;
 
 @end
-

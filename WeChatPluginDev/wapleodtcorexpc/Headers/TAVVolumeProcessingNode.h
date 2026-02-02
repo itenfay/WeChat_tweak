@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,7 +16,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType timingFunction; // @synthesize timingFunction=_timingFunction;
 @property(nonatomic) float endVolume; // @synthesize endVolume=_endVolume;
 @property(nonatomic) float startVolume; // @synthesize startVolume=_startVolume;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

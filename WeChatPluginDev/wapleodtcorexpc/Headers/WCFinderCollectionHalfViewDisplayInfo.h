@@ -19,7 +19,6 @@
 
 + (id)displayInfoWithPaidCollection:(id)arg1;
 + (id)displayInfoWithCollecitonInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reportURL; // @synthesize reportURL=_reportURL;
 @property(copy, nonatomic) NSString *displayDescContent; // @synthesize displayDescContent=_displayDescContent;
 @property(nonatomic) _Bool showCollectionDesc; // @synthesize showCollectionDesc=_showCollectionDesc;

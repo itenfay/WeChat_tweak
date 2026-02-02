@@ -14,7 +14,6 @@
     FavoritesItem *_favItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FavoritesItem *favItem; // @synthesize favItem=_favItem;
 @property(nonatomic) unsigned int updateTime; // @synthesize updateTime=_updateTime;
 @property(nonatomic) unsigned int localId; // @synthesize localId=_localId;

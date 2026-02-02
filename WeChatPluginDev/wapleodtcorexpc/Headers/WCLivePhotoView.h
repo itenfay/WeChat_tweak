@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMAsset;
 
 @interface WCLivePhotoView
@@ -12,7 +14,6 @@
 }
 
 + (id)generatePlayerArgsWithLocalLivePhotoPath:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMAsset *asset; // @synthesize asset=_asset;
 - (void)_startPlayingIfPending;
 - (void)_resetPendingToPlay;
@@ -30,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 asset:(id)arg2 playerArgs:(id)arg3;
 
 @end
-

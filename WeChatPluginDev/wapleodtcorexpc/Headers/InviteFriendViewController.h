@@ -11,7 +11,6 @@
     InviteFriendLogic *_inviteLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) InviteFriendLogic *inviteLogic; // @synthesize inviteLogic=_inviteLogic;
 @property(retain, nonatomic) MMTableViewInfo *tableViewInfo; // @synthesize tableViewInfo=_tableViewInfo;
 - (void)makeInviteSourceCell:(id)arg1 cellInfo:(id)arg2;

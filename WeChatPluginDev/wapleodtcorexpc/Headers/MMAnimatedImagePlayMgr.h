@@ -18,7 +18,6 @@
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedInstance;
 + (void)initialize;
-- (void).cxx_destruct;
 - (void)onApplicationDidReceiveMemoryWarning:(id)arg1;
 - (void)onApplicationDidBecomeActive:(id)arg1;
 - (void)onApplicationWillResignActive:(id)arg1;

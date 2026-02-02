@@ -10,7 +10,6 @@
     MFRTimelineReportInfo *_timelineReportInfo;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MFRTimelineReportInfo *timelineReportInfo; // @synthesize timelineReportInfo=_timelineReportInfo;
 - (void)didClickMissReadButton;
 - (void)timelineViewControllerWillDisplayDataItem:(id)arg1;

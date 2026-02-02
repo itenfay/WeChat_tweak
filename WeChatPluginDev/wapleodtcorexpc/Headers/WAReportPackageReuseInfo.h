@@ -14,7 +14,6 @@
     NSString *_reuseReason;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reuseReason; // @synthesize reuseReason=_reuseReason;
 @property(nonatomic) unsigned long long reuseType; // @synthesize reuseType=_reuseType;
 @property(nonatomic) unsigned int packageType; // @synthesize packageType=_packageType;

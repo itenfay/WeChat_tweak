@@ -26,7 +26,6 @@
     NSDictionary *_performanceConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *performanceConfig; // @synthesize performanceConfig=_performanceConfig;
 @property(retain, nonatomic) NSString *httpReferer; // @synthesize httpReferer=_httpReferer;
 @property(retain, nonatomic) NSString *httpUserAgent; // @synthesize httpUserAgent=_httpUserAgent;

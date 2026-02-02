@@ -14,7 +14,6 @@
     WCPlayerPlaybackInfo *_playbackInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showBulletAnimating; // @synthesize showBulletAnimating=_showBulletAnimating;
 @property(retain, nonatomic) WCPlayerPlaybackInfo *playbackInfo; // @synthesize playbackInfo=_playbackInfo;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;

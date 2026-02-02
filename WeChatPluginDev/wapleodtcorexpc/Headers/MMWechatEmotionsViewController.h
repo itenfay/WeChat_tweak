@@ -30,7 +30,6 @@
     StoreEmoticonTopicProxyLogic *_topicVCPorxy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StoreEmoticonTopicProxyLogic *topicVCPorxy; // @synthesize topicVCPorxy=_topicVCPorxy;
 @property(retain, nonatomic) MMLoadMoreCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) EmoticonStoreMoreManualFetchFooterView *moreFooterView; // @synthesize moreFooterView=_moreFooterView;

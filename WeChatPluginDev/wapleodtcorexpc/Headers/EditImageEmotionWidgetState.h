@@ -12,7 +12,6 @@
     NSString *_emotionSearchKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEmotionAnimated; // @synthesize isEmotionAnimated=_isEmotionAnimated;
 @property(retain, nonatomic) NSString *emotionSearchKey; // @synthesize emotionSearchKey=_emotionSearchKey;
 @property(retain, nonatomic) NSString *emotionMd5; // @synthesize emotionMd5=_emotionMd5;

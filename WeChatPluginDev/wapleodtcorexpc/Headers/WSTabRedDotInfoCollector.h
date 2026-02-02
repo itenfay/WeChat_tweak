@@ -13,7 +13,6 @@
     NSNumber *_currentBubbleCategory;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *currentBubbleCategory; // @synthesize currentBubbleCategory=_currentBubbleCategory;
 @property(retain, nonatomic) WSAllTabRedDotInfo *allTabRedDotInfo; // @synthesize allTabRedDotInfo=_allTabRedDotInfo;
 - (void)reportTabTipsBubbleClick:(long long)arg1;

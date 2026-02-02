@@ -18,7 +18,6 @@
 }
 
 + (void)setupCollectionView:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController<WCFinderFeedBaseViewControllerProtocol> *viewControler; // @synthesize viewControler=_viewControler;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) WCFinderExtStatsReporter *extStatsReporter; // @synthesize extStatsReporter=_extStatsReporter;

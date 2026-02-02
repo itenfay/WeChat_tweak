@@ -132,7 +132,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contentId; // @synthesize contentId=_contentId;
 @property(nonatomic) unsigned int subMsgType; // @synthesize subMsgType=_subMsgType;
 @property(retain, nonatomic) NSData *msgSimplePbData; // @synthesize msgSimplePbData=_msgSimplePbData;

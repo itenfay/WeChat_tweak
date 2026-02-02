@@ -12,7 +12,6 @@
     QryCancelECardDescRes *_cancelDetail;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QryCancelECardDescRes *cancelDetail; // @synthesize cancelDetail=_cancelDetail;
 @property(nonatomic) __weak id <WCPayECardDetailControlLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)successVCFinished:(id)arg1;

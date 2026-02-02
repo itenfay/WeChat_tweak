@@ -20,7 +20,6 @@
 
 + (long long)topAreaHeight;
 + (id)titleFont;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAMainFrameTaskBarSectionBaseViewReportDelegate> reportDelegate; // @synthesize reportDelegate=_reportDelegate;
 @property(retain, nonatomic) NSString *sectionId; // @synthesize sectionId=_sectionId;
 @property(retain, nonatomic) UIView *cellMask; // @synthesize cellMask=_cellMask;

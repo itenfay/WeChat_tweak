@@ -14,7 +14,6 @@
 }
 
 + (id)itemWith:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderMixObject *mixObject; // @synthesize mixObject=_mixObject;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(readonly, nonatomic) NSString *itemId;

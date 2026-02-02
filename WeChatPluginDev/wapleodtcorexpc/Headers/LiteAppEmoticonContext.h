@@ -19,7 +19,6 @@
 + (id)getFlutterViewWithController:(id)arg1;
 + (id)getEmoticonPanelWithUIViewController:(id)arg1;
 + (id)liteAppEmoticonContextTag;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <LiteAppLifeCycleCallbackDelegate> preLifeCycleDelegate; // @synthesize preLifeCycleDelegate=_preLifeCycleDelegate;
 @property(nonatomic) __weak UIViewController<ILiteAppJsApiPluginControllerProtocol> *liteAppVC; // @synthesize liteAppVC=_liteAppVC;
 @property(retain, nonatomic) EmoticonBoardView *emoticonBoardView; // @synthesize emoticonBoardView=_emoticonBoardView;

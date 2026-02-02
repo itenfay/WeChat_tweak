@@ -18,7 +18,6 @@
     WCPayTransferMoneyControlLogic *_transferMoneyControlLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayTransferMoneyControlLogic *transferMoneyControlLogic; // @synthesize transferMoneyControlLogic=_transferMoneyControlLogic;
 @property(retain, nonatomic) WCPayOpenApiParamter *openApiParam; // @synthesize openApiParam=_openApiParam;
 - (void)createWapWechatPay;

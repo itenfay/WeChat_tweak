@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableDictionary, NSString;
 @protocol MMMusicFlexEditBarThumbLoaderDelegate;
@@ -15,7 +16,6 @@
     id <MMMusicFlexEditBarThumbLoaderDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMMusicFlexEditBarThumbLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)ImageDidFail:(id)arg1;
 - (void)ImageDidLoad:(id)arg1 Url:(id)arg2;
@@ -36,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

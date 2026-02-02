@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCMegaVideoUserPageCGI
@@ -13,7 +15,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
@@ -24,4 +25,3 @@
 - (id)initWithContactUsername:(id)arg1 lastBuffer:(id)arg2 successful:(CDUnknownBlockType)arg3 failure:(CDUnknownBlockType)arg4;
 
 @end
-

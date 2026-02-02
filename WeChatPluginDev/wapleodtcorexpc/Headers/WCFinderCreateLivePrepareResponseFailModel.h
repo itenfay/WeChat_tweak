@@ -14,7 +14,6 @@
     FinderJumpInfo *_applyEligibilityJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderJumpInfo *applyEligibilityJumpInfo; // @synthesize applyEligibilityJumpInfo=_applyEligibilityJumpInfo;
 @property(retain, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(nonatomic) long long errCode; // @synthesize errCode=_errCode;

@@ -13,7 +13,6 @@
     WAMapAnnotationView *_markerView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int workingAnim; // @synthesize workingAnim=_workingAnim;
 @property(nonatomic) __weak WAMapAnnotationView *markerView; // @synthesize markerView=_markerView;
 @property(retain, nonatomic) NSDictionary *dic; // @synthesize dic=_dic;

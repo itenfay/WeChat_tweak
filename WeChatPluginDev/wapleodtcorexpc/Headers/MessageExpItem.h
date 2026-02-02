@@ -19,7 +19,6 @@
 }
 
 + (id)genExpXMLFromMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiSightDownloadControlType; // @synthesize uiSightDownloadControlType;
 @property(nonatomic) unsigned int uiImageDownloadControlType; // @synthesize uiImageDownloadControlType;
 @property(nonatomic) _Bool bNeedHiddenAppTail; // @synthesize bNeedHiddenAppTail;

@@ -17,7 +17,6 @@
     NSString *_musicId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needRefreshSameSongSessionidAfterMusicStop; // @synthesize needRefreshSameSongSessionidAfterMusicStop=_needRefreshSameSongSessionidAfterMusicStop;
 @property(retain, nonatomic) NSString *musicId; // @synthesize musicId=_musicId;
 @property(nonatomic) double lastStartTimestamp; // @synthesize lastStartTimestamp=_lastStartTimestamp;

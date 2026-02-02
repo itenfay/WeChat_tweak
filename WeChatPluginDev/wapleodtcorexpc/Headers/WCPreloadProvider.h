@@ -12,7 +12,6 @@
     id <WCPreloadProviderDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPreloadProviderDelegate> delegate; // @synthesize delegate;
 - (void)preloadHeadWithLatestID:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

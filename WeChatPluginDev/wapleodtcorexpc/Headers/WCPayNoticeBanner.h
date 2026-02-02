@@ -15,7 +15,6 @@
 }
 
 + (double)bannerHeightWithFrame:(struct CGRect)arg1 title:(id)arg2 oneline:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

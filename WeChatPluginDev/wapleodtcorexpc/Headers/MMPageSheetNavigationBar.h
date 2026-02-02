@@ -36,7 +36,6 @@
     double _titleOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNavAddDragDown; // @synthesize isNavAddDragDown=_isNavAddDragDown;
 @property(nonatomic) double titleOffset; // @synthesize titleOffset=_titleOffset;
 @property(nonatomic) double leftSideLeftMargin; // @synthesize leftSideLeftMargin=_leftSideLeftMargin;

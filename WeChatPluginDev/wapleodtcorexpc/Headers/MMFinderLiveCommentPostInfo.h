@@ -21,7 +21,6 @@
     FinderLiveContact *_fromUser;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveContact *fromUser; // @synthesize fromUser=_fromUser;
 @property(retain, nonatomic) FinderWindowProductInfo *questionProductInfo; // @synthesize questionProductInfo=_questionProductInfo;
 @property(retain, nonatomic) MMLiveCommentDataItem *selectCommentItem; // @synthesize selectCommentItem=_selectCommentItem;

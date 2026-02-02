@@ -112,7 +112,6 @@
 + (id)genNewEmotionSharePreConfirm:(id)arg1 comment:(id)arg2 emotion:(id)arg3;
 + (id)genEmotionSharePreConfirm:(id)arg1 comment:(id)arg2 emotion:(id)arg3;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTimelineDeleteDataItemWrap *deleteDataItemWrap; // @synthesize deleteDataItemWrap=_deleteDataItemWrap;
 @property(nonatomic) _Bool isModifyingStarStatus; // @synthesize isModifyingStarStatus=_isModifyingStarStatus;
 @property(retain, nonatomic) WCMomentsShareScopeMgr *shareScopeMgr; // @synthesize shareScopeMgr=_shareScopeMgr;

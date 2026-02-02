@@ -16,7 +16,6 @@
     QAnimation *_animation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QAnimation *animation; // @synthesize animation=_animation;
 @property(nonatomic) double maxHeight; // @synthesize maxHeight=_maxHeight;
 @property(retain, nonatomic) QHeatGradient *gradient; // @synthesize gradient=_gradient;

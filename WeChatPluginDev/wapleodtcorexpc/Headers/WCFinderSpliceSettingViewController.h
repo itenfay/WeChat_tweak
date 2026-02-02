@@ -12,7 +12,6 @@
     WCFinderPrivacySettingHelper *_helper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPrivacySettingHelper *helper; // @synthesize helper=_helper;
 @property(retain, nonatomic) FinderNewUserPrepareResponse *userPrepare; // @synthesize userPrepare=_userPrepare;
 @property(retain, nonatomic) WCTableViewManager *tableViewManager; // @synthesize tableViewManager=_tableViewManager;

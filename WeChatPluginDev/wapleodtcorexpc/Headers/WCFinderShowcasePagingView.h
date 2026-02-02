@@ -31,7 +31,6 @@
     struct _NSRange _oldCheckRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *exposedItems; // @synthesize exposedItems=_exposedItems;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) NSMapTable *index2CellMap; // @synthesize index2CellMap=_index2CellMap;

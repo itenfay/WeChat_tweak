@@ -12,7 +12,6 @@
     NSString *_liveName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *liveName; // @synthesize liveName=_liveName;
 
 @end

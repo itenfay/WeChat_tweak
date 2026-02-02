@@ -13,7 +13,6 @@
     NSString *_qrCodeUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *qrCodeUrl; // @synthesize qrCodeUrl=_qrCodeUrl;
 @property(retain, nonatomic) UIImage *qrCodeImage; // @synthesize qrCodeImage=_qrCodeImage;
 

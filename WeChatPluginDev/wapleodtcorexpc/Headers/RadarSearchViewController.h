@@ -10,7 +10,6 @@
     RadarSearchView *m_radarView;
 }
 
-- (void).cxx_destruct;
 - (id)getCurViewController;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;

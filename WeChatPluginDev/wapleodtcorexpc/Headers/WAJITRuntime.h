@@ -14,7 +14,6 @@
     CDStruct_b6d5f750 _performance;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long renderTime; // @synthesize renderTime=_renderTime;
 @property(nonatomic) long long jankTime; // @synthesize jankTime=_jankTime;
 @property(nonatomic) CDStruct_b6d5f750 performance; // @synthesize performance=_performance;

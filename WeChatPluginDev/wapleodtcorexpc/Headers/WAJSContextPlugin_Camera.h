@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WAPluginComponent_Camera;
 
 @interface WAJSContextPlugin_Camera
@@ -12,7 +14,6 @@
     WAPluginComponent_Camera *_cameraComponent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPluginComponent_Camera *cameraComponent; // @synthesize cameraComponent=_cameraComponent;
 - (void)onCameraStateChanged:(_Bool)arg1;
 - (_Bool)removeChildView:(unsigned int)arg1;
@@ -35,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

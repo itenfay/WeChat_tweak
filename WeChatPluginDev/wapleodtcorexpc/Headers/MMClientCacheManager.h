@@ -13,7 +13,6 @@
 }
 
 + (long long)getApplicationState;
-- (void).cxx_destruct;
 - (void)checkConfig;
 - (void)updateKey:(id)arg1;
 - (void)doSSReportForPayCheckoutCounter;

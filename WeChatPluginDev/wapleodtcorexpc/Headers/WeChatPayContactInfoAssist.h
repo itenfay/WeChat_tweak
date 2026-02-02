@@ -12,7 +12,6 @@
     PayPluginResponse *_payPluginResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PayPluginResponse *payPluginResp; // @synthesize payPluginResp=_payPluginResp;
 @property(retain, nonatomic) WCPayGetPluginCgi *getPluginCgi; // @synthesize getPluginCgi=_getPluginCgi;
 @property(nonatomic) _Bool bHasGetPluginSectionData; // @synthesize bHasGetPluginSectionData=_bHasGetPluginSectionData;

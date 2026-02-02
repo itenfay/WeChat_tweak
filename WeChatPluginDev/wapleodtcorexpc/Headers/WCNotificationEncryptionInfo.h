@@ -17,7 +17,6 @@
 + (id)infoFromDictionary:(id)arg1;
 + (id)encryptionInfoWithInfos:(id)arg1 error:(id *)arg2;
 + (id)defaultEncryptionInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *privateKey; // @synthesize privateKey=_privateKey;
 @property(retain, nonatomic) NSData *publicKey; // @synthesize publicKey=_publicKey;
 @property(retain, nonatomic) NSNumber *identifier; // @synthesize identifier=_identifier;

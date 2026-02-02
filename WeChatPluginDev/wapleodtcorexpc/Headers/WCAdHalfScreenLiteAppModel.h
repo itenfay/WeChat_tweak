@@ -11,7 +11,6 @@
     NSString *_pid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pid; // @synthesize pid=_pid;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 

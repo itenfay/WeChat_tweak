@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_infoXml;
 + (void)PBArrayAdd_appID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *infoXml; // @synthesize infoXml=_infoXml;
 @property(retain, nonatomic) NSString *appID; // @synthesize appID=_appID;
 - (id)parseXML;

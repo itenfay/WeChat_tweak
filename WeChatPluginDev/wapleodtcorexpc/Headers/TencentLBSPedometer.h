@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSOperationQueue;
 
@@ -16,7 +17,6 @@
 }
 
 + (_Bool)isStepCountingAvailable;
-- (void).cxx_destruct;
 @property _Bool isStart; // @synthesize isStart=_isStart;
 @property double version; // @synthesize version=_version;
 @property(retain, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
@@ -26,4 +26,3 @@
 - (id)init;
 
 @end
-

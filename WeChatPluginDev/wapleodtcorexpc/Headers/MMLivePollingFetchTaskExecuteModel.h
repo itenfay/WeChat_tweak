@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMLivePollingFetchTaskExecuteModel : NSObject
 {
@@ -12,10 +13,8 @@
     CDUnknownBlockType _reprocessAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reprocessAction; // @synthesize reprocessAction=_reprocessAction;
 @property(nonatomic) _Bool force; // @synthesize force=_force;
 @property(nonatomic) long long cmdID; // @synthesize cmdID=_cmdID;
 
 @end
-

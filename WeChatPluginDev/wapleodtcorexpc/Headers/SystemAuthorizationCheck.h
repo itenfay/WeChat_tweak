@@ -26,7 +26,6 @@
 + (unsigned int)getAuthStatusByItem:(unsigned int)arg1;
 + (_Bool)isAPPFirstTimeRuning;
 + (void)initMonitor;
-- (void).cxx_destruct;
 @property(retain, nonatomic) LocationAuthorizationInfo *locationAuthorizationInfo; // @synthesize locationAuthorizationInfo=_locationAuthorizationInfo;
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 - (unsigned long long)getNotificationAuthorizationStatus:(id)arg1;

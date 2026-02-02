@@ -19,7 +19,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize cropViewSize; // @synthesize cropViewSize=_cropViewSize;
 @property(nonatomic) struct CGPoint videoContentOffset; // @synthesize videoContentOffset=_videoContentOffset;
 @property(retain, nonatomic) NSURL *playerURL; // @synthesize playerURL=_playerURL;

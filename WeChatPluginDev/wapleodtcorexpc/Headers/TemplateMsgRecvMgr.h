@@ -11,7 +11,6 @@
     NSMutableDictionary *_dictIdListOfUser;
 }
 
-- (void).cxx_destruct;
 - (id)getRecvStateArrayByUsername:(id)arg1;
 - (void)onSetRecvState:(id)arg1;
 - (void)onGetRecvState:(id)arg1;

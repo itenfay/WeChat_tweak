@@ -10,7 +10,6 @@
     WCFinderSDKAuthorViewController *_bindVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderSDKAuthorViewController *bindVC; // @synthesize bindVC=_bindVC;
 - (void)finderSDKAuthorViewController:(id)arg1 comfirmFailure:(id)arg2;
 - (void)finderSDKAuthorViewController:(id)arg1 comfirmSuccessful:(id)arg2;

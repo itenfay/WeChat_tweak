@@ -27,7 +27,6 @@
     struct CGSize _iconSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long startExposeTime; // @synthesize startExposeTime=_startExposeTime;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(retain, nonatomic) UIColor *disableTextColor; // @synthesize disableTextColor=_disableTextColor;

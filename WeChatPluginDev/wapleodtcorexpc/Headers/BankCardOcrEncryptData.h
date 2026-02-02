@@ -16,7 +16,6 @@
     NSNumber *_key_seq;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *key_seq; // @synthesize key_seq=_key_seq;
 @property(copy, nonatomic) NSData *aad; // @synthesize aad=_aad;
 @property(copy, nonatomic) NSData *iv; // @synthesize iv=_iv;

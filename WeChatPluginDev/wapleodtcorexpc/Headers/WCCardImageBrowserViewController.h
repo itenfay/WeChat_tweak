@@ -18,7 +18,6 @@
     struct CGRect _originRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *originView; // @synthesize originView=_originView;
 @property(retain, nonatomic) SightIconView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;

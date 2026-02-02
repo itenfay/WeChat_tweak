@@ -14,7 +14,6 @@
 }
 
 + (id)buildStatusBannerItem:(unsigned int)arg1 view:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *view; // @synthesize view=_view;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 

@@ -10,7 +10,6 @@
     NSMutableDictionary *_usernameUpdateTimeDictionary;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *usernameUpdateTimeDictionary; // @synthesize usernameUpdateTimeDictionary=_usernameUpdateTimeDictionary;
 - (void)onStrangerContactUpdated:(id)arg1;
 - (void)onModifyContact:(id)arg1;

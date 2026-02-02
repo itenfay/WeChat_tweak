@@ -52,7 +52,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sampleCount; // @synthesize sampleCount=_sampleCount;
 @property(nonatomic) double encodeTimeMs; // @synthesize encodeTimeMs=_encodeTimeMs;
 @property(nonatomic) double gpuCostTimeMs; // @synthesize gpuCostTimeMs=_gpuCostTimeMs;

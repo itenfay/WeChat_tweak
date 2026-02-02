@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSError, NSString, NSThread, NSURLConnection, NSURLRequest, NSURLSessionTask, QBASIHTTPRequest;
 @protocol QBNetworkDelegate;
@@ -26,7 +27,6 @@
 + (_Bool)canSessionON;
 + (_Bool)defaultSessionSON;
 @property __weak id <QBNetworkDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 willCacheResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -62,4 +62,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,9 +4,9 @@
 //
 
 #import <Foundation/NSString.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSString (RegX)
 - (id)stringByReplacingSpecialCharactor;
 - (id)stringByReplacingMatchesFromRegularExpression:(id)arg1 replacementBlock:(CDUnknownBlockType)arg2;
 @end
-

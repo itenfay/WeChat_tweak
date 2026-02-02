@@ -12,7 +12,6 @@
     NSMutableDictionary *_infos;
 }
 
-- (void).cxx_destruct;
 - (id)description;
 - (void)setCount:(id)arg1 forTable:(id)arg2;
 - (void)addSequence:(id)arg1;

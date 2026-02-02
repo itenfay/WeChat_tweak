@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FBSDKLoginCompletionParameters;
 @protocol NSObject;
@@ -15,7 +16,6 @@
     _Bool _performExplicitFallback;
 }
 
-- (void).cxx_destruct;
 - (void)attemptBrowserLogIn:(id)arg1;
 - (void)setErrorWithDictionary:(id)arg1;
 - (void)setParametersWithDictionary:(id)arg1 appID:(id)arg2;
@@ -23,4 +23,3 @@
 - (id)initWithURLParameters:(id)arg1 appID:(id)arg2;
 
 @end
-

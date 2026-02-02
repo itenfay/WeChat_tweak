@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSString;
 
@@ -16,7 +17,6 @@
 }
 
 + (void)dispatchStore:(id)arg1 actionName:(id)arg2 json:(id)arg3 complection:(CDUnknownBlockType)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *overTimeCheck; // @synthesize overTimeCheck=_overTimeCheck;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(nonatomic) unsigned long long callBackID; // @synthesize callBackID=_callBackID;
@@ -36,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

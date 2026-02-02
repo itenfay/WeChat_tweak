@@ -27,7 +27,6 @@
 + (double)titleMinWidthWithModel:(id)arg1;
 + (id)followBtnBgColor;
 + (double)titleHeightWithModel:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) double intrinsicHeight; // @synthesize intrinsicHeight=_intrinsicHeight;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(retain, nonatomic) WCFinderMentionTitleModel *model; // @synthesize model=_model;

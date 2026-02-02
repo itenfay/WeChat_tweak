@@ -11,7 +11,6 @@
     JSEvent *_jsEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEvent *jsEvent; // @synthesize jsEvent=_jsEvent;
 @property(retain, nonatomic) WCPayNativeCgiTunnelImpl *cgiLogic; // @synthesize cgiLogic=_cgiLogic;
 - (void)asyncHandle_callbackEvent:(id)arg1 result:(id)arg2;

@@ -13,7 +13,6 @@
     CContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) MMTableViewInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 @property(nonatomic) __weak id <WWKFContactSettingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

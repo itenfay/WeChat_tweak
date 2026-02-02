@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMScrollActionSheet, NSString;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _scrollActionSheetDidSelectItemCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType scrollActionSheetDidSelectItemCallback; // @synthesize scrollActionSheetDidSelectItemCallback=_scrollActionSheetDidSelectItemCallback;
 @property(nonatomic) __weak MMScrollActionSheet *weakActionSheet; // @synthesize weakActionSheet=_weakActionSheet;
 - (void)scrollActionSheet:(id)arg1 clickCustomBtn:(id)arg2;
@@ -39,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

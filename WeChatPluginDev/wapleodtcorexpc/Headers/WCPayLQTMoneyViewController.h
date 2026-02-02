@@ -75,7 +75,6 @@
     WCPayLQTPageSheet *_preRedeemFundResPageSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayLQTPageSheet *preRedeemFundResPageSheet; // @synthesize preRedeemFundResPageSheet=_preRedeemFundResPageSheet;
 @property(retain, nonatomic) WCPayLQTPageSheet *purchaseFundResPageSheet; // @synthesize purchaseFundResPageSheet=_purchaseFundResPageSheet;
 @property(nonatomic) _Bool isOpenFof; // @synthesize isOpenFof=_isOpenFof;

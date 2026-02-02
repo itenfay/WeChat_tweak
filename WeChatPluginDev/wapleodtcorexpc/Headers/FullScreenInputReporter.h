@@ -15,7 +15,6 @@
 
 + (void)reportAction:(unsigned int)arg1;
 + (id)reporter;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) unsigned int chatType; // @synthesize chatType=_chatType;
 

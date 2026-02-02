@@ -19,7 +19,6 @@
     MJInspectorToolBar *_toolBar;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJInspectorToolBar *toolBar; // @synthesize toolBar=_toolBar;
 @property(retain, nonatomic) MJPageView *pageView; // @synthesize pageView=_pageView;
 @property(nonatomic) _Bool bFirstAppeared; // @synthesize bFirstAppeared=_bFirstAppeared;

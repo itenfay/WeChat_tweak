@@ -12,7 +12,6 @@
     NSArray *_paths;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *paths; // @synthesize paths=_paths;
 - (void)willBeginStorageCleanupInScenario:(unsigned long long)arg1 withContext:(id)arg2;
 - (void)keepAlive;

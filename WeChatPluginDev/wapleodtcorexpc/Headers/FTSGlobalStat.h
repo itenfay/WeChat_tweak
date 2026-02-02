@@ -21,7 +21,6 @@
     NSMutableDictionary *_moduleStat;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int addressBookResultCnt; // @synthesize addressBookResultCnt=_addressBookResultCnt;
 @property(nonatomic) unsigned int brandContactResultCnt; // @synthesize brandContactResultCnt=_brandContactResultCnt;
 @property(nonatomic) unsigned int groupContactResultCnt; // @synthesize groupContactResultCnt=_groupContactResultCnt;

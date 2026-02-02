@@ -34,7 +34,6 @@
 + (void)PBArrayAdd_controlExpiredTime;
 + (void)PBArrayAdd_liteRespUrl;
 + (void)PBArrayAdd_hasAllowanceOfFirstAsyncGetA8Key;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *jsapiControlBytes; // @synthesize jsapiControlBytes=_jsapiControlBytes;
 @property(nonatomic) _Bool fromKara; // @synthesize fromKara=_fromKara;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;

@@ -24,7 +24,6 @@
     unsigned long long _roomID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long roomID; // @synthesize roomID=_roomID;
 @property(nonatomic) _Bool noActionAfterEnteringForeground; // @synthesize noActionAfterEnteringForeground=_noActionAfterEnteringForeground;
 @property(retain, nonatomic) NSDate *dateOfIncomingInvitationFromPushKit; // @synthesize dateOfIncomingInvitationFromPushKit=_dateOfIncomingInvitationFromPushKit;

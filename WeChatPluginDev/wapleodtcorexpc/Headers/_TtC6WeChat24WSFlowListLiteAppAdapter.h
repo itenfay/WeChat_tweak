@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE, NSString;
 
@@ -18,7 +19,6 @@
     MISSING_TYPE *reportExtraInfo;
 }
 
-- (void).cxx_destruct;
 - (void)dispatchOnSwipePageWithModel:(id)arg1;
 - (void)addLiteAppViewToCellWithCell:(id)arg1 liteAppInfo:(id)arg2 waitRenderFinish:(_Bool)arg3 renderFinishHandler:(CDUnknownBlockType)arg4;
 - (void)clearCachedSnapshot;
@@ -29,4 +29,3 @@
 @property(nonatomic, copy) NSString *reportExtraInfo;
 
 @end
-

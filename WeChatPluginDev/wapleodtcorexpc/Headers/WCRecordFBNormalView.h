@@ -14,7 +14,6 @@
     NSMutableArray *_arrPillarsE;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrPillarsE; // @synthesize arrPillarsE=_arrPillarsE;
 @property(retain, nonatomic) NSMutableArray *arrPillarsD; // @synthesize arrPillarsD=_arrPillarsD;
 @property(retain, nonatomic) NSMutableArray *arrPillarsC; // @synthesize arrPillarsC=_arrPillarsC;

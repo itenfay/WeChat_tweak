@@ -16,7 +16,6 @@
     WCFinderRefreshTableFooterView *_footerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRefreshTableFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) WCFinderEmptyTipsView *emptyTipsView; // @synthesize emptyTipsView=_emptyTipsView;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;

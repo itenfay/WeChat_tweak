@@ -24,7 +24,6 @@
     UIPanGestureRecognizer *_panGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) _Bool shrink; // @synthesize shrink=_shrink;

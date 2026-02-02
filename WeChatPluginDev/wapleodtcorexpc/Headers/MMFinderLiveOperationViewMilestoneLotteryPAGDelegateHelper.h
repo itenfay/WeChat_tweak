@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -12,7 +13,6 @@
     CDUnknownBlockType _animationEndCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType animationEndCallback; // @synthesize animationEndCallback=_animationEndCallback;
 - (void)onAnimationEnd:(id)arg1;
 
@@ -26,4 +26,3 @@
 @property(readonly) Class superclass;
 
 @end
-

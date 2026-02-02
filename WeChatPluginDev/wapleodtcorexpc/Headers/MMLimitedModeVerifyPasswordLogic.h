@@ -12,7 +12,6 @@
     id <MMLimitedModeVerifyPasswordLogicDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLimitedModeVerifyPasswordLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)onVerifyPasswordResp:(id)arg1;

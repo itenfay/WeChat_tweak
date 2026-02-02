@@ -13,7 +13,6 @@
     NSMapTable *nativeModuleMap;
 }
 
-- (void).cxx_destruct;
 - (void)initModuleInner;
 - (void)registerNativeModule:(id)arg1 _class:(Class)arg2;
 - (void)registerView:(id)arg1 _class:(Class)arg2;

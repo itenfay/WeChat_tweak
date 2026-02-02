@@ -14,7 +14,6 @@
     RingTone *_ringtone;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RingTone *ringtone; // @synthesize ringtone=_ringtone;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) MMListenSimplePlayableInfo *info; // @synthesize info=_info;

@@ -17,7 +17,6 @@
     NSMutableDictionary *_cacheDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cacheDict; // @synthesize cacheDict=_cacheDict;
 @property(nonatomic) __weak id <GCMultiMessageViewModelDelegate> multiMessageViewModelDelegate; // @synthesize multiMessageViewModelDelegate=_multiMessageViewModelDelegate;
 @property(nonatomic) _Bool isRealTimeHotChat; // @synthesize isRealTimeHotChat=_isRealTimeHotChat;

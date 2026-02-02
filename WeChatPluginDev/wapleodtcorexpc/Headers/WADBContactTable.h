@@ -48,7 +48,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(retain, nonatomic) NSString *headImageStatus; // @synthesize headImageStatus=_headImageStatus;
 @property(nonatomic) unsigned int wxAppOpt; // @synthesize wxAppOpt=_wxAppOpt;

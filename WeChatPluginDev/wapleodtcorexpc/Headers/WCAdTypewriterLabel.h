@@ -12,7 +12,6 @@
     double _animationInterval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double animationInterval; // @synthesize animationInterval=_animationInterval;
 @property(retain, nonatomic) NSString *typewriterText; // @synthesize typewriterText=_typewriterText;
 @property(retain, nonatomic) MMTimer *typewriterTimer; // @synthesize typewriterTimer=_typewriterTimer;

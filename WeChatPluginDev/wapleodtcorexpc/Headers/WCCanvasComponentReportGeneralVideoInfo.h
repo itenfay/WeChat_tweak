@@ -23,7 +23,6 @@
     WCCanvasComponentReportVideoFloatAreaInfo *_floatAreaInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasComponentReportVideoFloatAreaInfo *floatAreaInfo; // @synthesize floatAreaInfo=_floatAreaInfo;
 @property(retain, nonatomic) WCCanvasComponentReportUrlInfo *videoUrlInfo; // @synthesize videoUrlInfo=_videoUrlInfo;
 @property(retain, nonatomic) WCCanvasComponentReportUrlInfo *thumbUrlInfo; // @synthesize thumbUrlInfo=_thumbUrlInfo;

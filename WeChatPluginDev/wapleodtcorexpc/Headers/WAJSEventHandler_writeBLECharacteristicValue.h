@@ -13,7 +13,6 @@
     unsigned long long m_writeTime;
 }
 
-- (void).cxx_destruct;
 - (id)bleInstance;
 - (void)dealloc;
 - (void)onSuccess;

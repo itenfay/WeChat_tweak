@@ -20,7 +20,6 @@
 + (long long)convertToQRCodeStateWithResultType:(long long)arg1;
 + (_Bool)_WAJSAPIMustRunInMainThread:(id)arg1;
 + (Class)convertNameToWAJSAPIClass:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *WAJSAPIAuthPool; // @synthesize WAJSAPIAuthPool=_WAJSAPIAuthPool;
 @property(retain, nonatomic) NSMutableArray *WAJSAPIEventsPool; // @synthesize WAJSAPIEventsPool=_WAJSAPIEventsPool;
 @property(retain, nonatomic) NSMutableArray *jsapiEvents; // @synthesize jsapiEvents=_jsapiEvents;

@@ -16,7 +16,6 @@
     NSString *_openimDescQuanPin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int openResSubType; // @synthesize openResSubType=_openResSubType;
 @property(retain, nonatomic) NSString *openimDescQuanPin; // @synthesize openimDescQuanPin=_openimDescQuanPin;
 @property(retain, nonatomic) NSString *openIMDesc; // @synthesize openIMDesc=_openIMDesc;

@@ -16,7 +16,6 @@
     UIScrollView *_scrollView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) double contentHeight; // @synthesize contentHeight=_contentHeight;
 @property(nonatomic) _Bool embeddedInScrollView; // @synthesize embeddedInScrollView=_embeddedInScrollView;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, MMTableViewInfo, UIView;
 
 @interface MMFinderLiveSettingPanel
@@ -14,7 +16,6 @@
 }
 
 + (_Bool)hasSettingEntranceForLive:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableViewInfo *settingTableViewInfo; // @synthesize settingTableViewInfo=_settingTableViewInfo;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
@@ -36,4 +37,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

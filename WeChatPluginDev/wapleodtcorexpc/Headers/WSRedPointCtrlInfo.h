@@ -34,7 +34,6 @@
 + (void)PBArrayAdd_recommendClearedTimeStamps;
 + (void)PBArrayAdd_recommendFirstColumnRedPointInfo;
 + (void)PBArrayAdd_searchRedPointInfo;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int recommendThirdColumnClearedTimeStamps; // @synthesize recommendThirdColumnClearedTimeStamps=_recommendThirdColumnClearedTimeStamps;
 @property(retain, nonatomic) WSRedPointInfo *recommendThirdColumnRedPointInfo; // @synthesize recommendThirdColumnRedPointInfo=_recommendThirdColumnRedPointInfo;
 @property(nonatomic) _Bool bContentReddotShowedInFindPage; // @synthesize bContentReddotShowedInFindPage=_bContentReddotShowedInFindPage;

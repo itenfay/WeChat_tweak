@@ -13,7 +13,6 @@
 }
 
 + (id)sharedMonitor;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lastDate; // @synthesize lastDate=_lastDate;
 - (void)monitorLogSize;
 

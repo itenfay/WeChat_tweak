@@ -14,7 +14,6 @@
     unsigned int m_uiOrder;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiOrder; // @synthesize m_uiOrder;
 @property(nonatomic) unsigned int m_uiNewVersion; // @synthesize m_uiNewVersion;
 @property(nonatomic) _Bool m_bHasShowNew; // @synthesize m_bHasShowNew;

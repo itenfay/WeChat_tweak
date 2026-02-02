@@ -11,7 +11,6 @@
     TextStateListenMediaView *_mediaView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak TextStateListenMediaView *mediaView; // @synthesize mediaView=_mediaView;
 @property(retain, nonatomic) StatusFooterJumpListen *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 - (id)generatePlayerConfiguration;

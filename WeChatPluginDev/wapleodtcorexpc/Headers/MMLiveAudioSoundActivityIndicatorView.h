@@ -17,7 +17,6 @@
     MMLiveAudioSoundActivityIndicatorAnimationView *_indicatorViewC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStub; // @synthesize isStub=_isStub;
 @property(retain, nonatomic) MMLiveAudioSoundActivityIndicatorAnimationView *indicatorViewC; // @synthesize indicatorViewC=_indicatorViewC;
 @property(retain, nonatomic) MMLiveAudioSoundActivityIndicatorAnimationView *indicatorViewB; // @synthesize indicatorViewB=_indicatorViewB;

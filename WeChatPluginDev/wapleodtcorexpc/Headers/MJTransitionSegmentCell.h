@@ -12,7 +12,6 @@
     MMUIButton *_transitionButton;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMUIButton *transitionButton; // @synthesize transitionButton=_transitionButton;
 @property(readonly, nonatomic) UIView *transitionButtonContainer; // @synthesize transitionButtonContainer=_transitionButtonContainer;
 @property(readonly, nonatomic) MJDashLine *dashLine; // @synthesize dashLine=_dashLine;

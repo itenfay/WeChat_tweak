@@ -10,7 +10,6 @@
     UILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)setupWithSegmentViewModel:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

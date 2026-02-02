@@ -33,7 +33,6 @@
     UIImageView *_m_liveStatusView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreDraftMsg; // @synthesize ignoreDraftMsg=_ignoreDraftMsg;
 @property(retain, nonatomic) UIImageView *m_liveStatusView; // @synthesize m_liveStatusView=_m_liveStatusView;
 @property(retain, nonatomic) UIImageView *m_statusView; // @synthesize m_statusView;

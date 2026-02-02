@@ -12,7 +12,6 @@
     NSString *_preSourceID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *preSourceID; // @synthesize preSourceID=_preSourceID;
 
 @end

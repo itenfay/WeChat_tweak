@@ -15,7 +15,6 @@
     UIImage *_lastImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CUsrInfo *m_usrInfo; // @synthesize m_usrInfo;
 - (void)onSightPictureTaken:(id)arg1 imageData:(id)arg2 withFrontCamera:(_Bool)arg3 editImageAttr:(id)arg4;
 - (void)MMImagePickerManagerDidCancel:(id)arg1;

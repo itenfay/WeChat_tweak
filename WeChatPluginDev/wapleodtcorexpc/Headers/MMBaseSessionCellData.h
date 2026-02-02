@@ -36,7 +36,6 @@
     NSString *_accessibilityForTimeLabel;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *accessibilityForTimeLabel; // @synthesize accessibilityForTimeLabel=_accessibilityForTimeLabel;
 @property(retain, nonatomic) UIImage *namePostIconImage; // @synthesize namePostIconImage=_namePostIconImage;
 @property(nonatomic) _Bool hideMsgLabelWhenMsgIsEmpty; // @synthesize hideMsgLabelWhenMsgIsEmpty=_hideMsgLabelWhenMsgIsEmpty;

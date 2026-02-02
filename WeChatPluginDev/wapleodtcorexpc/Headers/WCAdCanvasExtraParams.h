@@ -10,7 +10,6 @@
     NSString *_canvasDynamicInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *canvasDynamicInfo; // @synthesize canvasDynamicInfo=_canvasDynamicInfo;
 
 @end

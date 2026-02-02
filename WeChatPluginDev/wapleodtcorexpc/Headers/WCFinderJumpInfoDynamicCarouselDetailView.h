@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, WCFinderJumpInfoDynamicCarouselDetailViewItem;
 
@@ -15,7 +16,6 @@
     NSArray *_itemViews;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *itemViews; // @synthesize itemViews=_itemViews;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(copy, nonatomic) CDUnknownBlockType contentSizeDidChangeBlock; // @synthesize contentSizeDidChangeBlock=_contentSizeDidChangeBlock;
@@ -30,4 +30,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

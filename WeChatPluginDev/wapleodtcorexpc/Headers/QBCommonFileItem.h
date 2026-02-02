@@ -25,7 +25,6 @@
 @property(retain, nonatomic) NSString *fileUrl; // @synthesize fileUrl=_fileUrl;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(retain, nonatomic) NSString *moduleName; // @synthesize moduleName=_moduleName;
-- (void).cxx_destruct;
 
 @end
 

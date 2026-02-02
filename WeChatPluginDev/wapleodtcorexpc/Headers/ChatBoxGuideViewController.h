@@ -14,7 +14,6 @@
     MMUIButton *_goButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *goButton; // @synthesize goButton=_goButton;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) UIView *animateView; // @synthesize animateView=_animateView;

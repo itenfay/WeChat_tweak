@@ -13,7 +13,6 @@
     NSMutableDictionary *_deviceLogicMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *deviceLogicMap; // @synthesize deviceLogicMap=_deviceLogicMap;
 - (void)p_parseAppMsg:(id)arg1;
 - (void)onRevChatSyncRequest:(id)arg1 MsgWrap:(id)arg2;

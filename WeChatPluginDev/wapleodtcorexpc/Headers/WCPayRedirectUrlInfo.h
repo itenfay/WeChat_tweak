@@ -17,7 +17,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *button_name; // @synthesize button_name=_button_name;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSString *app_version; // @synthesize app_version=_app_version;

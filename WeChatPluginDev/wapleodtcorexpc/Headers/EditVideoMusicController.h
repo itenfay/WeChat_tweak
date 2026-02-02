@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, EditVideoBGMPlayer, NSMutableArray, NSString, RecommendedMusicInfo;
 
 @interface EditVideoMusicController
@@ -25,7 +27,6 @@
 }
 
 + (unsigned long long)musicBussidWithEntranceType:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType playerTimeControlStatusChangeBlock; // @synthesize playerTimeControlStatusChangeBlock=_playerTimeControlStatusChangeBlock;
 @property(copy, nonatomic) CDUnknownBlockType playerPlayToEndBlock; // @synthesize playerPlayToEndBlock=_playerPlayToEndBlock;
 @property(copy, nonatomic) CDUnknownBlockType playerReadyToPlayBlock; // @synthesize playerReadyToPlayBlock=_playerReadyToPlayBlock;
@@ -81,4 +82,3 @@
 @property(readonly) Class superclass;
 
 @end
-

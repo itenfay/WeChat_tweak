@@ -17,7 +17,6 @@
     NSString *_contextID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *contextID; // @synthesize contextID=_contextID;
 @property(copy, nonatomic) NSString *sdkBundleID; // @synthesize sdkBundleID=_sdkBundleID;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface ZZControlTarget : NSObject
 {
@@ -11,11 +12,9 @@
     unsigned long long _controlEvents;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long controlEvents; // @synthesize controlEvents=_controlEvents;
 @property(copy, nonatomic) CDUnknownBlockType senderBlock; // @synthesize senderBlock=_senderBlock;
 - (void)senderMethod:(id)arg1;
 - (id)initWithSenderBlock:(CDUnknownBlockType)arg1 controlEvents:(unsigned long long)arg2;
 
 @end
-

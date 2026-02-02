@@ -27,7 +27,6 @@
 + (_Bool)isOverShowInterval;
 + (_Bool)needTestSpeed;
 + (_Bool)isCurrentNetNormal;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *contentScrollView; // @synthesize contentScrollView=_contentScrollView;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMUILabel *otherTitleLabel; // @synthesize otherTitleLabel=_otherTitleLabel;

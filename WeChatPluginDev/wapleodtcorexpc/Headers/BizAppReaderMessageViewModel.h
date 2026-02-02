@@ -13,7 +13,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bigPicTitleLabelStyles; // @synthesize bigPicTitleLabelStyles=_bigPicTitleLabelStyles;
 @property(readonly, nonatomic) _Bool isNearbyNativeAppMsg; // @synthesize isNearbyNativeAppMsg=_isNearbyNativeAppMsg;
 - (id)accessibilityMessageType;

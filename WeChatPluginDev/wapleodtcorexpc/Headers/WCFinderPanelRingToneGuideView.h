@@ -19,7 +19,6 @@
 }
 
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(retain, nonatomic) MMLiveIconButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;

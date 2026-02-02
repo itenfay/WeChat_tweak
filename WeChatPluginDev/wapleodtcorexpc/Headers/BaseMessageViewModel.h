@@ -29,7 +29,6 @@
 + (void)initMessageViewModelClassListForVisionOS;
 + (void)initMessageViewModelClassListForIOS;
 + (void)registerMessageViewModelClass:(Class)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) _Bool isShowStatusView; // @synthesize isShowStatusView=_isShowStatusView;
 @property(retain, nonatomic) NSString *customHeadImageUrl; // @synthesize customHeadImageUrl=_customHeadImageUrl;

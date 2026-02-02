@@ -17,7 +17,6 @@
     NSMutableSet *_feedIDs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *feedIDs; // @synthesize feedIDs=_feedIDs;
 @property(nonatomic) unsigned long long seq; // @synthesize seq=_seq;
 @property(nonatomic) unsigned int offset; // @synthesize offset=_offset;

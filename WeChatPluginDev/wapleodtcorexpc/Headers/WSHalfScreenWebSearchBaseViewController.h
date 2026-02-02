@@ -28,7 +28,6 @@
     WCWebSearchPresenter *_presenter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCWebSearchPresenter *presenter; // @synthesize presenter=_presenter;
 @property(retain, nonatomic) _TtC6WeChat21WSTextFieldInteractor *textFieldInteractor; // @synthesize textFieldInteractor=_textFieldInteractor;
 @property(retain, nonatomic) MMUIButton *headerSearchTextFieldClearButton; // @synthesize headerSearchTextFieldClearButton=_headerSearchTextFieldClearButton;

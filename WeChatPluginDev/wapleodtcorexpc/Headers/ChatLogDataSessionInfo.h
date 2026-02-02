@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_audioDirMTime;
 + (void)PBArrayAdd_videoDirMTime;
 + (void)PBArrayAdd_sessionItem;
-- (void).cxx_destruct;
 @property(nonatomic) long long groupDirMTime; // @synthesize groupDirMTime=_groupDirMTime;
 @property(nonatomic) long long appDirMTime; // @synthesize appDirMTime=_appDirMTime;
 @property(nonatomic) long long vcodeDirMTime; // @synthesize vcodeDirMTime=_vcodeDirMTime;

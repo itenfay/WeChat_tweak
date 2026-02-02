@@ -23,7 +23,6 @@
     MMScrollViewZoomReporter *_zoomReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMScrollViewZoomReporter *zoomReporter; // @synthesize zoomReporter=_zoomReporter;
 @property(nonatomic) _Bool useWindowFrame; // @synthesize useWindowFrame=_useWindowFrame;
 @property __weak id <ImageScrollViewDelegate> m_delegate; // @synthesize m_delegate;

@@ -20,7 +20,6 @@
     NSURL *_iconUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *iconUrl; // @synthesize iconUrl=_iconUrl;
 @property(retain, nonatomic) MMFinderLiveGameTeamInfo *gameTeamInfo; // @synthesize gameTeamInfo=_gameTeamInfo;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;

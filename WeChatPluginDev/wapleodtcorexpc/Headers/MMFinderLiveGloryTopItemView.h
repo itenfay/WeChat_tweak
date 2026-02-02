@@ -20,7 +20,6 @@
     MMFinderLiveLiveRoleSignView *_mysteriousSignView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool alwaysDark; // @synthesize alwaysDark=_alwaysDark;
 @property(retain, nonatomic) MMFinderLiveLiveRoleSignView *mysteriousSignView; // @synthesize mysteriousSignView=_mysteriousSignView;
 @property(retain, nonatomic) MMUIImageView *roleIconImageView; // @synthesize roleIconImageView=_roleIconImageView;

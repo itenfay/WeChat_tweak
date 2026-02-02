@@ -14,7 +14,6 @@
     UIButton *_checkBoxButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsCheckBoxSelected; // @synthesize bIsCheckBoxSelected=_bIsCheckBoxSelected;
 @property(retain, nonatomic) UIButton *checkBoxButton; // @synthesize checkBoxButton=_checkBoxButton;
 @property(retain, nonatomic) MMTextView *payerCommentTextView; // @synthesize payerCommentTextView=_payerCommentTextView;

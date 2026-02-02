@@ -12,7 +12,6 @@
     NSData *_bypNotifyCmdBuffer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *bypNotifyCmdBuffer; // @synthesize bypNotifyCmdBuffer=_bypNotifyCmdBuffer;
 
 @end

@@ -15,7 +15,6 @@
     NSString *_path;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

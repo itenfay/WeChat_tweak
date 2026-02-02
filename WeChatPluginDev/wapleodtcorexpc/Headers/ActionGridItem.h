@@ -14,7 +14,6 @@
     NSString *_productID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productID; // @synthesize productID=_productID;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

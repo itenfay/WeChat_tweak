@@ -20,7 +20,6 @@
     struct CGRect _initialRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbiddenFrameCrop; // @synthesize forbiddenFrameCrop=_forbiddenFrameCrop;
 @property(nonatomic) struct CGRect initialRect; // @synthesize initialRect=_initialRect;
 @property(retain, nonatomic) MMUIButton *cropFrameUpButton; // @synthesize cropFrameUpButton=_cropFrameUpButton;

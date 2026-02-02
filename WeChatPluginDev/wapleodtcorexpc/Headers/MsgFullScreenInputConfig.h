@@ -15,7 +15,6 @@
     struct _NSRange _selectedRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bEnableTopicSearchInteraction; // @synthesize bEnableTopicSearchInteraction=_bEnableTopicSearchInteraction;
 @property(nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
 @property(retain, nonatomic) MMTextView *textView; // @synthesize textView=_textView;

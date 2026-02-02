@@ -12,7 +12,6 @@
     NSString *_scanResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *scanResult; // @synthesize scanResult=_scanResult;
 @property(retain, nonatomic) id <IWACameraScanViewControllerHelper> viewControllerHelper; // @synthesize viewControllerHelper=_viewControllerHelper;
 - (void)onCameraScanViewControllerDidBePoped;

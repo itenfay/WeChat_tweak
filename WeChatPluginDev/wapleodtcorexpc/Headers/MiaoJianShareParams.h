@@ -31,7 +31,6 @@
     NSMutableArray *_queryItemListForExtKV;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *queryItemListForExtKV; // @synthesize queryItemListForExtKV=_queryItemListForExtKV;
 @property(retain, nonatomic) NSURLQueryItem *queryItemForExportedOpenWX; // @synthesize queryItemForExportedOpenWX=_queryItemForExportedOpenWX;
 @property(retain, nonatomic) NSURLQueryItem *queryItemForCreationProjectStr; // @synthesize queryItemForCreationProjectStr=_queryItemForCreationProjectStr;

@@ -19,7 +19,6 @@
     UIView *_highlightView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

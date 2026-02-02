@@ -15,7 +15,6 @@
     unsigned long long _tipsBarCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long tipsBarCount; // @synthesize tipsBarCount=_tipsBarCount;
 @property(nonatomic) unsigned long long roomMemberCount; // @synthesize roomMemberCount=_roomMemberCount;
 @property(nonatomic) unsigned long long userRole; // @synthesize userRole=_userRole;

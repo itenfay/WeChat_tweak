@@ -205,7 +205,6 @@
 + (void)PBArrayAdd_iconUrl;
 + (void)PBArrayAdd_businessType;
 + (void)PBArrayAdd_jumpType;
-- (void).cxx_destruct;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
 @property(retain, nonatomic) FinderJumpInfoRedDot *redDot; // @synthesize redDot=_redDot;

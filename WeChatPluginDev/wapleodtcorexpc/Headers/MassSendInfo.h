@@ -39,7 +39,6 @@
     NSString *_tmpMiddlePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tmpMiddlePath; // @synthesize tmpMiddlePath=_tmpMiddlePath;
 @property(retain, nonatomic) NSString *tmpThumbPath; // @synthesize tmpThumbPath=_tmpThumbPath;
 @property(retain, nonatomic) NSString *tmpFilePath; // @synthesize tmpFilePath=_tmpFilePath;

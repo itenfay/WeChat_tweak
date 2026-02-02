@@ -13,7 +13,6 @@
     WCCanvasComponentRedEnvelopStatusInfo *_hbCard;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasComponentRedEnvelopStatusInfo *hbCard; // @synthesize hbCard=_hbCard;
 @property(retain, nonatomic) NSString *twistCardId; // @synthesize twistCardId=_twistCardId;
 @property(nonatomic) double maxAcceleration; // @synthesize maxAcceleration=_maxAcceleration;

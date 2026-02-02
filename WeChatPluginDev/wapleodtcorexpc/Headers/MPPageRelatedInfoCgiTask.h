@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSMutableSet;
 
 @interface MPPageRelatedInfoCgiTask
@@ -12,7 +14,6 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSMutableSet *pageIdentifierSet; // @synthesize pageIdentifierSet=_pageIdentifierSet;
 @property(retain, nonatomic) NSArray *urlInfoArr; // @synthesize urlInfoArr=_urlInfoArr;
@@ -27,4 +28,3 @@
 - (id)initWithUrlInfoArr:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

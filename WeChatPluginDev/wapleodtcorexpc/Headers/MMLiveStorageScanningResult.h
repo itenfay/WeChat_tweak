@@ -13,7 +13,6 @@
     NSMutableDictionary *_fileReferences;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *fileReferences; // @synthesize fileReferences=_fileReferences;
 @property(retain, nonatomic) MMLiveStorageDirectory *head; // @synthesize head=_head;
 @property(readonly, nonatomic) NSDictionary *sharedFileReferences;

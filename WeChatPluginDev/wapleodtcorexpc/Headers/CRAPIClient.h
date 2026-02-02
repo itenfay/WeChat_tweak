@@ -13,7 +13,6 @@
     CRRequestSession *_session;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) CRRequestSession *session; // @synthesize session=_session;
 - (void)dealloc;

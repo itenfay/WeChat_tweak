@@ -13,7 +13,6 @@
     NSString *_currentUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentUrl; // @synthesize currentUrl=_currentUrl;
 @property(retain, nonatomic) MMFinderLiveAnniversaryDecorationViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) PAGView *decorationView; // @synthesize decorationView=_decorationView;

@@ -25,7 +25,6 @@
     UIScreenEdgePanGestureRecognizer *_screenEdgePanGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *screenEdgePanGesture; // @synthesize screenEdgePanGesture=_screenEdgePanGesture;
 @property(nonatomic) _Bool canShowCard; // @synthesize canShowCard=_canShowCard;
 @property(retain, nonatomic) MMEasterEggNewYearActivityMaterialInfo *materialInfo; // @synthesize materialInfo=_materialInfo;

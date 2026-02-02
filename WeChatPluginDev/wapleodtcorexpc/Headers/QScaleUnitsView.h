@@ -24,7 +24,6 @@
     NSString *_fontName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
 @property(retain, nonatomic) UILabel *segmentLable; // @synthesize segmentLable=_segmentLable;
 @property(nonatomic) long long segmentNumber; // @synthesize segmentNumber=_segmentNumber;

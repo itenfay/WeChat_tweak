@@ -16,7 +16,6 @@
     UIColor *_rightTipsBtnFontColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *rightTipsBtnFontColor; // @synthesize rightTipsBtnFontColor=_rightTipsBtnFontColor;
 @property(retain, nonatomic) UIColor *rightTipsBtnBkColor; // @synthesize rightTipsBtnBkColor=_rightTipsBtnBkColor;
 @property(retain, nonatomic) NSString *rightTips; // @synthesize rightTips=_rightTips;

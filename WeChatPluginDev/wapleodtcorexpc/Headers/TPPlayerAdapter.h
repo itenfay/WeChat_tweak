@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSString, TPDynamicStatisticParams, TPGeneralPlayFlowParams, TPPlaybackInfo, TPPlaybackParams, TPPlayerLogContext, TPPlayerPictureInPictureHandler, TPPlayerQueue, TPPlayerStateStrategy, TPPlayerStateWrapper, UIView;
 @protocol ITPInnerRichMediaSynchronizer, ITPPlayerAdapterDelegate, ITPPlayerBase, ITPPlayerBaseDelegate, ITPStrategy;
@@ -28,7 +29,6 @@
     id <ITPInnerRichMediaSynchronizer> _innerRichMediaSynchronizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <ITPInnerRichMediaSynchronizer> innerRichMediaSynchronizer; // @synthesize innerRichMediaSynchronizer=_innerRichMediaSynchronizer;
 @property(retain, nonatomic) TPPlayerLogContext *log; // @synthesize log=_log;
 @property(retain, nonatomic) NSMutableSet *filteredDetailInfo; // @synthesize filteredDetailInfo=_filteredDetailInfo;
@@ -171,4 +171,3 @@
 @property(readonly) Class superclass;
 
 @end
-

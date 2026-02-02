@@ -22,7 +22,6 @@
     NSString *_m_nsEncryptedUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsEncryptedUrl; // @synthesize m_nsEncryptedUrl=_m_nsEncryptedUrl;
 @property(retain, nonatomic) NSString *m_nsAttachedText; // @synthesize m_nsAttachedText=_m_nsAttachedText;
 @property(retain, nonatomic) NSString *m_nsDesignerId; // @synthesize m_nsDesignerId=_m_nsDesignerId;

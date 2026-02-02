@@ -11,7 +11,6 @@
     WCTTable *_m_tableCompatibleCGI;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCTTable *m_tableCompatibleCGI; // @synthesize m_tableCompatibleCGI=_m_tableCompatibleCGI;
 - (_Bool)insertOrReplaceCompatibleCGIData:(id)arg1;
 - (_Bool)DeleteCompatibleCGIDataById:(id)arg1;

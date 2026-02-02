@@ -12,7 +12,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) vector_8ca568ff faceShape; // @synthesize faceShape=_faceShape;
 @property(nonatomic) struct Mat faceFrame; // @synthesize faceFrame=_faceFrame;
 - (id)initWithMat:(struct Mat *)arg1 withShape:(void *)arg2;

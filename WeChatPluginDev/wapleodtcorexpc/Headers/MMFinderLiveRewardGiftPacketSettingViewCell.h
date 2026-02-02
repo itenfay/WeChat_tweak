@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveGiftPacketViewModel, MMUIButton, MMUILabel, MMUITextField, NSString, UIImageView;
 @protocol MMFinderLiveRewardGiftPacketSettingViewCellDelegate;
 
@@ -23,7 +25,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveRewardGiftPacketSettingViewCellDelegate> cellDelegate; // @synthesize cellDelegate=_cellDelegate;
 @property(copy, nonatomic) CDUnknownBlockType becomeFirstResponderBlock; // @synthesize becomeFirstResponderBlock=_becomeFirstResponderBlock;
 @property(retain, nonatomic) MMFinderLiveGiftPacketViewModel *viewModel; // @synthesize viewModel=_viewModel;
@@ -73,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

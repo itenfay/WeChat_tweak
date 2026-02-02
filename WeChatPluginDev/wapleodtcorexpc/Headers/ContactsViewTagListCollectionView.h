@@ -17,7 +17,6 @@
     NSMutableArray *_tagList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *tagList; // @synthesize tagList=_tagList;
 @property(nonatomic) _Bool singleSelectMode; // @synthesize singleSelectMode=_singleSelectMode;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;

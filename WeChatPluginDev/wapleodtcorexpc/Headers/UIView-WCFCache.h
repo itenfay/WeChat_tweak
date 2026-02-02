@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (WCFCache)
 - (void)wcfSetImageWithURL:(id)arg1 imageIdentifier:(id)arg2 scaleToSize:(struct CGSize)arg3 completion:(CDUnknownBlockType)arg4;
@@ -15,4 +16,3 @@
 - (id)wcfImageLoadOperation;
 - (void)wcfSetImageLoadOperation:(id)arg1;
 @end
-

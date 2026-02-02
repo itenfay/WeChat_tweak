@@ -13,7 +13,6 @@
     NSString *_userName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) NSString *chatRoomName; // @synthesize chatRoomName=_chatRoomName;
 

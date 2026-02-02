@@ -16,7 +16,6 @@
     WAWebViewMutiFuncMenuView *_funcMenuView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAWebViewMutiFuncMenuView *funcMenuView; // @synthesize funcMenuView=_funcMenuView;
 @property(retain, nonatomic) WACapsuleView *capsuleView; // @synthesize capsuleView=_capsuleView;
 @property(retain, nonatomic) WASplashAdRootView *adRootView; // @synthesize adRootView=_adRootView;

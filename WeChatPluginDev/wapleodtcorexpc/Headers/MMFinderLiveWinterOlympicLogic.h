@@ -12,7 +12,6 @@
     id <MMFinderLiveWinterOlympicLogicDelegate> _liveLogicDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasInitTorch; // @synthesize hasInitTorch=_hasInitTorch;
 @property(nonatomic) __weak id <MMFinderLiveWinterOlympicLogicDelegate> liveLogicDelegate; // @synthesize liveLogicDelegate=_liveLogicDelegate;
 - (void)onGetFinderActivityLiveWinterOlympicsStartStatusUpdated:(_Bool)arg1 withTaskId:(id)arg2;

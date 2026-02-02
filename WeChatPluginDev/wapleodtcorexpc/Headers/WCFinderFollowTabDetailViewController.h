@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSIndexPath, NSString, WCFinderFeedListView, WCFinderFollowTabDetailBaseViewModel, WCFinderFollowTabDetailVCReporter, WCFinderShareCustomTransition;
 @protocol WCFinderFollowTabDetailVCDelegate;
 
@@ -18,7 +20,6 @@
     NSIndexPath *_currentMaxIndexPath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) NSIndexPath *currentMaxIndexPath; // @synthesize currentMaxIndexPath=_currentMaxIndexPath;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) WCFinderFollowTabDetailVCReporter *reporter; // @synthesize reporter=_reporter;
@@ -87,4 +88,3 @@
 @property(readonly) Class superclass;
 
 @end
-

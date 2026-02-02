@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
@@ -18,7 +19,6 @@
     CDUnknownBlockType _loadStateChangeCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType loadStateChangeCallback; // @synthesize loadStateChangeCallback=_loadStateChangeCallback;
 @property(nonatomic) unsigned long long currLoadState; // @synthesize currLoadState=_currLoadState;
 @property(retain, nonatomic) NSMutableArray *callbackList; // @synthesize callbackList=_callbackList;
@@ -32,4 +32,3 @@
 - (id)initWithProductId:(id)arg1 url:(id)arg2 md5:(id)arg3;
 
 @end
-

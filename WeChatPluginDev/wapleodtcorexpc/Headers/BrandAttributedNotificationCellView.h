@@ -10,7 +10,6 @@
     NSMutableArray *m_attributedMsgLabelArr;
 }
 
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)layoutSubviews;
 - (void)updateViewModel:(id)arg1;

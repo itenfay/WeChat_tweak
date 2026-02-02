@@ -20,7 +20,6 @@
 
 + (double)gradientMaskHeight;
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAllSelected; // @synthesize isAllSelected=_isAllSelected;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) MMUIButton *deleteButton; // @synthesize deleteButton=_deleteButton;

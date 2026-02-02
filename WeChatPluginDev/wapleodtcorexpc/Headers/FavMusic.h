@@ -27,7 +27,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int itemLocalId; // @synthesize itemLocalId=_itemLocalId;
 @property(retain, nonatomic) NSString *musicId; // @synthesize musicId=_musicId;
 @property(nonatomic) _Bool isAutoIncrement; // @synthesize isAutoIncrement;

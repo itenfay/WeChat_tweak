@@ -20,7 +20,6 @@
 + (id)reuseIdentifier;
 + (double)cellHeightByWidth:(double)arg1 singerInfoArray:(id)arg2 expand:(_Bool)arg3;
 + (id)buildSingleMusicianViewByWidth:(double)arg1 delegate:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMultiMusicianInfoView *multiMusicianView; // @synthesize multiMusicianView=_multiMusicianView;
 @property(retain, nonatomic) WCFinderSingleMusicianInfoView *singleMusicianView; // @synthesize singleMusicianView=_singleMusicianView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

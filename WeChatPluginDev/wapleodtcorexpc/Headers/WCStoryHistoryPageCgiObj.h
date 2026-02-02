@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCStoryHistoryPageCgiObj
 {
     int _timeZone;
@@ -11,7 +13,6 @@
     unsigned long long _maxID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxID; // @synthesize maxID=_maxID;
 @property(nonatomic) int timeZone; // @synthesize timeZone=_timeZone;
 @property(copy, nonatomic) CDUnknownBlockType dbSyncBlock; // @synthesize dbSyncBlock=_dbSyncBlock;
@@ -24,4 +25,3 @@
 - (id)init;
 
 @end
-

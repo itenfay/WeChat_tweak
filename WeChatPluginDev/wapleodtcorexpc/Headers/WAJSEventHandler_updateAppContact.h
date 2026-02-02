@@ -13,7 +13,6 @@
     MMTimer *_contactGetterTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *contactGetterTimer; // @synthesize contactGetterTimer=_contactGetterTimer;
 @property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(copy, nonatomic) NSString *requestAppId; // @synthesize requestAppId=_requestAppId;

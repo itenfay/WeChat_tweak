@@ -23,7 +23,6 @@
     struct UIEdgeInsets _TextView_textPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long puzzleImageViewLayoutStyle; // @synthesize puzzleImageViewLayoutStyle=_puzzleImageViewLayoutStyle;
 @property(nonatomic) long long TextView_textVerticalAlignment; // @synthesize TextView_textVerticalAlignment=_TextView_textVerticalAlignment;
 @property(nonatomic) struct UIEdgeInsets TextView_textPadding; // @synthesize TextView_textPadding=_TextView_textPadding;

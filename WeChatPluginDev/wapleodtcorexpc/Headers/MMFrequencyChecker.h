@@ -13,7 +13,6 @@
     NSString *module;
 }
 
-- (void).cxx_destruct;
 - (void)resetLimit;
 - (void)invalid;
 - (_Bool)canTriggerWithInterval:(unsigned long long)arg1 maxTriggerTimes:(unsigned long long)arg2 resetPeriod:(unsigned long long)arg3;

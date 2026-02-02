@@ -23,7 +23,6 @@
 
 + (struct CGSize)getCellSize;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) long long rank; // @synthesize rank=_rank;
 @property(nonatomic) _Bool forceDarkMode; // @synthesize forceDarkMode=_forceDarkMode;
 @property(retain, nonatomic) MMCPLabel *rewardGainValueLabel; // @synthesize rewardGainValueLabel=_rewardGainValueLabel;

@@ -20,7 +20,6 @@
     NSString *_desc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int isDevEdited; // @synthesize isDevEdited=_isDevEdited;
 @property(nonatomic) unsigned int appState; // @synthesize appState=_appState;
 @property(nonatomic) unsigned int appVersion; // @synthesize appVersion=_appVersion;

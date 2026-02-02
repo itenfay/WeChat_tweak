@@ -16,7 +16,6 @@
     VoIPTokenRegisterObject *m_secondTryRegister;
 }
 
-- (void).cxx_destruct;
 - (void)onVoIPTokenRegisterObjectOk;
 - (void)onVoIPTokenRegisterObjectError;
 - (void)onAuthOK;

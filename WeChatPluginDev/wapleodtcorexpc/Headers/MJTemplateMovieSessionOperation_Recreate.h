@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, OMJMovieOptions, OMJMovieOutroInfo;
 
 @interface MJTemplateMovieSessionOperation_Recreate
@@ -14,7 +16,6 @@
     CDUnknownBlockType _progressHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(readonly, nonatomic) OMJMovieOutroInfo *outroInfo; // @synthesize outroInfo=_outroInfo;
 @property(readonly, nonatomic) OMJMovieOptions *options; // @synthesize options=_options;
@@ -30,4 +31,3 @@
 - (id)initWithMaasSession:(id)arg1 sessionKey:(id)arg2 templateID:(id)arg3 musicID:(id)arg4 options:(id)arg5 outroInfo:(id)arg6 progressHandler:(CDUnknownBlockType)arg7 completionHandler:(CDUnknownBlockType)arg8;
 
 @end
-

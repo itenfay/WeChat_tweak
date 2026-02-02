@@ -31,7 +31,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdFireworkCheerGuideHalfScreenInfo *guideHalfScreenInfo; // @synthesize guideHalfScreenInfo=_guideHalfScreenInfo;
 @property(retain, nonatomic) WCAdFireworkCheerTagInfo *tagInfo; // @synthesize tagInfo=_tagInfo;
 @property(retain, nonatomic) NSString *bottomButtonTitle; // @synthesize bottomButtonTitle=_bottomButtonTitle;

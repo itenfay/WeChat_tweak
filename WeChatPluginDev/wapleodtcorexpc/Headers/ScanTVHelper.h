@@ -13,7 +13,6 @@
     id <ScanTVDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsTVID; // @synthesize m_nsTVID;
 @property(nonatomic) __weak id <ScanTVDelegate> m_delegate; // @synthesize m_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

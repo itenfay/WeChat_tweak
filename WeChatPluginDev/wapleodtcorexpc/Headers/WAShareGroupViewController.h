@@ -24,7 +24,6 @@
     NSString *_createTagName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *createTagName; // @synthesize createTagName=_createTagName;
 @property(nonatomic) unsigned int createTagEventId; // @synthesize createTagEventId=_createTagEventId;
 @property(retain, nonatomic) NSArray *m_contactList; // @synthesize m_contactList;

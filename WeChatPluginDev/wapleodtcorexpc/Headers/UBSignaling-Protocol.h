@@ -4,6 +4,7 @@
 //
 
 #import "NSObject-Protocol.h"
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSObject;
 
@@ -15,4 +16,3 @@
 - (void)removeAllObservers;
 - (void)removeObserver:(NSObject *)arg1;
 @end
-

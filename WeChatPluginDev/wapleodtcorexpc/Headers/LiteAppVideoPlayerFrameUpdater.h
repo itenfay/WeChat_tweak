@@ -14,7 +14,6 @@
     NSObject<FlutterTextureRegistry> *_registry;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak NSObject<FlutterTextureRegistry> *registry; // @synthesize registry=_registry;
 @property(nonatomic) long long textureId; // @synthesize textureId=_textureId;
 @property(nonatomic) _Bool isDisposed; // @synthesize isDisposed=_isDisposed;

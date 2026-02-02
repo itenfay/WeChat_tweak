@@ -15,7 +15,6 @@
     NSArray *_arrPluginUserInfoViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrPluginUserInfoViewModel; // @synthesize arrPluginUserInfoViewModel=_arrPluginUserInfoViewModel;
 @property(retain, nonatomic) WAAuthManagerSectionViewModel *weappUserInfoViewModel; // @synthesize weappUserInfoViewModel=_weappUserInfoViewModel;
 @property(retain, nonatomic) WAContact *contact; // @synthesize contact=_contact;

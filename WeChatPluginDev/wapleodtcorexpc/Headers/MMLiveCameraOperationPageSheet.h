@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveCameraOperationItem, MMLiveTaskId, MMUIButton, MMUILabel, NSArray, NSString, UICollectionView, UICollectionViewFlowLayout;
 @protocol MMLiveCameraOperationPanelDelegate;
 
@@ -24,7 +26,6 @@
 }
 
 + (_Bool)isCamGestureEnabled:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasMultipleRedDot; // @synthesize hasMultipleRedDot=_hasMultipleRedDot;
 @property(copy, nonatomic) CDUnknownBlockType redDotQueryBlock; // @synthesize redDotQueryBlock=_redDotQueryBlock;
 @property(retain, nonatomic) MMUILabel *cameraOffLabel; // @synthesize cameraOffLabel=_cameraOffLabel;
@@ -84,4 +85,3 @@
 @property(readonly) Class superclass;
 
 @end
-

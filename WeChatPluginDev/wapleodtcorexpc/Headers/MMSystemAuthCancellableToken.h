@@ -15,7 +15,6 @@
 }
 
 + (id)CompletedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMPageSheetBaseView *sheetView; // @synthesize sheetView=_sheetView;
 @property(nonatomic) _Bool isCompleted; // @synthesize isCompleted=_isCompleted;
 @property(nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;

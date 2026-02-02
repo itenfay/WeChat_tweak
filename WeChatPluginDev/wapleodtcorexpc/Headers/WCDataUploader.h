@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCDataUploaderResult, WCUploadTask;
 @protocol WCDataUploaderDelegate;
 
@@ -15,7 +17,6 @@
     CDUnknownBlockType _cancelResultBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cancelResultBlock; // @synthesize cancelResultBlock=_cancelResultBlock;
 @property(nonatomic) __weak id <WCDataUploaderDelegate> m_delegate; // @synthesize m_delegate;
 @property(retain, nonatomic) WCUploadTask *m_task; // @synthesize m_task;
@@ -34,4 +35,3 @@
 - (void)dealloc;
 
 @end
-

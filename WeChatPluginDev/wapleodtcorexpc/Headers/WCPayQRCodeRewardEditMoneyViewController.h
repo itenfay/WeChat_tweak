@@ -20,7 +20,6 @@
     WCPayNoticeItemView *_noticeItemView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNoticeItemView *noticeItemView; // @synthesize noticeItemView=_noticeItemView;
 @property(nonatomic) unsigned long long maxAmount; // @synthesize maxAmount=_maxAmount;
 @property(retain, nonatomic) WCPayParamInvalidTipView *invalidTipsView; // @synthesize invalidTipsView=_invalidTipsView;

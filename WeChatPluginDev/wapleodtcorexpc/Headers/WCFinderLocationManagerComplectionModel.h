@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderLocationManagerComplectionModel : NSObject
 {
@@ -12,10 +13,8 @@
     CDUnknownBlockType _failureBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType complectionBlock; // @synthesize complectionBlock=_complectionBlock;
 @property(nonatomic) _Bool requiredMapLocation; // @synthesize requiredMapLocation=_requiredMapLocation;
 
 @end
-

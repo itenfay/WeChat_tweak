@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIActivityIndicatorView;
 
 @interface WCShareCardListRefreshHeader
@@ -12,7 +14,6 @@
 }
 
 + (id)headerWithRefreshingBlock:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;
 @property(nonatomic) double insetTDelta; // @synthesize insetTDelta=_insetTDelta;
 - (void)setPullingPercent:(double)arg1;
@@ -23,4 +24,3 @@
 - (void)prepare;
 
 @end
-

@@ -17,7 +17,6 @@
     MISSING_TYPE *navigationBarColorSameAsVC;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onEndInteractivePopTransitionWithIsFinished:(_Bool)arg1;
 - (void)onStartNavPopTransitionFrom:(id)arg1;

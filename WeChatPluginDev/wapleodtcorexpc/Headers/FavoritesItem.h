@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FavLiteAppItem, FavLocationItem, FavProductItem, FavTVItem, FavURLItem, FavWeAppItem, MMMusicShareItem, NSArray, NSDate, NSMutableArray, NSString, WCFinderContentColumnSharedItem, WCFinderLiveShareItem, WCFinderMessageShareNameCard, WCFinderShareToMomentsItem, WCFinderThemeLiveStreamShareItem, WCFinderTopicShareItem, WCMegaVideoShareItem;
 
 @interface FavoritesItem
@@ -81,7 +83,6 @@
 + (id)xmlTagPreProcesslistForConfigTag:(id)arg1;
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *info; // @synthesize info=_info;
 @property(retain, nonatomic) FavLiteAppItem *liteAppItem; // @synthesize liteAppItem=_liteAppItem;
 @property(retain, nonatomic) MMMusicShareItem *musicShareItem; // @synthesize musicShareItem=_musicShareItem;
@@ -181,4 +182,3 @@
 - (void)ftsSearchTitle:(id *)arg1 ftsSearchDetail:(id *)arg2 forDisplay:(_Bool)arg3;
 
 @end
-

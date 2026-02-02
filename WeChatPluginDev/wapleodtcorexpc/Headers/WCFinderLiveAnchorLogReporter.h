@@ -35,7 +35,6 @@
     NSMutableArray *m_filePresentationInfos;
 }
 
-- (void).cxx_destruct;
 - (void)reportLightSafetyNotiAction:(id)arg1;
 - (void)reportKTVAudioEffectOperatingPanelDismiss:(id)arg1;
 - (void)reportKTVAudioEffectOperatingPanelExpose:(id)arg1;

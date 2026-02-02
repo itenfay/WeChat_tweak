@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCFinderLiveAudienceNoticeReporter, WCFinderStreamProfileViewModel;
 
@@ -25,7 +26,6 @@
     unsigned long long _vcSessionStayTimeMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hadReportNewLife; // @synthesize hadReportNewLife=_hadReportNewLife;
 @property(nonatomic) unsigned long long vcSessionStayTimeMs; // @synthesize vcSessionStayTimeMs=_vcSessionStayTimeMs;
 @property(retain, nonatomic) NSMutableSet *exposedRecomendContacts; // @synthesize exposedRecomendContacts=_exposedRecomendContacts;
@@ -67,4 +67,3 @@
 - (id)init;
 
 @end
-

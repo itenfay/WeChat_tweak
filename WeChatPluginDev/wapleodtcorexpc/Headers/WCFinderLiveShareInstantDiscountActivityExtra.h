@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_coverMaskImageURL;
 + (void)PBArrayAdd_activityKey;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *coverMaskImageURL; // @synthesize coverMaskImageURL=_coverMaskImageURL;
 @property(copy, nonatomic) NSString *activityKey; // @synthesize activityKey=_activityKey;
 - (void)encodeWithCoder:(id)arg1;

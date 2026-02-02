@@ -14,7 +14,6 @@
     NSArray *_localResources;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *localResources; // @synthesize localResources=_localResources;
 @property(retain, nonatomic) NSString *resourceName; // @synthesize resourceName=_resourceName;
 @property(retain, nonatomic) NSString *projectId; // @synthesize projectId=_projectId;

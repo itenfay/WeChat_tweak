@@ -38,7 +38,6 @@
     unsigned long long _authScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long authScene; // @synthesize authScene=_authScene;
 @property(nonatomic) unsigned int frameCount; // @synthesize frameCount=_frameCount;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;

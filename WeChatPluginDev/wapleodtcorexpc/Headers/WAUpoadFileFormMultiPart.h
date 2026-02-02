@@ -26,7 +26,6 @@
 + (id)arrayMultiPartWithFileFieldName:(id)arg1 fileName:(id)arg2 filePath:(id)arg3 formFields:(id)arg4 boundary:(id)arg5;
 + (id)arrayFormDataWithFileFieldName:(id)arg1 fileName:(id)arg2 filePath:(id)arg3 formFields:(id)arg4 boundary:(id)arg5 contentLength:(unsigned long long *)arg6;
 + (id)arrayFormBodyObjectWithFileFieldName:(id)arg1 fileName:(id)arg2 filePath:(id)arg3 formFields:(id)arg4 boundary:(id)arg5 contentLength:(unsigned long long *)arg6;
-- (void).cxx_destruct;
 - (void)setFileFieldName:(id)arg1 fileName:(id)arg2 filePath:(id)arg3 boundary:(id)arg4;
 - (void)setFieldName:(id)arg1 fieldValue:(id)arg2 boundary:(id)arg3;
 - (void)markLastPart;

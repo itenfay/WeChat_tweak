@@ -15,7 +15,6 @@
     MISSING_TYPE *downloadCost;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithImageUrl:(id)arg1 reportParams:(id)arg2;
 

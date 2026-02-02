@@ -34,7 +34,6 @@
     struct UIEdgeInsets _backgroundEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct UIEdgeInsets backgroundEdgeInsets; // @synthesize backgroundEdgeInsets=_backgroundEdgeInsets;
 @property(readonly, nonatomic) float backgroundStrokeWidth; // @synthesize backgroundStrokeWidth=_backgroundStrokeWidth;
 @property(readonly, nonatomic) NSString *backgroundStrokeColor; // @synthesize backgroundStrokeColor=_backgroundStrokeColor;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveLotteryFillClaimInfoRequest_ClaimInfo, NSData, NSString;
 
 @interface WCFinderLiveLotteryFillClaimInfoCGI
@@ -15,7 +17,6 @@
     FinderLiveLotteryFillClaimInfoRequest_ClaimInfo *_claimInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveLotteryFillClaimInfoRequest_ClaimInfo *claimInfo; // @synthesize claimInfo=_claimInfo;
 @property(retain, nonatomic) NSString *lotteryId; // @synthesize lotteryId=_lotteryId;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
@@ -28,4 +29,3 @@
 - (id)initWithLiveLotteryFillClaimInfoWithTaskId:(unsigned long long)arg1 objectId:(unsigned long long)arg2 liveCookies:(id)arg3 lotteryId:(id)arg4 claimInfo:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSObject;
 @protocol OS_dispatch_queue;
 
@@ -11,7 +13,6 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void)mainQueueCallCompleteBlock:(CDUnknownBlockType)arg1 withResult:(_Bool)arg2;
 - (void)performBlockOnSerialQueue:(CDUnknownBlockType)arg1;
@@ -21,4 +22,3 @@
 - (id)init;
 
 @end
-

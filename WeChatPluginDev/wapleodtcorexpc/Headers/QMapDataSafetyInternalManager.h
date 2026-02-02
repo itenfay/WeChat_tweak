@@ -12,7 +12,6 @@
     QMapView *_mapView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak QMapView *mapView; // @synthesize mapView=_mapView;
 - (id)getUserLocation;
 - (id)initWithMapView:(id)arg1;

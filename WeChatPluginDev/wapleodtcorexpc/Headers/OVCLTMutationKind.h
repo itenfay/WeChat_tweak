@@ -12,7 +12,6 @@
     NSString *_mutationKind;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *mutationKind; // @synthesize mutationKind=_mutationKind;
 - (id)initWithMutationKind:(id)arg1;
 

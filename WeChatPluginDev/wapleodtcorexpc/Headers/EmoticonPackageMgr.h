@@ -16,7 +16,6 @@
 
 + (id)getEmoticonPackageImageByPid:(id)arg1 style:(unsigned long long)arg2;
 + (id)packageImageFromLightModeName:(id)arg1 darkModeName:(id)arg2 style:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInstallingTusiji; // @synthesize isInstallingTusiji=_isInstallingTusiji;
 @property(retain) NSMutableDictionary *m_packageDownloadStatusCacheDic; // @synthesize m_packageDownloadStatusCacheDic=_m_packageDownloadStatusCacheDic;
 @property(retain, nonatomic) EmoticonSortSetting *m_sortSetting; // @synthesize m_sortSetting=_m_sortSetting;

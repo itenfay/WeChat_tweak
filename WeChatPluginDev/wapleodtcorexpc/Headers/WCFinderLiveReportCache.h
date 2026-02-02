@@ -33,7 +33,6 @@
 }
 
 + (id)sharedReportCache;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long identityPrivacySettingEnterTS; // @synthesize identityPrivacySettingEnterTS=_identityPrivacySettingEnterTS;
 @property(nonatomic) unsigned long long identityPrivacySettingFromSrc; // @synthesize identityPrivacySettingFromSrc=_identityPrivacySettingFromSrc;
 @property(copy, nonatomic) NSDictionary *sReportParamsDic; // @synthesize sReportParamsDic=_sReportParamsDic;

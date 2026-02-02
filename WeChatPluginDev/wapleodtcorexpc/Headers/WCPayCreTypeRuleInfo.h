@@ -13,7 +13,6 @@
     WCPayCreExtInfo *_m_creNeedInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayCreExtInfo *m_creNeedInfo; // @synthesize m_creNeedInfo=_m_creNeedInfo;
 @property(nonatomic) unsigned int m_supportCreType; // @synthesize m_supportCreType=_m_supportCreType;
 - (void)encodeWithCoder:(id)arg1;

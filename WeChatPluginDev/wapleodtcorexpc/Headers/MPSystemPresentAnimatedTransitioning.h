@@ -13,7 +13,6 @@
     id <MPSystemPresentAnimatedTransitioningDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MPSystemPresentAnimatedTransitioningDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

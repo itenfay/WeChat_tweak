@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTableView, MMUIActivityIndicatorView, NSDate, NSString, UIButton, UIImageView, UILabel, UIView, WCFilterView;
 @protocol WXGChatLogSessionViewControllerDelegate;
 
@@ -42,7 +44,6 @@
 
 + (id)getDateWithoutHMS:(id)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bLoadDataEnd; // @synthesize bLoadDataEnd=_bLoadDataEnd;
 @property(nonatomic) unsigned long long lastSelectTimeIndex; // @synthesize lastSelectTimeIndex=_lastSelectTimeIndex;
 @property(retain, nonatomic) NSDate *selectEndDate; // @synthesize selectEndDate=_selectEndDate;
@@ -117,4 +118,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -18,7 +18,6 @@
 @property(retain, nonatomic) NSData *dataHolders; // @synthesize dataHolders=_dataHolders;
 @property(readonly, nonatomic) int headTag; // @synthesize headTag=_headTag;
 @property(nonatomic) int headType; // @synthesize headType=_headType;
-- (void).cxx_destruct;
 - (id)readAnything:(int)arg1 required:(_Bool)arg2 description:(id)arg3;
 - (id)readUTF8String:(int)arg1 required:(_Bool)arg2 description:(id)arg3;
 - (id)readDictionary:(int)arg1 required:(_Bool)arg2 description:(id)arg3;

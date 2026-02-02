@@ -20,7 +20,6 @@
     ForwardMessageLogicController *_forwardLogicController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isExceedLimit; // @synthesize isExceedLimit=_isExceedLimit;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogicController; // @synthesize forwardLogicController=_forwardLogicController;
 @property(nonatomic) _Bool didBatchDownloadEmojiInfo; // @synthesize didBatchDownloadEmojiInfo=_didBatchDownloadEmojiInfo;

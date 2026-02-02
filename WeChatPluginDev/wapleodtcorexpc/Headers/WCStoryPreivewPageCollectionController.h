@@ -31,7 +31,6 @@
     struct CGSize _screenSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *willDisplayIndex; // @synthesize willDisplayIndex=_willDisplayIndex;
 @property(nonatomic) _Bool voiceOverEnable; // @synthesize voiceOverEnable=_voiceOverEnable;
 @property(retain, nonatomic) WCStoryPreviewReportObj *reportObj; // @synthesize reportObj=_reportObj;

@@ -13,7 +13,6 @@
     unsigned long long _startTimeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long startTimeStamp; // @synthesize startTimeStamp=_startTimeStamp;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 

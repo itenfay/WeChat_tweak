@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MJPublisherUtilities : NSObject
 {
@@ -74,4 +75,3 @@
 + (id)captionDirectory;
 
 @end
-

@@ -12,7 +12,6 @@
     UIImageView *_realImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *realImageView; // @synthesize realImageView=_realImageView;
 @property(retain, nonatomic) UIVisualEffectView *blurView; // @synthesize blurView=_blurView;
 @property(retain, nonatomic) UIImageView *backgroundView; // @synthesize backgroundView=_backgroundView;

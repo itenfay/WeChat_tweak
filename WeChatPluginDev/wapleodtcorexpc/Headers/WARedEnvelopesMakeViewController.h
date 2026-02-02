@@ -38,7 +38,6 @@
     UIButton *_scopeBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *scopeBtn; // @synthesize scopeBtn=_scopeBtn;
 @property(retain, nonatomic) WCBizPickerView *pickerView; // @synthesize pickerView=_pickerView;
 @property(retain, nonatomic) UILabel *errorLabel; // @synthesize errorLabel=_errorLabel;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJActionPanelViewController, MJAnalysisGuidanceManager, MJClippingPanel, MJExportProgressMaskView, MJGradientView, MJMovieComposingBottomBar, MJMovieComposingRecognitionGuideView, MJMovieComposingSession, MJMovieComposingTitleGuideView, MJMovieComposingViewModel, MJMovieTextEditInspector, MJMovieTextSuggestionContext, MJMovieTextSuggestionProcessor, MJMovieTextSuggestionSnapshotGenerator, MJMusicPickingViewModel, MJNarrationRecordingControlView, MJPassthroughView, MJPlaybackViewModel, MJPublisherPlaybackProgressSlider, MJSegmentCropBoxView, MJSegmentCropGestureCaptureView, MJSegmentViewModel, MJTimelineViewController, MJTimelineViewModel, MJVideoSafeAreaTipsView, MMBGMSelectHalfScreenViewController, MMUIButton, MMUILabel, NSMapTable, NSMutableArray, NSString, OMJHandleBoxBorderStyle, OMJPlaybackOverlayView, UIImageView, UIView;
 @protocol MJMovieComposingViewControllerDelegate;
 
@@ -68,7 +70,6 @@
 + (id)defaultHandleBoxTitleWithSegmentType:(unsigned long long)arg1;
 + (id)defaultHandleBoxTitlesWithSegmentVM:(id)arg1 hasButton:(_Bool)arg2;
 + (float)calculateEmoticonAdaptiveScaleWithImageSize:(struct CGSize)arg1 canvasSize:(struct CGSize)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJMovieTextSuggestionSnapshotGenerator *movieTextSuggestionSnapshotGenerator; // @synthesize movieTextSuggestionSnapshotGenerator=_movieTextSuggestionSnapshotGenerator;
 @property(retain, nonatomic) MJMovieTextSuggestionContext *movieTextSuggestionContext; // @synthesize movieTextSuggestionContext=_movieTextSuggestionContext;
 @property(retain, nonatomic) MJMovieTextSuggestionProcessor *movieTextSuggestionProcessor; // @synthesize movieTextSuggestionProcessor=_movieTextSuggestionProcessor;
@@ -553,4 +554,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -13,7 +13,6 @@
     id <EmoticonTextAntiSpamCgiDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EmoticonTextAntiSpamCgiDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) _Bool shouldBlock; // @synthesize shouldBlock=m_shouldBlock;

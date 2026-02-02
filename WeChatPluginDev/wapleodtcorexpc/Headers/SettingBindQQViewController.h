@@ -17,7 +17,6 @@
     _Bool m_bFirstMake;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *m_vcAccount; // @synthesize m_vcAccount;
 @property(retain, nonatomic) WCBaseTextFieldItem *m_tfPwd; // @synthesize m_tfPwd;
 @property(retain, nonatomic) WCBaseTextFieldItem *m_tfUsrName; // @synthesize m_tfUsrName;

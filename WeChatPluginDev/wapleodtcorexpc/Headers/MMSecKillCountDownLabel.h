@@ -15,7 +15,6 @@
 }
 
 + (double)widthWithSuffix:(id)arg1 font:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMCountDownLabel *countDownLabel; // @synthesize countDownLabel=_countDownLabel;
 @property(readonly, nonatomic) UILabel *suffixLabel; // @synthesize suffixLabel=_suffixLabel;
 @property(readonly, nonatomic) UIView *line; // @synthesize line=_line;

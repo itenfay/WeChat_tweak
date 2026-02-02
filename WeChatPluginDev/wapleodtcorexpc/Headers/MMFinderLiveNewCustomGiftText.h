@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface MMFinderLiveNewCustomGiftText
@@ -21,7 +23,6 @@
 
 + (_Bool)isGiftTextPBValid:(id)arg1 business:(id)arg2;
 + (id)transferFromGiftTextPB:(id)arg1 business:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType currDisplayTextChangeCallback; // @synthesize currDisplayTextChangeCallback=_currDisplayTextChangeCallback;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *currDisplayText; // @synthesize currDisplayText=_currDisplayText;
@@ -40,4 +41,3 @@
 - (id)styleName;
 
 @end
-

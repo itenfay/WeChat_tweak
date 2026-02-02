@@ -16,7 +16,6 @@
     KFContact *_bindKF;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isNeedUpdateKFContactInfo:(id)arg1;
 - (void)setHeadImgUpdateFlag:(id)arg1 oldContact:(id)arg2;
 - (id)tableName;

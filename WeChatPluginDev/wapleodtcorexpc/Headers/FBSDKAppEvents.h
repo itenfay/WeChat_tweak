@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FBSDKAppEventsState, FBSDKEventBindingManager, FBSDKServerConfiguration, NSString;
 @protocol OS_dispatch_source;
@@ -63,7 +64,6 @@
 + (void)logEvent:(id)arg1 valueToSum:(double)arg2;
 + (void)logEvent:(id)arg1;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *flushTimer; // @synthesize flushTimer=_flushTimer;
 @property(copy, nonatomic) NSString *pushNotificationsDeviceTokenString; // @synthesize pushNotificationsDeviceTokenString=_pushNotificationsDeviceTokenString;
 @property(nonatomic) _Bool disableTimer; // @synthesize disableTimer=_disableTimer;
@@ -85,4 +85,3 @@
 - (id)init;
 
 @end
-

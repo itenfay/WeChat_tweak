@@ -28,7 +28,6 @@
 }
 
 + (id)showWithTaskId:(id)arg1 openParams:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPinBottomCollectionViewFlowLayout *onlineUsersCollectionLayout; // @synthesize onlineUsersCollectionLayout=_onlineUsersCollectionLayout;
 @property(nonatomic) unsigned long long currentSelectIndex; // @synthesize currentSelectIndex=_currentSelectIndex;
 @property(nonatomic) unsigned int boardMemberCount; // @synthesize boardMemberCount=_boardMemberCount;

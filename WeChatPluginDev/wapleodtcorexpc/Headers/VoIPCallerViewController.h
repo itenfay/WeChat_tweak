@@ -40,7 +40,6 @@
     id _recentStatusModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id recentStatusModel; // @synthesize recentStatusModel=_recentStatusModel;
 @property(nonatomic) int recentStatusUserSexType; // @synthesize recentStatusUserSexType=_recentStatusUserSexType;
 @property(retain, nonatomic) NSString *recentStatusUserName; // @synthesize recentStatusUserName=_recentStatusUserName;

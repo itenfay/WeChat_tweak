@@ -77,7 +77,6 @@
 + (id)GenVideoMsg:(id)arg1 ToUsr:(id)arg2 MsgType:(unsigned int)arg3 VideoInfo:(id)arg4;
 + (void)CreateVideoMsg:(id)arg1 ToUsr:(id)arg2 VideoInfo:(id)arg3 MsgType:(unsigned int)arg4 retMessageWrap:(id *)arg5;
 + (void)CreateExtendInfoWithType:(unsigned int)arg1 retExtendInfo:(id *)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_assetIdForForward; // @synthesize m_assetIdForForward=_m_assetIdForForward;
 @property(retain, nonatomic) MMAsset *m_asset; // @synthesize m_asset=_m_asset;
 @property(retain, nonatomic) VideoUploadStatInfo *m_oVideoUploadStatInfo; // @synthesize m_oVideoUploadStatInfo=_m_oVideoUploadStatInfo;

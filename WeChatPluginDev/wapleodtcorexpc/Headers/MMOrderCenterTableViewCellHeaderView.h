@@ -21,7 +21,6 @@
 
 + (double)heightForOrder:(id)arg1 inWidth:(double)arg2 estimate:(_Bool)arg3;
 + (_Bool)shouldUseComponentForOrder:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *statusView; // @synthesize statusView=_statusView;
 @property(retain, nonatomic) NSArray *outletNameTagViews; // @synthesize outletNameTagViews=_outletNameTagViews;
 @property(retain, nonatomic) UILabel *storeNameView; // @synthesize storeNameView=_storeNameView;

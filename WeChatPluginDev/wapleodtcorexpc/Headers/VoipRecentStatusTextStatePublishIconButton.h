@@ -16,7 +16,6 @@
     UIImageView *_arrowImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) MMUILabel *iconDescriptionLabel; // @synthesize iconDescriptionLabel=_iconDescriptionLabel;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;

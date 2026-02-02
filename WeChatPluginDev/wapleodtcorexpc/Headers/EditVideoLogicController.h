@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSLock, NSMutableDictionary;
 
 @interface EditVideoLogicController
@@ -45,7 +47,6 @@
 + (id)finderVideoCompositionWithVideoComposition:(id)arg1 originVideoPaths:(id)arg2 attr:(id)arg3 emotionOffset:(struct CGPoint)arg4 completionHandler:(CDUnknownBlockType)arg5;
 + (void)finderVideoCompositionWithAVAsset:(id)arg1 paths:(id)arg2 assets:(id)arg3 attr:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 + (void)videoComposition:(id)arg1 withAttr:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 - (id)getEditVideoAttr:(id)arg1;
 - (void)removeEditedAsset:(id)arg1;
 - (id)modifyAsset:(id)arg1 withEditVideoAttr:(id)arg2;
@@ -53,4 +54,3 @@
 - (id)init;
 
 @end
-

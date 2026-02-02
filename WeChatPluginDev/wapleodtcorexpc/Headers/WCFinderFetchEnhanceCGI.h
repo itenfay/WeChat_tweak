@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderClientStatus, NSData, NSMutableArray, NSString, WCFinderLocationInfo;
 
 @interface WCFinderFetchEnhanceCGI
@@ -23,7 +25,6 @@
     NSString *_sessionBuffer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(nonatomic) int streamType; // @synthesize streamType=_streamType;
 @property(nonatomic) int eventType; // @synthesize eventType=_eventType;
@@ -44,4 +45,3 @@
 - (id)initWithLastBuff:(id)arg1 tid:(id)arg2 nonceID:(id)arg3 location:(id)arg4 tabType:(unsigned long long)arg5 readStats:(id)arg6 unreadItems:(id)arg7 viewerScene:(int)arg8 clientStatus:(id)arg9 eventType:(int)arg10 enhanceStreamType:(int)arg11 successful:(CDUnknownBlockType)arg12 failure:(CDUnknownBlockType)arg13;
 
 @end
-

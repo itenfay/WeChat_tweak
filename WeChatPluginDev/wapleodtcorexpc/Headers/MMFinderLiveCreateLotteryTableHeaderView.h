@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton;
 
@@ -14,7 +15,6 @@
     CDUnknownBlockType _addCreateLotteryBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType addCreateLotteryBlock; // @synthesize addCreateLotteryBlock=_addCreateLotteryBlock;
 @property(retain, nonatomic) MMUIButton *addCreateLotteryButton; // @synthesize addCreateLotteryButton=_addCreateLotteryButton;
 @property(retain, nonatomic) UIView *headerBgView; // @synthesize headerBgView=_headerBgView;
@@ -25,4 +25,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

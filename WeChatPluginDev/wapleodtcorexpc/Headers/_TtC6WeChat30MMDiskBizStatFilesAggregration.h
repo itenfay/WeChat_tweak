@@ -15,7 +15,6 @@
     MISSING_TYPE *latestFiles;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)report;
 - (void)addIfNeededWithName:(id)arg1 size:(long long)arg2 latestTimeInterval:(double)arg3;

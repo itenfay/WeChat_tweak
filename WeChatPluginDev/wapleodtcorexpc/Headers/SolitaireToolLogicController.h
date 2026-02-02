@@ -16,7 +16,6 @@
     WCAccountBindPhoneControlLogic *_bindPhoneLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAccountBindPhoneControlLogic *bindPhoneLogic; // @synthesize bindPhoneLogic=_bindPhoneLogic;
 @property(retain, nonatomic) MMActionSheetDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 @property(retain, nonatomic) MMPickLocationViewController *locationViewController; // @synthesize locationViewController=_locationViewController;

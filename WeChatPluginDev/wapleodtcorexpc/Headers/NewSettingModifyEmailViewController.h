@@ -17,7 +17,6 @@
 + (int)getDisplayType;
 + (_Bool)isVerify;
 + (void)showEmailVC:(id)arg1 fromVC:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) int displayType; // @synthesize displayType=_displayType;
 @property(retain, nonatomic) UIViewController *currentVC; // @synthesize currentVC=_currentVC;
 @property(retain, nonatomic) NSString *lastEmail; // @synthesize lastEmail=_lastEmail;

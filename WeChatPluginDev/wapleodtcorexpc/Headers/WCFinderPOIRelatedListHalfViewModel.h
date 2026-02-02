@@ -19,7 +19,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isContinueFlag; // @synthesize isContinueFlag=_isContinueFlag;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;

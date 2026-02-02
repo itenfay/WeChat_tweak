@@ -16,7 +16,6 @@
     MMFinderLiveGameUserInfo *_selectGameUserInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGameUserInfo *selectGameUserInfo; // @synthesize selectGameUserInfo=_selectGameUserInfo;
 @property(retain, nonatomic) WCFinderFeedFlowView *feedFlowView; // @synthesize feedFlowView=_feedFlowView;
 @property(retain, nonatomic) WCFinderLiveStarterGamePageViewModel *viewModel; // @synthesize viewModel=_viewModel;

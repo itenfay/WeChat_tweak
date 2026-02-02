@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, WAMediaCastingAirPlayDetector;
 
 @interface WAWebViewPlugin_LivePlayer
@@ -20,7 +22,6 @@
     WAMediaCastingAirPlayDetector *_airPlayDetector;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAMediaCastingAirPlayDetector *airPlayDetector; // @synthesize airPlayDetector=_airPlayDetector;
 @property(copy, nonatomic) CDUnknownBlockType operateCallback; // @synthesize operateCallback=_operateCallback;
 @property(nonatomic) _Bool isInBackground; // @synthesize isInBackground=_isInBackground;
@@ -77,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

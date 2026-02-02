@@ -13,7 +13,6 @@
     NSString *_message;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) unsigned long long level; // @synthesize level=_level;
 - (id)description;

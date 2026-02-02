@@ -38,7 +38,6 @@
 }
 
 + (double)contentHeight:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool copyMoved; // @synthesize copyMoved=_copyMoved;
 @property(nonatomic) unsigned long long dragType; // @synthesize dragType=_dragType;
 @property(nonatomic) long long dragButtonEventType; // @synthesize dragButtonEventType=_dragButtonEventType;

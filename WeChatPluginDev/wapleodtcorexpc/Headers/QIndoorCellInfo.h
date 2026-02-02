@@ -13,7 +13,6 @@
     NSArray *_regions;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *regions; // @synthesize regions=_regions;
 @property(retain, nonatomic) QIndoorCellStyle *style; // @synthesize style=_style;
 

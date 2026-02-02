@@ -14,7 +14,6 @@
     MMUIButton *_closeButon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *closeButon; // @synthesize closeButon=_closeButon;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;

@@ -21,7 +21,6 @@
     UIViewController *_currentVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *currentVC; // @synthesize currentVC=_currentVC;
 @property(nonatomic) __weak id <MMSnackBarViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *actionView; // @synthesize actionView=_actionView;

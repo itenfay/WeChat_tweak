@@ -12,7 +12,6 @@
     NSMutableArray *_privateItemList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *privateItemList; // @synthesize privateItemList=_privateItemList;
 - (id)mmkv;
 - (id)itemList;

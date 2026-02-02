@@ -24,7 +24,6 @@
     JSApiScopeConfirmWindow *_weakConfirmWindow;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak JSApiScopeConfirmWindow *weakConfirmWindow; // @synthesize weakConfirmWindow=_weakConfirmWindow;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

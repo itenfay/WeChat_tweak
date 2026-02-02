@@ -17,7 +17,6 @@
     MMFinderLiveShopShelfSubPageHeaderView *_headerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveShopShelfSubPageHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskID; // @synthesize taskID=_taskID;

@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithType:(id)arg1 isFreeSimCard:(id)arg2 allowedMobileNet:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *allowedMobileNet; // @synthesize allowedMobileNet=_allowedMobileNet;
 @property(retain, nonatomic) NSNumber *isFreeSimCard; // @synthesize isFreeSimCard=_isFreeSimCard;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;

@@ -19,7 +19,6 @@
     id <WCCanvasComponentDelegate> _canvasDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCanvasComponentDelegate> canvasDelegate; // @synthesize canvasDelegate=_canvasDelegate;
 @property(retain, nonatomic) WCCanvasComponentSidebarButtonInfo *buttonInfo; // @synthesize buttonInfo=_buttonInfo;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;

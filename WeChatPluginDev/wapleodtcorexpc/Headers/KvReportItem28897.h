@@ -19,7 +19,6 @@
     long long _preloadPicSize_30;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long preloadPicSize_30; // @synthesize preloadPicSize_30=_preloadPicSize_30;
 @property(nonatomic) long long preloadPicDownloadTime_29; // @synthesize preloadPicDownloadTime_29=_preloadPicDownloadTime_29;
 @property(nonatomic) unsigned int preloadPicAction_28; // @synthesize preloadPicAction_28=_preloadPicAction_28;

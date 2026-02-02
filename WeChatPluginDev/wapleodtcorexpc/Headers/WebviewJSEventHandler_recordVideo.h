@@ -17,7 +17,6 @@
     _Bool _isFromPicker;
 }
 
-- (void).cxx_destruct;
 - (void)setVideoPreviewHidden:(_Bool)arg1 inPicker:(id)arg2;
 - (void)dismissPicker;
 - (id)getAppId:(id)arg1;

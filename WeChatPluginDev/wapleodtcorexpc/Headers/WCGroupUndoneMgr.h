@@ -14,7 +14,6 @@
     WCGroupUndoneDatabase *_database;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCGroupUndoneDatabase *database; // @synthesize database=_database;
 @property(retain, nonatomic) NSDictionary *nativeWeAppIconUrlDic; // @synthesize nativeWeAppIconUrlDic=_nativeWeAppIconUrlDic;
 @property(retain, nonatomic) NSMutableDictionary *dicRoomDescRecord; // @synthesize dicRoomDescRecord=_dicRoomDescRecord;

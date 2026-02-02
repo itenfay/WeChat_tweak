@@ -12,7 +12,6 @@
     OVCLowerThirdTextLayerBuildData *_textLayerBuildData;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) OVCLowerThirdTextLayerBuildData *textLayerBuildData; // @synthesize textLayerBuildData=_textLayerBuildData;
 - (id)initWithTextLayerBuildData:(id)arg1;
 

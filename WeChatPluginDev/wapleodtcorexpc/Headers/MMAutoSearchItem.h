@@ -12,7 +12,6 @@
 }
 
 + (id)itemWithKeyWord:(id)arg1 startFromFirst:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool startFromFirst; // @synthesize startFromFirst=_startFromFirst;
 @property(retain, nonatomic) NSString *keyWord; // @synthesize keyWord=_keyWord;
 

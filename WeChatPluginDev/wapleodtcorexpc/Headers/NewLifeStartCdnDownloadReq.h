@@ -18,7 +18,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithMediaId:(id)arg1 url:(id)arg2 concurrentCount:(long long)arg3 path:(id)arg4;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(nonatomic) long long concurrentCount; // @synthesize concurrentCount=_concurrentCount;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;

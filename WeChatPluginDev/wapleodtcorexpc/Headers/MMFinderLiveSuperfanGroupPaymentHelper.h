@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveGenericPaymentSheetView, MMFinderLiveTask, MMUIViewController, NSString;
 
@@ -19,7 +20,6 @@
     unsigned long long _subscriptionType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long subscriptionType; // @synthesize subscriptionType=_subscriptionType;
 @property(nonatomic) __weak MMFinderLiveGenericPaymentSheetView *sheetView; // @synthesize sheetView=_sheetView;
 @property(nonatomic) unsigned long long lastSelectedIndex; // @synthesize lastSelectedIndex=_lastSelectedIndex;
@@ -58,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

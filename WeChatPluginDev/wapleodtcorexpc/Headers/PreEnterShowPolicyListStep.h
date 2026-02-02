@@ -12,7 +12,6 @@
     WCPolicyListControlLogic *_policyListLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPolicyListControlLogic *policyListLogic; // @synthesize policyListLogic=_policyListLogic;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) PreEnterShowPolicyListConfig *configObj; // @synthesize configObj=_configObj;

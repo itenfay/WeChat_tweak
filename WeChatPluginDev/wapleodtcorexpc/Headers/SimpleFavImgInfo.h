@@ -11,7 +11,6 @@
     FavoritesItem *_m_favItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FavoritesItem *m_favItem; // @synthesize m_favItem=_m_favItem;
 @property(retain, nonatomic) FavoritesItemDataField *m_favData; // @synthesize m_favData=_m_favData;
 - (id)getImgUUID;

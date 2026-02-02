@@ -19,7 +19,6 @@
     NSString *_recommendCardId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *recommendCardId; // @synthesize recommendCardId=_recommendCardId;
 @property(retain, nonatomic) NSString *templateMsgId; // @synthesize templateMsgId=_templateMsgId;
 @property(nonatomic) unsigned int followService; // @synthesize followService=_followService;

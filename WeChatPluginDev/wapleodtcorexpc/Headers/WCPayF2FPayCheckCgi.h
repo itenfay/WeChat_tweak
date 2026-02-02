@@ -16,7 +16,6 @@
     id <WCPayF2FPayCheckCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayF2FPayCheckCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 @property(nonatomic) unsigned int amount; // @synthesize amount=_amount;
 @property(retain, nonatomic) NSString *receiverOpenId; // @synthesize receiverOpenId=_receiverOpenId;

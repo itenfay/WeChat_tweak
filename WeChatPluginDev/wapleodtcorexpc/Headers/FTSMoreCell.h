@@ -13,7 +13,6 @@
     UIView *_topLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topLine; // @synthesize topLine=_topLine;
 @property(retain, nonatomic) UILabel *moreTipLabel; // @synthesize moreTipLabel=_moreTipLabel;
 @property(retain, nonatomic) UIImageView *rightArrowIcon; // @synthesize rightArrowIcon=_rightArrowIcon;

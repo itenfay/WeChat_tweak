@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTableView, NSArray, NSString;
 
@@ -20,7 +21,6 @@
     NSArray *_arrContacts;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrContacts; // @synthesize arrContacts=_arrContacts;
 @property(retain, nonatomic) UIView *bottomGradientMaskView; // @synthesize bottomGradientMaskView=_bottomGradientMaskView;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
@@ -50,4 +50,3 @@
 @property(readonly) Class superclass;
 
 @end
-

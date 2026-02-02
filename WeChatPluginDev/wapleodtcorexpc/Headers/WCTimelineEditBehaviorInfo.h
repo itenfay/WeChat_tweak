@@ -48,7 +48,6 @@
     unsigned long long _selectTagDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectTagDuration; // @synthesize selectTagDuration=_selectTagDuration;
 @property(nonatomic) unsigned long long selectTagStartTime; // @synthesize selectTagStartTime=_selectTagStartTime;
 @property(nonatomic) unsigned long long selectFriendFromTagDuration; // @synthesize selectFriendFromTagDuration=_selectFriendFromTagDuration;

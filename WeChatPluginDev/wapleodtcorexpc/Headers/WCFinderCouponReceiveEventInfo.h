@@ -21,7 +21,6 @@
 }
 
 + (id)infoWith:(id)arg1 event:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int clickButtonStyle; // @synthesize clickButtonStyle=_clickButtonStyle;
 @property(retain, nonatomic) FinderShopCouponInfo_AcquireInfo *acquireInfo; // @synthesize acquireInfo=_acquireInfo;
 @property(copy, nonatomic) NSString *buttonWording; // @synthesize buttonWording=_buttonWording;

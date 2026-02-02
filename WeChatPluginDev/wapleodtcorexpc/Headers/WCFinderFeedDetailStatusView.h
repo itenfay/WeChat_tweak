@@ -21,7 +21,6 @@
     UIButton *_closeBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *closeBtn; // @synthesize closeBtn=_closeBtn;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;

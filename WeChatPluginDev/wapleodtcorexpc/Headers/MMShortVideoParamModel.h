@@ -19,7 +19,6 @@
     NSDictionary *_userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) FinderVideoTemplateInfo *tempalteInfo; // @synthesize tempalteInfo=_tempalteInfo;
 @property(retain, nonatomic) ABAReportPrams *videoScoreParams; // @synthesize videoScoreParams=_videoScoreParams;

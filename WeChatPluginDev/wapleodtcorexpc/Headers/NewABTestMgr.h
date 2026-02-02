@@ -12,7 +12,6 @@
     NSMutableArray *_aryABTestList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bABTestCacheLoaded; // @synthesize bABTestCacheLoaded=_bABTestCacheLoaded;
 @property(nonatomic) unsigned int uiNextUpdateTime; // @synthesize uiNextUpdateTime=_uiNextUpdateTime;
 @property(retain, nonatomic) NSMutableArray *aryABTestList; // @synthesize aryABTestList=_aryABTestList;

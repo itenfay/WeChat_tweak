@@ -40,7 +40,6 @@
     NSMutableDictionary *_pageAdapterDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pageAdapterDict; // @synthesize pageAdapterDict=_pageAdapterDict;
 @property(retain, nonatomic) MMFinderGameLiveTabPageViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) WCFinderTabPageView *tabPageView; // @synthesize tabPageView=_tabPageView;

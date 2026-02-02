@@ -17,7 +17,6 @@
     UIButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) MMWebImageView *ipIconView; // @synthesize ipIconView=_ipIconView;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;

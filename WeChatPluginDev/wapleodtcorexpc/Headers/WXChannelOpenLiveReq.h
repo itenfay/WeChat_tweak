@@ -12,7 +12,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nonceID; // @synthesize nonceID=_nonceID;
 @property(copy, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;
 

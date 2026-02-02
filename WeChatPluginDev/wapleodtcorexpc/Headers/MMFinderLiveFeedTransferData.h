@@ -13,7 +13,6 @@
     NSArray *_comments;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *comments; // @synthesize comments=_comments;
 @property(retain, nonatomic) FinderLiveBattleSettingInfo *battleSettings; // @synthesize battleSettings=_battleSettings;
 - (id)useComments;

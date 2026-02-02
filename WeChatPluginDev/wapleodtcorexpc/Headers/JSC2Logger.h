@@ -19,7 +19,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL placeHolder; // @synthesize placeHolder=_placeHolder;
 @property(nonatomic) int rawLogFD; // @synthesize rawLogFD=_rawLogFD;
 @property(copy, nonatomic) NSString *rawLogPath; // @synthesize rawLogPath=_rawLogPath;

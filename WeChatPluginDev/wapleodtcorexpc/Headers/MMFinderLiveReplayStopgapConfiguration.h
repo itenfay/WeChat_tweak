@@ -18,7 +18,6 @@
 }
 
 + (_Bool)stopgapInfoValid:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *mediaItemsList; // @synthesize mediaItemsList=_mediaItemsList;
 @property(retain, nonatomic) NSDictionary *mediaItems; // @synthesize mediaItems=_mediaItems;
 @property(nonatomic) _Bool forceQualityRecommendation; // @synthesize forceQualityRecommendation=_forceQualityRecommendation;

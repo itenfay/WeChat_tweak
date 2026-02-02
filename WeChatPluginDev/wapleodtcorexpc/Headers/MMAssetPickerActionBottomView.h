@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _cameraBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cameraBlock; // @synthesize cameraBlock=_cameraBlock;
 @property(copy, nonatomic) CDUnknownBlockType albumBlock; // @synthesize albumBlock=_albumBlock;
 @property(retain, nonatomic) MMUIButton *cameraButton; // @synthesize cameraButton=_cameraButton;
@@ -35,4 +35,3 @@
 - (void)setBackgroundViewColor:(id)arg1;
 
 @end
-

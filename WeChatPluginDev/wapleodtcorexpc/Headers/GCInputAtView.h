@@ -13,7 +13,6 @@
     UILabel *_noResultView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *noResultView; // @synthesize noResultView=_noResultView;
 @property(retain, nonatomic) UICollectionView *atCollectionView; // @synthesize atCollectionView=_atCollectionView;
 - (void)setIsEmpty:(_Bool)arg1;

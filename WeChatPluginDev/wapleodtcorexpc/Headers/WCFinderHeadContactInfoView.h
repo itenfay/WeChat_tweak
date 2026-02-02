@@ -19,7 +19,6 @@
     NSHashTable *_currentOtherViewsArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *currentOtherViewsArray; // @synthesize currentOtherViewsArray=_currentOtherViewsArray;
 @property(nonatomic) _Bool hasChangeFontSize; // @synthesize hasChangeFontSize=_hasChangeFontSize;
 @property(nonatomic) unsigned long long currentShowLineType; // @synthesize currentShowLineType=_currentShowLineType;

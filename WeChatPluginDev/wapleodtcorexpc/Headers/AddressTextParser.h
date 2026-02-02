@@ -14,7 +14,6 @@
 + (struct _NSRange)RangeOfObjectInString:(id)arg1 withRange:(struct _NSRange)arg2;
 + (_Bool)needParserAddress;
 + (id)newInstance;
-- (void).cxx_destruct;
 - (id)getStyle;
 - (id)attributeStringForContent:(id)arg1;
 - (id)stylesForString:(id)arg1 withRange:(struct _NSRange)arg2 withParserPosition:(struct _NSParserPosition *)arg3;

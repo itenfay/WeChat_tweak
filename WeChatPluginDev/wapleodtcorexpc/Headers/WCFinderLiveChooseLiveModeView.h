@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAShapeLayer, MMTableView, NSString, UIView, WCFinderLiveChooseLiveModeViewModel, WCFinderLiveStarterSwitchModeItem;
 @protocol MMFinderLiveChooseLiveModeDelegate;
 
@@ -21,7 +23,6 @@
 + (id)getSelectedClarityDataItem:(id)arg1;
 + (id)generateAudioSubItemWithAudioSubType:(unsigned long long)arg1;
 + (id)generateDataItemListWithLiveMode:(unsigned long long)arg1 hideLandscpe:(_Bool)arg2 disableVideoLandscape:(_Bool)arg3 hideKTVLiveMode:(_Bool)arg4 redDotQueryBlock:(CDUnknownBlockType)arg5 redDotExposeBlock:(CDUnknownBlockType)arg6 redDotClickBlock:(CDUnknownBlockType)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveStarterSwitchModeItem *switchModeItem; // @synthesize switchModeItem=_switchModeItem;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
@@ -54,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

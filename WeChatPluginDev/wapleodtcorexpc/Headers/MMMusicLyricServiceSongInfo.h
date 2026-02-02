@@ -16,7 +16,6 @@
     long long _observerCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool manualOffsetControlEnabled; // @synthesize manualOffsetControlEnabled=_manualOffsetControlEnabled;
 @property(nonatomic) long long observerCount; // @synthesize observerCount=_observerCount;
 @property(nonatomic) int currentLyricIndex; // @synthesize currentLyricIndex=_currentLyricIndex;

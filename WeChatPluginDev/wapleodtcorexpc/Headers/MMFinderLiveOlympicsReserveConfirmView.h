@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, UIButton, UIView;
 
 @interface MMFinderLiveOlympicsReserveConfirmView
@@ -17,7 +19,6 @@
     CDUnknownBlockType _actionBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(retain, nonatomic) UIView *horiLine; // @synthesize horiLine=_horiLine;
 @property(retain, nonatomic) UIView *vertLine; // @synthesize vertLine=_vertLine;
@@ -33,4 +34,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

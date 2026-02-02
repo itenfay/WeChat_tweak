@@ -18,7 +18,6 @@
     UIView *_rightDotLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *rightDotLayer; // @synthesize rightDotLayer=_rightDotLayer;
 @property(retain, nonatomic) UIView *leftDotLayer; // @synthesize leftDotLayer=_leftDotLayer;
 @property(retain, nonatomic) UIView *centerDotLayer; // @synthesize centerDotLayer=_centerDotLayer;

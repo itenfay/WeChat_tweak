@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCMusicSmartBoxWorker;
 @protocol WCMusicSmartBoxViewControllerDelegate;
 
@@ -12,7 +14,6 @@
     WCMusicSmartBoxWorker *_smartboxWorker;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMusicSmartBoxWorker *smartboxWorker; // @synthesize smartboxWorker=_smartboxWorker;
 @property(nonatomic) __weak id <WCMusicSmartBoxViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)collectionVeiwCellForDataItem:(id)arg1 reuseCell:(id)arg2;
@@ -24,4 +25,3 @@
 - (void)cancelSearchWithLastReqeustId:(unsigned long long)arg1;
 
 @end
-

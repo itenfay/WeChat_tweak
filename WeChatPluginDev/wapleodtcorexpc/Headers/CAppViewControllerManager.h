@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMainViewController, MainTabBarViewController, NSMutableArray, NSMutableDictionary, NSString, PreEnterWechatLogic, SplitViewEmptyViewController, UIViewController, UIWindow, WCSplitViewController;
 
 @interface CAppViewControllerManager
@@ -39,7 +41,6 @@
 + (id)getTabBarController;
 + (id)getAppViewControllerManager;
 + (_Bool)hasEnterWechatMain;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *splitDetailViewControllerDict; // @synthesize splitDetailViewControllerDict=_splitDetailViewControllerDict;
 @property(nonatomic) _Bool m_isHandlingOrientationEvent; // @synthesize m_isHandlingOrientationEvent=_m_isHandlingOrientationEvent;
 @property(retain, nonatomic) UIViewController *m_lastPresentedViewController; // @synthesize m_lastPresentedViewController=_m_lastPresentedViewController;
@@ -182,4 +183,3 @@
 @property(readonly) Class superclass;
 
 @end
-

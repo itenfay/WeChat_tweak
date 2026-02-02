@@ -12,7 +12,6 @@
     LOTAnimationView *_closeIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LOTAnimationView *closeIcon; // @synthesize closeIcon=_closeIcon;
 - (void)onPageSheetDragToDismissOffset:(double)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;

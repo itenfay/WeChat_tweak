@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_reddotTipsUUid;
 + (void)PBArrayAdd_objectId;
 + (void)PBArrayAdd_requestTimeMs;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reddotTipsUUid; // @synthesize reddotTipsUUid=_reddotTipsUUid;
 @property(nonatomic) unsigned long long objectId; // @synthesize objectId=_objectId;
 @property(nonatomic) unsigned long long requestTimeMs; // @synthesize requestTimeMs=_requestTimeMs;

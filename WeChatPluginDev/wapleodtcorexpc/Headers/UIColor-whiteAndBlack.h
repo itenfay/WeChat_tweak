@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIColor.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIColor (whiteAndBlack)
 + (id)blackWithAlpha:(double)arg1;
@@ -67,4 +68,3 @@
 - (id)toClearColorIfVisionOS;
 - (CDUnknownBlockType)ifVisionOS;
 @end
-

@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)updateCurrentRoute:(id)arg1;
 - (void)onAudioSessionRouteChange:(id)arg1;
 - (void)unRegisterObserver;

@@ -13,7 +13,6 @@
     NSString *_retJson;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *retJson; // @synthesize retJson=_retJson;
 @property(retain, nonatomic) NSString *retMsg; // @synthesize retMsg=_retMsg;
 @property(nonatomic) unsigned int retCode; // @synthesize retCode=_retCode;

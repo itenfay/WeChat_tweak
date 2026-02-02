@@ -11,7 +11,6 @@
     WebViewA8KeyLogicImpl *_a8keyLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool passAll; // @synthesize passAll=_passAll;
 @property(retain, nonatomic) WebViewA8KeyLogicImpl *a8keyLogic; // @synthesize a8keyLogic=_a8keyLogic;
 - (_Bool)urlHasPayFragment:(id)arg1;

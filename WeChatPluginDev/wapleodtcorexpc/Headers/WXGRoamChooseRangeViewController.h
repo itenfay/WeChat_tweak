@@ -15,7 +15,6 @@
     UITableView *_sheetView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *sheetView; // @synthesize sheetView=_sheetView;
 @property(retain, nonatomic) NSMutableArray *cellHeightArr; // @synthesize cellHeightArr=_cellHeightArr;
 @property(retain, nonatomic) MMUINavigationBar *customNavigationBar; // @synthesize customNavigationBar=_customNavigationBar;

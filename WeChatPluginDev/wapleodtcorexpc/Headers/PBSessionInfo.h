@@ -50,7 +50,6 @@
 + (void)PBArrayAdd_atMeCount;
 + (void)PBArrayAdd_message;
 + (void)PBArrayAdd_contact;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long brandAffMsgId; // @synthesize brandAffMsgId=_brandAffMsgId;
 @property(nonatomic) _Bool bGroupUndoneFlag; // @synthesize bGroupUndoneFlag=_bGroupUndoneFlag;
 @property(nonatomic) _Bool bSpecialAttention; // @synthesize bSpecialAttention=_bSpecialAttention;

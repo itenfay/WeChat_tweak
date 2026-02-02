@@ -24,7 +24,6 @@
     int currViewPort[4];
 }
 
-- (void).cxx_destruct;
 - (void)leave;
 - (void)join:(id)arg1;
 - (void)dealloc;

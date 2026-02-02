@@ -17,7 +17,6 @@
     MJEmoticonPickerItem *_backupItem;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJEmoticonPickerItem *backupItem; // @synthesize backupItem=_backupItem;
 @property(retain, nonatomic) MJInspectorToolBar *toolBar; // @synthesize toolBar=_toolBar;
 @property(retain, nonatomic) EditImageEmotionToolAttrView *emotionView; // @synthesize emotionView=_emotionView;

@@ -18,7 +18,6 @@
     NSObject *_m_userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *m_userInfo; // @synthesize m_userInfo=_m_userInfo;
 @property(retain, nonatomic) NSString *accessibilityName; // @synthesize accessibilityName=_accessibilityName;
 @property(retain, nonatomic) NSString *panelUrl; // @synthesize panelUrl;

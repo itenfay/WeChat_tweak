@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIScrollView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveBoxId, MMFinderLiveCommentContentView, MMFinderLiveCommentEntranceTabBar, MMFinderLivePrivateCommentContentView, MMFinderLivePublicCommentContentView, MMFinderLiveTaskId, NSArray, NSMutableArray, NSString;
 
@@ -55,7 +56,6 @@
 + (_Bool)checkChatRoomIsBlocked:(id)arg1;
 + (_Bool)checkChatRoomIsDismiss:(id)arg1;
 + (_Bool)checkChatRoomHasAuthorities:(id)arg1 toast:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needRestoreVisibleCommentAfterLayout; // @synthesize needRestoreVisibleCommentAfterLayout=_needRestoreVisibleCommentAfterLayout;
 @property(nonatomic) _Bool isFoldAnimating; // @synthesize isFoldAnimating=_isFoldAnimating;
 @property(nonatomic) _Bool isExpandAnimating; // @synthesize isExpandAnimating=_isExpandAnimating;
@@ -264,4 +264,3 @@
 @property(readonly) Class superclass;
 
 @end
-

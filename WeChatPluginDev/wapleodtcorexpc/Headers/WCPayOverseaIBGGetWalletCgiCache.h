@@ -32,7 +32,6 @@
 + (void)PBArrayAdd_walletGrayArea;
 + (void)PBArrayAdd_walletNotice;
 + (void)PBArrayAdd_walletTitle;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userKeyInfoUrl; // @synthesize userKeyInfoUrl=_userKeyInfoUrl;
 @property(nonatomic) _Bool isShowUserKeyInfo; // @synthesize isShowUserKeyInfo=_isShowUserKeyInfo;
 @property(retain, nonatomic) NSMutableArray *walletRegionDescArray; // @synthesize walletRegionDescArray=_walletRegionDescArray;

@@ -15,7 +15,6 @@
     int _blendMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int blendMode; // @synthesize blendMode=_blendMode;
 @property(nonatomic) _Bool fill; // @synthesize fill=m_fill;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=m_strokeColor;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MiniAudioTaskContentView, NSDictionary, NSHashTable, NSString, UIImage, WCFinderMinimizeFloatingView, WCFinderMinimizeLogic, WCFinderMinimizeSilenceMonitor, WCFinderTransaction;
 
 @interface WCFinderMinimizeMgr
@@ -25,7 +27,6 @@
 + (void)removeAllMinimize:(id)arg1;
 + (_Bool)resumePlay;
 + (_Bool)pausePlay;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderMinimizeSilenceMonitor *silenceMonitor; // @synthesize silenceMonitor=_silenceMonitor;
 @property(retain, nonatomic) NSDictionary *tmpReportUDFKV; // @synthesize tmpReportUDFKV=_tmpReportUDFKV;
 @property(nonatomic) _Bool limitModeOn; // @synthesize limitModeOn=_limitModeOn;
@@ -138,4 +139,3 @@
 @property(readonly) Class superclass;
 
 @end
-

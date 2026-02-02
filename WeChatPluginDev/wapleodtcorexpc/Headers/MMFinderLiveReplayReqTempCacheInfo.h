@@ -16,7 +16,6 @@
     MMFinderLiveHonCoverCacheInfo *_honCoverCacheInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveHonCoverCacheInfo *honCoverCacheInfo; // @synthesize honCoverCacheInfo=_honCoverCacheInfo;
 @property(nonatomic) _Bool isNeedOpenBank; // @synthesize isNeedOpenBank=_isNeedOpenBank;
 @property(retain, nonatomic) WCLocationInfo *currentLocationInfo; // @synthesize currentLocationInfo=_currentLocationInfo;

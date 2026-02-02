@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UIView, UIViewController, WCFinderFullScreenAnimatedTransitioning, WCFinderMinimizeGestureAnimator, WCFinderTransitionAnimatorList, WCFinderTransitionUserInfo;
 @protocol WCFinderFeedListTransitionHelperBehavior, WCFinderFeedListTransitionHelperDelegate;
@@ -38,7 +39,6 @@
 + (void)configViewController:(id)arg1 delegate:(id)arg2;
 + (void)configViewController:(id)arg1 behavior:(id)arg2;
 + (_Bool)hasConfigViewController:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderTransitionAnimatorList *gesturingAnimatorList; // @synthesize gesturingAnimatorList=_gesturingAnimatorList;
 @property(retain, nonatomic) NSMutableArray *dismissBlocks; // @synthesize dismissBlocks=_dismissBlocks;
 @property(retain, nonatomic) WCFinderTransitionUserInfo *userInfo; // @synthesize userInfo=_userInfo;
@@ -94,4 +94,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -20,7 +20,6 @@
 }
 
 + (void)msgContentVCExpose;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *shareUsername; // @synthesize shareUsername=_shareUsername;
 @property(copy, nonatomic) NSString *eventId; // @synthesize eventId=_eventId;
 @property(copy, nonatomic) NSString *feedid; // @synthesize feedid=_feedid;

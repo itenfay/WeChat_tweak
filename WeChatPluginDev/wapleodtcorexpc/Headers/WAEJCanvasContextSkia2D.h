@@ -18,7 +18,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct SkPath path; // @synthesize path=_path;
 @property(retain, nonatomic) NSMutableArray *states; // @synthesize states=_states;
 @property(nonatomic) sk_sp_ce222020 offscreenSurface; // @synthesize offscreenSurface=_offscreenSurface;

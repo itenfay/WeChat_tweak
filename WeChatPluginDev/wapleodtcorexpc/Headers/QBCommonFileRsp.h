@@ -17,7 +17,6 @@
 @property(retain, nonatomic, getter=sContentMd5, setter=setSContentMd5:) NSString *jcev2_p_2_o_sContentMd5; // @synthesize jcev2_p_2_o_sContentMd5;
 @property(retain, nonatomic, getter=sModuleName, setter=setSModuleName:) NSString *jcev2_p_1_o_sModuleName; // @synthesize jcev2_p_1_o_sModuleName;
 @property(retain, nonatomic, getter=mCommonFile, setter=setMCommonFile:) NSDictionary *jcev2_p_0_o_mCommonFile__b0x9i_M09ONSStringVOQBCommonFileInfo; // @synthesize jcev2_p_0_o_mCommonFile__b0x9i_M09ONSStringVOQBCommonFileInfo;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAssetWriter, AVAssetWriterInput, NSDate, NSDictionary, NSOperationQueue, NSString;
 
@@ -33,7 +34,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)logWriterStatus;
 - (_Bool)writeVideoSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (int)writeVideoFrame:(unique_ptr_4b64f7fb)arg1 duration:(long long)arg2;
@@ -59,4 +59,3 @@
 - (id)init;
 
 @end
-

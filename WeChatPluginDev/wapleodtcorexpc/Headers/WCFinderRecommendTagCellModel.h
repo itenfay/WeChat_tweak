@@ -13,7 +13,6 @@
     long long _topicNumber;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long topicNumber; // @synthesize topicNumber=_topicNumber;
 @property(copy, nonatomic) NSString *topicString; // @synthesize topicString=_topicString;
 - (id)init;

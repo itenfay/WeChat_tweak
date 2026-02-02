@@ -19,7 +19,6 @@
 }
 
 + (id)bottomDescriptionLabel;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *prevStr; // @synthesize prevStr=_prevStr;
 @property(retain, nonatomic) MMUIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(retain, nonatomic) UILabel *statusLabel; // @synthesize statusLabel=_statusLabel;

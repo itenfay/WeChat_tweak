@@ -16,7 +16,6 @@
     UIView *_dimmingMaskView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTransitioning; // @synthesize isTransitioning=_isTransitioning;
 @property(retain, nonatomic) UIView *dimmingMaskView; // @synthesize dimmingMaskView=_dimmingMaskView;
 @property(nonatomic) _Bool maskHidden; // @synthesize maskHidden=_maskHidden;

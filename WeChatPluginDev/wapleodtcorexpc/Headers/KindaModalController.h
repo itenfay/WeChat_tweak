@@ -17,7 +17,6 @@
 }
 
 + (void)removePotentialModals;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBlurViewHelper *blurViewHelper; // @synthesize blurViewHelper=_blurViewHelper;
 @property(retain, nonatomic) KindaUIModalDelegateObject *delegateObject; // @synthesize delegateObject=_delegateObject;
 @property(retain, nonatomic) MMIUIModal *uiModal; // @synthesize uiModal=_uiModal;

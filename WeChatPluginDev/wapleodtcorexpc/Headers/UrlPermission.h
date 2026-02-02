@@ -14,7 +14,6 @@
     DeepLinkBitSet *m_deepLinkBitSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DeepLinkBitSet *m_deepLinkBitSet; // @synthesize m_deepLinkBitSet;
 @property(retain, nonatomic) GeneralControlBitSet *m_generalControlBitSet; // @synthesize m_generalControlBitSet;
 @property(retain, nonatomic) JSAPIPermissionBitSet *m_permissionBitSet; // @synthesize m_permissionBitSet;

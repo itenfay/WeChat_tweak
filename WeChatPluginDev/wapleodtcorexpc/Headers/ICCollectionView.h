@@ -19,7 +19,6 @@
     ICBatchFetchingContext *_batchFetchingContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ICBatchFetchingContext *batchFetchingContext; // @synthesize batchFetchingContext=_batchFetchingContext;
 @property(retain, nonatomic) UIView *collectionHeaderContainerView; // @synthesize collectionHeaderContainerView=_collectionHeaderContainerView;
 @property(retain, nonatomic) UIView *collectionFooterContainerView; // @synthesize collectionFooterContainerView=_collectionFooterContainerView;

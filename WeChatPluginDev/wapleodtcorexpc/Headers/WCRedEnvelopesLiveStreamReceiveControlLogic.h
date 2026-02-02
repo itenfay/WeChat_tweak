@@ -22,7 +22,6 @@
     UIView *_redEnvelopesDetailView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *redEnvelopesDetailView; // @synthesize redEnvelopesDetailView=_redEnvelopesDetailView;
 @property(retain, nonatomic) WCRedEnvelopesAtmospherePagView *atmospherePagView; // @synthesize atmospherePagView=_atmospherePagView;
 @property(nonatomic) WCPayComplianceHalfPage *complianceHalfPage; // @synthesize complianceHalfPage=_complianceHalfPage;

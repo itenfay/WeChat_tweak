@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString, WCFinderCustomCGI;
 
@@ -17,7 +18,6 @@
     long long _tabType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long tabType; // @synthesize tabType=_tabType;
 @property(retain, nonatomic) WCFinderCustomCGI *lastCGI; // @synthesize lastCGI=_lastCGI;
 @property(nonatomic) unsigned long long loadState; // @synthesize loadState=_loadState;
@@ -32,4 +32,3 @@
 - (id)initWithTabType:(long long)arg1;
 
 @end
-

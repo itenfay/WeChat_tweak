@@ -10,7 +10,6 @@
     WCFinderMemberShipPlaybackTabViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMemberShipPlaybackTabViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void)finderMemberShipZonePlaybackTabViewDeleteDataItemVM;
 - (void)finderMemberShipZonePlaybackTabViewFetchListFail;

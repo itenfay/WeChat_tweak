@@ -13,7 +13,6 @@
     UIView *_separatorBar;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorBar; // @synthesize separatorBar=_separatorBar;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <MMFinderLiveConnectMicAudienceApplyPageSheetDelegate> delegate; // @synthesize delegate=_delegate;

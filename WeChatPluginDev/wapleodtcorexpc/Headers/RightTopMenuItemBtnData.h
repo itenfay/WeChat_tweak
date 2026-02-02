@@ -16,7 +16,6 @@
 }
 
 + (id)genItemWithID:(id)arg1 title:(id)arg2 imageName:(id)arg3 actionType:(unsigned long long)arg4 actionName:(id)arg5 pluginUserName:(id)arg6;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsPluginUserName; // @synthesize m_nsPluginUserName;
 @property(retain, nonatomic) NSString *m_nsActionName; // @synthesize m_nsActionName;
 @property(nonatomic) unsigned long long m_actionType; // @synthesize m_actionType;

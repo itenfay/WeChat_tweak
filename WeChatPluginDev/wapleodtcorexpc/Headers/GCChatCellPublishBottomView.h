@@ -21,7 +21,6 @@
     UITapGestureRecognizer *_tapGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) UIImageView *rightArrow; // @synthesize rightArrow=_rightArrow;
 @property(retain, nonatomic) UILabel *rightLabel; // @synthesize rightLabel=_rightLabel;

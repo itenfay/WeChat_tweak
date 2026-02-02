@@ -13,7 +13,6 @@
     CALayer *_selectionMaskLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *selectionMaskLayer; // @synthesize selectionMaskLayer=_selectionMaskLayer;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 

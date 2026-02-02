@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_appid;
 + (void)PBArrayAdd_thumbUrl;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *price; // @synthesize price=_price;
 @property(retain, nonatomic) NSString *payUrl; // @synthesize payUrl=_payUrl;
 @property(retain, nonatomic) NSString *appid; // @synthesize appid=_appid;

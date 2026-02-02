@@ -16,7 +16,6 @@
     NSString *parentCode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int numbersOfChildren; // @synthesize numbersOfChildren;
 @property(nonatomic) int type; // @synthesize type;
 @property(retain, nonatomic) NSString *parentCode; // @synthesize parentCode;

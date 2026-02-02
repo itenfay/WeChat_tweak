@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ContactsViewTagListCollectionView, MMTableView, NSMutableArray, NSMutableDictionary, NSString, UIButton, UITextField, UIView, WCColorProxy, WCSTokenPickLogic;
 @protocol ContactsSearchControllerDelegate;
 
@@ -30,7 +32,6 @@
     NSMutableArray *_arrFilteredObject;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrFilteredObject; // @synthesize arrFilteredObject=_arrFilteredObject;
 @property(nonatomic) unsigned int expandBitSet; // @synthesize expandBitSet=_expandBitSet;
 @property(retain, nonatomic) NSMutableDictionary *dicSectionResults; // @synthesize dicSectionResults=_dicSectionResults;
@@ -142,4 +143,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -22,7 +22,6 @@
 
 + (_Bool)canShowFinderPicker;
 + (_Bool)canShowPublishTab;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(retain, nonatomic) NSMutableSet *tidContainSet; // @synthesize tidContainSet=_tidContainSet;

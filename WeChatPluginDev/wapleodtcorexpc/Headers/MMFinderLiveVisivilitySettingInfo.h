@@ -15,7 +15,6 @@
     NSArray *_allVisibilityFileList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isModified; // @synthesize isModified=_isModified;
 @property(retain, nonatomic) NSArray *allVisibilityFileList; // @synthesize allVisibilityFileList=_allVisibilityFileList;
 @property(nonatomic) long long currentVisibilityMode; // @synthesize currentVisibilityMode=_currentVisibilityMode;

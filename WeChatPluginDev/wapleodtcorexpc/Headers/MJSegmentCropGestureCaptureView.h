@@ -17,7 +17,6 @@
     UIPinchGestureRecognizer *_pinchGR;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIPinchGestureRecognizer *pinchGR; // @synthesize pinchGR=_pinchGR;
 @property(readonly, nonatomic) UIPanGestureRecognizer *panGR; // @synthesize panGR=_panGR;
 @property(retain, nonatomic) UIView *bottomCropMaskView; // @synthesize bottomCropMaskView=_bottomCropMaskView;

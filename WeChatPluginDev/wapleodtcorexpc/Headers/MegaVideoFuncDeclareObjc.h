@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -29,7 +30,6 @@
 + (id)from_Void_ByteArray_Block:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)to_Void_Bool_Block:(id)arg1;
 + (id)from_Void_Bool_Block:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType Void_LongVideoFeedPrefetchResult_2_Block; // @synthesize Void_LongVideoFeedPrefetchResult_2_Block=_Void_LongVideoFeedPrefetchResult_2_Block;
 @property(readonly, copy, nonatomic) CDUnknownBlockType Void_List_MegaVideoFeed_2_Block; // @synthesize Void_List_MegaVideoFeed_2_Block=_Void_List_MegaVideoFeed_2_Block;
 @property(readonly, copy, nonatomic) CDUnknownBlockType Void_Int32String_Block; // @synthesize Void_Int32String_Block=_Void_Int32String_Block;
@@ -53,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

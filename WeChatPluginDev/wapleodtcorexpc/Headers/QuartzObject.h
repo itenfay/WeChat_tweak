@@ -17,7 +17,6 @@
 
 + (id)getFontWithSize:(unsigned int)arg1 family:(id)arg2 weight:(id)arg3 style:(id)arg4;
 + (void)reset;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMMQuartz2DContextDelegate> contextDelegate; // @synthesize contextDelegate=_contextDelegate;
 - (struct CGAffineTransform)getTransform;
 - (void)addTransform:(struct CGAffineTransform)arg1;

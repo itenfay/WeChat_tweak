@@ -24,7 +24,6 @@
     UIButton *_doneBtn;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTrueScroll; // @synthesize isTrueScroll=_isTrueScroll;
 @property(retain, nonatomic) UIButton *doneBtn; // @synthesize doneBtn=_doneBtn;
 @property(retain, nonatomic) WNMultiImagesCollectionView *multiImagesCollectionView; // @synthesize multiImagesCollectionView=_multiImagesCollectionView;

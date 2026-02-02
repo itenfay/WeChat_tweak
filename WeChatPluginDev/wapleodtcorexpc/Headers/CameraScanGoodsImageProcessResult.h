@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct Mat oriImage; // @synthesize oriImage=_oriImage;
 
 @end

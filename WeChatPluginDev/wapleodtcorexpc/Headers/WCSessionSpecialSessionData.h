@@ -18,7 +18,6 @@
     NSString *_finderContextID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int logID; // @synthesize logID=_logID;
 @property(retain, nonatomic) NSString *finderContextID; // @synthesize finderContextID=_finderContextID;
 @property(nonatomic) unsigned long long hashcode; // @synthesize hashcode=_hashcode;

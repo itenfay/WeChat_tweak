@@ -10,7 +10,6 @@
     WCAdDynamicFeedElementRollTextInfo *_styleInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicFeedElementRollTextInfo *styleInfo; // @synthesize styleInfo=_styleInfo;
 - (void)layoutSubviews;
 - (void)updateDynamicRollTextWithTextList:(id)arg1;

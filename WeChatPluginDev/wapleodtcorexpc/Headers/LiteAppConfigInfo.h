@@ -46,7 +46,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int ilinkVersion; // @synthesize ilinkVersion;
 @property(retain, nonatomic) NSString *configJson; // @synthesize configJson;
 @property(retain, nonatomic) NSString *dynamicConfigPath; // @synthesize dynamicConfigPath;

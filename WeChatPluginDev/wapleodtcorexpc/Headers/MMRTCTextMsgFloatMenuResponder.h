@@ -11,7 +11,6 @@
     ForwardMessageLogicController *_forwardLogicController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogicController; // @synthesize forwardLogicController=_forwardLogicController;
 @property(retain, nonatomic) CMessageWrap *messageWrap; // @synthesize messageWrap=_messageWrap;
 - (void)OnForwardMessageCancel:(id)arg1;

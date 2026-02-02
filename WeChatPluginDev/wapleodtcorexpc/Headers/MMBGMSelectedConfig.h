@@ -13,7 +13,6 @@
     MMBGMSelectedOptionalConfig *_optionalConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBGMSelectedOptionalConfig *optionalConfig; // @synthesize optionalConfig=_optionalConfig;
 @property(nonatomic) int musicBussId; // @synthesize musicBussId=_musicBussId;
 - (id)genFixedDataReportDict;

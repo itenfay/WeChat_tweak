@@ -4,6 +4,7 @@
 //
 
 #import <WebKit/WKWebView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class JITRuntimeMessageHandler, JITRuntimeURLSchemeHandler, NSMutableDictionary, NSString;
 @protocol JITRuntimeViewDelegate;
@@ -20,7 +21,6 @@
     NSMutableDictionary *_tasks;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int jitLiteMode; // @synthesize jitLiteMode=_jitLiteMode;
 @property(retain, nonatomic) NSMutableDictionary *tasks; // @synthesize tasks=_tasks;
 @property(copy, nonatomic) CDUnknownBlockType loadResolver; // @synthesize loadResolver=_loadResolver;
@@ -63,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

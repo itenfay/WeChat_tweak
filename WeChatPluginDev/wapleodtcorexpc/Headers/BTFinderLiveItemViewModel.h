@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSMutableArray, NSString, WCFinderDataItem;
 
 @interface BTFinderLiveItemViewModel
@@ -19,7 +21,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *completions; // @synthesize completions=_completions;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(nonatomic) _Bool updateDataItemFinished; // @synthesize updateDataItemFinished=_updateDataItemFinished;
@@ -39,4 +40,3 @@
 - (id)initWithBTRecommendFinderData:(id)arg1;
 
 @end
-

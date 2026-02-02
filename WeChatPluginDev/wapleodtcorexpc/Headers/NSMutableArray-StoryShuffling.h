@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSMutableArray.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSMutableArray (StoryShuffling)
 - (void)shuffle;
@@ -35,4 +36,3 @@
 - (void)safeAddObjectsFromArray:(id)arg1;
 - (id)initWithNullableArray:(id)arg1;
 @end
-

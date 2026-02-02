@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, PAGView, UILabel;
 
@@ -15,7 +16,6 @@
     PAGView *_pagView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *pagView; // @synthesize pagView=_pagView;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(nonatomic) _Bool isDismissing; // @synthesize isDismissing=_isDismissing;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

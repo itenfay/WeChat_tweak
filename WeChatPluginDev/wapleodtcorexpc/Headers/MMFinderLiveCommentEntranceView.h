@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveBoxId, UILabel;
 
@@ -22,7 +23,6 @@
 
 + (double)preferHeight;
 + (double)preferTopMargin;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasRedDot; // @synthesize hasRedDot=_hasRedDot;
 @property(retain, nonatomic) FinderLiveBoxId *boxId; // @synthesize boxId=_boxId;
 @property(retain, nonatomic) UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;
@@ -46,4 +46,3 @@
 - (id)initWithBoxId:(id)arg1;
 
 @end
-

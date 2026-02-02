@@ -28,7 +28,6 @@
     float _screenCurrentEDRHeadroom;
 }
 
-- (void).cxx_destruct;
 - (void)uploadTexturesToCommandEncoder:(id)arg1;
 - (void)setScreenEDRHeadroom:(float)arg1;
 - (void)setScreenBrightness:(float)arg1;

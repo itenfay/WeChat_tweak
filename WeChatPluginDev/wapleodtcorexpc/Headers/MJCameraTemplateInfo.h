@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_resourcePackUrl;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *resourcePackUrl; // @synthesize resourcePackUrl=_resourcePackUrl;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

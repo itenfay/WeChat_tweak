@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class TAVSourceImageGenerator;
 
@@ -12,7 +13,6 @@
     TAVSourceImageGenerator *_imageGenerator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TAVSourceImageGenerator *imageGenerator; // @synthesize imageGenerator=_imageGenerator;
 - (void)destroy;
 - (void)requestFrames:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -20,4 +20,3 @@
 - (id)initWithComposition:(id)arg1 imageSize:(struct CGSize)arg2;
 
 @end
-

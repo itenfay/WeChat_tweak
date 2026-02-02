@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LOTAnimationView, MMFinderLiveLittleLotteryPacketView, MMFinderLiveLotteryInfo;
 @protocol LiveLotteryPacketDisplayDelegate;
@@ -23,7 +24,6 @@
 
 + (id)createLittleLotteryPacketView;
 + (id)createLargeLotteryPacketView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) LOTAnimationView *largeLotteryPacket; // @synthesize largeLotteryPacket=_largeLotteryPacket;
 @property(nonatomic) unsigned int currentLotteryStatus; // @synthesize currentLotteryStatus=_currentLotteryStatus;
 @property(nonatomic) _Bool isLittlePacketShow; // @synthesize isLittlePacketShow=_isLittlePacketShow;
@@ -57,4 +57,3 @@
 - (id)initWithLargeLotteryPacketView:(id)arg1;
 
 @end
-

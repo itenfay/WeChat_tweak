@@ -24,7 +24,6 @@
     NSString *_hashUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *hashUsername; // @synthesize hashUsername=_hashUsername;
 @property(nonatomic) _Bool snsFlag; // @synthesize snsFlag=_snsFlag;
 @property(retain, nonatomic) StatusExtInfo *textStatusExtInfo; // @synthesize textStatusExtInfo=_textStatusExtInfo;

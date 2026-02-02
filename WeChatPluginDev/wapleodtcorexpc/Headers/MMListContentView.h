@@ -15,7 +15,6 @@
     UIStackView *_bkgStack;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *bkgStack; // @synthesize bkgStack=_bkgStack;
 @property(nonatomic) __weak id <MMListContentUIDelegate> uiDelegate; // @synthesize uiDelegate=_uiDelegate;
 @property(nonatomic) __weak id <MMListContentDataSource> dataSource; // @synthesize dataSource=_dataSource;

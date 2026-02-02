@@ -18,7 +18,6 @@
 + (id)cellIdentifier;
 + (double)cellWidth;
 + (double)cellHeightInWidth:(double)arg1 styleInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *avatarTextTipsLabel; // @synthesize avatarTextTipsLabel=_avatarTextTipsLabel;
 @property(retain, nonatomic) UIView *avatarTextTipsContainer; // @synthesize avatarTextTipsContainer=_avatarTextTipsContainer;
 @property(retain, nonatomic) UIImageView *avatarViewCircleStatic; // @synthesize avatarViewCircleStatic=_avatarViewCircleStatic;

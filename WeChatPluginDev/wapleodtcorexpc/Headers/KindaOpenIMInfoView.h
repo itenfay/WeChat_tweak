@@ -26,7 +26,6 @@
     UILabel *_m_measureLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *m_measureLabel; // @synthesize m_measureLabel=_m_measureLabel;
 @property(retain, nonatomic) UILabel *m_secondSuffixLabel; // @synthesize m_secondSuffixLabel=_m_secondSuffixLabel;
 @property(retain, nonatomic) UILabel *m_secondLabel; // @synthesize m_secondLabel=_m_secondLabel;

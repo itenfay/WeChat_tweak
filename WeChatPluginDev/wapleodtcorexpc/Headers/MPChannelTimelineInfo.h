@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_shouldCleanUpDesc;
 + (void)PBArrayAdd_desc;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long appDebugModeType; // @synthesize appDebugModeType=_appDebugModeType;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(retain, nonatomic) NSArray *bizInfoArr; // @synthesize bizInfoArr=_bizInfoArr;

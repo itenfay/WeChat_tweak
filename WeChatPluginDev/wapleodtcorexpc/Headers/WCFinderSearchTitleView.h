@@ -13,7 +13,6 @@
     MMUIButton *_rightClearButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *rightClearButton; // @synthesize rightClearButton=_rightClearButton;
 @property(retain, nonatomic) MMTagTextField *searchField; // @synthesize searchField=_searchField;
 @property(retain, nonatomic) UIImageView *searchIconView; // @synthesize searchIconView=_searchIconView;

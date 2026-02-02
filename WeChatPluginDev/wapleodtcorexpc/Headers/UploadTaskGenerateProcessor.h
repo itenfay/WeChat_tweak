@@ -11,7 +11,6 @@
     NSMutableArray *_uploadTaskList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *uploadTaskList; // @synthesize uploadTaskList=_uploadTaskList;
 @property(retain, nonatomic) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;
 - (void)generateUploadTaskWithDataList:(id)arg1;

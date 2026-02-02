@@ -14,7 +14,6 @@
     NSString *_streamUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *streamUrl; // @synthesize streamUrl=_streamUrl;
 @property(copy, nonatomic) NSDictionary *httpHeader; // @synthesize httpHeader;
 @property(retain, nonatomic) TPMediaAssetExtraParam *extraParams; // @synthesize extraParams;

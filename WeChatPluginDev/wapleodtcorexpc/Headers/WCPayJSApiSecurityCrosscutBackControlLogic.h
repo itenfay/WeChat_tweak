@@ -10,7 +10,6 @@
     NSDictionary *m_param;
 }
 
-- (void).cxx_destruct;
 - (void)startLogic;
 - (id)initWithParam:(id)arg1;
 

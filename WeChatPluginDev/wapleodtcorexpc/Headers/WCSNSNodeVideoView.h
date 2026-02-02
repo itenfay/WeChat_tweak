@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMDragManager, NSString, SessionForwardRecordLogic, SharePreConfirmView, SightIconView, UIDragInteraction, UIImage, UIImageView, UILongPressGestureRecognizer, UITapGestureRecognizer, WCDataItem, WCMediaItem, WCMomentsPlayerSourceController, WCMomentsScrollActionSheet, WCPlayerConfigControlView, WCPlayerConfigFullScreenViewController, WCPlayerView;
 @protocol WCSNSNodeVideoViewDelegate;
 
@@ -41,7 +43,6 @@
     CDUnknownBlockType _videoCompositionCompletionHandler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int switchingVideoCompositionSeed; // @synthesize switchingVideoCompositionSeed=_switchingVideoCompositionSeed;
 @property(copy, nonatomic) CDUnknownBlockType videoCompositionCompletionHandler; // @synthesize videoCompositionCompletionHandler=_videoCompositionCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType videoCompositionConfigurationHandler; // @synthesize videoCompositionConfigurationHandler=_videoCompositionConfigurationHandler;
@@ -172,4 +173,3 @@
 @property(readonly) Class superclass;
 
 @end
-

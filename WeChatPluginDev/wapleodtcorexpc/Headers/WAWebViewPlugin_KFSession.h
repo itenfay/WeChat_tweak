@@ -11,7 +11,6 @@
     unsigned int _lastUnreadCount;
 }
 
-- (void).cxx_destruct;
 - (void)OnUnReadCountChange:(id)arg1;
 - (void)OnAddMsgListForSession:(id)arg1 NotifyUsrName:(id)arg2;
 - (void)checkUnreadCountChange;

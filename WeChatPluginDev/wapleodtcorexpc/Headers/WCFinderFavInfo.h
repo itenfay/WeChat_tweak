@@ -31,7 +31,6 @@
 + (void)PBArrayAdd_favId;
 + (void)PBArrayAdd_headImgUrl;
 + (void)PBArrayAdd_nickName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderFavInfo *info; // @synthesize info=_info;
 @property(copy, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;

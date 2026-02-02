@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -12,7 +13,6 @@
     NSMutableDictionary *_cache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cache; // @synthesize cache=_cache;
 - (void)enumerateKeysAndObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)allKeys;
@@ -25,4 +25,3 @@
 - (id)init;
 
 @end
-

@@ -15,7 +15,6 @@
     MMUILabel *_valueLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) MMUIButton *plusBtn; // @synthesize plusBtn=_plusBtn;
 @property(retain, nonatomic) MMUIButton *minusBtn; // @synthesize minusBtn=_minusBtn;

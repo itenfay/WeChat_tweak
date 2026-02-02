@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, WCTDatabase;
 
 @interface MusicHistoryManager
@@ -13,7 +15,6 @@
 
 + (id)databaseRepairPath;
 + (id)databasePath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *approvedAppidList; // @synthesize approvedAppidList=_approvedAppidList;
 @property(retain, nonatomic) WCTDatabase *database; // @synthesize database=_database;
 - (void)_clearUselessRecord;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

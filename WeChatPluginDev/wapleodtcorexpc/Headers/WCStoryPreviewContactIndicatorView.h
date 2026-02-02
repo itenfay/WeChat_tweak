@@ -19,7 +19,6 @@
 }
 
 + (double)heightForWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double gradientMaskHeight; // @synthesize gradientMaskHeight=_gradientMaskHeight;
 @property(nonatomic) __weak id <WCStoryPreviewContactIndicatorViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <WCStoryPreviewContactIndicatorViewDataSource> dataSource; // @synthesize dataSource=_dataSource;

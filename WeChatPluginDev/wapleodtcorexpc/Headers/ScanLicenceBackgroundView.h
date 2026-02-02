@@ -17,7 +17,6 @@
     double _lengthWidthRatio;
 }
 
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)commonInit;
 - (id)initWithFrame:(struct CGRect)arg1 andTypeRatio:(double)arg2;

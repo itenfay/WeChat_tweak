@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderDataItem;
 
 @interface WCFinderLiveModifyBattleCGI
@@ -16,7 +18,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) unsigned int battleLayout; // @synthesize battleLayout=_battleLayout;
@@ -30,4 +31,3 @@
 - (id)initWithLiveTaskId:(id)arg1 finderDataItem:(id)arg2 battleId:(id)arg3 liveCookies:(id)arg4 modifyFlag:(unsigned long long)arg5 battleLayout:(unsigned int)arg6 successBlock:(CDUnknownBlockType)arg7 failBlock:(CDUnknownBlockType)arg8;
 
 @end
-

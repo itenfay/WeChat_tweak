@@ -25,7 +25,6 @@
 + (id)replacePlaceHolder:(id)arg1 withName:(id)arg2 inWording:(id)arg3;
 + (id)safeResolveURLString:(id)arg1;
 + (id)additionalUA;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int brandType; // @synthesize brandType=_brandType;
 @property(retain, nonatomic) BrandLemmaTable *brandLemmaTable; // @synthesize brandLemmaTable=_brandLemmaTable;
 @property(retain, nonatomic) NSDictionary *domainKeyToListDict; // @synthesize domainKeyToListDict=_domainKeyToListDict;

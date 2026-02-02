@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSNumber, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
@@ -20,7 +22,6 @@
     NSMutableDictionary *_moduleCacheVersionCheckers;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *moduleCacheVersionCheckers; // @synthesize moduleCacheVersionCheckers=_moduleCacheVersionCheckers;
 @property(retain) NSNumber *_bothDownloadedFileNum; // @synthesize _bothDownloadedFileNum=__bothDownloadedFileNum;
 @property(retain) NSNumber *_hasDownloadedSubPackageNum; // @synthesize _hasDownloadedSubPackageNum=__hasDownloadedSubPackageNum;
@@ -65,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

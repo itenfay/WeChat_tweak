@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData;
 
 @interface WCFinderLiveKtvGetMusicBoardCGI
@@ -16,7 +18,6 @@
     CDUnknownBlockType _failureBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
@@ -31,4 +32,3 @@
 - (id)initWithLiveTaskId:(id)arg1 boardType:(unsigned int)arg2 subBoardType:(unsigned int)arg3 lastBuffer:(id)arg4 liveCookies:(id)arg5 scene:(unsigned int)arg6 successBlock:(CDUnknownBlockType)arg7 failureBlock:(CDUnknownBlockType)arg8;
 
 @end
-

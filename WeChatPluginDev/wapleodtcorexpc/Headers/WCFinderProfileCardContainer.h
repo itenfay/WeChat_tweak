@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, WCFinderSteamProfileHeaderTheme;
 @protocol WCFinderProfileCardContainerExposeDelegate;
@@ -25,7 +26,6 @@
 + (void)updateView:(id)arg1 ty:(long long)arg2 withData:(id)arg3 scene:(unsigned long long)arg4;
 + (_Bool)shouldDisplayViewWithTy:(long long)arg1 withData:(id)arg2;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *exposedItems; // @synthesize exposedItems=_exposedItems;
 @property(retain, nonatomic) NSArray *displayViewArray; // @synthesize displayViewArray=_displayViewArray;
 @property(retain, nonatomic) NSMutableDictionary *viewClassMap; // @synthesize viewClassMap=_viewClassMap;
@@ -51,4 +51,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 scene:(unsigned long long)arg2;
 
 @end
-

@@ -13,7 +13,6 @@
     MMUIImageView *_arrowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) MMUILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) MMUILabel *topLabel; // @synthesize topLabel=_topLabel;

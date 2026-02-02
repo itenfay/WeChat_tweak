@@ -19,7 +19,6 @@
     id <MailAttachDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MailAttachDelegate> m_delegate; // @synthesize m_delegate;
 @property(retain, nonatomic) NSString *m_nsMailID; // @synthesize m_nsMailID;
 @property(retain, nonatomic) CAttach *m_oAttach; // @synthesize m_oAttach;

@@ -48,7 +48,6 @@
 + (void)PBArrayAdd_debugURL;
 + (void)PBArrayAdd_username;
 + (void)PBArrayAdd_appid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrWidgetInfo; // @synthesize arrWidgetInfo=_arrWidgetInfo;
 @property(retain, nonatomic) NSString *withoutLibUrl; // @synthesize withoutLibUrl=_withoutLibUrl;
 @property(retain, nonatomic) NSMutableArray *arrPluginCodeInfo; // @synthesize arrPluginCodeInfo=_arrPluginCodeInfo;

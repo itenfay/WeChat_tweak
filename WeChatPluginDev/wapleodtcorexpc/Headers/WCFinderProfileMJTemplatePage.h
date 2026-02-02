@@ -13,7 +13,6 @@
     NSMutableDictionary *_exposedTimeMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *exposedTimeMap; // @synthesize exposedTimeMap=_exposedTimeMap;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UILabel *statusTips; // @synthesize statusTips=_statusTips;

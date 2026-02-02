@@ -16,7 +16,6 @@
     NSMutableDictionary *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) double videoCropEndTime; // @synthesize videoCropEndTime=_videoCropEndTime;
 @property(nonatomic) double videoCropStartTime; // @synthesize videoCropStartTime=_videoCropStartTime;

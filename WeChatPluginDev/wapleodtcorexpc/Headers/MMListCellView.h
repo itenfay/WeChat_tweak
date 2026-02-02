@@ -15,7 +15,6 @@
     id <MMListContentUIDelegate> _uiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMListContentUIDelegate> uiDelegate; // @synthesize uiDelegate=_uiDelegate;
 @property(retain, nonatomic) MMListCellConfig *config; // @synthesize config=_config;
 @property(nonatomic) _Bool isHighlightable; // @synthesize isHighlightable=_isHighlightable;

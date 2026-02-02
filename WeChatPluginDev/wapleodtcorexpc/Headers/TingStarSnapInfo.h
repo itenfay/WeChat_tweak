@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithLeft:(id)arg1 top:(id)arg2 width:(id)arg3 height:(id)arg4 buffer:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterStandardTypedData *buffer; // @synthesize buffer=_buffer;
 @property(retain, nonatomic) NSNumber *height; // @synthesize height=_height;
 @property(retain, nonatomic) NSNumber *width; // @synthesize width=_width;

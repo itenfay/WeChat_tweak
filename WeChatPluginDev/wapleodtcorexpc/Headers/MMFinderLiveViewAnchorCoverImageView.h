@@ -25,7 +25,6 @@
 }
 
 + (void)addBottomCorner:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *recordLiveBackgroundImageView; // @synthesize recordLiveBackgroundImageView=_recordLiveBackgroundImageView;
 @property(retain, nonatomic) UIColor *mainColor; // @synthesize mainColor=_mainColor;
 @property(nonatomic) double coverImageViewCenterPercent; // @synthesize coverImageViewCenterPercent=_coverImageViewCenterPercent;

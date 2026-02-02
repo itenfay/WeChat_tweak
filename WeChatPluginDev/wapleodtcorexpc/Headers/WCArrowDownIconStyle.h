@@ -15,7 +15,6 @@
     double _paddingBottom;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double paddingBottom; // @synthesize paddingBottom=_paddingBottom;
 @property(nonatomic) double layoutHeight; // @synthesize layoutHeight=_layoutHeight;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;

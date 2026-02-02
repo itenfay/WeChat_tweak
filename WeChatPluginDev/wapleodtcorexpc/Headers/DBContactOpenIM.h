@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_customInfoVisible;
 + (void)PBArrayAdd_openIMDescId;
 + (void)PBArrayAdd_customInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *customToolBarInfo; // @synthesize customToolBarInfo=_customToolBarInfo;
 @property(retain, nonatomic) NSString *exposedId; // @synthesize exposedId=_exposedId;
 @property(nonatomic) unsigned long long flags; // @synthesize flags=_flags;

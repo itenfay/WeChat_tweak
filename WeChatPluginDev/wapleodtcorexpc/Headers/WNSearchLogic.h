@@ -21,7 +21,6 @@
     id <WNSearchLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WNSearchLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak WeNoteDataController *dataController; // @synthesize dataController=_dataController;
 @property(nonatomic) __weak MMTableView *tableView; // @synthesize tableView=_tableView;

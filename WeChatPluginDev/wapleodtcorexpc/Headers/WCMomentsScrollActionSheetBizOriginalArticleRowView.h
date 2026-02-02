@@ -16,7 +16,6 @@
 }
 
 + (double)rowViewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) UIImageView *subscriptionsImageView; // @synthesize subscriptionsImageView=_subscriptionsImageView;

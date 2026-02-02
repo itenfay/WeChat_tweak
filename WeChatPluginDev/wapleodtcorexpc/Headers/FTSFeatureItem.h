@@ -24,7 +24,6 @@
     NSString *_thirdCandidateTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *thirdCandidateTitle; // @synthesize thirdCandidateTitle=_thirdCandidateTitle;
 @property(retain, nonatomic) NSString *secoundCandidateTitle; // @synthesize secoundCandidateTitle=_secoundCandidateTitle;
 @property(retain, nonatomic) NSString *candidateTitle; // @synthesize candidateTitle=_candidateTitle;

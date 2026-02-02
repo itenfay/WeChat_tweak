@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDictionary, NSMutableArray, NSString;
 
 @interface WAWebViewPlugin_NativeView
@@ -15,7 +17,6 @@
     NSMutableArray *_actionSheetArr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *actionSheetArr; // @synthesize actionSheetArr=_actionSheetArr;
 @property(retain, nonatomic) NSMutableArray *alertsDisplayingQueue; // @synthesize alertsDisplayingQueue=_alertsDisplayingQueue;
 @property(retain, nonatomic) NSMutableArray *alertsWaitingQueue; // @synthesize alertsWaitingQueue=_alertsWaitingQueue;
@@ -48,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

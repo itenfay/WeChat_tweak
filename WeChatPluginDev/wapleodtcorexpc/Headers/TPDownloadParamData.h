@@ -58,7 +58,6 @@
     long long _preloadHttpStartTimeMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long preloadHttpStartTimeMs; // @synthesize preloadHttpStartTimeMs=_preloadHttpStartTimeMs;
 @property(nonatomic) _Bool isNeedFlowControl; // @synthesize isNeedFlowControl=_isNeedFlowControl;
 @property(nonatomic) _Bool isCacheCopyFirst; // @synthesize isCacheCopyFirst=_isCacheCopyFirst;

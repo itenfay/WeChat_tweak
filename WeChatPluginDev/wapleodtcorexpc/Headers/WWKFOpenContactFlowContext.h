@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSString, WWKFContactBindNotifyCtx, WWKFContentSendMsgInfo;
 
@@ -24,7 +25,6 @@
     NSString *_encUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *encUsername; // @synthesize encUsername=_encUsername;
 @property(nonatomic) unsigned int actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) _Bool showPageSheet; // @synthesize showPageSheet=_showPageSheet;
@@ -40,4 +40,3 @@
 @property(nonatomic) __weak MMUIViewController *viewController; // @synthesize viewController=_viewController;
 
 @end
-

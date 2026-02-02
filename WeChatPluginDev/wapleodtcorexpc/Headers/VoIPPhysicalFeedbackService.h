@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLaunchTips; // @synthesize isLaunchTips=_isLaunchTips;
 @property(nonatomic) _Bool isReadyToLaunchTips; // @synthesize isReadyToLaunchTips=_isReadyToLaunchTips;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;

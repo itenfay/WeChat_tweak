@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIButton, UIImageView, UILabel;
 
 @interface MMFinderLiveNoticeCreateHintPageSheet
@@ -14,7 +16,6 @@
     UIButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
@@ -28,4 +29,3 @@
 - (id)init;
 
 @end
-

@@ -25,7 +25,6 @@
     NSString *_addbankword;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSString *addbankword; // @synthesize addbankword=_addbankword;
 @property(retain, nonatomic) NSString *underage_msg_preview; // @synthesize underage_msg_preview=_underage_msg_preview;
 @property(retain, nonatomic) NSString *under_age_session_id; // @synthesize under_age_session_id=_under_age_session_id;

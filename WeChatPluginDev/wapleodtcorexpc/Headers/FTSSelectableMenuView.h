@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
@@ -17,7 +18,6 @@
     double _itemViewHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double itemViewHeight; // @synthesize itemViewHeight=_itemViewHeight;
 @property(retain, nonatomic) NSArray *itemViews; // @synthesize itemViews=_itemViews;
 @property(copy, nonatomic) CDUnknownBlockType selection; // @synthesize selection=_selection;
@@ -33,4 +33,3 @@
 - (id)initWithItems:(id)arg1 selectedIndex:(unsigned long long)arg2;
 
 @end
-

@@ -15,7 +15,6 @@
     NSString *_firstTraceId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(copy, nonatomic) NSString *firstTraceId; // @synthesize firstTraceId=_firstTraceId;
 @property(copy, nonatomic) NSString *firstFeedId; // @synthesize firstFeedId=_firstFeedId;

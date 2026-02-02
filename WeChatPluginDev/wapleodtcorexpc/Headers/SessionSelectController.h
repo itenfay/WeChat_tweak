@@ -71,7 +71,6 @@
     MultiSelectContactsViewController *_multiSelectContactsVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDismissingForClose; // @synthesize isDismissingForClose=_isDismissingForClose;
 @property(nonatomic) __weak MultiSelectContactsViewController *multiSelectContactsVC; // @synthesize multiSelectContactsVC=_multiSelectContactsVC;
 @property(nonatomic) unsigned long long m_specificLogicScene; // @synthesize m_specificLogicScene=_m_specificLogicScene;

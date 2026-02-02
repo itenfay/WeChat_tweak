@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_functionMsgId;
 + (void)PBArrayAdd_version;
 + (void)PBArrayAdd_msgSvrId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int opType; // @synthesize opType=_opType;
 @property(nonatomic) long long msgSvrId; // @synthesize msgSvrId=_msgSvrId;
 @property(retain, nonatomic) NSString *chatName; // @synthesize chatName=_chatName;

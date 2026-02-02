@@ -26,7 +26,6 @@
     WCInputController *_inputController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCInputController *inputController; // @synthesize inputController=_inputController;
 @property(nonatomic) double textViewAjustHeight; // @synthesize textViewAjustHeight=_textViewAjustHeight;
 @property(nonatomic) double contentOffsetYWhenBeginDragging; // @synthesize contentOffsetYWhenBeginDragging=_contentOffsetYWhenBeginDragging;

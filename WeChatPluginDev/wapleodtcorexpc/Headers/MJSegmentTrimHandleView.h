@@ -19,7 +19,6 @@
     struct UIEdgeInsets _rightHitInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *rightTrimHandleImageView; // @synthesize rightTrimHandleImageView=_rightTrimHandleImageView;
 @property(retain, nonatomic) UIImageView *leftTrimHandleImageView; // @synthesize leftTrimHandleImageView=_leftTrimHandleImageView;
 @property(retain, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;

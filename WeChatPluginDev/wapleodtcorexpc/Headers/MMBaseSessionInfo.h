@@ -72,7 +72,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long messageCount; // @synthesize messageCount=_messageCount;
 @property(nonatomic) long long referMsgSvrId; // @synthesize referMsgSvrId=_referMsgSvrId;
 @property(retain, nonatomic) NSString *atUserList; // @synthesize atUserList=_atUserList;

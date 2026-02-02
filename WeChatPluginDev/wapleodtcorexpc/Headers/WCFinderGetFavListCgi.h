@@ -3,13 +3,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderGetFavListCgi
 {
     CDUnknownBlockType _completionBlock;
     CDUnknownBlockType _failedBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void)finderCgiDidFailWithError:(id)arg1 response:(id)arg2;
@@ -19,4 +20,3 @@
 - (id)initWithUserName:(id)arg1 lastBuffer:(id)arg2 clientStatus:(id)arg3 completion:(CDUnknownBlockType)arg4 failed:(CDUnknownBlockType)arg5;
 
 @end
-

@@ -16,7 +16,6 @@
     NSString *_ilinkUserId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *ilinkUserId; // @synthesize ilinkUserId=_ilinkUserId;
 @property(nonatomic) __weak id <WXGRoamCloudHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)handlerRemotePath:(id)arg1;

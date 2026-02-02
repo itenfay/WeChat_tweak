@@ -17,7 +17,6 @@
     int m_uiWCAddressDownloadType;
 }
 
-- (void).cxx_destruct;
 - (void)onResUpdateFinish:(long long)arg1 resType:(unsigned int)arg2 subResType:(unsigned int)arg3;
 - (void)onPackageDownloadProcessUpdated:(id)arg1 downloadSize:(int)arg2 totalSize:(int)arg3;
 - (void)onPackageDownloadFinish:(id)arg1 package:(id)arg2;

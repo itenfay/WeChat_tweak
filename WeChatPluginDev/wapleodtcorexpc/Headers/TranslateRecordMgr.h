@@ -14,7 +14,6 @@
     _Bool _isWorking;
 }
 
-- (void).cxx_destruct;
 - (void)onServiceInit;
 - (void)dealloc;
 - (id)init;

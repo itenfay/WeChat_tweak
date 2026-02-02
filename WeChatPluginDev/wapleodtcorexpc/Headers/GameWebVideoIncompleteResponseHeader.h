@@ -16,7 +16,6 @@
 }
 
 + (id)getValueFromResponseHeader:(id)arg1 byInsensitiveKey:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *acceptRanges; // @synthesize acceptRanges=_acceptRanges;
 @property(copy, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) unsigned long long contentTotalLength; // @synthesize contentTotalLength=_contentTotalLength;

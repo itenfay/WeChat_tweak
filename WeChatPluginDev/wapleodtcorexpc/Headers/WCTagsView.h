@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSDictionary, NSMutableArray;
 
@@ -25,7 +26,6 @@
 + (double)viewWidthForTags:(id)arg1 tagHeight:(id)arg2 tagSpace:(id)arg3 maxWidth:(id)arg4;
 + (double)viewWidthForTags:(id)arg1 maxWidth:(id)arg2;
 + (double)viewWidthForTags:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double viewWidth; // @synthesize viewWidth=_viewWidth;
 @property(retain, nonatomic) NSArray *visableTagViewModelArray; // @synthesize visableTagViewModelArray=_visableTagViewModelArray;
 @property(retain, nonatomic) NSArray *tagViewModelArray; // @synthesize tagViewModelArray=_tagViewModelArray;
@@ -48,4 +48,3 @@
 - (id)initWithTagHeight:(double)arg1;
 
 @end
-

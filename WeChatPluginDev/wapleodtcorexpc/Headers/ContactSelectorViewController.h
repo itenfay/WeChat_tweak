@@ -20,7 +20,6 @@
     MMUILabel *_blankTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *blankTipsLabel; // @synthesize blankTipsLabel=_blankTipsLabel;
 @property(retain, nonatomic) UIView *blankView; // @synthesize blankView=_blankView;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;

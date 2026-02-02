@@ -20,7 +20,6 @@
     WCLoopMetricsCollector *_metricsCollector;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCLoopMetricsCollector *metricsCollector; // @synthesize metricsCollector=_metricsCollector;
 @property(retain, nonatomic) CIContext *ciContext; // @synthesize ciContext=_ciContext;
 @property(retain, nonatomic) AVVideoCompositionRenderContext *renderContext; // @synthesize renderContext=_renderContext;

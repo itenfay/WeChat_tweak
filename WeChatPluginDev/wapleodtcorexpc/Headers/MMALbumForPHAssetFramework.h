@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMAlbumFetchResult, NSArray, NSDictionary, NSMutableDictionary, PHAssetCollection;
 
 @interface MMALbumForPHAssetFramework
@@ -18,7 +20,6 @@
     long long _m_livePhotoMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_livePhotoMode; // @synthesize m_livePhotoMode=_m_livePhotoMode;
 @property(nonatomic) _Bool isOnlyShowAssetWithLocation; // @synthesize isOnlyShowAssetWithLocation=_isOnlyShowAssetWithLocation;
 @property(nonatomic) _Bool m_isOnlyShowVideo; // @synthesize m_isOnlyShowVideo=_m_isOnlyShowVideo;
@@ -45,4 +46,3 @@
 - (void)dealloc;
 
 @end
-

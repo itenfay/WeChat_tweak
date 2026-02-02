@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) SharedPtr_db4ce4f7 backingIKImage; // @synthesize backingIKImage=_backingIKImage;
 - (id)initWithBackingIKImage:(const void *)arg1;
 

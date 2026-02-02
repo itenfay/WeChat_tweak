@@ -11,7 +11,6 @@
 }
 
 + (id)configCheckParameters;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *liteAppProjectIdList; // @synthesize liteAppProjectIdList=_liteAppProjectIdList;
 - (void)haveSpecifiedResource:(id)arg1 name:(id)arg2 version:(unsigned int)arg3;
 - (void)postProcess:(id)arg1;

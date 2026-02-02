@@ -23,7 +23,6 @@
 }
 
 + (id)logicOf:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasGotNewDataDuringFinishing; // @synthesize hasGotNewDataDuringFinishing=_hasGotNewDataDuringFinishing;
 @property(nonatomic) _Bool isDuringFinishing; // @synthesize isDuringFinishing=_isDuringFinishing;
 @property(nonatomic) _Bool isWaiting; // @synthesize isWaiting=_isWaiting;

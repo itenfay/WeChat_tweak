@@ -14,7 +14,6 @@
     NSString *m_nsLastSelectedQuestionID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsLastSelectedQuestionID; // @synthesize m_nsLastSelectedQuestionID;
 - (void)viewDidLoad;
 - (void)clickCell:(id)arg1 indexPath:(id)arg2;

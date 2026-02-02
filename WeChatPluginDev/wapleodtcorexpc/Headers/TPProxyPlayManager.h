@@ -33,7 +33,6 @@
     long long _playState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long playState; // @synthesize playState=_playState;
 @property(retain, nonatomic) NSMutableSet *resourceloaderSet; // @synthesize resourceloaderSet=_resourceloaderSet;
 @property(nonatomic) long long skipEndMs; // @synthesize skipEndMs=_skipEndMs;

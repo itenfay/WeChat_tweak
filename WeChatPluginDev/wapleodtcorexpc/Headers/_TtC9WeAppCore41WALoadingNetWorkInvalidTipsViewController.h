@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MISSING_TYPE, NSString;
 
 @interface _TtC9WeAppCore41WALoadingNetWorkInvalidTipsViewController
@@ -16,7 +18,6 @@
     MISSING_TYPE *onRetryAction;
 }
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewWillDisappear:(_Bool)arg1;
@@ -30,4 +31,3 @@
 @property(nonatomic, copy) NSString *tipsMsg;
 
 @end
-

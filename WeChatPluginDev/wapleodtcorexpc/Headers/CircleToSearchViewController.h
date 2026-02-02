@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CircleToSearchEntity, CircleToSearchLoadingView, CircleToSearchScrollView, MMUIButton, MMUIView, NSString, ShowFullScreenAnimationController, WCWebSearchViewControllerNewH5;
 
 @interface CircleToSearchViewController
@@ -19,7 +21,6 @@
 }
 
 + (void)presentFromViewController:(id)arg1 withEntity:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ShowFullScreenAnimationController *transitionController; // @synthesize transitionController=_transitionController;
 @property(nonatomic) int halfScreenType; // @synthesize halfScreenType=_halfScreenType;
 @property(retain, nonatomic) WCWebSearchViewControllerNewH5 *searchPage; // @synthesize searchPage=_searchPage;
@@ -81,4 +82,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -16,7 +16,6 @@
     id <WCPayVerifyUserRealNameInfoCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayVerifyUserRealNameInfoCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 @property(retain, nonatomic) WCPayVerifyUserRealNameInfoResp *resp; // @synthesize resp=_resp;
 @property(nonatomic) int verify_scene; // @synthesize verify_scene=_verify_scene;

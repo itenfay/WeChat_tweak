@@ -16,7 +16,6 @@
 }
 
 + (id)attachmentWithContent:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;

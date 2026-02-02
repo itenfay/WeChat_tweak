@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJAudioFileManager, NSMutableArray, NSString, UBDictionarySignal;
 
@@ -19,7 +20,6 @@
     NSString *_processedFilePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *processedFilePath; // @synthesize processedFilePath=_processedFilePath;
 @property(nonatomic) _Bool isCanceled; // @synthesize isCanceled=_isCanceled;
 @property(readonly, nonatomic) NSMutableArray *completions; // @synthesize completions=_completions;
@@ -41,4 +41,3 @@
 - (id)initWithAudioID:(id)arg1 roleID:(id)arg2 audioFileManager:(id)arg3 statusDidUpdateSignal:(id)arg4;
 
 @end
-

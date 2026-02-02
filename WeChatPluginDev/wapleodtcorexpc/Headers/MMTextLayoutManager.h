@@ -17,7 +17,6 @@
     CDStruct_e4889e99 _stat;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long profileCounter; // @synthesize profileCounter=_profileCounter;
 @property(nonatomic) long long lastTotal; // @synthesize lastTotal=_lastTotal;
 @property(nonatomic) long long total; // @synthesize total=_total;

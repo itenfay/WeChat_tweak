@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithStatus:(long long)arg1 scheme:(id)arg2 succHalfPanel:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterStandardTypedData *succHalfPanel; // @synthesize succHalfPanel=_succHalfPanel;
 @property(retain, nonatomic) FlutterStandardTypedData *scheme; // @synthesize scheme=_scheme;
 @property(nonatomic) long long status; // @synthesize status=_status;

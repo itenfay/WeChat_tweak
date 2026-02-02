@@ -20,7 +20,6 @@
     MMFinderLiveDropGiftViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveDropGiftViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;

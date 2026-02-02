@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveTask, MMLiveTaskId, NSMutableDictionary;
 
@@ -20,7 +21,6 @@
 }
 
 + (id)baseResourceDir;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *resourcePinningTokens; // @synthesize resourcePinningTokens=_resourcePinningTokens;
 @property(retain, nonatomic) NSMutableDictionary *renderScriptDict; // @synthesize renderScriptDict=_renderScriptDict;
 @property(nonatomic) unsigned long long renderSeq; // @synthesize renderSeq=_renderSeq;
@@ -56,4 +56,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

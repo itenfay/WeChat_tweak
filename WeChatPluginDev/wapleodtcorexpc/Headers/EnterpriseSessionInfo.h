@@ -63,7 +63,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *brandUserName; // @synthesize brandUserName=_brandUserName;
 @property(nonatomic) unsigned int newAtAllCount; // @synthesize newAtAllCount=_newAtAllCount;
 @property(nonatomic) unsigned int atAllCount; // @synthesize atAllCount=_atAllCount;

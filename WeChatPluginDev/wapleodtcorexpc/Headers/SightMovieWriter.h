@@ -41,7 +41,6 @@
     struct CGAffineTransform _m_preferredTransform;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AQAudioRecorder *recorder; // @synthesize recorder=_recorder;
 @property(nonatomic) _Bool needAudio; // @synthesize needAudio=_needAudio;
 @property(nonatomic) _Bool m_compressAudio; // @synthesize m_compressAudio=_m_compressAudio;

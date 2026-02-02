@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIGestureRecognizer.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIGestureRecognizer (WCBlock)
 + (void)hookUIGestureRecognizer;
@@ -15,4 +16,3 @@
 - (void)handleAction:(id)arg1;
 - (id)initWithHandler:(CDUnknownBlockType)arg1;
 @end
-

@@ -16,7 +16,6 @@
     MMUILabel *_descLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) WCAdPagView *activeIconPag; // @synthesize activeIconPag=_activeIconPag;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveCustomPIPMinimizeIndicatorContainerView, MMLiveTaskId, NSString;
 @protocol MMFinderLivePIPMinimizeDisplayViewProtocol, MMFinderLivePIPMinimizeLogicControllerDelegate, MMFinderLivePIPMinimizeLogicDelegate;
@@ -18,7 +19,6 @@
     UIView<MMFinderLivePIPMinimizeDisplayViewProtocol> *_displayContentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView<MMFinderLivePIPMinimizeDisplayViewProtocol> *displayContentView; // @synthesize displayContentView=_displayContentView;
 @property(retain, nonatomic) MMFinderLiveCustomPIPMinimizeIndicatorContainerView *indicatorContainerView; // @synthesize indicatorContainerView=_indicatorContainerView;
 @property(retain, nonatomic) MMLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
@@ -49,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

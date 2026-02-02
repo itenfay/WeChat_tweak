@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
@@ -16,7 +17,6 @@
     NSMutableArray *_m_contacts;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_contacts; // @synthesize m_contacts=_m_contacts;
 @property(readonly, nonatomic) NSMutableDictionary *m_loadInfoMap; // @synthesize m_loadInfoMap=_m_loadInfoMap;
 @property(retain, nonatomic) NSMutableDictionary *headImgDownloadMap; // @synthesize headImgDownloadMap=_headImgDownloadMap;
@@ -47,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

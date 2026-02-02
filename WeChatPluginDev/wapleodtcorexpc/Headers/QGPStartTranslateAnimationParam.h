@@ -13,7 +13,6 @@
     double _initRotation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needRotate; // @synthesize needRotate=_needRotate;
 @property(nonatomic) double initRotation; // @synthesize initRotation=_initRotation;
 @property(nonatomic) double duration; // @synthesize duration=_duration;

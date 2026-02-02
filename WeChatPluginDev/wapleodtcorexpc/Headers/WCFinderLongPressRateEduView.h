@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, PAGView, UILabel;
 @protocol WCFinderLongPressRateEduViewDelegate;
@@ -17,7 +18,6 @@
     struct CGSize _layoutSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *animationView; // @synthesize animationView=_animationView;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;
@@ -40,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderFlowFollowTabVCParam : NSObject
 {
@@ -11,9 +12,7 @@
     CDUnknownBlockType _dataChangeByPublichBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dataChangeByPublichBlock; // @synthesize dataChangeByPublichBlock=_dataChangeByPublichBlock;
 @property(nonatomic) double topExtraPadding; // @synthesize topExtraPadding=_topExtraPadding;
 
 @end
-

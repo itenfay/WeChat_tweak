@@ -12,7 +12,6 @@
     EnhanceTranslatingView *_enhanceTranslatingView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak EnhanceTranslatingView *enhanceTranslatingView; // @synthesize enhanceTranslatingView=_enhanceTranslatingView;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

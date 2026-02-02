@@ -15,7 +15,6 @@
     NSArray *_templateInfos;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *templateInfos; // @synthesize templateInfos=_templateInfos;
 @property(readonly, nonatomic) NSURL *thumbnailURL; // @synthesize thumbnailURL=_thumbnailURL;
 @property(readonly, nonatomic) NSString *categoryName; // @synthesize categoryName=_categoryName;

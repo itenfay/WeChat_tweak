@@ -10,7 +10,6 @@
     MMGroupLiveCommentPubbleView *_pubbleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMGroupLiveCommentPubbleView *pubbleView; // @synthesize pubbleView=_pubbleView;
 @property(readonly, nonatomic) MMGroupLiveCommentTableViewCellFrame *groupLiveCellFrame;
 - (void)setCellFrame:(id)arg1;

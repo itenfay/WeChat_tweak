@@ -12,7 +12,6 @@
     UITableView *_tableView;
 }
 
-- (void).cxx_destruct;
 - (void)initTableView;
 - (id)itemAtSection:(long long)arg1 row:(long long)arg2;
 - (void)onClickProtoButton:(id)arg1;

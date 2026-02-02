@@ -19,7 +19,6 @@
     WAJSContextPluginDelegateCenter *_delegateCenter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool usingBluetoothBackground; // @synthesize usingBluetoothBackground=_usingBluetoothBackground;
 @property(nonatomic) _Bool isRecording; // @synthesize isRecording=_isRecording;
 @property(nonatomic) _Bool usingLocationBackground; // @synthesize usingLocationBackground=_usingLocationBackground;

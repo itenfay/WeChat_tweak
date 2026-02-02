@@ -11,7 +11,6 @@
     NSString *_exportId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *exportId; // @synthesize exportId=_exportId;
 @property(retain, nonatomic) WCFinderFeedContentVM *feedContentVM; // @synthesize feedContentVM=_feedContentVM;
 - (void)refreshWithFinderDataItem:(id)arg1;

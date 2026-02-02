@@ -22,7 +22,6 @@
 + (id)overviewSectionTypes;
 + (_Bool)allowLimitMode;
 + (_Bool)shouldDisplay:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuff; // @synthesize lastBuff=_lastBuff;
 @property(retain, nonatomic) NSMutableArray *mutContentVMS; // @synthesize mutContentVMS=_mutContentVMS;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;

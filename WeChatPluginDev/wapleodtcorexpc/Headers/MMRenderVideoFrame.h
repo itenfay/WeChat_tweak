@@ -14,7 +14,6 @@
     NSMutableArray *_remoteVideoQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *remoteVideoQueue; // @synthesize remoteVideoQueue=_remoteVideoQueue;
 @property(retain, nonatomic) NSMutableDictionary *userVideoViews1; // @synthesize userVideoViews1=_userVideoViews1;
 @property(retain, nonatomic) UIImageView *localVideoView1; // @synthesize localVideoView1=_localVideoView1;

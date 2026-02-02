@@ -17,7 +17,6 @@
 }
 
 + (unsigned long long)maxTeamListCount;
-- (void).cxx_destruct;
 @property(nonatomic) double avatarMargin; // @synthesize avatarMargin=_avatarMargin;
 @property(nonatomic) struct CGSize avatarSize; // @synthesize avatarSize=_avatarSize;
 @property(retain, nonatomic) NSMutableArray *avatarList; // @synthesize avatarList=_avatarList;

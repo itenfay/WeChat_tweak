@@ -30,7 +30,6 @@
     unsigned long long _visitorStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long visitorStatus; // @synthesize visitorStatus=_visitorStatus;
 @property(retain, nonatomic) WCFinderMembershipPaymentSelectView *selectView; // @synthesize selectView=_selectView;
 @property(retain, nonatomic) NSTimer *pollingTimer; // @synthesize pollingTimer=_pollingTimer;

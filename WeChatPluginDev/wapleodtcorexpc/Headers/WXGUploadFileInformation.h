@@ -15,7 +15,6 @@
 }
 
 + (id)uploadFileInformationWithXMl:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fileDescription; // @synthesize fileDescription=_fileDescription;
 @property(copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(copy, nonatomic) NSString *rtxName; // @synthesize rtxName=_rtxName;

@@ -18,7 +18,6 @@
     id <UITableViewDelegate> _tableViewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int minScrollingThreshold; // @synthesize minScrollingThreshold=_minScrollingThreshold;
 @property(nonatomic) __weak id <UITableViewDelegate> tableViewDelegate; // @synthesize tableViewDelegate=_tableViewDelegate;
 @property(nonatomic) __weak id <TableViewCellExposureDelegate> delegate; // @synthesize delegate=_delegate;

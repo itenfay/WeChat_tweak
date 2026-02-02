@@ -12,7 +12,6 @@
     NSDictionary *_paramDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *paramDict; // @synthesize paramDict=_paramDict;
 @property(nonatomic) __weak id <WCPayJSApiNativeCgiTunnelLogicDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

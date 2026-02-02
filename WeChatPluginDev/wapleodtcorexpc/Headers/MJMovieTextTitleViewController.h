@@ -18,7 +18,6 @@
     NSArray *_menuItemsDisabled;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *menuItemsDisabled; // @synthesize menuItemsDisabled=_menuItemsDisabled;
 @property(retain, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 @property(retain, nonatomic) MJActionPanelMainMenuView *menuView; // @synthesize menuView=_menuView;

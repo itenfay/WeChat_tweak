@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveRedPacketViewModel, NSString, PAGFile, PAGView, UIButton, UILabel;
 
@@ -25,7 +26,6 @@
     struct CGSize _redPacketSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize redPacketSize; // @synthesize redPacketSize=_redPacketSize;
 @property(nonatomic) _Bool isStaticStyle; // @synthesize isStaticStyle=_isStaticStyle;
 @property(retain, nonatomic) UIView *staticBGView; // @synthesize staticBGView=_staticBGView;
@@ -79,4 +79,3 @@
 @property(readonly) Class superclass;
 
 @end
-

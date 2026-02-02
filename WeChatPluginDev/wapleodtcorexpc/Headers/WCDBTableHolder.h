@@ -13,7 +13,6 @@
     WCTTable *_table;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCTTable *table; // @synthesize table=_table;
 @property(readonly, nonatomic) WCTDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) NSString *name;

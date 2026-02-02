@@ -17,7 +17,6 @@
 + (id)genFromDictionary:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_m_itemArray;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_itemArray; // @synthesize m_itemArray=_m_itemArray;
 - (id)init;
 - (id)getPBPropertyTable;

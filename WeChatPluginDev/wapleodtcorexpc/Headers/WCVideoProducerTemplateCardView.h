@@ -23,7 +23,6 @@
 + (double)maxNameLabelHeight;
 + (id)headerIdentifier;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAnimPlaying; // @synthesize isAnimPlaying=_isAnimPlaying;
 @property(retain, nonatomic) NSString *loadedAnimFilePath; // @synthesize loadedAnimFilePath=_loadedAnimFilePath;
 @property(retain, nonatomic) WCProgressMaskView *progressMaskView; // @synthesize progressMaskView=_progressMaskView;

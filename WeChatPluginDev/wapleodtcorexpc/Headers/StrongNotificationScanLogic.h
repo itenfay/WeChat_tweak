@@ -10,7 +10,6 @@
     MMUIViewController *m_sourceViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *m_sourceViewController; // @synthesize m_sourceViewController;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)goToStrongNotificationAcceptViewControllerWithStrongNotificationContent:(id)arg1 qrCode:(id)arg2;

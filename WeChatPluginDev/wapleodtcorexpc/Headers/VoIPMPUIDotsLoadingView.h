@@ -13,7 +13,6 @@
     unsigned long long _lightIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lightIndex; // @synthesize lightIndex=_lightIndex;
 @property(retain, nonatomic) NSArray *viewDots; // @synthesize viewDots=_viewDots;
 - (id)initWithFrame:(struct CGRect)arg1;

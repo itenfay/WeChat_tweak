@@ -15,7 +15,6 @@
 + (_Bool)hasOpeningAnimation:(id)arg1;
 + (_Bool)hasProductInfo:(id)arg1;
 + (double)heightForMedia:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdSliderCardOpeningAnimationView *openingAnimationView; // @synthesize openingAnimationView=_openingAnimationView;
 @property(retain, nonatomic) WCAdSliderCardProductView *productView; // @synthesize productView=_productView;
 @property(retain, nonatomic) WCAdSliderCardView *sliderCard; // @synthesize sliderCard=_sliderCard;

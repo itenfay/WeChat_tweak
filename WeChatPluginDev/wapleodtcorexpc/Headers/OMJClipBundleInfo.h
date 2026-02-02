@@ -13,7 +13,6 @@
     unsigned long long _bundleSize;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long bundleSize; // @synthesize bundleSize=_bundleSize;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (id)initWithBundleID:(id)arg1 bundleSize:(unsigned long long)arg2;

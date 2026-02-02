@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class QQuadTreeNode;
 
@@ -17,7 +18,6 @@
 + (id)treeWithDatas:(id)arg1;
 + (id)treeWithDatas:(id)arg1 box:(struct CGRect)arg2;
 + (id)treeWithDatas:(id)arg1 box:(struct CGRect)arg2 capacity:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) QQuadTreeNode *root; // @synthesize root=_root;
 @property(nonatomic) unsigned long long bucketCapacity; // @synthesize bucketCapacity=_bucketCapacity;
 @property(nonatomic) struct CGRect boundingBox; // @synthesize boundingBox=_boundingBox;
@@ -28,4 +28,3 @@
 - (_Bool)insertData:(id)arg1;
 
 @end
-

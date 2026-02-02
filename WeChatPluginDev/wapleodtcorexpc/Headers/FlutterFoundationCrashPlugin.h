@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMStackReportConnection, NSDateFormatter, NSString;
 
@@ -18,7 +19,6 @@
     NSDateFormatter *_timeFormatter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool exitWhenKillSelf; // @synthesize exitWhenKillSelf=_exitWhenKillSelf;
 @property(nonatomic) _Bool reportToCrash; // @synthesize reportToCrash=_reportToCrash;
 @property(nonatomic) _Bool killSelf; // @synthesize killSelf=_killSelf;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

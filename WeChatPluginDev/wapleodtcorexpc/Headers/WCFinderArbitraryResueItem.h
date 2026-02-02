@@ -15,7 +15,6 @@
     UIViewController *_vc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *vc; // @synthesize vc=_vc;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

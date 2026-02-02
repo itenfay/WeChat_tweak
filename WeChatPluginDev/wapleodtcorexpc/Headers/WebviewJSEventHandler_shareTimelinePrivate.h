@@ -11,7 +11,6 @@
     NSData *_coverImageData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *coverImageData; // @synthesize coverImageData=_coverImageData;
 @property(retain, nonatomic) ShareTimelineBaseImpl *shareTimelineImpl; // @synthesize shareTimelineImpl=_shareTimelineImpl;
 - (void)setupUploadTask:(id)arg1 forEvent:(id)arg2;

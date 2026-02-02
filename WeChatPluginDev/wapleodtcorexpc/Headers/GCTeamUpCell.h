@@ -19,7 +19,6 @@
 }
 
 + (void)onCalculatLayoutInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *labelGroupView; // @synthesize labelGroupView=_labelGroupView;
 @property(retain, nonatomic) JumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(retain, nonatomic) UIButton *rightBtn; // @synthesize rightBtn=_rightBtn;

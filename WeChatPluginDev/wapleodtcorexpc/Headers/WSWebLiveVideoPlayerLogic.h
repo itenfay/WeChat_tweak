@@ -12,7 +12,6 @@
     NSString *_streamUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *streamUrl; // @synthesize streamUrl=_streamUrl;
 @property(retain, nonatomic) WCFinderDataItem *finderDataItem; // @synthesize finderDataItem=_finderDataItem;
 @property(retain, nonatomic) MMLiveCDNPlayerView *playerView; // @synthesize playerView=_playerView;

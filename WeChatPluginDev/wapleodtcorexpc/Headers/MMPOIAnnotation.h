@@ -12,7 +12,6 @@
     NSString *_searchId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUserLocation; // @synthesize isUserLocation=_isUserLocation;
 @property(retain, nonatomic) NSString *searchId; // @synthesize searchId=_searchId;
 @property(retain, nonatomic) POIItem *poiItem; // @synthesize poiItem=_poiItem;

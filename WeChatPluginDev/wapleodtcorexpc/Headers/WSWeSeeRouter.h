@@ -12,7 +12,6 @@
     MMUIViewController *_curViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *curViewController; // @synthesize curViewController=_curViewController;
 - (void)loadPrefetchConfigWith:(id)arg1;
 - (void)addPrefetchConfigWith:(id)arg1;

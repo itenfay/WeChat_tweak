@@ -15,7 +15,6 @@
     NSString *_lvCurrentContextID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lvCurrentContextID; // @synthesize lvCurrentContextID=_lvCurrentContextID;
 @property(retain, nonatomic) WCFinderRedDotCtrlInfo *finderCtrlInfo; // @synthesize finderCtrlInfo=_finderCtrlInfo;
 @property(nonatomic) _Bool isChangeTab; // @synthesize isChangeTab=_isChangeTab;

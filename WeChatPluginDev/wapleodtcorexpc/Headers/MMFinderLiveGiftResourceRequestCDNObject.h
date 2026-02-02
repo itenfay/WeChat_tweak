@@ -11,7 +11,6 @@
     CdnComMediaInfo *_cdnComInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useProprietaryProtocol; // @synthesize useProprietaryProtocol=_useProprietaryProtocol;
 @property(retain, nonatomic) CdnComMediaInfo *cdnComInfo; // @synthesize cdnComInfo=_cdnComInfo;
 

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class JSEventInvokeContext, NSMutableDictionary, NSString;
 @protocol JSEventHandler;
@@ -19,7 +20,6 @@
     JSEventInvokeContext *_eventInvokeContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEventInvokeContext *eventInvokeContext; // @synthesize eventInvokeContext=_eventInvokeContext;
 @property(copy, nonatomic) CDUnknownBlockType eventCompleteBlock; // @synthesize eventCompleteBlock=_eventCompleteBlock;
 @property(copy, nonatomic) CDUnknownBlockType kvReportBlock; // @synthesize kvReportBlock=m_kvReportBlock;
@@ -38,4 +38,3 @@
 - (id)initWithDelegate:(id)arg1 parameters:(id)arg2;
 
 @end
-

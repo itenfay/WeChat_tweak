@@ -12,7 +12,6 @@
     id <TingFlowPlayerProtocol> _player;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TingFlowPlayerProtocol> player; // @synthesize player=_player;
 @property(retain, nonatomic) TingSharedListView *listContentView; // @synthesize listContentView=_listContentView;
 - (void)onClickAsRefer;

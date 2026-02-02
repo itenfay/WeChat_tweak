@@ -16,7 +16,6 @@
     unsigned long long _pollingInterval;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long pollingInterval; // @synthesize pollingInterval=_pollingInterval;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, copy, nonatomic) NSURL *verificationURL; // @synthesize verificationURL=_verificationURL;

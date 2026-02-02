@@ -12,7 +12,6 @@
     UIView *_lineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UILabel *heatLabel; // @synthesize heatLabel=_heatLabel;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;

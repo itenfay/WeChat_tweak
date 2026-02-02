@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, NSString, RichTextView, UIButton, UIColor;
 
 @interface WCLiveHalfScreenView
@@ -38,7 +40,6 @@
     double _viewLeftRightMargin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShown; // @synthesize isShown=_isShown;
 @property(nonatomic) _Bool useBoldTitle; // @synthesize useBoldTitle=_useBoldTitle;
 @property(nonatomic) double viewLeftRightMargin; // @synthesize viewLeftRightMargin=_viewLeftRightMargin;
@@ -94,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

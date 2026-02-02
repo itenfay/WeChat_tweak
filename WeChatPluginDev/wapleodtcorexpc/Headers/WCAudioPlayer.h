@@ -17,7 +17,6 @@
     MMTimer *_progressCheckTimer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isReuse; // @synthesize isReuse=_isReuse;
 @property(retain, nonatomic) MMTimer *progressCheckTimer; // @synthesize progressCheckTimer=_progressCheckTimer;
 @property(retain, nonatomic) id <IWCAudioPlayerCore> playerCore; // @synthesize playerCore=_playerCore;

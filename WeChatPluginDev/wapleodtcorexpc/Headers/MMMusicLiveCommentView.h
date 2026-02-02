@@ -23,7 +23,6 @@
     long long _maxDisplayIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isScrollingToBottom; // @synthesize isScrollingToBottom=_isScrollingToBottom;
 @property(nonatomic) long long maxDisplayIndex; // @synthesize maxDisplayIndex=_maxDisplayIndex;
 @property(retain, nonatomic) MMMusicLiveCommentUnreadMentionView *unreadMentionView; // @synthesize unreadMentionView=_unreadMentionView;

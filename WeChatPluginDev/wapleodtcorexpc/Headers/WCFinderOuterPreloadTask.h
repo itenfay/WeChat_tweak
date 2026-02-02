@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_preloadPercent;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long preloadPercent; // @synthesize preloadPercent=_preloadPercent;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
 - (id)initWithCoder:(id)arg1;

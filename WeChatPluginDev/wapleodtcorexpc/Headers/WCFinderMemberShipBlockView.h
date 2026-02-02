@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton;
 
@@ -13,7 +14,6 @@
     UIButton *_bkBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *bkBtn; // @synthesize bkBtn=_bkBtn;
 @property(copy, nonatomic) CDUnknownBlockType btnClick; // @synthesize btnClick=_btnClick;
 - (void)OnButtonTapped;
@@ -21,4 +21,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 vm:(id)arg2;
 
 @end
-

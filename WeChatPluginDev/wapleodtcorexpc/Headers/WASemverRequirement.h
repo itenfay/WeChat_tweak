@@ -15,7 +15,6 @@
     WASemverRequirement *_req2;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WASemverRequirement *req2; // @synthesize req2=_req2;
 @property(nonatomic) unsigned long long op; // @synthesize op=_op;
 @property(retain, nonatomic) WASemverRequirement *req1; // @synthesize req1=_req1;

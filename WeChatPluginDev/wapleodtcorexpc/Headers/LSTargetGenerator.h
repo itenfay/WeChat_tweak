@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface LSTargetGenerator : NSObject
 {
@@ -14,7 +15,6 @@
 
 + (id)createByBlock:(CDUnknownBlockType)arg1;
 + (id)createBySel:(SEL)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) SEL sel; // @synthesize sel=_sel;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
@@ -23,4 +23,3 @@
 - (id)init;
 
 @end
-

@@ -13,7 +13,6 @@
     UILabel *_timeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) UIImageView *clockImageView; // @synthesize clockImageView=_clockImageView;
 - (void)layoutSubviews;

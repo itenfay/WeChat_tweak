@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveSyncAnchorCloseLiveGuideInfoResp, MMUIButton, NSString, RichTextView, UIView;
 
 @interface WCFinderLiveAnchorCloseLiveGuideView
@@ -16,7 +18,6 @@
     MMUIButton *_closeLiveButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *closeLiveButton; // @synthesize closeLiveButton=_closeLiveButton;
 @property(retain, nonatomic) MMUIButton *continueButton; // @synthesize continueButton=_continueButton;
 @property(retain, nonatomic) RichTextView *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -45,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

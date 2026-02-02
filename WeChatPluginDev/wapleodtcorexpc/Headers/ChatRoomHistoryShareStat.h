@@ -39,7 +39,6 @@
     unsigned long long _abandonUploadContentSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uploadFailAlertCnt; // @synthesize uploadFailAlertCnt=_uploadFailAlertCnt;
 @property(nonatomic) unsigned int waitUploadAlertCnt; // @synthesize waitUploadAlertCnt=_waitUploadAlertCnt;
 @property(nonatomic) unsigned int uploadFailCnt; // @synthesize uploadFailCnt=_uploadFailCnt;

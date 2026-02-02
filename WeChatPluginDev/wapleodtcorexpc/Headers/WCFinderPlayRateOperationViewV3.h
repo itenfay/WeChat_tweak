@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIImageView, UILabel, UIView, WCFinderFeedContentVM, WCFinderNormalProgressBar;
 
 @interface WCFinderPlayRateOperationViewV3
@@ -27,7 +29,6 @@
     struct CGPoint _startGesturePos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderNormalProgressBar *progressBar; // @synthesize progressBar=_progressBar;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(nonatomic) double distanceMoveXLimitConfig; // @synthesize distanceMoveXLimitConfig=_distanceMoveXLimitConfig;
@@ -60,4 +61,3 @@
 - (void)showOnView:(id)arg1 withVM:(id)arg2;
 
 @end
-

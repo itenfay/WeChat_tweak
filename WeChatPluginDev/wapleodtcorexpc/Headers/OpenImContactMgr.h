@@ -23,7 +23,6 @@
 + (id)convertChatRoomContactToCContact:(id)arg1;
 + (void)fillToCContact:(id)arg1 from:(id)arg2;
 + (id)convertToCContact:(id)arg1;
-- (void).cxx_destruct;
 - (void)loadOpenImExtendInfoInternal;
 - (void)saveOpenImExtendInfoToDataFileInternal;
 - (id)getOpenImExtendInfoDataFilePath;

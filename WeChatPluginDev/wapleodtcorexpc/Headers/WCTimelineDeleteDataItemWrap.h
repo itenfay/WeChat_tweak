@@ -13,7 +13,6 @@
     struct CGPoint _tableViewContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint tableViewContentOffset; // @synthesize tableViewContentOffset=_tableViewContentOffset;
 @property(readonly, nonatomic) WCDataItem *deleteDataItem; // @synthesize deleteDataItem=_deleteDataItem;
 - (id)initWithDeleteDataItem:(id)arg1 tableViewContentOffset:(struct CGPoint)arg2;

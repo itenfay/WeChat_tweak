@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MyFavoritesDB, NSArray, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString;
 @protocol FavoritesTagMgrDelegate;
 
@@ -27,7 +29,6 @@
     id <FavoritesTagMgrDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavoritesTagMgrDelegate> m_delegate; // @synthesize m_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)HandleBatchModifyFavItemResp:(id)arg1 Event:(unsigned int)arg2;
@@ -57,4 +58,3 @@
 - (void)initDB:(id)arg1;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MJLocationFetchUtils : NSObject
 {
@@ -22,4 +23,3 @@
 + (id)handler;
 
 @end
-

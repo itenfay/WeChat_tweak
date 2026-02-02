@@ -21,7 +21,6 @@
     unsigned long long _searchRequestID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long searchRequestID; // @synthesize searchRequestID=_searchRequestID;
 @property(retain, nonatomic) MMTListAdapter *listAdapter; // @synthesize listAdapter=_listAdapter;
 @property(retain, nonatomic) WCTimeLineFooterView *footerView; // @synthesize footerView=_footerView;

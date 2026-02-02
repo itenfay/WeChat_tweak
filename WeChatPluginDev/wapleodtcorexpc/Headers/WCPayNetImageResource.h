@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,7 +15,6 @@
     NSString *_m_cacheFolder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_cacheFolder; // @synthesize m_cacheFolder=_m_cacheFolder;
 @property(copy, nonatomic) CDUnknownBlockType m_block; // @synthesize m_block=_m_block;
 @property(retain, nonatomic) NSString *m_url; // @synthesize m_url=_m_url;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

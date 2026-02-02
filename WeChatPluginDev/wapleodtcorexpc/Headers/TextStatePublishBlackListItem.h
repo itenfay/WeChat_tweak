@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_labelList;
 + (void)PBArrayAdd_privacy;
 + (void)PBArrayAdd_textStateId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contactNameList; // @synthesize contactNameList=_contactNameList;
 @property(retain, nonatomic) NSArray *labelList; // @synthesize labelList=_labelList;
 @property(nonatomic) long long privacy; // @synthesize privacy=_privacy;

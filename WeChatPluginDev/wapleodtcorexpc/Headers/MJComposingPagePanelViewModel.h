@@ -14,7 +14,6 @@
     MJSegmentViewModel *_entranceSegmentVM;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJSegmentViewModel *entranceSegmentVM; // @synthesize entranceSegmentVM=_entranceSegmentVM;
 @property(retain, nonatomic) MJPageItem *selectedPageItem; // @synthesize selectedPageItem=_selectedPageItem;
 @property(nonatomic) unsigned long long selectedTab; // @synthesize selectedTab=_selectedTab;

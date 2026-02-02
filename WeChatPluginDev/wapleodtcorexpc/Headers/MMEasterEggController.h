@@ -18,7 +18,6 @@
     NSMutableArray *_pendingMsgs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingMsgs; // @synthesize pendingMsgs=_pendingMsgs;
 @property(retain, nonatomic) MMEasterEggActivityChatReportObject *reportObject; // @synthesize reportObject=_reportObject;
 @property(retain, nonatomic) id <MMEasterEggActivity> activity; // @synthesize activity=_activity;

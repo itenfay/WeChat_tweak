@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface WCUIActionSheetLogic
@@ -12,7 +14,6 @@
     NSMutableDictionary *m_dicHandler;
 }
 
-- (void).cxx_destruct;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)addBtnTitle:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)addBtnTitle:(id)arg1 target:(id)arg2 sel:(SEL)arg3;
@@ -28,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -13,7 +13,6 @@
     NSString *_canvasDynamicInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *canvasDynamicInfo; // @synthesize canvasDynamicInfo=_canvasDynamicInfo;
 @property(retain, nonatomic) NSString *brandUsername; // @synthesize brandUsername=_brandUsername;
 @property(nonatomic) int result; // @synthesize result=_result;

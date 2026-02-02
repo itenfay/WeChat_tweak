@@ -21,7 +21,6 @@
     unsigned long long _lastReportActionTimeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastReportActionTimeStamp; // @synthesize lastReportActionTimeStamp=_lastReportActionTimeStamp;
 @property(nonatomic) _Bool hasReportAction; // @synthesize hasReportAction=_hasReportAction;
 @property(retain, nonatomic) NSMutableArray *feedbackInfoArray; // @synthesize feedbackInfoArray=_feedbackInfoArray;

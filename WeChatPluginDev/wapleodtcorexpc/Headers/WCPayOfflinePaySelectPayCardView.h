@@ -23,7 +23,6 @@
     UIView *_m_titleArea;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasPostScreenChangeAccessibilityNotification; // @synthesize bHasPostScreenChangeAccessibilityNotification=_bHasPostScreenChangeAccessibilityNotification;
 @property(retain, nonatomic) UIView *m_titleArea; // @synthesize m_titleArea=_m_titleArea;
 @property(retain, nonatomic) NSMutableDictionary *cellTitleHalfYCache; // @synthesize cellTitleHalfYCache=_cellTitleHalfYCache;

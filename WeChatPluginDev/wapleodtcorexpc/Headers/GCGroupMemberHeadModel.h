@@ -22,7 +22,6 @@
     Slot *_slotInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) Slot *slotInfo; // @synthesize slotInfo=_slotInfo;
 @property(nonatomic) int numCircles; // @synthesize numCircles=_numCircles;
 @property(nonatomic) _Bool needFold; // @synthesize needFold=_needFold;

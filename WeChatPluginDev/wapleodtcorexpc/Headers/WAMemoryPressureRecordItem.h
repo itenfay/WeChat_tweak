@@ -13,7 +13,6 @@
     NSString *_recordDescription;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *recordDescription; // @synthesize recordDescription=_recordDescription;
 @property(nonatomic) unsigned long long interval; // @synthesize interval=_interval;
 @property(nonatomic) unsigned long long timeStamp; // @synthesize timeStamp=_timeStamp;

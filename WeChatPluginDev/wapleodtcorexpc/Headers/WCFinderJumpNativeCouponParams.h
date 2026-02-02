@@ -12,7 +12,6 @@
     NSString *_cardId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;
 
 @end

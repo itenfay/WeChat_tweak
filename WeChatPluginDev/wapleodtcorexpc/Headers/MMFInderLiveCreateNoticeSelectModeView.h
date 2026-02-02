@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLivePaymentSetting, MMCPLabel, MMFinderLivePaymentSettingView, MMUILabel, NSString, UIImageView, UISwitch;
 
@@ -49,7 +50,6 @@
     FinderLivePaymentSetting *_paymentSetting;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool modMode; // @synthesize modMode=_modMode;
 @property(nonatomic) _Bool isPaidSelect; // @synthesize isPaidSelect=_isPaidSelect;
 @property(retain, nonatomic) FinderLivePaymentSetting *paymentSetting; // @synthesize paymentSetting=_paymentSetting;
@@ -140,4 +140,3 @@
 @property(readonly) Class superclass;
 
 @end
-

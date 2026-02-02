@@ -16,7 +16,6 @@
     NSMutableDictionary *_writeOffsetDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *writeOffsetDict; // @synthesize writeOffsetDict=_writeOffsetDict;
 @property(retain, nonatomic) NSMutableDictionary *startOffsetDict; // @synthesize startOffsetDict=_startOffsetDict;
 @property(retain, nonatomic) NSMutableDictionary *dataContainerDict; // @synthesize dataContainerDict=_dataContainerDict;

@@ -11,7 +11,6 @@
     NSMutableSet *_activeBizsSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *activeBizsSet; // @synthesize activeBizsSet=_activeBizsSet;
 @property(retain, nonatomic) MagicBrushService *magicbrush; // @synthesize magicbrush=_magicbrush;
 - (void)updateActiveBizs;

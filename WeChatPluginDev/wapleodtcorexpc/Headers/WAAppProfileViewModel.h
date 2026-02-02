@@ -11,7 +11,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 - (id)reportAppMessageItem:(unsigned int)arg1;
 - (void)onReportClickWithUserInfo:(id)arg1;

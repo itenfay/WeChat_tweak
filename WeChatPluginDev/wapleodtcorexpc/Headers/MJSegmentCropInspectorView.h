@@ -11,7 +11,6 @@
     MJTimelineThumbnailView *_thumbnailView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJTimelineThumbnailView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 - (void)updateResetButton;

@@ -34,7 +34,6 @@
 + (id)filterFloatingBarrageItems:(id)arg1;
 + (id)supportedLandscapeBarrageMsgSubTypeList;
 + (id)supportedLandscapeBarrageMsgTypeList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *reRunCellList; // @synthesize reRunCellList=_reRunCellList;
 @property(retain, nonatomic) NSMutableArray *availableCellList; // @synthesize availableCellList=_availableCellList;
 @property(retain, nonatomic) MMLiveCommentDataItem *lastDisplayLandscapeCommentItem; // @synthesize lastDisplayLandscapeCommentItem=_lastDisplayLandscapeCommentItem;

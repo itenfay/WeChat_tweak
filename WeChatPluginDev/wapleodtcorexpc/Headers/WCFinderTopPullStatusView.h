@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UILabel, UIScrollView, WCFinderAnimationLoadingView;
 @protocol WCFinderTopPullStatusViewDelegate;
@@ -22,7 +23,6 @@
 }
 
 + (id)placeholder:(id)arg1 commit:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDragging; // @synthesize isDragging=_isDragging;
 @property(copy, nonatomic) CDUnknownBlockType uninstallBlock; // @synthesize uninstallBlock=_uninstallBlock;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
@@ -53,4 +53,3 @@
 - (void)installToContainer:(id)arg1 scrollView:(id)arg2 uninstallBlock:(CDUnknownBlockType)arg3;
 
 @end
-

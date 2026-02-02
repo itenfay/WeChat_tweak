@@ -13,7 +13,6 @@
     WCTTable *m_table;
 }
 
-- (void).cxx_destruct;
 - (id)query;
 - (void)clear;
 - (void)save:(id)arg1;

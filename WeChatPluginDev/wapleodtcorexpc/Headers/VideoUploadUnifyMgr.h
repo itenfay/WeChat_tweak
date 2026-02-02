@@ -18,7 +18,6 @@
     NSMutableArray *_arrUploadingTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrUploadingTask; // @synthesize arrUploadingTask=_arrUploadingTask;
 @property(retain, nonatomic) NSMutableArray *arrSendingTask; // @synthesize arrSendingTask=_arrSendingTask;
 @property(retain, nonatomic) VideoUploadTaskController *currentUploadingTask; // @synthesize currentUploadingTask=_currentUploadingTask;

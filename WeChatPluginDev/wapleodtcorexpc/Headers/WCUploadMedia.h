@@ -69,7 +69,6 @@
     NSData *_hdAlbumImgData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUseDefaultMediaType; // @synthesize shouldUseDefaultMediaType=_shouldUseDefaultMediaType;
 @property(retain, nonatomic) NSData *hdAlbumImgData; // @synthesize hdAlbumImgData=_hdAlbumImgData;
 @property(retain, nonatomic) NSData *jpgBuffer; // @synthesize jpgBuffer=_jpgBuffer;

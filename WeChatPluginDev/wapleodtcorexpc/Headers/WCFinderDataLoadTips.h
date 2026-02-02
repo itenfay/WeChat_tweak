@@ -16,7 +16,6 @@
     WCFinderDataLoadTipsConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataLoadTipsConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) MMUIButton *tipsButton; // @synthesize tipsButton=_tipsButton;

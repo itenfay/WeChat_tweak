@@ -17,7 +17,6 @@
     NSString *_content;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromAuthor; // @synthesize isFromAuthor=_isFromAuthor;
 @property(nonatomic) _Bool isReplySelected; // @synthesize isReplySelected=_isReplySelected;
 @property(nonatomic) _Bool isDelete; // @synthesize isDelete=_isDelete;

@@ -18,7 +18,6 @@
     NSRecursiveLock *_audioProcesserLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *audioProcesserLock; // @synthesize audioProcesserLock=_audioProcesserLock;
 @property(nonatomic) unsigned long long settingReverbType; // @synthesize settingReverbType=_settingReverbType;
 @property(retain, nonatomic) LiveKTVAudioEffectProcessInitParam *settingParam; // @synthesize settingParam=_settingParam;

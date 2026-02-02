@@ -22,7 +22,6 @@
     EmoticonLensInfo *_selectedLens;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonLensInfo *selectedLens; // @synthesize selectedLens=_selectedLens;
 @property(nonatomic) long long numberPerRow; // @synthesize numberPerRow=_numberPerRow;
 @property(retain, nonatomic) NSIndexPath *selectedIndex; // @synthesize selectedIndex=_selectedIndex;

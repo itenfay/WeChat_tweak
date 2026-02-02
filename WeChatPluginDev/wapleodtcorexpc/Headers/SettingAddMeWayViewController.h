@@ -20,7 +20,6 @@
     DelaySwitchSettingLogic *m_delaySwitchLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bIsShowPhoneSectionIndexAtFirst; // @synthesize m_bIsShowPhoneSectionIndexAtFirst;
 - (void)removeCoverView;
 - (void)hideCoverView;

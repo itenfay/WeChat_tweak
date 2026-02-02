@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, QAnnotationContainerView, QMUAnnoViewAnimationMediator, UIImage, UIImageView, UILongPressGestureRecognizer, UITapGestureRecognizer;
 @protocol QAnnotation;
@@ -40,7 +41,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *innerMainMarkerSource; // @synthesize innerMainMarkerSource=_innerMainMarkerSource;
 @property(nonatomic) int collidedViewCount; // @synthesize collidedViewCount=_collidedViewCount;
 @property(nonatomic) _Bool internalMarkerHidden; // @synthesize internalMarkerHidden=_internalMarkerHidden;
@@ -171,4 +171,3 @@
 @property(readonly) Class superclass;
 
 @end
-

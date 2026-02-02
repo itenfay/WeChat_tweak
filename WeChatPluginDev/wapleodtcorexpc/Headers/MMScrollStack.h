@@ -13,7 +13,6 @@
     long long _axis;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long axis; // @synthesize axis=_axis;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(nonatomic) long long alignment;

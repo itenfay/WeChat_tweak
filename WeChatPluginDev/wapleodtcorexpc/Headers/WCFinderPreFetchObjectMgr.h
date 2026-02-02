@@ -16,7 +16,6 @@
     id <WCFinderPreFetchObjectMgrDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderPreFetchObjectMgrDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMTimer *requestTimer; // @synthesize requestTimer=_requestTimer;
 @property(retain, nonatomic) NSMutableDictionary *feedRequestDict; // @synthesize feedRequestDict=_feedRequestDict;

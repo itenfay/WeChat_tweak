@@ -19,7 +19,6 @@
     struct CGPoint _notificationOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long layoutMode; // @synthesize layoutMode=_layoutMode;
 @property(nonatomic) _Bool isOtherRoomAudience; // @synthesize isOtherRoomAudience=_isOtherRoomAudience;
 @property(nonatomic) _Bool isOtherAnchor; // @synthesize isOtherAnchor=_isOtherAnchor;

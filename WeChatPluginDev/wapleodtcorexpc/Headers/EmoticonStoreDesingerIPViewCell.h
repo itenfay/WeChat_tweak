@@ -16,7 +16,6 @@
     EmoticonLoadMoreFooterView *_loadMoreView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonLoadMoreFooterView *loadMoreView; // @synthesize loadMoreView=_loadMoreView;
 @property(retain, nonatomic) UICollectionViewFlowLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) MMLoadMoreCollectionView *collectionView; // @synthesize collectionView=_collectionView;

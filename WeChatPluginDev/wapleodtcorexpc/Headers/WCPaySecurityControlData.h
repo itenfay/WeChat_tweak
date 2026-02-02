@@ -12,7 +12,6 @@
     PaySecurityResp *_securityResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PaySecurityResp *securityResp; // @synthesize securityResp=_securityResp;
 
 @end

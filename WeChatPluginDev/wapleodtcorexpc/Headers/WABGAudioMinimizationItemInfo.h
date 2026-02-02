@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage;
 @protocol WABGAudioMinimizationHostPlayerProtocol;
@@ -25,7 +26,6 @@
     CDUnknownBlockType _operateAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType operateAction; // @synthesize operateAction=_operateAction;
 @property(nonatomic) __weak id <WABGAudioMinimizationHostPlayerProtocol> hostPlayer; // @synthesize hostPlayer=_hostPlayer;
 @property(nonatomic) long long style; // @synthesize style=_style;
@@ -41,4 +41,3 @@
 @property(retain, nonatomic) NSString *hostId; // @synthesize hostId=_hostId;
 
 @end
-

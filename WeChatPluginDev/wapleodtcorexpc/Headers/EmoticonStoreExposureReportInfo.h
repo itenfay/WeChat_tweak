@@ -19,7 +19,6 @@
     NSMutableArray *_reqIDList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *reqIDList; // @synthesize reqIDList=_reqIDList;
 @property(retain, nonatomic) NSMutableArray *storeItemList; // @synthesize storeItemList=_storeItemList;
 @property(retain, nonatomic) NSMutableArray *indexList; // @synthesize indexList=_indexList;

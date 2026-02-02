@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIImageView;
 
 @interface MMFinderLiveShopSettingsSelectItemView
@@ -13,7 +15,6 @@
 }
 
 + (struct CGSize)leftIconDefaultSize;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onSelected; // @synthesize onSelected=_onSelected;
 @property(retain, nonatomic) UIImageView *leftIconView; // @synthesize leftIconView=_leftIconView;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
@@ -25,4 +26,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

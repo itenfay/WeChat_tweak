@@ -22,7 +22,6 @@
     NSArray *_originExtraMenuItems;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useSystemMenu; // @synthesize useSystemMenu=_useSystemMenu;
 @property(retain, nonatomic) NSArray *originExtraMenuItems; // @synthesize originExtraMenuItems=_originExtraMenuItems;
 @property(retain, nonatomic) NSArray *originMenuItems; // @synthesize originMenuItems=_originMenuItems;

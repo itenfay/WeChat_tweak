@@ -27,7 +27,6 @@
     double _titleBGViewWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInMusicPlayingMode; // @synthesize isInMusicPlayingMode=_isInMusicPlayingMode;
 @property(nonatomic) double titleBGViewWidth; // @synthesize titleBGViewWidth=_titleBGViewWidth;
 @property(nonatomic) double titleContentWidth; // @synthesize titleContentWidth=_titleContentWidth;

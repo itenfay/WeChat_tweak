@@ -25,7 +25,6 @@
     NSString *_authorUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *authorUsername; // @synthesize authorUsername=_authorUsername;
 @property(nonatomic) _Bool isPreview; // @synthesize isPreview=_isPreview;
 @property(retain, nonatomic) NewLifeDetailThumbInfo *detailThumbInfo; // @synthesize detailThumbInfo=_detailThumbInfo;

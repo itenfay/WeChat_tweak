@@ -13,7 +13,6 @@
     MISSING_TYPE *requirePerFrameCallback;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

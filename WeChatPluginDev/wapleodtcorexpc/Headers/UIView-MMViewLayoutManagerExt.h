@@ -4,9 +4,9 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (MMViewLayoutManagerExt)
 @property(nonatomic) _Bool mm_autoNotifyLayoutChanges;
 @property(copy, nonatomic) CDUnknownBlockType mm_onDependentViewsLayoutChanged;
 @end
-

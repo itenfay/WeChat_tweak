@@ -25,7 +25,6 @@
     NSMutableSet *_tidContainSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *tidContainSet; // @synthesize tidContainSet=_tidContainSet;
 @property(nonatomic) _Bool isFetchingData; // @synthesize isFetchingData=_isFetchingData;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;

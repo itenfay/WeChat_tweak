@@ -15,7 +15,6 @@
 }
 
 @property(readonly, nonatomic) int coreMlVersion; // @synthesize coreMlVersion=_coreMlVersion;
-- (void).cxx_destruct;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;
 - (id)initWithInputs:(const vector_1994dafb *)arg1 coreMlVersion:(int)arg2;

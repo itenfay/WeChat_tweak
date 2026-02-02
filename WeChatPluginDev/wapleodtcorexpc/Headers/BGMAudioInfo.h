@@ -15,7 +15,6 @@
 }
 
 + (id)createBGMAudioInfoWithSong:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long singingEndPosition; // @synthesize singingEndPosition=_singingEndPosition;
 @property(retain, nonatomic) NSString *originalMusicFilePath; // @synthesize originalMusicFilePath=_originalMusicFilePath;
 @property(retain, nonatomic) NSString *accompanyMusicFilePath; // @synthesize accompanyMusicFilePath=_accompanyMusicFilePath;

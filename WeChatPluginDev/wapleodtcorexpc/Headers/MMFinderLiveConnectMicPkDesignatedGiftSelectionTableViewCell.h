@@ -19,7 +19,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorBar; // @synthesize separatorBar=_separatorBar;
 @property(retain, nonatomic) UILabel *pricingLabel; // @synthesize pricingLabel=_pricingLabel;
 @property(retain, nonatomic) UIImageView *wecoinIconView; // @synthesize wecoinIconView=_wecoinIconView;

@@ -13,7 +13,6 @@
     EmotionSummary *_itemSummary;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNeedWWANDownload; // @synthesize isNeedWWANDownload=_isNeedWWANDownload;
 @property(retain, nonatomic) EmotionSummary *itemSummary; // @synthesize itemSummary=_itemSummary;
 - (id)init;

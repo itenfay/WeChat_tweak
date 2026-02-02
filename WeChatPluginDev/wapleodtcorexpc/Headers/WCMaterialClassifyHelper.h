@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCMaterialClassifyHelper : NSObject
 {
@@ -18,4 +19,3 @@
 + (void)asyncCalculateClassifyLabelsWithVideos:(id)arg1 images:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end
-

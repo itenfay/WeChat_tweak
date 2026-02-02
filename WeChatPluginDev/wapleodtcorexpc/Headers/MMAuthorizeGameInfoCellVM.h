@@ -15,7 +15,6 @@
     UserGrantInterfaceBody_InterfaceBodyItem *_bodyItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShow; // @synthesize shouldShow=_shouldShow;
 @property(nonatomic) unsigned int selectStatus; // @synthesize selectStatus=_selectStatus;
 @property(retain, nonatomic) UserGrantInterfaceBody_InterfaceBodyItem *bodyItem; // @synthesize bodyItem=_bodyItem;

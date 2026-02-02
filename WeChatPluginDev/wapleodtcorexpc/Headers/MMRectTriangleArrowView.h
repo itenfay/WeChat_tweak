@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView;
 
 @interface MMRectTriangleArrowView
@@ -17,7 +19,6 @@
 }
 
 + (id)createMaskPathInRect:(struct CGRect)arg1 cornerRadius:(double)arg2 triangleWidth:(double)arg3 triangleHeight:(double)arg4 orientation:(long long)arg5 triangleX:(double)arg6 triangleY:(double)arg7;
-- (void).cxx_destruct;
 @property(nonatomic) double triangePosOriginY; // @synthesize triangePosOriginY=_triangePosOriginY;
 @property(nonatomic) double triangePosOriginX; // @synthesize triangePosOriginX=_triangePosOriginX;
 @property(copy, nonatomic) CDUnknownBlockType dismissCallback; // @synthesize dismissCallback=_dismissCallback;
@@ -58,4 +59,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 orientation:(long long)arg2;
 
 @end
-

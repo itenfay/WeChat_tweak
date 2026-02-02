@@ -14,7 +14,6 @@
     unsigned long long _recordType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int interval; // @synthesize interval=_interval;
 @property(nonatomic) unsigned long long recordType; // @synthesize recordType=_recordType;
 @property(copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

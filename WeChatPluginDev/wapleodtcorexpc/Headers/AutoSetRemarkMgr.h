@@ -19,7 +19,6 @@
 + (id)GetPathOfStrangerRemarkList;
 + (id)GetPathOfVerifyList;
 + (id)GetPathOfUserAssociateMobileList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactRemarkLogic *remarkLogic; // @synthesize remarkLogic=_remarkLogic;
 - (void)onModifyContactProcessCardImage:(id)arg1;
 - (void)onModifyContactProcessPhone:(id)arg1;

@@ -16,7 +16,6 @@
     struct CGAffineTransform _transform;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TAVVideoComposition> effect; // @synthesize effect=_effect;
 @property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;

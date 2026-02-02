@@ -13,7 +13,6 @@
     MMTableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) MMFinderLivePaidConnectMicAudienceOperationInfo *info; // @synthesize info=_info;
 @property(nonatomic) __weak id <MMFinderLivePaidConnectMicAudienceOperationPanelDelegate> delegate; // @synthesize delegate=_delegate;

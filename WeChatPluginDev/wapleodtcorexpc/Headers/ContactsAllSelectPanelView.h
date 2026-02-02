@@ -13,7 +13,6 @@
     MMBottomBarButton *_selectAllButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelectAll; // @synthesize isSelectAll=_isSelectAll;
 @property(retain, nonatomic) MMBottomBarButton *selectAllButton; // @synthesize selectAllButton=_selectAllButton;
 @property(nonatomic) __weak id <ContactsAllSelectPanelViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

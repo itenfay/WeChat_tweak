@@ -30,7 +30,6 @@
 }
 
 + (double)inputToolViewInitialHeight;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *prePlaceHolderStr; // @synthesize prePlaceHolderStr=_prePlaceHolderStr;
 @property(retain, nonatomic) UIButton *expressionButton; // @synthesize expressionButton=_expressionButton;
 @property(retain, nonatomic) MMUILabel *countTipLabel; // @synthesize countTipLabel=_countTipLabel;

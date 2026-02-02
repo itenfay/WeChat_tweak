@@ -15,7 +15,6 @@
 }
 
 + (long long)getActionButtonStyleWithDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardActionButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(nonatomic) long long buttonStyle; // @synthesize buttonStyle=_buttonStyle;

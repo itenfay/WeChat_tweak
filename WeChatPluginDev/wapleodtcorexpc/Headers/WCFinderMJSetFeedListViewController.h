@@ -12,7 +12,6 @@
     WCFinderFeedListView *_feedListView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedListView *feedListView; // @synthesize feedListView=_feedListView;
 @property(nonatomic) long long viewIndex; // @synthesize viewIndex=_viewIndex;
 @property(retain, nonatomic) WCFinderMJSetTabModel *viewModel; // @synthesize viewModel=_viewModel;

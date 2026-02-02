@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GroupNoticeItem, NSString;
 
 @interface WNPasteMgr
@@ -26,7 +28,6 @@
 + (void)tryRemoveRiskDataFromStorageForMsgScene:(id)arg1 msg:(id)arg2;
 + (void)copy:(id)arg1 sections:(id)arg2 itemLocalId:(int)arg3 fromMessage:(id)arg4 isFromGroupNotice:(_Bool)arg5;
 + (id)sharedManager;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType downloadCallback; // @synthesize downloadCallback=_downloadCallback;
 @property(retain, nonatomic) GroupNoticeItem *downloadingItem; // @synthesize downloadingItem=_downloadingItem;
 - (void)onGroupNoticeDownloadItem:(id)arg1 retCode:(int)arg2;
@@ -42,4 +43,3 @@
 @property(readonly) Class superclass;
 
 @end
-

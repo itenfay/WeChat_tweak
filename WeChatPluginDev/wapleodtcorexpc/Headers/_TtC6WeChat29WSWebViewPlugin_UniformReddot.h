@@ -12,7 +12,6 @@
     MISSING_TYPE *businessType;
 }
 
-- (void).cxx_destruct;
 - (id)initWithPaths:(id)arg1 tabType:(int)arg2 businessType:(unsigned long long)arg3;
 - (id)init;
 - (void)finderRedDotDataChangedWithPathKey:(id)arg1;

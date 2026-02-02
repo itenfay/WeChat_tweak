@@ -19,7 +19,6 @@
 }
 
 + (double)contentHeight;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveGoodsManagerViewBottomActionViewDelegate> editingDelegate; // @synthesize editingDelegate=_editingDelegate;
 @property(nonatomic) unsigned int selectedCellsSize; // @synthesize selectedCellsSize=_selectedCellsSize;
 @property(retain, nonatomic) UIView *seperatorView; // @synthesize seperatorView=_seperatorView;

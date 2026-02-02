@@ -15,7 +15,6 @@
 + (void)initialize;
 @property(nonatomic, getter=b64, setter=setB64:) _Bool jcev2_p_1_o_b64; // @synthesize jcev2_p_1_o_b64;
 @property(retain, nonatomic, getter=sSysVer, setter=setSSysVer:) NSString *jcev2_p_0_o_sSysVer; // @synthesize jcev2_p_0_o_sSysVer;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

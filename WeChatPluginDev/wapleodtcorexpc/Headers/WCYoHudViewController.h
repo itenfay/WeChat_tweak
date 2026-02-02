@@ -20,7 +20,6 @@
     unsigned long long _count;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int yoTime; // @synthesize yoTime=_yoTime;
 @property(nonatomic) int yoType; // @synthesize yoType=_yoType;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;

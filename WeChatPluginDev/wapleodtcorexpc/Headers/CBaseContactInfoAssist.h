@@ -21,7 +21,6 @@
     NSString *_reportSessionId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiFromScene; // @synthesize m_uiFromScene=_m_uiFromScene;
 @property(retain, nonatomic) NSString *reportSessionId; // @synthesize reportSessionId=_reportSessionId;
 @property(retain, nonatomic) MMHeadImageView *m_headView; // @synthesize m_headView;

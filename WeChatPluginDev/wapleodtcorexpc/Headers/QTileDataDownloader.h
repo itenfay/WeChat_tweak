@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -12,7 +13,6 @@
     NSMutableDictionary *_downloadList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *downloadList; // @synthesize downloadList=_downloadList;
 - (void)cancelDownloadTile:(id)arg1;
 - (void)downloadTile:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -22,4 +22,3 @@
 - (id)init;
 
 @end
-

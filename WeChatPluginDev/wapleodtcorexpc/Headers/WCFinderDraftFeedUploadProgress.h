@@ -15,7 +15,6 @@
 }
 
 + (id)progressWithTid:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderDraftUploadProgress> parent; // @synthesize parent=_parent;
 @property(nonatomic) double value; // @synthesize value=_value;
 - (void)onFinderDataItemPostProgressWithTid:(id)arg1 progress:(id)arg2;

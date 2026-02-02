@@ -17,7 +17,6 @@
     NSString *_errString;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int pickerMode; // @synthesize pickerMode=_pickerMode;
 @property(retain, nonatomic) NSString *errString; // @synthesize errString=_errString;
 @property(retain, nonatomic) NSDictionary *result; // @synthesize result=_result;

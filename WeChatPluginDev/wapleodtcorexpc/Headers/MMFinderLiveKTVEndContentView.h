@@ -15,7 +15,6 @@
     MMUILabel *_nextSongTipLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *nextSongTipLabel; // @synthesize nextSongTipLabel=_nextSongTipLabel;
 @property(retain, nonatomic) MMUILabel *levelCntLabel; // @synthesize levelCntLabel=_levelCntLabel;
 @property(retain, nonatomic) MMUILabel *scoreCntLabel; // @synthesize scoreCntLabel=_scoreCntLabel;

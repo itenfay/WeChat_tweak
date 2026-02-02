@@ -21,7 +21,6 @@
     NSString *_m_nsJsReportArgs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsJsReportArgs; // @synthesize m_nsJsReportArgs=_m_nsJsReportArgs;
 @property(retain, nonatomic) NSString *m_nsStatExtStr; // @synthesize m_nsStatExtStr=_m_nsStatExtStr;
 @property(retain, nonatomic) NSString *m_nsStreamVideoAdUxInfo; // @synthesize m_nsStreamVideoAdUxInfo=_m_nsStreamVideoAdUxInfo;

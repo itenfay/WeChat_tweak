@@ -10,7 +10,6 @@
     NSString *_hardlinkTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *hardlinkTitle; // @synthesize hardlinkTitle=_hardlinkTitle;
 - (void)onClickPageSheetConfirmButton;
 - (double)bottomViewBottomMargin;

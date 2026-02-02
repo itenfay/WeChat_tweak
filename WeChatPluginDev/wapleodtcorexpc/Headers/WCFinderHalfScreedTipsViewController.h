@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderHalfScreedTipsViewController
@@ -15,7 +17,6 @@
     CDUnknownBlockType _clickCancelBtnBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickCancelBtnBlock; // @synthesize clickCancelBtnBlock=_clickCancelBtnBlock;
 @property(copy, nonatomic) CDUnknownBlockType clickConfirmBtnBlock; // @synthesize clickConfirmBtnBlock=_clickConfirmBtnBlock;
 @property(copy, nonatomic) NSString *confirmTips; // @synthesize confirmTips=_confirmTips;
@@ -31,4 +32,3 @@
 - (id)initWithTipsTitle:(id)arg1 tipsDetail:(id)arg2 cancelButtonTitle:(id)arg3 confirmButtonTitle:(id)arg4;
 
 @end
-

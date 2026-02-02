@@ -28,7 +28,6 @@
 }
 
 + (id)finderEntryLevelByRedDotNumber:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cgiWarningDic; // @synthesize cgiWarningDic=_cgiWarningDic;
 @property(retain, nonatomic) NSMutableDictionary *postFakeSucDic; // @synthesize postFakeSucDic=_postFakeSucDic;
 @property(retain, nonatomic) NSArray *cacheProfileAuthorJumpCreatorCenterJumpInfo; // @synthesize cacheProfileAuthorJumpCreatorCenterJumpInfo=_cacheProfileAuthorJumpCreatorCenterJumpInfo;

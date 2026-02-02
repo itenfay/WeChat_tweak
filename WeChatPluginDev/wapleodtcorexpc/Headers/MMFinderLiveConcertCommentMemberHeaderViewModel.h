@@ -13,7 +13,6 @@
     NSMutableOrderedSet *_headerUrlSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *headerUrlSet; // @synthesize headerUrlSet=_headerUrlSet;
 @property(retain, nonatomic) MMFinderLiveTaskId *finderTaskId; // @synthesize finderTaskId=_finderTaskId;
 - (unsigned long long)getHeadImgCount;

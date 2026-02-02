@@ -11,7 +11,6 @@
     CALayer *_rightFadeoutLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *rightFadeoutLayer; // @synthesize rightFadeoutLayer=_rightFadeoutLayer;
 @property(retain, nonatomic) CALayer *leftFadeoutLayer; // @synthesize leftFadeoutLayer=_leftFadeoutLayer;
 - (void)layoutSublayersOfLayer:(id)arg1;

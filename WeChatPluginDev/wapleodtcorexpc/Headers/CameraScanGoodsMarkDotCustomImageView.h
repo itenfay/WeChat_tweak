@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIImageView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAAnimationGroup, CABasicAnimation, NSString, POPSpringAnimation;
 
@@ -18,7 +19,6 @@
     CDUnknownBlockType _completionHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) unsigned long long fgImageScaleBeginTimestamp; // @synthesize fgImageScaleBeginTimestamp=_fgImageScaleBeginTimestamp;
 @property(retain, nonatomic) CAAnimationGroup *bgImageGroupAnimation; // @synthesize bgImageGroupAnimation=_bgImageGroupAnimation;
@@ -50,4 +50,3 @@
 @property(readonly) Class superclass;
 
 @end
-

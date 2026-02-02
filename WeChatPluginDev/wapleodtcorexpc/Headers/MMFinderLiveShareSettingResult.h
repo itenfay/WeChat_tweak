@@ -26,7 +26,6 @@
 }
 
 + (unsigned long long)transferSelectModeFromVisibilityMode:(long long)arg1 liveMode:(int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *selectedFreeFileList; // @synthesize selectedFreeFileList=_selectedFreeFileList;
 @property(retain, nonatomic) NSArray *freeContactListForDigestDisplay; // @synthesize freeContactListForDigestDisplay=_freeContactListForDigestDisplay;
 @property(retain, nonatomic) NSArray *freeContactUsernameList; // @synthesize freeContactUsernameList=_freeContactUsernameList;

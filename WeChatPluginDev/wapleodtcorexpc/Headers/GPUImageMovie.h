@@ -41,7 +41,6 @@
     AVPlayerItem *_playerItem;
 }
 
-- (void).cxx_destruct;
 @property _Bool isCancel; // @synthesize isCancel=_isCancel;
 @property(nonatomic) _Bool disableDisplayLink; // @synthesize disableDisplayLink=_disableDisplayLink;
 @property(retain) AVPlayerItem *playerItem; // @synthesize playerItem=_playerItem;

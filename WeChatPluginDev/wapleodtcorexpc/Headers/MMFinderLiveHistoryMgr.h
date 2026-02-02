@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSMutableSet, NSString;
 
 @interface MMFinderLiveHistoryMgr
@@ -14,7 +16,6 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) unsigned long long capacity; // @synthesize capacity=_capacity;
 @property(retain, nonatomic) NSMutableSet *dataItemsSet; // @synthesize dataItemsSet=_dataItemsSet;
@@ -40,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

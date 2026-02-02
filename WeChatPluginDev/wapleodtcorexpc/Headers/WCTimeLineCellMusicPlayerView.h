@@ -27,7 +27,6 @@
 }
 
 + (double)viewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCImageView *albumLocalImageView; // @synthesize albumLocalImageView=_albumLocalImageView;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;

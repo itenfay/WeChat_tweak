@@ -18,7 +18,6 @@
     NSDictionary *_oriUrlParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *oriUrlParams; // @synthesize oriUrlParams=_oriUrlParams;
 @property(retain, nonatomic) NSString *templatePath; // @synthesize templatePath=_templatePath;
 @property(nonatomic) _Bool shouldEncodeURL; // @synthesize shouldEncodeURL=_shouldEncodeURL;

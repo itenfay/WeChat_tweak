@@ -16,7 +16,6 @@
 }
 
 + (struct CGSize)dispalySize:(struct CGSize)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *wordingLabel; // @synthesize wordingLabel=_wordingLabel;
 @property(retain, nonatomic) UIView *rightLine; // @synthesize rightLine=_rightLine;
 @property(retain, nonatomic) UIView *leftLine; // @synthesize leftLine=_leftLine;

@@ -17,7 +17,6 @@
     struct CGSize _imageSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int conerSize; // @synthesize conerSize=_conerSize;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(nonatomic) unsigned char headCategory; // @synthesize headCategory=_headCategory;

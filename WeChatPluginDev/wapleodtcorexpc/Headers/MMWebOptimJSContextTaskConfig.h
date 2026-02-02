@@ -18,7 +18,6 @@
     NSData *_jsapiControlBytesData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *jsapiControlBytesData; // @synthesize jsapiControlBytesData=_jsapiControlBytesData;
 @property(retain, nonatomic) NSData *businessData; // @synthesize businessData=_businessData;
 @property(nonatomic) unsigned int subBizScene; // @synthesize subBizScene=_subBizScene;

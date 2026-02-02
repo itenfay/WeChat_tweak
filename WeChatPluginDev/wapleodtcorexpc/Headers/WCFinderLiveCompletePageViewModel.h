@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UICollectionView, UINavigationController, WCFinderLiveCompleteScrollView, WCFinderLiveHomePageViewController;
 
@@ -24,7 +25,6 @@
 }
 
 + (id)reuseIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) UINavigationController *bottomNavViewController; // @synthesize bottomNavViewController=_bottomNavViewController;
 @property(nonatomic) struct CGRect collectionViewFrame; // @synthesize collectionViewFrame=_collectionViewFrame;
@@ -71,4 +71,3 @@
 @property(readonly) Class superclass;
 
 @end
-

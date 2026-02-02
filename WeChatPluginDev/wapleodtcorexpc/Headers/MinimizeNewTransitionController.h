@@ -22,7 +22,6 @@
     MinimizationTransitionContext *_transitioningContext;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPerformingExtraAnimation; // @synthesize isPerformingExtraAnimation=_isPerformingExtraAnimation;
 @property(nonatomic) _Bool isHitMinimizeCircleArea; // @synthesize isHitMinimizeCircleArea=_isHitMinimizeCircleArea;
 @property(nonatomic) _Bool isMinimizeCircleInteracting; // @synthesize isMinimizeCircleInteracting=_isMinimizeCircleInteracting;

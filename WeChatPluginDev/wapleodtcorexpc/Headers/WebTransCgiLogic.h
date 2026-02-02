@@ -23,7 +23,6 @@
     NSMutableArray *_returnedNodelistRepositoryForFirstScreen;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *returnedNodelistRepositoryForFirstScreen; // @synthesize returnedNodelistRepositoryForFirstScreen=_returnedNodelistRepositoryForFirstScreen;
 @property(retain, nonatomic) NSMutableArray *returnedNodelistRepository; // @synthesize returnedNodelistRepository=_returnedNodelistRepository;
 @property(retain, nonatomic) NSMutableArray *cgiQueue; // @synthesize cgiQueue=_cgiQueue;

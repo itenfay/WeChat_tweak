@@ -15,7 +15,6 @@
     UITableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSString *confirmingSessionName; // @synthesize confirmingSessionName=_confirmingSessionName;
 @property(nonatomic) __weak id <MainSessionEditingLogicDelegate> delegate; // @synthesize delegate=_delegate;

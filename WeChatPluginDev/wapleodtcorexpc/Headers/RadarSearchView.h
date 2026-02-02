@@ -27,7 +27,6 @@
     WCUIAlertView *_currAlertView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <RadarSearchViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onLocationAuthorizationStatusUpdatedWithAccuracyAuthorization:(long long)arg1;
 - (void)onPerformShortCut:(id)arg1;

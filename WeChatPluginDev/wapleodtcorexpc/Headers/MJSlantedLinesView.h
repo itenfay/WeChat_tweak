@@ -22,7 +22,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *maskBorderLayer; // @synthesize maskBorderLayer=_maskBorderLayer;
 @property(retain, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(nonatomic) struct CGRect lastBounds; // @synthesize lastBounds=_lastBounds;

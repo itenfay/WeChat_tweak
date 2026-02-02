@@ -17,7 +17,6 @@
 }
 
 + (id)createRenderSpaceObject:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLivePIPCustomHandleLogic *rootHandleLogic; // @synthesize rootHandleLogic=_rootHandleLogic;
 @property(retain, nonatomic) NSString *staticLastRenderId; // @synthesize staticLastRenderId=_staticLastRenderId;
 @property(retain, nonatomic) NSString *staticFirstRenderId; // @synthesize staticFirstRenderId=_staticFirstRenderId;

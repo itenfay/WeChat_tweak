@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIButton.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class TXCDashboardWindow;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)defaultFloatingBall;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint originPoint; // @synthesize originPoint=_originPoint;
 @property(retain, nonatomic) TXCDashboardWindow *containerWindow; // @synthesize containerWindow=_containerWindow;
 @property(copy, nonatomic) CDUnknownBlockType onClick; // @synthesize onClick=_onClick;
@@ -26,4 +26,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

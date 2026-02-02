@@ -27,7 +27,6 @@
     UILabel *_bottomWarningLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *bottomWarningLabel; // @synthesize bottomWarningLabel=_bottomWarningLabel;
 @property(nonatomic) double fKeyboardHeight; // @synthesize fKeyboardHeight=_fKeyboardHeight;
 @property(copy, nonatomic) NSString *pasteBoardString; // @synthesize pasteBoardString=_pasteBoardString;

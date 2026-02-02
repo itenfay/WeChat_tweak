@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, UIButton;
 
 @interface SendPatGuideViewController
@@ -14,7 +16,6 @@
     UIButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) MMUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -30,4 +31,3 @@
 - (void)viewDidLoad;
 
 @end
-

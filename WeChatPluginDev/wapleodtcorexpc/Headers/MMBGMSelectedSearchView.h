@@ -21,7 +21,6 @@
     MMBGMSelectedConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBGMSelectedConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) MMBGMSearchViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) WCTimeLineFooterView *footerView; // @synthesize footerView=_footerView;

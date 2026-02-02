@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
@@ -21,7 +22,6 @@
     CDUnknownBlockType _changeToNormalStateCallbackForLayoutStyleChange;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType changeToNormalStateCallbackForLayoutStyleChange; // @synthesize changeToNormalStateCallbackForLayoutStyleChange=_changeToNormalStateCallbackForLayoutStyleChange;
 @property(copy, nonatomic) CDUnknownBlockType changeToEnterStateCallbackForLayoutStyleChange; // @synthesize changeToEnterStateCallbackForLayoutStyleChange=_changeToEnterStateCallbackForLayoutStyleChange;
 @property(copy, nonatomic) CDUnknownBlockType changeStateCallback; // @synthesize changeStateCallback=_changeStateCallback;
@@ -34,4 +34,3 @@
 @property(nonatomic) _Bool alwaysAtLast; // @synthesize alwaysAtLast=_alwaysAtLast;
 
 @end
-

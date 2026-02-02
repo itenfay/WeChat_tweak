@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, NSArray, NSData, UIImage;
 
@@ -19,7 +20,6 @@
     NSArray *_mjAssetInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *mjAssetInfos; // @synthesize mjAssetInfos=_mjAssetInfos;
 @property(retain, nonatomic) NSArray *mmAssetInfos; // @synthesize mmAssetInfos=_mmAssetInfos;
 @property(retain, nonatomic) UIImage *imageAsset; // @synthesize imageAsset=_imageAsset;
@@ -42,4 +42,3 @@
 - (id)initWithMMAssetInfos:(id)arg1;
 
 @end
-

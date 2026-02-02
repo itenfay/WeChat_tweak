@@ -17,7 +17,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool logOn; // @synthesize logOn=_logOn;
 @property(retain, nonatomic) NSFileHandle *selfHandle; // @synthesize selfHandle=_selfHandle;
 @property(copy, nonatomic) NSString *fileTextPath; // @synthesize fileTextPath=_fileTextPath;

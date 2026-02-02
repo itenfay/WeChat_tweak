@@ -19,7 +19,6 @@
     NSObject *_userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSString *confirmTitle; // @synthesize confirmTitle=_confirmTitle;
 @property(retain, nonatomic) NSString *cancelTitle; // @synthesize cancelTitle=_cancelTitle;

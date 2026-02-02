@@ -12,7 +12,6 @@
     double _barHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double barHeight; // @synthesize barHeight=_barHeight;
 @property(nonatomic) unsigned long long autoPlaySection; // @synthesize autoPlaySection=_autoPlaySection;
 @property(nonatomic) __weak RingToneVideoFeedViewController *currentVC; // @synthesize currentVC=_currentVC;

@@ -12,7 +12,6 @@
 }
 
 + (id)preloadPlugins;
-- (void).cxx_destruct;
 @property(nonatomic) long long k1kCategoryId; // @synthesize k1kCategoryId=_k1kCategoryId;
 @property(retain, nonatomic) WSWebViewPluginScheduler *pluginScheduler; // @synthesize pluginScheduler=_pluginScheduler;
 - (void)sendEvent:(id)arg1 withParams:(id)arg2 sendAfterReady:(_Bool)arg3;

@@ -23,7 +23,6 @@
     MMFinderLiveTaskId *_currentLiveTaskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *currentLiveTaskId; // @synthesize currentLiveTaskId=_currentLiveTaskId;
 @property(nonatomic) _Bool isAssistant; // @synthesize isAssistant=_isAssistant;
 @property(nonatomic) _Bool isInLive; // @synthesize isInLive=_isInLive;

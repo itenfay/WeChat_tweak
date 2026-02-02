@@ -15,7 +15,6 @@
     NSString *_usageDescription;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *usageDescription; // @synthesize usageDescription=_usageDescription;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;

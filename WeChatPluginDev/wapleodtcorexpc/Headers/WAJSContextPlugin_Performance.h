@@ -25,7 +25,6 @@
     WAPerformanceLabel *_labelFPS;
 }
 
-- (void).cxx_destruct;
 - (_Bool)updateItem:(long long)arg1 type:(long long)arg2 value:(id)arg3;
 - (void)innerInsertCustomData:(id)arg1 value:(id)arg2;
 - (void)insertCustomData:(id)arg1 value:(id)arg2;

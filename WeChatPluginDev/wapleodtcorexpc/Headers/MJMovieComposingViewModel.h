@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderMusicReportInfo, MJAssetAnalysisReportInfo, MJAudioFileManager, MJLocationItem, MJMovieComposingAssetsClassifyHelper, MJMovieComposingConfiguration, MJMovieComposingDraft, MJMovieComposingDraftManager, MJMovieTemplateInfo, MJPlaybackViewModel, MJPublisherContext, MJSpeechManager, MJTimelineViewModel, MJVocalAdjustmentCache, MJVoiceInputManager, MMBGMSelectedMusicResult, NSArray, NSData, NSMapTable, NSMutableDictionary, NSNumber, NSString, OMCComposingSession, OMCExportSession, OMJAspectRatio, OMJAssetInfo, OMJMusicInfo, OMJPublisherSessionMetrics, UBBooleanSignal, VideoEncodeTask;
 
@@ -55,7 +56,6 @@
 
 + (_Bool)_calcDiskSpaceAbleToSupportBackingExportWithVideoExportSize:(unsigned long long)arg1;
 + (unsigned long long)_calcEstimatedVideoSizeWithDuration:(double)arg1 exportSettings:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldSaveDraft; // @synthesize shouldSaveDraft=_shouldSaveDraft;
 @property(nonatomic) __weak VideoEncodeTask *exportingTask; // @synthesize exportingTask=_exportingTask;
 @property(nonatomic) unsigned long long startExportingTimestamp; // @synthesize startExportingTimestamp=_startExportingTimestamp;
@@ -149,4 +149,3 @@
 @property(readonly) Class superclass;
 
 @end
-

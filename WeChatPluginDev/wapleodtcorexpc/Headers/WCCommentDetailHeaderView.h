@@ -17,7 +17,6 @@
     id <WCCommentDetailHeaderViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCommentDetailHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIStackView *titleViewContainer; // @synthesize titleViewContainer=_titleViewContainer;
 @property(retain, nonatomic) MMUIButton *closeBtn; // @synthesize closeBtn=_closeBtn;

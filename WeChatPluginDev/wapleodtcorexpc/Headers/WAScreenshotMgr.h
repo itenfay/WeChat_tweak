@@ -17,7 +17,6 @@
     unsigned long long _cachedScreenshotNotifyTimestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasRegisterPhotoLibraryChangeObserver; // @synthesize hasRegisterPhotoLibraryChangeObserver=_hasRegisterPhotoLibraryChangeObserver;
 @property(nonatomic) _Bool isScreenshotTakenBeforeWeAppDidAppear; // @synthesize isScreenshotTakenBeforeWeAppDidAppear=_isScreenshotTakenBeforeWeAppDidAppear;
 @property(nonatomic) unsigned long long cachedScreenshotNotifyTimestamp; // @synthesize cachedScreenshotNotifyTimestamp=_cachedScreenshotNotifyTimestamp;

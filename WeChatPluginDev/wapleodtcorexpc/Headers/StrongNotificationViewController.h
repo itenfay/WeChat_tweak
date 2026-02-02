@@ -33,7 +33,6 @@
     StrongNotificationContentView *_fakeContentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool preparingShowAnimation; // @synthesize preparingShowAnimation=_preparingShowAnimation;
 @property(nonatomic) _Bool doingShowAnimation; // @synthesize doingShowAnimation=_doingShowAnimation;
 @property(nonatomic) _Bool doingCloseAnimation; // @synthesize doingCloseAnimation=_doingCloseAnimation;

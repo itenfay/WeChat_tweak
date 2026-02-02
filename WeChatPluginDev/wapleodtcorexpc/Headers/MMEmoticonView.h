@@ -21,7 +21,6 @@
     struct CGSize _noImageSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldCheckWxamValid; // @synthesize shouldCheckWxamValid=_shouldCheckWxamValid;
 @property(nonatomic) _Bool asyncLoadFirstFrame; // @synthesize asyncLoadFirstFrame=_asyncLoadFirstFrame;
 @property(nonatomic) _Bool forceAdjustViewSize; // @synthesize forceAdjustViewSize=_forceAdjustViewSize;

@@ -14,7 +14,6 @@
 }
 
 + (id)cardImageWithImage:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CardImgItemInfo *cardItem; // @synthesize cardItem=_cardItem;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (id)description;

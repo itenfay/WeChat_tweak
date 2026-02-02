@@ -18,7 +18,6 @@
     NSDictionary *_externInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *externInfo; // @synthesize externInfo=_externInfo;
 @property(nonatomic) unsigned int msgType; // @synthesize msgType=_msgType;
 @property(nonatomic) unsigned int lastUpdateMsgTime; // @synthesize lastUpdateMsgTime=_lastUpdateMsgTime;

@@ -15,7 +15,6 @@
     UIView *_highlightView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showHighlight; // @synthesize showHighlight=_showHighlight;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;

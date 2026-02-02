@@ -10,7 +10,6 @@
     WCPayJSApiSecureTunnelControlLogic *logic;
 }
 
-- (void).cxx_destruct;
 - (void)onSecureTunnelLogicFail:(id)arg1 from:(id)arg2;
 - (void)onSecureTunnelLogicSuccess:(id)arg1 from:(id)arg2;
 - (void)handleJSEvent:(id)arg1;

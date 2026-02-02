@@ -16,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) FlutterTouchInterceptingView *interceptingView; // @synthesize interceptingView=_interceptingView;
 @property(nonatomic) _Bool touchedEndedWithoutBlocking; // @synthesize touchedEndedWithoutBlocking=_touchedEndedWithoutBlocking;
 @property(nonatomic) _Bool shouldEndInNextTouchesEnded; // @synthesize shouldEndInNextTouchesEnded=_shouldEndInNextTouchesEnded;

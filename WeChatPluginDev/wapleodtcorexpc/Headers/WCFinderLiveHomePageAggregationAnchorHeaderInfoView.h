@@ -15,7 +15,6 @@
     MMLiveColorfulLabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveColorfulLabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) WCFinderLiveAggregationCardAnchorGroup *anchorGroup; // @synthesize anchorGroup=_anchorGroup;

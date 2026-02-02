@@ -69,7 +69,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *liveExtraData; // @synthesize liveExtraData=_liveExtraData;
 @property(nonatomic) unsigned int liveType; // @synthesize liveType=_liveType;
 @property(nonatomic) unsigned int barStatus; // @synthesize barStatus=_barStatus;

@@ -14,7 +14,6 @@
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 
 @end

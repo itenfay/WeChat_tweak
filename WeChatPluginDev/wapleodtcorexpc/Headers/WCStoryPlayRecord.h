@@ -42,7 +42,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int bHitPreload; // @synthesize bHitPreload=_bHitPreload;
 @property(nonatomic) unsigned int lastPlaySecne; // @synthesize lastPlaySecne=_lastPlaySecne;
 @property(nonatomic) unsigned int lastPlayTime; // @synthesize lastPlayTime=_lastPlayTime;

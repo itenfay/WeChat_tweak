@@ -36,7 +36,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) XMMGPUClarityPreProcess *clarityPreProcess; // @synthesize clarityPreProcess=_clarityPreProcess;
 @property(nonatomic) _Bool allowCompressedForRenderingYUV; // @synthesize allowCompressedForRenderingYUV=_allowCompressedForRenderingYUV;
 - (int)getMaxTextureImageUnit;

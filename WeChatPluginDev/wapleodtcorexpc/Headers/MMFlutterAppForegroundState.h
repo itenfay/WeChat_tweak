@@ -12,7 +12,6 @@
     FlutterBasicMessageChannel *_foregroundStateChannel;
 }
 
-- (void).cxx_destruct;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (id)initWithMessenger:(id)arg1;

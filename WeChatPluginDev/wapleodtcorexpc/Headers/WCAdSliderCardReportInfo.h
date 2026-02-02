@@ -15,7 +15,6 @@
     unsigned long long _touchDuraion;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int touchCount; // @synthesize touchCount=_touchCount;
 @property(nonatomic) unsigned long long touchDuraion; // @synthesize touchDuraion=_touchDuraion;
 @property(nonatomic) unsigned int slideJumpCount; // @synthesize slideJumpCount=_slideJumpCount;

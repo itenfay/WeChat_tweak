@@ -19,7 +19,6 @@
     unsigned long long _activityType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long activityType; // @synthesize activityType=_activityType;
 @property(nonatomic) unsigned long long gestureOperateType; // @synthesize gestureOperateType=_gestureOperateType;
 @property(nonatomic) unsigned long long gestureType; // @synthesize gestureType=_gestureType;

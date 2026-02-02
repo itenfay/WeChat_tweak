@@ -10,7 +10,6 @@
     GetA8KeyLogic *_geta8KeyLogic;
 }
 
-- (void).cxx_destruct;
 - (_Bool)handleProlieScanResult:(id)arg1;
 - (id)getScanResult;
 - (id)getExtTaransLinkParams;

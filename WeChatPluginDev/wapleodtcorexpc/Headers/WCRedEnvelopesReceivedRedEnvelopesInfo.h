@@ -22,7 +22,6 @@
     NSString *_m_nsReceiverDesc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsReceiverDesc; // @synthesize m_nsReceiverDesc=_m_nsReceiverDesc;
 @property(retain, nonatomic) NSString *m_nsReceiverSuffix; // @synthesize m_nsReceiverSuffix=_m_nsReceiverSuffix;
 @property(nonatomic) unsigned long long m_enWCRedEnvelopesKind; // @synthesize m_enWCRedEnvelopesKind;

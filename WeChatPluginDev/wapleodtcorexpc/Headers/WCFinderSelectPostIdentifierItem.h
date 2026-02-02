@@ -16,7 +16,6 @@
     NSString *_relatedUsername;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hidenMentionView; // @synthesize hidenMentionView=_hidenMentionView;
 @property(copy, nonatomic) NSString *relatedUsername; // @synthesize relatedUsername=_relatedUsername;
 @property(retain, nonatomic) PrepareFinder *prepare; // @synthesize prepare=_prepare;

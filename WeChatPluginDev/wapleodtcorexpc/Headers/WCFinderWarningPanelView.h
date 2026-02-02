@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class RichTextView, UIView;
 
 @interface WCFinderWarningPanelView
@@ -12,7 +14,6 @@
     UIView *_shortTitleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *shortTitleView; // @synthesize shortTitleView=_shortTitleView;
 @property(retain, nonatomic) RichTextView *durationRecomTextView; // @synthesize durationRecomTextView=_durationRecomTextView;
 @property(retain, nonatomic) RichTextView *lowBitRateTextView; // @synthesize lowBitRateTextView=_lowBitRateTextView;
@@ -22,4 +23,3 @@
 - (void)updateFlag:(unsigned long long)arg1 content:(id)arg2;
 
 @end
-

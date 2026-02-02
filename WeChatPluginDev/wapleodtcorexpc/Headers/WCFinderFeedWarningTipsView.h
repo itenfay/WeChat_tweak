@@ -16,7 +16,6 @@
     WCFinderFeedContentVM *_contentVM;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) WCFinderFeedContentTextView *warningTextView; // @synthesize warningTextView=_warningTextView;

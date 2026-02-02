@@ -16,7 +16,6 @@
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelPropertyBlacklistForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *typeToContent; // @synthesize typeToContent=_typeToContent;
 @property(retain, nonatomic) NSArray *contents; // @synthesize contents=_contents;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;

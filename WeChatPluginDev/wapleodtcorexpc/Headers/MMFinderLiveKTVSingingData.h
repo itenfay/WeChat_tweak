@@ -18,7 +18,6 @@
     MMFinderLiveKTVReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain) MMFinderLiveKTVReporter *reporter; // @synthesize reporter=_reporter;
 @property _Bool isDataUpdated; // @synthesize isDataUpdated=_isDataUpdated;
 @property(retain) LiveSEIKTVProgress *currProgress; // @synthesize currProgress=_currProgress;

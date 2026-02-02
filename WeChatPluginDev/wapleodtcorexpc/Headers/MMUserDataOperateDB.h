@@ -11,7 +11,6 @@
     WCTTable *m_userDataOperateItemTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *m_userDataOperateItemTable; // @synthesize m_userDataOperateItemTable;
 @property(retain, nonatomic) WCTDatabase *m_database; // @synthesize m_database;
 - (void)willRecoverDatabase;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CdnSnsTaskInfo, NSString, WCUploadMedia;
 @protocol WCMediaUploaderDelegate;
 
@@ -25,7 +27,6 @@
     _Bool _shouldOptimizeThumb;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldOptimizeThumb; // @synthesize shouldOptimizeThumb=_shouldOptimizeThumb;
 @property(nonatomic) int m_objectType; // @synthesize m_objectType;
 @property(retain, nonatomic) NSString *m_appID; // @synthesize m_appID;
@@ -47,4 +48,3 @@
 - (id)init;
 
 @end
-

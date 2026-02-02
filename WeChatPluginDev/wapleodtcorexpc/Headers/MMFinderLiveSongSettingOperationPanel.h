@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveMusicRelatedSettingTableFooterView, MMFinderLiveMusicSettingOperationNavBar, MMFinderLiveMusicTableViewBottomEditingBar, MMFinderLiveSongSettingOperationTableViewModel, MMFinderLiveSongSettingTableView, MMFinderLiveTaskId, MMUIActivityIndicatorView, MMUILabel, NSString, UIButton, UIImageView, UISwitch, UIView;
 
 @interface MMFinderLiveSongSettingOperationPanel
@@ -38,7 +40,6 @@
     struct CGPoint _previousPanPos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UISwitch *songEnableSwitch; // @synthesize songEnableSwitch=_songEnableSwitch;
 @property(retain, nonatomic) MMUILabel *songEnableSwitchLabel; // @synthesize songEnableSwitchLabel=_songEnableSwitchLabel;
 @property(retain, nonatomic) UIView *songEnableSwitchBGView; // @synthesize songEnableSwitchBGView=_songEnableSwitchBGView;
@@ -154,4 +155,3 @@
 @property(readonly) Class superclass;
 
 @end
-

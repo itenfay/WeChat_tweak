@@ -16,7 +16,6 @@
     unsigned long long _totalExposureTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalExposureTime; // @synthesize totalExposureTime=_totalExposureTime;
 @property(retain, nonatomic) WCStatTimerHelper *exposureTimeHelper; // @synthesize exposureTimeHelper=_exposureTimeHelper;
 @property(retain, nonatomic) WCCanvasDynamicDataLoader *dynamicLoader; // @synthesize dynamicLoader=_dynamicLoader;

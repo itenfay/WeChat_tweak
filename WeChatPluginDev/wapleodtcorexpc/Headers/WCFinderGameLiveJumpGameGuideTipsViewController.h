@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton;
 
 @interface WCFinderGameLiveJumpGameGuideTipsViewController
@@ -13,7 +15,6 @@
     CDUnknownBlockType _switchHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType switchHandler; // @synthesize switchHandler=_switchHandler;
 @property(retain, nonatomic) MMUIButton *checkBox; // @synthesize checkBox=_checkBox;
 @property(nonatomic) _Bool enableGuide; // @synthesize enableGuide=_enableGuide;
@@ -22,4 +23,3 @@
 - (id)initWithTitle:(id)arg1 message:(id)arg2 btnTitle:(id)arg3 handler:(CDUnknownBlockType)arg4 btnTitle:(id)arg5 handler:(CDUnknownBlockType)arg6 switchHandler:(CDUnknownBlockType)arg7;
 
 @end
-

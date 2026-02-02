@@ -47,7 +47,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;
 @property(nonatomic) double lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 @property(retain, nonatomic) NSString *imageFilename; // @synthesize imageFilename=_imageFilename;

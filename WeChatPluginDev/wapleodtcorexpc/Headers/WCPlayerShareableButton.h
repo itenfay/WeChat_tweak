@@ -12,7 +12,6 @@
     UIView *_hightLightMaskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *hightLightMaskView; // @synthesize hightLightMaskView=_hightLightMaskView;
 @property(retain, nonatomic) UIImageView *indicator; // @synthesize indicator=_indicator;
 @property(retain, nonatomic) RichTextView *richTitle; // @synthesize richTitle=_richTitle;

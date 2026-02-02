@@ -12,7 +12,6 @@
     MsgFullScreenInputAnimationController *_animationController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MsgFullScreenInputAnimationController *animationController; // @synthesize animationController=_animationController;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

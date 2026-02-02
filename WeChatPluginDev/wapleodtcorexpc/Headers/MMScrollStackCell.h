@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMScrollStack;
 
@@ -15,7 +16,6 @@
     UIView *_contentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak MMScrollStack *stack; // @synthesize stack=_stack;
 @property(copy, nonatomic) CDUnknownBlockType onTap; // @synthesize onTap=_onTap;
@@ -30,4 +30,3 @@
 - (id)initWithView:(id)arg1 stack:(id)arg2;
 
 @end
-

@@ -35,7 +35,6 @@
     struct UIEdgeInsets _emoticonMarginInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double channelLabelBtmMargin; // @synthesize channelLabelBtmMargin=_channelLabelBtmMargin;
 @property(nonatomic) double sharpImgWidth; // @synthesize sharpImgWidth=_sharpImgWidth;
 @property(nonatomic) double cellChannelSharpImgSpace; // @synthesize cellChannelSharpImgSpace=_cellChannelSharpImgSpace;

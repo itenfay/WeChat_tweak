@@ -13,7 +13,6 @@
     NSString *_rankJumpUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *rankJumpUrl; // @synthesize rankJumpUrl=_rankJumpUrl;
 @property(retain, nonatomic) NSString *rankIconUrl; // @synthesize rankIconUrl=_rankIconUrl;
 @property(retain, nonatomic) NSString *rankDesc; // @synthesize rankDesc=_rankDesc;

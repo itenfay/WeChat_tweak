@@ -13,7 +13,6 @@
     NSDictionary *_layers;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *layers; // @synthesize layers=_layers;
 @property(readonly, nonatomic) _Bool enable; // @synthesize enable=_enable;
 - (id)getAllConfigNames;

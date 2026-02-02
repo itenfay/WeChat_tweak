@@ -25,7 +25,6 @@
     double _layoutWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(retain, nonatomic) NSString *voiceOverHint; // @synthesize voiceOverHint=_voiceOverHint;
 @property(retain, nonatomic) NSString *voiceOverLabel; // @synthesize voiceOverLabel=_voiceOverLabel;

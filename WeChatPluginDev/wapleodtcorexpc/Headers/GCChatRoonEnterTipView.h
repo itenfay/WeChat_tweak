@@ -17,7 +17,6 @@
     MMWebImageView *_backGroundImgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *backGroundImgView; // @synthesize backGroundImgView=_backGroundImgView;
 @property(retain, nonatomic) UILabel *condtionTipLabel; // @synthesize condtionTipLabel=_condtionTipLabel;
 @property(retain, nonatomic) MMWebImageView *imgView; // @synthesize imgView=_imgView;

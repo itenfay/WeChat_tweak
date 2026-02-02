@@ -19,7 +19,6 @@
     NSMutableDictionary *_indexPathToItemHeight;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *indexPathToItemHeight; // @synthesize indexPathToItemHeight=_indexPathToItemHeight;
 @property(retain, nonatomic) NSMutableDictionary *iconIdToItem; // @synthesize iconIdToItem=_iconIdToItem;
 @property(nonatomic) long long itemCountPerRow; // @synthesize itemCountPerRow=_itemCountPerRow;

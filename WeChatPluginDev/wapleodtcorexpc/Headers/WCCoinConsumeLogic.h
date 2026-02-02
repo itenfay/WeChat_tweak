@@ -15,7 +15,6 @@
     WCCoinConsumePanel *_consumePanel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCoinConsumePanel *consumePanel; // @synthesize consumePanel=_consumePanel;
 @property(retain, nonatomic) PrepareWecoinConsumeResponse *prepareConsumeResponse; // @synthesize prepareConsumeResponse=_prepareConsumeResponse;
 @property(retain, nonatomic) WCCoinConsumeParameter *parameter; // @synthesize parameter=_parameter;

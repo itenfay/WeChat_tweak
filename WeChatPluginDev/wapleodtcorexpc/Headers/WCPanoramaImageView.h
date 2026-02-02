@@ -18,7 +18,6 @@
     struct CGRect _viewFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldStartMonitoring; // @synthesize shouldStartMonitoring=_shouldStartMonitoring;
 @property(nonatomic) long long maximumXOffset; // @synthesize maximumXOffset=_maximumXOffset;
 @property(nonatomic) long long minimumXOffset; // @synthesize minimumXOffset=_minimumXOffset;

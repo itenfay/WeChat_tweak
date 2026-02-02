@@ -10,7 +10,6 @@
     UIView *_bottomLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 - (void)setSelected:(_Bool)arg1;
 - (void)layoutSubviews;

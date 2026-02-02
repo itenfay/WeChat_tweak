@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLimitedModeVerifyPasswordUtilLogic, MMUIViewController, NSString;
 
 @interface MMLimitedModeExternalUtilMgr
@@ -14,7 +16,6 @@
     CDUnknownBlockType _verifyPasswordOrSetFailBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType verifyPasswordOrSetFailBlock; // @synthesize verifyPasswordOrSetFailBlock=_verifyPasswordOrSetFailBlock;
 @property(copy, nonatomic) CDUnknownBlockType verifyPasswordOrSetSuccessBlock; // @synthesize verifyPasswordOrSetSuccessBlock=_verifyPasswordOrSetSuccessBlock;
 @property(nonatomic) __weak MMUIViewController *sourceViewController; // @synthesize sourceViewController=_sourceViewController;
@@ -34,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

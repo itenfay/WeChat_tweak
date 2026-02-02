@@ -20,7 +20,6 @@
     NSString *_confirmBtnStr;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *confirmBtnStr; // @synthesize confirmBtnStr=_confirmBtnStr;
 @property(copy, nonatomic) NSString *priceLabelStr; // @synthesize priceLabelStr=_priceLabelStr;
 @property(retain, nonatomic) UILabel *cycleLabel; // @synthesize cycleLabel=_cycleLabel;

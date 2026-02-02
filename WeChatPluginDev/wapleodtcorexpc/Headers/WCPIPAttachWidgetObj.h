@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CIImage, UIView;
 
 @interface WCPIPAttachWidgetObj
@@ -13,7 +15,6 @@
     CDUnknownBlockType _updateCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateCallback; // @synthesize updateCallback=_updateCallback;
 @property(nonatomic) double widthHeightPercent; // @synthesize widthHeightPercent=_widthHeightPercent;
 @property(retain, nonatomic) CIImage *widgetCIImage; // @synthesize widgetCIImage=_widgetCIImage;
@@ -24,4 +25,3 @@
 - (id)initWithRootView:(id)arg1;
 
 @end
-

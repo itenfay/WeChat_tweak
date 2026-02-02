@@ -14,7 +14,6 @@
     id _token;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id token; // @synthesize token=_token;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)dealloc;

@@ -23,7 +23,6 @@
 
 + (_Bool)isOrderGuideMsgWithContact:(id)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *reportItemSet; // @synthesize reportItemSet=_reportItemSet;
 @property(retain, nonatomic) NSMutableSet *reportTitiles; // @synthesize reportTitiles=_reportTitiles;
 @property(retain, nonatomic) NSMutableArray *reportItems; // @synthesize reportItems=_reportItems;

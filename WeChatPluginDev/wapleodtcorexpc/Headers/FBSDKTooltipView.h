@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, UIColor, UILabel, UITapGestureRecognizer;
 
@@ -33,7 +34,6 @@
     NSString *_tagline;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tagline; // @synthesize tagline=_tagline;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(nonatomic) double displayDuration; // @synthesize displayDuration=_displayDuration;
@@ -55,4 +55,3 @@
 - (id)initWithTagline:(id)arg1 message:(id)arg2 colorStyle:(unsigned long long)arg3;
 
 @end
-

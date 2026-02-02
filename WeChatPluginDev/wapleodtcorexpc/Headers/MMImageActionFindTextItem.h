@@ -16,7 +16,6 @@
     OCRTransHalfScreenViewController *_ocrHalfScreenViewCtrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OCRTransHalfScreenViewController *ocrHalfScreenViewCtrl; // @synthesize ocrHalfScreenViewCtrl=_ocrHalfScreenViewCtrl;
 @property(nonatomic) __weak UIView *disableInteractWhenTranslateAnimatingView; // @synthesize disableInteractWhenTranslateAnimatingView=_disableInteractWhenTranslateAnimatingView;
 @property(nonatomic) __weak UIScrollView *animationScrollView; // @synthesize animationScrollView=_animationScrollView;

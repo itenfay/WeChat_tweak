@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString, OMCNarrationSegment;
 @protocol MJMovieComposingContext;
 
@@ -19,7 +21,6 @@
     OMCNarrationSegment *_narrationSegment;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMCNarrationSegment *narrationSegment; // @synthesize narrationSegment=_narrationSegment;
 @property(nonatomic) unsigned long long sttLoadingStatus; // @synthesize sttLoadingStatus=_sttLoadingStatus;
 @property(readonly, nonatomic) NSString *roleName; // @synthesize roleName=_roleName;
@@ -67,4 +68,3 @@
 - (id)initWithNarrationSegment:(id)arg1 composingContext:(id)arg2;
 
 @end
-

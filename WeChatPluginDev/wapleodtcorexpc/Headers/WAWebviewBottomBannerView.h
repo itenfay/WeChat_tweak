@@ -24,7 +24,6 @@
     WAWebviewHighlightedBottomBannerView *_highlightedBannerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAWebviewHighlightedBottomBannerView *highlightedBannerView; // @synthesize highlightedBannerView=_highlightedBannerView;
 @property(retain, nonatomic) WCTagsView *tagsView; // @synthesize tagsView=_tagsView;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;

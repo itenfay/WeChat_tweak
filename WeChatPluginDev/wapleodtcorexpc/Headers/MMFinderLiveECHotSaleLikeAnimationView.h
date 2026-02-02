@@ -22,7 +22,6 @@
     MMFinderLiveTaskId *_taskID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskID; // @synthesize taskID=_taskID;
 @property(nonatomic) _Bool hasFinishedEnter; // @synthesize hasFinishedEnter=_hasFinishedEnter;
 @property(nonatomic) unsigned long long productID; // @synthesize productID=_productID;

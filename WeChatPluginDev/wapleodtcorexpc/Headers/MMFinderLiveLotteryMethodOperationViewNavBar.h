@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel;
 
@@ -16,7 +17,6 @@
     unsigned long long _type;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) UIView *sepelateLine; // @synthesize sepelateLine=_sepelateLine;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -34,4 +34,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

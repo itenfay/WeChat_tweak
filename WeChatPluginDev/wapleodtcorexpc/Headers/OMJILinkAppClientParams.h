@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, OMJILinkLoginParams;
 
@@ -14,7 +15,6 @@
     CDUnknownBlockType _loginParamsGetterBlock;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType loginParamsGetterBlock; // @synthesize loginParamsGetterBlock=_loginParamsGetterBlock;
 @property(readonly, nonatomic) OMJILinkLoginParams *loginParams; // @synthesize loginParams=_loginParams;
 @property(readonly, copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
@@ -22,4 +22,3 @@
 - (id)initWithAppID:(id)arg1 loginParams:(id)arg2;
 
 @end
-

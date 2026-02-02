@@ -34,7 +34,6 @@
     struct CGPoint m_bContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *beginSearchText; // @synthesize beginSearchText=_beginSearchText;
 @property(retain, nonatomic) WCColorProxy *colorProxy; // @synthesize colorProxy=_colorProxy;
 @property(retain, nonatomic) WCSearcher *searcher; // @synthesize searcher=_searcher;

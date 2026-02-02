@@ -15,7 +15,6 @@
 }
 
 + (id)recommendedCategoryKey;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *videoTemplates; // @synthesize videoTemplates=_videoTemplates;
 @property(readonly, copy, nonatomic) NSString *categoryName; // @synthesize categoryName=_categoryName;
 @property(readonly, copy, nonatomic) NSString *categoryKey; // @synthesize categoryKey=_categoryKey;

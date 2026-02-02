@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCUIActionSheetLogic;
 
 @interface WCUIActionSheet
@@ -11,7 +13,6 @@
     id m_userData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id m_userData; // @synthesize m_userData;
 - (void)addCustomViewWithItem:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)addDestructiveButtonTitle:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -24,4 +25,3 @@
 - (id)init;
 
 @end
-

@@ -32,7 +32,6 @@
     BTRecommendFinderDataWrapper *_finderDataWrapper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BTRecommendFinderDataWrapper *finderDataWrapper; // @synthesize finderDataWrapper=_finderDataWrapper;
 @property(retain, nonatomic) NSString *extraData; // @synthesize extraData=_extraData;
 @property(retain, nonatomic) NSString *exptType; // @synthesize exptType=_exptType;

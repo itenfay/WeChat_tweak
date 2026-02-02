@@ -22,7 +22,6 @@
     NSArray *_interactionLabels;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *interactionLabels; // @synthesize interactionLabels=_interactionLabels;
 @property(nonatomic) _Bool shouldShowFollowBtn; // @synthesize shouldShowFollowBtn=_shouldShowFollowBtn;
 @property(copy, nonatomic) NSString *timeString; // @synthesize timeString=_timeString;

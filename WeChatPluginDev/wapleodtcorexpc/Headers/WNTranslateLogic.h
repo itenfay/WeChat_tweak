@@ -27,7 +27,6 @@
     long long _translateState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isServerAntiGarbage; // @synthesize isServerAntiGarbage=_isServerAntiGarbage;
 @property(nonatomic) _Bool isFromTitleBtn; // @synthesize isFromTitleBtn=_isFromTitleBtn;
 @property(nonatomic) long long translateState; // @synthesize translateState=_translateState;

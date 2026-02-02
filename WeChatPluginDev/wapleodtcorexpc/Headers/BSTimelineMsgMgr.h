@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BEFlutterBrandNavigator, BSTLExptConfig, BSTLMainSessionExposeItem, BSTOftenReadBizCache, BTResortPerformanceItem, BrandMsgResortContext, BrandResortConfig, BrandSessionCache, MMBaseSessionStorage, MMFlutterInstance, MMTimer, MemoryMappedKV, NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, WCEliminatedSlotMMKV;
 @protocol OS_dispatch_queue;
 
@@ -78,7 +80,6 @@
 + (id)getMainSessionNoPrefixContentByMsg:(id)arg1;
 + (_Bool)isBrandNotifyNoPrefixNameWithWrapMsg:(id)arg1;
 + (id)bizUserNameForMsgWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int validExposeUpgradeTime; // @synthesize validExposeUpgradeTime=_validExposeUpgradeTime;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *exposeRatioSlotKV; // @synthesize exposeRatioSlotKV=_exposeRatioSlotKV;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *exposeCountSlotKV; // @synthesize exposeCountSlotKV=_exposeCountSlotKV;
@@ -357,4 +358,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -19,7 +19,6 @@
     WCLanDeviceData *_deviceData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCLanDeviceData *deviceData; // @synthesize deviceData=_deviceData;
 @property(nonatomic) unsigned long long deviceScene; // @synthesize deviceScene=_deviceScene;
 @property(nonatomic) __weak id <WCLanDeviceKissLogicDelegate> delegate; // @synthesize delegate=_delegate;

@@ -26,7 +26,6 @@
 }
 
 + (struct CGSize)fullSizeForOuterContentViewSize:(struct CGSize)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *customizedTopRightView; // @synthesize customizedTopRightView=_customizedTopRightView;
 @property(retain, nonatomic) UIView *customizedLeftView; // @synthesize customizedLeftView=_customizedLeftView;
 @property(retain, nonatomic) MinimizeAudioTaskExtendCoverView *coverView; // @synthesize coverView=_coverView;

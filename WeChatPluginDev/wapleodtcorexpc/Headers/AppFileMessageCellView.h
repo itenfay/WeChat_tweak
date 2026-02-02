@@ -18,7 +18,6 @@
     MMLoadingIndicatorView *m_loadingView;
 }
 
-- (void).cxx_destruct;
 - (void)onCheckMsgStatus;
 - (void)onTouchUpInside;
 - (void)appFileProgressViewPauseButtonClick;

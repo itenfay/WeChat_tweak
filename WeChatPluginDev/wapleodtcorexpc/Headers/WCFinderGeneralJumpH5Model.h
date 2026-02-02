@@ -13,7 +13,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *link; // @synthesize link=_link;
 
 @end

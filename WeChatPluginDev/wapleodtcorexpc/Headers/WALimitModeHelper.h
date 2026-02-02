@@ -15,7 +15,6 @@
     id <WALimitModeHelperDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WALimitModeHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WAContact *pendingContact; // @synthesize pendingContact=_pendingContact;
 @property(retain, nonatomic) MMLimitedModeAuthorizationUtilLogic *utilLogic; // @synthesize utilLogic=_utilLogic;

@@ -3,13 +3,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WATransferJSAPIBusinessViewController
 {
     _Bool _isDidAppear;
     CDUnknownBlockType _callback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(nonatomic) _Bool isDidAppear; // @synthesize isDidAppear=_isDidAppear;
 - (void)registerOnceAfterViewDidAppearCallback:(CDUnknownBlockType)arg1;
@@ -23,4 +24,3 @@
 - (void)viewDidLoad;
 
 @end
-

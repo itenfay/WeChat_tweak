@@ -14,7 +14,6 @@
     unsigned long long _action;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long action; // @synthesize action=_action;
 @property(retain, nonatomic) NSString *businessId; // @synthesize businessId=_businessId;
 @property(retain, nonatomic) NSString *dataPath; // @synthesize dataPath=_dataPath;

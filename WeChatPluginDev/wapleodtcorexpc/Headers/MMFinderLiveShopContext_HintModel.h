@@ -13,7 +13,6 @@
     MMFinderLiveShopContext *_context;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveShopContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) MMFinderLiveShopShelfHintInfo *nextHint; // @synthesize nextHint=_nextHint;
 - (void)willShowHint:(id)arg1;

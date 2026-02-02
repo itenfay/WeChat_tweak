@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage, WCMediaItem;
 
@@ -16,7 +17,6 @@
 }
 
 + (id)genFICEntity:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int eliminationFactor; // @synthesize eliminationFactor=_eliminationFactor;
 @property(retain, nonatomic) WCMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 - (CDUnknownBlockType)drawingBlockForImage:(id)arg1;
@@ -36,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

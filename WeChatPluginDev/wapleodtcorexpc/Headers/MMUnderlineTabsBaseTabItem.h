@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _onSelectStateChangeBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onSelectStateChangeBlock; // @synthesize onSelectStateChangeBlock=_onSelectStateChangeBlock;
 @property(nonatomic) double autoUnderlineWidthExtension; // @synthesize autoUnderlineWidthExtension=_autoUnderlineWidthExtension;
 @property(nonatomic) double underlineWidth; // @synthesize underlineWidth=_underlineWidth;
@@ -26,4 +26,3 @@
 @property(nonatomic) double customTabViewTop; // @synthesize customTabViewTop=_customTabViewTop;
 
 @end
-

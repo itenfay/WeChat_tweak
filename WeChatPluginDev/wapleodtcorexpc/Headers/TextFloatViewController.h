@@ -33,7 +33,6 @@
     unsigned long long _parserType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidCopy; // @synthesize forbidCopy=_forbidCopy;
 @property(nonatomic) _Bool forbidOperate; // @synthesize forbidOperate=_forbidOperate;
 @property(nonatomic) _Bool forbidShare; // @synthesize forbidShare=_forbidShare;

@@ -17,7 +17,6 @@
     MMPickLocationViewController *_pickLocationViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMPickLocationViewController *pickLocationViewController; // @synthesize pickLocationViewController=_pickLocationViewController;
 @property(retain, nonatomic) UIButton *addButton; // @synthesize addButton=_addButton;
 @property(retain, nonatomic) RichTextView *protoTextView; // @synthesize protoTextView=_protoTextView;

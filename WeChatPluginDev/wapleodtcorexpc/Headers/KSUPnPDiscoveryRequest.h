@@ -20,7 +20,6 @@
     double _socketReceiveTimeoutInterval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double socketReceiveTimeoutInterval; // @synthesize socketReceiveTimeoutInterval=_socketReceiveTimeoutInterval;
 @property(nonatomic) double socketSendTimeoutInterval; // @synthesize socketSendTimeoutInterval=_socketSendTimeoutInterval;
 @property(nonatomic) unsigned long long maximumResponseDelay; // @synthesize maximumResponseDelay=_maximumResponseDelay;

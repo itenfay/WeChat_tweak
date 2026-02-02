@@ -14,7 +14,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1 WithErrorType:(unsigned int)arg2 ErrorMsg:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_wxErrorMsg; // @synthesize m_wxErrorMsg=_m_wxErrorMsg;
 @property(nonatomic) unsigned int m_wxErrorType; // @synthesize m_wxErrorType=_m_wxErrorType;
 - (id)init;

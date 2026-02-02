@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FlutterNewLifeNavigator, FlutterNewLifeViewController, MMFlutterInstance, MMLRUCache, NSArray, NSData, NSMutableDictionary, NSObject, NSString, NewLifeCallbackProcessor, NewLifeMMKVKeyModel, NewLifePagePerformanceReporter, NewLifePostVerifyAssist, NewLifePrefetchManager, NewLifeProfilePrefetchLogic, NewLifeRegisterCmdIdHandler, NewLifeReporter, NewLifeSnapShotViewController, NewLifeSwitchLogic, NewLifeSyncLogic, NewLifeThumbUpLogic, NewLifeUploadCdnMgr, PrefetchStreamCallbackCmdIdReq;
 
 @interface NewLifeManager
@@ -32,7 +34,6 @@
 }
 
 + (unsigned long long)finderMentionType:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifePagePerformanceReporter *pageReporter; // @synthesize pageReporter=_pageReporter;
 @property(retain, nonatomic) NewLifeSnapShotViewController *snapShotViewController; // @synthesize snapShotViewController=_snapShotViewController;
 @property(retain, nonatomic) NewLifeRegisterCmdIdHandler *registerCmdIdHandler; // @synthesize registerCmdIdHandler=_registerCmdIdHandler;
@@ -185,4 +186,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -28,7 +28,6 @@
     struct __sFILE *recordDumpFile;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(nonatomic) struct __sFILE *recordDumpFile; // @synthesize recordDumpFile;
 @property(retain, nonatomic) MMTimer *wxTalkTimer; // @synthesize wxTalkTimer;

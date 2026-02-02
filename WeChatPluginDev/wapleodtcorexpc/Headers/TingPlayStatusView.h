@@ -17,7 +17,6 @@
     NSString *_tid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tid; // @synthesize tid=_tid;
 @property(retain, nonatomic) TingItem *tingItem; // @synthesize tingItem=_tingItem;
 @property(retain, nonatomic) NSString *listenId; // @synthesize listenId=_listenId;

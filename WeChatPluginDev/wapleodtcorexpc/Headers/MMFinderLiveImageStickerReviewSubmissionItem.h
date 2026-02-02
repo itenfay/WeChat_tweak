@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage;
 
@@ -14,7 +15,6 @@
     NSString *_imageUri;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *imageUri; // @synthesize imageUri=_imageUri;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *submissionId; // @synthesize submissionId=_submissionId;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

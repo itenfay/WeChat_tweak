@@ -44,7 +44,6 @@
 }
 
 + (id)viewModelWithRecommendationInfo:(id)arg1 placeholderContext:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long Report_recommendationSessionIndex; // @synthesize Report_recommendationSessionIndex=_Report_recommendationSessionIndex;
 @property(copy, nonatomic) NSString *Report_timelineSessionID; // @synthesize Report_timelineSessionID=_Report_timelineSessionID;
 @property(nonatomic) _Bool Report_isFirstEnteringTimeline; // @synthesize Report_isFirstEnteringTimeline=_Report_isFirstEnteringTimeline;

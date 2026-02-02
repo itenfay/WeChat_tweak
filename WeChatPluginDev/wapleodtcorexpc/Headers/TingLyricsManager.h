@@ -13,7 +13,6 @@
     NSMutableArray *_pullingLyricsList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pullingLyricsList; // @synthesize pullingLyricsList=_pullingLyricsList;
 @property(retain, nonatomic) NSMutableDictionary *resolverList; // @synthesize resolverList=_resolverList;
 - (id)lyricsFor:(id)arg1 withCurrentTime:(double)arg2 preferCount:(unsigned long long)arg3;

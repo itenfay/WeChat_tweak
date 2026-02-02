@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class RichTextView, UIButton, UIImageView, UIView;
 
 @interface WCFinderShadowOptionBubbleView
@@ -21,7 +23,6 @@
 + (id)genCloseBtnTarget:(id)arg1 action:(SEL)arg2;
 + (id)genRighTextViewByWidth:(double)arg1;
 + (id)genActionBtnBy:(id)arg1 bkColor:(id)arg2 fontColor:(id)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType closeBlock; // @synthesize closeBlock=_closeBlock;
 @property(retain, nonatomic) RichTextView *leftContenTextView; // @synthesize leftContenTextView=_leftContenTextView;
 @property(retain, nonatomic) UIImageView *leftImageView; // @synthesize leftImageView=_leftImageView;
@@ -36,4 +37,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 uiConfig:(id)arg2 actionClickBlock:(CDUnknownBlockType)arg3 closeClickBlock:(CDUnknownBlockType)arg4;
 
 @end
-

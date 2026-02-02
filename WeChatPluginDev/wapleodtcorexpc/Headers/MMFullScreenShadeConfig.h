@@ -16,7 +16,6 @@
     double _animationDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(nonatomic) double maxTextSize; // @synthesize maxTextSize=_maxTextSize;
 @property(nonatomic) _Bool cancleOnTouch; // @synthesize cancleOnTouch=_cancleOnTouch;

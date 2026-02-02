@@ -15,7 +15,6 @@
     UIView *_footerViewSeperator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *footerViewSeperator; // @synthesize footerViewSeperator=_footerViewSeperator;
 @property(retain, nonatomic) UIView *tableFooterView; // @synthesize tableFooterView=_tableFooterView;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;

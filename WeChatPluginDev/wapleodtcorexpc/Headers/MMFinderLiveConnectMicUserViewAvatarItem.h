@@ -14,7 +14,6 @@
     NSString *_stagingAvatarUri;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *stagingAvatarUri; // @synthesize stagingAvatarUri=_stagingAvatarUri;
 @property(retain, nonatomic) MMWebImageView *avatarView; // @synthesize avatarView=_avatarView;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;

@@ -11,7 +11,6 @@
     NSMutableArray *_infos;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int moveScene; // @synthesize moveScene=_moveScene;
 @property(retain, nonatomic) NSMutableArray *infos; // @synthesize infos=_infos;
 

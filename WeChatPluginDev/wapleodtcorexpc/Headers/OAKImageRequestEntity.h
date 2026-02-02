@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OAKImageRequestEntity : NSObject
 {
@@ -18,7 +19,6 @@
 + (id)entityWithTaskID:(unsigned int)arg1 livePhotoCompletionHandler:(CDUnknownBlockType)arg2;
 + (id)entityWithTaskID:(unsigned int)arg1 assetCompletionHandler:(CDUnknownBlockType)arg2;
 + (id)entityWithTaskID:(unsigned int)arg1 imageDataCompletionHandler:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType livePhotoCompletionHandler; // @synthesize livePhotoCompletionHandler=_livePhotoCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType assetCompletionHandler; // @synthesize assetCompletionHandler=_assetCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType imageDataCompletionHandler; // @synthesize imageDataCompletionHandler=_imageDataCompletionHandler;
@@ -27,4 +27,3 @@
 @property(nonatomic) unsigned int taskID; // @synthesize taskID=_taskID;
 
 @end
-

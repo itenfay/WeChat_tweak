@@ -14,7 +14,6 @@
     SystemImagePickViewController *vc;
 }
 
-- (void).cxx_destruct;
 - (void)onAlbumChange:(id)arg1;
 - (void)onChangeAsset:(id)arg1;
 - (void)onClickAsset:(id)arg1;

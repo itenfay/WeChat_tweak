@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveECHotSaleLikeAnimationCenter, MMFinderLiveNumberAnimationLogic, MMGradientView, NSString, UILabel;
 
 @interface MMFinderLiveNotifyStyleHotSaleCommentPubbleCell
@@ -16,7 +18,6 @@
 
 + (double)preferDisplayDurationWithComment:(id)arg1;
 + (id)numberFont;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMGradientView *infoBackgroundView; // @synthesize infoBackgroundView=_infoBackgroundView;
 @property(retain, nonatomic) UILabel *infoNumberLabel; // @synthesize infoNumberLabel=_infoNumberLabel;
 @property(retain, nonatomic) UILabel *infoPrefixLabel; // @synthesize infoPrefixLabel=_infoPrefixLabel;
@@ -40,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

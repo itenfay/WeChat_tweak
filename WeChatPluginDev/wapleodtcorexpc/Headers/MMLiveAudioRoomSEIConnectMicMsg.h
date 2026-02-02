@@ -15,7 +15,6 @@
     unsigned long long _m;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m; // @synthesize m=_m;
 @property(retain, nonatomic) NSArray *sl; // @synthesize sl=_sl;
 @property(nonatomic) unsigned long long i; // @synthesize i=_i;

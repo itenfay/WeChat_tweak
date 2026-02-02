@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView, ZZCornerModel;
 
@@ -13,7 +14,6 @@
     ZZCornerModel *_cornerModel;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) ZZCornerModel *cornerModel; // @synthesize cornerModel=_cornerModel;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (CDUnknownBlockType)borderWidth;
@@ -22,4 +22,3 @@
 - (id)initWithView:(id)arg1 andPosition:(long long)arg2;
 
 @end
-

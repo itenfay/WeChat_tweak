@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_cacheTime;
 + (void)PBArrayAdd_fileFormat;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cacheTime; // @synthesize cacheTime=_cacheTime;
 @property(copy, nonatomic) NSString *mediaURL; // @synthesize mediaURL=_mediaURL;
 @property(copy, nonatomic) NSString *fileFormat; // @synthesize fileFormat=_fileFormat;

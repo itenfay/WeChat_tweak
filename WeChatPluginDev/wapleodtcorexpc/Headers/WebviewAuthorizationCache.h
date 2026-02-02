@@ -12,7 +12,6 @@
     NSMutableDictionary *_dicScope2ApiInfo;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isAuthorizedApi:(id)arg1 inScope:(id)arg2;
 - (_Bool)isExistAuthInfoForApi:(id)arg1 inScope:(id)arg2;
 - (_Bool)isAuthorizedScope:(id)arg1;

@@ -12,7 +12,6 @@
     id <WCBizSchemeUrlBaseHandlerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCBizSchemeUrlBaseHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)targetLoginStatusIsLogin;
 - (_Bool)needCustomizeWhenToDismissBlocingViewController;

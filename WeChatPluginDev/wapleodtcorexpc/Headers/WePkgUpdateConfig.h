@@ -37,7 +37,6 @@
 }
 
 + (id)updateConfigFromTableItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *file2DownloadFailCount; // @synthesize file2DownloadFailCount=_file2DownloadFailCount;
 @property(retain, nonatomic) NSMutableArray *atomicSingleFileListDownloadSuccessed; // @synthesize atomicSingleFileListDownloadSuccessed=_atomicSingleFileListDownloadSuccessed;
 @property(retain, nonatomic) NSMutableArray *atomicSingleFileListNeedDownload; // @synthesize atomicSingleFileListNeedDownload=_atomicSingleFileListNeedDownload;

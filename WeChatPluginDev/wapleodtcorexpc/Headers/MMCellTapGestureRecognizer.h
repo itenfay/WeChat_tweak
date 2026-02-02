@@ -15,7 +15,6 @@
     struct CGPoint _point;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITouch *touch; // @synthesize touch=_touch;
 @property(nonatomic) struct CGPoint point; // @synthesize point=_point;
 @property(nonatomic) __weak id <MMCellTapGestureRecognizerActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;

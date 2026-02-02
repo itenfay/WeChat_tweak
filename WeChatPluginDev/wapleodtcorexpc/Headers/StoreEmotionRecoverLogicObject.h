@@ -15,7 +15,6 @@
     id <StoreEmotionRecoverLogicObjectDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_hasStartLogic; // @synthesize m_hasStartLogic=_m_hasStartLogic;
 @property(nonatomic) _Bool m_isActive; // @synthesize m_isActive=_m_isActive;
 @property(nonatomic) __weak id <StoreEmotionRecoverLogicObjectDelegate> delegate; // @synthesize delegate=_delegate;

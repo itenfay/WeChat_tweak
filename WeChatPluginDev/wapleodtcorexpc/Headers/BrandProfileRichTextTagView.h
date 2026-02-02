@@ -24,7 +24,6 @@
 + (double)lastLineWidth:(id)arg1;
 + (long long)getCurrentLinesWithFont:(id)arg1 lineSpacing:(double)arg2 size:(struct CGSize)arg3;
 + (struct CGSize)sizeForContent:(id)arg1 font:(id)arg2 limitWidth:(double)arg3 lineSpacing:(double)arg4 limitLineNumber:(unsigned long long)arg5 outArrStyles:(id *)arg6 hasTag:(_Bool)arg7 tagImageSize:(struct CGSize)arg8;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) unsigned long long limitLineNumber; // @synthesize limitLineNumber=_limitLineNumber;
 @property(nonatomic) double limitWidth; // @synthesize limitWidth=_limitWidth;

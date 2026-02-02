@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock, WCDownloadArgsWrap, WCPlayerLayerView, WCPlayerPlayArgs, WCPlayerPlaybackInfo, WCPlayerReporter, WCPlayerResourceLoader;
 @protocol WCCorePlayerDelegate;
@@ -28,7 +29,6 @@
     double _seekingTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double seekingTime; // @synthesize seekingTime=_seekingTime;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) long long seekCount; // @synthesize seekCount=_seekCount;
@@ -93,4 +93,3 @@
 - (id)initWithPlayerArgs:(id)arg1 playbackInfo:(id)arg2 downloadArgsWrap:(id)arg3 resourceloader:(id)arg4;
 
 @end
-

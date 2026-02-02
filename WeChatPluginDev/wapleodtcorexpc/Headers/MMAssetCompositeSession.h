@@ -14,7 +14,6 @@
     ABAReportPrams *_reportParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ABAReportPrams *reportParams; // @synthesize reportParams=_reportParams;
 @property(retain, nonatomic) NSString *outputFilePath; // @synthesize outputFilePath=_outputFilePath;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;

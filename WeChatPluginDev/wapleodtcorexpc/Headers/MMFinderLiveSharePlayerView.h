@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveCDNPlayerView, NSString, UILabel, UIView, WCFinderDataItem;
 @protocol TextStateBaseMediaViewDelegate;
 
@@ -19,7 +21,6 @@
     struct CGSize _currentMediaSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TextStateBaseMediaViewDelegate> textStateDelegate; // @synthesize textStateDelegate=_textStateDelegate;
 @property(nonatomic) _Bool waitPlaying; // @synthesize waitPlaying=_waitPlaying;
 @property(retain, nonatomic) WCFinderDataItem *mediaDataItem; // @synthesize mediaDataItem=_mediaDataItem;
@@ -58,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

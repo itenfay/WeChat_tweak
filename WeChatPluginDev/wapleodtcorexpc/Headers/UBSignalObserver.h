@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSOperationQueue, UBBaseSignal;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _callback;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(readonly, nonatomic) __weak id observer; // @synthesize observer=_observer;
 @property(nonatomic) __weak UBBaseSignal *signal; // @synthesize signal=_signal;
@@ -29,4 +29,3 @@
 - (id)initWithSignal:(id)arg1 observer:(id)arg2 queue:(id)arg3 callback:(CDUnknownBlockType)arg4 priority:(unsigned long long)arg5;
 
 @end
-

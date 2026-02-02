@@ -45,7 +45,6 @@
     WCPaySimpleCashierInfo *_simple_cashier_info;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCPaySimpleCashierInfo *simple_cashier_info; // @synthesize simple_cashier_info=_simple_cashier_info;
 @property(retain) NSString *settlement_symbol; // @synthesize settlement_symbol=_settlement_symbol;
 @property(retain) NSString *settlement_type; // @synthesize settlement_type=_settlement_type;

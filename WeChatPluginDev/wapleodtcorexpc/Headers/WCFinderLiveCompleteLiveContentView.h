@@ -29,7 +29,6 @@
     NSAttributedString *_packAttributedString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSAttributedString *packAttributedString; // @synthesize packAttributedString=_packAttributedString;
 @property(retain, nonatomic) NSAttributedString *expandAttributedString; // @synthesize expandAttributedString=_expandAttributedString;
 @property(retain, nonatomic) NSAttributedString *originAttributedString; // @synthesize originAttributedString=_originAttributedString;

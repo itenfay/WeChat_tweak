@@ -20,7 +20,6 @@
     MISSING_TYPE *jsapiContextImpl;
 }
 
-- (void).cxx_destruct;
 - (void)onCanvasViewDestroy:(unsigned int)arg1 view:(id)arg2;
 - (void)onCanvasViewFirstFrameRendered:(unsigned int)arg1;
 - (void)onCanvasViewLayout:(unsigned int)arg1 view:(id)arg2 left:(float)arg3 top:(float)arg4 width:(float)arg5 height:(float)arg6;

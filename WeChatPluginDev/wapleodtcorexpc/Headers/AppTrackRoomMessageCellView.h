@@ -10,7 +10,6 @@
     UILabel *m_statusLabel;
 }
 
-- (void).cxx_destruct;
 - (void)OnTrackRoomMemberChange:(id)arg1 withNewMemberList:(id)arg2;
 - (void)onTouchUpInside;
 - (void)layoutContentView;

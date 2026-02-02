@@ -24,7 +24,6 @@
 
 + (id)createModelWithReaderWrap:(id)arg1 itemIndex:(unsigned int)arg2 msgWrap:(id)arg3 contact:(id)arg4 viewWidth:(double)arg5 relatedInfo:(id)arg6;
 + (_Bool)canCreateViewModelWithReaderWrap:(id)arg1 msgWrap:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPaySubcribeOpen; // @synthesize isPaySubcribeOpen=_isPaySubcribeOpen;
 @property(nonatomic) __weak id <BTReaderItemCellViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isPaid; // @synthesize isPaid=_isPaid;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveShareLiveQRCodeInfo, NSString, WCFinderContact;
 
 @interface MMFinderLiveLegacyGenericQrCodeViewController
@@ -12,7 +14,6 @@
     FinderLiveShareLiveQRCodeInfo *_qrCodeInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveShareLiveQRCodeInfo *qrCodeInfo; // @synthesize qrCodeInfo=_qrCodeInfo;
 @property(nonatomic) unsigned int isSpamModPic; // @synthesize isSpamModPic=_isSpamModPic;
 @property(retain, nonatomic) WCFinderContact *anchorContact; // @synthesize anchorContact=_anchorContact;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -17,7 +17,6 @@
 + (void)PBArrayAdd_subState;
 + (void)PBArrayAdd_retryCount;
 + (void)PBArrayAdd_createTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<PBCoding> *subState; // @synthesize subState=_subState;
 @property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;

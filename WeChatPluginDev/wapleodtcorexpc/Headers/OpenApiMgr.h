@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AppAddCardHandler, AppJumpLogicHelper, AppRefreshTokenErrorHandler, BaseOpenSDKHandler, ChooseCardHandler, ChooseInvoiceHandler, FinderChannelStartLiveHandler, JumpToBizWebviewHandler, MMFullScreenShadeViewController, MemoryMappedKV, NSMutableDictionary, NSString, NSURL, NewAuthHandler, OnGotAppMsgHandler, OpenBusinessViewHandler, OpenBusinessWebViewHandler, OpenCustomerServiceHandler, OpenFinderBindHandler, OpenFinderEventHandler, OpenFinderFeedHandler, OpenFinderLiveHandler, OpenFinderProfileHandler, OpenFinderShareVideoHandler, OpenMiniProgramHandler, OpenProfileHandler, OpenRankListHandler, OpenTempSessionHandler, OpenTypeWebViewHandler, OpenWebviewHandler, SMSAddCardHandler, SendAppMsgHandler, SendAppMsgHandlerV2, SendAppMsgToFavoritesHandler, SendAppMsgToStateHandler, SendAppMsgToWCHandler, WCTDatabase, WCTTable, WeAppTransferAPIHandler, WeChatHBHandler, WeChatOfflinePayHandler, WeChatPayHandler;
 
 @interface OpenApiMgr
@@ -57,7 +59,6 @@
     WCTTable *_tableLaunchAppInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *tableLaunchAppInfo; // @synthesize tableLaunchAppInfo=_tableLaunchAppInfo;
 @property(retain, nonatomic) WCTDatabase *db; // @synthesize db=_db;
 @property(retain, nonatomic) MMFullScreenShadeViewController *readPasteBoardNotiveVC; // @synthesize readPasteBoardNotiveVC=_readPasteBoardNotiveVC;
@@ -222,4 +223,3 @@
 @property(readonly) Class superclass;
 
 @end
-

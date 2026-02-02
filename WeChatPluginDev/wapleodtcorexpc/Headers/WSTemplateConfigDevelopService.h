@@ -12,7 +12,6 @@
     NSMapTable *m_templateMgrMapTable;
 }
 
-- (void).cxx_destruct;
 - (id)getTemplateMgrWithResourceType:(unsigned int)arg1 resourceSubType:(unsigned int)arg2;
 - (id)getActionSheetButtonTitleWithResourceType:(unsigned int)arg1 resourceSubType:(unsigned int)arg2;
 - (unsigned int)getMatchPatternResourceSubTypeByFileTitle:(id)arg1;

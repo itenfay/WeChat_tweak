@@ -15,7 +15,6 @@
     NSString *_stack;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stack; // @synthesize stack=_stack;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *exceptionName; // @synthesize exceptionName=_exceptionName;

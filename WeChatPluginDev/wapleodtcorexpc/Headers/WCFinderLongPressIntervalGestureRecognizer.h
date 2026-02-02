@@ -15,7 +15,6 @@
     double _timeInterval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double timeInterval; // @synthesize timeInterval=_timeInterval;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) __weak id <WCFinderLongPressIntervalGestureRecognizerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

@@ -16,7 +16,6 @@
 
 + (struct CGSize)getFitSizeForImgSize:(struct CGSize)arg1;
 + (void)onCalculatLayoutInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *imgAndVideoContainerView; // @synthesize imgAndVideoContainerView=_imgAndVideoContainerView;
 @property(retain, nonatomic) UIView *videoLayerView; // @synthesize videoLayerView=_videoLayerView;
 @property(retain, nonatomic) UILabel *timeDuration; // @synthesize timeDuration=_timeDuration;

@@ -14,7 +14,6 @@
 }
 
 + (id)getIconMaskPath:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *colorMaskView; // @synthesize colorMaskView=_colorMaskView;
 @property(retain, nonatomic) NSArray *icons; // @synthesize icons=_icons;
 - (void)startSwitchingAnimation;

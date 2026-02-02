@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSMutableIndexSet, NSString, TextStateHistoryCalendar, TextStateHistoryInfo, WCCgiBlockHelper;
 @protocol TextStateHistoryLogicDelegate;
@@ -27,7 +28,6 @@
 
 + (id)historyInfoListCachePath;
 + (void)fetchDataForTextStateIdList:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool fetchingData; // @synthesize fetchingData=_fetchingData;
 @property(nonatomic) unsigned long long pivotInfoIndex; // @synthesize pivotInfoIndex=_pivotInfoIndex;
 @property(retain, nonatomic) TextStateHistoryInfo *pivotInfo; // @synthesize pivotInfo=_pivotInfo;
@@ -76,4 +76,3 @@
 @property(readonly) Class superclass;
 
 @end
-

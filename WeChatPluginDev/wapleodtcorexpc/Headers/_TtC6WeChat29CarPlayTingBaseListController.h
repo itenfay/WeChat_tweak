@@ -11,7 +11,6 @@
     MISSING_TYPE *isLoading;
 }
 
-- (void).cxx_destruct;
 
 @end
 

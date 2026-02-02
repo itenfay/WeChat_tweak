@@ -18,7 +18,6 @@
     MJMessageBubbleView *_contentBubbleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJMessageBubbleView *contentBubbleView; // @synthesize contentBubbleView=_contentBubbleView;
 @property(retain, nonatomic) MMUILabel *instructionLabel; // @synthesize instructionLabel=_instructionLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

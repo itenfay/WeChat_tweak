@@ -27,7 +27,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MsgToDeviceLogic *ilinkDeviceLogic; // @synthesize ilinkDeviceLogic=_ilinkDeviceLogic;
 @property(nonatomic) __weak UIView *m_viewToShow; // @synthesize m_viewToShow;
 @property(nonatomic) long long m_opScene; // @synthesize m_opScene;

@@ -22,7 +22,6 @@
     UIView *_coverView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *coverView; // @synthesize coverView=_coverView;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

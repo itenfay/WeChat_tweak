@@ -12,7 +12,6 @@
     id <StoreEmotionAddTaskDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <StoreEmotionAddTaskDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *productID; // @synthesize productID=_productID;
 - (_Bool)resumeLogic;

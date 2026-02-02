@@ -16,7 +16,6 @@
     NSMutableDictionary *_cellDataWaitingForUpdate;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isSetNormalToBlackStyle;
 - (id)normalTintColor;
 - (void)modifyCellWithUsrName:(id)arg1 scope:(id)arg2 desc:(id)arg3 isAdd:(_Bool)arg4;

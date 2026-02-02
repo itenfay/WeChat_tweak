@@ -15,7 +15,6 @@
 
 + (id)fromMap:(id)arg1;
 + (id)makeWithPropertyKeys:(id)arg1 propertyValues:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *propertyValues; // @synthesize propertyValues=_propertyValues;
 @property(retain, nonatomic) NSArray *propertyKeys; // @synthesize propertyKeys=_propertyKeys;
 - (id)toMap;

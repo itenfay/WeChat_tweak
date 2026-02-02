@@ -20,7 +20,6 @@
 }
 
 + (_Bool)canCreateViewModelWithSectionData:(id)arg1 accountIndex:(unsigned int)arg2 appMsgIndex:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BTVideoItemCellAutoPlayReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) BTVideoItemCellAutoPlayerView *autoPlayerView; // @synthesize autoPlayerView=_autoPlayerView;
 @property(nonatomic) _Bool videoHasBeganBuffering; // @synthesize videoHasBeganBuffering=_videoHasBeganBuffering;

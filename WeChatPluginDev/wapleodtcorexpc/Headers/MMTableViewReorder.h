@@ -29,7 +29,6 @@
     struct CGPoint _currentPosition;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *singlePanGesture; // @synthesize singlePanGesture=_singlePanGesture;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGesture; // @synthesize longPressGesture=_longPressGesture;
 @property(nonatomic) _Bool isBottomToTop; // @synthesize isBottomToTop=_isBottomToTop;

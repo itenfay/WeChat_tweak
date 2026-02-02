@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterViewController;
 @protocol FlutterUndoManagerDelegate;
@@ -25,4 +26,3 @@
 - (id)initWithDelegate:(id)arg1;
 
 @end
-

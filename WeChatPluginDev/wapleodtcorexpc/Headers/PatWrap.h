@@ -22,7 +22,6 @@
 + (id)generateContentWithTemplate:(id)arg1 chatContact:(id)arg2 showLink:(_Bool)arg3 showTextStateIcon:(_Bool)arg4 showHighlightPat:(_Bool)arg5 showChangeSuffixRemind:(_Bool)arg6;
 + (id)templateFromTemplate:(id)arg1 fromUserName:(id)arg2 pattedUserName:(id)arg3;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showChangeSuffixRemind; // @synthesize showChangeSuffixRemind=_showChangeSuffixRemind;
 @property(nonatomic) _Bool isRead; // @synthesize isRead=_isRead;
 @property(nonatomic) long long serverId; // @synthesize serverId=_serverId;

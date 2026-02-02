@@ -13,7 +13,6 @@
     MMCommonActionSheetPicker *_startTimePicker;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCommonActionSheetPicker *startTimePicker; // @synthesize startTimePicker=_startTimePicker;
 @property(retain, nonatomic) MMFinderLivePaymentTrialModeSettingView *paymentTrialModeSettingView; // @synthesize paymentTrialModeSettingView=_paymentTrialModeSettingView;
 @property(retain, nonatomic) MMFinderLivePaymentSettingView *paymentSettingPanel; // @synthesize paymentSettingPanel=_paymentSettingPanel;

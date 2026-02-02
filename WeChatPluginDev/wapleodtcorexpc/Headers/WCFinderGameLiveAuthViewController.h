@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMAcceptAgreementCommonHeadView, MMUIButton, MMUILabel, MMWebImageView, NSString, UIButton, UIView;
 
 @interface WCFinderGameLiveAuthViewController
@@ -30,7 +32,6 @@
     long long _authScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long authScene; // @synthesize authScene=_authScene;
 @property(retain, nonatomic) MMWebImageView *authIconView; // @synthesize authIconView=_authIconView;
 @property(retain, nonatomic) UIButton *authExpiredButton; // @synthesize authExpiredButton=_authExpiredButton;
@@ -83,4 +84,3 @@
 @property(readonly) Class superclass;
 
 @end
-

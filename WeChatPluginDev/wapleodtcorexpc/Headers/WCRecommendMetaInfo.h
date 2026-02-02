@@ -16,7 +16,6 @@
     NSString *expOriginSnsId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *expOriginSnsId; // @synthesize expOriginSnsId;
 @property(retain, nonatomic) NSString *contentXml; // @synthesize contentXml;
 @property(retain, nonatomic) NSString *expId; // @synthesize expId;

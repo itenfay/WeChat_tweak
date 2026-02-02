@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIViewController, WCPayRealnameSelectGuardianViewController;
 
@@ -14,7 +15,6 @@
     CDUnknownBlockType _verifyParentCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType verifyParentCallback; // @synthesize verifyParentCallback=_verifyParentCallback;
 @property(retain, nonatomic) WCPayRealnameSelectGuardianViewController *selectGuardianVC; // @synthesize selectGuardianVC=_selectGuardianVC;
 @property(nonatomic) __weak UIViewController *curViewController; // @synthesize curViewController=_curViewController;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

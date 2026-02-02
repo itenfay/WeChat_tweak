@@ -11,7 +11,6 @@
     MMTableViewInfo *_tableViewInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableViewInfo *tableViewInfo; // @synthesize tableViewInfo=_tableViewInfo;
 @property(retain, nonatomic) UIView *contentHeaderView; // @synthesize contentHeaderView=_contentHeaderView;
 - (id)genDeviceInfoDateTimeStringByUInt:(unsigned int)arg1 retDayLength:(unsigned long long *)arg2;

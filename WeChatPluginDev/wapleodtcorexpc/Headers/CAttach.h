@@ -20,7 +20,6 @@
     NSString *_downloadUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *downloadUrl; // @synthesize downloadUrl=_downloadUrl;
 @property(nonatomic) _Bool isBigAttach; // @synthesize isBigAttach=_isBigAttach;
 @property(retain, nonatomic) NSString *m_nsAttachID; // @synthesize m_nsAttachID;

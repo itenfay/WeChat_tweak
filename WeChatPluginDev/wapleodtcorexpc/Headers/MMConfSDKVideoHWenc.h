@@ -38,7 +38,6 @@
     id <MMConfSDKVideoHWencDelegate> _mHWEncDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMConfSDKVideoHWencDelegate> mHWEncDelegate; // @synthesize mHWEncDelegate=_mHWEncDelegate;
 @property(retain, nonatomic) NSRecursiveLock *mVideoHWEncLock; // @synthesize mVideoHWEncLock;
 @property unsigned long long mFirstFrmTs; // @synthesize mFirstFrmTs;

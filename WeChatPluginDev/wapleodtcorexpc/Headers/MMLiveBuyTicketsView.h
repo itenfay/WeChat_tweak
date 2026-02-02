@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ConcertTicketInfo, MMFinderLivePayButton, MMUILabel, MMWebImageView;
 @protocol MMLiveBuyTicketsViewDelegate;
@@ -24,7 +25,6 @@
     long long _payButtonState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needSmallImage; // @synthesize needSmallImage=_needSmallImage;
 @property(nonatomic) _Bool isLandscapeLayout; // @synthesize isLandscapeLayout=_isLandscapeLayout;
 @property(nonatomic) long long payButtonState; // @synthesize payButtonState=_payButtonState;
@@ -61,4 +61,3 @@
 - (void)adaptLandscapeLayout:(_Bool)arg1 needSmallImage:(_Bool)arg2;
 
 @end
-

@@ -21,7 +21,6 @@
 
 + (id)parseMsgWrapFromBypSyncItem:(id)arg1;
 + (_Bool)IsSupportMsgItemTypeWithSyncKeyType:(int)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long firstAuthTime; // @synthesize firstAuthTime=_firstAuthTime;
 @property(nonatomic) int retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) _Bool enableBypSync; // @synthesize enableBypSync=_enableBypSync;

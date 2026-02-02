@@ -30,7 +30,6 @@
     MMLiveAudioRoomSEIConnectMicMsg *_audioRoomSeiMicMsgInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveAudioRoomSEIConnectMicMsg *audioRoomSeiMicMsgInfo; // @synthesize audioRoomSeiMicMsgInfo=_audioRoomSeiMicMsgInfo;
 @property(nonatomic) _Bool isFitRenderMode; // @synthesize isFitRenderMode=_isFitRenderMode;
 @property(retain, nonatomic) NSMutableDictionary *isOtherRoomMicAnchorAudioModeDict; // @synthesize isOtherRoomMicAnchorAudioModeDict=_isOtherRoomMicAnchorAudioModeDict;

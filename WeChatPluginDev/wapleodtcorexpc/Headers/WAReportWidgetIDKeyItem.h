@@ -16,7 +16,6 @@
     NSString *_srcAppid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *srcAppid; // @synthesize srcAppid=_srcAppid;
 @property(retain, nonatomic) NSString *extParams; // @synthesize extParams=_extParams;
 @property(retain, nonatomic) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;

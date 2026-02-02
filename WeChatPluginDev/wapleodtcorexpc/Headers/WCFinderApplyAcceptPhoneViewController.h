@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView;
 
 @interface WCFinderApplyAcceptPhoneViewController
@@ -13,7 +15,6 @@
 }
 
 + (void)showVCFromVC:(id)arg1 complete:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *detailView; // @synthesize detailView=_detailView;
 @property(retain, nonatomic) UIView *bgView; // @synthesize bgView=_bgView;
 @property(copy, nonatomic) CDUnknownBlockType complete; // @synthesize complete=_complete;
@@ -26,4 +27,3 @@
 - (void)viewDidLoad;
 
 @end
-

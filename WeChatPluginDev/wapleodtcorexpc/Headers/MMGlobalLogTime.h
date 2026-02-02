@@ -14,7 +14,6 @@
 }
 
 + (id)sharedMMGlobalLogTime;
-- (void).cxx_destruct;
 - (void)end:(id)arg1;
 - (void)needreport:(id)arg1 withEventId:(unsigned int)arg2;
 - (void)start:(id)arg1 withStep:(const char *)arg2;

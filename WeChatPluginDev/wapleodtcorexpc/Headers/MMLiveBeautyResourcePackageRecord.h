@@ -48,7 +48,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 @property(retain, nonatomic) NSString *instanceId; // @synthesize instanceId=_instanceId;
 @property(retain, nonatomic) NSString *md5Hash; // @synthesize md5Hash=_md5Hash;

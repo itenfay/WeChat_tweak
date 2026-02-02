@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary;
 
 @interface WAJSContextPlugin_Crypto
@@ -13,7 +15,6 @@
 
 + (id)getKeyTagsWithAppId:(id)arg1;
 + (id)getTagInKeyChainWithInputAlias:(id)arg1 appId:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *keyAliasList; // @synthesize keyAliasList=_keyAliasList;
 @property(retain, nonatomic) NSMutableDictionary *contexts; // @synthesize contexts=_contexts;
 - (id)getKeyTypeWithKeyAlgorithm:(id)arg1 keySize:(unsigned int)arg2;
@@ -29,4 +30,3 @@
 - (id)init;
 
 @end
-

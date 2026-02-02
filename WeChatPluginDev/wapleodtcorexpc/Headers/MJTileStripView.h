@@ -19,7 +19,6 @@
     NSMapTable *_tileLayersByAttrs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *tileLayersByAttrs; // @synthesize tileLayersByAttrs=_tileLayersByAttrs;
 @property(readonly, nonatomic) CALayer *contentLayer; // @synthesize contentLayer=_contentLayer;
 @property(retain, nonatomic) id <OMCThumbnailProvider> thumbnailProvider; // @synthesize thumbnailProvider=_thumbnailProvider;

@@ -13,7 +13,6 @@
     unsigned long long _unexposeTimeMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long unexposeTimeMs; // @synthesize unexposeTimeMs=_unexposeTimeMs;
 @property(nonatomic) unsigned long long exposeTimeMs; // @synthesize exposeTimeMs=_exposeTimeMs;
 @property(retain, nonatomic) NSDictionary *params; // @synthesize params=_params;

@@ -23,7 +23,6 @@
 
 + (id)chatRoomToolViewConfig;
 + (id)webInputToolViewConfig;
-- (void).cxx_destruct;
 @property(nonatomic) double growTextViewFont; // @synthesize growTextViewFont=_growTextViewFont;
 @property(nonatomic) double growTextViewLeftMargin; // @synthesize growTextViewLeftMargin=_growTextViewLeftMargin;
 @property(nonatomic) _Bool showRecommendEmoticon; // @synthesize showRecommendEmoticon=_showRecommendEmoticon;

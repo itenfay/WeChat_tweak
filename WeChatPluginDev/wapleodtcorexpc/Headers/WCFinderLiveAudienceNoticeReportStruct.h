@@ -27,7 +27,6 @@
 }
 
 + (id)replaceCommaToSemicolon:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveNoticeInfo *noticeInfo; // @synthesize noticeInfo=_noticeInfo;
 @property(retain, nonatomic) NSMutableDictionary *scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *channelExtraString; // @synthesize channelExtraString=_channelExtraString;

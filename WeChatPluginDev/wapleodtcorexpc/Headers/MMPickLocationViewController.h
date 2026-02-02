@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CLLocation, MMAutoSearchLogic, MMFloorPickView, MMLocationAttributeBanner, MMLocationPinView, MMMapView, MMPickLocationReporter, MMPickLocationSearchView, NSMutableArray, NSString, POIItem, PickLocationManager, QPoiInfo, UIBarButtonItem, UIButton, UIImageView, UIPinchGestureRecognizer, UIView, WCUIAlertView;
 @protocol MMPickLocationViewControllerDelegate;
 
@@ -91,7 +93,6 @@
 }
 
 + (void)safeMapView:(id)arg1 setRegion:(CDStruct_b7cb895d)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) int currentAuthLogType; // @synthesize currentAuthLogType=_currentAuthLogType;
 @property(nonatomic) _Bool showAccuracyAuthorizationTip; // @synthesize showAccuracyAuthorizationTip=_showAccuracyAuthorizationTip;
 @property(retain, nonatomic) WCUIAlertView *currAlertView; // @synthesize currAlertView=_currAlertView;
@@ -264,4 +265,3 @@
 @property(readonly) Class superclass;
 
 @end
-

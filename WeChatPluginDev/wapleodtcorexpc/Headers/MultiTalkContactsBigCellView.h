@@ -12,7 +12,6 @@
     WCVideoRender *_render;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCVideoRender *render; // @synthesize render=_render;
 - (void)layoutSubviews;
 - (id)initWithRender:(id)arg1;

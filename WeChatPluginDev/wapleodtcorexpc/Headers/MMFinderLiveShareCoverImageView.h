@@ -10,7 +10,6 @@
     WCFinderFeedImageCDNView *_CDNImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedImageCDNView *CDNImageView; // @synthesize CDNImageView=_CDNImageView;
 - (void)updateCover;
 - (id)initWithFrame:(struct CGRect)arg1 shareItem:(id)arg2;

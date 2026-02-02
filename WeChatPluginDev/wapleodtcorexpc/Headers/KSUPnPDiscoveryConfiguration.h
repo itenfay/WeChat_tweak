@@ -13,7 +13,6 @@
     double _discoverTimeInterval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double discoverTimeInterval; // @synthesize discoverTimeInterval=_discoverTimeInterval;
 @property(copy, nonatomic) NSString *searchTarget; // @synthesize searchTarget=_searchTarget;
 - (id)init;

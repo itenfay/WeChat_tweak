@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ICBatchFetchingContext, ICCollectionStatInfo, NSHashTable, NSMutableArray;
 @protocol OS_dispatch_queue;
@@ -21,7 +22,6 @@
     ICBatchFetchingContext *_batchFetchingContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ICBatchFetchingContext *batchFetchingContext; // @synthesize batchFetchingContext=_batchFetchingContext;
 @property(nonatomic) __weak id loadingMoreId; // @synthesize loadingMoreId=_loadingMoreId;
 @property(nonatomic) __weak id loadingNewId; // @synthesize loadingNewId=_loadingNewId;
@@ -82,4 +82,3 @@
 - (id)indexPathOfDataItem:(id)arg1;
 
 @end
-

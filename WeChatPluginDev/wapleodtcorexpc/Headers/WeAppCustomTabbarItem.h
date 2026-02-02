@@ -15,7 +15,6 @@
     NSAttributedString *_selectedText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSAttributedString *selectedText; // @synthesize selectedText=_selectedText;
 @property(retain, nonatomic) NSAttributedString *normalText; // @synthesize normalText=_normalText;
 @property(retain, nonatomic) UIImage *selectedImage; // @synthesize selectedImage=_selectedImage;

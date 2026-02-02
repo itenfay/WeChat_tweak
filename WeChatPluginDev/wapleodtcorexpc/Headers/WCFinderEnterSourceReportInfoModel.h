@@ -14,7 +14,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *enterSourceUserStr; // @synthesize enterSourceUserStr=_enterSourceUserStr;
 @property(copy, nonatomic) NSString *enterSourceFeedIDStr; // @synthesize enterSourceFeedIDStr=_enterSourceFeedIDStr;
 - (id)reportJSONStr;

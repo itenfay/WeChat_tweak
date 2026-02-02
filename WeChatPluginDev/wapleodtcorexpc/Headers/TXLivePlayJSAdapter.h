@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TXLiveContainerView, V2TXLivePlayerJSAdapter, WAMediaCastingRoutePickerController;
 @protocol TXLivePlayJSAdapterDelegate;
@@ -44,7 +45,6 @@
     struct CGRect _rect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double currOutputVolume; // @synthesize currOutputVolume=_currOutputVolume;
 @property(retain, nonatomic) WAMediaCastingRoutePickerController *mediaCastingRoutePickerController; // @synthesize mediaCastingRoutePickerController=_mediaCastingRoutePickerController;
 @property(nonatomic) unsigned long long pauseType; // @synthesize pauseType=_pauseType;
@@ -156,4 +156,3 @@
 @property(readonly) Class superclass;
 
 @end
-

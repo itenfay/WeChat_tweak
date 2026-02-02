@@ -18,7 +18,6 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *outputQueue; // @synthesize outputQueue=_outputQueue;
 @property(retain, nonatomic) TXCDarwinNotificationCenter *center; // @synthesize center=_center;
 @property(retain, nonatomic) TXCMediaStreamIPCTunnelServer *server; // @synthesize server=_server;

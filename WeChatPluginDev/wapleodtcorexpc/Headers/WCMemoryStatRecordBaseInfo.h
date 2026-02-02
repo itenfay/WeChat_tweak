@@ -15,7 +15,6 @@
     NSData *_vmRegionsData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(retain, nonatomic) NSData *vmRegionsData; // @synthesize vmRegionsData=_vmRegionsData;
 @property(retain, nonatomic) NSString *appUUID; // @synthesize appUUID=_appUUID;

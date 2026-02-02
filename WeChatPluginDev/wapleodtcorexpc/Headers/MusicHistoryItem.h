@@ -31,7 +31,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicInfo *musicInfo; // @synthesize musicInfo=_musicInfo;
 @property(nonatomic) double updateTimeStamp; // @synthesize updateTimeStamp=_updateTimeStamp;
 @property(retain, nonatomic) NSData *musicInfoData; // @synthesize musicInfoData=_musicInfoData;

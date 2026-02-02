@@ -27,7 +27,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool overseaAgreementSelected; // @synthesize overseaAgreementSelected=_overseaAgreementSelected;
 @property(nonatomic) _Bool agreementSelected; // @synthesize agreementSelected=_agreementSelected;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;

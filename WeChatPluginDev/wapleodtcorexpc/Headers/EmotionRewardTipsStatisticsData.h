@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_sendedPidCountWrapDic;
 + (void)PBArrayAdd_lastPidContiousSendTimes;
 + (void)PBArrayAdd_lastSendPid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sendedPidCountWrapDic; // @synthesize sendedPidCountWrapDic=_sendedPidCountWrapDic;
 @property(nonatomic) unsigned int lastPidContiousSendTimes; // @synthesize lastPidContiousSendTimes=_lastPidContiousSendTimes;
 @property(retain, nonatomic) NSString *lastSendPid; // @synthesize lastSendPid=_lastSendPid;

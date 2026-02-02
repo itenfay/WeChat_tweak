@@ -18,7 +18,6 @@
     UITableView *_modeSettingTableView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool modeChanged; // @synthesize modeChanged=_modeChanged;
 @property(retain, nonatomic) UITableView *modeSettingTableView; // @synthesize modeSettingTableView=_modeSettingTableView;
 @property(retain, nonatomic) MMFinderLiveConnectMicModePreviewView *previewView; // @synthesize previewView=_previewView;

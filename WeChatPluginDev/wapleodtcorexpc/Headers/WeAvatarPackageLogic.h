@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol IWeAvatarCodePackageLogic, IWeAvatarResPackageLogic;
 
@@ -14,7 +15,6 @@
     NSObject<IWeAvatarCodePackageLogic> *_codePackageLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<IWeAvatarCodePackageLogic> *codePackageLogic; // @synthesize codePackageLogic=_codePackageLogic;
 @property(retain, nonatomic) NSObject<IWeAvatarResPackageLogic> *resPackageLogic; // @synthesize resPackageLogic=_resPackageLogic;
 @property(readonly, nonatomic) _Bool isDebugMode; // @synthesize isDebugMode=_isDebugMode;
@@ -26,4 +26,3 @@
 - (id)init;
 
 @end
-

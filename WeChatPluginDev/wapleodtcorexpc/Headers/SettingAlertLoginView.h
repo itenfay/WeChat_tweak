@@ -11,7 +11,6 @@
     NSString *_titleString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
 @property(retain, nonatomic) NSString *tipString; // @synthesize tipString=_tipString;
 - (void)onClickPageSheetConfirmButton;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FavoritesItem, NSDate, NSString, RTESectionMgr, WNContentStorage, WNHtmlStringBuilder;
 
 @interface WNSaverContext
@@ -19,7 +21,6 @@
     CDUnknownBlockType _openHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType openHandler; // @synthesize openHandler=_openHandler;
 @property(copy, nonatomic) CDUnknownBlockType saveHandler; // @synthesize saveHandler=_saveHandler;
 @property(retain, nonatomic) WNHtmlStringBuilder *htmlBuilder; // @synthesize htmlBuilder=_htmlBuilder;
@@ -32,4 +33,3 @@
 @property(retain, nonatomic) NSDate *modifyTime; // @synthesize modifyTime=_modifyTime;
 
 @end
-

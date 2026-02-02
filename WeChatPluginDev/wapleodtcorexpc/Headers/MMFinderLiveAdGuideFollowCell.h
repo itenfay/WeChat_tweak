@@ -20,7 +20,6 @@
     MMUIButton *_followButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *followButton; // @synthesize followButton=_followButton;
 @property(retain, nonatomic) MMWebImageView *authIconView; // @synthesize authIconView=_authIconView;
 @property(retain, nonatomic) MMUILabel *followedLabel; // @synthesize followedLabel=_followedLabel;

@@ -21,7 +21,6 @@
     NSRecursiveLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) unsigned long long totalCost; // @synthesize totalCost=_totalCost;
 @property(nonatomic) unsigned long long totalCount; // @synthesize totalCount=_totalCount;

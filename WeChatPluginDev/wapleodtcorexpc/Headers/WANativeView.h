@@ -15,7 +15,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int webviewID; // @synthesize webviewID=_webviewID;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(retain, nonatomic) NSString *data; // @synthesize data=_data;

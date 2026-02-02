@@ -10,7 +10,6 @@
     NSMapTable *_cachedEngines;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *cachedEngines; // @synthesize cachedEngines=_cachedEngines;
 - (void)dealloc;
 - (void)remove:(id)arg1;

@@ -16,7 +16,6 @@
     CameraScannerViewWrapper *_wrapper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CameraScannerViewWrapper *wrapper; // @synthesize wrapper=_wrapper;
 @property(nonatomic) _Bool shouldSetBlacklistDelayedFrames; // @synthesize shouldSetBlacklistDelayedFrames=_shouldSetBlacklistDelayedFrames;
 @property(nonatomic) _Bool isSupportMultiCodes; // @synthesize isSupportMultiCodes=_isSupportMultiCodes;

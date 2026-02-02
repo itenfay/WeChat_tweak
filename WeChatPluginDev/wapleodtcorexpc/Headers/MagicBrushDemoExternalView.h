@@ -10,7 +10,6 @@
     NSMutableDictionary *_internalViewDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *internalViewDict; // @synthesize internalViewDict=_internalViewDict;
 - (void)onMainScriptInjected:(id)arg1;
 - (void)onCanvasViewLayout:(unsigned int)arg1 view:(id)arg2 left:(float)arg3 top:(float)arg4 width:(float)arg5 height:(float)arg6;

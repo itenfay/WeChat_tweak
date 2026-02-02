@@ -16,7 +16,6 @@
     NSString *_sendID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sendID; // @synthesize sendID=_sendID;
 @property(retain, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(retain, nonatomic) NSData *signature; // @synthesize signature=_signature;

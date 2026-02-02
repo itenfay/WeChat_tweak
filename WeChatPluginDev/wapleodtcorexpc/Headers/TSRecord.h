@@ -19,7 +19,6 @@
 }
 
 + (_Bool)supportsSecureCoding;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *externals; // @synthesize externals=_externals;
 @property(nonatomic) _Bool reported; // @synthesize reported=_reported;
 @property(retain, nonatomic) TSTrackedItem<TSFinalTrackedItem> *item; // @synthesize item=_item;

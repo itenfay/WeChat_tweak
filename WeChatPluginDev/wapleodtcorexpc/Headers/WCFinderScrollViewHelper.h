@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderScrollViewHelper : NSObject
 {
@@ -13,4 +14,3 @@
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 
 @end
-

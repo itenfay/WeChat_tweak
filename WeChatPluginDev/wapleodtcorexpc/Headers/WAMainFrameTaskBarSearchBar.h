@@ -16,7 +16,6 @@
     UILabel *_searchHintLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *searchHintLabel; // @synthesize searchHintLabel=_searchHintLabel;
 @property(retain, nonatomic) UIImageView *searchBarImageView; // @synthesize searchBarImageView=_searchBarImageView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

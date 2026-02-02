@@ -12,7 +12,6 @@
     id _jsonObject;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 - (id)description;
 - (_Bool)close:(id *)arg1;

@@ -12,7 +12,6 @@
     MISSING_TYPE *urlTask;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)didFinishWithParams:(id)arg1 data:(id)arg2;
 @property(nonatomic, readonly) NSDictionary *params;

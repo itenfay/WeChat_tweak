@@ -14,7 +14,6 @@
     NSString *_pattern;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned short rightIdentifier; // @synthesize rightIdentifier=_rightIdentifier;
 @property(nonatomic) unsigned short leftIdentifier; // @synthesize leftIdentifier=_leftIdentifier;
 @property(copy, nonatomic) NSString *pattern; // @synthesize pattern=_pattern;

@@ -26,7 +26,6 @@
     double _lastScrollDistance;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastScrollDistance; // @synthesize lastScrollDistance=_lastScrollDistance;
 @property(nonatomic) double distanceBeginDragging; // @synthesize distanceBeginDragging=_distanceBeginDragging;
 @property(retain, nonatomic) AdExposureTimerHelper *cardSlideTimer; // @synthesize cardSlideTimer=_cardSlideTimer;

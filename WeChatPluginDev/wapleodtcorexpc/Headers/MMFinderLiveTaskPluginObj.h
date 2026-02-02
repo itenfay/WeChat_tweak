@@ -19,7 +19,6 @@
     MMLiveBaseTask<MMFinderLiveTaskFunctionPlugin> *_liveTask;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMLiveBaseTask<MMFinderLiveTaskFunctionPlugin> *liveTask; // @synthesize liveTask=_liveTask;
 @property(retain, nonatomic) MMFinderLiveNoticeLogicPlugin *notice; // @synthesize notice=_notice;
 @property(retain, nonatomic) MMFinderLiveTaskFPSMonitorPlugin *fpsMonitor; // @synthesize fpsMonitor=_fpsMonitor;

@@ -38,7 +38,6 @@
 + (void)MMLiveReportFieldAdd_micId;
 + (void)MMLiveReportFieldAdd_liveId;
 + (void)MMLiveReportFieldAdd_roomId;
-- (void).cxx_destruct;
 @property(nonatomic) int isMicConnected; // @synthesize isMicConnected;
 @property(nonatomic) long long endAudienceUV; // @synthesize endAudienceUV;
 @property(nonatomic) long long startAudienceUV; // @synthesize startAudienceUV;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, UIScrollView, ZZFLEXAngelIndexPathChainModel, ZZFLEXAngelViewBatchEditChainModel, ZZFLEXAngelViewEditChainModel;
 
@@ -13,7 +14,6 @@
     UIScrollView *_hostView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIScrollView *hostView; // @synthesize hostView=_hostView;
 @property(readonly, nonatomic) NSMutableArray *data; // @synthesize data=_data;
 @property(readonly, copy, nonatomic) ZZFLEXAngelIndexPathChainModel *indexPath;
@@ -98,4 +98,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -18,7 +18,6 @@
     long long _orientationToRestore;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidRoundCorner; // @synthesize forbidRoundCorner=_forbidRoundCorner;
 @property(nonatomic) long long orientationToRestore; // @synthesize orientationToRestore=_orientationToRestore;
 @property(nonatomic) _Bool needZoom; // @synthesize needZoom=_needZoom;

@@ -20,7 +20,6 @@
     struct CGRect _destHitRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AdExposureTimerHelper *dragImageTimer; // @synthesize dragImageTimer=_dragImageTimer;
 @property(nonatomic) struct CGRect destHitRect; // @synthesize destHitRect=_destHitRect;
 @property(nonatomic) struct CGRect srcHitRect; // @synthesize srcHitRect=_srcHitRect;

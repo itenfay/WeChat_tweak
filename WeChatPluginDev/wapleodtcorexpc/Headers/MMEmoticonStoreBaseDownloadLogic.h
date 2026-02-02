@@ -14,7 +14,6 @@
     unsigned long long _downloadStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isReleaseBuild; // @synthesize isReleaseBuild=_isReleaseBuild;
 @property(nonatomic) unsigned long long downloadStatus; // @synthesize downloadStatus=_downloadStatus;
 @property(retain, nonatomic) EmoticonStoreItem *storeItem; // @synthesize storeItem=_storeItem;

@@ -13,7 +13,6 @@
 }
 
 + (id)showWithTaskId:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) FinderLiveUserAttrUserSetting *userSetting; // @synthesize userSetting=_userSetting;
 @property(retain, nonatomic) WCTableViewManager *tableViewManager; // @synthesize tableViewManager=_tableViewManager;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;

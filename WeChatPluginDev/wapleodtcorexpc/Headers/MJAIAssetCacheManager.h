@@ -10,7 +10,6 @@
     NSMutableDictionary *_uploadResultCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *uploadResultCache; // @synthesize uploadResultCache=_uploadResultCache;
 - (id)getCachedUploadResultForFileKey:(id)arg1;
 - (void)cacheUploadResult:(id)arg1 forFileKey:(id)arg2;

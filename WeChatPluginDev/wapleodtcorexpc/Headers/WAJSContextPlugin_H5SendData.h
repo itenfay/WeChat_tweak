@@ -10,7 +10,6 @@
     NSMutableDictionary *_webDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *webDic; // @synthesize webDic=_webDic;
 - (id)getWebViewID:(id)arg1;
 - (id)getWebVCWithWebViewID:(id)arg1;

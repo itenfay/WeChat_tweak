@@ -18,7 +18,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithPayPackage:(id)arg1 result:(id)arg2 errMsg:(id)arg3 miniShopAppId:(id)arg4;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *miniShopAppId; // @synthesize miniShopAppId=_miniShopAppId;
 @property(copy, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(copy, nonatomic) NSString *result; // @synthesize result=_result;

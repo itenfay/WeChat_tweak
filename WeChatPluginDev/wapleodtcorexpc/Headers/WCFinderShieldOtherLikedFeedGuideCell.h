@@ -16,7 +16,6 @@
 + (double)heightWithInfo:(id)arg1 width:(double)arg2;
 + (id)createLabel;
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 - (void)layoutContentViews;

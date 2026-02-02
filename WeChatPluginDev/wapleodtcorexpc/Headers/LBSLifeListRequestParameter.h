@@ -17,7 +17,6 @@
     NSString *_keyword;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool requestFullRange; // @synthesize requestFullRange=_requestFullRange;
 @property(retain, nonatomic) NSString *keyword; // @synthesize keyword=_keyword;
 @property(nonatomic) _Bool fromStart; // @synthesize fromStart=_fromStart;

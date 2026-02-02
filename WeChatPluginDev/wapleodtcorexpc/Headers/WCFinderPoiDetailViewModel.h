@@ -25,7 +25,6 @@
     FinderPoiStreamNearbyInfo *_nearbyInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderPoiStreamNearbyInfo *nearbyInfo; // @synthesize nearbyInfo=_nearbyInfo;
 @property(nonatomic) _Bool nearbyFlag; // @synthesize nearbyFlag=_nearbyFlag;
 @property(copy, nonatomic) NSString *syncKey; // @synthesize syncKey=_syncKey;

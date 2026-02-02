@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OS_dispatch_queue, WCFinderTaskSchedulerStrategyProtocol;
 
@@ -20,7 +21,6 @@
 }
 
 + (id)schedulerWithStrategy:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) _Bool ignoreNonEssentialTasks; // @synthesize ignoreNonEssentialTasks=_ignoreNonEssentialTasks;
 @property(nonatomic) unsigned long long executeFrequency; // @synthesize executeFrequency=_executeFrequency;
@@ -38,4 +38,3 @@
 - (id)initWithStrategyObject:(id)arg1;
 
 @end
-

@@ -17,7 +17,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_fileMD5;
 + (void)PBArrayAdd_fileSize;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bCacheUse; // @synthesize bCacheUse=_bCacheUse;
 @property(copy, nonatomic) NSString *fileMD5; // @synthesize fileMD5=_fileMD5;
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;

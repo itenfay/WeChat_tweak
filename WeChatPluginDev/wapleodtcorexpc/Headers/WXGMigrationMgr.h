@@ -17,7 +17,6 @@
     _Bool m_bBackground;
 }
 
-- (void).cxx_destruct;
 - (void)onAuthOK;
 - (_Bool)hasBeenMigrationWithSessionNameArray:(id)arg1;
 - (_Bool)hasBeenMigration;

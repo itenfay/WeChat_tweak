@@ -14,7 +14,6 @@
     unsigned int status;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int status; // @synthesize status;
 @property(nonatomic) int memberId; // @synthesize memberId;
 @property(retain, nonatomic) NSString *openId; // @synthesize openId;

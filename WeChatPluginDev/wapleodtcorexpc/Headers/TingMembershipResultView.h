@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UIImageView, UILabel;
 
@@ -17,7 +18,6 @@
     UIButton *_actionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -31,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

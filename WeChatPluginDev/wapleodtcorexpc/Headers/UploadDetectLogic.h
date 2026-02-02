@@ -17,7 +17,6 @@
     struct timeval _lastProcessTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int motionState; // @synthesize motionState=_motionState;
 @property(nonatomic) int retryTimes; // @synthesize retryTimes=_retryTimes;
 - (void)feedbackCameraFocused;

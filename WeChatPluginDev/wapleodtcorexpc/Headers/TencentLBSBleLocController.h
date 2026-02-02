@@ -16,7 +16,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain) TencentLBSLocation *pdrLocation_02; // @synthesize pdrLocation_02=_pdrLocation_02;
 @property(retain) TencentLBSLocation *pdrLocation; // @synthesize pdrLocation=_pdrLocation;
 @property(retain) TencentLBSLocation *beaconLocation_02; // @synthesize beaconLocation_02=_beaconLocation_02;

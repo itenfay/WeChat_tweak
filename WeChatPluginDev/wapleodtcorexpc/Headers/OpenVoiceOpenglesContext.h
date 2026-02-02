@@ -46,7 +46,6 @@
     id <OpenVoiceOpenglesContextDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int objectFit; // @synthesize objectFit=_objectFit;
 @property(nonatomic) _Bool fitView; // @synthesize fitView=_fitView;
 @property(nonatomic) __weak id <OpenVoiceOpenglesContextDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

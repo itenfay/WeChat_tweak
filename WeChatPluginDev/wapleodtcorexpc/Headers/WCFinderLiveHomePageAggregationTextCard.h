@@ -13,7 +13,6 @@
     UIImageView *_arrowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) MMLiveColorfulLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *headInfoBgView; // @synthesize headInfoBgView=_headInfoBgView;

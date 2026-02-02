@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AnyPromise, NSString, WCFinderContact;
 
@@ -14,7 +15,6 @@
 }
 
 + (id)assistWithContact:(id)arg1 userPrepareResponse:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AnyPromise *userPrepare; // @synthesize userPrepare=_userPrepare;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 - (_Bool)isContactLogout;
@@ -44,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

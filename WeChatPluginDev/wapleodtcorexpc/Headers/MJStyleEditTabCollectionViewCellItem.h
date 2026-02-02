@@ -13,7 +13,6 @@
     unsigned long long _type;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)initWithTitle:(id)arg1 type:(unsigned long long)arg2;

@@ -48,7 +48,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) NSNumber *destination;
 @property(nonatomic, retain) NSNumber *origin;

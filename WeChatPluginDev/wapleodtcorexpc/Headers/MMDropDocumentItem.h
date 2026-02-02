@@ -14,7 +14,6 @@
 
 + (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
 + (id)readableTypeIdentifiersForItemProvider;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (id)initWithData:(id)arg1 typeIdentifier:(id)arg2;
 

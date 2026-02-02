@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCMomentsPageContext;
 @protocol OS_dispatch_queue;
@@ -30,7 +31,6 @@
 }
 
 + (id)viewModelWithUserName:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *handleDataQueue; // @synthesize handleDataQueue=_handleDataQueue;
 @property(copy, nonatomic) CDUnknownBlockType EntranceCellClickBlock; // @synthesize EntranceCellClickBlock=_EntranceCellClickBlock;
 @property(copy, nonatomic) CDUnknownBlockType scrollViewDidScrollBlock; // @synthesize scrollViewDidScrollBlock=_scrollViewDidScrollBlock;
@@ -79,4 +79,3 @@
 @property(readonly) Class superclass;
 
 @end
-

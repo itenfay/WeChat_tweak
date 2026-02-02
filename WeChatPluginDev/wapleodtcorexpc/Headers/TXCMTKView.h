@@ -22,7 +22,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(nonatomic) _Bool layerSizeDidUpdate; // @synthesize layerSizeDidUpdate=_layerSizeDidUpdate;
 @property(readonly, nonatomic) CAMetalLayer *metalLayer; // @synthesize metalLayer=_metalLayer;

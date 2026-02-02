@@ -19,7 +19,6 @@
     NSMutableSet *_mergeRequestNumSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *mergeRequestNumSet; // @synthesize mergeRequestNumSet=_mergeRequestNumSet;
 @property(nonatomic) __weak id <TPAssetResourceLoadingRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;

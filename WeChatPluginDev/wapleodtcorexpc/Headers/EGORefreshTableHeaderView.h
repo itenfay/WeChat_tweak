@@ -14,7 +14,6 @@
     _Bool _useForTransparentNavBar;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useForTransparentNavBar; // @synthesize useForTransparentNavBar=_useForTransparentNavBar;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) __weak id <EGORefreshTableHeaderDelegate> delegate; // @synthesize delegate;

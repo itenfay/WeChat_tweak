@@ -13,7 +13,6 @@
     _Bool m_continueFlag;
 }
 
-- (void).cxx_destruct;
 - (id)dataViewModel;
 - (void)mmMusicPostVideoCollectionCell:(id)arg1 onSelectedBtnClicked:(id)arg2;
 - (void)onDataVMDataChanged:(_Bool)arg1;

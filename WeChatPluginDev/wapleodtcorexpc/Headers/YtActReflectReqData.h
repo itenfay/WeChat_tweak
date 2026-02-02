@@ -31,7 +31,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *config; // @synthesize config=_config;
 @property(retain) NSString *actionStr; // @synthesize actionStr=_actionStr;
 @property(retain) NSString *controlConfig; // @synthesize controlConfig=_controlConfig;

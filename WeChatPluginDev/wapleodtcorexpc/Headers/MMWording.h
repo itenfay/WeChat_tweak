@@ -18,7 +18,6 @@
 }
 
 + (id)WordingWithNeedshow:(_Bool)arg1 entryTip:(id)arg2 title:(id)arg3 subTitle:(id)arg4 desc:(id)arg5 subDesc:(id)arg6;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *subDesc; // @synthesize subDesc=_subDesc;
 @property(readonly, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(readonly, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;

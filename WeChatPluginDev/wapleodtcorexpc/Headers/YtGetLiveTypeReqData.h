@@ -18,7 +18,6 @@
     NSString *_controlConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSString *controlConfig; // @synthesize controlConfig=_controlConfig;
 @property(retain) YtExtraOptions *extraOptions; // @synthesize extraOptions=_extraOptions;
 @property(retain) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;

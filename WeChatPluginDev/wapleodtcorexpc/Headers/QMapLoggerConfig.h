@@ -15,7 +15,6 @@
     NSArray *_tags;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 @property(nonatomic) int level; // @synthesize level=_level;
 @property(nonatomic) _Bool toConsole; // @synthesize toConsole=_toConsole;

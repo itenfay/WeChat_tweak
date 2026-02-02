@@ -23,7 +23,6 @@
 + (void)PBArrayAdd_paymenu_username;
 + (void)PBArrayAdd_paymenu_jump_url;
 + (void)PBArrayAdd_paymenu_jump_type;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *paymenu_title; // @synthesize paymenu_title=_paymenu_title;
 @property(retain, nonatomic) NSString *paymenu_path; // @synthesize paymenu_path=_paymenu_path;
 @property(retain, nonatomic) NSString *paymenu_username; // @synthesize paymenu_username=_paymenu_username;

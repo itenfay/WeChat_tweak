@@ -87,7 +87,6 @@
 + (void)PBArrayAdd_m_nsAliasName;
 + (void)PBArrayAdd_m_nsEncodeUserName;
 + (void)PBArrayAdd_m_nsUsrName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_authIconUrl; // @synthesize m_authIconUrl=_m_authIconUrl;
 @property(retain, nonatomic) NSString *m_nsGroupMemberTicket; // @synthesize m_nsGroupMemberTicket=_m_nsGroupMemberTicket;
 @property(retain, nonatomic) NSDictionary *externalInfoJSONCache; // @synthesize externalInfoJSONCache=_externalInfoJSONCache;

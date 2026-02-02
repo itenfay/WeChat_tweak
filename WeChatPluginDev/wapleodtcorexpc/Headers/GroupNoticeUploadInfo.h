@@ -12,7 +12,6 @@
     GroupNoticeItemDataField *_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GroupNoticeItemDataField *data; // @synthesize data=_data;
 - (id)initWithData:(id)arg1;
 

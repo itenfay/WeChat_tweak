@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OAKImageManager : NSObject
 {
@@ -13,7 +14,6 @@
 
 + (id)defaultManager;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)cancelAllRequests;
 - (void)onRequestDidCompleteWithAsset:(id)arg1 audioMix:(id)arg2 info:(id)arg3 taskID:(unsigned int)arg4;
 - (void)onRequestDidCompleteWithImageData:(id)arg1 dataUTI:(id)arg2 orientation:(long long)arg3 info:(id)arg4 taskID:(unsigned int)arg5;
@@ -23,4 +23,3 @@
 - (int)requestImageDataForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 
 @end
-

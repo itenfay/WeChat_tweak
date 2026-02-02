@@ -11,7 +11,6 @@
     double _videoEndPos;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double videoEndPos; // @synthesize videoEndPos=_videoEndPos;
 @property(retain, nonatomic) NSString *videoId; // @synthesize videoId=_videoId;
 

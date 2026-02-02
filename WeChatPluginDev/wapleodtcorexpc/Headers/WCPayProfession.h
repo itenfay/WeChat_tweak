@@ -13,7 +13,6 @@
     long long _professionType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long professionType; // @synthesize professionType=_professionType;
 @property(copy, nonatomic) NSString *professionName; // @synthesize professionName=_professionName;
 

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EditVideoBGMPlayer, NSArray, NSMutableArray, NSString, RecommendedMusicInfo, UIImageView, VoipRecentStatusImagesView, WCFinderDataItem;
 
@@ -24,7 +25,6 @@
     UIImageView *_soundIconImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *soundIconImageView; // @synthesize soundIconImageView=_soundIconImageView;
 @property(retain, nonatomic) UIView *soundView; // @synthesize soundView=_soundView;
 @property(retain, nonatomic) NSMutableArray *dotViews; // @synthesize dotViews=_dotViews;
@@ -53,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

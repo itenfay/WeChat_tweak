@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_uiStepCount;
 + (void)PBArrayAdd_nsAppName;
 + (void)PBArrayAdd_nsBundleId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsInWhiteList; // @synthesize bIsInWhiteList=_bIsInWhiteList;
 @property(nonatomic) _Bool bIsLocalDevice; // @synthesize bIsLocalDevice=_bIsLocalDevice;
 @property(nonatomic) _Bool bIsAppleWatch; // @synthesize bIsAppleWatch=_bIsAppleWatch;

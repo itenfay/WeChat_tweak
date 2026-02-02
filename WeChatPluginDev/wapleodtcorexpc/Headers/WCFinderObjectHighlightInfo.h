@@ -13,7 +13,6 @@
     NSString *_mediaTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mediaTitle; // @synthesize mediaTitle=_mediaTitle;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 

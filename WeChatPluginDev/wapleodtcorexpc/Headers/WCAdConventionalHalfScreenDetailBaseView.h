@@ -17,7 +17,6 @@
     WCAdConventionalDetailContainerViewController *_containerViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdConventionalDetailContainerViewController *containerViewController; // @synthesize containerViewController=_containerViewController;
 @property(retain, nonatomic) WCAdConventionalHalfScreenScrollView *contentScrollView; // @synthesize contentScrollView=_contentScrollView;
 @property(retain, nonatomic) WCAdContactInfoHalfScreenViewController *contactViewController; // @synthesize contactViewController=_contactViewController;

@@ -29,7 +29,6 @@
     MMFinderLiveGiftCustomizationStyleItemResource *_textCustomizationPreview;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGiftCustomizationStyleItemResource *textCustomizationPreview; // @synthesize textCustomizationPreview=_textCustomizationPreview;
 @property(retain, nonatomic) MMFinderLiveGiftCustomizationStyleItemResource *thumbnailWithCustomText; // @synthesize thumbnailWithCustomText=_thumbnailWithCustomText;
 @property(retain, nonatomic) MMFinderLiveGiftCustomizationStyleItemResource *previewAnimationWithCustomText; // @synthesize previewAnimationWithCustomText=_previewAnimationWithCustomText;

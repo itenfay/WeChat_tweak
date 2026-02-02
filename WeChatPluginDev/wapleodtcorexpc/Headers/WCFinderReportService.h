@@ -20,7 +20,6 @@
     WCPlayerPlaybackInfo *_latestPlaybackInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerPlaybackInfo *latestPlaybackInfo; // @synthesize latestPlaybackInfo=_latestPlaybackInfo;
 @property(nonatomic) unsigned long long latestMediaType; // @synthesize latestMediaType=_latestMediaType;
 @property(retain, nonatomic) NSString *latestFeedID; // @synthesize latestFeedID=_latestFeedID;

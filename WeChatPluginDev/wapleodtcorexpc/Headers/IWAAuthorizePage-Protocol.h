@@ -4,6 +4,7 @@
 //
 
 #import "NSObject-Protocol.h"
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIViewController, WAAuthorizeResultInfo, WAAuthorizeSheetInfo;
 @protocol WAAuthorizePageDelegate;
@@ -39,4 +40,3 @@
 - (void)reloadData;
 - (void)dismissWithCompletion:(void (^)(void))arg1;
 @end
-

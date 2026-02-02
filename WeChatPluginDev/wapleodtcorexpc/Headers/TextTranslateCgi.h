@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _completeBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 @property(nonatomic) unsigned int requestID; // @synthesize requestID=_requestID;
 @property(retain, nonatomic) NSString *originText; // @synthesize originText=_originText;
@@ -25,4 +25,3 @@
 - (id)initWithText:(id)arg1;
 
 @end
-

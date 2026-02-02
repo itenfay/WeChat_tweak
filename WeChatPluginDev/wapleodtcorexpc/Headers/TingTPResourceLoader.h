@@ -29,7 +29,6 @@
     unsigned long long _callbackFileLength;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long callbackFileLength; // @synthesize callbackFileLength=_callbackFileLength;
 @property(nonatomic) _Bool isLocalFile; // @synthesize isLocalFile=_isLocalFile;
 @property(nonatomic) _Bool hasStartDownload; // @synthesize hasStartDownload=_hasStartDownload;

@@ -74,7 +74,6 @@
     long long _pitchDetectLeanBackWindow;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long pitchDetectLeanBackWindow; // @synthesize pitchDetectLeanBackWindow=_pitchDetectLeanBackWindow;
 @property(nonatomic) long long pitchDetectLeanFrontWindow; // @synthesize pitchDetectLeanFrontWindow=_pitchDetectLeanFrontWindow;
 @property(nonatomic) long long pitchDetectTotalWindow; // @synthesize pitchDetectTotalWindow=_pitchDetectTotalWindow;

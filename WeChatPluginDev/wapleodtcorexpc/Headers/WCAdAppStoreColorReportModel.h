@@ -13,7 +13,6 @@
     NSString *_ad_uid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ad_uid; // @synthesize ad_uid=_ad_uid;
 @property(nonatomic) int scene_id; // @synthesize scene_id=_scene_id;
 

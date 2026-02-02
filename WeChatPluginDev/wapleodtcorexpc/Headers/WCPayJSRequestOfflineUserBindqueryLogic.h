@@ -12,7 +12,6 @@
     KindaJSEvent *_jsEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) KindaJSEvent *jsEvent; // @synthesize jsEvent=_jsEvent;
 @property(nonatomic) __weak id <WCPayJSRequestOfflineUserBindqueryLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)checkIsKindaOfflinePay;

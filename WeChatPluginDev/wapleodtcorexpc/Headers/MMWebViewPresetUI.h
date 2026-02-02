@@ -37,7 +37,6 @@
 }
 
 + (id)menuItemIdentifier:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMenuHeaderHidden; // @synthesize isMenuHeaderHidden=_isMenuHeaderHidden;
 @property(retain, nonatomic) NSMutableArray *arrMenuItemFliters; // @synthesize arrMenuItemFliters=_arrMenuItemFliters;
 @property(retain, nonatomic) NSMutableSet *setDisableMenueItems; // @synthesize setDisableMenueItems=_setDisableMenueItems;

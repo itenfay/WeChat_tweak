@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderLiveMsgSessionInfoStorage;
 
 @interface WCFinderLiveMsgSessionMgr
@@ -11,7 +13,6 @@
 }
 
 + (id)defaultFinderContactForUsername:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveMsgSessionInfoStorage *qaSessionInfoStorage; // @synthesize qaSessionInfoStorage=_qaSessionInfoStorage;
 - (unsigned long long)getTotalUnreadCount;
 - (void)onFinderUserprepare;
@@ -48,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -18,7 +18,6 @@
     MMLiveSEIRecordScreenInfo *_recordScreenInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveSEIRecordScreenInfo *recordScreenInfo; // @synthesize recordScreenInfo=_recordScreenInfo;
 @property(retain, nonatomic) MMLiveSEIKTVStateInfo *ktvStateInfo; // @synthesize ktvStateInfo=_ktvStateInfo;
 @property(retain, nonatomic) MMLiveAnchorSEILiveModeInfo *liveModeInfo; // @synthesize liveModeInfo=_liveModeInfo;

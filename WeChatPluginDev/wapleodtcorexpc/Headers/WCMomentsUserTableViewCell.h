@@ -15,7 +15,6 @@
 
 + (double)heightForTableView:(id)arg1;
 + (id)defaultIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
 @property(retain, nonatomic) UILabel *nicknameLabel; // @synthesize nicknameLabel=_nicknameLabel;
 @property(retain, nonatomic) MMHeadImageView *headerView; // @synthesize headerView=_headerView;

@@ -25,7 +25,6 @@
     UIButton *_minimizeButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *minimizeButton; // @synthesize minimizeButton=_minimizeButton;
 @property(nonatomic) _Bool hasBeAccepted; // @synthesize hasBeAccepted=_hasBeAccepted;
 @property(retain, nonatomic) WavAudioPlayer *m_wavAudioPlayer; // @synthesize m_wavAudioPlayer=_m_wavAudioPlayer;

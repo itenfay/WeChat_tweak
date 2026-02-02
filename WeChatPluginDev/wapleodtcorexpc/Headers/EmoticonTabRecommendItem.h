@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_m_iconUrl;
 + (void)PBArrayAdd_m_productId;
 + (void)PBArrayAdd_m_name;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_buttonType; // @synthesize m_buttonType=_m_buttonType;
 @property(retain, nonatomic) NSString *m_recWord; // @synthesize m_recWord=_m_recWord;
 @property(retain, nonatomic) NSString *m_name; // @synthesize m_name=_m_name;

@@ -11,7 +11,6 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *targetView; // @synthesize targetView=_targetView;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

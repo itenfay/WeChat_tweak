@@ -23,7 +23,6 @@
     NSString *_loadingDarkModeStyle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *loadingDarkModeStyle; // @synthesize loadingDarkModeStyle=_loadingDarkModeStyle;
 @property(retain, nonatomic) NSString *enterType; // @synthesize enterType=_enterType;
 @property(retain, nonatomic) NSString *liteGameInfo; // @synthesize liteGameInfo=_liteGameInfo;

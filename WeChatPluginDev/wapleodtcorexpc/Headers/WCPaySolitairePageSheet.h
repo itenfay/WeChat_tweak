@@ -17,7 +17,6 @@
     MMTableView *_dataTableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *dataTableView; // @synthesize dataTableView=_dataTableView;
 @property(retain, nonatomic) UIView *pageDetailView; // @synthesize pageDetailView=_pageDetailView;
 @property(retain, nonatomic) MMPageSheetAdapter *pageAdapter; // @synthesize pageAdapter=_pageAdapter;

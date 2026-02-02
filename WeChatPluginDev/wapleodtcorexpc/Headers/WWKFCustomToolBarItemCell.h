@@ -22,7 +22,6 @@
 + (struct CGSize)SizeToFitModel:(id)arg1;
 + (double)WidthToFitTitle:(id)arg1;
 + (id)LabelFont;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WWKFCustomToolBarItemCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) COpenIMCustomToolBarItem *model; // @synthesize model=_model;
 - (void)onTapContainer:(id)arg1;

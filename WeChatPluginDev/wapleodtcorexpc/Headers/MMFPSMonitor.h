@@ -20,7 +20,6 @@
     double m_hangTime;
 }
 
-- (void).cxx_destruct;
 - (void)onExptItemListChange;
 - (void)onFPSMonitorPluginReport:(id)arg1 totalTime:(double)arg2 dropFrameTime:(double)arg3 hitchRate:(double)arg4 scene:(id)arg5;
 - (_Bool)shouldPrintViewTreeWithDuration:(double)arg1;

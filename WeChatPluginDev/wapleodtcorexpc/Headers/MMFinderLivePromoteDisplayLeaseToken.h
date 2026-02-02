@@ -19,7 +19,6 @@
     id <MMFinderLivePromoteDisplayLeasePromotionDelegate> _promotionDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLivePromoteDisplayLeasePromotionDelegate> promotionDelegate; // @synthesize promotionDelegate=_promotionDelegate;
 @property(retain, nonatomic) MMFinderLivePromoteDisplayLeaseRequest *request; // @synthesize request=_request;
 @property(nonatomic) __weak id <MMFinderLivePromoteDisplayLeaseTokenDelegate> delegate; // @synthesize delegate=_delegate;

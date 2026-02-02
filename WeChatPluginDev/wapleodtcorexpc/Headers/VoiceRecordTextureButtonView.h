@@ -25,7 +25,6 @@
     struct CGRect _originOvalFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=_gradientColors;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(retain, nonatomic) UIColor *unselectedFillColor; // @synthesize unselectedFillColor=_unselectedFillColor;

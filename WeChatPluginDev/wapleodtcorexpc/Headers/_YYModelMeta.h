@@ -24,7 +24,6 @@
 }
 
 + (id)metaWithClass:(Class)arg1 configTag:(id)arg2;
-- (void).cxx_destruct;
 - (id)genPropertyMapperByDic:(id)arg1;
 - (id)getParentDicOfPath:(id)arg1 inDic:(id)arg2 needGenerate:(_Bool)arg3;
 - (id)initWithClass:(Class)arg1 configTag:(id)arg2;

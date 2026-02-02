@@ -18,7 +18,6 @@
     NSMutableArray *_selectedFreeFileLists;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *selectedFreeFileLists; // @synthesize selectedFreeFileLists=_selectedFreeFileLists;
 @property(retain, nonatomic) NSArray *chooseFreeContactListForDigestDisplay; // @synthesize chooseFreeContactListForDigestDisplay=_chooseFreeContactListForDigestDisplay;
 @property(retain, nonatomic) NSMutableArray *chooseFreeContactUsernameList; // @synthesize chooseFreeContactUsernameList=_chooseFreeContactUsernameList;

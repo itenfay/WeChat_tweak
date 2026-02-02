@@ -10,7 +10,6 @@
     WCPayNativeCgiTunnelImpl *_cgiLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNativeCgiTunnelImpl *cgiLogic; // @synthesize cgiLogic=_cgiLogic;
 - (void)onNativeCgiTunnelFail:(id)arg1;
 - (void)onNativeCgiTunnelSuccess:(id)arg1;

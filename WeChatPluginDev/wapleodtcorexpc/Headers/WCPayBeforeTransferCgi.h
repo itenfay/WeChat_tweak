@@ -12,7 +12,6 @@
     NSString *_groupUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *groupUsername; // @synthesize groupUsername=_groupUsername;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 - (void)didFailWithError:(id)arg1;

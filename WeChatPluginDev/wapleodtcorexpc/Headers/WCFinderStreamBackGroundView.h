@@ -12,7 +12,6 @@
     UIView *_extResponder;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *extResponder; // @synthesize extResponder=_extResponder;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 

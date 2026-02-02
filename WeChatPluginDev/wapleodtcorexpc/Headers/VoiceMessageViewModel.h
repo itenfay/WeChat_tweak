@@ -20,7 +20,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CTRichTextView *richTextViewForCalcu; // @synthesize richTextViewForCalcu=_richTextViewForCalcu;
 @property(retain, nonatomic) NSMutableArray *textTranslateTextStyles; // @synthesize textTranslateTextStyles=_textTranslateTextStyles;
 @property(nonatomic) struct CGSize textTranslateTextSize; // @synthesize textTranslateTextSize=_textTranslateTextSize;

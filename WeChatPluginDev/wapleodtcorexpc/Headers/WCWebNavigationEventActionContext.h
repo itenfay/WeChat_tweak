@@ -13,7 +13,6 @@
     NSDictionary *_jsInitInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *jsInitInfo; // @synthesize jsInitInfo=_jsInitInfo;
 @property(nonatomic) __weak MMWebViewController *webViewController; // @synthesize webViewController=_webViewController;
 @property(nonatomic) __weak WCWebNavigationEventsStore *webEventsStore; // @synthesize webEventsStore=_webEventsStore;

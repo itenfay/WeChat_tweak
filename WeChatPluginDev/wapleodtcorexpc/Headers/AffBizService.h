@@ -11,7 +11,6 @@
 }
 
 + (id)shared;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AffBizCgiProxy *cgiProxy; // @synthesize cgiProxy=_cgiProxy;
 - (void)onServiceClearData;
 - (void)onServiceInit;

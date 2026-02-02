@@ -17,7 +17,6 @@
     NSArray *_chooseProudctList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *chooseProudctList; // @synthesize chooseProudctList=_chooseProudctList;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
 @property(copy, nonatomic) NSString *orderRequestId; // @synthesize orderRequestId=_orderRequestId;

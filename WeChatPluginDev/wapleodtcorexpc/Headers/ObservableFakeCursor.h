@@ -14,7 +14,6 @@
     NSString *_keyPath;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly, nonatomic) __weak id observeObject; // @synthesize observeObject=_observeObject;
 @property(readonly, nonatomic) __weak id observeTarget; // @synthesize observeTarget=_observeTarget;

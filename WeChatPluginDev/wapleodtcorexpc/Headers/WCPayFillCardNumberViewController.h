@@ -25,7 +25,6 @@
     WCBaseControlLogic *_fromControlLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBaseControlLogic *fromControlLogic; // @synthesize fromControlLogic=_fromControlLogic;
 @property(readonly, nonatomic) _Bool m_bAutoFilledCardNumber; // @synthesize m_bAutoFilledCardNumber;
 - (unsigned int)regFlag;

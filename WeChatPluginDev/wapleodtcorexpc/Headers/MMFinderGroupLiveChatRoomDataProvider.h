@@ -15,7 +15,6 @@
     WCFinderGroupLiveChatSaveToLocalFileHandler *_fileHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderGroupLiveChatSaveToLocalFileHandler *fileHandler; // @synthesize fileHandler=_fileHandler;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 @property(retain, nonatomic) NSMutableArray *mutaChatRoomItemCache; // @synthesize mutaChatRoomItemCache=_mutaChatRoomItemCache;

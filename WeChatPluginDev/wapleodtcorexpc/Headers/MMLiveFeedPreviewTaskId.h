@@ -14,7 +14,6 @@
     NSString *_uniqueId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
 @property(nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;
 - (_Bool)isValid;

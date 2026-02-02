@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_brandSubscriptionSettings;
 + (void)PBArrayAdd_brandSubscriptConfigUrl;
 + (void)PBArrayAdd_brandExternalInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *certificationInfo; // @synthesize certificationInfo=_certificationInfo;
 @property(retain, nonatomic) NSString *brandIconUrl; // @synthesize brandIconUrl=_brandIconUrl;
 @property(nonatomic) unsigned int brandSubscriptionSettings; // @synthesize brandSubscriptionSettings=_brandSubscriptionSettings;

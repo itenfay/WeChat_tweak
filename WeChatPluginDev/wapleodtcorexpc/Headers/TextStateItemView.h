@@ -17,7 +17,6 @@
     struct CGSize _stateEmojiSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize stateEmojiSize; // @synthesize stateEmojiSize=_stateEmojiSize;
 @property(retain, nonatomic) MMUILabel *stateTextLabel; // @synthesize stateTextLabel=_stateTextLabel;
 @property(retain, nonatomic) MMWebImageView *stateEmojiImageView; // @synthesize stateEmojiImageView=_stateEmojiImageView;

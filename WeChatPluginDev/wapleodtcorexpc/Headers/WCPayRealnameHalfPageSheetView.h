@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, RealnameHalfPageDialog, RichTextView, UIImageView, UILabel, UIView;
 
 @interface WCPayRealnameHalfPageSheetView
@@ -16,7 +18,6 @@
     RealnameHalfPageDialog *_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RealnameHalfPageDialog *data; // @synthesize data=_data;
 @property(retain, nonatomic) RichTextView *descView; // @synthesize descView=_descView;
 @property(retain, nonatomic) UILabel *titleView; // @synthesize titleView=_titleView;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

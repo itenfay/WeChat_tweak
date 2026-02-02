@@ -14,7 +14,6 @@
     id <StoreEmotionRewardAskForRewardCgiDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <StoreEmotionRewardAskForRewardCgiDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)showErrorTipsWithWording:(id)arg1;
 - (void)callFailedDelegateWithTips:(id)arg1;

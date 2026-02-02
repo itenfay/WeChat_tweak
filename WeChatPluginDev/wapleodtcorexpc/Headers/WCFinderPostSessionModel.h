@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderMJPublisherInfo, FinderMusicReportInfo, FinderPostNewLifeInfo, MMBGMSelectedMusicResult, NSArray, NSMutableArray, NSMutableDictionary, NSString, RecommendedMusicInfo, UIImage, WCEditVideoInformation, WCFinderDataItem, WCFinderEventModel, WCFinderFeedDraft, WCFinderJumpInfo, WCFinderOriginMediaUploadSession, WCFinderPostSourceInfo, WCFinderSearchEventRequestParams;
 
@@ -223,7 +224,6 @@
 + (void)PBArrayAdd_postFromDraft;
 + (void)PBArrayAdd_videoSourceType;
 + (void)PBArrayAdd_dataItem;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRealShootContent; // @synthesize isRealShootContent=_isRealShootContent;
 @property(retain, nonatomic) WCEditVideoInformation *uploadVideoInfomation; // @synthesize uploadVideoInfomation=_uploadVideoInfomation;
 @property(retain, nonatomic) WCFinderOriginMediaUploadSession *originVideoUploadSession; // @synthesize originVideoUploadSession=_originVideoUploadSession;
@@ -410,4 +410,3 @@
 @property(readonly) Class superclass;
 
 @end
-

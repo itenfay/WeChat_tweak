@@ -10,7 +10,6 @@
     TXLivePush *_txLivePusher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXLivePush *txLivePusher; // @synthesize txLivePusher=_txLivePusher;
 - (void)onNetStatus:(id)arg1;
 - (void)onPushEvent:(int)arg1 withParam:(id)arg2;

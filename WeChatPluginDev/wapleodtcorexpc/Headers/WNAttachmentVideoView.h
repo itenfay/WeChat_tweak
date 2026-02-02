@@ -11,7 +11,6 @@
 }
 
 + (double)getHeightOfAttachment:(id)arg1 withWidth:(double)arg2;
-- (void).cxx_destruct;
 - (void)onFavVideoCompressFinish:(id)arg1 isSuccess:(_Bool)arg2;
 - (void)onFavSightSizeDidChange:(id)arg1;
 - (void)onClickObject;

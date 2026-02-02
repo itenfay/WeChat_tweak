@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TXCVideoLoggerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)logAtLevel:(unsigned long long)arg1 message:(id)arg2;
 

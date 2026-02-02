@@ -13,7 +13,6 @@
     WAAppTaskHandlerWrapper *_handlerWrapper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAppTaskHandlerWrapper *handlerWrapper; // @synthesize handlerWrapper=_handlerWrapper;
 @property(nonatomic) __weak WAUINavigationController *nav; // @synthesize nav=_nav;
 

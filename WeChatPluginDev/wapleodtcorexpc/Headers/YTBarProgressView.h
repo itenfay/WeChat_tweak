@@ -15,7 +15,6 @@
     UIColor *_progressColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *progressColor; // @synthesize progressColor=_progressColor;
 @property(retain, nonatomic) UIColor *progressRemainingColor; // @synthesize progressRemainingColor=_progressRemainingColor;
 @property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;

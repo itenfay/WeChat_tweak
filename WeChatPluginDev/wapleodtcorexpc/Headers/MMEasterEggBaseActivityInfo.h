@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)activityNodeName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *frames; // @synthesize frames=_frames;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(nonatomic) long long animationType; // @synthesize animationType=_animationType;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

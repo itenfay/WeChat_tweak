@@ -18,7 +18,6 @@
     NSMutableArray *_childNodes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *childNodes; // @synthesize childNodes=_childNodes;
 @property(nonatomic) __weak WNHTMLTagNode *parentNode; // @synthesize parentNode=_parentNode;
 @property(retain, nonatomic) NSDictionary *tagAttributes; // @synthesize tagAttributes=_tagAttributes;

@@ -15,7 +15,6 @@
     NSArray *_tagWithIconList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *tagWithIconList; // @synthesize tagWithIconList=_tagWithIconList;
 @property(retain, nonatomic) NSArray *tagList; // @synthesize tagList=_tagList;
 @property(retain, nonatomic) NSString *headUrl; // @synthesize headUrl=_headUrl;

@@ -19,7 +19,6 @@
     double _horizonPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double horizonPadding; // @synthesize horizonPadding=_horizonPadding;
 @property(retain, nonatomic) UIView *dragLiftingView; // @synthesize dragLiftingView=_dragLiftingView;
 @property(retain, nonatomic) UIDragInteraction *dragInteraction; // @synthesize dragInteraction=_dragInteraction;

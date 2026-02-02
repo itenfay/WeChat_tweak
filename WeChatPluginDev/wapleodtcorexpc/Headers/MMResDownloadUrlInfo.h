@@ -44,7 +44,6 @@
 + (void)PBArrayAdd_isEncrypt;
 + (void)PBArrayAdd_version;
 + (void)PBArrayAdd_srcUrl;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *originalSha1; // @synthesize originalSha1=_originalSha1;
 @property(readonly, nonatomic) unsigned int protocal; // @synthesize protocal=_protocal;
 @property(retain, nonatomic) MMResSignatureDataInfos *arrSignatureDataInfo; // @synthesize arrSignatureDataInfo=_arrSignatureDataInfo;

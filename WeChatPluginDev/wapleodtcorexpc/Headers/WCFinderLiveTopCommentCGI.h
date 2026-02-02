@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderDataItem;
 
 @interface WCFinderLiveTopCommentCGI
@@ -17,7 +19,6 @@
     NSString *_oriClientMsgId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int optype; // @synthesize optype=_optype;
 @property(copy, nonatomic) NSString *oriClientMsgId; // @synthesize oriClientMsgId=_oriClientMsgId;
 @property(copy, nonatomic) NSString *clientMsgId; // @synthesize clientMsgId=_clientMsgId;
@@ -32,4 +33,3 @@
 - (id)initWithFinderTaskId:(id)arg1 liveCookies:(id)arg2 commentSeq:(unsigned long long)arg3 clientMsgId:(id)arg4 originalClientMsgId:(id)arg5 optype:(unsigned int)arg6 successBlock:(CDUnknownBlockType)arg7 failBlock:(CDUnknownBlockType)arg8;
 
 @end
-

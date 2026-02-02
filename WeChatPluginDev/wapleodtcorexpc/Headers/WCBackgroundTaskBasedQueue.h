@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSRecursiveLock;
 
 @interface WCBackgroundTaskBasedQueue
@@ -12,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 - (void)run;
 - (void)dispatchRecursively:(CDUnknownBlockType)arg1;
@@ -21,4 +22,3 @@
 - (id)initWithName:(id)arg1;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString;
 
 @interface KindaViewControllerRouteManager
@@ -10,7 +12,6 @@
     NSMutableArray *_routeActions;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *routeActions; // @synthesize routeActions=_routeActions;
 - (void)parseNext;
 - (void)addRouteAction:(id)arg1;
@@ -40,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

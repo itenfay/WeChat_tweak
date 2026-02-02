@@ -18,7 +18,6 @@
     double _collectionViewMargin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double collectionViewMargin; // @synthesize collectionViewMargin=_collectionViewMargin;
 @property(nonatomic) _Bool isInEditMode; // @synthesize isInEditMode=_isInEditMode;
 @property(retain, nonatomic) MMUILabel *emptyLabel; // @synthesize emptyLabel=_emptyLabel;

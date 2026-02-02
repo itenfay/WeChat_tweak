@@ -22,7 +22,6 @@
     struct CGPoint _previewOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint previewOffset; // @synthesize previewOffset=_previewOffset;
 @property(nonatomic) double leftEdge; // @synthesize leftEdge=_leftEdge;
 @property(retain, nonatomic) UILabel *m_previewDesLabel; // @synthesize m_previewDesLabel;

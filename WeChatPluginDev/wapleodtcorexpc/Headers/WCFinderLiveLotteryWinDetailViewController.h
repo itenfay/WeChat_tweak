@@ -45,7 +45,6 @@
 }
 
 + (long long)transferAliasRoleTypeFromPersonalMsgScene:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveLotteryDetailCardGiftView *giftView; // @synthesize giftView=_giftView;
 @property(retain, nonatomic) WCFinderContact *anchorContact; // @synthesize anchorContact=_anchorContact;
 @property(retain, nonatomic) RichTextView *agreementText; // @synthesize agreementText=_agreementText;

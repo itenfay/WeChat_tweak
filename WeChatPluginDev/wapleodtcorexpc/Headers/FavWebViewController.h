@@ -18,7 +18,6 @@
     FavWebCacheScriptMessageHandler *m_scriptMessageHandler;
 }
 
-- (void).cxx_destruct;
 - (void)OnUploadFavoritesItemFinish:(id)arg1 ErrCode:(int)arg2;
 - (void)userContentController:(id)arg1 didReceiveScriptMessage:(id)arg2;
 - (void)scrollActionSheet:(id)arg1 didSelecteItem:(id)arg2;

@@ -28,7 +28,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *opConfig; // @synthesize opConfig=_opConfig;
 @property(nonatomic) long long issueTime; // @synthesize issueTime=_issueTime;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;

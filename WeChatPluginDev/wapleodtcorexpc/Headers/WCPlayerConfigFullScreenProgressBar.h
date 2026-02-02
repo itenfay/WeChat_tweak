@@ -20,7 +20,6 @@
     WCPlayerConfigFullScreenProgressBarParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerConfigFullScreenProgressBarParams *params; // @synthesize params=_params;
 @property(nonatomic) unsigned long long updateTimerCount; // @synthesize updateTimerCount=_updateTimerCount;
 @property(nonatomic) double totalTime; // @synthesize totalTime=_totalTime;

@@ -22,7 +22,6 @@
     struct CGAffineTransform _widgetTransform;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double widgetViewRadius; // @synthesize widgetViewRadius=_widgetViewRadius;
 @property(nonatomic) double widgetOpacity; // @synthesize widgetOpacity=_widgetOpacity;
 @property(nonatomic) struct CGSize widgetShadowOffset; // @synthesize widgetShadowOffset=_widgetShadowOffset;

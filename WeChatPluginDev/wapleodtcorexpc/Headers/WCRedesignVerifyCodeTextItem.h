@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIButton;
 
 @interface WCRedesignVerifyCodeTextItem
@@ -16,7 +18,6 @@
     long long _countDown;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long countDown; // @synthesize countDown=_countDown;
 @property(nonatomic) double maxCountDownButtonWidth; // @synthesize maxCountDownButtonWidth=_maxCountDownButtonWidth;
 @property(retain, nonatomic) UIButton *verifyCodeButton; // @synthesize verifyCodeButton=_verifyCodeButton;
@@ -33,4 +34,3 @@
 - (id)initWithTitle:(id)arg1 tip:(id)arg2 key:(id)arg3;
 
 @end
-

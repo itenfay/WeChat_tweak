@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_mainTabPages;
 + (void)PBArrayAdd_blackListPages;
 + (void)PBArrayAdd_sessionsArray;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *filterPages; // @synthesize filterPages=_filterPages;
 @property(retain, nonatomic) NSMutableArray *mainTabPages; // @synthesize mainTabPages=_mainTabPages;
 @property(retain, nonatomic) NSMutableArray *blackListPages; // @synthesize blackListPages=_blackListPages;

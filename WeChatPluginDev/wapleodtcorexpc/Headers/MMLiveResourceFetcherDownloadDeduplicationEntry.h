@@ -14,7 +14,6 @@
     NSMutableArray *_invocations;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *invocations; // @synthesize invocations=_invocations;
 @property(retain, nonatomic) NSString *destination; // @synthesize destination=_destination;
 @property(retain, nonatomic) NSString *uri; // @synthesize uri=_uri;

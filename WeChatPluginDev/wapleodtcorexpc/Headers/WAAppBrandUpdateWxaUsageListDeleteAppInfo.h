@@ -14,7 +14,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int appType; // @synthesize appType=_appType;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;

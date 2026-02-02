@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCAccountEndPageViewController
@@ -12,7 +14,6 @@
     CDUnknownBlockType _onClichFinishBtnBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onClichFinishBtnBlock; // @synthesize onClichFinishBtnBlock=_onClichFinishBtnBlock;
 @property(retain, nonatomic) NSString *headTipsText; // @synthesize headTipsText=_headTipsText;
 @property(retain, nonatomic) NSString *headlineText; // @synthesize headlineText=_headlineText;
@@ -26,4 +27,3 @@
 - (_Bool)useSheetView;
 
 @end
-

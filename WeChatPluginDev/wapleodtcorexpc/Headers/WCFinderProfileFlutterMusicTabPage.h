@@ -10,7 +10,6 @@
     MMFlutterViewController *_flutterVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFlutterViewController *flutterVC; // @synthesize flutterVC=_flutterVC;
 - (void)onReceiveMusicEventRefreshList;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

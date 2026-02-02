@@ -17,7 +17,6 @@
     MMFinderLivePromoteDisplayLeaseToken *_displayLeaseToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePromoteDisplayLeaseToken *displayLeaseToken; // @synthesize displayLeaseToken=_displayLeaseToken;
 @property(retain, nonatomic) MMUIButton *applyButton; // @synthesize applyButton=_applyButton;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;

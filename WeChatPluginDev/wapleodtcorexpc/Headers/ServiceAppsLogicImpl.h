@@ -16,7 +16,6 @@
     NSMutableArray *_validJumpUrlList;
 }
 
-- (void).cxx_destruct;
 - (void)onWCPayWalletChange;
 - (void)OnSetUserWallet:(id)arg1;
 - (void)loadData;

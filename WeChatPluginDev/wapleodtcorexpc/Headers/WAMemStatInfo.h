@@ -17,7 +17,6 @@
     long long _processMemUsedWhenLaunch;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long processMemUsedWhenLaunch; // @synthesize processMemUsedWhenLaunch=_processMemUsedWhenLaunch;
 @property(nonatomic) unsigned int lastTimeEnterBg; // @synthesize lastTimeEnterBg=_lastTimeEnterBg;
 @property(nonatomic) unsigned int openSeq; // @synthesize openSeq=_openSeq;

@@ -12,7 +12,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) int count; // @synthesize count=_count;
 
 @end

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray;
 
 @interface WCFinderPlayRateButton
@@ -13,7 +15,6 @@
     long long _normalPlayRateIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long normalPlayRateIndex; // @synthesize normalPlayRateIndex=_normalPlayRateIndex;
 @property(nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(copy, nonatomic) CDUnknownBlockType playRateChangeBlock; // @synthesize playRateChangeBlock=_playRateChangeBlock;
@@ -30,4 +31,3 @@
 - (id)initWithCoder:(id)arg1;
 
 @end
-

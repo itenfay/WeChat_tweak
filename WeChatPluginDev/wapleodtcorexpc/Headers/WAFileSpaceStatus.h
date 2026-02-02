@@ -15,7 +15,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_dicAppItem;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicAppItem; // @synthesize dicAppItem=_dicAppItem;
 @property(nonatomic) unsigned long long totalFileSize; // @synthesize totalFileSize=_totalFileSize;
 @property(readonly, copy) NSString *description;

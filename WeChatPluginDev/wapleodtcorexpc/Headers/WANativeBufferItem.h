@@ -13,7 +13,6 @@
     NSMutableArray *_waitingBlock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *waitingBlock; // @synthesize waitingBlock=_waitingBlock;
 @property(retain, nonatomic) NSData *buffer; // @synthesize buffer=_buffer;
 - (id)initWithLock;

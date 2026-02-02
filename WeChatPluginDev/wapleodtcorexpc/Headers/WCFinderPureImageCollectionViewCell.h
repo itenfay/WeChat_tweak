@@ -13,7 +13,6 @@
     UIImage *_bindImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *bindImage; // @synthesize bindImage=_bindImage;
 @property(retain, nonatomic) WCFinderFeedImageView *imageContainer; // @synthesize imageContainer=_imageContainer;
 - (struct CGRect)getImageContainerRect;

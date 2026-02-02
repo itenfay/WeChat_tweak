@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FetchingRecommendTask, FinderLiveEnterSquareStatus, FinderLiveNavStreamStatus, FinderLiveSquareStyleInfo, FinderNavLiveStreamPreloadControlConfig, MMFinderLiveBuyTicketHandle, MMFinderLiveFeedExtraInfoFetchLogic, MMFinderLiveNavLiveStreamModel, MMFinderLiveReserveNoticeGenericLogic, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCFinderFeedFlowView, WCFinderLiveElectronicCommerceRoomConfigCGI, WCFinderLiveFeedGenericAutoPlayModel, WCFinderLiveHomePageCtx, WCFinderLiveHomePageFeedFlowLoadingStatus, WCFinderLiveHomePageInitialParams, WCFinderLiveHomePageReportSession, WCFinderLiveHomePageSectionViewModel, WCFinderLiveHomePageViewController, WCFinderLiveStreamContainerModel, WCFinderRedDotCtrlInfo;
 @protocol WCFinderLiveHomePageViewModelDelegate;
@@ -53,7 +54,6 @@
     WCFinderLiveElectronicCommerceRoomConfigCGI *_fetchECConfigCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveElectronicCommerceRoomConfigCGI *fetchECConfigCgi; // @synthesize fetchECConfigCgi=_fetchECConfigCgi;
 @property(retain, nonatomic) MMFinderLiveNavLiveStreamModel *liteRespModel; // @synthesize liteRespModel=_liteRespModel;
 @property(retain, nonatomic) MMFinderLiveNavLiveStreamModel *mainRespModel; // @synthesize mainRespModel=_mainRespModel;
@@ -255,4 +255,3 @@
 @property(readonly) Class superclass;
 
 @end
-

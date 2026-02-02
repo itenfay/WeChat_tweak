@@ -16,7 +16,6 @@
 }
 
 + (id)generateWithMsg:(id)arg1 delegate:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *currentPlayingMsg; // @synthesize currentPlayingMsg=_currentPlayingMsg;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(readonly, nonatomic) _Bool autoPlayEnabled; // @synthesize autoPlayEnabled=_autoPlayEnabled;

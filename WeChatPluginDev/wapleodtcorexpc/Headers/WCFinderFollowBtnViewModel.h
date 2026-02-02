@@ -14,7 +14,6 @@
     WCFinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) _Bool isPrivate; // @synthesize isPrivate=_isPrivate;
 @property(nonatomic) unsigned long long followState; // @synthesize followState=_followState;

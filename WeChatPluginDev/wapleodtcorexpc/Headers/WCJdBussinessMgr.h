@@ -12,7 +12,6 @@
     WCJdRemindItem *_currEntranceTipItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCJdRemindItem *currEntranceTipItem; // @synthesize currEntranceTipItem=_currEntranceTipItem;
 @property(nonatomic) _Bool hadLoadEntranceItem; // @synthesize hadLoadEntranceItem;
 @property(retain, nonatomic) NSMutableArray *aryHadHandleRemindItemList; // @synthesize aryHadHandleRemindItemList;

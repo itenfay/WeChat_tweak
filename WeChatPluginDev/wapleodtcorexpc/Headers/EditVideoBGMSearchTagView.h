@@ -12,7 +12,6 @@
     NSArray *_tags;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 @property(nonatomic) __weak id <EditVideoBGMSearchTagViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

@@ -16,7 +16,6 @@
     NSString *_defaultPayButtonTitle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showTopRightQuestionView; // @synthesize showTopRightQuestionView=_showTopRightQuestionView;
 @property(retain, nonatomic) NSString *defaultPayButtonTitle; // @synthesize defaultPayButtonTitle=_defaultPayButtonTitle;
 @property(retain, nonatomic) NSString *agreementRichText; // @synthesize agreementRichText=_agreementRichText;

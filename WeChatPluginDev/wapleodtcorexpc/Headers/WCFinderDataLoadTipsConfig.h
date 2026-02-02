@@ -15,7 +15,6 @@
 }
 
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tipsColor; // @synthesize tipsColor=_tipsColor;
 @property(retain, nonatomic) UIFont *tipsFont; // @synthesize tipsFont=_tipsFont;
 @property(nonatomic) struct CGSize loadingIconSize; // @synthesize loadingIconSize=_loadingIconSize;

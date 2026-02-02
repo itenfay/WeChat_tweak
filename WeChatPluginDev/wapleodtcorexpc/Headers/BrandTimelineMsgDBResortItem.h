@@ -22,7 +22,6 @@
     NSString *_resortBuffer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *resortBuffer; // @synthesize resortBuffer=_resortBuffer;
 @property(copy, nonatomic) NSString *recReason; // @synthesize recReason=_recReason;
 @property(nonatomic) _Bool reduceGroup; // @synthesize reduceGroup=_reduceGroup;

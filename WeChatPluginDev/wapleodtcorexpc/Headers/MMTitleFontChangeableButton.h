@@ -15,7 +15,6 @@
     UIFont *_disabledFont;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *disabledFont; // @synthesize disabledFont=_disabledFont;
 @property(retain, nonatomic) UIFont *selectedFont; // @synthesize selectedFont=_selectedFont;
 @property(retain, nonatomic) UIFont *highlightedFont; // @synthesize highlightedFont=_highlightedFont;

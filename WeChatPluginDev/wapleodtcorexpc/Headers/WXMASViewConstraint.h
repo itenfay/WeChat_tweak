@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView, WXMASLayoutConstraint, WXMASViewAttribute;
 
 @interface WXMASViewConstraint
@@ -21,7 +23,6 @@
 }
 
 + (id)installedConstraintsForView:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useAnimator; // @synthesize useAnimator=_useAnimator;
 @property(retain, nonatomic) id mas_key; // @synthesize mas_key=_mas_key;
 @property(nonatomic) _Bool hasLayoutRelation; // @synthesize hasLayoutRelation=_hasLayoutRelation;
@@ -58,4 +59,3 @@
 - (id)initWithFirstViewAttribute:(id)arg1;
 
 @end
-

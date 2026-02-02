@@ -22,7 +22,6 @@
     UILongPressGestureRecognizer *_longPressBlocker;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressBlocker; // @synthesize longPressBlocker=_longPressBlocker;
 @property(retain, nonatomic) UITapGestureRecognizer *singleTapBlocker; // @synthesize singleTapBlocker=_singleTapBlocker;
 @property(nonatomic) _Bool showsCancelBarButtonItem; // @synthesize showsCancelBarButtonItem=_showsCancelBarButtonItem;

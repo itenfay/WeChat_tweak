@@ -16,7 +16,6 @@
     NSData *_extraData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *extraData; // @synthesize extraData=_extraData;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) int channels; // @synthesize channels=_channels;

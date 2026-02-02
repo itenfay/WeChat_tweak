@@ -15,7 +15,6 @@
     WCGPUCounterSamplingReporter *_samplingReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCGPUCounterSamplingReporter *samplingReporter; // @synthesize samplingReporter=_samplingReporter;
 @property(retain, nonatomic) NSRecursiveLock *sampleLock; // @synthesize sampleLock=_sampleLock;
 @property(retain, nonatomic) MMTimer *reportTimer; // @synthesize reportTimer=_reportTimer;

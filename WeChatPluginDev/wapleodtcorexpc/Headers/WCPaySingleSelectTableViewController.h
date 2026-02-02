@@ -15,7 +15,6 @@
     MMTableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(retain, nonatomic) NSArray *displayData; // @synthesize displayData=_displayData;

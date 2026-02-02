@@ -13,7 +13,6 @@
     unsigned long long _msgDownloadStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long msgDownloadStatus; // @synthesize msgDownloadStatus=_msgDownloadStatus;
 @property(retain, nonatomic) CMessageWrap *messageWrap; // @synthesize messageWrap=_messageWrap;
 @property(retain, nonatomic) CEmoticonWrap *emoticonWrap; // @synthesize emoticonWrap=_emoticonWrap;

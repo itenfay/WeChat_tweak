@@ -30,7 +30,6 @@
     double _deviceTitleWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bNeedBind; // @synthesize bNeedBind=_bNeedBind;
 @property(nonatomic) _Bool bTapToAddDevice; // @synthesize bTapToAddDevice=_bTapToAddDevice;
 @property(nonatomic) _Bool bTapCreateToSendNotify; // @synthesize bTapCreateToSendNotify=_bTapCreateToSendNotify;

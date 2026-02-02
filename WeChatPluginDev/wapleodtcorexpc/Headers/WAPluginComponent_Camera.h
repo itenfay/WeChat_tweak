@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIView, WAArrayBuffer, WACameraLogicController;
 @protocol WAJSContextPlugin_NativeViewsRootViewProtocol, WAPluginComponent_CameraDelegate;
@@ -39,7 +40,6 @@
     id <WAPluginComponent_CameraDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAPluginComponent_CameraDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <WAJSContextPlugin_NativeViewsRootViewProtocol> embedViewDelegate; // @synthesize embedViewDelegate=_embedViewDelegate;
 @property(nonatomic) _Bool isViewDidAppear; // @synthesize isViewDidAppear=_isViewDidAppear;
@@ -86,4 +86,3 @@
 @property(readonly) Class superclass;
 
 @end
-

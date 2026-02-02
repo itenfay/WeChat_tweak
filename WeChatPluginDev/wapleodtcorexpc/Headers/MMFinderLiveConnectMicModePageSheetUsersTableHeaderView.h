@@ -13,7 +13,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 - (void)layoutSubviews;
 @property(retain, nonatomic) NSString *title;

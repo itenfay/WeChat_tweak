@@ -20,7 +20,6 @@
     MISSING_TYPE *_viewportSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct __CVBuffer *inputPixelBuffer; // @synthesize inputPixelBuffer=_inputPixelBuffer;
 @property(nonatomic) unsigned long long numVertices; // @synthesize numVertices=_numVertices;
 @property(retain, nonatomic) id <MTLBuffer> vertices; // @synthesize vertices=_vertices;

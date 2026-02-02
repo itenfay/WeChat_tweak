@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJPublisher, NSString, UIViewController, WCFinderTemplateBindData;
 
@@ -16,7 +17,6 @@
 
 + (_Bool)checkIsChildViewController:(id)arg1;
 + (id)delegateObjWithHost:(id)arg1 bindData:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderTemplateBindData *bindData; // @synthesize bindData=_bindData;
 @property(nonatomic) __weak UIViewController *hostVC; // @synthesize hostVC=_hostVC;
 @property(retain, nonatomic) MJPublisher *mjPublisher; // @synthesize mjPublisher=_mjPublisher;
@@ -59,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
 }
 
 + (id)vmWithBanner:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disbalePagAnimation; // @synthesize disbalePagAnimation=_disbalePagAnimation;
 @property(nonatomic) unsigned long long curSubTitleIndex; // @synthesize curSubTitleIndex=_curSubTitleIndex;
 @property(retain, nonatomic) MMFinderLiveBannerInfo *bannerInfo; // @synthesize bannerInfo=_bannerInfo;

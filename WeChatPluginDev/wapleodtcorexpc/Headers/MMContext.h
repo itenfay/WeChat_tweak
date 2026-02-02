@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CMainControll, MMExtensionCenter, MMLongLink, MMServiceCenter, NSRecursiveLock, NSString;
 
@@ -50,7 +51,6 @@
 + (id)contextFromTask;
 + (id)CancelAllMMTasksNotification;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *contextLock; // @synthesize contextLock=m_contextLock;
 @property(readonly, nonatomic) MMExtensionCenter *extensionCenter; // @synthesize extensionCenter=m_extensionCenter;
 @property(readonly, nonatomic) MMServiceCenter *serviceCenter; // @synthesize serviceCenter=m_serviceCenter;
@@ -106,4 +106,3 @@
 @property(readonly) Class superclass;
 
 @end
-

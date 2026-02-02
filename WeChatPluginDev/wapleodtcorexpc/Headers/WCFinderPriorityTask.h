@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderFeedMediaWrap;
 
@@ -20,7 +21,6 @@
     unsigned long long _timestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) WCFinderFeedMediaWrap *associateMediaWrap; // @synthesize associateMediaWrap=_associateMediaWrap;
 @property(nonatomic) unsigned long long commentScene; // @synthesize commentScene=_commentScene;
@@ -33,4 +33,3 @@
 - (id)initWithIdentifier:(id)arg1 priority:(unsigned long long)arg2;
 
 @end
-

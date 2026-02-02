@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_liveAppMsg;
 + (void)PBArrayAdd_likeNumber;
 + (void)PBArrayAdd_isLike;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *itemKey; // @synthesize itemKey=_itemKey;
 @property(retain, nonatomic) FinderLiveAppMsg *liveAppMsg; // @synthesize liveAppMsg=_liveAppMsg;
 @property(nonatomic) unsigned int likeNumber; // @synthesize likeNumber=_likeNumber;

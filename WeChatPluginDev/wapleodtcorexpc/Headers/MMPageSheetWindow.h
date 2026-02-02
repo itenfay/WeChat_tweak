@@ -10,7 +10,6 @@
     id <MMPageSheetWindowDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMPageSheetWindowDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)shouldHandleStatusBarAppearance;

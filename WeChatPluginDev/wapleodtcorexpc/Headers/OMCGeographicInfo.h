@@ -17,7 +17,6 @@
     NSString *_address;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *address; // @synthesize address=_address;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *region; // @synthesize region=_region;

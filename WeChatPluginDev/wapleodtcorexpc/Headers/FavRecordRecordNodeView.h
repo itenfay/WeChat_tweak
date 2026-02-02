@@ -12,7 +12,6 @@
 }
 
 + (double)heightForNodeWithDesc:(id)arg1;
-- (void).cxx_destruct;
 - (void)updateBkgImage:(_Bool)arg1;
 - (void)LongPressEvents;
 - (void)onTouchCancel;

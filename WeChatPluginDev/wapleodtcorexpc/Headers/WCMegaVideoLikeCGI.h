@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCMegaVideoLikeCGI
@@ -14,7 +16,6 @@
     NSString *_videoNonceId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLike; // @synthesize isLike=_isLike;
 @property(copy, nonatomic) NSString *videoNonceId; // @synthesize videoNonceId=_videoNonceId;
 @property(copy, nonatomic) NSString *videoId; // @synthesize videoId=_videoId;
@@ -27,4 +28,3 @@
 - (id)initVideoLikeCGIWith:(id)arg1 videoNonceId:(id)arg2 isLike:(_Bool)arg3 successful:(CDUnknownBlockType)arg4 failure:(CDUnknownBlockType)arg5;
 
 @end
-

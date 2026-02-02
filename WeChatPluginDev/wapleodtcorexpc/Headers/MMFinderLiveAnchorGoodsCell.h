@@ -41,7 +41,6 @@
 + (double)saleCountsHeight;
 + (double)titleLineHeight;
 + (struct CGSize)defaultTagSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *showPriceButton; // @synthesize showPriceButton=_showPriceButton;
 @property(retain, nonatomic) MMUIButton *preHotButton; // @synthesize preHotButton=_preHotButton;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;

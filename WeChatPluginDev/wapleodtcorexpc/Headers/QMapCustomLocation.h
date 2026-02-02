@@ -20,7 +20,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *interlandDataSafetyManangerArray; // @synthesize interlandDataSafetyManangerArray=_interlandDataSafetyManangerArray;
 @property(nonatomic) struct _opaque_pthread_rwlock_t lock; // @synthesize lock=_lock;
 @property(nonatomic) int loopCount; // @synthesize loopCount=_loopCount;

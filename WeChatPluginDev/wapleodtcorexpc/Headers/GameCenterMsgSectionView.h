@@ -14,7 +14,6 @@
     MMUIView *_lineRight;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *lineRight; // @synthesize lineRight=_lineRight;
 @property(retain, nonatomic) MMUILabel *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) MMUIView *lineLeft; // @synthesize lineLeft=_lineLeft;

@@ -14,7 +14,6 @@
 }
 
 + (id)infoWithPB:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) FinderShopShelfHintInfo *pb; // @synthesize pb=_pb;
 - (id)initWithPB:(id)arg1;

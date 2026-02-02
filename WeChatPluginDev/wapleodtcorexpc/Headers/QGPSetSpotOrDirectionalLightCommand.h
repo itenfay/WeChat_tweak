@@ -10,7 +10,6 @@
     QGPSetSpotOrDirectionalLightParam *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPSetSpotOrDirectionalLightParam *params; // @synthesize params=_params;
 
 @end

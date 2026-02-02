@@ -33,7 +33,6 @@
     NSArray *_dataList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int liteAppItemShowType; // @synthesize liteAppItemShowType=_liteAppItemShowType;
 @property(nonatomic) unsigned int favId; // @synthesize favId=_favId;
 @property(retain, nonatomic) NSArray *dataList; // @synthesize dataList=_dataList;

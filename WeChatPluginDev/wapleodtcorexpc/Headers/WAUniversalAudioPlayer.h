@@ -32,7 +32,6 @@
     long long _recordSampleTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ioCycleFixLogic; // @synthesize ioCycleFixLogic=_ioCycleFixLogic;
 @property(nonatomic) unsigned int playErrCount; // @synthesize playErrCount=_playErrCount;
 @property(nonatomic) long long recordSampleTime; // @synthesize recordSampleTime=_recordSampleTime;

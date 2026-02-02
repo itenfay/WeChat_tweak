@@ -10,7 +10,6 @@
     AVAssetResourceLoadingRequest *_loadingRequest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAssetResourceLoadingRequest *loadingRequest; // @synthesize loadingRequest=_loadingRequest;
 - (id)contentInformationRequest;
 - (id)getFileName;

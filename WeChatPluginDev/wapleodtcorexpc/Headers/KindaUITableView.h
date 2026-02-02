@@ -11,7 +11,6 @@
     struct CGRect _oldRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *heightAtIndexPath; // @synthesize heightAtIndexPath=_heightAtIndexPath;
 @property(nonatomic) struct CGRect oldRect; // @synthesize oldRect=_oldRect;
 - (void)reloadData;

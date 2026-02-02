@@ -12,7 +12,6 @@
     NSString *m_nsPassword;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsPassword; // @synthesize m_nsPassword;
 
 @end

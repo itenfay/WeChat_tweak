@@ -17,7 +17,6 @@
     MMLiveAudioSoundActivityIndicatorView *_rightView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveAudioSoundActivityIndicatorView *rightView; // @synthesize rightView=_rightView;
 @property(retain, nonatomic) MMLiveAudioSoundActivityIndicatorView *leftView; // @synthesize leftView=_leftView;
 @property(retain, nonatomic) MMUILabel *indicatorLabel; // @synthesize indicatorLabel=_indicatorLabel;

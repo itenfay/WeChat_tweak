@@ -12,7 +12,6 @@
     NSMutableArray *_debugViewParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *debugViewParams; // @synthesize debugViewParams=_debugViewParams;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak UIView *debugView; // @synthesize debugView=_debugView;

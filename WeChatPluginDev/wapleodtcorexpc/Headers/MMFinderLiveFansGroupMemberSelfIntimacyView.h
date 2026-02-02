@@ -18,7 +18,6 @@
     MMFinderLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) MMUILabel *rewardAmountLabel; // @synthesize rewardAmountLabel=_rewardAmountLabel;
 @property(retain, nonatomic) MMFinderLiveFansGroupSignView *fansGroupSignView; // @synthesize fansGroupSignView=_fansGroupSignView;

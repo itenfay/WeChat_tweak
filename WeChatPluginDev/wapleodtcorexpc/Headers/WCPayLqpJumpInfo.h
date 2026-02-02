@@ -15,7 +15,6 @@
     NSString *_mini_pagepath;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSString *mini_pagepath; // @synthesize mini_pagepath=_mini_pagepath;
 @property(retain) NSString *mini_username; // @synthesize mini_username=_mini_username;
 @property(retain) NSString *url; // @synthesize url=_url;

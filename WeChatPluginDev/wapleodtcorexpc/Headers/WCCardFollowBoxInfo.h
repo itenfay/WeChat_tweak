@@ -11,7 +11,6 @@
     long long _follow;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long follow; // @synthesize follow=_follow;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MegaVideoFinderCallback, NSNumber, NSString, UIViewController, WCFinderFeedContentVM;
 
@@ -19,7 +20,6 @@
 + (id)contentVMFromMegaFeed:(id)arg1 commentScene:(int)arg2;
 + (id)contentVMFromFinderObject:(id)arg1 commentScene:(int)arg2;
 + (id)contentVMFromFinderObjectBytes:(id)arg1 commentScene:(int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) WCFinderFeedContentVM *currentFeedContentVM; // @synthesize currentFeedContentVM=_currentFeedContentVM;
 @property(nonatomic) __weak UIViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
@@ -85,4 +85,3 @@
 @property(readonly) Class superclass;
 
 @end
-

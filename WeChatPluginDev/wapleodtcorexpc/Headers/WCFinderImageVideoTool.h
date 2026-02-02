@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderImageVideoTool : NSObject
 {
@@ -18,4 +19,3 @@
 + (id)imageResize:(id)arg1 andResizeConstraint:(struct CGSize)arg2;
 
 @end
-

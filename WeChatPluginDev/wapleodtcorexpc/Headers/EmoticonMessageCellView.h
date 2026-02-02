@@ -15,7 +15,6 @@
     EmoticonCustomAddLogicController *m_emoticonAddLogicController;
 }
 
-- (void).cxx_destruct;
 - (void)onClickAsRefer;
 - (id)getViewController;
 - (void)showFinishedTipsWithWording:(id)arg1;

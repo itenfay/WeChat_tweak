@@ -11,7 +11,6 @@
     UIImageView *_iconImgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *iconImgView; // @synthesize iconImgView=_iconImgView;
 @property(retain, nonatomic) MMUILabel *label; // @synthesize label=_label;
 - (void)didSelectItemAtIndexPath:(id)arg1;

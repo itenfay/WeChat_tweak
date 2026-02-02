@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIViewController;
 
@@ -12,7 +13,6 @@
     UIViewController *_currentViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 - (void)showCommentInputViewRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)onDetachedToViewController;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -12,7 +12,6 @@
     NSArray *firstStepOrder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *firstStepOrder; // @synthesize firstStepOrder;
 @property(retain, nonatomic) NSMutableArray *aryQuestions; // @synthesize aryQuestions;
 @property(retain, nonatomic) NSString *nsExpId; // @synthesize nsExpId;

@@ -15,7 +15,6 @@
     id <WAWebViewPluginContextProtocol> _context;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRecording; // @synthesize isRecording=_isRecording;
 @property(nonatomic) __weak id <WAWebViewPluginContextProtocol> context; // @synthesize context=_context;
 @property(readonly, nonatomic) __weak WAWebViewController *webViewController; // @synthesize webViewController=_webViewController;

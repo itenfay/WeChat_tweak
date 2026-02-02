@@ -15,7 +15,6 @@
 }
 
 + (id)infoWithMonoMsg:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isVideo; // @synthesize isVideo=_isVideo;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) VoipMonoMsg *monoMsg; // @synthesize monoMsg=_monoMsg;

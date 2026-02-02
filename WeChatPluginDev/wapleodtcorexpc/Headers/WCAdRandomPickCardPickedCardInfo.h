@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_timestamp;
 + (void)PBArrayAdd_cardId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;
 - (id)initWithCoder:(id)arg1;

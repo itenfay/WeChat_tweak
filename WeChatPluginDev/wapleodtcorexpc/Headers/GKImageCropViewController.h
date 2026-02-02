@@ -21,7 +21,6 @@
     struct CGSize cropSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool resizeableCropArea; // @synthesize resizeableCropArea;
 @property(retain, nonatomic) UIButton *useButton; // @synthesize useButton;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton;

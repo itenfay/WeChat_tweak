@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MJTemplateUtilities : NSObject
 {
@@ -45,4 +46,3 @@
 + (void)launchMiaoJianAppFromScene:(unsigned long long)arg1 withShareParams:(id)arg2 resultBlock:(CDUnknownBlockType)arg3;
 
 @end
-

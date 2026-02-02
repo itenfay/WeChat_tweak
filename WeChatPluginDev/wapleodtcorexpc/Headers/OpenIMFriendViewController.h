@@ -22,7 +22,6 @@
     _Bool _islastVCNavBarHidden;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool islastVCNavBarHidden; // @synthesize islastVCNavBarHidden=_islastVCNavBarHidden;
 - (void)cancelButtonClicked;
 - (void)onBackBtnClick;

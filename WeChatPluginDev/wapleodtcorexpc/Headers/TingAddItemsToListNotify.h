@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property _Bool notified; // @synthesize notified=_notified;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void)onPickListSuccessAlbumData:(id)arg1 error:(id *)arg2;
@@ -32,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

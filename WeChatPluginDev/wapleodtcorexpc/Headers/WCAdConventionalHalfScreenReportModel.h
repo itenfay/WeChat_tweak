@@ -16,7 +16,6 @@
 }
 
 + (id)modelPropertyBlacklistForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *gridItems; // @synthesize gridItems=_gridItems;
 @property(retain, nonatomic) WCAdConventionalHalfScreenReportVideoInfo *videoInfo; // @synthesize videoInfo=_videoInfo;
 @property(nonatomic) int pinToTop; // @synthesize pinToTop=_pinToTop;

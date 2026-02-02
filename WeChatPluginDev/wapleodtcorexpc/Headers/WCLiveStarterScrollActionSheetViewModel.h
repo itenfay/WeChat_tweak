@@ -13,7 +13,6 @@
     unsigned long long _hiddenItemsFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long hiddenItemsFlag; // @synthesize hiddenItemsFlag=_hiddenItemsFlag;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 @property(readonly, nonatomic) _Bool shouldHideRewardWishItem;

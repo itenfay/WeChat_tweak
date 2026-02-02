@@ -16,7 +16,6 @@
     UIButton *_voiceButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *voiceButton; // @synthesize voiceButton=_voiceButton;
 @property(retain, nonatomic) WCRedesignButtonItem *changeLanguageButtonItem; // @synthesize changeLanguageButtonItem=_changeLanguageButtonItem;
 @property(retain, nonatomic) MMUILabel *contentLabel; // @synthesize contentLabel=_contentLabel;

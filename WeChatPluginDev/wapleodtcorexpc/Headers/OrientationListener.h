@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,7 +15,6 @@
     id _observer;
 }
 
-- (void).cxx_destruct;
 @property(retain) id observer; // @synthesize observer=_observer;
 - (void)stopOrientationListener;
 - (id)getDeviceOrientation;
@@ -28,4 +28,3 @@
 @property(readonly) Class superclass;
 
 @end
-

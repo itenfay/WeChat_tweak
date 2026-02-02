@@ -36,7 +36,6 @@
     unsigned long long _sumRecvSeiStickSeqCnt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sumRecvSeiStickSeqCnt; // @synthesize sumRecvSeiStickSeqCnt=_sumRecvSeiStickSeqCnt;
 @property(nonatomic) unsigned long long sumRecvSeiDisContinuousSeqCnt; // @synthesize sumRecvSeiDisContinuousSeqCnt=_sumRecvSeiDisContinuousSeqCnt;
 @property(nonatomic) unsigned long long sumRecvSeiUnValidSeqCnt; // @synthesize sumRecvSeiUnValidSeqCnt=_sumRecvSeiUnValidSeqCnt;

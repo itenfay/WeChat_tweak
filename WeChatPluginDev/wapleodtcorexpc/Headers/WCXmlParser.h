@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCXmlParser : NSObject
 {
@@ -53,4 +54,3 @@
 + (id)storyMediaItemFromXmlNode:(struct XmlReaderNode_t *)arg1;
 
 @end
-

@@ -22,7 +22,6 @@
     MMShareExcerptPreviewView *m_excerptPreviewView;
 }
 
-- (void).cxx_destruct;
 - (void)relayoutScrollSheet;
 - (void)clickRFItemCallBack:(id)arg1;
 - (void)scrollActionSheetInDismissAnimation:(id)arg1;

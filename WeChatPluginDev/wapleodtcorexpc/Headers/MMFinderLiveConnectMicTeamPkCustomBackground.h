@@ -10,7 +10,6 @@
     UIImageView *_decorImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *decorImageView; // @synthesize decorImageView=_decorImageView;
 - (void)layoutSubviews;
 - (id)init;

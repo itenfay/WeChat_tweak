@@ -12,7 +12,6 @@
     _Bool m_recoverViewShown;
 }
 
-- (void).cxx_destruct;
 - (_Bool)showDBRecoverViewIfNeeded;
 - (void)stopIniting:(unsigned int)arg1;
 - (void)handleInitOk;

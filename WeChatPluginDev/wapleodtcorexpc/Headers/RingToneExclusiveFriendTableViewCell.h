@@ -22,7 +22,6 @@
     UIView *_bottomView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;
 @property(retain, nonatomic) VideoRingNetProvider *net; // @synthesize net=_net;
 @property(retain, nonatomic) RingToneToolView *toolView; // @synthesize toolView=_toolView;

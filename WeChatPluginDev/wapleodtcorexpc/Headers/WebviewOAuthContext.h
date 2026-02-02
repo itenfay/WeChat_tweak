@@ -11,7 +11,6 @@
     WAAuthorizeResultInfo *_resultInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAuthorizeResultInfo *resultInfo; // @synthesize resultInfo=_resultInfo;
 @property(retain, nonatomic) NSArray *scopeList; // @synthesize scopeList=_scopeList;
 

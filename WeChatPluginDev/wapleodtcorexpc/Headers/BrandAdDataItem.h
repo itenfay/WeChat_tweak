@@ -17,7 +17,6 @@
     NSString *_bizType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int expiredTimeInSec; // @synthesize expiredTimeInSec=_expiredTimeInSec;
 @property(copy, nonatomic) NSString *bizType; // @synthesize bizType=_bizType;
 @property(copy, nonatomic) NSString *aid; // @synthesize aid=_aid;

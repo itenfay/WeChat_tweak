@@ -13,7 +13,6 @@
     NSMutableArray *_callbacks;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *callbacks; // @synthesize callbacks=_callbacks;
 @property(retain, nonatomic) MMLiveKtvThemeItem *themeItem; // @synthesize themeItem=_themeItem;
 

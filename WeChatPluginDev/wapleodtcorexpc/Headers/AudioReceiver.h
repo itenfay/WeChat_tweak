@@ -11,7 +11,6 @@
     id <MsgAudioPlayerProtocol> m_audioPlayer;
 }
 
-- (void).cxx_destruct;
 - (void)audioPlayer:(id)arg1 didChangePeakPower:(float)arg2;
 - (void)onEarTip;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 isForceStop:(_Bool)arg2;

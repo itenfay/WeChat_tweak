@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class TXLivePlayConfig, UIView;
 @protocol TXAudioRawDataDelegate, TXLivePlayListener, TXLiveRecordListener, TXVideoCustomProcessDelegate;
@@ -26,7 +27,6 @@
 
 + (void)setAudioRoute:(long long)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAutoPlay; // @synthesize isAutoPlay=_isAutoPlay;
 @property(nonatomic) __weak id <TXLiveRecordListener> recordDelegate; // @synthesize recordDelegate=_recordDelegate;
 @property(copy, nonatomic) TXLivePlayConfig *config; // @synthesize config=_config;
@@ -74,4 +74,3 @@
 - (id)init;
 
 @end
-

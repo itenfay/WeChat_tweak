@@ -10,7 +10,6 @@
     WCPayControlData *_controlData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayControlData *controlData; // @synthesize controlData=_controlData;
 - (void)onWCPayCollectPalmControlLogicEndWithFail:(id)arg1;
 - (void)onWCPayCollectPalmControlLogicEndWithCancel:(id)arg1;

@@ -12,7 +12,6 @@
     EAGLOpenVoiceView *_glview;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EAGLOpenVoiceView *glview; // @synthesize glview=_glview;
 - (_Bool)isUnmatch;
 - (id)getView;

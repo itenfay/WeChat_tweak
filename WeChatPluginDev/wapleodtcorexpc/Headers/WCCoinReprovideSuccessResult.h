@@ -12,7 +12,6 @@
     NSArray *_successProductIds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *successProductIds; // @synthesize successProductIds=_successProductIds;
 
 @end

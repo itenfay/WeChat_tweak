@@ -25,7 +25,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int searchTime; // @synthesize searchTime=_searchTime;
 @property(copy, nonatomic) NSString *searchContent; // @synthesize searchContent=_searchContent;
 

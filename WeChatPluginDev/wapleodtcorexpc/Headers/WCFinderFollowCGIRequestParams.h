@@ -25,7 +25,6 @@
     FinderFollowNewLifeReportInfo *_newlifeReportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderFollowNewLifeReportInfo *newlifeReportInfo; // @synthesize newlifeReportInfo=_newlifeReportInfo;
 @property(copy, nonatomic) NSDictionary *clientUdfKv; // @synthesize clientUdfKv=_clientUdfKv;
 @property(nonatomic) unsigned int enhanceFollowBtn; // @synthesize enhanceFollowBtn=_enhanceFollowBtn;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMFinderLiveMusicDataItem, MMMusicHorizontalScrollingView, MMUIButton, MMUILabel, MMWebImageView, NSString, UIImageView, UIPanGestureRecognizer, UIView;
 
 @interface WCFinderLiveMusicInfoHalfViewController
@@ -34,7 +36,6 @@
     MMUIButton *_footerCloseBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *footerCloseBtn; // @synthesize footerCloseBtn=_footerCloseBtn;
 @property(retain, nonatomic) UIView *footerCloseBtnContainerView; // @synthesize footerCloseBtnContainerView=_footerCloseBtnContainerView;
 @property(retain, nonatomic) MMFinderLiveMusicDataItem *musicDataItem; // @synthesize musicDataItem=_musicDataItem;
@@ -83,4 +84,3 @@
 @property(readonly) Class superclass;
 
 @end
-

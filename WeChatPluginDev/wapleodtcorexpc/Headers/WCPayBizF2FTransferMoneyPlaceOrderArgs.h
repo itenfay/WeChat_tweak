@@ -16,7 +16,6 @@
     NSMutableArray *_extraBuyDetailInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *extraBuyDetailInfos; // @synthesize extraBuyDetailInfos=_extraBuyDetailInfos;
 @property(retain, nonatomic) FavorComposeInfo *favorComposeInfo; // @synthesize favorComposeInfo=_favorComposeInfo;
 @property(retain, nonatomic) NSString *payerComment; // @synthesize payerComment=_payerComment;

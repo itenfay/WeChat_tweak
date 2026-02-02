@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE, NSString, TextStateHistoryLogic, _TtC6WeChat20StatusSquareReporter;
 
@@ -16,7 +17,6 @@
     MISSING_TYPE *isViewLoaded;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, readonly) NSString *myStatusListInfo;
 - (void)setMessageBoxInfo:(id)arg1;
 @property(nonatomic) _Bool friendsHaveStatus;
@@ -37,4 +37,3 @@
 - (void)onTextStateUpdateForUserName:(id)arg1;
 
 @end
-

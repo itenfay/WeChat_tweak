@@ -14,7 +14,6 @@
     EmoticonCustomSortSingleBrick *_bottomBrick;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonCustomSortSingleBrick *bottomBrick; // @synthesize bottomBrick=_bottomBrick;
 @property(retain, nonatomic) EmoticonCustomSortSingleBrick *midBrick; // @synthesize midBrick=_midBrick;
 @property(retain, nonatomic) EmoticonCustomSortSingleBrick *mainBrick; // @synthesize mainBrick=_mainBrick;

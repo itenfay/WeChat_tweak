@@ -15,7 +15,6 @@
     UILabel *_labelView;
 }
 
-- (void).cxx_destruct;
 - (void)onOptionChanged:(id)arg1;
 - (void)config:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

@@ -12,7 +12,6 @@
     WCNewShareCardConsumedView *_newconsumedView;
 }
 
-- (void).cxx_destruct;
 - (void)onShareCardConsumedViewCloseBtnClick;
 - (void)onShareCardAfterConsumed:(_Bool)arg1;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;

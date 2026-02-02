@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveManger, MMWeEffectManager, NSArray, NSMutableArray, NSNumber, NSString, NSURLSessionDownloadTask, UIView, V2TXLivePusherJSAdapter;
 @protocol TXLivePushJSAdapterDelegate;
@@ -48,7 +49,6 @@
     NSArray *_weeffectClsArr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAllowFp16; // @synthesize isAllowFp16=_isAllowFp16;
 @property(nonatomic) _Bool enableVideoCustomRender; // @synthesize enableVideoCustomRender=_enableVideoCustomRender;
 @property(retain, nonatomic) NSArray *weeffectClsArr; // @synthesize weeffectClsArr=_weeffectClsArr;
@@ -176,4 +176,3 @@
 @property(readonly) Class superclass;
 
 @end
-

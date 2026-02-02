@@ -19,7 +19,6 @@
 }
 
 + (id)getHighlightTextInContent:(id)arg1 searchText:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHidePostTimeLabel; // @synthesize isHidePostTimeLabel=_isHidePostTimeLabel;
 @property(retain, nonatomic) NSMutableArray *textHightkeywords; // @synthesize textHightkeywords=_textHightkeywords;
 @property(retain, nonatomic) NSString *normalText; // @synthesize normalText=_normalText;

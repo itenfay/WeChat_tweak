@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @protocol UIViewControllerTransitioningDelegate;
 
 @interface FullScreenViewController
@@ -12,7 +14,6 @@
     id <UIViewControllerTransitioningDelegate> _m_TransitioningDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldCheckInterfaceOrientations; // @synthesize shouldCheckInterfaceOrientations=_shouldCheckInterfaceOrientations;
 @property(retain, nonatomic) id <UIViewControllerTransitioningDelegate> m_TransitioningDelegate; // @synthesize m_TransitioningDelegate=_m_TransitioningDelegate;
 - (void)presentedInViewController:(id)arg1 forceFullScreen:(_Bool)arg2 animated:(_Bool)arg3 pushAvaliable:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
@@ -24,4 +25,3 @@
 - (void)viewWillBePresented:(_Bool)arg1;
 
 @end
-

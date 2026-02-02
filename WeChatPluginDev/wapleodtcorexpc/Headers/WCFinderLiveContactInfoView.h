@@ -21,7 +21,6 @@
     NSString *_subTitle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showAuthorIcon; // @synthesize showAuthorIcon=_showAuthorIcon;
 @property(retain, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;

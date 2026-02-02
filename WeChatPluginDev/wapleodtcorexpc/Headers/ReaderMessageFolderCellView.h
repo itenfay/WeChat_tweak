@@ -13,7 +13,6 @@
     NSMutableArray *_collapsedPositionYList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *collapsedPositionYList; // @synthesize collapsedPositionYList=_collapsedPositionYList;
 @property(retain, nonatomic) NSMutableArray *expandedPositionYList; // @synthesize expandedPositionYList=_expandedPositionYList;
 @property(retain, nonatomic) NSMutableArray *cellViewList; // @synthesize cellViewList=_cellViewList;

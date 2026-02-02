@@ -13,7 +13,6 @@
     NSString *username;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *username; // @synthesize username;
 - (id)Contact;
 

@@ -24,7 +24,6 @@
 + (unsigned long long)optionsForCategoryPlayback;
 + (id)categoryFromFactors:(struct AudioSessionFactors)arg1;
 + (id)currentConfig;
-- (void).cxx_destruct;
 @property(nonatomic) long long outputNumberOfChannels; // @synthesize outputNumberOfChannels=_outputNumberOfChannels;
 @property(nonatomic) long long inputNumberOfChannels; // @synthesize inputNumberOfChannels=_inputNumberOfChannels;
 @property(nonatomic) double ioBufferDuration; // @synthesize ioBufferDuration=_ioBufferDuration;

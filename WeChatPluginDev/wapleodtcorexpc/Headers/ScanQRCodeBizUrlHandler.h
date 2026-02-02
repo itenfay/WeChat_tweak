@@ -12,7 +12,6 @@
     WCPayPayAuthNativeCgi *_m_payNativeCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayPayAuthNativeCgi *m_payNativeCgi; // @synthesize m_payNativeCgi=_m_payNativeCgi;
 @property(retain, nonatomic) NSString *m_sourceInfo; // @synthesize m_sourceInfo=_m_sourceInfo;
 @property(nonatomic) unsigned int m_sourceType; // @synthesize m_sourceType=_m_sourceType;

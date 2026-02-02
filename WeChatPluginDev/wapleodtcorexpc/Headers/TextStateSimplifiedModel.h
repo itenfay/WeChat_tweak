@@ -31,7 +31,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLiked; // @synthesize isLiked=_isLiked;
 @property(retain, nonatomic) TextStateSimplifiedIcon *clusterIcon; // @synthesize clusterIcon=_clusterIcon;
 @property(retain, nonatomic) NSString *clusterId; // @synthesize clusterId=_clusterId;

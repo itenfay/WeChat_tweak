@@ -10,7 +10,6 @@
     id <WCMallNetworkHelperDelegate> m_oWCMallNetworkHelperDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCMallNetworkHelperDelegate> m_oWCMallNetworkHelperDelegate; // @synthesize m_oWCMallNetworkHelperDelegate;
 - (void)OnGetWCMallPayChargeProxyReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)OnGetWCMallFunctionListMessageReturn:(id)arg1 Event:(unsigned int)arg2;

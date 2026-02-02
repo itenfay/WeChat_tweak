@@ -12,7 +12,6 @@
     id <WCDeviceWifiStateLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCDeviceWifiStateLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (id)getSubscribingWithDeviceType:(id)arg1 andDieviceID:(id)arg2;

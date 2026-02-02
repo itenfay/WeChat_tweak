@@ -15,7 +15,6 @@
     NSString *_redDotTitle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int redDotTipsId; // @synthesize redDotTipsId=_redDotTipsId;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(copy, nonatomic) NSString *redDotTitle; // @synthesize redDotTitle=_redDotTitle;

@@ -25,7 +25,6 @@
 }
 
 + (id)scheduledTimerWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4 repeats:(_Bool)arg5 dispatchQueue:(id)arg6;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *privateSerialQueue; // @synthesize privateSerialQueue=_privateSerialQueue;
 @property(nonatomic) _Bool repeats; // @synthesize repeats=_repeats;

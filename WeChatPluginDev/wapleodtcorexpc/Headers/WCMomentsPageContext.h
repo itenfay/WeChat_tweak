@@ -17,7 +17,6 @@
     long long _bizMpImageDisplayStyle;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool livePhotoShowMutedMenu; // @synthesize livePhotoShowMutedMenu=_livePhotoShowMutedMenu;
 @property(readonly, nonatomic) _Bool canSaveLivePhotos; // @synthesize canSaveLivePhotos=_canSaveLivePhotos;
 @property(readonly, nonatomic) _Bool canPlayLivePhotos; // @synthesize canPlayLivePhotos=_canPlayLivePhotos;

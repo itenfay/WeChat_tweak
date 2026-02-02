@@ -27,7 +27,6 @@
 
 + (double)calcHeightForTableViewWithGroup:(id)arg1 maxWidth:(double)arg2 advertiseInfo:(id)arg3 orientation:(long long)arg4;
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool turnPageAnimatingFlag; // @synthesize turnPageAnimatingFlag=_turnPageAnimatingFlag;
 @property(nonatomic) _Bool componentDraggingFlag; // @synthesize componentDraggingFlag=_componentDraggingFlag;
 @property(nonatomic) _Bool componentBackgroundFlag; // @synthesize componentBackgroundFlag=_componentBackgroundFlag;

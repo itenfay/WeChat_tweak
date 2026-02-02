@@ -12,7 +12,6 @@
     NSMutableDictionary *_jumpInfoDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *jumpInfoDict; // @synthesize jumpInfoDict=_jumpInfoDict;
 - (id)jumpInfoWithLinkScene:(id)arg1;
 - (void)safeSetJumpInfoStr:(id)arg1 linkScene:(id)arg2;

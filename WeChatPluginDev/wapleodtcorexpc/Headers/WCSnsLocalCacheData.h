@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_itemId;
 + (void)PBArrayAdd_snsOperation;
 + (void)PBArrayAdd_updateTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSnsOperation *snsOperation; // @synthesize snsOperation=_snsOperation;
 @property(retain, nonatomic) NSString *itemId; // @synthesize itemId=_itemId;
 @property(nonatomic) unsigned int updateTime; // @synthesize updateTime=_updateTime;

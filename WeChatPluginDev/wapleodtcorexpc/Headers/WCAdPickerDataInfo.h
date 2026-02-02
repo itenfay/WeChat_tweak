@@ -18,7 +18,6 @@
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *dataList; // @synthesize dataList=_dataList;
 @property(retain, nonatomic) NSArray *transferTable; // @synthesize transferTable=_transferTable;
 @property(retain, nonatomic) NSArray *defaultData; // @synthesize defaultData=_defaultData;

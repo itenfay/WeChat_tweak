@@ -14,7 +14,6 @@
     NSObject<WCYoDelegate> *_yoDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<WCYoDelegate> *yoDelegate; // @synthesize yoDelegate=_yoDelegate;
 @property(nonatomic) unsigned int yoTime; // @synthesize yoTime=_yoTime;
 @property(retain, nonatomic) NSDate *showedDate; // @synthesize showedDate=_showedDate;

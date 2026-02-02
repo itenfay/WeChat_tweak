@@ -19,7 +19,6 @@
     CDStruct_02837cd9 _latestVisibleRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_02837cd9 latestVisibleRect; // @synthesize latestVisibleRect=_latestVisibleRect;
 @property(retain, nonatomic) id <QBrandPromotionImageDownloader> imageDownloader; // @synthesize imageDownloader=_imageDownloader;
 @property(retain, nonatomic) NSMutableSet *latestVisibleGridModels; // @synthesize latestVisibleGridModels=_latestVisibleGridModels;

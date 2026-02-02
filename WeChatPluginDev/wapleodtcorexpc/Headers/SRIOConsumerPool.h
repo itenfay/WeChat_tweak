@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -13,11 +14,9 @@
     NSMutableArray *_bufferedConsumers;
 }
 
-- (void).cxx_destruct;
 - (void)returnConsumer:(id)arg1;
 - (id)consumerWithScanner:(CDUnknownBlockType)arg1 handler:(CDUnknownBlockType)arg2 bytesNeeded:(unsigned long long)arg3 readToCurrentFrame:(_Bool)arg4 unmaskBytes:(_Bool)arg5;
 - (id)init;
 - (id)initWithBufferCapacity:(unsigned long long)arg1;
 
 @end
-

@@ -16,7 +16,6 @@
     double _underLineViewWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(nonatomic) double underLineViewWidth; // @synthesize underLineViewWidth=_underLineViewWidth;
 @property(nonatomic) double tabViewWidth; // @synthesize tabViewWidth=_tabViewWidth;

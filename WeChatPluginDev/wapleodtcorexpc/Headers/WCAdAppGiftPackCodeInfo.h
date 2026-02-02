@@ -13,7 +13,6 @@
     NSString *_appGiftPackCodeTips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appGiftPackCodeTips; // @synthesize appGiftPackCodeTips=_appGiftPackCodeTips;
 @property(retain, nonatomic) NSString *appGiftPackCode; // @synthesize appGiftPackCode=_appGiftPackCode;
 - (_Bool)isValid;

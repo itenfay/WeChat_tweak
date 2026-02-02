@@ -12,7 +12,6 @@
     PhoneItemInfo *_phontItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PhoneItemInfo *phontItem; // @synthesize phontItem=_phontItem;
 
 @end

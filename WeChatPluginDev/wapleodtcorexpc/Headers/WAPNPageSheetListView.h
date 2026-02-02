@@ -13,7 +13,6 @@
 + (Class)cellClass;
 + (double)maxTableViewHeight;
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 - (id)pageSheet;
 - (id)sheetInfo;

@@ -14,7 +14,6 @@
     NSString *_openID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *openID; // @synthesize openID=_openID;
 @property(retain, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
 @property(retain, nonatomic) KidsWatchButton *nextButton; // @synthesize nextButton=_nextButton;

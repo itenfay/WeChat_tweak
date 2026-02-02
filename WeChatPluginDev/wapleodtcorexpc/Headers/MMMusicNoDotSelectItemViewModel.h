@@ -22,7 +22,6 @@
 + (id)modelFromTid:(id)arg1 nonceId:(id)arg2;
 + (id)modelFromMMMusicFinderVideoCellModel:(id)arg1;
 + (id)modelFromMMMusicAlbumVideoCellModel:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(retain, nonatomic) MMMusicFinderVideoCellModel *finderVideoCellModel; // @synthesize finderVideoCellModel=_finderVideoCellModel;
 @property(retain, nonatomic) WCFinderDataItem *draftFinderDataItem; // @synthesize draftFinderDataItem=_draftFinderDataItem;

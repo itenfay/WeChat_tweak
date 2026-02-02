@@ -33,7 +33,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(nonatomic) int localTimeZone; // @synthesize localTimeZone=_localTimeZone;
 @property(retain, nonatomic) NSString *tid; // @synthesize tid=_tid;

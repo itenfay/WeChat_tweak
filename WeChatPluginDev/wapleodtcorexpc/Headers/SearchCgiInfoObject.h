@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate, NSString;
 
@@ -15,7 +16,6 @@
     NSString *_requestId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *requestId; // @synthesize requestId=_requestId;
 @property(retain, nonatomic) NSDate *createDate; // @synthesize createDate=_createDate;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
@@ -23,4 +23,3 @@
 - (id)initWithCompletion:(CDUnknownBlockType)arg1 query:(id)arg2;
 
 @end
-

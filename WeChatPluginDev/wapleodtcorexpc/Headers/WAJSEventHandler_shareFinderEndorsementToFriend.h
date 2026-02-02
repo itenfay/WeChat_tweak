@@ -12,7 +12,6 @@
     NSString *_relativePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *relativePath; // @synthesize relativePath=_relativePath;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) SessionSelectController *sessionSelectController; // @synthesize sessionSelectController=_sessionSelectController;

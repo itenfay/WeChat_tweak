@@ -19,7 +19,6 @@
 + (id)getImagePickerFromCameraWithOptionObj:(id)arg1 withManager:(id)arg2;
 + (id)getImagePickerFromPhotoLibraryWithOptionObj:(id)arg1 withManager:(id)arg2;
 + (void)showWithOptionObj:(id)arg1 inViewController:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool statusBarHidden; // @synthesize statusBarHidden=_statusBarHidden;
 @property(retain, nonatomic) NSMutableArray *tempImagePool; // @synthesize tempImagePool=_tempImagePool;
 @property(retain, nonatomic) MMImagePickerManagerOptionObj *optionObj; // @synthesize optionObj=_optionObj;

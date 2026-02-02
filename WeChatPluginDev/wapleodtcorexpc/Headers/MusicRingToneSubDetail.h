@@ -14,7 +14,6 @@
     unsigned long long _sourceType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;

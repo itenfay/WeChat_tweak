@@ -12,7 +12,6 @@
     MMCommonActionSheetPicker *_pickerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCommonActionSheetPicker *pickerView; // @synthesize pickerView=_pickerView;
 - (void)layoutSubviews;
 

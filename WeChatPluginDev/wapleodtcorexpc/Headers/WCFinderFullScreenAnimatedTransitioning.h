@@ -16,7 +16,6 @@
 }
 
 + (id)animatorWithGesture:(id)arg1 transitioningType:(unsigned int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *gesture; // @synthesize gesture=_gesture;
 @property(nonatomic) unsigned int transitioningType; // @synthesize transitioningType=_transitioningType;
 @property(nonatomic) __weak UIViewController *animatedTransitionRespondViewController; // @synthesize animatedTransitionRespondViewController=_animatedTransitionRespondViewController;

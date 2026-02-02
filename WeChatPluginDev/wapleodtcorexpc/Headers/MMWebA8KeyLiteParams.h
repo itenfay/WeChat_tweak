@@ -23,7 +23,6 @@
     NSString *_prefetcherId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *prefetcherId; // @synthesize prefetcherId=_prefetcherId;
 @property(nonatomic) unsigned int appMsgInnerType; // @synthesize appMsgInnerType=_appMsgInnerType;
 @property(nonatomic) unsigned int msgType; // @synthesize msgType=_msgType;

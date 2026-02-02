@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
@@ -13,7 +15,6 @@
     unsigned int _taskIDSequence;
 }
 
-- (void).cxx_destruct;
 - (void)clearAllDownloadHandler;
 - (void)interruptDownloadHandlerWithBizName:(id)arg1;
 - (void)clearDownloadHandlerWithBizName:(id)arg1;
@@ -37,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

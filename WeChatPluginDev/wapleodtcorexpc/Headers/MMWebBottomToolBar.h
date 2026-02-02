@@ -14,7 +14,6 @@
     UIView *_lineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UIButton *forwardButton; // @synthesize forwardButton=_forwardButton;
 @property(retain, nonatomic) UIButton *backButton; // @synthesize backButton=_backButton;

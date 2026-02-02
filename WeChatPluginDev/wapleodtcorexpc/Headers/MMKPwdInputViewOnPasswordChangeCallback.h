@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onPasswordChange:(int)arg1 payPassword:(id)arg2 passwordHashData:(id)arg3;
 - (id)initWithCpp:(const void *)arg1;
 

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString;
 
@@ -22,7 +23,6 @@
 + (id)serializeURL:(id)arg1 params:(id)arg2 httpMethod:(id)arg3;
 + (id)serializeURL:(id)arg1 params:(id)arg2;
 + (_Bool)isAttachment:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long flags; // @synthesize flags=_flags;
 @property(readonly, copy, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, copy, nonatomic) NSString *graphPath; // @synthesize graphPath=_graphPath;
@@ -43,4 +43,3 @@
 - (id)initWithGraphPath:(id)arg1;
 
 @end
-

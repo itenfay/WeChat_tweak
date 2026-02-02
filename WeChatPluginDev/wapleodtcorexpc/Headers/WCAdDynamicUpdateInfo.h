@@ -12,7 +12,6 @@
     NSDictionary *_actionDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *actionDic; // @synthesize actionDic=_actionDic;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

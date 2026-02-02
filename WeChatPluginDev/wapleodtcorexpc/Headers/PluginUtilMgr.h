@@ -15,7 +15,6 @@
     NSArray *m_arrLocalizedOfficialNickNames;
 }
 
-- (void).cxx_destruct;
 - (void)onManulLoginOK;
 - (void)onRegCountryChange;
 - (void)onLanguageChange;

@@ -12,7 +12,6 @@
     long long _result;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(nonatomic) long long result; // @synthesize result=_result;
 @property(retain, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;

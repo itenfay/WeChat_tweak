@@ -11,7 +11,6 @@
     WCPayF2FJSAPIAuthenCgi *_jsapiAuthenCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayF2FJSAPIAuthenCgi *jsapiAuthenCgi; // @synthesize jsapiAuthenCgi=_jsapiAuthenCgi;
 @property(retain, nonatomic) JSEvent *jsEvent; // @synthesize jsEvent=_jsEvent;
 - (void)onGetWCPayF2FJSAPIAuthenCgiResp:(id)arg1;

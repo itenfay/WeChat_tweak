@@ -25,7 +25,6 @@
     NSString *_m_subDeviceIDList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int m_deviceSourceType; // @synthesize m_deviceSourceType=_m_deviceSourceType;
 @property(retain, nonatomic) NSString *m_subDeviceIDList; // @synthesize m_subDeviceIDList=_m_subDeviceIDList;
 @property(retain, nonatomic) NSString *m_abilityExtInfo; // @synthesize m_abilityExtInfo=_m_abilityExtInfo;

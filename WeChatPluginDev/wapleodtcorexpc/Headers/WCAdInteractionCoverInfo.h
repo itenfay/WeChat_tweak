@@ -20,7 +20,6 @@
     NSString *_themePAGMD5;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *themePAGMD5; // @synthesize themePAGMD5=_themePAGMD5;
 @property(retain, nonatomic) NSString *themePAGUrl; // @synthesize themePAGUrl=_themePAGUrl;
 @property(nonatomic) unsigned long long coverEndTime; // @synthesize coverEndTime=_coverEndTime;

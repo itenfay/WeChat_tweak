@@ -24,7 +24,6 @@
     TPMetalColorHelper *_colorHelper;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool renderOptYuv420; // @synthesize renderOptYuv420=_renderOptYuv420;
 @property(nonatomic) int rendererClarityFlag; // @synthesize rendererClarityFlag=_rendererClarityFlag;
 @property(nonatomic) int rendererLucidFlag; // @synthesize rendererLucidFlag=_rendererLucidFlag;

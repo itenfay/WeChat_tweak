@@ -13,7 +13,6 @@
     _Bool _bShowTextState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShowTextState; // @synthesize bShowTextState=_bShowTextState;
 @property(nonatomic) _Bool bAlwayShowDefaultImage; // @synthesize bAlwayShowDefaultImage=_bAlwayShowDefaultImage;
 @property(nonatomic) _Bool m_bHideOpenIMDesc; // @synthesize m_bHideOpenIMDesc=_m_bHideOpenIMDesc;

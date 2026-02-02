@@ -17,7 +17,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(copy, nonatomic) NSString *jump_url; // @synthesize jump_url=_jump_url;

@@ -13,7 +13,6 @@
     WCPayBindCardInfo *_defaultCardBinInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBindCardInfo *defaultCardBinInfo; // @synthesize defaultCardBinInfo=_defaultCardBinInfo;
 @property(retain, nonatomic) NSString *reportSessionId; // @synthesize reportSessionId=_reportSessionId;
 - (void)reportActionId:(unsigned int)arg1 cardBinInfo:(id)arg2;

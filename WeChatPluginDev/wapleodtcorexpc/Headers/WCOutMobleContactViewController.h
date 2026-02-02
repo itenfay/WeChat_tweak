@@ -16,7 +16,6 @@
     UITableView *_tableview;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *tableview; // @synthesize tableview=_tableview;
 @property(retain, nonatomic) NSMutableDictionary *allContactsDic; // @synthesize allContactsDic=_allContactsDic;
 @property(retain, nonatomic) NSMutableArray *sectionKeyArray; // @synthesize sectionKeyArray=_sectionKeyArray;

@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_mallProductInfo;
 + (void)PBArrayAdd_type;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mallProductInfo; // @synthesize mallProductInfo=_mallProductInfo;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 - (id)toXML;

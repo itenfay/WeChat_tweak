@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveClientStatus, NSData, NSString;
 
 @interface WCFinderFeedStreamGetLiveMsgCGI
@@ -20,7 +22,6 @@
     FinderLiveClientStatus *_liveClientStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) FinderLiveClientStatus *liveClientStatus; // @synthesize liveClientStatus=_liveClientStatus;
 @property(retain, nonatomic) NSString *sessionExtraKey; // @synthesize sessionExtraKey=_sessionExtraKey;
@@ -39,4 +40,3 @@
 - (id)initWithFinderDataItem:(id)arg1 liveCookies:(id)arg2 offline:(_Bool)arg3 scene:(long long)arg4 commentScene:(int)arg5 sessionExtraKey:(id)arg6 liveTaskId:(id)arg7 successBlock:(CDUnknownBlockType)arg8 failBlock:(CDUnknownBlockType)arg9;
 
 @end
-

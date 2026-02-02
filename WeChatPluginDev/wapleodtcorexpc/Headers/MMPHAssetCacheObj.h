@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIImage;
 
 @interface MMPHAssetCacheObj
@@ -20,7 +22,6 @@
 + (void)PBArrayAdd_videoAssetDuration;
 + (void)PBArrayAdd_isVideoAsset;
 + (void)PBArrayAdd_identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *thumbImage; // @synthesize thumbImage=_thumbImage;
 @property(nonatomic) _Bool isUpdated; // @synthesize isUpdated=_isUpdated;
 @property(nonatomic) double videoAssetDuration; // @synthesize videoAssetDuration=_videoAssetDuration;
@@ -54,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

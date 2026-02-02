@@ -13,7 +13,6 @@
 
 + (int)numberOfOccurrencesOfString:(id)arg1 inString:(id)arg2;
 + (id)encodeCountry:(id)arg1 province:(id)arg2 city:(id)arg3;
-- (void).cxx_destruct;
 - (_Bool)isProvinceMO:(id)arg1;
 - (_Bool)isProvinceHK:(id)arg1;
 - (_Bool)isProvinceTW:(id)arg1;

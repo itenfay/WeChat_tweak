@@ -12,7 +12,6 @@
     EKEvent *_event;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EKEvent *event; // @synthesize event=_event;
 @property(retain, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 @property(retain, nonatomic) NSDictionary *dic; // @synthesize dic=_dic;

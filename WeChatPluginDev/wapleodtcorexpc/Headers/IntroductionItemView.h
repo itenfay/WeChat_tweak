@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIControl.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSSet, WeChatIntroduction;
 
@@ -16,7 +17,6 @@
     WeChatIntroduction *_introduction;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WeChatIntroduction *introduction; // @synthesize introduction=_introduction;
 @property(copy, nonatomic) CDUnknownBlockType handleLongPress; // @synthesize handleLongPress=_handleLongPress;
 @property(copy, nonatomic) CDUnknownBlockType handleClick; // @synthesize handleClick=_handleClick;
@@ -32,4 +32,3 @@
 - (id)initWithIntroduction:(id)arg1;
 
 @end
-

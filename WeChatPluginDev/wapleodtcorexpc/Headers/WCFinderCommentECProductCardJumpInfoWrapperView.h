@@ -16,7 +16,6 @@
     WCFinderCommentECProductCardView *_productCard;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCommentECProductCardView *productCard; // @synthesize productCard=_productCard;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(nonatomic) double containerWidth; // @synthesize containerWidth=_containerWidth;

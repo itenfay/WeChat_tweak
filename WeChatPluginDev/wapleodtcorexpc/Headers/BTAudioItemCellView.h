@@ -12,7 +12,6 @@
     UIView *m_containView;
 }
 
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)audioPlayClicked;
 - (void)MMUIViewControllerDidBeRemoved:(id)arg1;

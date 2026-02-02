@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithFinderExportId:(id)arg1 liveStatus:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *liveStatus; // @synthesize liveStatus=_liveStatus;
 @property(copy, nonatomic) NSString *finderExportId; // @synthesize finderExportId=_finderExportId;
 - (id)toList;

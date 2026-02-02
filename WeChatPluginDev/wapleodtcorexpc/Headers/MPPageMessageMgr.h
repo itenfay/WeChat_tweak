@@ -10,7 +10,6 @@
     WCEliminatedSlotMMKV *_messageSlotMMKV;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *messageSlotMMKV; // @synthesize messageSlotMMKV=_messageSlotMMKV;
 - (void)OnAddMsg:(id)arg1 MsgWrap:(id)arg2;
 - (void)markLastMsgSendTimeToPage:(id)arg1 msgWrap:(id)arg2;

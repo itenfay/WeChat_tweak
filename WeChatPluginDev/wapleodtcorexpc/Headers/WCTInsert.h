@@ -13,7 +13,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)realExecute;
 - (_Bool)execute;
 - (id)value:(id)arg1;

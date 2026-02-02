@@ -8,7 +8,6 @@
     id _info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id info; // @synthesize info=_info;
 
 @end

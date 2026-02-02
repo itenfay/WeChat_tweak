@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTimerLabel, MMUILabel, NSString, UIImageView;
 @protocol MMLiveAchorTopStateBarDelegate;
 
@@ -22,7 +24,6 @@
 }
 
 + (id)networkImageForState:(long long)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMUILabel *likedCountLabel; // @synthesize likedCountLabel=_likedCountLabel;
 @property(readonly, nonatomic) UIImageView *likedImageView; // @synthesize likedImageView=_likedImageView;
 @property(retain, nonatomic) MMTimerLabel *timerLabel; // @synthesize timerLabel=_timerLabel;
@@ -51,4 +52,3 @@
 - (void)layoutSubviews;
 
 @end
-

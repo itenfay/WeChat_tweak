@@ -22,7 +22,6 @@
     WCOutInviteFriendLogic *_inviteFriendLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCOutInviteFriendLogic *inviteFriendLogic; // @synthesize inviteFriendLogic=_inviteFriendLogic;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) unsigned int clickReadmeCount; // @synthesize clickReadmeCount=_clickReadmeCount;

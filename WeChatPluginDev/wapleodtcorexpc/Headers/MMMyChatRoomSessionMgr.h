@@ -11,7 +11,6 @@
     NSMutableDictionary *_dicMyChatTimeInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPreLoadCache; // @synthesize hasPreLoadCache=_hasPreLoadCache;
 @property(retain, nonatomic) NSMutableDictionary *dicMyChatTimeInfo; // @synthesize dicMyChatTimeInfo=_dicMyChatTimeInfo;
 - (void)OnAddMsg:(id)arg1 MsgWrap:(id)arg2;

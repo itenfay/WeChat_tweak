@@ -21,7 +21,6 @@
     MMToolManageTableViewLogic *_toolManageTableViewLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMToolManageTableViewLogic *toolManageTableViewLogic; // @synthesize toolManageTableViewLogic=_toolManageTableViewLogic;
 @property(retain, nonatomic) NSArray *selectedExistWeAppList; // @synthesize selectedExistWeAppList=_selectedExistWeAppList;
 @property(retain, nonatomic) NSMutableArray *weAppList; // @synthesize weAppList=_weAppList;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMLiveLikeAnimationRoute : NSObject
 {
@@ -36,4 +37,3 @@
 - (void)startLiveLikeAnimation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

@@ -25,7 +25,6 @@
     long long _m_bizType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_onlyIntercept; // @synthesize m_onlyIntercept=_m_onlyIntercept;
 @property(nonatomic) long long m_bizType; // @synthesize m_bizType=_m_bizType;
 @property(retain, nonatomic) NSString *m_bizKey; // @synthesize m_bizKey=_m_bizKey;

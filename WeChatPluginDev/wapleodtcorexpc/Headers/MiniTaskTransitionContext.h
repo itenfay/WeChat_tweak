@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MiniTaskEdgeGestureHandler, MinimizeTaskData, MultiTaskPageActionInfo, UIImage;
 @protocol MiniTaskTransitionAnimationDelegate;
@@ -31,7 +32,6 @@
     struct CGRect _snapshotFrameToWindow;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromFlutterScenes; // @synthesize isFromFlutterScenes=_isFromFlutterScenes;
 @property(retain, nonatomic) MultiTaskPageActionInfo *pageActionInfo; // @synthesize pageActionInfo=_pageActionInfo;
 @property(nonatomic) unsigned int animationType; // @synthesize animationType=_animationType;
@@ -57,4 +57,3 @@
 - (void)tryUpdateSnapshotFrame;
 
 @end
-

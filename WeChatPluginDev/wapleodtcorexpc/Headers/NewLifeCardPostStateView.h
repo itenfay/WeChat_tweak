@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, SightIconView;
 
@@ -18,7 +19,6 @@
 }
 
 + (double)fixedHeight;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType repostAction; // @synthesize repostAction=_repostAction;
 @property(retain, nonatomic) MMUIButton *repostButton; // @synthesize repostButton=_repostButton;
 @property(retain, nonatomic) MMUILabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
@@ -31,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

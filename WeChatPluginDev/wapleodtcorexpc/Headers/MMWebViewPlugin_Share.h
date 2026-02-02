@@ -16,7 +16,6 @@
 + (id)shareDataFromShareDataParams:(id)arg1;
 + (id)shareDataParamsFromShareData:(id)arg1;
 + (_Bool)canShareAppMessageWithUpdateShareData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMScrollActionSheet *pluginShareActionSheet; // @synthesize pluginShareActionSheet=_pluginShareActionSheet;
 @property(retain, nonatomic) NSMutableDictionary *dictShareDataForShareTimeline; // @synthesize dictShareDataForShareTimeline=_dictShareDataForShareTimeline;
 @property(retain, nonatomic) NSMutableDictionary *dictShareDataForSendAppMessage; // @synthesize dictShareDataForSendAppMessage=_dictShareDataForSendAppMessage;

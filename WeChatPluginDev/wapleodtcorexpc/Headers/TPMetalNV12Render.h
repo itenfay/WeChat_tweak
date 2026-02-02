@@ -19,7 +19,6 @@
     int _uvHeight;
 }
 
-- (void).cxx_destruct;
 - (id)getYTexture;
 - (void)uploadTexturesToCommandEncoder:(id)arg1;
 - (_Bool)setupTexturesForFrame:(struct TPFrame *)arg1;

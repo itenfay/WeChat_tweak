@@ -26,7 +26,6 @@
     VideoParamsInfo *_cpVideoParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VideoParamsInfo *cpVideoParams; // @synthesize cpVideoParams=_cpVideoParams;
 @property(retain, nonatomic) VideoParamsInfo *srcVideoParams; // @synthesize srcVideoParams=_srcVideoParams;
 @property(nonatomic) _Bool sourceVideoContainsWXTag; // @synthesize sourceVideoContainsWXTag=_sourceVideoContainsWXTag;

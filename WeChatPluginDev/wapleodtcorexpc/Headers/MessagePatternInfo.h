@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_m_nsPattern;
 + (void)PBArrayAdd_m_uiLocalID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsPattern; // @synthesize m_nsPattern=_m_nsPattern;
 @property(nonatomic) unsigned int m_uiLocalID; // @synthesize m_uiLocalID=_m_uiLocalID;
 @property(readonly, copy) NSString *description;

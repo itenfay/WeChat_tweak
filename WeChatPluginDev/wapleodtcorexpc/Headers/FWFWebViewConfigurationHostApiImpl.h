@@ -12,7 +12,6 @@
     FWFInstanceManager *_instanceManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FWFInstanceManager *instanceManager; // @synthesize instanceManager=_instanceManager;
 - (void)setMediaTypesRequiresUserActionForConfigurationWithIdentifier:(id)arg1 forTypes:(id)arg2 error:(id *)arg3;
 - (void)setAllowsInlineMediaPlaybackForConfigurationWithIdentifier:(id)arg1 isAllowed:(id)arg2 error:(id *)arg3;

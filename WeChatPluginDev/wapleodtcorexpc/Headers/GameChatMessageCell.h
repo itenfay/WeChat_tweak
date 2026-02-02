@@ -13,7 +13,6 @@
 }
 
 + (double)dynamicCellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) UILabel *bottomLabel; // @synthesize bottomLabel=_bottomLabel;
 @property(retain, nonatomic) MMWebImageView *iconImgView; // @synthesize iconImgView=_iconImgView;

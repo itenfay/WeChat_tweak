@@ -26,7 +26,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *videoOutputSetting; // @synthesize videoOutputSetting=_videoOutputSetting;
 @property(nonatomic) int vbvBufferSize; // @synthesize vbvBufferSize=_vbvBufferSize;
 @property(nonatomic) float crf; // @synthesize crf=_crf;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSMutableSet, NSString, WCFinderSnSLiveSectionTableViewCell;
 @protocol WCTimelineLogicControllerDelegate;
@@ -19,7 +20,6 @@
     WCFinderSnSLiveSectionTableViewCell *_snsLiveCell;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSnSLiveSectionTableViewCell *snsLiveCell; // @synthesize snsLiveCell=_snsLiveCell;
 @property(retain, nonatomic) NSMutableSet *tidContainSet; // @synthesize tidContainSet=_tidContainSet;
 @property(retain, nonatomic) NSMutableArray *allDataItems; // @synthesize allDataItems=_allDataItems;
@@ -55,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

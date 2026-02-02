@@ -21,7 +21,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *friendUsernames; // @synthesize friendUsernames=_friendUsernames;
 @property(retain, nonatomic) WCCanvasComponentSocialInfo *socialInfo; // @synthesize socialInfo=_socialInfo;
 @property(retain, nonatomic) UILabel *friendAvatarDescLabel; // @synthesize friendAvatarDescLabel=_friendAvatarDescLabel;

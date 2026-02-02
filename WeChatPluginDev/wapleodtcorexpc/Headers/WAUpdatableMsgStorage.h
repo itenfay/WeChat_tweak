@@ -12,7 +12,6 @@
     NSMutableDictionary *_dictShareKey2Info;
 }
 
-- (void).cxx_destruct;
 - (_Bool)insertOrUpdateUpdatableMsgInfo:(id)arg1;
 - (id)getUpdatableMsgInfoWithShareKey:(id)arg1;
 - (void)clearMemoryCache;

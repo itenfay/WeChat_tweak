@@ -14,7 +14,6 @@
     NSString *_weapp_name;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *weapp_name; // @synthesize weapp_name=_weapp_name;
 @property(retain, nonatomic) NSString *weapp_id; // @synthesize weapp_id=_weapp_id;
 @property(nonatomic) unsigned int weapp_index; // @synthesize weapp_index=_weapp_index;

@@ -22,7 +22,6 @@
 }
 
 + (void)cacheFileToHardLink:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MsgDataDownloadLogic *msgDownloadLogic; // @synthesize msgDownloadLogic=_msgDownloadLogic;
 @property(retain, nonatomic) NSMutableDictionary *bigFileUploadRespDict; // @synthesize bigFileUploadRespDict=_bigFileUploadRespDict;
 @property(retain, nonatomic) NSMutableDictionary *msgInfoDict; // @synthesize msgInfoDict=_msgInfoDict;

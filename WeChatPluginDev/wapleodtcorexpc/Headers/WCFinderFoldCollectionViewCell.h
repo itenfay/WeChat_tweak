@@ -19,7 +19,6 @@
 
 + (double)cellHWithShowUIDetail:(_Bool)arg1;
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *descriLabel; // @synthesize descriLabel=_descriLabel;
 @property(retain, nonatomic) WCFinderAuthInfoIconView *authIconView; // @synthesize authIconView=_authIconView;
 @property(retain, nonatomic) UILabel *nickName; // @synthesize nickName=_nickName;

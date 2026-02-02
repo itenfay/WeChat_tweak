@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OMCProjectManager : NSObject
 {
@@ -17,4 +18,3 @@
 - (id)initWithBackingProjectManager:(void *)arg1;
 
 @end
-

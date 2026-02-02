@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCDataItem, WCMediaItem, WCMomentsPlayerSourceConfigurationContext, WCMomentsPlayerSourceDetermination, WCMomentsPlayerSourceSession;
 @protocol WCMomentsPlayerSourceControllerDataSource, WCMomentsPlayerSourceControllerDelegate;
@@ -34,7 +35,6 @@
 + (id)generateDownloadArgsLDForMediaItem:(id)arg1;
 + (id)generateDownloadArgsDEFForMediaItem:(id)arg1;
 + (id)descriptionForSourceStatus:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsPlayerSourceDetermination *currentSourceDetermination; // @synthesize currentSourceDetermination=_currentSourceDetermination;
 @property(retain, nonatomic) NSMutableArray *CDN_downloadRecords; // @synthesize CDN_downloadRecords=_CDN_downloadRecords;
 @property(retain, nonatomic) WCMomentsPlayerSourceConfigurationContext *configurationContext; // @synthesize configurationContext=_configurationContext;
@@ -114,4 +114,3 @@
 @property(readonly) Class superclass;
 
 @end
-

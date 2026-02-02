@@ -12,7 +12,6 @@
     UIButton *_selectBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *selectBtn; // @synthesize selectBtn=_selectBtn;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidLoad;

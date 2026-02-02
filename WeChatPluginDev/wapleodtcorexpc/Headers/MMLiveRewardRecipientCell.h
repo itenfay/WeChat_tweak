@@ -19,7 +19,6 @@
 + (double)getSeperatorLineXMargin;
 + (double)getCellHeight;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 @property(retain, nonatomic) WCFinderContact *rewardRecipientContact; // @synthesize rewardRecipientContact=_rewardRecipientContact;
 @property(retain, nonatomic) UIImageView *selectionIndicatorView; // @synthesize selectionIndicatorView=_selectionIndicatorView;

@@ -13,7 +13,6 @@
     MISSING_TYPE *placeHolder;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) UIImage *placeHolder; // @synthesize placeHolder;
 @property(nonatomic) long long options; // @synthesize options;

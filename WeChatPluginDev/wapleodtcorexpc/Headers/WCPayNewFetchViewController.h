@@ -45,7 +45,6 @@
     NSString *_fetchLimitRecomentSerial;
 }
 
-- (void).cxx_destruct;
 @property _Bool bIsShowingCardInfoView; // @synthesize bIsShowingCardInfoView=_bIsShowingCardInfoView;
 @property(retain, nonatomic) NSString *fetchLimitRecomentSerial; // @synthesize fetchLimitRecomentSerial=_fetchLimitRecomentSerial;
 @property(retain, nonatomic) RichTextView *fetchLimitGuildActionView; // @synthesize fetchLimitGuildActionView=_fetchLimitGuildActionView;

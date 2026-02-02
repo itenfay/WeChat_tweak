@@ -22,7 +22,6 @@
     NSString *_coverImgURL;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *coverImgURL; // @synthesize coverImgURL=_coverImgURL;
 @property(copy, nonatomic) NSString *titleStr; // @synthesize titleStr=_titleStr;
 @property(nonatomic) _Bool isShowLargeCover; // @synthesize isShowLargeCover=_isShowLargeCover;

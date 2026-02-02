@@ -16,7 +16,6 @@
 
 + (id)deviceItemAirPlay;
 + (id)deviceItemUpnp:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAMediaCastingUpnpDevice *upnpDevice; // @synthesize upnpDevice=_upnpDevice;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long deviceType; // @synthesize deviceType=_deviceType;

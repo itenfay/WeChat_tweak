@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_size;
 + (void)PBArrayAdd_end;
 + (void)PBArrayAdd_start;
-- (void).cxx_destruct;
 @property(nonatomic) int checkEndTimes; // @synthesize checkEndTimes=_checkEndTimes;
 @property(nonatomic) _Bool hasCheckEnd; // @synthesize hasCheckEnd=_hasCheckEnd;
 @property(nonatomic) _Bool disable; // @synthesize disable=_disable;

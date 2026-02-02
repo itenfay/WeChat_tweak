@@ -19,7 +19,6 @@
     NSObject<OS_dispatch_queue> *m_batchGetBySourceIdQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavoritesBatchGetMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)shouldBetchGetAll;
 - (void)onNetworkStatusChange:(unsigned int)arg1;

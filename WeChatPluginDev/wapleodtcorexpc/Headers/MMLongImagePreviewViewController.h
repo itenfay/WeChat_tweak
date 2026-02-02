@@ -31,7 +31,6 @@
     MMLongImageCropResult *_croppedResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLongImageCropResult *croppedResult; // @synthesize croppedResult=_croppedResult;
 @property(retain, nonatomic) FavoritesItem *addingFavItem; // @synthesize addingFavItem=_addingFavItem;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogicController; // @synthesize forwardLogicController=_forwardLogicController;

@@ -16,7 +16,6 @@
     struct UIEdgeInsets _infoEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *followBtnThemeColor; // @synthesize followBtnThemeColor=_followBtnThemeColor;
 @property(nonatomic) double cornerMaskRadius; // @synthesize cornerMaskRadius=_cornerMaskRadius;
 @property(nonatomic) double elementPadding; // @synthesize elementPadding=_elementPadding;

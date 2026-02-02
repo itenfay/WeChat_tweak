@@ -13,7 +13,6 @@
 }
 
 + (id)plugin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderFlutterAPI *flutterAPI; // @synthesize flutterAPI=_flutterAPI;
 - (id)finderCommonReportParamsWithError:(id *)arg1;
 - (void)onDetachedFromEngine:(id)arg1;

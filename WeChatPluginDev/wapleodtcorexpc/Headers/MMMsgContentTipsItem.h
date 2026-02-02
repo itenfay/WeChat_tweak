@@ -37,7 +37,6 @@
     struct CGSize _iconSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *customMenuItemTitle; // @synthesize customMenuItemTitle=_customMenuItemTitle;
 @property(nonatomic) unsigned int voiceMsgClientId; // @synthesize voiceMsgClientId=_voiceMsgClientId;
 @property(retain, nonatomic) UIView *expandView; // @synthesize expandView=_expandView;

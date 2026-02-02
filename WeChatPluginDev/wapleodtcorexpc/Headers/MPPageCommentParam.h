@@ -14,7 +14,6 @@
     NSString *_replyContent;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *replyContent; // @synthesize replyContent=_replyContent;
 @property(nonatomic) unsigned int personalCommentId; // @synthesize personalCommentId=_personalCommentId;
 @property(nonatomic) _Bool isSubReply; // @synthesize isSubReply=_isSubReply;

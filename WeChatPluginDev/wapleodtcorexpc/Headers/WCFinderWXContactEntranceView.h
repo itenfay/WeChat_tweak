@@ -19,7 +19,6 @@
 }
 
 + (double)displayHeightWithNewStyle:(_Bool)arg1 contact:(id)arg2 coverItems:(vector_3b4bbe29)arg3 titleFont:(id)arg4 contactDesc:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *coverStackView; // @synthesize coverStackView=_coverStackView;
 @property(retain, nonatomic) WCFinderAuthInfoIconView *authIconView; // @synthesize authIconView=_authIconView;
 @property(retain, nonatomic) UILabel *contactDescLabel; // @synthesize contactDescLabel=_contactDescLabel;

@@ -16,7 +16,6 @@
 }
 
 + (id)topBarStyleWithId:(id)arg1 priority:(unsigned long long)arg2 text:(id)arg3 andHideLoad:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHideLoad; // @synthesize isHideLoad=_isHideLoad;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) unsigned long long priority; // @synthesize priority=_priority;

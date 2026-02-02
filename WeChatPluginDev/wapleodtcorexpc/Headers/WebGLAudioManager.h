@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -16,7 +17,6 @@
     unsigned long long _timeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeStamp; // @synthesize timeStamp=_timeStamp;
 @property(nonatomic) unsigned long long frameNum; // @synthesize frameNum=_frameNum;
 - (void)onAudioInfoChanged:(int)arg1 channels:(int)arg2;
@@ -34,4 +34,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -21,7 +21,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_orderId;
 + (void)PBArrayAdd_bizUin;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int ver; // @synthesize ver=_ver;
 @property(retain, nonatomic) NSString *descColorStr; // @synthesize descColorStr=_descColorStr;
 @property(retain, nonatomic) NSString *titleColorStr; // @synthesize titleColorStr=_titleColorStr;

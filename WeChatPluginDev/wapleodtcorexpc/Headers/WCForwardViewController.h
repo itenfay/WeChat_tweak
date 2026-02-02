@@ -23,7 +23,6 @@
     WCMomentsPageContext *_pageContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsPageContext *pageContext; // @synthesize pageContext=_pageContext;
 @property(retain, nonatomic) WCContentItemBaseView *mediaCellView; // @synthesize mediaCellView=_mediaCellView;
 @property(nonatomic) _Bool uploadFinished; // @synthesize uploadFinished=_uploadFinished;

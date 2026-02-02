@@ -15,7 +15,6 @@
 + (_Bool)cacheCanvasServerData:(id)arg1 forLoadParams:(id)arg2;
 + (_Bool)cacheUxDynamicXML:(id)arg1 forCanvasId:(id)arg2 canvasExt:(id)arg3;
 + (void)cleanCanvasServerDataCacheWithLoadParams:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCanvasDynamicDataLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)handleGetRedPacketCoverUrlResponse:(id)arg1;
 - (void)getWeWorkContactWithJumpParams:(id)arg1 searchScene:(unsigned long long)arg2 subScene:(int)arg3;

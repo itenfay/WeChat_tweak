@@ -25,7 +25,6 @@
     WCPayBindCardInfo *_ECardInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBindCardInfo *ECardInfo; // @synthesize ECardInfo=_ECardInfo;
 @property(retain, nonatomic) BindECardRes *bindECardResponse; // @synthesize bindECardResponse=_bindECardResponse;
 @property(retain, nonatomic) OpenECardRes *openECardResponse; // @synthesize openECardResponse=_openECardResponse;

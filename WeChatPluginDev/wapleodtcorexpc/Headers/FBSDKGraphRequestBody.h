@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableData, NSMutableDictionary, NSString;
 
@@ -14,7 +15,6 @@
     NSString *_stringBoundary;
 }
 
-- (void).cxx_destruct;
 - (id)compressedData;
 - (void)_appendWithKey:(id)arg1 filename:(id)arg2 contentType:(id)arg3 contentBlock:(CDUnknownBlockType)arg4;
 @property(readonly, retain, nonatomic) NSData *data;
@@ -27,4 +27,3 @@
 - (id)init;
 
 @end
-

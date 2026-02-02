@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AppMMScheduleItem, AppMsgShareItem, AppProductItem, AppTVItem, BSAffMsgExtraData, BrandAffMsgExtraData, BrandMpVideoItem, BrandResortDigestInfo, CContact, CardTicketItem, EcsGiftMsgItem, EmoticonAppMsgItem, EmoticonSecurityInfoList, EmoticonSharedItem, EmotionDesignerSharedItem, EmotionPageSharedItem, FavoritesItem, GameLifeItem, GameShareCardItem, GameShareNameCard, GiftCardItem, GroupNoticeItem, HardWareItem, HistoryMsgsInfo, ImageInfo, LiteAppSharedItem, MMAsset, MMEasterEggMatch, MMFinderLiveRedPacketMessage, MMLiveAppMsgInnerItem, MMMusicShareItem, MMReaderInfo, MMTemplateMsg3rdAppShowItem, MPPageIdentityInfo, MallProductItem, MessageExpItem, MpShareTraceItem, NSArray, NSData, NSMutableArray, NSMutableDictionary, NSString, NotifyMsgItem, OpenSDKAppBrandItem, PatMessageWrap, PushMailWrap, ScanCodeHistoryItem, ServiceNotifyMessageItem, ShareMsgObj, SourceImgInfo, StrongNotificationItemPB, TingShareCategoryItem, TingShareListenItem, TingShareLyricsItem, VideoUploadStatInfo, VoiceAppMsgItem, WAAppMsgItem, WAScreenshotContextInfo, WASourceWeappInfo, WCCanvasPageItem, WCFinderClubSystemMessage, WCFinderContentColumnSharedItem, WCFinderLiveProductShareItem, WCFinderLiveShareItem, WCFinderLiveShopWindowShareItem, WCFinderMessageGuaranteeItem, WCFinderMessageShareNameCard, WCFinderMessageVerifyItem, WCFinderOrderShareItem, WCFinderShareItemContainer, WCFinderShareToMomentsItem, WCFinderThemeLiveStreamShareItem, WCFinderTopicShareItem, WCMegaVideoShareItem, WCPayExtensionInfo, WCPayInfoItem, WCPayPocketMoneyMsgItem, WCPayThirdInfo, WSVideoModel, WXSecretMsgItem, WeChatIntroductionItem, WebviewSharedItem, WxGameCardItem, iWatchAppMsgItem;
 @protocol IMsgExtendOperation;
 
@@ -239,7 +241,6 @@
 + (id)genFileAppMsgWithFileName:(id)arg1 filePath:(id)arg2 fileData:(id)arg3;
 + (_Bool)IsVoiceUseCdnDownload;
 + (id)getMessageListStatusImage:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *systemMessageActionWording; // @synthesize systemMessageActionWording=_systemMessageActionWording;
 @property(retain, nonatomic) NSString *systemMessageWording; // @synthesize systemMessageWording=_systemMessageWording;
 @property(nonatomic) unsigned int sendFailRetCode; // @synthesize sendFailRetCode=_sendFailRetCode;
@@ -924,4 +925,3 @@
 @property(retain, nonatomic) NSData *wxamData;
 
 @end
-

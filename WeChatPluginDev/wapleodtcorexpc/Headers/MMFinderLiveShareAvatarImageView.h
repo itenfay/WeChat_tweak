@@ -10,7 +10,6 @@
     MMWebImageView *_webImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *webImageView; // @synthesize webImageView=_webImageView;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 shareItem:(id)arg2;

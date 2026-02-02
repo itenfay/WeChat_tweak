@@ -10,7 +10,6 @@
     SpeedTestReportReq *speedTestReportRequest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SpeedTestReportReq *speedTestReportRequest; // @synthesize speedTestReportRequest;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;
 - (void)didGetResponse:(id)arg1;

@@ -14,7 +14,6 @@
     MISSING_TYPE *versionForUDR;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

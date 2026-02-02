@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIActivityIndicatorView, NSString, UIImageView, UIView, VOIPVideoRender, VoIPInvitationBreadthView, VoipDescriptionButton, VoipForceStartObject, VoipMonoMsg, XImageViewRenderer;
 
 @interface VoIPReceiverViewController
@@ -36,7 +38,6 @@
     VoipMonoMsg *_inviteMonoMsg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSetupedSceneQuickReplyFromBreadth; // @synthesize isSetupedSceneQuickReplyFromBreadth=_isSetupedSceneQuickReplyFromBreadth;
 @property(retain, nonatomic) VoipMonoMsg *inviteMonoMsg; // @synthesize inviteMonoMsg=_inviteMonoMsg;
 @property(retain, nonatomic) VoipForceStartObject *inviteBreadthShowStatForceStartObject; // @synthesize inviteBreadthShowStatForceStartObject=_inviteBreadthShowStatForceStartObject;
@@ -210,4 +211,3 @@
 @property(readonly) Class superclass;
 
 @end
-

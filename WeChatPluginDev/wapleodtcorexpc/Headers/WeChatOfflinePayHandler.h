@@ -13,7 +13,6 @@
     WCShareAuthViewController *_authVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCShareAuthViewController *authVC; // @synthesize authVC=_authVC;
 @property(retain, nonatomic) OpenApiParameter *parameter; // @synthesize parameter=_parameter;
 - (void)onSDKOpenOfflinePayLogicDidStop;

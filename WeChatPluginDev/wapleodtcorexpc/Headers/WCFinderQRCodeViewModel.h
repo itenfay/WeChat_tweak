@@ -18,7 +18,6 @@
     NSString *_userQRCodeUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *userQRCodeUrl; // @synthesize userQRCodeUrl=_userQRCodeUrl;
 @property(copy, nonatomic) NSString *talkerName; // @synthesize talkerName=_talkerName;
 @property(copy, nonatomic) NSString *fromUserName; // @synthesize fromUserName=_fromUserName;

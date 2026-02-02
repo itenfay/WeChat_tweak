@@ -16,7 +16,6 @@
     NSString *_fromURL;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fromURL; // @synthesize fromURL=_fromURL;
 @property(retain, nonatomic) NSString *phashVersion; // @synthesize phashVersion=_phashVersion;
 @property(retain, nonatomic) NSString *phashStr; // @synthesize phashStr=_phashStr;

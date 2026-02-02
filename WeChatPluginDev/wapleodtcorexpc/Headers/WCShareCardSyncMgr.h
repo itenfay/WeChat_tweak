@@ -15,7 +15,6 @@
     id <WCShareCardSyncMgrDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCShareCardSyncMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)saveSyncMaxSeq:(unsigned long long)arg1;
 - (id)getWCShareCardSyncInfoPath;

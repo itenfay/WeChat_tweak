@@ -23,7 +23,6 @@
 }
 
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(nonatomic) double loopInterval; // @synthesize loopInterval=_loopInterval;
 @property(nonatomic) double loopDuration; // @synthesize loopDuration=_loopDuration;
 @property(retain, nonatomic) CAAnimationGroup *breatheAnimationGroup; // @synthesize breatheAnimationGroup=_breatheAnimationGroup;

@@ -28,7 +28,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastOpenTime; // @synthesize lastOpenTime=_lastOpenTime;
 @property(nonatomic) unsigned int appType; // @synthesize appType=_appType;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

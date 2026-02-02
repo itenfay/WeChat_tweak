@@ -32,7 +32,6 @@
     MMBorderView *_buttonMiddleLine;
 }
 
-- (void).cxx_destruct;
 - (void)joinCurrentBannerMultiTalk;
 - (void)onEnterButtonPress;
 - (void)onCancelButtonPress;

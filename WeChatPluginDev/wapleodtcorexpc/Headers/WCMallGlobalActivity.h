@@ -12,7 +12,6 @@
     WCMallActivityInfo *m_oActivityInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMallActivityInfo *m_oActivityInfo; // @synthesize m_oActivityInfo;
 
 @end

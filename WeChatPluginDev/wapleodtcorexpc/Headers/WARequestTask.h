@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString, NSURLSession, NSURLSessionTask, WARequestConfig;
 @protocol OS_dispatch_queue, WARequestTaskDelegate;
@@ -50,7 +51,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property long long lastUpdateProgressWritten; // @synthesize lastUpdateProgressWritten=_lastUpdateProgressWritten;
 @property double lastUpdateProgressPercent; // @synthesize lastUpdateProgressPercent=_lastUpdateProgressPercent;
 @property unsigned long long lastUpdateProgressAbsoluteTime; // @synthesize lastUpdateProgressAbsoluteTime=_lastUpdateProgressAbsoluteTime;
@@ -94,4 +94,3 @@
 - (id)initWithAppID:(id)arg1 urlSession:(id)arg2 taskID:(id)arg3 workQueue:(id)arg4 requestConfig:(id)arg5 isUseCronet:(_Bool)arg6 useQuic:(_Bool)arg7 useHttp2:(_Bool)arg8 useCache:(_Bool)arg9 useChunked:(_Bool)arg10 appType:(unsigned int)arg11 context:(id)arg12;
 
 @end
-

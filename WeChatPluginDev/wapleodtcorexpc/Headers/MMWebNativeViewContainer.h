@@ -14,7 +14,6 @@
     MMWebContainerHookView *_nativeViewContainer;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMWebContainerHookView *nativeViewContainer; // @synthesize nativeViewContainer=_nativeViewContainer;
 @property(retain, nonatomic) UIView *nativeView; // @synthesize nativeView=_nativeView;
 @property(nonatomic) __weak UIView *scrollView; // @synthesize scrollView=_scrollView;

@@ -15,7 +15,6 @@
     MMUIButton *_closeButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) double contentHeight; // @synthesize contentHeight=_contentHeight;

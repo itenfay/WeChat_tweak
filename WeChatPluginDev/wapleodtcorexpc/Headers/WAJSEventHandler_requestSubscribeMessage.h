@@ -10,7 +10,6 @@
     WASubscriptionMessageLogic *_logic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WASubscriptionMessageLogic *logic; // @synthesize logic=_logic;
 - (id)viewControllerToShowPageSheet;
 - (void)onSubscriptionMessageLogicWillDismissPageSheet:(id)arg1;

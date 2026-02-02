@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol ITingRouter;
@@ -14,7 +15,6 @@
     id <ITingRouter> _router;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPendingDisplayMode; // @synthesize hasPendingDisplayMode=_hasPendingDisplayMode;
 @property(retain, nonatomic) id <ITingRouter> router; // @synthesize router=_router;
 - (void)onLimitedModeChanged;
@@ -44,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

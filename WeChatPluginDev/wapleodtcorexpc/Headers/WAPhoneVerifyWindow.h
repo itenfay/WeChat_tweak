@@ -26,7 +26,6 @@
 }
 
 + (id)setupWindow:(id)arg1 phone:(id)arg2 inputCount:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAHiddenTextField *confirmCodeTF; // @synthesize confirmCodeTF=_confirmCodeTF;
 @property(retain, nonatomic) id <IWARichTextViewHelper> richTextHelper; // @synthesize richTextHelper=_richTextHelper;
 @property(retain, nonatomic) NSString *phoneNum; // @synthesize phoneNum=_phoneNum;

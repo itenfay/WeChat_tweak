@@ -19,7 +19,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 - (void)clearAllResources;
 - (void)uninitGL;
 - (_Bool)initGL;

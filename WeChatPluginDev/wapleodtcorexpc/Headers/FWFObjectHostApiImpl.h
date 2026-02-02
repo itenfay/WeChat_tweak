@@ -12,7 +12,6 @@
     FWFInstanceManager *_instanceManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FWFInstanceManager *instanceManager; // @synthesize instanceManager=_instanceManager;
 - (void)disposeObjectWithIdentifier:(id)arg1 error:(id *)arg2;
 - (void)removeObserverForObjectWithIdentifier:(id)arg1 observerIdentifier:(id)arg2 keyPath:(id)arg3 error:(id *)arg4;

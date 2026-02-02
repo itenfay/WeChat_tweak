@@ -24,7 +24,6 @@
     KeyboardDismissProxy *_dismissKeyboardProxy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) KeyboardDismissProxy *dismissKeyboardProxy; // @synthesize dismissKeyboardProxy=_dismissKeyboardProxy;
 @property(nonatomic) long long configDelayHideKeyboardTime; // @synthesize configDelayHideKeyboardTime=_configDelayHideKeyboardTime;
 @property(retain, nonatomic) UIControl *emoticonStoreView; // @synthesize emoticonStoreView=_emoticonStoreView;

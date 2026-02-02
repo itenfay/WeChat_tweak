@@ -17,7 +17,6 @@
 + (_Bool)hasMusicCopyright:(id)arg1;
 + (id)getSongDescByMusicTopicInfo:(id)arg1;
 + (double)heightWithMusicTopicInfo:(id)arg1 andViewWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderMusicHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)getHeaderIconUrl;
 - (id)getHeaderTitle;

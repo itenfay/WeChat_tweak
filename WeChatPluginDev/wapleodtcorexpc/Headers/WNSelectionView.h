@@ -24,7 +24,6 @@
     MMMagnifiterView *_magnifiterView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMagnifiterView *magnifiterView; // @synthesize magnifiterView=_magnifiterView;
 @property(nonatomic) __weak WeNoteDataController *dataController; // @synthesize dataController=_dataController;
 @property(nonatomic) __weak MMTableView *tableView; // @synthesize tableView=_tableView;

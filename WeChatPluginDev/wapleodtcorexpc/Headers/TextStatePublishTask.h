@@ -32,7 +32,6 @@
 + (void)PBArrayAdd_state;
 + (void)PBArrayAdd_taskId;
 + (void)PBArrayAdd_textState;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLocatingCoordinateLogic *locationLogic; // @synthesize locationLogic=_locationLogic;
 @property(retain, nonatomic) WCCgiBlockHelper *cgiBlockHelper; // @synthesize cgiBlockHelper=_cgiBlockHelper;
 @property(nonatomic) _Bool hasFetchedLocation; // @synthesize hasFetchedLocation=_hasFetchedLocation;

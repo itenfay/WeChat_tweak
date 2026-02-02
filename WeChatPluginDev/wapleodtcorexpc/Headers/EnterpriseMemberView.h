@@ -12,7 +12,6 @@
     id <EnterpriseMemberViewDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EnterpriseMemberViewDelegate> delegate; // @synthesize delegate;
 - (void)onDeleteMember;
 - (void)onAddMember;

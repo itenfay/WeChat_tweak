@@ -44,7 +44,6 @@
     WCPayOfflineEnableCgi *_offlineEnableCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsSilientSetPayment; // @synthesize bIsSilientSetPayment=_bIsSilientSetPayment;
 @property(retain, nonatomic) WCPayOfflineEnableCgi *offlineEnableCgi; // @synthesize offlineEnableCgi=_offlineEnableCgi;
 @property(retain, nonatomic) WCPayOfflineSetPaymentCgi *v2AuthCodeSetPaymentCgi; // @synthesize v2AuthCodeSetPaymentCgi=_v2AuthCodeSetPaymentCgi;

@@ -11,7 +11,6 @@
     long long _priority;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) id item; // @synthesize item=_item;
 - (id)initWithItem:(id)arg1 andPriority:(long long)arg2;

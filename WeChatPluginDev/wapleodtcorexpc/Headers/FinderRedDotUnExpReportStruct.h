@@ -16,7 +16,6 @@
     unsigned long long _businessType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long businessType; // @synthesize businessType=_businessType;
 @property(retain, nonatomic) NSDictionary *reportDict; // @synthesize reportDict=_reportDict;
 @property(nonatomic) unsigned long long exposeTimeMs; // @synthesize exposeTimeMs=_exposeTimeMs;

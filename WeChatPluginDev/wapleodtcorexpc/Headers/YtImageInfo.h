@@ -12,7 +12,6 @@
     NSString *_checksum;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *checksum; // @synthesize checksum=_checksum;
 @property(retain, nonatomic) NSArray *five_points; // @synthesize five_points=_five_points;
 @property(retain, nonatomic) NSString *image; // @synthesize image=_image;

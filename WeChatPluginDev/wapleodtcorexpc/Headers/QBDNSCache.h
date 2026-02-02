@@ -13,7 +13,6 @@
     NSMutableOrderedSet *_set;
 }
 
-- (void).cxx_destruct;
 - (void)store;
 - (void)clear:(_Bool)arg1;
 - (id)objectForKey:(id)arg1;

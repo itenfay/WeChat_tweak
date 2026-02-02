@@ -20,7 +20,6 @@
     long long _curCountdownNum;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long curCountdownNum; // @synthesize curCountdownNum=_curCountdownNum;
 @property(retain, nonatomic) MMTimer *countdownTimer; // @synthesize countdownTimer=_countdownTimer;
 @property(retain, nonatomic) MMUIButton *returnBtn; // @synthesize returnBtn=_returnBtn;

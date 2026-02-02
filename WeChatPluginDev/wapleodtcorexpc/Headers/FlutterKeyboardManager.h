@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -15,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSMutableArray *secondaryResponders; // @synthesize secondaryResponders=_secondaryResponders;
 @property(readonly, retain, nonatomic) NSMutableArray *primaryResponders; // @synthesize primaryResponders=_primaryResponders;
 - (void)dispatchToSecondaryResponders:(id)arg1 complete:(CDUnknownBlockType)arg2;
@@ -27,4 +27,3 @@
 - (id)init;
 
 @end
-

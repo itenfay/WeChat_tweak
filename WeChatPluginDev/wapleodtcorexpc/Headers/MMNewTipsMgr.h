@@ -13,7 +13,6 @@
     NSMutableDictionary *_dicPathInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicPathInfo; // @synthesize dicPathInfo=_dicPathInfo;
 @property(retain, nonatomic) NSMutableDictionary *dicTipsInfo; // @synthesize dicTipsInfo=_dicTipsInfo;
 @property(retain, nonatomic) NewTipsNetworkLogic *networkLogic; // @synthesize networkLogic=_networkLogic;

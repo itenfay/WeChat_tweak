@@ -21,7 +21,6 @@
     CDStruct_1b6d18a9 _totalDuration;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *inputQueue; // @synthesize inputQueue=_inputQueue;
 @property(retain, nonatomic) AVAssetReaderTrackOutput *trackOutput; // @synthesize trackOutput=_trackOutput;
 @property(retain, nonatomic) AVAssetReader *assetReader; // @synthesize assetReader=_assetReader;

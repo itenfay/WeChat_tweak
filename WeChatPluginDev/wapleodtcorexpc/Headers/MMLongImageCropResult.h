@@ -14,7 +14,6 @@
     double _bottomCroppedRatio;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double bottomCroppedRatio; // @synthesize bottomCroppedRatio=_bottomCroppedRatio;
 @property(nonatomic) double topCroppedRatio; // @synthesize topCroppedRatio=_topCroppedRatio;
 @property(retain, nonatomic) UIImage *croppedImage; // @synthesize croppedImage=_croppedImage;

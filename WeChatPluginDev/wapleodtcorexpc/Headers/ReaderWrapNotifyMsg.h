@@ -38,7 +38,6 @@
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *timeColorDark; // @synthesize timeColorDark=_timeColorDark;
 @property(retain, nonatomic) NSString *timeColorLight; // @synthesize timeColorLight=_timeColorLight;
 @property(nonatomic) unsigned int msgBusiType; // @synthesize msgBusiType=_msgBusiType;

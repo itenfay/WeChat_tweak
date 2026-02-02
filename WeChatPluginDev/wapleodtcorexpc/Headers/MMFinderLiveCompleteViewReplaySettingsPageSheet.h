@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveInfo, MMFinderLiveCompleteViewReplaySettingsCoverPickingLogic, MMFinderLiveTask, MMLiveScrollGradientMaskingView, MMWebImageView, NSString, RichTextView, UIImage, UILabel, UIScrollView, UITableView, UIView;
 @protocol MMFinderLiveCompleteViewReplaySettingsStrategy;
 
@@ -26,7 +28,6 @@
     UIImage *_selectedCoverImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *selectedCoverImage; // @synthesize selectedCoverImage=_selectedCoverImage;
 @property(retain, nonatomic) MMFinderLiveCompleteViewReplaySettingsCoverPickingLogic *coverPickingLogic; // @synthesize coverPickingLogic=_coverPickingLogic;
 @property(retain, nonatomic) id <MMFinderLiveCompleteViewReplaySettingsStrategy> strategy; // @synthesize strategy=_strategy;
@@ -74,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

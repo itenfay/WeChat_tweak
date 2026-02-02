@@ -13,7 +13,6 @@
     NSMutableArray *_arrFrames;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrFrames; // @synthesize arrFrames=_arrFrames;
 @property(nonatomic) unsigned long long itemIdx; // @synthesize itemIdx=_itemIdx;
 

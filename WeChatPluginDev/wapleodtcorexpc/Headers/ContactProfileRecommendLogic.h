@@ -13,7 +13,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)getFriendProfileRecommendInputInfoInHello:(id)arg1;
 - (id)getFriendProfileRecommendInputInfo:(id)arg1;
 - (id)getContactProfileRemarkRecommend:(id)arg1;

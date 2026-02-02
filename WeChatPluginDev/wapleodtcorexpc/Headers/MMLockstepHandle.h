@@ -18,7 +18,6 @@
     id <MMLockstepHandleReportDelegate> _reportDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLockstepHandleReportDelegate> reportDelegate; // @synthesize reportDelegate=_reportDelegate;
 - (void)dealloc;
 - (void)releaseContext;

@@ -14,7 +14,6 @@
 }
 
 + (id)taskWithRequest:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) LbsLifeSyncRequest *request; // @synthesize request=_request;
 @property(nonatomic) int syncScene; // @synthesize syncScene=_syncScene;
 

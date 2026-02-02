@@ -16,7 +16,6 @@
     _Bool m_needIndexBar;
 }
 
-- (void).cxx_destruct;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (id)usrNameConvertToOContacts:(id)arg1;
 - (void)cancelSearch;

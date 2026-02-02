@@ -10,7 +10,6 @@
     NSMutableDictionary *_dicDownloadArgsWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicDownloadArgsWrap; // @synthesize dicDownloadArgsWrap=_dicDownloadArgsWrap;
 - (void)onDownloadSuccess:(id)arg1 argsWrap:(id)arg2;
 - (void)onDownloadError:(id)arg1 argsWrap:(id)arg2;

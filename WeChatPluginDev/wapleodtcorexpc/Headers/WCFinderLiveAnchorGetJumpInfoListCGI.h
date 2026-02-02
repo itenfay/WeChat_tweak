@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderLiveAnchorGetJumpInfoListCGI
@@ -14,7 +16,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
@@ -26,4 +27,3 @@
 - (id)initWithLiveTaskId:(id)arg1 type:(unsigned int)arg2 anchorFinderUsername:(id)arg3 lastBuffer:(id)arg4 successBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 
 @end
-

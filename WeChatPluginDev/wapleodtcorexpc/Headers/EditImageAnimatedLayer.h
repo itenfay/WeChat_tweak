@@ -14,7 +14,6 @@
     id <CAMediaTiming> _timingObj;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <CAMediaTiming> timingObj; // @synthesize timingObj=_timingObj;
 - (void)layoutSublayers;
 - (void)layoutIfNeeded;

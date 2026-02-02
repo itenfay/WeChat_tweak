@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderUploadMediaTask;
 
@@ -14,10 +15,8 @@
     WCFinderUploadMediaTask *_mediaTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderUploadMediaTask *mediaTask; // @synthesize mediaTask=_mediaTask;
 @property(copy, nonatomic) CDUnknownBlockType complection; // @synthesize complection=_complection;
 @property(copy, nonatomic) NSString *imagePath; // @synthesize imagePath=_imagePath;
 
 @end
-

@@ -11,7 +11,6 @@
     UIColor *_bkgColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *bkgColor; // @synthesize bkgColor=_bkgColor;
 - (void)dropSessionDidExit;
 - (void)dropSessionDidEnter;

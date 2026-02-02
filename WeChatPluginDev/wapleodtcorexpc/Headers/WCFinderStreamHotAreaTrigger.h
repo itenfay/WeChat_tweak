@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, UITableViewCell, UIViewController;
 @protocol WCFinderStreamHotAreaAdapter, WCFinderStreamHotAreaTriggerDelegate;
@@ -20,7 +21,6 @@
     NSMutableArray *_pendingRelease;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingRelease; // @synthesize pendingRelease=_pendingRelease;
 @property(nonatomic) _Bool isScrolling; // @synthesize isScrolling=_isScrolling;
 @property(nonatomic) __weak UITableViewCell *lastPlayCell; // @synthesize lastPlayCell=_lastPlayCell;
@@ -63,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

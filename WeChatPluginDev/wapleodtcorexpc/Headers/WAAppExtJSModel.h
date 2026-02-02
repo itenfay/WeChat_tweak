@@ -13,7 +13,6 @@
     NSString *_jsContent;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *jsContent; // @synthesize jsContent=_jsContent;
 @property(nonatomic) unsigned int downloadCostTimeInMs; // @synthesize downloadCostTimeInMs=_downloadCostTimeInMs;
 @property(nonatomic) unsigned long long timing; // @synthesize timing=_timing;

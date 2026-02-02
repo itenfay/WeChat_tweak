@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MAVVideoComposition, VideoCompositionOutputConfig;
 
 @interface MMVideoMavEncodeTask
@@ -18,7 +20,6 @@
 }
 
 + (id)taskWithComposition:(id)arg1 config:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCanceledInCurrentExportSessionForApplicationSuspend; // @synthesize hasCanceledInCurrentExportSessionForApplicationSuspend=_hasCanceledInCurrentExportSessionForApplicationSuspend;
 @property(copy, nonatomic) CDUnknownBlockType videoExportCompletion; // @synthesize videoExportCompletion=_videoExportCompletion;
 @property(retain, nonatomic) VideoCompositionOutputConfig *config; // @synthesize config=_config;
@@ -43,4 +44,3 @@
 - (id)initWithComposition:(id)arg1 config:(id)arg2;
 
 @end
-

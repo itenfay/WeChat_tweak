@@ -18,7 +18,6 @@
     NSString *_addAvatarBtnLimitWording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *addAvatarBtnLimitWording; // @synthesize addAvatarBtnLimitWording=_addAvatarBtnLimitWording;
 @property(retain, nonatomic) NSString *addAvatarBtnNormalWording; // @synthesize addAvatarBtnNormalWording=_addAvatarBtnNormalWording;
 @property(retain, nonatomic) NSString *defaultHeadimgFileid; // @synthesize defaultHeadimgFileid=_defaultHeadimgFileid;

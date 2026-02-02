@@ -53,7 +53,6 @@
 + (void)PBArrayAdd_request;
 + (void)PBArrayAdd_cgiNumber;
 + (void)PBArrayAdd_debugModuleName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXPBGeneratedMessage *cacheResponse; // @synthesize cacheResponse=_cacheResponse;
 @property(nonatomic) unsigned int eventID; // @synthesize eventID=_eventID;
 @property(nonatomic) _Bool canRetry; // @synthesize canRetry=_canRetry;

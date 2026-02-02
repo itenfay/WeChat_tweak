@@ -21,7 +21,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) double sumY2; // @synthesize sumY2=_sumY2;
 @property(nonatomic) double sumX2; // @synthesize sumX2=_sumX2;
 @property(nonatomic) double sumXY; // @synthesize sumXY=_sumXY;

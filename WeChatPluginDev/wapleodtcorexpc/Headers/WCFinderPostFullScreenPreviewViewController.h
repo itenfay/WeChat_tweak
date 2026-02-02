@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSString, UIButton, UITableView, WCFinderFeedContentVM, WCFinderPostSessionModel, WCFinderShareCustomTransition;
 @protocol WCFinderPostFullScreenPreviewViewControllerDelegate;
 
@@ -22,7 +24,6 @@
     unsigned long long _toolbarDisableConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAuthorPerspective; // @synthesize isAuthorPerspective=_isAuthorPerspective;
 @property(nonatomic) unsigned long long toolbarDisableConfig; // @synthesize toolbarDisableConfig=_toolbarDisableConfig;
 @property(copy, nonatomic) CDUnknownBlockType dismissBlock; // @synthesize dismissBlock=_dismissBlock;
@@ -121,4 +122,3 @@
 @property(readonly) Class superclass;
 
 @end
-

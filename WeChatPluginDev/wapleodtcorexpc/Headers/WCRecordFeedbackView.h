@@ -15,7 +15,6 @@
     UIColor *_pillarColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *pillarColor; // @synthesize pillarColor=_pillarColor;
 @property(retain, nonatomic) WCRecordFBNormalView *normalFbView; // @synthesize normalFbView=_normalFbView;
 @property(retain, nonatomic) WCRecordFBSmallView *smallFbView; // @synthesize smallFbView=_smallFbView;

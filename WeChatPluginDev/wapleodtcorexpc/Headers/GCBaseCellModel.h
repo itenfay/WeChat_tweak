@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GC23070Report, NSIndexPath, UICollectionViewCell;
 @protocol GCBaseCellModelDelegate;
@@ -19,7 +20,6 @@
     CDUnknownBlockType _willDisplayBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType willDisplayBlock; // @synthesize willDisplayBlock=_willDisplayBlock;
 @property(copy, nonatomic) CDUnknownBlockType didSelectBlock; // @synthesize didSelectBlock=_didSelectBlock;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
@@ -50,4 +50,3 @@
 @property(retain, nonatomic) GC23070Report *bindReport;
 
 @end
-

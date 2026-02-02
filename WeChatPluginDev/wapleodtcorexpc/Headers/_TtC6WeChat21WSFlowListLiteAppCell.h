@@ -21,7 +21,6 @@
     MISSING_TYPE *footerView;
 }
 
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)clearCell;
 - (void)removeSnapshot;

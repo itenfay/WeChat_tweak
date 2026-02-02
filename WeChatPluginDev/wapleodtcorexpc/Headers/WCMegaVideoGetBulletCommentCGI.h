@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCMegaVideoGetBulletCommentCGI
@@ -15,7 +17,6 @@
     unsigned long long _videoTimeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long videoTimeStamp; // @synthesize videoTimeStamp=_videoTimeStamp;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(copy, nonatomic) NSString *videoNonceId; // @synthesize videoNonceId=_videoNonceId;
@@ -28,4 +29,3 @@
 - (id)initWithVideoId:(id)arg1 videoNonceId:(id)arg2 videoTimeStamp:(unsigned long long)arg3 lastBuffer:(id)arg4 successful:(CDUnknownBlockType)arg5 failure:(CDUnknownBlockType)arg6;
 
 @end
-

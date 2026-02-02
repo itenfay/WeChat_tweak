@@ -15,7 +15,6 @@
     UIViewController *_animatedTransitionRespondViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTabbarTransparent; // @synthesize isTabbarTransparent=_isTabbarTransparent;
 @property(nonatomic) __weak UIViewController *animatedTransitionRespondViewController; // @synthesize animatedTransitionRespondViewController=_animatedTransitionRespondViewController;
 @property(nonatomic) __weak id <LVLandscapeTransitionDelegate> delegate; // @synthesize delegate=_delegate;

@@ -24,7 +24,6 @@
     EnhanceTranslatingResultView *_resultView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EnhanceTranslatingResultView *resultView; // @synthesize resultView=_resultView;
 @property(retain, nonatomic) UIImageView *perspectiveAnimationView; // @synthesize perspectiveAnimationView=_perspectiveAnimationView;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;

@@ -16,7 +16,6 @@
     long long _m_patterLockScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_patterLockScene; // @synthesize m_patterLockScene=_m_patterLockScene;
 @property(retain, nonatomic) WCPayWalletLockSettingViewController *settingVC; // @synthesize settingVC=_settingVC;
 @property(retain, nonatomic) WCPayCloseWalletLockCgi *closeWalletLockCgi; // @synthesize closeWalletLockCgi=_closeWalletLockCgi;

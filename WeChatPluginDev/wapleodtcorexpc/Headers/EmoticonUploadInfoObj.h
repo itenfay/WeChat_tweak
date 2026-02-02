@@ -46,7 +46,6 @@
 + (void)PBArrayAdd_attachedText;
 + (void)PBArrayAdd_isUploadWxam;
 + (void)PBArrayAdd_uploadImgMd5;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needAppendUserData; // @synthesize needAppendUserData=_needAppendUserData;
 @property(retain, nonatomic) EmotionFinderLinkInfo *finderSourceInfo; // @synthesize finderSourceInfo=_finderSourceInfo;
 @property(retain, nonatomic) NSMutableArray *wordings; // @synthesize wordings=_wordings;

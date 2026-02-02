@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveGloryTopView, MMFinderLiveOnlineStateRewardCountView, MMFinderLiveOnlineStateSessionInfo, MMFinderLiveOnlineUserLogic, MMFinderLiveUserStateItem, MMPageSheetAdapter, MMUIActivityIndicatorView, MMWebImageView, NSMutableArray, NSString, RichTextView, UICollectionView, UILabel, UIView, WCPinBottomCollectionViewFlowLayout;
 @protocol MMFinderLiveOnlineStateViewDataSource;
 
@@ -50,7 +52,6 @@
     MMFinderLiveUserStateItem *_myUserStateItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveUserStateItem *myUserStateItem; // @synthesize myUserStateItem=_myUserStateItem;
 @property(nonatomic) unsigned long long watchAdStartTs; // @synthesize watchAdStartTs=_watchAdStartTs;
 @property(retain, nonatomic) NSString *onlineStateAdUrl; // @synthesize onlineStateAdUrl=_onlineStateAdUrl;
@@ -179,4 +180,3 @@
 @property(readonly) Class superclass;
 
 @end
-

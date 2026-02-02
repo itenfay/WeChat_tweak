@@ -28,7 +28,6 @@
     struct CGSize _mediaSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderBlurBubbleView *eduBlurBubbleView; // @synthesize eduBlurBubbleView=_eduBlurBubbleView;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(retain, nonatomic) WCFinderLandScapeVideoInteractivePlayerViewInitParams *setupParams; // @synthesize setupParams=_setupParams;

@@ -19,7 +19,6 @@
     double _btnCornerRadius;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double btnCornerRadius; // @synthesize btnCornerRadius=_btnCornerRadius;
 @property(nonatomic) __weak id <FavTagSearchFilterDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onTagNameEditViewControllerRetWithTagName:(id)arg1;

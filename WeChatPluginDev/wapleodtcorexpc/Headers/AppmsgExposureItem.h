@@ -18,7 +18,6 @@
     NSString *_sendUserName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int currSessionID; // @synthesize currSessionID=_currSessionID;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;
 @property(retain, nonatomic) NSString *sendUserName; // @synthesize sendUserName=_sendUserName;

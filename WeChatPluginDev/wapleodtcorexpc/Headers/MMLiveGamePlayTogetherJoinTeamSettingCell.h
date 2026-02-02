@@ -14,7 +14,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *optionLabel; // @synthesize optionLabel=_optionLabel;

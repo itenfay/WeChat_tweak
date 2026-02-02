@@ -14,7 +14,6 @@
     NSArray *_dataItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *dataItems; // @synthesize dataItems=_dataItems;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;

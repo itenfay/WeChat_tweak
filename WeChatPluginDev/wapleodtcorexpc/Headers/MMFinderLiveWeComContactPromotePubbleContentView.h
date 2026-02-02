@@ -14,7 +14,6 @@
     FinderLivePromoteInfoListWecomContact *_wecomContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLivePromoteInfoListWecomContact *wecomContact; // @synthesize wecomContact=_wecomContact;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

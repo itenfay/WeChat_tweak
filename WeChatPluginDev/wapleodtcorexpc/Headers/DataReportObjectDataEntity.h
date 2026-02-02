@@ -17,7 +17,6 @@
     NSMutableDictionary *_lastReportTimes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *lastReportTimes; // @synthesize lastReportTimes=_lastReportTimes;
 @property(retain, nonatomic) NSMutableDictionary *reportIntervals; // @synthesize reportIntervals=_reportIntervals;
 @property(retain, nonatomic) NSMutableDictionary *reportPolicy; // @synthesize reportPolicy=_reportPolicy;

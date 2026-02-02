@@ -12,7 +12,6 @@
     IntelligentFaceAlbumData *_faceAlbumData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) IntelligentFaceAlbumData *faceAlbumData; // @synthesize faceAlbumData=_faceAlbumData;
 @property(retain, nonatomic) IntelligentOCRData *ocrData; // @synthesize ocrData=_ocrData;
 @property(retain, nonatomic) IntelligentClassificationData *classificationData; // @synthesize classificationData=_classificationData;

@@ -43,7 +43,6 @@
 + (void)reportSimpleStartLiveStep:(unsigned long long)arg1;
 + (void)reportStartFinalResultWith:(unsigned long long)arg1;
 + (void)reportStartPrecheckResultWith:(unsigned long long)arg1;
-- (void).cxx_destruct;
 - (id)_logStrWithActionType:(unsigned long long)arg1 actionJSON:(id)arg2 connectCount:(unsigned long long)arg3 connectTime:(unsigned long long)arg4 chnlExtra:(id)arg5;
 - (void)reportLiveStarterMinimizeEvent:(unsigned long long)arg1;
 - (void)reportLiveStickerOperation:(id)arg1;

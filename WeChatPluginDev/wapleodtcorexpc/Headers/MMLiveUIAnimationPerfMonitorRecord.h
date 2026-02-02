@@ -14,7 +14,6 @@
 + (double)getAnimationAbsoluteBeginTime:(id)arg1;
 + (id)tryGetAnimationState:(id)arg1;
 + (id)getMonitorUIAnimationKey:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak CAAnimation *animation; // @synthesize animation=_animation;
 @property(nonatomic) __weak CALayer *animationLayer; // @synthesize animationLayer=_animationLayer;
 - (id)getUniqueKey;

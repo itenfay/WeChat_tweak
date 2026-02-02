@@ -29,7 +29,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int status; // @synthesize status;
 @property(retain, nonatomic) NSData *code; // @synthesize code;
 @property(retain, nonatomic) NSString *qrCodeId; // @synthesize qrCodeId;

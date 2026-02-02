@@ -10,7 +10,6 @@
     id <MMInputAccessoryViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMInputAccessoryViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setFrame:(struct CGRect)arg1;
 

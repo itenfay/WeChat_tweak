@@ -14,7 +14,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) unsigned int continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(retain, nonatomic) NSMutableArray *onlineUserStateItems; // @synthesize onlineUserStateItems=_onlineUserStateItems;

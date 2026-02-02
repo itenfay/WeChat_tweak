@@ -13,7 +13,6 @@
     NSArray *_sortDescriptors;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(nonatomic) __weak JITRuntimeView *view; // @synthesize view=_view;
 - (void)handleTouches:(id)arg1 timestamp:(double)arg2 touches:(id)arg3 changedTouches:(id)arg4;

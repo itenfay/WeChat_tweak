@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveTask, MMLiveTaskId;
 
@@ -17,7 +18,6 @@
     long long _currentResourceObjectId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int resourcePlayTime; // @synthesize resourcePlayTime=_resourcePlayTime;
 @property(nonatomic) long long currentResourceObjectId; // @synthesize currentResourceObjectId=_currentResourceObjectId;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
@@ -32,4 +32,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

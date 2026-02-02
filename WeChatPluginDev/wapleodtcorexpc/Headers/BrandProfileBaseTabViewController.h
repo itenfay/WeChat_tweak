@@ -21,7 +21,6 @@
     BrandProfileEnterInfo *_bpeInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandProfileEnterInfo *bpeInfo; // @synthesize bpeInfo=_bpeInfo;
 @property(retain, nonatomic) BrandProfileReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) __weak id <BrandProfileBaseTabViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

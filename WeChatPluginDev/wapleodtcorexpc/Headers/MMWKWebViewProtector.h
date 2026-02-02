@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableSet;
 
@@ -21,7 +22,6 @@
 + (void)websiteDataStore:(id)arg1 safeFromMainThreadRemoveDataOfTypes:(id)arg2 forDataRecords:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)websiteDataStore:(id)arg1 safeFromMainThreadRemoveDataOfTypes:(id)arg2 modifiedSince:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)addEachWebViewOnInitedFromMainThread:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *websiteDataStoreHoldWebViewSet; // @synthesize websiteDataStoreHoldWebViewSet=_websiteDataStoreHoldWebViewSet;
 @property(nonatomic) long long websiteDataStoreOperatingCount; // @synthesize websiteDataStoreOperatingCount=_websiteDataStoreOperatingCount;
 @property(retain, nonatomic) NSMutableArray *webViewRecrodList; // @synthesize webViewRecrodList=_webViewRecrodList;
@@ -39,4 +39,3 @@
 - (void)__addEachWebViewOnInitedFromMainThread:(id)arg1;
 
 @end
-

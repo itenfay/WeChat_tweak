@@ -19,7 +19,6 @@
     NSMutableArray *_lotteryAttendTypeList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *lotteryAttendTypeList; // @synthesize lotteryAttendTypeList=_lotteryAttendTypeList;
 @property(retain, nonatomic) NSMutableArray *lotteryArray; // @synthesize lotteryArray=_lotteryArray;
 @property(retain, nonatomic) FinderLiveQuickReplyWordingInfo *quickReplyWordingInfo; // @synthesize quickReplyWordingInfo=_quickReplyWordingInfo;

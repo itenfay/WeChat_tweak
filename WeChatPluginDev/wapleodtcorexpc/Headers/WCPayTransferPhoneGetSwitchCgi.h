@@ -11,7 +11,6 @@
     id <WCPayTransferPhoneGetSwitchCgiDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property _Bool fromServer; // @synthesize fromServer=_fromServer;
 @property __weak id <WCPayTransferPhoneGetSwitchCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)didFailWithError:(id)arg1;

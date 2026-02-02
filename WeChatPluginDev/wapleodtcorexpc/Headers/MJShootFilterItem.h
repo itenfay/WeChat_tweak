@@ -15,7 +15,6 @@
 }
 
 + (id)createEmptyItem;
-- (void).cxx_destruct;
 @property(nonatomic) float intensity; // @synthesize intensity=_intensity;
 @property(retain, nonatomic) NSURL *iconURL; // @synthesize iconURL=_iconURL;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

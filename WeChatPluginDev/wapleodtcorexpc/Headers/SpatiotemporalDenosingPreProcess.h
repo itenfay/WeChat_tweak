@@ -29,7 +29,6 @@
     unsigned long long coordinatesBlocksPreFrame[10];
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (float)getNoiseLevel;
 - (float)getMotionRatioThreshod:(float)arg1 PixelMean:(float)arg2;

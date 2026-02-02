@@ -17,7 +17,6 @@
 
 + (double)cellHeight;
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *bottomSeparatorLine; // @synthesize bottomSeparatorLine=_bottomSeparatorLine;
 @property(nonatomic) __weak id <MMFinderLiveConnectMicPkPanelCellDelegate> cellDelegate; // @synthesize cellDelegate;

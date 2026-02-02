@@ -30,7 +30,6 @@
 }
 
 + (void)clearContentViewHiddenState;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *lastViewController; // @synthesize lastViewController=_lastViewController;
 @property(retain, nonatomic) RichTextView *mediaTitleTextView; // @synthesize mediaTitleTextView=_mediaTitleTextView;
 @property(retain, nonatomic) MMFinderLiveLimitModeLiveInfoEnsurer *liveInfoEnsurer; // @synthesize liveInfoEnsurer=_liveInfoEnsurer;

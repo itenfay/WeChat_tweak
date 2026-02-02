@@ -20,7 +20,6 @@
     struct CGRect _initialRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hiddenCropGridView; // @synthesize hiddenCropGridView=_hiddenCropGridView;
 @property(retain, nonatomic) EditImageCropGridView *cropGridView; // @synthesize cropGridView=_cropGridView;
 @property(nonatomic) struct CGSize mediaSize; // @synthesize mediaSize=_mediaSize;

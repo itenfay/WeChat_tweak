@@ -13,7 +13,6 @@
     NSURL *_sourceUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *sourceUrl; // @synthesize sourceUrl=_sourceUrl;
 @property(copy, nonatomic) NSString *fullFileUrl; // @synthesize fullFileUrl=_fullFileUrl;
 

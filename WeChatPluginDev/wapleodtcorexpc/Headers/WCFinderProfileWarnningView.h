@@ -17,7 +17,6 @@
     UIColor *_textColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) _Bool imageLoading; // @synthesize imageLoading=_imageLoading;
 @property(retain, nonatomic) UIImageView *tailIconView; // @synthesize tailIconView=_tailIconView;

@@ -36,7 +36,6 @@
 }
 
 + (id)finderLiveStreamAggregationCardFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int groupRefreshTimeIntervalMs; // @synthesize groupRefreshTimeIntervalMs=_groupRefreshTimeIntervalMs;
 @property(retain, nonatomic) FinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(retain, nonatomic) FinderThemeLiveStreamPreLoadConfig *themePreloadConfig; // @synthesize themePreloadConfig=_themePreloadConfig;

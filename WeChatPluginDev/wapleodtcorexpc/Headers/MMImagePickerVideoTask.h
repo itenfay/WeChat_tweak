@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, MMAsset, NSURL;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _completeCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completeCallback; // @synthesize completeCallback=_completeCallback;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSURL *videoUrl; // @synthesize videoUrl=_videoUrl;
@@ -24,4 +24,3 @@
 @property(retain, nonatomic) MMAsset *mmAsset; // @synthesize mmAsset=_mmAsset;
 
 @end
-

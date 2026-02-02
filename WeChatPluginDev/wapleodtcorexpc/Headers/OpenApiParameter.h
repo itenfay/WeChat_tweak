@@ -22,7 +22,6 @@
     AppCommunicateData *_appData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAppPassDataWithUrl; // @synthesize isAppPassDataWithUrl=_isAppPassDataWithUrl;
 @property(nonatomic) unsigned int appSupportUrlParamsType; // @synthesize appSupportUrlParamsType=_appSupportUrlParamsType;
 @property(retain, nonatomic) AppCommunicateData *appData; // @synthesize appData=_appData;

@@ -22,7 +22,6 @@
     id <StoreEmotionGetDesignerEmojiListCgiDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <StoreEmotionGetDesignerEmojiListCgiDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool isNoSuchProduct; // @synthesize isNoSuchProduct=m_isNoSuchProduct;
 @property(readonly, nonatomic) _Bool hasMore; // @synthesize hasMore=m_hasMore;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, WCFinderLiveStreamContainerModel;
 @protocol WCFinderLiveHomePageTabLiveStreamSectionViewModelDelegate;
 
@@ -14,7 +16,6 @@
     NSMutableDictionary *_pageVMDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pageVMDict; // @synthesize pageVMDict=_pageVMDict;
 @property(nonatomic) _Bool isLocationServiceAuthrized; // @synthesize isLocationServiceAuthrized=_isLocationServiceAuthrized;
 @property(retain, nonatomic) WCFinderLiveStreamContainerModel *tabListContainer; // @synthesize tabListContainer=_tabListContainer;
@@ -39,4 +40,3 @@
 - (id)initWithContainerModel:(id)arg1 scene:(int)arg2 ctx:(id)arg3 isSkeleton:(_Bool)arg4 tabListContainer:(id)arg5;
 
 @end
-

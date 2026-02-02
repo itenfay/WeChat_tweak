@@ -12,7 +12,6 @@
     WAWebViewBottomBannerButtonViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAWebViewBottomBannerButtonViewModel *viewModel; // @synthesize viewModel=_viewModel;
 
 @end

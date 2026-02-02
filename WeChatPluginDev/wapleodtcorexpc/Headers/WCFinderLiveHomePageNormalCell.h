@@ -26,7 +26,6 @@
 
 + (double)maxRecommendWidthInCellWidth:(double)arg1;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *mediaTitleTextView; // @synthesize mediaTitleTextView=_mediaTitleTextView;
 @property(retain, nonatomic) MMFinderLiveFeedHighlightTagView *highlightTagView; // @synthesize highlightTagView=_highlightTagView;
 @property(retain, nonatomic) MMFinderLiveActivityView *liveActivityView; // @synthesize liveActivityView=_liveActivityView;

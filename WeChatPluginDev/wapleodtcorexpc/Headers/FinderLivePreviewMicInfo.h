@@ -13,7 +13,6 @@
     NSString *_headUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *headUrl; // @synthesize headUrl=_headUrl;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 

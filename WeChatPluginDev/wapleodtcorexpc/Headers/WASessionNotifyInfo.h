@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_dicCloseItem;
 + (void)PBArrayAdd_globalOpenStatus;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicCloseItem; // @synthesize dicCloseItem=_dicCloseItem;
 @property(retain, nonatomic) NSNumber *globalOpenStatus; // @synthesize globalOpenStatus=_globalOpenStatus;
 @property(readonly, copy) NSString *description;

@@ -14,7 +14,6 @@
     NSMutableArray *_shareSheetStack;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *shareSheetStack; // @synthesize shareSheetStack=_shareSheetStack;
 @property(retain, nonatomic) NSMutableArray *sessionStackPages; // @synthesize sessionStackPages=_sessionStackPages;
 @property(retain, nonatomic) NSMutableDictionary *forwardMessageLogics; // @synthesize forwardMessageLogics=_forwardMessageLogics;

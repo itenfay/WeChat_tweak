@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonBoardView, FinderLiveBoxId, FinderLiveQuickReplyWordingInfo, FinderWindowProductInfo, MMBadgeView, MMFinderLiveQuickReplyView, MMFinderLiveSFBarrageCellView, MMFinderLiveViewController, MMGrowTextView, MMHeadImageView, MMLiveAddBoardView, MMLiveContactSelectViewController, MMLiveInputController, MMLiveRoomContactSelectForHalfScreenViewController, MMNormalTipsView, MMUIButton, MMUIImageView, MMUILabel, NSArray, NSMutableArray, NSString, RichTextView, UIButton, UIColor, UIFont;
 @protocol MMLiveInputToolViewDelegate;
@@ -81,7 +82,6 @@
 }
 
 + (double)inputToolViewInitialHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFirstShowBarrageSwitchEntrance; // @synthesize isFirstShowBarrageSwitchEntrance=_isFirstShowBarrageSwitchEntrance;
 @property(nonatomic) _Bool isResettingTextViewText; // @synthesize isResettingTextViewText=_isResettingTextViewText;
 @property(retain, nonatomic) NSString *lastValidBarragePreviewText; // @synthesize lastValidBarragePreviewText=_lastValidBarragePreviewText;
@@ -300,4 +300,3 @@
 @property(readonly) Class superclass;
 
 @end
-

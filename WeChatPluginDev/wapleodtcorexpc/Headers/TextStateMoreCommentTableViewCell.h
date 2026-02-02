@@ -16,7 +16,6 @@
     UIView *_bottomView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;
 @property(nonatomic) __weak UIButton *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) unsigned long long moreType; // @synthesize moreType=_moreType;

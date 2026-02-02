@@ -17,7 +17,6 @@
     unsigned long long _mode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) NSString *filteringShopName; // @synthesize filteringShopName=_filteringShopName;
 @property(retain, nonatomic) NSString *filteringAppId; // @synthesize filteringAppId=_filteringAppId;

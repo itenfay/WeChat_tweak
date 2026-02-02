@@ -15,7 +15,6 @@
     id <ShareTo3rdAppManageCellDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ShareTo3rdAppManageCellDelegate> m_delegate; // @synthesize m_delegate;
 - (void)actionSwitchValueChanged:(id)arg1;
 - (void)layoutSubviews;

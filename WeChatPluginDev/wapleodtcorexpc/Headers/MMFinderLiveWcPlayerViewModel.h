@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, MMFinderLiveWcPlayerViewConfig, MMLiveStorageCleanupPinningToken, NSMutableArray, NSString, WCPlayerView;
 @protocol MMFinderLiveWcPlayerViewModelDelegate, OS_dispatch_semaphore;
@@ -29,7 +30,6 @@
     struct CGRect _normalizedFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *tempYUVReqTaskLock; // @synthesize tempYUVReqTaskLock=_tempYUVReqTaskLock;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *tempARGBReqTaskLock; // @synthesize tempARGBReqTaskLock=_tempARGBReqTaskLock;
 @property(retain, nonatomic) NSMutableArray *tempYUVColorRequestTaskList; // @synthesize tempYUVColorRequestTaskList=_tempYUVColorRequestTaskList;
@@ -109,4 +109,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
     WCFinderFeedImageCDNView *_coverImageView3;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedImageCDNView *coverImageView3; // @synthesize coverImageView3=_coverImageView3;
 @property(retain, nonatomic) WCFinderFeedImageCDNView *coverImageView2; // @synthesize coverImageView2=_coverImageView2;
 @property(retain, nonatomic) WCFinderFeedImageCDNView *coverImageView1; // @synthesize coverImageView1=_coverImageView1;

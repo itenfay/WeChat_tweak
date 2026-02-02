@@ -29,7 +29,6 @@
     double _fullUpdateCostTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double fullUpdateCostTime; // @synthesize fullUpdateCostTime=_fullUpdateCostTime;
 @property(nonatomic) double fullUpdateStartTime; // @synthesize fullUpdateStartTime=_fullUpdateStartTime;
 @property(nonatomic) _Bool isFirstShow; // @synthesize isFirstShow=_isFirstShow;

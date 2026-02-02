@@ -13,7 +13,6 @@
     GCLabelDynamicLayout *_labelConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCLabelDynamicLayout *labelConfig; // @synthesize labelConfig=_labelConfig;
 @property(nonatomic) double space; // @synthesize space=_space;
 @property(nonatomic) double avatarSize; // @synthesize avatarSize=_avatarSize;

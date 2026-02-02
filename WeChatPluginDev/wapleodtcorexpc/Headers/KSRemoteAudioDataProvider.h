@@ -37,7 +37,6 @@
     struct _NSRange _tailDataRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bFirstLimitPart; // @synthesize bFirstLimitPart=_bFirstLimitPart;
 @property(nonatomic) unsigned int downloadTime; // @synthesize downloadTime=_downloadTime;
 @property(nonatomic) unsigned int triggleTime; // @synthesize triggleTime=_triggleTime;

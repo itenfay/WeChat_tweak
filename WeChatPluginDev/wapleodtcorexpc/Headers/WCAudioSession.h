@@ -18,7 +18,6 @@
 + (unsigned long long)audioModeWithRouteChange:(id)arg1;
 + (unsigned long long)deviceModeWithOutputs:(id)arg1;
 + (id)portNameWithOutputs:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAudioSessionRouteDescription *currentRoute; // @synthesize currentRoute=_currentRoute;
 @property(retain, nonatomic) NSMutableDictionary *categoryOptionsDict; // @synthesize categoryOptionsDict=_categoryOptionsDict;
 @property(nonatomic) _Bool m_otherPlayingBeforeActive; // @synthesize m_otherPlayingBeforeActive=_m_otherPlayingBeforeActive;

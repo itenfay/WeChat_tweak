@@ -16,7 +16,6 @@
     WCAssetStateView *_stateView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAssetStateView *stateView; // @synthesize stateView=_stateView;
 @property(retain, nonatomic) SightIconView *playIconView; // @synthesize playIconView=_playIconView;
 @property(readonly, nonatomic) _Bool canReselect; // @synthesize canReselect=_canReselect;

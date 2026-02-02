@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDate, NSString, UIViewController, WCFinderDataItem;
 
 @interface MMLiveResumeManager
@@ -12,7 +14,6 @@
     UIViewController *_presentingViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain, nonatomic) WCFinderDataItem *finderDataItem; // @synthesize finderDataItem=_finderDataItem;
 @property(nonatomic) _Bool hasCheckedAbnormal; // @synthesize hasCheckedAbnormal=_hasCheckedAbnormal;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

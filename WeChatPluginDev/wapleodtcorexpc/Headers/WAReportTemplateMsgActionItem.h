@@ -14,7 +14,6 @@
     NSString *_templateID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int appBrandType; // @synthesize appBrandType=_appBrandType;
 @property(nonatomic) unsigned int templateMsgType; // @synthesize templateMsgType=_templateMsgType;
 @property(nonatomic) unsigned int operateTime; // @synthesize operateTime=_operateTime;

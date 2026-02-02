@@ -25,7 +25,6 @@
     WCFinderMemberShipHomePageViewModel *_homePageViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMemberShipHomePageViewModel *homePageViewModel; // @synthesize homePageViewModel=_homePageViewModel;
 @property(retain, nonatomic) WCFinderMemberShipActivityViewModel *activityViewModel; // @synthesize activityViewModel=_activityViewModel;
 @property(retain, nonatomic) WCFinderMemberShipDraftViewModel *draftViewModel; // @synthesize draftViewModel=_draftViewModel;

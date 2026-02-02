@@ -12,7 +12,6 @@
     MISSING_TYPE *uiStore;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onViewDidDisAppearFor:(id)arg1;
 - (void)onViewWillDisAppearFor:(id)arg1;

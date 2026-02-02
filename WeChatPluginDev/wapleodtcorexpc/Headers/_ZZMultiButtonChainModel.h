@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton;
 
 @interface _ZZMultiButtonChainModel
@@ -19,4 +21,3 @@
 @property(readonly, nonatomic) MMUIButton *view; // @dynamic view;
 
 @end
-

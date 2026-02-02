@@ -12,7 +12,6 @@
     QryHoneyPayCardDetailResp *_detail;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QryHoneyPayCardDetailResp *detail; // @synthesize detail=_detail;
 @property(nonatomic) __weak id <HoneyPayReceiverCardDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (long long)overrideUserInterfaceStyle;

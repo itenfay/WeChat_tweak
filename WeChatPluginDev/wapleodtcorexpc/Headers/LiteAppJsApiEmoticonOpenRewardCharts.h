@@ -13,7 +13,6 @@
     EmotionRewardResponseInfo *_rewardInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didOpenChartsVC; // @synthesize didOpenChartsVC=_didOpenChartsVC;
 @property(retain, nonatomic) EmotionRewardResponseInfo *rewardInfo; // @synthesize rewardInfo=_rewardInfo;
 @property(retain, nonatomic) EmoticonStoreItem *storeItem; // @synthesize storeItem=_storeItem;

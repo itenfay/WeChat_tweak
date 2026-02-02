@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIColor, UIImage;
 
 @interface MMWebViewCustomNavigationBarItemState
@@ -19,7 +21,6 @@
     CDUnknownBlockType _rightBarItemClickCallBack;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableMinimizeBlock; // @synthesize disableMinimizeBlock=_disableMinimizeBlock;
 @property(nonatomic) _Bool isRightSearchItemHidden; // @synthesize isRightSearchItemHidden=_isRightSearchItemHidden;
 @property(nonatomic) _Bool isRightBarItemHidden; // @synthesize isRightBarItemHidden=_isRightBarItemHidden;
@@ -33,4 +34,3 @@
 - (_Bool)shouldBlockMinimization;
 
 @end
-

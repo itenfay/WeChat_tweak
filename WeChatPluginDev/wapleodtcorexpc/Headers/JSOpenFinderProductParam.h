@@ -23,7 +23,6 @@
     NSString *_entranceGMsgID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *entranceGMsgID; // @synthesize entranceGMsgID=_entranceGMsgID;
 @property(retain, nonatomic) NSDictionary *productExtraData; // @synthesize productExtraData=_productExtraData;
 @property(retain, nonatomic) NSString *ecSource; // @synthesize ecSource=_ecSource;

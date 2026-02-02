@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_appPagePath;
 + (void)PBArrayAdd_appUserName;
 + (void)PBArrayAdd_userName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appIconUrl; // @synthesize appIconUrl=_appIconUrl;
 @property(retain, nonatomic) NSString *appNickName; // @synthesize appNickName=_appNickName;
 @property(retain, nonatomic) NSString *appPagePath; // @synthesize appPagePath=_appPagePath;

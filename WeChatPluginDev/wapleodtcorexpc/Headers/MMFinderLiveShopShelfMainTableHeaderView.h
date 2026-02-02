@@ -17,7 +17,6 @@
     struct UIEdgeInsets _padding;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveShopShelfMainPageHeaderCouponsAdapter *couponsAdapter; // @synthesize couponsAdapter=_couponsAdapter;
 @property(retain, nonatomic) MMFinderLiveShopShelfMainPageHeaderVIPAdapter *vipAdapter; // @synthesize vipAdapter=_vipAdapter;
 @property(retain, nonatomic) UIView *couponsView; // @synthesize couponsView=_couponsView;

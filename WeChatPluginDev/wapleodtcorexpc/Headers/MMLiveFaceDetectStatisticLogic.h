@@ -35,7 +35,6 @@
     long long _startThermalState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int disableCanRetryFaceDetectTimes; // @synthesize disableCanRetryFaceDetectTimes=_disableCanRetryFaceDetectTimes;
 @property(nonatomic) int disableFaceDetectTimes; // @synthesize disableFaceDetectTimes=_disableFaceDetectTimes;
 @property(nonatomic) long long startThermalState; // @synthesize startThermalState=_startThermalState;

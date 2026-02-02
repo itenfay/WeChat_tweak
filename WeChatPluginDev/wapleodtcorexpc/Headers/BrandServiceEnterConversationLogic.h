@@ -15,7 +15,6 @@
     long long _subscene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long subscene; // @synthesize subscene=_subscene;
 @property(retain, nonatomic) NSMutableDictionary *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) __weak id <BrandServiceEnterConversationLogicDelegate> delegate; // @synthesize delegate=_delegate;

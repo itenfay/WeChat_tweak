@@ -11,7 +11,6 @@
     NSString *_nsTitle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiRankScore; // @synthesize uiRankScore=_uiRankScore;
 @property(retain, nonatomic) NSString *nsTitle; // @synthesize nsTitle=_nsTitle;
 

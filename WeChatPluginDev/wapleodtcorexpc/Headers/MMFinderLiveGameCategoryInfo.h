@@ -19,7 +19,6 @@
 }
 
 + (id)changeArrayWithGameCategoryInfoList:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tabName; // @synthesize tabName=_tabName;
 @property(nonatomic) unsigned int tabId; // @synthesize tabId=_tabId;
 @property(retain, nonatomic) NSString *queryBuffer; // @synthesize queryBuffer=_queryBuffer;

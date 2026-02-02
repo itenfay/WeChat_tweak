@@ -13,7 +13,6 @@
     UIImageView *_bottomImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *bottomImageView; // @synthesize bottomImageView=_bottomImageView;
 @property(retain, nonatomic) UIImageView *topImageView; // @synthesize topImageView=_topImageView;
 - (void)layoutSubviews;

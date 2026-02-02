@@ -16,7 +16,6 @@
     MMTableView *m_tableView;
 }
 
-- (void).cxx_destruct;
 - (void)setM_tableView:(id)arg1;
 - (id)m_tableView;
 - (void)setM_tableViewInfo:(id)arg1;

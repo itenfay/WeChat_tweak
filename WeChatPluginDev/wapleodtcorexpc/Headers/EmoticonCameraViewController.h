@@ -55,7 +55,6 @@
     EmoticonLensInfo *_followLensInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonLensInfo *followLensInfo; // @synthesize followLensInfo=_followLensInfo;
 @property(retain, nonatomic) EmoticonLensPackage *currLensPackage; // @synthesize currLensPackage=_currLensPackage;
 @property(nonatomic) _Bool enableNewYearPendant; // @synthesize enableNewYearPendant=_enableNewYearPendant;

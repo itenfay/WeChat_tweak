@@ -19,7 +19,6 @@
 + (id)paramsFromLiveLivingStyle:(id)arg1;
 + (id)paramsFromLiveNecessaryParamsJSON:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bypReportChnlExtra; // @synthesize bypReportChnlExtra=_bypReportChnlExtra;
 @property(copy, nonatomic) NSString *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;

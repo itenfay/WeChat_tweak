@@ -10,7 +10,6 @@
     UIView *_adBulletScreenView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *adBulletScreenView; // @synthesize adBulletScreenView=_adBulletScreenView;
 
 @end

@@ -16,7 +16,6 @@
     _Bool _bIsSuccessView;
 }
 
-- (void).cxx_destruct;
 - (void)hideAutoOAuthLoadingView;
 - (void)onBackToApp;
 - (void)layoutAutoOAuthView;

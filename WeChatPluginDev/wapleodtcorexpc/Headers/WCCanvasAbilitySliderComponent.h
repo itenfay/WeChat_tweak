@@ -12,7 +12,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCPLabel *abilityLabel; // @synthesize abilityLabel=_abilityLabel;
 @property(retain, nonatomic) WCCanvasAbilitySlider *abilitySlider; // @synthesize abilitySlider=_abilitySlider;
 - (void)ImageDidLoad:(id)arg1 Url:(id)arg2;

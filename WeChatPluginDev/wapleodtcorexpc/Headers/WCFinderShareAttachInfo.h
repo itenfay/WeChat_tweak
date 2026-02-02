@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_objectNonceId;
 + (void)PBArrayAdd_objectId;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *objectNonceId; // @synthesize objectNonceId=_objectNonceId;
 @property(copy, nonatomic) NSString *objectId; // @synthesize objectId=_objectId;
 - (id)toXMLV2;

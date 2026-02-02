@@ -13,7 +13,6 @@
     double _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) TSTrackedMotionSequence *motionSequence; // @synthesize motionSequence=_motionSequence;

@@ -12,7 +12,6 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-- (void).cxx_destruct;
 - (void)onAppTaskTerminate:(id)arg1;
 - (void)clearTaskDBWithAppID:(id)arg1;
 - (void)clearAllTaskDB;

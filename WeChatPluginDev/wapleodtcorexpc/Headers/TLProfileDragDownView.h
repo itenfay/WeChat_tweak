@@ -28,7 +28,6 @@
     CAGradientLayer *_gradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) MMUIButton *moreButton; // @synthesize moreButton=_moreButton;
 @property(retain, nonatomic) UIView *moreContainerView; // @synthesize moreContainerView=_moreContainerView;

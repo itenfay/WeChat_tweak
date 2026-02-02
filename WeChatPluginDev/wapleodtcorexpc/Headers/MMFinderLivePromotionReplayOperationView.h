@@ -15,7 +15,6 @@
     MMFinderLiveReplayGoodsPromoteContentView *_goodsTipView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveReplayGoodsPromoteContentView *goodsTipView; // @synthesize goodsTipView=_goodsTipView;
 @property(nonatomic) _Bool supressMessageUpdate; // @synthesize supressMessageUpdate=_supressMessageUpdate;
 @property(nonatomic) unsigned long long lastMessageUpdateTime; // @synthesize lastMessageUpdateTime=_lastMessageUpdateTime;

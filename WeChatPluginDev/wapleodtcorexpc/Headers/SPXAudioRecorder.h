@@ -16,7 +16,6 @@
     WavAudioPlayer *_m_wavAudioPlayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WavAudioPlayer *m_wavAudioPlayer; // @synthesize m_wavAudioPlayer=_m_wavAudioPlayer;
 @property(nonatomic) _Bool needWaitForTipAudio; // @synthesize needWaitForTipAudio=mIsNeedWaitForTipAudio;
 @property(nonatomic) _Bool needRestartAudioTalk; // @synthesize needRestartAudioTalk=mIsNeedRestartAudioTalk;

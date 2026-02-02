@@ -13,7 +13,6 @@
     ScheduleOPWrap *_scheduleOpWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ScheduleOPWrap *scheduleOpWrap; // @synthesize scheduleOpWrap=_scheduleOpWrap;
 @property(retain, nonatomic) NSString *word; // @synthesize word=_word;
 - (id)copyWithZone:(struct _NSZone *)arg1;

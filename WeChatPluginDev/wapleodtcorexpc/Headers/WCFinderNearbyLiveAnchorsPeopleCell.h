@@ -14,7 +14,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *footImage; // @synthesize footImage=_footImage;
 @property(retain, nonatomic) MMBadgeView *redDotView; // @synthesize redDotView=_redDotView;
 - (id)initWithFrame:(struct CGRect)arg1;

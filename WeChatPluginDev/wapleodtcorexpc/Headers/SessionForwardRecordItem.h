@@ -25,7 +25,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int forwardTime; // @synthesize forwardTime=_forwardTime;
 @property(retain, nonatomic) NSString *sessionItemUsername; // @synthesize sessionItemUsername=_sessionItemUsername;
 

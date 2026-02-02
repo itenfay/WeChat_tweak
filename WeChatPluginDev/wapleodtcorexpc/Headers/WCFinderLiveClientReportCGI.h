@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ErrorReportInfo;
 
 @interface WCFinderLiveClientReportCGI
@@ -13,7 +15,6 @@
     unsigned long long _reportScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long reportScene; // @synthesize reportScene=_reportScene;
 @property(copy, nonatomic) ErrorReportInfo *error; // @synthesize error=_error;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
@@ -24,4 +25,3 @@
 - (id)initWithError:(id)arg1 successful:(CDUnknownBlockType)arg2 failure:(CDUnknownBlockType)arg3;
 
 @end
-

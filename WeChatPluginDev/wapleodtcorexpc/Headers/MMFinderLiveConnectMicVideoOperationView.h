@@ -55,7 +55,6 @@
     struct CGRect _displayNormalizedFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHiddenSmallWidgets; // @synthesize isHiddenSmallWidgets=_isHiddenSmallWidgets;
 @property(retain, nonatomic) MMFinderLiveCommonOnlineMemberSheet *onlineMemberSheet; // @synthesize onlineMemberSheet=_onlineMemberSheet;
 @property(retain, nonatomic) MMLiveStrokeLabel *superfanExtraPkCreditLabel; // @synthesize superfanExtraPkCreditLabel=_superfanExtraPkCreditLabel;

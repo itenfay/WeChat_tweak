@@ -39,7 +39,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pageWarpList; // @synthesize pageWarpList=_pageWarpList;
 @property(retain, nonatomic) NSString *panelUrl; // @synthesize panelUrl;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl;

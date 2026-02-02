@@ -14,7 +14,6 @@
     NSString *rank;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int rankWeight; // @synthesize rankWeight;
 @property(nonatomic) _Bool shouldBold; // @synthesize shouldBold;
 @property(retain, nonatomic) NSString *rank; // @synthesize rank;

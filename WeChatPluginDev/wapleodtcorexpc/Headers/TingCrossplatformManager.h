@@ -12,7 +12,6 @@
     TingPlayerManager *_playTaskController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingPlayerManager *playTaskController; // @synthesize playTaskController=_playTaskController;
 - (void)finderRedDotDataChangedWithPathKey:(id)arg1;
 - (void)onManagerEnterForeground;

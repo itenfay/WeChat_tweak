@@ -14,7 +14,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MagicSclFrameSetView *frameSetView; // @synthesize frameSetView=_frameSetView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) NSString *rootId; // @synthesize rootId=_rootId;

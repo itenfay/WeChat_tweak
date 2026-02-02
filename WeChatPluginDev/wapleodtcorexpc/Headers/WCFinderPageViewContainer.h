@@ -22,7 +22,6 @@
     unsigned long long _dragCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long dragCount; // @synthesize dragCount=_dragCount;
 @property(retain, nonatomic) NSMutableDictionary *index2ViewDict; // @synthesize index2ViewDict=_index2ViewDict;
 @property(nonatomic) _Bool allowContentInsetChangeWhenPageIsNotAtTop; // @synthesize allowContentInsetChangeWhenPageIsNotAtTop=_allowContentInsetChangeWhenPageIsNotAtTop;

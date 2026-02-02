@@ -12,7 +12,6 @@
     NSObject<WAJSContextPlugin_userAccountProtocol> *_runningEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSObject<WAJSContextPlugin_userAccountProtocol> *runningEvent; // @synthesize runningEvent=_runningEvent;
 @property(retain) NSMutableArray *arrEvent; // @synthesize arrEvent=_arrEvent;
 - (_Bool)handleEvent:(long long)arg1 userInfo:(id)arg2;

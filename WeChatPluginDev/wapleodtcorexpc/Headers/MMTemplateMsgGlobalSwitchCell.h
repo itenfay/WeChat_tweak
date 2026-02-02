@@ -16,7 +16,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMTemplateMsgGlobalSwitchCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)updateTitle:(id)arg1 ctrlSwitch:(_Bool)arg2;
 - (void)layoutSubviews;

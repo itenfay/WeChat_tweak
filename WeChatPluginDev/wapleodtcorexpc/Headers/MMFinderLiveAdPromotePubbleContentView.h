@@ -15,7 +15,6 @@
     FinderLiveShopWindowAdItem *_adItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveShopWindowAdItem *adItem; // @synthesize adItem=_adItem;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

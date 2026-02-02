@@ -16,7 +16,6 @@
     NSString *_tag;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tag; // @synthesize tag=_tag;
 @property(retain, nonatomic) NSString *module; // @synthesize module=_module;
 @property(retain, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;

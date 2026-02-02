@@ -19,7 +19,6 @@
 
 + (id)liveCdnStreamInfoFromUrl:(id)arg1 withKey:(id)arg2;
 + (id)liveCdnStreamInfoFromCdnTransInfo:(id)arg1 withKey:(id)arg2 andQualityTagItem:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasChangedToBackStream; // @synthesize hasChangedToBackStream=_hasChangedToBackStream;
 @property(nonatomic) _Bool isMainStreamInvalidFromServer; // @synthesize isMainStreamInvalidFromServer=_isMainStreamInvalidFromServer;
 @property(nonatomic) _Bool isDisplayedStream; // @synthesize isDisplayedStream=_isDisplayedStream;

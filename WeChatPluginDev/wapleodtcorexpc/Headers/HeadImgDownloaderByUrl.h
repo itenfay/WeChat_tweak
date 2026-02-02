@@ -10,7 +10,6 @@
     NSMutableArray *m_userRequestList;
 }
 
-- (void).cxx_destruct;
 - (void)onModifyContact:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)onDownloadHeadImageFail:(id)arg1;

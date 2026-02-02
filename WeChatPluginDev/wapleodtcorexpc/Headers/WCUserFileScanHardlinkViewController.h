@@ -13,7 +13,6 @@
     UIButton *_scanNoCacheButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *scanNoCacheButton; // @synthesize scanNoCacheButton=_scanNoCacheButton;
 @property(retain, nonatomic) UIButton *scanWithCacheButton; // @synthesize scanWithCacheButton=_scanWithCacheButton;
 @property(copy, nonatomic) NSString *infoString; // @synthesize infoString=_infoString;

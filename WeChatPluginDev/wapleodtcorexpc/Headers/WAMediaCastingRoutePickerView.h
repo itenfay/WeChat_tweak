@@ -19,7 +19,6 @@
     WAMediaCastingRoutePickerTableHeaderView *_availableHeader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAMediaCastingRoutePickerTableHeaderView *availableHeader; // @synthesize availableHeader=_availableHeader;
 @property(retain, nonatomic) WAMediaCastingRoutePickerTableHeaderView *recentlyHeader; // @synthesize recentlyHeader=_recentlyHeader;
 @property(retain, nonatomic) MMUIButton *guideButton; // @synthesize guideButton=_guideButton;

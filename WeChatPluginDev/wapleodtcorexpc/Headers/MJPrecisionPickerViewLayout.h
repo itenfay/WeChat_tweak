@@ -15,7 +15,6 @@
     NSMutableDictionary *_labelLayoutAttributesCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *labelLayoutAttributesCache; // @synthesize labelLayoutAttributesCache=_labelLayoutAttributesCache;
 @property(nonatomic) __weak id <MJPrecisionPickerViewLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double labelHeight; // @synthesize labelHeight=_labelHeight;

@@ -20,7 +20,6 @@
     UIColor *_disableIconColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool videoPauseState; // @synthesize videoPauseState=_videoPauseState;
 @property(retain, nonatomic) UIColor *disableIconColor; // @synthesize disableIconColor=_disableIconColor;
 @property(retain, nonatomic) UIColor *localEnableColor; // @synthesize localEnableColor=_localEnableColor;

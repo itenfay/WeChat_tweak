@@ -17,7 +17,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) SecurityDialogButtonInfo *right_btn; // @synthesize right_btn=_right_btn;
 @property(retain) SecurityDialogButtonInfo *left_btn; // @synthesize left_btn=_left_btn;
 @property(retain) NSString *wording; // @synthesize wording=_wording;

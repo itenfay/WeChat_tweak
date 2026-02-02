@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAShapeLayer, CameraScannerView, MMTimer, NSString, PAGView, PalmEntryLogicController, PalmGuidingTipsView, UIImageView, UIView;
 @protocol PalmEntryViewControllerDelegate;
 
@@ -31,7 +33,6 @@
     MMTimer *_recordTimeoutTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *recordTimeoutTimer; // @synthesize recordTimeoutTimer=_recordTimeoutTimer;
 @property(retain, nonatomic) MMTimer *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(retain, nonatomic) UIImageView *successImageView; // @synthesize successImageView=_successImageView;
@@ -111,4 +112,3 @@
 @property(readonly) Class superclass;
 
 @end
-

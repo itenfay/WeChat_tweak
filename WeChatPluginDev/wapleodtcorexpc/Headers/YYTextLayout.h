@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSAttributedString, NSSet, YYTextContainer, YYTextLine;
 
@@ -43,7 +44,6 @@
 + (id)layoutWithContainer:(id)arg1 text:(id)arg2 range:(struct _NSRange)arg3;
 + (id)layoutWithContainer:(id)arg1 text:(id)arg2;
 + (id)layoutWithContainerSize:(struct CGSize)arg1 text:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_c3b9c2ee *lineRowsEdge; // @synthesize lineRowsEdge=_lineRowsEdge;
 @property(nonatomic) unsigned long long *lineRowsIndex; // @synthesize lineRowsIndex=_lineRowsIndex;
 @property(nonatomic) _Bool needDrawBorder; // @synthesize needDrawBorder=_needDrawBorder;
@@ -110,4 +110,3 @@
 - (id)_init;
 
 @end
-

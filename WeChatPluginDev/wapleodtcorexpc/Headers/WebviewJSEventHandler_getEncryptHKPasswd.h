@@ -10,7 +10,6 @@
     JSEvent *_jsEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEvent *jsEvent; // @synthesize jsEvent=_jsEvent;
 - (void)onGetEncryptHKPasswdFail:(_Bool)arg1;
 - (void)onGetEncryptHKPasswdSucc:(id)arg1 signature:(id)arg2;

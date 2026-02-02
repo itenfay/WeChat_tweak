@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData;
 
 @interface WCFinderLiveAudienceOpFansGroupCGI
@@ -16,7 +18,6 @@
     CDUnknownBlockType _joinFailBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType joinFailBlock; // @synthesize joinFailBlock=_joinFailBlock;
 @property(copy, nonatomic) CDUnknownBlockType joinSuccessBlock; // @synthesize joinSuccessBlock=_joinSuccessBlock;
 @property(copy, nonatomic) CDUnknownBlockType joinPrepareFailBlock; // @synthesize joinPrepareFailBlock=_joinPrepareFailBlock;
@@ -31,4 +32,3 @@
 - (id)initJoinPrepareWithTaskId:(id)arg1 liveCookies:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failBlock:(CDUnknownBlockType)arg4;
 
 @end
-

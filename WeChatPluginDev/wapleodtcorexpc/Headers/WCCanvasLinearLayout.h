@@ -12,7 +12,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needRelayout; // @synthesize needRelayout=_needRelayout;
 @property(retain, nonatomic) NSMutableDictionary *viewContainer; // @synthesize viewContainer=_viewContainer;
 - (void)shareComponentDidBeClickedWithType:(long long)arg1;

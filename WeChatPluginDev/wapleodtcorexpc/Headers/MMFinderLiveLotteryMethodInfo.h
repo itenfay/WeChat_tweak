@@ -16,7 +16,6 @@
     NSString *_requestId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int opType; // @synthesize opType=_opType;
 @property(nonatomic) unsigned int methodId; // @synthesize methodId=_methodId;
 @property(retain, nonatomic) NSString *requestId; // @synthesize requestId=_requestId;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCFinderBgmListParams;
 
 @interface WCFinderBgmListCgi
@@ -12,7 +14,6 @@
     CDUnknownBlockType _failedBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(copy, nonatomic) CDUnknownBlockType successfulBlock; // @synthesize successfulBlock=_successfulBlock;
 @property(retain, nonatomic) WCFinderBgmListParams *params; // @synthesize params=_params;
@@ -23,4 +24,3 @@
 - (id)initWithParams:(id)arg1 successfulBlock:(CDUnknownBlockType)arg2 failed:(CDUnknownBlockType)arg3;
 
 @end
-

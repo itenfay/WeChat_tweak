@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, SendPatWrap;
 
 @interface SendPatCgi
@@ -12,7 +14,6 @@
     CDUnknownBlockType _failureBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) SendPatWrap *sendPatWrap; // @synthesize sendPatWrap=_sendPatWrap;
@@ -27,4 +28,3 @@
 - (id)init;
 
 @end
-

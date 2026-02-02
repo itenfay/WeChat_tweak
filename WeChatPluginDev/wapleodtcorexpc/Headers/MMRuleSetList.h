@@ -16,7 +16,6 @@
     NSString *m_styleSheetFilePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *ruleSets; // @synthesize ruleSets=m_ruleSets;
 @property(retain, nonatomic) NSString *styleSheetFilePath; // @synthesize styleSheetFilePath=m_styleSheetFilePath;
 - (void)clearAllRuleSets;

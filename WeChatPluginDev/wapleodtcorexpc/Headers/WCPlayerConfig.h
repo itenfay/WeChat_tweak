@@ -19,7 +19,6 @@
     double _bottomToolBottomPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double bottomToolBottomPadding; // @synthesize bottomToolBottomPadding=_bottomToolBottomPadding;
 @property(retain, nonatomic) NSString *attachButtonTitle; // @synthesize attachButtonTitle=_attachButtonTitle;
 @property(nonatomic) _Bool bPassTouchThroughControlView; // @synthesize bPassTouchThroughControlView=_bPassTouchThroughControlView;

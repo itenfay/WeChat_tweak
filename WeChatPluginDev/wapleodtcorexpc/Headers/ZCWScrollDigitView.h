@@ -17,7 +17,6 @@
     UIFont *digitFont;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long _digit; // @synthesize _digit;
 @property(retain, nonatomic) UIFont *digitFont; // @synthesize digitFont;
 @property(readonly, nonatomic) unsigned long long digit; // @synthesize digit;

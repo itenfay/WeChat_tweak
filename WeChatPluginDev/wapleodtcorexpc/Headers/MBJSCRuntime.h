@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSContext, JSVirtualMachine, MBJSCJSBridgeImpl, MagicBrushCore, NSMutableDictionary, NSMutableSet, NSString, NSThread, WAOpenGLView, WXAudioNative, WasmAdaptor, WeMediaApi;
 
 @interface MBJSCRuntime
@@ -35,7 +37,6 @@
     NSMutableDictionary *_mapArrayBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int bufferIDSequence; // @synthesize bufferIDSequence=_bufferIDSequence;
 @property(retain, nonatomic) NSMutableDictionary *mapArrayBuffer; // @synthesize mapArrayBuffer=_mapArrayBuffer;
 @property(retain, nonatomic) NSMutableDictionary *extViewDict; // @synthesize extViewDict=_extViewDict;
@@ -181,4 +182,3 @@
 @property(readonly) Class superclass;
 
 @end
-

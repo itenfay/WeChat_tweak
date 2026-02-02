@@ -24,7 +24,6 @@
 
 + (id)viewerSortedFlags;
 + (id)authorSortedFlags;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderScrollActionGridView *bodyGridView; // @synthesize bodyGridView=_bodyGridView;
 @property(nonatomic) unsigned long long feedViewerScene; // @synthesize feedViewerScene=_feedViewerScene;
 @property(retain, nonatomic) WCFinderScrollActionSheetDelegate *delegateReplace; // @synthesize delegateReplace=_delegateReplace;

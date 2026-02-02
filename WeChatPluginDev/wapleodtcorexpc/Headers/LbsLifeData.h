@@ -16,7 +16,6 @@
     NSString *_searchID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStartFromFirst; // @synthesize isStartFromFirst=_isStartFromFirst;
 @property(retain, nonatomic) NSString *searchID; // @synthesize searchID=_searchID;
 @property(retain, nonatomic) NSString *logoUrl; // @synthesize logoUrl=_logoUrl;

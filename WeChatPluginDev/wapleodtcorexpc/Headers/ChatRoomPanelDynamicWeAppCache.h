@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_m_panelDynamicWeAppHadRedDotAr;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_panelDynamicWeAppHadRedDotAr; // @synthesize m_panelDynamicWeAppHadRedDotAr=_m_panelDynamicWeAppHadRedDotAr;
 - (id)getPBPropertyTable;
 

@@ -93,7 +93,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) DBContactEncryptSecret *dbContactEncryptSecret; // @synthesize dbContactEncryptSecret=_dbContactEncryptSecret;
 @property(retain, nonatomic) DBContactOpenIM *dbContactOpenIM; // @synthesize dbContactOpenIM=_dbContactOpenIM;
 @property(retain, nonatomic) NSString *openIMAppid; // @synthesize openIMAppid=_openIMAppid;

@@ -14,7 +14,6 @@
     WCPayF2FReceiveDetailSummaryItem *_summaryItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayF2FReceiveDetailSummaryItem *summaryItem; // @synthesize summaryItem=_summaryItem;
 @property(retain, nonatomic) NSString *retMsg; // @synthesize retMsg=_retMsg;
 @property(nonatomic) long long retCode; // @synthesize retCode=_retCode;

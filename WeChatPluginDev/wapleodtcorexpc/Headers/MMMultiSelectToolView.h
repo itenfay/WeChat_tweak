@@ -11,7 +11,6 @@
     UIColor *_itemColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *itemColor; // @synthesize itemColor=_itemColor;
 @property(retain, nonatomic) NSMutableArray *buttonArray; // @synthesize buttonArray=_buttonArray;
 - (void)addDownloadButtonWithTarget:(id)arg1 action:(SEL)arg2;

@@ -13,7 +13,6 @@
     unsigned int _groupViewDirection;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int groupViewDirection; // @synthesize groupViewDirection=_groupViewDirection;
 @property(retain, nonatomic) NSMutableArray *arrGroupViews; // @synthesize arrGroupViews=_arrGroupViews;
 - (_Bool)isAllHidden;

@@ -13,7 +13,6 @@
     NSString *_operateId;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSString *operateId; // @synthesize operateId=_operateId;
 @property(retain) NSString *traceInfo; // @synthesize traceInfo=_traceInfo;
 @property __weak id <WCPayJSOpenLQTSaveLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

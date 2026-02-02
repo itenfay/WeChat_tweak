@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WAAuthorizeResultInfo, WAPhoneNumberAuthorizeSheetInfo, WAPhoneNumberPageSheetViewModel;
 @protocol WAPhoneNumberAuthorizePageSheetDelegate;
 
@@ -12,7 +14,6 @@
     WAPhoneNumberPageSheetViewModel *_pnViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPhoneNumberPageSheetViewModel *pnViewModel; // @synthesize pnViewModel=_pnViewModel;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 - (id)subViewModel;
@@ -45,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

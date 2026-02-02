@@ -10,7 +10,6 @@
     id <WCPayT2BCPayRequestCgiDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetResponse:(id)arg1;

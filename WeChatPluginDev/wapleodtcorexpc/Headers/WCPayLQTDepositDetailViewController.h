@@ -39,7 +39,6 @@
     PlanIndexResp_PlanItem *_planItem;
 }
 
-- (void).cxx_destruct;
 @property(retain) PlanIndexResp_PlanItem *planItem; // @synthesize planItem=_planItem;
 @property(retain) QryAutoPlanOrderListResp *detailResp; // @synthesize detailResp=_detailResp;
 @property unsigned long long loadingState; // @synthesize loadingState=_loadingState;

@@ -36,7 +36,6 @@
 + (id)cellWithText:(id)arg1;
 + (id)cellWithType:(long long)arg1 title:(id)arg2 image:(id)arg3 subtitle:(id)arg4 accessoryType:(long long)arg5 accessoryTarget:(id)arg6 accessoryAction:(SEL)arg7 pathKey:(id)arg8;
 + (id)cellWithType:(long long)arg1 title:(id)arg2 image:(id)arg3 subtitle:(id)arg4 accessoryType:(long long)arg5 accessoryTarget:(id)arg6 accessoryAction:(SEL)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pathKey; // @synthesize pathKey=_pathKey;
 @property(nonatomic) double imageToTextPadding; // @synthesize imageToTextPadding=_imageToTextPadding;
 @property(nonatomic) struct UIEdgeInsets cellEdgeInsets; // @synthesize cellEdgeInsets=_cellEdgeInsets;

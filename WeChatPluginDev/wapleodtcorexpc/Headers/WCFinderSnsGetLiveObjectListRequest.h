@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSMutableArray;
 
 @interface WCFinderSnsGetLiveObjectListRequest
@@ -13,7 +15,6 @@
     NSMutableArray *_readStats;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *readStats; // @synthesize readStats=_readStats;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
@@ -24,4 +25,3 @@
 - (id)initRequestWith:(id)arg1 readStats:(id)arg2 successful:(CDUnknownBlockType)arg3 failure:(CDUnknownBlockType)arg4;
 
 @end
-

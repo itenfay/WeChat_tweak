@@ -12,7 +12,6 @@
     NSRecursiveLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) WCFinderPostSessionModel *postSession; // @synthesize postSession=_postSession;
 @property(retain, nonatomic) WCFinderDataItem *dataItemModel; // @synthesize dataItemModel=_dataItemModel;

@@ -10,7 +10,6 @@
     MMFinderLiveLotteryCommentInputView *_commentInputView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveLotteryCommentInputView *commentInputView; // @synthesize commentInputView=_commentInputView;
 - (void)layoutUI;
 - (void)viewDidLayoutSubviews;

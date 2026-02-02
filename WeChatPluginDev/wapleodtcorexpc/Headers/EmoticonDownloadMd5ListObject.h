@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_reqBuff;
 + (void)PBArrayAdd_m_lastUpdateTime;
 + (void)PBArrayAdd_m_md5List;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needRecordVersionKeyUpdate; // @synthesize needRecordVersionKeyUpdate=_needRecordVersionKeyUpdate;
 @property(nonatomic) unsigned long long m_type; // @synthesize m_type=_m_type;
 @property(nonatomic) unsigned int m_lastUpdateTime; // @synthesize m_lastUpdateTime=_m_lastUpdateTime;

@@ -11,7 +11,6 @@
     NSMutableArray *_reportQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isReporting; // @synthesize isReporting=_isReporting;
 @property(retain, nonatomic) NSMutableArray *reportQueue; // @synthesize reportQueue=_reportQueue;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

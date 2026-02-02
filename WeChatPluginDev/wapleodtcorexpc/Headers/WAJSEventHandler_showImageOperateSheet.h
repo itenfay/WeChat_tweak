@@ -21,7 +21,6 @@
     NSString *_base64DataString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *base64DataString; // @synthesize base64DataString=_base64DataString;
 @property(nonatomic) double imageHeight; // @synthesize imageHeight=_imageHeight;
 @property(nonatomic) double imageWidth; // @synthesize imageWidth=_imageWidth;

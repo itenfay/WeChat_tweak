@@ -17,7 +17,6 @@
 + (id)getMsgFromFTSMsgItem:(id)arg1;
 + (id)getMsgFrom:(id)arg1;
 + (id)getSimpleMsgFrom:(id)arg1;
-- (void).cxx_destruct;
 - (_Bool)isEnterBackground;
 - (void)applicationDidEnterBackground;
 - (void)applicationWillEnterForeground;

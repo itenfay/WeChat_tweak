@@ -20,7 +20,6 @@
 
 + (struct CGSize)getCellSize;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMiniGame; // @synthesize isMiniGame=_isMiniGame;
 @property(retain, nonatomic) NSString *gameIconUrl; // @synthesize gameIconUrl=_gameIconUrl;
 @property(retain, nonatomic) NSString *gameLabelText; // @synthesize gameLabelText=_gameLabelText;

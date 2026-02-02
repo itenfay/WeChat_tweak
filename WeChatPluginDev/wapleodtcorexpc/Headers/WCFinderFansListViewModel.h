@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, WCFinderContact;
 @protocol WCFinderFansListViewModelDelegate;
@@ -20,7 +21,6 @@
     NSMutableArray *_addContactArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *addContactArray; // @synthesize addContactArray=_addContactArray;
 @property(retain, nonatomic) NSMutableArray *contactArray; // @synthesize contactArray=_contactArray;
 @property(retain, nonatomic) NSData *lastBuf; // @synthesize lastBuf=_lastBuf;
@@ -39,4 +39,3 @@
 - (id)initWithContact:(id)arg1;
 
 @end
-

@@ -14,7 +14,6 @@
     RouteInfo *_route_info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RouteInfo *route_info; // @synthesize route_info=_route_info;
 @property(retain, nonatomic) WCPayPaidDetailLeadTailCmdData *cmd_data; // @synthesize cmd_data=_cmd_data;
 @property(nonatomic) long long type; // @synthesize type=_type;

@@ -18,7 +18,6 @@
     double _contentMaxWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double contentMaxWidth; // @synthesize contentMaxWidth=_contentMaxWidth;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long m_count; // @synthesize m_count=_m_count;

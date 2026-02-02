@@ -30,7 +30,6 @@
 
 + (double)heightWithContentVM:(id)arg1 param:(id)arg2 width:(double)arg3;
 + (_Bool)shouldShowFriendLikeToolbarViewWithContentVM:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPreOrientationLandScape; // @synthesize isPreOrientationLandScape=_isPreOrientationLandScape;
 @property(retain, nonatomic) WCFinderLandScapeVideoDisplayViewInitParams *setupParams; // @synthesize setupParams=_setupParams;
 @property(retain, nonatomic) WCFinderLandScapePlayerParam *param; // @synthesize param=_param;

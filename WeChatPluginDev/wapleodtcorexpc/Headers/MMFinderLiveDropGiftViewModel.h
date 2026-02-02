@@ -23,7 +23,6 @@
     NSString *_currentComboId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 @property(retain, nonatomic) NSString *currentComboId; // @synthesize currentComboId=_currentComboId;
 @property(nonatomic) double currentTimeOnEnterBackground; // @synthesize currentTimeOnEnterBackground=_currentTimeOnEnterBackground;

@@ -13,7 +13,6 @@
     MMMultiMenuItem *_menuItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMultiMenuItem *menuItem; // @synthesize menuItem=_menuItem;
 @property(nonatomic) double targetWidth; // @synthesize targetWidth=_targetWidth;
 - (void)setBackgroundColor:(id)arg1;

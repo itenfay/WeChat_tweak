@@ -17,7 +17,6 @@
     NSString *m_nsFootTip;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_uiAmountCount; // @synthesize m_uiAmountCount;
 @property(nonatomic) unsigned int m_uiNoticeID; // @synthesize m_uiNoticeID;
 @property(retain, nonatomic) NSString *m_nsTitle; // @synthesize m_nsTitle;

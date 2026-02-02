@@ -14,7 +14,6 @@
     NSData *_icon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *iconurl; // @synthesize iconurl=_iconurl;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;

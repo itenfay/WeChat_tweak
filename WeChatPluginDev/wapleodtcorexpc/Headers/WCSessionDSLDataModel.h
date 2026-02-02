@@ -16,7 +16,6 @@
     NSString *_methodAttr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int chainIndex; // @synthesize chainIndex=_chainIndex;
 @property(retain, nonatomic) NSString *methodAttr; // @synthesize methodAttr=_methodAttr;
 @property(retain, nonatomic) NSString *methodName; // @synthesize methodName=_methodName;

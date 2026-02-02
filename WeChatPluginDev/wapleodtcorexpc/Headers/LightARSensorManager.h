@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CMMotionManager, NSOperationQueue;
 
@@ -21,7 +22,6 @@
     NSOperationQueue *_accUpdateQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStarted; // @synthesize isStarted=_isStarted;
 @property(retain, nonatomic) NSOperationQueue *accUpdateQueue; // @synthesize accUpdateQueue=_accUpdateQueue;
 @property(retain, nonatomic) NSOperationQueue *gyroUpdateQueue; // @synthesize gyroUpdateQueue=_gyroUpdateQueue;
@@ -37,4 +37,3 @@
 - (id)init;
 
 @end
-

@@ -14,7 +14,6 @@
 
 + (id)bizPkgAppId;
 + (id)basePkgAppId;
-- (void).cxx_destruct;
 - (void)reportMonitorIdKey:(unsigned int)arg1;
 - (id)mappedKV;
 - (void)resetMappedKv;

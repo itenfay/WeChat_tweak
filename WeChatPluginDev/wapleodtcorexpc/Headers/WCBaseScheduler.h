@@ -21,7 +21,6 @@
     double _sliceTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double sliceTime; // @synthesize sliceTime=_sliceTime;
 @property(nonatomic) double bufferLimit; // @synthesize bufferLimit=_bufferLimit;
 @property(nonatomic) double threshold; // @synthesize threshold=_threshold;

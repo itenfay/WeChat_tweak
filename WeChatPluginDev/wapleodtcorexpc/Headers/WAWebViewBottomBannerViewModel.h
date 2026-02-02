@@ -28,7 +28,6 @@
     WAContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) _Bool originalGame; // @synthesize originalGame=_originalGame;
 @property(retain, nonatomic) NSString *titleTail; // @synthesize titleTail=_titleTail;

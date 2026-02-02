@@ -14,7 +14,6 @@
     NSString *_sessionBuffer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(copy, nonatomic) NSString *nonceID; // @synthesize nonceID=_nonceID;
 @property(copy, nonatomic) NSString *exportID; // @synthesize exportID=_exportID;

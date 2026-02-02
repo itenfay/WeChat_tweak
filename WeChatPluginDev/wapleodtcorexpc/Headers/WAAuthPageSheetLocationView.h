@@ -12,7 +12,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ZZFLEXAngel *angel; // @synthesize angel=_angel;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 - (id)initWithFrame:(struct CGRect)arg1;

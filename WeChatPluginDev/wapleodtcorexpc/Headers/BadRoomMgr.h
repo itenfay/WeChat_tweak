@@ -12,7 +12,6 @@
     NSRecursiveLock *_m_oLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *m_oLock; // @synthesize m_oLock=_m_oLock;
 - (id)HandleSysMsg:(id)arg1 revokeMsgId:(long long *)arg2;
 - (void)notifyWithData:(id)arg1;

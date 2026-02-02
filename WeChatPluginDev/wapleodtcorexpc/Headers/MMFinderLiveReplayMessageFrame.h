@@ -17,7 +17,6 @@
     NSMutableArray *_rewardMessages;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *rewardMessages; // @synthesize rewardMessages=_rewardMessages;
 @property(retain, nonatomic) LiveRoomImg *liveRoomImages; // @synthesize liveRoomImages=_liveRoomImages;
 @property(retain, nonatomic) FinderLiveMicInfo *liveMicInfo; // @synthesize liveMicInfo=_liveMicInfo;

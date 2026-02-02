@@ -17,7 +17,6 @@
 }
 
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *labelTextColor; // @synthesize labelTextColor=_labelTextColor;
 @property(retain, nonatomic) UIFont *labelFont; // @synthesize labelFont=_labelFont;
 @property(nonatomic) double iconLabelPadding; // @synthesize iconLabelPadding=_iconLabelPadding;

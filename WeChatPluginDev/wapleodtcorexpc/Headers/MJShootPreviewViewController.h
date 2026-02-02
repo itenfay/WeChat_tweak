@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJShootComposingViewModel, MMUIButton, MMUIView, NSString, UIStackView, UIView, WCProgressMaskView;
 @protocol MJShootPreviewViewControllerDelegate;
 
@@ -22,7 +24,6 @@
     WCProgressMaskView *_progressMaskView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPresentingCropVC; // @synthesize isPresentingCropVC=_isPresentingCropVC;
 @property(retain, nonatomic) WCProgressMaskView *progressMaskView; // @synthesize progressMaskView=_progressMaskView;
 @property(retain, nonatomic) MMUIView *bottomBar; // @synthesize bottomBar=_bottomBar;
@@ -74,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

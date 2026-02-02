@@ -16,7 +16,6 @@
 + (id)showWithTaskId:(id)arg1;
 + (id)showChangeFilterNoticeViewWith:(id)arg1 entry:(int)arg2;
 + (id)showWithTaskId:(id)arg1 entry:(int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveBeautyExtSettingCard *faceOccuSettingCard; // @synthesize faceOccuSettingCard=_faceOccuSettingCard;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(nonatomic) int entry; // @synthesize entry=_entry;

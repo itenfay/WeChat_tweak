@@ -13,7 +13,6 @@
     NSDictionary *_dicData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dicData; // @synthesize dicData=_dicData;
 @property(nonatomic) __weak WAAppTask *weakTask; // @synthesize weakTask=_weakTask;
 - (id)description;

@@ -14,7 +14,6 @@
     FaceRecogCheckBrightnessLogic *_brightnessCheckLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FaceRecogCheckBrightnessLogic *brightnessCheckLogic; // @synthesize brightnessCheckLogic=_brightnessCheckLogic;
 @property(retain, nonatomic) NSString *verifyInfo; // @synthesize verifyInfo=_verifyInfo;
 @property(nonatomic) float lightThreshold; // @synthesize lightThreshold=_lightThreshold;

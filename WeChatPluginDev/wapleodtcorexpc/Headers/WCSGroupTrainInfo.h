@@ -30,7 +30,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrClicks; // @synthesize arrClicks=_arrClicks;
 @property(nonatomic) unsigned int lastSearchTime; // @synthesize lastSearchTime=_lastSearchTime;
 @property(retain, nonatomic) NSData *info; // @synthesize info=_info;

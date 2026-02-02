@@ -20,7 +20,6 @@
     unsigned long long _detectFailTimestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long detectFailTimestamp; // @synthesize detectFailTimestamp=_detectFailTimestamp;
 @property(nonatomic) unsigned long long preparedTimestamp; // @synthesize preparedTimestamp=_preparedTimestamp;
 @property(nonatomic) _Bool isOldStyle; // @synthesize isOldStyle=_isOldStyle;

@@ -12,7 +12,6 @@
     id <WCFinderFixAssibilityElementViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderFixAssibilityElementViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)accessibilityElements;
 - (id)initWithFrame:(struct CGRect)arg1 delegate:(id)arg2;

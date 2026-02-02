@@ -27,7 +27,6 @@
     unsigned long long _playerMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long playerMode; // @synthesize playerMode=_playerMode;
 @property(nonatomic) double totalTime; // @synthesize totalTime=_totalTime;
 @property(nonatomic) _Bool isSliderScrubbing; // @synthesize isSliderScrubbing=_isSliderScrubbing;

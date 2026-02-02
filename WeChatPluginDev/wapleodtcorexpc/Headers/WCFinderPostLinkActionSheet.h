@@ -14,7 +14,6 @@
     UIView *_tipsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *tipsView; // @synthesize tipsView=_tipsView;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(nonatomic) long long linkFlag; // @synthesize linkFlag=_linkFlag;

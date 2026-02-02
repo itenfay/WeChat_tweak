@@ -14,7 +14,6 @@
     NSMutableArray *_liveGiftMRViewListenerList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *liveGiftMRViewListenerList; // @synthesize liveGiftMRViewListenerList=_liveGiftMRViewListenerList;
 @property(retain, nonatomic) NSString *productId; // @synthesize productId=_productId;
 @property(nonatomic) __weak _TtC6WeChat15MagicRewardView *rewardView; // @synthesize rewardView=_rewardView;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface QueryQRCodeOAuthStateCgi
@@ -15,7 +17,6 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) _Bool hasHandleEcdhRollback; // @synthesize hasHandleEcdhRollback=_hasHandleEcdhRollback;
 @property(copy, nonatomic) NSString *sdkToken; // @synthesize sdkToken=_sdkToken;
@@ -29,4 +30,3 @@
 - (id)initWithUUID:(id)arg1 lastErrcode:(unsigned int)arg2 isCancel:(_Bool)arg3 sdkToken:(id)arg4;
 
 @end
-

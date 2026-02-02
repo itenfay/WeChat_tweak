@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WXKBMessageActionContext, WXKBMessageActionReportObject;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)messageActionWithDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXKBMessageActionReportObject *reportObject; // @synthesize reportObject=_reportObject;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) WXKBMessageActionContext *context; // @synthesize context=_context;
@@ -34,4 +34,3 @@
 - (_Bool)precheck;
 
 @end
-

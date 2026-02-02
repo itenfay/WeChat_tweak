@@ -10,7 +10,6 @@
     NSMutableArray *_overlays;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *overlays; // @synthesize overlays=_overlays;
 - (id)createArrowImage:(struct CGSize)arg1;
 - (void)addMapLine:(id)arg1 line:(id)arg2;

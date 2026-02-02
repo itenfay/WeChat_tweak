@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -14,7 +15,6 @@
     NSMutableArray *_m_animations;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_animations; // @synthesize m_animations=_m_animations;
 @property(nonatomic) _Bool m_isAnimating; // @synthesize m_isAnimating=_m_isAnimating;
 @property unsigned long long maxCount; // @synthesize maxCount=_maxCount;
@@ -24,4 +24,3 @@
 - (id)init;
 
 @end
-

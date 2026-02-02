@@ -13,7 +13,6 @@
     EmojiInfoObj *_emojiInfoObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmojiInfoObj *emojiInfoObj; // @synthesize emojiInfoObj=_emojiInfoObj;
 @property(nonatomic) _Bool showEntry; // @synthesize showEntry=_showEntry;
 @property(nonatomic) long long addEmoticonSource; // @synthesize addEmoticonSource=_addEmoticonSource;

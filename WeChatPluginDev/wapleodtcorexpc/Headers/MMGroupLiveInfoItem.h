@@ -121,7 +121,6 @@
 + (void)PBArrayAdd_roomId;
 + (void)PBArrayAdd_liveName;
 + (void)PBArrayAdd_liveId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int barStatus; // @synthesize barStatus=_barStatus;
 @property(nonatomic) unsigned long long chatroomliveExtInfoFlag; // @synthesize chatroomliveExtInfoFlag;
 @property(nonatomic) _Bool useDefaultLiveName; // @synthesize useDefaultLiveName;

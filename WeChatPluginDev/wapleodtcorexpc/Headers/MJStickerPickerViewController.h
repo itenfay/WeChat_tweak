@@ -19,7 +19,6 @@
     MJInspectorToolBar *_toolBar;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJInspectorToolBar *toolBar; // @synthesize toolBar=_toolBar;
 @property(retain, nonatomic) UICollectionView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;

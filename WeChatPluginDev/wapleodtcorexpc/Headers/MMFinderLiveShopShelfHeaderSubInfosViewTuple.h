@@ -13,7 +13,6 @@
     UIView *_rightLineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *rightLineView; // @synthesize rightLineView=_rightLineView;
 @property(retain, nonatomic) UIView *infoView; // @synthesize infoView=_infoView;
 

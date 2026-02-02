@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSString, UIImageView, UILabel, UIView, WCFinderAnimationLoadingView, YYWKWebView;
 
 @interface WCFinderWebViewActionSheet
@@ -20,7 +22,6 @@
     UILabel *_retryLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *retryLabel; // @synthesize retryLabel=_retryLabel;
 @property(retain, nonatomic) UIImageView *retryImageView; // @synthesize retryImageView=_retryImageView;
 @property(retain, nonatomic) YYWKWebView *h5WebView; // @synthesize h5WebView=_h5WebView;
@@ -51,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

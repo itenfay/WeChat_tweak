@@ -12,7 +12,6 @@
     CAShapeLayer *_progressTriangleLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *progressTriangleLayer; // @synthesize progressTriangleLayer=_progressTriangleLayer;
 @property(retain, nonatomic) CAShapeLayer *progressArcLayer; // @synthesize progressArcLayer=_progressArcLayer;
 @property(nonatomic) double currentProgress; // @synthesize currentProgress=_currentProgress;

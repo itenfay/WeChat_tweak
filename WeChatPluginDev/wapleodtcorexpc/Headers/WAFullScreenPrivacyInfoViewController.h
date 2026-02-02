@@ -13,7 +13,6 @@
     id <IWARichTextViewHelper> _richTextHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <IWARichTextViewHelper> richTextHelper; // @synthesize richTextHelper=_richTextHelper;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *wording; // @synthesize wording=_wording;

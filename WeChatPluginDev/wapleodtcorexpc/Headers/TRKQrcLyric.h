@@ -25,7 +25,6 @@
     Lyric *_lyric;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) Lyric *lyric; // @synthesize lyric=_lyric;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(nonatomic) long long lyricFinishTime; // @synthesize lyricFinishTime=_lyricFinishTime;

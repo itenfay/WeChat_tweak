@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMMusicInfo, MMTimer, NSString;
 
@@ -25,7 +26,6 @@
 + (_Bool)isPlayingSameMusicWithInfo:(id)arg1;
 + (id)musicPlayerHandlerForTextState:(id)arg1;
 + (id)coordinator;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType residentHandler; // @synthesize residentHandler=_residentHandler;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) _Bool resident; // @synthesize resident=_resident;
@@ -47,4 +47,3 @@
 - (id)init;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface WSWebViewPlugin_NativeVideo
@@ -10,7 +12,6 @@
     NSMutableDictionary *_localFinderDataItemDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *localFinderDataItemDic; // @synthesize localFinderDataItemDic=_localFinderDataItemDic;
 - (void)onVideoPlayerEvent:(id)arg1 withData:(id)arg2 forViewId:(unsigned int)arg3;
 - (void)handleEvent:(id)arg1 userInfo:(id)arg2;
@@ -36,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

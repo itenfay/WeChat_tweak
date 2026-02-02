@@ -19,7 +19,6 @@
 }
 
 + (id)getDotColor:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hidesWhenStopped; // @synthesize hidesWhenStopped=_hidesWhenStopped;
 @property(nonatomic) double separatorDistance; // @synthesize separatorDistance=_separatorDistance;
 @property(nonatomic) struct CGSize dotSize; // @synthesize dotSize=_dotSize;

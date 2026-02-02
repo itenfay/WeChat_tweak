@@ -22,7 +22,6 @@
     CAShapeLayer *_innerBorderLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *innerBorderLayer; // @synthesize innerBorderLayer=_innerBorderLayer;
 @property(retain, nonatomic) CAShapeLayer *outterBorderLayer; // @synthesize outterBorderLayer=_outterBorderLayer;
 @property(retain, nonatomic) UIView *outerContentContainerView; // @synthesize outerContentContainerView=_outerContentContainerView;

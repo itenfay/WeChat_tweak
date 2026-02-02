@@ -26,7 +26,6 @@
 + (void)PreviewAppNode:(id)arg1 msgWrap:(id)arg2 inNavigationController:(id)arg3 withClickFrame:(struct CGRect)arg4 msgLocateForFile:(_Bool)arg5;
 + (void)PreviewAppNode:(id)arg1 msgWrap:(id)arg2 inNavigationController:(id)arg3 withClickFrame:(struct CGRect)arg4;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsChatName; // @synthesize m_nsChatName;
 @property(retain, nonatomic) CMessageWrap *m_curMsgWrap; // @synthesize m_curMsgWrap;
 - (void)doDeleteData;

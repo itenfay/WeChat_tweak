@@ -16,7 +16,6 @@
 
 + (void)uploadIsInternal:(int)arg1;
 + (id)manager;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasUploaded; // @synthesize hasUploaded=_hasUploaded;
 @property(retain, nonatomic) NSMutableArray *sendQueue; // @synthesize sendQueue=_sendQueue;
 @property(copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

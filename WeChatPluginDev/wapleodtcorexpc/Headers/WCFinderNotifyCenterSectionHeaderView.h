@@ -15,7 +15,6 @@
 
 + (double)descriptionTableViewCellHeight:(unsigned long long)arg1;
 + (double)descriptionTableViewCellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void)updateTitle:(id)arg1 style:(unsigned long long)arg2;

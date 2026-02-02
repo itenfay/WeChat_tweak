@@ -16,7 +16,6 @@
     MISSING_TYPE *frameSetRootName;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithBizName:(id)arg1 frameSetName:(id)arg2 frameSetData:(id)arg3 containerView:(id)arg4 frameSetRootName:(id)arg5;
 @property(nonatomic, copy) NSString *frameSetRootName;

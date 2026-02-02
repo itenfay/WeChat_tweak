@@ -24,7 +24,6 @@
     NSString *_fromFinderUsername;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAutoAdd; // @synthesize isAutoAdd=_isAutoAdd;
 @property(retain, nonatomic) NSString *fromFinderUsername; // @synthesize fromFinderUsername=_fromFinderUsername;
 @property(retain, nonatomic) NSString *fromWxUsername; // @synthesize fromWxUsername=_fromWxUsername;

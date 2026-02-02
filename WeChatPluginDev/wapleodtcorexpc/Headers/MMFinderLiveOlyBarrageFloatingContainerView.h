@@ -14,7 +14,6 @@
     struct CGSize _currSelfSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize currSelfSize; // @synthesize currSelfSize=_currSelfSize;
 @property(retain, nonatomic) NSMutableArray *floatingBarragePubbleRouteList; // @synthesize floatingBarragePubbleRouteList=_floatingBarragePubbleRouteList;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;

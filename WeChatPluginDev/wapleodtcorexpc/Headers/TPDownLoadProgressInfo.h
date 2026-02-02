@@ -16,7 +16,6 @@
     NSString *_extraInfo;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *extraInfo; // @synthesize extraInfo=_extraInfo;
 @property(readonly, nonatomic) long long totalFileSize; // @synthesize totalFileSize=_totalFileSize;
 @property(readonly, nonatomic) long long currentDownloadSize; // @synthesize currentDownloadSize=_currentDownloadSize;

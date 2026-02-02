@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton;
 
 @interface WCShortVideoToolbarResultPreviewBottomView
@@ -17,7 +19,6 @@
 
 + (id)genBtn;
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType editBlock; // @synthesize editBlock=_editBlock;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
 @property(copy, nonatomic) CDUnknownBlockType confirmBlock; // @synthesize confirmBlock=_confirmBlock;
@@ -36,4 +37,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

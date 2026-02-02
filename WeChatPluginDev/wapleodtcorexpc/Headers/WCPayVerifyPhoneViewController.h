@@ -36,7 +36,6 @@
     MMTimer *_verifyCodeTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain) MMTimer *verifyCodeTimer; // @synthesize verifyCodeTimer=_verifyCodeTimer;
 @property(retain) CountryCodeWrap *currentCountry; // @synthesize currentCountry=_currentCountry;
 @property unsigned int lastSendTime; // @synthesize lastSendTime=_lastSendTime;

@@ -16,7 +16,6 @@
     UIImageView *_rightArrowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *rightArrowView; // @synthesize rightArrowView=_rightArrowView;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

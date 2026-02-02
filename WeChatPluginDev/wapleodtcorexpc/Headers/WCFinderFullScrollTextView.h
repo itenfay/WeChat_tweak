@@ -14,7 +14,6 @@
     double _verticalMargin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double verticalMargin; // @synthesize verticalMargin=_verticalMargin;
 @property(retain, nonatomic) WCFinderFeedContentTouchExpandTextView *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;

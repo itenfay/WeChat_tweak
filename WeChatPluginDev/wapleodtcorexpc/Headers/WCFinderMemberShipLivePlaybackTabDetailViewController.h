@@ -13,7 +13,6 @@
     WCFinderShareCustomTransition *_animator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderShareCustomTransition *animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) WCFinderFeedContentVM *preVCData; // @synthesize preVCData=_preVCData;
 @property(retain, nonatomic) WCFinderMemberShipPlaybackTabDetailViewModel *viewModel; // @synthesize viewModel=_viewModel;

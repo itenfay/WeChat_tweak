@@ -159,7 +159,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) float brightness; // @synthesize brightness=_brightness;
 @property(nonatomic) unsigned short audioPlayingCount; // @synthesize audioPlayingCount=_audioPlayingCount;
 @property(nonatomic) unsigned short locationRetrievingCount; // @synthesize locationRetrievingCount=_locationRetrievingCount;

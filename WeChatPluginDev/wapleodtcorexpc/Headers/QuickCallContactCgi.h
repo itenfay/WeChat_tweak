@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray;
 @protocol QuickCallContactCgiDelegate;
 
@@ -16,7 +18,6 @@
     NSMutableArray *_successUsernames;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *successUsernames; // @synthesize successUsernames=_successUsernames;
 @property(retain, nonatomic) NSMutableArray *waitingUsernames; // @synthesize waitingUsernames=_waitingUsernames;
 @property(nonatomic) _Bool isAddContact; // @synthesize isAddContact=_isAddContact;
@@ -33,4 +34,3 @@
 - (id)init;
 
 @end
-

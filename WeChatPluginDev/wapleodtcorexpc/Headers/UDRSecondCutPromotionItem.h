@@ -16,7 +16,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *text_en; // @synthesize text_en=_text_en;
 @property(retain, nonatomic) NSString *text_zh_Hant; // @synthesize text_zh_Hant=_text_zh_Hant;
 @property(retain, nonatomic) NSString *text_zh_Hans; // @synthesize text_zh_Hans=_text_zh_Hans;

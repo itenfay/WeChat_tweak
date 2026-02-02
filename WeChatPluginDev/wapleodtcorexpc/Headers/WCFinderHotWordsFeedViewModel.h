@@ -21,7 +21,6 @@
     NSString *_dataScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int streamScene; // @synthesize streamScene=_streamScene;
 @property(retain, nonatomic) NSString *dataScene; // @synthesize dataScene=_dataScene;
 @property(retain, nonatomic) NSData *lastBuff; // @synthesize lastBuff=_lastBuff;

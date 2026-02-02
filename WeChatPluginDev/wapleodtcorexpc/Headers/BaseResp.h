@@ -14,7 +14,6 @@
     NSString *errStr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int type; // @synthesize type;
 @property(retain, nonatomic) NSString *errStr; // @synthesize errStr;
 @property(nonatomic) int errCode; // @synthesize errCode;

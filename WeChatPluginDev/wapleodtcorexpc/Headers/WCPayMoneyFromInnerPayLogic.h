@@ -14,7 +14,6 @@
     unsigned int m_eSene;
 }
 
-- (void).cxx_destruct;
 - (void)OnGetGenPaypreErrorRequest:(id)arg1 ErrorMsg:(id)arg2;
 - (void)OnGetGenPaypreRequest:(id)arg1 SessionID:(id)arg2 AppSource:(id)arg3 WalletMixSpGenprepayResp:(id)arg4;
 - (void)onWCBaseLogicDidStop:(unsigned int)arg1;

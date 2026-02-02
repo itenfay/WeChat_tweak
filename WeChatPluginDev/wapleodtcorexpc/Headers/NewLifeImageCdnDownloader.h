@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NewLifeImageCdnDownloader : NSObject
 {
@@ -13,4 +14,3 @@
 + (void)startDownload:(id)arg1 progressCallback:(CDUnknownBlockType)arg2 endCallback:(CDUnknownBlockType)arg3;
 
 @end
-

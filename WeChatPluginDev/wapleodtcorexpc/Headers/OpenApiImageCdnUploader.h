@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     NSString *_musicDataCDNMsgID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *musicDataCDNMsgID; // @synthesize musicDataCDNMsgID=_musicDataCDNMsgID;
 @property(copy) CDUnknownBlockType uploadCallback; // @synthesize uploadCallback=_uploadCallback;
 - (void)OnCdnUpload:(id)arg1;
@@ -23,4 +23,3 @@
 - (id)transferImageDataToTargetSize:(id)arg1;
 
 @end
-

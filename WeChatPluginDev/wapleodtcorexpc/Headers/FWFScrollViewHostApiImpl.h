@@ -12,7 +12,6 @@
     FWFInstanceManager *_instanceManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FWFInstanceManager *instanceManager; // @synthesize instanceManager=_instanceManager;
 - (void)setContentOffsetForScrollViewWithIdentifier:(id)arg1 toX:(id)arg2 y:(id)arg3 error:(id *)arg4;
 - (void)scrollByForScrollViewWithIdentifier:(id)arg1 x:(id)arg2 y:(id)arg3 error:(id *)arg4;

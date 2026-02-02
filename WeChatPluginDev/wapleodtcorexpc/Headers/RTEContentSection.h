@@ -18,7 +18,6 @@
 + (void)applyEditLocations:(id)arg1 inSections:(id)arg2 isAddParagraph:(_Bool)arg3;
 + (id)creatSectionArrayForString:(id)arg1;
 + (id)creatSectionForString:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numOfParagraph; // @synthesize numOfParagraph=_numOfParagraph;
 @property(retain, nonatomic) RTETextView *cellView; // @synthesize cellView=_cellView;
 @property(nonatomic) double cellHeight; // @synthesize cellHeight=_cellHeight;

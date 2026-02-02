@@ -13,7 +13,6 @@
     double _ParameterValue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double ParameterValue; // @synthesize ParameterValue=_ParameterValue;
 @property(copy, nonatomic) NSString *ParameterID; // @synthesize ParameterID=_ParameterID;
 

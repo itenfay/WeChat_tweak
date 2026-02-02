@@ -26,7 +26,6 @@
     UITapGestureRecognizer *_tapGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(nonatomic) _Bool hasTouchDown; // @synthesize hasTouchDown=_hasTouchDown;
 @property(retain, nonatomic) YYLabel *tailTextLabel; // @synthesize tailTextLabel=_tailTextLabel;

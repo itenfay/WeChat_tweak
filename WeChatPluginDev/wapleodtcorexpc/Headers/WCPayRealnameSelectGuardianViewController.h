@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, ContactsDataLogic, NSString, SharePreConfirmSheetView, SharePreConfirmView, WCPayNetImageResource, WCPayRealnameAuthenResp, WCPayRealnameVerifyGuardianCgi, WCPayRealnameVerifyParentCgi;
 @protocol WCPayRealnameSelectGuardianViewControllerDelegate;
 
@@ -20,7 +22,6 @@
     WCPayRealnameVerifyParentCgi *_liteappVerifyParentCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayRealnameVerifyParentCgi *liteappVerifyParentCgi; // @synthesize liteappVerifyParentCgi=_liteappVerifyParentCgi;
 @property(retain, nonatomic) WCPayNetImageResource *imageLoader; // @synthesize imageLoader=_imageLoader;
 @property(retain, nonatomic) WCPayRealnameVerifyGuardianCgi *verifyGuardianCgi; // @synthesize verifyGuardianCgi=_verifyGuardianCgi;
@@ -60,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,7 +15,6 @@
     CDUnknownBlockType _didFailLoadWithError;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasLoaded; // @synthesize hasLoaded=_hasLoaded;
 @property(copy, nonatomic) CDUnknownBlockType didFailLoadWithError; // @synthesize didFailLoadWithError=_didFailLoadWithError;
 @property(copy, nonatomic) CDUnknownBlockType didFinishLoad; // @synthesize didFinishLoad=_didFinishLoad;
@@ -32,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

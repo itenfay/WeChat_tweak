@@ -14,7 +14,6 @@
     MMUIViewController *_viewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
 @property __weak MMUIViewController *viewController; // @synthesize viewController=_viewController;
 - (id)generatePreviewDataSource;

@@ -22,7 +22,6 @@
     NSString *_extData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool nonautomatic; // @synthesize nonautomatic=_nonautomatic;
 @property(copy, nonatomic) NSString *extData; // @synthesize extData=_extData;
 @property(nonatomic) _Bool isOption1; // @synthesize isOption1=_isOption1;

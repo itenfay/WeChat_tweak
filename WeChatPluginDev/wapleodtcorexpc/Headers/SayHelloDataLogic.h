@@ -18,7 +18,6 @@
 }
 
 + (id)getContactFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <SayHelloDataLogicDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onModifyContact:(id)arg1;
 - (void)onSetStrangerRemark:(id)arg1;

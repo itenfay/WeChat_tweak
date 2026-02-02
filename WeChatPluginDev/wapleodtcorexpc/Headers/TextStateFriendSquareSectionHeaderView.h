@@ -19,7 +19,6 @@
 
 + (double)heightForSection:(long long)arg1;
 + (double)alignX;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;
 @property(nonatomic) long long section; // @synthesize section=_section;
 @property(retain, nonatomic) MMUILabel *clusterLabel; // @synthesize clusterLabel=_clusterLabel;

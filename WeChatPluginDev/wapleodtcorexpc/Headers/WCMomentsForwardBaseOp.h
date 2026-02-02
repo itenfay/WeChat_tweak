@@ -18,7 +18,6 @@
     id <WCMomentsForwardBaseOpDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCMomentsForwardBaseOpDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *forwardMessageLogicReportUserInfo; // @synthesize forwardMessageLogicReportUserInfo=_forwardMessageLogicReportUserInfo;
 @property(nonatomic) long long browseScene; // @synthesize browseScene=_browseScene;

@@ -10,7 +10,6 @@
     NSArray *_captionItems;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *captionItems; // @synthesize captionItems=_captionItems;
 - (id)description;
 - (id)initWithCaptionItems:(id)arg1;

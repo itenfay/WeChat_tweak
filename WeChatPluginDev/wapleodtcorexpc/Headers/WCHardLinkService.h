@@ -17,7 +17,6 @@
 + (void)setStateOfHardLinkDone:(_Bool)arg1;
 + (_Bool)getStateOfHardLinkDone;
 + (id)getRelatedMemoryKV;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCHardLinkMergeOperation *mergeOperation; // @synthesize mergeOperation=_mergeOperation;
 - (void)tryToHardLinkSameFile;
 - (void)dealloc;

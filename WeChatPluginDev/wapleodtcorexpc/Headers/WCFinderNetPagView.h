@@ -15,7 +15,6 @@
     NSString *_targetMd5;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *targetMd5; // @synthesize targetMd5=_targetMd5;
 @property(copy, nonatomic) NSString *netPagUrl; // @synthesize netPagUrl=_netPagUrl;
 @property(copy, nonatomic) NSString *defaultPagResPath; // @synthesize defaultPagResPath=_defaultPagResPath;

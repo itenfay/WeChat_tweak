@@ -14,7 +14,6 @@
 }
 
 + (long long)getInputControlerModeWith:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IWCUIKitInputControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (double)getVisibleHeight;
 - (void)keyboardDidHide;

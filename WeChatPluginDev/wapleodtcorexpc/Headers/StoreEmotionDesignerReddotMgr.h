@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmptyDesignerPagePidRecord, NSMutableDictionary, NSRecursiveLock, NSString;
 
 @interface StoreEmotionDesignerReddotMgr
@@ -12,7 +14,6 @@
     EmptyDesignerPagePidRecord *_emptyPageRecord;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmptyDesignerPagePidRecord *emptyPageRecord; // @synthesize emptyPageRecord=_emptyPageRecord;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableDictionary *modelMap; // @synthesize modelMap=_modelMap;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

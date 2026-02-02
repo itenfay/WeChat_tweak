@@ -17,7 +17,6 @@
 }
 
 + (void)reportOpenImChatRoomMigrateWithOpenIMChatRoomUserName:(id)arg1 andAssociateChatRoomUserName:(id)arg2 andOpenImChatRoomMigrateAction:(unsigned int)arg3;
-- (void).cxx_destruct;
 - (void)p_loadOpenImChatRoomMigrateInternal;
 - (void)p_saveOpenImChatRoomMigrateToDataFileInternal;
 - (id)p_getOpenImChatRoomMigrateDataFilePath;

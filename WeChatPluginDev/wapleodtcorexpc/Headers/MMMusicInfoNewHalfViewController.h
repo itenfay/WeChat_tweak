@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMusicHorizontalScrollingView, MMMusicInfo, MMMusicOpenThirdAppHelper, MMUIActivityIndicatorView, MMUIButton, MMUILabel, MVWebViewController, NSString, UIButton, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol MMMusicInfoNewHalfViewControllerDelegate;
 
@@ -40,7 +42,6 @@
     struct CGPoint _panStartPos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicOpenThirdAppHelper *thirdPartyAppHelper; // @synthesize thirdPartyAppHelper=_thirdPartyAppHelper;
 @property(nonatomic) double menbershipButtonAndLabelSpacing; // @synthesize menbershipButtonAndLabelSpacing=_menbershipButtonAndLabelSpacing;
 @property(retain, nonatomic) MMUILabel *openMembershipHintLabel; // @synthesize openMembershipHintLabel=_openMembershipHintLabel;
@@ -111,4 +112,3 @@
 @property(readonly) Class superclass;
 
 @end
-

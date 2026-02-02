@@ -10,7 +10,6 @@
     NSDictionary *_param;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *param; // @synthesize param=_param;
 - (void)onWCPayCheckoutFail:(id)arg1 dicResult:(id)arg2;
 - (void)onWCPayCheckoutSuccess:(id)arg1;

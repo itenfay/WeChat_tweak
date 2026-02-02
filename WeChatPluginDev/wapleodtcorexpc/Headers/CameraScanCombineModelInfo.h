@@ -18,7 +18,6 @@
     NSString *_modelConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useXNet; // @synthesize useXNet=_useXNet;
 @property(copy, nonatomic) NSString *modelConfig; // @synthesize modelConfig=_modelConfig;
 @property(copy, nonatomic) NSString *classifyModelPath; // @synthesize classifyModelPath=_classifyModelPath;

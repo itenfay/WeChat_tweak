@@ -14,7 +14,6 @@
     id <WCPayPaidDetailFinderInfoViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayPaidDetailFinderInfoViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WCPayPaidDetailFinderInfoViewData *viewData; // @synthesize viewData=_viewData;
 - (void)coverBtnClick;

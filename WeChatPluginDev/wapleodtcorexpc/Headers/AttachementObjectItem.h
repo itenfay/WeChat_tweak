@@ -20,7 +20,6 @@
     NSString *_pathKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pathKey; // @synthesize pathKey=_pathKey;
 @property(nonatomic) unsigned int attachementID; // @synthesize attachementID=_attachementID;
 @property(retain, nonatomic) NSString *nsDesc; // @synthesize nsDesc=_nsDesc;

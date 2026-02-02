@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderGetWindowProductProfileCardInfoResponse, FinderJumpInfo, FinderLiveAbnormalClosedPageInfo, FinderLiveAnchorQuestEntrance, FinderLiveInfo, FinderLiveNoticeInfo, FinderLiveSquareStyleInfo, FinderLiveTabInfo, FinderObject, MMFinderAnchorReplaySettingContainerView, MMFinderLiveCompleteNoticeView, MMFinderLiveCompleteViewReplaySettingsPageSheet, MMFinderLiveTask, MMHeadImageView, MMLiveQueue, MMTimer, MMUIButton, MMUILabel, MMUIView, MMWebImageView, NSArray, NSData, NSMutableArray, NSString, UICollectionView, UIImageView, UIView, WCFinderDataItem, WCFinderLiveAudienceLogReporter, WCFinderLiveCompleteDataView, WCFinderLiveCompleteHelpView, WCFinderLiveCompleteLiveAudienceCardView, WCFinderLiveCompleteLiveBannerContentView, WCFinderLiveCompleteLiveContentView, WCFinderLiveCompleteLiveReplayView, WCFinderLiveCompleteLiveVideoContentView, WCFinderLiveCompleteMoreFooterView, WCFinderLiveCompletePageViewModel, WCFinderLiveCompleteRecommendContentView, WCFinderLiveCompleteScrollView, WCFinderLiveCompleteShoppingView, WCFinderLiveHomePageViewController, WCFinderLiveOverReporter, WCFinderLivePageStayReporter, WCFinderNavLiveStreamPreFetchParams;
 
 @interface WCFinderLiveCompleteViewController
@@ -102,7 +104,6 @@
     MMLiveQueue *_anchorNotices;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveQueue *anchorNotices; // @synthesize anchorNotices=_anchorNotices;
 @property(retain, nonatomic) MMFinderLiveCompleteNoticeView *anchorNoticeView; // @synthesize anchorNoticeView=_anchorNoticeView;
 @property(retain, nonatomic) FinderLiveAnchorQuestEntrance *anchorQuestEntrance; // @synthesize anchorQuestEntrance=_anchorQuestEntrance;
@@ -375,4 +376,3 @@
 @property(readonly) Class superclass;
 
 @end
-

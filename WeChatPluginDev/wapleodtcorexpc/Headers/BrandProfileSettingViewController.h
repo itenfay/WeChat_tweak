@@ -25,7 +25,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(retain, nonatomic) MMUILabel *emptyLabel; // @synthesize emptyLabel=_emptyLabel;
 @property(retain, nonatomic) JSAPIGetAllUseUserInfoResponse *jsAPIGetAllUseUserInfoResponse; // @synthesize jsAPIGetAllUseUserInfoResponse=_jsAPIGetAllUseUserInfoResponse;

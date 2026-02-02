@@ -14,7 +14,6 @@
     id <BrandProfileMsgCellDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDisplaying; // @synthesize isDisplaying=_isDisplaying;
 @property(nonatomic) __weak id <BrandProfileMsgCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) BrandProfileMsgBaseViewModel *viewModel; // @synthesize viewModel=_viewModel;

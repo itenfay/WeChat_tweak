@@ -115,7 +115,6 @@
 + (void)PBArrayAdd_iconUrl;
 + (void)PBArrayAdd_destType;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reportExtraData; // @synthesize reportExtraData=_reportExtraData;
 @property(nonatomic) unsigned long long pt; // @synthesize pt=_pt;
 @property(nonatomic) unsigned int posType; // @synthesize posType=_posType;

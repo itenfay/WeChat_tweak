@@ -18,7 +18,6 @@
     long long _longpressedIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long longpressedIndex; // @synthesize longpressedIndex=_longpressedIndex;
 @property(nonatomic) unsigned long long bizScene; // @synthesize bizScene=_bizScene;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;

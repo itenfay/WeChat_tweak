@@ -38,7 +38,6 @@
 + (id)reportItemWithChannelItemModel:(id)arg1 index:(unsigned long long)arg2;
 + (id)reportItemWithBrandItemModel:(id)arg1 index:(unsigned long long)arg2;
 + (id)itemIdWithBrandItemModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
 @property(nonatomic) unsigned long long finderUin; // @synthesize finderUin=_finderUin;
 @property(nonatomic) unsigned int memberZoneStatus; // @synthesize memberZoneStatus=_memberZoneStatus;

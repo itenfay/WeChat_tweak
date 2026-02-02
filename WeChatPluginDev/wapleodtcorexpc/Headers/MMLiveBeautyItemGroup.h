@@ -16,7 +16,6 @@
 }
 
 + (id)itemGroupInJsonDictionary:(id)arg1 suiteId:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long order; // @synthesize order=_order;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;

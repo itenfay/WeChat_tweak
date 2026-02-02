@@ -23,7 +23,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *expiredToast; // @synthesize expiredToast=_expiredToast;
 @property(nonatomic) long long expiredTime; // @synthesize expiredTime=_expiredTime;
 @property(retain, nonatomic) NSString *emoticonMd5; // @synthesize emoticonMd5=_emoticonMd5;

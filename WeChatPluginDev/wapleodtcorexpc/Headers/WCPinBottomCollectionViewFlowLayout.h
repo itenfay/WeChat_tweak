@@ -13,7 +13,6 @@
     NSIndexPath *_indexPathForItemPinnedBottom;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *indexPathForItemPinnedBottom; // @synthesize indexPathForItemPinnedBottom=_indexPathForItemPinnedBottom;
 - (double)currentCollectionViewBoundsBottom;
 @property(readonly, nonatomic) __weak id <UICollectionViewDelegatePinBottomFlowLayout> collectionViewDelegate;

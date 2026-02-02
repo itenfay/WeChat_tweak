@@ -22,7 +22,6 @@
     unsigned long long _eventId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long eventId; // @synthesize eventId=_eventId;
 @property(copy, nonatomic) NSString *traceId; // @synthesize traceId=_traceId;
 @property(nonatomic, getter=isExporting) _Bool exporting; // @synthesize exporting=_exporting;

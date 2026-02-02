@@ -21,7 +21,6 @@
     NSMutableArray *_arrTableViewModels;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrTableViewModels; // @synthesize arrTableViewModels=_arrTableViewModels;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(retain, nonatomic) CContact *brandContact; // @synthesize brandContact=_brandContact;

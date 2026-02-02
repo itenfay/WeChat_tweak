@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
@@ -17,7 +18,6 @@
     MISSING_TYPE *displayLink;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)startWithTimePassed:(double)arg1 totalTime:(double)arg2 reverse:(_Bool)arg3;
 - (void)displayUpdate:(id)arg1;
@@ -25,4 +25,3 @@
 @property(nonatomic, copy) CDUnknownBlockType complete;
 
 @end
-

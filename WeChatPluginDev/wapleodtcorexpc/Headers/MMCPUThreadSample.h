@@ -49,7 +49,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) long long systemTime; // @synthesize systemTime=_systemTime;
 @property(nonatomic) long long userTime; // @synthesize userTime=_userTime;
 @property(nonatomic) float cpuUsage; // @synthesize cpuUsage=_cpuUsage;

@@ -12,7 +12,6 @@
     WCFinderFeedDetailStatusView *_finderStatusView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedDetailStatusView *finderStatusView; // @synthesize finderStatusView=_finderStatusView;
 @property(copy, nonatomic) NSString *msgText; // @synthesize msgText=_msgText;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

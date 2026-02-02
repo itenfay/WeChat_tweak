@@ -30,7 +30,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int updateTime; // @synthesize updateTime=_updateTime;
 @property(nonatomic) unsigned int debugMode; // @synthesize debugMode=_debugMode;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

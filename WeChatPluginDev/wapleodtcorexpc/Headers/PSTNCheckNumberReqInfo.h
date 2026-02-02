@@ -17,7 +17,6 @@
     NSString *_OsCountry;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int DialScene; // @synthesize DialScene=_DialScene;
 @property(copy, nonatomic) NSString *OsCountry; // @synthesize OsCountry=_OsCountry;
 @property(copy, nonatomic) NSString *SimCountry; // @synthesize SimCountry=_SimCountry;

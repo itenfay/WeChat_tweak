@@ -16,7 +16,6 @@
     NSString *_feedOwnerUsername;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *feedOwnerUsername; // @synthesize feedOwnerUsername=_feedOwnerUsername;
 @property(nonatomic) int bypassBufferType; // @synthesize bypassBufferType=_bypassBufferType;
 @property(retain, nonatomic) NSData *bypassBuffer; // @synthesize bypassBuffer=_bypassBuffer;

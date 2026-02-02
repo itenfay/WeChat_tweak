@@ -10,7 +10,6 @@
     WAAppIdToUsernameTransfer *_appIDTransfer;
 }
 
-- (void).cxx_destruct;
 - (void)openFinderProductWithUserName:(id)arg1 pagePath:(id)arg2 referrerAppID:(id)arg3 currentURL:(id)arg4 debugMode:(unsigned long long)arg5 adUxInfo:(id)arg6 productParam:(id)arg7;
 - (void)openFinderProductWithAppID:(id)arg1 pagePath:(id)arg2 referrerAppID:(id)arg3 currentURL:(id)arg4 debugMode:(unsigned long long)arg5 adUxInfo:(id)arg6 productParam:(id)arg7;
 - (void)endWithOK;

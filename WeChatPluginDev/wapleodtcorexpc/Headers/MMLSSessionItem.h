@@ -20,7 +20,6 @@
 }
 
 + (_Bool)sessionItemCompareItem:(id)arg1 withItem:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int msgNewestTime; // @synthesize msgNewestTime=_msgNewestTime;
 @property(nonatomic) unsigned int msgOldestTime; // @synthesize msgOldestTime=_msgOldestTime;
 @property(nonatomic) long long msgEndTime; // @synthesize msgEndTime=_msgEndTime;

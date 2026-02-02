@@ -17,7 +17,6 @@
     struct UIEdgeInsets _rightHitInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJTrimHandle *rightHandle; // @synthesize rightHandle=_rightHandle;
 @property(retain, nonatomic) MJTrimHandle *leftHandle; // @synthesize leftHandle=_leftHandle;
 @property(retain, nonatomic) MMUIView *foregroundView; // @synthesize foregroundView=_foregroundView;

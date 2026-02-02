@@ -14,7 +14,6 @@
     struct CLLocationCoordinate2D _clickedPosition;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) struct CLLocationCoordinate2D clickedPosition; // @synthesize clickedPosition=_clickedPosition;

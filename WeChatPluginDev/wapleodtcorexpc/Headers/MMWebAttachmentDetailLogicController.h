@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, NSURL, NSURLSession;
 
 @interface MMWebAttachmentDetailLogicController
@@ -18,7 +20,6 @@
 }
 
 + (id)localFilePathForFileURL:(id)arg1 fileExtName:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long downloadedSize; // @synthesize downloadedSize=_downloadedSize;
 @property(nonatomic) unsigned long long targetSize; // @synthesize targetSize=_targetSize;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
@@ -60,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

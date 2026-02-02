@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface ModEmotionRecordCgi
@@ -13,7 +15,6 @@
     NSString *_pid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pid; // @synthesize pid=_pid;
 @property(copy, nonatomic) CDUnknownBlockType onSuccessBlock; // @synthesize onSuccessBlock=_onSuccessBlock;
 @property(copy, nonatomic) CDUnknownBlockType onFailBlock; // @synthesize onFailBlock=_onFailBlock;
@@ -24,4 +25,3 @@
 - (id)init;
 
 @end
-

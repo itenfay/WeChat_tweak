@@ -14,7 +14,6 @@
     NSIndexPath *_currentIndexPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *currentIndexPath; // @synthesize currentIndexPath=_currentIndexPath;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;

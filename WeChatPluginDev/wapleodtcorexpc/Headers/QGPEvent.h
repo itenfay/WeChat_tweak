@@ -12,7 +12,6 @@
 }
 
 + (id)errorMsgForCode:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *layerId; // @synthesize layerId=_layerId;
 @property(retain, nonatomic) NSString *eventType; // @synthesize eventType=_eventType;
 - (id)init;

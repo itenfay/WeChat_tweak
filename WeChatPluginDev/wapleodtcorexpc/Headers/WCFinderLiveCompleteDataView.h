@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveAnchorCloseLivePageData, WCFinderLiveCompleteDataModel, WCFinderLiveCompleteDataPageView;
 
 @interface WCFinderLiveCompleteDataView
@@ -19,7 +21,6 @@
 + (_Bool)shouldPaymentEntryWithFinderLiveInfo:(id)arg1;
 + (id)getDataItemListWithType:(int)arg1 shouldPaymentEntry:(_Bool)arg2 enableLiveRoomReward:(_Bool)arg3 shoppingAvailable:(_Bool)arg4 isBizLive:(_Bool)arg5;
 + (id)localPageDataWithFinderLiveInfo:(id)arg1 finderLiveTask:(id)arg2 isBizLive:(_Bool)arg3 showType:(unsigned long long)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveCompleteDataPageView *incomePageView; // @synthesize incomePageView=_incomePageView;
 @property(retain, nonatomic) WCFinderLiveCompleteDataPageView *basePageView; // @synthesize basePageView=_basePageView;
 @property(retain, nonatomic) WCFinderLiveCompleteDataModel *dataModel; // @synthesize dataModel=_dataModel;
@@ -37,4 +38,3 @@
 - (id)getDataViewHeightWithPageData:(id)arg1;
 
 @end
-

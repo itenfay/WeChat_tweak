@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveStickerEditingViewControllerConfiguration, MMFinderLiveStickerItemBase, MMFinderLiveStickerTextTemplatesPageSheet, MMFinderLiveTaskId, MMLiveObjectManipulationView, NSString, UIButton, UIImageView, UILabel, UIView;
 @protocol MMFinderLiveStickerContentPicking, MMFinderLiveStickerEditingViewControllerDelegate, MMFinderLiveStickerReporting;
 
@@ -35,7 +37,6 @@
     id <MMFinderLiveStickerReporting> _reporter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needRecoverPreferOrientationMask; // @synthesize needRecoverPreferOrientationMask=_needRecoverPreferOrientationMask;
 @property(retain, nonatomic) id <MMFinderLiveStickerReporting> reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) id <MMFinderLiveStickerContentPicking> contentPicker; // @synthesize contentPicker=_contentPicker;
@@ -124,4 +125,3 @@
 @property(readonly) Class superclass;
 
 @end
-

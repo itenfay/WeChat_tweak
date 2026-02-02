@@ -21,7 +21,6 @@
     VOIPModeSwitchStateMachine *mStateMachine;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isInitialVoiceMode; // @synthesize m_isInitialVoiceMode=_m_isInitialVoiceMode;
 @property(retain, nonatomic) VOIPModeSwitchStateMachine *mStateMachine; // @synthesize mStateMachine;
 @property(nonatomic) _Bool m_isActiveByCaller; // @synthesize m_isActiveByCaller;

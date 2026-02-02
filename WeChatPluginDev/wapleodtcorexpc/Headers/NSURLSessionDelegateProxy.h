@@ -13,7 +13,6 @@
 }
 
 + (id)proxyWithTarget:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id target; // @synthesize target=_target;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;

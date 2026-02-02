@@ -38,7 +38,6 @@
     long long _renderPageCost;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long renderPageCost; // @synthesize renderPageCost=_renderPageCost;
 @property(nonatomic) long long appCost; // @synthesize appCost=_appCost;
 @property(nonatomic) int showPageResult; // @synthesize showPageResult=_showPageResult;

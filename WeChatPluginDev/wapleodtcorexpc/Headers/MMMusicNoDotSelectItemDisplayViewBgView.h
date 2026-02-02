@@ -11,7 +11,6 @@
     unsigned long long _curItemCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long curItemCount; // @synthesize curItemCount=_curItemCount;
 @property(retain, nonatomic) UIImageView *hintImageView; // @synthesize hintImageView=_hintImageView;
 - (void)changeSizeWithItemCount:(unsigned long long)arg1 itemSize:(struct CGSize)arg2 itemMargin:(double)arg3 itemInsets:(struct UIEdgeInsets)arg4;

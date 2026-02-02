@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_bind_serial;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bind_serial; // @synthesize bind_serial=_bind_serial;
 - (id)getPBPropertyTable;
 

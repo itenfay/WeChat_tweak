@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MJPHAssetsAnalyzer : NSObject
 {
@@ -30,4 +31,3 @@
 - (id)init;
 
 @end
-

@@ -10,7 +10,6 @@
     NSDictionary *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *params; // @synthesize params=_params;
 - (id)xmlToDictionary:(struct XmlReaderNode_t *)arg1;
 - (id)dictionaryToXml:(id)arg1;

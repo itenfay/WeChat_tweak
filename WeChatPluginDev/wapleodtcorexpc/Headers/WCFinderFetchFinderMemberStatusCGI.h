@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderFetchFinderMemberStatusCGI
@@ -13,7 +15,6 @@
     CDUnknownBlockType _failure;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needSubscriptionType; // @synthesize needSubscriptionType=_needSubscriptionType;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
@@ -24,4 +25,3 @@
 - (id)initWithFinderUsername:(id)arg1 needSubscriptionType:(_Bool)arg2 successful:(CDUnknownBlockType)arg3 failure:(CDUnknownBlockType)arg4;
 
 @end
-

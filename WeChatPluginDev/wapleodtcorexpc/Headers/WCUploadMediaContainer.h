@@ -13,7 +13,6 @@
     WCUploadMedia *_livePhotoUploadMedia;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCUploadMedia *livePhotoUploadMedia; // @synthesize livePhotoUploadMedia=_livePhotoUploadMedia;
 @property(readonly, nonatomic) WCUploadMedia *mainUploadMedia; // @synthesize mainUploadMedia=_mainUploadMedia;
 - (id)initWithMainUploadMedia:(id)arg1;

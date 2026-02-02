@@ -13,7 +13,6 @@
     OMJCamMetaTraits *_camMetaTraits;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMJCamMetaTraits *camMetaTraits; // @synthesize camMetaTraits=_camMetaTraits;
 @property(retain, nonatomic) OMJCamGestureRecognizerSettings *gestureRecognizerSettings; // @synthesize gestureRecognizerSettings=_gestureRecognizerSettings;
 

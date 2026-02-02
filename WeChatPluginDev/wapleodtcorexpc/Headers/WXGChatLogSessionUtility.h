@@ -22,7 +22,6 @@
 + (_Bool)p_isLocalizedContactThatCannotSync:(id)arg1;
 + (id)loadAllUserName;
 + (id)getUserName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *includeUsersMap; // @synthesize includeUsersMap=_includeUsersMap;
 @property(retain, nonatomic) NSMutableArray *topSessions; // @synthesize topSessions=_topSessions;
 @property(retain, nonatomic) NSMutableArray *foldChatRoomSessions; // @synthesize foldChatRoomSessions=_foldChatRoomSessions;

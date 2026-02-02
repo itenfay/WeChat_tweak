@@ -21,7 +21,6 @@
 @property(nonatomic) _Bool reachableOnWWAN; // @synthesize reachableOnWWAN;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *reachabilitySerialQueue; // @synthesize reachabilitySerialQueue;
 @property(nonatomic) struct __SCNetworkReachability *reachabilityRef; // @synthesize reachabilityRef;
-- (void).cxx_destruct;
 - (void)reachabilityChanged:(unsigned int)arg1;
 - (long long)currentReachabilityStatus;
 - (_Bool)isReachableViaWiFi;

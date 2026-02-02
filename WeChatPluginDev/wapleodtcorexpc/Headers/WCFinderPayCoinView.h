@@ -12,7 +12,6 @@
     UILabel *_amountLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) UILabel *amountLabel; // @synthesize amountLabel=_amountLabel;
 @property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;

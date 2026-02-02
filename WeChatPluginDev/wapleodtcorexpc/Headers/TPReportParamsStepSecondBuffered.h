@@ -15,7 +15,6 @@
     NSString *_url;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(nonatomic) long long ptime; // @synthesize ptime=_ptime;
 @property(nonatomic) long long format; // @synthesize format=_format;

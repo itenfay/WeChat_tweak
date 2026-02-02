@@ -48,7 +48,6 @@
     WAMainListReporter *_stayDurationReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAMainListReporter *stayDurationReporter; // @synthesize stayDurationReporter=_stayDurationReporter;
 @property(retain, nonatomic) WAMainListReporter *exposureReporter; // @synthesize exposureReporter=_exposureReporter;
 @property(nonatomic) long long reportSessionId; // @synthesize reportSessionId=_reportSessionId;

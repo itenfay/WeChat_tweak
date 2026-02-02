@@ -12,7 +12,6 @@
     WATemplateAudioPlayer *_audioPlayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WATemplateAudioPlayer *audioPlayer; // @synthesize audioPlayer=_audioPlayer;
 @property(readonly, nonatomic) WASubscriptionMessagePageSheetViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void)onDeclineButtonClick;

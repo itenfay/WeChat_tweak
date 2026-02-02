@@ -127,7 +127,6 @@
     UIImageView *_keywordCheckBoxImg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needReportKeywordAnimate; // @synthesize needReportKeywordAnimate=_needReportKeywordAnimate;
 @property(nonatomic) _Bool isDismissing; // @synthesize isDismissing=_isDismissing;
 @property(nonatomic) _Bool isKeywordChecked; // @synthesize isKeywordChecked=_isKeywordChecked;

@@ -18,7 +18,6 @@
     UICollectionView *_operationItemsCollectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *operationItemsCollectionView; // @synthesize operationItemsCollectionView=_operationItemsCollectionView;
 @property(retain, nonatomic) UICollectionViewFlowLayout *operationItemsLayout; // @synthesize operationItemsLayout=_operationItemsLayout;
 @property(retain, nonatomic) MMLiveCameraOperationItem *mirrorItem; // @synthesize mirrorItem=_mirrorItem;

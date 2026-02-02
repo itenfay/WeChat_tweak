@@ -18,7 +18,6 @@
     id <WCPayCouponsListViewDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (_Bool)shouldPreventedAutorotateToInterfaceOrientation;
 - (void)closeView;
 - (void)OnSelectedFavor:(id)arg1;

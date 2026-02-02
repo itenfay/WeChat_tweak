@@ -15,7 +15,6 @@
 }
 
 + (id)addTransparencyViewWith:(id)arg1 targetView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *finderContact; // @synthesize finderContact=_finderContact;
 @property(retain, nonatomic) MMCPLabel *nickNameLabel; // @synthesize nickNameLabel=_nickNameLabel;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;

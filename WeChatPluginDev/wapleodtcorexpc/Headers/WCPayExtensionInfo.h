@@ -19,7 +19,6 @@
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
 + (id)getTextFrom:(struct XmlReaderNode_t *)arg1 atNodeName:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) int m_businessType; // @synthesize m_businessType=_m_businessType;
 @property(nonatomic) _Bool m_isNeedFailover; // @synthesize m_isNeedFailover=_m_isNeedFailover;
 @property(nonatomic) unsigned int m_expireTime; // @synthesize m_expireTime=_m_expireTime;

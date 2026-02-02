@@ -4,8 +4,8 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSObject (MMDebounce)
 - (void)doDebouncedTaskWithInterval:(double)arg1 taskId:(id)arg2 taskBlock:(CDUnknownBlockType)arg3;
 @end
-

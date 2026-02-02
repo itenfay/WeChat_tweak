@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 @protocol GC23070ReportDelegate;
@@ -39,7 +40,6 @@
 + (id)dataForFindMoreScene;
 + (id)dataForChatTabScene;
 + (id)reportModelForVc:(id)arg1 subKey:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isExposureReported; // @synthesize isExposureReported=_isExposureReported;
 @property(nonatomic) __weak id <GC23070ReportDelegate> reportDelegate; // @synthesize reportDelegate=_reportDelegate;
 @property(retain, nonatomic) NSString *subKey; // @synthesize subKey=_subKey;
@@ -73,4 +73,3 @@
 - (id)init;
 
 @end
-

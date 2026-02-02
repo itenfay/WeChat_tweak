@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWindowMgrObject, NSString;
 @protocol MMUIWindowPassThroughDelegate;
 
@@ -15,7 +17,6 @@
     MMWindowMgrObject *_rootWindowMgrObj;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMWindowMgrObject *rootWindowMgrObj; // @synthesize rootWindowMgrObj=_rootWindowMgrObj;
 @property(nonatomic) _Bool shouldHandleStatusBarAppearance; // @synthesize shouldHandleStatusBarAppearance=_shouldHandleStatusBarAppearance;
 @property(nonatomic) _Bool canMixWithOther; // @synthesize canMixWithOther=_canMixWithOther;
@@ -57,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

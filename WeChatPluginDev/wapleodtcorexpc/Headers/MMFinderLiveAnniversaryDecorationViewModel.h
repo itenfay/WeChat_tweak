@@ -22,7 +22,6 @@
     struct CGRect _rect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *resourcesPinningToken; // @synthesize resourcesPinningToken=_resourcesPinningToken;
 @property(nonatomic) long long defaultVerifyTime; // @synthesize defaultVerifyTime=_defaultVerifyTime;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;

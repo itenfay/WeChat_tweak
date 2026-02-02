@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIScrollView, WCBatchViewCardHelper, WCGiftCardData, WCGiftCardDetailView, WCGiftCardEnvelopeView, WCPreGiftCardData;
 
 @interface WCGiftCardViewController
@@ -19,7 +21,6 @@
     WCBatchViewCardHelper *_viewCardHelp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBatchViewCardHelper *viewCardHelp; // @synthesize viewCardHelp=_viewCardHelp;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) long long fromScence; // @synthesize fromScence=_fromScence;
@@ -76,4 +77,3 @@
 @property(readonly) Class superclass;
 
 @end
-

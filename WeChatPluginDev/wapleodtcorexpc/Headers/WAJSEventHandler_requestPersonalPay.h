@@ -22,7 +22,6 @@
     WCBizLoadingView *_m_loadView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBizLoadingView *m_loadView; // @synthesize m_loadView=_m_loadView;
 @property(retain, nonatomic) WCPayBizF2FPaidSuccViewController *paidSuccViewController; // @synthesize paidSuccViewController=_paidSuccViewController;
 @property(retain, nonatomic) WCPayControlData *m_data; // @synthesize m_data=_m_data;

@@ -12,7 +12,6 @@
     UINavigationController *_navigationController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 
 @end

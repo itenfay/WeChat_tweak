@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIView, NSString, RichTextView, UIButton, WAContact;
 
@@ -20,7 +21,6 @@
     UIButton *_bottomFeedBackButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *bottomFeedBackButton; // @synthesize bottomFeedBackButton=_bottomFeedBackButton;
 @property(retain, nonatomic) MMUIView *buttonSplitView; // @synthesize buttonSplitView=_buttonSplitView;
 @property(retain, nonatomic) RichTextView *teenagerProtectView; // @synthesize teenagerProtectView=_teenagerProtectView;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

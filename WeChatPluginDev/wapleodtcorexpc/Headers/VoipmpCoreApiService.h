@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface VoipmpCoreApiService : NSObject
 {
@@ -15,7 +16,6 @@
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2 refCntManager:(void *)arg3;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (int)getVideoData:(int)arg1 buf:(id)arg2 dataLen:(int)arg3 width:(int)arg4 height:(int)arg5 format:(int)arg6;
 - (int)sendVideoDataWithStride:(id)arg1 dataLen:(int)arg2 width:(int)arg3 height:(int)arg4 stride:(int)arg5 format:(int)arg6;
@@ -86,4 +86,3 @@
 - (shared_ptr_66b52eba)getDispatcher;
 
 @end
-

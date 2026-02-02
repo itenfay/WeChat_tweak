@@ -25,7 +25,6 @@
 + (_Bool)showPrivateMsgCell;
 + (_Bool)isInLimitState;
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPersonalCenterSidesButton *managerCell; // @synthesize managerCell=_managerCell;
 @property(retain, nonatomic) WCFinderPersonalCenterSidesButton *orderCell; // @synthesize orderCell=_orderCell;
 @property(retain, nonatomic) WCFinderPersonalCenterSidesButton *privateMsgCell; // @synthesize privateMsgCell=_privateMsgCell;

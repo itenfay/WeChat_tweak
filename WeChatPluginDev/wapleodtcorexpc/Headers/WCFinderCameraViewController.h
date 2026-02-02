@@ -15,7 +15,6 @@
     NSString *_traceId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *traceId; // @synthesize traceId=_traceId;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
 @property(retain, nonatomic) MMImagePickerManagerOptionObj *optionObj; // @synthesize optionObj=_optionObj;

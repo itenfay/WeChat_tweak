@@ -13,7 +13,6 @@
     NSString *_modifiedText;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *modifiedText; // @synthesize modifiedText=_modifiedText;
 @property(copy, nonatomic) NSString *originText; // @synthesize originText=_originText;
 

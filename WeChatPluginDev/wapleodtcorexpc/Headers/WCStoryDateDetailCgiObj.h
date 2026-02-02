@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCStoryDateDetailCgiObj
@@ -13,7 +15,6 @@
     NSString *_dateString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dateString; // @synthesize dateString=_dateString;
 @property(nonatomic) int timeZone; // @synthesize timeZone=_timeZone;
 @property(copy, nonatomic) CDUnknownBlockType dbSyncBlock; // @synthesize dbSyncBlock=_dbSyncBlock;
@@ -26,4 +27,3 @@
 - (id)init;
 
 @end
-

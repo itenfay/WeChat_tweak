@@ -95,7 +95,6 @@
     MultiSelectContactsSelectionOperation *_contactSelectViewSelectionOperation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultiSelectContactsSelectionOperation *contactSelectViewSelectionOperation; // @synthesize contactSelectViewSelectionOperation=_contactSelectViewSelectionOperation;
 @property(retain, nonatomic) NSMutableArray *selectionOperations; // @synthesize selectionOperations=_selectionOperations;
 @property(nonatomic) long long halfPanelOmitCnt; // @synthesize halfPanelOmitCnt=_halfPanelOmitCnt;

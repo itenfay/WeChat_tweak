@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIViewController;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _callback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(nonatomic) unsigned long long entryScene; // @synthesize entryScene=_entryScene;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
@@ -25,4 +25,3 @@
 - (_Bool)valid;
 
 @end
-

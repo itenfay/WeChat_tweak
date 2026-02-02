@@ -36,7 +36,6 @@
 + (void)PBArrayAdd_appNameEn;
 + (void)PBArrayAdd_appName;
 + (void)PBArrayAdd_appID;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int appShowFlag; // @synthesize appShowFlag=_appShowFlag;
 @property(nonatomic) unsigned int appJumpType; // @synthesize appJumpType=_appJumpType;
 @property(nonatomic) _Bool appNotShowNew; // @synthesize appNotShowNew=_appNotShowNew;

@@ -28,7 +28,6 @@
     unsigned long long _lastDetectionActionTimestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastDetectionActionTimestamp; // @synthesize lastDetectionActionTimestamp=_lastDetectionActionTimestamp;
 @property(nonatomic) unsigned long long lastWechatDetectionEndTick; // @synthesize lastWechatDetectionEndTick=_lastWechatDetectionEndTick;
 @property(nonatomic) unsigned long long lastFinderDetectionEndTick; // @synthesize lastFinderDetectionEndTick=_lastFinderDetectionEndTick;

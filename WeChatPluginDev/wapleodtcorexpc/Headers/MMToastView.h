@@ -24,7 +24,6 @@
     MMUILabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) SightIconView *sightIconView; // @synthesize sightIconView=_sightIconView;
 @property(retain, nonatomic) MMUIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;

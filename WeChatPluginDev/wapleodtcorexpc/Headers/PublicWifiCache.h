@@ -11,7 +11,6 @@
 }
 
 + (id)getInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *notRegisterDict; // @synthesize notRegisterDict=_notRegisterDict;
 - (id)retrivalApAuthForSsid:(id)arg1;
 - (_Bool)removeApBase:(id)arg1;

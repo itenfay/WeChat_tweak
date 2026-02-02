@@ -13,7 +13,6 @@
 }
 
 + (id)instanceWithClickedPosition:(id)arg1 identifier:(id)arg2 name:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSArray *clickedPosition; // @synthesize clickedPosition=_clickedPosition;

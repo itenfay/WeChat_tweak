@@ -18,7 +18,6 @@
 }
 
 + (double)heightForSystemCellWithWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *redDotCountLabel; // @synthesize redDotCountLabel=_redDotCountLabel;
 @property(nonatomic) __weak UIView *lineView; // @synthesize lineView=_lineView;
 @property(nonatomic) __weak UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;

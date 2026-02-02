@@ -19,7 +19,6 @@
     id <MiniTaskTransitionAnimationDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MiniTaskTransitionAnimationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MinimizeTaskData *launchTaskData; // @synthesize launchTaskData=_launchTaskData;
 @property(retain, nonatomic) UIImageView *fakeSnapshot; // @synthesize fakeSnapshot=_fakeSnapshot;

@@ -14,7 +14,6 @@
     id <ContactTagNoTagContactsDetailViewControllerDelegate> _m_contactTagNoTagDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ContactTagNoTagContactsDetailViewControllerDelegate> m_contactTagNoTagDelegate; // @synthesize m_contactTagNoTagDelegate=_m_contactTagNoTagDelegate;
 - (void)reportNoTagContactSetTag;
 - (void)onNoTagBatchSetTagSuccess;

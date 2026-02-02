@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FlutterMethodChannel, NSString, NSURLRequest, WCAdFormWebViewJSLogic, YYWKWebView;
 
 @interface WCAdPlatformViewFormWebView
@@ -18,7 +20,6 @@
     NSString *_qrExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bgTransparent; // @synthesize bgTransparent=_bgTransparent;
 @property(nonatomic) _Bool hiddenBeforeLoad; // @synthesize hiddenBeforeLoad=_hiddenBeforeLoad;
 @property(retain, nonatomic) NSString *qrExtInfo; // @synthesize qrExtInfo=_qrExtInfo;
@@ -55,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

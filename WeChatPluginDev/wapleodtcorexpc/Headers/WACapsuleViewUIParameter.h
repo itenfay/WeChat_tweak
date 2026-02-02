@@ -17,7 +17,6 @@
     unsigned long long _state;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needToPutBackIfInterrupted; // @synthesize needToPutBackIfInterrupted=_needToPutBackIfInterrupted;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) double duration; // @synthesize duration=_duration;

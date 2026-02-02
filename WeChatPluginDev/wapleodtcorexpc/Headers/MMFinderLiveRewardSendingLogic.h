@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveRewardGiftExtInfo, MMFinderLiveCommomQueue, MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMLiveRewardGiftSelectionView, MMLiveRewardQuotaSheetView, NSData, NSMutableDictionary, NSString, WCFinderContact;
 @protocol MMFinderLiveGiftSendMoreBubbleHosting, MMFinderLiveRewardSendingLogicForOperationDelegate, MMFinderLiveRewardSendingLogicForReceivingDelegate;
@@ -42,7 +43,6 @@
     unsigned long long _currentSendMoreBubbleHost;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentSendMoreBubbleHost; // @synthesize currentSendMoreBubbleHost=_currentSendMoreBubbleHost;
 @property(retain, nonatomic) NSMutableDictionary *comboId2RewardPrepareBufArray; // @synthesize comboId2RewardPrepareBufArray=_comboId2RewardPrepareBufArray;
 @property(nonatomic) unsigned long long nextFlowSignHistoryRewardQuota; // @synthesize nextFlowSignHistoryRewardQuota=_nextFlowSignHistoryRewardQuota;
@@ -139,4 +139,3 @@
 @property(readonly) Class superclass;
 
 @end
-

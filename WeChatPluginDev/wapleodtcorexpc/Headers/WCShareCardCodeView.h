@@ -40,7 +40,6 @@
     NSString *_dynamicCode;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dynamicCode; // @synthesize dynamicCode=_dynamicCode;
 @property(nonatomic) __weak WCCardDynamicCodeGenerator *dynamicCodeGenerator; // @synthesize dynamicCodeGenerator=_dynamicCodeGenerator;
 @property(retain, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;

@@ -22,7 +22,6 @@
 
 + (long long)videoDownloadCategoryForMediaItem:(id)arg1;
 + (long long)videoDownloadCategoryForDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicDownloadingArgsWraps; // @synthesize dicDownloadingArgsWraps=_dicDownloadingArgsWraps;
 @property(retain, nonatomic) NSMutableDictionary *dicDownloadingInfoWraps; // @synthesize dicDownloadingInfoWraps=_dicDownloadingInfoWraps;
 @property(retain, nonatomic) NSMutableDictionary *dicStreamingTask; // @synthesize dicStreamingTask=_dicStreamingTask;

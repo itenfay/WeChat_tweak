@@ -22,7 +22,6 @@
     id <FaceRecogGuideViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FaceRecogGuideViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) FaceRecogGuideInfo *guideInfo; // @synthesize guideInfo=_guideInfo;
 @property(retain, nonatomic) UIView *connectLineView; // @synthesize connectLineView=_connectLineView;

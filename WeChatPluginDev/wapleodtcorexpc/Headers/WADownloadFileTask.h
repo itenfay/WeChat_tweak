@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableDictionary, NSString, NSURLSession, NSURLSessionDownloadTask, WADownloadFileConfig, WADownloadFileProgressInfo;
 @protocol OS_dispatch_queue, WADownloadFileTaskDelegate;
@@ -55,7 +56,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain) WADownloadFileProgressInfo *lastNotNotifyProgressInfo; // @synthesize lastNotNotifyProgressInfo=_lastNotNotifyProgressInfo;
 @property unsigned long long lastUpdateProgressAbsoluteTime; // @synthesize lastUpdateProgressAbsoluteTime=_lastUpdateProgressAbsoluteTime;
 @property _Bool isCanceled; // @synthesize isCanceled=_isCanceled;
@@ -108,4 +108,3 @@
 - (id)initWithAppID:(id)arg1 urlSession:(id)arg2 workerQueue:(id)arg3 taskID:(id)arg4 downloadConfig:(id)arg5 isUseCronet:(_Bool)arg6 useQuic:(_Bool)arg7 useHttp2:(_Bool)arg8 useCache:(_Bool)arg9 appType:(unsigned int)arg10;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 @protocol OS_dispatch_queue;
@@ -14,7 +15,6 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableDictionary *dicContainer; // @synthesize dicContainer=_dicContainer;
 - (id)containerAllValues;
@@ -30,4 +30,3 @@
 - (id)initWithQueueName:(id)arg1;
 
 @end
-

@@ -13,7 +13,6 @@
     NSString *_sourceBackupUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceBackupUrl; // @synthesize sourceBackupUrl=_sourceBackupUrl;
 @property(retain, nonatomic) NSString *sourceUrl; // @synthesize sourceUrl=_sourceUrl;
 @property(retain, nonatomic) NSString *sourceText; // @synthesize sourceText=_sourceText;

@@ -12,7 +12,6 @@
     UISwitch *_labSwitch;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UISwitch *labSwitch; // @synthesize labSwitch=_labSwitch;
 - (void)initTableView;
 - (id)genFeedbackFromStr;

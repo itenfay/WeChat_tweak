@@ -15,7 +15,6 @@
     unsigned long long _pickerMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pickerMode; // @synthesize pickerMode=_pickerMode;
 @property(retain, nonatomic) MMPageSheetAdapter *pageSheetAdapter; // @synthesize pageSheetAdapter=_pageSheetAdapter;
 @property(retain, nonatomic) UIPickerView *pickerView; // @synthesize pickerView=_pickerView;

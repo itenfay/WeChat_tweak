@@ -27,7 +27,6 @@
     MMInputToolView *_inputToolView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMInputToolView *inputToolView; // @synthesize inputToolView=_inputToolView;
 @property(retain, nonatomic) ChatUnavailableTipsView *chatroomUnavailableTipsView; // @synthesize chatroomUnavailableTipsView=_chatroomUnavailableTipsView;
 @property(nonatomic) __weak WCTopicSearchViewController *topicSearchVC; // @synthesize topicSearchVC=_topicSearchVC;

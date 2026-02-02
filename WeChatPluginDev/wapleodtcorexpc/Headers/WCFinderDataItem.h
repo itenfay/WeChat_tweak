@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ConcertTicketInfo, FinderCommByPass, FinderExtendedReading, FinderLiveQuickReplyWordingInfo, FinderLocation, FinderMusicInfo, FinderObjectAsyncLoadInfo, FinderObjectExtend, FinderStreamDivider, FinderTipsInfo, FinderTopic, MMFinderLiveGoodsItem, MMLiveAdsParams, MMMusicMVModel, NSArray, NSData, NSMutableArray, NSString, StatusFooterJumpFinderFeed, WCBulletinInfo, WCFinderAttachmentList, WCFinderCommentMutableArray, WCFinderContact, WCFinderDataItemInnerModel, WCFinderDataItemRecommendConfiguration, WCFinderFeedBindEventInfo, WCFinderFoldLayout, WCFinderFriendsLikeMutableArray, WCFinderJumpInfoContainer, WCFinderLikeMutableArray, WCFinderLiveInfo, WCFinderLocationInfo, WCFinderMedia, WCFinderMegaVideo, WCFinderObjectHotTopicMutableArray, WCFinderObjectHotWordInfo, WCFinderRecommenderMutableArray, WCFinderRedDotTipsShowInfo, WCFinderSnsShareInfo;
 
@@ -489,7 +490,6 @@
 + (id)dataItemFromTingBuffer:(id)arg1;
 + (unsigned long long)columnType;
 + (id)unarchiveWithWCTValue:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMegaVideo *longVideo; // @synthesize longVideo=_longVideo;
 @property(nonatomic) unsigned long long objectVersion; // @synthesize objectVersion=_objectVersion;
 @property(retain, nonatomic) WCFinderDataItemInnerModel *innerModel; // @synthesize innerModel=_innerModel;
@@ -840,4 +840,3 @@
 @property(readonly) Class superclass;
 
 @end
-

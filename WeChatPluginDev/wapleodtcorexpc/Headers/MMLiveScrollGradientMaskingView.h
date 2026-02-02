@@ -17,7 +17,6 @@
     CALayer *_fadeoutLayerForEnding;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *fadeoutLayerForEnding; // @synthesize fadeoutLayerForEnding=_fadeoutLayerForEnding;
 @property(retain, nonatomic) CALayer *fadeoutLayerForBeginning; // @synthesize fadeoutLayerForBeginning=_fadeoutLayerForBeginning;
 @property(nonatomic) double gradientFadeoutLength; // @synthesize gradientFadeoutLength=_gradientFadeoutLength;

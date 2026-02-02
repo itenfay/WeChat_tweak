@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderPostLiveMsgCGI
@@ -19,7 +21,6 @@
     NSString *_floatMsgProductId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *floatMsgProductId; // @synthesize floatMsgProductId=_floatMsgProductId;
 @property(nonatomic) unsigned int pbFloatMsgType; // @synthesize pbFloatMsgType=_pbFloatMsgType;
 @property(nonatomic) unsigned int isFloatMsg; // @synthesize isFloatMsg=_isFloatMsg;
@@ -36,4 +37,3 @@
 - (id)initWithFinderTaskId:(id)arg1 msgContent:(id)arg2 liveCookies:(id)arg3 clientMsgId:(id)arg4 msgType:(unsigned int)arg5 selfNickName:(id)arg6 extraInfo:(id)arg7 successBlock:(CDUnknownBlockType)arg8 failBlock:(CDUnknownBlockType)arg9;
 
 @end
-

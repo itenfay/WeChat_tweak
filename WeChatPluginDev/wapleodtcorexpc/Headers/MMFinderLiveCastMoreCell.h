@@ -17,7 +17,6 @@
 
 + (double)heightForViewItem:(id)arg1 inTableView:(id)arg2;
 + (id)defaultCellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *titleTextView; // @synthesize titleTextView=_titleTextView;
 @property(retain, nonatomic) MMUIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;

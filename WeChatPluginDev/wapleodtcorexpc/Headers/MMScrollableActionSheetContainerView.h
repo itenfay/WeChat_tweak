@@ -14,7 +14,6 @@
     MMScrollableActionSheetContainerDownStableView *_downStableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMScrollableActionSheetContainerDownStableView *downStableView; // @synthesize downStableView=_downStableView;
 @property(retain, nonatomic) MMScrollableActionSheetContainerUpScrollView *upScrollView; // @synthesize upScrollView=_upScrollView;
 @property(nonatomic) __weak id <MMScrollableActionSheetContainerViewDelegate> delegate; // @synthesize delegate=_delegate;

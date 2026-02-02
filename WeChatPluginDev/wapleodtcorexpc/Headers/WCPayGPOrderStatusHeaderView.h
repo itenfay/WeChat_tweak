@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AAQueryDetailRes, CContact, MMUIView, NSString, RichTextView;
 
 @interface WCPayGPOrderStatusHeaderView
@@ -24,7 +26,6 @@
     CDUnknownBlockType _onClickExpandThemeBtn;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onClickExpandThemeBtn; // @synthesize onClickExpandThemeBtn=_onClickExpandThemeBtn;
 @property(copy, nonatomic) CDUnknownBlockType onClickSetPayerRemarkBtn; // @synthesize onClickSetPayerRemarkBtn=_onClickSetPayerRemarkBtn;
 @property(copy, nonatomic) CDUnknownBlockType onClickRemindPayerBtn; // @synthesize onClickRemindPayerBtn=_onClickRemindPayerBtn;
@@ -73,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

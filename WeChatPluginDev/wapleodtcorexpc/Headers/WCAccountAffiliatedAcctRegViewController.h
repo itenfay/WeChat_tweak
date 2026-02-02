@@ -17,7 +17,6 @@
     UIButton *_nextBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *nextBtn; // @synthesize nextBtn=_nextBtn;
 @property(retain, nonatomic) WCAgreementCheckBox *checkBox; // @synthesize checkBox=_checkBox;
 @property(retain, nonatomic) WCAccountTextFieldItem *textFieldNameItem; // @synthesize textFieldNameItem=_textFieldNameItem;

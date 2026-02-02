@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AESEncryptObject, CLLocationManager, MMLocationCacheItem, MMLocationCacheStorage, MMLocationDB, MMLocationMgrUseInfoHandle, MMLocationPoiDetailDB, NSMutableArray, NSString, RSAEncryptObject;
 
 @interface MMLocationMgr
@@ -23,7 +25,6 @@
 + (int)rangeTypeForDistance:(double)arg1;
 + (void)logForAccuracyAuthorizationOperationWithOpResult:(int)arg1 scene:(int)arg2;
 + (void)logForAccuracyAuthorizationChangedWithAuthType:(int)arg1 scene:(int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLocationCacheItem *m_realtimeLocationCache; // @synthesize m_realtimeLocationCache=_m_realtimeLocationCache;
 @property(retain, nonatomic) AESEncryptObject *m_aesEncryptObject; // @synthesize m_aesEncryptObject=_m_aesEncryptObject;
 @property(retain, nonatomic) RSAEncryptObject *m_rsaEncryptObject; // @synthesize m_rsaEncryptObject=_m_rsaEncryptObject;
@@ -117,4 +118,3 @@
 @property(readonly) Class superclass;
 
 @end
-

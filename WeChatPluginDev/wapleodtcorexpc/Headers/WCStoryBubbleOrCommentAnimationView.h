@@ -21,7 +21,6 @@
     double _itemMoveingVelocity;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double itemMoveingVelocity; // @synthesize itemMoveingVelocity=_itemMoveingVelocity;
 @property(nonatomic) _Bool isInBackground; // @synthesize isInBackground=_isInBackground;
 @property(retain, nonatomic) NSSet *unreadCommentIdSet; // @synthesize unreadCommentIdSet=_unreadCommentIdSet;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveRewardGiftItem, MMFinderLiveTask, MMFinderLiveTaskId, MMUILabel, MMUIView, NSString, UIImageView, UIView;
 
 @interface MMLiveRecommendGiftTipsView
@@ -21,7 +23,6 @@
     UIView *_seperatorLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperatorLine; // @synthesize seperatorLine=_seperatorLine;
 @property(retain, nonatomic) UIImageView *coinIconView; // @synthesize coinIconView=_coinIconView;
 @property(retain, nonatomic) MMUILabel *priceLabel; // @synthesize priceLabel=_priceLabel;
@@ -59,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

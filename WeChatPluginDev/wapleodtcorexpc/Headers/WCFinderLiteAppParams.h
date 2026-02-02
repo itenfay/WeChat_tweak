@@ -17,7 +17,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(copy, nonatomic) NSString *defaultUrl; // @synthesize defaultUrl=_defaultUrl;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;

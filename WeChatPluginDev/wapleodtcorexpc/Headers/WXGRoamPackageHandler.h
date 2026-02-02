@@ -17,7 +17,6 @@
 + (id)getMediaIDForMessage:(id)arg1 dataID:(id)arg2;
 + (unsigned long long)mediaFiltered:(id)arg1 svrIDs:(id)arg2 mediaIDs:(id)arg3 mediaTypes:(id)arg4 resWithFilteredList:(id)arg5;
 + (id)convertFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *producerMap; // @synthesize producerMap=_producerMap;
 @property(nonatomic) unsigned long long msgListTotalSizeLimit; // @synthesize msgListTotalSizeLimit=_msgListTotalSizeLimit;
 @property(retain, nonatomic) NSRecursiveLock *handlerLock; // @synthesize handlerLock=_handlerLock;

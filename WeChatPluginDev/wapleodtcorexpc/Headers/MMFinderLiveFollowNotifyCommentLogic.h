@@ -18,7 +18,6 @@
     NSMutableArray *_removedFollowContactList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAsyncSorting; // @synthesize isAsyncSorting=_isAsyncSorting;
 @property(retain, nonatomic) NSMutableArray *removedFollowContactList; // @synthesize removedFollowContactList=_removedFollowContactList;
 @property(retain, nonatomic) NSMutableArray *pendingFollowContactList; // @synthesize pendingFollowContactList=_pendingFollowContactList;

@@ -23,7 +23,6 @@
 }
 
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) unsigned long long styleMode; // @synthesize styleMode=_styleMode;
 @property(retain, nonatomic) UILabel *reasonLabel; // @synthesize reasonLabel=_reasonLabel;

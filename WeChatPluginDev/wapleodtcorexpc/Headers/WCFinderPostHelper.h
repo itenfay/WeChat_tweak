@@ -15,7 +15,6 @@
 }
 
 + (void)showPostActionSheet:(id)arg1 params:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPostMgrDelegateProxy *vcDelegate; // @synthesize vcDelegate=_vcDelegate;
 @property(nonatomic) __weak NSObject *owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) WCFinderPostMgr *postMgr; // @synthesize postMgr=_postMgr;

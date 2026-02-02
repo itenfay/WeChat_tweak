@@ -12,7 +12,6 @@
     WCTTable *_mediaInfoTable;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCTTable *mediaInfoTable;
 @property(readonly, nonatomic) WCTTable *postInfoTable;
 @property(readonly, nonatomic) WCTDatabase *db;

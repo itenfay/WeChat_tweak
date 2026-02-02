@@ -11,7 +11,6 @@
     NSString *_corpid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *corpid; // @synthesize corpid=_corpid;
 @property(copy, nonatomic) NSString *wwkfUrl; // @synthesize wwkfUrl=_wwkfUrl;
 - (void)backTo3rdApp:(int)arg1 extMsg:(id)arg2;

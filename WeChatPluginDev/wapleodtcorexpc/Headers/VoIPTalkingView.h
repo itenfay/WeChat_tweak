@@ -105,7 +105,6 @@
 }
 
 + (double)smallCameraAlphaAnmationTime;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool clearedScreen; // @synthesize clearedScreen=_clearedScreen;
 @property(retain, nonatomic) VoIPMPUIScreenView *screenView; // @synthesize screenView=_screenView;
 @property(nonatomic) _Bool isCameraViewAnimation; // @synthesize isCameraViewAnimation=_isCameraViewAnimation;

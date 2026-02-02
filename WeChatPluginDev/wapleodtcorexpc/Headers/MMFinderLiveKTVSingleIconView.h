@@ -15,7 +15,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ktvThemeResourceFetchSessionToken; // @synthesize ktvThemeResourceFetchSessionToken=_ktvThemeResourceFetchSessionToken;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;

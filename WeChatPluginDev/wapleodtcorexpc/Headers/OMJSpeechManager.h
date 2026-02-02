@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OMJSpeechManager : NSObject
 {
@@ -11,7 +12,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) SharedPtr_c8455cb5 backingSpeechManager; // @synthesize backingSpeechManager=_backingSpeechManager;
 - (long long)queryAsyncSpeechSynthRequestWithSubmitTaskID:(id)arg1 iLinkAppRequest:(id)arg2 iLinkCmd:(id)arg3 contextBuff:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (long long)submitAsyncSpeechSynthRequestWithInfo:(id)arg1 iLinkAppRequest:(id)arg2 iLinkCmd:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -30,4 +30,3 @@
 - (id)initWithBackingSpeechManager:(const void *)arg1;
 
 @end
-

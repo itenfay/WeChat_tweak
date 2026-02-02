@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_endTimestamp;
 + (void)PBArrayAdd_clicked;
 + (void)PBArrayAdd_announcement;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int endTimestamp; // @synthesize endTimestamp=_endTimestamp;
 @property(nonatomic) _Bool clicked; // @synthesize clicked=_clicked;
 @property(retain, nonatomic) Announcement *announcement; // @synthesize announcement=_announcement;

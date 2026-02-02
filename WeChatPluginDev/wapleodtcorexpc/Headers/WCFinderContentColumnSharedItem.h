@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_iconUrl_1;
 + (void)PBArrayAdd_iconUrl;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *base64Cardbuffer; // @synthesize base64Cardbuffer=_base64Cardbuffer;
 @property(copy, nonatomic) NSData *cardbuffer; // @synthesize cardbuffer=_cardbuffer;
 @property(copy, nonatomic) NSString *iconUrl_3; // @synthesize iconUrl_3=_iconUrl_3;

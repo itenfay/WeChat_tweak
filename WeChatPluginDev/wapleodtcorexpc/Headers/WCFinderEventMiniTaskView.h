@@ -24,7 +24,6 @@
     UIImageView *_miniTaskRightArrowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *miniTaskRightArrowView; // @synthesize miniTaskRightArrowView=_miniTaskRightArrowView;
 @property(retain, nonatomic) UILabel *memberNumLabel; // @synthesize memberNumLabel=_memberNumLabel;
 @property(retain, nonatomic) UILabel *miniTaskEntranceWordingLabel; // @synthesize miniTaskEntranceWordingLabel=_miniTaskEntranceWordingLabel;

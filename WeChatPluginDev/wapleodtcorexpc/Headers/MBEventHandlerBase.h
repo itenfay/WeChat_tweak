@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MBJsApiMetaInfo, MBRuntime, MagicBrushService;
 @protocol IMBBizContextDelegate;
@@ -18,7 +19,6 @@
     MagicBrushService *_service;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MagicBrushService *service; // @synthesize service=_service;
 @property(nonatomic) __weak MBRuntime *runtime; // @synthesize runtime=_runtime;
 @property(readonly, nonatomic) unsigned int invokeContextId; // @synthesize invokeContextId=_invokeContextId;
@@ -45,4 +45,3 @@
 - (id)getFileSystem;
 
 @end
-

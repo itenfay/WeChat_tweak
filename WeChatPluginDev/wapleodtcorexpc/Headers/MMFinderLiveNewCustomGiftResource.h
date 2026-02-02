@@ -20,7 +20,6 @@
 
 + (_Bool)isResourcePBValid:(id)arg1 business:(id)arg2;
 + (id)transferFromResourcePB:(id)arg1 business:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveNewCustomGiftItemResourceURL *signThumbnail; // @synthesize signThumbnail=_signThumbnail;
 @property(retain, nonatomic) MMFinderLiveNewCustomGiftItemResourceURL *signPreview; // @synthesize signPreview=_signPreview;
 @property(retain, nonatomic) MMFinderLiveNewCustomGiftItemResourceURL *landscapeAnimation; // @synthesize landscapeAnimation=_landscapeAnimation;

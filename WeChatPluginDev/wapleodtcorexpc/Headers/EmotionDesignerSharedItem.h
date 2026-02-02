@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_designerName;
 + (void)PBArrayAdd_oldRedirectUrl;
 + (void)PBArrayAdd_designerUin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *designerName; // @synthesize designerName=_designerName;
 @property(retain, nonatomic) NSString *oldRedirectUrl; // @synthesize oldRedirectUrl=_oldRedirectUrl;
 @property(nonatomic) unsigned int designerUin; // @synthesize designerUin=_designerUin;

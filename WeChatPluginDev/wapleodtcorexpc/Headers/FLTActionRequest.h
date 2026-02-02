@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithCmdId:(id)arg1 proto:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FLTPlatformProto *proto; // @synthesize proto=_proto;
 @property(copy, nonatomic) NSString *cmdId; // @synthesize cmdId=_cmdId;
 - (id)toList;

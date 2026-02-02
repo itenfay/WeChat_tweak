@@ -15,7 +15,6 @@
     id <MMFinderLivePivotEducationViewModelDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLivePivotEducationViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double tipsAlpha; // @synthesize tipsAlpha=_tipsAlpha;
 @property(nonatomic) double tipsHeight; // @synthesize tipsHeight=_tipsHeight;

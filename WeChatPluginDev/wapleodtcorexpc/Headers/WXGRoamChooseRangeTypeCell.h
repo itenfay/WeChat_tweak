@@ -16,7 +16,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *rightIcon; // @synthesize rightIcon=_rightIcon;
 @property(retain, nonatomic) UIImageView *selectedIcon; // @synthesize selectedIcon=_selectedIcon;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

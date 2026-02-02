@@ -15,7 +15,6 @@
 + (id)uniqueID;
 + (id)nullID;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

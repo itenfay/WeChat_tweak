@@ -14,7 +14,6 @@
     id <GameLifeBlackHalfViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <GameLifeBlackHalfViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)colorForPageSheetCancelButton;
 - (id)colorForPageSheetConfirmButton;

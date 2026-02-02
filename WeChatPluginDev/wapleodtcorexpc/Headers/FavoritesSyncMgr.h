@@ -18,7 +18,6 @@
     NSObject<OS_dispatch_queue> *m_handleCmdListQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavoritesSyncMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)ReachabilityChange:(unsigned int)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

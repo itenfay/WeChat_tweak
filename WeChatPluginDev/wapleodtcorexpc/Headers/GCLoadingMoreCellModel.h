@@ -13,7 +13,6 @@
     UIView<GCLoadingViewProtocol> *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 @property(retain, nonatomic) UIView<GCLoadingViewProtocol> *loadingView; // @synthesize loadingView=_loadingView;
 @property(nonatomic) __weak id <GCLoadMoreProtocol> loadMoreDelegate; // @synthesize loadMoreDelegate=_loadMoreDelegate;

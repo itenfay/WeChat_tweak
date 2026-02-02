@@ -18,7 +18,6 @@
     unsigned long long m_uiFileTotalLen;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiFileType; // @synthesize m_uiFileType;
 @property(nonatomic) unsigned long long m_uiFileTotalLen; // @synthesize m_uiFileTotalLen;
 @property(retain, nonatomic) NSString *m_nsAesKey; // @synthesize m_nsAesKey;

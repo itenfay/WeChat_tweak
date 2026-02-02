@@ -11,7 +11,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *actionLabel; // @synthesize actionLabel=_actionLabel;
 - (void)onClickedSmartBox;
 - (void)customLayoutUI;

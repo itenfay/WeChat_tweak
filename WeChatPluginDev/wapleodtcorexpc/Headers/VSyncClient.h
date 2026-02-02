@@ -15,7 +15,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allowPauseAfterVsync; // @synthesize allowPauseAfterVsync=_allowPauseAfterVsync;
 - (id)getDisplayLink;
 - (double)getRefreshRate;

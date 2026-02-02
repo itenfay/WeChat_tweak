@@ -24,7 +24,6 @@
     WCAccountErrorHandleLogic *_passwordInputErrorLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAccountErrorHandleLogic *passwordInputErrorLogic; // @synthesize passwordInputErrorLogic=_passwordInputErrorLogic;
 @property(nonatomic) _Bool m_bDontFillWTBuf; // @synthesize m_bDontFillWTBuf;
 @property(nonatomic) unsigned int m_uiCGIScene; // @synthesize m_uiCGIScene;

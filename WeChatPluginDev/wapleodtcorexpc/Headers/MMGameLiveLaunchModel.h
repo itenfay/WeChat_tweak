@@ -16,7 +16,6 @@
     NSString *_ticket;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ticket; // @synthesize ticket=_ticket;
 @property(retain, nonatomic) NSMutableDictionary *gameLiveExtInfo; // @synthesize gameLiveExtInfo=_gameLiveExtInfo;
 @property(nonatomic) unsigned long long ticketExpiredTime; // @synthesize ticketExpiredTime=_ticketExpiredTime;

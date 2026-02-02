@@ -16,7 +16,6 @@
     UISwitch *_uiSwitch;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UISwitch *uiSwitch; // @synthesize uiSwitch=_uiSwitch;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) _Bool isOn; // @synthesize isOn=_isOn;

@@ -51,7 +51,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int callFlag; // @synthesize callFlag=_callFlag;
 @property(nonatomic) unsigned int countyrCodeType; // @synthesize countyrCodeType=_countyrCodeType;
 @property(nonatomic) unsigned int dialScene; // @synthesize dialScene=_dialScene;

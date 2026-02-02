@@ -13,7 +13,6 @@
     _Bool _shouldAsyncStartPlayer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAsyncStartPlayer; // @synthesize shouldAsyncStartPlayer=_shouldAsyncStartPlayer;
 - (void)dealloc;
 - (void)Reset;

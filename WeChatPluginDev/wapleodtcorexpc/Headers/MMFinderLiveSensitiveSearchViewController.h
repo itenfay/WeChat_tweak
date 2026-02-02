@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveCommentSensitiveSearchTableViewModel, MMFinderLiveTask, MMFinderLiveTaskId, MMTableView, NSMutableArray, NSString;
 
 @interface MMFinderLiveSensitiveSearchViewController
@@ -17,7 +19,6 @@
     NSString *_lastSearchQuery;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastSearchQuery; // @synthesize lastSearchQuery=_lastSearchQuery;
 @property(nonatomic) _Bool isSearching; // @synthesize isSearching=_isSearching;
 @property(retain, nonatomic) NSMutableArray *sourceDataItemList; // @synthesize sourceDataItemList=_sourceDataItemList;
@@ -62,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

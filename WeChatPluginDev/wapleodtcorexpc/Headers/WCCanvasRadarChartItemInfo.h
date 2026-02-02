@@ -12,7 +12,6 @@
     double _value;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *score; // @synthesize score=_score;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;

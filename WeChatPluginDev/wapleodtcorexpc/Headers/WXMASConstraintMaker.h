@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, UIView, WXMASConstraint;
 
@@ -15,7 +16,6 @@
     NSMutableArray *_constraints;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) _Bool removeExisting; // @synthesize removeExisting=_removeExisting;
@@ -63,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

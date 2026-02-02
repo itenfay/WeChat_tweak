@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIScrollView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIView;
 
@@ -13,7 +14,6 @@
     UIView *_flutterView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *flutterView; // @synthesize flutterView=_flutterView;
 @property(copy, nonatomic) CDUnknownBlockType offsetCallback; // @synthesize offsetCallback=_offsetCallback;
 - (void)sendSubviewToBack:(id)arg1;
@@ -34,4 +34,3 @@
 @property(readonly) Class superclass;
 
 @end
-

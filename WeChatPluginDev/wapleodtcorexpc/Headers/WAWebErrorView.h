@@ -22,7 +22,6 @@
     NSObject<WAWebErrorViewDelegate> *_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<WAWebErrorViewDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void)onOperationButtonTapped:(id)arg1;
 - (void)onLoadImageOK:(id)arg1;

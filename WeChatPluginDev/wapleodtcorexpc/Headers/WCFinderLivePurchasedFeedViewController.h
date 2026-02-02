@@ -17,7 +17,6 @@
     struct CGSize _lastLayoutSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastLayoutSize; // @synthesize lastLayoutSize=_lastLayoutSize;
 @property(retain, nonatomic) MMFinderLivePurchasedFeedViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) MMTableView *purchasedFeedsTableView; // @synthesize purchasedFeedsTableView=_purchasedFeedsTableView;

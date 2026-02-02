@@ -16,7 +16,6 @@
 + (_Bool)enableHttpCustomScheme;
 + (id)targetUrlSchemeArray;
 + (void)forceInitializeWebPlatformStrategies;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFirstLoad; // @synthesize isFirstLoad=_isFirstLoad;
 @property(retain, nonatomic) YYWKGameSchemeHandler *schemeHandler; // @synthesize schemeHandler=_schemeHandler;
 @property(nonatomic) _Bool didSuccessUseSchemeMethod; // @synthesize didSuccessUseSchemeMethod=_didSuccessUseSchemeMethod;

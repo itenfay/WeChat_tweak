@@ -14,7 +14,6 @@
     NSDictionary *_conflictTabMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *conflictTabMap; // @synthesize conflictTabMap=_conflictTabMap;
 @property(retain, nonatomic) NSMutableSet *requestingTabSet; // @synthesize requestingTabSet=_requestingTabSet;
 @property(retain, nonatomic) NSMutableArray *prefetchQueue; // @synthesize prefetchQueue=_prefetchQueue;

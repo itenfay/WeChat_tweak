@@ -20,7 +20,6 @@
     id <GameNoticeAdditionalInfoViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <GameNoticeAdditionalInfoViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *tapView; // @synthesize tapView=_tapView;
 @property(retain, nonatomic) MMUIButton *additionalButton; // @synthesize additionalButton=_additionalButton;

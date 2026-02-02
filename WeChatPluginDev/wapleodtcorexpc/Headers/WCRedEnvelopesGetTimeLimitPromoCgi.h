@@ -11,7 +11,6 @@
 }
 
 + (id)GetLastTimeLimitPromoResponse;
-- (void).cxx_destruct;
 - (unsigned long long)getCgiNewDNSBusinessType;
 - (void)saveTimeLimitPromotion:(id)arg1;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;

@@ -16,7 +16,6 @@
 
 + (double)heightWithInteractionItem:(id)arg1 width:(double)arg2;
 + (double)titleWidthWithInteractionItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;

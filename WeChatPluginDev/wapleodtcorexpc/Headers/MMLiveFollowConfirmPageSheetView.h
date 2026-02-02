@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveContext, MMUILabel, MMWebImageView, NSString, UIImageView, UIScrollView, WCFinderContact, WCFinderHeadImageView;
 
 @interface MMLiveFollowConfirmPageSheetView
@@ -26,7 +28,6 @@
     long long _previousOrientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long previousOrientation; // @synthesize previousOrientation=_previousOrientation;
 @property(nonatomic) _Bool isTop; // @synthesize isTop=_isTop;
 @property(nonatomic) _Bool isPopup; // @synthesize isPopup=_isPopup;
@@ -78,4 +79,3 @@
 @property(readonly) Class superclass;
 
 @end
-

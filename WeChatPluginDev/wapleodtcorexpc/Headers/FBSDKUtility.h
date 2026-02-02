@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface FBSDKUtility : NSObject
 {
@@ -18,4 +19,3 @@
 + (id)dictionaryWithQueryString:(id)arg1;
 
 @end
-

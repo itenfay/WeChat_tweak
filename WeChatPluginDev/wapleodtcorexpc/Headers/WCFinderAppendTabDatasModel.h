@@ -19,7 +19,6 @@
     WCFinderRedDotCtrlInfo *_redDotCtrlInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRedDotCtrlInfo *redDotCtrlInfo; // @synthesize redDotCtrlInfo=_redDotCtrlInfo;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(copy, nonatomic) NSString *scrollToFeedId; // @synthesize scrollToFeedId=_scrollToFeedId;

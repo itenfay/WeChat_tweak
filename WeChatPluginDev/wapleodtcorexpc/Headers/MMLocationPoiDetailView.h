@@ -26,7 +26,6 @@
 }
 
 + (double)contentHeight:(id)arg1 maxWidth:(double)arg2 showTakeCarBtn:(_Bool)arg3 isFinderHalfScreen:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomBlankView; // @synthesize bottomBlankView=_bottomBlankView;
 @property(retain, nonatomic) UIImageView *rightArrowView; // @synthesize rightArrowView=_rightArrowView;
 @property(retain, nonatomic) UILabel *addressLabel; // @synthesize addressLabel=_addressLabel;

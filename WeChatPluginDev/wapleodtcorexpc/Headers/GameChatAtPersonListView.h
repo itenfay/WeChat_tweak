@@ -20,7 +20,6 @@
     MMTimer *_atAllCheckTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *atAllCheckTimer; // @synthesize atAllCheckTimer=_atAllCheckTimer;
 @property(copy, nonatomic) NSArray *searchResultArray; // @synthesize searchResultArray=_searchResultArray;
 @property(nonatomic) _Bool isSearching; // @synthesize isSearching=_isSearching;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveConcertMiniatureTicketViewReportContext, MMUIButton, NSString, UIImageView, UILabel;
 
@@ -20,7 +21,6 @@
     MMFinderLiveConcertMiniatureTicketViewReportContext *_reportContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveConcertMiniatureTicketViewReportContext *reportContext; // @synthesize reportContext=_reportContext;
 @property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

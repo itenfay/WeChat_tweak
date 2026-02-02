@@ -28,7 +28,6 @@
     FavWebCacheScriptMessageHandler *m_scriptMessageHandler;
 }
 
-- (void).cxx_destruct;
 - (void)OnAddNewFavoritesItems:(id)arg1;
 - (void)onNetworkStatusChange:(unsigned int)arg1;
 - (void)userContentController:(id)arg1 didReceiveScriptMessage:(id)arg2;

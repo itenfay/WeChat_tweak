@@ -13,7 +13,6 @@
     NSMutableDictionary *_postQueueDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *postQueueDict; // @synthesize postQueueDict=_postQueueDict;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 - (void)handleOnPostLiveMessageResult:(id)arg1 taskId:(id)arg2 postTaskID:(unsigned long long)arg3 boxType:(unsigned int)arg4;

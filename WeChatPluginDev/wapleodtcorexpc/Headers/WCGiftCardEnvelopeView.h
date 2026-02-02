@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWebImageView, UIButton, UILabel, WCPreGiftCardData;
 
 @interface WCGiftCardEnvelopeView
@@ -21,7 +23,6 @@
     CDUnknownBlockType _acceptBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType acceptBlock; // @synthesize acceptBlock=_acceptBlock;
 @property(copy, nonatomic) CDUnknownBlockType closeBlock; // @synthesize closeBlock=_closeBlock;
 @property(retain, nonatomic) MMWebImageView *giftBackGroundView; // @synthesize giftBackGroundView=_giftBackGroundView;
@@ -44,4 +45,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

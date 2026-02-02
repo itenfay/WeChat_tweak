@@ -13,7 +13,6 @@
     FinderLiveRewardQuotaSwitchInfo *_rewardSwitchInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveRewardQuotaSwitchInfo *rewardSwitchInfo; // @synthesize rewardSwitchInfo=_rewardSwitchInfo;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(nonatomic) _Bool openRewardLimitNotify; // @synthesize openRewardLimitNotify=_openRewardLimitNotify;

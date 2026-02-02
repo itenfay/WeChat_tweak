@@ -26,7 +26,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *usersHasUnreadStory; // @synthesize usersHasUnreadStory=_usersHasUnreadStory;
 @property(retain, nonatomic) NSMutableDictionary *dicLayerIdShowTipView; // @synthesize dicLayerIdShowTipView=m_dicLayerIdShowTipView;
 @property(nonatomic) _Bool isShowDetail; // @synthesize isShowDetail=m_isShowDetail;

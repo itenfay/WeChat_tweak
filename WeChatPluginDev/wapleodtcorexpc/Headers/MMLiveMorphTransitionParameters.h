@@ -14,7 +14,6 @@
     struct CGRect _sourceFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize mediaSize; // @synthesize mediaSize=_mediaSize;
 @property(retain, nonatomic) UIView *primaryView; // @synthesize primaryView=_primaryView;
 @property(nonatomic) struct CGRect sourceFrame; // @synthesize sourceFrame=_sourceFrame;

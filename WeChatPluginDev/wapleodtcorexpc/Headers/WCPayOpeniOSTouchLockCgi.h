@@ -12,7 +12,6 @@
     NSString *_model;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *usertoken; // @synthesize usertoken=_usertoken;
 - (void)didFailWithError:(id)arg1;

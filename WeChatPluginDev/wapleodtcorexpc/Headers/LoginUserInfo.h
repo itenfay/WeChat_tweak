@@ -42,7 +42,6 @@
 + (void)PBArrayAdd_m_nsNickName;
 + (void)PBArrayAdd_m_nsLoginName;
 + (void)PBArrayAdd_m_nsUserName;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long extStatus2; // @synthesize extStatus2=_extStatus2;
 @property(retain, nonatomic) NSData *passkeyCredentialID; // @synthesize passkeyCredentialID=_passkeyCredentialID;
 @property(retain, nonatomic) NSString *m_bindLoginUserName; // @synthesize m_bindLoginUserName=_m_bindLoginUserName;

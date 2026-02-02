@@ -24,7 +24,6 @@
     struct CGSize _targetSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MAVExportOptionalParam *optionalParams; // @synthesize optionalParams=_optionalParams;
 @property(retain, nonatomic) NSDictionary *colorRange; // @synthesize colorRange=_colorRange;
 @property(copy, nonatomic) NSArray *metadata; // @synthesize metadata=_metadata;

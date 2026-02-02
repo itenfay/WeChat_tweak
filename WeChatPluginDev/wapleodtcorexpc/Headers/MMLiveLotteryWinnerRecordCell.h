@@ -28,7 +28,6 @@
 + (_Bool)canShowLotteryGift:(id)arg1;
 + (id)getDataArrayWithLotteryInfo:(id)arg1 lotteryContact:(id)arg2;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveLotteryDetailCardGiftFlowLayout *giftFlowLayout; // @synthesize giftFlowLayout=_giftFlowLayout;
 @property(nonatomic) long long giftRowNum; // @synthesize giftRowNum=_giftRowNum;
 @property(nonatomic) long long giftShowType; // @synthesize giftShowType=_giftShowType;

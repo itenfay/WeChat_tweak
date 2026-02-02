@@ -10,7 +10,6 @@
     MISSING_TYPE *TAG;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)createBizWithBizConfig:(id)arg1 isPreload:(_Bool)arg2;
 - (id)createBizWithBizConfig:(id)arg1;

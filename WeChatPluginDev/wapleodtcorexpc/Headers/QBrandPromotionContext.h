@@ -14,7 +14,6 @@
     NSOperationQueue *_queue;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) __weak QMapView *mapView; // @synthesize mapView=_mapView;
 @property(retain, nonatomic) QMapPromoteConfig *promoteConfig; // @synthesize promoteConfig=_promoteConfig;

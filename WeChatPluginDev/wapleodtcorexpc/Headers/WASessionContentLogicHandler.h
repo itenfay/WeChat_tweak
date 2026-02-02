@@ -16,7 +16,6 @@
     id <WASessionContentLogicHandlerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WASessionContentLogicHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onWAActionSheetInfoClicked;
 - (void)onWAActionSheetClickButtonWithButtonTitle:(id)arg1;

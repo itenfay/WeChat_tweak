@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, ZZFLEXSectionModel;
 
@@ -13,7 +14,6 @@
     ZZFLEXSectionModel *_sectionModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ZZFLEXSectionModel *sectionModel; // @synthesize sectionModel=_sectionModel;
 @property(retain, nonatomic) NSMutableArray *listData; // @synthesize listData=_listData;
 - (CDUnknownBlockType)backgrounColor;
@@ -23,4 +23,3 @@
 - (id)initWithSectionModel:(id)arg1 listData:(id)arg2;
 
 @end
-

@@ -18,7 +18,6 @@
     long long m_iRoomMemberCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_iRoomMemberCount; // @synthesize m_iRoomMemberCount;
 @property(nonatomic) _Bool m_iIsShowRoom; // @synthesize m_iIsShowRoom;
 @property(nonatomic) long long m_iFlushTime; // @synthesize m_iFlushTime;

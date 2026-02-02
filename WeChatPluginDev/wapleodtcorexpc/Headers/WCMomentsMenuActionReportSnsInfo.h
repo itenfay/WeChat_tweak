@@ -14,7 +14,6 @@
     NSString *_commentUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *commentUsername; // @synthesize commentUsername=_commentUsername;
 @property(retain, nonatomic) NSString *feedUsername; // @synthesize feedUsername=_feedUsername;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;

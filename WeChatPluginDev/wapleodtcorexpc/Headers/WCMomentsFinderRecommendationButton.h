@@ -28,7 +28,6 @@
 + (double)heightForCardView:(id)arg1;
 + (double)heightForBannerView:(id)arg1;
 + (double)heightForViewModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *descriptionTextView; // @synthesize descriptionTextView=_descriptionTextView;
 @property(retain, nonatomic) SightIconView *playIconView; // @synthesize playIconView=_playIconView;
 @property(retain, nonatomic) UIImageView *thumbImageView; // @synthesize thumbImageView=_thumbImageView;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSNumber;
 
@@ -13,7 +14,6 @@
     MMFinderLiveTaskId *_taskID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskID; // @synthesize taskID=_taskID;
 @property(retain, nonatomic) NSNumber *valueUpdating; // @synthesize valueUpdating=_valueUpdating;
 - (void)updateValue:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
@@ -22,4 +22,3 @@
 - (id)initWithTaskID:(id)arg1;
 
 @end
-

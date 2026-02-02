@@ -12,7 +12,6 @@
     MMTableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <WCPayECardBankCardListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)makeSelectNewCardToVerifyCell:(id)arg1;

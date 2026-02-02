@@ -28,7 +28,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(nonatomic) unsigned int msgLocalId; // @synthesize msgLocalId=_msgLocalId;
 @property(retain, nonatomic) NSString *sourceId; // @synthesize sourceId=_sourceId;

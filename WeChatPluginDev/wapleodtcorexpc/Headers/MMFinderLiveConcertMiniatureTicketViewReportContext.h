@@ -14,7 +14,6 @@
     NSString *_commentScene;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) NSString *activityId; // @synthesize activityId=_activityId;

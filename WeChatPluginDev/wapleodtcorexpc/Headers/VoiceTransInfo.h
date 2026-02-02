@@ -34,7 +34,6 @@
 + (void)PBArrayAdd_msgCreateTime;
 + (void)PBArrayAdd_msgServerId;
 + (void)PBArrayAdd_mesLocalId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *messageWrap; // @synthesize messageWrap=_messageWrap;
 @property(nonatomic) _Bool hadLocalTranslateRet; // @synthesize hadLocalTranslateRet=_hadLocalTranslateRet;
 @property(nonatomic) unsigned long long fristTransTime; // @synthesize fristTransTime=_fristTransTime;

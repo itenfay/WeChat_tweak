@@ -14,7 +14,6 @@
 }
 
 + (id)showWithTaskId:(id)arg1 delegate:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTableViewManager *tableViewManager; // @synthesize tableViewManager=_tableViewManager;
 @property(nonatomic) __weak id <MMFinderLiveAdGuideFollowSheetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;

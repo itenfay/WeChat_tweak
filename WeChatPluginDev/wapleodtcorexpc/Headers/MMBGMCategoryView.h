@@ -16,7 +16,6 @@
     MMBGMSelectedConfig *_panelConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBGMSelectedConfig *panelConfig; // @synthesize panelConfig=_panelConfig;
 @property(retain, nonatomic) MMBGMPanelPublishContext *publishContext; // @synthesize publishContext=_publishContext;
 @property(retain, nonatomic) UICollectionViewDiffableDataSource *diffDataSource; // @synthesize diffDataSource=_diffDataSource;

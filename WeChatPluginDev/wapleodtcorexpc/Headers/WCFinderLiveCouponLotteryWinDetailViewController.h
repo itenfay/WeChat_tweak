@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveLotteryGetPrizeMethodView, MMFinderLiveLotteryInfo, MMFinderLiveTask, MMFinderLiveTaskId, MMUIButton, MMUILabel, MilestoneLotteryCouponRecordInfo, MilestoneLotteryInfo, MilestoneLotteryRedpacketInfo, NSString, RichTextView, UIImageView, UIScrollView, UIView, WCAddressBaseAddress;
 
 @interface WCFinderLiveCouponLotteryWinDetailViewController
@@ -50,7 +52,6 @@
     MilestoneLotteryInfo *_milestoneRecordInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInLive; // @synthesize isInLive=_isInLive;
 @property(nonatomic) _Bool hasRefreshData; // @synthesize hasRefreshData=_hasRefreshData;
 @property(retain, nonatomic) MilestoneLotteryInfo *milestoneRecordInfo; // @synthesize milestoneRecordInfo=_milestoneRecordInfo;
@@ -161,4 +162,3 @@
 @property(readonly) Class superclass;
 
 @end
-

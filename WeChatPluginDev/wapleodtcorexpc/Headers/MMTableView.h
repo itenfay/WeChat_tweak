@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GradientMaskBottomView, MMTableViewChainModel, MMTableViewGestureHelper, MMTableViewIndexView, NSIndexPath, UIColor, UIPanGestureRecognizer, UIView, _TtC7WCUIKit21AnimateProgressRunner;
 @protocol MMTableViewDelegate;
@@ -47,7 +48,6 @@
 + (double)topPaddingForPlainTableSectionHeaderView;
 + (CDUnknownBlockType)zz_create;
 + (CDUnknownBlockType)zz_createWithStyle;
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC7WCUIKit21AnimateProgressRunner *progressRunner; // @synthesize progressRunner=_progressRunner;
 @property(retain, nonatomic) GradientMaskBottomView *maskedBottomView; // @synthesize maskedBottomView=_maskedBottomView;
 @property(nonatomic) _Bool shouldSelectedCellRecoverAnimated; // @synthesize shouldSelectedCellRecoverAnimated=_shouldSelectedCellRecoverAnimated;
@@ -120,4 +120,3 @@
 @property(readonly, copy, nonatomic) MMTableViewChainModel *zz_setup;
 
 @end
-

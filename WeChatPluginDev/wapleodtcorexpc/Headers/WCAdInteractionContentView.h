@@ -22,7 +22,6 @@
 }
 
 + (id)fetchContentViewForResourceInfo:(id)arg1 frame:(struct CGRect)arg2 delegate:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdInteractionReportDataHandler *customReportHandler; // @synthesize customReportHandler=_customReportHandler;
 @property(retain, nonatomic) WCAdInteractionReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property(retain, nonatomic) WCStatTimerHelper *contentTimeHelper; // @synthesize contentTimeHelper=_contentTimeHelper;

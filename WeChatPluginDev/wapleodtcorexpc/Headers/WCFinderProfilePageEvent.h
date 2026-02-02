@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderProfilePageEvent : NSObject
 {
@@ -17,7 +18,6 @@
 + (id)depPage:(Class)arg1 adapter:(CDUnknownBlockType)arg2;
 + (id)ensureContact:(CDUnknownBlockType)arg1;
 + (id)asyncFetchPage:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType asyncAdapter; // @synthesize asyncAdapter=_asyncAdapter;
 @property(copy, nonatomic) CDUnknownBlockType depPageAdapter; // @synthesize depPageAdapter=_depPageAdapter;
 @property(retain, nonatomic) Class depPage; // @synthesize depPage=_depPage;
@@ -26,4 +26,3 @@
 - (id)onFilledContact:(id)arg1;
 
 @end
-

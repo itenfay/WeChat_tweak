@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveGestureAnimationWeVisionRenderer, MMFinderLiveGestureGiftSenderCacheItem, MMFinderLiveTaskId, NSMutableArray, NSMutableDictionary, NSString;
 
@@ -26,7 +27,6 @@
 
 + (_Bool)isNewGestureLuaMessageModel:(id)arg1 stableRelativeWith:(id)arg2;
 + (_Bool)defaultGestureEnablementForLiveTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGestureAnimationWeVisionRenderer *weVisionLuaRenderer; // @synthesize weVisionLuaRenderer=_weVisionLuaRenderer;
 @property(retain, nonatomic) NSMutableDictionary *recentIncomingGiftSenders; // @synthesize recentIncomingGiftSenders=_recentIncomingGiftSenders;
 @property(retain, nonatomic) MMFinderLiveGestureGiftSenderCacheItem *lastIncomingGiftSender; // @synthesize lastIncomingGiftSender=_lastIncomingGiftSender;
@@ -78,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

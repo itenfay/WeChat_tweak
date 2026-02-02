@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel;
 
 @interface MMFinderLiveFansGroupRightsBriefCell
@@ -16,7 +18,6 @@
 + (double)layoutPadding;
 + (id)detailFont;
 + (id)detailText;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) MMUIButton *unsubscribeButton; // @synthesize unsubscribeButton=_unsubscribeButton;
 @property(copy, nonatomic) CDUnknownBlockType onUnsubscribe; // @synthesize onUnsubscribe=_onUnsubscribe;
@@ -27,4 +28,3 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
-

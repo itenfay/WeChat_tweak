@@ -19,7 +19,6 @@
     UIView *_iconSourceSeparator;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needsCreateOrUpdateLayout; // @synthesize needsCreateOrUpdateLayout=_needsCreateOrUpdateLayout;
 @property(retain, nonatomic) UIView *iconSourceSeparator; // @synthesize iconSourceSeparator=_iconSourceSeparator;
 @property(retain, nonatomic) TextStateSectionView *footerView; // @synthesize footerView=_footerView;

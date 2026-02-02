@@ -39,7 +39,6 @@
     NSArray *_m_arrCheckHitFileInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_arrCheckHitFileInfo; // @synthesize m_arrCheckHitFileInfo=_m_arrCheckHitFileInfo;
 @property(retain, nonatomic) NSString *m_lastSvrIP; // @synthesize m_lastSvrIP=_m_lastSvrIP;
 @property(nonatomic) _Bool m_useSafeCdn; // @synthesize m_useSafeCdn=_m_useSafeCdn;

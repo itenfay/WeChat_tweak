@@ -13,7 +13,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SharedPtr_b444224d backingProject; // @synthesize backingProject=_backingProject;
 - (id)description;
 - (id)saveToData;

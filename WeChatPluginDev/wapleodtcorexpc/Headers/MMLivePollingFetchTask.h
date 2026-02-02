@@ -17,7 +17,6 @@
 }
 
 + (id)createWithTaskId:(id)arg1 cmdId:(long long)arg2 interval:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) long long mostEarlyStartTime; // @synthesize mostEarlyStartTime=_mostEarlyStartTime;
 @property(nonatomic) long long lastExecuteTimeInterval; // @synthesize lastExecuteTimeInterval=_lastExecuteTimeInterval;
 @property(nonatomic) unsigned long long interval; // @synthesize interval=_interval;

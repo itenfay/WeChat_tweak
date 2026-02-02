@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMMusicDotMVDataSource, MMMusicLiveCGIMgr, MMMusicLiveLyricDisplayView, MMMusicLyricService, MMMusicMVModel, MMMusicMVPlayerBgView, MMMusicPlayerMgr, MMTimer, MVImageLoader, MVPlayerConfiguration, MVPreloadManager, NSMutableArray, NSString;
 @protocol MMMVPlayerDelegate;
@@ -34,7 +35,6 @@
     NSMutableArray *_pluginArr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isApplicationActive; // @synthesize isApplicationActive=_isApplicationActive;
 @property(retain, nonatomic) NSMutableArray *pluginArr; // @synthesize pluginArr=_pluginArr;
 @property(retain, nonatomic) MMMusicLiveCGIMgr *musicLiveCgiManager; // @synthesize musicLiveCgiManager=_musicLiveCgiManager;
@@ -161,4 +161,3 @@
 @property(readonly) Class superclass;
 
 @end
-

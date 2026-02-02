@@ -11,7 +11,6 @@
     NSString *state;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *state; // @synthesize state;
 @property(retain, nonatomic) NSString *scope; // @synthesize scope;
 - (id)init;

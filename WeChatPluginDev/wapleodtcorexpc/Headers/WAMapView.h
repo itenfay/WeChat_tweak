@@ -27,7 +27,6 @@
     NSMutableDictionary *_visualLayerDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *visualLayerDic; // @synthesize visualLayerDic=_visualLayerDic;
 @property(retain, nonatomic) QUserLocationPresentation *userLocationCfg; // @synthesize userLocationCfg=_userLocationCfg;
 @property(retain, nonatomic) NSMutableArray *clusterMarkers; // @synthesize clusterMarkers=_clusterMarkers;

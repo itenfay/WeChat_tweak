@@ -22,7 +22,6 @@
     NSString *_appID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(copy, nonatomic) NSString *extra; // @synthesize extra=_extra;
 @property(copy, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;

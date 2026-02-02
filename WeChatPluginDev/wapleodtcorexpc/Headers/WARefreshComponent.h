@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIPanGestureRecognizer, UIScrollView;
 
@@ -19,7 +20,6 @@
     UIPanGestureRecognizer *_pan;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *pan; // @synthesize pan=_pan;
 @property(nonatomic) double pullingPercent; // @synthesize pullingPercent=_pullingPercent;
 @property(readonly, nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -48,4 +48,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

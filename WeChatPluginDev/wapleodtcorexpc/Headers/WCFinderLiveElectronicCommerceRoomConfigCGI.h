@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderLiveElectronicCommerceRoomConfigCGI
@@ -14,7 +16,6 @@
     NSString *_anchorFinderUsrName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *anchorFinderUsrName; // @synthesize anchorFinderUsrName=_anchorFinderUsrName;
 @property(nonatomic) int reqScene; // @synthesize reqScene=_reqScene;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
@@ -27,4 +28,3 @@
 - (id)initWithLiveTaskId:(id)arg1 scene:(long long)arg2 anchorFinderUserName:(id)arg3 successBlock:(CDUnknownBlockType)arg4 failBlock:(CDUnknownBlockType)arg5;
 
 @end
-

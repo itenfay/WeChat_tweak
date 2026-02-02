@@ -20,7 +20,6 @@
     NSData *_m_lastAuthBiotricData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bHasBiotricAuth; // @synthesize m_bHasBiotricAuth=_m_bHasBiotricAuth;
 @property(retain, nonatomic) NSData *m_lastAuthBiotricData; // @synthesize m_lastAuthBiotricData=_m_lastAuthBiotricData;
 @property(retain, nonatomic) WCPayCheckUserAuthJSApiCgi *checkUserAuthJSApiCgi; // @synthesize checkUserAuthJSApiCgi=_checkUserAuthJSApiCgi;

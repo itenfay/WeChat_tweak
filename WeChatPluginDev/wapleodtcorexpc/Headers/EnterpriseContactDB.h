@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCTDatabase, WCTTable;
 
 @interface EnterpriseContactDB
@@ -13,7 +15,6 @@
     NSString *_path;
 }
 
-- (void).cxx_destruct;
 - (id)getTableByName:(id)arg1;
 - (void)deleteDB;
 - (void)deleteMyContact;
@@ -31,4 +32,3 @@
 - (id)initWithPath:(id)arg1;
 
 @end
-

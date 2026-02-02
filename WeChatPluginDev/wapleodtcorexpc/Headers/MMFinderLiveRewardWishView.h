@@ -23,7 +23,6 @@
     MMFinderLiveRewardWish *_wishGiftItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRewardWish *wishGiftItem; // @synthesize wishGiftItem=_wishGiftItem;
 @property(nonatomic) __weak id <MMFinderLiveRewardWishViewDelegate> operationDelegate; // @synthesize operationDelegate=_operationDelegate;
 @property(retain, nonatomic) MMUILabel *fansBadgeLabel; // @synthesize fansBadgeLabel=_fansBadgeLabel;

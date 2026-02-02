@@ -20,7 +20,6 @@
     NSMutableArray *_beforeToMiniApp;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *beforeToMiniApp; // @synthesize beforeToMiniApp=_beforeToMiniApp;
 @property(readonly, nonatomic) NSMutableArray *prepareToMiniApp; // @synthesize prepareToMiniApp=_prepareToMiniApp;
 @property(readonly, nonatomic) NSMutableArray *willJumpToMiniApp; // @synthesize willJumpToMiniApp=_willJumpToMiniApp;

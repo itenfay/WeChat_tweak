@@ -20,7 +20,6 @@
     struct UIEdgeInsets _paddingLabelPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double bottomTouchInset; // @synthesize bottomTouchInset=_bottomTouchInset;
 @property(nonatomic) _Bool multiLines; // @synthesize multiLines=_multiLines;
 @property(nonatomic) double lineSpacing; // @synthesize lineSpacing=_lineSpacing;

@@ -10,7 +10,6 @@
     VoiceRecordView *_recordView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoiceRecordView *recordView; // @synthesize recordView=_recordView;
 - (void)onTouchEndSendVoiceMsg;
 - (void)forceStopVoiceRecording;

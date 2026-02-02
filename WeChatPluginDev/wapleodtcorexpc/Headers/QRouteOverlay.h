@@ -13,7 +13,6 @@
     QTextStyle *_textStyle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QTextStyle *textStyle; // @synthesize textStyle=_textStyle;
 @property(retain, nonatomic) NSMutableArray *arrText; // @synthesize arrText=_arrText;
 @property(retain, nonatomic) NSMutableArray *arrColor; // @synthesize arrColor=_arrColor;

@@ -25,7 +25,6 @@
     WCFinderMSInteractionView *_interactionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMSInteractionView *interactionView; // @synthesize interactionView=_interactionView;
 @property(nonatomic) _Bool descContentLabelIsExpand; // @synthesize descContentLabelIsExpand=_descContentLabelIsExpand;
 @property(retain, nonatomic) UIButton *activityBtn; // @synthesize activityBtn=_activityBtn;

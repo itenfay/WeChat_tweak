@@ -12,7 +12,6 @@
     NSString *_filePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 
 @end

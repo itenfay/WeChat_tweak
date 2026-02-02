@@ -16,7 +16,6 @@
 }
 
 + (id)createService;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayDecimalKeyboardView *keyboard; // @synthesize keyboard=_keyboard;
 @property(nonatomic) __weak id <IWAPayKeyboardServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UITextField *textField; // @synthesize textField=_textField;

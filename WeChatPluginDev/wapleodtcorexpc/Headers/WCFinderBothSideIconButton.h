@@ -19,7 +19,6 @@
     struct CGSize _tailIconSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long textContentHash; // @synthesize textContentHash=_textContentHash;
 @property(nonatomic) _Bool hiddenImageView; // @synthesize hiddenImageView=_hiddenImageView;
 @property(nonatomic) _Bool revertLayout; // @synthesize revertLayout=_revertLayout;

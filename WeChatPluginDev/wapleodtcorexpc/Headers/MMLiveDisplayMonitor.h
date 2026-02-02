@@ -12,7 +12,6 @@
     WCDisplayMetricsMonitor *_metricsMonitor;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCDisplayMetricsMonitor *metricsMonitor; // @synthesize metricsMonitor=_metricsMonitor;
 - (void)displayMetricsMonitor:(id)arg1 didCollectMetrics:(id)arg2;
 - (void)stopMetricsMonitor;

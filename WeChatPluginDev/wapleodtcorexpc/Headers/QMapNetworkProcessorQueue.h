@@ -12,7 +12,6 @@
     QMapNetworkStatProcessor *_processor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QMapNetworkStatProcessor *processor; // @synthesize processor=_processor;
 - (void)onResponse:(id)arg1 error:(id)arg2 request:(id)arg3 data:(id)arg4;
 - (void)onRequest:(id)arg1;

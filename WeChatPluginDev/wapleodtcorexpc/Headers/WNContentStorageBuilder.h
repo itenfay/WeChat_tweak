@@ -20,7 +20,6 @@
     id <WNContentStorageBuilderDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WNContentStorageBuilderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)tryOutputContent;
 - (_Bool)isBlockTag:(id)arg1;

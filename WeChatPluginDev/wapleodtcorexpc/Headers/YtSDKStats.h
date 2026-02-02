@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
@@ -20,7 +21,6 @@
 
 + (void)clearInstance;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *stateNameMap; // @synthesize stateNameMap=_stateNameMap;
 @property(copy, nonatomic) CDUnknownBlockType onEventBlock; // @synthesize onEventBlock=_onEventBlock;
 - (id)netNameMapper:(id)arg1;
@@ -38,4 +38,3 @@
 - (id)init;
 
 @end
-

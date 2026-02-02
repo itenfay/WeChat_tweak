@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdContinuousLikeBannerInfo *bannerInfo; // @synthesize bannerInfo=_bannerInfo;
 @property(retain, nonatomic) WCAdContinuousLikeTagInfo *tagInfo; // @synthesize tagInfo=_tagInfo;
 @property(retain, nonatomic) WCAdContinuousLikeButtonInfo *buttonInfo; // @synthesize buttonInfo=_buttonInfo;

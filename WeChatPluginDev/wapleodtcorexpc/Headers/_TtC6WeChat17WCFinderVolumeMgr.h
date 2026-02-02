@@ -30,7 +30,6 @@
 }
 
 + (id)shared;
-- (void).cxx_destruct;
 - (_Bool)needMute;
 - (void)enableReport:(_Bool)arg1;
 - (void)attachAutoVolumeCheck:(id)arg1 contentVM:(id)arg2;

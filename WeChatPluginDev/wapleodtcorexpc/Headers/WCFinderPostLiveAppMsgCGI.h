@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveAppMsg, FinderWindowProductInfo, NSData, NSString, WCFinderDataItem;
 
 @interface WCFinderPostLiveAppMsgCGI
@@ -20,7 +22,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) FinderWindowProductInfo *questionProductInfo; // @synthesize questionProductInfo=_questionProductInfo;
@@ -46,4 +47,3 @@
 - (id)initWithLiveTaskId:(id)arg1 finderDataItem:(id)arg2 msgType:(unsigned int)arg3 liveScene:(unsigned int)arg4 liveCookies:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

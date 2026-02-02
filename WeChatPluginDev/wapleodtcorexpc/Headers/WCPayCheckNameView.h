@@ -17,7 +17,6 @@
     WCPayCss *_css;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCPayCss *css; // @synthesize css=_css;
 @property(retain) NSString *tail; // @synthesize tail=_tail;
 @property(retain) UILabel *tailLabel; // @synthesize tailLabel=_tailLabel;

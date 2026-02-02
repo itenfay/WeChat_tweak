@@ -21,7 +21,6 @@
 
 + (double)height;
 + (id)cellInTableView:(id)arg1 album:(id)arg2 name:(id)arg3 isSelected:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *albumId; // @synthesize albumId=_albumId;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) UIImageView *selectedImageView; // @synthesize selectedImageView=_selectedImageView;

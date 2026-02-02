@@ -20,7 +20,6 @@
     UIImageView *imageView;
 }
 
-- (void).cxx_destruct;
 - (void)showSuccessOpenAnimation;
 - (void)removeView;
 - (void)endAnimation;

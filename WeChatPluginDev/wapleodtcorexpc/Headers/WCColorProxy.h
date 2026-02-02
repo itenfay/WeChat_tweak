@@ -15,7 +15,6 @@
 }
 
 + (_Bool)resolveInstanceMethod:(SEL)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *brandColor; // @synthesize brandColor=_brandColor;
 @property(retain, nonatomic) NSString *brandColorReplacement; // @synthesize brandColorReplacement=_brandColorReplacement;
 @property(nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;

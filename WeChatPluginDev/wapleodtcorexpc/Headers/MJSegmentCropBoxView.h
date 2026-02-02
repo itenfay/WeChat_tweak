@@ -12,7 +12,6 @@
     struct CGSize _croppedViewInitializedSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *croppedView; // @synthesize croppedView=_croppedView;
 @property(nonatomic) double croppedViewInitializedScale; // @synthesize croppedViewInitializedScale=_croppedViewInitializedScale;
 @property(nonatomic) struct CGSize croppedViewInitializedSize; // @synthesize croppedViewInitializedSize=_croppedViewInitializedSize;

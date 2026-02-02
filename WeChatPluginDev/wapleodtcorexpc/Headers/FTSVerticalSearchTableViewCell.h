@@ -14,7 +14,6 @@
 }
 
 + (double)getCellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UIImageView *searchIcon; // @synthesize searchIcon=_searchIcon;

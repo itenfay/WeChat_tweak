@@ -15,7 +15,6 @@
     OMJMaterialInfo *_material;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMJMaterialInfo *material; // @synthesize material=_material;
 @property(retain, nonatomic) NSURL *iconURL; // @synthesize iconURL=_iconURL;
 @property(nonatomic) float intensity; // @synthesize intensity=_intensity;

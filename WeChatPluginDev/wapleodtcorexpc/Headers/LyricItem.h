@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithLyric:(id)arg1 startTime:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(copy, nonatomic) NSString *lyric; // @synthesize lyric=_lyric;
 - (id)toList;

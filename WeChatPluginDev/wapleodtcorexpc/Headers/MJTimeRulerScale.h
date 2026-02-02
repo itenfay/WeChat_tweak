@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MJTimeRulerScale : NSObject
 {
@@ -16,7 +17,6 @@
 }
 
 + (id)timeRulerScaleWithLevel:(unsigned long long)arg1 frameRate:(float)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType timeCodeFormatter; // @synthesize timeCodeFormatter=_timeCodeFormatter;
 @property(nonatomic) double minSpacingBetweenSubmarks; // @synthesize minSpacingBetweenSubmarks=_minSpacingBetweenSubmarks;
 @property(nonatomic) long long submarkCount; // @synthesize submarkCount=_submarkCount;
@@ -26,4 +26,3 @@
 - (id)description;
 
 @end
-

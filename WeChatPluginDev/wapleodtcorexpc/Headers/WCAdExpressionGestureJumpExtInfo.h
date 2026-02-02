@@ -14,7 +14,6 @@
     WCAdRandomPickComponentExtInfo *_componentExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdRandomPickComponentExtInfo *componentExtInfo; // @synthesize componentExtInfo=_componentExtInfo;
 @property(retain, nonatomic) WCAdRandomPickCardExtInfo *cardExtInfo; // @synthesize cardExtInfo=_cardExtInfo;
 @property(retain, nonatomic) NSString *candidateTwistCardId; // @synthesize candidateTwistCardId=_candidateTwistCardId;

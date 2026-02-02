@@ -11,7 +11,6 @@
     UIImageView *_arrowView;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(readonly, nonatomic) MMUILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
 - (void)loadUI:(id)arg1;

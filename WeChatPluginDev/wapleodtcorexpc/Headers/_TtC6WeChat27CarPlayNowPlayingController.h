@@ -17,7 +17,6 @@
     MISSING_TYPE *playerPlayList;
 }
 
-- (void).cxx_destruct;
 - (void)onPlayerLikeOp:(_Bool)arg1 listenId:(id)arg2;
 - (void)nowPlayingTemplateUpNextButtonTapped:(id)arg1;
 - (void)nowPlayingControllerWillAppear;

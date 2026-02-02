@@ -13,7 +13,6 @@
     NSString *_req_Key;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int payChannel; // @synthesize payChannel=_payChannel;
 @property(retain, nonatomic) NSString *req_Key; // @synthesize req_Key=_req_Key;
 @property(nonatomic) __weak id <WCPayOfflineCancelPayCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;

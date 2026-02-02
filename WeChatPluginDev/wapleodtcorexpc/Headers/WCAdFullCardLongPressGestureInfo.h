@@ -19,7 +19,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long spriteSizeType; // @synthesize spriteSizeType=_spriteSizeType;
 @property(nonatomic) long long spriteType; // @synthesize spriteType=_spriteType;
 @property(retain, nonatomic) NSString *spriteImageUrl; // @synthesize spriteImageUrl=_spriteImageUrl;

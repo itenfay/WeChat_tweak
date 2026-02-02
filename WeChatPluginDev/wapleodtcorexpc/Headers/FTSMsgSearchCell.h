@@ -14,7 +14,6 @@
 }
 
 + (unsigned int)calculateHeight:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(nonatomic) _Bool m_isHadImageThumbView; // @synthesize m_isHadImageThumbView=_m_isHadImageThumbView;
 @property(retain, nonatomic) NSString *m_detailText; // @synthesize m_detailText=_m_detailText;

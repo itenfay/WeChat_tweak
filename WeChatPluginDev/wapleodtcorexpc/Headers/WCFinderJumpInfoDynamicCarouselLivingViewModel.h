@@ -10,7 +10,6 @@
     FinderJumpLiveNecessaryParams *_livingParams;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) FinderJumpLiveNecessaryParams *livingParams; // @synthesize livingParams=_livingParams;
 - (void)reloadViewProperties;
 - (id)defaultActionBackgroundColor;

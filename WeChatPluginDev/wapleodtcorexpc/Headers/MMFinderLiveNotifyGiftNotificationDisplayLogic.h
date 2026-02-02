@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderJumpInfo, MMFinderLiveNotifyGiftNotificationView, MMFinderLiveTaskId, NSMutableArray;
 
@@ -18,7 +19,6 @@
     NSMutableArray *_pendingQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needHidden; // @synthesize needHidden=_needHidden;
 @property(nonatomic) _Bool enableDisplay; // @synthesize enableDisplay=_enableDisplay;
 @property(retain, nonatomic) NSMutableArray *pendingQueue; // @synthesize pendingQueue=_pendingQueue;
@@ -35,4 +35,3 @@
 - (id)initWithNotificationView:(id)arg1 taskId:(id)arg2;
 
 @end
-

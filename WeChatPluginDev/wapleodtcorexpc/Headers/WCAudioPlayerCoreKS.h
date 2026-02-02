@@ -22,7 +22,6 @@
 + (void)cleanCache;
 + (id)cacheRootPath;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAudioPlayerSeekingContext *seekingContext; // @synthesize seekingContext=_seekingContext;
 @property(nonatomic) _Bool isKSResuming; // @synthesize isKSResuming=_isKSResuming;
 @property(retain, nonatomic) WCAudioPlayerCoreKSPauseContext *pauseContext; // @synthesize pauseContext=_pauseContext;

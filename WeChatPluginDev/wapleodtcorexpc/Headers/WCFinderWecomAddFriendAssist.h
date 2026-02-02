@@ -17,7 +17,6 @@
 + (id)openOpenImContactInfo:(id)arg1 storeByVC:(id)arg2;
 + (id)openOpenImContactInfo:(id)arg1 storeByVC:(id)arg2 failTip:(id)arg3;
 + (id)openOpenImContactInfo:(id)arg1 openIMInfo:(id)arg2 storeByVC:(id)arg3 failTip:(id)arg4;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *failTip; // @synthesize failTip=_failTip;
 @property(retain, nonatomic) WCFinderOpenIMInfo *info; // @synthesize info=_info;
 @property(nonatomic) __weak MMUIViewController *vc; // @synthesize vc=_vc;

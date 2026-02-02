@@ -20,7 +20,6 @@
     RichTextView *_descTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *descTextView; // @synthesize descTextView=_descTextView;
 @property(retain, nonatomic) UIButton *bgButton; // @synthesize bgButton=_bgButton;
 @property(nonatomic) long long currentScene; // @synthesize currentScene=_currentScene;

@@ -14,7 +14,6 @@
     MISSING_TYPE *timestamp;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp;
 @property(nonatomic, copy) NSString *ID;

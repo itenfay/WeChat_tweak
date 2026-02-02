@@ -22,7 +22,6 @@
     NSString *_imageKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *imageKey; // @synthesize imageKey=_imageKey;
 @property(copy, nonatomic) NSString *sharePath; // @synthesize sharePath=_sharePath;
 @property(copy, nonatomic) NSString *shareAppId; // @synthesize shareAppId=_shareAppId;

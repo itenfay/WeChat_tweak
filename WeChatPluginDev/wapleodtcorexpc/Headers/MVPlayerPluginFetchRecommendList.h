@@ -10,7 +10,6 @@
     MMMusicLiveCGIMgr *_musicLiveCgiManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicLiveCGIMgr *musicLiveCgiManager; // @synthesize musicLiveCgiManager=_musicLiveCgiManager;
 - (void)onMusicLiveGetMVRecommentList:(id)arg1 continueFlag:(_Bool)arg2 requestId:(id)arg3;
 - (void)fetchRecommendMvList;

@@ -23,7 +23,6 @@
     unsigned long long _countDown;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long countDown; // @synthesize countDown=_countDown;
 @property(retain, nonatomic) UserIdAuthorizeSmsPhoneItem *selectedPhoneItem; // @synthesize selectedPhoneItem=_selectedPhoneItem;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;

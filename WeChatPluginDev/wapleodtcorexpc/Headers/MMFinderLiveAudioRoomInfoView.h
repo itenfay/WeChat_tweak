@@ -58,7 +58,6 @@
     unsigned long long _audioRoomScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long audioRoomScene; // @synthesize audioRoomScene=_audioRoomScene;
 @property(readonly, nonatomic) MMFinderLiveKTVBox *ktvBox; // @synthesize ktvBox=_ktvBox;
 @property(readonly, nonatomic) _Bool isKTVMode; // @synthesize isKTVMode=_isKTVMode;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveKSKitMusicSong, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveStorageCleanupPinningToken, MMLiveTaskId, MMTimer, MMUILabel, MMWebImageView, UIButton, UIView, WCFinderAnimationLoadingView;
 
 @interface MMFinderLiveKTVPrepareGuidePanel
@@ -32,7 +34,6 @@
 }
 
 + (id)genFormatDuraionTimeStringFrom:(int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *songResourcesPinningToken; // @synthesize songResourcesPinningToken=_songResourcesPinningToken;
 @property(nonatomic) _Bool isGiveUp; // @synthesize isGiveUp=_isGiveUp;
 @property(nonatomic) _Bool isSongResDownloading; // @synthesize isSongResDownloading=_isSongResDownloading;
@@ -102,4 +103,3 @@
 - (id)initWithTaskId:(id)arg1 frame:(struct CGRect)arg2;
 
 @end
-

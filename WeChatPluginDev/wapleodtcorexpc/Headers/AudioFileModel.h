@@ -16,7 +16,6 @@
     NSString *_ringId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *ringId; // @synthesize ringId=_ringId;
 @property(nonatomic) int mDataLen; // @synthesize mDataLen=_mDataLen;
 @property(nonatomic) double *data; // @synthesize data=_data;

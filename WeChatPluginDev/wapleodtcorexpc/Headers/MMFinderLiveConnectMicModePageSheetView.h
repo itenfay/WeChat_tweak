@@ -34,7 +34,6 @@
 + (id)rearrangedMicUserIndicesForFocusModeOf:(id)arg1 anchorMicIndex:(unsigned long long)arg2 anchorSdkUserId:(id)arg3 focusingUserId:(id)arg4;
 + (id)rearrangedMicUserIndicesForStandardModeOf:(id)arg1 anchorMicIndex:(unsigned long long)arg2 anchorSdkUserId:(id)arg3;
 + (id)rearrangedMicUserIndicesOf:(id)arg1 anchorMicIndex:(unsigned long long)arg2 anchorSdkUserId:(id)arg3 targetMode:(unsigned long long)arg4 targetFocusingUserId:(id)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool focusOnly; // @synthesize focusOnly=_focusOnly;
 @property(nonatomic) unsigned long long disabledConditions; // @synthesize disabledConditions=_disabledConditions;
 @property(nonatomic) _Bool autoConnect; // @synthesize autoConnect=_autoConnect;

@@ -10,7 +10,6 @@
     NSMutableArray *m_msgs;
 }
 
-- (void).cxx_destruct;
 - (id)GetMessageArray;
 - (void)setMsgArray:(id)arg1;
 - (id)init;

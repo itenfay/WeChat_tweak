@@ -14,7 +14,6 @@
     NSString *_camFunDirectory;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool overwriteExisting; // @synthesize overwriteExisting=_overwriteExisting;
 @property(readonly, copy, nonatomic) NSString *camFunDirectory; // @synthesize camFunDirectory=_camFunDirectory;
 @property(readonly, copy, nonatomic) NSString *instaMovieDirectory; // @synthesize instaMovieDirectory=_instaMovieDirectory;

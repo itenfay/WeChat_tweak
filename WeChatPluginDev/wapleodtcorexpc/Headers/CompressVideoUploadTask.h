@@ -16,7 +16,6 @@
     ThumbImageUploader *_thumbImageUploader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ThumbImageUploader *thumbImageUploader; // @synthesize thumbImageUploader=_thumbImageUploader;
 @property(retain, nonatomic) MsgDataDownloadLogic *downloadLogic; // @synthesize downloadLogic=_downloadLogic;
 @property(retain, nonatomic) VideoEncodeParams *params; // @synthesize params=_params;

@@ -21,7 +21,6 @@
 }
 
 + (id)createFromDownloadInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int fileSize; // @synthesize fileSize=_fileSize;
 @property(nonatomic) int costTime; // @synthesize costTime=_costTime;
 @property(nonatomic) int optType; // @synthesize optType=_optType;

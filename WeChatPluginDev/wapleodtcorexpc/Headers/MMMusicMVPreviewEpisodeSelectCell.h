@@ -18,7 +18,6 @@
     UIView *_maskLayerView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDoingAnimation; // @synthesize isDoingAnimation=_isDoingAnimation;
 @property(nonatomic) unsigned int maskLayerViewAnimationDuration; // @synthesize maskLayerViewAnimationDuration=_maskLayerViewAnimationDuration;
 @property(retain, nonatomic) UIView *maskLayerView; // @synthesize maskLayerView=_maskLayerView;

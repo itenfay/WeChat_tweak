@@ -19,7 +19,6 @@
     GameCenterMsgSourceInfo *_sourceInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameCenterMsgSourceInfo *sourceInfo; // @synthesize sourceInfo=_sourceInfo;
 @property(retain, nonatomic) GameCenterMsgContentPic *contentPicInfo; // @synthesize contentPicInfo=_contentPicInfo;
 @property(retain, nonatomic) GameCenterMsgSecondLineInfo *secondLineInfo; // @synthesize secondLineInfo=_secondLineInfo;

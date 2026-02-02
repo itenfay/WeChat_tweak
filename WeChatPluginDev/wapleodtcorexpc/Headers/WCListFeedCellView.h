@@ -15,7 +15,6 @@
 + (id)trimDescWithDataItem:(id)arg1;
 + (id)titleWithDataItem:(id)arg1;
 + (double)calculateHeightWithGroup:(id)arg1 groupItem:(id)arg2 width:(double)arg3 isFirstOneInsection:(_Bool)arg4 isLastOneInSection:(_Bool)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCListFeedVideoThumbView *videoThumbView; // @synthesize videoThumbView=_videoThumbView;
 @property(retain, nonatomic) UILabel *finderPureTextLabel; // @synthesize finderPureTextLabel=_finderPureTextLabel;
 - (id)customAccessibilityComponents;

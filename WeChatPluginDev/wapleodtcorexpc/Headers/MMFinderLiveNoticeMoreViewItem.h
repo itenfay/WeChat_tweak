@@ -16,7 +16,6 @@
     NSString *_tips;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tips; // @synthesize tips=_tips;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 @property(nonatomic) _Bool hasMore; // @synthesize hasMore=_hasMore;

@@ -13,7 +13,6 @@
     double _lastRenderTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastRenderTime; // @synthesize lastRenderTime=_lastRenderTime;
 @property(retain, nonatomic) NSString *animationId; // @synthesize animationId=_animationId;
 

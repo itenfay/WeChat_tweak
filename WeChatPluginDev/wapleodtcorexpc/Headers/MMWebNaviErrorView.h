@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UIButton, UIImageView;
 
@@ -16,7 +17,6 @@
     UIButton *_reloadButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *reloadButton; // @synthesize reloadButton=_reloadButton;
 @property(retain, nonatomic) MMUILabel *errLbl; // @synthesize errLbl=_errLbl;
 @property(retain, nonatomic) UIImageView *errIcon; // @synthesize errIcon=_errIcon;
@@ -29,4 +29,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

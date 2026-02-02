@@ -22,7 +22,6 @@
     WCSearcher *_searcher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSearcher *searcher; // @synthesize searcher=_searcher;
 @property(retain, nonatomic) NSArray *bannedCountryCodes; // @synthesize bannedCountryCodes=_bannedCountryCodes;
 @property(nonatomic) _Bool hideCode; // @synthesize hideCode=_hideCode;

@@ -11,7 +11,6 @@
     NSString *_md5;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *md5; // @synthesize md5=_md5;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 - (id)toXML;

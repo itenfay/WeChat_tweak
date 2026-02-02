@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSMutableArray;
 
 @interface WCStoryFetchBgmCgiObj
@@ -15,7 +17,6 @@
     CDUnknownBlockType _completionBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) NSData *classifyResultData; // @synthesize classifyResultData=_classifyResultData;
 @property(nonatomic) unsigned long long requestId; // @synthesize requestId=_requestId;
@@ -29,4 +30,3 @@
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 
 @end
-

@@ -19,7 +19,6 @@
     NSString *_forbidenMediaTypeToast;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *forbidenMediaTypeToast; // @synthesize forbidenMediaTypeToast=_forbidenMediaTypeToast;
 @property(nonatomic) unsigned long long forbidenMediaType; // @synthesize forbidenMediaType=_forbidenMediaType;
 @property(retain, nonatomic) NSString *maxFileSizeToast; // @synthesize maxFileSizeToast=_maxFileSizeToast;

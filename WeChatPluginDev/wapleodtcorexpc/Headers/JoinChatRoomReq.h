@@ -12,7 +12,6 @@
     NSString *extMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extMsg; // @synthesize extMsg;
 @property(retain, nonatomic) NSString *chatRoomNickName; // @synthesize chatRoomNickName;
 @property(retain, nonatomic) NSString *groupId; // @synthesize groupId;

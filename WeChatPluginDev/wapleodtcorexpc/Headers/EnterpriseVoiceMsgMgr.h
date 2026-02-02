@@ -13,7 +13,6 @@
     id <EnterpriseVoiceMsgMgrDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EnterpriseVoiceMsgMgrDelegate> delegate; // @synthesize delegate;
 - (void)handleDownloadVoiceMsgSuc:(id)arg1;
 - (_Bool)WriteAudioFile:(id)arg1 Offset:(unsigned int)arg2 Data:(id)arg3;

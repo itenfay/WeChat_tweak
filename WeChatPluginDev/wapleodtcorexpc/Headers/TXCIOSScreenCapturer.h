@@ -25,7 +25,6 @@
     NSString *_appGroupId;
 }
 
-- (void).cxx_destruct;
 @property _Bool isRunning; // @synthesize isRunning=_isRunning;
 @property(retain, nonatomic) NSString *appGroupId; // @synthesize appGroupId=_appGroupId;
 @property(retain, nonatomic) NSMutableSet *subscribers; // @synthesize subscribers=_subscribers;

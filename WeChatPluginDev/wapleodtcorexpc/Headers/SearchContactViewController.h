@@ -14,7 +14,6 @@
     MMTableView *m_tableView;
 }
 
-- (void).cxx_destruct;
 - (void)onMainWindowFrameChanged;
 - (_Bool)isSeachActive;
 - (void)onCancelSearch;

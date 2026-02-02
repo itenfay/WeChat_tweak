@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MPGetChannelFeedsDataHandler : NSObject
 {
@@ -12,7 +13,6 @@
 }
 
 + (void)sendRequestWithCompletion:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MPGetChannelFeedsDataHandler *selfRetain; // @synthesize selfRetain=_selfRetain;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
@@ -24,4 +24,3 @@
 - (id)initWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
-

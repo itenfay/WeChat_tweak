@@ -29,7 +29,6 @@
     _Bool m_isAnimatingTranslateText;
 }
 
-- (void).cxx_destruct;
 - (id)additionalCustomActions;
 - (unsigned long long)accessibilityTraits;
 - (void)onEndPlayingMsg:(id)arg1 autoPlayEnabled:(_Bool)arg2;

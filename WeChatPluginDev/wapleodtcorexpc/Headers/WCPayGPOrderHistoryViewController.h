@@ -18,7 +18,6 @@
     MMUILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) _Bool bIsDataLoadEnd; // @synthesize bIsDataLoadEnd=_bIsDataLoadEnd;

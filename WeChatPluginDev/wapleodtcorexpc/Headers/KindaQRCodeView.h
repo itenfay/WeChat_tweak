@@ -10,7 +10,6 @@
     QBarCodeView *contentView;
 }
 
-- (void).cxx_destruct;
 - (void)setCode:(id)arg1;
 - (id)getView;
 - (id)init;

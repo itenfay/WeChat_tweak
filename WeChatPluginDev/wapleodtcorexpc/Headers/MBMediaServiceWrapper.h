@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MBMediaServiceWrapper : NSObject
 {
@@ -29,4 +30,3 @@
 - (id)init;
 
 @end
-

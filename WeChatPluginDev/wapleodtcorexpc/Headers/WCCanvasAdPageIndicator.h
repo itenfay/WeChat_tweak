@@ -27,7 +27,6 @@
     UIColor *_indicatorColorBorder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *indicatorColorBorder; // @synthesize indicatorColorBorder=_indicatorColorBorder;
 @property(retain, nonatomic) UIColor *indicatorColorBg; // @synthesize indicatorColorBg=_indicatorColorBg;
 @property(nonatomic) double fillCurrentDuration; // @synthesize fillCurrentDuration=_fillCurrentDuration;

@@ -22,7 +22,6 @@
     UIView *_containerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) MMUIButton *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) MMUIButton *bottomButton; // @synthesize bottomButton=_bottomButton;

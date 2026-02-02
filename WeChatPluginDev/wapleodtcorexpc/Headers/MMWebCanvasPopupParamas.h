@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -17,7 +18,6 @@
     struct CGRect _canvasRect;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bizType; // @synthesize bizType=_bizType;
 @property(copy, nonatomic) CDUnknownBlockType closeBlock; // @synthesize closeBlock=_closeBlock;
 @property(nonatomic) unsigned int mode; // @synthesize mode=_mode;
@@ -27,4 +27,3 @@
 - (id)description;
 
 @end
-

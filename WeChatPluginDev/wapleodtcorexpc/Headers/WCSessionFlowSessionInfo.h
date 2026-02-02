@@ -21,7 +21,6 @@
     NSMutableArray *_markPagePathInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *markPagePathInfos; // @synthesize markPagePathInfos=_markPagePathInfos;
 @property(retain, nonatomic) NSMutableArray *pagePaths; // @synthesize pagePaths=_pagePaths;
 @property(retain, nonatomic) NSString *sid; // @synthesize sid=_sid;

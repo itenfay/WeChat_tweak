@@ -15,7 +15,6 @@
     NSMutableArray *_subviewArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *subviewArray; // @synthesize subviewArray=_subviewArray;
 - (void)setDisableHighlightDarkMode:(_Bool)arg1;
 - (void)setFocusableInTouchMode:(_Bool)arg1;

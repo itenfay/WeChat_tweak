@@ -64,7 +64,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) long long lastInsertedRowID; // @synthesize lastInsertedRowID;
 // Preceding property had unknown attributes: ?
 // Original attribute string: Tq,?,N,VlastInsertedRowID

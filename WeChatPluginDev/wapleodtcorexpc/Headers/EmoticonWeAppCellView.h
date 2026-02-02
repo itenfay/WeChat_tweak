@@ -16,7 +16,6 @@
     UIButton *_actionBtn;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isWeAppClicked; // @synthesize isWeAppClicked=_isWeAppClicked;
 @property(retain, nonatomic) UIButton *actionBtn; // @synthesize actionBtn=_actionBtn;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

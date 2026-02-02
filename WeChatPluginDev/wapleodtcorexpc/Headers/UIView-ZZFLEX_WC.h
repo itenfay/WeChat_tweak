@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class StandardButtonProviderChainModel;
 
@@ -15,4 +16,3 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType addMMTableView;
 @property(readonly, copy, nonatomic) CDUnknownBlockType addWebImageView;
 @end
-

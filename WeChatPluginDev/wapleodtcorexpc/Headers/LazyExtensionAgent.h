@@ -11,7 +11,6 @@
     NSMutableDictionary *m_dicKeyExtensions;
 }
 
-- (void).cxx_destruct;
 - (void)ensureLazyListenerInitedForExtension:(id)arg1 withSelector:(SEL)arg2 forKey:(id)arg3 inContext:(id)arg4;
 - (void)registerLazyListener:(Class)arg1 onExtension:(id)arg2 forKey:(id)arg3;
 - (void)ensureLazyListenerInitedForExtension:(id)arg1 withSelector:(SEL)arg2 inContext:(id)arg3;

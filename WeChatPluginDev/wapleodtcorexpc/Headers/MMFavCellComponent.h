@@ -23,7 +23,6 @@
 }
 
 + (double)calHeightWithComData:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak FavMultiMenuTableViewCell *parentCellView; // @synthesize parentCellView=_parentCellView;
 @property(nonatomic) __weak id <MMFavCellComponentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) FavoritesItem *favItem; // @synthesize favItem=_favItem;

@@ -32,7 +32,6 @@
 + (void)PBArrayAdd_createTime;
 + (void)PBArrayAdd_msgLocalId;
 + (void)PBArrayAdd_version;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needCheckEasterEgg; // @synthesize needCheckEasterEgg=_needCheckEasterEgg;
 @property(retain, nonatomic) NSString *msgSource; // @synthesize msgSource=_msgSource;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;

@@ -41,7 +41,6 @@
 + (void)PBArrayAdd_isNativePage;
 + (void)PBArrayAdd_itemShowType;
 + (void)PBArrayAdd_hasItemShowType;
-- (void).cxx_destruct;
 @property(nonatomic) long long picCount; // @synthesize picCount=_picCount;
 @property(nonatomic) _Bool isPaySubscribe; // @synthesize isPaySubscribe=_isPaySubscribe;
 @property(nonatomic) unsigned int funcFlag; // @synthesize funcFlag=_funcFlag;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSHashTable, NSString;
 
@@ -14,7 +15,6 @@
     NSHashTable *_tasks;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needWakeup; // @synthesize needWakeup=_needWakeup;
 @property(retain, nonatomic) NSHashTable *tasks; // @synthesize tasks=_tasks;
 @property(nonatomic) __weak id owner; // @synthesize owner=_owner;
@@ -42,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
 }
 
 + (id)mediatorWithBasicMapView:(id)arg1 indoorManager:(id)arg2 styleManager:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) __weak QStyleManager *styleManager; // @synthesize styleManager=_styleManager;
 @property(nonatomic) __weak QIndoorManager *indoorManager; // @synthesize indoorManager=_indoorManager;
 @property(nonatomic) __weak QBasicMapView *basicMapView; // @synthesize basicMapView=_basicMapView;

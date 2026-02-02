@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, CMessageWrap, ImageBrowseButton, MMProgressView, MMScrollView, NSString, NSURL, UIImageView, UILabel, UIView, WCActionSheet, WCPlayerConfigControlView, WCPlayerView, WXFullScreenGestureRecognizer;
 
 @interface MMMoviePlayerController
@@ -48,7 +50,6 @@
     NSString *_chatName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *chatName; // @synthesize chatName=_chatName;
 @property(nonatomic) long long messageSvrID; // @synthesize messageSvrID=_messageSvrID;
 @property(retain, nonatomic) NSURL *assetUrl; // @synthesize assetUrl=_assetUrl;
@@ -158,4 +159,3 @@
 @property(readonly) Class superclass;
 
 @end
-

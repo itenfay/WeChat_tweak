@@ -12,7 +12,6 @@
     NSMutableArray *_objects;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *objects; // @synthesize objects=_objects;
 - (id)init;
 

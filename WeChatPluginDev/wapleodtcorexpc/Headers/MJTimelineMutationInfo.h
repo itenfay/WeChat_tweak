@@ -18,7 +18,6 @@
     unsigned long long _mutationOptions;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long mutationOptions; // @synthesize mutationOptions=_mutationOptions;
 @property(readonly, nonatomic) NSArray *updates; // @synthesize updates=_updates;
 @property(readonly, nonatomic) NSArray *deletes; // @synthesize deletes=_deletes;

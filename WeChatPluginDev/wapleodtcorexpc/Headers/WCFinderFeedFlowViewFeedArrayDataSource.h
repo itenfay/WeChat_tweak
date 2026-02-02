@@ -14,7 +14,6 @@
     WCFinderFeedArray *_feedArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedArray *feedArray; // @synthesize feedArray=_feedArray;
 @property(nonatomic) __weak id <WCFinderFeedFlowViewAdapterDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)finderFeedFlowView:(id)arg1 indexPathOfTid:(id)arg2;

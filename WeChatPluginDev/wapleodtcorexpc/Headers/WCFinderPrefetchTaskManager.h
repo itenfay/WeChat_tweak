@@ -14,7 +14,6 @@
     NSMutableArray *_waitingTaskArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *waitingTaskArray; // @synthesize waitingTaskArray=_waitingTaskArray;
 @property(retain, nonatomic) NSMutableArray *requestingTaskArray; // @synthesize requestingTaskArray=_requestingTaskArray;
 @property(nonatomic) unsigned long long maxRequestNum; // @synthesize maxRequestNum=_maxRequestNum;

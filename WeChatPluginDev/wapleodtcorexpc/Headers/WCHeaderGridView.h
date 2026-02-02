@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableArray, NSString, RichTextView, UIColor, UIImageView, UILabel;
 
@@ -29,7 +30,6 @@
     NSString *_customIconSVGImageName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *customIconSVGImageName; // @synthesize customIconSVGImageName=_customIconSVGImageName;
 @property(retain, nonatomic) UIColor *customIconImageColor; // @synthesize customIconImageColor=_customIconImageColor;
 @property(retain, nonatomic) NSDictionary *customHeadImgUrlDic; // @synthesize customHeadImgUrlDic=_customHeadImgUrlDic;
@@ -56,4 +56,3 @@
 - (id)initWithUserInfos:(id)arg1 likeCount:(unsigned int)arg2;
 
 @end
-

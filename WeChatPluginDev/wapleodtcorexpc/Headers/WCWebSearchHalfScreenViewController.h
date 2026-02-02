@@ -13,7 +13,6 @@
     UIViewController *_actualPresentingViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *actualPresentingViewController; // @synthesize actualPresentingViewController=_actualPresentingViewController;
 @property(retain, nonatomic) WCWebSearchViewControllerNewH5 *searchPage; // @synthesize searchPage=_searchPage;
 @property(retain, nonatomic) WCFinderSteramProfileBarView *headerView; // @synthesize headerView=_headerView;

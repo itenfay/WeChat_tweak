@@ -14,7 +14,6 @@
     long long _cgi;
 }
 
-- (void).cxx_destruct;
 - (void)computeTimeConsumption:(_Bool)arg1 appId:(id)arg2 errCode:(long long)arg3;
 - (id)initWithUrl:(id)arg1 cgi:(long long)arg2;
 

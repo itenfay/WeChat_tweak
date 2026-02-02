@@ -27,7 +27,6 @@
 + (id)configPath;
 + (id)workDir;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMDiskUsageScaner *usageScanner; // @synthesize usageScanner=_usageScanner;
 - (void)reportTipsType:(unsigned int)arg1 andTipsOpt:(unsigned int)arg2 important:(_Bool)arg3;
 - (void)goCleanView;

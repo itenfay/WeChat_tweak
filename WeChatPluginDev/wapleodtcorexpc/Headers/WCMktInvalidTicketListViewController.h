@@ -12,7 +12,6 @@
     UIView *_emptyTipsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *emptyTipsView; // @synthesize emptyTipsView=_emptyTipsView;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) WCMktInvalidTicketListLogicController *logicController; // @synthesize logicController=_logicController;

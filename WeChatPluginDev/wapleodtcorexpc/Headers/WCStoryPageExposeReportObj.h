@@ -15,7 +15,6 @@
 
 + (void)ReportBubbleCommentListExposeWithTid:(id)arg1;
 + (void)ReportExposeWithPageType:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tid; // @synthesize tid=_tid;
 @property(nonatomic) unsigned long long pageType; // @synthesize pageType=_pageType;
 - (void)reportExpose;

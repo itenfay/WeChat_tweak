@@ -11,7 +11,6 @@
     UILabel *_descriptionLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) MMGradientView *gradientView; // @synthesize gradientView=_gradientView;
 - (void)didMoveToWindow;

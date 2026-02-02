@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMFinderLiveLandscapeBarrageEntranceItemView, MMFinderLiveLandscapeBarrageParamCardItemView, MMFinderLiveTask, MMLiveTaskId, MMUIButton, MMUILabel, UIScrollView, UIView;
 
 @interface MMFinderLiveLandscapeBarrageSettingPanel
@@ -20,7 +22,6 @@
     MMFinderLiveLandscapeBarrageParamCardItemView *_displayParamCardItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveLandscapeBarrageParamCardItemView *displayParamCardItem; // @synthesize displayParamCardItem=_displayParamCardItem;
 @property(retain, nonatomic) MMFinderLiveLandscapeBarrageParamCardItemView *rangeParamCardItem; // @synthesize rangeParamCardItem=_rangeParamCardItem;
 @property(retain, nonatomic) MMFinderLiveLandscapeBarrageEntranceItemView *entranceItem; // @synthesize entranceItem=_entranceItem;
@@ -58,4 +59,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

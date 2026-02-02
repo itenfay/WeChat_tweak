@@ -192,7 +192,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *resortBuffer; // @synthesize resortBuffer=_resortBuffer;
 @property(nonatomic) unsigned int recCardMediaType; // @synthesize recCardMediaType=_recCardMediaType;
 @property(retain, nonatomic) NSString *recReason; // @synthesize recReason=_recReason;

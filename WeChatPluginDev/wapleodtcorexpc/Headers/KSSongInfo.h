@@ -21,7 +21,6 @@
     long long _fileSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long fileSize; // @synthesize fileSize=_fileSize;
 @property(nonatomic) double durion; // @synthesize durion=_durion;
 @property(nonatomic) unsigned int databytesPerSecond; // @synthesize databytesPerSecond=_databytesPerSecond;

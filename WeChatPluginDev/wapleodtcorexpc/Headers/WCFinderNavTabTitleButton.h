@@ -15,7 +15,6 @@
     struct CGSize _selectedSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dispalyAccessibilityLabel; // @synthesize dispalyAccessibilityLabel=_dispalyAccessibilityLabel;
 @property(retain, nonatomic) YYLabel *label; // @synthesize label=_label;
 @property(nonatomic) struct CGSize selectedSize; // @synthesize selectedSize=_selectedSize;

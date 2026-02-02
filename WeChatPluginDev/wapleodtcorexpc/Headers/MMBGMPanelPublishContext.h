@@ -19,7 +19,6 @@
     id <MMBGMSelectedMusicDataProtocol> _currentSelectedMusic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int finderCommentScene; // @synthesize finderCommentScene=_finderCommentScene;
 @property(retain, nonatomic) id <MMBGMSelectedMusicDataProtocol> currentSelectedMusic; // @synthesize currentSelectedMusic=_currentSelectedMusic;
 @property(nonatomic) unsigned long long currentBgmPanelTabType; // @synthesize currentBgmPanelTabType=_currentBgmPanelTabType;

@@ -13,7 +13,6 @@
     struct CGRect _mRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect mRect; // @synthesize mRect=_mRect;
 @property(retain, nonatomic) UIView *mBgView; // @synthesize mBgView=_mBgView;
 - (long long)preferredInterfaceOrientationForPresentation;

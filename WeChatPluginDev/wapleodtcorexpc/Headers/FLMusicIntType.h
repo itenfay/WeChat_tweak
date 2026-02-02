@@ -15,7 +15,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithValue:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *value; // @synthesize value=_value;
 - (id)toList;
 

@@ -16,7 +16,6 @@
     struct CGSize cropSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImagePickerController *imagePickerController; // @synthesize imagePickerController=_imagePickerController;
 @property(nonatomic) _Bool resizeableCropArea; // @synthesize resizeableCropArea;
 @property(nonatomic) __weak id <GKImagePickerDelegate> delegate; // @synthesize delegate;

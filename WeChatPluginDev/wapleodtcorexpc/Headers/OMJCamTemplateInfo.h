@@ -18,7 +18,6 @@
     CDStruct_1b6d18a9 _maxRecordingDuration;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *musicInfos; // @synthesize musicInfos=_musicInfos;
 @property(readonly, nonatomic) _Bool hasAIGCFeature; // @synthesize hasAIGCFeature=_hasAIGCFeature;
 @property(readonly, nonatomic) unsigned long long supportedImportedAssetCount; // @synthesize supportedImportedAssetCount=_supportedImportedAssetCount;

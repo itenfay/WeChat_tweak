@@ -17,7 +17,6 @@
     NSArray *_networkTypes;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *networkTypes; // @synthesize networkTypes=_networkTypes;
 @property(retain, nonatomic) NSNumber *maximumBatteryLevel; // @synthesize maximumBatteryLevel=_maximumBatteryLevel;
 @property(retain, nonatomic) NSNumber *minimumBatteryLevel; // @synthesize minimumBatteryLevel=_minimumBatteryLevel;

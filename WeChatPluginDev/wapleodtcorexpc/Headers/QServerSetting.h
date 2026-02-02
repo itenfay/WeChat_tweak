@@ -16,7 +16,6 @@
     NSString *_host_test;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *host_test; // @synthesize host_test=_host_test;
 @property(copy, nonatomic) NSString *host; // @synthesize host=_host;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIControl.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ZZControlChainModel;
 
@@ -11,4 +12,3 @@
 + (CDUnknownBlockType)zz_create;
 @property(readonly, copy, nonatomic) ZZControlChainModel *zz_setup;
 @end
-

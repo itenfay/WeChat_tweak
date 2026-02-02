@@ -20,7 +20,6 @@
     NSMutableDictionary *_msgInfoDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *msgInfoDict; // @synthesize msgInfoDict=_msgInfoDict;
 @property(nonatomic) _Bool isCheckingBigFile; // @synthesize isCheckingBigFile=_isCheckingBigFile;
 @property(retain, nonatomic) MessageCommonUploader *fileUploader; // @synthesize fileUploader=_fileUploader;

@@ -14,7 +14,6 @@
     unsigned long long _m_nFinishedLegth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_nFinishedLegth; // @synthesize m_nFinishedLegth=_m_nFinishedLegth;
 @property(nonatomic) unsigned long long m_nTotalLength; // @synthesize m_nTotalLength=_m_nTotalLength;
 @property(retain, nonatomic) NSString *m_nsClientMsgID; // @synthesize m_nsClientMsgID=_m_nsClientMsgID;

@@ -15,7 +15,6 @@
     WCCardLargeCodeView *_largeCodeView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCardLargeCodeView *largeCodeView; // @synthesize largeCodeView=_largeCodeView;
 @property(retain, nonatomic) WCShareCardMemberHeaderCardImageView *memberCardImgView; // @synthesize memberCardImgView=_memberCardImgView;
 @property(nonatomic) _Bool bIsAcceptMemberCard; // @synthesize bIsAcceptMemberCard=_bIsAcceptMemberCard;

@@ -23,7 +23,6 @@
     UIImageView *_backgroundIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *backgroundIcon; // @synthesize backgroundIcon=_backgroundIcon;
 @property(retain, nonatomic) UILabel *balanceTipLabel; // @synthesize balanceTipLabel=_balanceTipLabel;
 @property(retain, nonatomic) UILabel *balanceLabel; // @synthesize balanceLabel=_balanceLabel;

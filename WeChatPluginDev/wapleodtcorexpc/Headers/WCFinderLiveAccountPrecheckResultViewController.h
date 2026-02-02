@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMAcceptAgreementCommonHeadView, MMFinderLiveTaskId, MMTableView, MMTableViewInfo, NSMutableDictionary, NSString, SecurityInfoAuthrizeLogic, SpamRisk, UIButton;
 
 @interface WCFinderLiveAccountPrecheckResultViewController
@@ -28,7 +30,6 @@
     double _m_tableContentHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cancelPrecheckProcess; // @synthesize cancelPrecheckProcess=_cancelPrecheckProcess;
 @property(nonatomic) _Bool isExitOnPolicyDone; // @synthesize isExitOnPolicyDone=_isExitOnPolicyDone;
 @property(nonatomic) _Bool isDoneButtonClicked; // @synthesize isDoneButtonClicked=_isDoneButtonClicked;
@@ -100,4 +101,3 @@
 @property(readonly) Class superclass;
 
 @end
-

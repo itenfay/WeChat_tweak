@@ -15,7 +15,6 @@
     long long _flag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelect; // @synthesize isSelect=_isSelect;
 @property(nonatomic) _Bool isAllFlag; // @synthesize isAllFlag=_isAllFlag;
 @property(nonatomic) long long flag; // @synthesize flag=_flag;

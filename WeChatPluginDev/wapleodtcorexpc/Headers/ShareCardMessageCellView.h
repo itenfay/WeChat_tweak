@@ -14,7 +14,6 @@
     MMUILabel *_personalVerifyIdentityLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *personalVerifyIdentityLabel; // @synthesize personalVerifyIdentityLabel=_personalVerifyIdentityLabel;
 @property(retain, nonatomic) UIImageView *certificationImageView; // @synthesize certificationImageView=_certificationImageView;
 - (void)onTouchUpInside;

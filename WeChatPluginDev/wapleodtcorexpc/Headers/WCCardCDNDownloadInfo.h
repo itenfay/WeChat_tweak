@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CdnComMediaInfo, NSString;
 
@@ -18,7 +19,6 @@
     CdnComMediaInfo *_cdnMediaInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CdnComMediaInfo *cdnMediaInfo; // @synthesize cdnMediaInfo=_cdnMediaInfo;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
@@ -28,4 +28,3 @@
 @property(retain, nonatomic) NSString *fileId; // @synthesize fileId=_fileId;
 
 @end
-

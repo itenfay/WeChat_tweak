@@ -15,7 +15,6 @@
 }
 
 + (id)animationOrigin:(struct CGPoint)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(nonatomic) struct CGPoint originPoint; // @synthesize originPoint=_originPoint;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;

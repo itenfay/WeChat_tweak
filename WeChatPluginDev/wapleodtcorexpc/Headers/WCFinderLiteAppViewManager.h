@@ -12,7 +12,6 @@
     OpenLiteAppInfo *_openLiteAppInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenLiteAppInfo *openLiteAppInfo; // @synthesize openLiteAppInfo=_openLiteAppInfo;
 - (double)displayHeight;
 - (id)displayView;

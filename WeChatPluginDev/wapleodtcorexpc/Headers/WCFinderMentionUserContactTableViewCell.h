@@ -14,7 +14,6 @@
     UIView *_separatorLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
 @property(retain, nonatomic) AttributeLabel *authInfoLabel; // @synthesize authInfoLabel=_authInfoLabel;
 @property(retain, nonatomic) WCFinderAuthInfoIconView *authInfoIconView; // @synthesize authInfoIconView=_authInfoIconView;

@@ -44,7 +44,6 @@
 + (void)PBArrayAdd_iconURL;
 + (void)PBArrayAdd_endTime;
 + (void)PBArrayAdd_beginTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *unreadTextColor; // @synthesize unreadTextColor=_unreadTextColor;
 @property(copy, nonatomic) NSString *withMeClusterDescription; // @synthesize withMeClusterDescription=_withMeClusterDescription;
 @property(copy, nonatomic) NSString *myselfAloneDescription; // @synthesize myselfAloneDescription=_myselfAloneDescription;

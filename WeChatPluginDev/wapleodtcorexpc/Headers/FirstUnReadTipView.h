@@ -11,7 +11,6 @@
 }
 
 + (id)showTipWithDelegate:(id)arg1 parentView:(id)arg2 content:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FirstUnReadTipViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setContentNormal;
 - (void)setContentHighlighted;

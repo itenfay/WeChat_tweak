@@ -12,7 +12,6 @@
     NSString *_shareExcerpt;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *shareExcerpt; // @synthesize shareExcerpt=_shareExcerpt;
 - (void)reportWithToInfo:(id)arg1 shareScene:(unsigned long long)arg2;
 - (void)reportForMoments:(id)arg1;

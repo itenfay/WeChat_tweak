@@ -20,7 +20,6 @@
 + (double)cellWidth;
 + (double)cellHeightInWidth:(double)arg1 styleInfo:(id)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveGenericFeedVM *feedVM; // @synthesize feedVM=_feedVM;
 @property(retain, nonatomic) UILabel *noticeTimeLabel; // @synthesize noticeTimeLabel=_noticeTimeLabel;
 @property(retain, nonatomic) UIView *headImageBorderView; // @synthesize headImageBorderView=_headImageBorderView;

@@ -15,7 +15,6 @@
     NSString *_path;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;
 @property(retain, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;

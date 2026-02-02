@@ -14,7 +14,6 @@
     unsigned long long _haveUploadSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long haveUploadSize; // @synthesize haveUploadSize=_haveUploadSize;
 @property(nonatomic) unsigned long long totalFileSize; // @synthesize totalFileSize=_totalFileSize;
 @property(nonatomic) int retryCount; // @synthesize retryCount=_retryCount;

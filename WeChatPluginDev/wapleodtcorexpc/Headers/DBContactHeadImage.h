@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_headHDImgUrl;
 + (void)PBArrayAdd_headImgUrl;
 + (void)PBArrayAdd_imgHDStatus;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *headHDMd5; // @synthesize headHDMd5=_headHDMd5;
 @property(retain, nonatomic) NSString *headHDImgUrl; // @synthesize headHDImgUrl=_headHDImgUrl;
 @property(retain, nonatomic) NSString *headImgUrl; // @synthesize headImgUrl=_headImgUrl;

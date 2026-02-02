@@ -11,7 +11,6 @@
     NSRecursiveLock *m_oMgrLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *m_dicSelectorList; // @synthesize m_dicSelectorList;
 - (void)onNewSyncPlugin:(unsigned int)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

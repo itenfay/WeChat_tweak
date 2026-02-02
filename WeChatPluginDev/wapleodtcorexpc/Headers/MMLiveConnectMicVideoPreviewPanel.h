@@ -22,7 +22,6 @@
     MMUIButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) MMUIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UILabel *videoTextLabel; // @synthesize videoTextLabel=_videoTextLabel;

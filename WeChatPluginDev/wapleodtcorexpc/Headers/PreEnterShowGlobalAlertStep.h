@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSNumber, NSString, PasswordLogic, WCAccountBindPhoneControlLogic;
 
 @interface PreEnterShowGlobalAlertStep
@@ -16,7 +18,6 @@
     NSNumber *m_autoSelectBtnIdxNum;
 }
 
-- (void).cxx_destruct;
 - (void)onTabBarRootViewControllerDidAppear;
 - (void)showSetPasswordView:(id)arg1;
 - (void)passwordLogicPause:(id)arg1;
@@ -54,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

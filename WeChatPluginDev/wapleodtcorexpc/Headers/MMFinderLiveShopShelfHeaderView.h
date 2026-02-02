@@ -19,7 +19,6 @@
     MMFinderLiveShopShelfHeaderSubInfosView *_subInfosView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveShopShelfHeaderSubInfosView *subInfosView; // @synthesize subInfosView=_subInfosView;
 @property(retain, nonatomic) MMFinderLiveShopShelfDisplayWindowButton *displayWindowButton; // @synthesize displayWindowButton=_displayWindowButton;
 @property(retain, nonatomic) UIButton *displayWindowBtn; // @synthesize displayWindowBtn=_displayWindowBtn;

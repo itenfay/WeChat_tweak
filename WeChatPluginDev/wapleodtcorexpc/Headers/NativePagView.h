@@ -14,7 +14,6 @@
     FlutterMethodChannel *_channel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterMethodChannel *channel; // @synthesize channel=_channel;
 @property(retain, nonatomic) PAGView *pagView; // @synthesize pagView=_pagView;
 @property(retain, nonatomic) PAGFile *pagFile; // @synthesize pagFile=_pagFile;

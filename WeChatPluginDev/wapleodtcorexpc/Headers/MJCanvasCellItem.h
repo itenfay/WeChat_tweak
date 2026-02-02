@@ -15,7 +15,6 @@
     OMJAspectRatio *_aspectRatio;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) OMJAspectRatio *aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 @property(retain, nonatomic) NSString *iconName; // @synthesize iconName=_iconName;

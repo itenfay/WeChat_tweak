@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderEditTool : NSObject
 {
@@ -28,4 +29,3 @@
 + (CDStruct_1b6d18a9)convectTime:(CDStruct_1b6d18a9)arg1;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIImageView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UILongPressGestureRecognizer, UIView, WCPlayerPlayArgs, WCPlayerView;
 
@@ -17,7 +18,6 @@
     UIView *_playerContainerView;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *playerContainerView; // @synthesize playerContainerView=_playerContainerView;
 @property(nonatomic) _Bool playGestureEnabled; // @synthesize playGestureEnabled=_playGestureEnabled;
 @property(copy, nonatomic) CDUnknownBlockType playerStateDidChange; // @synthesize playerStateDidChange=_playerStateDidChange;
@@ -52,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

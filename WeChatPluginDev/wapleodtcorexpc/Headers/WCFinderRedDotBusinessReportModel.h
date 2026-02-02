@@ -27,7 +27,6 @@
 + (long long)calcRemainPunishMValueFromBanCnt:(long long)arg1 punishStage:(long long)arg2;
 + (long long)calcRemainAccNValueFromExptCnt:(long long)arg1 accStage:(long long)arg2;
 + (_Bool)enableReportLimitInfoFromPath:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *extInfoDic; // @synthesize extInfoDic=_extInfoDic;
 @property(nonatomic) long long cleanAccNType; // @synthesize cleanAccNType=_cleanAccNType;
 @property(retain, nonatomic) WCFinderRedDotFrequencyInfo *frequencyInfo; // @synthesize frequencyInfo=_frequencyInfo;

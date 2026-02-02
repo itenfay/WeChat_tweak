@@ -19,7 +19,6 @@
     UITapGestureRecognizer *_tapGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(nonatomic, getter=isExpanded) _Bool expand; // @synthesize expand=_expand;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;

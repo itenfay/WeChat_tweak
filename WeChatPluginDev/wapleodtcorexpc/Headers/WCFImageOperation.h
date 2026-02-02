@@ -16,7 +16,6 @@
     WCFImageManager *_manager;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFImageManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) id <WCFImageOperation> loaderOperation; // @synthesize loaderOperation=_loaderOperation;
 @property(retain, nonatomic) id <WCFImageOperation> cacheOperation; // @synthesize cacheOperation=_cacheOperation;

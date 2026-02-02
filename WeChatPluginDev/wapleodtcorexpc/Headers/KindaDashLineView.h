@@ -12,7 +12,6 @@
     MMDynamicColor *_m_dashColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMDynamicColor *m_dashColor; // @synthesize m_dashColor=_m_dashColor;
 @property(nonatomic) float m_dashWidth; // @synthesize m_dashWidth=_m_dashWidth;
 @property(retain, nonatomic) KindaDashLineUIView *m_dashLineView; // @synthesize m_dashLineView=_m_dashLineView;

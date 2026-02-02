@@ -13,7 +13,6 @@
     NSString *_orderId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *orderId; // @synthesize orderId=_orderId;
 @property(retain, nonatomic) NSString *talkUserName; // @synthesize talkUserName=_talkUserName;
 

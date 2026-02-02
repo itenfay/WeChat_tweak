@@ -16,7 +16,6 @@
     NSNumber *_isUsingVideoSourceHD;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *isUsingVideoSourceHD; // @synthesize isUsingVideoSourceHD=_isUsingVideoSourceHD;
 @property(retain, nonatomic) NSDate *videoSourcePredictionEndTime; // @synthesize videoSourcePredictionEndTime=_videoSourcePredictionEndTime;
 @property(retain, nonatomic) NSDate *videoSourcePredictionStartTime; // @synthesize videoSourcePredictionStartTime=_videoSourcePredictionStartTime;

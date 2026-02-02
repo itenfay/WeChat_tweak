@@ -16,7 +16,6 @@
     NSMutableArray *_emotionSetInfoArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *emotionSetInfoArray; // @synthesize emotionSetInfoArray=_emotionSetInfoArray;
 @property(retain, nonatomic) NSMutableArray *emotionsArray; // @synthesize emotionsArray=_emotionsArray;
 @property(retain, nonatomic) NSData *currReqBuf; // @synthesize currReqBuf=_currReqBuf;

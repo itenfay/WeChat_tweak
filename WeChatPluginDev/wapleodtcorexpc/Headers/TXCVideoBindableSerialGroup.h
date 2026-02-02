@@ -16,7 +16,6 @@
     id <TXIVideoBindable> _nextBindable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TXIVideoBindable> nextBindable; // @synthesize nextBindable=_nextBindable;
 @property(retain, nonatomic) NSString *tag; // @synthesize tag=_tag;
 @property(retain, nonatomic) id <TXIVideoBindable> tail; // @synthesize tail=_tail;

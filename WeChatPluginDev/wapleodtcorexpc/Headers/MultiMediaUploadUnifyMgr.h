@@ -16,7 +16,6 @@
     NSMutableArray *_arrUploadingTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrUploadingTask; // @synthesize arrUploadingTask=_arrUploadingTask;
 @property(retain, nonatomic) MultiMediaUploadProcessController *currentTask; // @synthesize currentTask=_currentTask;
 @property(nonatomic) __weak id <RecordUploadCDNMgrDelegate> delegate; // @synthesize delegate=_delegate;

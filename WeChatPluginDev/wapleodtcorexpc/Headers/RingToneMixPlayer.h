@@ -19,7 +19,6 @@
     RingToneAvPlayer *_avPlayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RingToneAvPlayer *avPlayer; // @synthesize avPlayer=_avPlayer;
 @property(retain, nonatomic) RingToneFinderPlayerView *finderPlayerView; // @synthesize finderPlayerView=_finderPlayerView;
 @property(retain, nonatomic) NSObject<RingTonePlayer> *curPlayer; // @synthesize curPlayer=_curPlayer;

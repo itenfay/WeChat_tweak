@@ -14,7 +14,6 @@
     MMLiveRewardGiftNewCustomizationStyleSelectContainerView *_styleSelectContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveRewardGiftNewCustomizationStyleSelectContainerView *styleSelectContainerView; // @synthesize styleSelectContainerView=_styleSelectContainerView;
 @property(retain, nonatomic) MMLiveRewardGiftNewCustomizationStyleTabContainerView *styleTabContainerView; // @synthesize styleTabContainerView=_styleTabContainerView;
 @property(retain, nonatomic) MMLiveRewardGiftNewCustomizationEditLogic *customizationEditLogic; // @synthesize customizationEditLogic=_customizationEditLogic;

@@ -19,7 +19,6 @@
     unsigned long long _currentPosMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentPosMs; // @synthesize currentPosMs=_currentPosMs;
 @property(retain, nonatomic) NSMutableArray *subtitleLabelArray; // @synthesize subtitleLabelArray=_subtitleLabelArray;
 @property(nonatomic) double maxSubtitleWidth; // @synthesize maxSubtitleWidth=_maxSubtitleWidth;

@@ -20,7 +20,6 @@
 + (id)wifiWithHotspotNetwork:(id)arg1;
 + (id)wifiWithSSID:(id)arg1 BSSID:(id)arg2 password:(id)arg3;
 + (id)wifiWithSSID:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool justJoined; // @synthesize justJoined=_justJoined;
 @property(readonly, nonatomic) _Bool autoJoined; // @synthesize autoJoined=_autoJoined;
 @property(readonly, nonatomic) double signalStrength; // @synthesize signalStrength=_signalStrength;

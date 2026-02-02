@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GameLifeDb, GameLifeEnteredRedDotCache, MMBaseSessionStorage, NSString, WCTTable;
 
 @interface GameLifeDataService
@@ -15,7 +17,6 @@
     GameLifeEnteredRedDotCache *_enteredRedDotCache;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int notShowAppPanelItemIndex; // @synthesize notShowAppPanelItemIndex=_notShowAppPanelItemIndex;
 @property(retain, nonatomic) GameLifeEnteredRedDotCache *enteredRedDotCache; // @synthesize enteredRedDotCache=_enteredRedDotCache;
 @property(retain, nonatomic) MMBaseSessionStorage *conversationStorage; // @synthesize conversationStorage=_conversationStorage;
@@ -99,4 +100,3 @@
 @property(readonly) Class superclass;
 
 @end
-

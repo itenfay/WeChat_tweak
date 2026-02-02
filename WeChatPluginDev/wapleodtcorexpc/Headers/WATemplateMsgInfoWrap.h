@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_globalAudioSwitchOFF;
 + (void)PBArrayAdd_banAppIdList;
 + (void)PBArrayAdd_globalSwitchOFF;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *msgRecordList; // @synthesize msgRecordList=_msgRecordList;
 @property(nonatomic) _Bool globalAudioSwitchOFF; // @synthesize globalAudioSwitchOFF=_globalAudioSwitchOFF;
 @property(retain, nonatomic) NSMutableArray *banAppIdList; // @synthesize banAppIdList=_banAppIdList;

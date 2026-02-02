@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_nsRedDotBuff;
 + (void)PBArrayAdd_bShowRedDot;
 + (void)PBArrayAdd_bShowNew;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShowMeRedDot; // @synthesize bShowMeRedDot=_bShowMeRedDot;
 @property(nonatomic) _Bool bShowEntryRedDot; // @synthesize bShowEntryRedDot=_bShowEntryRedDot;
 @property(nonatomic) _Bool bShowEntryNew; // @synthesize bShowEntryNew=_bShowEntryNew;

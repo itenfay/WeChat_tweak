@@ -33,7 +33,6 @@
     id <WCGeneralMonitorDelegate> _monitorDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCGeneralMonitorDelegate> monitorDelegate; // @synthesize monitorDelegate=_monitorDelegate;
 - (id)getMonitorCell:(id)arg1 withIndexPath:(id)arg2;
 - (id)getMonitorCellId:(id)arg1;

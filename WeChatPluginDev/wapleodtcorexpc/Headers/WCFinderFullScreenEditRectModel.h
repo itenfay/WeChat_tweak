@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_widthPrecent;
 + (void)PBArrayAdd_topPrecent;
 + (void)PBArrayAdd_leftPrecent;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderHalfRect *halfRect; // @synthesize halfRect=_halfRect;
 @property(nonatomic) double heightPrecent; // @synthesize heightPrecent=_heightPrecent;
 @property(nonatomic) double widthPrecent; // @synthesize widthPrecent=_widthPrecent;

@@ -13,7 +13,6 @@
     UIView *_rootView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDirty; // @synthesize isDirty=_isDirty;
 @property(nonatomic) __weak UIView *rootView; // @synthesize rootView=_rootView;
 - (void)notifyRefresh;

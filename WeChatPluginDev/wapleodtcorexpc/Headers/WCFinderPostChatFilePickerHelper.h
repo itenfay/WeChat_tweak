@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUINavigationController, MMUIViewController, NSArray, NSString, WCFinderFilePickLimiter;
 
@@ -20,7 +21,6 @@
 }
 
 + (void)showChatFilePicker:(id)arg1 limiter:(id)arg2 fromVC:(id)arg3 complete:(CDUnknownBlockType)arg4 cancel:(CDUnknownBlockType)arg5;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onCancel; // @synthesize onCancel=_onCancel;
 @property(copy, nonatomic) CDUnknownBlockType onComplete; // @synthesize onComplete=_onComplete;
 @property(retain, nonatomic) NSString *choosedUserName; // @synthesize choosedUserName=_choosedUserName;
@@ -56,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

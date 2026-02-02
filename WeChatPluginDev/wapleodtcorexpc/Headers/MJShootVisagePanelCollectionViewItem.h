@@ -14,7 +14,6 @@
     unsigned long long _type;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *iconName; // @synthesize iconName=_iconName;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;

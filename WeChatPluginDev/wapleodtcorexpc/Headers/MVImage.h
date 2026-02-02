@@ -13,7 +13,6 @@
 }
 
 + (struct __CVBuffer *)CVPixelBufferRefFromUiImage:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 
 @end

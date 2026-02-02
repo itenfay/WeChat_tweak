@@ -19,7 +19,6 @@
     id <WCAdStateSettingBarViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAdStateSettingBarViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long barStyle; // @synthesize barStyle=_barStyle;
 @property(retain, nonatomic) WCAdURLImageView *jumpLinkIcon; // @synthesize jumpLinkIcon=_jumpLinkIcon;

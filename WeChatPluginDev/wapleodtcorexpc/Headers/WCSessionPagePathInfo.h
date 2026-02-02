@@ -15,7 +15,6 @@
     NSMutableArray *_viewOperation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *viewOperation; // @synthesize viewOperation=_viewOperation;
 @property(retain, nonatomic) NSMutableArray *businessParams; // @synthesize businessParams=_businessParams;
 @property(nonatomic) unsigned long long interval; // @synthesize interval=_interval;

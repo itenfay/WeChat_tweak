@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_configDic;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *configDic; // @synthesize configDic=_configDic;
 - (id)getPBPropertyTable;
 

@@ -15,7 +15,6 @@
     NSString *_resultFilePath;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *resultFilePath; // @synthesize resultFilePath=_resultFilePath;
 @property(readonly, nonatomic) NSString *cdnURL; // @synthesize cdnURL=_cdnURL;
 @property(readonly, nonatomic) unsigned long long cdnScene; // @synthesize cdnScene=_cdnScene;

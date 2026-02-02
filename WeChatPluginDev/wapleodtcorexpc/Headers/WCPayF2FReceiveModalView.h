@@ -27,7 +27,6 @@
     UIImageView *_qrcodeImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *qrcodeImage; // @synthesize qrcodeImage=_qrcodeImage;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;

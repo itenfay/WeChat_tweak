@@ -13,7 +13,6 @@
     struct CGPoint _lastOffset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *expiredTimeLabel; // @synthesize expiredTimeLabel=_expiredTimeLabel;
 @property(nonatomic) struct CGPoint lastOffset; // @synthesize lastOffset=_lastOffset;
 - (double)stepSpace;

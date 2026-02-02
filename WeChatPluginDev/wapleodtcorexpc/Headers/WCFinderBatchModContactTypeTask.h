@@ -24,7 +24,6 @@
 
 + (void)appendTaskItem:(id)arg1 type:(int)arg2 toDictionary:(id)arg3;
 + (id)taskWithAddContactNames:(id)arg1 deleteContactNames:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allSuccess; // @synthesize allSuccess=_allSuccess;
 @property(retain, nonatomic) NSMutableArray *faileds; // @synthesize faileds=_faileds;
 @property(retain, nonatomic) NSMutableArray *success; // @synthesize success=_success;

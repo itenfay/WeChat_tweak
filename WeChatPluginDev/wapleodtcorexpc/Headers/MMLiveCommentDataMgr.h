@@ -14,7 +14,6 @@
     unsigned long long _maxCacheCommentCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxCacheCommentCount; // @synthesize maxCacheCommentCount=_maxCacheCommentCount;
 @property(retain, nonatomic) MMTimer *cacheTimer; // @synthesize cacheTimer=_cacheTimer;
 @property(retain, nonatomic) SafeMutableDictionary *liveBoxIdRecordDict; // @synthesize liveBoxIdRecordDict=_liveBoxIdRecordDict;

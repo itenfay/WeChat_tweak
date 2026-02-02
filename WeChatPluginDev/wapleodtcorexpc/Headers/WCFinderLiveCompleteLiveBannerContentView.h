@@ -17,7 +17,6 @@
     NSArray *_bannerList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *bannerList; // @synthesize bannerList=_bannerList;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

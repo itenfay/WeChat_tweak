@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonCustomManageAddLogic;
 @protocol EmoticonCreateUploadTaskDelegate;
 
@@ -14,7 +16,6 @@
     EmoticonCustomManageAddLogic *_addEmoticonLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonCustomManageAddLogic *addEmoticonLogic; // @synthesize addEmoticonLogic=_addEmoticonLogic;
 @property(copy, nonatomic) CDUnknownBlockType uploadFailBlock; // @synthesize uploadFailBlock=_uploadFailBlock;
 @property(copy, nonatomic) CDUnknownBlockType appendInfoBlock; // @synthesize appendInfoBlock=_appendInfoBlock;
@@ -26,4 +27,3 @@
 - (void)startUpload;
 
 @end
-

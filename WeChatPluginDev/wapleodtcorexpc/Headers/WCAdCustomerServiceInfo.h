@@ -14,7 +14,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCustomerServiceConfirmInfo *confirmInfo; // @synthesize confirmInfo=_confirmInfo;
 @property(retain, nonatomic) NSString *customerServiceUrl; // @synthesize customerServiceUrl=_customerServiceUrl;
 - (_Bool)isValid;

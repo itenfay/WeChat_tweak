@@ -14,7 +14,6 @@
     TPTrackInfo *_trackInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPTrackInfo *trackInfo; // @synthesize trackInfo=_trackInfo;
 @property(nonatomic) long long selectTrackStartTimeSinceBootMs; // @synthesize selectTrackStartTimeSinceBootMs=_selectTrackStartTimeSinceBootMs;
 @property(nonatomic) long long selectTrackId; // @synthesize selectTrackId=_selectTrackId;

@@ -16,7 +16,6 @@
 
 + (id)fromMap:(id)arg1;
 + (id)makeWithSource:(id)arg1 injectionTime:(id)arg2 isMainFrameOnly:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *isMainFrameOnly; // @synthesize isMainFrameOnly=_isMainFrameOnly;
 @property(retain, nonatomic) FWFWKUserScriptInjectionTimeEnumData *injectionTime; // @synthesize injectionTime=_injectionTime;
 @property(copy, nonatomic) NSString *source; // @synthesize source=_source;

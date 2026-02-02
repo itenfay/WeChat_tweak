@@ -18,7 +18,6 @@
     CDStruct_e83c9415 _playRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(retain, nonatomic) TAVMediaPlayer *player; // @synthesize player=_player;
 @property(nonatomic) __weak id <MAVVideoCompositionPlayerDelegate> delegate; // @synthesize delegate=_delegate;

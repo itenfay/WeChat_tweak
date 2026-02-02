@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVVideoDevice, CContact, CMessageWrap, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString, VOIPVideoRender, XImageContext, XImageViewRenderer;
 @protocol IVOIPVideoDeviceDelegate, IlinkMultiTalkDelegate;
 
@@ -84,7 +86,6 @@
 + (_Bool)shouldSupportAddMembers;
 + (_Bool)shouldSupportIlinkCloudService;
 + (_Bool)isHavingIlinkCall;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool acceptNewCall; // @synthesize acceptNewCall=_acceptNewCall;
 @property(nonatomic) _Bool isCallKit; // @synthesize isCallKit=_isCallKit;
 @property(nonatomic) _Bool enableVoIPMPAudioUnit; // @synthesize enableVoIPMPAudioUnit=_enableVoIPMPAudioUnit;
@@ -346,4 +347,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -16,7 +16,6 @@
     unsigned long long _fansCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long fansCount; // @synthesize fansCount=_fansCount;
 @property(retain, nonatomic) UITapGestureRecognizer *stateRetryGesture; // @synthesize stateRetryGesture=_stateRetryGesture;
 @property(retain, nonatomic) UILabel *stateTipsLabel; // @synthesize stateTipsLabel=_stateTipsLabel;

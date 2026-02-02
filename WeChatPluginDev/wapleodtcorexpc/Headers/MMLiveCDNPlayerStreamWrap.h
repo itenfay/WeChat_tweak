@@ -17,7 +17,6 @@
     unsigned long long _switchTimestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool switchByUser; // @synthesize switchByUser=_switchByUser;
 @property(nonatomic) unsigned long long switchTimestamp; // @synthesize switchTimestamp=_switchTimestamp;
 @property(retain, nonatomic) MMLiveCdnStreamInfo *cdnStreamInfo; // @synthesize cdnStreamInfo=_cdnStreamInfo;

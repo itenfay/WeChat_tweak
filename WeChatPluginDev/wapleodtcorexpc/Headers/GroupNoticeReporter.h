@@ -20,7 +20,6 @@
 + (void)report_22613:(id)arg1;
 + (void)reportAction:(unsigned int)arg1;
 + (id)reporter;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *noticeId; // @synthesize noticeId=_noticeId;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(nonatomic) unsigned int memberCount; // @synthesize memberCount=_memberCount;

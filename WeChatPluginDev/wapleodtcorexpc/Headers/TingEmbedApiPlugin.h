@@ -13,7 +13,6 @@
     TingEmbedCallbackApi *_callbackApi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingEmbedCallbackApi *callbackApi; // @synthesize callbackApi=_callbackApi;
 @property(nonatomic) __weak UIViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 - (void)onScrollViewDataCallbackOriginY30percent:(double)arg1;

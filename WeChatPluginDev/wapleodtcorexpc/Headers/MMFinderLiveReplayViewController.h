@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveContentVM, MMFinderLiveReplayLogic, MMFinderLiveReplayOperationView, MMFinderLiveReplayTask, MMFinderLiveReplayTaskId, MMFinderLiveReplayView, MMLiveFullScreenTipsView, MMLiveTaskId, MMLiveView, NSString, UIImageView, UINavigationController, UIView;
 @protocol MMLiveContainerDisplayViewProtocol, MMLiveViewControllerDelegate;
 
@@ -21,7 +23,6 @@
     MMFinderLiveReplayLogic *_replayLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveReplayLogic *replayLogic; // @synthesize replayLogic=_replayLogic;
 @property(retain, nonatomic) NSString *lastFromVC; // @synthesize lastFromVC=_lastFromVC;
 @property(retain, nonatomic) MMFinderLiveReplayOperationView *operationView; // @synthesize operationView=_operationView;
@@ -141,4 +142,3 @@
 @property(readonly) Class superclass;
 
 @end
-

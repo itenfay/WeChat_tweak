@@ -19,7 +19,6 @@
     struct CGSize _size;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long wordingType; // @synthesize wordingType=_wordingType;
 @property(retain, nonatomic) NSArray *styles; // @synthesize styles=_styles;
 @property(nonatomic) double font; // @synthesize font=_font;

@@ -10,7 +10,6 @@
     NSString *_roomId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *roomId; // @synthesize roomId=_roomId;
 
 @end

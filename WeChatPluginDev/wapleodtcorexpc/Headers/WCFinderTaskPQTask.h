@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderTaskPQTask : NSObject
 {
@@ -14,7 +15,6 @@
     double _time;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool asyncEnd; // @synthesize asyncEnd=_asyncEnd;
 @property(nonatomic) double time; // @synthesize time=_time;
 @property(nonatomic) unsigned long long priority; // @synthesize priority=_priority;
@@ -22,4 +22,3 @@
 @property(copy, nonatomic) CDUnknownBlockType taskBlock; // @synthesize taskBlock=_taskBlock;
 
 @end
-

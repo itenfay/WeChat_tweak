@@ -18,7 +18,6 @@
     UIView *_bgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bgView; // @synthesize bgView=_bgView;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSArray *buttonTitles; // @synthesize buttonTitles=_buttonTitles;

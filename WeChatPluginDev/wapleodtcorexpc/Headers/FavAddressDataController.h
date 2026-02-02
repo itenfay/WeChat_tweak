@@ -21,7 +21,6 @@
     CLLocation *_currentLocation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool dataLoadComplete; // @synthesize dataLoadComplete=_dataLoadComplete;
 @property(retain, nonatomic) CLLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
 @property(retain, nonatomic) FavSearchHelper *favSearchHelper; // @synthesize favSearchHelper=_favSearchHelper;

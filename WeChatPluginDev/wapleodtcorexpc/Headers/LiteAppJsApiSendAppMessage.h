@@ -15,7 +15,6 @@
     long long _orientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) NSMutableData *m_recData; // @synthesize m_recData=_m_recData;
 @property(retain, nonatomic) NSDictionary *m_curExtraData; // @synthesize m_curExtraData=_m_curExtraData;

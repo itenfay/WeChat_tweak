@@ -18,7 +18,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double timeInterval; // @synthesize timeInterval=_timeInterval;
 @property(retain, nonatomic) WCAdColorInfo *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(retain, nonatomic) WCAdColorInfo *actionBarTitleColor; // @synthesize actionBarTitleColor=_actionBarTitleColor;

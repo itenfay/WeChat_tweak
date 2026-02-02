@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMImagePickerManagerOptionObj, NSMutableArray, NSString, UINavigationController;
 
 @interface WAJSEventHandler_chooseMedia
@@ -24,7 +26,6 @@
     unsigned long long _totalProcessCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalProcessCount; // @synthesize totalProcessCount=_totalProcessCount;
 @property(nonatomic) unsigned long long failedCount; // @synthesize failedCount=_failedCount;
 @property(nonatomic) unsigned int processedAssetCount; // @synthesize processedAssetCount=_processedAssetCount;
@@ -80,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

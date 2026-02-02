@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MemoryMappedKV, NSDate, NSDictionary, NSMutableArray, NSObject, NSString, WCSession;
 @protocol OS_dispatch_queue;
 
@@ -27,7 +29,6 @@
     MemoryMappedKV *_mappedKV;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 @property(retain, nonatomic) NSString *userXLabConfiguration; // @synthesize userXLabConfiguration=_userXLabConfiguration;
 @property(nonatomic) unsigned int globalXLabSwitch; // @synthesize globalXLabSwitch=_globalXLabSwitch;
@@ -136,4 +137,3 @@
 @property(readonly) Class superclass;
 
 @end
-

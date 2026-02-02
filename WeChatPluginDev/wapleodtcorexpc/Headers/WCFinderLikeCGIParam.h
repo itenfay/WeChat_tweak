@@ -29,7 +29,6 @@
     FinderLikeNewLifeReportInfo *_newlifeReportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLikeNewLifeReportInfo *newlifeReportInfo; // @synthesize newlifeReportInfo=_newlifeReportInfo;
 @property(nonatomic) _Bool isPrivateLike; // @synthesize isPrivateLike=_isPrivateLike;
 @property(nonatomic) int likeSourceType; // @synthesize likeSourceType=_likeSourceType;

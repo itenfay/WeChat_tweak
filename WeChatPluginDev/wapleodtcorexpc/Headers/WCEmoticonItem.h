@@ -24,7 +24,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_emoticonSearchKey;
 + (void)PBArrayAdd_emoticonMd5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *emoticonSearchKey; // @synthesize emoticonSearchKey=_emoticonSearchKey;
 @property(retain, nonatomic) NSString *emoticonMd5; // @synthesize emoticonMd5=_emoticonMd5;
 - (id)toXml;

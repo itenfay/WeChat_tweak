@@ -43,7 +43,6 @@
 }
 
 + (double)bannerCellHeightInWidth:(double)arg1 styleInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFeedHighlightTagView *highlightTagView; // @synthesize highlightTagView=_highlightTagView;
 @property(retain, nonatomic) WCFinderDiscoveryNearbyLiveCollectionViewCellConfig *config; // @synthesize config=_config;
 @property(nonatomic) _Bool isJustTappedByUser; // @synthesize isJustTappedByUser=_isJustTappedByUser;

@@ -11,7 +11,6 @@
     CMessageWrap *_latestMsgWrap;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int notifyCount; // @synthesize notifyCount=_notifyCount;
 @property(retain, nonatomic) CMessageWrap *latestMsgWrap; // @synthesize latestMsgWrap=_latestMsgWrap;
 - (unsigned long long)sectionType;

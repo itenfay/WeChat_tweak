@@ -16,7 +16,6 @@
     WCDataItem *_adPullDataItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCDataItem *adPullDataItem; // @synthesize adPullDataItem=_adPullDataItem;
 @property(nonatomic) _Bool adPullResponseFlag; // @synthesize adPullResponseFlag=_adPullResponseFlag;
 @property(retain, nonatomic) WCDataItem *timelinePullDataItem; // @synthesize timelinePullDataItem=_timelinePullDataItem;

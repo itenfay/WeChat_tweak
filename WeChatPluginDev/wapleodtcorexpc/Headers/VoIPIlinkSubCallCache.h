@@ -14,7 +14,6 @@
     ConfRecvInviteInfo *_inviteInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ConfRecvInviteInfo *inviteInfo; // @synthesize inviteInfo=_inviteInfo;
 @property(retain, nonatomic) CMessageWrap *inviteMessageWrap; // @synthesize inviteMessageWrap=_inviteMessageWrap;
 @property(retain, nonatomic) VoIPMtInviteMsg *inviteMsg; // @synthesize inviteMsg=_inviteMsg;

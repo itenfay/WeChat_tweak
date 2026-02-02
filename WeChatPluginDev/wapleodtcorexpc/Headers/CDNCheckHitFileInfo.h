@@ -17,7 +17,6 @@
     NSString *_fileID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fileID; // @synthesize fileID=_fileID;
 @property(retain, nonatomic) NSString *fileMD5; // @synthesize fileMD5=_fileMD5;
 @property(nonatomic) unsigned long long thumbSize; // @synthesize thumbSize=_thumbSize;

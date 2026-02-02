@@ -13,7 +13,6 @@
     double lastAccessTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastAccessTime; // @synthesize lastAccessTime;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem;
 - (void)encodeWithCoder:(id)arg1;

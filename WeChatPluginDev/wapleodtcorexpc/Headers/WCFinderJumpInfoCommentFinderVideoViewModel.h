@@ -17,7 +17,6 @@
 }
 
 + (id)modelWithData:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long displayType; // @synthesize displayType=_displayType;
 @property(copy, nonatomic) NSString *likeCount; // @synthesize likeCount=_likeCount;
 @property(nonatomic) _Bool showLikeIcon; // @synthesize showLikeIcon=_showLikeIcon;

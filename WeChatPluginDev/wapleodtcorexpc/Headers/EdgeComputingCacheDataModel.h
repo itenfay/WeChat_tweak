@@ -29,7 +29,6 @@
 + (void)PBArrayAdd_data;
 + (void)PBArrayAdd_reportTimeEC;
 + (void)PBArrayAdd_configID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *data; // @synthesize data=_data;
 @property(nonatomic) unsigned long long reportTimeEC; // @synthesize reportTimeEC=_reportTimeEC;
 @property(retain, nonatomic) NSString *configID; // @synthesize configID=_configID;

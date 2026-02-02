@@ -17,7 +17,6 @@
 }
 
 + (id)parseFromXml:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *downloadUrl; // @synthesize downloadUrl=_downloadUrl;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;
 @property(retain, nonatomic) NSString *entranceText; // @synthesize entranceText=_entranceText;

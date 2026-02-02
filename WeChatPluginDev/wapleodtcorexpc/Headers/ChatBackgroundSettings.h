@@ -15,7 +15,6 @@
     long long lastSyncListDate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lastSyncListDate; // @synthesize lastSyncListDate;
 @property(nonatomic) long long currentCID; // @synthesize currentCID;
 @property(retain, nonatomic) NSMutableDictionary *backgroundPreferences; // @synthesize backgroundPreferences;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class QConfigManager, QConfigPreference, QLocalErrorReporter;
 
@@ -14,7 +15,6 @@
     QConfigPreference *_configPreference;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QConfigPreference *configPreference; // @synthesize configPreference=_configPreference;
 @property(retain, nonatomic) QLocalErrorReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) __weak QConfigManager *configer; // @synthesize configer=_configer;
@@ -22,4 +22,3 @@
 - (id)initWithConfigPreference:(id)arg1;
 
 @end
-

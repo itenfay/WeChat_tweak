@@ -13,7 +13,6 @@
     NSString *_forceUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *forceUrl; // @synthesize forceUrl=_forceUrl;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;
 

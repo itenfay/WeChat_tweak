@@ -16,7 +16,6 @@
 
 + (id)cellID;
 + (double)height;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long arrowDirection; // @synthesize arrowDirection=_arrowDirection;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;

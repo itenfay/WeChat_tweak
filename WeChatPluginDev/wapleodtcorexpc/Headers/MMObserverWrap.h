@@ -10,7 +10,6 @@
     id m_observer;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id m_observer; // @synthesize m_observer;
 - (id)initWithObj:(id)arg1;
 

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, UIFont, UIImageView;
 
@@ -41,7 +42,6 @@
 + (double)getFansSignLabelLeftWithStyle:(long long)arg1 rank:(unsigned long long)arg2 isSuperfan:(_Bool)arg3;
 + (struct CGSize)getFansGroupSignSizeWithName:(id)arg1 uiStyle:(long long)arg2 rank:(unsigned int)arg3 isSuperfan:(_Bool)arg4 customFont:(id)arg5;
 + (struct CGSize)getFansGroupSignSizeWithName:(id)arg1 uiStyle:(long long)arg2 rank:(unsigned int)arg3 isSuperfan:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize originalIconImageSize; // @synthesize originalIconImageSize=_originalIconImageSize;
 @property(nonatomic) _Bool forceLayout; // @synthesize forceLayout=_forceLayout;
 @property(nonatomic) double currentLayoutFontScale; // @synthesize currentLayoutFontScale=_currentLayoutFontScale;
@@ -109,4 +109,3 @@
 @property(readonly) Class superclass;
 
 @end
-

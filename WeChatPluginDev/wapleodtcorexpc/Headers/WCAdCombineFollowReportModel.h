@@ -16,7 +16,6 @@
     NSString *_canvasDynamicInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *canvasDynamicInfo; // @synthesize canvasDynamicInfo=_canvasDynamicInfo;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(nonatomic) int finderResult; // @synthesize finderResult=_finderResult;

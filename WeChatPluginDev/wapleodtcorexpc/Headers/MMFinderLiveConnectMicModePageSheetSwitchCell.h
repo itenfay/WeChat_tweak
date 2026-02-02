@@ -17,7 +17,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorBar; // @synthesize separatorBar=_separatorBar;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <MMFinderLiveConnectMicModePageSheetSwitchCellDelegate> delegate; // @synthesize delegate=_delegate;

@@ -13,7 +13,6 @@
     UIImageView *_iView;
 }
 
-- (void).cxx_destruct;
 - (void)setupFlowTextView;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WAAppAuthInfoData, WAContact;
 
 @interface WAAppAuthorizationPayViewController
@@ -12,7 +14,6 @@
     CDUnknownBlockType _updateAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateAction; // @synthesize updateAction=_updateAction;
 @property(retain, nonatomic) WAAppAuthInfoData *authInfo; // @synthesize authInfo=_authInfo;
 @property(retain, nonatomic) WAContact *contact; // @synthesize contact=_contact;
@@ -26,4 +27,3 @@
 - (id)initWithContact:(id)arg1 authInfo:(id)arg2;
 
 @end
-

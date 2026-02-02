@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_action;
 + (void)PBArrayAdd_viewId;
 + (void)PBArrayAdd_pageName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *businessParams; // @synthesize businessParams=_businessParams;
 @property(nonatomic) unsigned long long action; // @synthesize action=_action;
 @property(retain, nonatomic) NSString *viewId; // @synthesize viewId=_viewId;

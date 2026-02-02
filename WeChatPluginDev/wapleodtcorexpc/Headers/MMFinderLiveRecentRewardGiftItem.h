@@ -14,7 +14,6 @@
 }
 
 + (id)batchConvert:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int productCount; // @synthesize productCount=_productCount;
 @property(retain, nonatomic) FinderLiveGift *gift; // @synthesize gift=_gift;
 @property(readonly, nonatomic) double lengthAtLast;

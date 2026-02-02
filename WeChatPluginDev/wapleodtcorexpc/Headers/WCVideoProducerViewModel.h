@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJTemplateMovieSession, MJVideoTemplate, NSString, OMJMusicInfo, OMJTemplateInfo, UIImage, UIView, WCMomentsPostReportSession, WCVideoProducerActionRecorder, WCVideoProducerDataManager, WCVideoProducerExportSettingsLoader, WCVideoProducerFlavors, WCVideoProducerOptions;
 @protocol WCVideoProducerDataProxy, WCVideoProducerViewModelDelegate;
@@ -40,7 +41,6 @@
     MJTemplateMovieSession *_sessionAssistant;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStoppingPlayingVideo; // @synthesize isStoppingPlayingVideo=_isStoppingPlayingVideo;
 @property(nonatomic) _Bool isStartingPlayingVideo; // @synthesize isStartingPlayingVideo=_isStartingPlayingVideo;
 @property(retain, nonatomic) MJTemplateMovieSession *sessionAssistant; // @synthesize sessionAssistant=_sessionAssistant;
@@ -163,4 +163,3 @@
 @property(readonly) Class superclass;
 
 @end
-

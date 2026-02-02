@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveUserQuitLiveGuidePage, MMFinderLiveAnchorCustomizeRewardSelectPanel, MMFinderLiveCastViewModel, MMFinderLiveChooseClarityLogic, MMFinderLiveFansGroupOperationPanel, MMFinderLiveGiftWallIntroSheet, MMFinderLiveGloryIntroSheet, MMFinderLiveHandOffItem, MMFinderLiveLogic, MMFinderLiveMemberTipsFullScreenView, MMFinderLiveMusicInfoSheet, MMFinderLiveOnlineUserProfileView, MMFinderLiveOperationView, MMFinderLivePIPHandler, MMFinderLivePreviewRelatedOperationView, MMFinderLiveRedPacketLogic, MMFinderLiveSaveWishListPanel, MMFinderLiveSetQuickReplyView, MMFinderLiveShopShelfView, MMFinderLiveSuperfanForbidJoinLiveFullScreenView, MMFinderLiveSuperfanGroupPaymentHelper, MMFinderLiveSuperfanInvalidRoleFullScreenView, MMFinderLiveSwitchStreamGuidePanel, MMFinderLiveTask, MMFinderLiveTaskId, MMFinderLiveWebPageSheetContainerCache, MMFinderLiveWishListDetailForAnchorPanel, MMFinderLiveWishListDetailForAudiencePanel, MMLiveAdDislikeReasonPanelView, MMLiveAdFeedbackPanelView, MMLiveAudienceAccountIntroView, MMLiveAudienceMoreFunctionManager, MMLiveCdnStreamInfo, MMLiveFullScreenTipsView, MMLiveMoreFunctionManager, MMLivePauseTimer, MMLiveRewardQuotaSettingSheetView, MMLiveSquareGuideView, MMPageSheetAdapter, MMUIViewController, MMWindowMgrObject, MagicSclFrameSetView, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, SharePreConfirmView, WCBulletinInfo, WCFinderDataItem, WCFinderGameLiveJumpGameGuideTipsViewController, WCFinderLiveAudienceComodityLogReporter, WCFinderLiveBaseLogReporter, WCFinderLiveCompleteViewController, WCFinderLiveHalfScreenUtilController, WCFinderLiveHomePageViewController, WCFinderStarterLiveViewModel, WCLiveContactActionSheet, WCLiveScrollActionSheet;
 @protocol MMLiveMorphDismissTarget;
 
@@ -122,7 +124,6 @@
 + (_Bool)checkIsNoNeedShowLiveMinizeWindowPageListForOnlyFullPageWhenCreateByFullPage:(id)arg1;
 + (_Bool)checkIsNoNeedShowLiveMinizeWindowPageListForPushByLiveRoomNavigationContoller:(id)arg1;
 + (_Bool)checkIsTransientViewControllerIgnoredForMinimization:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType halfCNYShareViewCloseAction; // @synthesize halfCNYShareViewCloseAction=_halfCNYShareViewCloseAction;
 @property(retain, nonatomic) MMLiveAdDislikeReasonPanelView *adDislikeReasonPanel; // @synthesize adDislikeReasonPanel=_adDislikeReasonPanel;
 @property(retain, nonatomic) MMLiveAdFeedbackPanelView *adFeedBackPanel; // @synthesize adFeedBackPanel=_adFeedBackPanel;
@@ -1005,4 +1006,3 @@
 @property(readonly) Class superclass;
 
 @end
-

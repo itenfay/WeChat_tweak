@@ -14,7 +14,6 @@
     UIImage *_arrowImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *arrowImage; // @synthesize arrowImage=_arrowImage;
 @property(retain, nonatomic) UIImage *mainPartBgImage; // @synthesize mainPartBgImage=_mainPartBgImage;
 @property(nonatomic) _Bool needBlurEffect; // @synthesize needBlurEffect=_needBlurEffect;

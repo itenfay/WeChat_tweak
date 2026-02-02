@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSOperationQueue, NSString, NSURLSession;
 @protocol OS_dispatch_queue;
@@ -20,7 +21,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) NSMutableDictionary *mapIDToPacket; // @synthesize mapIDToPacket=_mapIDToPacket;
@@ -44,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -29,7 +29,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1 withSizeType:(long long)arg2 basicWidth:(int)arg3 basicRootFontSize:(int)arg4 widthRoundingType:(long long)arg5 heightRoundingType:(long long)arg6;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *receiveUrl; // @synthesize receiveUrl=_receiveUrl;
 @property(retain, nonatomic) NSString *giveCardId; // @synthesize giveCardId=_giveCardId;
 @property(nonatomic) int theChosenSubtype; // @synthesize theChosenSubtype=_theChosenSubtype;

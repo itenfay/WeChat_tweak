@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_updateTime;
 + (void)PBArrayAdd_funcFlag;
 + (void)PBArrayAdd_acctType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *woringResources; // @synthesize woringResources=_woringResources;
 @property(retain, nonatomic) NSMutableDictionary *urls; // @synthesize urls=_urls;
 @property(retain, nonatomic) NSMutableDictionary *wordings; // @synthesize wordings=_wordings;

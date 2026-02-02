@@ -19,7 +19,6 @@
     NSRecursiveLock *_handlerLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *handlerLock; // @synthesize handlerLock=_handlerLock;
 @property(retain, nonatomic) WXGBackupMMDB *backupMMDB; // @synthesize backupMMDB=_backupMMDB;
 @property(nonatomic) unsigned long long filterMsgCnt; // @synthesize filterMsgCnt=_filterMsgCnt;

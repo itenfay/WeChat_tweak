@@ -16,7 +16,6 @@
     UIViewController *_viewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool viewControllerAttached; // @synthesize viewControllerAttached=_viewControllerAttached;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) MMOrderCenterPivotTabView *tabView; // @synthesize tabView=_tabView;

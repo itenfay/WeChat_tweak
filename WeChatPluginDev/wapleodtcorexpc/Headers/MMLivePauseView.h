@@ -23,7 +23,6 @@
     long long _buttonMaxCountdown;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastType; // @synthesize lastType=_lastType;
 @property(nonatomic) long long buttonMaxCountdown; // @synthesize buttonMaxCountdown=_buttonMaxCountdown;
 @property(nonatomic) long long maxCountdown; // @synthesize maxCountdown=_maxCountdown;

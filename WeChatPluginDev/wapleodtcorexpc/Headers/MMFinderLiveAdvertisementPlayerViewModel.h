@@ -13,7 +13,6 @@
     MMLiveStorageCleanupPinningToken *_resourcesPinningToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *resourcesPinningToken; // @synthesize resourcesPinningToken=_resourcesPinningToken;
 @property(retain, nonatomic) WCFinderLivePlayerViewReporter *playerViewReporter; // @synthesize playerViewReporter=_playerViewReporter;
 @property(nonatomic) unsigned long long beginShowAdVideoTimeForReport; // @synthesize beginShowAdVideoTimeForReport=_beginShowAdVideoTimeForReport;

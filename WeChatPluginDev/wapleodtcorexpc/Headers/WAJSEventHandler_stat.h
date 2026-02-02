@@ -10,7 +10,6 @@
     NSMutableDictionary *_recursiveDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *recursiveDic; // @synthesize recursiveDic=_recursiveDic;
 - (void)traversePath:(id)arg1 isLocalCache:(_Bool)arg2;
 - (id)dicFromStat:(struct stat)arg1;

@@ -13,7 +13,6 @@
     MMLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isExposing; // @synthesize isExposing=_isExposing;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 - (void)endExposeAction;

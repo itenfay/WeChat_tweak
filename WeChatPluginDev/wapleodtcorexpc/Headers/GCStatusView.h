@@ -17,7 +17,6 @@
     struct CGSize _initSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPureText; // @synthesize isPureText=_isPureText;
 @property(nonatomic) struct CGSize initSize; // @synthesize initSize=_initSize;
 @property(retain, nonatomic) UILabel *statusLabel; // @synthesize statusLabel=_statusLabel;

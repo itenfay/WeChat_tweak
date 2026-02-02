@@ -114,7 +114,6 @@
     NoticeItem *_noticeItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NoticeItem *noticeItem; // @synthesize noticeItem=_noticeItem;
 @property(retain, nonatomic) WCPayPaidDetailLeadTailViewData *leadtail_view; // @synthesize leadtail_view=_leadtail_view;
 @property(nonatomic) long long trade_mem_type; // @synthesize trade_mem_type=_trade_mem_type;

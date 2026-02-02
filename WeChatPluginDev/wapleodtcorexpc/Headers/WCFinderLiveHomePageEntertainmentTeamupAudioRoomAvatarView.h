@@ -15,7 +15,6 @@
     UIColor *_audioWaveColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *audioWaveColor; // @synthesize audioWaveColor=_audioWaveColor;
 @property(nonatomic) _Bool userIsTalking; // @synthesize userIsTalking=_userIsTalking;
 @property(retain, nonatomic) MMFinderLiveAudioRoomMicAudioAnimationView *audioAnimationView; // @synthesize audioAnimationView=_audioAnimationView;

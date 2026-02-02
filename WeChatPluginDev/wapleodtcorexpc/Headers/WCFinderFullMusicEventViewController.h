@@ -13,7 +13,6 @@
     UIBarButtonItem *_moreRightButtonItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *moreRightButtonItem; // @synthesize moreRightButtonItem=_moreRightButtonItem;
 @property(copy, nonatomic) NSString *navigationBarTitle; // @synthesize navigationBarTitle=_navigationBarTitle;
 @property(retain, nonatomic) WCFinderTopicRouteParams *params; // @synthesize params=_params;

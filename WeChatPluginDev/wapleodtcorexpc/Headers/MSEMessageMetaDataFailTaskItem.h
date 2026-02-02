@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_taskID;
 + (void)PBArrayAdd_sessionID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *taskID; // @synthesize taskID=_taskID;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 - (id)getPBPropertyTable;

@@ -47,7 +47,6 @@
     UIViewController *_gameStartupCoverVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDelayRestartGame; // @synthesize shouldDelayRestartGame=_shouldDelayRestartGame;
 @property(nonatomic) _Bool shouldForbidRecentForward; // @synthesize shouldForbidRecentForward=_shouldForbidRecentForward;
 @property(nonatomic) _Bool asyncLaunchPubResRelyUpdateRebooted; // @synthesize asyncLaunchPubResRelyUpdateRebooted=_asyncLaunchPubResRelyUpdateRebooted;

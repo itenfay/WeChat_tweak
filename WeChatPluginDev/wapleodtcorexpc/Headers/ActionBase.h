@@ -17,7 +17,6 @@
     NSString *_statId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *statId; // @synthesize statId=_statId;
 @property(retain, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;
 @property(nonatomic) int showType; // @synthesize showType=_showType;

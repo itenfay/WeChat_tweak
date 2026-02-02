@@ -13,7 +13,6 @@
 + (struct CGSize)calcContentSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3 width:(double)arg4;
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
 + (id)getRichTextFromSvrResponse:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *contentLabel; // @synthesize contentLabel=_contentLabel;
 - (void)alignTextWithHorizontalAlign:(long long)arg1 verticalAlign:(long long)arg2;
 - (void)configureWithCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;

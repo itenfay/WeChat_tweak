@@ -16,7 +16,6 @@
     id <StoreEmotionUploadMyPanelListCgiDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int code; // @synthesize code=_code;
 @property(nonatomic) _Bool m_ignoreLimit; // @synthesize m_ignoreLimit;
 @property(nonatomic) _Bool m_hasStartRequestOnce; // @synthesize m_hasStartRequestOnce;

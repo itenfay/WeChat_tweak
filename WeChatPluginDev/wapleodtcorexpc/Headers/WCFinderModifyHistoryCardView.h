@@ -13,7 +13,6 @@
     RichTextView *_editTimeTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *editTimeTextView; // @synthesize editTimeTextView=_editTimeTextView;
 @property(retain, nonatomic) RichTextView *shortDescTextView; // @synthesize shortDescTextView=_shortDescTextView;
 @property(retain, nonatomic) RichTextView *longDescTextView; // @synthesize longDescTextView=_longDescTextView;

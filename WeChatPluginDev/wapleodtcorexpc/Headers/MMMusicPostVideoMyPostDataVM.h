@@ -15,7 +15,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) unsigned long long maxId; // @synthesize maxId=_maxId;
 @property(nonatomic) __weak id <MMMusicPostVideoMyPostDataVMDelegate> delegate; // @synthesize delegate=_delegate;

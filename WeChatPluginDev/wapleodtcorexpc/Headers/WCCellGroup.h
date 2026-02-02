@@ -16,7 +16,6 @@
     NSString *_location;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *location; // @synthesize location=_location;
 @property(nonatomic) long long titleAlignment; // @synthesize titleAlignment=_titleAlignment;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

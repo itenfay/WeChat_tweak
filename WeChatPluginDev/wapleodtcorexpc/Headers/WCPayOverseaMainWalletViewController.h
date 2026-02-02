@@ -22,7 +22,6 @@
     MMWebViewController *_m_userKeyInfoWebViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_disableResetAccessibilityFocus; // @synthesize m_disableResetAccessibilityFocus=_m_disableResetAccessibilityFocus;
 @property(nonatomic) _Bool m_hasShownKeyInfo; // @synthesize m_hasShownKeyInfo=_m_hasShownKeyInfo;
 @property(retain, nonatomic) MMWebViewController *m_userKeyInfoWebViewController; // @synthesize m_userKeyInfoWebViewController=_m_userKeyInfoWebViewController;

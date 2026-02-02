@@ -14,7 +14,6 @@
     GCLoadingMoreCellModel *_loadMoreCellModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCLoadingMoreCellModel *loadMoreCellModel; // @synthesize loadMoreCellModel=_loadMoreCellModel;
 @property(retain, nonatomic) GCCollectionViewSectionModel *sectionModel; // @synthesize sectionModel=_sectionModel;
 @property(retain, nonatomic) GCGroupServer *groupServer; // @synthesize groupServer=_groupServer;

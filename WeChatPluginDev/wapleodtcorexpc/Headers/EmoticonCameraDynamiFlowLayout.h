@@ -12,7 +12,6 @@
     id <EmoticonCameraDynamiFlowLayoutDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EmoticonCameraDynamiFlowLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;

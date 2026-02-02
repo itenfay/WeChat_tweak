@@ -12,7 +12,6 @@
     NSMutableArray *_reportItemList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int slideJumpCount; // @synthesize slideJumpCount=_slideJumpCount;
 @property(nonatomic) int sliderCardStyle; // @synthesize sliderCardStyle=_sliderCardStyle;
 @property(retain, nonatomic) NSMutableArray *reportItemList; // @synthesize reportItemList=_reportItemList;

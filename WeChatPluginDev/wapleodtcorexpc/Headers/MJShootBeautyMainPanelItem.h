@@ -16,7 +16,6 @@
 }
 
 + (id)createEmptyItem;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *iconURL; // @synthesize iconURL=_iconURL;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

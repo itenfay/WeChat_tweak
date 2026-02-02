@@ -15,7 +15,6 @@
     OrderedDictionary *_tmpDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderedDictionary *tmpDict; // @synthesize tmpDict=_tmpDict;
 @property(nonatomic) _Bool hasUnDownload; // @synthesize hasUnDownload=_hasUnDownload;
 @property(retain, nonatomic) NSMutableArray *existLocalPackageArray; // @synthesize existLocalPackageArray=_existLocalPackageArray;

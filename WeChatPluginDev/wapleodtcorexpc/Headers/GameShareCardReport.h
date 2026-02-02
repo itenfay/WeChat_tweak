@@ -11,7 +11,6 @@
     NSMutableSet *_chatExposedSet;
 }
 
-- (void).cxx_destruct;
 - (void)report28466:(int)arg1 contentId:(id)arg2 shareScene:(int)arg3 appId:(id)arg4 fromUin:(unsigned int)arg5 shareId:(id)arg6 actionId:(int)arg7 shareType:(int)arg8;
 - (void)chatExposeReport:(id)arg1;
 - (void)snsExposeReport:(id)arg1;

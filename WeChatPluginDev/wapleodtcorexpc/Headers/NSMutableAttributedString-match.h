@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSMutableAttributedString.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSNumber, NSParagraphStyle, NSShadow, NSString, UIColor, UIFont, YYTextBorder, YYTextDecoration, YYTextShadow, ZZMutableAttributedStringChainModel;
 
@@ -139,4 +140,3 @@
 - (void)safeAddAttributes:(id)arg1 range:(struct _NSRange)arg2;
 - (void)safeAddAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange)arg3;
 @end
-

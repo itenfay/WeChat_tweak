@@ -14,7 +14,6 @@
     H5GameViewController *_gameVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak H5GameViewController *gameVC; // @synthesize gameVC=_gameVC;
 - (void)webViewReturn:(id)arg1;
 - (void)onGameViewClosed;

@@ -14,7 +14,6 @@
     long long _operation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long operation; // @synthesize operation=_operation;
 @property(nonatomic) long long source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;

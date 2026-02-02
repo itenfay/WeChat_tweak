@@ -14,7 +14,6 @@
     NSString *_localFilePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int countdownSeconds; // @synthesize countdownSeconds=_countdownSeconds;
 @property(retain, nonatomic) NSString *localFilePath; // @synthesize localFilePath=_localFilePath;
 @property(retain, nonatomic) FinderLiveButtonAnimationInfo *animationInfo; // @synthesize animationInfo=_animationInfo;

@@ -13,7 +13,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMUDPHandleLogDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)udpNativeLog:(int)arg1 log:(const char *)arg2 target:(long long)arg3;
 

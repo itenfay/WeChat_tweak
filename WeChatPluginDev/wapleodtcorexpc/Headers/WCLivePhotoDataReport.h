@@ -21,7 +21,6 @@
 
 + (id)safeStringWithString:(id)arg1;
 + (id)safeJSONStringWithObject:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *actionInfoDic; // @synthesize actionInfoDic=_actionInfoDic;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool isSuccess; // @synthesize isSuccess=_isSuccess;

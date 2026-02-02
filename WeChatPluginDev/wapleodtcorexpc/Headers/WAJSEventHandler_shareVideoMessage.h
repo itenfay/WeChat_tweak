@@ -11,7 +11,6 @@
     NSString *m_tempVideoPath;
 }
 
-- (void).cxx_destruct;
 - (void)OnForwardMessageException:(id)arg1;
 - (void)OnForwardMessageCancel:(id)arg1;
 - (void)OnForwardMessageSend:(id)arg1;

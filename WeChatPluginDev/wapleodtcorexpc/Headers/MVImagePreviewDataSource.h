@@ -14,7 +14,6 @@
     NSMutableArray *_selectedAssetInfosArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *selectedAssetInfosArray; // @synthesize selectedAssetInfosArray=_selectedAssetInfosArray;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSMutableArray *selectedViewModels; // @synthesize selectedViewModels=_selectedViewModels;

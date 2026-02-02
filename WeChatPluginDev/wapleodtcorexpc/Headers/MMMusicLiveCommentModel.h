@@ -19,7 +19,6 @@
 
 + (id)cellIdentifier;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *noticeQueue; // @synthesize noticeQueue=_noticeQueue;
 @property(retain, nonatomic) NSMutableArray *commentArray; // @synthesize commentArray=_commentArray;
 @property(retain, nonatomic) NSMutableSet *existedComment; // @synthesize existedComment=_existedComment;

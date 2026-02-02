@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, UIImage;
 
@@ -17,7 +18,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize maxPixelSize; // @synthesize maxPixelSize=_maxPixelSize;
 @property(retain, nonatomic) UIImage *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
 @property(retain) NSMutableDictionary *resultHandlersByTaskID; // @synthesize resultHandlersByTaskID=_resultHandlersByTaskID;
@@ -40,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

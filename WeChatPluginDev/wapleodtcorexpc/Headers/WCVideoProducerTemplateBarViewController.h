@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, NSIndexPath, NSString, UICollectionView, UIView, WCVideoProducerDataSource;
 @protocol WCVideoProducerTemplateBarDelegate;
 
@@ -19,7 +21,6 @@
     UICollectionView *_templateBarSelectorCollectionView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCollectionViewLoaded; // @synthesize isCollectionViewLoaded=_isCollectionViewLoaded;
 @property(retain, nonatomic) UICollectionView *templateBarSelectorCollectionView; // @synthesize templateBarSelectorCollectionView=_templateBarSelectorCollectionView;
 @property(retain, nonatomic) NSIndexPath *selectedIndex; // @synthesize selectedIndex=_selectedIndex;
@@ -86,4 +87,3 @@
 @property(readonly) Class superclass;
 
 @end
-

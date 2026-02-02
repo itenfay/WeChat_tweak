@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIView;
 
 @interface FaceRecogTipsPageSheet
@@ -11,7 +13,6 @@
     CDUnknownBlockType _onDismiss;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onDismiss; // @synthesize onDismiss=_onDismiss;
 @property(retain, nonatomic) UIView *tipsContainerView; // @synthesize tipsContainerView=_tipsContainerView;
 - (double)bottomViewBottomMargin;
@@ -36,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -19,7 +19,6 @@
     NSArray *_embeddingFeature;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *embeddingFeature; // @synthesize embeddingFeature=_embeddingFeature;
 @property(readonly, nonatomic) NSDictionary *clusters; // @synthesize clusters=_clusters;
 @property(readonly, nonatomic) NSArray *lastVersionOutScores; // @synthesize lastVersionOutScores=_lastVersionOutScores;

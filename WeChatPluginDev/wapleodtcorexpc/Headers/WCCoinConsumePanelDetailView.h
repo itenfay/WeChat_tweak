@@ -15,7 +15,6 @@
     RichTextView *_protocolTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *protocolTextView; // @synthesize protocolTextView=_protocolTextView;
 @property(retain, nonatomic) UIButton *selectBoxButton; // @synthesize selectBoxButton=_selectBoxButton;
 @property(retain, nonatomic) UIView *protocolView; // @synthesize protocolView=_protocolView;

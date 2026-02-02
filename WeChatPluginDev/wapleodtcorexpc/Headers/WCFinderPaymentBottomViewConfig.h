@@ -15,7 +15,6 @@
 }
 
 + (id)configWithPaidCollectionInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long price; // @synthesize price=_price;
 @property(copy, nonatomic) NSString *confirmButtonTitle; // @synthesize confirmButtonTitle=_confirmButtonTitle;
 @property(copy, nonatomic) NSString *priceDescription; // @synthesize priceDescription=_priceDescription;

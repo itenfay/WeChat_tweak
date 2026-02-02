@@ -16,7 +16,6 @@
     NSData *_liveCookies;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
 @property(copy, nonatomic) NSString *rewardRequestId; // @synthesize rewardRequestId=_rewardRequestId;
 @property(copy, nonatomic) NSString *rewardProductId; // @synthesize rewardProductId=_rewardProductId;

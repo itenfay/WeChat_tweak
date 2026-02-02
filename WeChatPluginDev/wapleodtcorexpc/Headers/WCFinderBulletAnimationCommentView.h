@@ -14,7 +14,6 @@
     UILabel *_likeNumLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *likeNumLabel; // @synthesize likeNumLabel=_likeNumLabel;
 @property(retain, nonatomic) UIImageView *likeIconView; // @synthesize likeIconView=_likeIconView;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;

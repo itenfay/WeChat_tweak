@@ -19,7 +19,6 @@
     NSString *_content;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool lineBreakByClipping; // @synthesize lineBreakByClipping=_lineBreakByClipping;
 @property(nonatomic) _Bool expandHotArea; // @synthesize expandHotArea=_expandHotArea;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;

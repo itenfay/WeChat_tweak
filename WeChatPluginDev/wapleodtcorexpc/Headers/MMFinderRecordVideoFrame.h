@@ -26,7 +26,6 @@
     CDStruct_1b6d18a9 _ptsTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long frameType; // @synthesize frameType=_frameType;
 @property(retain, nonatomic) MMFinderReplayKitVideoDecoder *decoder; // @synthesize decoder=_decoder;
 @property(nonatomic) long long videoFrameId; // @synthesize videoFrameId=_videoFrameId;

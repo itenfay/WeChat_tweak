@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -16,7 +17,6 @@
     NSString *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *taskId; // @synthesize taskId=_taskId;
 @property(copy, nonatomic) CDUnknownBlockType msghandler; // @synthesize msghandler=_msghandler;
 @property(copy, nonatomic) CDUnknownBlockType errorhandler; // @synthesize errorhandler=_errorhandler;
@@ -24,4 +24,3 @@
 @property(copy, nonatomic) CDUnknownBlockType openhandler; // @synthesize openhandler=_openhandler;
 
 @end
-

@@ -12,7 +12,6 @@
     UILabel *_totalTimeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *totalTimeLabel; // @synthesize totalTimeLabel=_totalTimeLabel;
 @property(retain, nonatomic) UILabel *speLabel; // @synthesize speLabel=_speLabel;
 @property(retain, nonatomic) UILabel *currTimeLabel; // @synthesize currTimeLabel=_currTimeLabel;

@@ -20,7 +20,6 @@
     id <RecentForwardSheetItemViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <RecentForwardSheetItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMUIButton *smallDeleteButton; // @synthesize smallDeleteButton=_smallDeleteButton;
 @property(nonatomic) _Bool forceDarkMode; // @synthesize forceDarkMode=_forceDarkMode;

@@ -26,7 +26,6 @@
     struct CGPoint _touchPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint touchPoint; // @synthesize touchPoint=_touchPoint;
 @property(nonatomic) struct CGPoint beginPoint; // @synthesize beginPoint=_beginPoint;
 @property(nonatomic) _Bool doSelect; // @synthesize doSelect=_doSelect;

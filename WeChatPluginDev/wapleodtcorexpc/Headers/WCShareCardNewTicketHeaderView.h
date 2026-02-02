@@ -17,7 +17,6 @@
     NSString *_giftDesc;
 }
 
-- (void).cxx_destruct;
 - (void)onLoadImageOK:(id)arg1;
 - (void)openUsedStoreView;
 - (id)createGiftView;

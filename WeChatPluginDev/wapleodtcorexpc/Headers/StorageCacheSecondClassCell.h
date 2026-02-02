@@ -17,7 +17,6 @@
     MMUILabel *_sizeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *sizeLabel; // @synthesize sizeLabel=_sizeLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *selectIconView; // @synthesize selectIconView=_selectIconView;

@@ -9,7 +9,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)setSpatialInfo:(id)arg1 shouldCommit:(_Bool)arg2;
 - (id)spatialInfo;

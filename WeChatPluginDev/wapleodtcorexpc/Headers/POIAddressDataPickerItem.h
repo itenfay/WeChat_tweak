@@ -10,7 +10,6 @@
     WCAddressStageDataStruct *_addressData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAddressStageDataStruct *addressData; // @synthesize addressData=_addressData;
 - (id)displayStr;
 - (id)initWithAddressData:(id)arg1;

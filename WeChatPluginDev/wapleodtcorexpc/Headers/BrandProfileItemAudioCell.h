@@ -11,7 +11,6 @@
     WCBrandAudioPlayView *_audioPlayView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBrandAudioPlayView *audioPlayView; // @synthesize audioPlayView=_audioPlayView;
 @property(retain, nonatomic) UIView *audioBgView; // @synthesize audioBgView=_audioBgView;
 - (id)accessibilityLabel;

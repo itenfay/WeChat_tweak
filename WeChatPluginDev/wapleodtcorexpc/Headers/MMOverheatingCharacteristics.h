@@ -16,7 +16,6 @@
     NSDate *_timeThatNetworkChangedToUnreachable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *timeThatNetworkChangedToUnreachable; // @synthesize timeThatNetworkChangedToUnreachable=_timeThatNetworkChangedToUnreachable;
 @property(retain, nonatomic) NSDate *timeThatApplicationEnteredBackground; // @synthesize timeThatApplicationEnteredBackground=_timeThatApplicationEnteredBackground;
 @property(retain, nonatomic) NSDate *timeThatApplicationEnteredForeground; // @synthesize timeThatApplicationEnteredForeground=_timeThatApplicationEnteredForeground;

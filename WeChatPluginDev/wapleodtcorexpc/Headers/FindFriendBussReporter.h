@@ -12,7 +12,6 @@
     SessionReportInfo *m_info;
 }
 
-- (void).cxx_destruct;
 - (void)report:(unsigned int)arg1;
 - (void)onAppearPage:(id)arg1 withVC:(id)arg2 withHashCode:(unsigned long long)arg3;
 - (void)onEnterBackground;

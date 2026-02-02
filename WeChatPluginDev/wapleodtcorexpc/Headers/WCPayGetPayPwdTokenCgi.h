@@ -12,7 +12,6 @@
     TokeMess *_tokenMess;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TokeMess *tokenMess; // @synthesize tokenMess=_tokenMess;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 - (void)didFailWithError:(id)arg1;

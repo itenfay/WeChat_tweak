@@ -13,7 +13,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <IWARichTextViewHelper> richTextHelper; // @synthesize richTextHelper=_richTextHelper;
 @property(retain, nonatomic) UIButton *checkButton; // @synthesize checkButton=_checkButton;
 - (void)onLinkClicked:(id)arg1 linkRect:(struct CGRect)arg2;

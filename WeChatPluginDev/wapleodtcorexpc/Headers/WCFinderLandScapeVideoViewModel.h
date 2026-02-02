@@ -31,7 +31,6 @@
 }
 
 + (int)getCommentScene;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataItem *enterFinderDataItem; // @synthesize enterFinderDataItem=_enterFinderDataItem;
 @property(retain, nonatomic) NSMutableArray *continuePlayContentVMs; // @synthesize continuePlayContentVMs=_continuePlayContentVMs;
 @property(retain, nonatomic) NSData *continuePlayLastBuf; // @synthesize continuePlayLastBuf=_continuePlayLastBuf;

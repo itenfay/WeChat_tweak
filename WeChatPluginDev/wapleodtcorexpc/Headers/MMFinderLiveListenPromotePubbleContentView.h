@@ -18,7 +18,6 @@
 
 + (void)preloadWithUrl:(id)arg1;
 + (void)preloadListenBgWithPromoteMsgInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool downLoadImageSuccess; // @synthesize downLoadImageSuccess=_downLoadImageSuccess;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) FinderLiveListenPromoteInfo *listenPromoteInfo; // @synthesize listenPromoteInfo=_listenPromoteInfo;

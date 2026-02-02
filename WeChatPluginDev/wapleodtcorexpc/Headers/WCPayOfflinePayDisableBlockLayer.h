@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_action_type;
 + (void)PBArrayAdd_is_show;
 + (void)PBArrayAdd_block_layer_report_id;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *text_info_array; // @synthesize text_info_array=_text_info_array;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *tiny_app_path; // @synthesize tiny_app_path=_tiny_app_path;

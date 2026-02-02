@@ -22,7 +22,6 @@
     WCFinderLandScapePlayerParam *_param;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLandScapePlayerParam *param; // @synthesize param=_param;
 @property(retain, nonatomic) id <WCFinderCollectionFeedListProvider> collectionDataProvider; // @synthesize collectionDataProvider=_collectionDataProvider;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;

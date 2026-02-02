@@ -20,7 +20,6 @@
 
 + (id)fromJSONStr:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int showTimesType; // @synthesize showTimesType=_showTimesType;
 @property(copy, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(retain, nonatomic) WCFinderLiteAppParams *linkLiteApp; // @synthesize linkLiteApp=_linkLiteApp;

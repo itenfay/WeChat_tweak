@@ -14,7 +14,6 @@
     NSString *_lastOperateMusicPluginName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lastOperateMusicPluginName; // @synthesize lastOperateMusicPluginName=_lastOperateMusicPluginName;
 @property(readonly, nonatomic) NSMutableDictionary *pluginName2InstanceDic; // @synthesize pluginName2InstanceDic=_pluginName2InstanceDic;
 @property(readonly, nonatomic) __weak WAJSCoreService *ownerContext; // @synthesize ownerContext=_ownerContext;

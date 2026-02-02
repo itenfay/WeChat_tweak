@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveCommentDataItem, MMLiveCommentPubbleCellFrame, MMUIButton, RichTextView, UIColor;
 
 @interface MMLiveCommentPubbleCell
@@ -22,7 +24,6 @@
 
 + (double)liveCommentPubbleCellToCellMargin;
 + (double)standardLiveCommentPubbleCellHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCommentTableTopState; // @synthesize isCommentTableTopState=_isCommentTableTopState;
 @property(retain, nonatomic) UIColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;
 @property(retain, nonatomic) MMUIButton *touchButton; // @synthesize touchButton=_touchButton;
@@ -60,4 +61,3 @@
 - (id)initWithCellFrame:(id)arg1;
 
 @end
-

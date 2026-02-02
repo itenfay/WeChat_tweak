@@ -15,7 +15,6 @@
 }
 
 + (id)exclusiveGroupInJsonDictionary:(id)arg1 suiteId:(id)arg2 suiteItems:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *exclusiveItems; // @synthesize exclusiveItems=_exclusiveItems;
 @property(retain, nonatomic) MMLiveBeautyItem *activeItem; // @synthesize activeItem=_activeItem;
 @property(retain, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;

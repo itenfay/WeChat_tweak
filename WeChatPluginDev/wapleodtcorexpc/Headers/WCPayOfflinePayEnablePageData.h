@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_text;
 + (void)PBArrayAdd_icon;
 + (void)PBArrayAdd_is_need_show;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *button; // @synthesize button=_button;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSString *icon; // @synthesize icon=_icon;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -14,7 +15,6 @@
 }
 
 + (void)makeSureLocalServiceActiveWithCompletion:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *storageMap; // @synthesize storageMap=_storageMap;
 @property(nonatomic) int serviceType; // @synthesize serviceType=_serviceType;
 - (void)updateTaskInfo:(int)arg1 key:(id)arg2 value:(id)arg3;
@@ -51,4 +51,3 @@
 - (id)initWithServiceType:(int)arg1;
 
 @end
-

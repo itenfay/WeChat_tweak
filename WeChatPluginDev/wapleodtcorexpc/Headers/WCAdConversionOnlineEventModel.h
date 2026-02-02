@@ -17,7 +17,6 @@
     WCAdConversionOnlineEventBizModel *_biz;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdConversionOnlineEventBizModel *biz; // @synthesize biz=_biz;
 @property(retain, nonatomic) WCAdConversionOnlineEventExtModel *ext; // @synthesize ext=_ext;
 @property(nonatomic) int vl; // @synthesize vl=_vl;

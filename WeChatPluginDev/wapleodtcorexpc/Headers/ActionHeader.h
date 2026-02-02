@@ -13,7 +13,6 @@
     NSString *_link;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *link; // @synthesize link=_link;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)toXml;

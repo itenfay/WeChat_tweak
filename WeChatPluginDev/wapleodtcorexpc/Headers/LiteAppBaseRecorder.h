@@ -29,7 +29,6 @@
 }
 
 + (id)recorderWithFilePath:(id)arg1 settings:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(nonatomic) _Bool timerOnFire; // @synthesize timerOnFire=_timerOnFire;
 @property(retain, nonatomic) NSArray *inputSourceArr; // @synthesize inputSourceArr=_inputSourceArr;

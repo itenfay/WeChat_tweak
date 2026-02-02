@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMGroupLiveCommentDataFetchEngine, MMGroupLiveInfoItem, MMLiveTaskId, NSString;
 
 @interface MMGroupLiveTask
@@ -16,7 +18,6 @@
 + (id)createTaskWithGroupLiveInfoItem:(id)arg1;
 + (id)createTaskWithShareLiveMsg:(id)arg1;
 + (id)createTaskWithReplaySysMsg:(id)arg1 linkUrl:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int audienceScene; // @synthesize audienceScene=_audienceScene;
 @property(nonatomic) unsigned int anchorScene; // @synthesize anchorScene=_anchorScene;
 @property(retain, nonatomic) MMGroupLiveInfoItem *liveInfoItem; // @synthesize liveInfoItem=_liveInfoItem;
@@ -53,4 +54,3 @@
 @property(nonatomic) _Bool isFrontCameraMirrored; // @dynamic isFrontCameraMirrored;
 
 @end
-

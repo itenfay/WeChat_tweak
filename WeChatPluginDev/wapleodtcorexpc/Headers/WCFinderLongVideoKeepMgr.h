@@ -11,7 +11,6 @@
     NSMutableDictionary *_caches;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *caches; // @synthesize caches=_caches;
 @property(nonatomic) __weak WCFinderLongVideoPlayViewController *vcContext; // @synthesize vcContext=_vcContext;
 - (void)updateVcContextUsedRecord;

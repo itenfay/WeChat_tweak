@@ -16,7 +16,6 @@
 + (double)collectionCellHeight;
 + (double)collectionCellWidth;
 + (double)collectionCellSpacing;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *operationImgView; // @synthesize operationImgView=_operationImgView;
 @property(retain, nonatomic) FinderLiveGetUserGameConfigResponse_GameActivityBanner_GameActivityBannerInfo *activity; // @synthesize activity=_activity;
 - (void)onLoadImageOK:(id)arg1;

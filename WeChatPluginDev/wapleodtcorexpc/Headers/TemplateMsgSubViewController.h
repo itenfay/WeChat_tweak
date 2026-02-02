@@ -17,7 +17,6 @@
     TemplateMsgSearchHelper *_searchHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TemplateMsgSearchHelper *searchHelper; // @synthesize searchHelper=_searchHelper;
 @property(retain, nonatomic) MMUILabel *typeLabel; // @synthesize typeLabel=_typeLabel;
 @property(retain, nonatomic) MMUILabel *nickNameLabel; // @synthesize nickNameLabel=_nickNameLabel;

@@ -15,7 +15,6 @@
     NSString *_nsDesc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiWalletType; // @synthesize uiWalletType=_uiWalletType;
 @property(retain, nonatomic) NSString *nsDesc; // @synthesize nsDesc=_nsDesc;
 @property(nonatomic) unsigned long long uiAmount; // @synthesize uiAmount=_uiAmount;

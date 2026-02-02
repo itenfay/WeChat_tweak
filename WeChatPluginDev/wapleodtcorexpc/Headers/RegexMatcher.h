@@ -15,7 +15,6 @@
     NSMutableCharacterSet *_identifierSet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool overLimited; // @synthesize overLimited=_overLimited;
 @property(copy, nonatomic) NSMutableCharacterSet *identifierSet; // @synthesize identifierSet=_identifierSet;
 @property(copy, nonatomic) NSMutableArray *regexGreedArray; // @synthesize regexGreedArray=_regexGreedArray;

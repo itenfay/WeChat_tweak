@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMLiveMagicRewardResourceCheckCallbackObj : NSObject
 {
@@ -12,7 +13,6 @@
     CDUnknownBlockType _timeOverLimitBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType timeOverLimitBlock; // @synthesize timeOverLimitBlock=_timeOverLimitBlock;
 @property(nonatomic) double maxWaitTime; // @synthesize maxWaitTime=_maxWaitTime;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
@@ -20,4 +20,3 @@
 - (void)invokeTimeOverLimitAutoCheckIfNeed;
 
 @end
-

@@ -15,7 +15,6 @@
     NSArray *_jumpInfoReportList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *jumpInfoReportList; // @synthesize jumpInfoReportList=_jumpInfoReportList;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;

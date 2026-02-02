@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveGroupedBadgeView, MMFinderLiveTrailingButtonTextView, NSString, UIImageView, UILabel;
 
 @interface MMFinderLiveConnectedMicAudienceCellView
@@ -23,7 +25,6 @@
 + (id)genDescLabel;
 + (double)cellHeightWithDescText:(id)arg1 expandDescIfNeeded:(_Bool)arg2 cellWidth:(double)arg3;
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTrailingButtonTextView *trailingButtonTextView; // @synthesize trailingButtonTextView=_trailingButtonTextView;
 @property(nonatomic) _Bool shouldExpandDesc; // @synthesize shouldExpandDesc=_shouldExpandDesc;
 @property(retain, nonatomic) NSString *descText; // @synthesize descText=_descText;
@@ -49,4 +50,3 @@
 - (void)prepareForReuse;
 
 @end
-

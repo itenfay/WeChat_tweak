@@ -13,7 +13,6 @@
     NSString *_kfOpenId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int kfType; // @synthesize kfType=_kfType;
 @property(retain, nonatomic) NSString *kfOpenId; // @synthesize kfOpenId=_kfOpenId;
 

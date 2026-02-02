@@ -12,7 +12,6 @@
     NSArray *_deviceArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *deviceArray; // @synthesize deviceArray=_deviceArray;
 @property(nonatomic) __weak id <ScrollItemSelectionDelegate> selectDelegate; // @synthesize selectDelegate=_selectDelegate;
 - (void)onItemClicked:(id)arg1;

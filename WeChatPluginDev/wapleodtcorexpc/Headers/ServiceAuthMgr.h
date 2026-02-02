@@ -12,7 +12,6 @@
     MMUIViewController *_loadingController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *loadingController; // @synthesize loadingController=_loadingController;
 - (void)_notifyChange:(id)arg1 error:(id)arg2;
 - (void)_saveStatusAuth:(id)arg1 noAuth:(id)arg2;

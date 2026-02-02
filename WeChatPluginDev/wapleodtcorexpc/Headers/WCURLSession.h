@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSRecursiveLock, NSString, WCURLSessionConfiguration;
 @protocol WCURLSessionDelegate;
@@ -19,7 +20,6 @@
 
 + (id)sessionWithConfiguration:(id)arg1 delegate:(id)arg2;
 + (id)sessionWithConfiguration:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableArray *taskArray; // @synthesize taskArray=_taskArray;
 @property(nonatomic) unsigned long long reqeustId; // @synthesize reqeustId=_reqeustId;
@@ -50,4 +50,3 @@
 @property(readonly) Class superclass;
 
 @end
-

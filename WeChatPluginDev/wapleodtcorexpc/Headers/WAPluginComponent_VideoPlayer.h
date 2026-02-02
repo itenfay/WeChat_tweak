@@ -30,7 +30,6 @@
 }
 
 + (long long)getDirection:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInBackground; // @synthesize isInBackground=_isInBackground;
 @property(nonatomic) long long lastOrientation; // @synthesize lastOrientation=_lastOrientation;
 @property(retain, nonatomic) WAMediaCastingAirPlayDetector *airPlayDetector; // @synthesize airPlayDetector=_airPlayDetector;

@@ -15,7 +15,6 @@
     long long _expireTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long expireTime; // @synthesize expireTime=_expireTime;
 @property(retain, nonatomic) NSString *weightStr; // @synthesize weightStr=_weightStr;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;

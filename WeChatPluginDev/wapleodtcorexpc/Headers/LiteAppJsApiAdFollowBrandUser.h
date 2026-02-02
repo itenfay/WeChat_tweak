@@ -12,7 +12,6 @@
     MMTimer *_brandContactSyncTimer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int brandUISubScene; // @synthesize brandUISubScene=_brandUISubScene;
 @property(nonatomic) int brandUIScene; // @synthesize brandUIScene=_brandUIScene;
 @property(retain, nonatomic) MMTimer *brandContactSyncTimer; // @synthesize brandContactSyncTimer=_brandContactSyncTimer;

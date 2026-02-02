@@ -19,7 +19,6 @@
     MMWebViewController *_authUrlWebView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMWebViewController *authUrlWebView; // @synthesize authUrlWebView=_authUrlWebView;
 @property(retain, nonatomic) WCCgiBlockHelper *checkLoginQRCodeCgiHelper; // @synthesize checkLoginQRCodeCgiHelper=_checkLoginQRCodeCgiHelper;
 @property(retain, nonatomic) MMTimer *m_timer; // @synthesize m_timer=_m_timer;

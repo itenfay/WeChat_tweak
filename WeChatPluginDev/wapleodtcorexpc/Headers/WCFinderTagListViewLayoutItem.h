@@ -14,7 +14,6 @@
     struct CGRect _frame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(retain, nonatomic) WCFinderTagListItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;

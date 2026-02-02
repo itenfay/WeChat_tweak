@@ -18,7 +18,6 @@
     MMPageSheetConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMPageSheetConfig *config; // @synthesize config=_config;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) UIView *customSubview; // @synthesize customSubview=_customSubview;

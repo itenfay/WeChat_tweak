@@ -25,7 +25,6 @@
     unsigned long long _bizType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isWebviewOnForeground; // @synthesize isWebviewOnForeground=_isWebviewOnForeground;
 @property(nonatomic) unsigned long long bizType; // @synthesize bizType=_bizType;
 @property(copy, nonatomic) NSString *topViewControllerName; // @synthesize topViewControllerName=_topViewControllerName;

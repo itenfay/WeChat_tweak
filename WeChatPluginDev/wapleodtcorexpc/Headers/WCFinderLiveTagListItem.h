@@ -15,7 +15,6 @@
 }
 
 + (id)itemWithItemId:(long long)arg1 title:(id)arg2 userInfo:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long itemId; // @synthesize itemId=_itemId;

@@ -15,7 +15,6 @@
     double _animDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInfinity; // @synthesize isInfinity=_isInfinity;
 @property(nonatomic) double animDuration; // @synthesize animDuration=_animDuration;
 @property(nonatomic) double predictUpdateComposeRectTime; // @synthesize predictUpdateComposeRectTime=_predictUpdateComposeRectTime;

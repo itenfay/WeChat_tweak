@@ -21,7 +21,6 @@
     struct CGSize _uploadMediaSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize uploadMediaSize; // @synthesize uploadMediaSize=_uploadMediaSize;
 @property(copy, nonatomic) NSString *uploadHash; // @synthesize uploadHash=_uploadHash;
 @property(nonatomic) _Bool livePhotoOpt; // @synthesize livePhotoOpt=_livePhotoOpt;

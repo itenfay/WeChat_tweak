@@ -26,7 +26,6 @@
     unsigned long long _actionTimeInMs_37;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long actionTimeInMs_37; // @synthesize actionTimeInMs_37=_actionTimeInMs_37;
 @property(nonatomic) _Bool isSubscribed_36; // @synthesize isSubscribed_36=_isSubscribed_36;
 @property(retain, nonatomic) NSString *recInfo_35; // @synthesize recInfo_35=_recInfo_35;

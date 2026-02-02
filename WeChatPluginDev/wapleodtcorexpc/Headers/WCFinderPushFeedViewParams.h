@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, StreamTabTipsInfo, WCFinderAdReportInfo, WCFinderFullShareListTemplatePlugin, WCFinderPushFeedPlayParams, WCFinderPushFeedViewProductParams, WCFinderShareEntranceMessageInfo;
 @protocol WCFinderFullShareListViewControllerDelegate;
@@ -49,7 +50,6 @@
     id <WCFinderFullShareListViewControllerDelegate> _shareVCDelagate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showScrollUpTips; // @synthesize showScrollUpTips=_showScrollUpTips;
 @property(nonatomic) _Bool ignoreUpdateContextId; // @synthesize ignoreUpdateContextId=_ignoreUpdateContextId;
 @property(nonatomic) __weak id <WCFinderFullShareListViewControllerDelegate> shareVCDelagate; // @synthesize shareVCDelagate=_shareVCDelagate;
@@ -90,4 +90,3 @@
 @property(nonatomic) double startPlayVideoTime; // @dynamic startPlayVideoTime;
 
 @end
-

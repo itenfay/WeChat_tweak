@@ -14,7 +14,6 @@
     NSString *_typeName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
 @property(copy, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(copy, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;

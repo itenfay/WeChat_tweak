@@ -10,7 +10,6 @@
     NSString *m_serverId;
 }
 
-- (void).cxx_destruct;
 - (id)bleInstance;
 - (void)onBluetoothStartAdvertising:(id)arg1 errMsg:(id)arg2 appid:(id)arg3 errCode:(int)arg4;
 - (void)handleJSEvent:(id)arg1;

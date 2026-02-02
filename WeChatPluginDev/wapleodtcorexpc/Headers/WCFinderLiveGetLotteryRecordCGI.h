@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderLiveGetLotteryRecordCGI
@@ -20,7 +22,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) _Bool isAudience; // @synthesize isAudience=_isAudience;
@@ -39,4 +40,3 @@
 - (id)initWithOpType:(long long)arg1 liveTaskId:(id)arg2 lotteryId:(id)arg3 liveId:(unsigned long long)arg4 objectId:(unsigned long long)arg5 objectNonceId:(id)arg6 finderUserName:(id)arg7 isAudience:(_Bool)arg8 lastBuffer:(id)arg9 liveCookies:(id)arg10 successBlock:(CDUnknownBlockType)arg11 failBlock:(CDUnknownBlockType)arg12;
 
 @end
-

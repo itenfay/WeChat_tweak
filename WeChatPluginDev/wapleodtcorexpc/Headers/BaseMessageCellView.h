@@ -17,7 +17,6 @@
     NSSet *_touches;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *touches; // @synthesize touches=_touches;
 - (id)extInfoForSnapshotPrinter;
 - (struct CGRect)previewingSourceRectForLocation:(struct CGPoint)arg1 inCoordinateView:(id)arg2;

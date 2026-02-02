@@ -25,7 +25,6 @@
     MMLoadingView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUploading; // @synthesize isUploading=_isUploading;
 @property(retain, nonatomic) MMLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 - (void)onPackageDownloadFinish:(id)arg1 package:(id)arg2;

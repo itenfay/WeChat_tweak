@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 @protocol MJVoiceInputRecognizerDelegate;
@@ -23,7 +24,6 @@
 }
 
 + (_Bool)isResponseStable:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *requestStatesByIndex; // @synthesize requestStatesByIndex=_requestStatesByIndex;
 @property(retain, nonatomic) NSMutableArray *captionItems; // @synthesize captionItems=_captionItems;
 @property(nonatomic) unsigned long long numResponses; // @synthesize numResponses=_numResponses;
@@ -43,4 +43,3 @@
 - (id)initWithIdentifier:(id)arg1;
 
 @end
-

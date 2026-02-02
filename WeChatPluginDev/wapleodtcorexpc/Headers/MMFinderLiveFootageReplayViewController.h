@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveFootageReplayModel, MMFinderLiveFootageReplayOperationView, MMFinderLiveFootageReplayReporter, MMFinderLiveReplayView, MMFinderLiveTaskId, MMUIButton, NSDictionary, NSString, UIImageView, UINavigationController;
 @protocol MMLiveViewControllerDelegate;
 
@@ -26,7 +28,6 @@
     unsigned long long _seekFromMediaTimeInMilliseconds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool replayStartReported; // @synthesize replayStartReported=_replayStartReported;
 @property(nonatomic) unsigned long long seekFromMediaTimeInMilliseconds; // @synthesize seekFromMediaTimeInMilliseconds=_seekFromMediaTimeInMilliseconds;
 @property(retain, nonatomic) MMFinderLiveFootageReplayReporter *footageReplayReporter; // @synthesize footageReplayReporter=_footageReplayReporter;
@@ -95,4 +96,3 @@
 @property(readonly) Class superclass;
 
 @end
-

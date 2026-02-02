@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIButton, UIView;
 
 @interface WCFinderCommonTitleActionSheet
@@ -19,7 +21,6 @@
     UIButton *_rightBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *rightBtn; // @synthesize rightBtn=_rightBtn;
 @property(retain, nonatomic) UIButton *leftBtn; // @synthesize leftBtn=_leftBtn;
 @property(retain, nonatomic) UIView *tipsView; // @synthesize tipsView=_tipsView;
@@ -37,4 +38,3 @@
 - (double)heightOfWholeSheet;
 
 @end
-

@@ -80,7 +80,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *m_nsBizCliMsgId; // @synthesize m_nsBizCliMsgId=_m_nsBizCliMsgId;
 @property(nonatomic) long long lastInsertedRowID; // @synthesize lastInsertedRowID;
 // Preceding property had unknown attributes: ?

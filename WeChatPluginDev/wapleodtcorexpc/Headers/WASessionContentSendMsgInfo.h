@@ -19,7 +19,6 @@
     NSString *_userName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int appType; // @synthesize appType=_appType;
 @property(nonatomic) unsigned int appVersion; // @synthesize appVersion=_appVersion;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

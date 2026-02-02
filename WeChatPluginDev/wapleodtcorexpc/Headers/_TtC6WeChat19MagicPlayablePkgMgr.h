@@ -18,7 +18,6 @@
     MISSING_TYPE *callback;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)prefetchGetCodeCmd:(id)arg1 didFinishDownloadWithRet:(_Bool)arg2 infoData:(id)arg3 remainRetryCount:(unsigned long long)arg4;
 

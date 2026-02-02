@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderNewUserPrepareResponse, FinderRecommendCloseConfig, FinderTeenagerInfo, MMScrollView, MMUIButton, NSMutableArray, NSMutableDictionary, NSNumber, NSString, UIButton, UIImageView, UIView, WCFinderAppendTabDatasModel, WCFinderCreateCoordinator, WCFinderFeedAudioHelper, WCFinderLeadToMachineCellState, WCFinderNavTeenagerView, WCFinderOpenTimelineParams, WCFinderPlaybackSpeedView, WCFinderPostMgr, WCFinderRecommendTabsView, WCFinderSearchStatReportShim, WCFinderTLUnreadModel, WCFinderTimelineTabBubbleController;
 @protocol WCFinderTabViewControllerProtocol><WCFinderFeedBaseViewControllerProtocol, WCFinderTimelineTabViewControllerDelegate;
 
@@ -73,7 +75,6 @@
 + (id)genPatMusicInfoByInfo:(id)arg1 dataItem:(id)arg2;
 + (id)genPatMusicInfoByInfo:(id)arg1 contentVM:(id)arg2;
 + (unsigned long long)getPostJumpTargetTabType;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cancelSpeedViewAnimateBlock; // @synthesize cancelSpeedViewAnimateBlock=_cancelSpeedViewAnimateBlock;
 @property(nonatomic) _Bool showPostMenu; // @synthesize showPostMenu=_showPostMenu;
 @property(nonatomic) long long machineTabConfigStyle; // @synthesize machineTabConfigStyle=_machineTabConfigStyle;
@@ -445,4 +446,3 @@
 @property(readonly) Class superclass;
 
 @end
-

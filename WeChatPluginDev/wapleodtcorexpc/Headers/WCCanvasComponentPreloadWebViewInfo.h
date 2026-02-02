@@ -14,7 +14,6 @@
     struct CGSize _webviewDynamicSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize webviewDynamicSize; // @synthesize webviewDynamicSize=_webviewDynamicSize;
 @property(nonatomic) double screenHeightOff; // @synthesize screenHeightOff=_screenHeightOff;
 @property(nonatomic) double webviewHeight; // @synthesize webviewHeight=_webviewHeight;

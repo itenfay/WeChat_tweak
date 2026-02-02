@@ -16,7 +16,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *SystemVibrationAry; // @synthesize SystemVibrationAry=_SystemVibrationAry;
 @property(copy, nonatomic) NSArray *PatternAry; // @synthesize PatternAry=_PatternAry;
 @property(nonatomic) long long AbsoluteTime; // @synthesize AbsoluteTime=_AbsoluteTime;

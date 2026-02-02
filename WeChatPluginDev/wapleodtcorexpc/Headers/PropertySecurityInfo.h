@@ -21,7 +21,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *status_name; // @synthesize status_name=_status_name;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *tinyapp_path; // @synthesize tinyapp_path=_tinyapp_path;

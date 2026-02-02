@@ -13,7 +13,6 @@
     double _alpha;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;

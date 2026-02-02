@@ -16,7 +16,6 @@
     RoomHistoryContext *_historyContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RoomHistoryContext *historyContext; // @synthesize historyContext=_historyContext;
 @property(nonatomic) __weak id <RoomDelMemControllDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)oplogRet:(int)arg1 errMsg:(id)arg2 eventID:(unsigned int)arg3 cgiWrap:(id)arg4;

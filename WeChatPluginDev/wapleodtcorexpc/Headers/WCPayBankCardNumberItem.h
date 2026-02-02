@@ -13,7 +13,6 @@
     NSString *m_starBankNumber;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_starBankNumber; // @synthesize m_starBankNumber;
 - (void)clearItem;
 - (void)setBankCardNumber:(id)arg1 starBankNumber:(id)arg2;

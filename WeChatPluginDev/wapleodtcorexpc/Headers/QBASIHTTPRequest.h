@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSOperation.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSData, NSDate, NSDictionary, NSError, NSInputStream, NSMutableArray, NSMutableData, NSMutableDictionary, NSNumber, NSOutputStream, NSRecursiveLock, NSString, NSThread, NSTimer, NSURL, QBASIDataDecompressor;
 @protocol QBASICacheDelegate, QBASIHTTPRequestDelegate, QBASIHTTPRequestDelegate><QBASIProgressDelegate, QBASIProgressDelegate;
@@ -464,4 +465,3 @@
 - (id)initWithURL:(id)arg1;
 
 @end
-

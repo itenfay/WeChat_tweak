@@ -41,7 +41,6 @@
 + (void)PBArrayAdd_imageFrom;
 + (void)PBArrayAdd_dataPath;
 + (void)PBArrayAdd_mattID;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *m_assetClassNameStr; // @synthesize m_assetClassNameStr=_m_assetClassNameStr;
 @property(copy, nonatomic) NSString *referenceUrlStr; // @synthesize referenceUrlStr=_referenceUrlStr;
 @property(copy, nonatomic) NSString *draftPath; // @synthesize draftPath=_draftPath;

@@ -29,7 +29,6 @@
 }
 
 + (id)LiteAppReportDataWithLogType:(long long)arg1 logAction:(long long)arg2 sessionId:(id)arg3 sequenceId:(long long)arg4 appId:(id)arg5 version:(id)arg6 scene:(long long)arg7 uri:(id)arg8 logStringValue:(id)arg9 logUIntValue:(long long)arg10 localTimeStamps:(long long)arg11 extInfo:(id)arg12 expandDimension1:(id)arg13 expandDimension2:(id)arg14 expandDimension3:(id)arg15 logIntValue:(long long)arg16 elapsedTimeSinceFirstLog:(long long)arg17;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long elapsedTimeSinceFirstLog; // @synthesize elapsedTimeSinceFirstLog=_elapsedTimeSinceFirstLog;
 @property(readonly, nonatomic) long long logIntValue; // @synthesize logIntValue=_logIntValue;
 @property(readonly, nonatomic) NSString *expandDimension3; // @synthesize expandDimension3=_expandDimension3;

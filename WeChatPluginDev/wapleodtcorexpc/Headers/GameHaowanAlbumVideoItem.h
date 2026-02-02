@@ -25,7 +25,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLocalCache; // @synthesize isLocalCache=_isLocalCache;
 @property(nonatomic) unsigned int previewJumpType; // @synthesize previewJumpType=_previewJumpType;
 @property(retain, nonatomic) NSString *previewPreloadId; // @synthesize previewPreloadId=_previewPreloadId;

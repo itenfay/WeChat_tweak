@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveGetFinderCouponWidgetsResponse, PAGView, UILabel;
 
@@ -15,7 +16,6 @@
     UILabel *_label;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNormalStyle; // @synthesize isNormalStyle=_isNormalStyle;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) PAGView *pagView; // @synthesize pagView=_pagView;
@@ -30,4 +30,3 @@
 - (id)initWithInfo:(id)arg1;
 
 @end
-

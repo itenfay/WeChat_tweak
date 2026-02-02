@@ -15,7 +15,6 @@
     NSMutableArray *_tipsHighLightkeywords;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *tipsHighLightkeywords; // @synthesize tipsHighLightkeywords=_tipsHighLightkeywords;
 @property(nonatomic) unsigned long long dataType; // @synthesize dataType=_dataType;
 @property(copy, nonatomic) NSString *highLightTips; // @synthesize highLightTips=_highLightTips;

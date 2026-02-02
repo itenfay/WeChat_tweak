@@ -24,7 +24,6 @@
 + (id)getBakChatMsgList:(id)arg1;
 + (id)splitMsgListIDArray:(id)arg1;
 + (void)finishAndUpdateSession;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShouldFilterMsg; // @synthesize bShouldFilterMsg=_bShouldFilterMsg;
 @property(copy, nonatomic) NSString *folderPath; // @synthesize folderPath=_folderPath;
 @property(retain, nonatomic) NSMutableDictionary *mediaPathMapTable; // @synthesize mediaPathMapTable=_mediaPathMapTable;

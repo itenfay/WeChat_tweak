@@ -12,7 +12,6 @@
     NSMutableArray *_uploadTaskList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *uploadTaskList; // @synthesize uploadTaskList=_uploadTaskList;
 @property(retain, nonatomic) NSMutableArray *bigFileTasks; // @synthesize bigFileTasks=_bigFileTasks;
 @property(retain, nonatomic) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;

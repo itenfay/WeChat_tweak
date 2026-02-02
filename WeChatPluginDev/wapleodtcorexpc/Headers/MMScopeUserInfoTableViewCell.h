@@ -19,7 +19,6 @@
 }
 
 + (double)viewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *bottomSeparateLine; // @synthesize bottomSeparateLine=_bottomSeparateLine;
 @property(retain, nonatomic) CALayer *topSeparateLine; // @synthesize topSeparateLine=_topSeparateLine;
 @property(retain, nonatomic) UIImageView *selectImageView; // @synthesize selectImageView=_selectImageView;

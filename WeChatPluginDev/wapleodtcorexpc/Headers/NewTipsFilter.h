@@ -12,7 +12,6 @@
     NSString *_configPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *configPath; // @synthesize configPath=_configPath;
 - (_Bool)needRequestLocalTipWhenLauchWithId:(int)arg1 Uid:(id)arg2;
 - (_Bool)canShowTipsWithTipsInfo:(id)arg1;

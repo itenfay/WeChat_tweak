@@ -12,7 +12,6 @@
     NewTipsConfigCenter *_configsCenter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewTipsConfigCenter *configsCenter; // @synthesize configsCenter=_configsCenter;
 - (_Bool)canReceiveXmlWithTipsInfo:(id)arg1;
 - (id)generateTipsInfoWithXml:(id)arg1;

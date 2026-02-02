@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, NSString, UIImageView;
 
 @interface MMFinderLiveKTVEmptyContentView
@@ -14,7 +16,6 @@
     NSString *_ktvThemeResourceFetchSessionToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ktvThemeResourceFetchSessionToken; // @synthesize ktvThemeResourceFetchSessionToken=_ktvThemeResourceFetchSessionToken;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
@@ -41,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

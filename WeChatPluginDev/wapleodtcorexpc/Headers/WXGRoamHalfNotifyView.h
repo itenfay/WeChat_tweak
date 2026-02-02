@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIButton, UILabel;
 
 @interface WXGRoamHalfNotifyView
@@ -14,7 +16,6 @@
     UIButton *_scanBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *scanBtn; // @synthesize scanBtn=_scanBtn;
 @property(retain, nonatomic) UILabel *title; // @synthesize title=_title;
 @property(retain, nonatomic) UILabel *subTitle; // @synthesize subTitle=_subTitle;
@@ -37,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

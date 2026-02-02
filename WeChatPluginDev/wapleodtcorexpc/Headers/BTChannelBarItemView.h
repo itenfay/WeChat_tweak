@@ -11,7 +11,6 @@
     MMWebImageView *m_smallIconImageView;
 }
 
-- (void).cxx_destruct;
 - (double)layoutSmallIconView;
 - (void)layoutDotImageView;
 - (void)layoutSubtitleView;

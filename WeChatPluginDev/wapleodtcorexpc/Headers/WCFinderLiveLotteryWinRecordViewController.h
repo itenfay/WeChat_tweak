@@ -21,7 +21,6 @@
     WCFinderLivePageStayReporter *_stayReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLivePageStayReporter *stayReporter; // @synthesize stayReporter=_stayReporter;
 @property(nonatomic) unsigned int supportMultiType; // @synthesize supportMultiType=_supportMultiType;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

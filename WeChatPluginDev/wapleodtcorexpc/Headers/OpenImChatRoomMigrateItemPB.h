@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_m_bIsHadMigrated;
 + (void)PBArrayAdd_m_nsAssociateChatRoomUserName;
 + (void)PBArrayAdd_m_nsOpenIMChatRoomUserName;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bIsSendInsertWarningSystemMessage; // @synthesize m_bIsSendInsertWarningSystemMessage=_m_bIsSendInsertWarningSystemMessage;
 @property(nonatomic) _Bool m_bIsHadMigrated; // @synthesize m_bIsHadMigrated=_m_bIsHadMigrated;
 @property(retain, nonatomic) NSString *m_nsAssociateChatRoomUserName; // @synthesize m_nsAssociateChatRoomUserName=_m_nsAssociateChatRoomUserName;

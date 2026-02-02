@@ -20,7 +20,6 @@
     UIImage *_resultOriginalImage;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *resultOriginalImage; // @synthesize resultOriginalImage=_resultOriginalImage;
 @property(nonatomic) _Bool isPaymentCode; // @synthesize isPaymentCode=_isPaymentCode;
 @property(nonatomic) int paymentCodeType; // @synthesize paymentCodeType=_paymentCodeType;

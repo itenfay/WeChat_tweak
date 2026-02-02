@@ -15,7 +15,6 @@
     MISSING_TYPE *dayOfTheWeek;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) _TtC6WeChat17WCDBIntegerNumber *dayOfTheWeek;
 @property(nonatomic, retain) _TtC6WeChat17WCDBIntegerNumber *hourOfTheDay;

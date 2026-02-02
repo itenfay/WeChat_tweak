@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableDictionary, UIImageView;
 
@@ -16,7 +17,6 @@
     struct CGSize _calculatedSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *moreView; // @synthesize moreView=_moreView;
 @property(retain, nonatomic) NSArray *stateViewList; // @synthesize stateViewList=_stateViewList;
 @property(retain, nonatomic) NSMutableDictionary *dicPassiveState2CacheView; // @synthesize dicPassiveState2CacheView=_dicPassiveState2CacheView;
@@ -30,4 +30,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

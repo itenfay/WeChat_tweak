@@ -19,7 +19,6 @@
 + (void)initializeSDK:(id)arg1;
 + (void)initializeWithLaunchData:(id)arg1;
 + (void)load;
-- (void).cxx_destruct;
 - (_Bool)isAppLaunched;
 - (void)_logSDKInitialize;
 - (void)_logIfAppLinkEvent:(id)arg1;

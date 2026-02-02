@@ -14,7 +14,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *finderTopicResList; // @synthesize finderTopicResList=_finderTopicResList;
 @property(retain, nonatomic) NSString *relationText; // @synthesize relationText=_relationText;
 

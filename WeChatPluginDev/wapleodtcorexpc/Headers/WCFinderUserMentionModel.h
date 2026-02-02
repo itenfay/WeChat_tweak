@@ -84,7 +84,6 @@
 + (void)PBArrayAdd_lastHeadImageURL;
 + (void)PBArrayAdd_unreadNotifyCount;
 + (void)PBArrayAdd_lastMergeSystemMSGBuffer;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long exposeNotificationInfoLastSequence; // @synthesize exposeNotificationInfoLastSequence=_exposeNotificationInfoLastSequence;
 @property(retain, nonatomic) FinderExposeNotificationInfo *exposeNotificationInfo; // @synthesize exposeNotificationInfo=_exposeNotificationInfo;
 @property(copy, nonatomic) NSString *helperNotificationRedDotTips; // @synthesize helperNotificationRedDotTips=_helperNotificationRedDotTips;

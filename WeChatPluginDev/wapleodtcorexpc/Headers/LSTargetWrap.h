@@ -13,7 +13,6 @@
     NSString *_prefix;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(retain, nonatomic) NSString *string; // @synthesize string=_string;
 - (id)initWithTarget:(id)arg1;

@@ -33,7 +33,6 @@
 }
 
 + (double)getHotSpotHeight:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderHotBigBubbleView *hotBigBubbleView; // @synthesize hotBigBubbleView=_hotBigBubbleView;
 @property(retain, nonatomic) WCFinderLottieImgBackgroundView *olympicView; // @synthesize olympicView=_olympicView;
 @property(retain, nonatomic) RichTextView *subTitleTextView; // @synthesize subTitleTextView=_subTitleTextView;

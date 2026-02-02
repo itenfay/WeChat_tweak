@@ -21,7 +21,6 @@
     GKCropBorderView *_cropBorderView;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) GKCropBorderView *cropBorderView; // @synthesize cropBorderView=_cropBorderView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void)drawRect:(struct CGRect)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet;
 
@@ -13,7 +14,6 @@
     NSMutableSet *_existsIdents;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *existsIdents; // @synthesize existsIdents=_existsIdents;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 - (void)processIdentifier:(id)arg1;
@@ -21,4 +21,3 @@
 - (id)init;
 
 @end
-

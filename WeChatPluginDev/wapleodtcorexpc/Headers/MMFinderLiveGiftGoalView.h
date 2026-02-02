@@ -41,7 +41,6 @@
     UIView *_sendButtonBorderView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sendButtonBorderView; // @synthesize sendButtonBorderView=_sendButtonBorderView;
 @property(retain, nonatomic) UIView *sendButtonBackgroundView; // @synthesize sendButtonBackgroundView=_sendButtonBackgroundView;
 @property(retain, nonatomic) MMUIButton *sendButton; // @synthesize sendButton=_sendButton;

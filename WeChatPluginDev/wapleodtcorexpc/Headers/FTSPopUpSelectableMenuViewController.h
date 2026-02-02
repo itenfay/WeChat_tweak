@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAShapeLayer, FTSSelectableMenuView, UIColor, UIView;
 
 @interface FTSPopUpSelectableMenuViewController
@@ -17,7 +19,6 @@
     UIColor *_backgroundColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(copy, nonatomic) CDUnknownBlockType selection; // @synthesize selection=_selection;
 @property(copy, nonatomic) CDUnknownBlockType didHideCallback; // @synthesize didHideCallback=_didHideCallback;
@@ -34,4 +35,3 @@
 - (id)initWithItems:(id)arg1 selectedIndex:(unsigned long long)arg2;
 
 @end
-

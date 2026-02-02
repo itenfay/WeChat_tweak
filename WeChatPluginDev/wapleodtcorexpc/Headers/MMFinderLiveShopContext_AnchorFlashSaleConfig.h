@@ -18,7 +18,6 @@
     FinderWxAppInfo *_orderPage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool historyEnable; // @synthesize historyEnable=_historyEnable;
 @property(nonatomic) _Bool flashSaleFirstOpenFlag; // @synthesize flashSaleFirstOpenFlag=_flashSaleFirstOpenFlag;
 @property(nonatomic) _Bool publicFlashSaleEnable; // @synthesize publicFlashSaleEnable=_publicFlashSaleEnable;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSRecursiveLock, NSString, XEffectRenderTarget, XEffectVideoRecorder;
 @protocol XEffectEffectManagerDelegate;
@@ -56,7 +57,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int appScenario; // @synthesize appScenario=_appScenario;
 @property(retain, nonatomic) NSArray *modelKeyArray; // @synthesize modelKeyArray=_modelKeyArray;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
@@ -174,4 +174,3 @@
 @property(readonly) Class superclass;
 
 @end
-

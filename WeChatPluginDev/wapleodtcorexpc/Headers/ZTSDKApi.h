@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol SKStoreProductViewControllerDelegate;
@@ -35,7 +36,6 @@
 + (void)initSDK:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKStoreProductViewControllerDelegate> storeControllerDelegate; // @synthesize storeControllerDelegate=_storeControllerDelegate;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (id)initSingleton;
@@ -51,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

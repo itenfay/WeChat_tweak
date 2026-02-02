@@ -15,7 +15,6 @@
     DeviceFollowItem *_followItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DeviceFollowItem *followItem; // @synthesize followItem=_followItem;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
 @property(retain, nonatomic) UILabel *nickNameLabel; // @synthesize nickNameLabel=_nickNameLabel;

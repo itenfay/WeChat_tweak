@@ -14,7 +14,6 @@
     double _lineWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool vertical; // @synthesize vertical=_vertical;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;

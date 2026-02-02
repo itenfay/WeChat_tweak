@@ -16,7 +16,6 @@
     long long _maxConcurrentCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isThumb; // @synthesize isThumb=_isThumb;
 @property(nonatomic) long long maxConcurrentCount; // @synthesize maxConcurrentCount=_maxConcurrentCount;
 @property(retain, nonatomic) NSString *savePath; // @synthesize savePath=_savePath;

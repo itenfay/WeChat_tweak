@@ -16,7 +16,6 @@
 
 + (id)resourceWithBackendModel:(id)arg1;
 + (id)resourceWithUri:(id)arg1 md5:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *pinningToken; // @synthesize pinningToken=_pinningToken;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;
 @property(retain, nonatomic) NSString *uri; // @synthesize uri=_uri;

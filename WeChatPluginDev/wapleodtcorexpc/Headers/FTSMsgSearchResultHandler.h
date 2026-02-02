@@ -23,7 +23,6 @@
     NSString *_limitUsername;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRuning; // @synthesize isRuning=_isRuning;
 @property(nonatomic) _Bool searchFinish; // @synthesize searchFinish=_searchFinish;
 @property(nonatomic) unsigned int currentOffset; // @synthesize currentOffset=_currentOffset;

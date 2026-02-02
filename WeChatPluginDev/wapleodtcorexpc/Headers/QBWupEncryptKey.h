@@ -17,7 +17,6 @@
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 @property(retain, nonatomic) NSString *qbKey; // @synthesize qbKey=_qbKey;
 @property(retain, nonatomic) NSString *aesKey; // @synthesize aesKey=_aesKey;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -40,7 +40,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *collectionTopicId; // @synthesize collectionTopicId=_collectionTopicId;
 @property(nonatomic) unsigned long long cacheIndex; // @synthesize cacheIndex=_cacheIndex;
 @property(nonatomic) unsigned long long pageType; // @synthesize pageType=_pageType;

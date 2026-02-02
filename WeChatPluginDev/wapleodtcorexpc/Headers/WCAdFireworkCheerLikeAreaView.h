@@ -17,7 +17,6 @@
 }
 
 + (double)topAreaHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool contentShowFlag; // @synthesize contentShowFlag=_contentShowFlag;
 @property(retain, nonatomic) MMUIView *topContentView; // @synthesize topContentView=_topContentView;
 @property(retain, nonatomic) PAGView *topPagView; // @synthesize topPagView=_topPagView;

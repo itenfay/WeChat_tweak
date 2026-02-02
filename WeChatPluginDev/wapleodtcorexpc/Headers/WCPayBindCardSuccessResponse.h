@@ -29,7 +29,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) NSString *action; // @synthesize action=_action;
 @property(retain) NSString *err_jump_page; // @synthesize err_jump_page=_err_jump_page;
 @property(retain) NSString *page; // @synthesize page=_page;

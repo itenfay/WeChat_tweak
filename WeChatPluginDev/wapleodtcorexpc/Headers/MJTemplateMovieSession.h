@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJAIAssetProcessor, NSArray, NSMutableDictionary, OMJMovieSession;
 
 @interface MJTemplateMovieSession
@@ -16,7 +18,6 @@
     NSMutableDictionary *_templateBuildResultCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *templateBuildResultCache; // @synthesize templateBuildResultCache=_templateBuildResultCache;
 @property(retain, nonatomic) NSMutableDictionary *AIModelTypeCache; // @synthesize AIModelTypeCache=_AIModelTypeCache;
 @property(retain, nonatomic) MJAIAssetProcessor *AIAssetProcessor; // @synthesize AIAssetProcessor=_AIAssetProcessor;
@@ -61,4 +62,3 @@
 - (_Bool)createMaasSession;
 
 @end
-

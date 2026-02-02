@@ -13,7 +13,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SharedPtr_dc2152c3 backingAudioTrack; // @synthesize backingAudioTrack=_backingAudioTrack;
 @property(readonly, nonatomic) long long averageBitrate;
 @property(readonly, nonatomic) long long sampleUnitsPerFrame;

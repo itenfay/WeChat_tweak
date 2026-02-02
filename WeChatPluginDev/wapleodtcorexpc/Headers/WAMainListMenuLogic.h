@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WAMainListNearByLocationLogic;
 
@@ -14,7 +15,6 @@
     WAMainListNearByLocationLogic *_locationLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAMainListNearByLocationLogic *locationLogic; // @synthesize locationLogic=_locationLogic;
 @property(retain, nonatomic) NSMutableArray *entranceInfoList; // @synthesize entranceInfoList=_entranceInfoList;
 @property(copy, nonatomic) CDUnknownBlockType menuInfoRespAction; // @synthesize menuInfoRespAction=_menuInfoRespAction;
@@ -38,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

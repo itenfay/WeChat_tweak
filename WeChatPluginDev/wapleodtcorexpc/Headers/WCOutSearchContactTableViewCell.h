@@ -12,7 +12,6 @@
     AttributeLabel *_phoneLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AttributeLabel *phoneLabel; // @synthesize phoneLabel=_phoneLabel;
 @property(retain, nonatomic) AttributeLabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;

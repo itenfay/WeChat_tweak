@@ -13,7 +13,6 @@
     ForwardMessageLogicController *_forwardMsgLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardMsgLogic; // @synthesize forwardMsgLogic=_forwardMsgLogic;
 @property(retain, nonatomic) GroupNoticeItemDataField *data; // @synthesize data=_data;
 @property(retain, nonatomic) GroupNoticeItem *item; // @synthesize item=_item;

@@ -14,7 +14,6 @@
     NSString *_imageUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;
 @property(retain, nonatomic) NSString *imagePath; // @synthesize imagePath=_imagePath;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;

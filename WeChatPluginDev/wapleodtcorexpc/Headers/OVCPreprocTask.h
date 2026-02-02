@@ -21,7 +21,6 @@
 
 + (id)taskWithFilePath:(id)arg1 assetMediaType:(long long)arg2 priority:(int)arg3 transcodePolicy:(unsigned long long)arg4 analysisParams:(id)arg5;
 + (id)taskWithLocalIdentifier:(id)arg1 priority:(int)arg2 transcodePolicy:(unsigned long long)arg3 analysisParams:(id)arg4;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *analysisParams; // @synthesize analysisParams=_analysisParams;
 @property(nonatomic) _Bool isAudioAnalysisEnabled; // @synthesize isAudioAnalysisEnabled=_isAudioAnalysisEnabled;
 @property(nonatomic) unsigned long long transcodeDimensionLevel; // @synthesize transcodeDimensionLevel=_transcodeDimensionLevel;

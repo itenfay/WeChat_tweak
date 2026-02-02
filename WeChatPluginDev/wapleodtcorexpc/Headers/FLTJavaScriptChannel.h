@@ -13,7 +13,6 @@
     NSString *_javaScriptChannelName;
 }
 
-- (void).cxx_destruct;
 - (void)userContentController:(id)arg1 didReceiveScriptMessage:(id)arg2;
 - (id)initWithMethodChannel:(id)arg1 javaScriptChannelName:(id)arg2;
 

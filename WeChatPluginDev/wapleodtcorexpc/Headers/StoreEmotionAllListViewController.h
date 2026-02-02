@@ -21,7 +21,6 @@
     unsigned long long _forwardCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long forwardCount; // @synthesize forwardCount=_forwardCount;
 @property(retain, nonatomic) UIView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) StoreEmotionPageShareLogic *shareLogic; // @synthesize shareLogic=_shareLogic;

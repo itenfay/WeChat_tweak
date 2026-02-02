@@ -16,7 +16,6 @@
     long long _expectedDownBandwidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long expectedDownBandwidth; // @synthesize expectedDownBandwidth=_expectedDownBandwidth;
 @property(nonatomic) long long expectedUpBandwidth; // @synthesize expectedUpBandwidth=_expectedUpBandwidth;
 @property(copy, nonatomic) NSString *userSig; // @synthesize userSig=_userSig;

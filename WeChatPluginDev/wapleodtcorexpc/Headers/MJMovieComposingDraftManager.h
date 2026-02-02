@@ -14,7 +14,6 @@
 }
 
 + (id)defaultMMKV;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *weGameDraftsByID; // @synthesize weGameDraftsByID=_weGameDraftsByID;
 @property(retain, nonatomic) NSMutableDictionary *finderDraftsByID; // @synthesize finderDraftsByID=_finderDraftsByID;
 - (id)_draftsByIDWithEntryScene:(long long)arg1;

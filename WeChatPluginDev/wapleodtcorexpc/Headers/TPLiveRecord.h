@@ -17,7 +17,6 @@
     long long _prepareEndTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long prepareEndTime; // @synthesize prepareEndTime=_prepareEndTime;
 @property(nonatomic) long long prepareStartTime; // @synthesize prepareStartTime=_prepareStartTime;
 @property(nonatomic) long long peroidBufferedCount; // @synthesize peroidBufferedCount=_peroidBufferedCount;

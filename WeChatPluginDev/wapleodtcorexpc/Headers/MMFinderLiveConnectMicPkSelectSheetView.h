@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveMicInfo_Wording, MMTableView, NSString;
 
 @interface MMFinderLiveConnectMicPkSelectSheetView
@@ -12,7 +14,6 @@
     FinderLiveMicInfo_Wording *_micInfoWording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveMicInfo_Wording *micInfoWording; // @synthesize micInfoWording=_micInfoWording;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(copy, nonatomic) CDUnknownBlockType selectAction; // @synthesize selectAction=_selectAction;
@@ -38,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

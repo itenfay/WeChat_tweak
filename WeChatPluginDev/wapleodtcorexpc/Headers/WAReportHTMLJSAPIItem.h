@@ -16,7 +16,6 @@
     NSString *_errorMsgStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorMsgStr; // @synthesize errorMsgStr=_errorMsgStr;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(nonatomic) long long permissionValue; // @synthesize permissionValue=_permissionValue;

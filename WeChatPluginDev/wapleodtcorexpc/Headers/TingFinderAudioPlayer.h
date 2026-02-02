@@ -11,7 +11,6 @@
 }
 
 + (id)audioUrlForDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataItem *fetchedDataItem; // @synthesize fetchedDataItem=_fetchedDataItem;
 - (void)onSuccessWithDataItem:(id)arg1;
 - (void)prepareToPlay;

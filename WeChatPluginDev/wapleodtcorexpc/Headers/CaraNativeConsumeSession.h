@@ -14,7 +14,6 @@
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (float)stayTimeInterval;
 - (id)username;

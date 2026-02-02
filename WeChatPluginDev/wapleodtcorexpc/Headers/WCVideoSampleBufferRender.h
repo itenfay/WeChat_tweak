@@ -14,7 +14,6 @@
     NSRecursiveLock *_localBufferLock;
 }
 
-- (void).cxx_destruct;
 @property _Bool isMirror; // @synthesize isMirror=_isMirror;
 @property(retain, nonatomic) NSRecursiveLock *localBufferLock; // @synthesize localBufferLock=_localBufferLock;
 @property(readonly, nonatomic) AVSampleBufferDisplayLayer *renderLayer; // @synthesize renderLayer=_renderLayer;

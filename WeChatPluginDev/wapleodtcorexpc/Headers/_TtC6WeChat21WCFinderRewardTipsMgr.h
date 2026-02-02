@@ -10,7 +10,6 @@
     MISSING_TYPE *rewardTipsInfoList;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)showRewardTipsInfoWithTriggerType:(unsigned long long)arg1 params:(id)arg2;
 - (void)prefetchJumpInfoWithTriggerTypes:(id)arg1;

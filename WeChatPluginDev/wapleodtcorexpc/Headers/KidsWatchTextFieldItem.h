@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UITextField;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _textChangeHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType textChangeHandler; // @synthesize textChangeHandler=_textChangeHandler;
 @property(copy, nonatomic) CDUnknownBlockType textHandler; // @synthesize textHandler=_textHandler;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
@@ -40,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

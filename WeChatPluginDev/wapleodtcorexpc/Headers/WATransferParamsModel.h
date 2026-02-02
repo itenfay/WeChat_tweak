@@ -21,7 +21,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(copy, nonatomic) NSString *instanceId; // @synthesize instanceId=_instanceId;

@@ -14,7 +14,6 @@
     NSString *_imgUrl;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *imgUrl; // @synthesize imgUrl=_imgUrl;
 @property(nonatomic) unsigned int idKeyID; // @synthesize idKeyID=_idKeyID;
 @property(retain, nonatomic) NSMutableArray *idKeys; // @synthesize idKeys=_idKeys;

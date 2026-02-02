@@ -15,7 +15,6 @@
     MMUIViewController *_contentVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *contentVC; // @synthesize contentVC=_contentVC;
 @property(nonatomic) __weak WCAccountSetPasswordViewController *setPasswordVC; // @synthesize setPasswordVC=_setPasswordVC;
 @property(retain, nonatomic) NSObject *selfHolder; // @synthesize selfHolder=_selfHolder;

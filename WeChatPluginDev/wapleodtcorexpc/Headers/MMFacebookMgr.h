@@ -10,7 +10,6 @@
     FacebookAuth *m_facebookAuth;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FacebookAuth *m_facebookAuth; // @synthesize m_facebookAuth;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)verifyAccessTokenValid:(id)arg1;

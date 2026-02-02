@@ -28,7 +28,6 @@
 + (void)ReportRenameFail;
 + (void)ReportLoadFileFail;
 + (void)ReportOpenFail;
-- (void).cxx_destruct;
 - (id)allFileNames;
 - (_Bool)deleteDataOfFile:(id)arg1;
 - (_Bool)containsFile:(id)arg1;

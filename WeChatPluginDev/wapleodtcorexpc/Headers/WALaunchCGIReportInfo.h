@@ -19,7 +19,6 @@
     NSString *_username;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(nonatomic) unsigned int requestType; // @synthesize requestType=_requestType;
 @property(nonatomic) unsigned int appServiceType; // @synthesize appServiceType=_appServiceType;

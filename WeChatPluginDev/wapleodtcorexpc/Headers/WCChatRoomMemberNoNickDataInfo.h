@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_arrUserNameTime;
 + (void)PBArrayAdd_dicUserNameTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrUserNameTime; // @synthesize arrUserNameTime=_arrUserNameTime;
 @property(retain, nonatomic) NSMutableDictionary *dicUserNameTime; // @synthesize dicUserNameTime=_dicUserNameTime;
 - (id)getPBPropertyTable;

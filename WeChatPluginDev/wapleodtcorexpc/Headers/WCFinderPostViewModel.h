@@ -65,7 +65,6 @@
 + (_Bool)shouldShowPostWxPayAlertByFinderUsername:(id)arg1;
 + (id)convertFinderLocationToWCLocation:(id)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool openPreuploadCDNSwitch; // @synthesize openPreuploadCDNSwitch=_openPreuploadCDNSwitch;
 @property(retain, nonatomic) NSMutableArray *modifyModelArray; // @synthesize modifyModelArray=_modifyModelArray;
 @property(nonatomic) long long shortModifyFeedMaxCount; // @synthesize shortModifyFeedMaxCount=_shortModifyFeedMaxCount;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMUIButton, MMUILabel, MMWebImageView, UIButton, WCFinderContact, WCFinderHeadImageView;
 
@@ -20,7 +21,6 @@
     MMUILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) MMWebImageView *authIconView; // @synthesize authIconView=_authIconView;
 @property(retain, nonatomic) MMUILabel *anchorNameLabel; // @synthesize anchorNameLabel=_anchorNameLabel;
@@ -52,4 +52,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 liveTask:(id)arg2;
 
 @end
-

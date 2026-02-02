@@ -20,7 +20,6 @@
     NSMutableDictionary *_psDelayDestroyBlocksDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *psDelayDestroyBlocksDict; // @synthesize psDelayDestroyBlocksDict=_psDelayDestroyBlocksDict;
 @property(retain, nonatomic) NSMutableDictionary *bizToServiceMessages; // @synthesize bizToServiceMessages=_bizToServiceMessages;
 @property(retain, nonatomic) NSMutableDictionary *serviceToBizMessages; // @synthesize serviceToBizMessages=_serviceToBizMessages;

@@ -17,7 +17,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_1255c1d2 metaData; // @synthesize metaData=_metaData;
 @property(nonatomic) unsigned int orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) double decodeCost; // @synthesize decodeCost=_decodeCost;

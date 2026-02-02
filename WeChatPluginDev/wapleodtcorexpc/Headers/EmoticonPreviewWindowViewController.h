@@ -24,7 +24,6 @@
     UIImageView *_midButtonBubble;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *midButtonBubble; // @synthesize midButtonBubble=_midButtonBubble;
 @property(retain, nonatomic) UIImageView *rightButtonBubble; // @synthesize rightButtonBubble=_rightButtonBubble;
 @property(retain, nonatomic) UIImageView *leftButtonBubble; // @synthesize leftButtonBubble=_leftButtonBubble;

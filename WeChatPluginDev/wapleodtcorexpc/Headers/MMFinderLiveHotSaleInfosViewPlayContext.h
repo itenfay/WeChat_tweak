@@ -14,7 +14,6 @@
     unsigned long long _nextIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long nextIndex; // @synthesize nextIndex=_nextIndex;
 @property(retain, nonatomic) FinderLiveGetProductCarouselResponse_FinderLiveProductCarouselItem *current; // @synthesize current=_current;
 @property(retain, nonatomic) FinderLiveGetProductCarouselResponse *info; // @synthesize info=_info;

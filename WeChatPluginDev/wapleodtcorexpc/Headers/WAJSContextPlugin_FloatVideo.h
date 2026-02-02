@@ -19,7 +19,6 @@
     struct CGPoint _floatVideoRightBottomMargin;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mmkv; // @synthesize mmkv=_mmkv;
 @property(nonatomic) struct CGPoint floatVideoRightBottomMargin; // @synthesize floatVideoRightBottomMargin=_floatVideoRightBottomMargin;
 @property(nonatomic) _Bool needRemoveFloatViewAfterPop; // @synthesize needRemoveFloatViewAfterPop=_needRemoveFloatViewAfterPop;

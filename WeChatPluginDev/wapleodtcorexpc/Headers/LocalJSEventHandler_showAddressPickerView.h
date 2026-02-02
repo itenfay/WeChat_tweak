@@ -14,7 +14,6 @@
     NSArray *_current;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(nonatomic) int pickerMode; // @synthesize pickerMode=_pickerMode;
 @property(retain, nonatomic) NSArray *current; // @synthesize current=_current;

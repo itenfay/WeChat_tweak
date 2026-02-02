@@ -10,7 +10,6 @@
     NSString *_appJumpUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appJumpUrl; // @synthesize appJumpUrl=_appJumpUrl;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

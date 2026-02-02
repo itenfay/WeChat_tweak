@@ -13,7 +13,6 @@
     NSData *_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) long long allocType; // @synthesize allocType=_allocType;
 

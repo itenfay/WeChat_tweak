@@ -17,7 +17,6 @@
     UIView *_topBar;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topBar; // @synthesize topBar=_topBar;
 @property(readonly, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

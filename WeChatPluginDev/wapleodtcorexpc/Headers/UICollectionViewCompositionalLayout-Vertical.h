@@ -4,8 +4,8 @@
 //
 
 #import <UIKit/UICollectionViewCompositionalLayout.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UICollectionViewCompositionalLayout (Vertical)
 + (id)finder_verticalLayoutWithHeightProvider:(CDUnknownBlockType)arg1;
 @end
-

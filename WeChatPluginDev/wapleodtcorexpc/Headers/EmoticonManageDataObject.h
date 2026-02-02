@@ -16,7 +16,6 @@
     unsigned long long _objPosition;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long objPosition; // @synthesize objPosition=_objPosition;
 @property(nonatomic) unsigned long long packedEmoticonCount; // @synthesize packedEmoticonCount=_packedEmoticonCount;
 @property(retain, nonatomic) CEmoticonIPSetInfo *setInfo; // @synthesize setInfo=_setInfo;

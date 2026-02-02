@@ -28,7 +28,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(retain, nonatomic) UIView *line; // @synthesize line=_line;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;

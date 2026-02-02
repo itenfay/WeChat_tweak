@@ -31,7 +31,6 @@
 @property(nonatomic) long long serverTime; // @synthesize serverTime;
 @property(nonatomic) int cmd; // @synthesize cmd;
 @property(nonatomic) BOOL result; // @synthesize result;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

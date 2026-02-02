@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface ScanQRCodeDataUsedInMultiCode : NSObject
 {
@@ -14,7 +15,6 @@
     struct CGRect _curRelatedRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint normalLongPressPoint; // @synthesize normalLongPressPoint=_normalLongPressPoint;
 @property(nonatomic) _Bool isClipImage; // @synthesize isClipImage=_isClipImage;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
@@ -22,4 +22,3 @@
 @property(nonatomic) struct CGRect curRelatedRect; // @synthesize curRelatedRect=_curRelatedRect;
 
 @end
-

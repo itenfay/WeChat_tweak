@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSString.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSString (RegexKitLiteAdditions)
 + (long long)captureCountForRegex:(id)arg1 options:(unsigned int)arg2 error:(id *)arg3;
@@ -58,4 +59,3 @@
 - (long long)captureCountWithOptions:(unsigned int)arg1 error:(id *)arg2;
 - (long long)captureCount;
 @end
-

@@ -13,7 +13,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *propertiesToReset; // @synthesize propertiesToReset=_propertiesToReset;
 @property(retain, nonatomic) NSString *commonDurationString; // @synthesize commonDurationString=_commonDurationString;
 @property(retain, nonatomic) NSString *commonStartDelayString; // @synthesize commonStartDelayString=_commonStartDelayString;

@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_valid;
 + (void)PBArrayAdd_showType;
 + (void)PBArrayAdd_type;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *data; // @synthesize data=_data;
 @property(nonatomic) unsigned int valid; // @synthesize valid=_valid;
 @property(nonatomic) unsigned int showType; // @synthesize showType=_showType;

@@ -22,7 +22,6 @@
     TPPlayerLogContext *_log;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerLogContext *log; // @synthesize log=_log;
 @property(nonatomic) _Bool isCachingNext; // @synthesize isCachingNext=_isCachingNext;
 @property(nonatomic) _Bool isPausedByUser; // @synthesize isPausedByUser=_isPausedByUser;

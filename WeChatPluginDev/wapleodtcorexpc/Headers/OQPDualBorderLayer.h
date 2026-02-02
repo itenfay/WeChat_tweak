@@ -10,7 +10,6 @@
     CALayer *_innerBorderLayer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGColor *innerBorderColor;
 @property(nonatomic) struct CGColor *outerBorderColor;
 @property(nonatomic) double innerBorderWidth;

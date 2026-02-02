@@ -14,7 +14,6 @@
     ShareConfirmView *_confirmView;
 }
 
-- (void).cxx_destruct;
 - (void)OnStayAtWeChat:(id)arg1;
 - (void)OnBackToApp:(id)arg1;
 - (void)onLeaveWebviewAndJumpToViewConroller;

@@ -15,7 +15,6 @@
     NSString *_ISOCode;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ISOCode; // @synthesize ISOCode=_ISOCode;
 @property(retain, nonatomic) KidsWatchButton *registerButton; // @synthesize registerButton=_registerButton;
 @property(retain, nonatomic) WCAgreementCheckBox *checkBox; // @synthesize checkBox=_checkBox;

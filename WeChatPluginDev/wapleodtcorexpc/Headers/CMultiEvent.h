@@ -16,7 +16,6 @@
     NSRecursiveLock *m_oEventLock;
 }
 
-- (void).cxx_destruct;
 - (id)GetLock;
 - (id)FindEvent:(unsigned int)arg1;
 - (unsigned int)IsEventTypeExist:(unsigned int)arg1;

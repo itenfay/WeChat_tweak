@@ -37,7 +37,6 @@
 + (void)PBArrayAdd_nickname;
 + (void)PBArrayAdd_objectNonceId;
 + (void)PBArrayAdd_objectId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *authIconUrl; // @synthesize authIconUrl=_authIconUrl;
 @property(nonatomic) unsigned long long authIconType; // @synthesize authIconType=_authIconType;
 @property(retain, nonatomic) WCFinderShareAttachInfo *finderInfo; // @synthesize finderInfo=_finderInfo;

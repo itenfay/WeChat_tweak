@@ -52,7 +52,6 @@
 }
 
 + (void)reportKFSessionBoxMsgSearchActionLog:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *payBrandSearchSema; // @synthesize payBrandSearchSema=_payBrandSearchSema;
 @property(nonatomic) _Bool bWCPayShouldCheckOnePageEnoughForResult; // @synthesize bWCPayShouldCheckOnePageEnoughForResult=_bWCPayShouldCheckOnePageEnoughForResult;
 @property(nonatomic) _Bool bWCPayBrandSearchShouldShowMoreResultCell; // @synthesize bWCPayBrandSearchShouldShowMoreResultCell=_bWCPayBrandSearchShouldShowMoreResultCell;

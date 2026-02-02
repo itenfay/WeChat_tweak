@@ -19,7 +19,6 @@
 }
 
 + (id)rubyWithCTRubyRef:(struct __CTRubyAnnotation *)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *textInline; // @synthesize textInline=_textInline;
 @property(copy, nonatomic) NSString *textInterCharacter; // @synthesize textInterCharacter=_textInterCharacter;
 @property(copy, nonatomic) NSString *textAfter; // @synthesize textAfter=_textAfter;

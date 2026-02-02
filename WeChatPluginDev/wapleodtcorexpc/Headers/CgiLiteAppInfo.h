@@ -20,7 +20,6 @@
     NSString *_refPageJson;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int itemType; // @synthesize itemType=_itemType;
 @property(retain, nonatomic) NSString *refPageJson; // @synthesize refPageJson=_refPageJson;
 @property(retain, nonatomic) NSString *curPageJson; // @synthesize curPageJson=_curPageJson;

@@ -11,7 +11,6 @@
     WCVideoProducerMusicSearchRequest *_currentSearchRequest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCVideoProducerMusicSearchRequest *currentSearchRequest; // @synthesize currentSearchRequest=_currentSearchRequest;
 @property(retain, nonatomic) NSMutableArray *searchRequestList; // @synthesize searchRequestList=_searchRequestList;
 - (void)didStopPlayingSelectedSearchResultMusic;

@@ -4,9 +4,9 @@
 //
 
 #import <QuartzCore/CATransaction.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CATransaction (MJExt)
 + (void)mj_performWithoutImplicitActions:(CDUnknownBlockType)arg1;
 + (void)qp_performWithoutImplicitActions:(CDUnknownBlockType)arg1;
 @end
-

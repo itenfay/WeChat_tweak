@@ -18,7 +18,6 @@
 + (id)WebComMessageReplyHandlerName;
 + (_Bool)canUseWebComMessageReplyHandler;
 + (_Bool)canUseWebCom;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WebvViewSanboxSessionInfo *currentPageSessionInfo; // @synthesize currentPageSessionInfo=_currentPageSessionInfo;
 @property(retain, nonatomic) NSMutableDictionary *dictSessionInfo; // @synthesize dictSessionInfo=_dictSessionInfo;
 @property(nonatomic) __weak WKWebView<YYWebViewInterface> *webView; // @synthesize webView=_webView;

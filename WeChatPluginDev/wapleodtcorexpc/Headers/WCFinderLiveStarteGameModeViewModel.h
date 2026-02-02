@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLocation, GameTeamUpSpecialGiftSettingDetail, MMFinderLiveGameUserInfo, MMFinderLiveImageOcrOp, MMFinderLivePromoteManageLogic, MMFinderLiveTask, NSArray, NSData, NSMutableArray, NSMutableDictionary, NSString;
 @protocol WCFinderStarterLiveGameViewModelDelegate;
 
@@ -40,7 +42,6 @@
     NSString *_ticket;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int platformId; // @synthesize platformId=_platformId;
 @property(nonatomic) unsigned int opensdkVersion; // @synthesize opensdkVersion=_opensdkVersion;
 @property(retain, nonatomic) NSString *ticket; // @synthesize ticket=_ticket;
@@ -105,4 +106,3 @@
 @property(readonly) Class superclass;
 
 @end
-

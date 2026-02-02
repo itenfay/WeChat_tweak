@@ -14,7 +14,6 @@
 }
 
 + (id)makeIconImage:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *imageCache; // @synthesize imageCache=_imageCache;
 @property(retain, nonatomic) NSMutableArray *markersId; // @synthesize markersId=_markersId;
 @property(retain, nonatomic) NSMutableArray *markersAddCluster; // @synthesize markersAddCluster=_markersAddCluster;

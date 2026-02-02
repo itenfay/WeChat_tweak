@@ -15,7 +15,6 @@
     CAGradientLayer *_gradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) CALayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;

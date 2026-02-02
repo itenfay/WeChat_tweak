@@ -15,7 +15,6 @@
 }
 
 + (double)PickLocationTopViewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *foldedBtn; // @synthesize foldedBtn=_foldedBtn;
 @property(nonatomic) __weak id <MMPickLocationActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 - (void)hideFoldBtn;

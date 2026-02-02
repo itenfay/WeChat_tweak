@@ -19,7 +19,6 @@
 + (void)navigateBackTo3rdApp:(id)arg1 universalLink:(id)arg2 businessType:(id)arg3 errCode:(int)arg4 errMsg:(id)arg5 extMsg:(id)arg6 appSupportParseUrlParamsType:(unsigned int)arg7;
 + (_Bool)isNativeBusinessType:(id)arg1;
 + (unsigned int)genExtKey;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMAsset *finderAsset; // @synthesize finderAsset=_finderAsset;
 @property(nonatomic) _Bool dismissModalByBiz; // @synthesize dismissModalByBiz=_dismissModalByBiz;
 @property(retain, nonatomic) MMUINavigationController *navigationController; // @synthesize navigationController=_navigationController;

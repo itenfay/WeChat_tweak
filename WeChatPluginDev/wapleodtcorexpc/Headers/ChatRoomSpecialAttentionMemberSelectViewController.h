@@ -10,7 +10,6 @@
     NSArray *_arrAdminOrOwnerUserName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrAdminOrOwnerUserName; // @synthesize arrAdminOrOwnerUserName=_arrAdminOrOwnerUserName;
 - (void)scrollViewDidScroll:(id)arg1;
 - (long long)mmcurrentIndexForTableView:(id)arg1;

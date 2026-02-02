@@ -25,7 +25,6 @@
     NSMutableDictionary *_filterDisplayImageDic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didChangeFilter; // @synthesize didChangeFilter=_didChangeFilter;
 @property(retain, nonatomic) NSMutableDictionary *filterDisplayImageDic; // @synthesize filterDisplayImageDic=_filterDisplayImageDic;
 @property(retain, nonatomic) NSArray *filterNameArray; // @synthesize filterNameArray=_filterNameArray;

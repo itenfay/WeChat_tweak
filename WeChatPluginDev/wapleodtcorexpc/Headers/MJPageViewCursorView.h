@@ -10,7 +10,6 @@
     MMUIView *_cursor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *cursor; // @synthesize cursor=_cursor;
 - (void)setFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

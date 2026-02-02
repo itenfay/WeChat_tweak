@@ -14,7 +14,6 @@
     WCPayBioPayV2GetChallengeCgi *_getChallengeCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBioPayV2GetChallengeCgi *getChallengeCgi; // @synthesize getChallengeCgi=_getChallengeCgi;
 @property(retain, nonatomic) WCPayBioPayV2UpdateAuthKeyCgi *updateAuthKeyCgi; // @synthesize updateAuthKeyCgi=_updateAuthKeyCgi;
 @property(nonatomic) __weak id <WCPayOpenTouchIDAuthLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

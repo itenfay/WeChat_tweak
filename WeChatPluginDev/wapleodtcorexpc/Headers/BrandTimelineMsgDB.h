@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MemoryMappedKV, WCTDatabase, WCTTable;
 
@@ -15,7 +16,6 @@
     MemoryMappedKV *_mappedKV;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 - (id)setupTableWithName:(id)arg1 tableClass:(Class)arg2;
 - (void)openTable;
@@ -132,4 +132,3 @@
 - (unsigned long long)getTimelineMsgTotalCount;
 
 @end
-

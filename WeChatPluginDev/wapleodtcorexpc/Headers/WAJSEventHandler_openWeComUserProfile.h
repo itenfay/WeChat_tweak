@@ -11,7 +11,6 @@
     unsigned long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSDictionary *reqDic; // @synthesize reqDic=_reqDic;
 - (void)showOpenIMContactInfoForThirdAppViewControllerWithDataUrl:(id)arg1 targetContact:(id)arg2 spamWording:(id)arg3;

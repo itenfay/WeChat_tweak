@@ -17,7 +17,6 @@
     NSDictionary *_userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) unsigned long long menuItemType; // @synthesize menuItemType=_menuItemType;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;

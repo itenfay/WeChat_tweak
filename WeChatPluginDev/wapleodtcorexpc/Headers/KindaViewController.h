@@ -19,7 +19,6 @@
     WCPayBlurViewHelper *_blurViewHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBlurViewHelper *blurViewHelper; // @synthesize blurViewHelper=_blurViewHelper;
 @property(retain, nonatomic) UIView *yogaSuperView; // @synthesize yogaSuperView=_yogaSuperView;
 @property(retain, nonatomic) KindaProxy *kindProxy; // @synthesize kindProxy=_kindProxy;

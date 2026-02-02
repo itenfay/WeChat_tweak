@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,11 +16,9 @@
     CDUnknownBlockType _handler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) _Bool isDestructive; // @synthesize isDestructive=_isDestructive;
 @property(retain, nonatomic) NSString *iconName; // @synthesize iconName=_iconName;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 
 @end
-

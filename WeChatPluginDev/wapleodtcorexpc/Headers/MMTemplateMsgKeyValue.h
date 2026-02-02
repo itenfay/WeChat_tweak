@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_value;
 + (void)PBArrayAdd_key;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 - (id)getPBPropertyTable;

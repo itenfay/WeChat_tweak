@@ -21,7 +21,6 @@
     NSString *_openSession;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *openSession; // @synthesize openSession=_openSession;
 @property(copy, nonatomic) NSString *appidFrom16And20; // @synthesize appidFrom16And20=_appidFrom16And20;
 @property(copy, nonatomic) NSString *appidFrom11And15; // @synthesize appidFrom11And15=_appidFrom11And15;

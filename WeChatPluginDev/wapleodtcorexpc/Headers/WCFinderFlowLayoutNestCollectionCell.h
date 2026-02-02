@@ -14,7 +14,6 @@
     id _attachObject;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id attachObject; // @synthesize attachObject=_attachObject;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void)reloadData;

@@ -40,7 +40,6 @@
 
 + (id)createFansGroupInfoByAnchorWithName:(id)arg1 anchorUsrName:(id)arg2;
 + (id)createFansGroupInfoFromFansClubInfo:(id)arg1 isAnchor:(_Bool)arg2 anchorUsrName:(id)arg3 selfJoined:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasRegisterExtension; // @synthesize hasRegisterExtension=_hasRegisterExtension;
 @property(retain, nonatomic) WCFinderContact *anchorContact; // @synthesize anchorContact=_anchorContact;
 @property(nonatomic) _Bool isSelfJoined; // @synthesize isSelfJoined=_isSelfJoined;

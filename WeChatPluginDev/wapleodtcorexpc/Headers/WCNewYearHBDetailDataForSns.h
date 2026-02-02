@@ -20,7 +20,6 @@
     struct CGSize _coverSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize coverSize; // @synthesize coverSize=_coverSize;
 @property(retain, nonatomic) NSMutableArray *arrRewardItem; // @synthesize arrRewardItem=_arrRewardItem;
 @property(retain, nonatomic) NSString *praise; // @synthesize praise=_praise;

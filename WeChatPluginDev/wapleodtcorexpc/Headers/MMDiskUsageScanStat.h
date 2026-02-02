@@ -85,7 +85,6 @@
 + (void)PBArrayAdd_m_totalUsedTime;
 + (void)PBArrayAdd_m_totalEndTime;
 + (void)PBArrayAdd_m_totalStartTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *markLock; // @synthesize markLock=_markLock;
 @property(nonatomic) _Bool m_isStart; // @synthesize m_isStart=_m_isStart;
 @property(retain, nonatomic) MMFolderWrapCacheData *wrapCacheData; // @synthesize wrapCacheData=_wrapCacheData;

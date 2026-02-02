@@ -17,7 +17,6 @@
     UILabel *_complaintsTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *complaintsTipsLabel; // @synthesize complaintsTipsLabel=_complaintsTipsLabel;
 @property(retain, nonatomic) UIView *separateAboveComplaintsLine; // @synthesize separateAboveComplaintsLine=_separateAboveComplaintsLine;
 @property(retain, nonatomic) UIButton *dislikeButton; // @synthesize dislikeButton=_dislikeButton;

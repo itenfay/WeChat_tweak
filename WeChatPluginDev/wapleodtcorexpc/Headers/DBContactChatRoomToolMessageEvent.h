@@ -82,7 +82,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int isDispose; // @synthesize isDispose=_isDispose;
 @property(nonatomic) unsigned int nReply; // @synthesize nReply=_nReply;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;

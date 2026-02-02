@@ -13,7 +13,6 @@
 }
 
 + (double)cellHeightInWidth:(double)arg1 styleInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveSquareStyleInfo *styleInfo; // @synthesize styleInfo=_styleInfo;
 - (void)updateStyle;
 - (void)initViewsIfNeeded;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCUITextField;
 
 @interface WCBaseTextFieldItem
@@ -13,7 +15,6 @@
     _Bool m_bTextFieldHasBecomeFirstResponder;
 }
 
-- (void).cxx_destruct;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (void)textFieldDidChanged:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
@@ -54,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

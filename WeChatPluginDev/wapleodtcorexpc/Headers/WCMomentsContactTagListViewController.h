@@ -27,7 +27,6 @@
     NSMutableSet *_searchSelectedTagIDSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *searchSelectedTagIDSet; // @synthesize searchSelectedTagIDSet=_searchSelectedTagIDSet;
 @property(retain, nonatomic) NSMutableDictionary *searchResultsDataCache; // @synthesize searchResultsDataCache=_searchResultsDataCache;
 @property(retain, nonatomic) WCMomentsContactTagEditView *tagEditView; // @synthesize tagEditView=_tagEditView;

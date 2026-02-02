@@ -16,7 +16,6 @@
     WCPayPickerView *m_pickerView;
 }
 
-- (void).cxx_destruct;
 - (void)userDidTakeScreenshot:(id)arg1;
 - (void)OnClickedHeaderImageView;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;

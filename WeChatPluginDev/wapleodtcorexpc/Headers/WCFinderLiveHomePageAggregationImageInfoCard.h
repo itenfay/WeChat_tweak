@@ -11,7 +11,6 @@
     WCFinderLiveHomePageAggregationAnchorHeaderInfoView *_headerInfoView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveHomePageAggregationAnchorHeaderInfoView *headerInfoView; // @synthesize headerInfoView=_headerInfoView;
 @property(retain, nonatomic) MMLiveColorfulLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (_Bool)showHeaderInfo;

@@ -14,7 +14,6 @@
     MMUILabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;

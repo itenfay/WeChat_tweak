@@ -30,7 +30,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int reportId; // @synthesize reportId=_reportId;
 @property(nonatomic) unsigned int launchFallbackDirectlyMinVersion; // @synthesize launchFallbackDirectlyMinVersion=_launchFallbackDirectlyMinVersion;
 @property(nonatomic) unsigned int lastVersion; // @synthesize lastVersion=_lastVersion;

@@ -18,7 +18,6 @@
     QTrafficStyle *_trafficStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableMSAA; // @synthesize enableMSAA=_enableMSAA;
 @property(retain, nonatomic) QTrafficStyle *trafficStyle; // @synthesize trafficStyle=_trafficStyle;
 @property(nonatomic) int overseaSourceType; // @synthesize overseaSourceType=_overseaSourceType;

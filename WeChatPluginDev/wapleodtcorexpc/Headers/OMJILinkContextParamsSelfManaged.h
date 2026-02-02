@@ -14,7 +14,6 @@
     NSString *_debugServerIP;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *debugServerIP; // @synthesize debugServerIP=_debugServerIP;
 @property(readonly, nonatomic) _Bool useDebugServer; // @synthesize useDebugServer=_useDebugServer;
 @property(readonly, nonatomic) unsigned long long sessionModuleType; // @synthesize sessionModuleType=_sessionModuleType;

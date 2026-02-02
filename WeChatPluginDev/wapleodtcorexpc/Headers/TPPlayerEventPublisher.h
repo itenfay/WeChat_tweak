@@ -13,7 +13,6 @@
     TPRecursiveLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSPointerArray *receivers; // @synthesize receivers=_receivers;
 - (long long)idxOfReceiver:(id)arg1;

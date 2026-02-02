@@ -10,7 +10,6 @@
     WCAudioInfo *_audioInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAudioInfo *audioInfo; // @synthesize audioInfo=_audioInfo;
 
 @end

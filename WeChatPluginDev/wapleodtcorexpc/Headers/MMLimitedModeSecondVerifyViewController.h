@@ -11,7 +11,6 @@
     long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
 - (void)onVerifyPasswordFail;
 - (void)onVerifyPasswordSuccess:(id)arg1;

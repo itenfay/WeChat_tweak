@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray;
 
 @interface WAJSContextPlugin_EventQueue
@@ -12,7 +14,6 @@
     NSMutableArray *_arrNavigationViewDidAppearEvent;
 }
 
-- (void).cxx_destruct;
 - (id)anyThread_popAllEventWhenIndexDataLoadedQueue;
 - (void)anythread_addEventWhenIndexDataLoadedQueue:(CDUnknownBlockType)arg1;
 - (id)anyThread_popAllEventInNavigationViewDidAppearQueue;
@@ -29,4 +30,3 @@
 - (void)mainthread_addEventToViewDidAppearQueue:(CDUnknownBlockType)arg1;
 
 @end
-

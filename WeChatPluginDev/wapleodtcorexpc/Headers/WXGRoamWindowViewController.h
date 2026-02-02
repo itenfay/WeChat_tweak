@@ -43,7 +43,6 @@
     unsigned long long _transferSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long transferSize; // @synthesize transferSize=_transferSize;
 @property(nonatomic) unsigned long long selectedSize; // @synthesize selectedSize=_selectedSize;
 @property(nonatomic) unsigned long long chatLogSize; // @synthesize chatLogSize=_chatLogSize;

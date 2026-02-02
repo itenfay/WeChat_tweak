@@ -14,7 +14,6 @@
     NSMutableArray *_topicButtonList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *topicButtonList; // @synthesize topicButtonList=_topicButtonList;
 @property(retain, nonatomic) MMUIButton *unfoldButton; // @synthesize unfoldButton=_unfoldButton;
 @property(retain, nonatomic) BrandProfileTopicViewModel *viewModel; // @synthesize viewModel=_viewModel;

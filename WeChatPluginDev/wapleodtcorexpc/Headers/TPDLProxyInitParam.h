@@ -21,7 +21,6 @@
     NSString *_configStr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableCheckLocalServerOnCreate; // @synthesize enableCheckLocalServerOnCreate=_enableCheckLocalServerOnCreate;
 @property(nonatomic) _Bool enableCheckLocalServer; // @synthesize enableCheckLocalServer=_enableCheckLocalServer;
 @property(nonatomic) int localServerCheckTimeInterval; // @synthesize localServerCheckTimeInterval=_localServerCheckTimeInterval;

@@ -13,7 +13,6 @@
     NSString *_detailString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *detailString; // @synthesize detailString=_detailString;
 @property(retain, nonatomic) UINavigationController *navControl; // @synthesize navControl=_navControl;
 @property(retain, nonatomic) NSMutableArray *chatLogInfoArray; // @synthesize chatLogInfoArray=_chatLogInfoArray;

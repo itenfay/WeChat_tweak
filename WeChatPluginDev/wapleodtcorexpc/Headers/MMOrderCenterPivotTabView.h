@@ -13,7 +13,6 @@
     UILabel *_titleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(nonatomic) long long numbering; // @synthesize numbering=_numbering;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLivePageSheetNoticeConfig, NSArray, UILabel;
 
 @interface MMFinderLivePageSheetNoticeView
@@ -14,7 +16,6 @@
     NSArray *_actionButtons;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *actionButtons; // @synthesize actionButtons=_actionButtons;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -28,4 +29,3 @@
 - (id)initWithConfig:(id)arg1;
 
 @end
-

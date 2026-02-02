@@ -14,7 +14,6 @@
     NSString *_customScript;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *customScript; // @synthesize customScript=_customScript;
 @property(nonatomic) _Bool useLoadHtmlString; // @synthesize useLoadHtmlString=_useLoadHtmlString;
 @property(nonatomic) _Bool useUrlSchemeHandler; // @synthesize useUrlSchemeHandler=_useUrlSchemeHandler;

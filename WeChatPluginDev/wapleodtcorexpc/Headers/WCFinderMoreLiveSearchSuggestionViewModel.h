@@ -16,7 +16,6 @@
     WCFinderSearchSuggestionCGI *_currentCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSearchSuggestionCGI *currentCgi; // @synthesize currentCgi=_currentCgi;
 @property(copy, nonatomic) NSString *searchKeyWord; // @synthesize searchKeyWord=_searchKeyWord;
 @property(retain, nonatomic) NSMutableArray *allSearchHistory; // @synthesize allSearchHistory=_allSearchHistory;

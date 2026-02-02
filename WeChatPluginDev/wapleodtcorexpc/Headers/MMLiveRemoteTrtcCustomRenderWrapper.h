@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveRemoteTrtcCustomRenderWrapperInitParam, MMLiveTaskId, MMVideoRenderView, MMWeEffectManager, NSString, UIView;
 
@@ -27,7 +28,6 @@
     struct CGRect _renderRect;
 }
 
-- (void).cxx_destruct;
 @property _Bool isStopCustomRender; // @synthesize isStopCustomRender=_isStopCustomRender;
 @property _Bool isWeVisMgrCreated; // @synthesize isWeVisMgrCreated=_isWeVisMgrCreated;
 @property(nonatomic) _Bool isAllowFp16; // @synthesize isAllowFp16=_isAllowFp16;
@@ -77,4 +77,3 @@
 @property(readonly) Class superclass;
 
 @end
-

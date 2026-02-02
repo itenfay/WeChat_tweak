@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CdnRenderViewBase, CustomPlayerConfig, MMLivePixelBuffer, MMLiveTask, MMWeEffectManager, NSMutableArray, NSString, TRTCCdnPlayerConfig, TXLivePlayer, UIView;
 @protocol OS_dispatch_semaphore, TRTCCdnPlayerManagerDelegate, TXLivePlayListener;
@@ -50,7 +51,6 @@
     NSObject<OS_dispatch_semaphore> *_forbidRenderPixelChangedLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *forbidRenderPixelChangedLock; // @synthesize forbidRenderPixelChangedLock=_forbidRenderPixelChangedLock;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *tempYUVReqTaskLock; // @synthesize tempYUVReqTaskLock=_tempYUVReqTaskLock;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *tempARGBReqTaskLock; // @synthesize tempARGBReqTaskLock=_tempARGBReqTaskLock;
@@ -201,4 +201,3 @@
 @property(readonly) Class superclass;
 
 @end
-

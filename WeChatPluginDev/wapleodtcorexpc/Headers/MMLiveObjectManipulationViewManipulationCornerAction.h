@@ -13,7 +13,6 @@
     UIColor *_backgroundColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 - (id)copyWithZone:(struct _NSZone *)arg1;

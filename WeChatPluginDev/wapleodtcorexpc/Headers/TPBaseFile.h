@@ -25,7 +25,6 @@
 + (id)loadDataFromPathEx:(id)arg1 Offset:(unsigned long long)arg2 MaxLen:(unsigned long long)arg3;
 + (long long)getFileSize:(id)arg1;
 + (_Bool)fileExist:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forUpdating; // @synthesize forUpdating=_forUpdating;
 @property(nonatomic) _Bool fileOpen; // @synthesize fileOpen=_fileOpen;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

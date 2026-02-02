@@ -28,7 +28,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *topicId; // @synthesize topicId=_topicId;
 @property(nonatomic) unsigned int expiredTime; // @synthesize expiredTime=_expiredTime;
 @property(retain, nonatomic) NSString *textStateId; // @synthesize textStateId=_textStateId;

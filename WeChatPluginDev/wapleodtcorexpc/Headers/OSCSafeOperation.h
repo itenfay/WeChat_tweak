@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSOperation.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OSCSafeOperation : NSOperation
 {
@@ -13,4 +14,3 @@
 - (void)setCompletionBlock:(CDUnknownBlockType)arg1;
 
 @end
-

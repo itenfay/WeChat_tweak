@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_desc;
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_iconUrl;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deeplinkJumpUrl; // @synthesize deeplinkJumpUrl=_deeplinkJumpUrl;
 @property(retain, nonatomic) NSString *brandUserName; // @synthesize brandUserName=_brandUserName;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;

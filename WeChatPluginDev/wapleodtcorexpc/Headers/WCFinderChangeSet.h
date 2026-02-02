@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSIndexSet;
 
@@ -17,7 +18,6 @@
 + (id)changeSetWithUpdate:(id)arg1;
 + (id)changeSetWithInsert:(id)arg1;
 + (id)changeSetWithRemove:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexSet *updates; // @synthesize updates=_updates;
 @property(retain, nonatomic) NSIndexSet *inserts; // @synthesize inserts=_inserts;
 @property(retain, nonatomic) NSIndexSet *removes; // @synthesize removes=_removes;
@@ -31,4 +31,3 @@
 @property(readonly, nonatomic) _Bool empty;
 
 @end
-

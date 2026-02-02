@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -12,10 +13,8 @@
     NSMutableDictionary *_commitQueues;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *commitQueues; // @synthesize commitQueues=_commitQueues;
 - (void)commitChangesToGiftCustomizationModel:(id)arg1 withTaskId:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)init;
 
 @end
-

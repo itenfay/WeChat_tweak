@@ -18,7 +18,6 @@
     long long _apiFrom;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long apiFrom; // @synthesize apiFrom=_apiFrom;
 @property(retain, nonatomic) WAOpenSDKJSEventHandlerContext *openSDKContext; // @synthesize openSDKContext=_openSDKContext;
 @property(copy, nonatomic) NSString *transitiveData; // @synthesize transitiveData=_transitiveData;

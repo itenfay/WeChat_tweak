@@ -13,7 +13,6 @@
     WCPayOverseaGetFacingReceiveQRCodeResponse *_m_getQRCodeResponse;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayOverseaGetFacingReceiveQRCodeResponse *m_getQRCodeResponse; // @synthesize m_getQRCodeResponse=_m_getQRCodeResponse;
 @property(retain, nonatomic) WCPayOverseaGetFacingReceiveQRCodeCgi *m_getQRCodeCgi; // @synthesize m_getQRCodeCgi=_m_getQRCodeCgi;
 - (id)WCPayFacingReceiveGetOfflineSlogan;

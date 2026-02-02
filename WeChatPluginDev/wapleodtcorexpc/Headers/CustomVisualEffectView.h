@@ -12,7 +12,6 @@
     UIViewPropertyAnimator *_animator;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithEffect:(id)arg1 intensity:(double)arg2 pausedOnCompletion:(_Bool)arg3;
 - (id)initWithEffect:(id)arg1 intensity:(double)arg2;

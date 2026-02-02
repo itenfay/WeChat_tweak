@@ -16,7 +16,6 @@
 }
 
 + (id)matchType:(unsigned int)arg1 subType:(unsigned int)arg2 target:(id)arg3 desc:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsMatchDesc; // @synthesize nsMatchDesc=_nsMatchDesc;
 @property(retain, nonatomic) LSTargetGenerator *targetGenerator; // @synthesize targetGenerator=_targetGenerator;
 @property(nonatomic) unsigned int matchSubType; // @synthesize matchSubType=_matchSubType;

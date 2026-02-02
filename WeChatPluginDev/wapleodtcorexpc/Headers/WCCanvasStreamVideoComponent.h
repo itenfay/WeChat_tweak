@@ -31,7 +31,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id timeObserverToken; // @synthesize timeObserverToken=_timeObserverToken;
 @property(nonatomic) _Bool turnToPlayForVideoDisplayScaleLargeThanHalf; // @synthesize turnToPlayForVideoDisplayScaleLargeThanHalf=_turnToPlayForVideoDisplayScaleLargeThanHalf;
 @property(nonatomic) _Bool shouldPlayAtBegin; // @synthesize shouldPlayAtBegin=_shouldPlayAtBegin;

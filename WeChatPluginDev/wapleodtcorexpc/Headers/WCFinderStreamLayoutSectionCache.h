@@ -18,7 +18,6 @@
     UICollectionViewLayoutAttributes *_decorationAttr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *decorationAttr; // @synthesize decorationAttr=_decorationAttr;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *footerAttr; // @synthesize footerAttr=_footerAttr;
 @property(retain, nonatomic) NSMutableDictionary *cellsAttr; // @synthesize cellsAttr=_cellsAttr;

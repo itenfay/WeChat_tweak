@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class TXCGlFrameBuffer, TXCGlProgram, UIImage;
 @protocol TXIGlContext;
 
@@ -23,7 +25,6 @@
     TXCGlProgram *_program;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableFilter2; // @synthesize enableFilter2=_enableFilter2;
 @property(nonatomic) _Bool enableFilter1; // @synthesize enableFilter1=_enableFilter1;
 @property(retain, nonatomic) TXCGlProgram *program; // @synthesize program=_program;
@@ -44,4 +45,3 @@
 - (id)initWithContext:(id)arg1 image:(id)arg2;
 
 @end
-

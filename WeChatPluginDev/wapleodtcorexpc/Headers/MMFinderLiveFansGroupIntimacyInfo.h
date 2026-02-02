@@ -23,7 +23,6 @@
     FinderJumpInfo *_cancelSuperfanSubscribeJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderJumpInfo *cancelSuperfanSubscribeJumpInfo; // @synthesize cancelSuperfanSubscribeJumpInfo=_cancelSuperfanSubscribeJumpInfo;
 @property(retain, nonatomic) FinderLiveSuperFanRightInfo *superfanRightsInfo; // @synthesize superfanRightsInfo=_superfanRightsInfo;
 @property(retain, nonatomic) FinderLiveFanClubFloatMsgInfo *floatMsgInfo; // @synthesize floatMsgInfo=_floatMsgInfo;

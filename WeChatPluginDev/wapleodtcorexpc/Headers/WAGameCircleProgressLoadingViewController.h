@@ -26,7 +26,6 @@
     MMUIButton *_requestFullScreenBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *requestFullScreenBtn; // @synthesize requestFullScreenBtn=_requestFullScreenBtn;
 @property(retain, nonatomic) WAMenuPopInteractiveTransition *dismissInteractiveTransition; // @synthesize dismissInteractiveTransition=_dismissInteractiveTransition;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *popBackGesture; // @synthesize popBackGesture=_popBackGesture;

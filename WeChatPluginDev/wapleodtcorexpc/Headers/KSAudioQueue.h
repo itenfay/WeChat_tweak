@@ -24,7 +24,6 @@
     unsigned long long _status;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(nonatomic) struct OpaqueAudioQueue *audioQueue; // @synthesize audioQueue=_audioQueue;
 @property(retain, nonatomic) NSData *magicCookie; // @synthesize magicCookie=_magicCookie;

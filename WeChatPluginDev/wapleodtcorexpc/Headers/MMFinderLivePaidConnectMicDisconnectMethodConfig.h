@@ -13,7 +13,6 @@
     NSString *_wording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;
 @property(nonatomic) unsigned long long disconnectMethod; // @synthesize disconnectMethod=_disconnectMethod;
 

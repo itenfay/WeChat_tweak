@@ -21,7 +21,6 @@
     long long _shareSourceType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long shareSourceType; // @synthesize shareSourceType=_shareSourceType;
 @property(nonatomic) long long shareActionType; // @synthesize shareActionType=_shareActionType;
 @property(copy, nonatomic) NSString *messageExtraData; // @synthesize messageExtraData=_messageExtraData;

@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_fullPinYin;
 + (void)PBArrayAdd_nickName;
 + (void)PBArrayAdd_aliasName;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiLastLaunchAppTime; // @synthesize uiLastLaunchAppTime=_uiLastLaunchAppTime;
 @property(nonatomic) unsigned int uiLastUpdateAppVersionInfoTime; // @synthesize uiLastUpdateAppVersionInfoTime=_uiLastUpdateAppVersionInfoTime;
 @property(retain, nonatomic) NSString *signature; // @synthesize signature=_signature;

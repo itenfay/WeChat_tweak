@@ -14,7 +14,6 @@
     unsigned long long _index;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(retain, nonatomic) NSNumber *testMarkViewSwitch; // @synthesize testMarkViewSwitch=_testMarkViewSwitch;
 @property(retain, nonatomic) NSMapTable *testMarkViews; // @synthesize testMarkViews=_testMarkViews;

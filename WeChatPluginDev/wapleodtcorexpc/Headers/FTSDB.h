@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FTS5MigrateRecord, NSDictionary, NSMutableDictionary, NSRecursiveLock, WCTDatabase, WCTTable;
 
@@ -38,7 +39,6 @@
     NSMutableDictionary *m_dicValidIntelligentUserNameId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *m_tableIntelligentSecureRank; // @synthesize m_tableIntelligentSecureRank;
 @property(retain, nonatomic) WCTTable *m_tableIntelligentFaceClusterMessage; // @synthesize m_tableIntelligentFaceClusterMessage;
 @property(retain, nonatomic) WCTTable *m_tableIntelligentFaceCluster; // @synthesize m_tableIntelligentFaceCluster;
@@ -218,4 +218,3 @@
 - (_Bool)CreateMessageTable;
 
 @end
-

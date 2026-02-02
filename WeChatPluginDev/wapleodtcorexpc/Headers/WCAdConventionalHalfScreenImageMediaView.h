@@ -11,7 +11,6 @@
     WCImageView *_imageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) WCMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 - (id)fetchMediaImage;

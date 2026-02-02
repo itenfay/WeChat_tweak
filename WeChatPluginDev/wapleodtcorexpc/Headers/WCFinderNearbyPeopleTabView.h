@@ -16,7 +16,6 @@
     UIView *_redDotView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *redDotView; // @synthesize redDotView=_redDotView;
 @property(copy, nonatomic) NSString *bindPath; // @synthesize bindPath=_bindPath;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

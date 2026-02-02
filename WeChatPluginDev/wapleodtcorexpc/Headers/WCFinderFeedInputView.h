@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonBoardView, MMGrowTextView, MMHeadImageView, NSString, UIButton, UIImageView, UITapGestureRecognizer, WCFinderCommentIdentityActionSheetView, WCFinderFeedInputViewModel, WCInputController;
 @protocol WCFinderFeedInputCommentPostDelegate, WCFinderFeedInputViewDelegate;
@@ -33,7 +34,6 @@
 }
 
 + (void)showForDataItemTid:(id)arg1 nonceID:(id)arg2 identitySwitchType:(unsigned long long)arg3 postCommentScene:(int)arg4 scrollView:(id)arg5 positioningView:(id)arg6;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCommentIdentityActionSheetView *identityActionSheet; // @synthesize identityActionSheet=_identityActionSheet;
 @property(retain, nonatomic) UITapGestureRecognizer *identitySwitchRecognizer; // @synthesize identitySwitchRecognizer=_identitySwitchRecognizer;
 @property(retain, nonatomic) MMHeadImageView *avatarImageView; // @synthesize avatarImageView=_avatarImageView;
@@ -99,4 +99,3 @@
 @property(readonly) Class superclass;
 
 @end
-

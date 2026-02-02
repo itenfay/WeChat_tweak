@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableArray, NSString, WCFinderBaseCgi;
 
@@ -17,7 +18,6 @@
 
 + (void)fillMatchInfo:(id)arg1 ToContact:(id)arg2;
 + (_Bool)_acceptMatchType:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderBaseCgi *fetchingCGI; // @synthesize fetchingCGI=_fetchingCGI;
 @property(retain, nonatomic) NSDictionary *dicMatchTips; // @synthesize dicMatchTips=_dicMatchTips;
 @property(retain, nonatomic) NSMutableArray *contacts; // @synthesize contacts=_contacts;
@@ -28,4 +28,3 @@
 - (void)asyncFetchContact:(CDUnknownBlockType)arg1 failure:(CDUnknownBlockType)arg2;
 
 @end
-

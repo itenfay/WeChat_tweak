@@ -42,7 +42,6 @@
     XMailBindMailControlLogic *_bindMailControlLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) XMailBindMailControlLogic *bindMailControlLogic; // @synthesize bindMailControlLogic=_bindMailControlLogic;
 @property(retain, nonatomic) NSString *sendingMailEventId; // @synthesize sendingMailEventId=_sendingMailEventId;
 @property(nonatomic) _Bool isPromptingAlert; // @synthesize isPromptingAlert=_isPromptingAlert;

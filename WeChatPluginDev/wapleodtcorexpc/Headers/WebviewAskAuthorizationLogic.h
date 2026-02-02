@@ -15,7 +15,6 @@
     _Bool _isQueueHandling;
 }
 
-- (void).cxx_destruct;
 - (id)getScopeListStrFromArray:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (unsigned int)structCGI:(id)arg1 withType:(unsigned int)arg2 withUserData:(id)arg3;

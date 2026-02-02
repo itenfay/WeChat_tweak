@@ -12,7 +12,6 @@
     JSEvent *_jsEvent;
 }
 
-- (void).cxx_destruct;
 - (void)onRetrieveLocationOK:(id)arg1;
 - (void)onRetrieveLocationTimeOut:(id)arg1;
 - (void)onRetrieveLocationError:(int)arg1;

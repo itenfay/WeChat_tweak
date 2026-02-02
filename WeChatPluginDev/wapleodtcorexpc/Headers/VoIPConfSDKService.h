@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ConfAVMemberList, IConfSDKRegisterableCallbackHolder, MMConfSDKAudioMgr, MMConfSDKCGIImp, MMConfSDKMemberMgr, MMConfSDKNetworkMgr, MMConfSDKVideoHWdec, MMConfSDKVideoHWenc, MMContext, NSMutableArray, NSObject, NSString, VoIPConfSDKNativeCallbackMgr;
 @protocol MultitalkApiDelegate, OS_dispatch_queue, ilinkApiDelegate;
 
@@ -108,7 +110,6 @@
     long long _deviceOrientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long deviceOrientation; // @synthesize deviceOrientation=_deviceOrientation;
 - (void)OnConfEvent:(int)arg1 errCode:(int)arg2 data:(id)arg3 callbackData:(id)arg4;
 - (void)callIfNotNil:(id)arg1 errCode:(int)arg2 data:(id)arg3 callbackData:(id)arg4;
@@ -230,4 +231,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -22,7 +22,6 @@
     UILabel *_m_subtitleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *m_subtitleLabel; // @synthesize m_subtitleLabel=_m_subtitleLabel;
 @property _Bool hasHLine; // @synthesize hasHLine=_hasHLine;
 @property int radius; // @synthesize radius=_radius;

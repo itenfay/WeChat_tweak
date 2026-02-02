@@ -21,7 +21,6 @@
     UIColor *_m_wxColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *m_wxColor; // @synthesize m_wxColor=_m_wxColor;
 @property(retain, nonatomic) UIColor *m_strikeThroughWordingColor; // @synthesize m_strikeThroughWordingColor=_m_strikeThroughWordingColor;
 @property(retain, nonatomic) NSString *m_nsStrikeThroughWording; // @synthesize m_nsStrikeThroughWording=_m_nsStrikeThroughWording;

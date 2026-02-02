@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIViewController, NSString, WAAppOpenParameter, WAAppTaskExtInfo, WAAppTaskHandlerWrapper, WAAppTrialInfoLoader, WAContact;
 @protocol IWALimitModeHelper;
 
@@ -18,7 +20,6 @@
     MMUIViewController *_loadingVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *loadingVC; // @synthesize loadingVC=_loadingVC;
 - (id)getJumpFromAppTask;
 - (_Bool)dismissControllerNeedMask;
@@ -107,4 +108,3 @@
 @property(readonly) Class superclass;
 
 @end
-

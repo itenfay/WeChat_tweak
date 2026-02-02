@@ -15,7 +15,6 @@
     FTSIntelligentMessageDB *_ftsDB;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSIntelligentMessageDB *ftsDB; // @synthesize ftsDB=_ftsDB;
 - (void)cancelSearch:(id)arg1 withHandlerKey:(id)arg2;
 - (void)callSearchFinish:(id)arg1;

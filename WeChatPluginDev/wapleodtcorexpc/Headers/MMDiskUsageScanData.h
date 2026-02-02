@@ -18,7 +18,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_m_rootFolder;
 + (void)PBArrayAdd_m_stat;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFolderWrap *m_rootFolder; // @synthesize m_rootFolder=_m_rootFolder;
 @property(retain, nonatomic) MMDiskUsageScanStat *m_stat; // @synthesize m_stat=_m_stat;
 - (id)getPBPropertyTable;

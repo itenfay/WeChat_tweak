@@ -21,7 +21,6 @@
 
 + (id)ArrayFromJSON:(id)arg1;
 + (id)FromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *prefixIconUrl; // @synthesize prefixIconUrl=_prefixIconUrl;
 @property(retain, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

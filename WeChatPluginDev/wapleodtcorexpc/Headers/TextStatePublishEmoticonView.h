@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, CEmoticonWrap, MMEmoticonView, MMUIButton;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _tapDeleteButtonHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tapDeleteButtonHandler; // @synthesize tapDeleteButtonHandler=_tapDeleteButtonHandler;
 @property(retain, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(retain, nonatomic) MMUIButton *deleteButton; // @synthesize deleteButton=_deleteButton;
@@ -29,4 +29,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

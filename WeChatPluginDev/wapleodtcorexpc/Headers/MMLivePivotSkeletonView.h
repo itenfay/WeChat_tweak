@@ -24,7 +24,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *operationButtons; // @synthesize operationButtons=_operationButtons;
 @property(retain, nonatomic) MMLivePivotSkeletonComponentView *commentBox; // @synthesize commentBox=_commentBox;
 @property(retain, nonatomic) UIView *operationsLine; // @synthesize operationsLine=_operationsLine;

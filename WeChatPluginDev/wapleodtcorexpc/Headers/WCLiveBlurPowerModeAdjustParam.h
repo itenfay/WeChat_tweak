@@ -29,7 +29,6 @@
 + (id)createFirstGearPowerModeAdjustParam;
 + (id)createZerothGearPowerModeAdjustParam;
 + (id)createDefaultPowerModeAdjustParam;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSilenceHandle; // @synthesize isSilenceHandle=_isSilenceHandle;
 @property(nonatomic) double monitorScheduleInterval; // @synthesize monitorScheduleInterval=_monitorScheduleInterval;
 @property(nonatomic) double similarStandardRate; // @synthesize similarStandardRate=_similarStandardRate;

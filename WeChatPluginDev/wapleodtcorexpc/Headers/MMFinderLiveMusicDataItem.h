@@ -18,7 +18,6 @@
     NSString *_publicTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int duration; // @synthesize duration=_duration;
 @property(nonatomic) _Bool isInBgMusicList; // @synthesize isInBgMusicList=_isInBgMusicList;
 @property(copy, nonatomic) NSString *publicTime; // @synthesize publicTime=_publicTime;

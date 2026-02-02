@@ -15,7 +15,6 @@
     NSLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableArray *cycleArray; // @synthesize cycleArray=_cycleArray;
 @property(nonatomic) int tailIndex; // @synthesize tailIndex=_tailIndex;

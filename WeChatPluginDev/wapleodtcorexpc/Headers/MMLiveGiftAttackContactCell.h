@@ -19,7 +19,6 @@
 + (double)getSeperatorLineXMargin;
 + (double)getCellHeight;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveGiftAttackContactCellDelegate> cellDelegate; // @synthesize cellDelegate=_cellDelegate;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 @property(retain, nonatomic) WCFinderContact *giftAttackContact; // @synthesize giftAttackContact=_giftAttackContact;

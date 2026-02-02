@@ -13,7 +13,6 @@
     NSMutableSet *_invalidComments;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *invalidComments; // @synthesize invalidComments=_invalidComments;
 @property(retain, nonatomic) NSMutableDictionary *commentDataItemDict; // @synthesize commentDataItemDict=_commentDataItemDict;
 - (unsigned long long)getCommentDataItemCount;

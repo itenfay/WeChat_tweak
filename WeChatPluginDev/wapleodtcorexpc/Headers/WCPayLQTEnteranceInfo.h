@@ -32,7 +32,6 @@
 + (void)PBArrayAdd_lct_url;
 + (void)PBArrayAdd_lqt_state;
 + (void)PBArrayAdd_lct_wording;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lqt_wording; // @synthesize lqt_wording=_lqt_wording;
 @property(retain, nonatomic) NSString *lqt_title; // @synthesize lqt_title=_lqt_title;
 @property(retain, nonatomic) NSString *lqt_open_url; // @synthesize lqt_open_url=_lqt_open_url;

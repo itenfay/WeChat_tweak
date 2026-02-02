@@ -45,7 +45,6 @@
 }
 
 + (void)CreateExtendInfoWithTypeForBiz:(unsigned int)arg1 retExtendInfo:(id *)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_revokedMsgInnerType; // @synthesize m_revokedMsgInnerType=_m_revokedMsgInnerType;
 @property(retain, nonatomic) NSString *m_revokedAtUserList; // @synthesize m_revokedAtUserList=_m_revokedAtUserList;
 @property(nonatomic) unsigned long long m_revokedReferSvrid; // @synthesize m_revokedReferSvrid=_m_revokedReferSvrid;

@@ -31,7 +31,6 @@
     NSArray *_monthsDatas;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *monthsDatas; // @synthesize monthsDatas=_monthsDatas;
 @property(retain, nonatomic) NSArray *yearsData; // @synthesize yearsData=_yearsData;
 @property(retain, nonatomic) MMCommonActionSheetPicker *yearMonthPickerView; // @synthesize yearMonthPickerView=_yearMonthPickerView;

@@ -15,7 +15,6 @@
 }
 
 + (id)instance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *downloadingList; // @synthesize downloadingList=_downloadingList;
 @property(retain, nonatomic) NSMutableDictionary *logoImageDict; // @synthesize logoImageDict=_logoImageDict;
 @property(retain, nonatomic) NSMutableDictionary *logoSourceDict; // @synthesize logoSourceDict=_logoSourceDict;

@@ -12,7 +12,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (ObjectRef_32b092d4)acquireTexture;
 - (void)pushTexture:(ObjectRef_32b092d4)arg1;
 

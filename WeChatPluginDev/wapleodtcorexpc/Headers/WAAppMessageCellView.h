@@ -14,7 +14,6 @@
     UIImageView *_thumbImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *thumbImageView; // @synthesize thumbImageView=_thumbImageView;
 @property(retain, nonatomic) UILabel *newsTitleLabel; // @synthesize newsTitleLabel=_newsTitleLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

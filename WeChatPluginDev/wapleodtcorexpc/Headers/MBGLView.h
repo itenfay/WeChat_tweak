@@ -18,7 +18,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *locationInView; // @synthesize locationInView=_locationInView;
 @property(retain, nonatomic) UIImageView *snapshotImage; // @synthesize snapshotImage=_snapshotImage;
 @property(retain, nonatomic) NSMutableArray *touchableRects; // @synthesize touchableRects=_touchableRects;

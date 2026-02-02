@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 @protocol EmoticonCustomCreateVideoEditTaskDelegate;
 
@@ -18,7 +20,6 @@
     NSString *_thumbImgUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *thumbImgUrl; // @synthesize thumbImgUrl=_thumbImgUrl;
 @property(retain, nonatomic) NSString *videoPath; // @synthesize videoPath=_videoPath;
 @property(nonatomic) unsigned long long editorType; // @synthesize editorType=_editorType;
@@ -48,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

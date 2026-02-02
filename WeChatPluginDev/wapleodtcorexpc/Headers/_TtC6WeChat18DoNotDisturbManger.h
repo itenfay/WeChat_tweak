@@ -13,7 +13,6 @@
 }
 
 + (id)voipTipTextWithIcon:(id)arg1;
-- (void).cxx_destruct;
 - (void)showEducatePageIfNeed;
 - (id)init;
 - (void)OnAddMsg:(id)arg1 MsgWrap:(id)arg2;

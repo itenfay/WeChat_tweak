@@ -16,7 +16,6 @@
     JSContext *_context;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int workerId; // @synthesize workerId=_workerId;
 @property(retain, nonatomic) JSContext *context; // @synthesize context=_context;
 @property(nonatomic) unsigned int block; // @synthesize block=_block;

@@ -17,7 +17,6 @@
     UIView *_shadowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) UIView *bigView; // @synthesize bigView=_bigView;
 @property(retain, nonatomic) UIView *bigHeadImage; // @synthesize bigHeadImage=_bigHeadImage;

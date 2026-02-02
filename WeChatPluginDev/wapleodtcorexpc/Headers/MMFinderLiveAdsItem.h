@@ -25,7 +25,6 @@
     unsigned long long _partnerAdId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long partnerAdId; // @synthesize partnerAdId=_partnerAdId;
 @property(nonatomic) unsigned int subType; // @synthesize subType=_subType;
 @property(nonatomic) unsigned int resourceType; // @synthesize resourceType=_resourceType;

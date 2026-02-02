@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -12,7 +13,6 @@
     CDUnknownBlockType _callback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 - (void)onCloseService:(unsigned long long)arg1 config:(id)arg2 error:(id)arg3;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

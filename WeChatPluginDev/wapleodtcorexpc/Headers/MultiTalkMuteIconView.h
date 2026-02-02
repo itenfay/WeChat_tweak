@@ -12,7 +12,6 @@
     UIImageView *_muteIconImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *muteIconImage; // @synthesize muteIconImage=_muteIconImage;
 - (void)initMuteIcon;
 - (void)layoutSubviews;

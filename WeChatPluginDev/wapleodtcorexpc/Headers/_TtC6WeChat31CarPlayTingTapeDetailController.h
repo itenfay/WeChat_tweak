@@ -11,7 +11,6 @@
     MISSING_TYPE *pageIndex;
 }
 
-- (void).cxx_destruct;
 
 @end
 

@@ -10,7 +10,6 @@
     NSString *_panoramaImageUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *panoramaImageUrl; // @synthesize panoramaImageUrl=_panoramaImageUrl;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

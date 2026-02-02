@@ -11,7 +11,6 @@
     _Bool m_hasIllegalData;
 }
 
-- (void).cxx_destruct;
 - (void)OnUpdateItems:(id)arg1;
 - (void)saveSight;
 - (void)onFavSightSizeDidChange:(id)arg1;

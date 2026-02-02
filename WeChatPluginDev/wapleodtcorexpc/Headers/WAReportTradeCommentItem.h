@@ -12,7 +12,6 @@
     NSString *_actionNote;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *actionNote; // @synthesize actionNote=_actionNote;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(nonatomic) unsigned int action; // @synthesize action=_action;

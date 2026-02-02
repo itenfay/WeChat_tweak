@@ -12,7 +12,6 @@
     NSMutableDictionary *_singerHeatInfoDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *singerHeatInfoDict; // @synthesize singerHeatInfoDict=_singerHeatInfoDict;
 @property(nonatomic) unsigned long long anchorHeatValue; // @synthesize anchorHeatValue=_anchorHeatValue;
 @property(retain, nonatomic) NSString *liveMeetId; // @synthesize liveMeetId=_liveMeetId;

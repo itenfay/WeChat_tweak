@@ -10,7 +10,6 @@
     NSMutableArray *_contacts;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *contacts; // @synthesize contacts=_contacts;
 - (id)contactAtIndex:(long long)arg1;
 - (long long)numberOfSessions;

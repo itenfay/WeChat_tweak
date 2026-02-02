@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
@@ -14,11 +15,9 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(nonatomic) long long maxConcurrent; // @synthesize maxConcurrent=_maxConcurrent;
 - (void)fetchAssetImage:(id)arg1 processBlock:(CDUnknownBlockType)arg2 resultBlock:(CDUnknownBlockType)arg3 errorBlock:(CDUnknownBlockType)arg4;
 
 @end
-

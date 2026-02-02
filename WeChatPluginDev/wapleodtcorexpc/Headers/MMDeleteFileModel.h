@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_filePaths;
 + (void)PBArrayAdd_fileDescription;
 + (void)PBArrayAdd_rtxName;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bUpload; // @synthesize bUpload=_bUpload;
 @property(retain, nonatomic) NSArray *filePaths; // @synthesize filePaths=_filePaths;
 @property(retain, nonatomic) NSString *fileDescription; // @synthesize fileDescription=_fileDescription;

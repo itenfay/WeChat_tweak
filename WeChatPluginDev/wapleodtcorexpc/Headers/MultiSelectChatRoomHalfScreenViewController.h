@@ -38,7 +38,6 @@
     ContactsDataLogic *_m_contactsDataLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactsDataLogic *m_contactsDataLogic; // @synthesize m_contactsDataLogic=_m_contactsDataLogic;
 @property(nonatomic) __weak id <MultiSelectChatRoomHalfScreenViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) NSMutableDictionary *m_dicMultiSelectIndex; // @synthesize m_dicMultiSelectIndex;

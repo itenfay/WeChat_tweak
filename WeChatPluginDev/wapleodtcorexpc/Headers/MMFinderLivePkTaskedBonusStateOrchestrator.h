@@ -20,7 +20,6 @@
     id <MMFinderLivePkTaskedBonusStateDescriptor> _currentState;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMFinderLivePkTaskedBonusStateDescriptor> currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) double introPlayTime; // @synthesize introPlayTime=_introPlayTime;
 @property(nonatomic) unsigned long long giftsVerificationStatus; // @synthesize giftsVerificationStatus=_giftsVerificationStatus;

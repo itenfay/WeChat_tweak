@@ -16,7 +16,6 @@
     WAPopOverTaskBarlogic *_taskBarLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPopOverTaskBarlogic *taskBarLogic; // @synthesize taskBarLogic=_taskBarLogic;
 @property(retain, nonatomic) UICollectionView *taskCollectionView; // @synthesize taskCollectionView=_taskCollectionView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

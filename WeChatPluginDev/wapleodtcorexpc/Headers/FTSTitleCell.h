@@ -12,7 +12,6 @@
     UIView *_lineView;
 }
 
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (double)getTopMargin;
 - (void)updateTitle:(id)arg1;

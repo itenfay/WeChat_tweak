@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, WCDataItem, WCLikeButton;
 
@@ -19,7 +20,6 @@
     CDUnknownBlockType _detailBlock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enablesHotAreaOptimization; // @synthesize enablesHotAreaOptimization=_enablesHotAreaOptimization;
 @property(copy, nonatomic) CDUnknownBlockType detailBlock; // @synthesize detailBlock=_detailBlock;
 @property(retain, nonatomic) MMUIButton *detailButton; // @synthesize detailButton=_detailButton;
@@ -43,4 +43,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 dataItem:(id)arg2 likeOpBlock:(CDUnknownBlockType)arg3 commentBlock:(CDUnknownBlockType)arg4 detailBlock:(CDUnknownBlockType)arg5;
 
 @end
-

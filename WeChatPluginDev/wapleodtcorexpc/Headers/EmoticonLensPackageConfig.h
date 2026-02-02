@@ -19,7 +19,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *params; // @synthesize params=_params;
 @property(retain, nonatomic) NSArray *paramsList; // @synthesize paramsList=_paramsList;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;

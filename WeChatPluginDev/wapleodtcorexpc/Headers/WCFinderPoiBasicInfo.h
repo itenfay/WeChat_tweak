@@ -76,7 +76,6 @@
 + (void)PBArrayAdd_scene;
 + (void)PBArrayAdd_cacheTime;
 + (void)PBArrayAdd_poiId;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *groupFooterTitle; // @synthesize groupFooterTitle=_groupFooterTitle;
 @property(retain, nonatomic) NSArray *groupBuyArray; // @synthesize groupBuyArray=_groupBuyArray;
 @property(copy, nonatomic) NSString *groupBuyTitle; // @synthesize groupBuyTitle=_groupBuyTitle;

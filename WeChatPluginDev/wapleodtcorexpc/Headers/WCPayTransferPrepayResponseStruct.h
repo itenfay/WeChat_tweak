@@ -58,7 +58,6 @@
     NSString *_placeorderAttach;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *placeorderAttach; // @synthesize placeorderAttach=_placeorderAttach;
 @property(retain, nonatomic) WCPayTransferAmountReInputPageStruct *amountReinputPage; // @synthesize amountReinputPage=_amountReinputPage;
 @property(retain, nonatomic) MsgCheckInfo *msgCheckInfo; // @synthesize msgCheckInfo=_msgCheckInfo;

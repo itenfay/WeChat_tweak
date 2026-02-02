@@ -24,7 +24,6 @@
     _Bool _foreground;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool foreground; // @synthesize foreground=_foreground;
 - (void)jumpFromScene:(long long)arg1;
 - (long long)getShakeTimestamp;

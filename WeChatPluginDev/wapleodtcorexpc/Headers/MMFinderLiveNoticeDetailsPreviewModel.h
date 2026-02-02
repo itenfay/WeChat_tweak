@@ -20,7 +20,6 @@
     NSString *_discountWording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *discountWording; // @synthesize discountWording=_discountWording;
 @property(retain, nonatomic) NSString *introductionExtend; // @synthesize introductionExtend=_introductionExtend;
 @property(retain, nonatomic) NSString *introduction; // @synthesize introduction=_introduction;

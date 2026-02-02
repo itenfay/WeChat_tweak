@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol MTLEvent, MTLTexture;
 
@@ -37,7 +38,6 @@
 + (long long)getYuvRangeWithPixelBuffer:(struct __CVBuffer *)arg1;
 + (long long)getYuvColorPrimariesWithPixelBuffer:(struct __CVBuffer *)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTLEvent> eventToWait; // @synthesize eventToWait=_eventToWait;
 @property(copy, nonatomic) CDUnknownBlockType notifyUseCompletedBlock; // @synthesize notifyUseCompletedBlock=_notifyUseCompletedBlock;
 @property(readonly, nonatomic) _Bool isHDR10; // @synthesize isHDR10=_isHDR10;
@@ -60,4 +60,3 @@
 - (id)init;
 
 @end
-

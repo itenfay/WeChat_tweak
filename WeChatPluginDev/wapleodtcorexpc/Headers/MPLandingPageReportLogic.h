@@ -32,7 +32,6 @@
     NSMutableDictionary *_performanceReportCtxDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *performanceReportCtxDict; // @synthesize performanceReportCtxDict=_performanceReportCtxDict;
 @property(retain, nonatomic) NSMutableArray *performanceReportDataArr; // @synthesize performanceReportDataArr=_performanceReportDataArr;
 @property(nonatomic) unsigned int webPageId; // @synthesize webPageId=_webPageId;

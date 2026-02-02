@@ -19,7 +19,6 @@
     NSString *_pagePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(copy, nonatomic) NSString *pagePath; // @synthesize pagePath=_pagePath;
 @property(nonatomic) unsigned int debugMode; // @synthesize debugMode=_debugMode;

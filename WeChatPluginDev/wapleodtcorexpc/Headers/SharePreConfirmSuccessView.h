@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIImageView;
 
 @interface SharePreConfirmSuccessView
@@ -16,7 +18,6 @@
     CDUnknownBlockType _OnClickStayAtWeChat;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType OnClickStayAtWeChat; // @synthesize OnClickStayAtWeChat=_OnClickStayAtWeChat;
 @property(copy, nonatomic) CDUnknownBlockType OnClickBackToApp; // @synthesize OnClickBackToApp=_OnClickBackToApp;
 @property(retain, nonatomic) NSString *stayAtWeChatString; // @synthesize stayAtWeChatString=_stayAtWeChatString;
@@ -33,4 +34,3 @@
 - (void)internalInit;
 
 @end
-

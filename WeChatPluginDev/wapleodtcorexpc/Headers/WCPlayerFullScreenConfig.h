@@ -24,7 +24,6 @@
     double _bottomToolBottomPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double bottomToolBottomPadding; // @synthesize bottomToolBottomPadding=_bottomToolBottomPadding;
 @property(retain, nonatomic) NSString *shareableButtonTitle; // @synthesize shareableButtonTitle=_shareableButtonTitle;
 @property(retain, nonatomic) NSString *attachButtonTitle; // @synthesize attachButtonTitle=_attachButtonTitle;

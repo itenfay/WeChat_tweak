@@ -20,7 +20,6 @@
     WCPayGPLaunchChatroomProfilePageSheet *_profilePageSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayGPLaunchChatroomProfilePageSheet *profilePageSheet; // @synthesize profilePageSheet=_profilePageSheet;
 @property(retain, nonatomic) NSString *displayNameContent; // @synthesize displayNameContent=_displayNameContent;
 @property(retain, nonatomic) NSString *theme; // @synthesize theme=_theme;

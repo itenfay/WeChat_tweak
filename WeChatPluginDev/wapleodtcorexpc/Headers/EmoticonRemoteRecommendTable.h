@@ -15,7 +15,6 @@
 }
 
 + (void)clearAll;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonRemoteRecommendRecord *headRecord; // @synthesize headRecord=_headRecord;
 @property(retain, nonatomic) MemoryMappedKV *recentUseStorage; // @synthesize recentUseStorage=_recentUseStorage;
 @property(retain, nonatomic) MemoryMappedKV *recordStorage; // @synthesize recordStorage=_recordStorage;

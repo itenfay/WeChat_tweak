@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMUIButton, MMUILabel, MMUIView, NSString, PAGView, UIImageView, UILongPressGestureRecognizer, WCFinderAnimationLoadingView;
 @protocol MMLiveRewardGiftPreviewWindowDelegate;
 
@@ -28,7 +30,6 @@
     MMUILabel *_priceLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *priceLabel; // @synthesize priceLabel=_priceLabel;
 @property(retain, nonatomic) UIImageView *coinIconView; // @synthesize coinIconView=_coinIconView;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
@@ -84,4 +85,3 @@
 @property(readonly) Class superclass;
 
 @end
-

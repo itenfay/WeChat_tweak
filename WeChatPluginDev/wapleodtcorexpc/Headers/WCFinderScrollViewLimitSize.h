@@ -13,7 +13,6 @@
     struct CGSize _minsize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) struct CGSize minsize; // @synthesize minsize=_minsize;
 - (void)_onScrollViewSetContentSize:(struct CGSize)arg1 originImp:(CDUnknownFunctionPointerType)arg2;

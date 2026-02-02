@@ -17,7 +17,6 @@
     id <HeadImgDownloaderDelegate> m_downloaderDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <HeadImgDownloaderDelegate> downloaderDelegate; // @synthesize downloaderDelegate=m_downloaderDelegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (_Bool)checkIfForbidden:(id)arg1;

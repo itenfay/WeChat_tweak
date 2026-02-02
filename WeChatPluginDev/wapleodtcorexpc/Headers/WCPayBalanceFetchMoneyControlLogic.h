@@ -20,7 +20,6 @@
     WCPayFetchBalanceReport *m_reportLogic;
 }
 
-- (void).cxx_destruct;
 - (void)ActiveFetchViewControllerTextField:(_Bool)arg1;
 - (void)call:(id)arg1;
 - (void)startKindaFetchBalance:(unsigned long long)arg1 fetchAll:(_Bool)arg2;

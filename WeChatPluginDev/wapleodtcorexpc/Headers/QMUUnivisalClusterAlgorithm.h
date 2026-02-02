@@ -12,7 +12,6 @@
     QMUWorldClusterAlgorithm *_lowLevel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QMUWorldClusterAlgorithm *lowLevel; // @synthesize lowLevel=_lowLevel;
 @property(retain, nonatomic) QMUInScreenClusterAlgorithm *highLevel; // @synthesize highLevel=_highLevel;
 @property(nonatomic) int thresholdZoomlevel; // @synthesize thresholdZoomlevel=_thresholdZoomlevel;

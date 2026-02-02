@@ -15,7 +15,6 @@
     long long _freeSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long freeSize; // @synthesize freeSize=_freeSize;
 @property(nonatomic) long long deviceSize; // @synthesize deviceSize=_deviceSize;
 @property(retain, nonatomic) NSMutableArray *detailModels; // @synthesize detailModels=_detailModels;

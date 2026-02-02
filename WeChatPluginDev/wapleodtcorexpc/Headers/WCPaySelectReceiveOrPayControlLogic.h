@@ -10,7 +10,6 @@
     LocationRetriever *locationRetriever;
 }
 
-- (void).cxx_destruct;
 - (void)onRetrieveLocationError:(int)arg1;
 - (void)onRetrieveLocationTimeOut:(id)arg1;
 - (void)onRetrieveLocationOK:(id)arg1;

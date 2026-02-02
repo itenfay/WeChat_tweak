@@ -20,7 +20,6 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) UIImageView *rightChevronView; // @synthesize rightChevronView=_rightChevronView;
 @property(retain, nonatomic) MMUIButton *createNoticeButton; // @synthesize createNoticeButton=_createNoticeButton;

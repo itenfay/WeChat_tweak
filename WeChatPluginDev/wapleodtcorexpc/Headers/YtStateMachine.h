@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class BaseState, NSLock, NSMutableArray, NSMutableDictionary, NSString, NSThread, UIView, YtEventData;
 @protocol YtDeviceDelegate;
@@ -33,7 +34,6 @@
 
 + (void)clearInstance;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *stateMap; // @synthesize stateMap=_stateMap;
 @property(retain, nonatomic) NSString *firstStateName; // @synthesize firstStateName=_firstStateName;
 @property(retain, nonatomic) BaseState *currentState; // @synthesize currentState=_currentState;
@@ -66,4 +66,3 @@
 - (id)init;
 
 @end
-

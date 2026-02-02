@@ -12,7 +12,6 @@
     NSMutableDictionary *m_msgHistoryDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *m_msgHistoryDic; // @synthesize m_msgHistoryDic;
 - (void)addHistoryWithMsg:(id)arg1;
 - (id)msgsWithServiceType:(id)arg1 key:(id)arg2;

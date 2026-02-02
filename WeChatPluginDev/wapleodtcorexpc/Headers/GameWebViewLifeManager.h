@@ -10,7 +10,6 @@
     GameWebViewRecord *_webviewRecord;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameWebViewRecord *webviewRecord; // @synthesize webviewRecord=_webviewRecord;
 - (id)getTopWebViewController;
 - (void)notifyJsCoreStateChange:(id)arg1;

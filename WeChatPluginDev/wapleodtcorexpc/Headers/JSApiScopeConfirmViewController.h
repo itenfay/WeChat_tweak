@@ -11,7 +11,6 @@
     JSApiScopeConfirmWindow *_weakConfirmWindow;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak JSApiScopeConfirmWindow *weakConfirmWindow; // @synthesize weakConfirmWindow=_weakConfirmWindow;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;

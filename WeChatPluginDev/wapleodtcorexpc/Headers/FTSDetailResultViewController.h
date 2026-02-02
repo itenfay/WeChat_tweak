@@ -18,7 +18,6 @@
     NSString *_latestSearchQuery;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *latestSearchQuery; // @synthesize latestSearchQuery=_latestSearchQuery;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) FTSBaseSectionController *searchController; // @synthesize searchController=_searchController;

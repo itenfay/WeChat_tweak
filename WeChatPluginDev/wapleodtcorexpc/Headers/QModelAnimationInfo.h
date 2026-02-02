@@ -14,7 +14,6 @@
     double _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;

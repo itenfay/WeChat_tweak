@@ -16,7 +16,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_crtNo; // @synthesize m_crtNo=_m_crtNo;
 @property(nonatomic) int m_isCurDevice; // @synthesize m_isCurDevice=_m_isCurDevice;
 @property(retain, nonatomic) NSString *m_deviceOs; // @synthesize m_deviceOs=_m_deviceOs;

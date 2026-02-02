@@ -18,7 +18,6 @@
     double _preloadUnixEpochTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double preloadUnixEpochTime; // @synthesize preloadUnixEpochTime=_preloadUnixEpochTime;
 @property(nonatomic) double preloadRatio; // @synthesize preloadRatio=_preloadRatio;
 @property(retain, nonatomic) NSString *uri; // @synthesize uri=_uri;

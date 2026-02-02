@@ -16,7 +16,6 @@
     NSString *_tinyapp_path;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSString *tinyapp_path; // @synthesize tinyapp_path=_tinyapp_path;
 @property(retain) NSString *tinyapp_username; // @synthesize tinyapp_username=_tinyapp_username;
 @property(retain) NSString *jump_h5_url; // @synthesize jump_h5_url=_jump_h5_url;

@@ -17,7 +17,6 @@
     UIView *_lineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) UILabel *auditLabel; // @synthesize auditLabel=_auditLabel;

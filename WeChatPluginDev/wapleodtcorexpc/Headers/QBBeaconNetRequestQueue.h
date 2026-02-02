@@ -15,7 +15,6 @@
     long long _maxConcurrentRequest;
 }
 
-- (void).cxx_destruct;
 - (void)requestFinish:(id)arg1;
 - (void)addOneRequest:(id)arg1;
 - (void)dealloc;

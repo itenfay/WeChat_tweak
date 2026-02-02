@@ -16,7 +16,6 @@
     UIImageView *_iconImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) MMUIButton *loadMoreButton; // @synthesize loadMoreButton=_loadMoreButton;
 @property(nonatomic) __weak id <MiniTaskCollectionLoadMoreViewDelegate> delegate; // @synthesize delegate=_delegate;

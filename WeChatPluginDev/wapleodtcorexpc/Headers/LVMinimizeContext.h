@@ -17,7 +17,6 @@
     LVMinimizeReportInfo *_reportInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPlayFinished; // @synthesize isPlayFinished=_isPlayFinished;
 @property(nonatomic) _Bool isPlayEndReported; // @synthesize isPlayEndReported=_isPlayEndReported;
 @property(retain, nonatomic) LVMinimizeReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;

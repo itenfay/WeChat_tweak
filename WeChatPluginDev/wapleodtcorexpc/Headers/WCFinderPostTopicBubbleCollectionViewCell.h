@@ -15,7 +15,6 @@
 + (double)getTextViewWidthWithText:(id)arg1;
 + (double)getBubbleWidthWithText:(id)arg1;
 + (id)getStandardRichTextView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *contentTextView; // @synthesize contentTextView=_contentTextView;
 - (void)updateBubbleWithTopicInfo:(id)arg1;
 - (void)updateBubbleTips:(id)arg1;

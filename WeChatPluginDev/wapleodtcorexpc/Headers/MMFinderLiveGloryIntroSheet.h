@@ -22,7 +22,6 @@
 }
 
 + (id)showWithTaskId:(id)arg1 delegate:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIImageView *headImageBoarderView; // @synthesize headImageBoarderView=_headImageBoarderView;
 @property(retain, nonatomic) MMWebImageView *headImageView; // @synthesize headImageView=_headImageView;
 @property(retain, nonatomic) MMUIButton *confirmButton; // @synthesize confirmButton=_confirmButton;

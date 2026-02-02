@@ -17,7 +17,6 @@
     UIColor *_gcNormalTextColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *gcNormalTextColor; // @synthesize gcNormalTextColor=_gcNormalTextColor;
 @property(retain, nonatomic) UILabel *topLabel; // @synthesize topLabel=_topLabel;
 @property(retain, nonatomic) UIView *redDotView; // @synthesize redDotView=_redDotView;

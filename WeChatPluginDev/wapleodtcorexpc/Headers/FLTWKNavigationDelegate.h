@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterMethodChannel, NSString;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)errorCodeToString:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldEnableZoom; // @synthesize shouldEnableZoom=_shouldEnableZoom;
 @property(nonatomic) _Bool hasDartNavigationDelegate; // @synthesize hasDartNavigationDelegate=_hasDartNavigationDelegate;
 - (void)webViewWebContentProcessDidTerminate:(id)arg1;
@@ -34,4 +34,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveShareLiveQRCodeInfo, MMFinderLiveNoticePosterModel, MMFinderLiveTask, MMLiveTaskId, MMWebImageView, NSString, UIButton, UIImage, UIImageView, UILabel, WCFinderContact, WCFinderHeadImageView;
 @protocol MMFinderLiveGenericQrCodeViewDelegate;
@@ -43,7 +44,6 @@
     UIView *_posterBackgroundImageShadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *posterBackgroundImageShadingView; // @synthesize posterBackgroundImageShadingView=_posterBackgroundImageShadingView;
 @property(retain, nonatomic) UIImageView *posterBackgroundImageView; // @synthesize posterBackgroundImageView=_posterBackgroundImageView;
 @property(retain, nonatomic) UIView *posterBackgroundImageContainer; // @synthesize posterBackgroundImageContainer=_posterBackgroundImageContainer;
@@ -115,4 +115,3 @@
 @property(readonly) Class superclass;
 
 @end
-

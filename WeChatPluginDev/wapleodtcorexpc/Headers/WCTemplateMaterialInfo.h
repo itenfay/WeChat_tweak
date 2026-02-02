@@ -14,7 +14,6 @@
 
 + (id)assetInfoWithMediaFileAtPath:(id)arg1 identifier:(id)arg2 mediaType:(long long)arg3 error:(id *)arg4;
 + (id)assetInfoWithPHLocalIdentifier:(id)arg1 error:(id *)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMJAssetInfo *omjAssetInfo; // @synthesize omjAssetInfo=_omjAssetInfo;
 - (id)initWithMediaFileAtPath:(id)arg1 identifier:(id)arg2 mediaType:(long long)arg3 error:(id *)arg4;
 - (id)initWithPHLocalIdentifier:(id)arg1 error:(id *)arg2;

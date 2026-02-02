@@ -10,7 +10,6 @@
     id _object;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id object; // @synthesize object=_object;
 - (_Bool)isEqual:(id)arg1;
 

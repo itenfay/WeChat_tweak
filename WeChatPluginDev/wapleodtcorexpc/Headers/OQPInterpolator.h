@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OQPInterpolator : NSObject
 {
@@ -11,7 +12,6 @@
 }
 
 + (id)linearInterpolator;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType valueForProgress; // @synthesize valueForProgress=_valueForProgress;
 - (struct CGAffineTransform)affineTransformBetweenValue:(struct CGAffineTransform)arg1 andValue:(struct CGAffineTransform)arg2 progress:(double)arg3;
 - (struct CGRect)rectBetweenValue:(struct CGRect)arg1 andValue:(struct CGRect)arg2 progress:(double)arg3;
@@ -22,4 +22,3 @@
 - (id)initWithInterpolationBlock:(CDUnknownBlockType)arg1;
 
 @end
-

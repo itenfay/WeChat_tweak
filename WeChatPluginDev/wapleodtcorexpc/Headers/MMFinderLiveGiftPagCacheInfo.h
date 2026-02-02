@@ -10,7 +10,6 @@
     PAGFile *_pagFile;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGFile *pagFile; // @synthesize pagFile=_pagFile;
 
 @end

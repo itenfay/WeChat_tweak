@@ -31,7 +31,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appPagePath; // @synthesize appPagePath=_appPagePath;
 @property(retain, nonatomic) NSString *appUserName; // @synthesize appUserName=_appUserName;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

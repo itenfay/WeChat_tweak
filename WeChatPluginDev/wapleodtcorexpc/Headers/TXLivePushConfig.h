@@ -51,7 +51,6 @@
     struct CGRect _watermarkNormalization;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *metaData; // @synthesize metaData=_metaData;
 @property(nonatomic) int rtmpChannelType; // @synthesize rtmpChannelType=_rtmpChannelType;
 @property(nonatomic) _Bool enableNearestIP; // @synthesize enableNearestIP=_enableNearestIP;

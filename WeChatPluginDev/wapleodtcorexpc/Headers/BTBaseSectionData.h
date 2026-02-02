@@ -12,7 +12,6 @@
 }
 
 + (_Bool)isFunctionalSecionType:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <BTBaseSectionDataDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double sectionWidth; // @synthesize sectionWidth=_sectionWidth;
 - (id)identifierWithRow:(unsigned long long)arg1;

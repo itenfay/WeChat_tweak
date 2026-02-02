@@ -19,7 +19,6 @@
     _Bool _bHasAddBlur;
 }
 
-- (void).cxx_destruct;
 - (void)onClickAsRefer;
 - (_Bool)handleMagicTapAction:(id)arg1;
 - (void)addMagicTapActions:(id)arg1;

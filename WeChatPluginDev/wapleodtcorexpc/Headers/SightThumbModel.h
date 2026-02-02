@@ -14,7 +14,6 @@
     double _timeCost;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double timeCost; // @synthesize timeCost=_timeCost;
 @property(nonatomic) double thumbTimeStamp; // @synthesize thumbTimeStamp=_thumbTimeStamp;
 @property(retain, nonatomic) UIImage *thumb; // @synthesize thumb=_thumb;

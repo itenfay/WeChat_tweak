@@ -28,7 +28,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPluginStatePermissionBytes *state_bytes; // @synthesize state_bytes=_state_bytes;
 @property(retain, nonatomic) NSData *control_bytes; // @synthesize control_bytes=_control_bytes;
 @property(retain, nonatomic) NSString *appID; // @synthesize appID=_appID;

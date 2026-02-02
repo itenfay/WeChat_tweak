@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWebPrefetchInjectTaskRequest, NSObject;
 @protocol OS_dispatch_queue;
 
@@ -15,7 +17,6 @@
     NSObject<OS_dispatch_queue> *_workerThread;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCancel; // @synthesize isCancel=_isCancel;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workerThread; // @synthesize workerThread=_workerThread;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
@@ -45,4 +46,3 @@
 - (id)initWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

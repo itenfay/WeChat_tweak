@@ -25,7 +25,6 @@
 + (void)PBArrayAdd_deviceType;
 + (void)PBArrayAdd_uuid;
 + (void)PBArrayAdd_name;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool online; // @synthesize online=_online;
 @property(nonatomic) unsigned int lastTime; // @synthesize lastTime=_lastTime;
 @property(retain, nonatomic) NSString *deviceType; // @synthesize deviceType=_deviceType;

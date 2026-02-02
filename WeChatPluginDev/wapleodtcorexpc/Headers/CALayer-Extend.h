@@ -4,10 +4,10 @@
 //
 
 #import <QuartzCore/CALayer.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CALayer (Extend)
 + (void)transformWithDisableActions:(CDUnknownBlockType)arg1;
 - (void)coordinateUIViewAnimationWithFrame:(struct CGRect)arg1;
 - (void)setAnchorPointWithoutChangingPosition:(struct CGPoint)arg1;
 @end
-

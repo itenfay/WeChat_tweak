@@ -14,7 +14,6 @@
     UIColor *_originBackgroundColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *originBackgroundColor; // @synthesize originBackgroundColor=_originBackgroundColor;
 @property(nonatomic) double animateDuration; // @synthesize animateDuration=_animateDuration;
 @property(retain, nonatomic) UIColor *selectedColor; // @synthesize selectedColor=_selectedColor;

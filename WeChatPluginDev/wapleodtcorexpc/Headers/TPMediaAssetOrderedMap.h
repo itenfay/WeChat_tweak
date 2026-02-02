@@ -10,7 +10,6 @@
     NSMutableString *_orderedMap;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableString *orderedMap; // @synthesize orderedMap=_orderedMap;
 - (id)stringValue;
 - (void)addStringValue:(id)arg1 forKey:(id)arg2;

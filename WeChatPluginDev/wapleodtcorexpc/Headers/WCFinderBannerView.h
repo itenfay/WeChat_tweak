@@ -14,7 +14,6 @@
     RichTextView *_textView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) __weak id <WCFinderBannerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setTextColor:(id)arg1;

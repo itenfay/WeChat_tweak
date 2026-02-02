@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_appUUID;
 + (void)PBArrayAdd_cacheLanStringDict;
 + (void)PBArrayAdd_curSystemLanguage;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *updateModifeTime; // @synthesize updateModifeTime=_updateModifeTime;
 @property(nonatomic) unsigned int appVersion; // @synthesize appVersion=_appVersion;
 @property(copy, nonatomic) NSString *appUUID; // @synthesize appUUID=_appUUID;

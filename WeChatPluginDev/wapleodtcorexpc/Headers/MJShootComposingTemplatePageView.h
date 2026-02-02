@@ -15,7 +15,6 @@
     NSString *_downloadingTemplateID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *downloadingTemplateID; // @synthesize downloadingTemplateID=_downloadingTemplateID;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(nonatomic) __weak id <MJShootComposingTemplatePageViewDelegate> delegate; // @synthesize delegate=_delegate;

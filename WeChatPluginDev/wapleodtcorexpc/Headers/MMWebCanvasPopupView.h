@@ -12,7 +12,6 @@
     UIView *_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) MMWebCanvasPopupParamas *params; // @synthesize params=_params;
 @property(retain, nonatomic) MMWebCanvasView *canvasView; // @synthesize canvasView=_canvasView;

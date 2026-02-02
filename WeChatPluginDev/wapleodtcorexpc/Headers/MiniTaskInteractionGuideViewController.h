@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, MiniTaskDurantionCounter, MiniTaskPanGestureHandler, NSString, UIImageView, UIView;
 
 @interface MiniTaskInteractionGuideViewController
@@ -17,7 +19,6 @@
     MiniTaskDurantionCounter *_eduDurantionCounter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MiniTaskDurantionCounter *eduDurantionCounter; // @synthesize eduDurantionCounter=_eduDurantionCounter;
 @property(retain, nonatomic) MiniTaskPanGestureHandler *leftPanPopGestureHandler; // @synthesize leftPanPopGestureHandler=_leftPanPopGestureHandler;
 @property(copy, nonatomic) CDUnknownBlockType guideConfirmBlock; // @synthesize guideConfirmBlock=_guideConfirmBlock;
@@ -66,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

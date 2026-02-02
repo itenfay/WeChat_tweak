@@ -22,7 +22,6 @@
 
 + (id)prefetchConfigWithScene:(unsigned long long)arg1;
 + (id)MMKVKeyWithPrfetchScene:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *prefetchTimer; // @synthesize prefetchTimer=_prefetchTimer;
 @property(nonatomic) unsigned long long lastForegroundPrefetchTimestamp; // @synthesize lastForegroundPrefetchTimestamp=_lastForegroundPrefetchTimestamp;
 @property(retain, nonatomic) NSMutableArray *timeProbArray; // @synthesize timeProbArray=_timeProbArray;

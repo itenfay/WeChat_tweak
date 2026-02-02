@@ -18,7 +18,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithUsername:(id)arg1 nickname:(id)arg2 headImageUrl:(id)arg3 isFollow:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *isFollow; // @synthesize isFollow=_isFollow;
 @property(copy, nonatomic) NSString *headImageUrl; // @synthesize headImageUrl=_headImageUrl;
 @property(copy, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;

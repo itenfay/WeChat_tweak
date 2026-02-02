@@ -11,7 +11,6 @@
 }
 
 + (double)getHeightWithViewModel:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *thumbsUpImageView; // @synthesize thumbsUpImageView=_thumbsUpImageView;
 - (void)updateNofiyCenterCellWithViewModel:(id)arg1 width:(double)arg2;
 - (void)prepareForReuse;

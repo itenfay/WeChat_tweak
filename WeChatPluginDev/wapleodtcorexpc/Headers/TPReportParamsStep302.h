@@ -12,7 +12,6 @@
     long long _t302;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long t302; // @synthesize t302=_t302;
 @property(nonatomic) long long vt; // @synthesize vt=_vt;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

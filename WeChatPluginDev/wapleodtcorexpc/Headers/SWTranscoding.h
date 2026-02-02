@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NSURL;
 
@@ -40,7 +41,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType videoProgressHandler; // @synthesize videoProgressHandler=_videoProgressHandler;
 @property(nonatomic) int intraPeriod; // @synthesize intraPeriod=_intraPeriod;
@@ -74,4 +74,3 @@
 - (id)initWithURL:(id)arg1 outputFile:(id)arg2;
 
 @end
-

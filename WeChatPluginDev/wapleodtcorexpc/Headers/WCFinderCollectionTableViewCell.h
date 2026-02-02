@@ -26,7 +26,6 @@
     WCFinderCollectionFeedCellConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCollectionFeedCellConfig *config; // @synthesize config=_config;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;

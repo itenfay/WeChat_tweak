@@ -37,7 +37,6 @@
     NSString *_brandUserName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *brandUserName; // @synthesize brandUserName=_brandUserName;
 @property(nonatomic) unsigned int weappVersion; // @synthesize weappVersion=_weappVersion;
 @property(retain, nonatomic) NSString *weappUsrName; // @synthesize weappUsrName=_weappUsrName;

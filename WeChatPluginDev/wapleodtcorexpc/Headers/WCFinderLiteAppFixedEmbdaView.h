@@ -19,7 +19,6 @@
     struct CGSize _contentSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenLiteAppInfo *liteAppInfo; // @synthesize liteAppInfo=_liteAppInfo;
 @property(nonatomic) _Bool alreadyStartLiteApp; // @synthesize alreadyStartLiteApp=_alreadyStartLiteApp;
 @property(nonatomic) double originWidth; // @synthesize originWidth=_originWidth;

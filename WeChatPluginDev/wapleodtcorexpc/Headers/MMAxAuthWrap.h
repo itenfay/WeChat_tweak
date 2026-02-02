@@ -13,7 +13,6 @@
     MMAxAuthLogic *_axAuthLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain) MMAxAuthLogic *axAuthLogic; // @synthesize axAuthLogic=_axAuthLogic;
 @property(retain) MMMultiHostAuthInfo *authInfo; // @synthesize authInfo=_authInfo;
 

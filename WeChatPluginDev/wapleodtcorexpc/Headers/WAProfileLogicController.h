@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GetProfileInfoResponse, NSMutableDictionary, NSString, WAContact;
 
 @interface WAProfileLogicController
@@ -18,7 +20,6 @@
 + (id)localCachePageInfoWithUserName:(id)arg1;
 + (id)localCacheCommentInfoWithUserName:(id)arg1;
 + (double)localCacheAverageScoreWithUserName:(id)arg1;
-- (void).cxx_destruct;
 @property _Bool bProfileResponseDataReturned; // @synthesize bProfileResponseDataReturned=_bProfileResponseDataReturned;
 @property(retain, nonatomic) WAContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) GetProfileInfoResponse *profileResponseData; // @synthesize profileResponseData=_profileResponseData;
@@ -49,4 +50,3 @@
 @property(readonly) Class superclass;
 
 @end
-

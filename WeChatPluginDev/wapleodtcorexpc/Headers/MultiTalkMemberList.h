@@ -14,7 +14,6 @@
 + (id)unarchiveWithWCTValue:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_memberList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *memberList; // @synthesize memberList=_memberList;
 - (id)archivedWCTValue;
 - (id)getPBPropertyTable;

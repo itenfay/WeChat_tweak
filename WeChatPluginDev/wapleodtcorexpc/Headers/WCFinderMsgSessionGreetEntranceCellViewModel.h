@@ -12,7 +12,6 @@
     WCFinderContact *_realChatContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *realChatContact; // @synthesize realChatContact=_realChatContact;
 @property(retain, nonatomic) NSString *senderUserName; // @synthesize senderUserName=_senderUserName;
 @property(retain, nonatomic) MMBaseSessionCellData *cellData; // @synthesize cellData=_cellData;

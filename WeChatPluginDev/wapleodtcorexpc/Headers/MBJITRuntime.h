@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JITRuntime, JITRuntimeView, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface MBJITRuntime
@@ -16,7 +18,6 @@
     NSString *_fsScheme;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fsScheme; // @synthesize fsScheme=_fsScheme;
 @property(retain, nonatomic) NSMutableSet *extJsApiAsyncCallbacks; // @synthesize extJsApiAsyncCallbacks=_extJsApiAsyncCallbacks;
 @property(retain, nonatomic) NSMutableDictionary *extJsApiCallbackResults; // @synthesize extJsApiCallbackResults=_extJsApiCallbackResults;
@@ -59,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

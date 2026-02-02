@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMListenCategoryItem, MMListenFinderSingerProfileShowInfo, MMUILabel, NSString, RichTextView, UIButton, UIImageView;
 
@@ -25,7 +26,6 @@
     RichTextView *_extraDescLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *extraDescLabel; // @synthesize extraDescLabel=_extraDescLabel;
 @property(retain, nonatomic) MMListenCategoryItem *singerRadioCategory; // @synthesize singerRadioCategory=_singerRadioCategory;
 @property(retain, nonatomic) MMListenFinderSingerProfileShowInfo *showInfo; // @synthesize showInfo=_showInfo;
@@ -60,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

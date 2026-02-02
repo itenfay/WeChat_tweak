@@ -18,7 +18,6 @@
     struct CGRect _normalizeFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect normalizeFrame; // @synthesize normalizeFrame=_normalizeFrame;
 @property(nonatomic) struct CGSize rgbaTexSize; // @synthesize rgbaTexSize=_rgbaTexSize;
 @property(retain, nonatomic) XImage *rgbaImage; // @synthesize rgbaImage=_rgbaImage;

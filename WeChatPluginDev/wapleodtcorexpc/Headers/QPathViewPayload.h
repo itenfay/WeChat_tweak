@@ -25,7 +25,6 @@
     CDStruct_34734122 _originPoint;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *segmentColor; // @synthesize segmentColor=_segmentColor;
 @property(copy, nonatomic) NSArray *segmentStyle; // @synthesize segmentStyle=_segmentStyle;
 @property(copy, nonatomic) NSArray *lineDashPattern; // @synthesize lineDashPattern=_lineDashPattern;

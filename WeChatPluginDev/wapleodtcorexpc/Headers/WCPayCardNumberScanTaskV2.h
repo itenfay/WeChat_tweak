@@ -18,7 +18,6 @@
     WCPayBizOcrImageCgi *_m_cgi;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCPayBizOcrImageCgi *m_cgi; // @synthesize m_cgi=_m_cgi;
 @property __weak id <WCPayCardNumberScanTaskV2Delegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain) NSString *sessionKey; // @synthesize sessionKey=_sessionKey;

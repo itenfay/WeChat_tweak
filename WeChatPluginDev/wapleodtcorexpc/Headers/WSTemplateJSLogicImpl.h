@@ -11,7 +11,6 @@
     id <WSTemplateJSLogicImplDelegate> _handlerDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WSTemplateJSLogicImplDelegate> handlerDelegate; // @synthesize handlerDelegate=_handlerDelegate;
 - (void)webViewContentProcessDidTerminate:(id)arg1;
 - (void)webviewDidReceiveScriptMessage:(id)arg1 handler:(id)arg2 rawMessage:(id)arg3;

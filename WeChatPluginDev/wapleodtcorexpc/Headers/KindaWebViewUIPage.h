@@ -11,7 +11,6 @@
     KindaProxy *_kindProxy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) KindaProxy *kindProxy; // @synthesize kindProxy=_kindProxy;
 @property(retain, nonatomic) MMIUIPage *kindaUIPage; // @synthesize kindaUIPage=_kindaUIPage;
 - (void)triggerReport:(long long)arg1 customKey:(id)arg2;

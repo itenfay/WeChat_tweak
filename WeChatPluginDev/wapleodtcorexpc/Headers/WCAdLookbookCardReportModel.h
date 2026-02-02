@@ -13,7 +13,6 @@
     WCAdLookbookCardReportItemModel *_brandNewItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdLookbookCardReportItemModel *brandNewItem; // @synthesize brandNewItem=_brandNewItem;
 @property(retain, nonatomic) NSMutableArray *reportItemList; // @synthesize reportItemList=_reportItemList;
 @property(nonatomic) unsigned int slideCount; // @synthesize slideCount=_slideCount;

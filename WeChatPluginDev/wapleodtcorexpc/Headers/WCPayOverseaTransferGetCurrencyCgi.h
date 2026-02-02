@@ -14,7 +14,6 @@
     WCPayOverseaBaseCgi *_m_cgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayOverseaBaseCgi *m_cgi; // @synthesize m_cgi=_m_cgi;
 @property(nonatomic) __weak id <WCPayOverseaTransferGetCurrencyCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)onWCPayOverseaBaseCgiErrorWithRetCode:(int)arg1 ErrorMsg:(id)arg2;

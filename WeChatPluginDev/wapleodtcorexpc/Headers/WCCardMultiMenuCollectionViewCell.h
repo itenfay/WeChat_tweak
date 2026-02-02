@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSIndexPath, NSMutableArray, NSString, UIColor, UIGestureRecognizer, UIImageView, UIView;
 
@@ -25,7 +26,6 @@
     CDUnknownBlockType _editAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType editAction; // @synthesize editAction=_editAction;
 @property(retain, nonatomic) UIColor *menuBackgroundColor; // @synthesize menuBackgroundColor=_menuBackgroundColor;
 @property(nonatomic) _Bool contextMenuEnabled; // @synthesize contextMenuEnabled=_contextMenuEnabled;
@@ -64,4 +64,3 @@
 @property(readonly) Class superclass;
 
 @end
-

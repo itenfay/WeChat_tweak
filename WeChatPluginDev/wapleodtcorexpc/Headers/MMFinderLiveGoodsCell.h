@@ -17,7 +17,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveECHotSaleLikeAnimationMaskView *hotSaleLikeAnimationMaskView; // @synthesize hotSaleLikeAnimationMaskView=_hotSaleLikeAnimationMaskView;
 @property(retain, nonatomic) UIView *bottomSeparatorLine; // @synthesize bottomSeparatorLine=_bottomSeparatorLine;
 @property(retain, nonatomic) UIView *topSeparatorLine; // @synthesize topSeparatorLine=_topSeparatorLine;

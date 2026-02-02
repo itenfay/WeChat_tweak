@@ -12,7 +12,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) MMLiveColorfulLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) InfiniteLoopContainerView *loopPageView; // @synthesize loopPageView=_loopPageView;

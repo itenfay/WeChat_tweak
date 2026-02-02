@@ -14,7 +14,6 @@
     CAShapeLayer *_separatorLineLayer;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CAShapeLayer *separatorLineLayer; // @synthesize separatorLineLayer=_separatorLineLayer;
 @property(nonatomic) double separatorLineWidthPixels; // @synthesize separatorLineWidthPixels=_separatorLineWidthPixels;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;

@@ -14,7 +14,6 @@
     id <IntelligentMsgImgFigurePageHeaderViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IntelligentMsgImgFigurePageHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onMsgFigureImgClicked:(id)arg1;
 - (void)onTransitionToNewSize;

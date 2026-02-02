@@ -16,7 +16,6 @@
     UIButton *_verifyButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *verifyButton; // @synthesize verifyButton=_verifyButton;
 @property(retain, nonatomic) MMUIButton *refreshButton; // @synthesize refreshButton=_refreshButton;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;

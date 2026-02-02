@@ -4,16 +4,15 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderPostNetResourceAssistCancelToken : NSObject
 {
     CDUnknownBlockType _cancelBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
 - (void)dealloc;
 - (void)cancel;
 
 @end
-

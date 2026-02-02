@@ -16,7 +16,6 @@
 
 + (id)hdColorProperties;
 + (id)dp3ColorProperties;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *YCbCrMatrix; // @synthesize YCbCrMatrix=_YCbCrMatrix;
 @property(copy, nonatomic) NSString *transferFunction; // @synthesize transferFunction=_transferFunction;
 @property(copy, nonatomic) NSString *colorPrimaries; // @synthesize colorPrimaries=_colorPrimaries;

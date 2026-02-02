@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVCaptureAudioDataOutput, AVCaptureDeviceInput, AVCapturePhotoOutput, AVCaptureSession, AVCaptureVideoDataOutput, NSString, OMJPhotoCapturer;
 @protocol OS_dispatch_queue;
@@ -33,7 +34,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) function_ffe40f9b didFinishSwitchCameraCallbackFunc; // @synthesize didFinishSwitchCameraCallbackFunc=_didFinishSwitchCameraCallbackFunc;
 @property(nonatomic) long long targetPositionFlagForSwitchCamera; // @synthesize targetPositionFlagForSwitchCamera=_targetPositionFlagForSwitchCamera;
 @property(nonatomic) _Bool isCameraSwitching; // @synthesize isCameraSwitching=_isCameraSwitching;
@@ -105,4 +105,3 @@
 @property(readonly) Class superclass;
 
 @end
-

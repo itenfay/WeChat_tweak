@@ -22,7 +22,6 @@
     id <EmojiUploadCgiDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EmojiUploadCgiDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) EmoticonUploadInfoObj *uploadInfoObj; // @synthesize uploadInfoObj=_uploadInfoObj;
 @property(readonly, nonatomic) _Bool isAntiSpam; // @synthesize isAntiSpam=m_isAntiSpam;

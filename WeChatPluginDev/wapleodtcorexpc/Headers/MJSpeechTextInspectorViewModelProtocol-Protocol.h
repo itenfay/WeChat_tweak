@@ -4,6 +4,7 @@
 //
 
 #import "NSObject-Protocol.h"
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJSpeechManager, MJVoiceItem, NSIndexPath, NSString;
 
@@ -36,4 +37,3 @@
 // Original attribute string: T@?,?,C,N
 
 @end
-

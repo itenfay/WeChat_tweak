@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveGenericPickerView, MMFinderLivePaidConnectMicAnchorInfo, MMFinderLivePaidConnectMicAnchorSetting, MMFinderLivePaidConnectMicAnchorSettingConfig, MMFinderLiveTaskId, MMTableViewInfo, MMUIButton, MMUILabel, MMUIMaskContainerView, NSString, UIButton;
 @protocol MMFinderLivePaidConnectMicAnchorSettingPanelDelegate;
 
@@ -24,7 +26,6 @@
     MMFinderLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDismissedByConfirm; // @synthesize isDismissedByConfirm=_isDismissedByConfirm;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) MMFinderLivePaidConnectMicAnchorInfo *anchorInfo; // @synthesize anchorInfo=_anchorInfo;
@@ -86,4 +87,3 @@
 @property(readonly) Class superclass;
 
 @end
-

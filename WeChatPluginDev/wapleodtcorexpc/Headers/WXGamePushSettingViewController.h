@@ -14,7 +14,6 @@
     UILabel *_errorLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *errorLabel; // @synthesize errorLabel=_errorLabel;
 @property(retain, nonatomic) SwitchBlockList *userSwitchBlockList; // @synthesize userSwitchBlockList=_userSwitchBlockList;
 @property(retain, nonatomic) WXGameSetUserSwitchCGI *setUserSwitchCGI; // @synthesize setUserSwitchCGI=_setUserSwitchCGI;

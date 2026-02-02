@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTableView, NSArray, NSMutableOrderedSet, NSMutableSet, NSString, WCMomentsContactTagSearchBottomBar;
 @protocol WCMomentsContactTagSearchViewControllerDelegate;
 
@@ -18,7 +20,6 @@
     NSMutableSet *_selecedTagDataSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *selecedTagDataSet; // @synthesize selecedTagDataSet=_selecedTagDataSet;
 @property(nonatomic) _Bool isMultiSelectEnabled; // @synthesize isMultiSelectEnabled=_isMultiSelectEnabled;
 @property(retain, nonatomic) NSString *lastQuery; // @synthesize lastQuery=_lastQuery;
@@ -65,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

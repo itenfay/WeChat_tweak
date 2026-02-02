@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OMJMovieSessionComposingDelegate, OMJMovieSessionDataSource, OMJMovieSessionDelegate;
 
@@ -21,7 +22,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_85cde1ea backingRenderView; // @synthesize backingRenderView=_backingRenderView;
 @property(nonatomic) SharedPtr_4dc38317 backingSession; // @synthesize backingSession=_backingSession;
 @property(nonatomic) __weak id <OMJMovieSessionComposingDelegate> composingDelegate; // @synthesize composingDelegate=_composingDelegate;
@@ -104,4 +104,3 @@
 - (void)dealloc;
 
 @end
-

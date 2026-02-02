@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIImageView, UILabel;
 
 @interface WCFinderRecommendBubbleView
@@ -14,7 +16,6 @@
     NSString *_railTips;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *railTips; // @synthesize railTips=_railTips;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(retain, nonatomic) UILabel *nextTipsLabel; // @synthesize nextTipsLabel=_nextTipsLabel;
@@ -25,4 +26,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 maxWidth:(double)arg2 railTips:(id)arg3;
 
 @end
-

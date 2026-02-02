@@ -16,7 +16,6 @@
     NSData *_contentsBytes;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastOperateTimeStamp; // @synthesize lastOperateTimeStamp=_lastOperateTimeStamp;
 @property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
 @property(retain, nonatomic) NSData *contentsBytes; // @synthesize contentsBytes=_contentsBytes;

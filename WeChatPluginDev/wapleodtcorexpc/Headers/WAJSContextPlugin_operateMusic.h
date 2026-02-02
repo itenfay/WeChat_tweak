@@ -10,7 +10,6 @@
     NSString *_currentMusic;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSString *currentMusic; // @synthesize currentMusic=_currentMusic;
 - (void)onRemoteControlMusicShouldPlayPrevTrack;
 - (void)onRemoteControlMusicShouldPlayNextTrack;

@@ -16,7 +16,6 @@
     unsigned long long _floatStatePauseTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long floatStatePauseTime; // @synthesize floatStatePauseTime=_floatStatePauseTime;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(nonatomic) unsigned long long countedFloatPauseStartTs; // @synthesize countedFloatPauseStartTs=_countedFloatPauseStartTs;

@@ -19,7 +19,6 @@
     NSMutableArray *_gameAppidList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int suspendCount; // @synthesize suspendCount=_suspendCount;
 @property(nonatomic) unsigned int backgroundCount; // @synthesize backgroundCount=_backgroundCount;
 @property(nonatomic) unsigned int foregroundCount; // @synthesize foregroundCount=_foregroundCount;

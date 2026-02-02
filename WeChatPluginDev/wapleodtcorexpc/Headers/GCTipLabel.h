@@ -16,7 +16,6 @@
 
 + (id)createTipLabel:(unsigned long long)arg1;
 + (id)createTipLabel;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long tipType; // @synthesize tipType=_tipType;
 @property(retain, nonatomic) UIImageView *unReadIconView; // @synthesize unReadIconView=_unReadIconView;
 @property(retain, nonatomic) UILabel *unReadCountLabel; // @synthesize unReadCountLabel=_unReadCountLabel;

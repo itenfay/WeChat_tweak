@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UILabel, WCFinderLiveCommentBlurButtonBackView;
 
 @interface WCFinderLiveCommentButton
@@ -16,7 +18,6 @@
     long long _currentBadgeNum;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSynchronizeLayout; // @synthesize isSynchronizeLayout=_isSynchronizeLayout;
 @property(nonatomic) long long currentBadgeNum; // @synthesize currentBadgeNum=_currentBadgeNum;
 @property(nonatomic) unsigned long long unReadFriendMsgCount; // @synthesize unReadFriendMsgCount=_unReadFriendMsgCount;
@@ -43,4 +44,3 @@
 - (void)layoutUI;
 
 @end
-

@@ -29,7 +29,6 @@
 }
 
 + (id)itemInJsonDictionary:(id)arg1 suiteId:(id)arg2 suiteResourcePath:(id)arg3 itemGroups:(id)arg4 badges:(id)arg5 isLowSpecDevice:(_Bool)arg6;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long order; // @synthesize order=_order;
 @property(retain, nonatomic) NSString *itemGroupId; // @synthesize itemGroupId=_itemGroupId;
 @property(nonatomic) double value; // @synthesize value=_value;

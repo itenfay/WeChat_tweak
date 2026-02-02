@@ -16,7 +16,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveFeedCollectionView *liveCollectionView; // @synthesize liveCollectionView=_liveCollectionView;
 @property(nonatomic) unsigned long long displayType; // @synthesize displayType=_displayType;
 @property(nonatomic) __weak id <WCFinderFriendLiveSectionTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;

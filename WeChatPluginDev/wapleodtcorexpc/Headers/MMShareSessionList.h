@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_sessionList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sessionList; // @synthesize sessionList=_sessionList;
 - (id)getPBPropertyTable;
 

@@ -23,7 +23,6 @@
 + (double)annotationHeightSelect;
 + (double)annotationHeightUnSelect;
 + (double)annotationWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *animateDisplayLink; // @synthesize animateDisplayLink=_animateDisplayLink;
 @property(nonatomic) double lastHeight; // @synthesize lastHeight=_lastHeight;
 @property(nonatomic) double lastWidth; // @synthesize lastWidth=_lastWidth;

@@ -16,7 +16,6 @@
     WebviewJSEventHandler_gameCenterFacade *_eventHandler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WebviewJSEventHandler_gameCenterFacade *eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(retain, nonatomic) JSEvent *jsEvent; // @synthesize jsEvent=_jsEvent;
 @property(retain, nonatomic) NSDictionary *params; // @synthesize params=_params;

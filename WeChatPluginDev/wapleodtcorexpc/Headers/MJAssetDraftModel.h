@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_relativeFilePath;
 + (void)PBArrayAdd_localIdentifier;
 + (void)PBArrayAdd_type;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNeedOrigin; // @synthesize isNeedOrigin=_isNeedOrigin;
 @property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
 @property(copy, nonatomic) NSString *relativeFilePath; // @synthesize relativeFilePath=_relativeFilePath;

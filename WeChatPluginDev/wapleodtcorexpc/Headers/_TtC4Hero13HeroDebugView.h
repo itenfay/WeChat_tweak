@@ -28,7 +28,6 @@
     MISSING_TYPE *startScale;
 }
 
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)onSlide;
 - (void)onDisplayArcCurve;

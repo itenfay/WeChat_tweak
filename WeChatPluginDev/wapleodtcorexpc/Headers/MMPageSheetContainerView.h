@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMPageSheetProviderView, NSString;
 @protocol MMPageSheetProvider><MMPageSheetContainerDelegate;
@@ -16,7 +17,6 @@
     struct CGSize _superviewSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMPageSheetProvider><MMPageSheetContainerDelegate> provider; // @synthesize provider=_provider;
 @property(nonatomic) struct CGSize superviewSize; // @synthesize superviewSize=_superviewSize;
 @property(retain, nonatomic) MMPageSheetProviderView *providerView; // @synthesize providerView=_providerView;
@@ -47,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

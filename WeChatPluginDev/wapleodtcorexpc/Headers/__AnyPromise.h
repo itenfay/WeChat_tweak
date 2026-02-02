@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
@@ -13,7 +14,6 @@
     MISSING_TYPE *context;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) _Bool __pending;
 @property(nonatomic, readonly) id __value;
@@ -27,4 +27,3 @@
 - (id)initWithResolver:(CDUnknownBlockType)arg1;
 
 @end
-

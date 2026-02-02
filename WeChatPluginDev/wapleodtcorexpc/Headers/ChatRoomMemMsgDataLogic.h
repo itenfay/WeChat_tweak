@@ -18,7 +18,6 @@
     unsigned int m_uiLeftCount;
 }
 
-- (void).cxx_destruct;
 - (void)getMsgsLimit:(int)arg1;
 - (_Bool)isMsgMatch:(id)arg1;
 - (id)initWithChat:(id)arg1 memName:(id)arg2 delegate:(id)arg3;

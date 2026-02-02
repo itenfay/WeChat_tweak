@@ -16,7 +16,6 @@
     struct CGSize _conentSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize conentSize; // @synthesize conentSize=_conentSize;
 @property(retain, nonatomic) NSMutableArray *insertIndexPaths; // @synthesize insertIndexPaths=_insertIndexPaths;
 @property(retain, nonatomic) NSArray *finalLayoutAttributes; // @synthesize finalLayoutAttributes=_finalLayoutAttributes;

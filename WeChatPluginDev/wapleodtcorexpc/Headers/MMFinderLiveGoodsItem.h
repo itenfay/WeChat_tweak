@@ -43,7 +43,6 @@
     NSString *_ecSource;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ecSource; // @synthesize ecSource=_ecSource;
 @property(retain, nonatomic) NSString *headImgUrl; // @synthesize headImgUrl=_headImgUrl;
 @property(retain, nonatomic) NSString *product_recommend_wording; // @synthesize product_recommend_wording=_product_recommend_wording;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString;
 
 @interface MMPayLiteAppResourceGetCGI
@@ -14,7 +16,6 @@
     CDUnknownBlockType _fail;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fail; // @synthesize fail=_fail;
 @property(copy, nonatomic) CDUnknownBlockType success; // @synthesize success=_success;
 @property(retain, nonatomic) NSArray *localResources; // @synthesize localResources=_localResources;
@@ -27,4 +28,3 @@
 - (id)initWithAppId:(id)arg1 resourceName:(id)arg2 localResouces:(id)arg3 successBlock:(CDUnknownBlockType)arg4 failBlock:(CDUnknownBlockType)arg5;
 
 @end
-

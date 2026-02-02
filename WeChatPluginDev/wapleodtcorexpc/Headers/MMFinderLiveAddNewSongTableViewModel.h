@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveSongItem, MMTableView, NSIndexPath, NSMutableArray, NSMutableSet, NSString;
 
@@ -19,7 +20,6 @@
     NSString *_targetWord;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *targetWord; // @synthesize targetWord=_targetWord;
 @property(retain, nonatomic) NSMutableSet *existingSongNames; // @synthesize existingSongNames=_existingSongNames;
 @property(retain, nonatomic) NSIndexPath *indexPathToActivate; // @synthesize indexPathToActivate=_indexPathToActivate;
@@ -71,4 +71,3 @@
 @property(readonly) Class superclass;
 
 @end
-

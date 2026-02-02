@@ -14,7 +14,6 @@
     MMFinderLiveConnectMicUser *_userInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int score; // @synthesize score=_score;
 @property(nonatomic) _Bool isPreparing; // @synthesize isPreparing=_isPreparing;
 @property(retain, nonatomic) MMFinderLiveConnectMicUser *userInfo; // @synthesize userInfo=_userInfo;

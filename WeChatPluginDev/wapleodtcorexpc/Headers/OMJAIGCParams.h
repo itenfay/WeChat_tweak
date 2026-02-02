@@ -14,7 +14,6 @@
     NSData *_aigcBuffer;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *aigcBuffer; // @synthesize aigcBuffer=_aigcBuffer;
 @property(readonly, nonatomic) NSString *imageFilePath; // @synthesize imageFilePath=_imageFilePath;
 @property(readonly, nonatomic) long long requestID; // @synthesize requestID=_requestID;

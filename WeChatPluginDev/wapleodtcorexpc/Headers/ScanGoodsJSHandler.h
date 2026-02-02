@@ -15,7 +15,6 @@
     NSMutableDictionary *_forwardUrl2UploadTaskMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *forwardUrl2UploadTaskMap; // @synthesize forwardUrl2UploadTaskMap=_forwardUrl2UploadTaskMap;
 @property(retain, nonatomic) NSMutableDictionary *forwardUrl2MessageWrapMap; // @synthesize forwardUrl2MessageWrapMap=_forwardUrl2MessageWrapMap;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardMsgLogic; // @synthesize forwardMsgLogic=_forwardMsgLogic;

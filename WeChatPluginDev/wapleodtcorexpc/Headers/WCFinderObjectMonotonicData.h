@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderObjectMonotonicData, NSString;
 
@@ -26,7 +27,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderObjectMonotonicData *monoData; // @synthesize monoData=_monoData;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
 - (void)compareDataVersionWithUpdateVersion:(id)arg1 localVersion:(id)arg2 monoDataSourceType:(unsigned long long)arg3 resultBlock:(CDUnknownBlockType)arg4;
@@ -50,4 +50,3 @@
 @property(readonly) Class superclass;
 
 @end
-

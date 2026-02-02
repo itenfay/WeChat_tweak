@@ -12,7 +12,6 @@
     CContact *m_contact;
 }
 
-- (void).cxx_destruct;
 - (void)goWeSportBlackListView;
 - (void)updateBrandReceiveMSG;
 - (_Bool)isReceiveMessage;

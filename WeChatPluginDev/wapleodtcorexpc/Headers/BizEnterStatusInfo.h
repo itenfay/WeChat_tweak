@@ -40,7 +40,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithEnterSource:(id)arg1 openArticleFromScene:(id)arg2 isTeenMode:(id)arg3 redDotCount:(id)arg4 pos:(id)arg5 finderLiveRedDotType:(id)arg6 finderFeedExportId:(id)arg7 exposeMsgType:(id)arg8 exposeUserName:(id)arg9 lastExposeId:(id)arg10 lastExposeMsgId:(id)arg11 lastExposeMid:(id)arg12 sessionId:(id)arg13 enterTime:(id)arg14 netType:(id)arg15 isHeadsetOn:(id)arg16 redDotReportItem:(id)arg17 createEngineGroup:(id)arg18 createEngine:(id)arg19 startOpenTime:(id)arg20 endOnEnterTime:(id)arg21 startCreateEngineGroupTime:(id)arg22 startCreateEngineTime:(id)arg23 startShowFlutterPageTime:(id)arg24 firstGroupMsgCount:(id)arg25 reddotReportInfo:(id)arg26;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reddotReportInfo; // @synthesize reddotReportInfo=_reddotReportInfo;
 @property(retain, nonatomic) NSNumber *firstGroupMsgCount; // @synthesize firstGroupMsgCount=_firstGroupMsgCount;
 @property(retain, nonatomic) NSNumber *startShowFlutterPageTime; // @synthesize startShowFlutterPageTime=_startShowFlutterPageTime;

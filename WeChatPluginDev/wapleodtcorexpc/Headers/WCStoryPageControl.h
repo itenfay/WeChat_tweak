@@ -17,7 +17,6 @@
 }
 
 + (id)pageControlWithPageCount:(unsigned long long)arg1 normalPageColor:(id)arg2 currentPageColor:(id)arg3 highlightedPageColor:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pageDotsForIOS14Plus; // @synthesize pageDotsForIOS14Plus=_pageDotsForIOS14Plus;
 @property(nonatomic) unsigned long long hightlightIndexMask; // @synthesize hightlightIndexMask=_hightlightIndexMask;
 @property(retain, nonatomic) UIColor *highlightedPageColor; // @synthesize highlightedPageColor=_highlightedPageColor;

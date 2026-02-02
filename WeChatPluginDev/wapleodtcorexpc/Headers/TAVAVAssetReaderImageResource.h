@@ -16,7 +16,6 @@
     struct CGAffineTransform _preferredTransform;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform preferredTransform; // @synthesize preferredTransform=_preferredTransform;
 @property(nonatomic) struct opaqueCMSampleBuffer *lastSampleBuffer; // @synthesize lastSampleBuffer=_lastSampleBuffer;
 @property(nonatomic) CDStruct_1b6d18a9 lastReaderTime; // @synthesize lastReaderTime=_lastReaderTime;

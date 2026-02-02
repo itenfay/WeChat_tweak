@@ -22,7 +22,6 @@
 }
 
 + (id)defaultConfiguration;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableCorruptCrashUpload; // @synthesize enableCorruptCrashUpload=_enableCorruptCrashUpload;
 @property(retain, nonatomic) NSArray *customStrategy; // @synthesize customStrategy=_customStrategy;
 @property(nonatomic) unsigned long long reportStrategy; // @synthesize reportStrategy=_reportStrategy;

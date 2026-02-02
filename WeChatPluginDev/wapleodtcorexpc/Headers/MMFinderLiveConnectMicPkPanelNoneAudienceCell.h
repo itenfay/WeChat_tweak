@@ -16,7 +16,6 @@
 
 + (id)ReuseIdentifier;
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <MMFinderLiveConnectMicPkPanelCellDelegate> cellDelegate; // @synthesize cellDelegate;
 - (void)prepareForReuse;

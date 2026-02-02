@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIButton, UILabel, UIView;
 
 @interface MMFinderLiveFreeMicFeatureDescriptionPanel
@@ -17,7 +19,6 @@
     UIButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) UILabel *tipLabel2; // @synthesize tipLabel2=_tipLabel2;
 @property(retain, nonatomic) UILabel *tipLabel1; // @synthesize tipLabel1=_tipLabel1;
@@ -35,4 +36,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -16,7 +16,6 @@
     WAProfileLogicController *_profileLogicController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAProfileLogicController *profileLogicController; // @synthesize profileLogicController=_profileLogicController;
 @property(retain, nonatomic) WAMenuHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) WAMenuAboveHeaderView *topView; // @synthesize topView=_topView;

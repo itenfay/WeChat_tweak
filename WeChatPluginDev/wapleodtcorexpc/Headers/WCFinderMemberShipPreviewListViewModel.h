@@ -22,7 +22,6 @@
     unsigned long long _collectionTopicId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long collectionTopicId; // @synthesize collectionTopicId=_collectionTopicId;
 @property(retain, nonatomic) NSMutableSet *tidContainSet; // @synthesize tidContainSet=_tidContainSet;
 @property(nonatomic) _Bool isFetchingData; // @synthesize isFetchingData=_isFetchingData;

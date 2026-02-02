@@ -14,7 +14,6 @@
     MMMetricsInfo *_lastReportedMetricsInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMetricsInfo *lastReportedMetricsInfo; // @synthesize lastReportedMetricsInfo=_lastReportedMetricsInfo;
 @property(nonatomic) __weak MMLiveTask<MMLiveMetricsMonitorDelegate> *liveTaskDelegate; // @synthesize liveTaskDelegate=_liveTaskDelegate;
 - (void)metricsMonitor:(id)arg1 didCollectMetricsInfo:(id)arg2;

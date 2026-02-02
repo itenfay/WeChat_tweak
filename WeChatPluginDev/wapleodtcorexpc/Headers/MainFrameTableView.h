@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CADisplayLink, NSIndexPath;
 
 @interface MainFrameTableView
@@ -14,7 +16,6 @@
     NSIndexPath *_selectedIndexPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 @property(nonatomic) double finalContentOffset; // @synthesize finalContentOffset=_finalContentOffset;
@@ -32,4 +33,3 @@
 - (_Bool)tryDeleteRowsAtIndexPaths:(id)arg1 withRowAnimation:(long long)arg2;
 
 @end
-

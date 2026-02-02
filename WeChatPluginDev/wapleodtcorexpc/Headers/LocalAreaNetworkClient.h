@@ -26,7 +26,6 @@
     NSString *_server_ip;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned short server_port; // @synthesize server_port=_server_port;
 @property(retain, nonatomic) NSString *server_ip; // @synthesize server_ip=_server_ip;
 @property(nonatomic) __weak id <LocalAreaNetworkClientDelegate> delegate; // @synthesize delegate=_delegate;

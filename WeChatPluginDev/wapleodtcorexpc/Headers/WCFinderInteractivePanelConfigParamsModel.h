@@ -32,7 +32,6 @@
     struct CGRect _mediaCollectionViewFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderTableViewParamModel *tableViewParamModel; // @synthesize tableViewParamModel=_tableViewParamModel;
 @property(nonatomic) _Bool emitCarouselAfterHotCommentUpdate; // @synthesize emitCarouselAfterHotCommentUpdate=_emitCarouselAfterHotCommentUpdate;
 @property(retain, nonatomic) NSSet *feedSourceShowSceneSet; // @synthesize feedSourceShowSceneSet=_feedSourceShowSceneSet;

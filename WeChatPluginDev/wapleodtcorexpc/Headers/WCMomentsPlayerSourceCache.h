@@ -10,7 +10,6 @@
     NSMutableDictionary *_sourceStatusCache;
 }
 
-- (void).cxx_destruct;
 - (void)onCacheMgrCleanCacheWarning;
 - (long long)getSourceStatusForMediaItem:(id)arg1;
 - (void)updateSourceStatus:(long long)arg1 forMediaItem:(id)arg2;

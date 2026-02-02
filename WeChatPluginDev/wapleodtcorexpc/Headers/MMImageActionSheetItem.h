@@ -16,7 +16,6 @@
     MMImageActionSheet *_imageActionSheet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMImageActionSheet *imageActionSheet; // @synthesize imageActionSheet=_imageActionSheet;
 @property(nonatomic) __weak MMUIViewController *curViewController; // @synthesize curViewController=_curViewController;
 @property(nonatomic) _Bool isClickable; // @synthesize isClickable=_isClickable;

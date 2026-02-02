@@ -19,7 +19,6 @@
     WCPayInterceptWinLogic *_interceptWinLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayInterceptWinLogic *interceptWinLogic; // @synthesize interceptWinLogic=_interceptWinLogic;
 @property(retain, nonatomic) ForeignHbDetailResp *detailResp; // @synthesize detailResp=_detailResp;
 @property(retain, nonatomic) ForeignHbOpenResp *openResp; // @synthesize openResp=_openResp;

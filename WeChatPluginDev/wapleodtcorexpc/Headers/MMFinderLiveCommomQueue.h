@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -13,7 +14,6 @@
     NSMutableArray *_array;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *array; // @synthesize array=_array;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 - (void)removeObjectsInArray:(id)arg1;
@@ -27,4 +27,3 @@
 - (void)enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
 
 @end
-

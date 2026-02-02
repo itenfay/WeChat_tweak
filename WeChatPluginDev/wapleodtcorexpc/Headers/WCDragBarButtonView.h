@@ -16,7 +16,6 @@
     NSString *_selectedTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *selectedTitle; // @synthesize selectedTitle=_selectedTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;

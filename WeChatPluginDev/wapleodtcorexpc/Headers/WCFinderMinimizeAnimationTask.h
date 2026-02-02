@@ -13,7 +13,6 @@
     struct CGRect _startFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MinimizeTaskData *taskData; // @synthesize taskData=_taskData;
 @property(nonatomic) struct CGRect startFrame; // @synthesize startFrame=_startFrame;
 

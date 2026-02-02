@@ -21,7 +21,6 @@
 }
 
 + (struct CGSize)editSelectCollectionViewDefaultSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *snapedView; // @synthesize snapedView=_snapedView;
 @property(retain, nonatomic) NSIndexPath *oldIndexPath; // @synthesize oldIndexPath=_oldIndexPath;
 @property(nonatomic) long long currentSelectedIndex; // @synthesize currentSelectedIndex=_currentSelectedIndex;

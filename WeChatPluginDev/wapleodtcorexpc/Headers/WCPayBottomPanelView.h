@@ -18,7 +18,6 @@
     UIView *_contentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *detailView; // @synthesize detailView=_detailView;

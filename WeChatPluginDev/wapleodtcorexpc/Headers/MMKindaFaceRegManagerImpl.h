@@ -14,7 +14,6 @@
     FaceRecogPayHandler *_m_faceHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FaceRecogPayHandler *m_faceHandler; // @synthesize m_faceHandler=_m_faceHandler;
 @property(retain, nonatomic) MMVoidCallback *m_cancelCallback; // @synthesize m_cancelCallback=_m_cancelCallback;
 @property(retain, nonatomic) MMVoidBoolStringI32StringCallback *m_finishCallback; // @synthesize m_finishCallback=_m_finishCallback;

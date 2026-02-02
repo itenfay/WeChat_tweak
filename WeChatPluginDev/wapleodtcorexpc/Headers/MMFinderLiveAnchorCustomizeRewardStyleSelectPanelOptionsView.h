@@ -18,7 +18,6 @@
     long long _curSubviewIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long curSubviewIndex; // @synthesize curSubviewIndex=_curSubviewIndex;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardImageOptionContentView *imageOptionView; // @synthesize imageOptionView=_imageOptionView;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardTextOptionContentView *textOptionView; // @synthesize textOptionView=_textOptionView;

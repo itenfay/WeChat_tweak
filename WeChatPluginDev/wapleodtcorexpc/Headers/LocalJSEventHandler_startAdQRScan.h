@@ -12,7 +12,6 @@
     ScanQRCodeLogicController *_scanQRCodeLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ScanQRCodeLogicController *scanQRCodeLogic; // @synthesize scanQRCodeLogic=_scanQRCodeLogic;
 @property(retain, nonatomic) NSString *uxInfo; // @synthesize uxInfo=_uxInfo;
 @property(retain, nonatomic) NSString *scanUrl; // @synthesize scanUrl=_scanUrl;

@@ -12,7 +12,6 @@
     MISSING_TYPE *windowPublisher;
 }
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)willMoveToWindow:(id)arg1;

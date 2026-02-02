@@ -15,7 +15,6 @@
     double _panelHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double panelHeight; // @synthesize panelHeight=_panelHeight;
 @property(readonly, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

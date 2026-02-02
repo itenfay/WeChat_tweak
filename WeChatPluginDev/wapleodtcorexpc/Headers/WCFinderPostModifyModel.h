@@ -15,7 +15,6 @@
     struct _NSRange _fromTextRange;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *toText; // @synthesize toText=_toText;
 @property(copy, nonatomic) NSString *fromText; // @synthesize fromText=_fromText;
 @property(nonatomic) struct _NSRange fromTextRange; // @synthesize fromTextRange=_fromTextRange;

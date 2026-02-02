@@ -13,7 +13,6 @@
     NSMutableDictionary *_donwloadLogicDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *donwloadLogicDic; // @synthesize donwloadLogicDic=_donwloadLogicDic;
 @property(nonatomic) __weak MMLiteAppViewController *currentVC; // @synthesize currentVC=_currentVC;
 - (void)onDownloadStatusChangeTo:(long long)arg1 pid:(id)arg2;

@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_timestamp;
 + (void)PBArrayAdd_clickScore;
 + (void)PBArrayAdd_key;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicGroupMember; // @synthesize dicGroupMember=_dicGroupMember;
 @property(nonatomic) unsigned int timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) unsigned int clickScore; // @synthesize clickScore=_clickScore;

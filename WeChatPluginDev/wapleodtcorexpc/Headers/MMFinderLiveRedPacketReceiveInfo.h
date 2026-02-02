@@ -16,7 +16,6 @@
     NSString *_clientMsgId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *clientMsgId; // @synthesize clientMsgId=_clientMsgId;
 @property(nonatomic) unsigned long long seq; // @synthesize seq=_seq;
 @property(retain, nonatomic) FinderLiveContact *toUserContact; // @synthesize toUserContact=_toUserContact;

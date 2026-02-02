@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebViewController, NSString;
 
@@ -19,7 +20,6 @@
 }
 
 + (id)openerWithNeedPreload:(_Bool)arg1 reReploadWhenExit:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebViewController *cacheWebView; // @synthesize cacheWebView=_cacheWebView;
 @property(nonatomic) _Bool reReploadWhenExit; // @synthesize reReploadWhenExit=_reReploadWhenExit;
 @property(retain, nonatomic) NSString *targetURL; // @synthesize targetURL=_targetURL;
@@ -32,4 +32,3 @@
 - (void)updateURL:(id)arg1;
 
 @end
-

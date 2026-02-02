@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, NSMutableArray;
 @protocol WCFinderRedPacketCropSliderModelDelegate;
@@ -18,7 +19,6 @@
 }
 
 + (double)shareTimeSecondsInterval;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *thumbImages; // @synthesize thumbImages=_thumbImages;
 @property(nonatomic) double videoDuration; // @synthesize videoDuration=_videoDuration;
 @property(nonatomic) _Bool isLoadingImg; // @synthesize isLoadingImg=_isLoadingImg;
@@ -29,4 +29,3 @@
 - (id)initWithAsset:(id)arg1;
 
 @end
-

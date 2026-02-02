@@ -13,7 +13,6 @@
     NSString *_poiId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNameOnly; // @synthesize isNameOnly=_isNameOnly;
 @property(retain, nonatomic) NSString *poiId; // @synthesize poiId=_poiId;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

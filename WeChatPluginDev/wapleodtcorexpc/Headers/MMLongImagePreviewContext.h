@@ -12,7 +12,6 @@
     NSString *_webUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *webUrl; // @synthesize webUrl=_webUrl;
 
 @end

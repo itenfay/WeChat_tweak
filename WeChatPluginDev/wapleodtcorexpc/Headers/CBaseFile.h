@@ -60,7 +60,6 @@
 + (_Bool)CreateFile:(id)arg1;
 + (int)BlockSizeForIO;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSFileHandle *m_fhFile; // @synthesize m_fhFile;
 @property(retain, nonatomic) NSString *m_nsFilePath; // @synthesize m_nsFilePath;
 - (_Bool)WriteLargeData:(id)arg1;

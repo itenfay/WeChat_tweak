@@ -17,7 +17,6 @@
     NSString *_errorTags;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorTags; // @synthesize errorTags=_errorTags;
 @property(nonatomic) unsigned long long errorSeverityLevel; // @synthesize errorSeverityLevel=_errorSeverityLevel;
 @property(retain, nonatomic) NSString *errorInfo; // @synthesize errorInfo=_errorInfo;

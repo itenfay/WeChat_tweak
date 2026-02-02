@@ -15,7 +15,6 @@
     double _getDetailTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double getDetailTime; // @synthesize getDetailTime=_getDetailTime;
 @property(copy, nonatomic) NSString *invalideMsg; // @synthesize invalideMsg=_invalideMsg;
 @property(nonatomic) _Bool getDetailResult; // @synthesize getDetailResult=_getDetailResult;

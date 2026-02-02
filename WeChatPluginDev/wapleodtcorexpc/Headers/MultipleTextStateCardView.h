@@ -36,7 +36,6 @@
 }
 
 + (id)popAnimationForView:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *draggingGuideView; // @synthesize draggingGuideView=_draggingGuideView;
 @property(retain, nonatomic) UIScrollView *autoLoopView; // @synthesize autoLoopView=_autoLoopView;
 @property(nonatomic) unsigned long long candidateActiveIndex; // @synthesize candidateActiveIndex=_candidateActiveIndex;

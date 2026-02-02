@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface FTSWebSearchUtil : NSObject
 {
@@ -126,4 +127,3 @@
 + (unsigned int)getTopicSearchVersion;
 
 @end
-

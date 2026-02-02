@@ -14,7 +14,6 @@
 }
 
 + (id)userMapWithUserInfos:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *validUserInfos; // @synthesize validUserInfos=_validUserInfos;
 @property(retain, nonatomic) NSArray *riskUserInfos; // @synthesize riskUserInfos=_riskUserInfos;
 - (id)riskUserNames;

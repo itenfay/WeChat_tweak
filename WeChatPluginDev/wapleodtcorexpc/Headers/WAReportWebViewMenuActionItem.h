@@ -14,7 +14,6 @@
     unsigned long long _actionResult;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int errcode; // @synthesize errcode=_errcode;
 @property(nonatomic) unsigned long long actionResult; // @synthesize actionResult=_actionResult;
 @property(nonatomic) unsigned int actionTimeStamp; // @synthesize actionTimeStamp=_actionTimeStamp;

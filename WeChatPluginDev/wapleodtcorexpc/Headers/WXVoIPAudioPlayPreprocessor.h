@@ -17,7 +17,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) int getDataLengthBytes; // @synthesize getDataLengthBytes=_getDataLengthBytes;
 @property(nonatomic) struct DataBasicDescription getDataDescription; // @synthesize getDataDescription=_getDataDescription;
 @property(nonatomic) __weak id <AudioPlayPreprocessedDelegate> delegate; // @synthesize delegate=_delegate;

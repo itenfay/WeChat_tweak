@@ -16,7 +16,6 @@
     MISSING_TYPE *dismissUsername;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onDidCancelInternalDismiss;
 - (void)onWillEndInternalDismiss;

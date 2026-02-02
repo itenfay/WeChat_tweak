@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_appserviceDataStr;
 + (void)PBArrayAdd_webviewDataStr;
 + (void)PBArrayAdd_content;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appserviceDataStr; // @synthesize appserviceDataStr=_appserviceDataStr;
 @property(copy, nonatomic) NSString *webviewDataStr; // @synthesize webviewDataStr=_webviewDataStr;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;

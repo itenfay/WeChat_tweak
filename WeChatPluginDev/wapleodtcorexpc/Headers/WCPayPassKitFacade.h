@@ -13,7 +13,6 @@
 }
 
 + (id)GenCurrentDeviceInfo;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayPassKitFacadeDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)checkIssueCardPermissionWithSpecificCardType:(id)arg1 appId:(id)arg2 iOSVersion:(double)arg3;
 - (_Bool)isPassLibraryAvailable;

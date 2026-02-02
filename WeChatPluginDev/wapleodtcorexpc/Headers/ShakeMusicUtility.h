@@ -13,7 +13,6 @@
 
 + (id)genReportSongId:(unsigned int)arg1;
 + (unsigned long long)getCopyRightWithShakeMusicInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double lastMusicOffset; // @synthesize lastMusicOffset=_lastMusicOffset;
 @property(retain, nonatomic) MMMusicInfo *lastPlayingMusic; // @synthesize lastPlayingMusic=_lastPlayingMusic;
 - (void)onMusicPlayInnerStatusChanged:(unsigned long long)arg1 musicInfo:(id)arg2 errInfo:(id)arg3;

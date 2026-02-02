@@ -4,16 +4,15 @@
 //
 
 #import <UIKit/UICollectionView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MJCollectionView : UICollectionView
 {
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void)reloadDataCompletion:(CDUnknownBlockType)arg1;
 - (void)layoutSubviews;
 
 @end
-

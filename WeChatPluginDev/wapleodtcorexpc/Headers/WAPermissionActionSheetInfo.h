@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_popEvaluateLeastStayTime;
 + (void)PBArrayAdd_isNeedEvaluateBeforeExit;
 + (void)PBArrayAdd_isOpenComment;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *controlBytes; // @synthesize controlBytes=_controlBytes;
 @property(nonatomic) unsigned int popEvaluateLeastStayTime; // @synthesize popEvaluateLeastStayTime=_popEvaluateLeastStayTime;
 @property(nonatomic) _Bool isNeedEvaluateBeforeExit; // @synthesize isNeedEvaluateBeforeExit=_isNeedEvaluateBeforeExit;

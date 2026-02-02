@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveNewCustomGiftText, MMUIButton, MMUILabel, NSMutableArray, NSRegularExpression, NSString, UIImageView, UITextField;
 
@@ -29,7 +30,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *beanIncreaseLabel; // @synthesize beanIncreaseLabel=_beanIncreaseLabel;
 @property(retain, nonatomic) NSMutableArray *inputToolStateListenerList; // @synthesize inputToolStateListenerList=_inputToolStateListenerList;
 @property(retain, nonatomic) NSRegularExpression *nonAlphanumericRegex; // @synthesize nonAlphanumericRegex=_nonAlphanumericRegex;
@@ -109,4 +109,3 @@
 @property(readonly) Class superclass;
 
 @end
-

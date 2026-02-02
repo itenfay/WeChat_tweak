@@ -18,7 +18,6 @@
     double _skipRealPlayTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double skipRealPlayTime; // @synthesize skipRealPlayTime=_skipRealPlayTime;
 @property(retain, nonatomic) NSString *playSessionId; // @synthesize playSessionId=_playSessionId;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;

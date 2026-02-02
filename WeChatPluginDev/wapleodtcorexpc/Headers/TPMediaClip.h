@@ -19,7 +19,6 @@
 
 + (id)mediaTrackClipWithFilePath:(id)arg1 mediaType:(long long)arg2;
 + (int)genTrackClipIdWithMediaType:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_e83c9415 timeRange; // @synthesize timeRange=_timeRange;
 @property(retain, nonatomic) NSURL *filePath; // @synthesize filePath=_filePath;
 @property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;

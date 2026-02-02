@@ -19,7 +19,6 @@
 
 + (double)heightForViewItem:(id)arg1 inTableView:(id)arg2;
 + (id)defaultCellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) UIView *topLine; // @synthesize topLine=_topLine;
 @property(retain, nonatomic) WCFinderLiveNoticeView *noticeView; // @synthesize noticeView=_noticeView;

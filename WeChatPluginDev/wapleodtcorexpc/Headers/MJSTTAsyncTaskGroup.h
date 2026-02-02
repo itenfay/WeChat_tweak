@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJSpeechAudioData, NSData, NSMutableArray, NSNumber, NSString, UBDictionarySignal;
 
@@ -25,7 +26,6 @@
     long long _queryCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long queryCount; // @synthesize queryCount=_queryCount;
 @property(nonatomic) double queryInterval; // @synthesize queryInterval=_queryInterval;
 @property(nonatomic) double requestStartTimeInterval; // @synthesize requestStartTimeInterval=_requestStartTimeInterval;
@@ -62,4 +62,3 @@
 - (id)initWithAudioID:(id)arg1 statusDidUpdateSignal:(id)arg2;
 
 @end
-

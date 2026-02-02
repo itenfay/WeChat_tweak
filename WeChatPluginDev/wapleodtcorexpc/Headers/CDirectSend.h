@@ -18,7 +18,6 @@
     NSData *m_dtData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *m_dtData; // @synthesize m_dtData;
 @property(nonatomic) unsigned short m_usDataLen; // @synthesize m_usDataLen;
 @property(retain, nonatomic) NSString *m_nsUsrNameList; // @synthesize m_nsUsrNameList;

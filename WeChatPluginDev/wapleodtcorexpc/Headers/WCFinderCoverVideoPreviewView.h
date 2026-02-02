@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, AVAssetImageGenerator, AVPlayer, AVPlayerItem, AVPlayerLayer, MMUIScrollView, NSString, UIImageView, UIView, WCFinderCropRectModel, WCFinderPreviewEditVideoCompositionTask;
 
 @interface WCFinderCoverVideoPreviewView
@@ -29,7 +31,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAssetImageGenerator *coverGenerator; // @synthesize coverGenerator=_coverGenerator;
 @property(nonatomic) struct CGSize videoSize; // @synthesize videoSize=_videoSize;
 @property(retain, nonatomic) WCFinderPreviewEditVideoCompositionTask *compositionTask; // @synthesize compositionTask=_compositionTask;
@@ -82,4 +83,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -17,7 +17,6 @@
     NSString *_legalUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needShowLegalPromot; // @synthesize needShowLegalPromot=_needShowLegalPromot;
 @property(retain, nonatomic) NSString *legalUrl; // @synthesize legalUrl=_legalUrl;
 @property(retain, nonatomic) NSString *legalTitle; // @synthesize legalTitle=_legalTitle;

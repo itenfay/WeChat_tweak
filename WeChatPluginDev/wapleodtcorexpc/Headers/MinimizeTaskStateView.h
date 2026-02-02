@@ -22,7 +22,6 @@
     struct UIEdgeInsets _edgeInset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *touchArea; // @synthesize touchArea=_touchArea;
 @property(retain, nonatomic) MinimizeAnimateStateBaseView *stateView; // @synthesize stateView=_stateView;
 @property(retain, nonatomic) UIView *entryBtn; // @synthesize entryBtn=_entryBtn;

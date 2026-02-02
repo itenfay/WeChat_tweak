@@ -15,7 +15,6 @@
     MJTimelineViewModel *_timelineVM;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJTimelineViewModel *timelineVM; // @synthesize timelineVM=_timelineVM;
 @property(retain, nonatomic) MJPublisherButton *muteButton; // @synthesize muteButton=_muteButton;
 @property(nonatomic) __weak id <MJSegmentReusableViewDelegate> delegate; // @synthesize delegate=_delegate;

@@ -15,7 +15,6 @@
     long long _preferredFramesPerSecond;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long preferredFramesPerSecond; // @synthesize preferredFramesPerSecond=_preferredFramesPerSecond;
 - (void)refresh;
 - (void)stop;

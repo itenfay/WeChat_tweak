@@ -11,7 +11,6 @@
 }
 
 + (id)createWeComContactAnchorPromoteInfoFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLivePromoteInfoListWecomContact *wecomContact; // @synthesize wecomContact=_wecomContact;
 - (id)promoteKey;
 

@@ -24,7 +24,6 @@
     struct OpaqueJSValue *_deleteBindingObjFunc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct OpaqueJSValue *deleteBindingObjFunc; // @synthesize deleteBindingObjFunc=_deleteBindingObjFunc;
 @property(nonatomic) struct OpaqueJSValue *getBindingObjFunc; // @synthesize getBindingObjFunc=_getBindingObjFunc;
 @property(nonatomic) struct OpaqueJSValue *setBindingObjFunc; // @synthesize setBindingObjFunc=_setBindingObjFunc;

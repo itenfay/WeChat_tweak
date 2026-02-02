@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_m_recentHotNum;
 + (void)PBArrayAdd_m_topHotNum;
 + (void)PBArrayAdd_itemList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_cellSetList; // @synthesize m_cellSetList=_m_cellSetList;
 @property(nonatomic) unsigned int m_recentHotNum; // @synthesize m_recentHotNum=_m_recentHotNum;
 @property(nonatomic) unsigned int m_topHotNum; // @synthesize m_topHotNum=_m_topHotNum;

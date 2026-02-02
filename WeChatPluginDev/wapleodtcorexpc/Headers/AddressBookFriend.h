@@ -32,7 +32,6 @@
     _Bool _bWaitForVerify;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bWaitForVerify; // @synthesize bWaitForVerify=_bWaitForVerify;
 @property(retain, nonatomic) NSString *m_nsAntispamTicket; // @synthesize m_nsAntispamTicket;
 @property(retain, nonatomic) NSString *m_nsHeadHDImgUrl; // @synthesize m_nsHeadHDImgUrl;

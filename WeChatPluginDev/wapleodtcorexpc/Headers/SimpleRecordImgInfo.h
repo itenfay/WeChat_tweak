@@ -11,7 +11,6 @@
     CMessageWrap *_m_msgWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *m_msgWrap; // @synthesize m_msgWrap=_m_msgWrap;
 @property(retain, nonatomic) FavoritesItemDataField *m_recordData; // @synthesize m_recordData=_m_recordData;
 - (id)getImgUUID;

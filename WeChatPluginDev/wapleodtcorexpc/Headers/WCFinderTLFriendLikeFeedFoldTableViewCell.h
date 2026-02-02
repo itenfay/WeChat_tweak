@@ -23,7 +23,6 @@
 
 + (id)cellID;
 + (double)cellHByShowLargeSeparatorLine:(_Bool)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFoldFeedReportInfo *foldFeedReportInfo; // @synthesize foldFeedReportInfo=_foldFeedReportInfo;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;

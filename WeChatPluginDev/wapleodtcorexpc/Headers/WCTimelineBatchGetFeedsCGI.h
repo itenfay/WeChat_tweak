@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray;
 
 @interface WCTimelineBatchGetFeedsCGI
@@ -14,7 +16,6 @@
     CDUnknownBlockType _failureHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureHandler; // @synthesize failureHandler=_failureHandler;
 @property(copy, nonatomic) CDUnknownBlockType successHandler; // @synthesize successHandler=_successHandler;
 @property(nonatomic) unsigned int startTime; // @synthesize startTime=_startTime;
@@ -27,4 +28,3 @@
 - (id)initWithScene:(int)arg1 feedIds:(id)arg2 successHandler:(CDUnknownBlockType)arg3 failureHandler:(CDUnknownBlockType)arg4;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, FinderFromAppInfo, MMUIViewController, NSString, NSURL;
 @protocol WCFinderLongVideoChooseHelperDelegate;
@@ -20,7 +21,6 @@
     CDUnknownBlockType _shortAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType shortAction; // @synthesize shortAction=_shortAction;
 @property(nonatomic) __weak id <WCFinderLongVideoChooseHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak MMUIViewController *context; // @synthesize context=_context;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

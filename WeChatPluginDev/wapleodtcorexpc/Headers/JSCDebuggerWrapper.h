@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class JSCTarget;
 
@@ -14,11 +15,9 @@
     CDUnknownBlockType _disconnectBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType disconnectBlock; // @synthesize disconnectBlock=_disconnectBlock;
 @property(retain, nonatomic) JSCTarget *targetInternal; // @synthesize targetInternal=_targetInternal;
 @property(nonatomic) struct JSCRemoteConnectionToTarget *connection; // @synthesize connection=_connection;
 - (void)dealloc;
 
 @end
-

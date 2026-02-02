@@ -17,7 +17,6 @@
 
 + (id)coverVMFromCategoryItem:(id)arg1;
 + (id)coverVMFromUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMListenCategoryItem *categoryItem; // @synthesize categoryItem=_categoryItem;
 @property(nonatomic) unsigned long long coverNum; // @synthesize coverNum=_coverNum;
 @property(retain, nonatomic) NSArray *arrCoverUrls; // @synthesize arrCoverUrls=_arrCoverUrls;

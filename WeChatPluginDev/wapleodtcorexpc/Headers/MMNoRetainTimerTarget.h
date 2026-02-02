@@ -11,7 +11,6 @@
     id _target;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(nonatomic) SEL targetAction; // @synthesize targetAction=_targetAction;
 - (void)onNoRetainTimer:(id)arg1;

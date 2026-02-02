@@ -25,7 +25,6 @@
     BrandProfileMsgFooterViewModel *_footerVM;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandProfileMsgFooterViewModel *footerVM; // @synthesize footerVM=_footerVM;
 @property(nonatomic) _Bool isFeatureMsgFold; // @synthesize isFeatureMsgFold=_isFeatureMsgFold;
 @property(nonatomic) _Bool isFeatureMsg; // @synthesize isFeatureMsg=_isFeatureMsg;

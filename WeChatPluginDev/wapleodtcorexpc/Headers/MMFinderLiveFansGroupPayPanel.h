@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMLiveRewardGiftCoinButton, MMUIButton, MMUILabel, MMWebImageView, NSString, UIImageView, UIView;
 
 @interface MMFinderLiveFansGroupPayPanel
@@ -25,7 +27,6 @@
     long long _balance;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool fetchWecoinBalanceFinished; // @synthesize fetchWecoinBalanceFinished=_fetchWecoinBalanceFinished;
 @property(nonatomic) _Bool wecoinBalanceUpdated; // @synthesize wecoinBalanceUpdated=_wecoinBalanceUpdated;
 @property(nonatomic) long long balance; // @synthesize balance=_balance;
@@ -88,4 +89,3 @@
 @property(readonly) Class superclass;
 
 @end
-

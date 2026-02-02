@@ -18,7 +18,6 @@
     NSString *_CountryFlagImgUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int flag; // @synthesize flag=_flag;
 @property(retain, nonatomic) NSString *CountryFlagImgUrl; // @synthesize CountryFlagImgUrl=_CountryFlagImgUrl;
 @property(retain, nonatomic) NSString *Desc; // @synthesize Desc=_Desc;

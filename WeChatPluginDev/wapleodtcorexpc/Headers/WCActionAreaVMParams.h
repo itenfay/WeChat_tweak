@@ -15,7 +15,6 @@
     double _elementSpacing;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double elementSpacing; // @synthesize elementSpacing=_elementSpacing;
 @property(nonatomic) double iconViewLen; // @synthesize iconViewLen=_iconViewLen;
 @property(nonatomic) double actionAreaWidth; // @synthesize actionAreaWidth=_actionAreaWidth;

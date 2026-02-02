@@ -14,7 +14,6 @@
     long long _viewId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableHook; // @synthesize disableHook=_disableHook;
 @property(nonatomic) long long viewId; // @synthesize viewId=_viewId;
 @property(retain, nonatomic) UIView *nativeView; // @synthesize nativeView=_nativeView;

@@ -14,7 +14,6 @@
     NSArray *_startPoints;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *startPoints; // @synthesize startPoints=_startPoints;
 @property(readonly, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 - (int)getMapSize;

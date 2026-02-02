@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSNumber, NSString;
 
@@ -16,7 +17,6 @@
     NSNumber *_height;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *height; // @synthesize height=_height;
 @property(nonatomic) double containerWidth; // @synthesize containerWidth=_containerWidth;
 @property(copy, nonatomic) CDUnknownBlockType tapAction; // @synthesize tapAction=_tapAction;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

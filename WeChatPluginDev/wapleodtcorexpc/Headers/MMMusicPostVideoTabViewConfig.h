@@ -13,7 +13,6 @@
     long long _category;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long category; // @synthesize category=_category;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)initWithTitle:(id)arg1 category:(long long)arg2;

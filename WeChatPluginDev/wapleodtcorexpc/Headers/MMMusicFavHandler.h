@@ -14,7 +14,6 @@
     MMMusicVideoImageDownloader *_imageDownLoader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicVideoImageDownloader *imageDownLoader; // @synthesize imageDownLoader=_imageDownLoader;
 @property(nonatomic) _Bool isFromShake; // @synthesize isFromShake=_isFromShake;
 @property(nonatomic) __weak id <MMMusicFavHandlerDelegate> delegate; // @synthesize delegate=_delegate;

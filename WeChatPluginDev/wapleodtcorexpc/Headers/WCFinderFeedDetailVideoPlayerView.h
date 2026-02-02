@@ -28,7 +28,6 @@
     struct CGRect _layoutBounds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect layoutBounds; // @synthesize layoutBounds=_layoutBounds;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(nonatomic) _Bool fullScreenState; // @synthesize fullScreenState=_fullScreenState;

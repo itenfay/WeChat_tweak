@@ -12,7 +12,6 @@
 }
 
 + (_Bool)shouldAutoProcessingToastWithErrorCode:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) NSMutableArray *unreadItems; // @synthesize unreadItems=_unreadItems;
 - (void)finderCgiDidFailWithError:(id)arg1 response:(id)arg2;

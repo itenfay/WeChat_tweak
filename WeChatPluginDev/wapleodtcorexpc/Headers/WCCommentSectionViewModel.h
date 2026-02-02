@@ -25,7 +25,6 @@
 
 + (id)commentDescriptionSectionViewModelWithDescription:(id)arg1 type:(unsigned long long)arg2;
 + (id)commentSectionViewModelWithRootComment:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *subCommentIDSet; // @synthesize subCommentIDSet=_subCommentIDSet;
 @property(retain, nonatomic) WCFinderComment *rootComment; // @synthesize rootComment=_rootComment;
 @property(nonatomic) _Bool shouldHideMoreCommentCount; // @synthesize shouldHideMoreCommentCount=_shouldHideMoreCommentCount;

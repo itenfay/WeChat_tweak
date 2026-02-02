@@ -14,7 +14,6 @@
 }
 
 + (id)getFileInfoDBPath;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fileDBPath; // @synthesize fileDBPath=_fileDBPath;
 @property(retain, nonatomic) WCTDatabase *fileInfoDB; // @synthesize fileInfoDB=_fileInfoDB;
 - (id)p_getFileInfoTable;

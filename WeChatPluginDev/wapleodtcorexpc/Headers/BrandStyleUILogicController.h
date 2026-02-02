@@ -13,7 +13,6 @@
     NSMutableDictionary *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *extInfo; // @synthesize extInfo=_extInfo;
 - (id)getInnerToolView;
 - (id)getOutterInputPresenter;

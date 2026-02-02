@@ -31,7 +31,6 @@
     WCPayIdKeyRegularReporter *_m_controlReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayIdKeyRegularReporter *m_controlReporter; // @synthesize m_controlReporter=_m_controlReporter;
 @property(retain, nonatomic) WCPayIdKeyRegularReporter *m_cgiReporter; // @synthesize m_cgiReporter=_m_cgiReporter;
 @property(retain, nonatomic) NSString *m_crtDeviceId; // @synthesize m_crtDeviceId=_m_crtDeviceId;

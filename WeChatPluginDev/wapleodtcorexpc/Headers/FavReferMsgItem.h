@@ -14,7 +14,6 @@
     NSString *_content;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSString *referDesc; // @synthesize referDesc=_referDesc;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;

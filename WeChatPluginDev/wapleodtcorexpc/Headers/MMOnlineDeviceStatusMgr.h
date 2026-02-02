@@ -11,7 +11,6 @@
     MultiDeviceManageViewController *_multiDeviceViewController;
 }
 
-- (void).cxx_destruct;
 - (void)onExtDeviceNotifyUnlockWithMessage:(id)arg1;
 - (void)onLogoutWeb;
 - (void)showDeviceInfoUnlockView:(id)arg1 name:(id)arg2;

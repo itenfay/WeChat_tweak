@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MinimizeAbsorbFloatingView, MinimizeAntiCollisionLogic, MinimizeGestureCircleView, MinimizePendingTaskContext, MinimizeStarFloatingView, MinimizeTaskOuterContentView, NSMutableArray, NSMutableDictionary, NSString, UIButton, UIScrollView, UIView;
 @protocol MinimizeDetailTaskListViewInterface, MinimizeTaskDataSource, MinimizeVCDelegate;
 
@@ -45,7 +47,6 @@
     struct CGPoint _draggableTaskViewBeginTouchPoint;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MinimizeAntiCollisionLogic *antiCollisionLogic; // @synthesize antiCollisionLogic=_antiCollisionLogic;
 @property(nonatomic) double currentSystemKeyboardTop; // @synthesize currentSystemKeyboardTop=_currentSystemKeyboardTop;
 @property(nonatomic) double currentInputToolBarTop; // @synthesize currentInputToolBarTop=_currentInputToolBarTop;
@@ -225,4 +226,3 @@
 @property(readonly) Class superclass;
 
 @end
-

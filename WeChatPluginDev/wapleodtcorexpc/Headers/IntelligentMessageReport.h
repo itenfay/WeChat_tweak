@@ -32,7 +32,6 @@
     unsigned long long _imageAllCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int stayTime; // @synthesize stayTime=_stayTime;
 @property(nonatomic) unsigned int categoryDisplayType; // @synthesize categoryDisplayType=_categoryDisplayType;
 @property(nonatomic) unsigned int finderCnt; // @synthesize finderCnt=_finderCnt;

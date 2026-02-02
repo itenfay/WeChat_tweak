@@ -25,7 +25,6 @@
 + (void)PBArrayAdd_envVersion;
 + (void)PBArrayAdd_wechatToken;
 + (void)PBArrayAdd_deviceUUID;
-- (void).cxx_destruct;
 @property(nonatomic) double delayReconnectTime; // @synthesize delayReconnectTime=_delayReconnectTime;
 @property(copy, nonatomic) NSString *extraData; // @synthesize extraData=_extraData;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;

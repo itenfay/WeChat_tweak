@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIButtonFinderWhenTap : NSObject
 {
@@ -11,11 +12,9 @@
     CDUnknownBlockType _action;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(nonatomic) unsigned long long hashValue; // @synthesize hashValue=_hashValue;
 - (void)replaceBlock:(CDUnknownBlockType)arg1;
 - (void)onTap:(id)arg1;
 
 @end
-

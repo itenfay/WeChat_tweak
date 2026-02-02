@@ -16,7 +16,6 @@
     unsigned long long _downloadFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long downloadFlag; // @synthesize downloadFlag=_downloadFlag;
 @property(retain, nonatomic) WCFinderFeedMediaWrap *currentMediaWrap; // @synthesize currentMediaWrap=_currentMediaWrap;
 @property(retain, nonatomic) UIImage *defaultImage; // @synthesize defaultImage=_defaultImage;

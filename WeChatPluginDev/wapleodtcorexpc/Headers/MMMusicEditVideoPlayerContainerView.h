@@ -16,7 +16,6 @@
     _Bool isLongVideo;
 }
 
-- (void).cxx_destruct;
 - (void)onPlayerVideoFrameOut:(id)arg1;
 - (void)onVideoPlay:(unsigned int)arg1;
 - (void)onVideoPrepareToPlay:(unsigned int)arg1 playBackInfo:(id)arg2;

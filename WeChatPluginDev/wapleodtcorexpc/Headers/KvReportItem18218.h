@@ -36,7 +36,6 @@
     NSString *_ReddotReportInfo_48;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *ReddotReportInfo_48; // @synthesize ReddotReportInfo_48=_ReddotReportInfo_48;
 @property(nonatomic) unsigned int dataMode_46; // @synthesize dataMode_46=_dataMode_46;
 @property(nonatomic) unsigned int renderMode_45; // @synthesize renderMode_45=_renderMode_45;

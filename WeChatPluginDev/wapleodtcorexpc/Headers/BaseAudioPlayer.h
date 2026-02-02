@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AudioPlayerUserData, MMTimer, NSString;
 @protocol AudioPlayerDelegate;
@@ -21,7 +22,6 @@
     MMTimer *_meterTimer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool stopInBackground; // @synthesize stopInBackground=_stopInBackground;
 @property(nonatomic) _Bool isFixingEarVolume; // @synthesize isFixingEarVolume=_isFixingEarVolume;
 @property(retain, nonatomic) MMTimer *meterTimer; // @synthesize meterTimer=_meterTimer;
@@ -85,4 +85,3 @@
 @property(readonly) Class superclass;
 
 @end
-

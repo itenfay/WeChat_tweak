@@ -12,7 +12,6 @@
     GCImageMsgWrapper *_imgMsgWrapper;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int icountPointProgress; // @synthesize icountPointProgress=_icountPointProgress;
 @property(nonatomic) _Bool oriNaviHidden; // @synthesize oriNaviHidden=_oriNaviHidden;
 @property(retain, nonatomic) GCImageMsgWrapper *imgMsgWrapper; // @synthesize imgMsgWrapper=_imgMsgWrapper;

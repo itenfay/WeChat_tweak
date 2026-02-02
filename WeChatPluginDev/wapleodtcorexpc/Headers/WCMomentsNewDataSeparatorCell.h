@@ -17,7 +17,6 @@
 
 + (id)createTipsLabel;
 + (double)heightForWidth:(double)arg1 viewModel:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsFinderRecommendationButton *finderRecommendationButton; // @synthesize finderRecommendationButton=_finderRecommendationButton;
 @property(retain, nonatomic) MMUILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) WCMomentsNewDataSeparatorViewModel *viewModel; // @synthesize viewModel=_viewModel;

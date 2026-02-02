@@ -21,7 +21,6 @@
     NSString *_preinjectData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *preinjectData; // @synthesize preinjectData=_preinjectData;
 @property(retain, nonatomic) GameLiteAppParam *liteAppparam; // @synthesize liteAppparam=_liteAppparam;
 @property(nonatomic) _Bool disableLiteAppMatch; // @synthesize disableLiteAppMatch=_disableLiteAppMatch;

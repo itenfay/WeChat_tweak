@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, UIScrollView, WCFinderLiveStarterSwitchModeItem;
 @protocol WCFinderLiveStarterSwitchModeDelegate;
@@ -23,7 +24,6 @@
     WCFinderLiveStarterSwitchModeItem *_item;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveStarterSwitchModeItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) NSArray *cellArray; // @synthesize cellArray=_cellArray;
@@ -50,4 +50,3 @@
 - (void)createCellArray;
 
 @end
-

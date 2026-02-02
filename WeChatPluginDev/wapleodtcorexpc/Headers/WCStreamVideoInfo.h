@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_streamVideoWording;
 + (void)PBArrayAdd_streamVideoTitle;
 + (void)PBArrayAdd_streamVideoUrl;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *streamVideoAdUxInfo; // @synthesize streamVideoAdUxInfo=_streamVideoAdUxInfo;
 @property(retain, nonatomic) NSString *streamVideoPublishId; // @synthesize streamVideoPublishId=_streamVideoPublishId;
 @property(retain, nonatomic) NSString *streamVideoThumbUrl; // @synthesize streamVideoThumbUrl=_streamVideoThumbUrl;

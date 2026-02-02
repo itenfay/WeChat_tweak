@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, UIButton, UIImageView;
 
 @interface WCC2CHDImageExpireSheetView
@@ -15,7 +17,6 @@
     UIButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) MMUIButton *jumpButton; // @synthesize jumpButton=_jumpButton;
 @property(retain, nonatomic) MMUILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
@@ -28,4 +29,3 @@
 - (id)initWithType:(int)arg1;
 
 @end
-

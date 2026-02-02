@@ -16,7 +16,6 @@
     NSArray *_tabListData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *tabListData; // @synthesize tabListData=_tabListData;
 @property(retain, nonatomic) NSMutableArray *tabButtons; // @synthesize tabButtons=_tabButtons;
 @property(retain, nonatomic) UIView *tabUnderLine; // @synthesize tabUnderLine=_tabUnderLine;

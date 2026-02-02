@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSVirtualMachine, MMWebOptimJSContextTaskLoader, NSMutableDictionary, NSString;
 
 @interface MMWebOptimJSContextTaskMgr
@@ -12,7 +14,6 @@
     JSVirtualMachine *_jsVirtualMachine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSVirtualMachine *jsVirtualMachine; // @synthesize jsVirtualMachine=_jsVirtualMachine;
 @property(retain, nonatomic) NSMutableDictionary *dicTaskId2Task; // @synthesize dicTaskId2Task=_dicTaskId2Task;
 @property(retain, nonatomic) MMWebOptimJSContextTaskLoader *taskLoader; // @synthesize taskLoader=_taskLoader;
@@ -38,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

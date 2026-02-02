@@ -12,7 +12,6 @@
     NSArray *_tabInfoArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *tabInfoArray; // @synthesize tabInfoArray=_tabInfoArray;
 
 @end

@@ -26,7 +26,6 @@
     WCPayFollowCardBDMchCgi *_followMchCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cancelByOpenApi; // @synthesize cancelByOpenApi=_cancelByOpenApi;
 @property(retain, nonatomic) WCPayFollowCardBDMchCgi *followMchCgi; // @synthesize followMchCgi=_followMchCgi;
 @property(retain, nonatomic) MMVoidCallback *m_failCallback; // @synthesize m_failCallback=_m_failCallback;

@@ -19,7 +19,6 @@
     double _imageScale;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double imageScale; // @synthesize imageScale=_imageScale;
 @property(nonatomic) unsigned int uiPlayTimes; // @synthesize uiPlayTimes=_uiPlayTimes;
 @property(nonatomic) unsigned int dataSize; // @synthesize dataSize=_dataSize;

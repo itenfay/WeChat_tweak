@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_localID;
 + (void)PBArrayAdd_chatName;
 + (void)PBArrayAdd_MD5;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastReadTime; // @synthesize lastReadTime=_lastReadTime;
 @property(nonatomic) unsigned int localID; // @synthesize localID=_localID;
 @property(retain, nonatomic) NSString *chatName; // @synthesize chatName=_chatName;

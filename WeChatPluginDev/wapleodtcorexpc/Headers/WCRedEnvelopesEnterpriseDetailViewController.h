@@ -28,7 +28,6 @@
     ContactUpdateHelper *_m_senderNickNameHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactUpdateHelper *m_senderNickNameHelper; // @synthesize m_senderNickNameHelper=_m_senderNickNameHelper;
 @property(nonatomic) unsigned int m_uiStatFromScene; // @synthesize m_uiStatFromScene;
 @property(nonatomic) _Bool m_bEnterpriseRedEnvelopes; // @synthesize m_bEnterpriseRedEnvelopes;

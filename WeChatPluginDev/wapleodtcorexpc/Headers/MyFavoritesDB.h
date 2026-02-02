@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCTDatabase, WCTTable;
 
@@ -17,7 +18,6 @@
     WCTTable *m_tableMusic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *m_tableMusic; // @synthesize m_tableMusic;
 @property(retain, nonatomic) WCTTable *m_tableTagItem; // @synthesize m_tableTagItem;
 @property(retain, nonatomic) WCTTable *m_tableFileRetainCount; // @synthesize m_tableFileRetainCount;
@@ -98,4 +98,3 @@
 - (_Bool)insertFavMusicByMusicId:(id)arg1 localFavId:(unsigned int)arg2;
 
 @end
-

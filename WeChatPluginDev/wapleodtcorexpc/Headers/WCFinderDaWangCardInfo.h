@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDateFormatter, NSString, WCFinderDaWangResponseBusiness;
 
@@ -18,7 +19,6 @@
     NSString *_currentSeqId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *currentSeqId; // @synthesize currentSeqId=_currentSeqId;
 @property(copy, nonatomic) NSString *lastIPV6; // @synthesize lastIPV6=_lastIPV6;
 @property(copy, nonatomic) NSString *lastIPV4; // @synthesize lastIPV4=_lastIPV4;
@@ -38,4 +38,3 @@
 - (id)init;
 
 @end
-

@@ -48,7 +48,6 @@
     MMTableView *m_tableView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didChangeVCHierarchy; // @synthesize didChangeVCHierarchy=_didChangeVCHierarchy;
 @property(nonatomic) unsigned int m_eFilterType; // @synthesize m_eFilterType=_m_eFilterType;
 @property(retain, nonatomic) MMTableView *m_tableView; // @synthesize m_tableView;

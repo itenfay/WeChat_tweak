@@ -15,7 +15,6 @@
     struct CGRect _faceRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mediaFilePath; // @synthesize mediaFilePath=_mediaFilePath;
 @property(nonatomic) struct CGRect faceRect; // @synthesize faceRect=_faceRect;
 @property(nonatomic) float zScore; // @synthesize zScore=_zScore;

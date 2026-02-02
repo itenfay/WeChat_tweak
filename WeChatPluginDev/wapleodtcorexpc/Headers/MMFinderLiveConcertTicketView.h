@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, NSArray, UIImageView, UILabel;
 @protocol MMFinderLiveConcertTicketViewDelegate;
@@ -40,7 +41,6 @@
     UIImageView *_externalNavigationBarRightChevronView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *externalNavigationBarRightChevronView; // @synthesize externalNavigationBarRightChevronView=_externalNavigationBarRightChevronView;
 @property(retain, nonatomic) MMUIButton *externalNavigationButton; // @synthesize externalNavigationButton=_externalNavigationButton;
 @property(retain, nonatomic) UIImageView *externalNavigationBarIconView; // @synthesize externalNavigationBarIconView=_externalNavigationBarIconView;
@@ -82,4 +82,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

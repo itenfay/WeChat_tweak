@@ -17,7 +17,6 @@
     MMMusicNoDotSelectItemDisplayViewBgView *_bgView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInLongSelectedStatus; // @synthesize isInLongSelectedStatus=_isInLongSelectedStatus;
 @property(retain, nonatomic) MMMusicNoDotSelectItemDisplayViewBgView *bgView; // @synthesize bgView=_bgView;
 @property(retain, nonatomic) MMMusicNoDotSelectItemView *curSelectedItemView; // @synthesize curSelectedItemView=_curSelectedItemView;

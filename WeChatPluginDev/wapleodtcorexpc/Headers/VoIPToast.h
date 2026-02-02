@@ -19,7 +19,6 @@
 
 + (id)constructVoIPToast:(id)arg1 delta:(double)arg2 type:(unsigned long long)arg3;
 + (id)constructVoIPToast:(id)arg1 delta:(double)arg2 type:(unsigned long long)arg3 isDiff:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDiff; // @synthesize isDiff=_isDiff;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) _Bool hasShowedBefore; // @synthesize hasShowedBefore=_hasShowedBefore;

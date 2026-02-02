@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSDictionary, NSString, UIColor;
 
@@ -20,7 +21,6 @@
     CDUnknownBlockType _afterFlutterUISetup;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType afterFlutterUISetup; // @synthesize afterFlutterUISetup=_afterFlutterUISetup;
 @property(nonatomic) double halfScreenMaxHeightRatio; // @synthesize halfScreenMaxHeightRatio=_halfScreenMaxHeightRatio;
 @property(nonatomic) double halfScreenHeightRatio; // @synthesize halfScreenHeightRatio=_halfScreenHeightRatio;
@@ -33,4 +33,3 @@
 - (id)init;
 
 @end
-

@@ -16,7 +16,6 @@
     NSString *_fullUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fullUrl; // @synthesize fullUrl=_fullUrl;
 @property(retain, nonatomic) NSString *weappShareUrl; // @synthesize weappShareUrl=_weappShareUrl;
 @property(retain, nonatomic) NSString *weappPagePath; // @synthesize weappPagePath=_weappPagePath;

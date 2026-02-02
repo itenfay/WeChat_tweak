@@ -12,7 +12,6 @@
     NSString *_preloadData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *preloadData; // @synthesize preloadData=_preloadData;
 
 @end

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CMessageWrap, EditImageAttr, EditImageIntialView, FavoritesItem, ForwardMessageLogicController, MMLoadingView, NSString, UIImage, UIViewController, WCActionSheet;
 @protocol EditImageForwardAndEditLogicDelegate;
@@ -30,7 +31,6 @@
     unsigned long long _editImageCompletion;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEmoticonBoardSearchEnabled; // @synthesize isEmoticonBoardSearchEnabled=_isEmoticonBoardSearchEnabled;
 @property(nonatomic) unsigned long long editImageCompletion; // @synthesize editImageCompletion=_editImageCompletion;
 @property(nonatomic) int editImageScene; // @synthesize editImageScene=_editImageScene;
@@ -75,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

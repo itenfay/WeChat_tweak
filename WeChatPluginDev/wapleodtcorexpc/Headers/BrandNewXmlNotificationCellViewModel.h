@@ -11,7 +11,6 @@
 }
 
 + (_Bool)canCreateViewModelWithMsgWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandNewXMLNotification *notification; // @synthesize notification=_notification;
 @property(readonly, nonatomic) NSString *webPageUrl;
 - (id)messageText;

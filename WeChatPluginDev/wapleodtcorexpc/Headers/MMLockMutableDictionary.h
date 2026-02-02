@@ -12,7 +12,6 @@
 }
 
 + (id)dictionaryWithMutableDictionary:(id)arg1;
-- (void).cxx_destruct;
 - (int)count;
 - (void)removeObjectsForKeys:(id)arg1;
 - (void)removeAllObjects;

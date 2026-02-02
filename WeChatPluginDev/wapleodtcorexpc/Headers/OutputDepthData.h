@@ -19,7 +19,6 @@
     long long _capture_time;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float averageAngle; // @synthesize averageAngle=_averageAngle;
 @property(nonatomic) float offset; // @synthesize offset=_offset;
 @property(nonatomic) float median; // @synthesize median=_median;

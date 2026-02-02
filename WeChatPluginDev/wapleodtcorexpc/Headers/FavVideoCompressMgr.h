@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString;
 
 @interface FavVideoCompressMgr
@@ -12,7 +14,6 @@
     int m_retryTime;
 }
 
-- (void).cxx_destruct;
 - (CDUnknownBlockType)getCompressCallbackBlock;
 - (void)startCompressVideo;
 - (_Bool)tryCompressVideo:(id)arg1 IsPriority:(_Bool)arg2;
@@ -29,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

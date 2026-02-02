@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, UIPercentDrivenInteractiveTransition, UIView, UIViewController, WCFinderTransitionAnimatorList, WCFinderTransitionUserInfo;
 @protocol UIViewControllerContextTransitioning, WCFinderMinimizeGestureAnimatorDelegate;
@@ -36,7 +37,6 @@
     struct CGRect _fromViewInitialFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long animCnt; // @synthesize animCnt=_animCnt;
 @property(nonatomic) _Bool animationRunning; // @synthesize animationRunning=_animationRunning;
 @property(nonatomic) _Bool forceMakeFinish; // @synthesize forceMakeFinish=_forceMakeFinish;
@@ -90,4 +90,3 @@
 @property(readonly) Class superclass;
 
 @end
-

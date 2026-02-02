@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIImage.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSObject, YYSentinel;
 @protocol OS_dispatch_semaphore, YYImageDelegate;
@@ -26,7 +27,6 @@
 + (id)imageWithBlock:(CDUnknownBlockType)arg1 prefertSize:(struct CGSize)arg2;
 + (id)imageWithUIImage:(id)arg1;
 + (id)imageWithBlock:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDynamicImg; // @synthesize isDynamicImg=_isDynamicImg;
 @property(retain, nonatomic) UIImage *decodeImageDM; // @synthesize decodeImageDM=_decodeImageDM;
 @property(retain, nonatomic) UIImage *decodeImageLM; // @synthesize decodeImageLM=_decodeImageLM;
@@ -44,4 +44,3 @@
 - (id)initWithBlock:(CDUnknownBlockType)arg1 prefertSize:(struct CGSize)arg2;
 
 @end
-

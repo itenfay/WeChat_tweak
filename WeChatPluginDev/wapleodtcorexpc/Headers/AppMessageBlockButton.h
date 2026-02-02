@@ -11,7 +11,6 @@
     MMUIViewController *_baseViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *baseViewController; // @synthesize baseViewController=_baseViewController;
 @property(retain, nonatomic) CMessageWrap *messageWrap; // @synthesize messageWrap=_messageWrap;
 - (void)onTemplateMsgConnectionChange:(unsigned int)arg1;

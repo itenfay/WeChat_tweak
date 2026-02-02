@@ -12,7 +12,6 @@
     WCFinderCustomPanelSheet *_panelSheet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderCustomPanelSheet *panelSheet; // @synthesize panelSheet=_panelSheet;
 @property(retain, nonatomic) WCTableViewManager *tableViewManager; // @synthesize tableViewManager=_tableViewManager;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;

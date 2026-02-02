@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol WCPlayerCoreAdapterDelegate;
@@ -17,7 +18,6 @@
 + (void)makeSureLocalServiceActiveWithCompletion:(CDUnknownBlockType)arg1;
 + (id)SharedInstance;
 + (void)SetupWithDelegate:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool openPlayerLog; // @synthesize openPlayerLog=_openPlayerLog;
 @property __weak id <WCPlayerCoreAdapterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)logWithLevel:(int)arg1 tommfile:(_Bool)arg2 module:(const char *)arg3 file:(const char *)arg4 function:(const char *)arg5 line:(unsigned long long)arg6 message:(id)arg7;
@@ -34,4 +34,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, FinderLiveBoxId, MMFinderLiveCommentTableViewCell, MMLiveCommentDataDictCache, MMLiveCommentDataItem, MMLiveCommentDataMgr, MMLiveCommentPerformanceEventReport, MMLiveCommentPerformanceStateReport, MMLiveCommentTableViewTopItem, MMLiveCommentVMState, MMLiveTaskId, MMLiveTopCommentActionObj, MMTimer, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableString, NSString, NSTimer, UITableView, UIView, WCDisplayMetrics, WCLoopMetricsCollector;
 @protocol OS_dispatch_queue;
@@ -120,7 +121,6 @@
     MMLiveCommentVMState *_commentVMState;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveCommentVMState *commentVMState; // @synthesize commentVMState=_commentVMState;
 @property(retain, nonatomic) WCLoopMetricsCollector *cellFrameMetricsCollector; // @synthesize cellFrameMetricsCollector=_cellFrameMetricsCollector;
 @property(nonatomic) _Bool startLoadActualComments; // @synthesize startLoadActualComments=_startLoadActualComments;
@@ -520,4 +520,3 @@
 @property(readonly) Class superclass;
 
 @end
-

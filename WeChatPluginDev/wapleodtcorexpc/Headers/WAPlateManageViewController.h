@@ -22,7 +22,6 @@
     long long _currentDeleteIdx;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool firstIn; // @synthesize firstIn=_firstIn;
 @property(nonatomic) long long currentDeleteIdx; // @synthesize currentDeleteIdx=_currentDeleteIdx;
 @property(nonatomic) long long currentEditIdx; // @synthesize currentEditIdx=_currentEditIdx;

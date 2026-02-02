@@ -20,7 +20,6 @@
     _Bool m_disableAutoFixLastMsg;
 }
 
-- (void).cxx_destruct;
 - (void)checkSessionLastMsgUpdate:(id)arg1;
 - (long long)getSessionLastMsgId:(id)arg1;
 - (void)removeSessionLastMsgRecords:(id)arg1;

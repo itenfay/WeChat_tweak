@@ -19,7 +19,6 @@
     double _buttonHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double buttonHeight; // @synthesize buttonHeight=_buttonHeight;
 @property(nonatomic) double buttonTitleSpacing; // @synthesize buttonTitleSpacing=_buttonTitleSpacing;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;

@@ -21,7 +21,6 @@
 + (id)satelliteOnlineDirectoryPath;
 + (id)engineLogDirectoryPath;
 + (id)vectorDataOnlineDirectoryPath;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *businessKey; // @synthesize businessKey=_businessKey;
 @property(retain, nonatomic) NSBundle *QMapKitBundle; // @synthesize QMapKitBundle=_QMapKitBundle;
 @property(copy, nonatomic) NSString *configDirectoryPath; // @synthesize configDirectoryPath=_configDirectoryPath;

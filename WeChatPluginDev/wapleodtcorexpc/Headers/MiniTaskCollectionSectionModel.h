@@ -20,7 +20,6 @@
 }
 
 + (id)sectionWithType:(long long)arg1 title:(id)arg2 cellModels:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cellModels; // @synthesize cellModels=_cellModels;
 @property(nonatomic) _Bool canLoadMore; // @synthesize canLoadMore=_canLoadMore;
 @property(nonatomic) _Bool isEditing; // @synthesize isEditing=_isEditing;

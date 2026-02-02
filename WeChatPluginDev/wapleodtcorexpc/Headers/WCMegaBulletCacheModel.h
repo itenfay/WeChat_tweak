@@ -19,7 +19,6 @@
 }
 
 + (double)preLoadDuration;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *existedTag; // @synthesize existedTag=_existedTag;
 @property(retain, nonatomic) NSMutableDictionary *tasks; // @synthesize tasks=_tasks;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

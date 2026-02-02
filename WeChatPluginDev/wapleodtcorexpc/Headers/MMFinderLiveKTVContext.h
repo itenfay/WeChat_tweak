@@ -14,7 +14,6 @@
     id <MMLiveUniqueTaskId> _taskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMLiveUniqueTaskId> taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) UIColor *mainWidgetsColor; // @synthesize mainWidgetsColor=_mainWidgetsColor;
 - (void)updateMainWidgetsColor:(id)arg1;

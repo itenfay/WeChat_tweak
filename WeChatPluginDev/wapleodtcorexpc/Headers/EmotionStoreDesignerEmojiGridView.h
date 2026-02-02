@@ -18,7 +18,6 @@
 
 + (void)calNumOfItemInOneLine:(long long *)arg1 ItemSideLen:(double *)arg2 ForTotalWidth:(double)arg3;
 + (id)configEmojiCell:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long maxNumOfEmojiToShow; // @synthesize maxNumOfEmojiToShow=_maxNumOfEmojiToShow;
 @property(nonatomic) long long maxLineNum; // @synthesize maxLineNum=_maxLineNum;
 @property(retain, nonatomic) NSArray *emojiInfos; // @synthesize emojiInfos=_emojiInfos;

@@ -24,7 +24,6 @@
     MultiMediaUploadBaseState *_state;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultiMediaUploadBaseState *state; // @synthesize state=_state;
 @property(nonatomic) _Bool isHadUploadData; // @synthesize isHadUploadData=_isHadUploadData;
 @property(nonatomic) _Bool isStopped; // @synthesize isStopped=_isStopped;

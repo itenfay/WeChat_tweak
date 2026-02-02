@@ -13,7 +13,6 @@
     SEL m_getSafetyInfoNextStepSEL;
 }
 
-- (void).cxx_destruct;
 - (void)onTipsShowInfoChangeWithPathKey:(id)arg1;
 - (void)setupDeepLinkConfig;
 - (id)rightValueForCellIsHas:(_Bool)arg1 IsOpen:(_Bool)arg2;

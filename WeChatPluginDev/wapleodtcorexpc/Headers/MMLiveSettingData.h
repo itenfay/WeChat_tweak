@@ -36,7 +36,6 @@
 + (void)PBArrayAdd_attendLotteryIdCache;
 + (void)PBArrayAdd_isPolicyForAudienceConfirmed;
 + (void)PBArrayAdd_isPolicyForAnchorConfirmed;
-- (void).cxx_destruct;
 @property(retain, nonatomic) LiveKTVAudioSettingCacheInfo *ktvAudioSettingCacheInfoV2; // @synthesize ktvAudioSettingCacheInfoV2=_ktvAudioSettingCacheInfoV2;
 @property(retain, nonatomic) LiveKTVAudioSettingCacheInfo *ktvAudioSettingCacheInfoNew; // @synthesize ktvAudioSettingCacheInfoNew=_ktvAudioSettingCacheInfoNew;
 @property(retain, nonatomic) LiveKTVAudioSettingCacheInfo *ktvAudioSettingCacheInfo; // @synthesize ktvAudioSettingCacheInfo=_ktvAudioSettingCacheInfo;

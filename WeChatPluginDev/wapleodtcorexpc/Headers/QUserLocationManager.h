@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, QLocationManager, QLocationMarkerWrapper, QMapContext;
 @protocol QUserLocationManagerDelegate;
@@ -17,7 +18,6 @@
 }
 
 + (id)correctLocation:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) QLocationMarkerWrapper *locationMarkerWrapper; // @synthesize locationMarkerWrapper=_locationMarkerWrapper;
 @property(retain, nonatomic) QLocationManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) __weak id <QUserLocationManagerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -59,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

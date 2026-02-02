@@ -17,7 +17,6 @@
     NSMutableArray *_spriteImages;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *spriteImages; // @synthesize spriteImages=_spriteImages;
 @property(retain, nonatomic) UIImage *spriteImage; // @synthesize spriteImage=_spriteImage;
 @property(retain, nonatomic) NSString *spriteImageUrl; // @synthesize spriteImageUrl=_spriteImageUrl;

@@ -17,7 +17,6 @@
     UIImageView *m_backgroundImageView;
 }
 
-- (void).cxx_destruct;
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)onChangeLanguage;
 - (void)initView;

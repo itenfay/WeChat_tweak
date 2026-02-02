@@ -24,7 +24,6 @@
 
 + (double)titleAreaHeight;
 + (double)cellHeightForWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *voiceOverElements; // @synthesize voiceOverElements=_voiceOverElements;
 @property(retain, nonatomic) UIImage *defaultSnapshot; // @synthesize defaultSnapshot=_defaultSnapshot;
 @property(retain, nonatomic) CAGradientLayer *longVideoGradientLayer; // @synthesize longVideoGradientLayer=_longVideoGradientLayer;

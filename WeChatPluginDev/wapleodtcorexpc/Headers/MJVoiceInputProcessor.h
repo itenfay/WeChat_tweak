@@ -30,7 +30,6 @@
 
 + (id)float32DataWithSInt16Data:(id)arg1;
 + (id)adjustVolumeForPCMData:(id)arg1 withGain:(float)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJVoiceInputDenoiser *denoiser; // @synthesize denoiser=_denoiser;
 @property(nonatomic) unsigned long long denoiseType; // @synthesize denoiseType=_denoiseType;
 @property(retain, nonatomic) MJVocalAdjustmentCache *vocalAdjustmentCache; // @synthesize vocalAdjustmentCache=_vocalAdjustmentCache;

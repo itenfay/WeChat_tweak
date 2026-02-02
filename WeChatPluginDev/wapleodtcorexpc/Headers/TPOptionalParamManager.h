@@ -14,7 +14,6 @@
 }
 
 + (id)shaderManager;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *paramValueDic; // @synthesize paramValueDic=_paramValueDic;
 @property(retain, nonatomic) NSMutableDictionary *paramNameDic; // @synthesize paramNameDic=_paramNameDic;
 - (id)getParamKeyArray;

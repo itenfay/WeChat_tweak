@@ -35,7 +35,6 @@
     id <WXGMigrationServerLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WXGMigrationServerLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)p_notifyOnMainThreadCurrentSession:(unsigned long long)arg1 totalSession:(unsigned long long)arg2;
 - (void)p_alertOnMainthread:(unsigned long long)arg1;

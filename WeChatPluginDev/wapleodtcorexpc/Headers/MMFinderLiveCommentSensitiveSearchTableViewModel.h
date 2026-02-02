@@ -15,7 +15,6 @@
     NSMutableArray *_sensitiveResultDataItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sensitiveResultDataItems; // @synthesize sensitiveResultDataItems=_sensitiveResultDataItems;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <MMFinderLiveCommentSensitiveSearchTableDelegate> delegate; // @synthesize delegate=_delegate;

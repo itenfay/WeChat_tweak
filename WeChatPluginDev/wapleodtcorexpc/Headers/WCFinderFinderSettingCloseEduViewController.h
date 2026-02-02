@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class RichTextView, UIButton, UIImageView, UILabel;
 @protocol WCFinderFinderSettingCloseEduViewControllerDelegate;
 
@@ -16,7 +18,6 @@
     UIButton *_closeButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) RichTextView *descTextView; // @synthesize descTextView=_descTextView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -27,4 +28,3 @@
 - (void)viewDidLoad;
 
 @end
-

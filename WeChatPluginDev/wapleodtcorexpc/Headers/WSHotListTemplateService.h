@@ -10,7 +10,6 @@
     WSHotListContainerView *_hotListView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WSHotListContainerView *hotListView; // @synthesize hotListView=_hotListView;
 - (void)onSearchConfigDataUpdated;
 - (unsigned long long)entranceExptValue;

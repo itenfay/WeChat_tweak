@@ -19,7 +19,6 @@
     QQuadTree *_quadTree;
 }
 
-- (void).cxx_destruct;
 
 @end
 

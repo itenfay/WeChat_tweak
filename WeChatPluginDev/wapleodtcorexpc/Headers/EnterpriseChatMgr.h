@@ -11,7 +11,6 @@
     NSMutableSet *m_pendingMarkMsgRead;
 }
 
-- (void).cxx_destruct;
 - (void)requestInviteShareInfo:(id)arg1;
 - (void)onBizTransferResult:(int)arg1 errorMsg:(id)arg2 cmd:(unsigned int)arg3 bodyData:(id)arg4 mainBrandUserName:(id)arg5;
 - (void)handleBizTransfer:(id)arg1;

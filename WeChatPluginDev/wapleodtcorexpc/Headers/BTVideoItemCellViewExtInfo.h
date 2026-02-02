@@ -14,7 +14,6 @@
     NSString *_videoCurrentSnapshotBase64Str;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int autoPlayId; // @synthesize autoPlayId=_autoPlayId;
 @property(retain, nonatomic) NSString *videoCurrentSnapshotBase64Str; // @synthesize videoCurrentSnapshotBase64Str=_videoCurrentSnapshotBase64Str;
 @property(nonatomic) double videoInitialTime; // @synthesize videoInitialTime=_videoInitialTime;

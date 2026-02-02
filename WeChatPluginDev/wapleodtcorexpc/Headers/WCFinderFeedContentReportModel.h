@@ -14,7 +14,6 @@
     PicStats *_picStat;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PicStats *picStat; // @synthesize picStat=_picStat;
 @property(retain, nonatomic) NSMutableArray *jumpInfoReportList; // @synthesize jumpInfoReportList=_jumpInfoReportList;
 @property(nonatomic) _Bool hasShowInHotArea; // @synthesize hasShowInHotArea=_hasShowInHotArea;

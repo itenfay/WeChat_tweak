@@ -14,7 +14,6 @@
     NSURL *_curURL;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *curURL; // @synthesize curURL=_curURL;
 @property(nonatomic) __weak id <WXGRoamCustomDiskBaseLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)uploadFileInner:(unsigned long long)arg1 processId:(long long)arg2 localPath:(id)arg3 remotePath:(id)arg4;

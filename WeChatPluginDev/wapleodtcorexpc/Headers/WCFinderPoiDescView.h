@@ -17,7 +17,6 @@
     NSMutableArray *_headItemArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *headItemArray; // @synthesize headItemArray=_headItemArray;
 @property(retain, nonatomic) MMUIButton *expandButton; // @synthesize expandButton=_expandButton;
 @property(nonatomic) _Bool isExpandable; // @synthesize isExpandable=_isExpandable;

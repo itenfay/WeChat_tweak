@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_aggreSessionId;
 + (void)PBArrayAdd_positionY;
 + (void)PBArrayAdd_positionX;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long aggreSessionIdCreateTime; // @synthesize aggreSessionIdCreateTime=_aggreSessionIdCreateTime;
 @property(retain, nonatomic) NSString *aggreSessionId; // @synthesize aggreSessionId=_aggreSessionId;
 @property(nonatomic) double positionY; // @synthesize positionY=_positionY;

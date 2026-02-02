@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface FBSDKAppLinkUtility : NSObject
 {
@@ -13,4 +14,3 @@
 + (void)fetchDeferredAppLink:(CDUnknownBlockType)arg1;
 
 @end
-

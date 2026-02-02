@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSString;
 
@@ -14,7 +15,6 @@
     CDUnknownBlockType _redDotValidator;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType redDotValidator; // @synthesize redDotValidator=_redDotValidator;
 @property(retain, nonatomic) NSMutableSet *observingPaths; // @synthesize observingPaths=_observingPaths;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
@@ -32,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

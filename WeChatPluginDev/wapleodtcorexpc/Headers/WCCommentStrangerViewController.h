@@ -29,7 +29,6 @@
 + (void)removeOldText;
 + (void)writeOldText:(id)arg1;
 + (id)openOldText;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCommentStrangerViewControllerDelegate> delegate; // @synthesize delegate=m_delegate;
 @property(nonatomic) _Bool isSendTextOnly; // @synthesize isSendTextOnly=m_bSendTextOnly;
 @property(nonatomic) unsigned int source; // @synthesize source;

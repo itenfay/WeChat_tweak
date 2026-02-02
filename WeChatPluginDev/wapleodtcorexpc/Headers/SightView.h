@@ -48,7 +48,6 @@
     struct CGSize _iconViewSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShouldResumeWhenSeekEnd; // @synthesize bShouldResumeWhenSeekEnd=_bShouldResumeWhenSeekEnd;
 @property(nonatomic) _Bool bUseVideoStreamPlayView; // @synthesize bUseVideoStreamPlayView=_bUseVideoStreamPlayView;
 @property(nonatomic) _Bool wasPlayingBeforeClearPlayerView; // @synthesize wasPlayingBeforeClearPlayerView=_wasPlayingBeforeClearPlayerView;

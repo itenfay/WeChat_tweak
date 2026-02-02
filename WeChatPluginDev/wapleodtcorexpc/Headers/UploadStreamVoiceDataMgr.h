@@ -28,7 +28,6 @@
     NSMutableDictionary *_sequenceMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sequenceMap; // @synthesize sequenceMap=_sequenceMap;
 @property(retain, nonatomic) NSMutableSet *processingVoiceIds; // @synthesize processingVoiceIds=_processingVoiceIds;
 @property(nonatomic) double uploadInterval; // @synthesize uploadInterval=_uploadInterval;

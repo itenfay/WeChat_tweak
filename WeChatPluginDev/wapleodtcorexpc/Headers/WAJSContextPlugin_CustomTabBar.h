@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSString, UIColor, UIView, WeAppCustomTabbar;
 
 @interface WAJSContextPlugin_CustomTabBar
@@ -29,7 +31,6 @@
     NSMutableDictionary *_dicTabWebView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldIgnoreBottomSafeInset; // @synthesize shouldIgnoreBottomSafeInset=_shouldIgnoreBottomSafeInset;
 @property(nonatomic) _Bool needAdaptIpad; // @synthesize needAdaptIpad=_needAdaptIpad;
 @property(nonatomic) _Bool isTabbarVisible; // @synthesize isTabbarVisible=_isTabbarVisible;
@@ -106,4 +107,3 @@
 @property(readonly) Class superclass;
 
 @end
-

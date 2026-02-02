@@ -11,7 +11,6 @@
     DigitalCertLocalConfig *_digitalCertLocalConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DigitalCertLocalConfig *digitalCertLocalConfig; // @synthesize digitalCertLocalConfig=_digitalCertLocalConfig;
 @property(retain, nonatomic) NSString *m_digitalCertNo; // @synthesize m_digitalCertNo=_m_digitalCertNo;
 - (_Bool)hasCert:(id)arg1;

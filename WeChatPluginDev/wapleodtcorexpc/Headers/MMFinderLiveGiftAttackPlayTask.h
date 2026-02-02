@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveGiftAttackRewardPlayContext, MMFinderLiveGiftPlayItem, MMLiveTaskId, NSMutableDictionary, NSString;
 
@@ -30,7 +31,6 @@
     CDUnknownBlockType _aniamtionCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType aniamtionCompletion; // @synthesize aniamtionCompletion=_aniamtionCompletion;
 @property(copy, nonatomic) CDUnknownBlockType timeoutCallback; // @synthesize timeoutCallback=_timeoutCallback;
 @property(nonatomic) _Bool isPlayStart; // @synthesize isPlayStart=_isPlayStart;
@@ -82,4 +82,3 @@
 - (id)initWithGiftPlayItem:(id)arg1 liveTaskId:(id)arg2 identifier:(int)arg3;
 
 @end
-

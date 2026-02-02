@@ -18,7 +18,6 @@
     NSDictionary *_extraData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extraData; // @synthesize extraData=_extraData;
 @property(retain, nonatomic) NSString *headImageURL; // @synthesize headImageURL=_headImageURL;
 @property(nonatomic) unsigned int versionType; // @synthesize versionType=_versionType;

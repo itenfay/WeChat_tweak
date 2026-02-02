@@ -14,7 +14,6 @@
     NSAttributedString *_progressDescription;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSAttributedString *progressDescription; // @synthesize progressDescription=_progressDescription;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) MMFinderLivePkTaskedBonusTaskItem *taskItem; // @synthesize taskItem=_taskItem;

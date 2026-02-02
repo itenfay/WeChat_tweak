@@ -13,7 +13,6 @@
     MMListenCategoryItem *_category;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMListenCategoryItem *category; // @synthesize category=_category;
 @property(retain, nonatomic) NSArray *audios; // @synthesize audios=_audios;
 

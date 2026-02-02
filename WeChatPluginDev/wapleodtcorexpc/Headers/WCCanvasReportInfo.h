@@ -32,7 +32,6 @@
     NSString *_viewId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *viewId; // @synthesize viewId=_viewId;
 @property(nonatomic) unsigned long long canvasId; // @synthesize canvasId=_canvasId;
 @property(nonatomic) unsigned int originScene; // @synthesize originScene=_originScene;

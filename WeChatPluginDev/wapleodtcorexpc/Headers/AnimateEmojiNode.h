@@ -13,7 +13,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1 resDir:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ScreenEffectNode *screenEffect; // @synthesize screenEffect=_screenEffect;
 @property(retain, nonatomic) NSString *animFile; // @synthesize animFile=_animFile;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;

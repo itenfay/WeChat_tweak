@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJTemplateAsyncExportInfo, NSString, OMJMaasCore, OMJMusicInfo, OMJTemplateInfo, UIImage;
 
 @interface MJTemplateCompositeTask
@@ -16,7 +18,6 @@
     UIImage *_coverImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *coverImage; // @synthesize coverImage=_coverImage;
 @property(retain, nonatomic) OMJMusicInfo *musicInfo; // @synthesize musicInfo=_musicInfo;
 @property(retain, nonatomic) OMJTemplateInfo *templateInfo; // @synthesize templateInfo=_templateInfo;
@@ -52,4 +53,3 @@
 - (id)initWithTaskId:(id)arg1 maasCore:(id)arg2 asyncExportInfo:(id)arg3 templateInfo:(id)arg4 musicInfo:(id)arg5 exportFilePath:(id)arg6;
 
 @end
-

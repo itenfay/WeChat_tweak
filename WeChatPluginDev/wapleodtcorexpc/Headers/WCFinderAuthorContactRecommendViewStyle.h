@@ -16,7 +16,6 @@
 }
 
 + (id)defaultStyle;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *nicknameColor; // @synthesize nicknameColor=_nicknameColor;
 @property(retain, nonatomic) UIFont *nicknameFont; // @synthesize nicknameFont=_nicknameFont;
 @property(nonatomic) double authIconSize; // @synthesize authIconSize=_authIconSize;

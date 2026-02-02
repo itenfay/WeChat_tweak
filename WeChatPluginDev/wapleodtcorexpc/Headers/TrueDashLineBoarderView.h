@@ -14,7 +14,6 @@
     MMDynamicColor *_color;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMDynamicColor *color; // @synthesize color=_color;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double lineLength; // @synthesize lineLength=_lineLength;

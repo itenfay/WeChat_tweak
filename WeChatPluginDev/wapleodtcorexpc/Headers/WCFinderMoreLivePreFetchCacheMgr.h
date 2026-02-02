@@ -20,7 +20,6 @@
 + (unsigned int)GetHomePageResponseFlag;
 + (_Bool)saveLiveTabsInfoCache:(id)arg1 scene:(unsigned long long)arg2;
 + (id)GetLiveTabsInfoCacheWithScene:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *aggrecardThemePrefetchConfDict; // @synthesize aggrecardThemePrefetchConfDict=_aggrecardThemePrefetchConfDict;
 @property(retain, nonatomic) NSMutableDictionary *prefetchL2Caches; // @synthesize prefetchL2Caches=_prefetchL2Caches;
 @property(retain, nonatomic) NSMutableDictionary *firstScreenCaches; // @synthesize firstScreenCaches=_firstScreenCaches;

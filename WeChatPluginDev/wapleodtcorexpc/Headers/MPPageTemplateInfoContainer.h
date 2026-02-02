@@ -18,7 +18,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_checkInterval;
 + (void)PBArrayAdd_templateInfoDic;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int checkInterval; // @synthesize checkInterval=_checkInterval;
 @property(retain, nonatomic) NSMutableDictionary *templateInfoDic; // @synthesize templateInfoDic=_templateInfoDic;
 - (void)setTemplateInfo:(id)arg1;

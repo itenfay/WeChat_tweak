@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveFlowActionBase;
 
@@ -15,9 +16,7 @@
 + (id)createWithActionFactory:(CDUnknownBlockType)arg1;
 + (id)createWithActionInstance:(id)arg1;
 + (id)createWithActionClass:(Class)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionFactory; // @synthesize actionFactory=_actionFactory;
 @property(readonly, nonatomic) MMLiveFlowActionBase *action;
 
 @end
-

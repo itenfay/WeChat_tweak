@@ -21,7 +21,6 @@
     UIButton *_acceptButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *acceptButton; // @synthesize acceptButton=_acceptButton;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *micIconView; // @synthesize micIconView=_micIconView;

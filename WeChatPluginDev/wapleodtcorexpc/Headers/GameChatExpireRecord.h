@@ -16,7 +16,6 @@
 }
 
 + (id)modelFromJsonStr:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double maxAge; // @synthesize maxAge=_maxAge;
 @property(nonatomic) double recordTime; // @synthesize recordTime=_recordTime;
 @property(retain, nonatomic) NSString *recordKey; // @synthesize recordKey=_recordKey;

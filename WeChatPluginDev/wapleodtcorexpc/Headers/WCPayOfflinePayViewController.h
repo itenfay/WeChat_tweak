@@ -72,7 +72,6 @@
     WCPayOfflineEnablePageTipsView *_enableTipsView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsUpdateCodeAfterSetPayment; // @synthesize bIsUpdateCodeAfterSetPayment=_bIsUpdateCodeAfterSetPayment;
 @property(retain, nonatomic) WCPayOfflineEnablePageTipsView *enableTipsView; // @synthesize enableTipsView=_enableTipsView;
 @property(nonatomic) _Bool bIsCaptureWhenViewDisappear; // @synthesize bIsCaptureWhenViewDisappear=_bIsCaptureWhenViewDisappear;

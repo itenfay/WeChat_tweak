@@ -18,7 +18,6 @@
 }
 
 + (id)fromServerObj:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productImgUrl; // @synthesize productImgUrl=_productImgUrl;
 @property(nonatomic) unsigned int price; // @synthesize price=_price;
 @property(retain, nonatomic) NSString *sellerUserName; // @synthesize sellerUserName=_sellerUserName;

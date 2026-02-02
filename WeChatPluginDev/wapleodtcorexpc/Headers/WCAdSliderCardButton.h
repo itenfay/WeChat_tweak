@@ -14,7 +14,6 @@
     WCAdCardBtnInfo *_clickActionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardBtnInfo *clickActionInfo; // @synthesize clickActionInfo=_clickActionInfo;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *icon; // @synthesize icon=_icon;

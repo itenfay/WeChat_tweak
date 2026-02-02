@@ -18,7 +18,6 @@
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)fromXML:(struct XmlReaderNode_t *)arg1 basicWidth:(int)arg2 basicRootFontSize:(int)arg3 influentData:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicFeedTemplateExtraInfo *templateExtraInfo; // @synthesize templateExtraInfo=_templateExtraInfo;
 @property(retain, nonatomic) WCAdDynamicFeedConfigInfo *configInfo; // @synthesize configInfo=_configInfo;
 @property(retain, nonatomic) NSArray *animations; // @synthesize animations=_animations;

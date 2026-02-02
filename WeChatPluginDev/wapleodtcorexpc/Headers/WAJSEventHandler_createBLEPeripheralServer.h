@@ -10,7 +10,6 @@
     NSString *m_serverID;
 }
 
-- (void).cxx_destruct;
 - (void)onBluetoothDidStartPeripheralServer:(id)arg1 errMsg:(id)arg2 errCode:(int)arg3 appid:(id)arg4 state:(long long)arg5;
 - (id)bleInstance;
 - (void)handleJSEvent:(id)arg1;

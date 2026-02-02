@@ -25,7 +25,6 @@
     WCFinderWechatMentionCellViewModel *_showProfileViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderWechatMentionCellViewModel *showProfileViewModel; // @synthesize showProfileViewModel=_showProfileViewModel;
 @property(nonatomic) double enterTime; // @synthesize enterTime=_enterTime;
 @property(nonatomic) long long unreadNotifyCount; // @synthesize unreadNotifyCount=_unreadNotifyCount;

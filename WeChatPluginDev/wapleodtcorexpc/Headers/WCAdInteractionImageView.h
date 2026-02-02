@@ -10,7 +10,6 @@
     MMWebImageView *_imageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *imageView; // @synthesize imageView=_imageView;
 - (void)organizeSubContentViews;
 

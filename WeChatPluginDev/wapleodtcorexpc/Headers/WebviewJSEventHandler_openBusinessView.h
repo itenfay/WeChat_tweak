@@ -10,7 +10,6 @@
     WAContactGetter *_contactGetter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAContactGetter *contactGetter; // @synthesize contactGetter=_contactGetter;
 - (void)dealloc;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

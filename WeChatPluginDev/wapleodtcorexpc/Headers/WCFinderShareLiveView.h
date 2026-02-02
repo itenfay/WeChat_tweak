@@ -29,7 +29,6 @@
 
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
 + (struct CGSize)sizeForContentItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveShareCardExposeReportAdapter *exposeReportAdapter; // @synthesize exposeReportAdapter=_exposeReportAdapter;
 @property(retain, nonatomic) NSDate *startAutoPlay; // @synthesize startAutoPlay=_startAutoPlay;
 @property(retain, nonatomic) UIImageView *bottomGradientView; // @synthesize bottomGradientView=_bottomGradientView;

@@ -12,7 +12,6 @@
 }
 
 + (struct CGSize)preferSizeForCellFrame:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *buttonLabel; // @synthesize buttonLabel=_buttonLabel;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 - (void)didMoveToWindow;

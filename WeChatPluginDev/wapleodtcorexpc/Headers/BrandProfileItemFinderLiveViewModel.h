@@ -12,7 +12,6 @@
     struct CGSize _liveTitleSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize liveTitleSize; // @synthesize liveTitleSize=_liveTitleSize;
 @property(retain, nonatomic) NSMutableArray *liveTitleLabelStyles; // @synthesize liveTitleLabelStyles=_liveTitleLabelStyles;
 @property(retain, nonatomic) BrandFinderLiveDataWrapper *liveDataWrapperCache; // @synthesize liveDataWrapperCache=_liveDataWrapperCache;

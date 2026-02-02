@@ -37,7 +37,6 @@
     struct AudioStreamBasicDescription _fileFormat;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double packetDuraion; // @synthesize packetDuraion=_packetDuraion;
 @property(nonatomic) _Bool needCalculateByProcessedPackets; // @synthesize needCalculateByProcessedPackets=_needCalculateByProcessedPackets;
 @property(nonatomic) unsigned long long processedPacketsSizeTotal; // @synthesize processedPacketsSizeTotal=_processedPacketsSizeTotal;

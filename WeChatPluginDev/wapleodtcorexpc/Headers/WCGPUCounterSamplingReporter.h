@@ -17,7 +17,6 @@
     WCGPUCounterSamplingConfig *_samplingConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCGPUCounterSamplingConfig *samplingConfig; // @synthesize samplingConfig=_samplingConfig;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *saveGPUSamplingDumpToLibraryQueue; // @synthesize saveGPUSamplingDumpToLibraryQueue=_saveGPUSamplingDumpToLibraryQueue;
 @property(retain, nonatomic) MMStackReportConnection *reportConnection; // @synthesize reportConnection=_reportConnection;

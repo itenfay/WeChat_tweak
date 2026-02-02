@@ -10,7 +10,6 @@
     NSMutableDictionary *m_dict;
 }
 
-- (void).cxx_destruct;
 - (void)doReport:(id)arg1;
 - (void)onPreloadTaskComplete:(id)arg1 preloadDuration:(unsigned int)arg2 preloadDataSize:(unsigned int)arg3 preloadVideoSize:(unsigned int)arg4;
 - (void)onPreloadTaskCreate:(id)arg1 data:(id)arg2;

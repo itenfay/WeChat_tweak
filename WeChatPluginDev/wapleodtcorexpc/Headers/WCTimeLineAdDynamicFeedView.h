@@ -42,7 +42,6 @@
 + (id)fetchAnimationViewForView:(id)arg1 isFromTimeline:(_Bool)arg2 dataItem:(id)arg3;
 + (id)findRootContainerViewForMediaHolder:(id)arg1;
 + (double)heightForMedia:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdBulletScreenLogic *adBulletScreenLogic; // @synthesize adBulletScreenLogic=_adBulletScreenLogic;
 @property(retain, nonatomic) WCAdBulletScreenView *adBulletScreenView; // @synthesize adBulletScreenView=_adBulletScreenView;
 @property(retain, nonatomic) MMUIView *adBulletScreenContainerView; // @synthesize adBulletScreenContainerView=_adBulletScreenContainerView;

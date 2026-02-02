@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMCPLabel, MMFinderLiveRewardGiftItem, MMFinderLiveTask, MMFinderLiveTaskId, MMUILabel, NSArray, NSIndexPath, UIImageView;
 
 @interface MMLiveRewardGiftAttackContactBubbleView
@@ -20,7 +22,6 @@
 
 + (double)GetEstimateHeight;
 + (double)GetEstimateWidth:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *selectContactArrowIconView; // @synthesize selectContactArrowIconView=_selectContactArrowIconView;
 @property(retain, nonatomic) MMCPLabel *firstGiftAttackContactNickNameLabel; // @synthesize firstGiftAttackContactNickNameLabel=_firstGiftAttackContactNickNameLabel;
 @property(retain, nonatomic) NSArray *giftAttackContactHeadImageViews; // @synthesize giftAttackContactHeadImageViews=_giftAttackContactHeadImageViews;
@@ -43,4 +44,3 @@
 - (id)initWithTaskId:(id)arg1 frame:(struct CGRect)arg2 orientation:(long long)arg3;
 
 @end
-

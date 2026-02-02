@@ -14,7 +14,6 @@
     struct CLLocationCoordinate2D _coordinate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *uid; // @synthesize uid=_uid;

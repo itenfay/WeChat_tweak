@@ -26,7 +26,6 @@
 
 + (void)removeCache;
 + (id)getPreloadInstance;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableSendViewAppearJSEvent; // @synthesize enableSendViewAppearJSEvent=_enableSendViewAppearJSEvent;
 @property(nonatomic) long long searchSessionID; // @synthesize searchSessionID=_searchSessionID;
 @property(retain, nonatomic) SearchCgiGuideConfig *vertInfo; // @synthesize vertInfo=_vertInfo;

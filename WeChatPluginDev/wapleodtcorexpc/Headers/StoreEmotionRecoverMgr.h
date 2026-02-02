@@ -16,7 +16,6 @@
     NSMutableDictionary *_serverDic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int wwanAutoDownloadThreshold; // @synthesize wwanAutoDownloadThreshold=_wwanAutoDownloadThreshold;
 @property(retain, nonatomic) NSMutableDictionary *serverDic; // @synthesize serverDic=_serverDic;
 @property(retain, nonatomic) NSMutableArray *xmlTaskArray; // @synthesize xmlTaskArray=_xmlTaskArray;

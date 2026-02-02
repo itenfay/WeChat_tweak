@@ -15,7 +15,6 @@
     MMLiteAppViewController *_toLiteAppVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBeingDismissed; // @synthesize isBeingDismissed=_isBeingDismissed;
 @property(nonatomic) int businessType; // @synthesize businessType=_businessType;
 @property(nonatomic) __weak MMLiteAppViewController *toLiteAppVC; // @synthesize toLiteAppVC=_toLiteAppVC;

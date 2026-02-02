@@ -53,7 +53,6 @@
 
 + (id)cellModelFromChatroomMessage:(id)arg1;
 + (Class)classForMessageType:(unsigned long long)arg1 subMessageType:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isHighLight) _Bool highLight; // @synthesize highLight=_highLight;
 @property(nonatomic) unsigned long long bindCellModelSeq; // @synthesize bindCellModelSeq=_bindCellModelSeq;
 @property(nonatomic) _Bool hasTimeNode; // @synthesize hasTimeNode=_hasTimeNode;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, MBWeakProxy, MagicBrushPerformance, NSCondition, NSMutableDictionary, NSString, NSThread;
 @protocol MagicBrushCoreJSStuffDelegate, MagicBrushCoreResourceDelegate, MagicBrushCoreScreenCanvasDelegate;
@@ -29,7 +30,6 @@
 }
 
 + (_Bool)supportRenderdoc;
-- (void).cxx_destruct;
 @property(nonatomic) struct CmdBufferResultHelperOC *cmdbuffer_helper; // @synthesize cmdbuffer_helper=_cmdbuffer_helper;
 @property(retain, nonatomic) MBWeakProxy *weakProxy; // @synthesize weakProxy=_weakProxy;
 @property(nonatomic) _Bool isFirstNativeRenderScreenCanvasCreated; // @synthesize isFirstNativeRenderScreenCanvasCreated=_isFirstNativeRenderScreenCanvasCreated;
@@ -115,4 +115,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -10,7 +10,6 @@
     NSString *_ocrText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ocrText; // @synthesize ocrText=_ocrText;
 
 @end

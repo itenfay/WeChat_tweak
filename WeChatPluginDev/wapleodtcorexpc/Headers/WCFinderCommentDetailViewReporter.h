@@ -12,7 +12,6 @@
     WCFinderCommentDetailViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCommentDetailViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (id)_viewIDForViewType:(unsigned long long)arg1;
 - (id)_eventIDForEvent:(unsigned long long)arg1;

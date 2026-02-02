@@ -14,7 +14,6 @@
     MMFinderLiveAnchorCustomizeRewardResourceUrl *_customImageResource;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardResourceUrl *customImageResource; // @synthesize customImageResource=_customImageResource;
 @property(retain, nonatomic) NSString *customText; // @synthesize customText=_customText;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardSkinItem *selectedSkinItem; // @synthesize selectedSkinItem=_selectedSkinItem;

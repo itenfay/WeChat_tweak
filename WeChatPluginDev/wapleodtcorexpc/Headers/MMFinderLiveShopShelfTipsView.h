@@ -12,7 +12,6 @@
     MMWebImageView *_imageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) MMFinderLiveShopShelfHintInfo *info; // @synthesize info=_info;

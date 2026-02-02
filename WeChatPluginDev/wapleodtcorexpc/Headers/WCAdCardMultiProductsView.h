@@ -18,7 +18,6 @@
 }
 
 + (double)getHeightForDataItem:(id)arg1 maxWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardMultiProductsDisplayLink *positionDisplayLink; // @synthesize positionDisplayLink=_positionDisplayLink;
 @property(retain, nonatomic) ColorGradientView *rightGradientView; // @synthesize rightGradientView=_rightGradientView;
 @property(retain, nonatomic) ColorGradientView *bottomGradientView; // @synthesize bottomGradientView=_bottomGradientView;

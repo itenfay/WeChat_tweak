@@ -13,7 +13,6 @@
     UILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(nonatomic) long long curScene; // @synthesize curScene=_curScene;
 - (_Bool)shouldShowSpecailEntranceTip;

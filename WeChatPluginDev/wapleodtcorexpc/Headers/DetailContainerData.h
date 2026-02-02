@@ -15,7 +15,6 @@
     UIImage *_rightIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain) UIImage *rightIcon; // @synthesize rightIcon=_rightIcon;
 @property(retain) DetailSubIcon *subIcon; // @synthesize subIcon=_subIcon;
 @property(retain) RedDot *redDot; // @synthesize redDot=_redDot;

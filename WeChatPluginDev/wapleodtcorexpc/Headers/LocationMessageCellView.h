@@ -17,7 +17,6 @@
     _Bool m_enterBackground;
 }
 
-- (void).cxx_destruct;
 - (void)applicationWillEnterForeground;
 - (void)applicationDidEnterBackground;
 - (void)traitCollectionDidChange:(id)arg1;

@@ -26,7 +26,6 @@
 }
 
 + (id)currentDevice;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(copy, nonatomic) NSString *openid; // @synthesize openid=_openid;
 @property(copy, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;

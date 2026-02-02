@@ -38,7 +38,6 @@
     UILabel *_expiredTimeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *expiredTimeLabel; // @synthesize expiredTimeLabel=_expiredTimeLabel;
 @property(retain, nonatomic) UIView *rightUpTagView; // @synthesize rightUpTagView=_rightUpTagView;
 @property(retain, nonatomic) UILabel *descriptLabel; // @synthesize descriptLabel=_descriptLabel;

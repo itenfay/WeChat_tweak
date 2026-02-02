@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CLLocation, LocationRetriever, NSCache, NSMutableArray, NSString, WCFinderCachedLocation, WCFinderGetLocationToken, WCFinderMMKVKeyModel;
 @protocol WCFinderLocationManagerDelegate;
@@ -25,7 +26,6 @@
     WCFinderMMKVKeyModel *_mmkv;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMMKVKeyModel *mmkv; // @synthesize mmkv=_mmkv;
 @property(nonatomic) double enterBackgroundTimestamp; // @synthesize enterBackgroundTimestamp=_enterBackgroundTimestamp;
 @property(retain) NSMutableArray *complectionArray; // @synthesize complectionArray=_complectionArray;
@@ -76,4 +76,3 @@
 @property(readonly) Class superclass;
 
 @end
-

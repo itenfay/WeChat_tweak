@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSError, NSString, WCBGStorage;
 
 @interface WCCoverMasterStorageCGI
@@ -15,7 +17,6 @@
     WCBGStorage *_bgStorage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool usesOldDataForcibly; // @synthesize usesOldDataForcibly=_usesOldDataForcibly;
 @property(retain, nonatomic) WCBGStorage *bgStorage; // @synthesize bgStorage=_bgStorage;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -29,4 +30,3 @@
 - (id)initWithLanguage:(id)arg1;
 
 @end
-

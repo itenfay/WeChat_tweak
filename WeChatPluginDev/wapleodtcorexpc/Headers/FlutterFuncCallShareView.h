@@ -10,7 +10,6 @@
     NSMutableDictionary *_viewMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *viewMap; // @synthesize viewMap=_viewMap;
 - (void)onServiceClearData;
 - (void)onServiceInit;

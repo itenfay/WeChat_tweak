@@ -12,7 +12,6 @@
     id <RTELayoutManagerDelegate> _layoutDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <RTELayoutManagerDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
 - (id)storage;
 - (void)relayoutForContentRange:(struct _NSRange)arg1;

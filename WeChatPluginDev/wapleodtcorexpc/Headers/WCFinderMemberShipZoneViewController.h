@@ -21,7 +21,6 @@
     WCFinderMemberShipZoneReporter *_memberShipReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMemberShipZoneReporter *memberShipReporter; // @synthesize memberShipReporter=_memberShipReporter;
 @property(retain, nonatomic) WCFinderLiveAudienceNoticeReporter *liveReporter; // @synthesize liveReporter=_liveReporter;
 @property(retain, nonatomic) MMFinderLiveBuyTicketHandle *ticketHandle; // @synthesize ticketHandle=_ticketHandle;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderHandOffItem, NSMutableArray, NSString, UIImage, UILabel, UITableView, UIView, UIViewController, WCFinderAnimationLoadingView, WCFinderBulletGroupView, WCFinderExtStatsReporter, WCFinderFeedContentVM, WCFinderFeedFriendsLikeListViewController, WCFinderLandScapeReporter, WCFinderLandScapeVCParams, WCFinderLandScapeVideoDisplayView, WCFinderRefreshTableFooterView, WCFinderScrollActionSheet, WCFinderVideoDragProgressReporter;
 @protocol WCFinderCommentBaseViewProtocol, WCFinderLandScapeVideoViewDataSource, WCFinderLandScapeVideoViewDelegate;
 
@@ -38,7 +40,6 @@
     MMFinderHandOffItem *_finderHandoffItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderHandOffItem *finderHandoffItem; // @synthesize finderHandoffItem=_finderHandoffItem;
 @property(nonatomic) __weak WCFinderFeedFriendsLikeListViewController *tmpLikeListVC; // @synthesize tmpLikeListVC=_tmpLikeListVC;
 @property(retain, nonatomic) NSMutableArray *landScapeUIRefreshTaskQueue; // @synthesize landScapeUIRefreshTaskQueue=_landScapeUIRefreshTaskQueue;
@@ -261,4 +262,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -28,7 +28,6 @@
     double _resumeTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPreparing; // @synthesize isPreparing=_isPreparing;
 @property(nonatomic) _Bool isPendingPlay; // @synthesize isPendingPlay=_isPendingPlay;
 @property(nonatomic) _Bool bIsManualPaused; // @synthesize bIsManualPaused=_bIsManualPaused;

@@ -46,7 +46,6 @@
     long long _finderDownloadImageType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool sufferedFromBadNetwork; // @synthesize sufferedFromBadNetwork=_sufferedFromBadNetwork;
 @property(nonatomic) _Bool wasSuspended; // @synthesize wasSuspended=_wasSuspended;
 @property(nonatomic) long long finderDownloadImageType; // @synthesize finderDownloadImageType=_finderDownloadImageType;

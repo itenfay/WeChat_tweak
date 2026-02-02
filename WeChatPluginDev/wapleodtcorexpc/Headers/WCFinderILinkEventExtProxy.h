@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
 }
 
 + (id)proxyWithBlock:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType linkClickBlock; // @synthesize linkClickBlock=_linkClickBlock;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;
 - (void)addToTextView:(id)arg1;
@@ -28,4 +28,3 @@
 @property(readonly) Class superclass;
 
 @end
-

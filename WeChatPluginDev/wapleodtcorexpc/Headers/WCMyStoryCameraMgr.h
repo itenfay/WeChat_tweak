@@ -12,7 +12,6 @@
     EditStoryImageAttr *_storyAttr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EditStoryImageAttr *storyAttr; // @synthesize storyAttr=_storyAttr;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(retain, nonatomic) WCStoryPublishReportObj *publishReportObj; // @synthesize publishReportObj=_publishReportObj;

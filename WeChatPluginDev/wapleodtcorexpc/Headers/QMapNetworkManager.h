@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSIndexSet, QFoundationDataSafetyRules, QMapNetworkDomainProxy, QMapNetworkProcessorQueue, QMapNetworkSessionPool;
 
@@ -18,7 +19,6 @@
 
 + (id)manager;
 + (id)managerWithConnectionProxyDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSIndexSet *acceptableStatusCodes; // @synthesize acceptableStatusCodes=_acceptableStatusCodes;
 @property(retain, nonatomic) QMapNetworkSessionPool *sessionPool; // @synthesize sessionPool=_sessionPool;
 @property(retain) QFoundationDataSafetyRules *dataSafetyRules; // @synthesize dataSafetyRules=_dataSafetyRules;
@@ -37,4 +37,3 @@
 - (id)getNetworkErrorLocalizedDescription:(id)arg1;
 
 @end
-

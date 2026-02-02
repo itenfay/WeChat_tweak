@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMFinderLiveCreateLotteryDataItem, MMLiveLotteryGiftPacketsView, MMUIButton, MMUILabel, UIImageView, UIView;
 
 @interface MMFinderLiveCreateLotteryCell
@@ -24,7 +26,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bigCell; // @synthesize bigCell=_bigCell;
 @property(nonatomic) int prizeType; // @synthesize prizeType=_prizeType;
 @property(retain, nonatomic) MMLiveLotteryGiftPacketsView *lotteryGiftPacketsView; // @synthesize lotteryGiftPacketsView=_lotteryGiftPacketsView;
@@ -51,4 +52,3 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
-

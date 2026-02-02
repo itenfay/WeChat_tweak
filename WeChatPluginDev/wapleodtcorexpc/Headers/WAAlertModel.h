@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -21,7 +22,6 @@
     CDUnknownBlockType _showEvent;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType showEvent; // @synthesize showEvent=_showEvent;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) CDUnknownBlockType alertDidShowAction; // @synthesize alertDidShowAction=_alertDidShowAction;
@@ -36,4 +36,3 @@
 - (id)initWithTitle:(id)arg1 message:(id)arg2 okButton:(id)arg3 cancelButton:(id)arg4 okButtonClickedAction:(CDUnknownBlockType)arg5 cancelButtonClickedAction:(CDUnknownBlockType)arg6;
 
 @end
-

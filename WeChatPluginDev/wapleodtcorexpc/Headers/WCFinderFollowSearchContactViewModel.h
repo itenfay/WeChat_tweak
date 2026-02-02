@@ -23,7 +23,6 @@
     NSArray *_sections;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) WCFinderMentionSearchSection *moreSec; // @synthesize moreSec=_moreSec;
 @property(retain, nonatomic) WCFinderMentionSearchSection *followSec; // @synthesize followSec=_followSec;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class BrandDirectlyOperateContactLogic, FLTNewLifeCommonApi, FLTPreviewPictureCallbackApi, FlutterEventChannel, NSMutableSet, NSString, UIViewController, WCFinderDataItem;
 @protocol FlutterTextureRegistry;
@@ -24,7 +25,6 @@
 + (id)plugin;
 + (id)requestFromData:(id)arg1 pbClass:(Class)arg2;
 + (void)handleNewLifeFinderLikeFeed:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandDirectlyOperateContactLogic *brandOperateContactLogic; // @synthesize brandOperateContactLogic=_brandOperateContactLogic;
 @property(retain, nonatomic) WCFinderDataItem *detailLiveDataItem; // @synthesize detailLiveDataItem=_detailLiveDataItem;
 @property(retain, nonatomic) NSObject<FlutterTextureRegistry> *flutterTextureRegistery; // @synthesize flutterTextureRegistery=_flutterTextureRegistery;
@@ -135,4 +135,3 @@
 @property(readonly) Class superclass;
 
 @end
-

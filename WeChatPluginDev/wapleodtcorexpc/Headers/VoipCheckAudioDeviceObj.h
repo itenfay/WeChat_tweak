@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _audioDevicePluginCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType audioDevicePluginCallback; // @synthesize audioDevicePluginCallback=_audioDevicePluginCallback;
 @property(nonatomic) _Bool isUsingEarDevice; // @synthesize isUsingEarDevice=_isUsingEarDevice;
 - (void)checkExternalAudioDeviceState;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

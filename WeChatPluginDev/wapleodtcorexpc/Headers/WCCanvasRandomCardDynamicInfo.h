@@ -24,7 +24,6 @@
 + (id)generateCardDynamicInfoFromGiveHBCardInfo:(id)arg1;
 + (id)mergeRedEnvelopInfo:(id)arg1 withCardDynamicInfo:(id)arg2;
 + (id)mergeSocialInfo:(id)arg1 withCardDynamicInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *receiveUrl; // @synthesize receiveUrl=_receiveUrl;
 @property(nonatomic) int subCardType; // @synthesize subCardType=_subCardType;
 @property(retain, nonatomic) NSString *giveCardId; // @synthesize giveCardId=_giveCardId;

@@ -37,7 +37,6 @@
     PromptInfo *_promptInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int default_card_state; // @synthesize default_card_state=_default_card_state;
 @property(retain, nonatomic) PromptInfo *promptInfo; // @synthesize promptInfo=_promptInfo;
 @property(retain) WCPayLqpEntranceInfo *lqp_entrance_info; // @synthesize lqp_entrance_info=_lqp_entrance_info;

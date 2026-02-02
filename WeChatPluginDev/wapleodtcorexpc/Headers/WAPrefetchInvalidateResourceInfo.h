@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_invalidateContactTokens;
 + (void)PBArrayAdd_invalidateCodeTokens;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *invalidateContactTokens; // @synthesize invalidateContactTokens=_invalidateContactTokens;
 @property(retain, nonatomic) NSMutableDictionary *invalidateCodeTokens; // @synthesize invalidateCodeTokens=_invalidateCodeTokens;
 - (id)getPBPropertyTable;

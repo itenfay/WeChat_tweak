@@ -10,7 +10,6 @@
     NSMutableDictionary *_dicDownloadingURL;
 }
 
-- (void).cxx_destruct;
 - (void)OnCdnDownload:(id)arg1;
 - (void)handleJSEvent:(id)arg1;
 

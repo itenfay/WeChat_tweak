@@ -34,7 +34,6 @@
     NSMutableDictionary *_itemsUpdateTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *itemsUpdateTime; // @synthesize itemsUpdateTime=_itemsUpdateTime;
 @property(nonatomic) _Bool needLoadItemsUpdateTime; // @synthesize needLoadItemsUpdateTime=_needLoadItemsUpdateTime;
 @property(nonatomic) _Bool needSaveItemsUpdateTime; // @synthesize needSaveItemsUpdateTime=_needSaveItemsUpdateTime;

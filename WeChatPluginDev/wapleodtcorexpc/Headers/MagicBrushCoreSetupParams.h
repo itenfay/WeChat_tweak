@@ -16,7 +16,6 @@
     long long _enableParallelShaderCompile;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long enableParallelShaderCompile; // @synthesize enableParallelShaderCompile=_enableParallelShaderCompile;
 @property(retain, nonatomic) NSString *renderThreadName; // @synthesize renderThreadName=_renderThreadName;
 @property(nonatomic) _Bool autoHighFreshRate; // @synthesize autoHighFreshRate=_autoHighFreshRate;

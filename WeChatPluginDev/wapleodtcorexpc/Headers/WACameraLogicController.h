@@ -44,7 +44,6 @@
 
 + (_Bool)isAuthStatusOK;
 + (_Bool)needCheckRequestAuthAccess;
-- (void).cxx_destruct;
 @property(nonatomic) double maxScannerZoomFactor; // @synthesize maxScannerZoomFactor=_maxScannerZoomFactor;
 @property(nonatomic) _Bool muted; // @synthesize muted=_muted;
 @property(nonatomic) _Bool selfieMirror; // @synthesize selfieMirror=_selfieMirror;

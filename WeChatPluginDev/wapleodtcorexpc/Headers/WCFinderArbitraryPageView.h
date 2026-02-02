@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMNavBarInteractiveConfig, MMUIViewController, NSArray, NSMutableDictionary, NSString, UILabel, UIScrollView, UIViewController, WCFinderAnimationLoadingView, WCFinderArbitraryPageScrollProcess, WCFinderArbitraryResueItem, WCFinderTabSwitchView;
 @protocol WCFinderArbitraryPageViewDataDelegate, WCFinderArbitraryPageViewDataSource;
@@ -50,7 +51,6 @@
     struct CGSize _layoutSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) id *tmpPageInfos; // @synthesize tmpPageInfos=_tmpPageInfos;
 @property(nonatomic) __weak MMNavBarInteractiveConfig *navBarConfig; // @synthesize navBarConfig=_navBarConfig;
 @property(nonatomic) __weak UIView *vcTitleView; // @synthesize vcTitleView=_vcTitleView;
@@ -206,4 +206,3 @@
 @property(readonly) Class superclass;
 
 @end
-

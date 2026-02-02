@@ -21,7 +21,6 @@
     struct UIEdgeInsets _contentEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(nonatomic) struct UIEdgeInsets contentEdgeInsets; // @synthesize contentEdgeInsets=_contentEdgeInsets;
 @property(nonatomic) double contentSpacing; // @synthesize contentSpacing=_contentSpacing;

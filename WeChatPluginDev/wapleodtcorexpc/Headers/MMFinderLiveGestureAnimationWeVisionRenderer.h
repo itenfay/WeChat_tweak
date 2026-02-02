@@ -17,7 +17,6 @@
     NSMutableSet *_gestureDeduplicateSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *gestureDeduplicateSet; // @synthesize gestureDeduplicateSet=_gestureDeduplicateSet;
 @property(retain, nonatomic) NSMutableDictionary *animationResourceIdToRenderTaskMap; // @synthesize animationResourceIdToRenderTaskMap=_animationResourceIdToRenderTaskMap;
 @property(retain, nonatomic) NSMutableDictionary *renderScriptIdToRenderTaskMap; // @synthesize renderScriptIdToRenderTaskMap=_renderScriptIdToRenderTaskMap;

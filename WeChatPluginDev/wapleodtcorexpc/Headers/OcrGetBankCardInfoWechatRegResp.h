@@ -13,7 +13,6 @@
     NSData *_data_encrypt_key;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *data_encrypt_key; // @synthesize data_encrypt_key=_data_encrypt_key;
 @property(copy, nonatomic) NSNumber *errcode; // @synthesize errcode=_errcode;
 

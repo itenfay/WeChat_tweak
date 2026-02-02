@@ -15,7 +15,6 @@
     WCOPackageItem *_item_buy;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int purchaseRetCode; // @synthesize purchaseRetCode=_purchaseRetCode;
 @property(retain, nonatomic) WCOPackageItem *item_buy; // @synthesize item_buy=_item_buy;
 @property(retain, nonatomic) WCOutPurchasePackageCgi *purchaseCgi; // @synthesize purchaseCgi=_purchaseCgi;

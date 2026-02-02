@@ -21,7 +21,6 @@
 + (double)widthWithoutText;
 + (struct CGSize)packetAnimationSize;
 + (struct CGSize)sizeWithText:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *pagCountdownGradientBGLayer; // @synthesize pagCountdownGradientBGLayer=_pagCountdownGradientBGLayer;
 @property(retain, nonatomic) PAGView *pagPacketView; // @synthesize pagPacketView=_pagPacketView;
 @property(retain, nonatomic) LOTAnimationView *lotPacketView; // @synthesize lotPacketView=_lotPacketView;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderJumpInfo, FinderJumpInfo_LiteApp, FinderLiveBattleSettingInfo, FinderLiveGetPurchaseMicInfoResponse, FinderLiveLocation, FinderLiveMicInfo_Wording, FinderLivePurchaseMicConfig, MMFinderLiveAudioRoomConnectMicView, MMFinderLiveAudioRoomLocationGuideView, MMFinderLiveConnectMicAudienceApplyInfo, MMFinderLiveConnectMicAudienceApplyPageSheet, MMFinderLiveConnectMicFlowReporter, MMFinderLiveConnectMicLayoutModeSubtitleWrap, MMFinderLiveConnectMicOperationPanel, MMFinderLiveConnectMicPkPanel, MMFinderLiveConnectMicPkSelectionResult, MMFinderLiveConnectMicTeamPkPanel, MMFinderLiveConnectMicUser, MMFinderLiveFreeMicFeatureDescriptionPanel, MMFinderLiveMicInviteAudiencePanel, MMFinderLiveModifyMicSeatNamePanel, MMFinderLiveOperationView, MMFinderLivePaidConnectMicAudienceApplyInfo, MMFinderLivePaidConnectMicAudienceApplyPanel, MMFinderLivePaidConnectMicAudienceOperationPanel, MMFinderLivePaidConnectMicKeepAliveTipsView, MMFinderLivePreviewRelatedOperationView, MMFinderLiveTaskId, MMFinderLivedConnectMicAudiencePreviewCameraView, MMLiveAudienceConnectMicSessionDataReporter, MMLiveCachedConnectMicInfoBeforeSwitchCdnOrTrtc, MMLocatingCoordinateLogic, MMTimer, NSArray, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSString, OrderedDictionary, UIView, WCLiveActionSheet;
 @protocol MMFinderLiveConnectMicActionDelegate, MMLiveBeautyOperationPanelExternalClosing;
 
@@ -126,7 +128,6 @@
 + (unsigned long long)convertToMicUserAttrTypeFromConditionType:(unsigned long long)arg1;
 + (unsigned long long)timestampForPaidConnectMicUsageInMS;
 + (unsigned long long)timestampForPaidConnectMicUsageInSeconds;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int audienceDelayTimeInPaidMicCountdown; // @synthesize audienceDelayTimeInPaidMicCountdown=_audienceDelayTimeInPaidMicCountdown;
 @property(retain, nonatomic) MMFinderLivePaidConnectMicKeepAliveTipsView *keepAliveTipsView; // @synthesize keepAliveTipsView=_keepAliveTipsView;
 @property(retain, nonatomic) NSMutableSet *paidMicAutoDisconnectingSessionIdSet; // @synthesize paidMicAutoDisconnectingSessionIdSet=_paidMicAutoDisconnectingSessionIdSet;
@@ -801,4 +802,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -17,7 +17,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sepelateLine; // @synthesize sepelateLine=_sepelateLine;
 @property(retain, nonatomic) UIImageView *selectStateImg; // @synthesize selectStateImg=_selectStateImg;
 @property(retain, nonatomic) MMUILabel *stateLabel; // @synthesize stateLabel=_stateLabel;

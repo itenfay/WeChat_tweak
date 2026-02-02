@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveCommentDataAppendLogic;
 
 @interface MMFinderLiveCommentTableViewModel
@@ -20,7 +22,6 @@
     MMFinderLiveCommentDataAppendLogic *_commentDataAppendLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveCommentDataAppendLogic *commentDataAppendLogic; // @synthesize commentDataAppendLogic=_commentDataAppendLogic;
 @property(nonatomic) _Bool hasSuccessFetchRemoteDataAfterDisplay; // @synthesize hasSuccessFetchRemoteDataAfterDisplay=_hasSuccessFetchRemoteDataAfterDisplay;
 @property(nonatomic) _Bool hasSuccessLoadLocalDataAfterDisplay; // @synthesize hasSuccessLoadLocalDataAfterDisplay=_hasSuccessLoadLocalDataAfterDisplay;
@@ -69,4 +70,3 @@
 - (long long)commentCellFrameStyle;
 
 @end
-

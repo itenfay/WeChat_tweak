@@ -15,7 +15,6 @@
     DepositQueryDepositRequest *_m_queryDepositReuqest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DepositQueryDepositRequest *m_queryDepositReuqest; // @synthesize m_queryDepositReuqest=_m_queryDepositReuqest;
 @property unsigned long long m_currentRetryCount; // @synthesize m_currentRetryCount=_m_currentRetryCount;
 @property unsigned long long m_maxRetryCount; // @synthesize m_maxRetryCount=_m_maxRetryCount;

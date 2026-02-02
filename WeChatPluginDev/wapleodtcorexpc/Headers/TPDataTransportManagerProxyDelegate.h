@@ -14,7 +14,6 @@
     TPPlayerEventPublisher *_publisher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerEventPublisher *publisher; // @synthesize publisher=_publisher;
 @property(nonatomic) __weak id <TPProxyPlayDelegate> outerDelegate; // @synthesize outerDelegate=_outerDelegate;
 - (id)onPlayCallbackWithMessageType:(unsigned long long)arg1 ext1:(id)arg2 ext2:(id)arg3 ext3:(id)arg4 ext4:(id)arg5;

@@ -58,7 +58,6 @@
 + (id)getDarkUIModeBackgroundImageWithRank:(unsigned int)arg1;
 + (id)getRankImageWithRank:(unsigned int)arg1 size:(struct CGSize)arg2;
 + (struct CGSize)getGlobalRankSizeWithRank:(unsigned int)arg1 uiStyle:(long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *shiningConfigArray; // @synthesize shiningConfigArray=_shiningConfigArray;
 @property(retain, nonatomic) NSMutableArray *shiningStarImageViews; // @synthesize shiningStarImageViews=_shiningStarImageViews;
 @property(nonatomic) _Bool lightMask; // @synthesize lightMask=_lightMask;

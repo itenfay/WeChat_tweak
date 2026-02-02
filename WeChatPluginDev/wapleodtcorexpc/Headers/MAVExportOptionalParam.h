@@ -23,7 +23,6 @@
     id <TAVSourceSoftEncoderFactory> _encoderFactory;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool keepsProcessInBackground; // @synthesize keepsProcessInBackground=_keepsProcessInBackground;
 @property(retain, nonatomic) id <TAVSourceSoftEncoderFactory> encoderFactory; // @synthesize encoderFactory=_encoderFactory;
 @property(nonatomic, getter=isUseHDRToSDR) _Bool useHDRToSDR; // @synthesize useHDRToSDR=_useHDRToSDR;

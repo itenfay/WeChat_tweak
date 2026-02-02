@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_root;
 + (void)PBArrayAdd_entryPagePath;
 + (void)PBArrayAdd_desc;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *supportedMaterials; // @synthesize supportedMaterials=_supportedMaterials;
 @property(retain, nonatomic) NSArray *scopes; // @synthesize scopes=_scopes;
 @property(retain, nonatomic) NSString *root; // @synthesize root=_root;

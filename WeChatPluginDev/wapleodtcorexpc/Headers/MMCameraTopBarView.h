@@ -12,7 +12,6 @@
     NSMutableArray *_btnArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *btnArray; // @synthesize btnArray=_btnArray;
 - (void)layoutButtonElem;
 - (void)removeBtn:(id)arg1;

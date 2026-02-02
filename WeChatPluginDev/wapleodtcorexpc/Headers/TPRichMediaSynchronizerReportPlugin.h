@@ -23,7 +23,6 @@
     NSMutableDictionary *_callbackDataParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *callbackDataParams; // @synthesize callbackDataParams=_callbackDataParams;
 @property(retain, nonatomic) NSMutableArray *selectFeatureParams; // @synthesize selectFeatureParams=_selectFeatureParams;
 @property(nonatomic) long long prepareStartTimeMs; // @synthesize prepareStartTimeMs=_prepareStartTimeMs;

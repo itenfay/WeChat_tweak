@@ -15,7 +15,6 @@
     WCPayCreditPayQuestionStruct *m_oNextQuestionNode;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayCreditPayQuestionStruct *m_oNextQuestionNode; // @synthesize m_oNextQuestionNode;
 @property(retain, nonatomic) WCPayCreditPayQuestionStruct *m_oQuestionNode; // @synthesize m_oQuestionNode;
 @property(nonatomic) _Bool m_bTwoLevel; // @synthesize m_bTwoLevel;

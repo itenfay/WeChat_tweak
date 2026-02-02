@@ -60,7 +60,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCdnPreloadSuccess; // @synthesize isCdnPreloadSuccess=_isCdnPreloadSuccess;
 @property(nonatomic) _Bool isCdnPreload; // @synthesize isCdnPreload=_isCdnPreload;
 @property(retain, nonatomic) NSString *resourceUrl; // @synthesize resourceUrl=_resourceUrl;

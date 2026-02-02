@@ -16,7 +16,6 @@
     unsigned int m_lastUpdateAllGroupsTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_lastUpdateAllGroupsTime; // @synthesize m_lastUpdateAllGroupsTime;
 @property(retain, nonatomic) NSString *m_initFromPath; // @synthesize m_initFromPath;
 @property(retain, nonatomic) NSString *m_fromUsrName; // @synthesize m_fromUsrName;

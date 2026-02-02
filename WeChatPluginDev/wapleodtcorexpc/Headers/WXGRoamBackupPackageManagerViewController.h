@@ -16,7 +16,6 @@
     UIScrollView *_sheetView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *sheetView; // @synthesize sheetView=_sheetView;
 @property(retain, nonatomic) WXGRoamBackupPackageDetailCell *deviceCell; // @synthesize deviceCell=_deviceCell;
 @property(retain, nonatomic) WXGRoamBackupPackageDetailCell *recordCell; // @synthesize recordCell=_recordCell;

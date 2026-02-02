@@ -15,7 +15,6 @@
 }
 
 + (void)buildSongResourceInfo:(id)arg1 withResourceInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) int accompanyQuality; // @synthesize accompanyQuality=_accompanyQuality;
 @property(nonatomic) int songQuality; // @synthesize songQuality=_songQuality;
 @property(retain, nonatomic) NSMutableArray *resources; // @synthesize resources=_resources;

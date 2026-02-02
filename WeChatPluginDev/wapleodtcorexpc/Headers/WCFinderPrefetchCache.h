@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WXPBGeneratedMessage;
 
@@ -31,7 +32,6 @@
 + (void)PBArrayAdd_requestTime;
 + (void)PBArrayAdd_innerRequestData;
 + (void)PBArrayAdd_requestCls;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *innerResponseData; // @synthesize innerResponseData=_innerResponseData;
 @property(copy, nonatomic) NSString *responseCls; // @synthesize responseCls=_responseCls;
 @property(retain, nonatomic) NSData *innerRequestData; // @synthesize innerRequestData=_innerRequestData;
@@ -56,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

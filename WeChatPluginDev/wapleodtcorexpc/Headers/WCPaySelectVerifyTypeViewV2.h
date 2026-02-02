@@ -28,7 +28,6 @@
     double _minHeight;
 }
 
-- (void).cxx_destruct;
 @property double minHeight; // @synthesize minHeight=_minHeight;
 @property(retain) GetRealnameWordingRsp *wording; // @synthesize wording=_wording;
 @property long long guideType; // @synthesize guideType=_guideType;

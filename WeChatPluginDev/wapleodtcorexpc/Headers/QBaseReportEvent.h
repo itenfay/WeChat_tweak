@@ -13,7 +13,6 @@
     NSDictionary *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *params; // @synthesize params=_params;
 @property(copy, nonatomic) NSString *eventCode; // @synthesize eventCode=_eventCode;
 

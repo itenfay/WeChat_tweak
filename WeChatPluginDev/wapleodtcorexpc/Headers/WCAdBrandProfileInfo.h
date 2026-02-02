@@ -14,7 +14,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool openVideoTab; // @synthesize openVideoTab=_openVideoTab;
 @property(retain, nonatomic) NSString *brandUsername; // @synthesize brandUsername=_brandUsername;
 - (_Bool)isValid;

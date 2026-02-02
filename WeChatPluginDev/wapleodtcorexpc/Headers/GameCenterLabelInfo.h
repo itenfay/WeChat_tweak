@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_labelBgColor;
 + (void)PBArrayAdd_labelName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *labelBgColor; // @synthesize labelBgColor=_labelBgColor;
 @property(retain, nonatomic) NSString *labelName; // @synthesize labelName=_labelName;
 - (id)getPBPropertyTable;

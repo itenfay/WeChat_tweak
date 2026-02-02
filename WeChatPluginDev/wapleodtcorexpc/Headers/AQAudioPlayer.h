@@ -11,7 +11,6 @@
     NSString *mCachedTag;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mCachedTag; // @synthesize mCachedTag;
 - (void)autostop;
 - (void)stop;

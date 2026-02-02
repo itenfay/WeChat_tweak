@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BSTimelineFlutterViewController, CreateChatLogic, MFTitleView, MMLoadingView, MMSessionInfo, MMTimer, MMUIViewController, MainFrameCustomBarView, MainFrameHeaderLogic, MainFrameLogicController, MainFrameSectionFoldView, MainFrameTableView, MainFrameUnreadReporter, MainSessionEditingLogic, NSIndexPath, NSString, UIColor, UIDynamicAnimator, UIImageView, UIView, WAMainFrameTaskBarLogic, WAMainFrameTaskBarView, WAMainFrameTopHeaderView, WCSearchBar;
 @protocol BrandTLViewControllerProtocol, UIViewControllerPreviewing;
 
@@ -71,7 +73,6 @@
     MainFrameCustomBarView *_fakeNavBarView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool willAppearFromFailedMiniTaskPushAnimation; // @synthesize willAppearFromFailedMiniTaskPushAnimation=_willAppearFromFailedMiniTaskPushAnimation;
 @property(retain, nonatomic) MainFrameCustomBarView *fakeNavBarView; // @synthesize fakeNavBarView=_fakeNavBarView;
 @property(nonatomic) _Bool hasReportNavBarBroken; // @synthesize hasReportNavBarBroken=_hasReportNavBarBroken;
@@ -426,4 +427,3 @@
 @property(readonly) Class superclass;
 
 @end
-

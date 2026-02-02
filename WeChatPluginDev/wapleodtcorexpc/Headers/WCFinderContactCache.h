@@ -15,7 +15,6 @@
     WCFinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) _Bool hasSetSex; // @synthesize hasSetSex=_hasSetSex;
 @property(nonatomic) _Bool hasSetLocation; // @synthesize hasSetLocation=_hasSetLocation;

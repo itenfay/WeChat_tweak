@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveHalfScreenTitleBarView, MMLiveOnlineUserLogic, MMLoadingView, NSString, UIScrollView, UIView;
 @protocol MMLiveOnlineStateViewDelegate;
 
@@ -20,7 +22,6 @@
     double _previousPanPositionY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double previousPanPositionY; // @synthesize previousPanPositionY=_previousPanPositionY;
 @property(nonatomic) double viewTopAtPanBegin; // @synthesize viewTopAtPanBegin=_viewTopAtPanBegin;
 @property(retain, nonatomic) MMLoadingView *loadingView; // @synthesize loadingView=_loadingView;
@@ -62,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

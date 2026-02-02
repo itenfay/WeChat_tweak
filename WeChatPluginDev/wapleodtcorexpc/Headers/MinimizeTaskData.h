@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MinimizeTaskContainerInfo, MinimizeTaskExtInfo, NSArray, NSData, NSString;
 
 @interface MinimizeTaskData
@@ -131,7 +133,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sizeChangedAnimAnchorPoint; // @synthesize sizeChangedAnimAnchorPoint=_sizeChangedAnimAnchorPoint;
 @property(nonatomic) _Bool canMaximizeForStateView; // @synthesize canMaximizeForStateView=_canMaximizeForStateView;
 @property(retain, nonatomic) MinimizeTaskContainerInfo *containerInfo; // @synthesize containerInfo=_containerInfo;
@@ -194,4 +195,3 @@
 @property(readonly) Class superclass;
 
 @end
-

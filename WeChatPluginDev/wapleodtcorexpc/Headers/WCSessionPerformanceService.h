@@ -14,7 +14,6 @@
 }
 
 + (id)sharedPerformanceService;
-- (void).cxx_destruct;
 - (id)getConfigMMKV;
 - (id)getDataMMKV;
 - (id)getPerformanceJsonString:(id)arg1;

@@ -14,7 +14,6 @@
 }
 
 + (id)viewWithFrame:(struct CGRect)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVSampleBufferDisplayLayer *customRenderLayer; // @synthesize customRenderLayer=_customRenderLayer;
 - (void)drawPixelBufferRef:(struct __CVBuffer *)arg1;
 - (void)clear;

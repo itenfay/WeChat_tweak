@@ -20,7 +20,6 @@
     unsigned long long _downloadCompleteOperateType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long downloadCompleteOperateType; // @synthesize downloadCompleteOperateType=_downloadCompleteOperateType;
 @property(retain, nonatomic) UIImageView *thumbImageView; // @synthesize thumbImageView=_thumbImageView;
 @property(retain, nonatomic) WCPlayerView *playerView; // @synthesize playerView=_playerView;

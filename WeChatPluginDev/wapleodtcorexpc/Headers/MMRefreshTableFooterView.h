@@ -14,7 +14,6 @@
     _Bool _m_bTop;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bTop; // @synthesize m_bTop=_m_bTop;
 @property(nonatomic) double m_refreshThresholdOffset; // @synthesize m_refreshThresholdOffset;
 @property(nonatomic) double m_heightLimit; // @synthesize m_heightLimit;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TXDeviceManager : NSObject
 {
@@ -13,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType speakerTestBlock; // @synthesize speakerTestBlock=_speakerTestBlock;
 @property(copy, nonatomic) CDUnknownBlockType micTestBlock; // @synthesize micTestBlock=_micTestBlock;
 - (void)onTestSpeakerVolume:(unsigned int)arg1;
@@ -33,4 +33,3 @@
 - (void)setInternelDeviceManager:(weak_ptr_65a257e1)arg1;
 
 @end
-

@@ -15,7 +15,6 @@
 + (id)countWordingForCoupon:(id)arg1;
 + (double)preferHeightForCoupon:(id)arg1 width:(double)arg2;
 + (id)countWordingFont;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *platformLabel; // @synthesize platformLabel=_platformLabel;
 @property(retain, nonatomic) UILabel *countLabel; // @synthesize countLabel=_countLabel;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;

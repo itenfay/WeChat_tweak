@@ -15,7 +15,6 @@
     UIButton *_acceptBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *acceptBtn; // @synthesize acceptBtn=_acceptBtn;
 @property(nonatomic) long long curSelectIndex; // @synthesize curSelectIndex=_curSelectIndex;
 @property(retain, nonatomic) NSArray *redPacketArray; // @synthesize redPacketArray=_redPacketArray;

@@ -19,7 +19,6 @@
     UIView *_headerView;
 }
 
-- (void).cxx_destruct;
 @property(retain) UIView *headerView; // @synthesize headerView=_headerView;
 @property unsigned long long loadingState; // @synthesize loadingState=_loadingState;
 @property(retain) MMUIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;

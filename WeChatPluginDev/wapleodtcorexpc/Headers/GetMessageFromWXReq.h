@@ -11,7 +11,6 @@
     NSString *country;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *country; // @synthesize country;
 @property(retain, nonatomic) NSString *lang; // @synthesize lang;
 - (id)init;

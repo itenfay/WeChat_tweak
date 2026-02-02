@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAShapeLayer, UIView, WCFinderSelectMenuView;
 
 @interface WCFinderPopUpSelectMenuViewController
@@ -15,7 +17,6 @@
     CDUnknownBlockType _selection;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType selection; // @synthesize selection=_selection;
 @property(copy, nonatomic) CDUnknownBlockType didHideCallback; // @synthesize didHideCallback=_didHideCallback;
 @property(copy, nonatomic) CDUnknownBlockType willHideCallback; // @synthesize willHideCallback=_willHideCallback;
@@ -30,4 +31,3 @@
 - (id)initWithItems:(id)arg1 selectedIndex:(unsigned long long)arg2;
 
 @end
-

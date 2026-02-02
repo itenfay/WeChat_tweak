@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderLiveIconImageView;
 
@@ -14,7 +15,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveIconImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(copy, nonatomic) CDUnknownBlockType clickStartLiveBlock; // @synthesize clickStartLiveBlock=_clickStartLiveBlock;
 - (void)startLive;
@@ -23,4 +23,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

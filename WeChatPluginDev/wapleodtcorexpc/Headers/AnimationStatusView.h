@@ -14,7 +14,6 @@
     NSString *_nsAppending;
 }
 
-- (void).cxx_destruct;
 - (id)getText;
 - (void)stopAnimation;
 - (void)startAnimation;

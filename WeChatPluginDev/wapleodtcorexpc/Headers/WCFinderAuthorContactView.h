@@ -18,7 +18,6 @@
 }
 
 + (double)viewHeightWithStyle:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double nsFWidth; // @synthesize nsFWidth=_nsFWidth;
 @property(retain, nonatomic) UILabel *authProfessionLabel; // @synthesize authProfessionLabel=_authProfessionLabel;
 @property(retain, nonatomic) WCFinderAuthorContactViewStyle *style; // @synthesize style=_style;

@@ -13,7 +13,6 @@
     unsigned int m_uiAmount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiAmount; // @synthesize m_uiAmount;
 @property(retain, nonatomic) NSString *m_nsAppName; // @synthesize m_nsAppName;
 - (void)encodeWithCoder:(id)arg1;

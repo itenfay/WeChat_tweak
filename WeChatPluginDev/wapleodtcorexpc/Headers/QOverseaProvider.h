@@ -12,7 +12,6 @@
     NSString *_name;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)clearCache;
 - (id)logoImage;

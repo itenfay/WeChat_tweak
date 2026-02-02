@@ -27,7 +27,6 @@
     double _numberFontSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double numberFontSize; // @synthesize numberFontSize=_numberFontSize;
 @property(retain, nonatomic) UILabel *numberLabel; // @synthesize numberLabel=_numberLabel;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;

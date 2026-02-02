@@ -22,7 +22,6 @@
 + (id)identifier;
 + (double)preferLabelLeft;
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *playingStateImg; // @synthesize playingStateImg=_playingStateImg;
 @property(retain, nonatomic) MMUIView *playingAnimatedBgView; // @synthesize playingAnimatedBgView=_playingAnimatedBgView;
 @property(retain, nonatomic) PAGView *playingAnimatedView; // @synthesize playingAnimatedView=_playingAnimatedView;

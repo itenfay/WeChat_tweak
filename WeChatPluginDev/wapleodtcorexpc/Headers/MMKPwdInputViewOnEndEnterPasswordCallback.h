@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onEndEnterPassword:(id)arg1 passwordHashData:(id)arg2;
 - (id)initWithCpp:(const void *)arg1;
 

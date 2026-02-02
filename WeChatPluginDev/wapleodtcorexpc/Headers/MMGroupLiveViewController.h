@@ -14,7 +14,6 @@
     NSString *_lastFromVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastFromVC; // @synthesize lastFromVC=_lastFromVC;
 @property(nonatomic) long long previousOrientation; // @synthesize previousOrientation=_previousOrientation;
 @property(nonatomic) long long orientationBeforeMinimize; // @synthesize orientationBeforeMinimize=_orientationBeforeMinimize;

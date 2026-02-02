@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSRecursiveLock, NSString;
 
@@ -209,4 +210,3 @@
 - (void)VoIPTermination_setIsInterrputted:(_Bool)arg1;
 
 @end
-

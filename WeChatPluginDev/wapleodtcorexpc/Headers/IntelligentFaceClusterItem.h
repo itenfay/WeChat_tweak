@@ -23,7 +23,6 @@
     struct CGRect _faceRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrL2NormFaceFeature; // @synthesize arrL2NormFaceFeature=_arrL2NormFaceFeature;
 @property(retain, nonatomic) NSArray *arrfacePoint; // @synthesize arrfacePoint=_arrfacePoint;
 @property(nonatomic) double faceImageHeight; // @synthesize faceImageHeight=_faceImageHeight;

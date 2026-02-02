@@ -21,7 +21,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasClickEventManager *clickManager; // @synthesize clickManager=_clickManager;
 @property(nonatomic) unsigned long long playActionState; // @synthesize playActionState=_playActionState;
 @property(nonatomic) _Bool componentHasInit; // @synthesize componentHasInit=_componentHasInit;

@@ -12,7 +12,6 @@
     NSMutableArray *_customHitViewArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *customHitViewArray; // @synthesize customHitViewArray=_customHitViewArray;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)addCustomHitView:(id)arg1;

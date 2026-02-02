@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_svrPatternHash;
 + (void)PBArrayAdd_version;
 + (void)PBArrayAdd_uin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *sign; // @synthesize sign=_sign;
 @property(nonatomic) unsigned int lockStatus; // @synthesize lockStatus=_lockStatus;
 @property(retain, nonatomic) NSData *svrPatternHash; // @synthesize svrPatternHash=_svrPatternHash;

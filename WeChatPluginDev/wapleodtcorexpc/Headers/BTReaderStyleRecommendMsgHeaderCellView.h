@@ -13,7 +13,6 @@
     _Bool _forceSetHighlight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceSetHighlight; // @synthesize forceSetHighlight=_forceSetHighlight;
 - (id)getAggregationLabelAccessibilityLabel;
 - (void)forceSetHighlight:(_Bool)arg1;

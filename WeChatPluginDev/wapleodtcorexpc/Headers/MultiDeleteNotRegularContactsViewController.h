@@ -30,7 +30,6 @@
     MMDeleteNotRegularContactLogic *_deleteNotRegularContactLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMDeleteNotRegularContactLogic *deleteNotRegularContactLogic; // @synthesize deleteNotRegularContactLogic=_deleteNotRegularContactLogic;
 @property(retain, nonatomic) ContactBatchModifyLogic *contactBatchModifyLogic; // @synthesize contactBatchModifyLogic=_contactBatchModifyLogic;
 @property(retain, nonatomic) MMUILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;

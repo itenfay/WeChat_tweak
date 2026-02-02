@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLRUCache, NSMutableArray, NSString, WCFinderJSApiPreloadFeedConfig;
 
@@ -23,7 +24,6 @@
 + (id)preloadFeedFromVC:(id)arg1 config:(id)arg2;
 + (id)preloadFeedFromVC:(id)arg1;
 + (void)invokePreloadFromParams:(id)arg1 vc:(id)arg2 callback:(CDUnknownBlockType)arg3 failback:(CDUnknownBlockType)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool invokeTimer; // @synthesize invokeTimer=_invokeTimer;
 @property(nonatomic) unsigned long long preFetchTime; // @synthesize preFetchTime=_preFetchTime;
 @property(retain, nonatomic) WCFinderJSApiPreloadFeedConfig *config; // @synthesize config=_config;
@@ -52,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -24,7 +24,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct circle_buffer pcm_delay_buffer; // @synthesize pcm_delay_buffer=_pcm_delay_buffer;
 @property(nonatomic) _Bool firstStartDetect; // @synthesize firstStartDetect=_firstStartDetect;
 @property(nonatomic) void *handle; // @synthesize handle=_handle;

@@ -13,7 +13,6 @@
     NSString *_moduleName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *moduleName; // @synthesize moduleName=_moduleName;
 @property(nonatomic) unsigned int packageType; // @synthesize packageType=_packageType;
 @property(nonatomic) unsigned int reportId; // @synthesize reportId=_reportId;

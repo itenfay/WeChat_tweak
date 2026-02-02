@@ -16,7 +16,6 @@
     WCAdWebStoreAnimatedTransitioning *_webStoreAnimatedTransitioning;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdWebStoreAnimatedTransitioning *webStoreAnimatedTransitioning; // @synthesize webStoreAnimatedTransitioning=_webStoreAnimatedTransitioning;
 @property(retain, nonatomic) SKStoreProductViewController *productViewController; // @synthesize productViewController=_productViewController;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogic; // @synthesize forwardLogic=_forwardLogic;

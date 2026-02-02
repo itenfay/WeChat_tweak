@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CMessageWrap, ForwardMessageLogicController, MMBarButtonItem, MMLoadingView, MMProgressViewEx, MMTableView, MMTimer, MMUIView, MMUIWindow, MMWebImageView, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSURLRequest, PAGView, ScanQRCodeLogicController, UIButton, UIImage, UIImageView, UIView, WCActionSheetWithScanWXCode, WCAdCanvasExtraParams, WCAdExpressionGestureJumpExtInfo, WCAdRandomPickCardLogic, WCAdvertiseInfo, WCCanvasActionSheet, WCCanvasArrowDownIcon, WCCanvasComponent, WCCanvasComponentItem, WCCanvasDynamicDataLoader, WCCanvasFloatActionBaseView, WCCanvasFloatActionBtnView, WCCanvasFloatConversionBarView, WCCanvasFloatJumpView, WCCanvasFloatScrollView, WCCanvasFloatSidebarView, WCCanvasFloatView, WCCanvasMusicMgr, WCCanvasPassthroughContainerView, WCCanvasRandomEncoreView, WCCanvasRandomPickCardBottomView, WCCanvasReportMgr, WCDataItem, WCStatTimerHelper, WCWeAppBizTempSessionHelper;
 @protocol WCCanvasPageViewControllerDelegate;
 
@@ -119,7 +121,6 @@
     struct CGRect _originRectInScreen;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCanvasExtraParams *extraParams; // @synthesize extraParams=_extraParams;
 @property(nonatomic) _Bool isAdAntiAbuse; // @synthesize isAdAntiAbuse=_isAdAntiAbuse;
 @property(retain, nonatomic) WCStatTimerHelper *backgroundMusicStayTimeHelper; // @synthesize backgroundMusicStayTimeHelper=_backgroundMusicStayTimeHelper;
@@ -638,4 +639,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -16,7 +16,6 @@
     MultiTalkScreenSharingPresentationViewController *_presentingPresentationViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MultiTalkScreenSharingPresentationViewController *presentingPresentationViewController; // @synthesize presentingPresentationViewController=_presentingPresentationViewController;
 @property(retain, nonatomic) MMHalfScreenGuideView *guideView; // @synthesize guideView=_guideView;
 @property(readonly, nonatomic) __weak id <MultiTalkScreenSharingLogicDelegate> delegate; // @synthesize delegate=_delegate;

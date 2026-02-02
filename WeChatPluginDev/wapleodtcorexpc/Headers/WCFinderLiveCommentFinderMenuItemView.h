@@ -20,7 +20,6 @@
 
 + (double)finderMenuItemStandardHeight;
 + (double)finderMenuItemMinWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *roleImgView; // @synthesize roleImgView=_roleImgView;
 @property(retain, nonatomic) UIImageView *rightArrowImgView; // @synthesize rightArrowImgView=_rightArrowImgView;
 @property(retain, nonatomic) MMUILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

@@ -15,7 +15,6 @@
     FinderPrivateMsgContactExtInfo *_respExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderPrivateMsgContactExtInfo *respExtInfo; // @synthesize respExtInfo=_respExtInfo;
 @property(nonatomic) unsigned int refreshInterval; // @synthesize refreshInterval=_refreshInterval;
 @property(nonatomic) unsigned long long lastRequestTime; // @synthesize lastRequestTime=_lastRequestTime;

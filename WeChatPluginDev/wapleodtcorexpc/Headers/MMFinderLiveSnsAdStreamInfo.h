@@ -63,7 +63,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int refreshIntervalInSecond; // @synthesize refreshIntervalInSecond=_refreshIntervalInSecond;
 @property(nonatomic) unsigned int previewCtrlInfoEffectSeconds; // @synthesize previewCtrlInfoEffectSeconds=_previewCtrlInfoEffectSeconds;
 @property(nonatomic) _Bool previewCtrlInfoEnable; // @synthesize previewCtrlInfoEnable=_previewCtrlInfoEnable;

@@ -10,7 +10,6 @@
     NSMutableArray *_jsModels;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *jsModels; // @synthesize jsModels=_jsModels;
 
 @end

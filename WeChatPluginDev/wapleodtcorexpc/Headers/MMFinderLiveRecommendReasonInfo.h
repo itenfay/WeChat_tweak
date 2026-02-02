@@ -14,7 +14,6 @@
 }
 
 + (id)createRecommendReasonInfo:(id)arg1 showInLiveComment:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRecommendReasonShowInLiveComment; // @synthesize isRecommendReasonShowInLiveComment=_isRecommendReasonShowInLiveComment;
 @property(retain, nonatomic) NSString *recommendReason; // @synthesize recommendReason=_recommendReason;
 @property(readonly, nonatomic) _Bool needShowInLiveComment;

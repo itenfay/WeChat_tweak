@@ -20,7 +20,6 @@
     NSString *_itemUserName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *itemUserName; // @synthesize itemUserName=_itemUserName;
 @property(nonatomic) unsigned int matchType; // @synthesize matchType=_matchType;
 @property(nonatomic) long long boxIndex; // @synthesize boxIndex=_boxIndex;

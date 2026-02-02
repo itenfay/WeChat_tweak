@@ -116,7 +116,6 @@
 + (id)domainNetworkPolicy:(id)arg1;
 + (id)flutterAssetsName:(id)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isImpellerEnabled;
 @property(readonly, nonatomic) _Bool isWideGamutEnabled;
 - (struct RunConfiguration)runConfigurationForEntrypoint:(id)arg1 libraryOrNil:(id)arg2 entrypointArgs:(id)arg3;

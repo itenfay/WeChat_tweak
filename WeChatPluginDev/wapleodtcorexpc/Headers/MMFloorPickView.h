@@ -20,7 +20,6 @@
     UITableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) long long reportTapCount; // @synthesize reportTapCount=_reportTapCount;
 @property(nonatomic) long long reportShowCount; // @synthesize reportShowCount=_reportShowCount;

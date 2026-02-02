@@ -15,7 +15,6 @@
     long long _changeCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long changeCount; // @synthesize changeCount=_changeCount;
 @property(nonatomic) long long latestNewAssetIndex; // @synthesize latestNewAssetIndex=_latestNewAssetIndex;
 @property(retain, nonatomic) NSArray *deleteAssetIds; // @synthesize deleteAssetIds=_deleteAssetIds;

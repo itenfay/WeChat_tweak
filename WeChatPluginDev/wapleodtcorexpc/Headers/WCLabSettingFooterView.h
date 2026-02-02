@@ -16,7 +16,6 @@
 }
 
 + (double)height;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCLabSettingFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)initAgreementView;
 - (void)initTipLabel;

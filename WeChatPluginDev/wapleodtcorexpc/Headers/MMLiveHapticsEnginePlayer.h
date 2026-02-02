@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CHHapticEngine;
 
 @interface MMLiveHapticsEnginePlayer
@@ -10,7 +12,6 @@
     CHHapticEngine *_hapticsEngine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CHHapticEngine *hapticsEngine; // @synthesize hapticsEngine=_hapticsEngine;
 - (void)playPatternWithinData:(id)arg1;
 - (void)stopEngine;
@@ -21,4 +22,3 @@
 - (void)anticipatePlayingWithinTimeInterval:(double)arg1;
 
 @end
-

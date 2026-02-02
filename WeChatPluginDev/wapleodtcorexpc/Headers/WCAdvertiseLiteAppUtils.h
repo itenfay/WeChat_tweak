@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCAdvertiseLiteAppUtils : NSObject
 {
@@ -22,4 +23,3 @@
 + (_Bool)isLiteAppValid:(id)arg1;
 
 @end
-

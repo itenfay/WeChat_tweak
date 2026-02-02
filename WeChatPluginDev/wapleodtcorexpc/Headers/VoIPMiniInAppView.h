@@ -37,7 +37,6 @@
     UIButton *_extendButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *extendButton; // @synthesize extendButton=_extendButton;
 @property(retain, nonatomic) UILabel *extendLabel; // @synthesize extendLabel=_extendLabel;
 @property(retain, nonatomic) UIView *extendView; // @synthesize extendView=_extendView;

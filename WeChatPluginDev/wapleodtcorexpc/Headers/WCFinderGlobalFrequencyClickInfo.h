@@ -16,7 +16,6 @@
     NSString *_lastReportExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastReportExtInfo; // @synthesize lastReportExtInfo=_lastReportExtInfo;
 @property(retain, nonatomic) NSString *lastFeedId; // @synthesize lastFeedId=_lastFeedId;
 @property(nonatomic) long long lastTabType; // @synthesize lastTabType=_lastTabType;

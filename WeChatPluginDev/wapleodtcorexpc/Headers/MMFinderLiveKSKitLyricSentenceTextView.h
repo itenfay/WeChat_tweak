@@ -14,7 +14,6 @@
 }
 
 + (id)lyricWordFont;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *lyricLabelList; // @synthesize lyricLabelList=_lyricLabelList;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 - (void)updateLyricLabelsCenterY;

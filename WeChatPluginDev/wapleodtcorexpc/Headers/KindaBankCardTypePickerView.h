@@ -18,7 +18,6 @@
     long long m_iCurrentSectoin;
 }
 
-- (void).cxx_destruct;
 - (void)WCBizPickerViewDidComplete:(id)arg1;
 - (id)pickerView:(id)arg1 viewForRow:(long long)arg2 forComponent:(long long)arg3 reusingView:(id)arg4;
 - (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;

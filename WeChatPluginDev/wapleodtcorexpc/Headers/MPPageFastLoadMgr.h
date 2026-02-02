@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSVirtualMachine, MMWebOptimVideoCacheTask, MPPageFastLoadEventMgr, MPPageResourceDownloader, MPPageTemplateInfoContainer, MemoryMappedKV, NSMutableArray, NSMutableDictionary, NSObject, NSOperationQueue, NSString, NSURLSession;
 @protocol OS_dispatch_queue;
 
@@ -57,7 +59,6 @@
 + (_Bool)applyToDeveloperTemplateWithFilePath:(id)arg1 fileName:(id)arg2;
 + (_Bool)isMatchDeveloperTemplateWithFileName:(id)arg1;
 + (id)preloadIdentifierForImageUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableFastLoadOnLimitedMode; // @synthesize enableFastLoadOnLimitedMode=_enableFastLoadOnLimitedMode;
 @property(retain, nonatomic) MPPageFastLoadEventMgr *eventMgr; // @synthesize eventMgr=_eventMgr;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
@@ -307,4 +308,3 @@
 @property(readonly) Class superclass;
 
 @end
-

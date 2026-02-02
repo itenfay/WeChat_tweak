@@ -10,7 +10,6 @@
     WCFinderMsgSessionBadgeLabelViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMsgSessionBadgeLabelViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

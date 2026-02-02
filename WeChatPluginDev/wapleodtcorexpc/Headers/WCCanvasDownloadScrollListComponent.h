@@ -17,7 +17,6 @@
 
 + (double)calcMaxHeightWithGroup:(id)arg1 maxWidth:(double)arg2 advertiseInfo:(id)arg3 orientation:(long long)arg4;
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_arrCanvasComponent; // @synthesize m_arrCanvasComponent=_m_arrCanvasComponent;
 @property(nonatomic) _Bool m_hasScroll; // @synthesize m_hasScroll=_m_hasScroll;
 @property(nonatomic) struct CGPoint m_curOffset; // @synthesize m_curOffset=_m_curOffset;

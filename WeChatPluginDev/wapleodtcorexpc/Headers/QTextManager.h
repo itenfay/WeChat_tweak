@@ -12,7 +12,6 @@
     QMapContext *_mapContext;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak QMapContext *mapContext; // @synthesize mapContext=_mapContext;
 - (void)textChanged:(id)arg1;
 - (void)updateText:(id)arg1;

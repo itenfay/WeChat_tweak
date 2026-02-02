@@ -22,7 +22,6 @@
     NSString *_converationUpdateEventName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *converationUpdateEventName; // @synthesize converationUpdateEventName=_converationUpdateEventName;
 @property(retain, nonatomic) NSMutableDictionary *webDurationReportDict; // @synthesize webDurationReportDict=_webDurationReportDict;
 @property(retain, nonatomic) GameSkStoreController *skStoreController; // @synthesize skStoreController=_skStoreController;

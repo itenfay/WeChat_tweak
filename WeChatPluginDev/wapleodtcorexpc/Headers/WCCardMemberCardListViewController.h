@@ -15,7 +15,6 @@
     ShareMessageConfirmLogicHelper *_sendAppMsgHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ShareMessageConfirmLogicHelper *sendAppMsgHelper; // @synthesize sendAppMsgHelper=_sendAppMsgHelper;
 @property(retain, nonatomic) WCCardMemberCardListLogicController *logicViewController; // @synthesize logicViewController=_logicViewController;
 @property(retain, nonatomic) UICollectionViewFlowLayout *collectionLayout; // @synthesize collectionLayout=_collectionLayout;

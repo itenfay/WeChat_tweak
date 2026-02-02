@@ -12,7 +12,6 @@
     NSString *_anchor;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *anchor; // @synthesize anchor=_anchor;
 
 @end

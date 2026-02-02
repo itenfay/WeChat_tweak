@@ -13,7 +13,6 @@
     WCRedEnvelopesGetShowResourcesCgi *_getShowResourcesCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isDownloadingNewYearRes; // @synthesize m_isDownloadingNewYearRes=_m_isDownloadingNewYearRes;
 @property(retain, nonatomic) WCRedEnvelopesGetShowResourcesCgi *getShowResourcesCgi; // @synthesize getShowResourcesCgi=_getShowResourcesCgi;
 @property(retain, nonatomic) ContactUpdateHelper *m_senderNickNameHelper; // @synthesize m_senderNickNameHelper=_m_senderNickNameHelper;

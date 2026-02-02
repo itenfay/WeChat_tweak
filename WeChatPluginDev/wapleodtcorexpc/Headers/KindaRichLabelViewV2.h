@@ -28,7 +28,6 @@
     NSMutableAttributedString *_m_attrStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableAttributedString *m_attrStr; // @synthesize m_attrStr=_m_attrStr;
 @property(retain, nonatomic) NSString *m_finalText; // @synthesize m_finalText=_m_finalText;
 @property(retain, nonatomic) NSMutableArray *m_textFragmentArray; // @synthesize m_textFragmentArray=_m_textFragmentArray;

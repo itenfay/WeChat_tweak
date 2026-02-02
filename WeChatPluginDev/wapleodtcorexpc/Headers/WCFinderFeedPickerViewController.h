@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString, UIScrollView, WCFinderFeedPickerParams, WCFinderFeedPickerTabView, WCFinderPostMgr;
 @protocol WCFinderFeedPickerViewControllerDelegate;
 
@@ -29,7 +31,6 @@
 + (id)pickerForEmoticon:(_Bool)arg1;
 + (id)pickerForEmoticonInImagePicker;
 + (id)defaultPickerForEmoticon;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType pushCustomVCBlock; // @synthesize pushCustomVCBlock=_pushCustomVCBlock;
 @property(nonatomic) long long publishTabIndex; // @synthesize publishTabIndex=_publishTabIndex;
 @property(retain, nonatomic) WCFinderPostMgr *postMgr; // @synthesize postMgr=_postMgr;
@@ -79,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

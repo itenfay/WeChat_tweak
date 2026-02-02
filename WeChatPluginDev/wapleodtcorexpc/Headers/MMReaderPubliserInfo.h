@@ -17,7 +17,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 @property(nonatomic) unsigned int nicknameType; // @synthesize nicknameType=_nicknameType;
 @property(retain, nonatomic) NSString *headImg; // @synthesize headImg=_headImg;

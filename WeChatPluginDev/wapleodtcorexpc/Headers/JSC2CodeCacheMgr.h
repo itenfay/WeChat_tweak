@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSObject, NSString;
 @protocol OS_dispatch_queue;
 
@@ -12,7 +14,6 @@
     NSObject<OS_dispatch_queue> *_generatorQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *generatorQueue; // @synthesize generatorQueue=_generatorQueue;
 @property(nonatomic) _Bool shouldSampleLargeReport; // @synthesize shouldSampleLargeReport=_shouldSampleLargeReport;
 - (void)reportErrorOnCodeCacheValidationWithErrCode:(long long)arg1;
@@ -35,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

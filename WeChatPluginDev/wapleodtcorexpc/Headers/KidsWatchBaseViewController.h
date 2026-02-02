@@ -15,7 +15,6 @@
     UITapGestureRecognizer *_tapGesture;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool firstResponderOnceToken; // @synthesize firstResponderOnceToken=_firstResponderOnceToken;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(nonatomic) _Bool allowTapEndEditing; // @synthesize allowTapEndEditing=_allowTapEndEditing;

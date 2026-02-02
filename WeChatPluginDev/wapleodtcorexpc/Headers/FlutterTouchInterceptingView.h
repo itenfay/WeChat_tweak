@@ -16,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)accessibilityContainer;
 - (void)setFlutterAccessibilityContainer:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

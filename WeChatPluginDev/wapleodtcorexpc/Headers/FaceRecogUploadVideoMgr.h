@@ -10,7 +10,6 @@
     NSMutableDictionary *m_dicLogic;
 }
 
-- (void).cxx_destruct;
 - (void)onUploadFaceVideoFinish:(id)arg1;
 - (void)addUploadLogic:(id)arg1;
 

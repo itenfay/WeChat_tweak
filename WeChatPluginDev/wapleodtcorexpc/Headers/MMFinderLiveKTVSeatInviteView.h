@@ -17,7 +17,6 @@
 
 + (double)preferHeight;
 + (double)preferWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *inviteLabel; // @synthesize inviteLabel=_inviteLabel;
 @property(retain, nonatomic) UIImageView *inviteIconView; // @synthesize inviteIconView=_inviteIconView;
 @property(retain, nonatomic) UIView *inviteRoundView; // @synthesize inviteRoundView=_inviteRoundView;

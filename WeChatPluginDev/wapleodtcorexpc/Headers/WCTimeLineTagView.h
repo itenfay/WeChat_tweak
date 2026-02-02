@@ -17,7 +17,6 @@
     NSMutableArray *_labelArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *labelArray; // @synthesize labelArray=_labelArray;
 @property(nonatomic) double tagMargin; // @synthesize tagMargin=_tagMargin;
 @property(retain, nonatomic) UIColor *tagDefaultColor; // @synthesize tagDefaultColor=_tagDefaultColor;

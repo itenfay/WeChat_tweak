@@ -108,7 +108,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCLocationInfo *locationInfo; // @synthesize locationInfo=_locationInfo;
 @property(retain, nonatomic) NSMutableArray *originImageMd5s; // @synthesize originImageMd5s=_originImageMd5s;
 @property(retain, nonatomic) NSArray *aggregateBubbleCommentVisitList; // @synthesize aggregateBubbleCommentVisitList=_aggregateBubbleCommentVisitList;

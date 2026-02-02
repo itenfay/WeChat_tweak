@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVPlayer, AVPlayerItem, AVPlayerLayer, NSString, UIImage, UIImageView, WCShortVideoToolbarResultPreviewBottomView;
 
@@ -31,7 +32,6 @@
     struct CGRect _previewFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
 @property(retain, nonatomic) AVPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
@@ -71,4 +71,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 previewFrame:(struct CGRect)arg2;
 
 @end
-

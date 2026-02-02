@@ -15,7 +15,6 @@
 }
 
 + (id)errorWithErrorCode:(int)arg1 errorMessage:(id)arg2 uiMessage:(int)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiMessage; // @synthesize uiMessage=_uiMessage;
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;
 @property(copy, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;

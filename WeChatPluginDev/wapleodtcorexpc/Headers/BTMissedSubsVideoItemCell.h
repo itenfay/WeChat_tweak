@@ -13,7 +13,6 @@
     SightIconView *_playIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SightIconView *playIconView; // @synthesize playIconView=_playIconView;
 @property(retain, nonatomic) MMUILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

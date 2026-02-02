@@ -14,7 +14,6 @@
     UploadShakeMusicMgr *m_uploadMgr;
 }
 
-- (void).cxx_destruct;
 - (void)onGetMusicItemFail:(int)arg1 sessionId:(unsigned int)arg2;
 - (void)OnGetMusicFail:(int)arg1 SessionId:(unsigned int)arg2;
 - (void)onGetMusicItemSuccess:(id)arg1 fpId:(unsigned int)arg2;

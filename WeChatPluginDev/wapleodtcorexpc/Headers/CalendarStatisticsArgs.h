@@ -32,7 +32,6 @@
 + (void)PBArrayAdd_liveInfo;
 + (void)PBArrayAdd_finderInfo;
 + (void)PBArrayAdd_discoverInfo;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastFinderVvCount; // @synthesize lastFinderVvCount=_lastFinderVvCount;
 @property(nonatomic) unsigned int lastExitFinderTimeSec; // @synthesize lastExitFinderTimeSec=_lastExitFinderTimeSec;
 @property(nonatomic) unsigned int lastEnterFinderTimeSec; // @synthesize lastEnterFinderTimeSec=_lastEnterFinderTimeSec;

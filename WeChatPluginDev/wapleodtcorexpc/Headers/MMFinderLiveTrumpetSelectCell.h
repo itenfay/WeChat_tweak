@@ -18,7 +18,6 @@
     UIImageView *_selectStateImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *selectStateImageView; // @synthesize selectStateImageView=_selectStateImageView;
 @property(retain, nonatomic) MMUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

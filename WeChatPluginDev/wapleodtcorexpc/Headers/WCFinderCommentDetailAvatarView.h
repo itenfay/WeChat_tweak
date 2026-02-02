@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UITapGestureRecognizer, WCFinderCommentDetailAvatarUpdateInfo, WCFinderHeadImageView;
 
@@ -17,7 +18,6 @@
     UITapGestureRecognizer *_tapGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) WCFinderHeadImageView *finderAvatar; // @synthesize finderAvatar=_finderAvatar;
 @property(retain, nonatomic) WCFinderHeadImageView *wechatAvatar; // @synthesize wechatAvatar=_wechatAvatar;
@@ -32,4 +32,3 @@
 - (void)layoutSubviews;
 
 @end
-

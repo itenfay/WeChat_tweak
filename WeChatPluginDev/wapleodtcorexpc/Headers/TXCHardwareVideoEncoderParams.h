@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate, TXCHardwareVideoEncoder;
 
@@ -14,10 +15,8 @@
     NSDate *_encodeStartTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *encodeStartTime; // @synthesize encodeStartTime=_encodeStartTime;
 @property(copy, nonatomic) CDUnknownBlockType complete; // @synthesize complete=_complete;
 @property __weak TXCHardwareVideoEncoder *encoder; // @synthesize encoder=_encoder;
 
 @end
-

@@ -26,7 +26,6 @@
     struct UIEdgeInsets _playheadTouchInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMCBatchThumbnailProvider *batchThumbnailProvider; // @synthesize batchThumbnailProvider=_batchThumbnailProvider;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(nonatomic) struct UIEdgeInsets playheadTouchInsets; // @synthesize playheadTouchInsets=_playheadTouchInsets;

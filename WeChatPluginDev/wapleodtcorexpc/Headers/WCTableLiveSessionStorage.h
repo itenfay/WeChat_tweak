@@ -21,7 +21,6 @@
 }
 
 + (id)dataBaseWithSessionType:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *sessionCacheLock; // @synthesize sessionCacheLock=_sessionCacheLock;
 @property(retain, nonatomic) WCTDatabase *customDataBase; // @synthesize customDataBase=_customDataBase;
 @property(retain, nonatomic) NSString *sessionTableName; // @synthesize sessionTableName=_sessionTableName;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, NSString, PasswordLogic, UIButton, UIView, WCUITextField;
 
 @interface MMVerifyPasswordViewController
@@ -22,7 +24,6 @@
     PasswordLogic *_passwordLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSuccess; // @synthesize isSuccess=_isSuccess;
 @property(nonatomic) _Bool isShowErrorTip; // @synthesize isShowErrorTip=_isShowErrorTip;
 @property(retain, nonatomic) PasswordLogic *passwordLogic; // @synthesize passwordLogic=_passwordLogic;
@@ -69,4 +70,3 @@
 @property(readonly) Class superclass;
 
 @end
-

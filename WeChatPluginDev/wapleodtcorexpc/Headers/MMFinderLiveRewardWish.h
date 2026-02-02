@@ -16,7 +16,6 @@
 
 + (id)createInstanceFromLiveRewardWishItem:(id)arg1;
 + (id)createInstanceFromLiveRewardWish:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentCount; // @synthesize currentCount=_currentCount;
 @property(nonatomic) unsigned long long targetCount; // @synthesize targetCount=_targetCount;
 @property(retain, nonatomic) MMFinderLiveRewardGiftItem *giftItem; // @synthesize giftItem=_giftItem;

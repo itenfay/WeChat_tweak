@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSObject, NSString, WAFileDescriptorLogic;
 @protocol OS_dispatch_queue;
 
@@ -12,7 +14,6 @@
     WAFileDescriptorLogic *m_fdLogic;
 }
 
-- (void).cxx_destruct;
 - (void)onAppTaskTerminate:(id)arg1;
 - (void)updateFileStatusWithPath:(id)arg1 originFileSize:(unsigned long long)arg2 appId:(id)arg3;
 - (void)closeFileWithAppId:(id)arg1;
@@ -35,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

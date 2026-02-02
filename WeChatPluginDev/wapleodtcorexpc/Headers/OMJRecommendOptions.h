@@ -14,7 +14,6 @@
     NSString *_scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int eventType; // @synthesize eventType=_eventType;
 @property(readonly, copy, nonatomic) NSString *scene; // @synthesize scene=_scene;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;

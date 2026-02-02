@@ -13,7 +13,6 @@
 }
 
 + (double)calHeightWithComData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMComponentData *m_componentData; // @synthesize m_componentData=_componentData;
 - (void)setHighlightContent:(id)arg1 Keywords:(id)arg2;
 - (void)configContentLayout;

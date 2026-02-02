@@ -18,7 +18,6 @@
     WCFinderPopupTipsView *_tipsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPopupTipsView *tipsView; // @synthesize tipsView=_tipsView;
 @property(retain, nonatomic) FinderPopupShowInfo *popupShowInfo; // @synthesize popupShowInfo=_popupShowInfo;
 @property(nonatomic) _Bool willCheckSlideReport; // @synthesize willCheckSlideReport=_willCheckSlideReport;

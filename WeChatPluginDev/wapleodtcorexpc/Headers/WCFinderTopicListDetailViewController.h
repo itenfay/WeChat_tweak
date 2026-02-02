@@ -19,7 +19,6 @@
     WCFinderShareCustomTransition *_animator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderShareCustomTransition *animator; // @synthesize animator=_animator;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
 @property(nonatomic) int fromScene; // @synthesize fromScene=_fromScene;

@@ -47,7 +47,6 @@
     NSString *_miniShopRequestId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *miniShopRequestId; // @synthesize miniShopRequestId=_miniShopRequestId;
 @property(nonatomic) unsigned long long videoPlayBackTime; // @synthesize videoPlayBackTime=_videoPlayBackTime;
 @property(retain, nonatomic) WCAdExpParamsReportInfo *expParamsInfo; // @synthesize expParamsInfo=_expParamsInfo;

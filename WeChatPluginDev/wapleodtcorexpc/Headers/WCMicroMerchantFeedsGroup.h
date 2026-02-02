@@ -20,7 +20,6 @@
 + (id)buildWsGroupDict:(id)arg1;
 + (id)fromDataList:(id)arg1 oldGroup:(id)arg2;
 + (id)fromServerObj:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int topFeedType; // @synthesize topFeedType=_topFeedType;
 @property(retain, nonatomic) NSMutableSet *feedIds; // @synthesize feedIds=_feedIds;
 @property(retain, nonatomic) NSString *summaryTitle; // @synthesize summaryTitle=_summaryTitle;

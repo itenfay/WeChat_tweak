@@ -13,7 +13,6 @@
     unsigned long long _maxCostMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxCostMs; // @synthesize maxCostMs=_maxCostMs;
 @property(retain, nonatomic) NSMutableDictionary *reddotInfo; // @synthesize reddotInfo=_reddotInfo;
 @property(retain, nonatomic) ExitReportInfo *exitInfo; // @synthesize exitInfo=_exitInfo;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMLiveMagicRewardMemoryMonitorTask : NSObject
 {
@@ -12,7 +13,6 @@
 }
 
 + (double)defaultMonitorTime;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType getMonitorTimeCallback; // @synthesize getMonitorTimeCallback=_getMonitorTimeCallback;
 @property(nonatomic) _Bool isStartMonitor; // @synthesize isStartMonitor=_isStartMonitor;
 - (double)getMonitorTime;
@@ -24,4 +24,3 @@
 - (void)startMonitor;
 
 @end
-

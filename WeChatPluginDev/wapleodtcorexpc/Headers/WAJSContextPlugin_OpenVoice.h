@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAudioPlayer;
 
 @interface WAJSContextPlugin_OpenVoice
@@ -10,7 +12,6 @@
     AVAudioPlayer *_player;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAudioPlayer *player; // @synthesize player=_player;
 - (void)stopCallTone;
 - (void)playCallTone;
@@ -23,4 +24,3 @@
 - (id)init;
 
 @end
-

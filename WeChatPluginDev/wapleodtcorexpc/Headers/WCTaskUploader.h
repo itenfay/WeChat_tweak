@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableSet, NSString, WCUploadTask, WCUploader;
 @protocol WCTaskUploaderDelegate;
 
@@ -15,7 +17,6 @@
     id <WCTaskUploaderDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 - (void)OnDelFavoritesItems:(id)arg1;
 - (void)OnUploadFavoritesItemFinish:(id)arg1 ErrCode:(int)arg2;
 - (void)onDataUploadFinished:(id)arg1 uploadResult:(id)arg2;
@@ -50,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

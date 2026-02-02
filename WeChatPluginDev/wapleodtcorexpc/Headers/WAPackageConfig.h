@@ -33,7 +33,6 @@
 }
 
 + (_Bool)isModuleInfoValid:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int templateID; // @synthesize templateID=_templateID;
 @property(retain, nonatomic) NSString *withoutLibUrl; // @synthesize withoutLibUrl=_withoutLibUrl;
 @property(retain, nonatomic) NSArray *arrWidgetInfo; // @synthesize arrWidgetInfo=_arrWidgetInfo;

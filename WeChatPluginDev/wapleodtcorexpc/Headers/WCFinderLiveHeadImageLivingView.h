@@ -16,7 +16,6 @@
     WCFinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) WCFinderHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
 @property(retain, nonatomic) UILabel *liveMarkView; // @synthesize liveMarkView=_liveMarkView;

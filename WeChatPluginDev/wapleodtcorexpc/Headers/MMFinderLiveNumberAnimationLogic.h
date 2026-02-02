@@ -17,7 +17,6 @@
     NSPointerArray *_observers;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasFinished; // @synthesize hasFinished=_hasFinished;
 @property(nonatomic) _Bool hasStarted; // @synthesize hasStarted=_hasStarted;
 @property(retain, nonatomic) NSPointerArray *observers; // @synthesize observers=_observers;

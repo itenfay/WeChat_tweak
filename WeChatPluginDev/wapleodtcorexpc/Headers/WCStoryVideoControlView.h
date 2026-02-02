@@ -15,7 +15,6 @@
     UIImage *_thumbImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *thumbImage; // @synthesize thumbImage=_thumbImage;
 @property(retain, nonatomic) WCStoryMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(nonatomic) __weak id <WCStoryVideoControlViewDelegate> delegate; // @synthesize delegate=_delegate;

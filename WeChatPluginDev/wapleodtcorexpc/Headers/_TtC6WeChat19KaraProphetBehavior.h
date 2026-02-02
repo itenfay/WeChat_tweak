@@ -24,7 +24,6 @@
     MISSING_TYPE *userInfo;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 @property(nonatomic, copy) NSString *userInfo;

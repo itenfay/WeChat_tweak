@@ -14,7 +14,6 @@
     NSNumber *_categoryId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *categoryId; // @synthesize categoryId=_categoryId;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) _Bool enablePageCache; // @synthesize enablePageCache=_enablePageCache;

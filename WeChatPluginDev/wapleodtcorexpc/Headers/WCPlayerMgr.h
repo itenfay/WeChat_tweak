@@ -20,7 +20,6 @@
     NSMutableArray *_arrBufferingTimes;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int backgroundSequence; // @synthesize backgroundSequence=_backgroundSequence;
 @property(retain, nonatomic) NSMutableArray *arrBufferingTimes; // @synthesize arrBufferingTimes=_arrBufferingTimes;
 @property(nonatomic) unsigned int lastNoDataBufferingTime; // @synthesize lastNoDataBufferingTime=_lastNoDataBufferingTime;

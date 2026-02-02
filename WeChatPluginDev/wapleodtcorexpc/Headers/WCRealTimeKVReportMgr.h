@@ -10,7 +10,6 @@
     NSMutableDictionary *m_realTimeReport;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (id)realTimeReportWithWrap:(id)arg1;
 - (id)reportLogId2:(unsigned int)arg1 value:(id)arg2 extKey:(id)arg3;

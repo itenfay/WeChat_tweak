@@ -20,7 +20,6 @@
     UIView *_intervalLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *intervalLine; // @synthesize intervalLine=_intervalLine;
 @property(retain, nonatomic) NSMutableDictionary *badgeViews; // @synthesize badgeViews=_badgeViews;
 @property(retain, nonatomic) NSMutableDictionary *labelViews; // @synthesize labelViews=_labelViews;

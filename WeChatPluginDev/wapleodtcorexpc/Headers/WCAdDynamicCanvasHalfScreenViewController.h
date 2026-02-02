@@ -13,7 +13,6 @@
     UIPanGestureRecognizer *_contentViewPanGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *contentViewPanGesture; // @synthesize contentViewPanGesture=_contentViewPanGesture;
 @property(nonatomic) _Bool willJumpToHalfOtherContent; // @synthesize willJumpToHalfOtherContent=_willJumpToHalfOtherContent;
 @property(retain, nonatomic) WCAdDynamicCanvasViewController *dynamicCanvasViewController; // @synthesize dynamicCanvasViewController=_dynamicCanvasViewController;

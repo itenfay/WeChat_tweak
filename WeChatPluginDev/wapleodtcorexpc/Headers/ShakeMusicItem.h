@@ -40,7 +40,6 @@
 + (void)PBArrayAdd_albumName;
 + (void)PBArrayAdd_singer;
 + (void)PBArrayAdd_musicName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *music; // @synthesize music=_music;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *songMid; // @synthesize songMid=_songMid;

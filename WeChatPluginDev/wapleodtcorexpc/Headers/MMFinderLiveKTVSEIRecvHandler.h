@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKTVReporter, MMFinderLiveKTVSEIRecvSession, NSMutableArray;
 @protocol MMLiveUniqueTaskId;
@@ -24,7 +25,6 @@
     double _lastUnStickTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastUnStickTime; // @synthesize lastUnStickTime=_lastUnStickTime;
 @property(retain) MMFinderLiveKTVReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) double currSessionStartTime; // @synthesize currSessionStartTime=_currSessionStartTime;
@@ -69,4 +69,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

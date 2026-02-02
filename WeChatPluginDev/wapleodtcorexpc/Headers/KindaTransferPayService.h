@@ -19,7 +19,6 @@
     WCPayBizF2FConfirmViewController *_m_amountConfirmViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBizF2FConfirmViewController *m_amountConfirmViewController; // @synthesize m_amountConfirmViewController=_m_amountConfirmViewController;
 @property(retain, nonatomic) MMVoidI64Callback *m_checkAmountSuccessCallBack; // @synthesize m_checkAmountSuccessCallBack=_m_checkAmountSuccessCallBack;
 @property(retain, nonatomic) MMVoidCallback *m_checkAmountCancelCallBack; // @synthesize m_checkAmountCancelCallBack=_m_checkAmountCancelCallBack;

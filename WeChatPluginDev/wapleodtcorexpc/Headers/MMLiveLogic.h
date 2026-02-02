@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveConnectMicLogic, MMLiveTaskId, NSString;
 @protocol MMLiveLogicDelegate;
@@ -15,7 +16,6 @@
     MMLiveConnectMicLogic *_connectMicLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveConnectMicLogic *connectMicLogic; // @synthesize connectMicLogic=_connectMicLogic;
 @property(nonatomic) __weak id <MMLiveLogicDelegate> liveLogicDelegate; // @synthesize liveLogicDelegate=_liveLogicDelegate;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
@@ -69,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

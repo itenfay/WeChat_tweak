@@ -16,7 +16,6 @@
     UIImpactFeedbackGenerator *_feedbackGenerator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(retain, nonatomic) MMUIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;

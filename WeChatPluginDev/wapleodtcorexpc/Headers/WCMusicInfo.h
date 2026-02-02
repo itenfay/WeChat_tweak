@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_webUrl;
 + (void)PBArrayAdd_singer;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lyric; // @synthesize lyric=_lyric;
 @property(retain, nonatomic) NSString *nsCoverImgHD; // @synthesize nsCoverImgHD=_nsCoverImgHD;
 @property(retain, nonatomic) NSString *nsCoverImg; // @synthesize nsCoverImg=_nsCoverImg;

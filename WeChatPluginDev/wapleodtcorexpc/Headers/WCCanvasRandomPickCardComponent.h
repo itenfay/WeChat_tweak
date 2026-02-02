@@ -13,7 +13,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didShowImpressiveAnimation; // @synthesize didShowImpressiveAnimation=_didShowImpressiveAnimation;
 @property(retain, nonatomic) WCAdRandomPickCardItemsView *cardItemsView; // @synthesize cardItemsView=_cardItemsView;
 @property(retain, nonatomic) WCCanvasComponentRandomPickCardInfo *cardsInfo; // @synthesize cardsInfo=_cardsInfo;

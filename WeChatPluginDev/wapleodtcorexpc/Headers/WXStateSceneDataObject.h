@@ -15,7 +15,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXStateJumpInfo *stateJumpDataInfo; // @synthesize stateJumpDataInfo=_stateJumpDataInfo;
 @property(nonatomic) unsigned long long jumpType; // @synthesize jumpType=_jumpType;
 @property(copy, nonatomic) NSString *token; // @synthesize token=_token;

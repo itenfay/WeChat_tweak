@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderContactPreviewData, WCFinderFeedInfoSubTidArray;
 
@@ -33,7 +34,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool likedFeedListHasNoData; // @synthesize likedFeedListHasNoData=_likedFeedListHasNoData;
 @property(retain, nonatomic) WCFinderFeedInfoSubTidArray *likedFeedTidList; // @synthesize likedFeedTidList=_likedFeedTidList;
 @property(retain, nonatomic) WCFinderContactPreviewData *previewData; // @synthesize previewData=_previewData;
@@ -60,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

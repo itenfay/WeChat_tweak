@@ -20,7 +20,6 @@
     NSMutableDictionary *_cellAttrArr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cellAttrArr; // @synthesize cellAttrArr=_cellAttrArr;
 @property(retain, nonatomic) NSMutableDictionary *footerAttrArr; // @synthesize footerAttrArr=_footerAttrArr;
 @property(retain, nonatomic) NSMutableDictionary *headerAttrsArr; // @synthesize headerAttrsArr=_headerAttrsArr;

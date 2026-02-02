@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageIntialView, EditImageLogicController, MMAsset, MMLoadingView, MultiImageScrollView, NSMutableArray, NSString, UIActivityIndicatorView, UIButton, UIImage, UILabel, UIView;
 @protocol ImageBrowseDelegate;
 
@@ -29,7 +31,6 @@
     MultiImageScrollView *_pagingScrollView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultiImageScrollView *pagingScrollView; // @synthesize pagingScrollView=_pagingScrollView;
 @property(retain, nonatomic) MMAsset *m_editAsset; // @synthesize m_editAsset=_m_editAsset;
 @property(nonatomic) _Bool loadAssetFinish; // @synthesize loadAssetFinish=_loadAssetFinish;
@@ -84,4 +85,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -22,7 +22,6 @@
     struct CGRect _targetRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(nonatomic) double maxTextAreaWidth; // @synthesize maxTextAreaWidth=_maxTextAreaWidth;

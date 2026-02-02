@@ -12,7 +12,6 @@
     NSString *_headImageUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *headImageUrl; // @synthesize headImageUrl=_headImageUrl;
 @property(copy, nonatomic) NSString *identityId; // @synthesize identityId=_identityId;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;

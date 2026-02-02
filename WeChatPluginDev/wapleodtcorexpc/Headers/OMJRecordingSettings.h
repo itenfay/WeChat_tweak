@@ -28,7 +28,6 @@
 
 + (id)default720pSettings;
 + (id)default1080pSettings;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long checksumType; // @synthesize checksumType=_checksumType;
 @property(nonatomic) _Bool shouldGenerateCoverImage; // @synthesize shouldGenerateCoverImage=_shouldGenerateCoverImage;
 @property(nonatomic) int videoClockwiseRotation; // @synthesize videoClockwiseRotation=_videoClockwiseRotation;

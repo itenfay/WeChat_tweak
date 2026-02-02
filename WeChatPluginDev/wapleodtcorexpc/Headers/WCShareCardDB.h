@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCTDatabase, WCTTable;
 
 @interface WCShareCardDB
@@ -11,7 +13,6 @@
     WCTTable *m_tableShareCardInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *m_tableShareCardInfo; // @synthesize m_tableShareCardInfo;
 @property(retain, nonatomic) WCTDatabase *m_db; // @synthesize m_db;
 - (_Bool)runTransaction:(CDUnknownBlockType)arg1;
@@ -30,4 +31,3 @@
 - (unsigned int)getShareCardCount;
 
 @end
-

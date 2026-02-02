@@ -10,7 +10,6 @@
     UIView *_playerLayerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *playerLayerView; // @synthesize playerLayerView=_playerLayerView;
 - (id)playerLayer;
 - (id)initWithFrame:(struct CGRect)arg1;

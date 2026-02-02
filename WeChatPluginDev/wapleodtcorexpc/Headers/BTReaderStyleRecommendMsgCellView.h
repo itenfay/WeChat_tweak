@@ -14,7 +14,6 @@
     CAGradientLayer *m_maskLayer;
 }
 
-- (void).cxx_destruct;
 - (void)updateImage:(id)arg1 widthUrl:(id)arg2;
 - (void)initCoverMask;
 - (void)initRecReasonView;

@@ -15,7 +15,6 @@
     NSString *_systemVersion;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *systemVersion; // @synthesize systemVersion=_systemVersion;
 @property(retain, nonatomic) NSString *systemName; // @synthesize systemName=_systemName;
 @property(retain, nonatomic) NSString *machine; // @synthesize machine=_machine;

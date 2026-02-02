@@ -11,7 +11,6 @@
     BrandTemplateMsgAuthLogic *_logic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandTemplateMsgAuthLogic *logic; // @synthesize logic=_logic;
 @property(retain, nonatomic) JSEvent *event; // @synthesize event=_event;
 - (id)pageSheetLifecyclePlugin;

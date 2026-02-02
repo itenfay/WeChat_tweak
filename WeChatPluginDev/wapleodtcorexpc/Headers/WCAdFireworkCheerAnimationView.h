@@ -21,7 +21,6 @@
     unsigned long long _playStartTimestampMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool closedFlag; // @synthesize closedFlag=_closedFlag;
 @property(nonatomic) _Bool isHideAnimating; // @synthesize isHideAnimating=_isHideAnimating;
 @property(nonatomic) unsigned long long playStartTimestampMs; // @synthesize playStartTimestampMs=_playStartTimestampMs;

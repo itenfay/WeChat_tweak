@@ -13,7 +13,6 @@
     id <TingPlayerStateClient><TingPlayTaskStateListener><TingAudioFocus> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TingPlayerStateClient><TingPlayTaskStateListener><TingAudioFocus> delegate; // @synthesize delegate=_delegate;
 - (void)setAudioFocusCallback:(id)arg1;
 - (void)requestFocus:(int)arg1 context:(id)arg2;

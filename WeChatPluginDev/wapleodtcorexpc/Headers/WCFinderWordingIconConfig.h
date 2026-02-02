@@ -28,7 +28,6 @@
     NSMutableDictionary *_items;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *items; // @synthesize items=_items;
 @property(retain, nonatomic) WCFinderLightDarkIconName *hotLikeOffIcon; // @synthesize hotLikeOffIcon=_hotLikeOffIcon;
 @property(retain, nonatomic) WCFinderLightDarkIconName *likedFilledFullPageIcon; // @synthesize likedFilledFullPageIcon=_likedFilledFullPageIcon;

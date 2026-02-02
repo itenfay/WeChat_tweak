@@ -20,7 +20,6 @@
     NSString *_placeholder;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(readonly, nonatomic) NSString *defaultContent; // @synthesize defaultContent=_defaultContent;
 @property(readonly, nonatomic) _Bool isEditable; // @synthesize isEditable=_isEditable;

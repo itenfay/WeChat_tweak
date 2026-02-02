@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @protocol WCFinderUserPrepareCgiDelegate;
 
 @interface WCFinderUserPrepareCgi
@@ -13,7 +15,6 @@
     CDUnknownBlockType _successfulBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType successfulBlock; // @synthesize successfulBlock=_successfulBlock;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(nonatomic) __weak id <WCFinderUserPrepareCgiDelegate> delegate; // @synthesize delegate=_delegate;
@@ -25,4 +26,3 @@
 - (id)init;
 
 @end
-

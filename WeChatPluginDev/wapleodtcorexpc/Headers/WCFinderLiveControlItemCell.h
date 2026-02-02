@@ -21,7 +21,6 @@
     UIView *_badgeView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) NSString *redDotPath; // @synthesize redDotPath=_redDotPath;
 @property(nonatomic) _Bool isImageMirrored; // @synthesize isImageMirrored=_isImageMirrored;

@@ -4,14 +4,13 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderMentionContactSearchTask : NSObject
 {
     CDUnknownBlockType _complete;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType complete; // @synthesize complete=_complete;
 
 @end
-

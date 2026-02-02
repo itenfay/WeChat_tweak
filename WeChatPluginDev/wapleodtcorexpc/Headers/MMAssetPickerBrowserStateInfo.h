@@ -20,7 +20,6 @@
 + (void)reportSelectImageFailedWithFileSize:(unsigned int)arg1;
 + (id)videoStateInfoWithAvAsset:(id)arg1 videoPath:(id)arg2 pickerScene:(int)arg3 isSlowmotion:(_Bool)arg4;
 + (id)gifStateInfoWithImageData:(id)arg1 image:(id)arg2 isSend:(_Bool)arg3 needCheckValid:(_Bool)arg4 maxSize:(unsigned int)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long checkResult; // @synthesize checkResult=_checkResult;
 @property(nonatomic) _Bool isiCloudError; // @synthesize isiCloudError=_isiCloudError;
 @property(retain, nonatomic) NSString *errorInfo; // @synthesize errorInfo=_errorInfo;

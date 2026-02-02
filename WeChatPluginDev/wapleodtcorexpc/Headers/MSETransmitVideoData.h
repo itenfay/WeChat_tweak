@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_thumbPath;
 + (void)PBArrayAdd_filePath;
 + (void)PBArrayAdd_videoUrl;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *thumbPath; // @synthesize thumbPath=_thumbPath;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(retain, nonatomic) NSString *videoUrl; // @synthesize videoUrl=_videoUrl;

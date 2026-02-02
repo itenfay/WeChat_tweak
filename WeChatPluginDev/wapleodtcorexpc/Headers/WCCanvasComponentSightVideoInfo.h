@@ -28,7 +28,6 @@
     NSString *_canvasExt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int canvasNoStore; // @synthesize canvasNoStore=_canvasNoStore;
 @property(retain, nonatomic) NSString *canvasExt; // @synthesize canvasExt=_canvasExt;
 @property(retain, nonatomic) NSString *canvasId; // @synthesize canvasId=_canvasId;

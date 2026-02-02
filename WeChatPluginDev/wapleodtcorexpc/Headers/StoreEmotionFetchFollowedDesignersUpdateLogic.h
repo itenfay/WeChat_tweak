@@ -23,7 +23,6 @@
     MemoryMappedKV *_mappedKV;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 @property(retain, nonatomic) NSMutableDictionary *eventIdMap; // @synthesize eventIdMap=_eventIdMap;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *worker; // @synthesize worker=_worker;

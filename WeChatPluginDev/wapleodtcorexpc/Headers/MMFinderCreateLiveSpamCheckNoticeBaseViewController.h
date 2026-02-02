@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderCreateLiveSpamCheckReportSession, MMUILabel, MMUIMaskContainerView, NSString, UIScrollView;
 
 @interface MMFinderCreateLiveSpamCheckNoticeBaseViewController
@@ -21,7 +23,6 @@
     MMUILabel *_contentLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -64,4 +65,3 @@
 @property(readonly) Class superclass;
 
 @end
-

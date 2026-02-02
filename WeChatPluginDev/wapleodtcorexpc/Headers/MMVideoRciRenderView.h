@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMCameraFocusSquare, UIPinchGestureRecognizer, UITapGestureRecognizer, XImageViewRenderer;
 @protocol MMVideoRenderViewDelegate;
@@ -38,7 +39,6 @@
     struct CGRect _videoRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int mRawDataFrameType; // @synthesize mRawDataFrameType=_mRawDataFrameType;
 @property(retain, nonatomic) XImageViewRenderer *renderer; // @synthesize renderer=_renderer;
 @property(nonatomic) struct CGRect videoRect; // @synthesize videoRect=_videoRect;
@@ -77,4 +77,3 @@
 - (id)init;
 
 @end
-

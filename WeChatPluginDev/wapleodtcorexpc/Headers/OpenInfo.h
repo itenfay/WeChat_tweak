@@ -43,7 +43,6 @@
     long long _downloadBehavior;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long downloadBehavior; // @synthesize downloadBehavior=_downloadBehavior;
 @property(nonatomic) _Bool autoDownload; // @synthesize autoDownload=_autoDownload;
 @property(nonatomic) _Bool disableHitCheck; // @synthesize disableHitCheck=_disableHitCheck;

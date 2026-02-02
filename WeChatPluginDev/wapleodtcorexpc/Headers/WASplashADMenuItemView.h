@@ -17,7 +17,6 @@
     MMUIButton *_button;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) MMWebImageView *logoImageView; // @synthesize logoImageView=_logoImageView;

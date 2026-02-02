@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _comparator;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(retain, nonatomic) NSMutableArray *comboObjectQueue; // @synthesize comboObjectQueue=_comboObjectQueue;
 - (void)insert:(id)arg1;
@@ -30,4 +30,3 @@
 - (id)init;
 
 @end
-

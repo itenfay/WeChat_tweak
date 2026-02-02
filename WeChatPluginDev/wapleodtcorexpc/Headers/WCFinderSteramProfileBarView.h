@@ -12,7 +12,6 @@
     UIImageView *_closeIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *closeIcon; // @synthesize closeIcon=_closeIcon;
 - (void)updateBarBGColor:(id)arg1 arrowColor:(id)arg2;
 - (void)layoutSubviews;

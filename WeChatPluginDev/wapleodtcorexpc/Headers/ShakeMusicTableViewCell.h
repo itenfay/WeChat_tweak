@@ -12,7 +12,6 @@
     UILabel *singerLabel;
 }
 
-- (void).cxx_destruct;
 - (void)updateWithShakeMusicItem:(id)arg1;
 
 @end

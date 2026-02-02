@@ -14,7 +14,6 @@
     NSURL *_sendingScreenShotUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *sendingScreenShotUrl; // @synthesize sendingScreenShotUrl=_sendingScreenShotUrl;
 @property(retain, nonatomic) UIImage *sendingScreenShot; // @synthesize sendingScreenShot=_sendingScreenShot;
 @property(retain) UIImage *fakeScreenShot; // @synthesize fakeScreenShot=_fakeScreenShot;

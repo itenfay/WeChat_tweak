@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MagicBrushCore, NSMapTable, NSMutableDictionary, NSString, WAOpenGLView;
 @protocol WALivePusherPixelBufferDelegate, WAMagicARPixelBufferDelegate;
 
@@ -20,7 +22,6 @@
 }
 
 + (id)getBundle;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *captureInfos; // @synthesize captureInfos=_captureInfos;
 @property(retain, nonatomic) NSMutableDictionary *rendertargets; // @synthesize rendertargets=_rendertargets;
 @property(retain, nonatomic) NSMapTable *glLayerMap; // @synthesize glLayerMap=_glLayerMap;
@@ -65,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

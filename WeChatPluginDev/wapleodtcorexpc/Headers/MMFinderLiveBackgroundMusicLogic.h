@@ -16,7 +16,6 @@
     unsigned long long _playerErrorCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long playerErrorCount; // @synthesize playerErrorCount=_playerErrorCount;
 @property(retain, nonatomic) AVPlayer *audioPlayer; // @synthesize audioPlayer=_audioPlayer;
 @property(nonatomic) unsigned long long currentIndex; // @synthesize currentIndex=_currentIndex;

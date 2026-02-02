@@ -18,7 +18,6 @@
     WCFinderFeedContentVM *_contentVM;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(nonatomic) int showPosition; // @synthesize showPosition=_showPosition;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;

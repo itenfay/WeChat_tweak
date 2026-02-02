@@ -12,7 +12,6 @@
     NSMutableArray *moduleList;
 }
 
-- (void).cxx_destruct;
 - (void)onAppCreate;
 - (void)initAllModule;
 - (void)registerModule:(id)arg1;

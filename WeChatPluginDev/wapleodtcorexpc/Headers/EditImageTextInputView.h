@@ -31,7 +31,6 @@
     unsigned long long _textStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long textStyle; // @synthesize textStyle=_textStyle;
 @property(retain, nonatomic) UILabel *validationErrorLabel; // @synthesize validationErrorLabel=_validationErrorLabel;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;

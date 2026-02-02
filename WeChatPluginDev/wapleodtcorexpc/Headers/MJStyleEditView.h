@@ -15,7 +15,6 @@
     UIButton *_reloadButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *reloadButton; // @synthesize reloadButton=_reloadButton;
 @property(retain, nonatomic) MJCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) MJStyleEditData *data; // @synthesize data=_data;

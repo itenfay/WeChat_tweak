@@ -15,7 +15,6 @@
 
 + (id)handleJParams:(id)arg1;
 + (void)reportCustomCgiEventTime:(id)arg1 eventId:(id)arg2 params:(id)arg3 bizId:(id)arg4 isBatchReport:(id)arg5 curPageInfo:(id)arg6 sourcePageInfo:(id)arg7;
-- (void).cxx_destruct;
 - (_Bool)isFlutterPage:(id)arg1;
 - (void)reportAllOutEventTime:(long long)arg1 pageId:(long long)arg2 eventId:(id)arg3 pageName:(id)arg4 params:(id)arg5 sourcePageInfo:(id)arg6 error:(id *)arg7;
 - (void)reportStandardViewEventTime:(long long)arg1 eventId:(id)arg2 viewId:(id)arg3 params:(id)arg4 routeRules:(id)arg5 curPageInfo:(id)arg6 sourcePageInfo:(id)arg7 error:(id *)arg8;

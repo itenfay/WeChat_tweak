@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderNewUserPrepareResponse, MMFinderLivePurchasedFeedViewModel, MMUIViewController, NSString, WCFinderContact, WCFinderPersonalCenterParams, WCFinderWebViewOpener;
 @protocol WCFinderPersonalCenterControllerDelegate;
@@ -21,7 +22,6 @@
 }
 
 + (id)controllerWithHostVC:(id)arg1 params:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePurchasedFeedViewModel *purchasedFeedViewModel; // @synthesize purchasedFeedViewModel=_purchasedFeedViewModel;
 @property(copy, nonatomic) CDUnknownBlockType waittingPrepareBlock; // @synthesize waittingPrepareBlock=_waittingPrepareBlock;
 @property(retain, nonatomic) WCFinderWebViewOpener *creatorWebVCOpener; // @synthesize creatorWebVCOpener=_creatorWebVCOpener;
@@ -69,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

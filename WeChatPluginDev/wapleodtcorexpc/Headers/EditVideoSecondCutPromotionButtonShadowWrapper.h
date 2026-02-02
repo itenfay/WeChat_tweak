@@ -11,7 +11,6 @@
     CAGradientLayer *_backgroundLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
 @property(retain, nonatomic) EditVideoSecondCutPromotionButton *button; // @synthesize button=_button;
 - (void)updateEditVideoEntrance:(unsigned long long)arg1;

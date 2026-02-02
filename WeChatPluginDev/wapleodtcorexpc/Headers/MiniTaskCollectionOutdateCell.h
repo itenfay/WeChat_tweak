@@ -16,7 +16,6 @@
     UIView *_bottomLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) MMUIButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) MMUIButton *favButton; // @synthesize favButton=_favButton;

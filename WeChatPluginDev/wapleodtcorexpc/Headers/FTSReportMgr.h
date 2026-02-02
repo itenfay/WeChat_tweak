@@ -15,7 +15,6 @@
     FTSBrowseReportHelper *_subBrowseHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSBrowseReportHelper *subBrowseHelper; // @synthesize subBrowseHelper=_subBrowseHelper;
 @property(retain, nonatomic) FTSBrowseReportHelper *mainBrowseHelper; // @synthesize mainBrowseHelper=_mainBrowseHelper;
 @property(retain, nonatomic) NSMutableSet *resultHittedKeywordSet; // @synthesize resultHittedKeywordSet=_resultHittedKeywordSet;

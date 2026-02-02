@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_cityName;
 + (void)PBArrayAdd_otherCityList;
 + (void)PBArrayAdd_localCityList;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool entryShowNew; // @synthesize entryShowNew=_entryShowNew;
 @property(nonatomic) _Bool entryShowRedDot; // @synthesize entryShowRedDot=_entryShowRedDot;
 @property(retain, nonatomic) NSMutableArray *entryIcons; // @synthesize entryIcons=_entryIcons;

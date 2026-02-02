@@ -23,7 +23,6 @@
 + (double)currentLayoutStandardWidth;
 + (double)topCommentMinContentWidth;
 + (double)topCommentMaxContentWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *extraLayoutInfoDict; // @synthesize extraLayoutInfoDict=_extraLayoutInfoDict;
 @property(retain, nonatomic) UIFont *topCommentContentFontLandScape; // @synthesize topCommentContentFontLandScape=_topCommentContentFontLandScape;
 @property(retain, nonatomic) UIFont *topCommentContentFontPotrait; // @synthesize topCommentContentFontPotrait=_topCommentContentFontPotrait;

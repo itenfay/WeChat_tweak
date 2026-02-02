@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class PAGView, UILabel;
 
@@ -15,7 +16,6 @@
     UILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) PAGView *animationView; // @synthesize animationView=_animationView;
 @property(nonatomic) unsigned long long viewType; // @synthesize viewType=_viewType;
@@ -29,4 +29,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 viewType:(unsigned long long)arg2;
 
 @end
-

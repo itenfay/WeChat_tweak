@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UIImageView, UILabel;
 
@@ -23,7 +24,6 @@
 + (id)genDescLabel;
 + (double)cellHeightWithMaxWidth:(double)arg1;
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *audiencePriceLabel; // @synthesize audiencePriceLabel=_audiencePriceLabel;
 @property(retain, nonatomic) UILabel *applyAudienceLabel; // @synthesize applyAudienceLabel=_applyAudienceLabel;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
@@ -43,4 +43,3 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
-

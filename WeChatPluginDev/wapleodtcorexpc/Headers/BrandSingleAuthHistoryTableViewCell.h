@@ -17,7 +17,6 @@
     UIView *_spaceView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEnd; // @synthesize isEnd=_isEnd;
 @property(retain, nonatomic) UIView *spaceView; // @synthesize spaceView=_spaceView;
 @property(retain, nonatomic) UIView *endLine; // @synthesize endLine=_endLine;

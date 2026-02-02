@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary;
 
 @interface WCFinderOplogCGI
@@ -10,7 +12,6 @@
     NSMutableDictionary *_handlerMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *handlerMap; // @synthesize handlerMap=_handlerMap;
 - (void)finderCgiDidFailWithError:(id)arg1 response:(id)arg2;
 - (void)didGetResponse:(id)arg1;
@@ -18,4 +19,3 @@
 - (id)initWithRequest:(id)arg1;
 
 @end
-

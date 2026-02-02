@@ -11,7 +11,6 @@
     NSString *_shortAppname;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *shortAppname; // @synthesize shortAppname=_shortAppname;
 @property(nonatomic) _Bool isAdded; // @synthesize isAdded=_isAdded;
 - (void)copyFromPBItem:(id)arg1;

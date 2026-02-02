@@ -14,7 +14,6 @@
     NSArray *_mExternalList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *mExternalList; // @synthesize mExternalList=_mExternalList;
 @property(retain, nonatomic) id <IMBFileSystem> mFlattenFS; // @synthesize mFlattenFS=_mFlattenFS;
 @property(retain, nonatomic) id <IMBFileSystem> mWxaPkgFS; // @synthesize mWxaPkgFS=_mWxaPkgFS;

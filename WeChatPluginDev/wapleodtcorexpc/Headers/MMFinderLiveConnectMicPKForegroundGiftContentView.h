@@ -15,7 +15,6 @@
     double _widthHeightRatio;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double widthHeightRatio; // @synthesize widthHeightRatio=_widthHeightRatio;
 @property(nonatomic) double heightPercent; // @synthesize heightPercent=_heightPercent;
 @property(retain, nonatomic) RfxPagView *rfxPAGView; // @synthesize rfxPAGView=_rfxPAGView;

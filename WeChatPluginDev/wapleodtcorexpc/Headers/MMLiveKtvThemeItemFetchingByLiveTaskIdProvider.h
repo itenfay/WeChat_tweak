@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSString;
 
@@ -12,7 +13,6 @@
     MMFinderLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 - (void)fetchThemeItemsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithTaskId:(id)arg1;
@@ -27,4 +27,3 @@
 @property(readonly) Class superclass;
 
 @end
-

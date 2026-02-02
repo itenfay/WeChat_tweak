@@ -12,7 +12,6 @@
     MMFinderLiveStickerItemBase *_stickerItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveStickerItemBase *stickerItem; // @synthesize stickerItem=_stickerItem;
 
 @end

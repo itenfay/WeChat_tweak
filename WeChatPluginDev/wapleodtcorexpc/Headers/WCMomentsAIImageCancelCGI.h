@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSError, NSString;
 
 @interface WCMomentsAIImageCancelCGI
@@ -13,7 +15,6 @@
     NSError *_error;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) CDUnknownBlockType failureHandler; // @synthesize failureHandler=_failureHandler;
 @property(copy, nonatomic) CDUnknownBlockType successHandler; // @synthesize successHandler=_successHandler;
@@ -25,4 +26,3 @@
 - (id)initWithTaskID:(id)arg1;
 
 @end
-

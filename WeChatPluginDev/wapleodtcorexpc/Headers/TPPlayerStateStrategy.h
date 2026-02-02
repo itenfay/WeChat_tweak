@@ -12,7 +12,6 @@
     TPPlayerStateWrapper *_stateWrapper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerStateWrapper *stateWrapper; // @synthesize stateWrapper=_stateWrapper;
 - (_Bool)isValidStateToCallbackOnSeekComplete;
 - (_Bool)isValidStateToCallbackOnDataOutput;

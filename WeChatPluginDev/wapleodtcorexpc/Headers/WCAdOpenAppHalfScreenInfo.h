@@ -23,7 +23,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *appImageList; // @synthesize appImageList=_appImageList;
 @property(retain, nonatomic) NSString *appDesc; // @synthesize appDesc=_appDesc;
 @property(nonatomic) int style; // @synthesize style=_style;

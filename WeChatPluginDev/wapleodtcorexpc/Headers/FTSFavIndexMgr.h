@@ -18,7 +18,6 @@
     FTSFavDB *_ftsFavDB;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSFavDB *ftsFavDB; // @synthesize ftsFavDB=_ftsFavDB;
 - (void)internalIndexingDropTask;
 - (id)getLocalIdSetFromCacheByTag:(id)arg1;

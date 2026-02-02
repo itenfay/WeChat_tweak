@@ -40,7 +40,6 @@
 + (void)PBArrayAdd_appID;
 + (void)PBArrayAdd_apiName;
 + (void)PBArrayAdd_url;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sdkUrlParamType; // @synthesize sdkUrlParamType=_sdkUrlParamType;
 @property(nonatomic) _Bool isSDKResendByRefreshToken; // @synthesize isSDKResendByRefreshToken=_isSDKResendByRefreshToken;
 @property(copy, nonatomic) NSString *sdkVersion; // @synthesize sdkVersion=_sdkVersion;

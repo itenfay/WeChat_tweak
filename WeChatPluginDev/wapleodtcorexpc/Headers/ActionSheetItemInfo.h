@@ -11,7 +11,6 @@
     id _attachInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id attachInfo; // @synthesize attachInfo=_attachInfo;
 @property(nonatomic) unsigned int itemType; // @synthesize itemType=_itemType;
 

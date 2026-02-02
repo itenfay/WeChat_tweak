@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiteAppViewController, MMUILabel, NSMutableDictionary, NSString, PAGView, UIButton, UILabel, UIView, WCFinderFeedDetailStatusView, WCFinderFeedFriendsLikeListViewController, WCFinderFeedListView, WCFinderFeedSideColumnView, WCFinderLeadToMachineTableViewCell, WCFinderNearByDescriptionTableViewCell, WCFinderShareCustomTransition, WCFinderShareListReportModel, WCFinderShareListViewModel, WCFinderShareSpanState, WCFinderWebviewDelegateObject, WCStoryTouchToDismissView, WXFullScreenGestureRecognizer;
 @protocol WCFinderFullShareListViewControllerDelegate;
 
@@ -48,7 +50,6 @@
 }
 
 + (struct CGRect)transitionRectForFeedId:(id)arg1 image:(id)arg2 inNav:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderLeadToMachineTableViewCell *leadToMachineCell; // @synthesize leadToMachineCell=_leadToMachineCell;
 @property(nonatomic) __weak WCFinderFeedFriendsLikeListViewController *tmpLikeListVC; // @synthesize tmpLikeListVC=_tmpLikeListVC;
 @property(nonatomic) _Bool isFromMiniFloat; // @synthesize isFromMiniFloat=_isFromMiniFloat;
@@ -334,4 +335,3 @@
 @property(readonly) Class superclass;
 
 @end
-

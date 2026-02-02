@@ -20,7 +20,6 @@
     WXFullScreenGestureRecognizer *_fullScreenGesture;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool toolViewHidden; // @synthesize toolViewHidden=_toolViewHidden;
 @property(retain, nonatomic) WXFullScreenGestureRecognizer *fullScreenGesture; // @synthesize fullScreenGesture=_fullScreenGesture;
 @property(nonatomic) double currentProgress; // @synthesize currentProgress=_currentProgress;

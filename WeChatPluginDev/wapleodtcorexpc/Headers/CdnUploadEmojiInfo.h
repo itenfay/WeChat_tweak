@@ -16,7 +16,6 @@
     unsigned long long _startTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSData *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) long long emojiType; // @synthesize emojiType=_emojiType;

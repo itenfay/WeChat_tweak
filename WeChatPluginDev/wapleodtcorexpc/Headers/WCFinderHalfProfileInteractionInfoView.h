@@ -16,7 +16,6 @@
     UICollectionViewDiffableDataSource *_dataSource;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(copy, nonatomic) NSArray *configurations; // @synthesize configurations=_configurations;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;

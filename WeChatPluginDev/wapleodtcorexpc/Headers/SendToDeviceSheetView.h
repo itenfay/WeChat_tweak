@@ -22,7 +22,6 @@
     MsgToDeviceLogic *_ilinkDeviceLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MsgToDeviceLogic *ilinkDeviceLogic; // @synthesize ilinkDeviceLogic=_ilinkDeviceLogic;
 @property(retain, nonatomic) WCDevice *device; // @synthesize device=_device;
 @property(retain, nonatomic) SSVMiniAppRedirectInfo *ssvRedirectInfo; // @synthesize ssvRedirectInfo=_ssvRedirectInfo;

@@ -22,7 +22,6 @@
 }
 
 + (struct CGRect)getAnimationFromPosFromViewManager:(id)arg1 identifier:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatroomData *chatroomData; // @synthesize chatroomData=_chatroomData;
 @property(nonatomic) _Bool showRedDot; // @synthesize showRedDot=_showRedDot;
 @property(retain, nonatomic) NSString *gameId; // @synthesize gameId=_gameId;

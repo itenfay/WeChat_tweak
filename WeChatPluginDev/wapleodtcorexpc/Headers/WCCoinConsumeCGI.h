@@ -12,7 +12,6 @@
     id <WCCoinConsumeCGIDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCoinConsumeCGIDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) ConsumeWecoinResponse *response; // @synthesize response=_response;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;

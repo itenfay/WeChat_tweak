@@ -19,7 +19,6 @@
     long long _musicClipStartTimeMS;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowLyrics; // @synthesize shouldShowLyrics=_shouldShowLyrics;
 @property(nonatomic) long long musicClipStartTimeMS; // @synthesize musicClipStartTimeMS=_musicClipStartTimeMS;
 @property(copy, nonatomic) NSString *musicUrlPath; // @synthesize musicUrlPath=_musicUrlPath;

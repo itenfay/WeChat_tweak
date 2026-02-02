@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton;
 @protocol WCFinderProgressBarDelegate, WCFinderProgressBarExtendDelegate;
@@ -17,7 +18,6 @@
     MMUIButton *_dotBtn;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMUIButton *dotBtn; // @synthesize dotBtn=_dotBtn;
 @property(nonatomic, getter=isShowAnchorPoint) _Bool showAnchorPoint; // @synthesize showAnchorPoint=_showAnchorPoint;
 @property(nonatomic, getter=isShowLargeBar) _Bool showLargeBar; // @synthesize showLargeBar=_showLargeBar;
@@ -33,4 +33,3 @@
 - (double)value;
 
 @end
-

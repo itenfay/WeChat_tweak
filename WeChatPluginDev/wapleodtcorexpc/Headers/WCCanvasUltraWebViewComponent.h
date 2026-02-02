@@ -11,7 +11,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebViewController *webViewController; // @synthesize webViewController=_webViewController;
 - (_Bool)isChildViewController;
 - (void)componentWillDisappearInMainScreen:(_Bool)arg1;

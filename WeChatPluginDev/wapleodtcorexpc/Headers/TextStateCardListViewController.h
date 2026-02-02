@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MultipleTextStateCardCollectionCell, MultipleTextStateCardView, NSIndexPath, NSString, TextStateCardListCollectionView, TextStateCardListFooterView, TextStateCardListSlidingWindowRefreshTask, TextStateModel, TextStateMusicPlayerCoordinator, TextStatePrivacyMgr, UICollectionViewFlowLayout, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UITapGestureRecognizer, UIView, UIViewPropertyAnimator, _TtC6WeChat31TextStateFriendSquareTransition;
 @protocol TextStateCardListDataProvider, TextStateCardListDelegate;
 
@@ -54,7 +56,6 @@
 + (double)targetItemAlphaForProgress:(double)arg1;
 + (double)cardBottomPaddingForNeedShowGuide:(_Bool)arg1 isSingle:(_Bool)arg2;
 + (id)generateSnapshotViewForView:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStatePrivacyMgr *shareScopeMgr; // @synthesize shareScopeMgr=_shareScopeMgr;
 @property(retain, nonatomic) MultipleTextStateCardCollectionCell *lastCell; // @synthesize lastCell=_lastCell;
 @property(retain, nonatomic) TextStateCardListSlidingWindowRefreshTask *delayTask; // @synthesize delayTask=_delayTask;
@@ -192,4 +193,3 @@
 @property(readonly) Class superclass;
 
 @end
-

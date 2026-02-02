@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJSegmentViewModel, NSArray, NSString, OMCSegment, OMJID, OMJMaterialInfo, OMJMaterialManager;
 
@@ -28,7 +29,6 @@
     unsigned long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) OMJMaterialManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) OMCSegment *segment; // @synthesize segment=_segment;
@@ -72,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

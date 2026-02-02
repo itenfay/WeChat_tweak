@@ -13,7 +13,6 @@
 
 + (double)heightForItemContentViewWithViewItem:(id)arg1 inTableView:(id)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SightIconView *playIconView; // @synthesize playIconView=_playIconView;
 @property(retain, nonatomic) MMWebImageView *previewImageView; // @synthesize previewImageView=_previewImageView;
 - (void)contentDidTap;

@@ -27,7 +27,6 @@
     struct CGSize _size;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double exposure; // @synthesize exposure=_exposure;
 @property(copy, nonatomic) NSString *target_name; // @synthesize target_name=_target_name;
 @property(copy, nonatomic) NSString *ktx2Url; // @synthesize ktx2Url=_ktx2Url;

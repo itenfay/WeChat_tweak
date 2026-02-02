@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol FlutterBinaryMessenger, FlutterMessageCodec, FlutterTaskQueue;
@@ -21,7 +22,6 @@
 + (void)resizeChannelWithName:(id)arg1 binaryMessenger:(id)arg2 size:(long long)arg3;
 + (id)messageChannelWithName:(id)arg1 binaryMessenger:(id)arg2 codec:(id)arg3;
 + (id)messageChannelWithName:(id)arg1 binaryMessenger:(id)arg2;
-- (void).cxx_destruct;
 - (void)setWarnsOnOverflow:(_Bool)arg1;
 - (void)resizeChannelBuffer:(long long)arg1;
 - (void)setMessageHandler:(CDUnknownBlockType)arg1;
@@ -31,4 +31,3 @@
 - (id)initWithName:(id)arg1 binaryMessenger:(id)arg2 codec:(id)arg3;
 
 @end
-

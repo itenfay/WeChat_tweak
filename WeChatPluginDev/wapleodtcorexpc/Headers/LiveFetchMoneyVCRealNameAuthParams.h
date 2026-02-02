@@ -15,7 +15,6 @@
     FinderEncashPrepareInfo *_targetEncashPrepareInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderEncashPrepareInfo *targetEncashPrepareInfo; // @synthesize targetEncashPrepareInfo=_targetEncashPrepareInfo;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 @property(nonatomic) _Bool needRefreshPage; // @synthesize needRefreshPage=_needRefreshPage;

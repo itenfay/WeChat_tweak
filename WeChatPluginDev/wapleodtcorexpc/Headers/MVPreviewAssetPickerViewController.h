@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMusicPostAssetPickerHandler, MMUIButton, NSMutableArray, UIView;
 
 @interface MVPreviewAssetPickerViewController
@@ -15,7 +17,6 @@
     NSMutableArray *_selectedArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *selectedArray; // @synthesize selectedArray=_selectedArray;
 @property(retain, nonatomic) MMMusicPostAssetPickerHandler *pickerHandler; // @synthesize pickerHandler=_pickerHandler;
 @property(retain, nonatomic) MMUIButton *finishButton; // @synthesize finishButton=_finishButton;
@@ -32,4 +33,3 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end
-

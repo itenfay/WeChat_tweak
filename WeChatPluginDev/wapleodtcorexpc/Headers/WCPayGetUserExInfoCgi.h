@@ -11,7 +11,6 @@
     NSString *_scene;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *scene; // @synthesize scene=_scene;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetTenPayError:(id)arg1;

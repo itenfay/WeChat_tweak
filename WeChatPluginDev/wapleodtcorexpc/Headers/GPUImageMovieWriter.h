@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAssetWriter, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor, GLProgram, GPUImageContext, GPUImageFramebuffer, NSArray, NSString, NSURL;
 @protocol GPUImageMovieWriterDelegate, OS_dispatch_queue;
@@ -54,7 +55,6 @@
     NSURL *_movieURL;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *movieURL; // @synthesize movieURL=_movieURL;
 @property(copy, nonatomic) CDUnknownBlockType audioProcessingCallback; // @synthesize audioProcessingCallback=_audioProcessingCallback;
 @property(nonatomic) id <GPUImageMovieWriterDelegate> delegate; // @synthesize delegate=_delegate;
@@ -113,4 +113,3 @@
 @property(readonly) Class superclass;
 
 @end
-

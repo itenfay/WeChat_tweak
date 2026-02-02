@@ -25,7 +25,6 @@
 @property(nonatomic, getter=bProxy, setter=setBProxy:) BOOL jcev2_p_2_o_bProxy; // @synthesize jcev2_p_2_o_bProxy;
 @property(retain, nonatomic, getter=sApn, setter=setSApn:) NSString *jcev2_p_1_o_sApn; // @synthesize jcev2_p_1_o_sApn;
 @property(retain, nonatomic, getter=vIPInfos, setter=setVIPInfos:) NSArray *jcev2_p_0_r_vIPInfos__b0x9i_VOQBRouteJoinIPInfo; // @synthesize jcev2_p_0_r_vIPInfos__b0x9i_VOQBRouteJoinIPInfo;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

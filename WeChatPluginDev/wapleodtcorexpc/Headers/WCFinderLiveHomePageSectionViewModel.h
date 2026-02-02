@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, WCFinderLiveHomePageCtx, WCFinderLiveHomePageReportSession, WCFinderLiveHomePageViewController, WCFinderLiveStreamContainerModel;
 @protocol WCFinderLiveHomePageSectionViewModelDelegate;
@@ -26,7 +27,6 @@
     unsigned long long _curSubTabId;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long curSubTabId; // @synthesize curSubTabId=_curSubTabId;
 @property(readonly, nonatomic) unsigned long long curTabId; // @synthesize curTabId=_curTabId;
 @property(nonatomic) _Bool isSkeleton; // @synthesize isSkeleton=_isSkeleton;
@@ -69,4 +69,3 @@
 - (id)initWithContainerModel:(id)arg1 scene:(int)arg2 ctx:(id)arg3 isSkeleton:(_Bool)arg4;
 
 @end
-

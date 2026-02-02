@@ -19,7 +19,6 @@
     unsigned long long _svrFromTimestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int svrRetTrynum; // @synthesize svrRetTrynum=_svrRetTrynum;
 @property(nonatomic) unsigned long long svrFromTimestamp; // @synthesize svrFromTimestamp=_svrFromTimestamp;
 @property(nonatomic) _Bool bIsAllDataLoadEnd; // @synthesize bIsAllDataLoadEnd=_bIsAllDataLoadEnd;

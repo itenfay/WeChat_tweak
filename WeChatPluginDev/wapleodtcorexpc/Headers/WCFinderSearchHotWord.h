@@ -33,7 +33,6 @@
 + (void)PBArrayAdd_link;
 + (void)PBArrayAdd_actionType;
 + (void)PBArrayAdd_hotwordText;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *requestId; // @synthesize requestId=_requestId;
 @property(nonatomic) unsigned long long hotwordId; // @synthesize hotwordId=_hotwordId;
 @property(retain, nonatomic) FinderEventInfo *eventInfo; // @synthesize eventInfo=_eventInfo;

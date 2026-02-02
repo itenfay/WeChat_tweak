@@ -17,7 +17,6 @@
     NSMutableArray *_languageReq;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *languageReq; // @synthesize languageReq=_languageReq;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;

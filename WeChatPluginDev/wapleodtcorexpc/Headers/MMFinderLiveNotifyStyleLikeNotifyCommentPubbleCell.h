@@ -10,7 +10,6 @@
     NSMutableArray *_headImageViewList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *headImageViewList; // @synthesize headImageViewList=_headImageViewList;
 @property(readonly, nonatomic) MMFinderLiveLikeNotifyDataItem *likeNotifyDataItem;
 - (void)updateHeadImageViewsOrigin;

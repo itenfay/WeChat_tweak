@@ -13,7 +13,6 @@
     WCPayNoticeItemView *_noticeItemView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNoticeItemView *noticeItemView; // @synthesize noticeItemView=_noticeItemView;
 @property(retain, nonatomic) WCPayQRCodeRewardCodeView *codeView; // @synthesize codeView=_codeView;
 @property(nonatomic) __weak id <WCPayQRCodeRewardReceiverDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

@@ -14,7 +14,6 @@
     NSString *extMsg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int webType; // @synthesize webType;
 @property(retain, nonatomic) NSString *extMsg; // @synthesize extMsg;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID;

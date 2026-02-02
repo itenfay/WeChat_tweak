@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIView, WAArrayBuffer, WACameraLogicController;
 
 @interface WAWebViewPlugin_Camera
@@ -33,7 +35,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 - (void)changeCameraMenuState:(_Bool)arg1;
 - (void)sendEvent:(id)arg1 param:(id)arg2;
 - (void)onCameraDidRotate;
@@ -76,4 +77,3 @@
 @property(readonly) Class superclass;
 
 @end
-

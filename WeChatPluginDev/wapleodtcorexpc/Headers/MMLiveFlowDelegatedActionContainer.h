@@ -12,7 +12,6 @@
     MMLiveFlowActionBase *_action;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveFlowActionBase *action; // @synthesize action=_action;
 
 @end

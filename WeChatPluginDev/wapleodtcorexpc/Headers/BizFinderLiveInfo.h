@@ -26,7 +26,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithBizusername:(id)arg1 finder_feed_export_id:(id)arg2 refresh_interval:(id)arg3 title:(id)arg4 live_scene:(id)arg5 cover:(id)arg6 use_weapp:(id)arg7 finder_session_buffer:(id)arg8 data_buffer:(id)arg9 weapp_data:(id)arg10 finder_data:(id)arg11 live_status:(id)arg12;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *live_status; // @synthesize live_status=_live_status;
 @property(retain, nonatomic) Finder_Data *finder_data; // @synthesize finder_data=_finder_data;
 @property(retain, nonatomic) WeApp_Data *weapp_data; // @synthesize weapp_data=_weapp_data;

@@ -15,7 +15,6 @@
     UIImageView *_talkingIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *talkingIconView; // @synthesize talkingIconView=_talkingIconView;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;

@@ -19,7 +19,6 @@
     struct CGSize _videoResolution;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double videoFileSize; // @synthesize videoFileSize=_videoFileSize;
 @property(nonatomic) unsigned long long audioTrackNum; // @synthesize audioTrackNum=_audioTrackNum;
 @property(nonatomic) unsigned long long frameRate; // @synthesize frameRate=_frameRate;

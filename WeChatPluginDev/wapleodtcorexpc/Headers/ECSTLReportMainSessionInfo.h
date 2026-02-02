@@ -16,7 +16,6 @@
     CMessageWrap *_sessionMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *sessionMsg; // @synthesize sessionMsg=_sessionMsg;
 @property(nonatomic) unsigned int unreadCount; // @synthesize unreadCount=_unreadCount;
 @property(nonatomic) unsigned int msgNotifyType; // @synthesize msgNotifyType=_msgNotifyType;

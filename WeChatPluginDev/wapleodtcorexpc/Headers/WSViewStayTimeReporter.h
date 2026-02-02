@@ -16,7 +16,6 @@
     double _stayDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double stayDuration; // @synthesize stayDuration=_stayDuration;
 @property(nonatomic) double beginTime; // @synthesize beginTime=_beginTime;
 @property(copy, nonatomic) NSString *connectid; // @synthesize connectid=_connectid;

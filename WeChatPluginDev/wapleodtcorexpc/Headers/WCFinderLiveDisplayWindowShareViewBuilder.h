@@ -16,7 +16,6 @@
     MMWebImageView *_appLogoView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *appLogoView; // @synthesize appLogoView=_appLogoView;
 @property(nonatomic) _Bool isRecordDetail; // @synthesize isRecordDetail=_isRecordDetail;
 @property(retain, nonatomic) WCFinderLiveShopWindowShareItem *remoteItem; // @synthesize remoteItem=_remoteItem;

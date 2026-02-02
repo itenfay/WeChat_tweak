@@ -17,7 +17,6 @@
     MMMusicInfo *_musicInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicInfo *musicInfo; // @synthesize musicInfo=_musicInfo;
 @property(nonatomic) __weak id <MMMusicPostVideoDataVMDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)dataArray;

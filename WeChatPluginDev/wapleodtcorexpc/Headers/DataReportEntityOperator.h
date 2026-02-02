@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface DataReportEntityOperator : NSObject
 {
@@ -84,4 +85,3 @@
 + (id)getPageDataEntity:(id)arg1 needCreate:(_Bool)arg2;
 
 @end
-

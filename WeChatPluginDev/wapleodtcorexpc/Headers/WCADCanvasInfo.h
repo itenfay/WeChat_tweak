@@ -51,7 +51,6 @@
     NSString *_canvasDynamicInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canvasFullScreen; // @synthesize canvasFullScreen=_canvasFullScreen;
 @property(retain, nonatomic) NSString *canvasDynamicInfo; // @synthesize canvasDynamicInfo=_canvasDynamicInfo;
 @property(nonatomic) _Bool forceOpenVoice; // @synthesize forceOpenVoice=_forceOpenVoice;

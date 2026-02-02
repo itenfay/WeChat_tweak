@@ -19,7 +19,6 @@
     ColorGradientView *_colorGradientView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ColorGradientView *colorGradientView; // @synthesize colorGradientView=_colorGradientView;
 @property(retain, nonatomic) MMUIButton *logoView; // @synthesize logoView=_logoView;
 @property(retain, nonatomic) MMUILabel *labelDesc; // @synthesize labelDesc=_labelDesc;

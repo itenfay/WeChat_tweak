@@ -25,7 +25,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) long long setPathResult; // @synthesize setPathResult=_setPathResult;
 @property(retain, nonatomic) NSString *entryPoint; // @synthesize entryPoint=_entryPoint;
 @property(retain, nonatomic) NSString *baseLibPath; // @synthesize baseLibPath=_baseLibPath;

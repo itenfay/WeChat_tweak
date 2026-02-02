@@ -14,7 +14,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (void)doReport;
 - (void)reportWithID:(int)arg1 ext:(id)arg2 isReportNow:(_Bool)arg3 isKeyLog:(_Bool)arg4;
 - (void)reportWithID:(int)arg1 key:(int)arg2 value:(int)arg3;

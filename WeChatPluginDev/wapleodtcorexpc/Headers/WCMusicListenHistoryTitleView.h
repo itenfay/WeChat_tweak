@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, NSString;
 
@@ -17,7 +18,6 @@
     struct UIEdgeInsets _contentEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) MMUIButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -30,4 +30,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

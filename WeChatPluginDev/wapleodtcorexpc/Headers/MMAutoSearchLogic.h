@@ -14,7 +14,6 @@
     NSString *_lastResponseKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastResponseKey; // @synthesize lastResponseKey=_lastResponseKey;
 @property(nonatomic) _Bool blockSignal; // @synthesize blockSignal=_blockSignal;
 @property(retain, nonatomic) NSMutableArray *autoSearchQueue; // @synthesize autoSearchQueue=_autoSearchQueue;

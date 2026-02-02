@@ -13,7 +13,6 @@
     unsigned long long _encryptType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long encryptType; // @synthesize encryptType=_encryptType;
 @property(copy, nonatomic) NSString *decryptMd5; // @synthesize decryptMd5=_decryptMd5;
 @property(nonatomic) unsigned int appVersion; // @synthesize appVersion=_appVersion;

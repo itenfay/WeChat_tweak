@@ -40,7 +40,6 @@
     NSArray *_participant;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *participant; // @synthesize participant=_participant;
 @property(retain, nonatomic) NSString *chatroomUsername; // @synthesize chatroomUsername=_chatroomUsername;
 @property(nonatomic) _Bool useForChatTool; // @synthesize useForChatTool=_useForChatTool;

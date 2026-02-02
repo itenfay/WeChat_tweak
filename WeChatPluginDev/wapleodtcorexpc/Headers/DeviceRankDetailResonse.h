@@ -51,7 +51,6 @@
 + (void)PBArrayAdd_nsDayScoreTitle;
 + (void)PBArrayAdd_nsMotto;
 + (void)PBArrayAdd_nsCoverUrl;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrGoal; // @synthesize arrGoal=_arrGoal;
 @property(nonatomic) _Bool isLike; // @synthesize isLike=_isLike;
 @property(retain, nonatomic) NSArray *arrLikes; // @synthesize arrLikes=_arrLikes;

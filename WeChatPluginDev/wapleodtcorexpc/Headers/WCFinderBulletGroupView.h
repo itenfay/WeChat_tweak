@@ -19,7 +19,6 @@
     NSMutableArray *_waitingArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *waitingArray; // @synthesize waitingArray=_waitingArray;
 @property(retain, nonatomic) NSMutableSet *bulletItemContainSet; // @synthesize bulletItemContainSet=_bulletItemContainSet;
 @property(nonatomic) double preWidth; // @synthesize preWidth=_preWidth;

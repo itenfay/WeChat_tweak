@@ -58,7 +58,6 @@
     UIViewPropertyAnimator *_showAnimationAnimator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *showAnimationAnimator; // @synthesize showAnimationAnimator=_showAnimationAnimator;
 @property(nonatomic) _Bool isDisplayTranslateImage; // @synthesize isDisplayTranslateImage=_isDisplayTranslateImage;
 @property(retain, nonatomic) MMScrollViewZoomReporter *zoomReporter; // @synthesize zoomReporter=_zoomReporter;

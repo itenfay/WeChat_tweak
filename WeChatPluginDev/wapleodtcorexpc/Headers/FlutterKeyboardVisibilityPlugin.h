@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,7 +16,6 @@
 }
 
 + (void)registerWithRegistrar:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isVisible; // @synthesize isVisible=_isVisible;
 @property(nonatomic) _Bool flutterEventListening; // @synthesize flutterEventListening=_flutterEventListening;
 @property(copy, nonatomic) CDUnknownBlockType flutterEventSink; // @synthesize flutterEventSink=_flutterEventSink;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

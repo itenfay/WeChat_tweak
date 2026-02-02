@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MBPackageLogic, NSString;
 
@@ -13,7 +14,6 @@
     MBPackageLogic *_pkg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDownloadFinish; // @synthesize isDownloadFinish=_isDownloadFinish;
 @property(retain, nonatomic) MBPackageLogic *pkg; // @synthesize pkg=_pkg;
 - (id)getCodePackageMD5;
@@ -34,4 +34,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -19,7 +19,6 @@
 
 + (double)defaultHeight;
 + (double)defaultWidthWithToolBarStyle:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(retain, nonatomic) UIView *toolbarView; // @synthesize toolbarView=_toolbarView;
 @property(nonatomic) unsigned long long toolBarStyle; // @synthesize toolBarStyle=_toolBarStyle;

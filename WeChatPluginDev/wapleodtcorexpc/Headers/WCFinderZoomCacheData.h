@@ -14,7 +14,6 @@
     struct CGRect _snapOriginFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double snapCornerRadius; // @synthesize snapCornerRadius=_snapCornerRadius;
 @property(nonatomic) struct CGRect snapOriginFrame; // @synthesize snapOriginFrame=_snapOriginFrame;
 @property(retain, nonatomic) UIView *snapView; // @synthesize snapView=_snapView;

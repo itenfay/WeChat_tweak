@@ -15,7 +15,6 @@
     UITableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(nonatomic) double showHeight; // @synthesize showHeight=_showHeight;

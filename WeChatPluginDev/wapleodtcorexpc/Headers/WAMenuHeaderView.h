@@ -66,7 +66,6 @@
     double _contentY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double contentY; // @synthesize contentY=_contentY;
 @property(retain, nonatomic) UIView *commentModuleHighlightView; // @synthesize commentModuleHighlightView=_commentModuleHighlightView;
 @property(retain, nonatomic) UIView *dividingLineView; // @synthesize dividingLineView=_dividingLineView;

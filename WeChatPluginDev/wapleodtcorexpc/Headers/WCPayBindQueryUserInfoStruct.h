@@ -38,7 +38,6 @@
     NSString *_complianceHalfPageData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *complianceHalfPageData; // @synthesize complianceHalfPageData=_complianceHalfPageData;
 @property(retain, nonatomic) NSArray *payManageLabelList; // @synthesize payManageLabelList=_payManageLabelList;
 @property(retain, nonatomic) WCPayOfflinePayDisableBlockLayer *offlinePayDisableBlockLayer; // @synthesize offlinePayDisableBlockLayer=_offlinePayDisableBlockLayer;

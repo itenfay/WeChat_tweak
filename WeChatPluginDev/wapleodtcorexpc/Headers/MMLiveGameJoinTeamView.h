@@ -34,7 +34,6 @@
     MMLiveJoinGameAudiencePaymentView *_paymentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldReport; // @synthesize shouldReport=_shouldReport;
 @property(nonatomic) _Bool isShow; // @synthesize isShow=_isShow;
 @property(retain, nonatomic) MMLiveJoinGameAudiencePaymentView *paymentView; // @synthesize paymentView=_paymentView;

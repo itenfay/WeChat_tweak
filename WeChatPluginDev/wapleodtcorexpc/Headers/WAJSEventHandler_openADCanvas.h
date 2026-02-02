@@ -12,7 +12,6 @@
     WCAdvertiseInfo *_adInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdvertiseInfo *adInfo; // @synthesize adInfo=_adInfo;
 @property(retain, nonatomic) WCCanvasDynamicDataLoader *dataLoader; // @synthesize dataLoader=_dataLoader;
 - (void)onCloseCanvasPageView;

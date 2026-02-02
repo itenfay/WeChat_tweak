@@ -16,7 +16,6 @@
     NSMutableArray *_pendingTasks;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingTasks; // @synthesize pendingTasks=_pendingTasks;
 @property(retain, nonatomic) NSMutableDictionary *progressMap; // @synthesize progressMap=_progressMap;
 @property(retain, nonatomic) WCFinderUploadCdnMgr *uploadMgr; // @synthesize uploadMgr=_uploadMgr;

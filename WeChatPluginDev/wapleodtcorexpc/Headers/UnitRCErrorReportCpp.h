@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UnitRCErrorReportCpp : NSObject
 {
@@ -12,4 +13,3 @@
 + (void)registerErrorReport:(CDUnknownBlockType)arg1;
 
 @end
-

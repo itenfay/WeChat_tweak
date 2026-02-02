@@ -17,7 +17,6 @@
     long long _index;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(retain, nonatomic) NSArray *textArray; // @synthesize textArray=_textArray;
 @property(retain, nonatomic) MMTimer *carouselTimer; // @synthesize carouselTimer=_carouselTimer;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WeVisPixelBuffer : NSObject
 {
@@ -15,11 +16,9 @@
 + (id)bufferWithNV12WidthY:(unsigned long long)arg1 heightY:(unsigned long long)arg2 cleanup:(CDUnknownBlockType)arg3;
 + (id)bufferFromPool:(struct __CVPixelBufferPool *)arg1 maxBufferCount:(int)arg2 cleanup:(CDUnknownBlockType)arg3;
 + (id)bufferWithCVPixelBuffer:(struct __CVBuffer *)arg1 cleanup:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cleanupCallback; // @synthesize cleanupCallback=_cleanupCallback;
 @property(nonatomic) struct __CVBuffer *pixelBufferRef; // @synthesize pixelBufferRef=_pixelBufferRef;
 - (id)cloneYUV;
 - (void)dealloc;
 
 @end
-

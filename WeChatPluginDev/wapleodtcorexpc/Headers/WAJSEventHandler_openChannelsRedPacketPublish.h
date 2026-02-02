@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJPublisher, MMAsset, NSString, WCFinderCreateCoordinator;
 
 @interface WAJSEventHandler_openChannelsRedPacketPublish
@@ -14,7 +16,6 @@
     unsigned long long _enterScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUsingNewPublisher; // @synthesize isUsingNewPublisher=_isUsingNewPublisher;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(retain, nonatomic) MMAsset *finderAsset; // @synthesize finderAsset=_finderAsset;
@@ -58,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

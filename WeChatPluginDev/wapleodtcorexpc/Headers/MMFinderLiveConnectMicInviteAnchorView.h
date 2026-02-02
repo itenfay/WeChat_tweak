@@ -25,7 +25,6 @@
     NSMutableArray *_displaySearchUserInfoList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool footerViewHasBeenExposed; // @synthesize footerViewHasBeenExposed=_footerViewHasBeenExposed;
 @property(retain, nonatomic) NSMutableArray *displaySearchUserInfoList; // @synthesize displaySearchUserInfoList=_displaySearchUserInfoList;
 @property(retain, nonatomic) NSString *curSearchText; // @synthesize curSearchText=_curSearchText;

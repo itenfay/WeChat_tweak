@@ -18,7 +18,6 @@
     TextState3rdPartyContext *_context;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasParsedHandler; // @synthesize hasParsedHandler=_hasParsedHandler;
 @property(retain, nonatomic) TextState3rdPartyContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) id <TextState3rdPartyHandler> handler; // @synthesize handler=_handler;

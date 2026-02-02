@@ -15,7 +15,6 @@
 + (double)headerViewHeight;
 + (id)headerFont;
 + (id)reuseID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)layoutSubviews;
 

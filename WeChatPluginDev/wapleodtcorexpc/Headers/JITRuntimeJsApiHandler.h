@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class JITRuntime, JITRuntimeNativeBufferMgr, NSMutableArray, NSMutableDictionary;
 @protocol JITRuntimeJsApiHandlerDelegate;
@@ -26,7 +27,6 @@
     NSMutableDictionary *_commandBufferBuffers;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useXHRTransferJSEvent; // @synthesize useXHRTransferJSEvent=_useXHRTransferJSEvent;
 @property(retain, nonatomic) NSMutableDictionary *commandBufferBuffers; // @synthesize commandBufferBuffers=_commandBufferBuffers;
 @property(retain, nonatomic) JITRuntimeNativeBufferMgr *nativeBufferMgr; // @synthesize nativeBufferMgr=_nativeBufferMgr;
@@ -76,4 +76,3 @@
 - (void)innerProcessJsApiCommandBuffer:(id)arg1;
 
 @end
-

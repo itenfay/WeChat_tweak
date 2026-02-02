@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface MMEmoticonHomePageContext
@@ -15,7 +17,6 @@
     NSString *_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) _Bool cannotOpenInLimitedMode; // @synthesize cannotOpenInLimitedMode=_cannotOpenInLimitedMode;
 @property(nonatomic) unsigned long long searchScene; // @synthesize searchScene=_searchScene;
@@ -27,4 +28,3 @@
 - (_Bool)isValid;
 
 @end
-

@@ -20,7 +20,6 @@
     long long _styleOrder;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long styleOrder; // @synthesize styleOrder=_styleOrder;
 @property(retain, nonatomic) NSArray *styleList; // @synthesize styleList=_styleList;
 @property(copy, nonatomic) NSString *stylePlistPath; // @synthesize stylePlistPath=_stylePlistPath;

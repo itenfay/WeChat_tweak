@@ -14,7 +14,6 @@
     WCFinderLivePageStayReporter *_exposeReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLivePageStayReporter *exposeReporter; // @synthesize exposeReporter=_exposeReporter;
 @property(nonatomic) _Bool hasRefreshLiveTabInfo; // @synthesize hasRefreshLiveTabInfo=_hasRefreshLiveTabInfo;
 @property(retain, nonatomic) WCFinderLiveTabInfo *cityTabInfo; // @synthesize cityTabInfo=_cityTabInfo;

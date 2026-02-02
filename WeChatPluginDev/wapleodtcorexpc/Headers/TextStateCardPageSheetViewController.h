@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, MMUIButton, MMUIViewController, MultipleTextStateCardView, NSString, TextStateCompositeCardView, TextStateMusicPlayerCoordinator, TextStatePrivacyMgr;
 
 @interface TextStateCardPageSheetViewController
@@ -18,7 +20,6 @@
     TextStatePrivacyMgr *_shareScopeMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStatePrivacyMgr *shareScopeMgr; // @synthesize shareScopeMgr=_shareScopeMgr;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
 @property(retain, nonatomic) TextStateMusicPlayerCoordinator *musicPlayerCoordinator; // @synthesize musicPlayerCoordinator=_musicPlayerCoordinator;
@@ -71,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

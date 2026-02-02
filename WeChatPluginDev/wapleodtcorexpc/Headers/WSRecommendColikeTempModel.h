@@ -17,7 +17,6 @@
     unsigned long long _version;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(nonatomic) unsigned int updateFlag; // @synthesize updateFlag=_updateFlag;

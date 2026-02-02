@@ -11,7 +11,6 @@
     NSString *_uuid;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) NSString *requestId; // @synthesize requestId=_requestId;
 - (id)init;

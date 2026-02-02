@@ -18,7 +18,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
 @property(nonatomic) _Bool enableHook; // @synthesize enableHook=_enableHook;

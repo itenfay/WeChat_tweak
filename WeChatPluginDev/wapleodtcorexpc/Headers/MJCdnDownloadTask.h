@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJCdnDownloadRequest, MJCdnDownloadResult, NSError, NSString;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _completionHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) MJCdnDownloadResult *result; // @synthesize result=_result;
@@ -34,4 +34,3 @@
 - (id)init;
 
 @end
-

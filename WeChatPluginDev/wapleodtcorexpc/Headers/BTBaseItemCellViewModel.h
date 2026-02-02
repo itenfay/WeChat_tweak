@@ -18,7 +18,6 @@
     BTMsgSectionData *_sectionData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTitleUp; // @synthesize isTitleUp=_isTitleUp;
 @property(nonatomic) int msgSectionIndex; // @synthesize msgSectionIndex=_msgSectionIndex;
 @property(nonatomic) int posInTL; // @synthesize posInTL=_posInTL;

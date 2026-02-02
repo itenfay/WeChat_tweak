@@ -13,7 +13,6 @@
     NSArray *_reverbs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *reverbs; // @synthesize reverbs=_reverbs;
 @property(retain, nonatomic) NSArray *themes; // @synthesize themes=_themes;
 

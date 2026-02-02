@@ -18,7 +18,6 @@
     unsigned long long _status;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(retain, nonatomic) MMProgressViewEx *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UIImageView *successImageView; // @synthesize successImageView=_successImageView;

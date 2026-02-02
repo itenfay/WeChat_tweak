@@ -13,7 +13,6 @@
     NSString *_username;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float stayTimeInterval; // @synthesize stayTimeInterval=_stayTimeInterval;
 @property(readonly, nonatomic) NSString *username; // @synthesize username=_username;
 - (id)zidl;

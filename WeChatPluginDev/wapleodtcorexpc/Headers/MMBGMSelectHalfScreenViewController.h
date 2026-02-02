@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMBGMPanelPublishContext, MMBGMSelectedConfig, MMBGMSelectedView, NSMutableArray, NSString, UIColor;
 @protocol MMBGMSelectHalfScreenViewControllerDelegate;
 
@@ -19,7 +21,6 @@
     MMBGMSelectedConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBGMSelectedConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) MMBGMSelectedView *musicView; // @synthesize musicView=_musicView;
 @property(nonatomic) _Bool useIphoneUIStyleInIpad; // @synthesize useIphoneUIStyleInIpad=_useIphoneUIStyleInIpad;
@@ -71,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

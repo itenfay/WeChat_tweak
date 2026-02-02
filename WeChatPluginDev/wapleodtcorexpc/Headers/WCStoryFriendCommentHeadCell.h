@@ -21,7 +21,6 @@
 + (id)getRichTextViewFont;
 + (unsigned long long)getRichTextViewParserType;
 + (double)heightForComment:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separateLine; // @synthesize separateLine=_separateLine;
 @property(retain, nonatomic) RichTextView *commentView; // @synthesize commentView=_commentView;
 @property(retain, nonatomic) MMCPLabel *userNameLabel; // @synthesize userNameLabel=_userNameLabel;

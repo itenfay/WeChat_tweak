@@ -13,7 +13,6 @@
     PAGView *_pagView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *pagView; // @synthesize pagView=_pagView;
 @property(retain, nonatomic) WCAdURLImageView *thumbView; // @synthesize thumbView=_thumbView;
 @property(retain, nonatomic) WCAdPagViewConfig *config; // @synthesize config=_config;

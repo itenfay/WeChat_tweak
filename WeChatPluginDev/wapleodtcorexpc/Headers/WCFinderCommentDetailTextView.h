@@ -13,7 +13,6 @@
     WCFinderCommentDetailTextViewContext *_context;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCommentDetailTextViewContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSMutableArray *mentionEntryArray; // @synthesize mentionEntryArray=_mentionEntryArray;
 @property(nonatomic) __weak id <WCFinderCommentDetailTextViewMentionDelegate> mentionDelegate; // @synthesize mentionDelegate=_mentionDelegate;

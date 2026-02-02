@@ -10,7 +10,6 @@
     MMBadgeView *_reddotView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBadgeView *reddotView; // @synthesize reddotView=_reddotView;
 - (struct CGRect)titleRectForContentRect:(struct CGRect)arg1;
 - (void)showReddotView:(_Bool)arg1;

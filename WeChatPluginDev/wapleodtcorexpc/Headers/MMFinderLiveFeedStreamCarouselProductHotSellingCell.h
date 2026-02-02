@@ -10,7 +10,6 @@
     MMFinderLiveFeedStreamProductStyleView *_hotSellingStyleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFeedStreamProductStyleView *hotSellingStyleView; // @synthesize hotSellingStyleView=_hotSellingStyleView;
 - (void)onLiveFeedStreamProductStyleViewClicked:(id)arg1 jump2Type:(unsigned long long)arg2 productInfo:(id)arg3;
 - (void)setTaskId:(id)arg1;

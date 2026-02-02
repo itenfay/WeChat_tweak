@@ -19,7 +19,6 @@
     NSMutableArray *_recommendCardsArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *recommendCardsArray; // @synthesize recommendCardsArray=_recommendCardsArray;
 @property(retain, nonatomic) UIScrollView *recommendScrollView; // @synthesize recommendScrollView=_recommendScrollView;
 @property(retain, nonatomic) UILabel *tailLabel; // @synthesize tailLabel=_tailLabel;

@@ -12,7 +12,6 @@
 
 + (id)packet;
 @property(readonly, nonatomic) QBUniAttribute *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (long long)getReturnCode;
 - (void)putObjectAttr:(id)arg1 value:(id)arg2;
 - (void)putObjectAttr:(id)arg1 type:(id)arg2 value:(id)arg3;

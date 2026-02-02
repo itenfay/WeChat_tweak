@@ -17,7 +17,6 @@
     unsigned long long _index;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needUpdateLocation; // @synthesize needUpdateLocation=_needUpdateLocation;
 @property(nonatomic) _Bool needHideKeyBoard; // @synthesize needHideKeyBoard=_needHideKeyBoard;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;

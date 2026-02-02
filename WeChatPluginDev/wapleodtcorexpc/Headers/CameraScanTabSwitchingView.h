@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CameraScanBlurEffectView, UILabel;
 
 @interface CameraScanTabSwitchingView
@@ -12,7 +14,6 @@
     UILabel *_centerLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *centerLabel; // @synthesize centerLabel=_centerLabel;
 @property(retain, nonatomic) CameraScanBlurEffectView *blurView; // @synthesize blurView=_blurView;
 @property(nonatomic) double tabViewHeight; // @synthesize tabViewHeight=_tabViewHeight;
@@ -26,4 +27,3 @@
 - (id)init;
 
 @end
-

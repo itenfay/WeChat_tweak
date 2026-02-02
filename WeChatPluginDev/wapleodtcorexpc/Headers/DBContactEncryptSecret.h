@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_recordEncryptSecret;
 + (void)PBArrayAdd_commonEncryptSecret;
 + (void)PBArrayAdd_textStateEncryptSecret;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *recordEncryptSecret; // @synthesize recordEncryptSecret=_recordEncryptSecret;
 @property(retain, nonatomic) NSString *commonEncryptSecret; // @synthesize commonEncryptSecret=_commonEncryptSecret;
 @property(retain, nonatomic) NSString *textStateEncryptSecret; // @synthesize textStateEncryptSecret=_textStateEncryptSecret;

@@ -18,7 +18,6 @@
     NSString *richTextKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *richTextKey; // @synthesize richTextKey;
 - (_Bool)tryParseTitleFormat:(id)arg1;
 - (_Bool)parseTitleFormat:(id)arg1 priorTitleFormat:(id)arg2;

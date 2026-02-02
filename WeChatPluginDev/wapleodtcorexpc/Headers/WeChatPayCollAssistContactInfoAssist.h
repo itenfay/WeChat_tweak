@@ -13,7 +13,6 @@
     WCPayGetCollAssistMenuCgi *_getCollAssistMenuCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayGetCollAssistMenuCgi *getCollAssistMenuCgi; // @synthesize getCollAssistMenuCgi=_getCollAssistMenuCgi;
 @property(retain, nonatomic) GetReceiptAssisPluginResponse *collAssistPluginResp; // @synthesize collAssistPluginResp=_collAssistPluginResp;
 @property(retain, nonatomic) WCPayGetCollAssistPluginCgi *getPluginCgi; // @synthesize getPluginCgi=_getPluginCgi;

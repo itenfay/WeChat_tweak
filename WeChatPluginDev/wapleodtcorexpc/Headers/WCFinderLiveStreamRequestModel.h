@@ -31,7 +31,6 @@
     WCFinderRedDotCtrlInfo *_ctrlInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRedDotCtrlInfo *ctrlInfo; // @synthesize ctrlInfo=_ctrlInfo;
 @property(nonatomic) unsigned long long cacheDurationInSeconds; // @synthesize cacheDurationInSeconds=_cacheDurationInSeconds;
 @property(retain, nonatomic) WCFinderLiveTabInfo *liveTabInfo; // @synthesize liveTabInfo=_liveTabInfo;

@@ -13,7 +13,6 @@
     TXCVideoEncodeConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TXCVideoEncodeConfig *config; // @synthesize config=_config;
 @property(nonatomic) __weak id <TXCVideoEncodeReportDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) int streamType; // @synthesize streamType=_streamType;

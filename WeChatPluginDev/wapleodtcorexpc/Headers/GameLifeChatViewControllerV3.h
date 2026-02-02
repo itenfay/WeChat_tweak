@@ -21,7 +21,6 @@
     MMUIButton *_tabButtonRight;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *tabButtonRight; // @synthesize tabButtonRight=_tabButtonRight;
 @property(retain, nonatomic) MMUIButton *tabButtonLeft; // @synthesize tabButtonLeft=_tabButtonLeft;
 @property(nonatomic) __weak MMUIViewController *currentTabVc; // @synthesize currentTabVc=_currentTabVc;

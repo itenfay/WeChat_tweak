@@ -15,7 +15,6 @@
     MMShortVideoParamModel *_videoParamModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMShortVideoParamModel *videoParamModel; // @synthesize videoParamModel=_videoParamModel;
 @property(retain, nonatomic) EditVideoAttr *editVideoAttr; // @synthesize editVideoAttr=_editVideoAttr;
 @property(retain, nonatomic) UIImage *videoThumbImage; // @synthesize videoThumbImage=_videoThumbImage;

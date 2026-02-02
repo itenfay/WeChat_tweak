@@ -11,7 +11,6 @@
     _Bool m_isLoading;
 }
 
-- (void).cxx_destruct;
 - (void)startCommonLoadingWithTips:(id)arg1;
 - (void)stopCommonLoading;
 - (void)startCommonLoading;

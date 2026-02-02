@@ -13,7 +13,6 @@
 }
 
 + (id)proxyWithTarget:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak FlutterTextInputPlugin *target; // @synthesize target=_target;
 - (void)enableActiveViewAccessibility;
 

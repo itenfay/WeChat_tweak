@@ -17,7 +17,6 @@
 + (id)generateNormalHeadImage:(id)arg1;
 + (id)generateHDHeadDataLow:(id)arg1;
 + (id)generateHDHeadData:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <HeadImgDelegate> delegate; // @synthesize delegate;
 - (void)onUploadPartFail:(id)arg1;
 - (void)onUploadComplete:(id)arg1;

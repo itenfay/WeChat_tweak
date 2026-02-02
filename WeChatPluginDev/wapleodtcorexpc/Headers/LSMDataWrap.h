@@ -13,7 +13,6 @@
     NSData *_data;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int modifyTime; // @synthesize modifyTime=_modifyTime;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (id)initWithData:(id)arg1 modifyTime:(unsigned int)arg2;

@@ -13,7 +13,6 @@
     NSMutableSet *_imageOwners;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *imageOwners; // @synthesize imageOwners=_imageOwners;
 @property(retain, nonatomic) NSURLSessionDataTask *task; // @synthesize task=_task;
 - (void)removeImageOwner:(id)arg1;

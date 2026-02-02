@@ -17,7 +17,6 @@
     UIImageView *m_searchingLogo;
 }
 
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)dealloc;
 - (void)textModifyMethod;

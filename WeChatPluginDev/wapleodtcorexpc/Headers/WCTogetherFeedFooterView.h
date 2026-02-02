@@ -12,7 +12,6 @@
 
 + (double)heightForViewSection:(id)arg1 inTableView:(id)arg2;
 + (id)reusableViewIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 - (void)layoutSubviews;
 - (id)initWithReuseIdentifier:(id)arg1;

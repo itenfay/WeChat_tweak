@@ -15,7 +15,6 @@
     NSString *_rawPhoneNumber;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasSentVerifyCode; // @synthesize hasSentVerifyCode=_hasSentVerifyCode;
 @property(retain, nonatomic) NSString *rawPhoneNumber; // @synthesize rawPhoneNumber=_rawPhoneNumber;
 @property(retain, nonatomic) KidsWatchButton *doneButton; // @synthesize doneButton=_doneButton;

@@ -40,7 +40,6 @@
 + (void)PBArrayAdd_qqUin;
 + (void)PBArrayAdd_mobileFullHash;
 + (void)PBArrayAdd_mobileHash;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cardList; // @synthesize cardList=_cardList;
 @property(retain, nonatomic) NSString *weiDianInfo; // @synthesize weiDianInfo=_weiDianInfo;
 @property(retain, nonatomic) NSMutableArray *phoneList; // @synthesize phoneList=_phoneList;

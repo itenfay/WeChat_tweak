@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSRecursiveLock;
 
@@ -22,7 +23,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType m_SaveFaceClusterToDbBlock; // @synthesize m_SaveFaceClusterToDbBlock=_m_SaveFaceClusterToDbBlock;
 @property(retain) NSMutableArray *m_arrPreFaceCluster; // @synthesize m_arrPreFaceCluster;
 - (_Bool)isEnableDataReport;
@@ -48,4 +48,3 @@
 - (id)init;
 
 @end
-

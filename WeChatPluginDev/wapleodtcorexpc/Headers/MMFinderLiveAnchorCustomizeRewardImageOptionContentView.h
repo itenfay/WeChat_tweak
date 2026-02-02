@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveAnchorCustomizeRewardOptionsHighlightView, NSArray, UIView;
 
 @interface MMFinderLiveAnchorCustomizeRewardImageOptionContentView
@@ -23,7 +25,6 @@
 + (double)seplineHeight;
 + (double)seplineWidth;
 + (struct CGSize)imageCellSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *imageLabelViewArray; // @synthesize imageLabelViewArray=_imageLabelViewArray;
 @property(retain, nonatomic) NSArray *imageViewArray; // @synthesize imageViewArray=_imageViewArray;
 @property(retain, nonatomic) NSArray *imageLabelArray; // @synthesize imageLabelArray=_imageLabelArray;
@@ -50,4 +51,3 @@
 - (id)init;
 
 @end
-

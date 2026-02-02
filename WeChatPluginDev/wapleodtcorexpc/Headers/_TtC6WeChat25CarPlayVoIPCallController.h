@@ -11,7 +11,6 @@
     MISSING_TYPE *delegate;
 }
 
-- (void).cxx_destruct;
 - (id)initWithContact:(id)arg1 toast:(id)arg2;
 - (void)setRoomInfoWithRoomID:(long long)arg1 roomKey:(long long)arg2;
 - (void)updateButtonsWithIsMuted:(_Bool)arg1;

@@ -16,7 +16,6 @@
     UIColor *_m_wxColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *m_wxColor; // @synthesize m_wxColor=_m_wxColor;
 @property(nonatomic) struct _NSRange m_range; // @synthesize m_range;
 @property(nonatomic) _Bool m_bUnderline; // @synthesize m_bUnderline;

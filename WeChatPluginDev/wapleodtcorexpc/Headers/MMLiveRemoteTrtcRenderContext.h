@@ -21,7 +21,6 @@
     struct CGRect _normalizeFrame;
 }
 
-- (void).cxx_destruct;
 @property _Bool isFirstFrameFromCapture; // @synthesize isFirstFrameFromCapture=_isFirstFrameFromCapture;
 @property _Bool isFirstFrameRendered; // @synthesize isFirstFrameRendered=_isFirstFrameRendered;
 @property struct CGRect normalizeFrame; // @synthesize normalizeFrame=_normalizeFrame;

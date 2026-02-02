@@ -14,7 +14,6 @@
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *params; // @synthesize params=_params;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

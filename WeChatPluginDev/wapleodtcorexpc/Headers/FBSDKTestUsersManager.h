@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)sharedInstanceForAppID:(id)arg1 appSecret:(id)arg2;
-- (void).cxx_destruct;
 - (void)fetchExistingTestAccountsWithAfterCursor:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)appAccessToken;
 - (id)userIdAndTokenOfExistingAccountWithPermissions:(id)arg1 skip:(id)arg2;
@@ -27,4 +27,3 @@
 - (id)initWithAppID:(id)arg1 appSecret:(id)arg2;
 
 @end
-

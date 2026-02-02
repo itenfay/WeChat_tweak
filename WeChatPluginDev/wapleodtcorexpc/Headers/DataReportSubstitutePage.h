@@ -20,7 +20,6 @@
     long long _stackDeep;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long stackDeep; // @synthesize stackDeep=_stackDeep;
 @property(nonatomic) _Bool isFlutterPage; // @synthesize isFlutterPage=_isFlutterPage;
 @property(nonatomic) _Bool isParentPage; // @synthesize isParentPage=_isParentPage;

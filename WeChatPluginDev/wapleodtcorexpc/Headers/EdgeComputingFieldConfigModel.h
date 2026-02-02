@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_name;
 + (void)PBArrayAdd_type;
 + (void)PBArrayAdd_index;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(nonatomic) unsigned int index; // @synthesize index=_index;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJDashLine, MJDummyNarrationSegmentCell, MJDummyNarrationTextInputSegmentCell, MJPlaybackViewModel, MJScrollViewAutoScroller, MJSegmentMoveContext, MJSegmentTrimContext, MJSegmentTrimHandleReusableView, MJSnapMarksView, MJSnapMarksViewLayout, MJTimeRulerView, MJTimeRulerViewLayout, MJTimelineCollectionViewLayout, MJTimelineLayoutCalculator, MJTimelineView, MJTimelineViewModel, MMUIButton, NSMapTable, NSMutableSet, NSString, NSTimer, OMCSegmentSequenceTimeOffsetMapper, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UISelectionFeedbackGenerator, UITapGestureRecognizer, UIView;
 @protocol MJTimelineViewControllerDelegate;
@@ -55,7 +56,6 @@
     CDStruct_1b6d18a9 _narrationStartTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 narrationStartTime; // @synthesize narrationStartTime=_narrationStartTime;
 @property(retain, nonatomic) MJDummyNarrationTextInputSegmentCell *dummyTextInputNarrationCell; // @synthesize dummyTextInputNarrationCell=_dummyTextInputNarrationCell;
 @property(retain, nonatomic) MJDummyNarrationSegmentCell *dummyNarrationCell; // @synthesize dummyNarrationCell=_dummyNarrationCell;
@@ -235,4 +235,3 @@
 @property(readonly) Class superclass;
 
 @end
-

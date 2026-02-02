@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BTCanvasItemCellViewModel, MMWebCanvasView, NSMutableDictionary, NSString;
 
 @interface BTCanvasItemCellView
@@ -14,7 +16,6 @@
     NSMutableDictionary *_dicPopupView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicPopupView; // @synthesize dicPopupView=_dicPopupView;
 @property(retain, nonatomic) MMWebCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 @property(nonatomic) double statusBarHeight; // @synthesize statusBarHeight=_statusBarHeight;
@@ -39,4 +40,3 @@
 @property(readonly, nonatomic) BTCanvasItemCellViewModel *viewModel; // @dynamic viewModel;
 
 @end
-

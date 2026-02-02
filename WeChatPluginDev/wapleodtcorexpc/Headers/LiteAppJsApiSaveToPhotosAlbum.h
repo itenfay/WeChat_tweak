@@ -13,7 +13,6 @@
     MMLiteAppDownloadMgr *_downloadMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiteAppDownloadMgr *downloadMgr; // @synthesize downloadMgr=_downloadMgr;
 - (void)addTailInfo:(id)arg1;
 - (void)onDownloadTaskCompletion:(id)arg1 errType:(unsigned long long)arg2 errCode:(int)arg3;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIView, NSMutableArray, NSMutableDictionary, NSString, UIColor, UIView, WCFilterBasePanel;
 @protocol WCFilterViewDelegate;
 
@@ -28,7 +30,6 @@
     UIColor *_curTintColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) UIColor *curTintColor; // @synthesize curTintColor=_curTintColor;
 @property(nonatomic) _Bool useBoldFont; // @synthesize useBoldFont=_useBoldFont;
 @property(nonatomic) _Bool useEmphasizeColor; // @synthesize useEmphasizeColor=_useEmphasizeColor;
@@ -65,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -17,7 +17,6 @@
     MMFinderLiveRealNameFriendLikeBubbleView *_bubbleView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasDismissBubble; // @synthesize hasDismissBubble=_hasDismissBubble;
 @property(nonatomic) __weak MMFinderLiveRealNameFriendLikeBubbleView *bubbleView; // @synthesize bubbleView=_bubbleView;
 @property(nonatomic) _Bool hasBubbleShowed; // @synthesize hasBubbleShowed=_hasBubbleShowed;

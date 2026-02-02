@@ -14,7 +14,6 @@
     NSString *_url;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isZstd; // @synthesize isZstd=_isZstd;
 @property(nonatomic) _Bool isPatch; // @synthesize isPatch=_isPatch;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;

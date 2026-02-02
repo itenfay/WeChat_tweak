@@ -15,7 +15,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct MJTimeScaleList timeScaleList; // @synthesize timeScaleList=_timeScaleList;
 @property(readonly, nonatomic) OMCSegmentSequenceTimeOffsetMapper *timelineTimeOffsetMapper; // @synthesize timelineTimeOffsetMapper=_timelineTimeOffsetMapper;
 - (void)adjustTimeScaleWithSegmentMappers:(id)arg1 adjustState:(unsigned long long)arg2;

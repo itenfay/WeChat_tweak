@@ -13,7 +13,6 @@
     double _expireTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double expireTime; // @synthesize expireTime=_expireTime;
 @property(copy, nonatomic) NSString *token; // @synthesize token=_token;
 

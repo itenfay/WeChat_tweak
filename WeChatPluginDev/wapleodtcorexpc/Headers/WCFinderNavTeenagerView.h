@@ -14,7 +14,6 @@
     RichTextView *_richTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;
 @property(nonatomic) __weak id <WCFinderNavTeenagerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIImageView *teenagerImageView; // @synthesize teenagerImageView=_teenagerImageView;

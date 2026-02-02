@@ -13,7 +13,6 @@
 }
 
 + (id)proxyWithTarget:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id target; // @synthesize target=_target;
 - (void)connection:(id)arg1 didSendBodyData:(long long)arg2 totalBytesWritten:(long long)arg3 totalBytesExpectedToWrite:(long long)arg4;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

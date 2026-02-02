@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface GetV6StrangerRequest : NSObject
 {
@@ -14,4 +15,3 @@
 + (_Bool)isV6StrangerEncodedUsername:(id)arg1;
 
 @end
-

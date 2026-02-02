@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, WASubscriptionMessageRequestListByIDCgi, WASubscriptionMessageRequestSubscribeCgi;
 @protocol BrandTemplateMsgAuthLogicDelegate;
 
@@ -22,7 +24,6 @@
     WASubscriptionMessageRequestSubscribeCgi *_requestSubscribeCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WASubscriptionMessageRequestSubscribeCgi *requestSubscribeCgi; // @synthesize requestSubscribeCgi=_requestSubscribeCgi;
 @property(retain, nonatomic) WASubscriptionMessageRequestListByIDCgi *requestListByIDCgi; // @synthesize requestListByIDCgi=_requestListByIDCgi;
 @property(copy, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
@@ -67,4 +68,3 @@
 @property(readonly) Class superclass;
 
 @end
-

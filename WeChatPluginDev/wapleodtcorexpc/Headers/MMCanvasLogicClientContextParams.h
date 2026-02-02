@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebCanvasItemData;
 @protocol MMWebJsCanvasViewPortDelegate;
@@ -20,7 +21,6 @@
     CDUnknownBlockType _deleteHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType deleteHandler; // @synthesize deleteHandler=_deleteHandler;
 @property(copy, nonatomic) CDUnknownBlockType prepareCompletion; // @synthesize prepareCompletion=_prepareCompletion;
 @property(nonatomic) __weak id <MMWebJsCanvasViewPortDelegate> viewDelegate; // @synthesize viewDelegate=_viewDelegate;
@@ -31,4 +31,3 @@
 @property(retain, nonatomic) MMWebCanvasItemData *canvasItemData; // @synthesize canvasItemData=_canvasItemData;
 
 @end
-

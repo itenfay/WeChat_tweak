@@ -18,7 +18,6 @@
     NSMutableDictionary *_containedFiles;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool scanned; // @synthesize scanned=_scanned;
 @property(retain, nonatomic) NSMutableDictionary *containedFiles; // @synthesize containedFiles=_containedFiles;
 @property(retain, nonatomic) NSMutableDictionary *subdirectories; // @synthesize subdirectories=_subdirectories;

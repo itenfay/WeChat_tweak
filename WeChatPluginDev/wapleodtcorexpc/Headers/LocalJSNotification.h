@@ -13,7 +13,6 @@
     NSDictionary *_params;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *params; // @synthesize params=_params;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 

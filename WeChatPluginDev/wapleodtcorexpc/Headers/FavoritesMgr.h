@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FavForwardLogicController, FavSecurityLogic, FavoritesBatchDelMgr, FavoritesBatchGetMgr, FavoritesDownloadMgr, FavoritesItemDB, FavoritesRepairSvrDataLogic, FavoritesReportLogic, FavoritesSetting, FavoritesSyncMgr, FavoritesTagMgr, FavoritesUploadMgr, MyFavoritesDB, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_semaphore;
 
@@ -35,7 +37,6 @@
 
 + (unsigned long long)preCleanGetCacheSize;
 + (unsigned long long)cleanCacheMgrMakeToClean;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FavForwardLogicController *forwardLogic; // @synthesize forwardLogic=_forwardLogic;
 @property(retain, nonatomic) FavoritesReportLogic *reportLogic; // @synthesize reportLogic=_reportLogic;
 @property(retain, nonatomic) FavoritesSetting *setting; // @synthesize setting=_setting;
@@ -172,4 +173,3 @@
 @property(readonly) Class superclass;
 
 @end
-

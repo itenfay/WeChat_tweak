@@ -12,7 +12,6 @@
     WCFinderFeedFlowView *_feedFlowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedFlowView *feedFlowView; // @synthesize feedFlowView=_feedFlowView;
 @property(retain, nonatomic) WCFinderFeedFlowViewAdapter *flowViewAdapter; // @synthesize flowViewAdapter=_flowViewAdapter;
 @property(retain, nonatomic) WCFinderHistoryViewModel *viewModel; // @synthesize viewModel=_viewModel;

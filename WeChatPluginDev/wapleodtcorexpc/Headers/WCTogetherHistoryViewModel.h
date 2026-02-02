@@ -35,7 +35,6 @@
     struct CGPoint _lastScrollContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint lastScrollContentOffset; // @synthesize lastScrollContentOffset=_lastScrollContentOffset;
 @property(nonatomic) long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
 @property(nonatomic) long long dayOfYesterday; // @synthesize dayOfYesterday=_dayOfYesterday;

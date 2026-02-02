@@ -25,7 +25,6 @@
 + (id)cellIdentifier;
 + (void)prepareForReuseQueue:(id)arg1;
 + (struct CGSize)calculateDisplaySize:(struct CGSize)arg1 forVM:(id)arg2 cellIdentifier:(id)arg3 showSceneIntroduce:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cellIdentifier; // @synthesize cellIdentifier=_cellIdentifier;
 @property(nonatomic) _Bool showSeparatorLine; // @synthesize showSeparatorLine=_showSeparatorLine;
 @property(copy, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;

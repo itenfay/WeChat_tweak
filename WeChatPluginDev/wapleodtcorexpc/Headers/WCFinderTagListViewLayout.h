@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSValue, WCFinderTagListViewOptions;
 
@@ -20,7 +21,6 @@
 }
 
 + (id)displayTitle:(id)arg1 withLimitCharCount:(long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *expandBtnSizeValue; // @synthesize expandBtnSizeValue=_expandBtnSizeValue;
 @property(nonatomic) long long oldExpandBtnStyle; // @synthesize oldExpandBtnStyle=_oldExpandBtnStyle;
 @property(nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
@@ -40,4 +40,3 @@
 - (id)init;
 
 @end
-

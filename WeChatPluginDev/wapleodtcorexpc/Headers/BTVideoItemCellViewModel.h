@@ -21,7 +21,6 @@
 }
 
 + (_Bool)canCreateViewModelWithReaderWrap:(id)arg1 msgWrap:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BTVideoItemCellAutoPlayReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) BTVideoItemCellAutoPlayerView *autoPlayerView; // @synthesize autoPlayerView=_autoPlayerView;
 @property(nonatomic) _Bool videoHasBeganBuffering; // @synthesize videoHasBeganBuffering=_videoHasBeganBuffering;

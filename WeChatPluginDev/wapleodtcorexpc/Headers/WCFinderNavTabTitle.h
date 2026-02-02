@@ -17,7 +17,6 @@
 + (id)titleWithIcon:(id)arg1 text:(id)arg2;
 + (id)titleWithView:(id)arg1;
 + (id)titleWithText:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSAttributedString *richText; // @synthesize richText=_richText;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 

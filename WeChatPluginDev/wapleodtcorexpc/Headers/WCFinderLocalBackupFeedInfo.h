@@ -43,7 +43,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long funcFlag; // @synthesize funcFlag=_funcFlag;
 @property(nonatomic) unsigned long long feedSource; // @synthesize feedSource=_feedSource;
 @property(nonatomic) unsigned long long expiredTime; // @synthesize expiredTime=_expiredTime;

@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property function_2b6ca66c callback; // @synthesize callback=_callback;
 @property int height; // @synthesize height=_height;
 @property int width; // @synthesize width=_width;

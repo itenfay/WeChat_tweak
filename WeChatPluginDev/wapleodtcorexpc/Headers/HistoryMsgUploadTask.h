@@ -20,7 +20,6 @@
     OpenUploadVideoCDNMgr *_openUploadVideoCDNMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenUploadVideoCDNMgr *openUploadVideoCDNMgr; // @synthesize openUploadVideoCDNMgr=_openUploadVideoCDNMgr;
 @property(retain, nonatomic) OpenUploadCDNMgr *openUploadCDNMgr; // @synthesize openUploadCDNMgr=_openUploadCDNMgr;
 @property(retain, nonatomic) MultiMediaUploadUnifyMgr *multiMediaUploadUnifyMgr; // @synthesize multiMediaUploadUnifyMgr=_multiMediaUploadUnifyMgr;

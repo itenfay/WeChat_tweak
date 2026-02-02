@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, MMLiveTaskId, NSString, UIPanGestureRecognizer;
 
@@ -20,7 +21,6 @@
     double _contentViewPreviousPanPositionY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double contentViewPreviousPanPositionY; // @synthesize contentViewPreviousPanPositionY=_contentViewPreviousPanPositionY;
 @property(nonatomic) double contentViewTopAtPanBegin; // @synthesize contentViewTopAtPanBegin=_contentViewTopAtPanBegin;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
@@ -56,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

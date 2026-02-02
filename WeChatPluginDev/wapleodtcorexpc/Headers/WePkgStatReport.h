@@ -10,7 +10,6 @@
     ReportObj16171 *_reportObj16171;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ReportObj16171 *reportObj16171; // @synthesize reportObj16171=_reportObj16171;
 - (_Bool)svrReport:(unsigned int)arg1 withLogExt:(id)arg2;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

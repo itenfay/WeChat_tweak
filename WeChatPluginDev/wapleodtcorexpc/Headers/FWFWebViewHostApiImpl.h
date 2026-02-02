@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FWFAssetManager, FWFInstanceManager, NSBundle;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)errorForURLString:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) FWFAssetManager *assetManager; // @synthesize assetManager=_assetManager;
 @property(retain) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) FWFInstanceManager *instanceManager; // @synthesize instanceManager=_instanceManager;
@@ -42,4 +42,3 @@
 - (id)initWithInstanceManager:(id)arg1;
 
 @end
-

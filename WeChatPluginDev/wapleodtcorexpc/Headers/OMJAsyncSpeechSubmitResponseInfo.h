@@ -15,7 +15,6 @@
     NSData *_contextBuff;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *contextBuff; // @synthesize contextBuff=_contextBuff;
 @property(readonly, nonatomic) unsigned long long queryIntervalMillis; // @synthesize queryIntervalMillis=_queryIntervalMillis;
 @property(readonly, nonatomic) long long taskID; // @synthesize taskID=_taskID;

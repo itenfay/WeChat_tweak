@@ -15,7 +15,6 @@
     CAShapeLayer *_maskLayer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDarkMode; // @synthesize isDarkMode=_isDarkMode;
 @property(nonatomic) _Bool isSender; // @synthesize isSender=_isSender;
 @property(retain, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;

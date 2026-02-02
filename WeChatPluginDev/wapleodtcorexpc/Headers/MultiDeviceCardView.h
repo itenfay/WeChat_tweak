@@ -18,7 +18,6 @@
     MultiDeviceManageInfo *_deviceManageInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultiDeviceManageInfo *deviceManageInfo; // @synthesize deviceManageInfo=_deviceManageInfo;
 @property(retain, nonatomic) MultiDeviceCardManageContentView *deviceManageContentView; // @synthesize deviceManageContentView=_deviceManageContentView;
 @property(retain, nonatomic) MultiDeviceLoginInfo *deviceLoginInfo; // @synthesize deviceLoginInfo=_deviceLoginInfo;

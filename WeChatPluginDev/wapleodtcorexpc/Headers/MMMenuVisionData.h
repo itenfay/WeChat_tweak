@@ -15,7 +15,6 @@
     struct CGRect _showFromRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIResponder *responder; // @synthesize responder=_responder;
 @property(retain, nonatomic) NSString *sceneId; // @synthesize sceneId=_sceneId;
 @property(nonatomic) struct CGRect showFromRect; // @synthesize showFromRect=_showFromRect;

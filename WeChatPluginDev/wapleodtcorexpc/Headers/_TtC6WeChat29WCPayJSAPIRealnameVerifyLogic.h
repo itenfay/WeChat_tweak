@@ -11,7 +11,6 @@
     MISSING_TYPE *params;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithData:(id)arg1;
 - (void)OnRealnameVerifySuccessWithNotification:(id)arg1;

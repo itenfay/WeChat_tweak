@@ -46,7 +46,6 @@
     long long _exposeCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long exposeCount; // @synthesize exposeCount=_exposeCount;
 @property(retain, nonatomic) WCFinderFeedAudioHelper *feedAudioHelper; // @synthesize feedAudioHelper=_feedAudioHelper;
 @property(retain, nonatomic) WCPlayerView *playerView; // @synthesize playerView=_playerView;

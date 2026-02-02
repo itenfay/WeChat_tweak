@@ -21,7 +21,6 @@
     NSString *_reqId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reqId; // @synthesize reqId=_reqId;
 @property(retain, nonatomic) NSString *thirdPartyLinkReportInfo; // @synthesize thirdPartyLinkReportInfo=_thirdPartyLinkReportInfo;
 @property(nonatomic) unsigned long long thirdPartyLinkStatus; // @synthesize thirdPartyLinkStatus=_thirdPartyLinkStatus;

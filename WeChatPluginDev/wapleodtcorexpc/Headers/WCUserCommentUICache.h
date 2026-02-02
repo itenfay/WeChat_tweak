@@ -26,7 +26,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEmotionComment; // @synthesize isEmotionComment=_isEmotionComment;
 @property(nonatomic) _Bool refHasStory; // @synthesize refHasStory=_refHasStory;
 @property(nonatomic) _Bool userHasStory; // @synthesize userHasStory=_userHasStory;

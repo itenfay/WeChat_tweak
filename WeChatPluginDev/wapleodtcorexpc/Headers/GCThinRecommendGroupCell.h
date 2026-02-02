@@ -10,7 +10,6 @@
     UIView *_lineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 - (double)maxRight;
 - (void)configureWithCellModel:(id)arg1;

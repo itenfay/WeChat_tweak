@@ -24,7 +24,6 @@
     UILabel *_m_contentLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *m_contentLabel; // @synthesize m_contentLabel=_m_contentLabel;
 @property(retain, nonatomic) UILabel *m_iconDescLabel; // @synthesize m_iconDescLabel=_m_iconDescLabel;
 @property(retain, nonatomic) UIImageView *m_iconView; // @synthesize m_iconView=_m_iconView;

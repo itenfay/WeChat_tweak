@@ -13,7 +13,6 @@
     JSEventInvokeContext *_jsContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEventInvokeContext *jsContext; // @synthesize jsContext=_jsContext;
 @property(retain, nonatomic) NSObject *data; // @synthesize data=_data;
 

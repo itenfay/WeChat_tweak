@@ -24,7 +24,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *paymsgid; // @synthesize paymsgid=_paymsgid;
 @property(copy, nonatomic) NSString *sourceicon; // @synthesize sourceicon=_sourceicon;
 @property(copy, nonatomic) NSString *receiverdigest; // @synthesize receiverdigest=_receiverdigest;

@@ -16,7 +16,6 @@
 }
 
 + (id)errorWithCode:(long long)arg1 message:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorDetailUrl; // @synthesize errorDetailUrl=_errorDetailUrl;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;

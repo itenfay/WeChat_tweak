@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMToastParameter, MMToastView;
 
 @interface WeToast
@@ -23,7 +25,6 @@
 }
 
 + (id)toast;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType transitionToNewSizeBlock; // @synthesize transitionToNewSizeBlock=_transitionToNewSizeBlock;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) MMToastParameter *parameter; // @synthesize parameter=_parameter;
@@ -74,4 +75,3 @@
 - (id)init;
 
 @end
-

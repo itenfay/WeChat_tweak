@@ -53,7 +53,6 @@
     NSString *_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) int fromScene; // @synthesize fromScene;
 - (void)registerYReportSdk;

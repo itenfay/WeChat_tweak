@@ -17,7 +17,6 @@
     MISSING_TYPE *$__lazy_storage_$_textWidth;
 }
 
-- (void).cxx_destruct;
 - (struct CGRect)titleRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)imageRectForContentRect:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

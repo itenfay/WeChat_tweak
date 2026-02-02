@@ -13,7 +13,6 @@
     id <WxaFlutterViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WxaFlutterViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onPageResume:(int)arg1 arguments:(id)arg2;
 - (void)onPagePause:(int)arg1 arguments:(id)arg2;

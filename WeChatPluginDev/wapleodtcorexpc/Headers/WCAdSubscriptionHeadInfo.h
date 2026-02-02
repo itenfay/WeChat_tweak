@@ -14,7 +14,6 @@
 }
 
 + (id)fetchDefaultSubscriptionHeadInfoForDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 @property(retain, nonatomic) NSString *headImageUrl; // @synthesize headImageUrl=_headImageUrl;
 

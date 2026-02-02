@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderOriginalTypeItem, NSString;
 @protocol WCFinderEditMusicMediaAudioUrlAdapter;
@@ -17,7 +18,6 @@
     id <WCFinderEditMusicMediaAudioUrlAdapter> _adapter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <WCFinderEditMusicMediaAudioUrlAdapter> adapter; // @synthesize adapter=_adapter;
 @property(copy, nonatomic) CDUnknownBlockType onComplete; // @synthesize onComplete=_onComplete;
 @property(retain, nonatomic) FinderOriginalTypeItem *originalItem; // @synthesize originalItem=_originalItem;
@@ -25,4 +25,3 @@
 @property(retain, nonatomic) NSString *tid; // @synthesize tid=_tid;
 
 @end
-

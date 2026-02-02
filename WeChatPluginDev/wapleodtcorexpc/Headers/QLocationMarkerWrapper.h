@@ -18,7 +18,6 @@
     NSString *_directionSouthInstruction;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *directionSouthInstruction; // @synthesize directionSouthInstruction=_directionSouthInstruction;
 @property(retain, nonatomic) NSString *directionNorthInstruction; // @synthesize directionNorthInstruction=_directionNorthInstruction;
 @property(retain, nonatomic) NSString *directionWestInstruction; // @synthesize directionWestInstruction=_directionWestInstruction;

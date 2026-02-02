@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, UIView, WCFinderContact;
 @protocol WCActionSheetWithHeadAvatarDelegate;
 
@@ -17,7 +19,6 @@
     UIView *_headView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *headView; // @synthesize headView=_headView;
 @property(retain, nonatomic) UIView *tipsView; // @synthesize tipsView=_tipsView;
 @property(retain, nonatomic) UIView *finderAvatarView; // @synthesize finderAvatarView=_finderAvatarView;
@@ -35,4 +36,3 @@
 - (void)updateContact:(id)arg1 itemsArray:(id)arg2;
 
 @end
-

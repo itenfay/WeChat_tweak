@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol MMUIViewControllerDelegate;
@@ -14,7 +15,6 @@
     CDUnknownBlockType _finalBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType finalBlock; // @synthesize finalBlock=_finalBlock;
 @property(nonatomic) __weak id <MMUIViewControllerDelegate> vcDelegate; // @synthesize vcDelegate=_vcDelegate;
 - (id)presentationAnchorForAuthorizationController:(id)arg1;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

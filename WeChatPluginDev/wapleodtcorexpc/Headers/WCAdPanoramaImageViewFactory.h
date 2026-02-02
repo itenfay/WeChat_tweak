@@ -13,7 +13,6 @@
     NSObject<FlutterBinaryMessenger> *_messenger;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<FlutterBinaryMessenger> *messenger; // @synthesize messenger=_messenger;
 - (id)createArgsCodec;
 - (id)createWithFrame:(struct CGRect)arg1 viewIdentifier:(long long)arg2 arguments:(id)arg3;

@@ -36,7 +36,6 @@
     NSString *userData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userData; // @synthesize userData;
 @property(retain, nonatomic) NSString *twitterOAuthTokenSecret; // @synthesize twitterOAuthTokenSecret;
 @property(retain, nonatomic) NSString *twitterOAuthToken; // @synthesize twitterOAuthToken;

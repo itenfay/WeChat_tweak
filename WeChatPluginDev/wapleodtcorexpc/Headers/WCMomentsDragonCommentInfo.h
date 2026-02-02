@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_fireworkType;
 + (id)dragonCommentInfoFromServerBuffer:(id)arg1;
 + (id)dragonCommentInfoFromServerObject:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int fireworkSeed; // @synthesize fireworkSeed=_fireworkSeed;
 @property(copy, nonatomic) NSString *fireworkEmojiKey; // @synthesize fireworkEmojiKey=_fireworkEmojiKey;
 @property(copy, nonatomic) NSString *fireworkText; // @synthesize fireworkText=_fireworkText;

@@ -14,7 +14,6 @@
     double _itemHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double itemHeight; // @synthesize itemHeight=_itemHeight;
 @property(nonatomic) unsigned long long descriptionLineNumber; // @synthesize descriptionLineNumber=_descriptionLineNumber;
 @property(retain, nonatomic) TextStateIcon *icon; // @synthesize icon=_icon;

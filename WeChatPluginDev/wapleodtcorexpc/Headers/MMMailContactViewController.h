@@ -16,7 +16,6 @@
     MMUILongPressMenuView *_addressView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShowSendBtn; // @synthesize bShowSendBtn=_bShowSendBtn;
 @property(retain, nonatomic) NSString *nsMailContactAddress; // @synthesize nsMailContactAddress=_nsMailContactAddress;
 @property(retain, nonatomic) NSString *nsMailContactName; // @synthesize nsMailContactName=_nsMailContactName;

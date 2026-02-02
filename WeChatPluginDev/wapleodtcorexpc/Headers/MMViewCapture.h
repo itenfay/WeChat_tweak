@@ -18,7 +18,6 @@
     CADisplayLink *_displayLink;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic) _Bool alignsImageSize; // @synthesize alignsImageSize=_alignsImageSize;
 @property(nonatomic) long long preferredFramesPerSecond; // @synthesize preferredFramesPerSecond=_preferredFramesPerSecond;

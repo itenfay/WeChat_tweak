@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSString;
 
@@ -21,7 +22,6 @@
     MMTimer *_timeOutTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timeOutTimer; // @synthesize timeOutTimer=_timeOutTimer;
 @property(copy, nonatomic) NSString *requestKey; // @synthesize requestKey=_requestKey;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -52,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

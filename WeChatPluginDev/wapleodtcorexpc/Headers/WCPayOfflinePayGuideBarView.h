@@ -17,7 +17,6 @@
     UIButton *_clickBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *clickBtn; // @synthesize clickBtn=_clickBtn;
 @property(retain, nonatomic) MMUILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) WCPayWebImageView *logoImgView; // @synthesize logoImgView=_logoImgView;

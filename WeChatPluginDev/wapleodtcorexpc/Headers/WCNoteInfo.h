@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_editUsr;
 + (void)PBArrayAdd_editTime;
 + (void)PBArrayAdd_favLocalId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *dataListNSCodingData; // @synthesize dataListNSCodingData=_dataListNSCodingData;
 @property(retain, nonatomic) NSArray *dataList; // @synthesize dataList=_dataList;
 @property(nonatomic) int fromScene; // @synthesize fromScene=_fromScene;

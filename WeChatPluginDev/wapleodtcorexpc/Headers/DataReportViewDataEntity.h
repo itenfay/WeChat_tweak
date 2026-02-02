@@ -16,7 +16,6 @@
     NSMutableDictionary *_reportPolicy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *reportPolicy; // @synthesize reportPolicy=_reportPolicy;
 @property(retain, nonatomic) NSMutableDictionary *innerProperty; // @synthesize innerProperty=_innerProperty;
 @property(retain, nonatomic) NSMutableDictionary *dynamicParamsBlocks; // @synthesize dynamicParamsBlocks=_dynamicParamsBlocks;

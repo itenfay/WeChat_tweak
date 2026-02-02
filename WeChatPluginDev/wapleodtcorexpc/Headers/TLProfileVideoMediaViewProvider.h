@@ -14,7 +14,6 @@
     UIImage *_image;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(nonatomic) unsigned int type; // @synthesize type;

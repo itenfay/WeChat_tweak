@@ -33,7 +33,6 @@
     _Bool _m_bShowAllTags;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bShowAllTags; // @synthesize m_bShowAllTags=_m_bShowAllTags;
 @property(nonatomic) unsigned long long m_memberCountLimit; // @synthesize m_memberCountLimit;
 @property(retain, nonatomic) UIBarButtonItem *m_panelBtnItem; // @synthesize m_panelBtnItem;

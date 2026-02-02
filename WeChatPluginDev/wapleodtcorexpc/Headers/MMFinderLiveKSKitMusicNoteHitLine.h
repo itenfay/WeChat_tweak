@@ -13,7 +13,6 @@
     struct _NSRange _hitRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange hitRange; // @synthesize hitRange=_hitRange;
 @property(nonatomic) __weak MMFinderLiveKSKitMusicNote *rootMusicNote; // @synthesize rootMusicNote=_rootMusicNote;
 - (void)updateSelfLeftAndWidth;

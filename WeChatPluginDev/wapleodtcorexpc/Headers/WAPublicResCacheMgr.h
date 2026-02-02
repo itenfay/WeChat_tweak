@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString, WAAppBrandNotifyInfo, WAPackageDownloadLogic, WAPackageInfoCacheLogic, WAPublicResInfo, WAPublicResInfoStorage, WAPublicResModel;
 
 @interface WAPublicResCacheMgr
@@ -31,7 +33,6 @@
 + (id)getBundlePublicRelativePathWithFileName:(id)arg1;
 + (id)getBundlePublicRelativePath:(unsigned long long)arg1;
 + (id)getPublicRelativePath:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAppBrandNotifyInfo *publicDebugInfo; // @synthesize publicDebugInfo=_publicDebugInfo;
 @property(retain, nonatomic) NSMutableArray *unpackedCheckSum; // @synthesize unpackedCheckSum=_unpackedCheckSum;
 @property(retain, nonatomic) WAPublicResModel *publicResModel; // @synthesize publicResModel=_publicResModel;
@@ -99,4 +100,3 @@
 @property(readonly) Class superclass;
 
 @end
-

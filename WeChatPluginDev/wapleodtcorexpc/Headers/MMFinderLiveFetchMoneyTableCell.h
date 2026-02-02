@@ -33,7 +33,6 @@
     MMUIActivityIndicatorView *_activityIndicatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(nonatomic) _Bool isWaiting; // @synthesize isWaiting=_isWaiting;
 @property(nonatomic) unsigned int businessId; // @synthesize businessId=_businessId;

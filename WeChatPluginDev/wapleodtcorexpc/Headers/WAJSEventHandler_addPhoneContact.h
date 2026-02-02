@@ -10,7 +10,6 @@
     NSDictionary *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *contact; // @synthesize contact=_contact;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;

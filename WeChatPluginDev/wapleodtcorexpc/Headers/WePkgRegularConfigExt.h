@@ -38,7 +38,6 @@
 + (void)PBArrayAdd_lastUnusedSeconds;
 + (void)PBArrayAdd_currentPkgMd5;
 + (void)PBArrayAdd_currentEnabledVersion;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int checkUpdateSuccessTime; // @synthesize checkUpdateSuccessTime=_checkUpdateSuccessTime;
 @property(retain, nonatomic) NSMutableArray *nonAtomicSingleFileList; // @synthesize nonAtomicSingleFileList=_nonAtomicSingleFileList;
 @property(retain, nonatomic) NSMutableArray *atomicSingleFileList; // @synthesize atomicSingleFileList=_atomicSingleFileList;

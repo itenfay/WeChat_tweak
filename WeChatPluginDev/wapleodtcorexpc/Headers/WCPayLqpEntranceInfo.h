@@ -14,7 +14,6 @@
     WCPayLqpWordingItem *_wording_item;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCPayLqpWordingItem *wording_item; // @synthesize wording_item=_wording_item;
 @property(retain) WCPayLqpJumpInfo *jump_info; // @synthesize jump_info=_jump_info;
 @property _Bool is_exposure; // @synthesize is_exposure=_is_exposure;

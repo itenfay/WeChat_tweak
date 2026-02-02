@@ -14,7 +14,6 @@
     WCFinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) WCFinderGetWechatHDHeadFetcher *wechatHDHeadFetcher; // @synthesize wechatHDHeadFetcher=_wechatHDHeadFetcher;
 @property(retain, nonatomic) WCFinderHeadImageView *imageView; // @synthesize imageView=_imageView;

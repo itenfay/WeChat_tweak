@@ -31,7 +31,6 @@
     MMWebViewMpInfoModelVideoInfo *_videoInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDisableMenuHeader; // @synthesize isDisableMenuHeader=_isDisableMenuHeader;
 @property(nonatomic) _Bool isShowMenuBrandInfo; // @synthesize isShowMenuBrandInfo=_isShowMenuBrandInfo;
 @property(nonatomic) _Bool hasFinderElement; // @synthesize hasFinderElement=_hasFinderElement;

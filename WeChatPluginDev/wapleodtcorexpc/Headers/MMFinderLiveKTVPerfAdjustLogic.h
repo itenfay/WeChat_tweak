@@ -16,7 +16,6 @@
 }
 
 + (unsigned long long)getPerfDeviceType;
-- (void).cxx_destruct;
 @property(nonatomic) long long thermalState; // @synthesize thermalState=_thermalState;
 @property(retain, nonatomic) id <MMLiveUniqueTaskId> taskId; // @synthesize taskId=_taskId;
 @property(nonatomic) _Bool isBlackStreamFpsNeedUpdate; // @synthesize isBlackStreamFpsNeedUpdate=_isBlackStreamFpsNeedUpdate;

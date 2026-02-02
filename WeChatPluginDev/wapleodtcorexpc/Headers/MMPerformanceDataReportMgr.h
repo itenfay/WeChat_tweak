@@ -21,7 +21,6 @@
     _Bool m_bActive;
 }
 
-- (void).cxx_destruct;
 - (void)onResUpdateFinish:(long long)arg1 resType:(unsigned int)arg2 subResType:(unsigned int)arg3;
 - (id)getIdKeyContent;
 - (void)loadIdKeyInfo;

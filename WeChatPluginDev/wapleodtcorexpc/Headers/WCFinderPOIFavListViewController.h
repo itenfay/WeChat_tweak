@@ -15,7 +15,6 @@
     UILabel *_emptyLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *emptyLabel; // @synthesize emptyLabel=_emptyLabel;
 @property(retain, nonatomic) UIButton *retryButton; // @synthesize retryButton=_retryButton;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;

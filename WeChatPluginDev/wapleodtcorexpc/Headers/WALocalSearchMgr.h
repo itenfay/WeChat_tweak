@@ -22,7 +22,6 @@
     NSDictionary *_dicWeApp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dicWeApp; // @synthesize dicWeApp=_dicWeApp;
 @property(retain, nonatomic) NSString *lastQueryTextForDetail; // @synthesize lastQueryTextForDetail=_lastQueryTextForDetail;
 @property(retain, nonatomic) NSString *lastQueryText; // @synthesize lastQueryText=_lastQueryText;

@@ -23,7 +23,6 @@
     MMFinderLiveFootageReplayModel *_footageReplayModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFootageReplayModel *footageReplayModel; // @synthesize footageReplayModel=_footageReplayModel;
 @property(nonatomic) int scenario; // @synthesize scenario=_scenario;
 @property(copy, nonatomic) NSString *liveDesc; // @synthesize liveDesc=_liveDesc;

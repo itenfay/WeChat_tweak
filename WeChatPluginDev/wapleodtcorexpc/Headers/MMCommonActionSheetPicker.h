@@ -22,7 +22,6 @@
 }
 
 + (struct UIEdgeInsets)realSafeAreaInsets;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showInView; // @synthesize showInView=_showInView;
 @property(retain, nonatomic) MMCommonPickerView *customPickerView; // @synthesize customPickerView=_customPickerView;
 @property(nonatomic) __weak UIView *transparentView; // @synthesize transparentView=_transparentView;

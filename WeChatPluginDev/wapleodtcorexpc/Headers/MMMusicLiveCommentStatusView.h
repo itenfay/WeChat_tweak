@@ -13,7 +13,6 @@
     UILabel *_historyLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *historyLabel; // @synthesize historyLabel=_historyLabel;
 @property(retain, nonatomic) UILabel *currentLabel; // @synthesize currentLabel=_currentLabel;
 - (void)setCurrentAudience:(unsigned long long)arg1;

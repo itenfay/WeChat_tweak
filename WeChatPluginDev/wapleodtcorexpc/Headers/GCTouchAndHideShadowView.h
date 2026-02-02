@@ -4,16 +4,15 @@
 //
 
 #import <UIKit/UIControl.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface GCTouchAndHideShadowView : UIControl
 {
     CDUnknownBlockType _onCloseBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onCloseBlock; // @synthesize onCloseBlock=_onCloseBlock;
 - (void)removeSelf;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

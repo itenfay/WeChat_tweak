@@ -19,7 +19,6 @@
     BraceletStepScoreView *_stepView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BraceletStepScoreView *stepView; // @synthesize stepView=_stepView;
 @property(nonatomic) _Bool isSelf; // @synthesize isSelf=_isSelf;
 @property(retain, nonatomic) DeviceRankDetailResonse *rankDetail; // @synthesize rankDetail=_rankDetail;

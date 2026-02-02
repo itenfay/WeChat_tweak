@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCTDatabase;
 
@@ -17,7 +18,6 @@
     NSString *_indexDBPath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *indexDBPath; // @synthesize indexDBPath=_indexDBPath;
 @property(nonatomic) unsigned long long recoverInfoFailedCount; // @synthesize recoverInfoFailedCount=_recoverInfoFailedCount;
 @property(nonatomic) unsigned long long recoverInfoCount; // @synthesize recoverInfoCount=_recoverInfoCount;
@@ -44,4 +44,3 @@
 - (id)init;
 
 @end
-

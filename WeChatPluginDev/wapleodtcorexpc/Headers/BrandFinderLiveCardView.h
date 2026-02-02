@@ -12,7 +12,6 @@
     UIImageView *_backgroundImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) MMWebImageView *coverImageView; // @synthesize coverImageView=_coverImageView;
 @property(retain, nonatomic) MMUILabel *categoryLabel; // @synthesize categoryLabel=_categoryLabel;

@@ -18,7 +18,6 @@
     NSString *_lastUploadErrMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastUploadErrMsg; // @synthesize lastUploadErrMsg=_lastUploadErrMsg;
 @property(retain, nonatomic) ChatRoomHistoryShareStat *oRoomHistoryStat; // @synthesize oRoomHistoryStat=_oRoomHistoryStat;
 @property(retain, nonatomic) CdnUploadTaskInfo *uploadInfo; // @synthesize uploadInfo=_uploadInfo;

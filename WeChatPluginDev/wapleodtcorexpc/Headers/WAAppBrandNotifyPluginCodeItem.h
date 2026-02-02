@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_md5;
 + (void)PBArrayAdd_version;
 + (void)PBArrayAdd_provider;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *semver; // @synthesize semver=_semver;
 @property(retain, nonatomic) NSString *versionDesc; // @synthesize versionDesc=_versionDesc;
 @property(nonatomic) unsigned int debugDevKey; // @synthesize debugDevKey=_debugDevKey;

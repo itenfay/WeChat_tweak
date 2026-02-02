@@ -13,7 +13,6 @@
     WCAdHalfScreenFinderLiveNoticeView *_reserveSuccessHalfScreenView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdHalfScreenFinderLiveNoticeView *reserveSuccessHalfScreenView; // @synthesize reserveSuccessHalfScreenView=_reserveSuccessHalfScreenView;
 @property(nonatomic) _Bool isDetail; // @synthesize isDetail=_isDetail;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;

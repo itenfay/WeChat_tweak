@@ -20,7 +20,6 @@
     MMFinderLivePaymentSettingInputView *_inputView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceDarkMode; // @synthesize forceDarkMode=_forceDarkMode;
 @property(retain, nonatomic) MMFinderLivePaymentSettingInputView *inputView; // @synthesize inputView=_inputView;
 @property(nonatomic) unsigned int curPriceInWecoin; // @synthesize curPriceInWecoin=_curPriceInWecoin;

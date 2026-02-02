@@ -14,7 +14,6 @@
     NSString *_sourceViewId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceViewId; // @synthesize sourceViewId=_sourceViewId;
 @property(retain, nonatomic) NSString *pageId; // @synthesize pageId=_pageId;
 @property(nonatomic) unsigned long long pageHash; // @synthesize pageHash=_pageHash;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderBarItem, FinderNpsSurveyInfo, ForwardMessageLogicController, MMFinderLiveCastViewModel, NSData, NSNumber, NSString, SessionForwardRecordLogic, SharePreConfirmSheetView, SharePreConfirmView, WCFinderDataItem, WCFinderFeedContentReportModel, WCFinderFeedContentTempModel, WCFinderFeedLayoutContentVM, WCFinderFeedVideoCellViewModel, WCFinderLiveNoticeCellViewModel, WCFinderObjectHotTopic, WCFinderProfilePreloadInfo, WCFinderProgressBarStatusInfo;
 
@@ -109,7 +110,6 @@
 
 + (id)getFinderSecurityReportLinkByCommentScene:(int)arg1 feedId:(id)arg2 extParams:(id)arg3;
 + (struct WCFinderDynamicIcon)fetchLikeTokenWithLikeFlag:(int)arg1 isPrivateAccount:(_Bool)arg2 objectType:(int)arg3 iconSize:(struct CGSize)arg4 customColor:(id)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCertificateType; // @synthesize isCertificateType=_isCertificateType;
 @property(nonatomic) _Bool shareFromFastForward; // @synthesize shareFromFastForward=_shareFromFastForward;
 @property(retain, nonatomic) SharePreConfirmSheetView *sharePreConfirmSheetView; // @synthesize sharePreConfirmSheetView=_sharePreConfirmSheetView;
@@ -489,4 +489,3 @@
 @property(readonly) Class superclass;
 
 @end
-

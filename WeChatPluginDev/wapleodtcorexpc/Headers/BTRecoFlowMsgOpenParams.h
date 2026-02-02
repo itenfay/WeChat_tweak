@@ -20,7 +20,6 @@
     NSString *_finderFeedXml;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderFeedXml; // @synthesize finderFeedXml=_finderFeedXml;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 @property(nonatomic) unsigned int itemShowType; // @synthesize itemShowType=_itemShowType;

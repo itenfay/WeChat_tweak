@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class _TtC6WeChat15MagicRewardView;
 
@@ -16,7 +17,6 @@
     double _currPixelRatio;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double currPixelRatio; // @synthesize currPixelRatio=_currPixelRatio;
 @property(nonatomic) long long currQuailtyLevel; // @synthesize currQuailtyLevel=_currQuailtyLevel;
 @property(copy, nonatomic) CDUnknownBlockType onFrameRateChangedCallback; // @synthesize onFrameRateChangedCallback=_onFrameRateChangedCallback;
@@ -38,4 +38,3 @@
 - (id)initWithRewardView:(id)arg1;
 
 @end
-

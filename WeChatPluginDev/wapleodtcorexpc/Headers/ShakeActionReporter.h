@@ -35,7 +35,6 @@
 
 + (void)reportAction:(int)arg1;
 + (id)reporter;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(nonatomic) int type; // @synthesize type=_type;

@@ -22,7 +22,6 @@
     long long _currentAdjustStrategyParamLevel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long currentAdjustStrategyParamLevel; // @synthesize currentAdjustStrategyParamLevel=_currentAdjustStrategyParamLevel;
 @property(retain, nonatomic) NSArray *adjustStrategyParamLevelList; // @synthesize adjustStrategyParamLevelList=_adjustStrategyParamLevelList;
 @property(retain, nonatomic) NSArray *adjustStrategyParamList; // @synthesize adjustStrategyParamList=_adjustStrategyParamList;

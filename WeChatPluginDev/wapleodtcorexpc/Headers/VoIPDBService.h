@@ -10,7 +10,6 @@
     VoIPDB *_voipBaseDB;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoIPDB *voipBaseDB; // @synthesize voipBaseDB=_voipBaseDB;
 - (void)onDelMsg:(id)arg1 msgList:(id)arg2 deleteAll:(_Bool)arg3;
 - (void)DelAllMsg:(id)arg1;

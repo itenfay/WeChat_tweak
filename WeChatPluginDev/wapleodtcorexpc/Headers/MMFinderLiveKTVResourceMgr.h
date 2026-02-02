@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveKtvThemeRepository, MMLiveResourceFetcherFanoutFlowAction, NSMutableDictionary, NSObject, NSString, OrderedDictionary;
 @protocol OS_dispatch_queue;
 
@@ -17,7 +19,6 @@
 }
 
 + (id)createTaskKeyWithSong:(id)arg1 needsSongResources:(_Bool)arg2 taskId:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *loadingTaskDict; // @synthesize loadingTaskDict=_loadingTaskDict;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *lyricNoteResProcessQueue; // @synthesize lyricNoteResProcessQueue=_lyricNoteResProcessQueue;
 @property(retain, nonatomic) MMLiveKtvThemeRepository *themeRepository; // @synthesize themeRepository=_themeRepository;
@@ -78,4 +79,3 @@
 @property(readonly) Class superclass;
 
 @end
-

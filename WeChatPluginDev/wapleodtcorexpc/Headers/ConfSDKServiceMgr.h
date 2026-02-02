@@ -10,7 +10,6 @@
     NSRecursiveLock *_mEngineLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *mEngineLock; // @synthesize mEngineLock=_mEngineLock;
 - (void)HeadSetPlugin:(_Bool)arg1;
 - (void)subscribeByUsernameList:(id)arg1 LargeUsers:(id)arg2;

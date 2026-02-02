@@ -18,7 +18,6 @@
     id <WCAdFollowItemViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAdFollowItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMUILabel *followedTips; // @synthesize followedTips=_followedTips;
 @property(retain, nonatomic) MMUILabel *followDesc; // @synthesize followDesc=_followDesc;

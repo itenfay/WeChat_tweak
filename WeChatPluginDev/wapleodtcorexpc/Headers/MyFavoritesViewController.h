@@ -29,7 +29,6 @@
     id <MyFavoritesViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool createNewDirectly; // @synthesize createNewDirectly=_createNewDirectly;
 @property(nonatomic) __weak id <MyFavoritesViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)onClickTipsBtn:(id)arg1 Index:(long long)arg2 withText:(id)arg3 withTipsVC:(id)arg4;

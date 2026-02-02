@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface MMLiveResourceFetcherUnarchiveFlowAction
 {
     unsigned long long _pendingTasksCount;
@@ -13,4 +15,3 @@
 - (void)startFetcherTask:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 
 @end
-

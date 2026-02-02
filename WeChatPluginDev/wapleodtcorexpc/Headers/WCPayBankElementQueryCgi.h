@@ -19,7 +19,6 @@
     NSError *_m_error;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *m_error; // @synthesize m_error=_m_error;
 @property(retain, nonatomic) WCPayGetUserExInfoCgiResponse *m_userInfoResponse; // @synthesize m_userInfoResponse=_m_userInfoResponse;
 @property(retain, nonatomic) NSArray *m_availableBankArray; // @synthesize m_availableBankArray=_m_availableBankArray;

@@ -13,7 +13,6 @@
     FinderLiveCreatorFunctions *_functions;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveCreatorFunctions *functions; // @synthesize functions=_functions;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 

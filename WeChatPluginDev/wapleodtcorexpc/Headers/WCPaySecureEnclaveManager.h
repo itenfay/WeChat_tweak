@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock;
 
@@ -16,7 +17,6 @@
 }
 
 + (id)shared;
-- (void).cxx_destruct;
 @property int taskCount; // @synthesize taskCount=_taskCount;
 @property unsigned long long currenScene; // @synthesize currenScene=_currenScene;
 @property(nonatomic) _Bool needChangeAuthKey; // @synthesize needChangeAuthKey=_needChangeAuthKey;
@@ -35,4 +35,3 @@
 - (id)initOnce;
 
 @end
-

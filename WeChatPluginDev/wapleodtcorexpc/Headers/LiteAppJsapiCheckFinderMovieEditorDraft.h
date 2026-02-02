@@ -10,7 +10,6 @@
     MJPublisher *_mjPublisher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJPublisher *mjPublisher; // @synthesize mjPublisher=_mjPublisher;
 - (void)invokeJsApi:(id)arg1 param:(id)arg2 isFromView:(_Bool)arg3;
 

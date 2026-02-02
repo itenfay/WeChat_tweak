@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveNoticeInfo, MMFinderLiveActivityTask, MMFinderLiveActivityTaskId, MMFinderLiveOlympicsReserveConfirmView, MMFinderLiveWinterOlympicOperationView, MMFinderLiveWinterOlympicView, NSString, WCUIAlertView;
 
 @interface MMFinderLiveWinterOlympicViewController
@@ -13,7 +15,6 @@
     WCUIAlertView *_currAlertView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCUIAlertView *currAlertView; // @synthesize currAlertView=_currAlertView;
 @property(retain, nonatomic) FinderLiveNoticeInfo *liveNoticeInfo; // @synthesize liveNoticeInfo=_liveNoticeInfo;
 @property(retain, nonatomic) MMFinderLiveOlympicsReserveConfirmView *reserveConfirmView; // @synthesize reserveConfirmView=_reserveConfirmView;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

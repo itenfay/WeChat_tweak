@@ -17,7 +17,6 @@
     unsigned long long _relativeIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long relativeIndex; // @synthesize relativeIndex=_relativeIndex;
 @property(nonatomic) unsigned long long contentMediaType; // @synthesize contentMediaType=_contentMediaType;
 @property(copy, nonatomic) NSString *contentTid; // @synthesize contentTid=_contentTid;

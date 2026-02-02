@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveTaskId, MonitorResult, NSMutableArray, WCLiveBlurButton, WCLiveBlurPowerModeAdjustStrategy;
 
@@ -36,7 +37,6 @@
 + (id)cropImageInRect:(struct CGRect)arg1 fromSrcImage:(id)arg2;
 + (id)getSubOperationViewFromLiveVC:(id)arg1;
 + (id)getSubLiveViewFromLiveVC:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double staticBlurEnterTime; // @synthesize staticBlurEnterTime=_staticBlurEnterTime;
 @property(retain, nonatomic) WCLiveBlurPowerModeAdjustStrategy *adjustStrategy; // @synthesize adjustStrategy=_adjustStrategy;
 @property(nonatomic) _Bool isPreparingEnterStaticBlur; // @synthesize isPreparingEnterStaticBlur=_isPreparingEnterStaticBlur;
@@ -98,4 +98,3 @@
 - (id)initWithMonitorBtn:(id)arg1 liveTaskId:(id)arg2 adjustStrategyParam:(id)arg3;
 
 @end
-

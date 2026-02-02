@@ -18,7 +18,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(retain) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSMutableSet *waitingPageIdentifierSet; // @synthesize waitingPageIdentifierSet=_waitingPageIdentifierSet;
 @property(retain, nonatomic) NSMutableArray *waitingUrlInfoQueue; // @synthesize waitingUrlInfoQueue=_waitingUrlInfoQueue;

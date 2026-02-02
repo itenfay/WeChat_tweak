@@ -13,7 +13,6 @@
     id <TXCVideoResultHandlerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TXCVideoResultHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)processVideoFrame:(id)arg1;
 - (id)bindTo:(id)arg1;

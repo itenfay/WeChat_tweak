@@ -25,7 +25,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *mixData; // @synthesize mixData=_mixData;
 @property _Bool terminal; // @synthesize terminal=_terminal;
 @property _Bool ready; // @synthesize ready=_ready;

@@ -19,7 +19,6 @@
     NSDictionary *_businessByPass;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *businessByPass; // @synthesize businessByPass=_businessByPass;
 @property(nonatomic) int selectedTab; // @synthesize selectedTab=_selectedTab;
 @property(nonatomic) long long redPacketJumpFrom; // @synthesize redPacketJumpFrom=_redPacketJumpFrom;

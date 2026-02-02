@@ -15,7 +15,6 @@
 }
 
 + (id)configFromButtonInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bottomButtonBGColorHexInConnectMic; // @synthesize bottomButtonBGColorHexInConnectMic=_bottomButtonBGColorHexInConnectMic;
 @property(retain, nonatomic) NSString *bottomButtonBGColorHexLandscapeLivePortraitMode; // @synthesize bottomButtonBGColorHexLandscapeLivePortraitMode=_bottomButtonBGColorHexLandscapeLivePortraitMode;
 @property(retain, nonatomic) NSString *commonBGColorHex; // @synthesize commonBGColorHex=_commonBGColorHex;

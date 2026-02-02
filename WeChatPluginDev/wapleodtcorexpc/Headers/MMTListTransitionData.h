@@ -14,7 +14,6 @@
     NSArray *_toSectionControllers;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *toSectionControllers; // @synthesize toSectionControllers=_toSectionControllers;
 @property(readonly, copy, nonatomic) NSArray *toObjects; // @synthesize toObjects=_toObjects;
 @property(readonly, copy, nonatomic) NSArray *fromObjects; // @synthesize fromObjects=_fromObjects;

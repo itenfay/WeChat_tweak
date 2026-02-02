@@ -10,7 +10,6 @@
     NSMutableSet *_alertViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *alertViews; // @synthesize alertViews=_alertViews;
 - (void)removeAlertView:(id)arg1;
 - (void)addAlertView:(id)arg1;

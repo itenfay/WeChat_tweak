@@ -16,7 +16,6 @@
     NSArray *_memberPriceArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *memberPriceArray; // @synthesize memberPriceArray=_memberPriceArray;
 @property(retain, nonatomic) WCFinderMembershipPaymentNoticeView *noticeView; // @synthesize noticeView=_noticeView;
 @property(retain, nonatomic) UIImageView *questionView; // @synthesize questionView=_questionView;

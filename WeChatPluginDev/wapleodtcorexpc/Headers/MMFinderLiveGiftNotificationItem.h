@@ -21,7 +21,6 @@
     MMFinderLiveGiftNotificationLayout *_notificationLayout;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGiftNotificationLayout *notificationLayout; // @synthesize notificationLayout=_notificationLayout;
 @property(retain, nonatomic) MMFinderLiveRewardAppMsgInfo *rewardAppMsgInfo; // @synthesize rewardAppMsgInfo=_rewardAppMsgInfo;
 @property(retain, nonatomic) NSString *comboId; // @synthesize comboId=_comboId;

@@ -16,7 +16,6 @@
     BrandProfileTipsSectionData *_sectionData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandProfileTipsSectionData *sectionData; // @synthesize sectionData=_sectionData;
 @property(nonatomic) __weak id <BrandProfileTipsCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

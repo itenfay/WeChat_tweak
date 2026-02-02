@@ -34,7 +34,6 @@
     NSString *_reportStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportStr; // @synthesize reportStr=_reportStr;
 @property(nonatomic) unsigned int realPlayTime; // @synthesize realPlayTime=_realPlayTime;
 @property(nonatomic) unsigned int lastPlayTime; // @synthesize lastPlayTime=_lastPlayTime;

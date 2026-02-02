@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMTryCatchWrapper : NSObject
 {
@@ -16,4 +17,3 @@
 + (id)runBlockWithTryCatch:(CDUnknownBlockType)arg1;
 
 @end
-

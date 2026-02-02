@@ -11,7 +11,6 @@
     ICFlowTableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ICFlowTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) ICFlowModel *model; // @synthesize model=_model;
 - (void)flowModel:(id)arg1 deleteDataSectionsAt:(id)arg2;

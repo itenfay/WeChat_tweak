@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCStoryWCDB;
 
 @interface WCStoryDataMgr
@@ -10,7 +12,6 @@
     WCStoryWCDB *_dataBase;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStoryWCDB *dataBase; // @synthesize dataBase=_dataBase;
 - (_Bool)deleteDataItemAllUserRelatedCommentWithTid:(id)arg1;
 - (_Bool)hasUserUnreadRelatedComment;
@@ -98,4 +99,3 @@
 @property(readonly) Class superclass;
 
 @end
-

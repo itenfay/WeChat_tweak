@@ -20,7 +20,6 @@
     UIImageView *_globalRewardLevelIconBgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *globalRewardLevelIconBgView; // @synthesize globalRewardLevelIconBgView=_globalRewardLevelIconBgView;
 @property(retain, nonatomic) UIImageView *globalRewardLevelIconView; // @synthesize globalRewardLevelIconView=_globalRewardLevelIconView;
 @property(retain, nonatomic) MMUIButton *globalRewardLevelEditButton; // @synthesize globalRewardLevelEditButton=_globalRewardLevelEditButton;

@@ -12,7 +12,6 @@
 }
 
 + (id)GenerateRedDotInfoParamStringForSimulatedNativeMainList;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAMainListNewTipsLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onTipsShowInfoChangeWithPathKey:(id)arg1;
 - (void)disposeNewTipsWithPathKey:(id)arg1;

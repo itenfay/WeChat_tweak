@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMRichTextCoverView, NSArray, NSMutableArray, NSRecursiveLock, NSString, TextStyleAttributeObj, UIColor, UIFont, UIImage, UITouch;
 @protocol ILinkEventExt, RichTextLayoutDelegate;
 
@@ -95,7 +97,6 @@
 + (double)getHeightForContent:(id)arg1 font:(id)arg2 width:(double)arg3 parserType:(unsigned long long)arg4;
 + (void)initialize;
 + (id)pureStringForContent:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double truncatedTrailingStyleWidth; // @synthesize truncatedTrailingStyleWidth=_truncatedTrailingStyleWidth;
 @property(retain, nonatomic) NSArray *truncatedTrailingStyles; // @synthesize truncatedTrailingStyles=_truncatedTrailingStyles;
 @property(retain, nonatomic) UITouch *touch; // @synthesize touch=_touch;
@@ -259,4 +260,3 @@
 @property(readonly) Class superclass;
 
 @end
-

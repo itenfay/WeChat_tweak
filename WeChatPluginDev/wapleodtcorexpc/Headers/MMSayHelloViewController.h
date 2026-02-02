@@ -15,7 +15,6 @@
     id <MMSayHelloViewControllerDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMSayHelloViewControllerDelegate> delegate; // @synthesize delegate=m_delegate;
 @property(retain, nonatomic) CContact *helloReceiver; // @synthesize helloReceiver=m_helloReceiver;
 @property(retain, nonatomic) NSString *helloContent; // @synthesize helloContent=m_helloContent;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CADisplayLink, EmoticonPreviewWindowViewController, EmoticonRecommendBoardCgi, EmoticonSearchBoardView, EmoticonSearchInMessagePanelReporter, NSArray, NSString, UICollectionViewFlowLayout, UITableView;
 @protocol EmoticonSearchHalfScreenViewControllerDelegate;
 
@@ -31,7 +33,6 @@
     EmoticonSearchInMessagePanelReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonSearchInMessagePanelReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) int animationMode; // @synthesize animationMode=_animationMode;
 @property(copy, nonatomic) CDUnknownBlockType dismissAnimateBlock; // @synthesize dismissAnimateBlock=_dismissAnimateBlock;
@@ -106,4 +107,3 @@
 @property(readonly) Class superclass;
 
 @end
-

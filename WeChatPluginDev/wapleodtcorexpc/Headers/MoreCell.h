@@ -16,7 +16,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) UIImageView *icon; // @synthesize icon=_icon;
 - (void)layoutSubviews;

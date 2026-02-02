@@ -19,7 +19,6 @@
 }
 
 + (double)singleSystemMentionHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *liveSystemMentions; // @synthesize liveSystemMentions=_liveSystemMentions;
 @property(nonatomic) double maxHeight; // @synthesize maxHeight=_maxHeight;
 @property(nonatomic) _Bool isFolded; // @synthesize isFolded=_isFolded;

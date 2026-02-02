@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVRoutePickerView, CADisplayLink, CContact, CMessageWrap, MMStringToastView, MMUIButton, MinimizeNewTransitionController, MultiTalkHDHeadView, NSString, RingBackSoundCoordinator, RingDancingButton, RingToneDetail, UIImageView, UILabel, UIView, VoIPHeadImageBlurView, VoIPMPUIDotsLoadingView, VoIPTalkingView, VoipMinimizeReportObject, WCUIAlertView;
 @protocol VoIPViewControllerDelegate;
 
@@ -81,7 +83,6 @@
 }
 
 + (id)getCurrentTopViewController;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isVideoDeviceRecvFrameAtFirst; // @synthesize isVideoDeviceRecvFrameAtFirst=_isVideoDeviceRecvFrameAtFirst;
 @property(nonatomic) _Bool isVideoDeviceStartCompleteAtFirst; // @synthesize isVideoDeviceStartCompleteAtFirst=_isVideoDeviceStartCompleteAtFirst;
 @property(nonatomic) _Bool canClickAddMembersBtn; // @synthesize canClickAddMembersBtn=_canClickAddMembersBtn;
@@ -355,4 +356,3 @@
 @property(readonly) Class superclass;
 
 @end
-

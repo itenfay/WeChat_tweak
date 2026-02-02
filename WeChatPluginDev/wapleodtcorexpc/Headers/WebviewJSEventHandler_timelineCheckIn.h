@@ -12,7 +12,6 @@
     NSMutableData *_m_recData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *m_recData; // @synthesize m_recData=_m_recData;
 @property(retain, nonatomic) JSEvent *m_curEvent; // @synthesize m_curEvent=_m_curEvent;
 @property(retain, nonatomic) NSURLConnection *m_connecttion; // @synthesize m_connecttion=_m_connecttion;

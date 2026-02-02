@@ -14,7 +14,6 @@
     NSString *_openId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int reliable; // @synthesize reliable=_reliable;
 @property(copy, nonatomic) NSString *openId; // @synthesize openId=_openId;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;

@@ -16,7 +16,6 @@
     id <WADropListViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WADropListViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *dropList; // @synthesize dropList=_dropList;
 - (long long)getCurrentItemCount;

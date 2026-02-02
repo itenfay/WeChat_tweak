@@ -17,7 +17,6 @@
 + (id)identifier;
 + (double)imageWidthForCellWidth:(double)arg1;
 + (double)cellHeightWithModel:(id)arg1 cellWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *priceLabel; // @synthesize priceLabel=_priceLabel;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) MMFinderLiveGoodsSerialNumberView *serialNumberView; // @synthesize serialNumberView=_serialNumberView;

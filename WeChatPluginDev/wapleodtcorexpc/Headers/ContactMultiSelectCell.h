@@ -17,7 +17,6 @@
 }
 
 + (void)makeEditingCell:(id)arg1 selected:(_Bool)arg2 itemView:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCheckBoxHiddenInEditing; // @synthesize isCheckBoxHiddenInEditing=_isCheckBoxHiddenInEditing;
 @property(nonatomic) _Bool isSelectedInRoomContact; // @synthesize isSelectedInRoomContact=_isSelectedInRoomContact;
 @property(nonatomic) _Bool isDisabled; // @synthesize isDisabled=_isDisabled;

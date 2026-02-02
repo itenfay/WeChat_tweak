@@ -21,7 +21,6 @@
     _Bool m_bSendFinish;
 }
 
-- (void).cxx_destruct;
 - (void)reportDisconnect:(unsigned long long)arg1;
 - (void)processFilterResponseData:(id)arg1;
 - (void)processBackupDataTagResponseData:(id)arg1;

@@ -13,7 +13,6 @@
     unsigned int finderLiveSampleIntervalPreReport;
 }
 
-- (void).cxx_destruct;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (void)startFinderLiveReportUntilStopWithBid:(id)arg1;
 - (void)stopFinderLiveReport;

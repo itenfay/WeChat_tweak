@@ -26,7 +26,6 @@
 }
 
 + (_Bool)isSameMinuteTimestampA:(unsigned int)arg1 andTimestampB:(unsigned int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *adShareExposureIdSet; // @synthesize adShareExposureIdSet=_adShareExposureIdSet;
 @property(retain, nonatomic) NSMutableSet *forbidReportTimelineExposureFeedIdSet; // @synthesize forbidReportTimelineExposureFeedIdSet=_forbidReportTimelineExposureFeedIdSet;
 - (id)getCachedBodyWrapList;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSPointerArray;
 
@@ -18,7 +19,6 @@
     NSPointerArray *_observers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSPointerArray *observers; // @synthesize observers=_observers;
 @property(nonatomic) _Bool loadingFailUp; // @synthesize loadingFailUp=_loadingFailUp;
 @property(nonatomic) _Bool loadingFailDown; // @synthesize loadingFailDown=_loadingFailDown;
@@ -39,4 +39,3 @@
 - (id)init;
 
 @end
-

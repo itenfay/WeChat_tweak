@@ -15,7 +15,6 @@
     NSString *_systemInfoJsonStr;
 }
 
-- (void).cxx_destruct;
 @property(copy) NSString *systemInfoJsonStr; // @synthesize systemInfoJsonStr=_systemInfoJsonStr;
 @property(retain, nonatomic) NSMutableDictionary *dicJSContexts; // @synthesize dicJSContexts=_dicJSContexts;
 @property(retain, nonatomic) MMWebJsBasePkgInfo *bizPkgInfo; // @synthesize bizPkgInfo=_bizPkgInfo;

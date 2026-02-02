@@ -15,7 +15,6 @@
     _Bool bHasLeading;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasLeading; // @synthesize bHasLeading;
 @property(nonatomic) unsigned int uiMaxLength; // @synthesize uiMaxLength;
 @property(nonatomic) unsigned int uiMinLength; // @synthesize uiMinLength;

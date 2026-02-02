@@ -12,7 +12,6 @@
     MMKPatternLockViewOnInputInvalidPatternCallback *_invalidInputCallback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMKPatternLockViewOnInputInvalidPatternCallback *invalidInputCallback; // @synthesize invalidInputCallback=_invalidInputCallback;
 @property(retain, nonatomic) MMKPatternLockViewEndWithPatternCallback *callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) MMPatternLockView *lockView; // @synthesize lockView=_lockView;

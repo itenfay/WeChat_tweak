@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMIlinkCheckResourceMgr, MMLiteAppCacheInfo, MMLiteAppDownloadMgr, MMLiteAppInfoItem, MMPageSheetAdapter, NSMutableArray, NSMutableDictionary, NSPointerArray, NSString, UIPanGestureRecognizer, WxaRouterConfig;
 
 @interface MMLiteAppMgr
@@ -55,7 +57,6 @@
 + (unsigned long long)cleanLiteAppImageCacheSize;
 + (unsigned long long)preGetLiteAppImageCacheSize;
 + (id)makeLiteAppDownloadFilePath:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSPointerArray *gameHalfScreenViews; // @synthesize gameHalfScreenViews=_gameHalfScreenViews;
 @property(retain, nonatomic) MMLiteAppCacheInfo *cacheInfo; // @synthesize cacheInfo=_cacheInfo;
 @property(retain, nonatomic) NSMutableArray *bundleAppIds; // @synthesize bundleAppIds=_bundleAppIds;
@@ -275,4 +276,3 @@
 @property(readonly) Class superclass;
 
 @end
-

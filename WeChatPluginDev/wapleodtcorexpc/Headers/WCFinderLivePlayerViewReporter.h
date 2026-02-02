@@ -15,7 +15,6 @@
     MMFinderLiveTaskId *_liveTaskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 @property(nonatomic) unsigned long long videoDuration; // @synthesize videoDuration=_videoDuration;
 @property(retain, nonatomic) NSString *playUrl; // @synthesize playUrl=_playUrl;

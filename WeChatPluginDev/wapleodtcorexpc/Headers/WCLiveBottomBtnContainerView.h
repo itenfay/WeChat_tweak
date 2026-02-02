@@ -4,15 +4,14 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCLiveBottomBtnContainerView : UIView
 {
     CDUnknownBlockType _frameChangeCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType frameChangeCallback; // @synthesize frameChangeCallback=_frameChangeCallback;
 - (void)setFrame:(struct CGRect)arg1;
 
 @end
-

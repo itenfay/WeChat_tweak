@@ -11,7 +11,6 @@
     NSString *_digest;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBold; // @synthesize isBold=_isBold;
 @property(retain, nonatomic) NSString *digest; // @synthesize digest=_digest;
 - (id)genItemReportDigest;

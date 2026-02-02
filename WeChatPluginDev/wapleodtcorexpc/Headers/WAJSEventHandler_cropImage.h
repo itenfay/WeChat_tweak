@@ -10,7 +10,6 @@
     MMImageCropperViewController *_cropViewController;
 }
 
-- (void).cxx_destruct;
 - (void)imageCropperDidCancel:(id)arg1;
 - (void)imageCropper:(id)arg1 didFinished:(id)arg2;
 - (void)handleJSEvent:(id)arg1;

@@ -14,7 +14,6 @@
     NSString *_to;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *to; // @synthesize to=_to;
 @property(copy, nonatomic) NSString *from; // @synthesize from=_from;
 @property(copy, nonatomic) NSString *createtime; // @synthesize createtime=_createtime;

@@ -31,7 +31,6 @@
     double _progress;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool lastStartActiveFail; // @synthesize lastStartActiveFail=_lastStartActiveFail;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) id progressObserver; // @synthesize progressObserver=_progressObserver;

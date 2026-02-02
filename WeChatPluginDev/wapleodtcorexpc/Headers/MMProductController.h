@@ -20,7 +20,6 @@
 + (id)sharedControllerWithProductId:(id)arg1 skAdItem:(id)arg2 callbackUrl:(id)arg3;
 + (id)sharedControllerWithProductId:(id)arg1 callbackUrl:(id)arg2;
 + (_Bool)isAvailable;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SKStoreProductViewController *productViewController; // @synthesize productViewController=_productViewController;
 @property(retain, nonatomic) UIViewController *pushViewController; // @synthesize pushViewController=_pushViewController;
 @property(copy, nonatomic) NSString *callbackUrl; // @synthesize callbackUrl=_callbackUrl;

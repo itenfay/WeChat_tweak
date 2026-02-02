@@ -25,7 +25,6 @@
     long long _m_expandHitHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_expandHitHeight; // @synthesize m_expandHitHeight=_m_expandHitHeight;
 @property(nonatomic) long long m_expandHitWidth; // @synthesize m_expandHitWidth=_m_expandHitWidth;
 @property(retain, nonatomic) id <MMKImage> m_selectedBackgroundImage; // @synthesize m_selectedBackgroundImage=_m_selectedBackgroundImage;

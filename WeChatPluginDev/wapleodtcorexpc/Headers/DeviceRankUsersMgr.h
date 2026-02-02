@@ -11,7 +11,6 @@
     _Bool m_bLoaded;
 }
 
-- (void).cxx_destruct;
 - (void)updateOrAddCoverUrl:(id)arg1 WithUsername:(id)arg2;
 - (id)getCoverUrlByUserName:(id)arg1;
 - (void)SaveDeviceRankUsers;

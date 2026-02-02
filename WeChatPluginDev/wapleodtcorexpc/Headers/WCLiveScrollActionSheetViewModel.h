@@ -13,7 +13,6 @@
     MMFinderLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInStopState; // @synthesize isInStopState=_isInStopState;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 - (_Bool)showComplain;

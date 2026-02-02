@@ -18,7 +18,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *liveHeadUrl; // @synthesize liveHeadUrl=_liveHeadUrl;
 @property(nonatomic) long long relayIndex; // @synthesize relayIndex=_relayIndex;
 @property(retain, nonatomic) NSData *byPassInfo; // @synthesize byPassInfo=_byPassInfo;

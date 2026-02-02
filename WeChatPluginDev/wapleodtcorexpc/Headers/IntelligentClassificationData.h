@@ -11,7 +11,6 @@
     NSArray *_arrClassificationItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int classificationTime; // @synthesize classificationTime=_classificationTime;
 @property(retain, nonatomic) NSArray *arrClassificationItem; // @synthesize arrClassificationItem=_arrClassificationItem;
 - (_Bool)checkHadFaceAlbumClassificationLabelId;

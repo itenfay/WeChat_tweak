@@ -16,7 +16,6 @@
     CDStruct_1b6d18a9 _timelineDuration;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJMovieComposingAssetsClassifyHelper *assetsClassifyHelper; // @synthesize assetsClassifyHelper=_assetsClassifyHelper;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 timelineDuration; // @synthesize timelineDuration=_timelineDuration;
 @property(readonly, nonatomic) NSArray *originAssets; // @synthesize originAssets=_originAssets;

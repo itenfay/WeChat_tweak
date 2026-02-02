@@ -10,7 +10,6 @@
     id <TingFlowPlayerProtocol> _player;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TingFlowPlayerProtocol> player; // @synthesize player=_player;
 - (long long)onPrevChannelCommand:(id)arg1;
 - (long long)onNextChannelCommand:(id)arg1;

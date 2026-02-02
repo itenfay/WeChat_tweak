@@ -4,6 +4,7 @@
 //
 
 #import "NSObject-Protocol.h"
+typedef void (^CDUnknownBlockType)(void);
 
 @class ConcertTicketInfo, MMFinderLiveConcertMiniatureTicketViewReportContext;
 
@@ -13,4 +14,3 @@
 @property(copy, nonatomic) CDUnknownBlockType readyForDisplayBlock;
 - (void)updateWithTicketModel:(ConcertTicketInfo *)arg1 reportContext:(MMFinderLiveConcertMiniatureTicketViewReportContext *)arg2;
 @end
-

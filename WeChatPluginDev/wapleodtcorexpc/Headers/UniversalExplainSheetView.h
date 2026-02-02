@@ -12,7 +12,6 @@
     NSString *_desc;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIButton *settingButton; // @synthesize settingButton=_settingButton;

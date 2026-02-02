@@ -31,7 +31,6 @@
 
 + (id)errorWithCode:(long long)arg1 message:(id)arg2;
 + (id)resultWithCacheWrap:(id)arg1 andError:(id *)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromLocalCache; // @synthesize isFromLocalCache=_isFromLocalCache;
 @property(retain, nonatomic) TranslateLinkCacheWrap *cacheWrap; // @synthesize cacheWrap=_cacheWrap;
 @property(nonatomic) long long shareChatScope; // @synthesize shareChatScope=_shareChatScope;

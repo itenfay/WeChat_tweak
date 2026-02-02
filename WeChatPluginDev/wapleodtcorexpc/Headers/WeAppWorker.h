@@ -19,7 +19,6 @@
     long long _dataSize;
 }
 
-- (void).cxx_destruct;
 @property long long dataSize; // @synthesize dataSize=_dataSize;
 @property(retain) NSString *userFile; // @synthesize userFile=_userFile;
 @property(retain) NSMutableSet *eventHandlers; // @synthesize eventHandlers=_eventHandlers;

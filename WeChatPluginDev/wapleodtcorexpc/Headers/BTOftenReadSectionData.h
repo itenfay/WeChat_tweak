@@ -14,7 +14,6 @@
     NSString *_forcePreposedUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *forcePreposedUsername; // @synthesize forcePreposedUsername=_forcePreposedUsername;
 @property(retain, nonatomic) MPChannelTopBarInfo *channelInfo; // @synthesize channelInfo=_channelInfo;
 @property(retain, nonatomic) NSArray *brandContactArr; // @synthesize brandContactArr=_brandContactArr;

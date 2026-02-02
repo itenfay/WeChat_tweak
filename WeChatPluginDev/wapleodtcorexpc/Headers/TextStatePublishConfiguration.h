@@ -21,7 +21,6 @@
 + (id)followConfiguration;
 + (id)editConfiguration;
 + (id)defaultConfiguration;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool checkExceed; // @synthesize checkExceed=_checkExceed;
 @property(nonatomic) _Bool preserveLastPrivacyIfNeeded; // @synthesize preserveLastPrivacyIfNeeded=_preserveLastPrivacyIfNeeded;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;

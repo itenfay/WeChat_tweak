@@ -14,7 +14,6 @@
     MMUIViewController *_containerVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *containerVC; // @synthesize containerVC=_containerVC;
 @property(nonatomic) __weak id <WSTemplateBaseJSHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)handleJSApi_openFinderView:(id)arg1 callbackID:(id)arg2;

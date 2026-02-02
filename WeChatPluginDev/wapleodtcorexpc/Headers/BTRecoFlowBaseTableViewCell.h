@@ -18,7 +18,6 @@
 }
 
 + (id)cellReuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightMaskView; // @synthesize highlightMaskView=_highlightMaskView;
 @property(retain, nonatomic) BTRecoFlowSectionData *sectionData; // @synthesize sectionData=_sectionData;
 @property(nonatomic) _Bool shouldShowBottomSeperateLine; // @synthesize shouldShowBottomSeperateLine=_shouldShowBottomSeperateLine;

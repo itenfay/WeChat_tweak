@@ -21,7 +21,6 @@
     struct UIEdgeInsets _insets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *columnHeights; // @synthesize columnHeights=_columnHeights;
 @property(retain, nonatomic) NSMutableDictionary *supplementaryAttributesCacheDic; // @synthesize supplementaryAttributesCacheDic=_supplementaryAttributesCacheDic;
 @property(retain, nonatomic) NSMutableDictionary *attributesCacheDic; // @synthesize attributesCacheDic=_attributesCacheDic;

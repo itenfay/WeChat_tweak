@@ -14,7 +14,6 @@
     NSArray *_monthArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *monthArray; // @synthesize monthArray=_monthArray;
 @property(nonatomic) __weak MMUILabel *albumYearLabel; // @synthesize albumYearLabel=_albumYearLabel;
 @property(retain, nonatomic) MMUILabel *albumTimeLabel; // @synthesize albumTimeLabel=_albumTimeLabel;

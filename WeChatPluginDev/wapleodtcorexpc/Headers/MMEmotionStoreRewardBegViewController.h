@@ -20,7 +20,6 @@
     MMUILabel *_designerNameLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *designerNameLabel; // @synthesize designerNameLabel=_designerNameLabel;
 @property(retain, nonatomic) MMWebImageView *designerIconView; // @synthesize designerIconView=_designerIconView;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

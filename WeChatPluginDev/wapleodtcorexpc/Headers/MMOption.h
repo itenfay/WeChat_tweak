@@ -14,7 +14,6 @@
 }
 
 + (id)OptionWithContent:(id)arg1 enabled:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) NSString *content; // @synthesize content=_content;
 - (id)description;

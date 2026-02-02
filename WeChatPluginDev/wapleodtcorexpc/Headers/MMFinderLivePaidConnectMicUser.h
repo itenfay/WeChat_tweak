@@ -14,7 +14,6 @@
 }
 
 + (id)connectMicUserFromAudience:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool expandContentIfNeeded; // @synthesize expandContentIfNeeded=_expandContentIfNeeded;
 @property(nonatomic) _Bool isOnline; // @synthesize isOnline=_isOnline;
 @property(retain, nonatomic) NSString *consultContent; // @synthesize consultContent=_consultContent;

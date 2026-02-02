@@ -12,7 +12,6 @@
     WCTogetherMoreViewItem *_viewItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTogetherMoreViewItem *viewItem; // @synthesize viewItem=_viewItem;
 
 @end

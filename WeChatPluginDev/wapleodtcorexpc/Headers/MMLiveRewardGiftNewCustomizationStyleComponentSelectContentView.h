@@ -13,7 +13,6 @@
     MMLiveRewardGiftNewCustomizationComponentTagView *_currSelectComponentTagView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMLiveRewardGiftNewCustomizationComponentTagView *currSelectComponentTagView; // @synthesize currSelectComponentTagView=_currSelectComponentTagView;
 @property(retain, nonatomic) NSMutableArray *componentTagViewList; // @synthesize componentTagViewList=_componentTagViewList;
 @property(retain, nonatomic) UIScrollView *componentContainerView; // @synthesize componentContainerView=_componentContainerView;

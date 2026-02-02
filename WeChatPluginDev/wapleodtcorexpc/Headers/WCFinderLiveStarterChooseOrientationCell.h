@@ -18,7 +18,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *redDotView; // @synthesize redDotView=_redDotView;
 @property(retain, nonatomic) UIImageView *selectStateImg; // @synthesize selectStateImg=_selectStateImg;
 @property(retain, nonatomic) MMUILabel *stateLabel; // @synthesize stateLabel=_stateLabel;

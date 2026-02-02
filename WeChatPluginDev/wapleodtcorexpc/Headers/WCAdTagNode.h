@@ -20,7 +20,6 @@
     UIImage *_lightIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *lightIcon; // @synthesize lightIcon=_lightIcon;
 @property(retain, nonatomic) UIImage *darkIcon; // @synthesize darkIcon=_darkIcon;
 @property(retain, nonatomic) NSString *tagDarkNameColor; // @synthesize tagDarkNameColor=_tagDarkNameColor;

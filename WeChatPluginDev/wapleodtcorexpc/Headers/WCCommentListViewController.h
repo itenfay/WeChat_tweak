@@ -40,7 +40,6 @@
     WCCommentListTipsView *_commentListTipsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCommentListTipsView *commentListTipsView; // @synthesize commentListTipsView=_commentListTipsView;
 @property(nonatomic) _Bool shouldShowMuteTips; // @synthesize shouldShowMuteTips=_shouldShowMuteTips;
 @property(nonatomic) _Bool isNewMessageMuteTipsEnabled; // @synthesize isNewMessageMuteTipsEnabled=_isNewMessageMuteTipsEnabled;

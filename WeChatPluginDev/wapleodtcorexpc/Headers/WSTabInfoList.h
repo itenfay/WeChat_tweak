@@ -14,7 +14,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *tabs; // @synthesize tabs=_tabs;
 @property(nonatomic) long long jumpCategoryInFutrue; // @synthesize jumpCategoryInFutrue=_jumpCategoryInFutrue;
 - (void)configureJumpCategory:(int)arg1;

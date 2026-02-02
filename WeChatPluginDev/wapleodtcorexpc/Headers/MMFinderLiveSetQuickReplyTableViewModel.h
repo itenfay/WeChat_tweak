@@ -15,7 +15,6 @@
     NSMutableArray *_dataArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *dataArray; // @synthesize dataArray=_dataArray;
 @property(nonatomic) __weak id <MMFinderLiveSetQuickReplyTableDataDelegate> dataDelegate; // @synthesize dataDelegate=_dataDelegate;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;

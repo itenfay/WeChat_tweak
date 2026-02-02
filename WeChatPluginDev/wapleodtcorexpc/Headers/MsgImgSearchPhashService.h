@@ -12,7 +12,6 @@
 }
 
 + (_Bool)isSearchPhashEnable;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *searchPhashSlotKV; // @synthesize searchPhashSlotKV=_searchPhashSlotKV;
 @property(retain, nonatomic) NSMutableSet *needCallbackContextSets; // @synthesize needCallbackContextSets=_needCallbackContextSets;
 - (id)cdnFileIDForContext:(id)arg1;

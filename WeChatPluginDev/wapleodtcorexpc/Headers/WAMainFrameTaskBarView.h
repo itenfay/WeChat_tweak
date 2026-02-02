@@ -86,7 +86,6 @@
 
 + (id)mixColor1:(id)arg1 color2:(id)arg2 ratio:(double)arg3;
 + (_Bool)checkLimitedBlockForType:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAMainFrameAudioCenterBaseView *audioCenter; // @synthesize audioCenter=_audioCenter;
 @property(nonatomic) double emptyViewAreaHeight; // @synthesize emptyViewAreaHeight=_emptyViewAreaHeight;
 @property(nonatomic) double lastLayoutWidth; // @synthesize lastLayoutWidth=_lastLayoutWidth;

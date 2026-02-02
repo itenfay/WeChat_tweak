@@ -21,7 +21,6 @@
     UILabel *_errorLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *errorLabel; // @synthesize errorLabel=_errorLabel;
 @property(retain, nonatomic) SightIconView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) CAShapeLayer *arrowLayer; // @synthesize arrowLayer=_arrowLayer;

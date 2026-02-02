@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderDataItem, WCFinderFeedMediaWrap;
 
@@ -16,7 +17,6 @@
     NSObject *_selfHolder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *selfHolder; // @synthesize selfHolder=_selfHolder;
 @property(copy, nonatomic) NSString *resolvedPath; // @synthesize resolvedPath=_resolvedPath;
 @property(retain, nonatomic) WCFinderFeedMediaWrap *mediaWrap; // @synthesize mediaWrap=_mediaWrap;
@@ -38,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

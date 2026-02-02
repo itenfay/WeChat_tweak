@@ -17,7 +17,6 @@
     JSEvent *_cbEvent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useHttp; // @synthesize useHttp=_useHttp;
 @property(retain, nonatomic) JSEvent *cbEvent; // @synthesize cbEvent=_cbEvent;
 @property(retain, nonatomic) NSString *baseRequest; // @synthesize baseRequest=_baseRequest;

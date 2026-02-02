@@ -35,7 +35,6 @@
 + (id)generateWidgetCanvasViewThumbFromView:(id)arg1 atTimeOffsetSec:(double)arg2 forSize:(struct CGSize)arg3;
 + (id)generateWidgetCanvasViewFromWidgetViewList:(id)arg1 forCanvasSize:(struct CGSize)arg2;
 + (id)generateWidgetViewListFromWidgetStateList:(id)arg1 forCanvasSize:(struct CGSize)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *assets; // @synthesize assets=_assets;
 @property(retain, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) UIImage *originalImage; // @synthesize originalImage=_originalImage;

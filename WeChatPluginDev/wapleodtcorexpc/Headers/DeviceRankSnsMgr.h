@@ -10,7 +10,6 @@
     NSArray *m_focusArray;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)callExtensionOnReceivedCGIResp:(id)arg1;
 - (void)handleRankAddLikeResponse:(id)arg1;

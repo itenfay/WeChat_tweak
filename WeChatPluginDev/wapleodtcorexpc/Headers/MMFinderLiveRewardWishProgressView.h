@@ -18,7 +18,6 @@
     MMFinderLiveRewardWish *_wishGiftItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRewardWish *wishGiftItem; // @synthesize wishGiftItem=_wishGiftItem;
 @property(retain, nonatomic) MMUILabel *giftDisableLabel; // @synthesize giftDisableLabel=_giftDisableLabel;
 @property(retain, nonatomic) MMUILabel *fansBadgeLabel; // @synthesize fansBadgeLabel=_fansBadgeLabel;

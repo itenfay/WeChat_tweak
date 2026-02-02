@@ -16,7 +16,6 @@
     NSString *_prefetchId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *prefetchId; // @synthesize prefetchId=_prefetchId;
 @property(nonatomic) unsigned int reportId; // @synthesize reportId=_reportId;
 @property(nonatomic) unsigned int cmdSequence; // @synthesize cmdSequence=_cmdSequence;

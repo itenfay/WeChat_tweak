@@ -12,7 +12,6 @@
     NewLifeCardView *_cardView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeCardView *cardView; // @synthesize cardView=_cardView;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

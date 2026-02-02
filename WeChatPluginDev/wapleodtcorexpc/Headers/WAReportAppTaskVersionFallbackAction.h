@@ -15,7 +15,6 @@
     NSString *_netType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isWeakNet; // @synthesize isWeakNet=_isWeakNet;
 @property(copy, nonatomic) NSString *netType; // @synthesize netType=_netType;
 @property(nonatomic) unsigned int waitTimeInMs; // @synthesize waitTimeInMs=_waitTimeInMs;

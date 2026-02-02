@@ -39,7 +39,6 @@
     struct CGSize _lastTextGradientSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *barrageTrailingPAGView; // @synthesize barrageTrailingPAGView=_barrageTrailingPAGView;
 @property(retain, nonatomic) PAGView *barrageLeadingPAGView; // @synthesize barrageLeadingPAGView=_barrageLeadingPAGView;
 @property(retain, nonatomic) UIImageView *barrageTrailingImageView; // @synthesize barrageTrailingImageView=_barrageTrailingImageView;

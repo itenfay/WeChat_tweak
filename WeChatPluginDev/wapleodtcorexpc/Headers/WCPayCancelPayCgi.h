@@ -12,7 +12,6 @@
     NSString *_reqKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reqKey; // @synthesize reqKey=_reqKey;
 @property(nonatomic) __weak id <WCPayCancelPayCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (void)didFailWithError:(id)arg1;

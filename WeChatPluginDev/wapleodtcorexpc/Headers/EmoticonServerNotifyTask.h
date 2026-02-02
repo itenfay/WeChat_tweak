@@ -14,7 +14,6 @@
     id <EmoticonServerNotifyTaskDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EmoticonServerNotifyTaskDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *md5ObjectArray; // @synthesize md5ObjectArray=_md5ObjectArray;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

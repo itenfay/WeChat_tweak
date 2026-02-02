@@ -19,7 +19,6 @@
     struct CGSize _videoPlayerSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasClickEventManager *clickManager; // @synthesize clickManager=_clickManager;
 @property(nonatomic) _Bool componentHasInit; // @synthesize componentHasInit=_componentHasInit;
 @property(nonatomic) struct CGSize videoPlayerSize; // @synthesize videoPlayerSize=_videoPlayerSize;

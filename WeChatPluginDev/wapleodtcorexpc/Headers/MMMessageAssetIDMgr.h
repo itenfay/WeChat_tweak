@@ -11,7 +11,6 @@
     WCTTable *_table;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *table; // @synthesize table=_table;
 @property(retain, nonatomic) WCTDatabase *database; // @synthesize database=_database;
 - (void)OnMsgSendSuccess:(id)arg1;

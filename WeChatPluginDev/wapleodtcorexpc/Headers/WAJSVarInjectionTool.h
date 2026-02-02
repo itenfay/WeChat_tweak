@@ -14,7 +14,6 @@
     NSString *_baseObjJsonStr;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *baseObjJsonStr; // @synthesize baseObjJsonStr=_baseObjJsonStr;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)getJSString;

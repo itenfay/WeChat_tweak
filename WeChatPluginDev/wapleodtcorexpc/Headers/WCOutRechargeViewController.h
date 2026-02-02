@@ -39,7 +39,6 @@
     NSString *_payCurrencyType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int verifyRet; // @synthesize verifyRet=_verifyRet;
 @property(nonatomic) unsigned int purchaseRet; // @synthesize purchaseRet=_purchaseRet;
 @property(retain, nonatomic) NSString *payCurrencyType; // @synthesize payCurrencyType=_payCurrencyType;

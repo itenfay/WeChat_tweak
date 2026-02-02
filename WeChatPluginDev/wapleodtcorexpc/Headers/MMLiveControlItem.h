@@ -18,7 +18,6 @@
     struct CGSize _iconImageSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveControlItemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool showBadge; // @synthesize showBadge=_showBadge;
 @property(nonatomic) struct CGSize iconImageSize; // @synthesize iconImageSize=_iconImageSize;

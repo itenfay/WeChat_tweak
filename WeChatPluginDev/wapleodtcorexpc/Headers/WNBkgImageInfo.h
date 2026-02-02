@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_backgroundAlpha;
 + (void)PBArrayAdd_backgroundColor;
 + (void)PBArrayAdd_displayName;
-- (void).cxx_destruct;
 @property(nonatomic) int colorType; // @synthesize colorType=_colorType;
 @property(nonatomic) float logoAlpha; // @synthesize logoAlpha=_logoAlpha;
 @property(retain, nonatomic) NSString *logoColor; // @synthesize logoColor=_logoColor;

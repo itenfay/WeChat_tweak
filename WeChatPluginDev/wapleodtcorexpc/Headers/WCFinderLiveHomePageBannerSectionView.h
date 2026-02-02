@@ -13,7 +13,6 @@
 }
 
 + (double)viewHeightInWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderLiveHomePageBannerSectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WCFinderLiveFeedGenericAutoPlayModel *autoPlayModel; // @synthesize autoPlayModel=_autoPlayModel;
 - (void)onContainerSectionVMHomePageDeleteTid:(id)arg1;

@@ -16,7 +16,6 @@
     TextStateRecentIconList *_recentIconList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStateRecentIconList *recentIconList; // @synthesize recentIconList=_recentIconList;
 @property(retain, nonatomic) TextStatePublishIconGroup *recentIconGroup; // @synthesize recentIconGroup=_recentIconGroup;
 @property(retain, nonatomic) TextStatePublishIconList *publishIconList; // @synthesize publishIconList=_publishIconList;

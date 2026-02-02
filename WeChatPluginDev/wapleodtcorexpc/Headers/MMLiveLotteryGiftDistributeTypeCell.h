@@ -16,7 +16,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *optionName; // @synthesize optionName=_optionName;
 @property(nonatomic) unsigned int optionValue; // @synthesize optionValue=_optionValue;

@@ -18,7 +18,6 @@
     unsigned int _hasSplashScreen;
 }
 
-- (void).cxx_destruct;
 - (void)reportPreDownloadStatus:(unsigned int)arg1 value:(unsigned int)arg2;
 - (void)markEventTriggerDownload:(id)arg1;
 - (void)init:(id)arg1 scene:(unsigned int)arg2;

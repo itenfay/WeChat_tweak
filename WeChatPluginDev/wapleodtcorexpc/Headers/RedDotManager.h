@@ -13,7 +13,6 @@
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)getCtrlInfoByFinderUsernamePath:(id)arg1 reddotPath:(id)arg2;
 - (id)getCtrlInfoByFinderUsernameType:(id)arg1 type:(int)arg2;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GetProfileInfoResponse_RelievedBuyInfo, UIView, WAProfileServiceHeaderView;
 
 @interface WAProfileServiceViewController
@@ -14,7 +16,6 @@
 }
 
 + (double)viewHeightByBuyInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType halfAdapterCloseAction; // @synthesize halfAdapterCloseAction=_halfAdapterCloseAction;
 @property(retain, nonatomic) UIView *halfAdapterHeaderView; // @synthesize halfAdapterHeaderView=_halfAdapterHeaderView;
 @property(retain, nonatomic) WAProfileServiceHeaderView *headerView; // @synthesize headerView=_headerView;
@@ -26,4 +27,3 @@
 - (id)initWithBuyInfo:(id)arg1;
 
 @end
-

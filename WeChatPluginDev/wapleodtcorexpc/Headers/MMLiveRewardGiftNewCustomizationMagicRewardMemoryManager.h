@@ -13,7 +13,6 @@
     NSMutableDictionary *_monitorTaskDict;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasResMemoryLoaded; // @synthesize hasResMemoryLoaded=_hasResMemoryLoaded;
 @property(retain, nonatomic) NSMutableDictionary *monitorTaskDict; // @synthesize monitorTaskDict=_monitorTaskDict;
 - (void)onLiveTask:(id)arg1 didCollectMetricsInfo:(id)arg2;

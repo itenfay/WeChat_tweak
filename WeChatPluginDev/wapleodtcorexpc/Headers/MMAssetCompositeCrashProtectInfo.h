@@ -18,7 +18,6 @@
     long long _taskStartTimes;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long taskStartTimes; // @synthesize taskStartTimes=_taskStartTimes;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;

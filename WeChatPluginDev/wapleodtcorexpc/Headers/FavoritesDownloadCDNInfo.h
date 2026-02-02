@@ -24,7 +24,6 @@
 }
 
 + (id)CreatFavDownloadCDNInfoForData:(id)arg1 inFavItem:(id)arg2 isThumb:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *streamWebUrl; // @synthesize streamWebUrl=_streamWebUrl;
 @property(retain, nonatomic) NSString *dataFmt; // @synthesize dataFmt=_dataFmt;
 @property(nonatomic) int dataType; // @synthesize dataType=_dataType;

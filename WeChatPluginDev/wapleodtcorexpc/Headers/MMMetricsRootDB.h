@@ -13,7 +13,6 @@
     WCTTable *m_tableAppRunningInfo;
 }
 
-- (void).cxx_destruct;
 - (_Bool)deleteAppRunningInfo:(id)arg1;
 - (_Bool)insertOrUpdateAppRunningInfo:(id)arg1;
 - (id)getAllAppRunningInfos;

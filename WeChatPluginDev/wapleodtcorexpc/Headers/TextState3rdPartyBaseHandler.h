@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TextState3rdPartyContext;
 
@@ -12,7 +13,6 @@
     TextState3rdPartyContext *context;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextState3rdPartyContext *context; // @synthesize context;
 - (id)updateBizData;
 - (_Bool)dataReady;
@@ -51,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

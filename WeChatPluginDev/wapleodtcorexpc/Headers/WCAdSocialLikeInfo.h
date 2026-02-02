@@ -26,7 +26,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdSocialLikePatInfo *patInfo; // @synthesize patInfo=_patInfo;
 @property(retain, nonatomic) WCAdFireworkCheerInfo *fireworkCheerInfo; // @synthesize fireworkCheerInfo=_fireworkCheerInfo;
 @property(retain, nonatomic) WCAdContinuousLikeInfo *continuousLikeInfo; // @synthesize continuousLikeInfo=_continuousLikeInfo;

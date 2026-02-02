@@ -15,7 +15,6 @@
     struct UIEdgeInsets _contentEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMusicLoadingHintView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) MMUILabel *hintLabel; // @synthesize hintLabel=_hintLabel;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;

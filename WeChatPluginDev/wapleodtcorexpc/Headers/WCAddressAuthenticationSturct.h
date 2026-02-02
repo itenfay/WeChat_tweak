@@ -14,7 +14,6 @@
     int m_uiPayRcptScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int m_uiPayRcptScene; // @synthesize m_uiPayRcptScene;
 @property(retain, nonatomic) NSString *m_nsHandleUrl; // @synthesize m_nsHandleUrl;
 @property(retain, nonatomic) NSString *m_appID; // @synthesize m_appID;

@@ -21,7 +21,6 @@
     char *_kwm_data;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int kwm_length; // @synthesize kwm_length=_kwm_length;
 @property(nonatomic) char *kwm_data; // @synthesize kwm_data=_kwm_data;
 @property(retain, nonatomic) NSData *mmapData; // @synthesize mmapData=_mmapData;

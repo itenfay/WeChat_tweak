@@ -26,7 +26,6 @@
     WCPayAuthenRequestRetryInfo *_m_retryInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayAuthenRequestRetryInfo *m_retryInfo; // @synthesize m_retryInfo=_m_retryInfo;
 @property(copy, nonatomic) NSString *autoDeductBankSerial; // @synthesize autoDeductBankSerial=_autoDeductBankSerial;
 @property(copy, nonatomic) NSString *autoDeductBankType; // @synthesize autoDeductBankType=_autoDeductBankType;

@@ -10,7 +10,6 @@
     NSDictionary *_singlePageData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *singlePageData; // @synthesize singlePageData=_singlePageData;
 - (_Bool)isNavigateToTabWithURL:(id)arg1;
 - (void)navigateToURL:(id)arg1 withAppID:(id)arg2 webView:(id)arg3;

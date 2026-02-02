@@ -13,7 +13,6 @@
     UIViewController *_fileViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *fileViewController; // @synthesize fileViewController=_fileViewController;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogic; // @synthesize forwardLogic=_forwardLogic;
 - (id)getCurrentViewController;

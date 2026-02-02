@@ -13,7 +13,6 @@
     NSString *_titleText;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(copy, nonatomic) NSArray *iconURLs; // @synthesize iconURLs=_iconURLs;
 

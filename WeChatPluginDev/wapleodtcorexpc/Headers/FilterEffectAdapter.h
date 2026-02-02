@@ -11,7 +11,6 @@
 }
 
 + (id)weeffectType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *alpha; // @synthesize alpha=_alpha;
 - (id)getFilterDirectory;
 - (id)generateJsonDic;

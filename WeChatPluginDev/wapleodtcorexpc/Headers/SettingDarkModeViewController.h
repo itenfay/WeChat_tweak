@@ -10,7 +10,6 @@
     MMTableViewInfo *_tableViewInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableViewInfo *tableViewInfo; // @synthesize tableViewInfo=_tableViewInfo;
 - (void)onSelectLightMode;
 - (void)onSelectDarkMode;

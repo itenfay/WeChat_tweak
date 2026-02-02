@@ -18,7 +18,6 @@
     CALayer *_gradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) CAShapeLayer *progressLayer; // @synthesize progressLayer=_progressLayer;
 @property(nonatomic) _Bool needUpdateBgProgress; // @synthesize needUpdateBgProgress=_needUpdateBgProgress;

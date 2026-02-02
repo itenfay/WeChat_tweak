@@ -13,7 +13,6 @@
     id <EmoticonStoreGridViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EmoticonStoreGridViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long m_currentSelectIndex; // @synthesize m_currentSelectIndex;
 @property(retain, nonatomic) NSString *m_emoticonPid; // @synthesize m_emoticonPid;

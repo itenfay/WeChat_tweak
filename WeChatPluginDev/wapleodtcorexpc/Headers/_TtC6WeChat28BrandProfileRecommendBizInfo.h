@@ -16,7 +16,6 @@
     MISSING_TYPE *verifyType;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, copy) NSString *headimgurl;
 @property(nonatomic, copy) NSString *username;

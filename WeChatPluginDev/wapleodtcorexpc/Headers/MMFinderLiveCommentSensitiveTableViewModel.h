@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveSensitiveTableView, NSMutableArray, NSString;
 
@@ -15,7 +16,6 @@
     NSMutableArray *_sensitiveSrcDataItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sensitiveSrcDataItems; // @synthesize sensitiveSrcDataItems=_sensitiveSrcDataItems;
 @property(retain, nonatomic) MMFinderLiveSensitiveTableView *tableView; // @synthesize tableView=_tableView;
 @property(copy, nonatomic) CDUnknownBlockType onSensitiveDataItemDeleteCallback; // @synthesize onSensitiveDataItemDeleteCallback=_onSensitiveDataItemDeleteCallback;
@@ -52,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

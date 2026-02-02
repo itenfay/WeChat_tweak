@@ -13,7 +13,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPersonalCenterSidesButton *button; // @synthesize button=_button;
 - (void)setRedDotInfo:(id)arg1;
 - (void)handleClick;

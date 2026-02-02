@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CameraRecordDevice, NSString, NSTimer, NSURLSessionDataTask, UIButton, UIImage, UIImageView, UILabel, UIView, YtFLCircleProgressView;
 
 @interface YtOcrViewController
@@ -25,7 +27,6 @@
     YtFLCircleProgressView *timeoutProgressView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isManualMode; // @synthesize isManualMode=_isManualMode;
 @property(nonatomic) _Bool needTakePhoto; // @synthesize needTakePhoto;
 @property(retain, nonatomic) YtFLCircleProgressView *timeoutProgressView; // @synthesize timeoutProgressView;
@@ -52,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

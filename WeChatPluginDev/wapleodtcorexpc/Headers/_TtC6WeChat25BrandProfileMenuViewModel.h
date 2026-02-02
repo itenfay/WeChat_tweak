@@ -15,7 +15,6 @@
     MISSING_TYPE *_menuItems;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)updateWithButtonList:(id)arg1;
 - (id)filterButtonList:(id)arg1 isForceButtonHidden:(_Bool)arg2;

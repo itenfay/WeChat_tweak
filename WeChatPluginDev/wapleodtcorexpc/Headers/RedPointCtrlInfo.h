@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_seqInfo;
 + (void)PBArrayAdd_redPointList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SequenceInfo *seqInfo; // @synthesize seqInfo=_seqInfo;
 @property(retain, nonatomic) NSMutableArray *redPointList; // @synthesize redPointList=_redPointList;
 - (id)getPBPropertyTable;

@@ -16,7 +16,6 @@
     MMUIButton *_editBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *editBtn; // @synthesize editBtn=_editBtn;
 @property(retain, nonatomic) RichTextView *nickNameLabel; // @synthesize nickNameLabel=_nickNameLabel;
 @property(retain, nonatomic) UIImageView *headerImageView; // @synthesize headerImageView=_headerImageView;

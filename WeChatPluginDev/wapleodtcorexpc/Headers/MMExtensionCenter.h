@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMExtensionCenter : NSObject
 {
@@ -31,4 +32,3 @@
 - (id)initWithContext:(id)arg1;
 
 @end
-

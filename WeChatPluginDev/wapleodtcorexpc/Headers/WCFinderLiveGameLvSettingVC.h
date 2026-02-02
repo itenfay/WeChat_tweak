@@ -10,7 +10,6 @@
     GameRankSwitchInfo *_gameLiveSwitchInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameRankSwitchInfo *gameLiveSwitchInfo; // @synthesize gameLiveSwitchInfo=_gameLiveSwitchInfo;
 - (void)onGameLiveRankSwitched:(id)arg1 cellInfo:(id)arg2;
 - (void)onBuildTables;

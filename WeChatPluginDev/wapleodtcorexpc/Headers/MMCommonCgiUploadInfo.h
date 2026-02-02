@@ -17,7 +17,6 @@
     NSString *_filePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sectionLength; // @synthesize sectionLength=_sectionLength;
 @property(nonatomic) unsigned int sectionOffset; // @synthesize sectionOffset=_sectionOffset;
 @property(nonatomic) unsigned int sectionIndex; // @synthesize sectionIndex=_sectionIndex;

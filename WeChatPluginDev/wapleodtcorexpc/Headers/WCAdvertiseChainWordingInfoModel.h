@@ -20,7 +20,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int wordingComplexExchangeValue; // @synthesize wordingComplexExchangeValue=_wordingComplexExchangeValue;
 @property(retain, nonatomic) NSString *wordingComplexString; // @synthesize wordingComplexString=_wordingComplexString;
 @property(retain, nonatomic) NSArray *userNameList; // @synthesize userNameList=_userNameList;

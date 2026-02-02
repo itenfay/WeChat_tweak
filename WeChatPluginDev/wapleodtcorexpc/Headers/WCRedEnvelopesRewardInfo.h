@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_reportId;
 + (void)PBArrayAdd_arrRewardItem;
 + (void)PBArrayAdd_resoureId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrRewardItem; // @synthesize arrRewardItem=_arrRewardItem;
 @property(nonatomic) unsigned int reportKey; // @synthesize reportKey=_reportKey;
 @property(nonatomic) unsigned int reportId; // @synthesize reportId=_reportId;

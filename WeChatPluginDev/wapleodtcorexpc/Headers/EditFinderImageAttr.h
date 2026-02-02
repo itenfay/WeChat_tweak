@@ -14,7 +14,6 @@
     struct CGRect _cropRectInScreen;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect cropRectInScreen; // @synthesize cropRectInScreen=_cropRectInScreen;
 @property(nonatomic) struct CGRect fullScreenRectInScreen; // @synthesize fullScreenRectInScreen=_fullScreenRectInScreen;
 @property(retain, nonatomic) NSMutableArray *unCropImagesArray; // @synthesize unCropImagesArray=_unCropImagesArray;

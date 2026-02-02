@@ -27,7 +27,6 @@
     NSString *_dataPathToWrite;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *dataPathToWrite; // @synthesize dataPathToWrite=_dataPathToWrite;
 @property(copy, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 @property(nonatomic) double offset; // @synthesize offset=_offset;

@@ -24,7 +24,6 @@
 
 + (id)getConflictWordingWithScene:(int)arg1;
 + (unsigned char)getPriorityWithScene:(int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *conflictWording; // @synthesize conflictWording=_conflictWording;
 @property(retain, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool hasListenerLastTime; // @synthesize hasListenerLastTime=_hasListenerLastTime;

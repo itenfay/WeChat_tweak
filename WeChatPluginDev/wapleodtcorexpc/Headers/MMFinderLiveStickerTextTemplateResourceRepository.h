@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveStickerTextTemplateRemoteDeliveredResourcesFetchingRootAction, NSArray, NSMutableDictionary;
 
@@ -14,7 +15,6 @@
     MMFinderLiveStickerTextTemplateRemoteDeliveredResourcesFetchingRootAction *_fetcher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveStickerTextTemplateRemoteDeliveredResourcesFetchingRootAction *fetcher; // @synthesize fetcher=_fetcher;
 @property(retain, nonatomic) NSMutableDictionary *templateFonts; // @synthesize templateFonts=_templateFonts;
 @property(retain, nonatomic) NSArray *templateItems; // @synthesize templateItems=_templateItems;
@@ -25,4 +25,3 @@
 - (void)updateWithBackendEntitiesForTextTemplates:(id)arg1 templateFonts:(id)arg2;
 
 @end
-

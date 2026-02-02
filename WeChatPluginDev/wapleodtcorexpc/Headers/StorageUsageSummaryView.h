@@ -18,7 +18,6 @@
     StorageUsageSummaryModel *m_model;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StorageUsageSummaryModel *model; // @synthesize model=m_model;
 - (void)updateLayoutWithAnimation;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

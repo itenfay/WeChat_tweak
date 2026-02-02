@@ -10,7 +10,6 @@
     MMPickLocationViewController *_locationViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMPickLocationViewController *locationViewController; // @synthesize locationViewController=_locationViewController;
 - (void)onCancelSeletctedLocation;
 - (void)onFinishSelectLocation;

@@ -21,7 +21,6 @@
 }
 
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(nonatomic) double maxLabelWidth; // @synthesize maxLabelWidth=_maxLabelWidth;
 @property(nonatomic) struct CGSize buttonSize; // @synthesize buttonSize=_buttonSize;
 @property(retain, nonatomic) UIColor *buttonBlurColor; // @synthesize buttonBlurColor=_buttonBlurColor;

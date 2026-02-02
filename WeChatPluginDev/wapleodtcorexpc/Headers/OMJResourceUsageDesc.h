@@ -12,7 +12,6 @@
     NSArray *_resourceItems;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *resourceItems; // @synthesize resourceItems=_resourceItems;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithResourceItems:(id)arg1;

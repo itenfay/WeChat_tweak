@@ -16,7 +16,6 @@
 }
 
 + (id)genAnimateStateView:(unsigned int)arg1 WithGrayBackground:(_Bool)arg2 isMiniVersion:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(retain, nonatomic) UIImageView *stateIcon; // @synthesize stateIcon=_stateIcon;
 @property(retain, nonatomic) UIColor *stateIconColor; // @synthesize stateIconColor=_stateIconColor;

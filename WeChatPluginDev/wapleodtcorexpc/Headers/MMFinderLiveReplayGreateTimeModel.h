@@ -17,7 +17,6 @@
 
 + (id)transferToSortedGreateTimeListFromAnchorSpecified:(id)arg1 autoDetection:(id)arg2;
 + (id)createGreateTimeModel:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long srcType; // @synthesize srcType=_srcType;
 @property(copy, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl=_thumbUrl;
 @property(nonatomic) double greateTime; // @synthesize greateTime=_greateTime;

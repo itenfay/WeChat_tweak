@@ -26,7 +26,6 @@
     AuthorizeInfoWithPhone *_authorizeInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showPrivacyInfo; // @synthesize showPrivacyInfo=_showPrivacyInfo;
 @property(retain, nonatomic) AuthorizeInfoWithPhone *authorizeInfo; // @synthesize authorizeInfo=_authorizeInfo;
 @property(retain, nonatomic) NSMutableArray *userIdListNew; // @synthesize userIdListNew=_userIdListNew;

@@ -12,7 +12,6 @@
     MMLivePivotFooterView *_footer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMLivePivotFooterView *footer; // @synthesize footer=_footer;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 

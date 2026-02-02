@@ -16,7 +16,6 @@
     NSString *_redirectUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int downloadTime; // @synthesize downloadTime=_downloadTime;
 @property(nonatomic) unsigned int dataSize; // @synthesize dataSize=_dataSize;
 @property(copy, nonatomic) NSString *redirectUrl; // @synthesize redirectUrl=_redirectUrl;

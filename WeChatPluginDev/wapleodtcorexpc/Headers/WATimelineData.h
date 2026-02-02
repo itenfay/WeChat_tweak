@@ -30,7 +30,6 @@
     NSString *_liteAppBizData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int liteAppPriority; // @synthesize liteAppPriority=_liteAppPriority;
 @property(retain, nonatomic) NSString *liteAppBizData; // @synthesize liteAppBizData=_liteAppBizData;
 @property(nonatomic) unsigned int appBrandPriority; // @synthesize appBrandPriority=_appBrandPriority;

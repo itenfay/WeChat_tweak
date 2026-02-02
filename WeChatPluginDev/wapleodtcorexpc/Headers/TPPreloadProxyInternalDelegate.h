@@ -15,7 +15,6 @@
     id <ITPPreloadProxyLifeCycleDelegate> _lifeDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ITPPreloadProxyLifeCycleDelegate> lifeDelegate; // @synthesize lifeDelegate=_lifeDelegate;
 @property(nonatomic) __weak id <TPPreloadProxyDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) int playId; // @synthesize playId=_playId;

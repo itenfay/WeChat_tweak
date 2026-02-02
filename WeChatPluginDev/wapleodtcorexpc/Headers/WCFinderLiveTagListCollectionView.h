@@ -19,7 +19,6 @@
 }
 
 + (struct CGSize)cellHeightConfig:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long lastSelectItemId; // @synthesize lastSelectItemId=_lastSelectItemId;
 @property(retain, nonatomic) UICollectionView *tagCollectionView; // @synthesize tagCollectionView=_tagCollectionView;
 @property(retain, nonatomic) WCFinderLiveTagListCollectionViewConfig *config; // @synthesize config=_config;

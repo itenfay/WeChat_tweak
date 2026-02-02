@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMPrefetcherGameCenterJSContext, MMWebJsBasePkgInfo, MMWebOptimizationPrefetcher, MMWebPrefecherJsEngine, MMWebPrefetcherPkgDownloadTask, MemoryMappedKV, NSMutableArray, NSString, NSURLSession;
 
 @interface MMWebPrefetcherMgr
@@ -35,7 +37,6 @@
 + (void)contextReport:(unsigned int)arg1;
 + (void)workflowMonitorFor:(unsigned int)arg1;
 + (void)stateMonitorFor:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *exptMappedKV; // @synthesize exptMappedKV=_exptMappedKV;
 @property(retain, nonatomic) MMWebPrefetcherPkgDownloadTask *adPkgDownloadTask; // @synthesize adPkgDownloadTask=_adPkgDownloadTask;
 @property(retain, nonatomic) MemoryMappedKV *pkgFrequencyMappedKV; // @synthesize pkgFrequencyMappedKV=_pkgFrequencyMappedKV;
@@ -78,4 +79,3 @@
 @property(readonly) Class superclass;
 
 @end
-

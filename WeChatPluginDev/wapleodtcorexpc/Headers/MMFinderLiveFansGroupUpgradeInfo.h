@@ -16,7 +16,6 @@
     NSString *_upgradeStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFull; // @synthesize isFull=_isFull;
 @property(retain, nonatomic) NSString *upgradeStatus; // @synthesize upgradeStatus=_upgradeStatus;
 @property(retain, nonatomic) NSString *intimacyIncCount; // @synthesize intimacyIncCount=_intimacyIncCount;

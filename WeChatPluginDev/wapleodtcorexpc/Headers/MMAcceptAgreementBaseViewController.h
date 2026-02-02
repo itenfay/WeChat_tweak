@@ -14,7 +14,6 @@
     UIColor *_m_navigationBarColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *m_navigationBarColor; // @synthesize m_navigationBarColor=_m_navigationBarColor;
 @property(retain, nonatomic) MMAcceptAgreementCommonHeadView *m_commonHeadView; // @synthesize m_commonHeadView=_m_commonHeadView;
 @property(retain, nonatomic) MMTableView *m_tableView; // @synthesize m_tableView=_m_tableView;

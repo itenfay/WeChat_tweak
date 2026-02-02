@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface VoIPMPSystemAuthNativeAPI : NSObject
 {
@@ -15,7 +16,6 @@
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2 refCntManager:(void *)arg3;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)requestAsync:(int)arg1 on:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestAsync:(int)arg1 completion:(CDUnknownBlockType)arg2;
@@ -25,4 +25,3 @@
 - (shared_ptr_b77fd022)getDispatcher;
 
 @end
-

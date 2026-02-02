@@ -16,7 +16,6 @@
     WCSnsABTestTipData *firstTipData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSnsABTestTipData *firstTipData; // @synthesize firstTipData;
 @property(retain, nonatomic) NSMutableDictionary *dicTipData; // @synthesize dicTipData;
 @property(nonatomic) unsigned long long experType; // @synthesize experType;

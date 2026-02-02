@@ -17,7 +17,6 @@
     UIButton *_checkButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *checkButton; // @synthesize checkButton=_checkButton;
 @property(retain, nonatomic) FixTitleColorButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) GameNoticeAdditionalInfoView *additionalView; // @synthesize additionalView=_additionalView;

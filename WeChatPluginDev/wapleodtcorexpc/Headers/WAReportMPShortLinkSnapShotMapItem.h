@@ -13,7 +13,6 @@
     NSString *_currentPageTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *currentPageTitle; // @synthesize currentPageTitle=_currentPageTitle;
 @property(copy, nonatomic) NSString *currentPathQuery; // @synthesize currentPathQuery=_currentPathQuery;
 @property(copy, nonatomic) NSString *snapshotCDNUrl; // @synthesize snapshotCDNUrl=_snapshotCDNUrl;

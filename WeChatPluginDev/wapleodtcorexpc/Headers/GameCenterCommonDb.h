@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, WCTDatabase;
 
 @interface GameCenterCommonDb
@@ -11,7 +13,6 @@
     NSMutableDictionary *_tableDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *tableDict; // @synthesize tableDict=_tableDict;
 @property(retain, nonatomic) WCTDatabase *dataBase; // @synthesize dataBase=_dataBase;
 - (_Bool)runTransaction:(CDUnknownBlockType)arg1;
@@ -34,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

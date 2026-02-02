@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderMVInfo, FinderPostOriginInfo, NSArray, NSString, WCFinderPostSessionModel;
 
@@ -82,7 +83,6 @@
 + (void)PBArrayAdd_totalsize;
 + (void)PBArrayAdd_createTime;
 + (void)PBArrayAdd_clientId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderPostOriginInfo *originInfo; // @synthesize originInfo=_originInfo;
 @property(nonatomic) _Bool doubleCheckPostAction; // @synthesize doubleCheckPostAction=_doubleCheckPostAction;
 @property(nonatomic) _Bool isMusicMVClip; // @synthesize isMusicMVClip=_isMusicMVClip;
@@ -150,4 +150,3 @@
 @property(readonly) Class superclass;
 
 @end
-

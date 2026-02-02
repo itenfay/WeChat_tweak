@@ -13,7 +13,6 @@
     MMUIButton *_topButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *topButton; // @synthesize topButton=_topButton;
 @property(retain, nonatomic) UIImageView *blurImgView; // @synthesize blurImgView=_blurImgView;
 - (void)setBlurImage:(id)arg1;

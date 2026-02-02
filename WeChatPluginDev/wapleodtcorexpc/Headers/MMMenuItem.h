@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIMenuItem.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIFont, UIImage;
 @protocol MMMenuItemProtocol;
@@ -28,7 +29,6 @@
     struct CGRect _itemFrame;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType menuItemAnimator; // @synthesize menuItemAnimator=_menuItemAnimator;
 @property(nonatomic) __weak id <MMMenuItemProtocol> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long linePosition; // @synthesize linePosition=_linePosition;
@@ -58,4 +58,3 @@
 - (struct CGSize)itemSizeWithWidth:(double)arg1;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
@@ -32,7 +34,6 @@
     NSMutableDictionary *_videoUrlPlayDurationDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *videoUrlPlayDurationDic; // @synthesize videoUrlPlayDurationDic=_videoUrlPlayDurationDic;
 @property(retain, nonatomic) NSMutableDictionary *videoUrlRequestDurationDic; // @synthesize videoUrlRequestDurationDic=_videoUrlRequestDurationDic;
 @property(retain, nonatomic) NSMutableDictionary *videoApiRequestDurationDic; // @synthesize videoApiRequestDurationDic=_videoApiRequestDurationDic;
@@ -93,4 +94,3 @@
 @property(readonly) Class superclass;
 
 @end
-

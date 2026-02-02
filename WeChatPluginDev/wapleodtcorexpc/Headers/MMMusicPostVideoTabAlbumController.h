@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMAlbum, MMAlbumDropPickerController, MMAssetForPHAssetFramework, MMDropableTitleView, MMMusicPostVideoImagePickerControlCenter, NSMutableArray, NSObject, NSString, UICollectionView, UICollectionViewFlowLayout;
 @protocol MMMusicPostVideoTabAlbumControllerDataSource, MMMusicPostVideoTabAlbumControllerDelegate, OS_dispatch_queue;
 
@@ -25,7 +27,6 @@
     NSObject<OS_dispatch_queue> *_albumExecuteQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *albumExecuteQueue; // @synthesize albumExecuteQueue=_albumExecuteQueue;
 @property(nonatomic) _Bool canMultiSelect; // @synthesize canMultiSelect=_canMultiSelect;
 @property(nonatomic) _Bool canAlbumShowPhoto; // @synthesize canAlbumShowPhoto=_canAlbumShowPhoto;
@@ -79,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

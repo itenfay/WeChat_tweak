@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMainSceneDelegate;
 
 @interface MMSubSceneDelegate
@@ -10,7 +12,6 @@
     MMMainSceneDelegate *_mainSceneDelegate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMainSceneDelegate *mainSceneDelegate; // @synthesize mainSceneDelegate=_mainSceneDelegate;
 - (void)windowScene:(id)arg1 didUpdateCoordinateSpace:(id)arg2 interfaceOrientation:(long long)arg3 traitCollection:(id)arg4;
 - (void)sceneDidEnterBackground:(id)arg1;
@@ -22,4 +23,3 @@
 - (void)updateSceneBizViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

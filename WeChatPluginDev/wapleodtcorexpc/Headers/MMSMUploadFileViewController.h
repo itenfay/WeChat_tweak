@@ -11,7 +11,6 @@
     UIProgressView *m_progressView;
 }
 
-- (void).cxx_destruct;
 - (void)onFinishButtonClicked:(id)arg1;
 - (void)onUploadFilesFail;
 - (void)onUploadFilesFinished;

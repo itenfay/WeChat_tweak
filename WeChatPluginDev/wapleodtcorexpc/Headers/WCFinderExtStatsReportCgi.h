@@ -11,7 +11,6 @@
     NSString *_extraKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extraKey; // @synthesize extraKey=_extraKey;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 - (void)finderCgiDidFailWithError:(id)arg1 response:(id)arg2;

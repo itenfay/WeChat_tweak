@@ -14,7 +14,6 @@
     FinderLiveSquareStyleInfo *_styleInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveSquareStyleInfo *styleInfo; // @synthesize styleInfo=_styleInfo;
 @property(retain, nonatomic) WCFinderLiveHomePageSectionViewModel *vm; // @synthesize vm=_vm;
 @property(retain, nonatomic) UICollectionView *collectionview; // @synthesize collectionview=_collectionview;

@@ -14,7 +14,6 @@
     UIImage *_customDotInactiveImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *customDotInactiveImage; // @synthesize customDotInactiveImage=_customDotInactiveImage;
 @property(retain, nonatomic) UIImage *customDotActiveImage; // @synthesize customDotActiveImage=_customDotActiveImage;
 @property(retain, nonatomic) UIImage *interactiveBackgroundImage; // @synthesize interactiveBackgroundImage=_interactiveBackgroundImage;

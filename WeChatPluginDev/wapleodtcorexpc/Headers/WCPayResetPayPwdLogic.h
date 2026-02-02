@@ -22,7 +22,6 @@
     NSString *_userIDNum;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userIDNum; // @synthesize userIDNum=_userIDNum;
 @property(retain, nonatomic) NSString *userIDType; // @synthesize userIDType=_userIDType;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

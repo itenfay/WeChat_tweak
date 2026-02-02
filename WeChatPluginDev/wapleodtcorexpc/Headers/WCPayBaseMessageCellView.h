@@ -12,7 +12,6 @@
     UIImageView *m_iconView;
 }
 
-- (void).cxx_destruct;
 - (_Bool)disableImplicitAnimations;
 - (void)onTouchUpInside;
 - (void)initIconView;

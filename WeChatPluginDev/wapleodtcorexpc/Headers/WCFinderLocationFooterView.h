@@ -31,7 +31,6 @@
 
 + (double)heightWithParams:(id)arg1 width:(double)arg2;
 + (double)defaultHeightWithWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLocationReportModel *reportModel; // @synthesize reportModel=_reportModel;
 @property(nonatomic) __weak id <WCFinderLocationFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WCFinderLocationTerminatorViewParams *params; // @synthesize params=_params;

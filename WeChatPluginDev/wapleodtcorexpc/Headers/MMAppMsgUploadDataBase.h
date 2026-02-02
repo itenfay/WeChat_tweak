@@ -11,7 +11,6 @@
     WCTTable *_uploadfileTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *uploadfileTable; // @synthesize uploadfileTable=_uploadfileTable;
 @property(retain, nonatomic) WCTDatabase *database; // @synthesize database=_database;
 - (id)MMAppMsgUploadDBPath;

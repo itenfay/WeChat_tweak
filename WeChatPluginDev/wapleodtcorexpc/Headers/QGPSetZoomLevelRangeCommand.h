@@ -10,7 +10,6 @@
     QGPSetZoomLevelRangeParam *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPSetZoomLevelRangeParam *params; // @synthesize params=_params;
 
 @end

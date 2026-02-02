@@ -42,7 +42,6 @@
     NSString *_translatingWording;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int translatingWordingIndex; // @synthesize translatingWordingIndex=_translatingWordingIndex;
 @property(nonatomic) _Bool bIsForceEndTrans; // @synthesize bIsForceEndTrans=_bIsForceEndTrans;
 @property(nonatomic) _Bool bIsEditingMode; // @synthesize bIsEditingMode=_bIsEditingMode;

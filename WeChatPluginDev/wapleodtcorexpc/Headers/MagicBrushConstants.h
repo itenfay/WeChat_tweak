@@ -20,7 +20,6 @@
     NSMutableDictionary *_allUDRExpt;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *allUDRExpt; // @synthesize allUDRExpt=_allUDRExpt;
 @property(retain, nonatomic) NSMutableDictionary *projectToBizNameDic; // @synthesize projectToBizNameDic=_projectToBizNameDic;
 @property(retain, nonatomic) NSMutableDictionary *bizNameToProjectDic; // @synthesize bizNameToProjectDic=_bizNameToProjectDic;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface IntelligentUtil : NSObject
 {
@@ -28,4 +29,3 @@
 + (double)distanceFromPoint:(struct CGPoint)arg1 to:(struct CGPoint)arg2;
 
 @end
-

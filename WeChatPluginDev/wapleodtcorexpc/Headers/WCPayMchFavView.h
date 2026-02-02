@@ -19,7 +19,6 @@
     MMUIActivityIndicatorView *_indicatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(retain, nonatomic) UIButton *coverBtn; // @synthesize coverBtn=_coverBtn;
 @property(retain, nonatomic) MMUILabel *followTipsLabel; // @synthesize followTipsLabel=_followTipsLabel;

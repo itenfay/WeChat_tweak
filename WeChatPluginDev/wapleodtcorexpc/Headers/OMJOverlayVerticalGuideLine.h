@@ -11,7 +11,6 @@
     UIView *_lineBottom;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineBottom; // @synthesize lineBottom=_lineBottom;
 @property(retain, nonatomic) UIView *lineTop; // @synthesize lineTop=_lineTop;
 - (void)configWithGuideLineStyle:(id)arg1;

@@ -12,7 +12,6 @@
 }
 
 + (id)hashIntent:(id)arg1;
-- (void).cxx_destruct;
 - (_Bool)clear:(id)arg1;
 - (_Bool)bindIntent:(id)arg1 andPreIntent:(id)arg2;
 - (id)traceValByKey:(id)arg1 atObjHash:(id)arg2;

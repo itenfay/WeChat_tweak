@@ -48,7 +48,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *strCon3; // @synthesize strCon3=_strCon3;
 @property(retain, nonatomic) NSString *strCon2; // @synthesize strCon2=_strCon2;
 @property(retain, nonatomic) NSString *strCon1; // @synthesize strCon1=_strCon1;

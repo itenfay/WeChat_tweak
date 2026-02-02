@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditVideoAttr, NSArray, NSString, SightDraft, VideoCompositionAttr;
 
 @interface WCMomentsFinderShareViewModel
@@ -21,7 +23,6 @@
 }
 
 + (id)sharedReportCache;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SightDraft *sightDraft; // @synthesize sightDraft=_sightDraft;
 @property(copy, nonatomic) NSArray *videoEditWidgetStateList; // @synthesize videoEditWidgetStateList=_videoEditWidgetStateList;
 @property(retain, nonatomic) VideoCompositionAttr *compositionAttr; // @synthesize compositionAttr=_compositionAttr;
@@ -55,4 +56,3 @@
 - (id)reportCache;
 
 @end
-

@@ -14,7 +14,6 @@
     NSMutableArray *_headInfoViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *headInfoViews; // @synthesize headInfoViews=_headInfoViews;
 @property(retain, nonatomic) UIView *headInfoBgView; // @synthesize headInfoBgView=_headInfoBgView;
 @property(retain, nonatomic) WCFinderLiveAggregationCardAnchorGroup *group; // @synthesize group=_group;

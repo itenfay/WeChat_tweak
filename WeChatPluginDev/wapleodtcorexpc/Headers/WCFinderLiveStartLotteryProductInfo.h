@@ -17,7 +17,6 @@
 }
 
 + (id)getProductInfoWithNSDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *productJumpInfo; // @synthesize productJumpInfo=_productJumpInfo;
 @property(retain, nonatomic) NSString *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) NSString *productId; // @synthesize productId=_productId;

@@ -13,7 +13,6 @@
     UIView *_dotView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *dotView; // @synthesize dotView=_dotView;
 @property(retain, nonatomic) RichTextView *textView; // @synthesize textView=_textView;
 - (void)updateFont:(id)arg1 content:(id)arg2;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveResourceFetcherFanoutFlowAction, MMLiveStorageCleanupPinningToken, NSMutableDictionary;
 
@@ -15,7 +16,6 @@
     MMLiveStorageCleanupPinningToken *_resourcesPinningToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *resourcesPinningToken; // @synthesize resourcesPinningToken=_resourcesPinningToken;
 @property(retain, nonatomic) NSMutableDictionary *completionDictionary; // @synthesize completionDictionary=_completionDictionary;
 @property(retain, nonatomic) NSMutableDictionary *taskDictionary; // @synthesize taskDictionary=_taskDictionary;
@@ -24,4 +24,3 @@
 - (id)init;
 
 @end
-

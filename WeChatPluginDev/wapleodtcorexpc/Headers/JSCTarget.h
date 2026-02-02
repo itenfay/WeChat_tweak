@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class JSCProtocolAdapter, NSMutableArray, NSMutableDictionary, NSString;
 
@@ -25,7 +26,6 @@
 + (id)jsonParse:(id)arg1;
 + (id)jsonString:(id)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sendToRemoteImpl; // @synthesize sendToRemoteImpl=_sendToRemoteImpl;
 @property(copy, nonatomic) CDUnknownBlockType sendToTargetImpl; // @synthesize sendToTargetImpl=_sendToTargetImpl;
 - (void)onMessageFromTarget:(id)arg1;
@@ -38,4 +38,3 @@
 - (id)initWithTargetId:(id)arg1;
 
 @end
-

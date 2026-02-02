@@ -23,7 +23,6 @@
     double _endDragDownTransitionOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isExpanded; // @synthesize isExpanded=_isExpanded;
 @property(nonatomic) double endDragDownTransitionOffset; // @synthesize endDragDownTransitionOffset=_endDragDownTransitionOffset;
 @property(nonatomic) double startDragDownTransitionOffset; // @synthesize startDragDownTransitionOffset=_startDragDownTransitionOffset;

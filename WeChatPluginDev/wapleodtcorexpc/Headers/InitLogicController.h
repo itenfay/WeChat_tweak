@@ -17,7 +17,6 @@
     ContactInitLogic *m_contactInitLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bFromReg; // @synthesize m_bFromReg;
 @property(readonly, nonatomic) _Bool m_bIsIniting; // @synthesize m_bIsIniting;
 @property(nonatomic) __weak id <initLogicControllerDelegate> m_delegate; // @synthesize m_delegate;

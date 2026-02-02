@@ -13,7 +13,6 @@
     unsigned long long _refreshTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long refreshTime; // @synthesize refreshTime=_refreshTime;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 

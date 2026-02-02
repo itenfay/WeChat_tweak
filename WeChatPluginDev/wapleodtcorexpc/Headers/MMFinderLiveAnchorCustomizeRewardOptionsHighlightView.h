@@ -10,7 +10,6 @@
     UIView *_highlightInnerBorderView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightInnerBorderView; // @synthesize highlightInnerBorderView=_highlightInnerBorderView;
 - (void)layoutSubviews;
 - (id)initWithOptionViewSize:(struct CGSize)arg1;

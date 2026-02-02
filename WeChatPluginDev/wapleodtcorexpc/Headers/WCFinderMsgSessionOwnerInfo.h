@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_lastOwner;
 + (void)PBArrayAdd_hasSetDefaultOwner;
 + (void)PBArrayAdd_owner;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastOwner; // @synthesize lastOwner=_lastOwner;
 @property(nonatomic) _Bool hasSetDefaultOwner; // @synthesize hasSetDefaultOwner=_hasSetDefaultOwner;
 @property(retain, nonatomic) NSString *owner; // @synthesize owner=_owner;

@@ -42,7 +42,6 @@
 
 + (double)heightWhenShrinkingWith:(id)arg1;
 + (double)heightWith:(id)arg1 maxWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *groupBuyMoreButton; // @synthesize groupBuyMoreButton=_groupBuyMoreButton;
 @property(retain, nonatomic) NSMutableArray *groupBuyViewArray; // @synthesize groupBuyViewArray=_groupBuyViewArray;
 @property(retain, nonatomic) MMUILabel *groupBuyTitleLabel; // @synthesize groupBuyTitleLabel=_groupBuyTitleLabel;

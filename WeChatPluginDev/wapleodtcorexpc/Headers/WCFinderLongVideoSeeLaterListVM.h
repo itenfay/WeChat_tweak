@@ -16,7 +16,6 @@
     NSMutableDictionary *_cellHeightDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cellHeightDict; // @synthesize cellHeightDict=_cellHeightDict;
 @property(copy, nonatomic) NSString *fromSessionID; // @synthesize fromSessionID=_fromSessionID;
 @property(copy, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

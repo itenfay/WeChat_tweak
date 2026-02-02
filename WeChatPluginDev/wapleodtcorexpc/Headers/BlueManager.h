@@ -16,7 +16,6 @@
 }
 
 + (long long)getDIDbyMACString:(id)arg1 AndConnProto:(id)arg2;
-- (void).cxx_destruct;
 @property _Bool stateUpdateFlag; // @synthesize stateUpdateFlag=_stateUpdateFlag;
 @property(retain) CBCentralManager *bleManager; // @synthesize bleManager=_bleManager;
 @property __weak NSObject<BlueAdapterDelegate> *delegate; // @synthesize delegate=_delegate;

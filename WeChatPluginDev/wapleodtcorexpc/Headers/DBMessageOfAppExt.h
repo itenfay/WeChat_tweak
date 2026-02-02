@@ -30,7 +30,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int msgInnerType; // @synthesize msgInnerType=_msgInnerType;
 @property(nonatomic) unsigned int msgLocalId; // @synthesize msgLocalId=_msgLocalId;
 @property(retain, nonatomic) NSString *chatUsername; // @synthesize chatUsername=_chatUsername;

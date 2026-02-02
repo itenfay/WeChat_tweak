@@ -21,7 +21,6 @@
     NSString *_reportDescriptionExtend;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportDescriptionExtend; // @synthesize reportDescriptionExtend=_reportDescriptionExtend;
 @property(retain, nonatomic) NSString *reportDescriptionStr; // @synthesize reportDescriptionStr=_reportDescriptionStr;
 @property(nonatomic) unsigned long long seq; // @synthesize seq=_seq;

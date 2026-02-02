@@ -11,7 +11,6 @@
     NSRecursiveLock *m_oLock;
 }
 
-- (void).cxx_destruct;
 - (id)allDevices;
 - (void)clearAllDevice;
 - (void)clearDisconnectedDevice;

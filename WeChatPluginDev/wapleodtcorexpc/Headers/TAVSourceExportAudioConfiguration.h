@@ -16,7 +16,6 @@
     NSDictionary *_audioOutputSetting;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *audioOutputSetting; // @synthesize audioOutputSetting=_audioOutputSetting;
 @property(nonatomic) unsigned long long channelCount; // @synthesize channelCount=_channelCount;
 @property(nonatomic) unsigned long long encoderBitRate; // @synthesize encoderBitRate=_encoderBitRate;

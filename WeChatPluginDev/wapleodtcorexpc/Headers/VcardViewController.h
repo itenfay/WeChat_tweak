@@ -20,7 +20,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *copyedText; // @synthesize copyedText=_copyedText;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) MMVcardItem *vcardItem; // @synthesize vcardItem=_vcardItem;

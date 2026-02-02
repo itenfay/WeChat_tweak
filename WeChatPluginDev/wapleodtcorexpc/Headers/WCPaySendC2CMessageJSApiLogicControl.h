@@ -12,7 +12,6 @@
     NSString *m_toUser;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_toUser; // @synthesize m_toUser;
 - (void)OnSelectSessionCancel:(id)arg1;
 - (void)OnSelectSession:(id)arg1 SessionSelectController:(id)arg2;

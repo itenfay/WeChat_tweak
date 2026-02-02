@@ -16,7 +16,6 @@
 + (void)handleVoipLocalBusy:(id)arg1;
 + (id)genInviteMessageFromVoipMonoMsg:(id)arg1;
 + (void)reportAckWithCallResult:(int)arg1 ByVoipMsg:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoipGetRoomInfoCgi *m_getRoomInfoCgi; // @synthesize m_getRoomInfoCgi;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)voIPInvitationServiceDidRejectWithInfo:(id)arg1;

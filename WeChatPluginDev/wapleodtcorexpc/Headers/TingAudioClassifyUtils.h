@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TingAudioClassifyUtils : NSObject
 {
@@ -23,4 +24,3 @@
 + (unsigned int)recognizeAudio:(id)arg1 relativePath:(id)arg2;
 
 @end
-

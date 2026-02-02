@@ -27,7 +27,6 @@
     double _animationDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(retain, nonatomic) id <FavImageFullScreenViewContainerDelegate> strongDelegate; // @synthesize strongDelegate=_strongDelegate;
 @property(readonly, nonatomic) WXFullScreenGestureRecognizer *fullScreenGesture; // @synthesize fullScreenGesture=m_gesture;

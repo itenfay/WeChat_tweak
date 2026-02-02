@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GCCommonServer, NSMutableDictionary, NSString, WCTTable;
 
 @interface GameLiteAppManager
@@ -13,7 +15,6 @@
     GCCommonServer *_server;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCCommonServer *server; // @synthesize server=_server;
 @property(retain, nonatomic) WCTTable *dbTable; // @synthesize dbTable=_dbTable;
 @property(retain, nonatomic) NSMutableDictionary *dbDataDict; // @synthesize dbDataDict=_dbDataDict;
@@ -46,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

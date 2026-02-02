@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, UITapGestureRecognizer;
 
 @interface MMFinderLiveCommentContentView
@@ -21,7 +23,6 @@
 + (double)commentTableWidthLandScape:(id)arg1;
 + (double)commentTableWidthPortrait:(id)arg1;
 + (double)commentTableWidth:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double previousNotifyAreaHeight; // @synthesize previousNotifyAreaHeight=_previousNotifyAreaHeight;
 @property(nonatomic) __weak UITapGestureRecognizer *commentTableTapGesRecognizer; // @synthesize commentTableTapGesRecognizer=_commentTableTapGesRecognizer;
 @property(nonatomic) unsigned long long startDisplayTime; // @synthesize startDisplayTime=_startDisplayTime;
@@ -64,4 +65,3 @@
 @property(readonly) Class superclass;
 
 @end
-

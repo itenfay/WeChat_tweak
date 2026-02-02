@@ -13,7 +13,6 @@
     id <MMDeleteNotRegularContactLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMDeleteNotRegularContactLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onContactVerifyPreCheckFailActionCancel:(id)arg1 opcode:(unsigned int)arg2;
 - (void)onContactVerifyPreCheckFailActionDone:(id)arg1 opcode:(unsigned int)arg2;

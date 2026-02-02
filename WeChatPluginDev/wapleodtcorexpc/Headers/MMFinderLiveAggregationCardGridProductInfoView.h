@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, FinderLiveAggregationCardProduct, FinderLiveEcGetLiveConfigResponse_ShowAnimation_HotSellingOptions, MMFinderLiveGoodsHotSaleAnimationView, MMFinderLiveHotSaleAnimationLogic, MMWebImageView, NSString, UILabel;
 @protocol MMFinderLiveAggregationCardGridProductInfoViewDelegate;
@@ -22,7 +23,6 @@
     FinderLiveEcGetLiveConfigResponse_ShowAnimation_HotSellingOptions *_hotSellingOptions;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveEcGetLiveConfigResponse_ShowAnimation_HotSellingOptions *hotSellingOptions; // @synthesize hotSellingOptions=_hotSellingOptions;
 @property(retain, nonatomic) MMFinderLiveGoodsHotSaleAnimationView *hotSaleAnimationView; // @synthesize hotSaleAnimationView=_hotSaleAnimationView;
 @property(retain, nonatomic) MMFinderLiveHotSaleAnimationLogic *animationLogic; // @synthesize animationLogic=_animationLogic;
@@ -60,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

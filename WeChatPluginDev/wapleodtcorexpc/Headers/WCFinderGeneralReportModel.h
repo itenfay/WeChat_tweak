@@ -15,7 +15,6 @@
 + (id)convertFromGeneralReportPB:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_svrReportJsonString;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *svrReportJsonString; // @synthesize svrReportJsonString=_svrReportJsonString;
 - (id)genPBGeneralReportInfo;
 - (id)getPBPropertyTable;

@@ -23,7 +23,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *liteAppId; // @synthesize liteAppId=_liteAppId;
 @property(copy, nonatomic) NSString *liteQuery; // @synthesize liteQuery=_liteQuery;
 @property(nonatomic) _Bool showComplaintEntrance; // @synthesize showComplaintEntrance=_showComplaintEntrance;

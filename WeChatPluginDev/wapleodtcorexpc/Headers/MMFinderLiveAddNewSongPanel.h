@@ -19,7 +19,6 @@
     MMFinderLiveAddNewSongTableViewModel *_songsTableVM;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveAddNewSongTableViewModel *songsTableVM; // @synthesize songsTableVM=_songsTableVM;
 @property(retain, nonatomic) MMTableView *songsTableView; // @synthesize songsTableView=_songsTableView;
 @property(retain, nonatomic) MMUIButton *confirmButton; // @synthesize confirmButton=_confirmButton;

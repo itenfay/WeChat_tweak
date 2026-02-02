@@ -28,7 +28,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastPostTime; // @synthesize lastPostTime=_lastPostTime;
 @property(nonatomic) unsigned int postCount; // @synthesize postCount=_postCount;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

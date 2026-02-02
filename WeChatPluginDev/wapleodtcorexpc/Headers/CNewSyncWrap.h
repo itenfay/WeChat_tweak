@@ -17,7 +17,6 @@
     unsigned int m_uiSyncBufferType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiSyncBufferType; // @synthesize m_uiSyncBufferType;
 @property(retain, nonatomic) NSString *m_nsSyncKeyMd5; // @synthesize m_nsSyncKeyMd5;
 @property(nonatomic) _Bool m_bContinue; // @synthesize m_bContinue;

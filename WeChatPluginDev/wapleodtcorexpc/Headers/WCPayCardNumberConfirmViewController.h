@@ -18,7 +18,6 @@
     UIImageView *_cardImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *cardImageView; // @synthesize cardImageView=_cardImageView;
 @property(retain, nonatomic) TenpayEditableBankNum *editBankNumView; // @synthesize editBankNumView=_editBankNumView;
 @property(retain, nonatomic) MMUILabel *label; // @synthesize label=_label;

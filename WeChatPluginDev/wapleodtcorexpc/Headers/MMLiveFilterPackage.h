@@ -15,7 +15,6 @@
 
 + (id)filterPackageInLocalDirectory:(id)arg1 withConfigurationPath:(id)arg2;
 + (id)filterPackageInResourcePackage:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveBeautyBadgeCollection *badges; // @synthesize badges=_badges;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 

@@ -12,7 +12,6 @@
     TingItem *_autoResumeFailItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingItem *autoResumeFailItem; // @synthesize autoResumeFailItem=_autoResumeFailItem;
 - (void)applicationDidBecomeActive;
 - (void)flowPlayer:(id)arg1 onItemLoaded:(id)arg2;

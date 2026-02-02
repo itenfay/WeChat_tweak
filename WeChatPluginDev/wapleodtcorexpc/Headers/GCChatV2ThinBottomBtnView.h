@@ -12,7 +12,6 @@
     GCChatV2BottomBtnModel *_btnModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCChatV2BottomBtnModel *btnModel; // @synthesize btnModel=_btnModel;
 - (void)reportExplosure;
 - (void)configureWithModel:(id)arg1;

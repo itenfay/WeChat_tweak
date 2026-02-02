@@ -56,7 +56,6 @@
 + (void)PBArrayAdd_wording_hk;
 + (void)PBArrayAdd_wording_cn;
 + (void)PBArrayAdd_isShow;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;
 @property(nonatomic) long long selectskinpage_invalidateTime; // @synthesize selectskinpage_invalidateTime=_selectskinpage_invalidateTime;
 @property(nonatomic) long long selectskinpage_exposureTimes; // @synthesize selectskinpage_exposureTimes=_selectskinpage_exposureTimes;

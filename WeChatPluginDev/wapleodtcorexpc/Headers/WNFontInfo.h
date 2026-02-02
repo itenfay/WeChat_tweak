@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_fileName;
 + (void)PBArrayAdd_familyName;
 + (void)PBArrayAdd_displayName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *zipFilePath; // @synthesize zipFilePath=_zipFilePath;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(retain, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;

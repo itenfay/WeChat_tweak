@@ -10,7 +10,6 @@
     UIScrollView *m_mainScrollView;
 }
 
-- (void).cxx_destruct;
 - (void)OnClickBackBarButton:(id)arg1;
 - (void)onClickTipsBtn:(id)arg1 Index:(long long)arg2 withText:(id)arg3 withTipsVC:(id)arg4;
 - (void)doReinit;

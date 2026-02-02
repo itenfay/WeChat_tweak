@@ -16,7 +16,6 @@
     long long _curTriggerEvent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long curTriggerEvent; // @synthesize curTriggerEvent=_curTriggerEvent;
 @property(retain, nonatomic) FinderNpsSurveyQuestion *curSurveyQuestion; // @synthesize curSurveyQuestion=_curSurveyQuestion;
 @property(retain, nonatomic) NPSFlutterVC *curNPSFlutterVC; // @synthesize curNPSFlutterVC=_curNPSFlutterVC;

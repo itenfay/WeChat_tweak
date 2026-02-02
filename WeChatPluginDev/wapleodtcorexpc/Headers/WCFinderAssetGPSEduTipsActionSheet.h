@@ -10,7 +10,6 @@
     NSString *_finderPostSessionid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *finderPostSessionid; // @synthesize finderPostSessionid=_finderPostSessionid;
 - (void)bindCancelButton:(id)arg1;
 - (void)bindAcceptButton:(id)arg1;

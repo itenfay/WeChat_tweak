@@ -13,7 +13,6 @@
     double _featStackTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double featStackTime; // @synthesize featStackTime=_featStackTime;
 @property(retain, nonatomic) NSMutableDictionary *stackFeatDict; // @synthesize stackFeatDict=_stackFeatDict;
 - (id)copyWithZone:(struct _NSZone *)arg1;

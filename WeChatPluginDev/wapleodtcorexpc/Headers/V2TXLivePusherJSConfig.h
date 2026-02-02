@@ -46,7 +46,6 @@
     long long _fps;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long fps; // @synthesize fps=_fps;
 @property(nonatomic) _Bool enableVideoCustomRender; // @synthesize enableVideoCustomRender=_enableVideoCustomRender;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;

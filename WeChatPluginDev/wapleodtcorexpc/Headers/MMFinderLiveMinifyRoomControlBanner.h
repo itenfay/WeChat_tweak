@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIControl.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderJumpInfo, MMLiveTaskId, MMUIButton, MMUIImageView, MMUILabel, NSData, NSString, UIImage, UITapGestureRecognizer, UIView;
 
@@ -26,7 +27,6 @@
 
 + (struct CGSize)expendViewSizeByBannerInfo:(id)arg1;
 + (struct CGSize)viewSizeByBannerInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(nonatomic) _Bool isTransToFullScreen; // @synthesize isTransToFullScreen=_isTransToFullScreen;
 @property(retain, nonatomic) NSString *buttonEndColor; // @synthesize buttonEndColor=_buttonEndColor;
@@ -67,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

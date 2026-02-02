@@ -15,7 +15,6 @@
     FinderJumpInfo *_cacheJumpInfoMayBeNull;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderJumpInfo *cacheJumpInfoMayBeNull; // @synthesize cacheJumpInfoMayBeNull=_cacheJumpInfoMayBeNull;
 @property(retain, nonatomic) NSMutableDictionary *objectStatusMap; // @synthesize objectStatusMap=_objectStatusMap;
 @property(retain, nonatomic) NSMutableSet *alreadyDisplayItems; // @synthesize alreadyDisplayItems=_alreadyDisplayItems;

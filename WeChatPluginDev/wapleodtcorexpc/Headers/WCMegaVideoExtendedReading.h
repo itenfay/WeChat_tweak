@@ -18,7 +18,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_link;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *link; // @synthesize link=_link;
 @property(readonly, copy) NSString *description;

@@ -21,7 +21,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dialogButtonTitle; // @synthesize dialogButtonTitle=_dialogButtonTitle;
 @property(retain, nonatomic) NSString *dialogAppName; // @synthesize dialogAppName=_dialogAppName;
 @property(retain, nonatomic) NSString *dialogAppIcon; // @synthesize dialogAppIcon=_dialogAppIcon;

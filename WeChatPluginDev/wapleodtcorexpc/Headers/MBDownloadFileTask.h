@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MBDownloadFileProgressInfo, NSDictionary, NSMutableDictionary, NSString;
 @protocol MBDownloadFileTaskDelegate, OS_dispatch_queue;
@@ -42,7 +43,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain) MBDownloadFileProgressInfo *lastNotNotifyProgressInfo; // @synthesize lastNotNotifyProgressInfo=_lastNotNotifyProgressInfo;
 @property unsigned long long lastUpdateProgressAbsoluteTime; // @synthesize lastUpdateProgressAbsoluteTime=_lastUpdateProgressAbsoluteTime;
 @property _Bool isCanceled; // @synthesize isCanceled=_isCanceled;
@@ -85,4 +85,3 @@
 - (id)initWithBizName:(id)arg1 workerQueue:(id)arg2 taskID:(id)arg3 maxConcurrentCount:(unsigned int)arg4;
 
 @end
-

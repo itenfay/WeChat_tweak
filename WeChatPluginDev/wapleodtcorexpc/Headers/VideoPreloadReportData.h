@@ -14,7 +14,6 @@
     NSString *_mediaId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int preloadVideoSize; // @synthesize preloadVideoSize=_preloadVideoSize;
 @property(nonatomic) unsigned int preloadDataSize; // @synthesize preloadDataSize=_preloadDataSize;
 @property(nonatomic) unsigned int preloadDuration; // @synthesize preloadDuration=_preloadDuration;

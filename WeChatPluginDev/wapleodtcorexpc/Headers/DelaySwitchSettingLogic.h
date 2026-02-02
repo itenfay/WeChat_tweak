@@ -11,7 +11,6 @@
     NotificationBannerDisplayContentSettingOplog *_quickReplyOplog;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NotificationBannerDisplayContentSettingOplog *quickReplyOplog; // @synthesize quickReplyOplog=_quickReplyOplog;
 - (void)commitQuickReplySettingChange;
 - (void)saveQuickReplyLocalChange;

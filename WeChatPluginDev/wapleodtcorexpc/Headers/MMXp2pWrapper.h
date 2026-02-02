@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol MMXp2pWrapperDelegate, OS_dispatch_queue;
@@ -38,7 +39,6 @@
 
 + (void)destroySharedInstance;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic, setter=setBPostDelayStopP2p:) _Bool bPostDelayStopP2p; // @synthesize bPostDelayStopP2p=_bPostDelayStopP2p;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *p2pProcessingQueue; // @synthesize p2pProcessingQueue=_p2pProcessingQueue;
 @property _Bool bStartP2pService; // @synthesize bStartP2pService=_bStartP2pService;
@@ -83,4 +83,3 @@
 - (id)initInternal;
 
 @end
-

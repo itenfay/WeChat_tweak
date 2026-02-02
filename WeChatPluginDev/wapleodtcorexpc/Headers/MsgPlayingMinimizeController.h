@@ -15,7 +15,6 @@
     MinimizeTaskData *_taskData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MinimizeTaskData *taskData; // @synthesize taskData=_taskData;
 @property(retain, nonatomic) MsgPlayingMinimizeView *minimizeView; // @synthesize minimizeView=_minimizeView;
 @property(nonatomic) __weak id <MsgPlayingMinimizeControllerDelegate> delegate; // @synthesize delegate=_delegate;

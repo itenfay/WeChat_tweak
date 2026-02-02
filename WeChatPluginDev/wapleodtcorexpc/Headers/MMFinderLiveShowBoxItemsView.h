@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveShowBoxItemsViewConfig, NSArray;
 
 @interface MMFinderLiveShowBoxItemsView
@@ -26,7 +28,6 @@
 + (_Bool)canShowAtLeastOneForSize:(struct CGSize)arg1 config:(id)arg2 items:(id)arg3;
 + (double)borderImageLabelImageToText;
 + (double)spacing;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *views; // @synthesize views=_views;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) CDUnknownBlockType onClickableItemClicked; // @synthesize onClickableItemClicked=_onClickableItemClicked;
@@ -43,4 +44,3 @@
 - (void)layoutSubviews;
 
 @end
-

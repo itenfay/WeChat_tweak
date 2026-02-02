@@ -15,7 +15,6 @@
     UIButton *_titleButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *titleButton; // @synthesize titleButton=_titleButton;
 @property(retain, nonatomic) UIImageView *liveImageView; // @synthesize liveImageView=_liveImageView;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;

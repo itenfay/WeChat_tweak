@@ -15,7 +15,6 @@
 }
 
 + (double)displayHeightWithSecurityTips:(id)arg1 withWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
 @property(retain, nonatomic) UILabel *securityTipsLabel; // @synthesize securityTipsLabel=_securityTipsLabel;
 @property(retain, nonatomic) UIImageView *securityTipsIcon; // @synthesize securityTipsIcon=_securityTipsIcon;

@@ -20,7 +20,6 @@
     CgiRewardPlaceOrderResp *_placeOrderResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CgiRewardPlaceOrderResp *placeOrderResp; // @synthesize placeOrderResp=_placeOrderResp;
 @property(retain, nonatomic) CgiScanRewardQrcodeResp *scanRewardQrcodeResp; // @synthesize scanRewardQrcodeResp=_scanRewardQrcodeResp;
 @property(retain, nonatomic) CgiGetRewardQrcodeResp *getQRCodeResp; // @synthesize getQRCodeResp=_getQRCodeResp;

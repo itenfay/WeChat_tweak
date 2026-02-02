@@ -12,7 +12,6 @@
     MISSING_TYPE *$__lazy_storage_$_recreateHandler;
 }
 
-- (void).cxx_destruct;
 - (void)handleEvent:(id)arg1 userInfo:(id)arg2;
 - (id)init;
 - (void)appDidTerminateWKWebviewNetworkProcess;

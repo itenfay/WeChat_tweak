@@ -12,7 +12,6 @@
     FBSDKBridgeAPIProtocolNativeV1 *_nativeProtocol;
 }
 
-- (void).cxx_destruct;
 - (id)responseParametersForActionID:(id)arg1 queryParameters:(id)arg2 cancelled:(_Bool *)arg3 error:(id *)arg4;
 - (id)requestURLWithActionID:(id)arg1 scheme:(id)arg2 methodName:(id)arg3 methodVersion:(id)arg4 parameters:(id)arg5 error:(id *)arg6;
 - (id)_requestURLForDialogConfiguration:(id)arg1 error:(id *)arg2;

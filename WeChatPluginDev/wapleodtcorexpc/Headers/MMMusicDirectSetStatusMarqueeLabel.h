@@ -13,7 +13,6 @@
     unsigned long long _mode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) MMUILabel *labelForMarquee; // @synthesize labelForMarquee=_labelForMarquee;
 @property(retain, nonatomic) MMUILabel *labelForDefault; // @synthesize labelForDefault=_labelForDefault;

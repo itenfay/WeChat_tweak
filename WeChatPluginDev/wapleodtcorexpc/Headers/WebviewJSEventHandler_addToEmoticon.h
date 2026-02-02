@@ -13,7 +13,6 @@
     NSString *_currentThumbUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentThumbUrl; // @synthesize currentThumbUrl=_currentThumbUrl;
 @property(retain, nonatomic) NSString *currentUrl; // @synthesize currentUrl=_currentUrl;
 @property(retain, nonatomic) EmoticonCustomManageAddLogic *emoticonAddLogic; // @synthesize emoticonAddLogic=_emoticonAddLogic;

@@ -40,7 +40,6 @@
 + (_Bool)isWebGetA8keyLiteEnableWithOption:(unsigned int)arg1;
 + (_Bool)isWebGetA8keyLiteEnable;
 + (long long)webGetA8keyLiteSupportOptions;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *shouldWaitNotifyDic; // @synthesize shouldWaitNotifyDic=_shouldWaitNotifyDic;
 @property(retain, nonatomic) MMWebOptimJSContextTaskMgr *jsContextManager; // @synthesize jsContextManager=_jsContextManager;
 @property(retain, nonatomic) MMWebOptimizationPrefetcher *resourcePrefetcher; // @synthesize resourcePrefetcher=_resourcePrefetcher;

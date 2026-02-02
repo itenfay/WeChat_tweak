@@ -23,7 +23,6 @@
     struct CGRect _cropRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needPosition; // @synthesize needPosition=_needPosition;
 @property(nonatomic) long long rotate; // @synthesize rotate=_rotate;
 @property(nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;

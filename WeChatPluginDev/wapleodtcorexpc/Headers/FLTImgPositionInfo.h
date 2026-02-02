@@ -18,7 +18,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithWidth:(id)arg1 height:(id)arg2 offsetX:(id)arg3 offsetY:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *offsetY; // @synthesize offsetY=_offsetY;
 @property(retain, nonatomic) NSNumber *offsetX; // @synthesize offsetX=_offsetX;
 @property(retain, nonatomic) NSNumber *height; // @synthesize height=_height;

@@ -12,7 +12,6 @@
     NSArray *_wcpay_new_bind_card_favor_list;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *wcpay_new_bind_card_favor_list; // @synthesize wcpay_new_bind_card_favor_list=_wcpay_new_bind_card_favor_list;
 
 @end

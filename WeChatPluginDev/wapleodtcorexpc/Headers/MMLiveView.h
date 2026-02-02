@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveAdvertisementPlayerViewModel, MMFinderLiveAudioRoomInfoView, MMFinderLiveConnectMicUsersInfo, MMFinderLiveGestureAnimationContainerView, MMFinderLiveSubTitleView, MMFinderLiveTask, MMFinderLiveViewAnchorCoverImageView, MMFinderLiveWcPlayerView, MMLiveAudioModeAnimatedBackgroundPlayerViewModel, MMLivePauseView, MMLiveRemoteTrtcCustomRenderWrapper, MMLiveResourceFetcherRootFlowAction, MMLiveTaskId, MMUIActivityIndicatorView, MMUIButton, MMUIImageView, MMUILabel, MMWebImageView, NSMutableDictionary, NSString, UIImageView, UILabel, UIPanGestureRecognizer, UIViewPropertyAnimator, WCFinderLiveStarterLiveModeSubItem, WCLiveVideoView, WeAvatarScreenView;
 @protocol MMLiveViewDelegate;
@@ -117,7 +118,6 @@
     struct CGRect _currentConnectMicViewFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *cdnPlayerContainerView; // @synthesize cdnPlayerContainerView=_cdnPlayerContainerView;
 @property(retain, nonatomic) UIView *connectMicUserWidgetContainerView; // @synthesize connectMicUserWidgetContainerView=_connectMicUserWidgetContainerView;
 @property(retain, nonatomic) UIView *videoContainerView; // @synthesize videoContainerView=_videoContainerView;
@@ -498,4 +498,3 @@
 @property(readonly) Class superclass;
 
 @end
-

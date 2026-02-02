@@ -14,7 +14,6 @@
     NSString *_version;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;

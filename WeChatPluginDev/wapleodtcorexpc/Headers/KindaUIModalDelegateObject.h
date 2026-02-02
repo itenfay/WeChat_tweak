@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class KindaModalController, MMVoidBoolI32Callback, NSString;
 
@@ -14,7 +15,6 @@
     KindaModalController *_controller;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak KindaModalController *controller; // @synthesize controller=_controller;
 @property(copy, nonatomic) CDUnknownBlockType requestEndEditing; // @synthesize requestEndEditing=_requestEndEditing;
 @property(retain, nonatomic) MMVoidBoolI32Callback *keyboardShowCallback; // @synthesize keyboardShowCallback=_keyboardShowCallback;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

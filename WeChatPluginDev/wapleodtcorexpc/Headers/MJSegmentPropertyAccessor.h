@@ -12,7 +12,6 @@
     MJSegmentViewModel *_segmentVM;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MJSegmentViewModel *segmentVM; // @synthesize segmentVM=_segmentVM;
 - (void)setCaptionText:(id)arg1 atTimeInTimeline:(CDStruct_1b6d18a9)arg2 language:(id)arg3;
 - (id)displayingCaptionTextAtTimeInTimeline:(CDStruct_1b6d18a9)arg1 language:(id)arg2;

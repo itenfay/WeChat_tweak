@@ -10,7 +10,6 @@
     NSString *returnKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *returnKey; // @synthesize returnKey;
 - (id)init;
 

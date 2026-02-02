@@ -21,7 +21,6 @@
 
 + (id)dissociativeModuleKey;
 + (_Bool)isTingAuidioModuleActive;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIntterutedBy3rdApp; // @synthesize bIntterutedBy3rdApp=_bIntterutedBy3rdApp;
 @property(nonatomic) _Bool bWaitRecoverNotify; // @synthesize bWaitRecoverNotify=_bWaitRecoverNotify;
 @property(nonatomic) __weak id <TingFlowPlayerProtocol> player; // @synthesize player=_player;

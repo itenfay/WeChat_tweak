@@ -18,7 +18,6 @@
     NSString *_queryKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *queryKey; // @synthesize queryKey=_queryKey;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(copy, nonatomic) NSString *commentId; // @synthesize commentId=_commentId;

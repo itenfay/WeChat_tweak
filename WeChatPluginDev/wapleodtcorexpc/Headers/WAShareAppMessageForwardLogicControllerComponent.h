@@ -20,7 +20,6 @@
     NSMutableDictionary *_shareKeys;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int currentEventID; // @synthesize currentEventID=_currentEventID;
 @property(retain, nonatomic) NSMutableDictionary *shareKeys; // @synthesize shareKeys=_shareKeys;
 @property(retain, nonatomic) NSMutableArray *reportArray; // @synthesize reportArray=_reportArray;

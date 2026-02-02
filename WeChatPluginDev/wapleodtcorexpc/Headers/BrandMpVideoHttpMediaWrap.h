@@ -10,7 +10,6 @@
     NSString *_vid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *vid; // @synthesize vid=_vid;
 - (id)initWithVid:(id)arg1;
 - (id)getMediaWrapUrl;

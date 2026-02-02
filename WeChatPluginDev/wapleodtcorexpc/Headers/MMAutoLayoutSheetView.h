@@ -12,7 +12,6 @@
     double _fixedHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double fixedHeight; // @synthesize fixedHeight=_fixedHeight;
 @property(retain, nonatomic) MMScrollStack *scrollStack; // @synthesize scrollStack=_scrollStack;
 @property(retain, nonatomic) UIStackView *contentView; // @synthesize contentView=_contentView;

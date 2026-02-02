@@ -13,7 +13,6 @@
     UIImageView *m_bgImageView;
 }
 
-- (void).cxx_destruct;
 - (void)handleRightButtonClicked:(id)arg1;
 - (void)onChatBackgroundChanged:(id)arg1;
 - (void)layoutInternal;

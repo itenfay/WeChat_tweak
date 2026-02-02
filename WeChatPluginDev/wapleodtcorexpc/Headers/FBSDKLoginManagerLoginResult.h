@@ -17,7 +17,6 @@
     NSSet *_declinedPermissions;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSkipped; // @synthesize isSkipped=_isSkipped;
 @property(copy, nonatomic) NSSet *declinedPermissions; // @synthesize declinedPermissions=_declinedPermissions;
 @property(copy, nonatomic) NSSet *grantedPermissions; // @synthesize grantedPermissions=_grantedPermissions;

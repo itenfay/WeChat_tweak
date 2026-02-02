@@ -13,7 +13,6 @@
     NSString *m_nsWCPayCredName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsWCPayCredType; // @synthesize m_nsWCPayCredType;
 @property(retain, nonatomic) NSString *m_nsWCPayCredName; // @synthesize m_nsWCPayCredName;
 - (id)initWithCoder:(id)arg1;

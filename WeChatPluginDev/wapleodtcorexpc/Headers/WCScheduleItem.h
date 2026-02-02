@@ -65,7 +65,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int remindTime; // @synthesize remindTime=_remindTime;
 @property(nonatomic) unsigned long long createTime; // @synthesize createTime=_createTime;
 @property(nonatomic) int opType; // @synthesize opType=_opType;

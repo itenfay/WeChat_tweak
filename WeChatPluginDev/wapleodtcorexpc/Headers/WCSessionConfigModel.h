@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_prePage;
 + (void)PBArrayAdd_pageNames;
 + (void)PBArrayAdd_sid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sessionParams; // @synthesize sessionParams=_sessionParams;
 @property(retain, nonatomic) NSString *prePage; // @synthesize prePage=_prePage;
 @property(retain, nonatomic) NSMutableArray *pageNames; // @synthesize pageNames=_pageNames;

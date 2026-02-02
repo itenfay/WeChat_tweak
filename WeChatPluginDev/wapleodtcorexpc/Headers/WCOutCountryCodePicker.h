@@ -20,7 +20,6 @@
     WCSearcher *_searcher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSearcher *searcher; // @synthesize searcher=_searcher;
 @property(nonatomic) __weak id <WCOutCountryCodeDelegate> delegate; // @synthesize delegate=m_delegate;
 - (void)wcsSearchBarCancelButtonClicked:(id)arg1;

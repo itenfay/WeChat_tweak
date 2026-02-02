@@ -10,7 +10,6 @@
     NSMutableDictionary *_cacheDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cacheDict; // @synthesize cacheDict=_cacheDict;
 - (void)removeCacheWebView:(id)arg1;
 - (id)showHalfScreenWebViewWithConfig:(id)arg1;

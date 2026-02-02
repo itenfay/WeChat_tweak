@@ -17,7 +17,6 @@
 }
 
 + (id)getBrotiData:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WXWASMLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
 @property(nonatomic) __weak id <WXFileLoaderDelegate> fileDelegate; // @synthesize fileDelegate=_fileDelegate;
 - (void)dealloc;

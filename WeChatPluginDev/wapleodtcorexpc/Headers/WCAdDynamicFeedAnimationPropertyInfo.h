@@ -14,7 +14,6 @@
     WCAdDynamicFeedAnimationPropertyValueInfo *_toValue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicFeedAnimationPropertyValueInfo *toValue; // @synthesize toValue=_toValue;
 @property(retain, nonatomic) WCAdDynamicFeedAnimationPropertyValueInfo *fromValue; // @synthesize fromValue=_fromValue;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

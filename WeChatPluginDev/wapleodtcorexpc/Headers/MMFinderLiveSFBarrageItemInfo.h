@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveSFBarrageCellView, MMFinderLiveSFBarrageSingleTrackInfo;
 
@@ -29,7 +30,6 @@
     struct CGPoint _animationStartPos;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInDisappearState; // @synthesize isInDisappearState=_isInDisappearState;
 @property(nonatomic) _Bool isInTappedState; // @synthesize isInTappedState=_isInTappedState;
 @property(copy, nonatomic) CDUnknownBlockType movingCompletion; // @synthesize movingCompletion=_movingCompletion;
@@ -55,4 +55,3 @@
 - (id)initWithBarrageCell:(id)arg1;
 
 @end
-

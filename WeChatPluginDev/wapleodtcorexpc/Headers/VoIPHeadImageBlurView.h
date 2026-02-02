@@ -15,7 +15,6 @@
     MultiTalkHDHeadView *_headImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultiTalkHDHeadView *headImageView; // @synthesize headImageView=_headImageView;
 @property(nonatomic) _Bool shouldIgnoreHeadViewCenterYCompatibilityInSmall; // @synthesize shouldIgnoreHeadViewCenterYCompatibilityInSmall=_shouldIgnoreHeadViewCenterYCompatibilityInSmall;
 @property(retain, nonatomic) UIImageView *blurView; // @synthesize blurView=_blurView;

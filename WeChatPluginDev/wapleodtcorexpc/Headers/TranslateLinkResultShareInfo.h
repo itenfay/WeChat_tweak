@@ -12,7 +12,6 @@
     NSString *_url;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int skipCompress; // @synthesize skipCompress=_skipCompress;
 @property(nonatomic) unsigned int videoTime; // @synthesize videoTime=_videoTime;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

@@ -16,7 +16,6 @@
 }
 
 + (void)clearData:(id)arg1 fromPasteboardOnApplicationDidBecomeActive:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIPasteboard *pasteboard; // @synthesize pasteboard=_pasteboard;
 @property(readonly, nonatomic, getter=shouldIncludeAppIcon) _Bool includeAppIcon; // @synthesize includeAppIcon=_includeAppIcon;
 @property(readonly, nonatomic) unsigned long long dataLengthThreshold; // @synthesize dataLengthThreshold=_dataLengthThreshold;

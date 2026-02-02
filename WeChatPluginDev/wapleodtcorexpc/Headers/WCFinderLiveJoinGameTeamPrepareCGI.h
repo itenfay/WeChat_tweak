@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData;
 
 @interface WCFinderLiveJoinGameTeamPrepareCGI
@@ -14,7 +16,6 @@
     NSData *_liveCookies;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int reqType; // @synthesize reqType=_reqType;
 @property(nonatomic) unsigned int liveScene; // @synthesize liveScene=_liveScene;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
@@ -26,4 +27,3 @@
 - (id)initWithLiveTaskId:(id)arg1 reqType:(int)arg2 finderDataItem:(id)arg3 liveCookies:(id)arg4 liveScene:(long long)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

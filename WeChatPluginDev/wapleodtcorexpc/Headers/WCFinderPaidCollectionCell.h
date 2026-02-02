@@ -21,7 +21,6 @@
 
 + (double)cellHeightWithPaidCollection:(id)arg1 width:(double)arg2;
 + (double)titleMaxWidthWithWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLastCell; // @synthesize isLastCell=_isLastCell;
 @property(retain, nonatomic) FinderPaidCollectionInfo *paidCollection; // @synthesize paidCollection=_paidCollection;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;

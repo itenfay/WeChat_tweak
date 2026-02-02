@@ -24,7 +24,6 @@
     NSString *_reportExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportExtInfo; // @synthesize reportExtInfo=_reportExtInfo;
 @property(nonatomic) unsigned long long innerVersion; // @synthesize innerVersion=_innerVersion;
 @property(retain, nonatomic) NSString *redDotShowInfoIconUrl; // @synthesize redDotShowInfoIconUrl=_redDotShowInfoIconUrl;

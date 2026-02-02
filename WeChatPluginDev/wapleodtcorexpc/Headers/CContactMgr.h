@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContactCacheOptimizeMgr, CContactDB, CContactOPLog, CContactUpdateMgr, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString, NewContactDB, OpenImContactMgr;
 
 @interface CContactMgr
@@ -39,7 +41,6 @@
 + (void)reportGroupCreateResultWithSessionId:(id)arg1 andChatRoomUserName:(id)arg2 andActionCode:(unsigned int)arg3;
 + (void)reportGroupCreateResultWithSessionId:(id)arg1 andChatRoomUserName:(id)arg2 andActionCode:(unsigned int)arg3 andChatRoomCreateResult:(int)arg4;
 + (id)getShareCardMsgFtsTextWithMsgContent:(id)arg1;
-- (void).cxx_destruct;
 - (void)reloadSkipContactDictionary;
 - (void)clearFTSIndexRecord;
 - (_Bool)markIndexUpdatedOfType:(int)arg1 success:(_Bool)arg2;
@@ -308,4 +309,3 @@
 @property(readonly) Class superclass;
 
 @end
-

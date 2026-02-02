@@ -13,7 +13,6 @@
     struct _NSRange _selectedRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
 @property(copy, nonatomic) NSString *selectedText; // @synthesize selectedText=_selectedText;
 - (id)initWithContent:(id)arg1 selectedRange:(struct _NSRange)arg2;

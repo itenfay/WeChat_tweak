@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MPMediaItemArtwork, NSDate, NSMutableDictionary, NSString;
 
@@ -17,7 +18,6 @@
 
 + (id)reportParamWithPlayer:(id)arg1;
 + (id)handlerArtworkResponseImage:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MPMediaItemArtwork *defaultArtwork; // @synthesize defaultArtwork=_defaultArtwork;
 @property(nonatomic) long long backgroundState; // @synthesize backgroundState=_backgroundState;
 @property(retain, nonatomic) NSDate *lastCheckNowPlayingInfoTime; // @synthesize lastCheckNowPlayingInfoTime=_lastCheckNowPlayingInfoTime;
@@ -64,4 +64,3 @@
 @property(readonly) Class superclass;
 
 @end
-

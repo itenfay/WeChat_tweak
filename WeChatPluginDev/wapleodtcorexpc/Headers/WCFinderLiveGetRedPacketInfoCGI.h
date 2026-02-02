@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, NSArray, NSData, NSString;
 
 @interface WCFinderLiveGetRedPacketInfoCGI
@@ -19,7 +21,6 @@
     CDUnknownBlockType _failureBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) long long liveScene; // @synthesize liveScene=_liveScene;
@@ -36,4 +37,3 @@
 - (id)initWithFinderTaskId:(id)arg1 liveId:(unsigned long long)arg2 finderId:(unsigned long long)arg3 finderNonceId:(id)arg4 liveCookies:(id)arg5 redPacketIdList:(id)arg6 finderUsername:(id)arg7 liveScene:(long long)arg8 successBlock:(CDUnknownBlockType)arg9 failureBlock:(CDUnknownBlockType)arg10;
 
 @end
-

@@ -34,7 +34,6 @@
     NSString *_shareMsgSvrID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *shareMsgSvrID; // @synthesize shareMsgSvrID=_shareMsgSvrID;
 @property(copy, nonatomic) NSString *shareMsgSource; // @synthesize shareMsgSource=_shareMsgSource;
 @property(retain, nonatomic) NSData *relatedlistLastBuffer; // @synthesize relatedlistLastBuffer=_relatedlistLastBuffer;

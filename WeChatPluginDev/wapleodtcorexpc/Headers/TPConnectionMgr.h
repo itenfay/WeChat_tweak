@@ -12,7 +12,6 @@
     TPThumbPlayerConnectionMgrWrapper *_connectionMgrWrapper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPThumbPlayerConnectionMgrWrapper *connectionMgrWrapper; // @synthesize connectionMgrWrapper=_connectionMgrWrapper;
 - (void)removeConnection:(int)arg1;
 - (void)deactiveConnection:(int)arg1;

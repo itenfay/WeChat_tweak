@@ -19,7 +19,6 @@
     FinderQRCodeResponse *_qrcodeResponse;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderQRCodeResponse *qrcodeResponse; // @synthesize qrcodeResponse=_qrcodeResponse;
 @property(retain, nonatomic) WCFinderQCCodeNameCardViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UIButton *saveQRCodeButton; // @synthesize saveQRCodeButton=_saveQRCodeButton;

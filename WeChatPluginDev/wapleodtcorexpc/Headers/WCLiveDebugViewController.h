@@ -10,7 +10,6 @@
     UITableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

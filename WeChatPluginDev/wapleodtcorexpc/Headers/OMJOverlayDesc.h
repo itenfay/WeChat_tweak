@@ -13,7 +13,6 @@
     OMJSpatialInfo *_spatialInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int zIndex; // @synthesize zIndex=_zIndex;
 @property(retain, nonatomic) OMJSpatialInfo *spatialInfo; // @synthesize spatialInfo=_spatialInfo;
 - (id)description;

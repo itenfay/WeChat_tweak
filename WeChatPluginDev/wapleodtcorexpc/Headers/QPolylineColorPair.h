@@ -13,7 +13,6 @@
     UIColor *_borderColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 - (unsigned long long)hash;

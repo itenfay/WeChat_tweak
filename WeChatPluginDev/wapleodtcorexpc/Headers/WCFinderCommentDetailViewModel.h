@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CEmoticonWrap, FinderCommentSectionPromptInfo, FinderGetCommentListCtx, NSData, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WAAppOpenParameter, WCFinderComment, WCFinderCommentDetailTranslator, WCFinderCommentExtraViewModel, WCFinderContact, WCFinderContentVMShareModel, WCFinderDataItem, WCFinderFeedContentVM, WCFinderFeedMembershipInfo;
 @protocol WCFinderCommentDetailViewModelDelegate;
@@ -69,7 +70,6 @@
 }
 
 + (void)markEmoticonWrapFromEmoticonScene:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedMembershipInfo *membershipInfo; // @synthesize membershipInfo=_membershipInfo;
 @property(nonatomic) _Bool commentHighlightShown; // @synthesize commentHighlightShown=_commentHighlightShown;
 @property(retain, nonatomic) NSMutableArray *commitMentionArray; // @synthesize commitMentionArray=_commitMentionArray;
@@ -248,4 +248,3 @@
 @property(readonly) Class superclass;
 
 @end
-

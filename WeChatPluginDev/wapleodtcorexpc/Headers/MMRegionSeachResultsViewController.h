@@ -18,7 +18,6 @@
     double _searchBackgroundHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double searchBackgroundHeight; // @synthesize searchBackgroundHeight=_searchBackgroundHeight;
 @property(nonatomic) double searchBackgroundY; // @synthesize searchBackgroundY=_searchBackgroundY;
 @property(retain, nonatomic) NSMutableArray *cities; // @synthesize cities=_cities;

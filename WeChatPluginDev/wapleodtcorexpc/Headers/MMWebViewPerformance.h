@@ -15,7 +15,6 @@
 }
 
 + (unsigned long long)currentTimeInMs;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSMutableDictionary *timeRecordDic; // @synthesize timeRecordDic=_timeRecordDic;
 @property(retain, nonatomic) NSMutableArray *timeRecordList; // @synthesize timeRecordList=_timeRecordList;

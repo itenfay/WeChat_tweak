@@ -25,7 +25,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool viewInitialized; // @synthesize viewInitialized=_viewInitialized;
 @property(retain, nonatomic) UIView *replayIconView; // @synthesize replayIconView=_replayIconView;
 @property(retain, nonatomic) MMUILabel *replayText; // @synthesize replayText=_replayText;

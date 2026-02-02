@@ -19,7 +19,6 @@
     NSMutableArray *m_pickImageMd5List;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_pickImageMd5List; // @synthesize m_pickImageMd5List;
 @property(retain, nonatomic) ClickCommandRequestInfo *m_reportInfo; // @synthesize m_reportInfo;
 @property(retain, nonatomic) MMBizMenuInfo *m_menuData; // @synthesize m_menuData;

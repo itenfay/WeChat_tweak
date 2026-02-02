@@ -30,7 +30,6 @@
     _Bool _bIgnoreLongPress;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIgnoreLongPress; // @synthesize bIgnoreLongPress=_bIgnoreLongPress;
 @property(nonatomic) _Bool silencePlay; // @synthesize silencePlay=_silencePlay;
 - (void)OnForwardMessageCancel:(id)arg1;

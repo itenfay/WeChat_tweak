@@ -20,7 +20,6 @@
     double _currentLayoutFontScale;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool outerShouldDisplay; // @synthesize outerShouldDisplay=_outerShouldDisplay;
 @property(nonatomic) _Bool innerShouldDisplay; // @synthesize innerShouldDisplay=_innerShouldDisplay;
 @property(nonatomic) double currentLayoutFontScale; // @synthesize currentLayoutFontScale=_currentLayoutFontScale;

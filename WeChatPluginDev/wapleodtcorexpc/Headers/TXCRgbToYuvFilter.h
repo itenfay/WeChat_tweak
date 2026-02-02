@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class TXCGlFrameBuffer, TXCGlProgram, TXCPixelBufferPool;
 @protocol TXCPixelTransferSession, TXIGlContext;
 
@@ -16,7 +18,6 @@
     id <TXCPixelTransferSession> _pixelTransferSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TXCPixelTransferSession> pixelTransferSession; // @synthesize pixelTransferSession=_pixelTransferSession;
 @property(retain, nonatomic) TXCPixelBufferPool *bufferPool; // @synthesize bufferPool=_bufferPool;
 @property(retain, nonatomic) TXCGlProgram *program; // @synthesize program=_program;
@@ -31,4 +32,3 @@
 - (id)initWithContext:(id)arg1 outputFormat:(unsigned long long)arg2;
 
 @end
-

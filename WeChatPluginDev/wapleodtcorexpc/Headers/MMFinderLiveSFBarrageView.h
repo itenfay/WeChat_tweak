@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, CAGradientLayer, MMFinderLiveSFBarrageTracksInfo, MMFinderLiveSFBarrageViewModel, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveTextureBuffer, NSArray, NSMutableArray, NSString, UITapGestureRecognizer;
 @protocol MMFinderLiveSFBarrageViewDelegate;
@@ -50,7 +51,6 @@
 + (double)getBarrageDisplayDurationWithLiveTask:(id)arg1 isPortrait:(_Bool)arg2;
 + (_Bool)isHighDevicePerf;
 + (double)estimateBarrageCellLineHeight:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cpuAnimationRecentAnalysisResults; // @synthesize cpuAnimationRecentAnalysisResults=_cpuAnimationRecentAnalysisResults;
 @property(retain, nonatomic) NSMutableArray *cpuAnimationRecentMetricList; // @synthesize cpuAnimationRecentMetricList=_cpuAnimationRecentMetricList;
 @property(nonatomic) _Bool cpuAnimationDisable; // @synthesize cpuAnimationDisable=_cpuAnimationDisable;
@@ -278,4 +278,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -17,7 +17,6 @@
     WCFinderStreamLoadingState *_loadingState;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderStreamLoadingState *loadingState; // @synthesize loadingState=_loadingState;
 @property(retain, nonatomic) WCFinderFeedArray *feedArray; // @synthesize feedArray=_feedArray;
 @property(retain, nonatomic) RecommendReasonWording *headInfo; // @synthesize headInfo=_headInfo;

@@ -18,7 +18,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightedView; // @synthesize highlightedView=_highlightedView;
 @property(retain, nonatomic) MMUIImageView *certTagView; // @synthesize certTagView=_certTagView;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;

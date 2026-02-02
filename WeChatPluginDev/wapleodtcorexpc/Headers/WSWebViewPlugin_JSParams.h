@@ -11,7 +11,6 @@
     MISSING_TYPE *extReqParamDict;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)setDynamicValue:(id)arg1 forKey:(id)arg2;
 - (void)addExtReqParamFor:(id)arg1 value:(id)arg2;

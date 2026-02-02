@@ -12,7 +12,6 @@
     NSString *_bundleId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsSuccOpenOfflinePay; // @synthesize bIsSuccOpenOfflinePay=_bIsSuccOpenOfflinePay;
 @property(retain, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;

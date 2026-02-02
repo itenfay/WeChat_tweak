@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCAdvertiseCommonUtil : NSObject
 {
@@ -256,4 +257,3 @@
 + (_Bool)canAdChainStrengthenShow:(id)arg1;
 
 @end
-

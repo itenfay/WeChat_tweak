@@ -14,7 +14,6 @@
     NSMutableDictionary *_attributes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *attributes; // @synthesize attributes=_attributes;
 @property(retain, nonatomic) NSMutableDictionary *uniforms; // @synthesize uniforms=_uniforms;
 @property(readonly, nonatomic) unsigned int program; // @synthesize program=_program;

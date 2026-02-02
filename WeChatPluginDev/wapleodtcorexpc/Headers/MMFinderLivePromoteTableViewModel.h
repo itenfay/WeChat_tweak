@@ -19,7 +19,6 @@
     NSString *_errorStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorStr; // @synthesize errorStr=_errorStr;
 @property(retain, nonatomic) MMFinderLiveAnchorPromoteInfo *lastSendedPromoteInfo; // @synthesize lastSendedPromoteInfo=_lastSendedPromoteInfo;
 @property(nonatomic) _Bool isLiving; // @synthesize isLiving=_isLiving;

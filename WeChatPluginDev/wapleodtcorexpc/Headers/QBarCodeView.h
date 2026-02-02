@@ -13,7 +13,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableDefaultAccessibility; // @synthesize disableDefaultAccessibility=_disableDefaultAccessibility;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)displayQBarCode:(struct QBAR_IMAGE)arg1 TwoDimensional:(_Bool)arg2;

@@ -18,7 +18,6 @@
 }
 
 + (void)bindCoinViewInfo:(id)arg1 priceInfo:(id)arg2;
-- (void).cxx_destruct;
 - (_Bool)needMonitorConrtol;
 - (long long)getCoinScene;
 - (void)onSendEvent:(id)arg1;

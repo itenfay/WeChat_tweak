@@ -24,7 +24,6 @@
     NSString *_greatGrandTagname;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTitle; // @synthesize isTitle=_isTitle;
 @property(nonatomic) _Bool isNodeInFirstScreen; // @synthesize isNodeInFirstScreen=_isNodeInFirstScreen;
 @property(copy, nonatomic) NSString *greatGrandTagname; // @synthesize greatGrandTagname=_greatGrandTagname;

@@ -35,7 +35,6 @@
     unsigned long long _stepStartTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool addSuccess; // @synthesize addSuccess=_addSuccess;
 @property(nonatomic) unsigned long long stepStartTime; // @synthesize stepStartTime=_stepStartTime;
 @property(retain, nonatomic) AddAvatarUploadImageTask *uploadTask; // @synthesize uploadTask=_uploadTask;

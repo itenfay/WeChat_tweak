@@ -13,7 +13,6 @@
     id <LQTDepositPlanDeleteDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property __weak id <LQTDepositPlanDeleteDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onWCPayLQTDepositManagePlanCgiError:(id)arg1 errorCode:(unsigned int)arg2;
 - (void)onWCPayLQTDepositManagePlanCgiResponseOK:(id)arg1;

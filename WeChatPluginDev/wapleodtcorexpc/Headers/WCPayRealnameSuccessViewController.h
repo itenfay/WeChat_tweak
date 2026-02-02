@@ -12,7 +12,6 @@
     MMWebViewController *_uploadIdWebVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebViewController *uploadIdWebVC; // @synthesize uploadIdWebVC=_uploadIdWebVC;
 @property __weak id <WCPayRealnameSuccessViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)webViewReturn:(id)arg1;

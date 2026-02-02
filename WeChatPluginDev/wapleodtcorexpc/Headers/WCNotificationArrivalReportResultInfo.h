@@ -24,7 +24,6 @@
 
 + (id)resultInfoWithChannel:(unsigned long long)arg1 notificationUserInfo:(id)arg2 cbURLResponse:(id)arg3 cbURLSessionError:(id)arg4;
 + (id)resultInfoWithUserInfos:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *voIPContentRoomKey; // @synthesize voIPContentRoomKey=_voIPContentRoomKey;
 @property(retain, nonatomic) NSString *voIPContentRoomID; // @synthesize voIPContentRoomID=_voIPContentRoomID;
 @property(nonatomic) unsigned long long voIPContentType; // @synthesize voIPContentType=_voIPContentType;

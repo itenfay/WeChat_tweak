@@ -10,7 +10,6 @@
     UIView *_maskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
 - (void)createMaskViewIfNeeded;
 - (void)setHighlighted:(_Bool)arg1;

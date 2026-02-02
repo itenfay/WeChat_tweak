@@ -14,7 +14,6 @@
 }
 
 + (id)UDRResourceDBPath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *resourceTable; // @synthesize resourceTable=_resourceTable;
 @property(retain, nonatomic) WCTDatabase *db; // @synthesize db=_db;
 - (void)dealloc;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMNewVoiceInputReportObj, NSSet, NSString, RecordInfoContentView, SightIconView, UIButton, UILabel, VoiceRecordTextureButtonView;
 @protocol RecordViewDelegate, VoiceRecordViewDelegate;
@@ -42,7 +43,6 @@
     long long _inputSendTextButtonState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int inputLanguageType; // @synthesize inputLanguageType=_inputLanguageType;
 @property(nonatomic) _Bool needShowSecondTips; // @synthesize needShowSecondTips=_needShowSecondTips;
 @property(nonatomic) _Bool needShowFirstTips; // @synthesize needShowFirstTips=_needShowFirstTips;
@@ -133,4 +133,3 @@
 @property(readonly) Class superclass;
 
 @end
-

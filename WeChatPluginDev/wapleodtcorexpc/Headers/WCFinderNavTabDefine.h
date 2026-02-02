@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderNavTabTitle;
 
@@ -16,7 +17,6 @@
     NSString *_idenfitier;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *idenfitier; // @synthesize idenfitier=_idenfitier;
 @property(copy, nonatomic) CDUnknownBlockType pageGenerator; // @synthesize pageGenerator=_pageGenerator;
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
@@ -24,4 +24,3 @@
 @property(retain, nonatomic) WCFinderNavTabTitle *title; // @synthesize title=_title;
 
 @end
-

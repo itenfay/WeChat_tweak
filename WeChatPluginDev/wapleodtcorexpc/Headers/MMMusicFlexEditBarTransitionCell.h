@@ -17,7 +17,6 @@
     UIImage *_transitionImgForNotModify;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *transitionImgForNotModify; // @synthesize transitionImgForNotModify=_transitionImgForNotModify;
 @property(retain, nonatomic) UIImage *transitionImgForModify; // @synthesize transitionImgForModify=_transitionImgForModify;
 @property(retain, nonatomic) UIImageView *transitionImgView; // @synthesize transitionImgView=_transitionImgView;

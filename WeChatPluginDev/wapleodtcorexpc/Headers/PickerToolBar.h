@@ -13,7 +13,6 @@
     UILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool autoExpandWithText; // @synthesize autoExpandWithText=_autoExpandWithText;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;

@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_m_iconUrl;
 + (void)PBArrayAdd_m_freeCount;
 + (void)PBArrayAdd_m_newCount;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isNeedBadge; // @synthesize m_isNeedBadge=_m_isNeedBadge;
 @property(nonatomic) unsigned int m_addButtonNewCount; // @synthesize m_addButtonNewCount=_m_addButtonNewCount;
 @property(nonatomic) unsigned int m_personalNewCount; // @synthesize m_personalNewCount=_m_personalNewCount;

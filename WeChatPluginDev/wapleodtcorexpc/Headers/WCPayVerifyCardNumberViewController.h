@@ -13,7 +13,6 @@
     UILabel *_tips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tips; // @synthesize tips=_tips;
 @property(retain, nonatomic) WCPayInputView *payInputView; // @synthesize payInputView=_payInputView;
 @property(nonatomic) __weak id <WCPayVerifyCardNumberViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

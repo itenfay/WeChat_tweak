@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_records;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *records; // @synthesize records=_records;
 - (id)getPBPropertyTable;
 - (id)init;

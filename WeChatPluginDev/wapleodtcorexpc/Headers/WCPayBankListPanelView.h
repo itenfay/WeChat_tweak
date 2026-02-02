@@ -25,7 +25,6 @@
     UIView *_m_titleArea;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *m_titleArea; // @synthesize m_titleArea=_m_titleArea;
 @property(retain, nonatomic) NSMutableDictionary *cellTitleHalfYCache; // @synthesize cellTitleHalfYCache=_cellTitleHalfYCache;
 @property(nonatomic) double totalCellHeight; // @synthesize totalCellHeight=_totalCellHeight;

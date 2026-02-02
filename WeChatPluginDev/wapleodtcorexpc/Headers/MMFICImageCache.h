@@ -13,7 +13,6 @@
 
 + (unsigned long long)preCleanGetCacheSize;
 + (unsigned long long)cleanCacheMgrMakeToClean;
-- (void).cxx_destruct;
 - (unsigned long long)preGetFICImageCacheSize;
 - (unsigned long long)cleanFICImageCache;
 - (void)executeEntityCreating:(id)arg1 withImage:(id)arg2;

@@ -12,7 +12,6 @@
     TSKMidiScoreResult *_scoreResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TSKMidiScoreResult *scoreResult; // @synthesize scoreResult=_scoreResult;
 - (_Bool)resetWithResultSet:(id)arg1;
 - (_Bool)updateWithResultSet:(id)arg1 index:(int)arg2;

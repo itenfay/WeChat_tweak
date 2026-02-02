@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
 }
 
 + (id)helperWithVideoPath:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *videoPath; // @synthesize videoPath=_videoPath;
 - (void)uploadFileThenRecognit:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)onExportFinish:(id)arg1 complete:(CDUnknownBlockType)arg2;
@@ -21,4 +21,3 @@
 - (id)initWithVideoPath:(id)arg1;
 
 @end
-

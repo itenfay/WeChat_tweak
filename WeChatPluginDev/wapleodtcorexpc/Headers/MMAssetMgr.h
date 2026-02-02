@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CLLocation, EditImageLogicController, EditVideoLogicController, NSObject, NSString, PHCachingImageManager;
 @protocol OS_dispatch_queue;
 
@@ -25,7 +27,6 @@
 + (int)getAssetSourceForMetadata:(id)arg1 isCreatedByWeChatCamera:(_Bool)arg2;
 + (int)getAssetCameraDeviceForMetadata:(id)arg1;
 + (void)reportPhotoUsageScene:(int)arg1 dimensionSize:(struct CGSize)arg2 createTimestamp:(id)arg3 isCreatedByWeChatCamera:(_Bool)arg4 metadata:(id)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) __weak EditVideoLogicController *m_editVideoLogicController; // @synthesize m_editVideoLogicController;
 @property(nonatomic) __weak EditImageLogicController *m_editImageLogicController; // @synthesize m_editImageLogicController;
 @property(retain, nonatomic) PHCachingImageManager *m_imageManagerForIOS8Plus; // @synthesize m_imageManagerForIOS8Plus;
@@ -50,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

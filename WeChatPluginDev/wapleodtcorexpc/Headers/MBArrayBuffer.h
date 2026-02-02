@@ -18,7 +18,6 @@
     NSObject *_dataRef;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *dataRef; // @synthesize dataRef=_dataRef;
 @property(retain) NSMutableData *localData; // @synthesize localData=_localData;
 @property unsigned long long bufferLength; // @synthesize bufferLength=_bufferLength;

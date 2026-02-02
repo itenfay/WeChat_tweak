@@ -17,7 +17,6 @@
 
 + (id)sharedInstance;
 + (id)newInstance;
-- (void).cxx_destruct;
 @property(nonatomic) double lineSpacing; // @synthesize lineSpacing=_lineSpacing;
 @property(nonatomic) __weak id <BaseParserStyleDelegate> styleDelegate; // @synthesize styleDelegate=_styleDelegate;
 @property(nonatomic) unsigned long long parserType; // @synthesize parserType=_parserType;

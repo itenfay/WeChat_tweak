@@ -11,7 +11,6 @@
     UIViewController<IWAVConsoleWebVCHelper> *_vConsoleWebVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController<IWAVConsoleWebVCHelper> *vConsoleWebVC; // @synthesize vConsoleWebVC=_vConsoleWebVC;
 - (id)fetchPublicResLogic;
 - (void)web_view_configViewFrame:(struct CGRect)arg1;

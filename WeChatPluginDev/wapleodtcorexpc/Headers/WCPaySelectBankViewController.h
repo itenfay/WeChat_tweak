@@ -20,7 +20,6 @@
     NSMutableArray *_m_allBankCardTypeList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_allBankCardTypeList; // @synthesize m_allBankCardTypeList=_m_allBankCardTypeList;
 @property(nonatomic) double searchBackgroundHeight; // @synthesize searchBackgroundHeight=_searchBackgroundHeight;
 @property(nonatomic) double searchBackgroundY; // @synthesize searchBackgroundY=_searchBackgroundY;

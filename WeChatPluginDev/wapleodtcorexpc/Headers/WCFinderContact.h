@@ -214,7 +214,6 @@
 + (unsigned long long)followActionOfFollowState:(unsigned long long)arg1 isPrivateContact:(_Bool)arg2;
 + (unsigned long long)columnType;
 + (id)unarchiveWithWCTValue:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContactInnerModel *innerModel; // @synthesize innerModel=_innerModel;
 @property(retain, nonatomic) FinderContact *contactInfo; // @synthesize contactInfo=_contactInfo;
 @property(nonatomic) long long additionalFlag; // @synthesize additionalFlag=_additionalFlag;

@@ -16,7 +16,6 @@
     NewLifeTransitionManager *_transitionManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeTransitionManager *transitionManager; // @synthesize transitionManager=_transitionManager;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString, OrderedDictionary;
 
@@ -31,7 +32,6 @@
 }
 
 + (id)viewModelWithUserName:(id)arg1 type:(long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *prepardDownloadMediaInfos; // @synthesize prepardDownloadMediaInfos=_prepardDownloadMediaInfos;
 @property(copy, nonatomic) CDUnknownBlockType finishDownloadBlock; // @synthesize finishDownloadBlock=_finishDownloadBlock;
 @property(copy, nonatomic) CDUnknownBlockType getIndexPathBlock; // @synthesize getIndexPathBlock=_getIndexPathBlock;
@@ -98,4 +98,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, NSData, NSError, NSMutableArray, NSString, PackageResourceInfo_ProductBatchInfo, WCFinderContact;
 
@@ -31,7 +32,6 @@
     PackageResourceInfo_ProductBatchInfo *_batchInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PackageResourceInfo_ProductBatchInfo *batchInfo; // @synthesize batchInfo=_batchInfo;
 @property(retain, nonatomic) NSMutableArray *rewardPrepareBuff; // @synthesize rewardPrepareBuff=_rewardPrepareBuff;
 @property(copy, nonatomic) CDUnknownBlockType freeGiftFailedBlock; // @synthesize freeGiftFailedBlock=_freeGiftFailedBlock;
@@ -68,4 +68,3 @@
 @property(readonly) Class superclass;
 
 @end
-

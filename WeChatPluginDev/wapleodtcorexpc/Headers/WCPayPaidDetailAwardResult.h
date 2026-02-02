@@ -23,7 +23,6 @@
     NSString *_tinyAppBtnText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tinyAppBtnText; // @synthesize tinyAppBtnText=_tinyAppBtnText;
 @property(retain, nonatomic) NSString *tinyAppPath; // @synthesize tinyAppPath=_tinyAppPath;
 @property(retain, nonatomic) NSString *tinyAppUsername; // @synthesize tinyAppUsername=_tinyAppUsername;

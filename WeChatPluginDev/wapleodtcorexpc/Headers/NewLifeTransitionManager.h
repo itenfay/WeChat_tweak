@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NewLifePopTransition, NewLifePushTransition, UIColor, UIImage, UIPanGestureRecognizer, UIPercentDrivenInteractiveTransition, UIScreenEdgePanGestureRecognizer, UIViewController;
 
@@ -39,7 +40,6 @@
 
 + (struct CGAffineTransform)getToViewFromTransform:(struct CGRect)arg1 toFrame:(struct CGRect)arg2 fromContentFrame:(struct CGRect)arg3 toContentFrame:(struct CGRect)arg4;
 + (struct CGAffineTransform)getFromViewToTransform:(struct CGRect)arg1 toFrame:(struct CGRect)arg2 fromContentFrame:(struct CGRect)arg3 toContentFrame:(struct CGRect)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInteractive; // @synthesize isInteractive=_isInteractive;
 @property(retain, nonatomic) UIPercentDrivenInteractiveTransition *interactive; // @synthesize interactive=_interactive;
 @property(nonatomic) long long operation; // @synthesize operation=_operation;
@@ -96,4 +96,3 @@
 @property(readonly) Class superclass;
 
 @end
-

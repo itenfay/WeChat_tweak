@@ -10,7 +10,6 @@
     LiteAppJsApiPluginScheduler *_liteAppPluginScheduler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak LiteAppJsApiPluginScheduler *liteAppPluginScheduler; // @synthesize liteAppPluginScheduler=_liteAppPluginScheduler;
 
 // Remaining properties

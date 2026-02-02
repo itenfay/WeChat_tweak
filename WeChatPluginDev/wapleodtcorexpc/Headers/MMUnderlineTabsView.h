@@ -22,7 +22,6 @@
     NSMutableArray *_itemInfoList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *itemInfoList; // @synthesize itemInfoList=_itemInfoList;
 @property(retain, nonatomic) NSArray *tabItems; // @synthesize tabItems=_tabItems;
 @property(retain, nonatomic) UIView *underlineView; // @synthesize underlineView=_underlineView;

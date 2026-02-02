@@ -14,7 +14,6 @@
     UIColor *_borderColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) _Bool isShowBorder; // @synthesize isShowBorder=_isShowBorder;
 @property(retain, nonatomic) MMAssetView *assetView; // @synthesize assetView=_assetView;

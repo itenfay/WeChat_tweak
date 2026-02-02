@@ -15,7 +15,6 @@
 }
 
 + (id)modelPropertyBlacklistForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int receiveSeqNum; // @synthesize receiveSeqNum=_receiveSeqNum;
 @property(nonatomic) long long opCode; // @synthesize opCode=_opCode;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

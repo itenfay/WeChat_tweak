@@ -15,7 +15,6 @@
     BaseMessageViewModel *_messageViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BaseMessageViewModel *messageViewModel; // @synthesize messageViewModel=_messageViewModel;
 @property(nonatomic) unsigned int m_index; // @synthesize m_index;
 @property(retain, nonatomic) FavoritesItemDataField *m_dataItem; // @synthesize m_dataItem;

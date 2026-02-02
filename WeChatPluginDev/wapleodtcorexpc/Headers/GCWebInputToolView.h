@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CEmoticonWrap, EmojiInputView, MMImage, NSArray, NSString, UIButton, UIImageView, UIView;
 
 @interface GCWebInputToolView
@@ -22,7 +24,6 @@
     NSArray *_emojiList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *emojiList; // @synthesize emojiList=_emojiList;
 @property(retain, nonatomic) EmojiInputView *emojiInputView; // @synthesize emojiInputView=_emojiInputView;
 @property(retain, nonatomic) UIView *emojiInputBGView; // @synthesize emojiInputBGView=_emojiInputBGView;
@@ -80,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -13,7 +13,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *label; // @synthesize label=_label;
 - (void)genFromDic:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_audioCategory;
 + (void)PBArrayAdd_audioCount;
 + (void)PBArrayAdd_audios;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMListenCategoryItem *audioCategory; // @synthesize audioCategory=_audioCategory;
 @property(nonatomic) long long audioCount; // @synthesize audioCount=_audioCount;
 @property(retain, nonatomic) NSArray *audios; // @synthesize audios=_audios;

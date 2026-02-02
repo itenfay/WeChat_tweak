@@ -12,7 +12,6 @@
     struct CGRect _normalizedFocusFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *fakeOverlayView; // @synthesize fakeOverlayView=_fakeOverlayView;
 @property(retain, nonatomic) CircleToSearchOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 @property(readonly, nonatomic) struct CGRect normalizedFocusFrame; // @synthesize normalizedFocusFrame=_normalizedFocusFrame;

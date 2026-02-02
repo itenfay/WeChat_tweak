@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel;
 
@@ -14,7 +15,6 @@
     struct CGSize _layoutSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;
 @property(retain, nonatomic) UIImageView *tipsImgView; // @synthesize tipsImgView=_tipsImgView;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
@@ -26,4 +26,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

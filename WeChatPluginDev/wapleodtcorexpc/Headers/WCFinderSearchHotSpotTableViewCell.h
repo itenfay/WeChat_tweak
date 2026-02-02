@@ -19,7 +19,6 @@
 
 + (id)cellID;
 + (double)cellHWithHotWord:(id)arg1 cellW:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long rowCount; // @synthesize rowCount=_rowCount;
 @property(nonatomic) __weak UILabel *reasonLabel; // @synthesize reasonLabel=_reasonLabel;
 @property(nonatomic) __weak UIView *lineView; // @synthesize lineView=_lineView;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJMetaBackupInfo, MJSegmentViewModel, NSArray;
 
@@ -17,7 +18,6 @@
     long long _editType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long editType; // @synthesize editType=_editType;
 @property(retain, nonatomic) NSArray *contentItems; // @synthesize contentItems=_contentItems;
 @property(retain, nonatomic) NSArray *titleItems; // @synthesize titleItems=_titleItems;
@@ -35,4 +35,3 @@
 - (id)initWithSegmentVM:(id)arg1 editType:(long long)arg2;
 
 @end
-

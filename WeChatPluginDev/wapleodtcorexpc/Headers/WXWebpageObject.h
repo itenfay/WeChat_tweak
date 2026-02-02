@@ -13,7 +13,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *webpageUrl; // @synthesize webpageUrl;
 - (id)init;
 

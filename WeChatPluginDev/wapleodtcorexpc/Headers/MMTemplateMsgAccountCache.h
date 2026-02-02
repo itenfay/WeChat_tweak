@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_bizsvrList;
 + (void)PBArrayAdd_weappList;
 + (void)PBArrayAdd_isGlobalNotify;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bizsvrList; // @synthesize bizsvrList=_bizsvrList;
 @property(retain, nonatomic) NSMutableArray *weappList; // @synthesize weappList=_weappList;
 @property(nonatomic) _Bool isGlobalNotify; // @synthesize isGlobalNotify=_isGlobalNotify;

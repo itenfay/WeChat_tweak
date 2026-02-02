@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUIImageView, MMUILabel;
 
@@ -17,7 +18,6 @@
     MMUILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMUIImageView *errImageView; // @synthesize errImageView=_errImageView;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
@@ -33,4 +33,3 @@
 - (id)initWithType:(unsigned long long)arg1;
 
 @end
-

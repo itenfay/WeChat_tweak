@@ -16,7 +16,6 @@
     UIView *_parentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *parentView; // @synthesize parentView=_parentView;
 @property(nonatomic) long long showTimeStamp; // @synthesize showTimeStamp=_showTimeStamp;
 @property(nonatomic) _Bool isNeedAutoDismiss; // @synthesize isNeedAutoDismiss=_isNeedAutoDismiss;

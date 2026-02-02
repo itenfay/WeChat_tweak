@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface MMFinderLiveRealNameFriendLikeBubbleView
 {
     _Bool _isLiked;
@@ -10,7 +12,6 @@
     CDUnknownBlockType _closeAction;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLiked; // @synthesize isLiked=_isLiked;
 @property(copy, nonatomic) CDUnknownBlockType closeAction; // @synthesize closeAction=_closeAction;
 @property(copy, nonatomic) CDUnknownBlockType likeAction; // @synthesize likeAction=_likeAction;
@@ -22,4 +23,3 @@
 - (id)initWithTaskId:(id)arg1 closeAction:(CDUnknownBlockType)arg2 likeAction:(CDUnknownBlockType)arg3;
 
 @end
-

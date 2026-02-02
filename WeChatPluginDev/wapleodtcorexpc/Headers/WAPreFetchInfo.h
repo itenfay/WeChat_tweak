@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_query;
 + (void)PBArrayAdd_path;
 + (void)PBArrayAdd_userName;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastModifyTimeMs; // @synthesize lastModifyTimeMs=_lastModifyTimeMs;
 @property(nonatomic) unsigned int lastModifyTime; // @synthesize lastModifyTime=_lastModifyTime;
 @property(retain, nonatomic) NSString *fetchData; // @synthesize fetchData=_fetchData;

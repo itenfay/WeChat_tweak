@@ -21,7 +21,6 @@
     WCStoryFriendsCollectionDismissTransition *_dismissAnimateTransition;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStoryFriendsCollectionDismissTransition *dismissAnimateTransition; // @synthesize dismissAnimateTransition=_dismissAnimateTransition;
 @property(retain, nonatomic) WCStoryDismissInteractiveTransition *transition; // @synthesize transition=_transition;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;

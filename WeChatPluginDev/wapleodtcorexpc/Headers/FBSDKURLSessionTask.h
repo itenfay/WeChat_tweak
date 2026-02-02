@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSURLSessionTask;
 
@@ -15,7 +16,6 @@
     unsigned long long _loggerSerialNumber;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long loggerSerialNumber; // @synthesize loggerSerialNumber=_loggerSerialNumber;
 @property(nonatomic) unsigned long long requestStartTime; // @synthesize requestStartTime=_requestStartTime;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
@@ -31,4 +31,3 @@
 - (id)initWithRequest:(id)arg1 fromSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end
-

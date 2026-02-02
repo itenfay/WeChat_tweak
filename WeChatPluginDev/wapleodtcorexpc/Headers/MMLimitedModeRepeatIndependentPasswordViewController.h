@@ -12,7 +12,6 @@
     MMLimitedModeSetIndependentPasswordViewController *_firstInputViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLimitedModeSetIndependentPasswordViewController *firstInputViewController; // @synthesize firstInputViewController=_firstInputViewController;
 @property(retain, nonatomic) NSString *m_firsetInputPassword; // @synthesize m_firsetInputPassword=_m_firsetInputPassword;
 - (void)onLimitedModeSetPasswordRetType:(unsigned int)arg1 ticket:(id)arg2 success:(_Bool)arg3 errMsg:(id)arg4;

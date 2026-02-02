@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderObjectExtInfoList, NSDictionary, NSLock, NSMapTable, NSMutableDictionary, NSString, WCFinderDynamicIconFetcher, WCFinderGlobalWordingIconConfig;
 
@@ -33,7 +34,6 @@
 
 + (void)configIconUrlDefaultDic:(id)arg1;
 + (void)configIconURLKey:(id)arg1 lightURL:(id)arg2 darkURL:(id)arg3 containerDic:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *iconUrlDefaultDic; // @synthesize iconUrlDefaultDic=_iconUrlDefaultDic;
 @property(retain, nonatomic) NSMutableDictionary *dynamicPageMap; // @synthesize dynamicPageMap=_dynamicPageMap;
 @property(retain, nonatomic) NSMutableDictionary *globalItems; // @synthesize globalItems=_globalItems;
@@ -82,4 +82,3 @@
 - (id)init;
 
 @end
-

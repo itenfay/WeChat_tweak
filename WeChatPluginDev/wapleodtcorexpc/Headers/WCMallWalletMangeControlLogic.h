@@ -13,7 +13,6 @@
     WCPayWalletBatchFunctionOperateCgi *_batchOperateCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayWalletBatchFunctionOperateCgi *batchOperateCgi; // @synthesize batchOperateCgi=_batchOperateCgi;
 @property(retain, nonatomic) WCPayWalletGetFunctionSwitchListCgi *getListCgi; // @synthesize getListCgi=_getListCgi;
 - (void)onWCPayWalletBatchFunctionOperateCgiError:(id)arg1 errorCode:(unsigned int)arg2;

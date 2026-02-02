@@ -10,7 +10,6 @@
     NSArray *_mediaList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *mediaList; // @synthesize mediaList=_mediaList;
 - (id)generatePostId;
 - (id)createDbItem;

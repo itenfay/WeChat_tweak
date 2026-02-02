@@ -15,7 +15,6 @@
     RichTextView *_label;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *label; // @synthesize label=_label;
 @property(nonatomic) __weak id <MMFinderLiveConnectMicRandomHintTableFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool enableAction; // @synthesize enableAction=_enableAction;

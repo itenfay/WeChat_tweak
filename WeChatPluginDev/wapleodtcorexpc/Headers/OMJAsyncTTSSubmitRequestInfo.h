@@ -18,7 +18,6 @@
     NSDictionary *_extraParams;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *extraParams; // @synthesize extraParams=_extraParams;
 @property(readonly, nonatomic) NSString *submitID; // @synthesize submitID=_submitID;
 @property(readonly, nonatomic) float volume; // @synthesize volume=_volume;

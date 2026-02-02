@@ -16,7 +16,6 @@
     MMFinderLiveTaskId *_finderTaskId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastDisplayMsgId; // @synthesize lastDisplayMsgId=_lastDisplayMsgId;
 @property(retain, nonatomic) MMFinderLiveTaskId *finderTaskId; // @synthesize finderTaskId=_finderTaskId;
 @property(nonatomic) __weak id <MMFinderLiveLikeNotifyCommentDelegate> notifyDelegate; // @synthesize notifyDelegate=_notifyDelegate;

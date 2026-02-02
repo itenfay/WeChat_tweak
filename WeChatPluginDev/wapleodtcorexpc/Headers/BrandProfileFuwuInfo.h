@@ -21,7 +21,6 @@
     MpEcsJumpInfo *_menuEcsJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MpEcsJumpInfo *menuEcsJumpInfo; // @synthesize menuEcsJumpInfo=_menuEcsJumpInfo;
 @property(nonatomic) unsigned long long showIconType; // @synthesize showIconType=_showIconType;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;

@@ -10,7 +10,6 @@
     NSMutableDictionary *_preloadList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *preloadList; // @synthesize preloadList=_preloadList;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;
 

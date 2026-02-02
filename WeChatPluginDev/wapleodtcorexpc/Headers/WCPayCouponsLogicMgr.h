@@ -12,7 +12,6 @@
     NSMutableDictionary *_dicFavorItemInComponseInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsUserClickConfirmInCouponList; // @synthesize bIsUserClickConfirmInCouponList=_bIsUserClickConfirmInCouponList;
 @property(retain, nonatomic) NSMutableDictionary *dicFavorItemInComponseInfo; // @synthesize dicFavorItemInComponseInfo=_dicFavorItemInComponseInfo;
 @property(retain, nonatomic) WCPayTradeFavInfo *wcPayTradeFavInfo; // @synthesize wcPayTradeFavInfo=_wcPayTradeFavInfo;

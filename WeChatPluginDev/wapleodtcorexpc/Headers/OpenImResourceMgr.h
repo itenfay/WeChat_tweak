@@ -15,7 +15,6 @@
 
 + (_Bool)isWeWorkOpenIm:(id)arg1;
 + (id)resourcePathType;
-- (void).cxx_destruct;
 - (id)getWeWorkOpenImAcctType;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (_Bool)doUpdateOpenImResourceFromServer:(id)arg1 subType:(unsigned int)arg2 wordings:(id)arg3 checkTime:(_Bool)arg4;

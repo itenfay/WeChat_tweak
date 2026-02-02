@@ -14,7 +14,6 @@
     EcsGiftJumpInfo *_jumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EcsGiftJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(retain, nonatomic) NSString *giftMsgId; // @synthesize giftMsgId=_giftMsgId;
 @property(retain, nonatomic) NSString *wishMessage; // @synthesize wishMessage=_wishMessage;

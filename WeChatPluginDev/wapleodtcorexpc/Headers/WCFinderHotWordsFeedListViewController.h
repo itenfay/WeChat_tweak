@@ -12,7 +12,6 @@
     WCFinderFeedListView *_feedListView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedListView *feedListView; // @synthesize feedListView=_feedListView;
 @property(retain, nonatomic) WCFinderHotWordsFeedViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) long long scrollToIndexWhenViewDidAppear; // @synthesize scrollToIndexWhenViewDidAppear=_scrollToIndexWhenViewDidAppear;

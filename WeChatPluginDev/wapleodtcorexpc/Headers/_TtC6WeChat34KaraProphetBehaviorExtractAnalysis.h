@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_extractFeatures;
 + (void)PBArrayAdd_bytes;
 + (void)PBArrayAdd_error;
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) _TtC6WeChat42KaraProphetBehaviorExtractFeaturesAnalysis *extractFeatures; // @synthesize extractFeatures;
 @property(nonatomic, retain) NSNumber *bytes;

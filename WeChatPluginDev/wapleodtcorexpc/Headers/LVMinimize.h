@@ -17,7 +17,6 @@
     WCFinderLandScapePlayCompleteTipsView *_playCompleteTipsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLandScapePlayCompleteTipsView *playCompleteTipsView; // @synthesize playCompleteTipsView=_playCompleteTipsView;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) _Bool supportContinuePlay; // @synthesize supportContinuePlay=_supportContinuePlay;

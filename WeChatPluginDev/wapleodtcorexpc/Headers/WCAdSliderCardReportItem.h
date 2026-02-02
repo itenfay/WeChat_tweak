@@ -26,7 +26,6 @@
     NSString *_extra;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool playOver1sCountFlag; // @synthesize playOver1sCountFlag=_playOver1sCountFlag;
 @property(retain, nonatomic) NSString *extra; // @synthesize extra=_extra;
 @property(nonatomic) unsigned long long videoTotalTime; // @synthesize videoTotalTime=_videoTotalTime;

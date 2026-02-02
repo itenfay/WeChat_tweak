@@ -43,7 +43,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int reportId; // @synthesize reportId=_reportId;
 @property(nonatomic) unsigned int endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) unsigned int beginTime; // @synthesize beginTime=_beginTime;

@@ -10,7 +10,6 @@
     NSObject *_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *data; // @synthesize data=_data;
 - (id)description;
 - (id)toDict;

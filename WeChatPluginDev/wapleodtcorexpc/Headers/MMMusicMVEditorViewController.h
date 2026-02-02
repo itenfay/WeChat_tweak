@@ -41,7 +41,6 @@
     NSMutableDictionary *_imagePreviewDataSourceMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *imagePreviewDataSourceMap; // @synthesize imagePreviewDataSourceMap=_imagePreviewDataSourceMap;
 @property(nonatomic) __weak MMImagePreviewBrowserController *currentImagePreviewViewController; // @synthesize currentImagePreviewViewController=_currentImagePreviewViewController;
 @property(retain, nonatomic) MVImagePreviewControlCenter *previewControlCenter; // @synthesize previewControlCenter=_previewControlCenter;

@@ -17,7 +17,6 @@
     NSMutableDictionary *_dicExistContact;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableInteractiveDismiss; // @synthesize enableInteractiveDismiss=_enableInteractiveDismiss;
 @property(retain, nonatomic) NSMutableDictionary *dicExistContact; // @synthesize dicExistContact=_dicExistContact;
 @property(retain, nonatomic) NSString *m_nsViewControllerTitle; // @synthesize m_nsViewControllerTitle=_m_nsViewControllerTitle;

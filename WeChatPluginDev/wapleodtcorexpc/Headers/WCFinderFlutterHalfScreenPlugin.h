@@ -16,7 +16,6 @@
     NSArray *_preventDragAreas;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *preventDragAreas; // @synthesize preventDragAreas=_preventDragAreas;
 @property(nonatomic) _Bool preventDrag; // @synthesize preventDrag=_preventDrag;
 @property(retain, nonatomic) FinderHalfScreenFlutterAPI *flutterAPI; // @synthesize flutterAPI=_flutterAPI;

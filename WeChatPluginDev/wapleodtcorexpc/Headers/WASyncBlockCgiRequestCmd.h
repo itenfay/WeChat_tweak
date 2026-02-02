@@ -13,7 +13,6 @@
     NSMutableArray *_sceneLists;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int blockEndTime; // @synthesize blockEndTime=_blockEndTime;
 @property(nonatomic) unsigned int blockBeginTime; // @synthesize blockBeginTime=_blockBeginTime;
 @property(retain, nonatomic) NSMutableArray *sceneLists; // @synthesize sceneLists=_sceneLists;

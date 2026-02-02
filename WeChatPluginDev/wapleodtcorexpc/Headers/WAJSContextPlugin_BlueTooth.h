@@ -21,7 +21,6 @@
     _Bool _isAllowBackground;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasConnection; // @synthesize hasConnection=_hasConnection;
 @property(nonatomic) _Bool m_isScaning; // @synthesize m_isScaning;
 - (void)stopScan;

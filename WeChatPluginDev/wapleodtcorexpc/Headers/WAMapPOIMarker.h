@@ -11,7 +11,6 @@
     double _rotate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double rotate; // @synthesize rotate=_rotate;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 

@@ -16,7 +16,6 @@
 }
 
 + (struct CGSize)sizeForContent:(id)arg1 maxWidth:(double)arg2 font:(id)arg3 outArrStyles:(id *)arg4 hasImage:(_Bool)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;
 @property(retain, nonatomic) UIView *referLineView; // @synthesize referLineView=_referLineView;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;

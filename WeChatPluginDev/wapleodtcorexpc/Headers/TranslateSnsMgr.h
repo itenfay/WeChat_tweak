@@ -20,7 +20,6 @@
 + (_Bool)checkContentOrComment:(id)arg1;
 + (id)getSnsTransDataWrapWithComment:(id)arg1 andScene:(int)arg2 andDataItemTid:(id)arg3;
 + (id)getSnsTransDataWrap:(id)arg1 andScene:(int)arg2;
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)responseForTransTextResponse:(id)arg1 Event:(unsigned int)arg2;
 - (void)asyncNotifyTranslateSnsChanged:(id)arg1;

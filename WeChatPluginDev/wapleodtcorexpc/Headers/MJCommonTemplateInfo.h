@@ -38,7 +38,6 @@
 + (void)PBArrayAdd_tplMessage;
 + (void)PBArrayAdd_usageCount;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long tmplDescVersion; // @synthesize tmplDescVersion=_tmplDescVersion;
 @property(copy, nonatomic) NSString *tmplDescFileMd5; // @synthesize tmplDescFileMd5=_tmplDescFileMd5;
 @property(copy, nonatomic) NSString *tmplDescUrl; // @synthesize tmplDescUrl=_tmplDescUrl;

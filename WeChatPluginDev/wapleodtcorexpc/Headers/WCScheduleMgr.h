@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCClearScheduleCgi, WCGetScheduleCgi, WCTDatabase, WCTTable;
 
 @interface WCScheduleMgr
@@ -15,7 +17,6 @@
     WCClearScheduleCgi *_deleteAllCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canShowMainFrameEducation; // @synthesize canShowMainFrameEducation=_canShowMainFrameEducation;
 @property(retain, nonatomic) WCClearScheduleCgi *deleteAllCgi; // @synthesize deleteAllCgi=_deleteAllCgi;
 @property(retain, nonatomic) WCGetScheduleCgi *scheduleGetCgi; // @synthesize scheduleGetCgi=_scheduleGetCgi;
@@ -68,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

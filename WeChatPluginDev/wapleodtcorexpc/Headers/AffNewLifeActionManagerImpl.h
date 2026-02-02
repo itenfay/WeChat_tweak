@@ -12,7 +12,6 @@
     AffNewLifeActionManagerCallback *callback;
 }
 
-- (void).cxx_destruct;
 - (void)doActionAsync:(int)arg1 req:(id)arg2;
 - (id)doActionSync:(id)arg1;
 - (void)setCallback:(id)arg1;

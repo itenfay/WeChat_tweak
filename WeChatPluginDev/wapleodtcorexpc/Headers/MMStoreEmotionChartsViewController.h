@@ -14,7 +14,6 @@
     EmoticonStoreFootView *_tailView;
 }
 
-- (void).cxx_destruct;
 - (void)OnEmotionChartsCellTapButton:(id)arg1;
 - (void)MMRefreshTableFooterDidTriggerRefresh:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

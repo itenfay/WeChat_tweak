@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, CIContext, MMFinderLiveTask, MMLiveRemoteTrtcCustomRenderComposeInitParam, MMLiveRemoteTrtcCustomRenderComposeMetricsMonitor, MMLiveTaskId, MMWeEffectManager, NSMutableDictionary, NSString, UIView;
 
@@ -47,7 +48,6 @@
     MMLiveRemoteTrtcCustomRenderComposeMetricsMonitor *_metricsMonitor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveRemoteTrtcCustomRenderComposeMetricsMonitor *metricsMonitor; // @synthesize metricsMonitor=_metricsMonitor;
 @property(retain, nonatomic) CIContext *tranferContext; // @synthesize tranferContext=_tranferContext;
 @property _Bool isRenderPrepareWaitOverTime; // @synthesize isRenderPrepareWaitOverTime=_isRenderPrepareWaitOverTime;
@@ -183,4 +183,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -18,7 +18,6 @@
 }
 
 + (id)parseLyricSentence:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *lyricSegmentList; // @synthesize lyricSegmentList=_lyricSegmentList;
 @property(nonatomic) unsigned long long initWordsCnt; // @synthesize initWordsCnt=_initWordsCnt;
 @property(nonatomic) unsigned long long initSegmentsCnt; // @synthesize initSegmentsCnt=_initSegmentsCnt;

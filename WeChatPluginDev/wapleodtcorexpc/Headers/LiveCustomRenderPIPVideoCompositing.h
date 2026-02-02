@@ -20,7 +20,6 @@
     WCPIPVideoFrame *_emptyVideoFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPIPVideoFrame *emptyVideoFrame; // @synthesize emptyVideoFrame=_emptyVideoFrame;
 @property(retain, nonatomic) CIContext *ciContext; // @synthesize ciContext=_ciContext;
 @property(retain, nonatomic) AVVideoCompositionRenderContext *renderContext; // @synthesize renderContext=_renderContext;

@@ -14,7 +14,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(copy) NSString *destPath; // @synthesize destPath=_destPath;
 @property(copy, nonatomic) NSString *roadRootPath; // @synthesize roadRootPath=_roadRootPath;
 - (void)writeDataToFile:(id)arg1 filePath:(id)arg2;

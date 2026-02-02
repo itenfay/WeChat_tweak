@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, NSURLSession, WADownloadFileConfig;
 @protocol OS_dispatch_queue;
@@ -19,7 +20,6 @@
     unsigned int _workerId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int workerId; // @synthesize workerId=_workerId;
 - (void)downloadFileTaskDidEnd:(id)arg1;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
@@ -55,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

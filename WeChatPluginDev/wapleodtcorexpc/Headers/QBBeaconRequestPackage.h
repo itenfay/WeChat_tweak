@@ -39,7 +39,6 @@
 @property(nonatomic) BOOL zipType; // @synthesize zipType;
 @property(nonatomic) BOOL encryType; // @synthesize encryType;
 @property(nonatomic) BOOL platformId; // @synthesize platformId;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)createWUPModel;
 

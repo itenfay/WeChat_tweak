@@ -37,7 +37,6 @@
     WCPayControlData *_fillCardData;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCPayControlData *fillCardData; // @synthesize fillCardData=_fillCardData;
 @property(nonatomic) _Bool bFromKinda; // @synthesize bFromKinda=_bFromKinda;
 @property(retain) FaceRecogPayHandler *faceHandler; // @synthesize faceHandler=_faceHandler;

@@ -13,7 +13,6 @@
 
 + (void)saveSVGData:(id)arg1 urlString:(id)arg2;
 + (id)taskWithConfig:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *dynamicKey; // @synthesize dynamicKey=_dynamicKey;
 @property(retain, nonatomic) WCFinderDynamicIconFetchConfig *config; // @synthesize config=_config;
 - (void)ImageDidFail:(id)arg1;

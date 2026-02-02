@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSString;
 
@@ -15,7 +16,6 @@
     NSMutableArray *_pendingTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingTask; // @synthesize pendingTask=_pendingTask;
 @property(retain, nonatomic) NSString *keyword; // @synthesize keyword=_keyword;
 @property(nonatomic) long long cursor; // @synthesize cursor=_cursor;
@@ -28,4 +28,3 @@
 - (id)init;
 
 @end
-

@@ -19,7 +19,6 @@
     ReaderWrap *_rightReaderWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ReaderWrap *rightReaderWrap; // @synthesize rightReaderWrap=_rightReaderWrap;
 @property(retain, nonatomic) ReaderWrap *leftReaderWrap; // @synthesize leftReaderWrap=_leftReaderWrap;
 @property(nonatomic) __weak id <WeiShiMsgCardMenuDelegate> menuDelegate; // @synthesize menuDelegate=_menuDelegate;

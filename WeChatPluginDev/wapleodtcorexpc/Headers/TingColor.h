@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TingColor : NSObject
 {
@@ -17,4 +18,3 @@
 + (id)defaultBlurColor;
 
 @end
-

@@ -13,7 +13,6 @@
     NSDictionary *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *params; // @synthesize params=_params;
 @property(nonatomic) _Bool result; // @synthesize result=_result;
 - (id)initWithResult:(_Bool)arg1 params:(id)arg2;

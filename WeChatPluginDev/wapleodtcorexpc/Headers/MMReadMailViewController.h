@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAttach, CMail, CMessageWrap, MMLoadingView, MMTableView, NSMutableArray, NSString, NSURLRequest, PushMailWrap, UIButton, UILabel, UIView, WebViewJSLogicImpl, YYWKWebView;
 @protocol MMReadMailViewDelegate;
 
@@ -39,7 +41,6 @@
     id <MMReadMailViewDelegate> _m_mailDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMReadMailViewDelegate> m_mailDelegate; // @synthesize m_mailDelegate=_m_mailDelegate;
 @property(retain, nonatomic) CAttach *m_loadingAttach; // @synthesize m_loadingAttach;
 @property(retain, nonatomic) CMail *mail; // @synthesize mail=_mail;
@@ -135,4 +136,3 @@
 @property(readonly) Class superclass;
 
 @end
-

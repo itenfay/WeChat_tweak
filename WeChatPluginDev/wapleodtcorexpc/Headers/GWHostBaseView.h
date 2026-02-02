@@ -17,7 +17,6 @@
     struct CGRect _curConfigFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *observedViews; // @synthesize observedViews=_observedViews;
 @property(nonatomic) _Bool isChildDirty; // @synthesize isChildDirty=_isChildDirty;
 @property(nonatomic) struct CGRect curConfigFrame; // @synthesize curConfigFrame=_curConfigFrame;

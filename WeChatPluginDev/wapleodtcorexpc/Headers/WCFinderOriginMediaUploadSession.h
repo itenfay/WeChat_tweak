@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderPostOriginInfo, NSString, WCEditVideoInformation;
 
@@ -15,7 +16,6 @@
     WCEditVideoInformation *_originVideoInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canUploadOriginVideo; // @synthesize canUploadOriginVideo=_canUploadOriginVideo;
 @property(retain, nonatomic) WCEditVideoInformation *originVideoInfo; // @synthesize originVideoInfo=_originVideoInfo;
 @property(retain, nonatomic) FinderPostOriginInfo *originInfo; // @synthesize originInfo=_originInfo;
@@ -24,4 +24,3 @@
 - (void)asyncGetOriginalVideoInfoWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
-

@@ -16,7 +16,6 @@
     NSString *_adSelfSeeTips;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *adSelfSeeTips; // @synthesize adSelfSeeTips=_adSelfSeeTips;
 @property(copy, nonatomic) NSString *adDeleteFeedTips; // @synthesize adDeleteFeedTips=_adDeleteFeedTips;
 @property(retain, nonatomic) WCFinderLightDarkIconName *miniShopIcon; // @synthesize miniShopIcon=_miniShopIcon;

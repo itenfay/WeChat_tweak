@@ -14,7 +14,6 @@
     unsigned long long _tagType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long tagType; // @synthesize tagType=_tagType;
 @property(retain, nonatomic) NSString *recommendTag; // @synthesize recommendTag=_recommendTag;
 @property(nonatomic) _Bool showRecommendTag; // @synthesize showRecommendTag=_showRecommendTag;

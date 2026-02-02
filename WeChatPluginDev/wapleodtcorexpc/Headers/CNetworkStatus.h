@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWifiInfo, NSObject, NSRecursiveLock, NSString;
 @protocol NetworkStatusDelegate, OS_dispatch_queue, OS_nw_path_monitor;
 
@@ -38,7 +40,6 @@
 + (id)NetworkTypeDescription;
 + (id)descriptionForNewNetType:(int)arg1;
 + (id)descriptionForNetType:(int)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCellularValid; // @synthesize isCellularValid=_isCellularValid;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cellularQueue; // @synthesize cellularQueue=_cellularQueue;
 @property(retain, nonatomic) NSObject<OS_nw_path_monitor> *cellularMonitor; // @synthesize cellularMonitor=_cellularMonitor;
@@ -79,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

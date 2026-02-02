@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithAppId:(id)arg1 page:(id)arg2 path:(id)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *page; // @synthesize page=_page;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;

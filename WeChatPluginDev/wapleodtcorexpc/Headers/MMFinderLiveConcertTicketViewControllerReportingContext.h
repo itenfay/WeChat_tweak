@@ -16,7 +16,6 @@
     unsigned long long _enterTimestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterTimestamp; // @synthesize enterTimestamp=_enterTimestamp;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(retain, nonatomic) NSString *activityId; // @synthesize activityId=_activityId;

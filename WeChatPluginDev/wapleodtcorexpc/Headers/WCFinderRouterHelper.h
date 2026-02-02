@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderRouterHelper : NSObject
 {
@@ -232,4 +233,3 @@
 + (void)startPickTheSameTemplateWithId:(id)arg1 tempMusicId:(id)arg2 type:(unsigned long long)arg3 optionalParams:(id)arg4 fromVC:(id)arg5;
 
 @end
-

@@ -11,7 +11,6 @@
     NSString *_requestId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *requestId; // @synthesize requestId=_requestId;
 @property(retain, nonatomic) WCFinderJumpSearchUGCParams *params; // @synthesize params=_params;
 - (unsigned long long)feedViewerScene;

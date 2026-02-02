@@ -23,7 +23,6 @@
     struct CGRect _viewBox;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSVGGradient *currentGradient; // @synthesize currentGradient=_currentGradient;
 @property(retain, nonatomic) NSMutableDictionary *gradients; // @synthesize gradients=_gradients;
 @property(nonatomic) _Bool isDefined; // @synthesize isDefined=_isDefined;

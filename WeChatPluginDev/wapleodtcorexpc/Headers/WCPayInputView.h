@@ -29,7 +29,6 @@
     struct CGSize _rectangleSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double startPadding; // @synthesize startPadding=_startPadding;
 @property(nonatomic) long long currentCount; // @synthesize currentCount=_currentCount;
 @property(nonatomic) long long pwdViewStyle; // @synthesize pwdViewStyle=_pwdViewStyle;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString, SightCameraCapture;
 @protocol OS_dispatch_queue, SightCaptureDelegate;
 
@@ -22,7 +24,6 @@
     unsigned int _maasRecordId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int maasRecordId; // @synthesize maasRecordId=_maasRecordId;
 @property(nonatomic) _Bool needAudio; // @synthesize needAudio=_needAudio;
 - (void)setCaptureNeedAudio:(_Bool)arg1;
@@ -154,4 +155,3 @@
 @property(readonly) Class superclass;
 
 @end
-

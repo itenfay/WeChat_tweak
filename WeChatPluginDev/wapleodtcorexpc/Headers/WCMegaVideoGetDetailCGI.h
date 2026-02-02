@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCMegaVideoGetDetailCGI
@@ -15,7 +17,6 @@
     NSString *_encryptedVideoId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *encryptedVideoId; // @synthesize encryptedVideoId=_encryptedVideoId;
 @property(copy, nonatomic) NSString *videoNonceId; // @synthesize videoNonceId=_videoNonceId;
@@ -28,4 +29,3 @@
 - (id)initWithVideoId:(id)arg1 videoNonceId:(id)arg2 encryptedVideoId:(id)arg3 scene:(long long)arg4 successful:(CDUnknownBlockType)arg5 failure:(CDUnknownBlockType)arg6;
 
 @end
-

@@ -33,7 +33,6 @@
     NSString *_m_nsForgetPasswordUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsForgetPasswordUrl; // @synthesize m_nsForgetPasswordUrl=_m_nsForgetPasswordUrl;
 @property(nonatomic) int cert_encrypt_type; // @synthesize cert_encrypt_type=_cert_encrypt_type;
 @property(nonatomic) long long authen_account_type; // @synthesize authen_account_type=_authen_account_type;

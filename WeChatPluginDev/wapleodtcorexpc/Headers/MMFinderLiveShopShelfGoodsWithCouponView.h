@@ -17,7 +17,6 @@
     MMFinderLiveCouponItem *_coupon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveCouponItem *coupon; // @synthesize coupon=_coupon;
 @property(retain, nonatomic) MMFinderLiveShopShelfCouponsSimpleHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic) __weak id <MMFinderLiveShopShelfGoodsWithCouponViewDelegate> delegate; // @synthesize delegate=_delegate;

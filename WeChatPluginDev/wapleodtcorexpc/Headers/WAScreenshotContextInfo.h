@@ -34,7 +34,6 @@
 + (void)PBArrayAdd_nickname;
 + (void)PBArrayAdd_appId;
 + (void)PBArrayAdd_assetId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int versionType; // @synthesize versionType=_versionType;
 @property(nonatomic) __weak id weakUserInfo; // @synthesize weakUserInfo=_weakUserInfo;
 @property(copy, nonatomic) NSString *imageKey; // @synthesize imageKey=_imageKey;

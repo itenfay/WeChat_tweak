@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CMessageWrap, ForwardMessageLogicController, NSArray, NSData, NSString, NewLifeFeedScrollActionDelegateObject, RecentForwardScrollView, WCFinderDataItem;
 
 @interface NewLifeScrollActionSheet
@@ -22,7 +24,6 @@
 }
 
 + (id)getForwardExtraInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *thumbData; // @synthesize thumbData=_thumbData;
 @property(retain, nonatomic) NSArray *statusWordingList; // @synthesize statusWordingList=_statusWordingList;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogic; // @synthesize forwardLogic=_forwardLogic;
@@ -87,4 +88,3 @@
 @property(readonly) Class superclass;
 
 @end
-

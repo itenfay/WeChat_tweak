@@ -12,7 +12,6 @@
     MMKScrollViewOnScrollCallback *_callback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMKScrollViewOnScrollCallback *callback; // @synthesize callback=_callback;
 @property(nonatomic) _Bool m_shouldShowScrollBar; // @synthesize m_shouldShowScrollBar=_m_shouldShowScrollBar;
 @property(retain, nonatomic) KindaUIScrollView *m_scrollView; // @synthesize m_scrollView=_m_scrollView;

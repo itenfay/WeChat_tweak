@@ -18,7 +18,6 @@
     unsigned long long _startTimeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTimeMillSecond; // @synthesize isTimeMillSecond=_isTimeMillSecond;
 @property(nonatomic) _Bool isImportant; // @synthesize isImportant=_isImportant;
 @property(nonatomic) _Bool isReportNow; // @synthesize isReportNow=_isReportNow;

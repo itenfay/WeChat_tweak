@@ -19,7 +19,6 @@
     NSString *_keyRequest;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRoute13542To27220; // @synthesize shouldRoute13542To27220=_shouldRoute13542To27220;
 @property(retain, nonatomic) NSString *keyRequest; // @synthesize keyRequest=_keyRequest;
 @property(retain, nonatomic) NSString *keyResult; // @synthesize keyResult=_keyResult;

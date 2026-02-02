@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_finderLiveShareItem;
 + (void)PBArrayAdd_finderDataItem;
 + (void)PBArrayAdd_liveId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveShareItem *finderLiveShareItem; // @synthesize finderLiveShareItem=_finderLiveShareItem;
 @property(retain, nonatomic) WCFinderDataItem *finderDataItem; // @synthesize finderDataItem=_finderDataItem;
 @property(nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;

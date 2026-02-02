@@ -11,7 +11,6 @@
     CalendarStatisticsArgs *finderCalendarArgs;
 }
 
-- (void).cxx_destruct;
 - (void)finder19943:(id)arg1;
 - (id)checkToReturnAiFinderInfo;
 - (void)quitFindFriendEntryController:(id)arg1 andNext:(id)arg2 andStayTimeMs:(unsigned long long)arg3;

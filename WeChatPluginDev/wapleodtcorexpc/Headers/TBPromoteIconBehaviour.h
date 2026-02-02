@@ -13,7 +13,6 @@
     unsigned long long _showCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long showCount; // @synthesize showCount=_showCount;
 @property(copy, nonatomic) NSString *promoteID; // @synthesize promoteID=_promoteID;
 - (id)descriptionDictionary;

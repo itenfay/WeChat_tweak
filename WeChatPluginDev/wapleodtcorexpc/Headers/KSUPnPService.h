@@ -16,7 +16,6 @@
 }
 
 + (id)defaultService;
-- (void).cxx_destruct;
 @property(retain, nonatomic) KSUPnPDiscoverer *discoverer; // @synthesize discoverer=_discoverer;
 @property(copy, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(nonatomic) __weak id <KSUPnPServiceObserver> observer; // @synthesize observer=_observer;

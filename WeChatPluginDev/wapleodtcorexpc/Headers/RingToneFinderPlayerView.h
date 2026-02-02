@@ -26,7 +26,6 @@
     UIImage *_defaultImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *defaultImage; // @synthesize defaultImage=_defaultImage;
 @property(retain, nonatomic) UIImageView *briefImageView; // @synthesize briefImageView=_briefImageView;
 @property(retain, nonatomic) WCFinderFeedContentVM *feedContentVM; // @synthesize feedContentVM=_feedContentVM;

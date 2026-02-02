@@ -14,7 +14,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRedPacketAnchorPromoteInfo *redPacketPromoteInfo; // @synthesize redPacketPromoteInfo=_redPacketPromoteInfo;
 @property(retain, nonatomic) MMUILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

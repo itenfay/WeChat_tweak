@@ -13,7 +13,6 @@
     void *_recorder;
 }
 
-- (void).cxx_destruct;
 @property void *recorder; // @synthesize recorder=_recorder;
 @property(copy, nonatomic) NSString *replaykitObserverKey; // @synthesize replaykitObserverKey=_replaykitObserverKey;
 - (void)onBroadcastExtResumed;

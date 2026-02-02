@@ -21,7 +21,6 @@
 }
 
 + (id)initFromCustomMenuItem:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int placeId; // @synthesize placeId=_placeId;
 @property(retain, nonatomic) NSString *targetUrl; // @synthesize targetUrl=_targetUrl;
 @property(nonatomic) int actionType; // @synthesize actionType=_actionType;

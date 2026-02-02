@@ -33,7 +33,6 @@
 + (void)PBArrayAdd_username;
 + (void)PBArrayAdd_nsSeparator;
 + (void)PBArrayAdd_content;
-- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(nonatomic) unsigned int msgCreateTime; // @synthesize msgCreateTime=_msgCreateTime;
 @property(nonatomic) long long itemNum; // @synthesize itemNum=_itemNum;

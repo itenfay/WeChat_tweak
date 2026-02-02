@@ -18,7 +18,6 @@
     _Bool _isUserClickedBtn;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUserClickedBtn; // @synthesize isUserClickedBtn=_isUserClickedBtn;
 @property(nonatomic) __weak id <ShakeTypeBarDelegate> m_delegate; // @synthesize m_delegate;
 - (void)processBtnClicked:(id)arg1;

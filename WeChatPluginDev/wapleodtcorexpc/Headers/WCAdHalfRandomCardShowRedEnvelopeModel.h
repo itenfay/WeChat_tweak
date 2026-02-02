@@ -13,7 +13,6 @@
     NSString *_cardId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int cardIdType; // @synthesize cardIdType=_cardIdType;
 @property(retain, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;
 @property(retain, nonatomic) NSString *pageId; // @synthesize pageId=_pageId;

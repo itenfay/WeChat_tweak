@@ -12,7 +12,6 @@
     _Bool _bEnable;
 }
 
-- (void).cxx_destruct;
 - (void)reportOwnerRecord;
 - (void)reportHumenRecord;
 - (void)onAuthOK;

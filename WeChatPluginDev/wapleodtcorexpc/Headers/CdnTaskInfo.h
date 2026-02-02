@@ -72,7 +72,6 @@
 
 + (_Bool)isServerBehavior:(long long)arg1;
 + (unsigned int)GetStatNetworkType;
-- (void).cxx_destruct;
 @property(nonatomic) long long downloadBehavior; // @synthesize downloadBehavior=_downloadBehavior;
 @property(nonatomic) _Bool hadTryCalcPHash; // @synthesize hadTryCalcPHash=_hadTryCalcPHash;
 @property(nonatomic) _Bool hadTryCaculateOriginSourceMD5; // @synthesize hadTryCaculateOriginSourceMD5=_hadTryCaculateOriginSourceMD5;

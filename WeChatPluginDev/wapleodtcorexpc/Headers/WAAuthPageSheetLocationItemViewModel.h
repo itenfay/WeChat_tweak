@@ -14,7 +14,6 @@
     long long _index;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

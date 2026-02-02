@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveSFBarrageItemInfo, NSArray, NSMutableArray;
 
@@ -21,7 +22,6 @@
     CDUnknownBlockType _hasBarrageMovingAtTrackCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType hasBarrageMovingAtTrackCallback; // @synthesize hasBarrageMovingAtTrackCallback=_hasBarrageMovingAtTrackCallback;
 @property(copy, nonatomic) CDUnknownBlockType invokeReRunBlock; // @synthesize invokeReRunBlock=_invokeReRunBlock;
 @property(nonatomic) unsigned long long trackCount; // @synthesize trackCount=_trackCount;
@@ -41,4 +41,3 @@
 - (id)initWithContentSize:(struct CGSize)arg1 trackPosYPercentList:(id)arg2;
 
 @end
-

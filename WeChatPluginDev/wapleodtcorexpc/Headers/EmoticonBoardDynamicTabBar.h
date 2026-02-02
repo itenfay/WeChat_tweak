@@ -37,7 +37,6 @@
     struct UIEdgeInsets _inset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) EmoticonBoardDynamicTabBarLayout *collectionLayout; // @synthesize collectionLayout=_collectionLayout;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

@@ -21,7 +21,6 @@
     long long tag;
 }
 
-- (void).cxx_destruct;
 - (long long)searchForTermAfterPreBuffering:(long long)arg1;
 - (unsigned long long)readLengthForTermWithPreBuffer:(id)arg1 found:(_Bool *)arg2;
 - (unsigned long long)readLengthForTermWithHint:(unsigned long long)arg1 shouldPreBuffer:(_Bool *)arg2;

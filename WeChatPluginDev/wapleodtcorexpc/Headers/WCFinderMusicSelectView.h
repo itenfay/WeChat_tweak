@@ -20,7 +20,6 @@
     WCFinderMusicSelectViewInitParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMusicSelectViewInitParams *params; // @synthesize params=_params;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) MMUIButton *osButton; // @synthesize osButton=_osButton;

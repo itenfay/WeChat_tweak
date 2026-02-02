@@ -19,7 +19,6 @@
     NSString *_mobileInputed;
 }
 
-- (void).cxx_destruct;
 @property _Bool hasBeenEdited; // @synthesize hasBeenEdited=_hasBeenEdited;
 @property(retain) NSString *mobileInputed; // @synthesize mobileInputed=_mobileInputed;
 @property(retain) KindaRichLabelViewV2 *tipsLabel; // @synthesize tipsLabel=_tipsLabel;

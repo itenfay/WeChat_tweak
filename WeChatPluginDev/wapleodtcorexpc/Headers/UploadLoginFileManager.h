@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
@@ -16,7 +17,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType callbakcblock; // @synthesize callbakcblock=_callbakcblock;
 @property _Bool isUploaded; // @synthesize isUploaded=_isUploaded;
 @property(retain, nonatomic) NSString *rootDir; // @synthesize rootDir=_rootDir;
@@ -34,4 +34,3 @@
 - (id)init;
 
 @end
-

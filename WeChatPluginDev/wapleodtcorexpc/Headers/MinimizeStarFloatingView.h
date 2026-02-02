@@ -32,7 +32,6 @@
     struct CGRect _origiFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long animationSerial; // @synthesize animationSerial=_animationSerial;
 @property(nonatomic) double animateDurationForAdsorbToWindow; // @synthesize animateDurationForAdsorbToWindow=_animateDurationForAdsorbToWindow;
 @property(nonatomic) _Bool animatedForAdsorbToWindow; // @synthesize animatedForAdsorbToWindow=_animatedForAdsorbToWindow;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, EditImageAttr, EditVideoAttr, EditVideoInitialView, MMAsset, NSString, UIImage, WCEditViewControllerUIConfig;
 @protocol EditVideoLogicItemDelegate, EditVideoOptionsDelegate;
 
@@ -27,7 +29,6 @@
     WCEditViewControllerUIConfig *_uiConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideVideoOriginalSound; // @synthesize hideVideoOriginalSound=_hideVideoOriginalSound;
 @property(nonatomic) _Bool isEmoticonBoardSearchEnabled; // @synthesize isEmoticonBoardSearchEnabled=_isEmoticonBoardSearchEnabled;
 @property(retain, nonatomic) WCEditViewControllerUIConfig *uiConfig; // @synthesize uiConfig=_uiConfig;
@@ -85,4 +86,3 @@
 @property(readonly) Class superclass;
 
 @end
-

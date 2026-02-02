@@ -30,7 +30,6 @@
     NSString *_anonymousOnlineCountStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *anonymousOnlineCountStr; // @synthesize anonymousOnlineCountStr=_anonymousOnlineCountStr;
 @property(retain, nonatomic) LiveOnlineInfo *exposedOnlineInfo; // @synthesize exposedOnlineInfo=_exposedOnlineInfo;
 @property(retain, nonatomic) NSData *businessFilterBuffer; // @synthesize businessFilterBuffer=_businessFilterBuffer;

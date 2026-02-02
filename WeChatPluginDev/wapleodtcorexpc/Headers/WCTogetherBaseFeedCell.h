@@ -24,7 +24,6 @@
 + (double)heightForViewItem:(id)arg1 inTableView:(id)arg2;
 + (id)createFriendsLabel;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) InteractionLabel *locationLabel; // @synthesize locationLabel=_locationLabel;
 @property(retain, nonatomic) MMUILabel *friendsLabel; // @synthesize friendsLabel=_friendsLabel;
 @property(retain, nonatomic) TextStateItemView *textStateView; // @synthesize textStateView=_textStateView;

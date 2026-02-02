@@ -13,7 +13,6 @@
     NSString *_tip;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tip; // @synthesize tip=_tip;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;
 - (void)layoutSubviews;

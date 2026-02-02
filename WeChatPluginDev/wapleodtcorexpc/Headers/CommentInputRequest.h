@@ -21,7 +21,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithShow:(id)arg1 commentInfo:(id)arg2 canSwitch:(id)arg3 useIdentityType:(id)arg4 enableMention:(id)arg5 showInputBar:(id)arg6 disableShowKeyboard:(id)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *disableShowKeyboard; // @synthesize disableShowKeyboard=_disableShowKeyboard;
 @property(retain, nonatomic) NSNumber *showInputBar; // @synthesize showInputBar=_showInputBar;
 @property(retain, nonatomic) NSNumber *enableMention; // @synthesize enableMention=_enableMention;

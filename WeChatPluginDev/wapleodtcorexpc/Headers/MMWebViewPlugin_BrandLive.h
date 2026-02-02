@@ -12,7 +12,6 @@
     NSMutableDictionary *_customBrandLiveDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *customBrandLiveDict; // @synthesize customBrandLiveDict=_customBrandLiveDict;
 @property(nonatomic) _Bool hasProfileTitleViewLiveReport; // @synthesize hasProfileTitleViewLiveReport=_hasProfileTitleViewLiveReport;
 @property(nonatomic) _Bool hasLiveTitleViewReport; // @synthesize hasLiveTitleViewReport=_hasLiveTitleViewReport;

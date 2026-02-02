@@ -24,7 +24,6 @@
     long long _finderFromScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long finderFromScene; // @synthesize finderFromScene=_finderFromScene;
 @property(nonatomic) int brandUISubScene; // @synthesize brandUISubScene=_brandUISubScene;
 @property(nonatomic) int brandUIScene; // @synthesize brandUIScene=_brandUIScene;

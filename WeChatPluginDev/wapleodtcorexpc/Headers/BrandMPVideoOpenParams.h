@@ -17,7 +17,6 @@
     struct CGRect _originRect;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSData *videoThumbData; // @synthesize videoThumbData=_videoThumbData;
 @property(nonatomic) struct CGRect originRect; // @synthesize originRect=_originRect;

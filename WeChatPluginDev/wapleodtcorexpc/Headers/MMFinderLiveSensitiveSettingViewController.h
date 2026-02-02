@@ -14,7 +14,6 @@
 }
 
 + (void)presentSensitiveSettingVCFromVC:(id)arg1 taskId:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveSensitiveLogic *sensitiveLogic; // @synthesize sensitiveLogic=_sensitiveLogic;
 @property(retain, nonatomic) MMFinderLiveCommentSensitiveTableViewModel *tableViewModel; // @synthesize tableViewModel=_tableViewModel;
 @property(retain, nonatomic) MMFinderLiveSensitiveTableView *tableView; // @synthesize tableView=_tableView;

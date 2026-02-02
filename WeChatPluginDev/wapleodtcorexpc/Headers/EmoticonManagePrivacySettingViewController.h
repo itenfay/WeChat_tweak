@@ -10,7 +10,6 @@
     WCTableViewManager *_tableViewMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTableViewManager *tableViewMgr; // @synthesize tableViewMgr=_tableViewMgr;
 - (void)onPersonalizedRecommendSwitchChanged:(id)arg1;
 - (void)onLocalOcrRecommendSwitchChanged:(id)arg1;

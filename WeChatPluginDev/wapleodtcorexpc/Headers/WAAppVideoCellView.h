@@ -16,7 +16,6 @@
     NSString *_appThumbUrl;
 }
 
-- (void).cxx_destruct;
 - (void)OnCdnVideoPreloadCompleted:(id)arg1;
 - (void)OnCdnDownloadProgress:(id)arg1;
 - (void)OnCdnDownload:(id)arg1;

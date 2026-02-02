@@ -13,7 +13,6 @@
     id <IWATimelineCommitDelegate> _commitDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IWATimelineCommitDelegate> commitDelegate; // @synthesize commitDelegate=_commitDelegate;
 - (void)onDoneForwardForForwardView:(id)arg1;
 - (void)onCancelForwardForForwardView:(id)arg1;

@@ -10,7 +10,6 @@
     NSDictionary *_eventDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *eventDic; // @synthesize eventDic=_eventDic;
 - (void)OnRecordDenied;
 - (void)OnRecordPermissioned;

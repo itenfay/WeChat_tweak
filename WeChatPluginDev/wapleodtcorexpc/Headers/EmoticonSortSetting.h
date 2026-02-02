@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_m_sortPids;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_sortPids; // @synthesize m_sortPids=_m_sortPids;
 - (id)getOldSortPackageListWithDownloadedTusiji:(id)arg1;
 - (id)getSortPackageListWithDownloadedTusiji:(id)arg1;

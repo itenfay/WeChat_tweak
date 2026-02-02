@@ -14,7 +14,6 @@
     long long length;
 }
 
-- (void).cxx_destruct;
 
 @end
 

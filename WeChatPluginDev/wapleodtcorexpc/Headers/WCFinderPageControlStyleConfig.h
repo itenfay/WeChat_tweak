@@ -21,7 +21,6 @@
 }
 
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(nonatomic) double dotShadowRadius; // @synthesize dotShadowRadius=_dotShadowRadius;
 @property(nonatomic) struct CGSize dotShadowOffset; // @synthesize dotShadowOffset=_dotShadowOffset;
 @property(retain, nonatomic) UIColor *dotHighlightShadowColor; // @synthesize dotHighlightShadowColor=_dotHighlightShadowColor;

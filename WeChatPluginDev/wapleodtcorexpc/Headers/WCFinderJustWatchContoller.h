@@ -20,7 +20,6 @@
 }
 
 + (id)controllerWithNotifyKey:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) _Bool hiddenJustWatchBanner; // @synthesize hiddenJustWatchBanner=_hiddenJustWatchBanner;
 @property(nonatomic) long long watchIndex; // @synthesize watchIndex=_watchIndex;

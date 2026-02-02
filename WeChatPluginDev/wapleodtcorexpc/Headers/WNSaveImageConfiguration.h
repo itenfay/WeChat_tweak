@@ -23,7 +23,6 @@
     NSMutableArray *_arrSelectedIndex;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrSelectedIndex; // @synthesize arrSelectedIndex=_arrSelectedIndex;
 @property(nonatomic) unsigned long long colorType; // @synthesize colorType=_colorType;
 @property(retain, nonatomic) UIColor *logoColor; // @synthesize logoColor=_logoColor;

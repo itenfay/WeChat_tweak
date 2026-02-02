@@ -12,7 +12,6 @@
 }
 
 + (_Bool)canCreateSectionDataWithMsgWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cachedRowHeightMap; // @synthesize cachedRowHeightMap=_cachedRowHeightMap;
 @property(readonly, nonatomic) BTRecommendMsgData *recommendData; // @synthesize recommendData=_recommendData;
 - (void)updateDataWithObjectIdArr:(id)arg1;

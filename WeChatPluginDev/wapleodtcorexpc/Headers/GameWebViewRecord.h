@@ -13,7 +13,6 @@
     NSMutableDictionary *_webviewControllerDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *webviewControllerDic; // @synthesize webviewControllerDic=_webviewControllerDic;
 @property(retain, nonatomic) NSMutableArray *webviewControllerArray; // @synthesize webviewControllerArray=_webviewControllerArray;
 - (unsigned long long)objectArrayCnt;

@@ -24,7 +24,6 @@
     ECSTimelineReportLogic *_reportLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableBrandService; // @synthesize enableBrandService=_enableBrandService;
 @property(nonatomic) _Bool enableAd; // @synthesize enableAd=_enableAd;
 @property(nonatomic) _Bool canShowPersonalCenter; // @synthesize canShowPersonalCenter=_canShowPersonalCenter;

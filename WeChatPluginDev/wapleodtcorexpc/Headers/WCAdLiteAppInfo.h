@@ -16,7 +16,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *minVersion; // @synthesize minVersion=_minVersion;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;
 @property(retain, nonatomic) NSString *page; // @synthesize page=_page;

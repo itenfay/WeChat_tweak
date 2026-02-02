@@ -27,7 +27,6 @@
 + (double)calculateScrollViewHeight;
 + (double)calculateHeight;
 + (id)certificationImageWithBizInfo:(id)arg1;
-- (void).cxx_destruct;
 - (id)init;
 - (void)onCellExposedWithItem:(id)arg1 pos:(long long)arg2;
 - (void)onCellClickedWithItem:(id)arg1 pos:(long long)arg2;

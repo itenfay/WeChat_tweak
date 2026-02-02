@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface RoamManager : NSObject
 {
@@ -15,7 +16,6 @@
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)setScheduleLevel:(int)arg1;
 - (void)triggerAutoBackupCheck;
@@ -56,4 +56,3 @@
 - (shared_ptr_322d64af)getDispatcher;
 
 @end
-

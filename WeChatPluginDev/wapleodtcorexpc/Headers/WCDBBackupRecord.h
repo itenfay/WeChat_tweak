@@ -42,7 +42,6 @@
 + (void)PBArrayAdd_startRecordTime;
 + (void)PBArrayAdd_backupTimes;
 + (void)PBArrayAdd_bakeupSize;
-- (void).cxx_destruct;
 @property(nonatomic) long long incrementalMaterialSize; // @synthesize incrementalMaterialSize=_incrementalMaterialSize;
 @property(nonatomic) unsigned int incrementalBackupTimes; // @synthesize incrementalBackupTimes=_incrementalBackupTimes;
 @property(nonatomic) unsigned long long beginBackupCPUTime; // @synthesize beginBackupCPUTime=_beginBackupCPUTime;

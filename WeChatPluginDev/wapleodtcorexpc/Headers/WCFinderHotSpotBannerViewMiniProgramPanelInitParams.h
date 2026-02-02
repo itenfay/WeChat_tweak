@@ -13,7 +13,6 @@
     NSString *_livingFinderUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *livingFinderUsername; // @synthesize livingFinderUsername=_livingFinderUsername;
 @property(retain, nonatomic) WCFinderLiveProductShareItem *productShareItem; // @synthesize productShareItem=_productShareItem;
 

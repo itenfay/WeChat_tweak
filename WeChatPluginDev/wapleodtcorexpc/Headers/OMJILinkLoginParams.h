@@ -14,7 +14,6 @@
     long long _loginType;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long loginType; // @synthesize loginType=_loginType;
 @property(readonly, copy, nonatomic) NSString *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(readonly, copy, nonatomic) NSString *authCode; // @synthesize authCode=_authCode;

@@ -32,7 +32,6 @@
 + (void)PBArrayAdd_openIMDescId;
 + (void)PBArrayAdd_customInfo;
 + (void)PBArrayAdd_customInfoVisible;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *customToolBarInfo; // @synthesize customToolBarInfo=_customToolBarInfo;
 @property(nonatomic) unsigned int kefuType; // @synthesize kefuType=_kefuType;
 @property(retain, nonatomic) NSString *customInfo; // @synthesize customInfo=_customInfo;

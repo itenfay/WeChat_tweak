@@ -15,7 +15,6 @@
     NSString *_scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needSyncEscape; // @synthesize needSyncEscape=_needSyncEscape;
 @property(nonatomic) _Bool isForceShow; // @synthesize isForceShow=_isForceShow;
 @property(retain, nonatomic) NSString *scene; // @synthesize scene=_scene;

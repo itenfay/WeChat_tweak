@@ -17,7 +17,6 @@
 
 + (id)genExternInfoWithNoticeID:(id)arg1 withNew:(_Bool)arg2 sourceScene:(int)arg3;
 + (id)genExternInfoWithNoticeID:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictScene2LayerID; // @synthesize dictScene2LayerID=_dictScene2LayerID;
 @property(retain, nonatomic) NSMutableDictionary *gameDescSDK; // @synthesize gameDescSDK=_gameDescSDK;
 @property(retain, nonatomic) NSMutableDictionary *gameLaunchTime; // @synthesize gameLaunchTime=_gameLaunchTime;

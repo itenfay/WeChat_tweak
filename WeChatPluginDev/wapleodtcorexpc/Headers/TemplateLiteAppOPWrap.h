@@ -22,7 +22,6 @@
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
 + (id)liteAppOPWrapWithJSON:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *defaultUrl; // @synthesize defaultUrl=_defaultUrl;
 @property(nonatomic) double heightPercent; // @synthesize heightPercent=_heightPercent;
 @property(nonatomic) _Bool isForbidRightgesture; // @synthesize isForbidRightgesture=_isForbidRightgesture;

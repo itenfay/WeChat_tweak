@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FixTitleColorButton, MMFinderLiveCreateVoteHeaderTableViewCell, MMFinderLiveLiveVoteChoice, MMFinderLiveLiveVoteItem, MMFinderLiveTaskId, MMFinderLiveVoteDurationPickerView, MMTableView, NSIndexPath, NSString, UIView;
 
 @interface MMFinderLiveCreateVoteViewController
@@ -24,7 +26,6 @@
 
 + (id)createVoteViewControllerWithTaskId:(id)arg1 successBlock:(CDUnknownBlockType)arg2;
 + (void)presentCreateVoteInViewController:(id)arg1 taskId:(id)arg2 successBlock:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveVoteDurationPickerView *durationPickerView; // @synthesize durationPickerView=_durationPickerView;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) UIView *sectionRoundView; // @synthesize sectionRoundView=_sectionRoundView;
@@ -93,4 +94,3 @@
 @property(readonly) Class superclass;
 
 @end
-

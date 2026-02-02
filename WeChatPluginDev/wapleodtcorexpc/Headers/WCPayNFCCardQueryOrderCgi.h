@@ -15,7 +15,6 @@
     OrderQueryOrderRequest *_m_queryOrderRequest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderQueryOrderRequest *m_queryOrderRequest; // @synthesize m_queryOrderRequest=_m_queryOrderRequest;
 @property unsigned long long m_currentRetryCount; // @synthesize m_currentRetryCount=_m_currentRetryCount;
 @property unsigned long long m_maxRetryCount; // @synthesize m_maxRetryCount=_m_maxRetryCount;

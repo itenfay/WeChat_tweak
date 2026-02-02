@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderFeedArray, WCFinderFeedGroup, WCFinderStreamLoadingState;
 @protocol WCFinderHistoryViewModelDelegate;
@@ -19,7 +20,6 @@
 }
 
 + (CDUnknownBlockType)mapSessionBlock;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requestId; // @synthesize requestId=_requestId;
 @property(nonatomic) _Bool showSearchIcon; // @synthesize showSearchIcon=_showSearchIcon;
 @property(nonatomic) long long historyRecardDays; // @synthesize historyRecardDays=_historyRecardDays;
@@ -36,4 +36,3 @@
 - (id)init;
 
 @end
-

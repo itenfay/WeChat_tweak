@@ -10,7 +10,6 @@
     WCMomentsPostReportSession *_currentActiveSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsPostReportSession *currentActiveSession; // @synthesize currentActiveSession=_currentActiveSession;
 - (void)deactivateSessionIfNeeded:(id)arg1;
 - (id)deactivateCurrentSession;

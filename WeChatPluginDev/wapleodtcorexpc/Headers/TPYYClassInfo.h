@@ -23,7 +23,6 @@
 
 + (id)classInfoWithClassName:(id)arg1;
 + (id)classInfoWithClass:(Class)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *propertyInfos; // @synthesize propertyInfos=_propertyInfos;
 @property(readonly, nonatomic) NSDictionary *methodInfos; // @synthesize methodInfos=_methodInfos;
 @property(readonly, nonatomic) NSDictionary *ivarInfos; // @synthesize ivarInfos=_ivarInfos;

@@ -12,7 +12,6 @@
     NSMutableDictionary *m_dicItemArchives;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *m_dicItemArchives; // @synthesize m_dicItemArchives;
 @property(retain, nonatomic) NSMutableArray *m_arrShowIDs; // @synthesize m_arrShowIDs;
 @property(nonatomic) _Bool m_bShowNew; // @synthesize m_bShowNew;

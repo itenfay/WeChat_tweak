@@ -10,7 +10,6 @@
     WCPayOverseaGetOfflinePayUrlCgi *_getOfflinePayUrlCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayOverseaGetOfflinePayUrlCgi *getOfflinePayUrlCgi; // @synthesize getOfflinePayUrlCgi=_getOfflinePayUrlCgi;
 - (void)call:(id)arg1;
 - (void)webViewDidReturn:(id)arg1;

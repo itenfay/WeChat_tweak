@@ -15,7 +15,6 @@
     NSArray *_enhancingTidList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *enhancingTidList; // @synthesize enhancingTidList=_enhancingTidList;
 @property(retain, nonatomic) WCFinderDataItem *enhancedByThisItem; // @synthesize enhancedByThisItem=_enhancedByThisItem;
 @property(retain, nonatomic) NSNumber *lastTriggerEvent; // @synthesize lastTriggerEvent=_lastTriggerEvent;

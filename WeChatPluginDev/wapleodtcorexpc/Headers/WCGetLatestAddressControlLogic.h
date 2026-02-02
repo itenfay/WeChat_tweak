@@ -13,7 +13,6 @@
     NSString *m_nsAppUserName;
 }
 
-- (void).cxx_destruct;
 - (void)OnNotAcceptGetLatestAddress;
 - (void)OnAcceptGetLatestAddress;
 - (void)OnGetLatestAddress:(id)arg1 UserName:(id)arg2 NickName:(id)arg3 Error:(id)arg4;

@@ -22,7 +22,6 @@
 + (double)getEmoctionScaleFor:(double)arg1 maxLength:(double)arg2;
 + (struct CGSize)getEmoctionViewShowSize:(struct CGSize)arg1 maxLength:(double)arg2;
 + (struct CGSize)getEmojiSize:(id)arg1 maxLength:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *failRetryBtn; // @synthesize failRetryBtn=_failRetryBtn;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UIImageView *emoctionView; // @synthesize emoctionView=_emoctionView;

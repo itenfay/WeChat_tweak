@@ -68,7 +68,6 @@
     unsigned long long _responsedDataWhenPlayerReady;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHadStopObserve; // @synthesize bHadStopObserve=_bHadStopObserve;
 @property(nonatomic) float bufferPosWhenPlayerReady; // @synthesize bufferPosWhenPlayerReady=_bufferPosWhenPlayerReady;
 @property(nonatomic) unsigned long long responsedDataWhenPlayerReady; // @synthesize responsedDataWhenPlayerReady=_responsedDataWhenPlayerReady;

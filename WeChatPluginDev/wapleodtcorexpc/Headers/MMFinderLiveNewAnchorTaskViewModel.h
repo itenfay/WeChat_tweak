@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSMutableArray, NSMutableDictionary;
 @protocol MMFinderLiveNewAnchorTaskViewModelDelegate;
@@ -20,7 +21,6 @@
     NSMutableArray *_needGuideTargetTypes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *needGuideTargetTypes; // @synthesize needGuideTargetTypes=_needGuideTargetTypes;
 @property(retain, nonatomic) NSMutableDictionary *targetProgressDic; // @synthesize targetProgressDic=_targetProgressDic;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
@@ -52,4 +52,3 @@
 - (id)initWithTaskId:(id)arg1 scene:(unsigned int)arg2;
 
 @end
-

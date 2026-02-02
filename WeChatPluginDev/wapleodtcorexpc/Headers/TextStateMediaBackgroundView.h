@@ -12,7 +12,6 @@
     MMTextStateMediaItem *_mediaItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTextStateMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 - (void)onTextStateMediaThumbDownloadFail:(id)arg1;
 - (void)onTextStateMediaThumbDownloadSuccess:(id)arg1;

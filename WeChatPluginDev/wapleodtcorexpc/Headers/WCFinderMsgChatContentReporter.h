@@ -28,7 +28,6 @@
     NSString *_sourceFeed;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceFeed; // @synthesize sourceFeed=_sourceFeed;
 @property(nonatomic) _Bool needReport; // @synthesize needReport=_needReport;
 @property(nonatomic) unsigned long long enterTimeInMs; // @synthesize enterTimeInMs=_enterTimeInMs;

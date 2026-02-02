@@ -21,7 +21,6 @@
     unsigned long long _beforeCleanSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long beforeCleanSize; // @synthesize beforeCleanSize=_beforeCleanSize;
 @property(retain, nonatomic) NSArray *cleanArray; // @synthesize cleanArray=_cleanArray;
 @property(nonatomic) float estimatedTimeMins; // @synthesize estimatedTimeMins=_estimatedTimeMins;

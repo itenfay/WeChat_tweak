@@ -21,7 +21,6 @@
     MMFinderLiveFeedStreamCarouselBaseItem<MMFinderLiveFeedStreamCarouselItemProtocol> *_waitAnimationFinishToRemovedItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDelaying; // @synthesize isDelaying=_isDelaying;
 @property(retain, nonatomic) MMFinderLiveFeedStreamCarouselBaseItem<MMFinderLiveFeedStreamCarouselItemProtocol> *waitAnimationFinishToRemovedItem; // @synthesize waitAnimationFinishToRemovedItem=_waitAnimationFinishToRemovedItem;
 @property(nonatomic) _Bool isIsAnimation; // @synthesize isIsAnimation=_isIsAnimation;

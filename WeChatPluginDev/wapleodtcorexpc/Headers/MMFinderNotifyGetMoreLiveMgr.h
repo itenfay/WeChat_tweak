@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTimer, NSArray, NSMutableDictionary, NSMutableSet, NSString, WCFinderLiveHomePageViewController;
 
 @interface MMFinderNotifyGetMoreLiveMgr
@@ -20,7 +22,6 @@
 }
 
 + (id)uniqueKeyWithObjectId:(id)arg1 tipsId:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *homePageVCCacheTimer; // @synthesize homePageVCCacheTimer=_homePageVCCacheTimer;
 @property(nonatomic) unsigned long long homePageVCLastLeaveTs; // @synthesize homePageVCLastLeaveTs=_homePageVCLastLeaveTs;
 @property(nonatomic) unsigned long long homePageVCRelatedRequestId; // @synthesize homePageVCRelatedRequestId=_homePageVCRelatedRequestId;
@@ -66,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

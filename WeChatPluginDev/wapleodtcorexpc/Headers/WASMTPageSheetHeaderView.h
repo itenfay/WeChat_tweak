@@ -12,7 +12,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIButton *backButton; // @synthesize backButton=_backButton;
 - (void)setupUI;

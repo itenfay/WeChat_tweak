@@ -10,7 +10,6 @@
     NSString *_requestKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *requestKey; // @synthesize requestKey=_requestKey;
 - (void)prefetchGetCodeCmd:(id)arg1 didFinishDownloadWithRet:(_Bool)arg2 infoData:(id)arg3 remainRetryCount:(unsigned long long)arg4;
 - (void)prefetchGetCodeWithResult:(unsigned long long)arg1 preDownloadRequestkey:(id)arg2;

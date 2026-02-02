@@ -12,7 +12,6 @@
     MMFinderLiveCouponItem *_coupon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveCouponItem *coupon; // @synthesize coupon=_coupon;
 - (_Bool)needActionButton;
 

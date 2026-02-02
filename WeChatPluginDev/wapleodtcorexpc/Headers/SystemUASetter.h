@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WKWebView;
 
@@ -15,7 +16,6 @@
 
 + (id)deviceSystemDefaultUA;
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *systemDefaultUA; // @synthesize systemDefaultUA=_systemDefaultUA;
 @property(retain, nonatomic) WKWebView *webview; // @synthesize webview=_webview;
 - (id)getDefaultUserAgentWithWeixinVersion;
@@ -31,4 +31,3 @@
 - (id)syncGetSystemDefaultUA;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UICollectionView, UICollectionViewCell, UIView;
 
@@ -16,7 +17,6 @@
 }
 
 + (id)helperWithCollectionView:(id)arg1 idxPathGetter:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UICollectionViewCell *cacheCell; // @synthesize cacheCell=_cacheCell;
 @property(retain, nonatomic) UIView *cacheSnapView; // @synthesize cacheSnapView=_cacheSnapView;
 @property(copy, nonatomic) CDUnknownBlockType idxPathGetter; // @synthesize idxPathGetter=_idxPathGetter;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

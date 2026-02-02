@@ -15,7 +15,6 @@
     MMFinderLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) NSMutableArray *historyVotes; // @synthesize historyVotes=_historyVotes;
 @property(nonatomic) _Bool isFetchingData; // @synthesize isFetchingData=_isFetchingData;

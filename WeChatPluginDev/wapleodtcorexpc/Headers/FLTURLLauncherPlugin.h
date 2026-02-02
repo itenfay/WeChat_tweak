@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FLTURLLaunchSession, NSString;
 
@@ -13,7 +14,6 @@
 }
 
 + (void)registerWithRegistrar:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FLTURLLaunchSession *currentSession; // @synthesize currentSession=_currentSession;
 - (id)topViewControllerFromViewController:(id)arg1;
 - (id)topViewController;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

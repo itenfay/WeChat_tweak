@@ -13,7 +13,6 @@
     UIViewController<WCFinderFullMultiMediaCollectionGestureConflictHandler> *_currentHandler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController<WCFinderFullMultiMediaCollectionGestureConflictHandler> *currentHandler; // @synthesize currentHandler=_currentHandler;
 - (void)selfDidScroll;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

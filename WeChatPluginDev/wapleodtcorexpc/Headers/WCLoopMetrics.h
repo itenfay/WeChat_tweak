@@ -16,7 +16,6 @@
     double _endTime;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(readonly, nonatomic) double beginTime; // @synthesize beginTime=_beginTime;
 @property(readonly, nonatomic) double preferredDuration; // @synthesize preferredDuration=_preferredDuration;

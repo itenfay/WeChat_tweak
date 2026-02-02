@@ -24,7 +24,6 @@
     unsigned long long _encoderFeatures;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long encoderFeatures; // @synthesize encoderFeatures=_encoderFeatures;
 @property(nonatomic) unsigned int inputFormat; // @synthesize inputFormat=_inputFormat;
 @property(nonatomic) _Bool watermarkFilterEnabled; // @synthesize watermarkFilterEnabled=_watermarkFilterEnabled;

@@ -16,7 +16,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *underlineView; // @synthesize underlineView=_underlineView;
 @property(retain, nonatomic) UILabel *tabTitleLabel; // @synthesize tabTitleLabel=_tabTitleLabel;
 - (void)loadTabCellViewModel:(id)arg1;

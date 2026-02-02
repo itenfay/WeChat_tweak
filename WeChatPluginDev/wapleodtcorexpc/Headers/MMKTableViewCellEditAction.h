@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)triggered;
 - (id)getTitle;
 - (_Bool)getIsDestructive;

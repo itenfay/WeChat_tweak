@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_chatRoomUsername;
 + (void)PBArrayAdd_chatRoomName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *chatRoomUsername; // @synthesize chatRoomUsername=_chatRoomUsername;
 @property(retain, nonatomic) NSString *chatRoomName; // @synthesize chatRoomName=_chatRoomName;
 - (id)getPBPropertyTable;

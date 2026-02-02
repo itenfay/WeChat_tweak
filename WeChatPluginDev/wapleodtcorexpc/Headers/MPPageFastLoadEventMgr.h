@@ -13,7 +13,6 @@
     NSMutableDictionary *_dictTmplDownloadState;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictTmplDownloadState; // @synthesize dictTmplDownloadState=_dictTmplDownloadState;
 @property(retain, nonatomic) NSSet *setEventWithTmplType; // @synthesize setEventWithTmplType=_setEventWithTmplType;
 - (unsigned int)downloadStateWithTemplateType:(unsigned int)arg1;

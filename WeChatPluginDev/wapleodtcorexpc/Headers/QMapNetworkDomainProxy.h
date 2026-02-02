@@ -12,7 +12,6 @@
     NSDictionary *_mapping;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *mapping; // @synthesize mapping=_mapping;
 - (id)replaceUrl:(id)arg1;
 - (id)init;

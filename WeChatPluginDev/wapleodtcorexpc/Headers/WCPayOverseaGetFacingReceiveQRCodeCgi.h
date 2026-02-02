@@ -16,7 +16,6 @@
 
 + (void)SafeSaveQRCodeLocalData:(id)arg1;
 + (id)GetPathOfOverseaFacingReceiveQRCodeLocalData;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayOverseaBaseCgi *m_cgi; // @synthesize m_cgi;
 @property(nonatomic) __weak id <WCPayOverseaGetFacingReceiveQRCodeCgiDelegate> m_delegate; // @synthesize m_delegate;
 - (void)callErrorDelegateWithErrorCode:(int)arg1 ErrorMsg:(id)arg2;

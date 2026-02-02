@@ -24,7 +24,6 @@
     struct CGSize _size;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long audioBitRate; // @synthesize audioBitRate=_audioBitRate;
 @property(retain, nonatomic) NSString *audioCodecTag; // @synthesize audioCodecTag=_audioCodecTag;
 @property(retain, nonatomic) NSString *audioCodecID; // @synthesize audioCodecID=_audioCodecID;

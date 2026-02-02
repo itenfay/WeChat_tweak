@@ -15,7 +15,6 @@
 }
 
 + (id)imageVideoCompositionWithImage:(id)arg1 duration:(CDStruct_1b6d18a9)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) TAVVideoConfiguration *videoConfiguration; // @synthesize videoConfiguration=_videoConfiguration;
 @property(retain, nonatomic) TAVImageResource *resource; // @synthesize resource=_resource;

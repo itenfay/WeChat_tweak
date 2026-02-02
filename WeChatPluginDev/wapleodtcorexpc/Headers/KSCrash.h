@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSDictionary, NSString;
 @protocol KSCrashReportFilter;
@@ -53,7 +54,6 @@
 + (id)sharedInstance;
 + (void)initialize;
 + (void)load;
-- (void).cxx_destruct;
 @property(nonatomic) CDUnknownFunctionPointerType onInnerHandleSignalCallBack; // @synthesize onInnerHandleSignalCallBack=_onInnerHandleSignalCallBack;
 @property(nonatomic) unsigned long long userID; // @synthesize userID=_userID;
 @property(nonatomic) _Bool coreDumpEnabledAtNonCrash; // @synthesize coreDumpEnabledAtNonCrash=_coreDumpEnabledAtNonCrash;
@@ -124,4 +124,3 @@
 - (id)init;
 
 @end
-

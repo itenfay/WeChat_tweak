@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CADisplayLink, NSMutableArray, NSMutableDictionary, NSString, WANonRetainingProxy;
 @protocol NativeRenderDelegate;
 
@@ -20,7 +22,6 @@
     NSMutableArray *_keepCanvas;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *keepCanvas; // @synthesize keepCanvas=_keepCanvas;
 @property _Bool present; // @synthesize present=_present;
 @property _Bool destroyed; // @synthesize destroyed=_destroyed;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

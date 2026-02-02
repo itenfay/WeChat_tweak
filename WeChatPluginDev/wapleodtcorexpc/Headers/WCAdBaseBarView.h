@@ -13,7 +13,6 @@
 + (double)topMargin;
 + (double)bottomMargin;
 + (double)viewHeight;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAdBaseBarViewDelegate> baseDelegate; // @synthesize baseDelegate=_baseDelegate;
 - (void)updateDataItem:(id)arg1;
 

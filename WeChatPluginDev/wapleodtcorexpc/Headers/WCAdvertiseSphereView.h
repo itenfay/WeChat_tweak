@@ -38,7 +38,6 @@
     struct CGPoint _fingerRotation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool idleState; // @synthesize idleState=_idleState;
 @property(nonatomic) int idleCheckCount; // @synthesize idleCheckCount=_idleCheckCount;
 @property(retain, nonatomic) CMDeviceMotion *idleMotion; // @synthesize idleMotion=_idleMotion;

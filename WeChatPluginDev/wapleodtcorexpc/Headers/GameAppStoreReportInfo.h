@@ -16,7 +16,6 @@
 }
 
 + (id)reportInfoFromDict:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int uiarea; // @synthesize uiarea=_uiarea;
 @property(retain, nonatomic) NSString *noticeId; // @synthesize noticeId=_noticeId;
 @property(retain, nonatomic) NSString *msgId; // @synthesize msgId=_msgId;

@@ -17,7 +17,6 @@
 }
 
 + (double)calcBulletTextContainerHeightWithBulletScreenInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *logicTimer; // @synthesize logicTimer=_logicTimer;
 @property(nonatomic) _Bool endureTimerScheduled; // @synthesize endureTimerScheduled=_endureTimerScheduled;
 @property(nonatomic) struct CGSize lastLayoutSize; // @synthesize lastLayoutSize=_lastLayoutSize;

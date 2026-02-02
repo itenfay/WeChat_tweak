@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface PasskeyNoCredentialsPageSheet
@@ -10,7 +12,6 @@
     CDUnknownBlockType _onFinishBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onFinishBlock; // @synthesize onFinishBlock=_onFinishBlock;
 - (void)onClickPageSheetConfirmButton;
 - (id)titleForPageSheetConfirmButton;
@@ -29,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

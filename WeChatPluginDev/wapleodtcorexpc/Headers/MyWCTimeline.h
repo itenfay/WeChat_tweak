@@ -50,7 +50,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) int m_codingType; // @synthesize m_codingType=_m_codingType;
 @property(retain, nonatomic) NSData *m_buffer; // @synthesize m_buffer=_m_buffer;
 @property(retain, nonatomic) NSString *m_fromUser; // @synthesize m_fromUser=_m_fromUser;

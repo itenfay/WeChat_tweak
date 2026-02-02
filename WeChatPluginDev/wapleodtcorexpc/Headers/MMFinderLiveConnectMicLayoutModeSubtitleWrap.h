@@ -13,7 +13,6 @@
     NSString *_grabModeWording;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *grabModeWording; // @synthesize grabModeWording=_grabModeWording;
 @property(copy, nonatomic) NSString *commonModeWording; // @synthesize commonModeWording=_commonModeWording;
 

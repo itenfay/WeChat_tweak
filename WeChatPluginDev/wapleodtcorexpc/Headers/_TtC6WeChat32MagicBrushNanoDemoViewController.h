@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MISSING_TYPE;
 
 @interface _TtC6WeChat32MagicBrushNanoDemoViewController
@@ -14,7 +16,6 @@
     MISSING_TYPE *thread;
 }
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)evaluateScript;
@@ -32,4 +33,3 @@
 - (void)didAppear;
 
 @end
-

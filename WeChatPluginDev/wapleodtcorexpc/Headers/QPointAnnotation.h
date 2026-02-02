@@ -15,7 +15,6 @@
     struct CGPoint _lockedScreenPoint;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QIndoorInfo *indoorInfo; // @synthesize indoorInfo=_indoorInfo;
 @property(nonatomic) struct CGPoint lockedScreenPoint; // @synthesize lockedScreenPoint=_lockedScreenPoint;
 @property(nonatomic) _Bool lockedToScreen; // @synthesize lockedToScreen=_lockedToScreen;

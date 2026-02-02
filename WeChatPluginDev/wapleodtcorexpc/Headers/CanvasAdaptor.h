@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (shared_ptr_bf7a578a)GetDecodeCache;
 - (void)CheckAndPost:(function_ffe40f9b)arg1;
 - (void)SetAppTag:(id)arg1;

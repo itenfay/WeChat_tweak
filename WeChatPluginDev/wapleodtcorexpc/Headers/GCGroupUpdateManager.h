@@ -13,7 +13,6 @@
     GCGroupServer *_groupServer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int previousSceneType; // @synthesize previousSceneType=_previousSceneType;
 @property(retain, nonatomic) GCGroupServer *groupServer; // @synthesize groupServer=_groupServer;
 @property(retain, nonatomic) GetMyChatroomResponse *lastestRoomResponse; // @synthesize lastestRoomResponse=_lastestRoomResponse;

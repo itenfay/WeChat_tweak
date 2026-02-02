@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeInfo, NSArray, NSDate, NSMutableArray, NSString, WCFinderCreateLivePrepareResponseFailModel, WCFinderCreateLivePrepareResponseModel;
 
@@ -28,7 +29,6 @@
 }
 
 + (id)getNoticeIdsDesc:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableDescExtend; // @synthesize enableDescExtend=_enableDescExtend;
 @property(copy, nonatomic) CDUnknownBlockType createLivePrePareBlock; // @synthesize createLivePrePareBlock=_createLivePrePareBlock;
 @property(retain, nonatomic) NSDate *specificDate; // @synthesize specificDate=_specificDate;
@@ -77,4 +77,3 @@
 - (id)init;
 
 @end
-

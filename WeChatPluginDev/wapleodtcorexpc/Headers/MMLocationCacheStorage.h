@@ -12,7 +12,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_caches;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *caches; // @synthesize caches=_caches;
 - (id)init;
 - (id)getPBPropertyTable;

@@ -24,7 +24,6 @@
     MMUIButton *_maskButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *maskButton; // @synthesize maskButton=_maskButton;
 @property(retain, nonatomic) WCAdSliderCardSightView *mediaSightView; // @synthesize mediaSightView=_mediaSightView;
 @property(retain, nonatomic) MMUIView *mediaSightViewHolder; // @synthesize mediaSightViewHolder=_mediaSightViewHolder;

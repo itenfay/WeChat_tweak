@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate;
 
@@ -14,7 +15,6 @@
     NSDate *_lastAppearDate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLastEventAppear; // @synthesize isLastEventAppear=_isLastEventAppear;
 @property(retain, nonatomic) NSDate *lastAppearDate; // @synthesize lastAppearDate=_lastAppearDate;
 @property(copy, nonatomic) CDUnknownBlockType reportAction; // @synthesize reportAction=_reportAction;
@@ -22,4 +22,3 @@
 - (void)onAppear;
 
 @end
-

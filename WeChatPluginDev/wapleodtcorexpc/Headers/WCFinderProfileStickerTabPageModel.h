@@ -21,7 +21,6 @@
 + (id)overviewSectionTypes;
 + (_Bool)recordTabDisplayFlagToExtInfo;
 + (_Bool)allowLimitMode;
-- (void).cxx_destruct;
 @property(nonatomic) double beginFetchData; // @synthesize beginFetchData=_beginFetchData;
 @property(retain, nonatomic) EmoticonFinderDesignerContentLogic *mainTabContentLogic; // @synthesize mainTabContentLogic=_mainTabContentLogic;
 @property(nonatomic) _Bool didLoadFail; // @synthesize didLoadFail=_didLoadFail;

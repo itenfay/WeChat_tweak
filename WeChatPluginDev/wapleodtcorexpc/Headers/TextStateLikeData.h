@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_idToExpireTimeDict;
 + (void)PBArrayAdd_idToTypeDict;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *idToExpireTimeDict; // @synthesize idToExpireTimeDict=_idToExpireTimeDict;
 @property(retain, nonatomic) NSMutableDictionary *idToTypeDict; // @synthesize idToTypeDict=_idToTypeDict;
 - (void)batchRemoveExpiredLike;

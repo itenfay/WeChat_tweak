@@ -42,7 +42,6 @@
 + (void)PBArrayAdd_isNativePage;
 + (void)PBArrayAdd_itemShowType;
 + (void)PBArrayAdd_hasItemShowType;
-- (void).cxx_destruct;
 @property(nonatomic) double coverPicHeight; // @synthesize coverPicHeight=_coverPicHeight;
 @property(nonatomic) double coverPicWidth; // @synthesize coverPicWidth=_coverPicWidth;
 @property(nonatomic) long long picCount; // @synthesize picCount=_picCount;

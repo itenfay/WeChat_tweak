@@ -30,7 +30,6 @@
     double _timestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPlayLiveUseFeedBack; // @synthesize isPlayLiveUseFeedBack=_isPlayLiveUseFeedBack;
 @property(nonatomic) _Bool isPlayLiveByLongPress; // @synthesize isPlayLiveByLongPress=_isPlayLiveByLongPress;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;

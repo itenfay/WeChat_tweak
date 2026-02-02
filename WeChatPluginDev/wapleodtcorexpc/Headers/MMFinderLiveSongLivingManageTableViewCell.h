@@ -19,7 +19,6 @@
 + (double)getSeparatorLeftInset;
 + (id)identifier;
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMUIButton *singButton; // @synthesize singButton=_singButton;
 @property(readonly, nonatomic) MMUIButton *finishButton; // @synthesize finishButton=_finishButton;
 @property(readonly, nonatomic) MMUILabel *heartValueLabel; // @synthesize heartValueLabel=_heartValueLabel;

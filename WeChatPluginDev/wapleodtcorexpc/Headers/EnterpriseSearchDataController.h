@@ -18,7 +18,6 @@
     NSString *_brandUserName;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *brandUserName; // @synthesize brandUserName=_brandUserName;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)handleBizChatContactSearchResp:(id)arg1;

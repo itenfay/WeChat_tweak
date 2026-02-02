@@ -24,7 +24,6 @@
     FavClickStreamData *_clickData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FavClickStreamData *clickData; // @synthesize clickData=_clickData;
 @property(nonatomic) _Bool bReceiveSearchResult; // @synthesize bReceiveSearchResult=_bReceiveSearchResult;
 @property(nonatomic) int deleteType; // @synthesize deleteType=_deleteType;

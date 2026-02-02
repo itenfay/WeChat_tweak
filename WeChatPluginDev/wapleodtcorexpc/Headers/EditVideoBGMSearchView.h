@@ -37,7 +37,6 @@
     unsigned long long _maxExposureIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLastInputModeDictation; // @synthesize isLastInputModeDictation=_isLastInputModeDictation;
 @property(nonatomic) unsigned long long maxExposureIndex; // @synthesize maxExposureIndex=_maxExposureIndex;
 @property(retain, nonatomic) EditVideoBGMFetchFeedbackLogic *kvReportlogic; // @synthesize kvReportlogic=_kvReportlogic;

@@ -15,7 +15,6 @@
     CAGradientLayer *_gradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) double paddingBottom; // @synthesize paddingBottom=_paddingBottom;

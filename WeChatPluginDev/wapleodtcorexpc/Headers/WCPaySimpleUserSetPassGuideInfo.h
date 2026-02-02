@@ -14,7 +14,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiSendPwdMsg; // @synthesize m_uiSendPwdMsg=_m_uiSendPwdMsg;
 @property(retain, nonatomic) NSString *m_nsRightButtonWording; // @synthesize m_nsRightButtonWording=_m_nsRightButtonWording;
 @property(retain, nonatomic) NSString *m_nsLeftButtonWording; // @synthesize m_nsLeftButtonWording=_m_nsLeftButtonWording;

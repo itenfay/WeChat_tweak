@@ -22,7 +22,6 @@
     id <ContactSelectListViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ContactSelectListViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(nonatomic) _Bool m_isHiddenAccessory; // @synthesize m_isHiddenAccessory=_m_isHiddenAccessory;
 @property(retain, nonatomic) NSMutableDictionary *m_dicAllContacts; // @synthesize m_dicAllContacts;

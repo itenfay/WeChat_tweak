@@ -12,7 +12,6 @@
     NSMutableDictionary *_loadInfoDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *loadInfoDict; // @synthesize loadInfoDict=_loadInfoDict;
 - (void)reportLoadInfoWithTid:(id)arg1;
 - (id)loadInfoWithTid:(id)arg1;

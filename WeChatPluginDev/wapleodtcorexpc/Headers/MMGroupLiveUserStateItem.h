@@ -12,7 +12,6 @@
     CContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSString *roomId; // @synthesize roomId=_roomId;
 @property(retain, nonatomic) NSString *identityId; // @synthesize identityId=_identityId;

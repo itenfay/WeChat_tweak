@@ -16,7 +16,6 @@
     UIColor *_separatorLineColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *separatorLineColor; // @synthesize separatorLineColor=_separatorLineColor;
 @property(nonatomic) _Bool shouldShowSeparatorLine; // @synthesize shouldShowSeparatorLine=_shouldShowSeparatorLine;
 @property(readonly, nonatomic) MJDualBorderLayer *separatorLineLayer; // @synthesize separatorLineLayer=_separatorLineLayer;

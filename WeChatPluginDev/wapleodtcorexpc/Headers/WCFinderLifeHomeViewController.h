@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSMapTable, NSNumber, NSString, WCFinderArbitraryPageView, WCFinderLifeHomeNoLocationAuthView, WCFinderLifeHomeViewModel, WCFinderRedDotTipsShowInfo;
 
 @interface WCFinderLifeHomeViewController
@@ -25,7 +27,6 @@
     NSNumber *_locationStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool fetchingLocation; // @synthesize fetchingLocation=_fetchingLocation;
 @property(retain, nonatomic) NSNumber *locationStatus; // @synthesize locationStatus=_locationStatus;
 @property(nonatomic) long long menuFlag; // @synthesize menuFlag=_menuFlag;
@@ -119,4 +120,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
     NSString *_liveNoticeEncryptedId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPreviewMode; // @synthesize isPreviewMode=_isPreviewMode;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(copy, nonatomic) NSString *liveNoticeEncryptedId; // @synthesize liveNoticeEncryptedId=_liveNoticeEncryptedId;

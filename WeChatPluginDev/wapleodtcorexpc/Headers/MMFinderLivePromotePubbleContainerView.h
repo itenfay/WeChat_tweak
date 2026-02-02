@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLivePromoteMsgInfo, FinderShopCouponInfo, MMFinderLiveAdsItem, MMFinderLiveGoodsItem, MMFinderLiveProductPromotePubbleContentView, MMFinderLivePromotePubbleContentView, MMFinderLiveTaskId, MMUIButton;
 @protocol MMFinderLiveOperationViewDelegate;
 
@@ -28,7 +30,6 @@
 + (double)getContentHeight:(long long)arg1;
 + (double)getContainerHeight:(long long)arg1 displayTriTip:(_Bool)arg2;
 + (id)createPromotePubbleContainerWithPromoteMsgInfo:(id)arg1 taskId:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
@@ -84,4 +85,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 orientation:(long long)arg2 promoteMsgInfo:(id)arg3 taskId:(id)arg4 style:(long long)arg5;
 
 @end
-

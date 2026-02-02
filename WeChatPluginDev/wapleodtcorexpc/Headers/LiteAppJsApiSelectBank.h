@@ -11,7 +11,6 @@
     WCPayT2BCGetBankListCgi *_getBankListCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayT2BCGetBankListCgi *getBankListCgi; // @synthesize getBankListCgi=_getBankListCgi;
 @property(nonatomic) __weak WCPaySelectBankViewController *selectBankVC; // @synthesize selectBankVC=_selectBankVC;
 - (void)OnGetBankListWithError:(id)arg1 errorCode:(unsigned int)arg2;

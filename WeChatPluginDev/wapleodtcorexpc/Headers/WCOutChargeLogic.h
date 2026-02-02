@@ -20,7 +20,6 @@
 }
 
 + (id)logicWithAutoVerify;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int autoVerifyErrcode; // @synthesize autoVerifyErrcode=_autoVerifyErrcode;
 @property(nonatomic) unsigned int autoVerifyRet; // @synthesize autoVerifyRet=_autoVerifyRet;
 @property(nonatomic) unsigned int autoVerifyMode; // @synthesize autoVerifyMode=_autoVerifyMode;

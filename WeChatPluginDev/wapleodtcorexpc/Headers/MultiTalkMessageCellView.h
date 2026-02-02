@@ -10,7 +10,6 @@
     UIImageView *m_backgroundImageView;
 }
 
-- (void).cxx_destruct;
 - (void)onChatBackgroundChanged:(id)arg1;
 - (_Bool)canCellShowOperationMenu;
 - (void)layoutContentView;

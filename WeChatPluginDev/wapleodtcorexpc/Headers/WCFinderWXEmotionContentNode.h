@@ -13,7 +13,6 @@
     NSString *_content;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isWXEmotion; // @synthesize isWXEmotion=_isWXEmotion;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;
 

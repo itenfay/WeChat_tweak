@@ -32,7 +32,6 @@
 
 + (const float *)textureCoordinatesForRotation:(unsigned long long)arg1;
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enabled; // @synthesize enabled;
 @property(nonatomic) unsigned long long fillMode; // @synthesize fillMode=_fillMode;
 @property(nonatomic) unsigned long long aspectRatio; // @synthesize aspectRatio;

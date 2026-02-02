@@ -11,7 +11,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id peekControllerRetainPoint; // @synthesize peekControllerRetainPoint=_peekControllerRetainPoint;
 
 @end

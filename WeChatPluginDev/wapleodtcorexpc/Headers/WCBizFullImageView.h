@@ -24,7 +24,6 @@
 
 + (void)freeWCBizFullScreenView;
 + (id)getWCBizFullScreenView;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_iCurIndex; // @synthesize m_iCurIndex;
 @property(nonatomic) __weak id <WCBizFullImageViewDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onVideoVoipViewDidAppear:(id)arg1;

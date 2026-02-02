@@ -13,7 +13,6 @@
     unsigned long long _seq;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long seq; // @synthesize seq=_seq;
 @property(retain, nonatomic) NSString *msgClientId; // @synthesize msgClientId=_msgClientId;
 

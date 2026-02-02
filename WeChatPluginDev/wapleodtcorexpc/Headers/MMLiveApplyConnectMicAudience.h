@@ -20,7 +20,6 @@
     CContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) _Bool isSelf; // @synthesize isSelf=_isSelf;
 @property(copy, nonatomic) NSString *roomId; // @synthesize roomId=_roomId;

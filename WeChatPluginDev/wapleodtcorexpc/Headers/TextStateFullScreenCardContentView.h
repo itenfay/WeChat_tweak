@@ -30,7 +30,6 @@
 }
 
 + (id)verticalSeparator;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needsLayoutText; // @synthesize needsLayoutText=_needsLayoutText;
 @property(nonatomic) _Bool needsCreateOrUpdateLayout; // @synthesize needsCreateOrUpdateLayout=_needsCreateOrUpdateLayout;
 @property(retain, nonatomic) WCFinderFullDoubleLikeEduView *doubleTapFavoriteGuideView; // @synthesize doubleTapFavoriteGuideView=_doubleTapFavoriteGuideView;

@@ -14,7 +14,6 @@
     NSString *_content;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;
 @property(nonatomic) long long endTimeMs; // @synthesize endTimeMs=_endTimeMs;
 @property(nonatomic) long long startTimeMs; // @synthesize startTimeMs=_startTimeMs;

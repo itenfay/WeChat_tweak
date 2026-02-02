@@ -21,7 +21,6 @@
     EmoticonBoardCrossCollectionEmoticonHeaderModel *_headerViewModel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isReloadingSections; // @synthesize isReloadingSections=_isReloadingSections;
 @property(retain, nonatomic) EmoticonBoardCrossCollectionEmoticonHeaderModel *headerViewModel; // @synthesize headerViewModel=_headerViewModel;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;

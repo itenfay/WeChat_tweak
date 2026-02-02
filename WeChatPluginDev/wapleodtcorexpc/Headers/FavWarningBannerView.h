@@ -18,7 +18,6 @@
     id <FavWarningBannerViewDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int bannerType; // @synthesize bannerType;
 @property(nonatomic) __weak id <FavWarningBannerViewDelegate> delegate; // @synthesize delegate;
 - (void)relayoutViews;

@@ -14,7 +14,6 @@
 }
 
 + (id)itemWithView:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double flexShrink; // @synthesize flexShrink=_flexShrink;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 

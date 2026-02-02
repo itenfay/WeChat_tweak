@@ -15,7 +15,6 @@
     NSString *_bindFeedId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bindFeedId; // @synthesize bindFeedId=_bindFeedId;
 @property(nonatomic) double haflScreenHeightPercent; // @synthesize haflScreenHeightPercent=_haflScreenHeightPercent;
 @property(retain, nonatomic) NSMutableArray *halfScreenMoveProgressArray; // @synthesize halfScreenMoveProgressArray=_halfScreenMoveProgressArray;

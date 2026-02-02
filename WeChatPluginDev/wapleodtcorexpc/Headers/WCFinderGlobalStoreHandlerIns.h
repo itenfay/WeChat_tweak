@@ -12,7 +12,6 @@
     MMLiteAppViewController *_liteAppVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMLiteAppViewController *liteAppVC; // @synthesize liteAppVC=_liteAppVC;
 
 // Remaining properties

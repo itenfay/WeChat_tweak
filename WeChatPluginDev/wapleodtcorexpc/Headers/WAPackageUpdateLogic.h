@@ -12,7 +12,6 @@
     NSMutableArray *_arrRequestingAppInfoData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrRequestingAppInfoData; // @synthesize arrRequestingAppInfoData=_arrRequestingAppInfoData;
 - (void)onUpdateAppPkgComplete:(_Bool)arg1 withAppInfoData:(id)arg2 errorCode:(unsigned int)arg3 errorMsg:(id)arg4;
 - (_Bool)startDownloadPkgWithAppInfoData:(id)arg1 CDNURL:(id)arg2 CDNURLWithZstd:(id)arg3 patchURL:(id)arg4;

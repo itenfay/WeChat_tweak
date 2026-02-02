@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GetProfileInfoResponse_RelievedBuyInfo, NSString, UIButton, UILabel, WAProfileEasyBuyIconView;
 
@@ -17,7 +18,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIButton *cardView; // @synthesize cardView=_cardView;
 @property(retain, nonatomic) WAProfileEasyBuyIconView *iconView; // @synthesize iconView=_iconView;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

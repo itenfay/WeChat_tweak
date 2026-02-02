@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSObject, NSString, WAFileSpaceTraceLogic;
 @protocol OS_dispatch_queue;
 
@@ -18,7 +20,6 @@
 
 + (id)getTempVideoPathWithMediaIdentifier:(id)arg1;
 + (id)getFormatPathWithMediaIdentifier:(id)arg1;
-- (void).cxx_destruct;
 - (void)onAppTaskTerminate:(id)arg1;
 - (void)onAppTaskDidFinishColdLaunchWithAppId:(id)arg1;
 - (id)getZipEntryDicOfCurrentFile:(id)arg1 length:(unsigned int)arg2 position:(unsigned int)arg3 encoding:(id)arg4;
@@ -97,4 +98,3 @@
 @property(readonly) Class superclass;
 
 @end
-

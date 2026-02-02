@@ -12,7 +12,6 @@
     UIView *_highlightMaskView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceHighlight; // @synthesize forceHighlight=_forceHighlight;
 @property(retain, nonatomic) UIView *highlightMaskView; // @synthesize highlightMaskView=_highlightMaskView;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGest; // @synthesize longPressGest=_longPressGest;

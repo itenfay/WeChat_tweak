@@ -19,7 +19,6 @@
     double m_tableContentHeight;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *m_chatRoomContact; // @synthesize m_chatRoomContact;
 - (id)navigationBarBackgroundColor;
 - (_Bool)textFieldShouldClear:(id)arg1;

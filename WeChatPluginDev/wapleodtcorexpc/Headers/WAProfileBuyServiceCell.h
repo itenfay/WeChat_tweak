@@ -15,7 +15,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) GetProfileInfoResponse_RelievedBuyInfo *infoModel; // @synthesize infoModel=_infoModel;

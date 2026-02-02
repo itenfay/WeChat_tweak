@@ -17,7 +17,6 @@
 
 + (struct CGSize)tagSizeWithModel:(id)arg1;
 + (void)setupLeftUserTagLabel:(id)arg1 rightUserTagLabel:(id)arg2 withModel:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;
 @property(retain, nonatomic) WCFinderUserRelationshipModel *model; // @synthesize model=_model;
 @property(retain, nonatomic) WCFinderUserRelationshipTagLabel *rightTagLabel; // @synthesize rightTagLabel=_rightTagLabel;

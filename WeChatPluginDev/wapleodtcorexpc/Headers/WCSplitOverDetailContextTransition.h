@@ -13,7 +13,6 @@
     WCSplitOverDetailContextPresentationController *_presentController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPresent; // @synthesize isPresent=_isPresent;
 @property(retain, nonatomic) WCSplitOverDetailContextPresentationController *presentController; // @synthesize presentController=_presentController;
 @property(nonatomic) __weak id <WCSplitBaseTransitionDelegate> baseDelegate; // @synthesize baseDelegate=_baseDelegate;

@@ -21,7 +21,6 @@
     WCMktDeleteTicketCgi *_deleteCardCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasHandleLocation; // @synthesize bHasHandleLocation=_bHasHandleLocation;
 @property(nonatomic) _Bool bNeedRefreshHomePageAfterAppear; // @synthesize bNeedRefreshHomePageAfterAppear=_bNeedRefreshHomePageAfterAppear;
 @property(nonatomic) unsigned int svrRetChangeRule; // @synthesize svrRetChangeRule=_svrRetChangeRule;

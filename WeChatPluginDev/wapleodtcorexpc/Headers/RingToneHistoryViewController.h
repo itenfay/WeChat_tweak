@@ -23,7 +23,6 @@
 }
 
 + (void)report25858Data:(unsigned long long)arg1 feedID:(id)arg2 type:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalSendRingBackCount; // @synthesize totalSendRingBackCount=_totalSendRingBackCount;
 @property(nonatomic) unsigned long long totalScanRingBackCount; // @synthesize totalScanRingBackCount=_totalScanRingBackCount;
 @property(nonatomic) unsigned long long cliMinSeq; // @synthesize cliMinSeq=_cliMinSeq;

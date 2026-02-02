@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface CdnWeEffectManager
 {
     _Bool _needLimitFPS;
@@ -16,7 +18,6 @@
     long long _fpsCounter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long fpsCounter; // @synthesize fpsCounter=_fpsCounter;
 @property(nonatomic) _Bool isWeEffectProcessStart; // @synthesize isWeEffectProcessStart=_isWeEffectProcessStart;
 @property(nonatomic) long long cdnAudienceWeEffectScene; // @synthesize cdnAudienceWeEffectScene=_cdnAudienceWeEffectScene;
@@ -43,4 +44,3 @@
 - (void)startSurviveCountDown;
 
 @end
-

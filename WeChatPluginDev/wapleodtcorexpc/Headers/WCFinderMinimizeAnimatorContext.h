@@ -22,7 +22,6 @@
 }
 
 + (id)wrapContext:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIViewControllerContextTransitioning> ctx; // @synthesize ctx=_ctx;
 @property(nonatomic) _Bool isExpand; // @synthesize isExpand=_isExpand;
 @property(retain, nonatomic) WCFinderTransitionUserInfo *userInfo; // @synthesize userInfo=_userInfo;

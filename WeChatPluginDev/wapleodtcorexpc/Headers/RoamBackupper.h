@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface RoamBackupper : NSObject
 {
@@ -14,7 +15,6 @@
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (int)setPackageFlags:(id)arg1;
 - (id)getPackageFlags;
@@ -41,4 +41,3 @@
 - (shared_ptr_acec5b40)getDispatcher;
 
 @end
-

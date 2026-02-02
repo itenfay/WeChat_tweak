@@ -14,7 +14,6 @@
 }
 
 + (double)estimateHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *countLabel; // @synthesize countLabel=_countLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void)updateWithSvgIconName:(id)arg1 countString:(id)arg2;

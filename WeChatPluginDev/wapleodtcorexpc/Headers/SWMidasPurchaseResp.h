@@ -18,7 +18,6 @@
     MISSING_TYPE *purchaseOption;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 @property(nonatomic, readonly) SWMidasPurchaseOption *purchaseOption; // @synthesize purchaseOption;

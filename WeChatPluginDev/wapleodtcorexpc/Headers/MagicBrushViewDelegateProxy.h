@@ -13,7 +13,6 @@
     id <IMBViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMBViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onCanvasViewFirstFrameRendered:(unsigned int)arg1;
 - (void)onCanvasViewDestroy:(unsigned int)arg1 view:(id)arg2;

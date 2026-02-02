@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveProductQuestionBoxItem, MMFinderLiveTaskId, MMLiveCommentDataMgr;
 
@@ -17,7 +18,6 @@
     MMFinderLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoadingRecentMsg; // @synthesize isLoadingRecentMsg=_isLoadingRecentMsg;
 @property(nonatomic) _Bool isLoadingPreMsg; // @synthesize isLoadingPreMsg=_isLoadingPreMsg;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
@@ -46,4 +46,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

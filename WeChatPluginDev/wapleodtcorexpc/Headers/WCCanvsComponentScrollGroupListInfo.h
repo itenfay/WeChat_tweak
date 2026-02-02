@@ -14,7 +14,6 @@
     NSArray *_componentGroupList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int enterViewIndex; // @synthesize enterViewIndex=_enterViewIndex;
 @property(nonatomic) int autoCarousel; // @synthesize autoCarousel=_autoCarousel;
 @property(nonatomic) int isFullScreen; // @synthesize isFullScreen=_isFullScreen;

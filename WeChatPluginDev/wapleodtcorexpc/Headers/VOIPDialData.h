@@ -64,7 +64,6 @@
     NSMutableArray *_mPunchSvrIpStr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int mDataChannelType; // @synthesize mDataChannelType=_mDataChannelType;
 @property(retain, nonatomic) NSMutableArray *mPunchSvrIpStr; // @synthesize mPunchSvrIpStr=_mPunchSvrIpStr;
 @property(nonatomic) CDStruct_3cf45a09 *mAudioSvrParams; // @synthesize mAudioSvrParams;

@@ -20,7 +20,6 @@
 
 + (double)cardWidthForMoment;
 + (double)cardWidthForChat;
-- (void).cxx_destruct;
 @property(nonatomic) double textMarginTop; // @synthesize textMarginTop=_textMarginTop;
 @property(retain, nonatomic) MMListenCategoryItem *categoryItem; // @synthesize categoryItem=_categoryItem;
 @property(retain, nonatomic) MMUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;

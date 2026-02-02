@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSCalendar, NSDate, NSDictionary, NSMutableDictionary;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)descriptionForCalendarUnit:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(nonatomic) unsigned long long calendarUnit; // @synthesize calendarUnit=_calendarUnit;
 @property(retain, nonatomic) NSMutableDictionary *selectedDatas; // @synthesize selectedDatas=_selectedDatas;
@@ -36,4 +36,3 @@
 - (id)initWithDate:(id)arg1 calendarUnit:(unsigned long long)arg2;
 
 @end
-

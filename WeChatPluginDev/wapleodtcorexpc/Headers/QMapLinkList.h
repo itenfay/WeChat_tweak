@@ -15,7 +15,6 @@
     QMapLinkNode *_trail;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QMapLinkNode *trail; // @synthesize trail=_trail;
 @property(retain, nonatomic) QMapLinkNode *head; // @synthesize head=_head;
 @property(nonatomic) unsigned long long cost; // @synthesize cost=_cost;

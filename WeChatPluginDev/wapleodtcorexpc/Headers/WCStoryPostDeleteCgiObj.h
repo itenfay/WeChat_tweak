@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCStoryDataItem;
 
 @interface WCStoryPostDeleteCgiObj
@@ -12,7 +14,6 @@
     CDUnknownBlockType _dbSyncBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dbSyncBlock; // @synthesize dbSyncBlock=_dbSyncBlock;
 @property(copy, nonatomic) CDUnknownBlockType deletePostBlock; // @synthesize deletePostBlock=_deletePostBlock;
 @property(retain, nonatomic) WCStoryDataItem *dataItem; // @synthesize dataItem=_dataItem;
@@ -22,4 +23,3 @@
 - (id)initWithDataItem:(id)arg1;
 
 @end
-

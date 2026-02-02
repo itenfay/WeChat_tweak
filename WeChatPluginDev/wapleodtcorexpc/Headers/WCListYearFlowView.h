@@ -16,7 +16,6 @@
 }
 
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *selectTapGesture; // @synthesize selectTapGesture=_selectTapGesture;
 @property(retain, nonatomic) MMUIImageView *selectDownIcon; // @synthesize selectDownIcon=_selectDownIcon;
 @property(retain, nonatomic) MMUILabel *yearLabel; // @synthesize yearLabel=_yearLabel;

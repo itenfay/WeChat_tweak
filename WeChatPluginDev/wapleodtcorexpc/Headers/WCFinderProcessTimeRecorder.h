@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderProcessTimeRecorder : NSObject
 {
@@ -12,7 +13,6 @@
     CDUnknownBlockType _onEnterBackground;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool observed; // @synthesize observed=_observed;
 @property(copy, nonatomic) CDUnknownBlockType onEnterBackground; // @synthesize onEnterBackground=_onEnterBackground;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
@@ -25,4 +25,3 @@
 - (id)init;
 
 @end
-

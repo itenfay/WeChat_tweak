@@ -11,7 +11,6 @@
     WAWebViewPlugin_NativeView *_nativeInstance;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WAWebViewPlugin_NativeView *nativeInstance; // @synthesize nativeInstance=_nativeInstance;
 @property(nonatomic) __weak WAWebViewPlugin_InputKeyboard *keyboardPlugin; // @synthesize keyboardPlugin=_keyboardPlugin;
 - (void)onSuccess:(id)arg1;

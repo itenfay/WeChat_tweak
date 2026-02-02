@@ -15,7 +15,6 @@
     NSString *_rightArrowText;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *rightArrowText; // @synthesize rightArrowText=_rightArrowText;
 @property(nonatomic) _Bool showRightArrow; // @synthesize showRightArrow=_showRightArrow;
 @property(nonatomic) _Bool showSepLine; // @synthesize showSepLine=_showSepLine;

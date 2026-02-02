@@ -13,7 +13,6 @@
     NSString *_content;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(nonatomic) unsigned int startTimeInMilliseconds; // @synthesize startTimeInMilliseconds=_startTimeInMilliseconds;
 - (id)initWithStartTimeInMilliseconds:(unsigned int)arg1 content:(id)arg2;

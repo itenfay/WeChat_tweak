@@ -16,7 +16,6 @@
     NSRecursiveLock *_clearTaskListLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *clearTaskListLock; // @synthesize clearTaskListLock=_clearTaskListLock;
 @property(retain, nonatomic) NSMutableArray *clearTaskList; // @synthesize clearTaskList=_clearTaskList;
 @property(retain, nonatomic) NSRecursiveLock *widgetDictLock; // @synthesize widgetDictLock=_widgetDictLock;

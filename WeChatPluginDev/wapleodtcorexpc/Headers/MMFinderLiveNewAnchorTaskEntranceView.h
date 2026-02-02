@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMFinderLiveTaskId, MMRollableLabelView, MMUIImageView, MMUILabel, MMUIView, UIView;
 
 @interface MMFinderLiveNewAnchorTaskEntranceView
@@ -19,7 +21,6 @@
     CAGradientLayer *_titleGradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *titleGradientLayer; // @synthesize titleGradientLayer=_titleGradientLayer;
 @property(retain, nonatomic) MMRollableLabelView *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) MMUIView *scrollBaseView; // @synthesize scrollBaseView=_scrollBaseView;
@@ -39,4 +40,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 scene:(unsigned int)arg2;
 
 @end
-

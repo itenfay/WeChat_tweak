@@ -14,7 +14,6 @@
     CXCallObserver *_callObserver;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool mIsNeedResumeFinderMinimize; // @synthesize mIsNeedResumeFinderMinimize=_mIsNeedResumeFinderMinimize;
 @property(nonatomic) _Bool mIsNeedResumeWXMusic; // @synthesize mIsNeedResumeWXMusic=_mIsNeedResumeWXMusic;
 @property(retain, nonatomic) CXCallObserver *callObserver; // @synthesize callObserver=_callObserver;

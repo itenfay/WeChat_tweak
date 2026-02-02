@@ -21,7 +21,6 @@
     UIImage *_coverImg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *coverImg; // @synthesize coverImg=_coverImg;
 @property(retain, nonatomic) NSString *coverUrl; // @synthesize coverUrl=_coverUrl;
 @property(retain, nonatomic) NSString *descStr; // @synthesize descStr=_descStr;

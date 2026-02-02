@@ -44,7 +44,6 @@
 + (void)PBArrayAdd_cmdType;
 + (void)PBArrayAdd_appid;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAInfoData *infoData; // @synthesize infoData=_infoData;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(nonatomic) _Bool enableDownloadResumption; // @synthesize enableDownloadResumption=_enableDownloadResumption;

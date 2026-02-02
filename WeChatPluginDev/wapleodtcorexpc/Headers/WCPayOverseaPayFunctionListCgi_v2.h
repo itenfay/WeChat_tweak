@@ -18,7 +18,6 @@
 
 + (id)cacheObjectWithTpaCountry:(unsigned int)arg1;
 + (id)oldRespFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayWalletGetAllFunctionCgi *m_getAllFunctionCgi; // @synthesize m_getAllFunctionCgi=_m_getAllFunctionCgi;
 @property(nonatomic) _Bool m_isCgiEnd; // @synthesize m_isCgiEnd=_m_isCgiEnd;
 @property(nonatomic) unsigned int m_tpaCountry; // @synthesize m_tpaCountry=_m_tpaCountry;

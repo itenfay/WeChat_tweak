@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1 withSizeType:(long long)arg2 basicWidth:(int)arg3 basicRootFontSize:(int)arg4 widthRoundingType:(long long)arg5 heightRoundingType:(long long)arg6;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *layoutItems; // @synthesize layoutItems=_layoutItems;
 @property(nonatomic) double bgColorAlpha; // @synthesize bgColorAlpha=_bgColorAlpha;
 @property(retain, nonatomic) NSString *bgColor; // @synthesize bgColor=_bgColor;

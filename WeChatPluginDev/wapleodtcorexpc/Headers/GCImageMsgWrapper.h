@@ -37,7 +37,6 @@
 + (id)msgWrapperFromMsgPack:(id)arg1 oAsset:(id)arg2 chatRoomName:(id)arg3;
 + (id)imgWrapFromMsgPack:(id)arg1 chatRoomName:(id)arg2;
 + (id)createChatroomMsgImageWithImgWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long imgCdnStatus; // @synthesize imgCdnStatus=_imgCdnStatus;
 @property(nonatomic) unsigned int m_uiPercent; // @synthesize m_uiPercent=_m_uiPercent;
 @property(nonatomic) long long uploadStage; // @synthesize uploadStage=_uploadStage;

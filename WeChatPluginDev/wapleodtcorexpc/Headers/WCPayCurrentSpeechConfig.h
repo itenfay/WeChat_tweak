@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_md5;
 + (void)PBArrayAdd_version;
 + (void)PBArrayAdd_currentSpeechId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *currentSpeechId; // @synthesize currentSpeechId=_currentSpeechId;

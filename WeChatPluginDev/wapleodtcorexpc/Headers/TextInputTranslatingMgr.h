@@ -19,7 +19,6 @@
     NSString *_nsLastUseResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsLastUseResult; // @synthesize nsLastUseResult=_nsLastUseResult;
 @property(retain, nonatomic) NSString *nsChatName; // @synthesize nsChatName=_nsChatName;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;

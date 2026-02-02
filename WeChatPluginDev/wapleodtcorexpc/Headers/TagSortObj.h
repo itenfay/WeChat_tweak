@@ -13,7 +13,6 @@
     NSString *_tagPinyin;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tagPinyin; // @synthesize tagPinyin=_tagPinyin;
 @property(retain, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;
 - (id)initWithTag:(id)arg1;

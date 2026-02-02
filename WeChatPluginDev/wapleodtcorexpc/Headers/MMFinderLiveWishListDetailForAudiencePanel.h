@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveGiftWallInfo, MMFinderLiveSharePubbleTipView, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMUIButton, MMUILabel, NSMutableArray, NSString, UICollectionView, UICollectionViewFlowLayout, UIScrollView, UIView;
 @protocol MMFinderLiveWishListDetailForAudiencePanelDelegate;
 
@@ -29,7 +31,6 @@
     FinderLiveGiftWallInfo *_giftWallInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveGiftWallInfo *giftWallInfo; // @synthesize giftWallInfo=_giftWallInfo;
 @property(retain, nonatomic) MMFinderLiveSharePubbleTipView *tipsPubbleView; // @synthesize tipsPubbleView=_tipsPubbleView;
 @property(retain, nonatomic) MMUIButton *helpButton; // @synthesize helpButton=_helpButton;
@@ -100,4 +101,3 @@
 @property(readonly) Class superclass;
 
 @end
-

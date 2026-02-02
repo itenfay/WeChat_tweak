@@ -13,7 +13,6 @@
     NSMapTable *_delegateMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *delegateMap; // @synthesize delegateMap=_delegateMap;
 @property(retain, nonatomic) MagicBrushCVPixelBufferRT *rendertarget; // @synthesize rendertarget=_rendertarget;
 - (id)init;

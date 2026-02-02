@@ -14,7 +14,6 @@
     GetA8KeyLogic *_getA8KeyLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GetA8KeyLogic *getA8KeyLogic; // @synthesize getA8KeyLogic=_getA8KeyLogic;
 @property(nonatomic) __weak id <UrlControllerDelegate> m_delegate; // @synthesize m_delegate;
 - (void)dealloc;

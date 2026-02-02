@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class IntelligentClassification, IntelligentFaceAlbum, IntelligentMessageDataPB, IntelligentOCR, NSMutableDictionary, NSMutableSet, NSNumber, NSRecursiveLock, NSString;
 
 @interface IntelligentMsgImgMgr
@@ -19,7 +21,6 @@
     NSNumber *_intelligentOCRInitResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *intelligentOCRInitResult; // @synthesize intelligentOCRInitResult=_intelligentOCRInitResult;
 @property(retain, nonatomic) IntelligentFaceAlbum *m_intelligentFaceAlbum; // @synthesize m_intelligentFaceAlbum;
 @property(retain, nonatomic) IntelligentClassification *m_intelligentClassification; // @synthesize m_intelligentClassification;
@@ -110,4 +111,3 @@
 @property(readonly) Class superclass;
 
 @end
-

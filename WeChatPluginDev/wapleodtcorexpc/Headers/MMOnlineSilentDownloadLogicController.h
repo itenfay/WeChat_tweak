@@ -16,7 +16,6 @@
     SilentDownloadMessageWrap *_currentDownloadFile;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SilentDownloadMessageWrap *currentDownloadFile; // @synthesize currentDownloadFile=_currentDownloadFile;
 @property(retain, nonatomic) SilentDownloadMessageWrap *currentDownloadVideo; // @synthesize currentDownloadVideo=_currentDownloadVideo;
 @property(retain, nonatomic) SilentDownloadMessageWrap *currentDownloadImage; // @synthesize currentDownloadImage=_currentDownloadImage;

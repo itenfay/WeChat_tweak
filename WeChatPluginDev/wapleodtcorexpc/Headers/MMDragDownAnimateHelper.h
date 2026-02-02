@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, MMDragDisplayLinkContext, NSDate, NSString, UIPanGestureRecognizer, UITableView, UIView;
 
@@ -38,7 +39,6 @@
     double _animationCurrentTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double animationCurrentTime; // @synthesize animationCurrentTime=_animationCurrentTime;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) unsigned long long animationType; // @synthesize animationType=_animationType;
@@ -111,4 +111,3 @@
 @property(readonly) Class superclass;
 
 @end
-

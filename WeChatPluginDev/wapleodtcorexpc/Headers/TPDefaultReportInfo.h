@@ -37,7 +37,6 @@
     NSMutableDictionary *_extraReportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *extraReportInfo; // @synthesize extraReportInfo=_extraReportInfo;
 @property(nonatomic) long long scenesId; // @synthesize scenesId=_scenesId;
 @property(nonatomic) long long freeType; // @synthesize freeType=_freeType;

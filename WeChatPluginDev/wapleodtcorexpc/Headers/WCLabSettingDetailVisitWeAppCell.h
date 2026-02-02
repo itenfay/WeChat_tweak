@@ -16,7 +16,6 @@
 }
 
 + (double)height;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCLabSettingDetailVisitWeAppCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)initButton;
 - (void)onClickVisitWeApp:(id)arg1;

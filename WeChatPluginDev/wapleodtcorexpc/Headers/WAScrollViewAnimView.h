@@ -14,7 +14,6 @@
     CADisplayLink *_displayLink;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) UIView *animateView; // @synthesize animateView=_animateView;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;

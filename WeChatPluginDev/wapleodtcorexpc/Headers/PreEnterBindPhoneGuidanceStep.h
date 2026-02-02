@@ -13,7 +13,6 @@
     WCAccountBindPhoneControlLogic *_bindPhoneLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAccountBindPhoneControlLogic *bindPhoneLogic; // @synthesize bindPhoneLogic=_bindPhoneLogic;
 @property(retain, nonatomic) WCAccountPhoneBindGuidanceData *guidancedData; // @synthesize guidancedData=_guidancedData;
 @property(nonatomic) _Bool needSyncEscape; // @synthesize needSyncEscape=_needSyncEscape;

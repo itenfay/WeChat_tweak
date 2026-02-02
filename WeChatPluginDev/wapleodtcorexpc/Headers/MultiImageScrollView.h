@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIViewController, NSMutableDictionary, NSString;
 @protocol MultiImageScrollViewDelegate;
 
@@ -22,7 +24,6 @@
     MMUIViewController *m_viewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMovingToNextPage; // @synthesize isMovingToNextPage=_isMovingToNextPage;
 @property(nonatomic) _Bool isTilingPage; // @synthesize isTilingPage=_isTilingPage;
 @property(nonatomic) _Bool m_needUseWindowFrame; // @synthesize m_needUseWindowFrame=_m_needUseWindowFrame;
@@ -90,4 +91,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -18,7 +18,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasMoreData; // @synthesize hasMoreData=_hasMoreData;
 @property(nonatomic) _Bool isFetching; // @synthesize isFetching=_isFetching;
 @property(nonatomic) unsigned int purchasedFeedsTotalCount; // @synthesize purchasedFeedsTotalCount=_purchasedFeedsTotalCount;

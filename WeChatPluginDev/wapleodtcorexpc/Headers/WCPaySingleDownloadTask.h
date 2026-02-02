@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NSURLSessionDownloadTask;
 
@@ -17,7 +18,6 @@
     id _extraInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id extraInfo; // @synthesize extraInfo=_extraInfo;
 @property(nonatomic) _Bool isDownloading; // @synthesize isDownloading=_isDownloading;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -27,4 +27,3 @@
 - (id)initWithDownloadTask:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 
 @end
-

@@ -52,7 +52,6 @@
 }
 
 + (void)disableAllImagesDigiZoomIfNeededWithTimeline:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) float narrationSegmentsVolume; // @synthesize narrationSegmentsVolume=_narrationSegmentsVolume;
 @property(nonatomic) CDStruct_1b6d18a9 anchoredSegmentStartTimeBeforeMove; // @synthesize anchoredSegmentStartTimeBeforeMove=_anchoredSegmentStartTimeBeforeMove;
 @property(nonatomic) _Bool isAutoVolumeAdjustmentEnabled; // @synthesize isAutoVolumeAdjustmentEnabled=_isAutoVolumeAdjustmentEnabled;

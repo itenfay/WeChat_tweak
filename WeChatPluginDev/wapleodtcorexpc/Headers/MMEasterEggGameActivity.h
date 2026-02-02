@@ -15,7 +15,6 @@
     MMEasterEggGameActivityInfo *_activityInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMEasterEggGameActivityInfo *activityInfo; // @synthesize activityInfo=_activityInfo;
 @property(nonatomic) __weak id <MMEasterEggActivityDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *activityId; // @synthesize activityId=_activityId;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderContactHelper : NSObject
 {
@@ -15,4 +16,3 @@
 + (id)wechatAcctNickNameOfUserName:(id)arg1;
 
 @end
-

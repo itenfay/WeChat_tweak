@@ -15,7 +15,6 @@
     long long _m_startOrientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_startOrientation; // @synthesize m_startOrientation=_m_startOrientation;
 @property(retain, nonatomic) SequenceAnimationObject *m_animationObjectForAlpha; // @synthesize m_animationObjectForAlpha=_m_animationObjectForAlpha;
 @property(nonatomic) __weak id <MultitalkMinimizeWindowDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

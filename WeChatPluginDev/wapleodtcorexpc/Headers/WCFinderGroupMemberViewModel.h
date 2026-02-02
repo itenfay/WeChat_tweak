@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString;
 
@@ -20,7 +21,6 @@
     NSString *_finderUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
 @property(copy, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(copy, nonatomic) CDUnknownBlockType dataChangeBlock; // @synthesize dataChangeBlock=_dataChangeBlock;
@@ -34,4 +34,3 @@
 - (id)initWithFinderContact:(id)arg1;
 
 @end
-

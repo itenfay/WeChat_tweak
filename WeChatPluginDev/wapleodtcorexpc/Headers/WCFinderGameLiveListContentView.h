@@ -20,7 +20,6 @@
     MMFinderLiveGameUserInfo *_gameUserInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGameUserInfo *gameUserInfo; // @synthesize gameUserInfo=_gameUserInfo;
 @property(retain, nonatomic) UIImageView *selectStateImg; // @synthesize selectStateImg=_selectStateImg;
 @property(nonatomic) _Bool isSelectGame; // @synthesize isSelectGame=_isSelectGame;

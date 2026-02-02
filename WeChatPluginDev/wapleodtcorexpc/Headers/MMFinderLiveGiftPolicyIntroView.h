@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveLegalPromotConfig, NSString, RichTextView, UIButton, UILabel, UIView;
 
 @interface MMFinderLiveGiftPolicyIntroView
@@ -16,7 +18,6 @@
     MMFinderLiveLegalPromotConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveLegalPromotConfig *config; // @synthesize config=_config;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
@@ -46,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

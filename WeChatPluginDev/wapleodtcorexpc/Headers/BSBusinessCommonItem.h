@@ -18,7 +18,6 @@
 }
 
 + (id)fromServerObj:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BusinessActionInfo *actionInfo; // @synthesize actionInfo=_actionInfo;
 @property(retain, nonatomic) BusinessExtendInfo *extendInfo; // @synthesize extendInfo=_extendInfo;
 @property(retain, nonatomic) BusinessDetailInfo *detailInfo; // @synthesize detailInfo=_detailInfo;

@@ -34,7 +34,6 @@
 }
 
 + (_Bool)validDivider:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool preLoadRefresh; // @synthesize preLoadRefresh=_preLoadRefresh;
 @property(nonatomic) _Bool waittingRefresh; // @synthesize waittingRefresh=_waittingRefresh;
 @property(copy, nonatomic) NSString *layoutID; // @synthesize layoutID=_layoutID;

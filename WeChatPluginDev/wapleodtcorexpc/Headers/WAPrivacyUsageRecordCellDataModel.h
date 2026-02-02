@@ -13,7 +13,6 @@
 }
 
 + (id)createByPrivacyUsageRecordData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPrivacyUsageRecordData *recordData; // @synthesize recordData=_recordData;
 
 @end

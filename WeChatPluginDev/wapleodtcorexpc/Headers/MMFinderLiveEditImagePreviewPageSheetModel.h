@@ -14,7 +14,6 @@
     WCFinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSString *previewBulletinTitle; // @synthesize previewBulletinTitle=_previewBulletinTitle;
 @property(retain, nonatomic) UIImage *cover4Vs3Image; // @synthesize cover4Vs3Image=_cover4Vs3Image;

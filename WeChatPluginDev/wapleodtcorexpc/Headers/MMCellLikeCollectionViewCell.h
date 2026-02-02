@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMCellTapGestureRecognizer, MMUILabel, NSString, UIImageView, UIStackView;
 
@@ -17,7 +18,6 @@
     MMCellTapGestureRecognizer *_tapGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCellTapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(copy, nonatomic) CDUnknownBlockType tapHandler; // @synthesize tapHandler=_tapHandler;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
@@ -40,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

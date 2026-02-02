@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UITraitCollection;
 @protocol AppUserInterfaceSizeDelegate;
 
@@ -11,7 +13,6 @@
     id <AppUserInterfaceSizeDelegate> _interfaceSizeDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <AppUserInterfaceSizeDelegate> interfaceSizeDelegate; // @synthesize interfaceSizeDelegate=_interfaceSizeDelegate;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)childViewControllerForStatusBarHidden;
@@ -43,4 +44,3 @@
 @property(readonly, nonatomic) UITraitCollection *traitCollection;
 
 @end
-

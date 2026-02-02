@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSCache, NSMutableArray, NSString, QConfigManager, QConfigPreference, QOfflineMapDownloader;
 
@@ -21,7 +22,6 @@
 
 + (_Bool)offlineMapEnable;
 + (id)sharedOfflineMap;
-- (void).cxx_destruct;
 @property(retain, nonatomic) QOfflineMapDownloader *downloader; // @synthesize downloader=_downloader;
 @property(retain, nonatomic) NSMutableArray *itemArray; // @synthesize itemArray=_itemArray;
 @property(copy, nonatomic) NSString *offlineConfigPath; // @synthesize offlineConfigPath=_offlineConfigPath;
@@ -56,4 +56,3 @@
 - (id)init;
 
 @end
-

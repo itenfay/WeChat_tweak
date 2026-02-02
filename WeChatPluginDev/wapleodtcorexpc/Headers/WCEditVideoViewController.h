@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageAttr, EditVideoAttr, NSArray, NSMutableArray, NSString, RecommendedMusicInfo, WCEditVideoLayoutView, WCEditViewControllerUIConfig;
 @protocol WCEditVideoViewControllerDelegate;
 
@@ -31,7 +33,6 @@
 }
 
 + (unsigned long long)convertToEntranceFromPickerScene:(int)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *videoMD5String; // @synthesize videoMD5String=_videoMD5String;
 @property(retain, nonatomic) WCEditViewControllerUIConfig *uiConfig; // @synthesize uiConfig=_uiConfig;
 @property(nonatomic) _Bool isEmoticonBoardSearchEnabled; // @synthesize isEmoticonBoardSearchEnabled=_isEmoticonBoardSearchEnabled;
@@ -127,4 +128,3 @@
 @property(readonly) Class superclass;
 
 @end
-

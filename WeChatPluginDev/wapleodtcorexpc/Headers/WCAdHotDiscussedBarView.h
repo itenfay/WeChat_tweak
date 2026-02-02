@@ -21,7 +21,6 @@
 + (double)viewHeight;
 + (double)bottomMargin;
 + (double)topMargin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *clickActionButton; // @synthesize clickActionButton=_clickActionButton;
 @property(retain, nonatomic) MMUILabel *discussedNumberLabel; // @synthesize discussedNumberLabel=_discussedNumberLabel;
 @property(retain, nonatomic) MMUIImageView *rightArrow; // @synthesize rightArrow=_rightArrow;

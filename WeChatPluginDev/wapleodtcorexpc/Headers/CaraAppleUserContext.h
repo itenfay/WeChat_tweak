@@ -12,7 +12,6 @@
     MMContext *_context;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMContext *context; // @synthesize context=_context;
 - (void)pop;
 - (void)push;

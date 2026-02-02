@@ -10,7 +10,6 @@
     NSString *_audioFileExt;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *audioFileExt; // @synthesize audioFileExt=_audioFileExt;
 - (id)audioFileExtension;
 - (void)close:(_Bool)arg1;

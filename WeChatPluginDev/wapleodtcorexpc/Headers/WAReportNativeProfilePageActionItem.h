@@ -19,7 +19,6 @@
     unsigned long long _shopGuarantee;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long shopGuarantee; // @synthesize shopGuarantee=_shopGuarantee;
 @property(retain, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;
 @property(retain, nonatomic) NSString *sharePath; // @synthesize sharePath=_sharePath;

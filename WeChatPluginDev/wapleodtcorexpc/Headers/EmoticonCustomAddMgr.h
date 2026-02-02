@@ -10,7 +10,6 @@
     NSMutableSet *_addEmoticonTasks;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *addEmoticonTasks; // @synthesize addEmoticonTasks=_addEmoticonTasks;
 - (void)onAddEmoticonTaskFinish:(id)arg1;
 - (void)showEmoticonCameraWithLensId:(id)arg1 inViewController:(id)arg2;

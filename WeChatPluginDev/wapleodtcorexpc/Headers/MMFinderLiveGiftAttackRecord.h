@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveGiftPlayItem, NSString;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _rewardCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType rewardCompletion; // @synthesize rewardCompletion=_rewardCompletion;
 @property(copy, nonatomic) CDUnknownBlockType giftAttackGetAutoEndDurationCallback; // @synthesize giftAttackGetAutoEndDurationCallback=_giftAttackGetAutoEndDurationCallback;
 @property(copy, nonatomic) CDUnknownBlockType giftAttackEndCallback; // @synthesize giftAttackEndCallback=_giftAttackEndCallback;
@@ -30,4 +30,3 @@
 - (id)initWithPlayItem:(id)arg1;
 
 @end
-

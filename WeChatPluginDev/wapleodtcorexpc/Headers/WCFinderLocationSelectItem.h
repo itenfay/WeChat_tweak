@@ -16,7 +16,6 @@
 + (id)emptyLocationItem;
 + (id)selectOtherItem;
 + (id)selectableLocationItemWithLocation:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long itemType; // @synthesize itemType=_itemType;
 @property(retain, nonatomic) WCLocationInfo *locationInfo; // @synthesize locationInfo=_locationInfo;
 

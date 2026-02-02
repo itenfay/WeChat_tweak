@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIControl.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,7 +16,6 @@
     struct CGRect _myFrame;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) struct CGRect myFrame; // @synthesize myFrame=_myFrame;
 @property(retain, nonatomic) NSString *nsUrl; // @synthesize nsUrl=_nsUrl;
@@ -25,4 +25,3 @@
 - (struct CGRect)accessibilityFrame;
 
 @end
-

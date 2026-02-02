@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ICCollectionStatInfo, ICCollectionView, NSMutableArray, NSString;
 
 @interface ICCollectionViewController
@@ -18,7 +20,6 @@
     id _loadingMoreId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id loadingMoreId; // @synthesize loadingMoreId=_loadingMoreId;
 @property(nonatomic) __weak id loadingNewId; // @synthesize loadingNewId=_loadingNewId;
 @property(nonatomic) _Bool isFirstLoad; // @synthesize isFirstLoad=_isFirstLoad;
@@ -95,4 +96,3 @@
 @property(readonly) Class superclass;
 
 @end
-

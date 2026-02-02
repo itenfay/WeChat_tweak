@@ -26,7 +26,6 @@
     MMMusicShareItem *_m_musicShareItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicShareItem *m_musicShareItem; // @synthesize m_musicShareItem=_m_musicShareItem;
 @property(nonatomic) __weak id <MMMusicPlayerContollerDelegate> m_playDelegate; // @synthesize m_playDelegate;
 @property(retain, nonatomic) NSString *m_singer; // @synthesize m_singer;

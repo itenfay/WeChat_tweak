@@ -13,7 +13,6 @@
     UILabel *m_label;
 }
 
-- (void).cxx_destruct;
 - (void)fadeShowWithDuration:(double)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 tipText:(id)arg2;
 

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, CALayer, EditImageAttr, EditVideoAttr, MJAIAssetProcessor, MJBubbleTouchCaptureView, MJCamChangeTemplateParams, MJCameraTemplateReportObject, MJPublisherBubbleView, MJShootAlbumEntryView, MJShootBeautyInspector, MJShootBeautyMainPanelView, MJShootBubbleSwitchTouchCaptureView, MJShootComposingRecordButton, MJShootComposingTemplateListView, MJShootComposingTemplatePanelHalfScreenViewController, MJShootComposingViewModel, MJShootCountdownTimerSwitch, MJShootCountdownView, MJShootFaceEffectInspector, MJShootFaceGenderSwitch, MJShootFavTemplateEntranceView, MJShootFilterInspector, MJShootFocusView, MJShootMakeupInspector, MJShootMusicEntryView, MJShootRecordingTimerSwitch, MJShootSideToolbar, MJShootToastManager, MJShootVisagePanelViewController, MMBGMSelectHalfScreenViewController, MMCameraTouchEventView, MMLoadingView, MMShortVideoParamModel, MMSightRecordView, MMTimer, MMUIButton, MMUILabel, MMUIView, NSData, NSString, OMJAIGCParams, OMJCamGestureRecognizerSettings, OMJRecordingResultTraits, UIImage, UIImageView, UIStackView, UIView, UIVisualEffectView, WCShortVideoToolBarInitParams;
 @protocol MJShootComposingViewDelegate;
 
@@ -117,7 +119,6 @@
 
 + (id)postEnterSceneKey;
 + (id)createVisagePanelViewModel;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *dragControlForTemplatePanel; // @synthesize dragControlForTemplatePanel=_dragControlForTemplatePanel;
 @property(nonatomic) _Bool isNotchScreen; // @synthesize isNotchScreen=_isNotchScreen;
 @property(retain, nonatomic) MJShootFocusView *focusView; // @synthesize focusView=_focusView;
@@ -548,4 +549,3 @@
 @property(readonly) Class superclass;
 
 @end
-

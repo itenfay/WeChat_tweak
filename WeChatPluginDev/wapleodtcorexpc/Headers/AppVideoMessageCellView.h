@@ -12,7 +12,6 @@
     CAGradientLayer *_gradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) MMUILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) SightIconView *playIconImgView; // @synthesize playIconImgView=_playIconImgView;

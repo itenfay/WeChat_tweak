@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MISSING_TYPE;
 
 @interface _TtC6WeChat24MBBootsPkgManagementBase
@@ -12,7 +14,6 @@
     MISSING_TYPE *version;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)getVersionInfo;
 - (int)provideRemoteVersion;
@@ -21,4 +22,3 @@
 - (void)provideMainScript:(CDUnknownBlockType)arg1;
 
 @end
-

@@ -17,7 +17,6 @@
     NSString *_contractDesc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contractDesc; // @synthesize contractDesc=_contractDesc;
 @property(retain, nonatomic) NSString *contractTitle; // @synthesize contractTitle=_contractTitle;
 @property(retain, nonatomic) NSString *contractUrl; // @synthesize contractUrl=_contractUrl;

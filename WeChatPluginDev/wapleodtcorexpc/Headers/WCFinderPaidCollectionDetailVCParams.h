@@ -19,7 +19,6 @@
 }
 
 + (id)defaultParams;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool authorScene; // @synthesize authorScene=_authorScene;
 @property(nonatomic) _Bool autoStartPurchase; // @synthesize autoStartPurchase=_autoStartPurchase;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;

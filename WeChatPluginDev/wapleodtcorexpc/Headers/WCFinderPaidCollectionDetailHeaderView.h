@@ -24,7 +24,6 @@
     double _layoutWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(retain, nonatomic) FinderPaidCollectionInfo *paidCollection; // @synthesize paidCollection=_paidCollection;
 @property(retain, nonatomic) UILabel *collectionTitleLabel; // @synthesize collectionTitleLabel=_collectionTitleLabel;

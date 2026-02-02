@@ -14,7 +14,6 @@
     NSArray *_wepkgIds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *wepkgIds; // @synthesize wepkgIds=_wepkgIds;
 @property(nonatomic) long long floatLayerType; // @synthesize floatLayerType=_floatLayerType;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

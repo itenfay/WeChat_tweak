@@ -13,7 +13,6 @@
     WCAdConfirmHalfScreenBaseView *_halfScreenView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdConfirmHalfScreenBaseView *halfScreenView; // @synthesize halfScreenView=_halfScreenView;
 @property(retain, nonatomic) WCAdAppointmentInfo *appointmentInfo; // @synthesize appointmentInfo=_appointmentInfo;
 @property(nonatomic) __weak id <WCAdAppointmentLogicDelegate> delegate; // @synthesize delegate=_delegate;

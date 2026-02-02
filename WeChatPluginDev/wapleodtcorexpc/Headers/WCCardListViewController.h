@@ -13,7 +13,6 @@
     NSMutableArray *_cardDataList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cardDataList; // @synthesize cardDataList=_cardDataList;
 @property(nonatomic) __weak id <WCCardListViewControllerDelegate> m_delegate; // @synthesize m_delegate;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

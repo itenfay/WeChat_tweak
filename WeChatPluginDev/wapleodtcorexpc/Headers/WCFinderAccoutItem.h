@@ -15,7 +15,6 @@
 }
 
 + (id)itemWithAcctPageItem:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *friendFollowCountText; // @synthesize friendFollowCountText=_friendFollowCountText;
 @property(retain, nonatomic) NSMutableArray *dataItems; // @synthesize dataItems=_dataItems;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;

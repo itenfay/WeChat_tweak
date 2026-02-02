@@ -15,7 +15,6 @@
     MemoryMappedKV *_mmkv;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableVisibilityEvent; // @synthesize disableVisibilityEvent=_disableVisibilityEvent;
 @property(retain, nonatomic) MemoryMappedKV *mmkv; // @synthesize mmkv=_mmkv;
 @property(nonatomic) _Bool isSyncRequest; // @synthesize isSyncRequest=_isSyncRequest;

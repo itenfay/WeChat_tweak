@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMMVPlayer, MMMusicFlexEditBarThumbLoader, MMMusicFlexEditBarTransitionPanel, MMMusicLiveCGIMgr, MMMusicMVFlexClipEditBar, MMMusicMVModel, MMUIButton, NSArray, NSMutableArray, NSString, UILabel, UITapGestureRecognizer, WCDragDeleteBarView;
 
 @interface MMMusicFlexibleClipMVPreviewViewController
@@ -37,7 +39,6 @@
     MMMusicMVModel *_mvModelHistory;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowExitConfirmActionSheet; // @synthesize isShowExitConfirmActionSheet=_isShowExitConfirmActionSheet;
 @property(retain, nonatomic) MMMusicMVModel *mvModelHistory; // @synthesize mvModelHistory=_mvModelHistory;
 @property(nonatomic) _Bool isMVEdit; // @synthesize isMVEdit=_isMVEdit;
@@ -148,4 +149,3 @@
 @property(readonly) Class superclass;
 
 @end
-

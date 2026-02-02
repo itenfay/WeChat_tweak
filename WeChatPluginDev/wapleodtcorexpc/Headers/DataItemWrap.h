@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_feedSource;
 + (void)PBArrayAdd_tid;
 + (void)PBArrayAdd_finderObject;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long expiredTime; // @synthesize expiredTime=_expiredTime;
 @property(nonatomic) unsigned long long funcFlag; // @synthesize funcFlag=_funcFlag;
 @property(nonatomic) unsigned long long feedSource; // @synthesize feedSource=_feedSource;

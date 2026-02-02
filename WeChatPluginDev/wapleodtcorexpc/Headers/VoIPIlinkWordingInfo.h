@@ -20,7 +20,6 @@
     NSString *_remoteUsername;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int calleeMemberID; // @synthesize calleeMemberID=_calleeMemberID;
 @property(nonatomic) int callerMemberID; // @synthesize callerMemberID=_callerMemberID;
 @property(retain, nonatomic) NSString *remoteUsername; // @synthesize remoteUsername=_remoteUsername;

@@ -32,7 +32,6 @@
     NSString *_usrFileNameListUseCodeCache;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int splashAdClientState; // @synthesize splashAdClientState=_splashAdClientState;
 @property(nonatomic) unsigned int currentOpenedTaskIndex; // @synthesize currentOpenedTaskIndex=_currentOpenedTaskIndex;
 @property(nonatomic) unsigned int wxProcessColdStartTimeStamp; // @synthesize wxProcessColdStartTimeStamp=_wxProcessColdStartTimeStamp;

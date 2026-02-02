@@ -28,7 +28,6 @@
 + (unsigned int)switchFromCertVersion:(unsigned int)arg1 region:(unsigned int)arg2;
 + (unsigned int)certVersionWithRegion:(unsigned int)arg1;
 + (void)SetHybridEcdhEncryptSkipAAK;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 @property(nonatomic) _Bool m_bSpeedy; // @synthesize m_bSpeedy;
 @property(readonly, nonatomic) ProtobufCGIWrap *m_pbCGIWrap; // @synthesize m_pbCGIWrap;

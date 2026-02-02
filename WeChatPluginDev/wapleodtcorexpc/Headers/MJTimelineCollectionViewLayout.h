@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewLayout.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJTimelineLayoutCalculator, MJTimelineViewModel, NSIndexPath, NSMutableDictionary, NSSet;
 
@@ -38,7 +39,6 @@
 + (id)timelineLeadingAccessoryViewIndexPath;
 + (id)narrationSegmentPlaceholderViewIndexPath;
 + (id)musicSegmentPlaceholderViewIndexPath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *finalCellLayoutAttributesByIndexPath; // @synthesize finalCellLayoutAttributesByIndexPath=_finalCellLayoutAttributesByIndexPath;
 @property(retain, nonatomic) NSMutableDictionary *initialCellLayoutAttributesByIndexPath; // @synthesize initialCellLayoutAttributesByIndexPath=_initialCellLayoutAttributesByIndexPath;
 @property(nonatomic) struct CGRect deltaBounds; // @synthesize deltaBounds=_deltaBounds;
@@ -106,4 +106,3 @@
 - (id)layoutAttributesForTrimHandleAtIndexPath:(id)arg1;
 
 @end
-

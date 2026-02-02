@@ -13,7 +13,6 @@
     NSString *_cdnURL;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *cdnURL; // @synthesize cdnURL=_cdnURL;
 @property(readonly, nonatomic) NSString *taskKey; // @synthesize taskKey=_taskKey;
 - (id)initWithTaskKey:(id)arg1 cdnURL:(id)arg2;

@@ -15,7 +15,6 @@
     id <TXIVideoBindable> _nextBindable;
 }
 
-- (void).cxx_destruct;
 @property(retain) id <TXIVideoBindable> nextBindable; // @synthesize nextBindable=_nextBindable;
 @property(nonatomic) _Bool checkInterval; // @synthesize checkInterval=_checkInterval;
 @property(retain, nonatomic) NSString *tag; // @synthesize tag=_tag;

@@ -26,7 +26,6 @@
     long long _maxImageCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableDrag; // @synthesize enableDrag=_enableDrag;
 @property(nonatomic) long long maxImageCount; // @synthesize maxImageCount=_maxImageCount;
 @property(nonatomic) double stepWidth; // @synthesize stepWidth=_stepWidth;

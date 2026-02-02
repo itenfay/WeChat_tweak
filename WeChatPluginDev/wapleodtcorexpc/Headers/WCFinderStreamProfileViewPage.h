@@ -22,7 +22,6 @@
 }
 
 + (Class)pageScrollViewClass;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) WCFinderStreamProfileViewScrollProxy *scrollDelegateProxy; // @synthesize scrollDelegateProxy=_scrollDelegateProxy;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

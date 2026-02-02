@@ -23,7 +23,6 @@
     UIView *_sepelateLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sepelateLine; // @synthesize sepelateLine=_sepelateLine;
 @property(nonatomic) double contentHeight; // @synthesize contentHeight=_contentHeight;
 @property(retain, nonatomic) PrizeData *prizeData; // @synthesize prizeData=_prizeData;

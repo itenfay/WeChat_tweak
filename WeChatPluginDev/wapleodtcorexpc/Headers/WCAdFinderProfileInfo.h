@@ -12,7 +12,6 @@
     NSString *_finderUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
 - (_Bool)isValid;
 - (void)encodeWithCoder:(id)arg1;

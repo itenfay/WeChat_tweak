@@ -38,7 +38,6 @@
     struct CGPoint _touchPoint;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
 @property(nonatomic) long long scrollDecelerateSeq; // @synthesize scrollDecelerateSeq=_scrollDecelerateSeq;
 @property(nonatomic) _Bool isSceneSizeChanged; // @synthesize isSceneSizeChanged=_isSceneSizeChanged;

@@ -14,7 +14,6 @@
     MMFinderLiveGoodsSerialNumberView *_serialNumberView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGoodsSerialNumberView *serialNumberView; // @synthesize serialNumberView=_serialNumberView;
 @property(retain, nonatomic) MMFinderLiveMultiPriceView *priceView; // @synthesize priceView=_priceView;
 @property(retain, nonatomic) MMWebImageView *goodsImageView; // @synthesize goodsImageView=_goodsImageView;

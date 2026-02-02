@@ -18,7 +18,6 @@
     id <MMFinderLiveGoodsBaseCellDelegate> _multiSelectDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveGoodsBaseCellDelegate> multiSelectDelegate; // @synthesize multiSelectDelegate=_multiSelectDelegate;
 @property(retain, nonatomic) UIView *reorderView; // @synthesize reorderView=_reorderView;
 @property(retain, nonatomic) UIImageView *m_selectedImageView; // @synthesize m_selectedImageView;

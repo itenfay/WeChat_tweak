@@ -18,7 +18,6 @@
     MMBadgeView *_badgeView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) MMWebImageView *imageView; // @synthesize imageView=_imageView;

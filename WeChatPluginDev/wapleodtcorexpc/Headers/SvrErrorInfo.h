@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_m_nsUrl;
 + (void)PBArrayAdd_m_nsNoticeID;
 + (void)PBArrayAdd_m_nsContent;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_position; // @synthesize m_position=_m_position;
 @property(nonatomic) unsigned int m_uiExpiredTime; // @synthesize m_uiExpiredTime=_m_uiExpiredTime;
 @property(retain, nonatomic) NSString *m_nsTipsContent; // @synthesize m_nsTipsContent=_m_nsTipsContent;

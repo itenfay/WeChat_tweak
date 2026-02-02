@@ -22,7 +22,6 @@
     MMAssetForGameHaowan *_asset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMAssetForGameHaowan *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) GameHaowanMediaWrap *mediaWrap; // @synthesize mediaWrap=_mediaWrap;
 @property(retain, nonatomic) WCPlayerView *playerView; // @synthesize playerView=_playerView;

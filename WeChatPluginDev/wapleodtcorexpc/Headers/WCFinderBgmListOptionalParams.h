@@ -16,7 +16,6 @@
     NSMutableArray *_assertItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *assertItems; // @synthesize assertItems=_assertItems;
 @property(nonatomic) unsigned long long finderEnterScene; // @synthesize finderEnterScene=_finderEnterScene;
 @property(copy, nonatomic) NSString *miaojianTemplateId; // @synthesize miaojianTemplateId=_miaojianTemplateId;

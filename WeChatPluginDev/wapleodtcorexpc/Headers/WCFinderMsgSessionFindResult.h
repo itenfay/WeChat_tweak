@@ -14,7 +14,6 @@
     WCTableSessionStorage *_sessionStorage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInGreetSessionList; // @synthesize isInGreetSessionList=_isInGreetSessionList;
 @property(retain, nonatomic) WCTableSessionStorage *sessionStorage; // @synthesize sessionStorage=_sessionStorage;
 @property(retain, nonatomic) WCFinderMsgSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;

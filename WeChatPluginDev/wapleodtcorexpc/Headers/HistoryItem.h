@@ -14,7 +14,6 @@
     id _dataValue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id dataValue; // @synthesize dataValue=_dataValue;
 @property(retain, nonatomic) NSNumber *updateTime; // @synthesize updateTime=_updateTime;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

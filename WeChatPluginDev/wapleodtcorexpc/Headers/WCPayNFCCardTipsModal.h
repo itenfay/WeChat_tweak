@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIActivityIndicatorView, NFCCardTipsModalViewData, UIButton, UIImageView, UILabel;
 
@@ -22,7 +23,6 @@
     double _originHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double originHeight; // @synthesize originHeight=_originHeight;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -47,4 +47,3 @@
 - (void)setOnDoneCallBack:(CDUnknownBlockType)arg1;
 
 @end
-

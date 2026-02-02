@@ -17,7 +17,6 @@
     id <ChatMigrationHeartBeatMonitorDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ChatMigrationHeartBeatMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)checkHeartBeat;
 - (void)disableHeartBeatMonitor;

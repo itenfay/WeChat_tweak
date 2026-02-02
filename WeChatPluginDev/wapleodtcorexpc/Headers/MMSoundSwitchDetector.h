@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray;
 
 @interface MMSoundSwitchDetector
@@ -13,7 +15,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) double beginTime; // @synthesize beginTime=_beginTime;
 @property(retain, nonatomic) NSMutableArray *completeHandlers; // @synthesize completeHandlers=_completeHandlers;
 @property(nonatomic) unsigned int soundId; // @synthesize soundId=_soundId;
@@ -23,4 +24,3 @@
 - (id)init;
 
 @end
-

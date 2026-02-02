@@ -34,7 +34,6 @@
     UITapGestureRecognizer *_debugTapGesture;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLongPressHandled; // @synthesize isLongPressHandled=_isLongPressHandled;
 @property(retain, nonatomic) UITapGestureRecognizer *debugTapGesture; // @synthesize debugTapGesture=_debugTapGesture;
 @property(retain, nonatomic) UIDragInteraction *dragInteraction; // @synthesize dragInteraction=_dragInteraction;

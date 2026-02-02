@@ -13,7 +13,6 @@
     KidsWatchFlexibleImageView *_bottomRightBackgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) KidsWatchFlexibleImageView *bottomRightBackgroundView; // @synthesize bottomRightBackgroundView=_bottomRightBackgroundView;
 @property(retain, nonatomic) UIButton *switchAccountButton; // @synthesize switchAccountButton=_switchAccountButton;
 @property(retain, nonatomic) NSArray *kidsAccountInfoList; // @synthesize kidsAccountInfoList=_kidsAccountInfoList;

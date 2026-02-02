@@ -14,7 +14,6 @@
     NSMutableArray *_teamUIs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *teamUIs; // @synthesize teamUIs=_teamUIs;
 @property(nonatomic) unsigned long long rightPkProgressGradientColorType; // @synthesize rightPkProgressGradientColorType=_rightPkProgressGradientColorType;
 @property(nonatomic) unsigned long long leftPkProgressGradientColorType; // @synthesize leftPkProgressGradientColorType=_leftPkProgressGradientColorType;

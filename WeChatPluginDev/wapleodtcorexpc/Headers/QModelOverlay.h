@@ -24,7 +24,6 @@
     CDStruct_02837cd9 _boundingRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QModelOverlayAnimationLayer *animLayer; // @synthesize animLayer=_animLayer;
 @property(nonatomic) double anchorZ; // @synthesize anchorZ=_anchorZ;
 @property(nonatomic) double anchorY; // @synthesize anchorY=_anchorY;

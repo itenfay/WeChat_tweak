@@ -16,7 +16,6 @@
     NSString *_targetOwnerName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *targetOwnerName; // @synthesize targetOwnerName=_targetOwnerName;
 @property(retain, nonatomic) NSArray *owners; // @synthesize owners=_owners;
 @property(nonatomic) _Bool isRedSide; // @synthesize isRedSide=_isRedSide;

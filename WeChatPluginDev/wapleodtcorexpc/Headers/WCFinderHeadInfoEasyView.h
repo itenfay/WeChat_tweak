@@ -34,7 +34,6 @@
 }
 
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *customeAccessibleElements; // @synthesize customeAccessibleElements=_customeAccessibleElements;
 @property(retain, nonatomic) NSMutableArray *elementsArray; // @synthesize elementsArray=_elementsArray;
 @property(retain, nonatomic) NSString *brandLogoUrl; // @synthesize brandLogoUrl=_brandLogoUrl;

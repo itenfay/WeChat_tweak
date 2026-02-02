@@ -18,7 +18,6 @@
     NSMutableArray *_pagePaths;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pagePaths; // @synthesize pagePaths=_pagePaths;
 @property(nonatomic) unsigned long long interval; // @synthesize interval=_interval;
 @property(nonatomic) unsigned long long quitTimestampMs; // @synthesize quitTimestampMs=_quitTimestampMs;

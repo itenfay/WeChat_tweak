@@ -12,7 +12,6 @@
     int m_enWCPayCheckOpenWCPayViewAuthorityScene;
 }
 
-- (void).cxx_destruct;
 - (void)OnCheckWCPayJsApiRequest:(id)arg1 Error:(id)arg2;
 - (void)stopLogic;
 - (void)startLogic;

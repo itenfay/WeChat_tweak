@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_viewOperations;
 + (void)PBArrayAdd_businessParams;
 + (void)PBArrayAdd_pageName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *viewOperations; // @synthesize viewOperations=_viewOperations;
 @property(retain, nonatomic) NSMutableArray *businessParams; // @synthesize businessParams=_businessParams;
 @property(retain, nonatomic) NSString *pageName; // @synthesize pageName=_pageName;

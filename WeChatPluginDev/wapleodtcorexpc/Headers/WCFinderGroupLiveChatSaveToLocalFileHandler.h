@@ -11,7 +11,6 @@
     NSString *_filePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(nonatomic) unsigned int lastCRC32; // @synthesize lastCRC32=_lastCRC32;
 - (void)setupFilePath:(id)arg1;

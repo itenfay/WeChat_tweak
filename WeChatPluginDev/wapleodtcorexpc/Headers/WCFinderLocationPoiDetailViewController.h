@@ -54,7 +54,6 @@
     struct CGPoint _originalContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long flowLoadingTime; // @synthesize flowLoadingTime=_flowLoadingTime;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *edgeRecognizer; // @synthesize edgeRecognizer=_edgeRecognizer;
 @property(retain, nonatomic) TakeCarServiceDataLogic *takeCarDataLogic; // @synthesize takeCarDataLogic=_takeCarDataLogic;

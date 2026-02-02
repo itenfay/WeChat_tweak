@@ -22,7 +22,6 @@
     unsigned long long _cardType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cardType; // @synthesize cardType=_cardType;
 @property(nonatomic) unsigned long long entryScene; // @synthesize entryScene=_entryScene;
 @property(nonatomic) unsigned int poiSrcType; // @synthesize poiSrcType=_poiSrcType;

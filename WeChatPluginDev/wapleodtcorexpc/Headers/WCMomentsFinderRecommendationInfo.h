@@ -16,7 +16,6 @@
 }
 
 + (id)recommendationInfoWithFinderCtrlInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *customizedSeparatorTips; // @synthesize customizedSeparatorTips=_customizedSeparatorTips;
 @property(readonly, nonatomic) unsigned long long userCount; // @synthesize userCount=_userCount;
 @property(readonly, copy, nonatomic) NSArray *usernames; // @synthesize usernames=_usernames;

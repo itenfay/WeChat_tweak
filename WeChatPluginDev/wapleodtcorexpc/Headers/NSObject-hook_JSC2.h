@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSObject (hook_JSC2)
 + (id)jsc2_valueWithJSValueRef:(struct OpaqueJSValue *)arg1 inContext:(id)arg2;
@@ -27,4 +28,3 @@
 + (id)jsc2_valueWithBool:(_Bool)arg1 inContext:(id)arg2;
 + (id)jsc2_valueWithObject:(id)arg1 inContext:(id)arg2;
 @end
-

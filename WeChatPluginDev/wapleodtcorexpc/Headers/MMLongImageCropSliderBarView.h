@@ -28,7 +28,6 @@
 
 + (struct CGSize)calBarSizeWithContentSize:(struct CGSize)arg1;
 + (struct CGSize)calContentSizeWithBarSize:(struct CGSize)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGest; // @synthesize tapGest=_tapGest;
 @property(nonatomic) struct CGSize sliderFrameMaxSize; // @synthesize sliderFrameMaxSize=_sliderFrameMaxSize;
 @property(retain, nonatomic) UIView *sliderView; // @synthesize sliderView=_sliderView;

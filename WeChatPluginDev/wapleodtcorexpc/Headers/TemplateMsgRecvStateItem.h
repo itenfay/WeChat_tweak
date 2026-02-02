@@ -14,7 +14,6 @@
     NSString *_templateTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *templateTitle; // @synthesize templateTitle=_templateTitle;
 @property(nonatomic) unsigned int recvState; // @synthesize recvState=_recvState;
 @property(retain, nonatomic) NSString *templateId; // @synthesize templateId=_templateId;

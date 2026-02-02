@@ -17,7 +17,6 @@
 }
 
 + (id)sharedContext;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *libraryCache; // @synthesize libraryCache=_libraryCache;
 @property(nonatomic) struct __CVMetalTextureCache *textureCache; // @synthesize textureCache=_textureCache;
 @property(retain, nonatomic) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_commandQueue;

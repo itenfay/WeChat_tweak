@@ -17,7 +17,6 @@
     id <MMFinderLiveCouponCardViewModelDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool audienceReceived; // @synthesize audienceReceived=_audienceReceived;
 @property(nonatomic) __weak id <MMFinderLiveCouponCardViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskID; // @synthesize taskID=_taskID;

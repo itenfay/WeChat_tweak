@@ -28,7 +28,6 @@
     double _seekStartTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double seekStartTime; // @synthesize seekStartTime=_seekStartTime;
 @property(nonatomic) _Bool enterLittleStridePreview; // @synthesize enterLittleStridePreview=_enterLittleStridePreview;
 @property(nonatomic) _Bool isTimeHidden; // @synthesize isTimeHidden=_isTimeHidden;

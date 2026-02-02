@@ -12,7 +12,6 @@
     OMJAssetInfo *_assetInfo;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) OMJAssetInfo *assetInfo; // @synthesize assetInfo=_assetInfo;
 - (id)initWithAssetInfo:(id)arg1;
 

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMHeadImageView, MMUIButton, UIImageView, UILabel, UIView, WCFinderLikeInfo;
 @protocol WCFinderFeedFriendsLikeListTableViewCellDelegate;
 
@@ -23,7 +25,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLikeInfo *likeInfo; // @synthesize likeInfo=_likeInfo;
 @property(retain, nonatomic) UIImageView *logoIconView; // @synthesize logoIconView=_logoIconView;
 @property(retain, nonatomic) UILabel *firstLikeLabel; // @synthesize firstLikeLabel=_firstLikeLabel;
@@ -48,4 +49,3 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
-

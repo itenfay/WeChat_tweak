@@ -13,7 +13,6 @@
     EditVideoBGMPlayer *_bgmPlayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EditVideoBGMPlayer *bgmPlayer; // @synthesize bgmPlayer=_bgmPlayer;
 @property(retain, nonatomic) WCWidgetPlayerParams *params; // @synthesize params=_params;
 - (void)_initBGMPlayerIfNeeded;

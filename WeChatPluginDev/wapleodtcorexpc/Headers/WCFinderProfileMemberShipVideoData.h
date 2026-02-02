@@ -14,7 +14,6 @@
     NSString *_memberShipTicket;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *memberShipTicket; // @synthesize memberShipTicket=_memberShipTicket;
 @property(retain, nonatomic) WCFinderMemberShipIntroduceListData *listData; // @synthesize listData=_listData;
 @property(retain, nonatomic) WCFinderFeedArray *feedArray; // @synthesize feedArray=_feedArray;

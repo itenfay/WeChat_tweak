@@ -14,7 +14,6 @@
     NSString *_currentLoadUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *currentLoadUrl; // @synthesize currentLoadUrl=_currentLoadUrl;
 @property(retain, nonatomic) UILabel *cardDesc; // @synthesize cardDesc=_cardDesc;
 @property(retain, nonatomic) UIImageView *cardImgView; // @synthesize cardImgView=_cardImgView;

@@ -21,7 +21,6 @@
     NSDictionary *_menuEcsData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *menuEcsData; // @synthesize menuEcsData=_menuEcsData;
 @property(nonatomic) unsigned long long showIconType; // @synthesize showIconType=_showIconType;
 @property(nonatomic) unsigned int menuActionType; // @synthesize menuActionType=_menuActionType;

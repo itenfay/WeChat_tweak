@@ -11,7 +11,6 @@
     JSValue *_cleanAtomCallback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSValue *cleanAtomCallback; // @synthesize cleanAtomCallback=_cleanAtomCallback;
 @property(retain, nonatomic) MMBaseJsApiHandler *baseJsApiHandler; // @synthesize baseJsApiHandler=_baseJsApiHandler;
 - (void)internalInit;

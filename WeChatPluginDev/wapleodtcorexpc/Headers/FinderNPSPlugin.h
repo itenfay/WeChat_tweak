@@ -14,7 +14,6 @@
 }
 
 + (id)plugin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderNPSFlutterAPI *flutterAPI; // @synthesize flutterAPI=_flutterAPI;
 - (void)onCloseNPSWithError:(id *)arg1;
 - (void)onClickNPSQuestionBuffer:(id)arg1 answerBuffer:(id)arg2 inputText:(id)arg3 mutliAnswerIDs:(id)arg4 error:(id *)arg5;

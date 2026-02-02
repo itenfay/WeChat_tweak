@@ -13,7 +13,6 @@
     TemplateMsgSubViewController *_templateVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TemplateMsgSubViewController *templateVC; // @synthesize templateVC=_templateVC;
 @property(retain, nonatomic) NSString *templateSessionId; // @synthesize templateSessionId=_templateSessionId;
 - (void)OnTagLink:(id)arg1 messageWrap:(id)arg2;

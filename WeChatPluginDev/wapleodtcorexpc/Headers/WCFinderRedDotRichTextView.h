@@ -10,7 +10,6 @@
     WCFinderRedDotTextLayout *_layout;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRedDotTextLayout *layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) _Bool isContentTruncatedOrInvisible;
 - (double)getUntruncatedWidthMaxWidth:(double)arg1;

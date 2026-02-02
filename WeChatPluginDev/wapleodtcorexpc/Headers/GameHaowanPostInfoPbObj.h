@@ -19,7 +19,6 @@
 + (void)PBArrayAdd_mediaList;
 + (void)PBArrayAdd_postType;
 + (void)PBArrayAdd_postId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *continueData; // @synthesize continueData=_continueData;
 @property(retain, nonatomic) NSArray *mediaList; // @synthesize mediaList=_mediaList;
 @property(readonly, copy) NSString *description;

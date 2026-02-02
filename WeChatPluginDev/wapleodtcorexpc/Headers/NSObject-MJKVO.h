@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSObject (MJKVO)
 - (void)mj_unobserveAll;
@@ -13,4 +14,3 @@
 - (void)mj_observe:(id)arg1 keyPath:(id)arg2 options:(unsigned long long)arg3 notifyUntilChanged:(_Bool)arg4 block:(CDUnknownBlockType)arg5;
 - (void)mj_observe:(id)arg1 keyPath:(id)arg2 options:(unsigned long long)arg3 block:(CDUnknownBlockType)arg4;
 @end
-

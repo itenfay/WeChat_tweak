@@ -15,7 +15,6 @@
     id <WCContactItemDeleteViewDelegate> _deleteViewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCContactItemDeleteViewDelegate> deleteViewDelegate; // @synthesize deleteViewDelegate=_deleteViewDelegate;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 - (id)initWithContact:(id)arg1;

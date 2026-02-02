@@ -15,7 +15,6 @@
 
 + (struct CGSize)signSizeWithText:(id)arg1 font:(id)arg2 boundingSize:(struct CGSize)arg3 iconWidth:(double)arg4;
 + (struct CGSize)signSizeWithText:(id)arg1 font:(id)arg2 boundingSize:(struct CGSize)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) UILabel *signLabel; // @synthesize signLabel=_signLabel;
 - (id)accessibilityLabel;

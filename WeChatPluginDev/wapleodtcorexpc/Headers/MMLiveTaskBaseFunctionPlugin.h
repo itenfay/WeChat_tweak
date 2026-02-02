@@ -13,7 +13,6 @@
     MMLiveBaseTask<MMFinderLiveTaskFunctionPlugin> *_liveTask;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMLiveBaseTask<MMFinderLiveTaskFunctionPlugin> *liveTask; // @synthesize liveTask=_liveTask;
 @property(readonly, nonatomic) _Bool isLiveRoom;
 @property(readonly, nonatomic) MMFinderLiveTaskId *finderTaskId;

@@ -10,7 +10,6 @@
     UIBezierPath *_borderPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIBezierPath *borderPath; // @synthesize borderPath=_borderPath;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)commonInit;

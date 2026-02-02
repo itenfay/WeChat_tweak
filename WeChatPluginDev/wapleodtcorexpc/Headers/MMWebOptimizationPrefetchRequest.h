@@ -24,7 +24,6 @@
     NSString *_transferScope;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *transferScope; // @synthesize transferScope=_transferScope;
 @property(nonatomic) unsigned int fetchPkgType; // @synthesize fetchPkgType=_fetchPkgType;
 @property(nonatomic) unsigned int prefetchMode; // @synthesize prefetchMode=_prefetchMode;

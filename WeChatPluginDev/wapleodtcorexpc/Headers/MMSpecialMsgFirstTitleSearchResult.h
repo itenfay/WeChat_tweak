@@ -10,7 +10,6 @@
     NSString *_m_firstTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_firstTitle; // @synthesize m_firstTitle=_m_firstTitle;
 
 @end

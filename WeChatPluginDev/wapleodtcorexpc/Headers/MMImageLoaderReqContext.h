@@ -24,7 +24,6 @@
     MMHevcHelper *_hevcHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMHevcHelper *hevcHelper; // @synthesize hevcHelper=_hevcHelper;
 @property(readonly, nonatomic) unsigned int posInTL; // @synthesize posInTL=_posInTL;
 @property(readonly, nonatomic) _Bool isOpenBlankMonitor; // @synthesize isOpenBlankMonitor=_isOpenBlankMonitor;

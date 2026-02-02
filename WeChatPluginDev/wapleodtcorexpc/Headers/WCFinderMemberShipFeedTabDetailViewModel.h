@@ -15,7 +15,6 @@
     NSMutableDictionary *_contentVMDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *contentVMDict; // @synthesize contentVMDict=_contentVMDict;
 @property(retain, nonatomic) WCFinderMemberShipFeedTabViewModel *feedTabVM; // @synthesize feedTabVM=_feedTabVM;
 @property(nonatomic) __weak id <WCFinderMemberShipFeedTabDetailViewModelDelegate> delegate; // @synthesize delegate=_delegate;

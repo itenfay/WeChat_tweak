@@ -16,7 +16,6 @@
     NSMutableArray *_redDotFromClientIdList;
 }
 
-- (void).cxx_destruct;
 - (void)updateRedpointForId:(id)arg1;
 - (void)updateWCLabByXExpt:(id)arg1 deleteExptIds:(id)arg2 andExptFlag:(unsigned int)arg3 andAppIdList:(id)arg4;
 - (void)onGetABTestExpLabsItems:(id)arg1 expiredExpids:(id)arg2 isAutoGet:(_Bool)arg3;

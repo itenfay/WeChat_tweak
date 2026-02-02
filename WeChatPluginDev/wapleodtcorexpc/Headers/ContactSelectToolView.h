@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, KeepRotateImageView, MMLaconButton, MMUIButton, NSMutableArray, NSMutableDictionary, NSString, UIButton, UIImageView;
 
@@ -33,7 +34,6 @@
     NSMutableDictionary *_headImageViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *headImageViews; // @synthesize headImageViews=_headImageViews;
 @property(retain, nonatomic) NSMutableArray *selectedContacts; // @synthesize selectedContacts=_selectedContacts;
 @property(retain, nonatomic) MMUIButton *foldButton; // @synthesize foldButton=_foldButton;
@@ -89,4 +89,3 @@
 @property(readonly) Class superclass;
 
 @end
-

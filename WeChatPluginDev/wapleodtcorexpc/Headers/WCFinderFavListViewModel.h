@@ -17,7 +17,6 @@
     unsigned long long _selectedTopicId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool userFavChanged; // @synthesize userFavChanged=_userFavChanged;
 @property(nonatomic) unsigned long long selectedTopicId; // @synthesize selectedTopicId=_selectedTopicId;
 @property(retain, nonatomic) NSMutableArray *pageViewModels; // @synthesize pageViewModels=_pageViewModels;

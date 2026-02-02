@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIViewController, WAContact, WAOpenSDKTransferContext;
 @protocol MMUIViewControllerDelegate;
@@ -31,7 +32,6 @@
     WAOpenSDKTransferContext *_transferContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAOpenSDKTransferContext *transferContext; // @synthesize transferContext=_transferContext;
 @property(copy, nonatomic) NSString *jsapiType; // @synthesize jsapiType=_jsapiType;
 @property(copy, nonatomic) NSString *ticket; // @synthesize ticket=_ticket;
@@ -54,4 +54,3 @@
 - (id)init;
 
 @end
-

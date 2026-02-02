@@ -15,7 +15,6 @@
     id <MMMusicMVRecommendHeaderViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMMusicMVRecommendHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)didClickClose:(id)arg1;

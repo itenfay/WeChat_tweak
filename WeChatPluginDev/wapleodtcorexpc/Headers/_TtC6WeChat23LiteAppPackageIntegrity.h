@@ -13,7 +13,6 @@
     MISSING_TYPE *missFilePath;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithIntegrity:(_Bool)arg1 missFilePath:(id)arg2;
 @property(nonatomic, readonly) NSString *missFilePath;

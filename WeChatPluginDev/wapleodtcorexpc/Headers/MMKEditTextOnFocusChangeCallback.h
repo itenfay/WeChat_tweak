@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onFocusChange:(_Bool)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

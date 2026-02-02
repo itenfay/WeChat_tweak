@@ -58,7 +58,6 @@
 + (void)PBArrayAdd_remark;
 + (void)PBArrayAdd_name;
 + (void)PBArrayAdd_appID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *h5GameDetailUrl; // @synthesize h5GameDetailUrl=_h5GameDetailUrl;
 @property(retain, nonatomic) NSString *h5GameLaunchUrl; // @synthesize h5GameLaunchUrl=_h5GameLaunchUrl;
 @property(retain, nonatomic) NSString *h5GameAppid; // @synthesize h5GameAppid=_h5GameAppid;

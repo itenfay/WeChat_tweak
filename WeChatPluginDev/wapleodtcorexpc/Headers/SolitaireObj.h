@@ -54,7 +54,6 @@
 + (void)PBArrayAdd_nsExample;
 + (void)PBArrayAdd_nsSolitaireTail;
 + (void)PBArrayAdd_nsSolitaireHeader;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;
 @property(retain, nonatomic) NSMutableDictionary *dicInvalidMsg; // @synthesize dicInvalidMsg=_dicInvalidMsg;
 @property(retain, nonatomic) NSMutableSet *invalidSolitaireKeySet; // @synthesize invalidSolitaireKeySet=_invalidSolitaireKeySet;

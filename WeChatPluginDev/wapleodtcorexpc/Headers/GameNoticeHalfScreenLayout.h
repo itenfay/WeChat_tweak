@@ -17,7 +17,6 @@
     struct CGSize _additionalIconSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCLabelDynamicLayout *checkBtnLayout; // @synthesize checkBtnLayout=_checkBtnLayout;
 @property(retain, nonatomic) GCLabelDynamicLayout *additionalBtnLayout; // @synthesize additionalBtnLayout=_additionalBtnLayout;
 @property(retain, nonatomic) GCLabelDynamicLayout *additionalSubTitleLabelLayout; // @synthesize additionalSubTitleLabelLayout=_additionalSubTitleLabelLayout;

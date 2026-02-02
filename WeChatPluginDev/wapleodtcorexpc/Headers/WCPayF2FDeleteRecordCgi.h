@@ -14,7 +14,6 @@
     id <WCPayF2FDeleteRecordCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayF2FDeleteRecordCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 @property(nonatomic) unsigned long long timeFormat; // @synthesize timeFormat=_timeFormat;
 @property(nonatomic) unsigned long long timeStamp; // @synthesize timeStamp=_timeStamp;

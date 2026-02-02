@@ -18,7 +18,6 @@
     unsigned long long _reportPolicy;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long reportPolicy; // @synthesize reportPolicy=_reportPolicy;
 @property(nonatomic) unsigned long long time; // @synthesize time=_time;
 @property(retain, nonatomic) NSArray *routeRules; // @synthesize routeRules=_routeRules;

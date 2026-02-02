@@ -10,7 +10,6 @@
     NSString *_groupName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 - (Class)bindSupplyMentaryElementClassOfKind:(id)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;

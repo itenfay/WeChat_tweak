@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSUUID;
 
 @interface WXPTenpayCgiWrapper
@@ -13,7 +15,6 @@
     NSUUID *_uuid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) CDUnknownBlockType endCallback; // @synthesize endCallback=_endCallback;
 @property(copy, nonatomic) CDUnknownBlockType successCallback; // @synthesize successCallback=_successCallback;
@@ -24,4 +25,3 @@
 - (id)init;
 
 @end
-

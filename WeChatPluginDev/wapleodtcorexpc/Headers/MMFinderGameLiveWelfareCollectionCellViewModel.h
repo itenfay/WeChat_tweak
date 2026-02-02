@@ -21,7 +21,6 @@
 
 + (Class)cellClass;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUseLocalPic; // @synthesize isUseLocalPic=_isUseLocalPic;
 @property(retain, nonatomic) NSString *reportExtInfoJson; // @synthesize reportExtInfoJson=_reportExtInfoJson;
 @property(nonatomic) double cellWidth; // @synthesize cellWidth=_cellWidth;

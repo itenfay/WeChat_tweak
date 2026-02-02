@@ -23,7 +23,6 @@
 + (double)lastLineWidth:(id)arg1;
 + (struct CGSize)sizeForContent:(id)arg1 font:(id)arg2 limitWidth:(double)arg3 lineSpacing:(double)arg4 limitLineNumber:(unsigned long long)arg5 parserType:(unsigned long long)arg6 outArrStyles:(id *)arg7 hasTag:(_Bool)arg8 tagSize:(struct CGSize)arg9 spacingDic:(id)arg10;
 + (struct CGSize)sizeForContent:(id)arg1 font:(id)arg2 limitWidth:(double)arg3 lineSpacing:(double)arg4 limitLineNumber:(unsigned long long)arg5 outArrStyles:(id *)arg6 hasTag:(_Bool)arg7 tagSize:(struct CGSize)arg8 spacingDic:(id)arg9;
-- (void).cxx_destruct;
 @property(nonatomic) double customTextTagBottomSpacing; // @synthesize customTextTagBottomSpacing=_customTextTagBottomSpacing;
 @property(nonatomic) double customTextTagLeftSpacing; // @synthesize customTextTagLeftSpacing=_customTextTagLeftSpacing;
 @property(nonatomic) unsigned long long limitLineNumber; // @synthesize limitLineNumber=_limitLineNumber;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMCommonCgiUploader, NSString;
 
@@ -20,7 +21,6 @@
     CDUnknownBlockType _completeBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 @property(retain, nonatomic) MMCommonCgiUploader *cgiUploader; // @synthesize cgiUploader=_cgiUploader;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
@@ -49,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

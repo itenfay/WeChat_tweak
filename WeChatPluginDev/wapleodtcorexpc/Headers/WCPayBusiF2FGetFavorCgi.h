@@ -14,7 +14,6 @@
     double _m_interval;
 }
 
-- (void).cxx_destruct;
 @property double m_interval; // @synthesize m_interval=_m_interval;
 @property _Bool m_isLoading; // @synthesize m_isLoading=_m_isLoading;
 @property(retain) BusiF2FGetFavorReq *m_nextRequest; // @synthesize m_nextRequest=_m_nextRequest;

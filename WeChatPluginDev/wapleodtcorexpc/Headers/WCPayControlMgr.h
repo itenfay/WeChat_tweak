@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 @protocol WCPayOfflineLogicDelegate;
 
@@ -13,7 +15,6 @@
 
 + (unsigned long long)preGetWCPayCacheSize;
 + (unsigned long long)cleanWCPayCache;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayOfflineLogicDelegate> offlineLogicDelegate; // @synthesize offlineLogicDelegate=_offlineLogicDelegate;
 - (unsigned int)startCollectPalmControlLogic:(id)arg1 withData:(id)arg2 logicDelegate:(id)arg3;
 - (unsigned int)startChargeNFCCardControlLogic:(id)arg1 params:(id)arg2 delegate:(id)arg3;
@@ -232,4 +233,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -16,7 +17,6 @@
     GameCenterPkgForceUpdateListiener *_selfRef;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameCenterPkgForceUpdateListiener *selfRef; // @synthesize selfRef=_selfRef;
 @property(nonatomic) _Bool successUpdate; // @synthesize successUpdate=_successUpdate;
 @property(retain, nonatomic) NSString *errorDesc; // @synthesize errorDesc=_errorDesc;
@@ -30,4 +30,3 @@
 - (id)initWithTargetPkgId:(id)arg1 didCompleteBlock:(CDUnknownBlockType)arg2;
 
 @end
-

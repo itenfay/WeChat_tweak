@@ -132,7 +132,6 @@
 + (void)PBArrayAdd_m_nsTranscationID;
 + (void)PBArrayAdd_m_nsFeeDesc;
 + (void)PBArrayAdd_m_uiPaySubType;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_c2cPayReceiveStatus; // @synthesize m_c2cPayReceiveStatus=_m_c2cPayReceiveStatus;
 @property(nonatomic) unsigned int m_c2cPayBubbleType; // @synthesize m_c2cPayBubbleType=_m_c2cPayBubbleType;
 @property(nonatomic) int bubble_click_flag; // @synthesize bubble_click_flag=_bubble_click_flag;

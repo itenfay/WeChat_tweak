@@ -18,7 +18,6 @@
     OTTextureProgram *_program;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OTTextureProgram *program; // @synthesize program=_program;
 @property(retain, nonatomic) OTTextureHolder *flipTexture; // @synthesize flipTexture=_flipTexture;
 @property(nonatomic) unsigned int frameBuffer; // @synthesize frameBuffer=_frameBuffer;

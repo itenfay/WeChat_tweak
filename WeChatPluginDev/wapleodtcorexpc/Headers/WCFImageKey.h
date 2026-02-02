@@ -15,7 +15,6 @@
     NSString *_uri;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *uri; // @synthesize uri=_uri;
 @property(readonly, nonatomic) NSString *hashKey; // @synthesize hashKey=_hashKey;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;

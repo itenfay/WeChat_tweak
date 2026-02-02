@@ -13,7 +13,6 @@
     NSArray *_backupPackages;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *backupPackages; // @synthesize backupPackages=_backupPackages;
 @property(retain, nonatomic) WXGRoamBackendHandler *backendHandler; // @synthesize backendHandler=_backendHandler;
 @property(retain, nonatomic) UILabel *showInfoLabel; // @synthesize showInfoLabel=_showInfoLabel;

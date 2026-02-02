@@ -28,7 +28,6 @@
     NSMutableArray *_labelList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *stopButton; // @synthesize stopButton=_stopButton;
 - (void)onShrinkButtonChanged:(id)arg1;
 - (void)onExpandButtonChanged:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJAssetAnalysisReportInfo, MJMusicAnalyzer, MJOSTAnalyzer, MJPHAssetsAnalyzer, MJVolumeAnalysisResult, MJVolumeAnalyzer;
 
@@ -17,7 +18,6 @@
     MJVolumeAnalysisResult *_volumeResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJVolumeAnalysisResult *volumeResult; // @synthesize volumeResult=_volumeResult;
 @property(retain, nonatomic) MJAssetAnalysisReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property(readonly, nonatomic) MJVolumeAnalyzer *volumeAnalyzer; // @synthesize volumeAnalyzer=_volumeAnalyzer;
@@ -29,4 +29,3 @@
 - (id)init;
 
 @end
-

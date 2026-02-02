@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (int)requestFeatureDataAsyncWithIndex:(int)arg1 timeRangeArray:(const void *)arg2;
 - (int)requestFeatureDataAsyncWithIndex:(int)arg1 timeRange:(const struct TPPlayerRichMediaTimeRange *)arg2;
 - (int)requestFeatureDataAsyncWithIndex:(int)arg1 timeMsArray:(const void *)arg2;

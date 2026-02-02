@@ -10,7 +10,6 @@
     MMFinderLiveNewCustomGiftStyleObj *_style;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveNewCustomGiftStyleObj *style; // @synthesize style=_style;
 
 @end

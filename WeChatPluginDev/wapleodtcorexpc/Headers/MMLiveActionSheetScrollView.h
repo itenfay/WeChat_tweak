@@ -15,7 +15,6 @@
     NSMutableArray *_itemViewArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *itemViewArray; // @synthesize itemViewArray=_itemViewArray;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 @property(nonatomic) __weak id <MMLiveActionSheetScrollViewDelegate> actionSheetDelegate; // @synthesize actionSheetDelegate=_actionSheetDelegate;

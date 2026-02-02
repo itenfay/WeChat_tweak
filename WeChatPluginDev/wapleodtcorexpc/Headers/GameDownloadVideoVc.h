@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMProgressViewEx, MMWebImageView, NSString;
 
 @interface GameDownloadVideoVc
@@ -19,7 +21,6 @@
     MMProgressViewEx *_progressView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool oriNavigationBarHidden; // @synthesize oriNavigationBarHidden=_oriNavigationBarHidden;
 @property(nonatomic) _Bool downloadEventCompleted; // @synthesize downloadEventCompleted=_downloadEventCompleted;
 @property(nonatomic) _Bool isPopByDownLoadCompleted; // @synthesize isPopByDownLoadCompleted=_isPopByDownLoadCompleted;
@@ -50,4 +51,3 @@
 - (id)initWithVideoUrl:(id)arg1 thumbUrl:(id)arg2;
 
 @end
-

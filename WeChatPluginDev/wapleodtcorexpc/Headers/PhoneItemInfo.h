@@ -16,7 +16,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_phoneNum;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *phoneNum; // @synthesize phoneNum=_phoneNum;
 @property(nonatomic) long long index; // @synthesize index;
 @property(nonatomic) _Bool bFromHash; // @synthesize bFromHash;

@@ -34,7 +34,6 @@
 + (void)PBArrayAdd_iconUrl;
 + (void)PBArrayAdd_topicType;
 + (void)PBArrayAdd_topic;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedBindEventInfo *event; // @synthesize event=_event;
 @property(nonatomic) unsigned long long topicCount; // @synthesize topicCount=_topicCount;
 @property(nonatomic) unsigned long long musicType; // @synthesize musicType=_musicType;

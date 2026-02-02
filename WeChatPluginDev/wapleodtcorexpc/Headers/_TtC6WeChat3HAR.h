@@ -15,7 +15,6 @@
     MISSING_TYPE *loopAllEntry;
 }
 
-- (void).cxx_destruct;
 - (void)addEntryWithUrlRequest:(id)arg1 urlResponse:(id)arg2 responseData:(id)arg3 startDate:(id)arg4 webviewPtrValue:(id)arg5;
 - (id)init;
 - (id)entryMatchUrlStrWithUrlStr:(id)arg1;

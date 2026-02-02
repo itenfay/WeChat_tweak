@@ -15,7 +15,6 @@
     NSString *_paySign;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *paySign; // @synthesize paySign=_paySign;
 @property(copy, nonatomic) NSString *signType; // @synthesize signType=_signType;
 @property(copy, nonatomic) NSString *packageStr; // @synthesize packageStr=_packageStr;

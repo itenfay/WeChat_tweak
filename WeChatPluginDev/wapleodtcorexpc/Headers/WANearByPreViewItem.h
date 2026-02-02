@@ -15,7 +15,6 @@
     NSString *_path;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int debugMode; // @synthesize debugMode=_debugMode;
 @property(nonatomic) unsigned int appVersion; // @synthesize appVersion=_appVersion;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;

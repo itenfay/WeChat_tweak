@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class StrokeView, UIColor, UIImageView;
 
@@ -21,7 +22,6 @@
     UIView *_bottomProgressLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomProgressLine; // @synthesize bottomProgressLine=_bottomProgressLine;
 @property(retain, nonatomic) UIView *topProgressLine; // @synthesize topProgressLine=_topProgressLine;
 @property(retain, nonatomic) UIImageView *lightIconView; // @synthesize lightIconView=_lightIconView;
@@ -43,4 +43,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 showLightingBar:(_Bool)arg2;
 
 @end
-

@@ -26,7 +26,6 @@
     NSString *_sessionID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidShowMJTemplate; // @synthesize forbidShowMJTemplate=_forbidShowMJTemplate;
 @property(nonatomic) int pickerScene; // @synthesize pickerScene=_pickerScene;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;

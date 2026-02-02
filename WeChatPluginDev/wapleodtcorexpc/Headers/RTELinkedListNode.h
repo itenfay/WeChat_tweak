@@ -10,7 +10,6 @@
     RTELinkedListNode *_preNode;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RTELinkedListNode *preNode; // @synthesize preNode=_preNode;
 @property(retain, nonatomic) RTELinkedListNode *nextNode; // @synthesize nextNode=_nextNode;
 @property(nonatomic) unsigned long long length; // @synthesize length=_length;

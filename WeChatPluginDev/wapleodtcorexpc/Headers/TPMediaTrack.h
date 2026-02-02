@@ -18,7 +18,6 @@
 
 + (id)mediaTrackWithTrackMediaType:(long long)arg1;
 + (id)mediaTrackWithTrackId:(int)arg1 mediaType:(long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *clipArray; // @synthesize clipArray=_clipArray;
 @property(copy, nonatomic) NSDictionary *httpHeader; // @synthesize httpHeader;
 @property(retain, nonatomic) TPMediaAssetExtraParam *extraParams; // @synthesize extraParams;

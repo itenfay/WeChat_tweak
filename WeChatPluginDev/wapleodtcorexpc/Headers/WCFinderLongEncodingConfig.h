@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, AVAssetExportSession, AVMutableVideoComposition, NSString, NSURL, VideoEncodeTask;
 
@@ -21,7 +22,6 @@
     AVAssetExportSession *_longEncodeExportSession;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hadError; // @synthesize hadError=_hadError;
 @property(nonatomic) __weak AVAssetExportSession *longEncodeExportSession; // @synthesize longEncodeExportSession=_longEncodeExportSession;
 @property(nonatomic) __weak VideoEncodeTask *longEncodeTask; // @synthesize longEncodeTask=_longEncodeTask;
@@ -42,4 +42,3 @@
 - (id)initWithUrl:(id)arg1;
 
 @end
-

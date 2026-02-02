@@ -15,7 +15,6 @@
     UIButton *_submitButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *submitButton; // @synthesize submitButton=_submitButton;
 @property(retain, nonatomic) WCRedesignVerifyCodeTextItem *verifyCodeTextItem; // @synthesize verifyCodeTextItem=_verifyCodeTextItem;
 @property(retain, nonatomic) WCRedesignButtonItem *phoneNumberButtonItem; // @synthesize phoneNumberButtonItem=_phoneNumberButtonItem;

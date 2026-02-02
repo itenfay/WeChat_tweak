@@ -17,7 +17,6 @@
     NSMutableArray *_uploadTaskList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *uploadTaskList; // @synthesize uploadTaskList=_uploadTaskList;
 @property(retain, nonatomic) UploadStateProcessor *state; // @synthesize state=_state;
 @property(nonatomic) _Bool isStopped; // @synthesize isStopped=_isStopped;

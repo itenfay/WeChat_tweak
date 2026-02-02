@@ -12,7 +12,6 @@
     NSMutableDictionary *_objectMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *objectMap; // @synthesize objectMap=_objectMap;
 - (id)objectValueForKey:(id)arg1;
 - (void)setExtraObjectValue:(id)arg1 forKey:(id)arg2;

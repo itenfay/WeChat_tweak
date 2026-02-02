@@ -15,7 +15,6 @@
     long long _currentIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool pauseFlag; // @synthesize pauseFlag=_pauseFlag;
 @property(nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) MMTimer *animateTimer; // @synthesize animateTimer=_animateTimer;

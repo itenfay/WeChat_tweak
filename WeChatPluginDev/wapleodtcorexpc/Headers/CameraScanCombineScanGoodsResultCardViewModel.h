@@ -19,7 +19,6 @@
     struct CGRect _normalizedRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int reportType; // @synthesize reportType=_reportType;
 @property(nonatomic) struct CGRect normalizedRect; // @synthesize normalizedRect=_normalizedRect;
 @property(nonatomic) _Bool isFail; // @synthesize isFail=_isFail;

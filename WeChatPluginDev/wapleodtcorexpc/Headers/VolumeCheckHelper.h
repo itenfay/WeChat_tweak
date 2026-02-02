@@ -13,7 +13,6 @@
 
 + (void)freeVolumeCheckHelper;
 + (id)getVolumeCheckHelper;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WeToast *toast; // @synthesize toast=_toast;
 - (void)volumeChanged:(id)arg1;
 - (void)showVolumeTip;

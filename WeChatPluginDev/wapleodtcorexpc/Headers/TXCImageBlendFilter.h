@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class TXCGlFrameBuffer, TXCGlProgram, UIImage;
 @protocol TXIGlContext;
 
@@ -18,7 +20,6 @@
     struct CGRect _imageRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
 @property(readonly, nonatomic) struct CGRect imageRect; // @synthesize imageRect=_imageRect;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
@@ -33,4 +34,3 @@
 - (id)initWithContext:(id)arg1 image:(id)arg2 atRect:(struct CGRect)arg3;
 
 @end
-

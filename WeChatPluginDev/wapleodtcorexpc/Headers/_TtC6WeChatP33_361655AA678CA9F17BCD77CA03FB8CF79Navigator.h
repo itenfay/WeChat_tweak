@@ -16,7 +16,6 @@
     MISSING_TYPE *currentSelection;
 }
 
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)sizeToFit;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

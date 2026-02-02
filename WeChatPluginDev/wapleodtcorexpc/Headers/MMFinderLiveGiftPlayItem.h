@@ -19,7 +19,6 @@
     long long _playAttackGiftItemIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long playAttackGiftItemIndex; // @synthesize playAttackGiftItemIndex=_playAttackGiftItemIndex;
 @property(retain, nonatomic) FinderLiveGift_MultiAnimationItem *multiAnimationItem; // @synthesize multiAnimationItem=_multiAnimationItem;
 @property(retain, nonatomic) NSString *animationId; // @synthesize animationId=_animationId;

@@ -45,7 +45,6 @@
     unsigned long long _publicDataSizeInBytes;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long publicDataSizeInBytes; // @synthesize publicDataSizeInBytes=_publicDataSizeInBytes;
 @property(nonatomic) unsigned long long restWeAppAllCacheSizeInBytes; // @synthesize restWeAppAllCacheSizeInBytes=_restWeAppAllCacheSizeInBytes;
 @property(copy, nonatomic) NSString *top8NickName; // @synthesize top8NickName=_top8NickName;

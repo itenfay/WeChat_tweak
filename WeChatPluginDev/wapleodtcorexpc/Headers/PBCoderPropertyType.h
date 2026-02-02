@@ -18,7 +18,6 @@
     id _m_blockSet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isContainerUnpacked; // @synthesize m_isContainerUnpacked=_m_isContainerUnpacked;
 @property(nonatomic) _Bool m_isSuperPlaceHolder; // @synthesize m_isSuperPlaceHolder=_m_isSuperPlaceHolder;
 @property(retain, nonatomic) id m_blockSet; // @synthesize m_blockSet=_m_blockSet;

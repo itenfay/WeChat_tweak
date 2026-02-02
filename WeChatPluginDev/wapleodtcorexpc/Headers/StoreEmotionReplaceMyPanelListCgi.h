@@ -15,7 +15,6 @@
     NSMutableArray *_m_needUploadProductIDList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_ignoreLimit; // @synthesize m_ignoreLimit=_m_ignoreLimit;
 @property(nonatomic) _Bool m_hasStartRequestOnce; // @synthesize m_hasStartRequestOnce=_m_hasStartRequestOnce;
 @property(nonatomic) unsigned int m_eventId; // @synthesize m_eventId=_m_eventId;

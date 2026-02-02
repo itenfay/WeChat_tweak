@@ -14,7 +14,6 @@
     NSString *_size;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *size; // @synthesize size=_size;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *data; // @synthesize data=_data;

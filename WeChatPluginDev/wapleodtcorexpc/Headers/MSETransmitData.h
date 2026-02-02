@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_shareType;
 + (void)PBArrayAdd_searchText;
-- (void).cxx_destruct;
 @property(nonatomic) long long shareType; // @synthesize shareType=_shareType;
 @property(retain, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 - (id)getPBPropertyTable;

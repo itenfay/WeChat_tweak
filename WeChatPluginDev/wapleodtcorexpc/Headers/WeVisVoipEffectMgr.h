@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EAGLContext, MMGPUClarityFilter, MMGPUClarityPreProcess, MMGPUSpatiotemporalDenosing, NSArray, NSMutableArray, NSRecursiveLock, NSString, SpatiotemporalDenosingPreProcess, WCLoopMetricsCollector, WeVisByPassFS, WeVisGLFrameBuffer, WeVisGLRGBA2YUVTwoPassFS, WeVisGLTexture, WeVisGLYUV2RGBA, WeVisPixelBuffer;
 @protocol WeVisVoipEffectDelegate;
@@ -132,7 +133,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCLoopMetricsCollector *liveCaptureMetricsCollector; // @synthesize liveCaptureMetricsCollector=_liveCaptureMetricsCollector;
 @property(nonatomic) long long actionConfig; // @synthesize actionConfig=_actionConfig;
 @property(nonatomic) long long trackConfig; // @synthesize trackConfig=_trackConfig;
@@ -262,4 +262,3 @@
 - (void)setEffect:(id)arg1;
 
 @end
-

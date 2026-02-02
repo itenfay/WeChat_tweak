@@ -14,7 +14,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tvInfo; // @synthesize tvInfo=_tvInfo;
 @property(retain, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl=_thumbUrl;
 @property(retain, nonatomic) NSString *tvDesc; // @synthesize tvDesc=_tvDesc;

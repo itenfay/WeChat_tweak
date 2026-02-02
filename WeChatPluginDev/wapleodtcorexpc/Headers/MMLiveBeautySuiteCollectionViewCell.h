@@ -23,7 +23,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBadgeView *detailsBadgeView; // @synthesize detailsBadgeView=_detailsBadgeView;
 @property(retain, nonatomic) MMBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) UIImageView *detailsChevronView; // @synthesize detailsChevronView=_detailsChevronView;

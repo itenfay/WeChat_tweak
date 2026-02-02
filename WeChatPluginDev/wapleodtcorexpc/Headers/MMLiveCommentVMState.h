@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveBoxId, MMLiveTaskId;
 
@@ -31,7 +32,6 @@
     unsigned long long _lowFrequencyDistanceCnt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAppendLowFrequencyDistanceData; // @synthesize isAppendLowFrequencyDistanceData=_isAppendLowFrequencyDistanceData;
 @property(nonatomic) _Bool isRefreshLowFrequencyDistanceData; // @synthesize isRefreshLowFrequencyDistanceData=_isRefreshLowFrequencyDistanceData;
 @property(nonatomic) unsigned long long lowFrequencyDistanceCnt; // @synthesize lowFrequencyDistanceCnt=_lowFrequencyDistanceCnt;
@@ -95,4 +95,3 @@
 - (id)initWithTaskId:(id)arg1 boxId:(id)arg2;
 
 @end
-

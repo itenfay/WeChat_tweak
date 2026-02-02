@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWebProgressBar, NSCache, NSString, UIColor, UIImageView, UILabel, WAWebViewController, WAWebViewPlugin_HTMLWeb, WebTransWebpageLogic;
 @protocol IWAHTMLWebVCDelegate;
 
@@ -29,7 +31,6 @@
 }
 
 + (_Bool)isKeyJsapi:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long transStatus; // @synthesize transStatus=_transStatus;
 @property(retain, nonatomic) NSString *curRandomUUID; // @synthesize curRandomUUID=_curRandomUUID;
 @property(retain, nonatomic) WebTransWebpageLogic *transWebpageLogic; // @synthesize transWebpageLogic=_transWebpageLogic;
@@ -154,4 +155,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_tags;
 + (void)PBArrayAdd_tabName;
 + (void)PBArrayAdd_tabId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int tabType; // @synthesize tabType=_tabType;
 @property(copy, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 @property(copy, nonatomic) NSString *tabName; // @synthesize tabName=_tabName;

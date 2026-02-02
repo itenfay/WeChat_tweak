@@ -18,7 +18,6 @@
     WCStateMachine *_stateMachine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(nonatomic) double panLocationYShowingPanel; // @synthesize panLocationYShowingPanel=_panLocationYShowingPanel;
 @property(nonatomic) double panLocationYInitial; // @synthesize panLocationYInitial=_panLocationYInitial;

@@ -18,7 +18,6 @@
 
 + (double)emoticonContentHeightWithComment:(id)arg1;
 + (double)recommendNameInfoHeightWithComment:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCommentEmoticonView *emoticonView; // @synthesize emoticonView=_emoticonView;
 @property(retain, nonatomic) MMUIButton *recommendButton; // @synthesize recommendButton=_recommendButton;
 @property(retain, nonatomic) WCFinderFriendsHeaderSuffixView *friendLikeSuffixView; // @synthesize friendLikeSuffixView=_friendLikeSuffixView;

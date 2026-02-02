@@ -11,7 +11,6 @@
     WCTTable *_tableLiveRewardGift;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCTTable *tableLiveRewardGift; // @synthesize tableLiveRewardGift=_tableLiveRewardGift;
 @property(retain) WCTDatabase *db; // @synthesize db=_db;
 - (void)willRecoverDatabase;

@@ -12,7 +12,6 @@
     EmoticonStoreItem *_item;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonStoreItem *item; // @synthesize item=_item;
 - (unsigned long long)startPurchase;
 - (id)initWithStoreItem:(id)arg1;

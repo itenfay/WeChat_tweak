@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSCondition;
 
@@ -13,9 +14,7 @@
 }
 
 + (id)registerExecutorName:(id)arg1;
-- (void).cxx_destruct;
 - (id)executeBlock:(CDUnknownBlockType)arg1;
 - (id)init;
 
 @end
-

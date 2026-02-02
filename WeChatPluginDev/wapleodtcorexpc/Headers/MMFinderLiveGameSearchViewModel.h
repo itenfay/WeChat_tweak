@@ -20,7 +20,6 @@
     NSMutableArray *_searchGames;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *searchGames; // @synthesize searchGames=_searchGames;
 @property(copy, nonatomic) NSMutableArray *mostRecentlyPlayGames; // @synthesize mostRecentlyPlayGames=_mostRecentlyPlayGames;
 @property(nonatomic) _Bool hasNext; // @synthesize hasNext=_hasNext;

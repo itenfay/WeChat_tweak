@@ -14,7 +14,6 @@
 + (id)makeLiteAppReporterWithoutAppId;
 + (id)makeLiteAppReporter:(id)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setVersion:(id)arg1;
 - (id)getVersion;
 - (void)setAppId:(id)arg1;

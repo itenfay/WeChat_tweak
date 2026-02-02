@@ -13,7 +13,6 @@
     NSMutableDictionary *_fetchingDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *fetchingDict; // @synthesize fetchingDict=_fetchingDict;
 @property(retain, nonatomic) OrderedDictionary *fetchLiveInfoQueue; // @synthesize fetchLiveInfoQueue=_fetchLiveInfoQueue;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;

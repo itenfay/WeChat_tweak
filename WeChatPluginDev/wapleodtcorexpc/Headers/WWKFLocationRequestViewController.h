@@ -11,7 +11,6 @@
     WWKFLocationRequestView *_contentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WWKFLocationRequestView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 - (void)onSetAllowReportLocation:(id)arg1 allowReport:(_Bool)arg2 success:(_Bool)arg3;

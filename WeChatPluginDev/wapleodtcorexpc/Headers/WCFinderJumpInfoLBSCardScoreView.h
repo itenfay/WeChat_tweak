@@ -13,7 +13,6 @@
     NSArray *_scoreIcons;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *scoreIcons; // @synthesize scoreIcons=_scoreIcons;
 @property(retain, nonatomic) UIView *backView; // @synthesize backView=_backView;
 - (void)updateScore:(double)arg1;

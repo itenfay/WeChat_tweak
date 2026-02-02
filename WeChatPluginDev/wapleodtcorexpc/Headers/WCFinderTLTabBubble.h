@@ -18,7 +18,6 @@
     long long _style;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) double displayDuration; // @synthesize displayDuration=_displayDuration;
 @property(retain, nonatomic) WCFinderTimelineRedDotBubbleDisplayInfo *redDotDisplayInfo; // @synthesize redDotDisplayInfo=_redDotDisplayInfo;

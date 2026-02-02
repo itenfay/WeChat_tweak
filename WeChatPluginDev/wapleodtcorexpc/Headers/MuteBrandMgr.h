@@ -10,7 +10,6 @@
     NSArray *_openBrandList;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)onProfileChange;
 - (void)onFailOpenUseBizMuteFlag;

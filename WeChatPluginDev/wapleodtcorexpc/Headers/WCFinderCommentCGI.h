@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderComment;
 
 @interface WCFinderCommentCGI
@@ -21,7 +23,6 @@
     NSData *_bypassBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *bypassBuffer; // @synthesize bypassBuffer=_bypassBuffer;
 @property(nonatomic) unsigned int bypassBufferType; // @synthesize bypassBufferType=_bypassBufferType;
 @property(retain, nonatomic) NSString *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
@@ -43,4 +44,3 @@
 - (id)initCommentCGIWith:(id)arg1 username:(id)arg2 scene:(unsigned long long)arg3 objectID:(unsigned long long)arg4 nonceID:(id)arg5 sessionBuffer:(id)arg6 successBlock:(CDUnknownBlockType)arg7 failureBlock:(CDUnknownBlockType)arg8;
 
 @end
-

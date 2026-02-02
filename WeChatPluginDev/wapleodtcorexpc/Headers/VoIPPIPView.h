@@ -17,7 +17,6 @@
     UILabel *_waitForConnectingLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *waitForConnectingLabel; // @synthesize waitForConnectingLabel=_waitForConnectingLabel;
 @property(retain, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;
 @property(retain, nonatomic) UIImageView *remoteAvatarView; // @synthesize remoteAvatarView=_remoteAvatarView;

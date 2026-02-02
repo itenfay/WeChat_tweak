@@ -18,7 +18,6 @@
     RichTextView *_richTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;
 @property(retain, nonatomic) UIView *pageSheetDetailView; // @synthesize pageSheetDetailView=_pageSheetDetailView;
 @property(retain, nonatomic) MMPageSheetAdapter *pageAdapter; // @synthesize pageAdapter=_pageAdapter;

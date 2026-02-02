@@ -22,7 +22,6 @@
     NSString *_customFromAppid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *customFromAppid; // @synthesize customFromAppid=_customFromAppid;
 @property(nonatomic) unsigned int customWeappVersion; // @synthesize customWeappVersion=_customWeappVersion;
 @property(nonatomic) unsigned int customDebugMode; // @synthesize customDebugMode=_customDebugMode;

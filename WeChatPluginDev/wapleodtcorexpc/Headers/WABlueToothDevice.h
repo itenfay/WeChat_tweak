@@ -16,7 +16,6 @@
     CBPeripheral *_peripheral;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CBPeripheral *peripheral; // @synthesize peripheral=_peripheral;
 @property(retain, nonatomic) WABlueToothDeviceAdData *adData; // @synthesize adData=_adData;
 @property(retain, nonatomic) NSNumber *RSSI; // @synthesize RSSI=_RSSI;

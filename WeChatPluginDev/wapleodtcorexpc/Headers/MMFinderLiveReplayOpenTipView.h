@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUIImageView, MMUILabel, UIView;
 
 @interface MMFinderLiveReplayOpenTipView
@@ -34,7 +36,6 @@
 
 + (double)getDetailHeight:(double)arg1;
 + (double)getLiveReplayOpenTipViewHeight:(unsigned int)arg1 showMemberReplaySwitch:(_Bool)arg2 width:(double)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) double currentHeight; // @synthesize currentHeight=_currentHeight;
 @property(nonatomic) _Bool showMemberReplaySwitch; // @synthesize showMemberReplaySwitch=_showMemberReplaySwitch;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
@@ -74,4 +75,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

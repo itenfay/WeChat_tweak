@@ -20,7 +20,6 @@
     id <MMFinderLivePaymentSettingInputViewDelegate> _operationDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceDarkMode; // @synthesize forceDarkMode=_forceDarkMode;
 @property(nonatomic) __weak id <MMFinderLivePaymentSettingInputViewDelegate> operationDelegate; // @synthesize operationDelegate=_operationDelegate;
 @property(nonatomic) double contentViewHeight; // @synthesize contentViewHeight=_contentViewHeight;

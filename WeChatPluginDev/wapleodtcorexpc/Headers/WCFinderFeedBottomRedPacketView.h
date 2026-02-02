@@ -10,7 +10,6 @@
     UIImageView *_topImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *topImageView; // @synthesize topImageView=_topImageView;
 - (id)initWithWidth:(double)arg1;
 

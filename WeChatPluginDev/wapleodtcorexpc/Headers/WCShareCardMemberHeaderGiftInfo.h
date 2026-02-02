@@ -14,7 +14,6 @@
     NSString *_m_nsTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsTitle; // @synthesize m_nsTitle=_m_nsTitle;
 @property(retain, nonatomic) NSString *m_nsFromUserName; // @synthesize m_nsFromUserName=_m_nsFromUserName;
 @property(nonatomic) _Bool m_bShowGiftInfo; // @synthesize m_bShowGiftInfo=_m_bShowGiftInfo;

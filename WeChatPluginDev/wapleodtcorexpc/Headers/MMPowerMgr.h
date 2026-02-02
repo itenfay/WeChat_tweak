@@ -15,7 +15,6 @@
 
 + (long long)getResidentMemory;
 + (float)getCurrentCpuUsage;
-- (void).cxx_destruct;
 - (_Bool)isLowPowerMode;
 - (void)processPowerModeChange;
 - (void)p_setPowerMode;

@@ -16,7 +16,6 @@
     unsigned long long _imageInfosCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long imageInfosCount; // @synthesize imageInfosCount=_imageInfosCount;
 @property(nonatomic) unsigned long long fontInfosCount; // @synthesize fontInfosCount=_fontInfosCount;
 @property(nonatomic) unsigned int curVersion; // @synthesize curVersion=_curVersion;

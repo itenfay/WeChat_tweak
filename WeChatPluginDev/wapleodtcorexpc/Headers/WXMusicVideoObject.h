@@ -24,7 +24,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *musicOperationUrl; // @synthesize musicOperationUrl=_musicOperationUrl;
 @property(nonatomic) unsigned int duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSString *identification; // @synthesize identification=_identification;

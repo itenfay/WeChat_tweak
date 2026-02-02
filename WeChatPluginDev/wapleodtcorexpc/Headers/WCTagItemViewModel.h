@@ -13,7 +13,6 @@
     struct CGRect _tagViewFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect tagViewFrame; // @synthesize tagViewFrame=_tagViewFrame;
 @property(retain, nonatomic) WCTagItem *tagItem; // @synthesize tagItem=_tagItem;
 @property(readonly, nonatomic) UIView *tagView;

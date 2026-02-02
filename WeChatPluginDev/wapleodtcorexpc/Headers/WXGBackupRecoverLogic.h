@@ -16,7 +16,6 @@
     WXGBackupRecoverHelper *_recoverHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXGBackupRecoverHelper *recoverHelper; // @synthesize recoverHelper=_recoverHelper;
 - (_Bool)onPhoneDiskNotEnouge;
 - (void)onLastImportFinished;

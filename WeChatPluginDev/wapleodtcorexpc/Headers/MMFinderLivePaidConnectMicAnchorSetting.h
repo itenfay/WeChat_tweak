@@ -22,7 +22,6 @@
 }
 
 + (id)fromPurchaseMicSetting:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long settingSeq; // @synthesize settingSeq=_settingSeq;
 @property(nonatomic) unsigned int bidGap; // @synthesize bidGap=_bidGap;
 @property(retain, nonatomic) NSDictionary *focusUserIndices; // @synthesize focusUserIndices=_focusUserIndices;

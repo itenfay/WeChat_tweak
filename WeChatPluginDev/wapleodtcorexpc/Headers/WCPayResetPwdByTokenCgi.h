@@ -12,7 +12,6 @@
     NSString *_password;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 - (void)didFailWithError:(id)arg1;

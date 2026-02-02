@@ -16,7 +16,6 @@
     id _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) id delegate; // @synthesize delegate=_delegate;
 - (id)Date1980;
 - (_Bool)OverWrite:(id)arg1;

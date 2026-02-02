@@ -54,7 +54,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic) _Bool isWeComContact; // @synthesize isWeComContact;
 @property(nonatomic, retain) _TtC6WeChat17WCDBIntegerNumber *localID;

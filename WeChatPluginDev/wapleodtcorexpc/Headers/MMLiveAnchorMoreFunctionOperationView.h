@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTableView, NSString, UIView;
 @protocol UITableViewDelegate><UITableViewDataSource;
 
@@ -19,7 +21,6 @@
 }
 
 + (id)getAnchorMoreFunctionOperationView:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double customHeight; // @synthesize customHeight=_customHeight;
 @property(nonatomic) long long previousOrientation; // @synthesize previousOrientation=_previousOrientation;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
@@ -45,4 +46,3 @@
 - (void)pageSheetDidRotation;
 
 @end
-

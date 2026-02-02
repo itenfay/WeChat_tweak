@@ -24,7 +24,6 @@
 + (void)mmdnsResolve:(id)arg1 fallbackLocal:(_Bool)arg2 hostIpMap:(id)arg3;
 + (id)localDNSResolve:(id)arg1;
 + (void)initDNSMgrServiceIfNeeded;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInBackground; // @synthesize isInBackground=_isInBackground;
 @property(retain, nonatomic) MMTimer *refreshTimer; // @synthesize refreshTimer=_refreshTimer;
 @property(nonatomic) unsigned int lastNetworkChangeTimestamp; // @synthesize lastNetworkChangeTimestamp=_lastNetworkChangeTimestamp;

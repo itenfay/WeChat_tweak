@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MAVMetalContext, NSArray, NSString;
 
@@ -16,7 +17,6 @@
     struct CGSize _assetSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lastRenderPts; // @synthesize lastRenderPts=_lastRenderPts;
 @property(retain, nonatomic) NSArray *lastTrackList; // @synthesize lastTrackList=_lastTrackList;
 @property(nonatomic) struct CGSize assetSize; // @synthesize assetSize=_assetSize;
@@ -42,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

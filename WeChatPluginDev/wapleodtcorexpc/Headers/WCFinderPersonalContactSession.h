@@ -14,7 +14,6 @@
 }
 
 + (id)sessionWithContactModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutItems; // @synthesize mutItems=_mutItems;
 @property(retain, nonatomic) WCFinderPersonalContactModel *model; // @synthesize model=_model;
 - (id)itemWithTag:(long long)arg1;

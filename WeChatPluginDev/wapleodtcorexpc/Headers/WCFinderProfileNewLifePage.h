@@ -17,7 +17,6 @@
     RichTextView *_stateClickLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int newlifetabEnterType; // @synthesize newlifetabEnterType=_newlifetabEnterType;
 @property(nonatomic) _Bool firstAppear; // @synthesize firstAppear=_firstAppear;
 @property(retain, nonatomic) RichTextView *stateClickLabel; // @synthesize stateClickLabel=_stateClickLabel;

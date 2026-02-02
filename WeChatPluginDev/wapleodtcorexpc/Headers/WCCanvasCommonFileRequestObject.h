@@ -16,7 +16,6 @@
     CdnComMediaInfo *_cdnComInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CdnComMediaInfo *cdnComInfo; // @synthesize cdnComInfo=_cdnComInfo;
 @property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) unsigned long long beginTimeStamp; // @synthesize beginTimeStamp=_beginTimeStamp;

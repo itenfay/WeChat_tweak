@@ -13,7 +13,6 @@
     MMUILabel *_descView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *descView; // @synthesize descView=_descView;
 @property(retain, nonatomic) MMUILabel *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) WCAdURLImageView *iconView; // @synthesize iconView=_iconView;

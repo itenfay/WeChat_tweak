@@ -16,7 +16,6 @@
 
 + (id)sharedCache;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (shared_ptr_fb084d9c)threadPool;
 - (void *)assetManager;
 - (void *)pipelineStateCache;

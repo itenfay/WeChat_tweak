@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithUserName:(id)arg1 openChattingFromScene:(id)arg2 chattingSubScene:(id)arg3 clickPos:(id)arg4 msgLocalId:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *msgLocalId; // @synthesize msgLocalId=_msgLocalId;
 @property(retain, nonatomic) NSNumber *clickPos; // @synthesize clickPos=_clickPos;
 @property(retain, nonatomic) NSNumber *chattingSubScene; // @synthesize chattingSubScene=_chattingSubScene;

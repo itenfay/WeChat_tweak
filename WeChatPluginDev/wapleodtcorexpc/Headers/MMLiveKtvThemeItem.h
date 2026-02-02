@@ -23,7 +23,6 @@
 }
 
 + (id)themeItemWithResource:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *allResources; // @synthesize allResources=_allResources;
 @property(retain, nonatomic) MMLiveKtvThemeResource *perfectAnimation; // @synthesize perfectAnimation=_perfectAnimation;
 @property(retain, nonatomic) MMLiveKtvThemeResource *goodAnimation; // @synthesize goodAnimation=_goodAnimation;

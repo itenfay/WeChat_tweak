@@ -13,7 +13,6 @@
     _Bool _isInitialized;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInitialized; // @synthesize isInitialized=_isInitialized;
 - (void)drawQuad:(unsigned int)arg1;
 - (id)init;

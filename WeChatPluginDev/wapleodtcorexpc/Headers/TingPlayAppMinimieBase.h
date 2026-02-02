@@ -18,7 +18,6 @@
     NSString *_taskBizName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isForeground; // @synthesize isForeground=_isForeground;
 @property(nonatomic) int moduleScene; // @synthesize moduleScene=_moduleScene;
 @property(copy, nonatomic) NSString *taskBizName; // @synthesize taskBizName=_taskBizName;

@@ -13,7 +13,6 @@
     long long _currentIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) NSMutableArray *operations; // @synthesize operations=_operations;
 - (void)undoOperationWithType:(unsigned long long)arg1;

@@ -16,7 +16,6 @@
     NSString *_brandWording;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *brandWording; // @synthesize brandWording=_brandWording;
 @property(copy, nonatomic) NSString *translatedLang; // @synthesize translatedLang=_translatedLang;
 @property(copy, nonatomic) NSString *translatedText; // @synthesize translatedText=_translatedText;

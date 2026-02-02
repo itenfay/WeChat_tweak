@@ -21,7 +21,6 @@
 + (void)singleShotLogEntry:(id)arg1 formatString:(id)arg2;
 + (void)singleShotLogEntry:(id)arg1 logEntry:(id)arg2;
 + (unsigned long long)generateSerialNumber;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableString *internalContents; // @synthesize internalContents=_internalContents;
 @property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, copy, nonatomic) NSString *loggingBehavior; // @synthesize loggingBehavior=_loggingBehavior;

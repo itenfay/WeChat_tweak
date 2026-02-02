@@ -15,7 +15,6 @@
     NSString *_fileExt;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fileExt; // @synthesize fileExt=_fileExt;
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(copy, nonatomic) NSString *fileMD5; // @synthesize fileMD5=_fileMD5;

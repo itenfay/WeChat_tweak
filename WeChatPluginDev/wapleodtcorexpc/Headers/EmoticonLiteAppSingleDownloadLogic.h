@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EmojiInfoObj, NSString;
 
@@ -15,7 +16,6 @@
     EmojiInfoObj *_emojiInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) EmojiInfoObj *emojiInfo; // @synthesize emojiInfo=_emojiInfo;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

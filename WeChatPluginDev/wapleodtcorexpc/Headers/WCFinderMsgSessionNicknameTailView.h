@@ -22,7 +22,6 @@
 }
 
 + (id)createNewTailView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAuthInfo *authInfo; // @synthesize authInfo=_authInfo;
 @property(retain, nonatomic) NSMutableArray *contentViewItems; // @synthesize contentViewItems=_contentViewItems;
 @property(retain, nonatomic) WCFinderMsgSessionUserTagLabel *userTagLabel; // @synthesize userTagLabel=_userTagLabel;

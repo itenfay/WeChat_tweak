@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AudioRecorderUserData, MMTimer, NSRecursiveLock, NSString;
 
@@ -28,7 +29,6 @@
     struct AudioChannelLayout _availableChannelLayout;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) MMTimer *meterTimer; // @synthesize meterTimer=_meterTimer;
 @property(readonly, nonatomic) struct AudioChannelLayout availableChannelLayout; // @synthesize availableChannelLayout=_availableChannelLayout;
@@ -98,4 +98,3 @@
 @property(readonly) Class superclass;
 
 @end
-

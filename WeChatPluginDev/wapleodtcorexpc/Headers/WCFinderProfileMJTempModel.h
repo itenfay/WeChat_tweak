@@ -18,7 +18,6 @@
     struct CGSize _coverSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VideoTemplate *videoTemp; // @synthesize videoTemp=_videoTemp;
 @property(retain, nonatomic) FinderTopicInfo *topic; // @synthesize topic=_topic;
 @property(nonatomic) struct CGSize coverSize; // @synthesize coverSize=_coverSize;

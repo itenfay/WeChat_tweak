@@ -22,7 +22,6 @@
     WCPayWebImageView *_icon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayWebImageView *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(retain, nonatomic) UILabel *unitLabel; // @synthesize unitLabel=_unitLabel;

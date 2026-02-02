@@ -13,7 +13,6 @@
     struct CGSize _mIntrinsicContentSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize mIntrinsicContentSize; // @synthesize mIntrinsicContentSize=_mIntrinsicContentSize;
 @property(retain, nonatomic) NSNumber *theStyle; // @synthesize theStyle=_theStyle;
 - (void)onClickSelf;

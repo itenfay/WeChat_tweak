@@ -17,7 +17,6 @@
     unsigned long long _startTimeMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int brandNotifyType; // @synthesize brandNotifyType=_brandNotifyType;
 @property(nonatomic) unsigned int liveNotifyType; // @synthesize liveNotifyType=_liveNotifyType;
 @property(nonatomic) unsigned int unReadCount; // @synthesize unReadCount=_unReadCount;

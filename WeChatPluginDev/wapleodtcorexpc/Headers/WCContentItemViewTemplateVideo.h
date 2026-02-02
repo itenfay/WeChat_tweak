@@ -15,7 +15,6 @@
 }
 
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long legalityType; // @synthesize legalityType=_legalityType;
 - (void)triggerLongPressFor3DTouchAtLocation:(struct CGPoint)arg1 inCoordinateView:(id)arg2;
 - (void)OnDownloadSuccessForFavoriteAdd;

@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(retain, nonatomic) NSString *tagText; // @synthesize tagText=_tagText;
 @property(retain, nonatomic) NSString *tagIcon; // @synthesize tagIcon=_tagIcon;

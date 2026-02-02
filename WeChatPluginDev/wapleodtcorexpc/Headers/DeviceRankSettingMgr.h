@@ -11,7 +11,6 @@
     _Bool bSettingChanged;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)UpdateSettingTOSVR;
 - (void)UpdateSettingFromSVR;

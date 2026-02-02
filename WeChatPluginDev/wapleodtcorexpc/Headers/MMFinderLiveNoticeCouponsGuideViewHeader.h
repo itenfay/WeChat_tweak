@@ -15,7 +15,6 @@
     UILabel *_canReceiveLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *canReceiveLabel; // @synthesize canReceiveLabel=_canReceiveLabel;
 @property(retain, nonatomic) UILabel *willNoticeLabel; // @synthesize willNoticeLabel=_willNoticeLabel;
 @property(retain, nonatomic) UILabel *reservedLabel; // @synthesize reservedLabel=_reservedLabel;

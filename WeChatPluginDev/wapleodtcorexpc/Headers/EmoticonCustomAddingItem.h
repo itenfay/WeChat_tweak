@@ -21,7 +21,6 @@
 }
 
 + (id)createItemFromTask:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsUploadWhenExceedLimit; // @synthesize allowsUploadWhenExceedLimit=_allowsUploadWhenExceedLimit;
 @property(nonatomic) unsigned long long addUI; // @synthesize addUI=_addUI;
 @property(nonatomic) unsigned long long addWay; // @synthesize addWay=_addWay;

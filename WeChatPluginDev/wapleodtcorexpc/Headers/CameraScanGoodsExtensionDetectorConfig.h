@@ -15,7 +15,6 @@
     CameraScanCombineConfig *_combineConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CameraScanCombineConfig *combineConfig; // @synthesize combineConfig=_combineConfig;
 @property(retain, nonatomic) CameraScanCombineModelInfo *curModelInfo; // @synthesize curModelInfo=_curModelInfo;
 @property(nonatomic) long long svrRequestExchangeTimeout; // @synthesize svrRequestExchangeTimeout=_svrRequestExchangeTimeout;

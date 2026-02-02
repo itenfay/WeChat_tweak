@@ -11,7 +11,6 @@
     WCTTable *_m_table;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *m_table; // @synthesize m_table=_m_table;
 @property(retain, nonatomic) WCTDatabase *m_db; // @synthesize m_db=_m_db;
 - (id)getApBaseWithSsid:(id)arg1 opCode:(unsigned int)arg2;

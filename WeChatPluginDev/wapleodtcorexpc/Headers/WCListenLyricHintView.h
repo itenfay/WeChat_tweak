@@ -12,7 +12,6 @@
     MMUILabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) MMUIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;

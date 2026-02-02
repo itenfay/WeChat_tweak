@@ -22,7 +22,6 @@
     MMEmoticonStoreDownloadLogic *_downloadLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMEmoticonStoreDownloadLogic *downloadLogic; // @synthesize downloadLogic=_downloadLogic;
 @property(nonatomic) __weak id <MMEmotionChartsCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool m_showBlackLine; // @synthesize m_showBlackLine;

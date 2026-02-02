@@ -11,7 +11,6 @@
     NSMutableDictionary *_redPacketDictionary;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *redPacketDictionary; // @synthesize redPacketDictionary=_redPacketDictionary;
 @property(retain, nonatomic) MMFinderLiveRedPacketMessage *taggedRedPacketMessage; // @synthesize taggedRedPacketMessage=_taggedRedPacketMessage;
 - (void)clearOutdatedDataForStatusOpenedInMMKV:(id)arg1;

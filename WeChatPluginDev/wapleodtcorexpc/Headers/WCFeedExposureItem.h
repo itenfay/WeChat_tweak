@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_uiCount;
 + (void)PBArrayAdd_uiCreateTime;
 + (void)PBArrayAdd_nsFeedId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFold; // @synthesize isFold=_isFold;
 @property(nonatomic) unsigned int uiCount; // @synthesize uiCount=_uiCount;
 @property(nonatomic) unsigned int uiCreateTime; // @synthesize uiCreateTime=_uiCreateTime;

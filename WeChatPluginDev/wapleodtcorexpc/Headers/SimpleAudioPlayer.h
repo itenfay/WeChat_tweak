@@ -15,7 +15,6 @@
 }
 
 + (void)sprintRetCode:(int)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) float m_volume; // @synthesize m_volume=_m_volume;
 @property(nonatomic) _Bool m_hasPrepare; // @synthesize m_hasPrepare=_m_hasPrepare;
 @property(retain, nonatomic) SimpleAudioState *m_bufferState; // @synthesize m_bufferState;

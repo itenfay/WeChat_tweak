@@ -16,7 +16,6 @@
     NSString *_backgroundImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(retain, nonatomic) NSString *foregroundImage; // @synthesize foregroundImage=_foregroundImage;
 @property(retain, nonatomic) NSString *foregroundColor; // @synthesize foregroundColor=_foregroundColor;

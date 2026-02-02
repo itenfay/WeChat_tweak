@@ -15,7 +15,6 @@
 }
 
 + (void)CreateExtendInfoWithUserName:(id)arg1 retExtendInfo:(id *)arg2 retIsContinueDispatch:(_Bool *)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) __weak CMessageWrap *m_refMessageWrap; // @synthesize m_refMessageWrap;
 @property(nonatomic) unsigned int m_mmreaderSubType; // @synthesize m_mmreaderSubType;
 @property(retain, nonatomic) NSArray *m_arrReaderWaps; // @synthesize m_arrReaderWaps;

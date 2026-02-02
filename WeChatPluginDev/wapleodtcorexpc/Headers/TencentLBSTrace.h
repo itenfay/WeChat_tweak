@@ -15,7 +15,6 @@
     TencentLBSCalman *_calman;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TencentLBSCalman *calman; // @synthesize calman=_calman;
 @property(retain, nonatomic) NSMutableArray *lines; // @synthesize lines=_lines;
 @property(nonatomic) unsigned long long coreSize; // @synthesize coreSize=_coreSize;

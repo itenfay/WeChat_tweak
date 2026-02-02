@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIScrollView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, NSString, TextStateEmojiBoardReportObject, TextStateEmojiBoardView, TextStatePublishCustomIconView, TextStatePublishIconList, TextStatePublishOfficialIconCollectionView, TextStatePublishRecentUseIconView, TextStatePublishReportObject, UIView;
 @protocol TextStatePublishCustomIconViewDelegate;
@@ -25,7 +26,6 @@
     CAGradientLayer *_gradientMaskLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientMaskLayer; // @synthesize gradientMaskLayer=_gradientMaskLayer;
 @property(retain, nonatomic) TextStateEmojiBoardView *emojiBoardView; // @synthesize emojiBoardView=_emojiBoardView;
 @property(retain, nonatomic) TextStatePublishOfficialIconCollectionView *recommendIconView; // @synthesize recommendIconView=_recommendIconView;
@@ -77,4 +77,3 @@
 @property(readonly) Class superclass;
 
 @end
-

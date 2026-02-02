@@ -16,7 +16,6 @@
 
 + (id)GetCachePath;
 + (_Bool)isExistScanHistory;
-- (void).cxx_destruct;
 - (id)arrHistoryItems;
 - (unsigned long long)historyCount;
 - (void)cleanAllData;

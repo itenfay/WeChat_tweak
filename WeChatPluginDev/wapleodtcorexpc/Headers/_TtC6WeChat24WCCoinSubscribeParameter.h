@@ -12,7 +12,6 @@
     MISSING_TYPE *buff;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithBuff:(id)arg1;
 @property(nonatomic, readonly) NSData *buff;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NewLifeCommonRouter : NSObject
 {
@@ -24,4 +25,3 @@
 + (_Bool)routeProfileWithParameter:(id)arg1 fromNavigationController:(id)arg2;
 
 @end
-

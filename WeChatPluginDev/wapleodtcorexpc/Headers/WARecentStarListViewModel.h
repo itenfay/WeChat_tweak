@@ -14,7 +14,6 @@
     WAMainListPageLogic *_pageLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAMainListPageLogic *pageLogic; // @synthesize pageLogic=_pageLogic;
 @property(nonatomic) __weak WAMainListStarLogic *starLogic; // @synthesize starLogic=_starLogic;
 @property(nonatomic) __weak id <WADesktopStarListReportDelegate> reportDelegate; // @synthesize reportDelegate=_reportDelegate;

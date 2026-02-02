@@ -12,7 +12,6 @@
     WAJSCoreService *_service;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WAJSCoreService *service; // @synthesize service=_service;
 - (void)onReceiveNetworkHeader:(id)arg1;
 - (void)onCustomMessage:(id)arg1 payload:(id)arg2;

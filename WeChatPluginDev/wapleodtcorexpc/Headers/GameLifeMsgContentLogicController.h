@@ -14,7 +14,6 @@
     NSDictionary *_reportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property _Bool shouldShowAttachButton; // @synthesize shouldShowAttachButton;
 @property _Bool shouldShowEmotionBoard; // @synthesize shouldShowEmotionBoard;

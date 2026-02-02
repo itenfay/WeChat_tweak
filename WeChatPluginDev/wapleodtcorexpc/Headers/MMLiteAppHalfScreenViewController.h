@@ -22,7 +22,6 @@
     UIColor *_darkTitleBgColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *darkTitleBgColor; // @synthesize darkTitleBgColor=_darkTitleBgColor;
 @property(retain, nonatomic) UIColor *titleBgColor; // @synthesize titleBgColor=_titleBgColor;
 @property(retain, nonatomic) UIView *safeAreaInsetsView; // @synthesize safeAreaInsetsView=_safeAreaInsetsView;

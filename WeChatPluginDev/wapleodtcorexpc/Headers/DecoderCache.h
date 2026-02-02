@@ -17,7 +17,6 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)instance;
-- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 @property int currentId; // @synthesize currentId=_currentId;
 @property(retain) NSMutableDictionary *decoderMap; // @synthesize decoderMap=_decoderMap;

@@ -15,7 +15,6 @@
     NSMutableArray *_parentAddressFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *parentAddressFrame; // @synthesize parentAddressFrame=_parentAddressFrame;
 - (id)description;
 - (void)p_mergedAddressFrameArray:(id)arg1 with:(id)arg2;

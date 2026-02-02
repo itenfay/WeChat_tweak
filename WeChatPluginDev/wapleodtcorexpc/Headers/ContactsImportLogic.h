@@ -25,7 +25,6 @@
 + (void)encodeEncryptedUsernameToOldAccountContactMap:(id)arg1 toFilePath:(id)arg2;
 + (id)decodeOrCreateEncryptedUsernameToOldAccountContactMapFromFilePath:(id)arg1 maxClientSequence:(unsigned int *)arg2;
 + (void)fixContactStatus:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderedDictionary *encryptedUsernameToOldAccountContactMap; // @synthesize encryptedUsernameToOldAccountContactMap=_encryptedUsernameToOldAccountContactMap;
 @property(nonatomic) unsigned int clientSequence; // @synthesize clientSequence=_clientSequence;
 @property(retain, nonatomic) NSString *oldAlias; // @synthesize oldAlias=_oldAlias;

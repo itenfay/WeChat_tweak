@@ -15,7 +15,6 @@
     unsigned int m_uiUploadCount;
 }
 
-- (void).cxx_destruct;
 - (void)OnProtocolResponse:(id)arg1 shouldContinue:(_Bool *)arg2;
 - (void)OnProtocolStart:(id)arg1 shouldContinue:(_Bool *)arg2;
 

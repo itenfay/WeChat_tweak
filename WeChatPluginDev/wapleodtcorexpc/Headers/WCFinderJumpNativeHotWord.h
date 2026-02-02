@@ -17,7 +17,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long hotwordId; // @synthesize hotwordId=_hotwordId;
 @property(retain, nonatomic) NSData *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(copy, nonatomic) NSString *sessionBufferString; // @synthesize sessionBufferString=_sessionBufferString;

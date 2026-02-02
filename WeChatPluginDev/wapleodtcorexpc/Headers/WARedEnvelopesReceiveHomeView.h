@@ -24,7 +24,6 @@
     ContactUpdateHelper *_m_successOpenNickNameHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactUpdateHelper *m_successOpenNickNameHelper; // @synthesize m_successOpenNickNameHelper=_m_successOpenNickNameHelper;
 @property(retain, nonatomic) ContactUpdateHelper *m_nickNameHelper; // @synthesize m_nickNameHelper=_m_nickNameHelper;
 - (id)convertToImage:(id)arg1;

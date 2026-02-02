@@ -12,7 +12,6 @@
     struct CGSize _targetSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) WAMainFrameTaskbarOperationViewController *operationVC; // @synthesize operationVC=_operationVC;

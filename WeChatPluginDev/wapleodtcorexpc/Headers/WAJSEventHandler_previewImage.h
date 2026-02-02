@@ -10,7 +10,6 @@
     PhotoViewController *m_photoViewController;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)showImageWithUrls:(id)arg1 current:(id)arg2 referrerPolicyType:(unsigned long long)arg3 showMenu:(_Bool)arg4;
 - (void)uninitImageViewer;

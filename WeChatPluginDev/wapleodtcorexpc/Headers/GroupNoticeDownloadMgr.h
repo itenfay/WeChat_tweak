@@ -12,7 +12,6 @@
     _Bool m_isDownloading;
 }
 
-- (void).cxx_destruct;
 - (void)onGroupNoticeDownloadData:(id)arg1 retCode:(int)arg2;
 - (void)onGroupNoticeDownloadData:(id)arg1 finishedLength:(unsigned long long)arg2 totalLength:(unsigned long long)arg3;
 - (void)onGroupNoticeDownloadItem:(id)arg1 retCode:(int)arg2;

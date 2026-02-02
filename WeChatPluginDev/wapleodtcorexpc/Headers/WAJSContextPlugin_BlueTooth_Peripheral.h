@@ -16,7 +16,6 @@
     _Bool _isAllowBackground;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAllowBackground; // @synthesize isAllowBackground=_isAllowBackground;
 - (id)generateServerId;
 - (id)generateCallbackId;

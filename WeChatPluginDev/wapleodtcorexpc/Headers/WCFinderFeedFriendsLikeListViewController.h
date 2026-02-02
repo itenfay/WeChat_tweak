@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTableView, MMUIButton, NSMutableSet, NSString, UILabel, UINavigationController, UITapGestureRecognizer, WCFinderAnimationLoadingView, WCFinderDynamicRichTextView, WCFinderFeedFriendsLikeListViewModel, WCFinderRefreshTableFooterView;
 @protocol WCFinderFeedFriendsLikeListViewControllerDelegate;
 
@@ -36,7 +38,6 @@
     WCFinderFeedFriendsLikeListViewController *_tmpLikeListVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderFeedFriendsLikeListViewController *tmpLikeListVC; // @synthesize tmpLikeListVC=_tmpLikeListVC;
 @property(copy, nonatomic) NSString *targetUsername; // @synthesize targetUsername=_targetUsername;
 @property(retain, nonatomic) NSMutableSet *highlightUsernameSet; // @synthesize highlightUsernameSet=_highlightUsernameSet;
@@ -129,4 +130,3 @@
 @property(readonly) Class superclass;
 
 @end
-

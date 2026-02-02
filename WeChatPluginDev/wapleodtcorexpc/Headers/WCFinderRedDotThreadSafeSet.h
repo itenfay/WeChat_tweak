@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet;
 @protocol OS_dispatch_queue;
@@ -14,7 +15,6 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableSet *setContainer; // @synthesize setContainer=_setContainer;
 - (void)containerEnumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
@@ -25,4 +25,3 @@
 - (id)initWithQueueName:(id)arg1;
 
 @end
-

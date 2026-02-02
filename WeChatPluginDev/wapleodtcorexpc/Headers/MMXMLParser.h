@@ -21,7 +21,6 @@
 + (id)xmlWithDic:(id)arg1;
 + (id)dictionaryWithXMLString:(id)arg1;
 + (id)dictionaryWithXMLData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *xml; // @synthesize xml=_xml;
 @property(retain, nonatomic) NSMutableString *textInProgress; // @synthesize textInProgress=_textInProgress;
 @property(retain, nonatomic) NSMutableArray *dictionaryStack; // @synthesize dictionaryStack=_dictionaryStack;

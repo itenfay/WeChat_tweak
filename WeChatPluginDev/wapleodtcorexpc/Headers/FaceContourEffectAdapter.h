@@ -13,7 +13,6 @@
 }
 
 + (id)weeffectType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSNumber *faceModel; // @synthesize faceModel=_faceModel;
 @property(retain, nonatomic) NSNumber *alpha; // @synthesize alpha=_alpha;

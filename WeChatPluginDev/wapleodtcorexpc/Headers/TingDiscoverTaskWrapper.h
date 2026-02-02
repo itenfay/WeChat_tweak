@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TingDiscoverTaskWrapper : NSObject
 {
@@ -11,9 +12,7 @@
     CDUnknownBlockType _getCommentInfoCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType getCommentInfoCompletion; // @synthesize getCommentInfoCompletion=_getCommentInfoCompletion;
 @property(copy, nonatomic) CDUnknownBlockType discoverCompletion; // @synthesize discoverCompletion=_discoverCompletion;
 
 @end
-

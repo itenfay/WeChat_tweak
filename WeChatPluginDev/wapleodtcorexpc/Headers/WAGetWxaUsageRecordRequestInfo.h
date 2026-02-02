@@ -15,7 +15,6 @@
     TencentLBSLocation *_location;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int requestTime; // @synthesize requestTime=_requestTime;
 @property(retain, nonatomic) TencentLBSLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *BSSIDHash; // @synthesize BSSIDHash=_BSSIDHash;

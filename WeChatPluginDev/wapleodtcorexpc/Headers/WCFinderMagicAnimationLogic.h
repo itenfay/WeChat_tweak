@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, UIView;
 
@@ -14,7 +15,6 @@
     CDUnknownBlockType _visibleMetaFilter;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType visibleMetaFilter; // @synthesize visibleMetaFilter=_visibleMetaFilter;
 @property(retain, nonatomic) NSMutableDictionary *magicAnimationMetaDict; // @synthesize magicAnimationMetaDict=_magicAnimationMetaDict;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
@@ -33,4 +33,3 @@
 - (id)initWithContainerView:(id)arg1;
 
 @end
-

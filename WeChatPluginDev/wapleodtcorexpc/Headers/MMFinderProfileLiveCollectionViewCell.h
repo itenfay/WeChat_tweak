@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMLiveCDNPlayerView, MMUIImageView, NSString, RichTextView, UILabel, UIView, WCFinderDataItem;
 @protocol MMFinderProfileLiveCollectionViewCellDelegate;
@@ -31,7 +32,6 @@
 + (_Bool)isAudiencePurchasedWithDataItem:(id)arg1;
 + (_Bool)isOwnerWithDataItem:(id)arg1;
 + (double)cellHeightInWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIImageView *privateIcon; // @synthesize privateIcon=_privateIcon;
 @property(retain, nonatomic) UIView *separaLine; // @synthesize separaLine=_separaLine;
 @property(retain, nonatomic) MMUIImageView *digestIcon; // @synthesize digestIcon=_digestIcon;
@@ -81,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
     _Bool m_bStop;
 }
 
-- (void).cxx_destruct;
 - (void)stopBuildHtmlString;
 - (id)buildSpanElementWithRange:(struct _NSRange)arg1 plainText:(id)arg2;
 - (id)tryBuildListEndTagAtLocation:(unsigned long long)arg1 WithPreListAttribute:(id)arg2 withCurrentListAttribute:(id)arg3;

@@ -14,7 +14,6 @@
     MMLiveRewardGiftNewCustomizationMagicRewardResManager *_currRewardResManager;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMLiveRewardGiftNewCustomizationMagicRewardResManager *currRewardResManager; // @synthesize currRewardResManager=_currRewardResManager;
 @property(nonatomic) __weak MMLiveRewardGiftNewCustomizationMagicRewardMemoryManager *currRewardMemoryManager; // @synthesize currRewardMemoryManager=_currRewardMemoryManager;
 @property(retain, nonatomic) MMLiveMagicEngineMemoryMonitorTask *magicEngineMemMonitorTask; // @synthesize magicEngineMemMonitorTask=_magicEngineMemMonitorTask;

@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_antispamTicket;
 + (void)PBArrayAdd_friendScene;
 + (void)PBArrayAdd_deleteFlag;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int addCreateTime; // @synthesize addCreateTime=_addCreateTime;
 @property(nonatomic) unsigned long long localBitFlag; // @synthesize localBitFlag=_localBitFlag;
 @property(retain, nonatomic) NSString *groupMemberTicket; // @synthesize groupMemberTicket=_groupMemberTicket;

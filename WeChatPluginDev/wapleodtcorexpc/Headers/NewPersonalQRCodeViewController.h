@@ -33,7 +33,6 @@
     TipsView *_abandonTipsView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int pageMode; // @synthesize pageMode=_pageMode;
 @property(retain, nonatomic) TipsView *abandonTipsView; // @synthesize abandonTipsView=_abandonTipsView;
 @property(nonatomic) _Bool needRefreshOldImage; // @synthesize needRefreshOldImage=_needRefreshOldImage;

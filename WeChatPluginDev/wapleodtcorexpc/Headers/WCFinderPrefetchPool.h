@@ -15,7 +15,6 @@
     NSMutableDictionary *_droppedCacheDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *droppedCacheDict; // @synthesize droppedCacheDict=_droppedCacheDict;
 @property(retain, nonatomic) NSMutableDictionary *waitingToDropDict; // @synthesize waitingToDropDict=_waitingToDropDict;
 @property(retain, nonatomic) NSMutableDictionary *waitingCgiDict; // @synthesize waitingCgiDict=_waitingCgiDict;

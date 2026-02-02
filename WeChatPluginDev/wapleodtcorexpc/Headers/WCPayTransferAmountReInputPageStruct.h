@@ -14,7 +14,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void)genFromDic:(id)arg1;

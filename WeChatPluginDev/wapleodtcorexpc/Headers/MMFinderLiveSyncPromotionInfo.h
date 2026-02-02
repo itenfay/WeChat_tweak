@@ -17,7 +17,6 @@
     FinderJumpInfo *_oriPromotePanelInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int panelShowTime; // @synthesize panelShowTime=_panelShowTime;
 @property(retain, nonatomic) FinderJumpInfo *oriPromotePanelInfo; // @synthesize oriPromotePanelInfo=_oriPromotePanelInfo;
 @property(retain, nonatomic) WCFinderJumpInfo *promotePanelInfo; // @synthesize promotePanelInfo=_promotePanelInfo;

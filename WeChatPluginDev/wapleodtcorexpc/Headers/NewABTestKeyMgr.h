@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface NewABTestKeyMgr
@@ -11,7 +13,6 @@
     _Bool _bABTestCacheLoaded;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bABTestCacheLoaded; // @synthesize bABTestCacheLoaded=_bABTestCacheLoaded;
 @property(retain, nonatomic) NSMutableDictionary *cachedABTestItems; // @synthesize cachedABTestItems;
 - (void)onGetABTestExpKeyItems:(id)arg1 expiredExpids:(id)arg2 isAutoGet:(_Bool)arg3;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

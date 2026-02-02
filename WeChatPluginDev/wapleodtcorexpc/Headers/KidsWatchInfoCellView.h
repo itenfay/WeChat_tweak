@@ -17,7 +17,6 @@
     CAShapeLayer *_dotLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *dotLayer; // @synthesize dotLayer=_dotLayer;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) MMUILabel *contentLabel; // @synthesize contentLabel=_contentLabel;

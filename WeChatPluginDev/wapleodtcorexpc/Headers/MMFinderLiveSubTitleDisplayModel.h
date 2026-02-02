@@ -37,7 +37,6 @@
 + (_Bool)isSubTitleStartLineIndexValid:(long long)arg1;
 + (id)createDisplayContent:(id)arg1 splicingStyle:(unsigned long long)arg2;
 + (id)getContentWithArrStyles:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needForceRefreshUI; // @synthesize needForceRefreshUI=_needForceRefreshUI;
 @property(retain, nonatomic) NSMutableArray *currSubTitleList; // @synthesize currSubTitleList=_currSubTitleList;
 @property(nonatomic) unsigned long long currentSplicingStyle; // @synthesize currentSplicingStyle=_currentSplicingStyle;

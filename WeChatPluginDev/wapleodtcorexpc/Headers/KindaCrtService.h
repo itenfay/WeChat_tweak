@@ -17,7 +17,6 @@
     MMVoidStringCallback *_m_deleteFailCallBack;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMVoidStringCallback *m_deleteFailCallBack; // @synthesize m_deleteFailCallBack=_m_deleteFailCallBack;
 @property(retain, nonatomic) MMVoidCallback *m_deleteSuccessCallback; // @synthesize m_deleteSuccessCallback=_m_deleteSuccessCallback;
 @property(retain, nonatomic) WCPayDeleteDigitalCertCgi *m_deleteCertCgi; // @synthesize m_deleteCertCgi=_m_deleteCertCgi;

@@ -21,7 +21,6 @@
     struct CGSize _labelSize;
 }
 
-- (void).cxx_destruct;
 - (struct CGSize)setLabelText:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)calFavBarButtonSize;

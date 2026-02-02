@@ -17,7 +17,6 @@
     NSString *_appid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appid; // @synthesize appid=_appid;
 @property(nonatomic) int pagetype; // @synthesize pagetype=_pagetype;
 @property(nonatomic) int actiontype; // @synthesize actiontype=_actiontype;

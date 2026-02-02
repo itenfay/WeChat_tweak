@@ -19,7 +19,6 @@
     UIView *_tempMoveCell;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float distGuesLocationWithCellCenterY; // @synthesize distGuesLocationWithCellCenterY=_distGuesLocationWithCellCenterY;
 @property(nonatomic) float distGuesLocationWithCellCenterX; // @synthesize distGuesLocationWithCellCenterX=_distGuesLocationWithCellCenterX;
 @property(nonatomic) __weak UIView *tempMoveCell; // @synthesize tempMoveCell=_tempMoveCell;

@@ -16,7 +16,6 @@
     _Bool _isSinglePageMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSinglePageMode; // @synthesize isSinglePageMode=_isSinglePageMode;
 @property(nonatomic) _Bool sheetModeShouldHideLeftReturnButton; // @synthesize sheetModeShouldHideLeftReturnButton=_sheetModeShouldHideLeftReturnButton;
 - (void)viewDidLayoutSubviews;

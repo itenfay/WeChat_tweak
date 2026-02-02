@@ -15,7 +15,6 @@
 
 + (id)partWithText:(id)arg1 isSmallLevel:(_Bool)arg2;
 + (id)partWithText:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSmallLevel; // @synthesize isSmallLevel=_isSmallLevel;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 

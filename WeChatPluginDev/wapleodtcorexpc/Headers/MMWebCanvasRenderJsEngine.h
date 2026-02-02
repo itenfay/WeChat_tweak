@@ -18,7 +18,6 @@
 
 + (id)fileNameForResWithUrl:(id)arg1;
 + (id)pathOfCacheDir;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WACanvasFileHelper *fileHelper; // @synthesize fileHelper=_fileHelper;
 @property(retain, nonatomic) MMWebJsMediaServiceHandler *videoDecoder; // @synthesize videoDecoder=_videoDecoder;
 @property(retain, nonatomic) NSMutableDictionary *eventQueue2Client; // @synthesize eventQueue2Client=_eventQueue2Client;

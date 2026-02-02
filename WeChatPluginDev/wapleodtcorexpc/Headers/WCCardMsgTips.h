@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_nsTipWording;
 + (void)PBArrayAdd_lastUpdateTime;
 + (void)PBArrayAdd_newCount;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsTipIconUrl; // @synthesize nsTipIconUrl=_nsTipIconUrl;
 @property(retain, nonatomic) NSString *nsTipWording; // @synthesize nsTipWording=_nsTipWording;
 @property(nonatomic) unsigned int lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;

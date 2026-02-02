@@ -13,7 +13,6 @@
     MISSING_TYPE *page;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)setInteractiveTrasitionAnimationWithEnabled:(_Bool)arg1;
 - (void)setupAnimation;

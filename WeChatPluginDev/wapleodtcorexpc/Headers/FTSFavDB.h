@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FTSDB, NSMutableSet;
 
@@ -15,7 +16,6 @@
     NSMutableSet *_favOriginalTag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool checkOriginTagsSuccess; // @synthesize checkOriginTagsSuccess=_checkOriginTagsSuccess;
 @property(nonatomic) _Bool hasCheckOriginTags; // @synthesize hasCheckOriginTags=_hasCheckOriginTags;
 @property(retain, nonatomic) NSMutableSet *favOriginalTag; // @synthesize favOriginalTag=_favOriginalTag;
@@ -45,4 +45,3 @@
 - (_Bool)initDB:(id)arg1;
 
 @end
-

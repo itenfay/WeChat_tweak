@@ -13,7 +13,6 @@
     NSArray *_regionIDS;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *regionIDS; // @synthesize regionIDS=_regionIDS;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 

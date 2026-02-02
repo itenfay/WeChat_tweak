@@ -17,7 +17,6 @@
     BrandProfileAuthorizedScopeTableCellViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandProfileAuthorizedScopeTableCellViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UIButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) UIView *topSeperatorLine; // @synthesize topSeperatorLine=_topSeperatorLine;

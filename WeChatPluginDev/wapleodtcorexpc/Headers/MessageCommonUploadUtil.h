@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MessageCommonUploadUtil : NSObject
 {
@@ -16,4 +17,3 @@
 + (unsigned int)maxMiddleImageSize;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCTimelineRouterHelper : NSObject
 {
@@ -38,4 +39,3 @@
 + (void)showImagePickerWithPickerScene:(int)arg1 sourceType:(long long)arg2 showsCameraButtonInPicker:(_Bool)arg3 showsCameraButtonAtBottom:(_Bool)arg4 customOptionsBlock:(CDUnknownBlockType)arg5 delegate:(id)arg6 fromViewController:(id)arg7;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveKTVBoardItem, MMFinderLiveTaskId, MMTableView, MMUIActivityIndicatorView, MMUILabel, MMUISearchBar, NSData, NSMutableArray, NSMutableSet, NSString, UICollectionView, UIView, WCFinderLiveAnchorLogReporter, WCTimeLineFooterView;
 
 @interface MMFinderLiveKTVRequestSongPanel
@@ -32,7 +34,6 @@
 }
 
 + (id)showWithTaskId:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *reportedSongUniqueIdSet; // @synthesize reportedSongUniqueIdSet=_reportedSongUniqueIdSet;
 @property(retain, nonatomic) WCFinderLiveAnchorLogReporter *anchorReporter; // @synthesize anchorReporter=_anchorReporter;
 @property(nonatomic) _Bool isShowing; // @synthesize isShowing=_isShowing;
@@ -106,4 +107,3 @@
 @property(readonly) Class superclass;
 
 @end
-

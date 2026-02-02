@@ -16,7 +16,6 @@
     UIImageView *_bottomBackgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *bottomBackgroundView; // @synthesize bottomBackgroundView=_bottomBackgroundView;
 @property(retain, nonatomic) UIImageView *shapeView; // @synthesize shapeView=_shapeView;
 @property(retain, nonatomic) SightIconView *loadingView; // @synthesize loadingView=_loadingView;

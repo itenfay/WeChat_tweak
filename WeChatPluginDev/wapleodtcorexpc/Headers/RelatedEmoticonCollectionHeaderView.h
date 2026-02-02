@@ -16,7 +16,6 @@
     struct CGSize _emoticonSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMEmoticonView *emoticonView; // @synthesize emoticonView=_emoticonView;
 @property(retain, nonatomic) UILabel *bottomTextLabel; // @synthesize bottomTextLabel=_bottomTextLabel;
 @property(nonatomic) struct CGSize emoticonSize; // @synthesize emoticonSize=_emoticonSize;

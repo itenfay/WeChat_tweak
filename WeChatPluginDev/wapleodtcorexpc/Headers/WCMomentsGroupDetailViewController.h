@@ -12,7 +12,6 @@
     MMPageSheetAdapter *_pageSheetAdapter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMPageSheetAdapter *pageSheetAdapter; // @synthesize pageSheetAdapter=_pageSheetAdapter;
 @property(retain, nonatomic) NSString *viewControllerTitle; // @synthesize viewControllerTitle=_viewControllerTitle;
 @property(retain, nonatomic) NSArray *contactDataList; // @synthesize contactDataList=_contactDataList;

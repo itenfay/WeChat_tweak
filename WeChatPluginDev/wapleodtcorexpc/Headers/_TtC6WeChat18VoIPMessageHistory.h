@@ -75,7 +75,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 @property(nonatomic) unsigned int duration; // @synthesize duration;

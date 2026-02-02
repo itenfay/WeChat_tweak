@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSObject, NSString, VideoEncodeTask;
 
 @interface VideoEncodeMgr
@@ -13,7 +15,6 @@
     NSObject *_queueLockObject;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *queueLockObject; // @synthesize queueLockObject=_queueLockObject;
 @property(retain, nonatomic) NSMutableArray *highPriorityTaskQueue; // @synthesize highPriorityTaskQueue=_highPriorityTaskQueue;
 @property(retain, nonatomic) NSMutableArray *normalTaskQueue; // @synthesize normalTaskQueue=_normalTaskQueue;
@@ -82,4 +83,3 @@
 @property(readonly) Class superclass;
 
 @end
-

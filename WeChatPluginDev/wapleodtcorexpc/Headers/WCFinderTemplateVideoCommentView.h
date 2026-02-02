@@ -17,7 +17,6 @@
 }
 
 + (double)heightWithComment:(id)arg1 width:(double)arg2 forceExpand:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long commentType; // @synthesize commentType=_commentType;
 @property(retain, nonatomic) WCFinderTemplateCommentArrowButton *cutSameVideoBtn; // @synthesize cutSameVideoBtn=_cutSameVideoBtn;
 @property(retain, nonatomic) UIImageView *playIconView; // @synthesize playIconView=_playIconView;

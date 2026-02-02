@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIControl.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIControl (ZZEvent)
 - (id)controlTargetList;
@@ -11,4 +12,3 @@
 - (void)addControlEvents:(unsigned long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)setControlEvents:(unsigned long long)arg1 handler:(CDUnknownBlockType)arg2;
 @end
-

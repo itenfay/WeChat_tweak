@@ -21,7 +21,6 @@
 
 + (id)getDisplayRecord:(id)arg1;
 + (double)calculateHeight:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BraceletRankNewLikeButton *likeButton; // @synthesize likeButton=_likeButton;
 @property(retain, nonatomic) SportRecord *record; // @synthesize record=_record;
 @property(nonatomic) _Bool isSelf; // @synthesize isSelf=_isSelf;

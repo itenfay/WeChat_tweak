@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FixTitleColorButton, MMUIButton, MMUILabel, WCAdAppImageGalleryView, WCAdSchemaJumpInfo, WCAdURLImageView;
 
 @interface WCAdHalfScreenConversionOpenAppGalleryView
@@ -17,7 +19,6 @@
     MMUIButton *_maskButtonView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *maskButtonView; // @synthesize maskButtonView=_maskButtonView;
 @property(retain, nonatomic) FixTitleColorButton *confirmButtonView; // @synthesize confirmButtonView=_confirmButtonView;
 @property(retain, nonatomic) WCAdAppImageGalleryView *appImageGalleryView; // @synthesize appImageGalleryView=_appImageGalleryView;
@@ -34,4 +35,3 @@
 - (id)initWithSchemaJumpInfo:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
 
 @end
-

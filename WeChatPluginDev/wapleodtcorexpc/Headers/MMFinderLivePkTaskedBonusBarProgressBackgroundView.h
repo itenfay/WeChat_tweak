@@ -19,7 +19,6 @@
     unsigned long long _elapsedTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long elapsedTime; // @synthesize elapsedTime=_elapsedTime;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) double progress; // @synthesize progress=_progress;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -19,7 +20,6 @@
 }
 
 + (id)nodeWithCapacity:(unsigned long long)arg1 box:(struct CGRect)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *nodeDatas; // @synthesize nodeDatas=_nodeDatas;
 @property(nonatomic) struct CGRect boundingBox; // @synthesize boundingBox=_boundingBox;
 @property(retain, nonatomic) QQuadTreeNode *southEast; // @synthesize southEast=_southEast;
@@ -36,4 +36,3 @@
 - (void)subdivide;
 
 @end
-

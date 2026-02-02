@@ -41,7 +41,6 @@
 }
 
 + (id)specialCollectionViewLayout;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(nonatomic) _Bool isDataItemsReplacing; // @synthesize isDataItemsReplacing=_isDataItemsReplacing;
 @property(nonatomic) _Bool isDataItemsPrependSettingOffset; // @synthesize isDataItemsPrependSettingOffset=_isDataItemsPrependSettingOffset;

@@ -12,7 +12,6 @@
     id <MMFinderLiveKTVSEISyncSendDelegate> _handler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveKTVSEISyncSendDelegate> handler; // @synthesize handler=_handler;
 
 @end

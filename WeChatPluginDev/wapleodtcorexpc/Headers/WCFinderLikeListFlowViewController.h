@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, RichTextView, UILabel, UIView, WCFinderExtStatsReporter, WCFinderFeedFlowView, WCFinderLikeListFlowViewModel, WCSearchBar;
 
 @interface WCFinderLikeListFlowViewController
@@ -23,7 +25,6 @@
 
 + (_Bool)automaticallyNotifiesObserversOfTotalCount;
 + (id)keyPathsForValuesAffectingTotalCount;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderExtStatsReporter *extStatReporter; // @synthesize extStatReporter=_extStatReporter;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
 @property(retain, nonatomic) UILabel *subTitleView; // @synthesize subTitleView=_subTitleView;
@@ -88,4 +89,3 @@
 @property(readonly) Class superclass;
 
 @end
-

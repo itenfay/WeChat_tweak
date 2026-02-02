@@ -17,7 +17,6 @@
     NSString *_session_buffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int comment_scene; // @synthesize comment_scene=_comment_scene;
 @property(nonatomic) unsigned int search_scene; // @synthesize search_scene=_search_scene;
 @property(retain, nonatomic) NSString *session_buffer; // @synthesize session_buffer=_session_buffer;

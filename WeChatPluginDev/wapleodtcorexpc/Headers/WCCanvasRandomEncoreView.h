@@ -21,7 +21,6 @@
 }
 
 + (struct CGSize)calcSizeForRandomEncoreInfo:(id)arg1 orientation:(long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *maxAccelerationInfo; // @synthesize maxAccelerationInfo=_maxAccelerationInfo;
 @property(retain, nonatomic) WCAdInteractionDeviceMotionContainer *deviceMotionContainer; // @synthesize deviceMotionContainer=_deviceMotionContainer;
 @property(nonatomic) _Bool didShowEncoreAnimation; // @synthesize didShowEncoreAnimation=_didShowEncoreAnimation;

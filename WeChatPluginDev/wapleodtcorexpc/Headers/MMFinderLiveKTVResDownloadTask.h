@@ -14,7 +14,6 @@
     NSArray *_necessaryResources;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needsSongResources; // @synthesize needsSongResources=_needsSongResources;
 @property(retain, nonatomic) NSArray *necessaryResources; // @synthesize necessaryResources=_necessaryResources;
 @property(retain, nonatomic) MMFinderLiveKTVSongItem *songItem; // @synthesize songItem=_songItem;

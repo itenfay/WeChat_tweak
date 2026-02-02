@@ -14,7 +14,6 @@
     double _previousStartTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double previousStartTime; // @synthesize previousStartTime=_previousStartTime;
 @property(nonatomic) double realPlayedTime; // @synthesize realPlayedTime=_realPlayedTime;
 @property(retain, nonatomic) NSMutableArray *traceLogs; // @synthesize traceLogs=_traceLogs;

@@ -27,7 +27,6 @@
 + (_Bool)isTingPlayerModuleActive;
 + (id)generateTapeInfoWithPlayer:(id)arg1;
 + (id)platformMMKVId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TingRedDotServiceListener><TingRecentServiceListener> weakProxy; // @synthesize weakProxy=_weakProxy;
 @property(retain, nonatomic) MMLRUCache *notifyUUIDCache; // @synthesize notifyUUIDCache=_notifyUUIDCache;
 @property(retain, nonatomic) TingRedDotItem *taskBarRedDotItem; // @synthesize taskBarRedDotItem=_taskBarRedDotItem;

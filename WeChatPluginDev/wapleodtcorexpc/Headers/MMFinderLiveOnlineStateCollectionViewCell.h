@@ -40,7 +40,6 @@
 }
 
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showHeadImage; // @synthesize showHeadImage=_showHeadImage;
 @property(retain, nonatomic) UITapGestureRecognizer *tipsPubbleViewTapGesture; // @synthesize tipsPubbleViewTapGesture=_tipsPubbleViewTapGesture;
 @property(retain, nonatomic) MMFinderLiveUserStateItem *onlineUserItem; // @synthesize onlineUserItem=_onlineUserItem;

@@ -18,7 +18,6 @@
 
 + (id)invokerWithInstance:(id)arg1 method:(id)arg2;
 + (id)invokerWithClass:(id)arg1 method:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSInvocation *invocation; // @synthesize invocation=_invocation;
 @property(retain, nonatomic) id target; // @synthesize target=_target;
 @property(nonatomic) _Bool isFromView; // @synthesize isFromView=_isFromView;

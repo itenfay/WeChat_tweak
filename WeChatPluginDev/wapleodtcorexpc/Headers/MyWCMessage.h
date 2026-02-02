@@ -96,7 +96,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_commentFlag; // @synthesize m_commentFlag=_m_commentFlag;
 @property(retain, nonatomic) NSString *m_comment64Id; // @synthesize m_comment64Id=_m_comment64Id;
 @property(retain, nonatomic) NSString *m_clientId; // @synthesize m_clientId=_m_clientId;

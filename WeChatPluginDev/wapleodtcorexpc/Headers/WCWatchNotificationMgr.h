@@ -13,7 +13,6 @@
     NSString *_isShowingUsername;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int yoTime; // @synthesize yoTime=_yoTime;
 @property(copy, nonatomic) NSString *isShowingUsername; // @synthesize isShowingUsername=_isShowingUsername;
 @property(retain, nonatomic) WCYoWindowController *yoWindowController; // @synthesize yoWindowController=_yoWindowController;

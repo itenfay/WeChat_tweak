@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMLiveTaskId, MMWeEffectManager, NSMutableArray, NSMutableDictionary, NSString;
 
@@ -40,7 +41,6 @@
 }
 
 + (_Bool)isGiftPlayItemValid:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastMaxSumResuedScriptIdCnt; // @synthesize lastMaxSumResuedScriptIdCnt=_lastMaxSumResuedScriptIdCnt;
 @property(nonatomic) _Bool isAppActive; // @synthesize isAppActive=_isAppActive;
 @property(retain, nonatomic) NSMutableArray *recentRenderFullLoadTimeRangeList; // @synthesize recentRenderFullLoadTimeRangeList=_recentRenderFullLoadTimeRangeList;
@@ -207,4 +207,3 @@
 @property(readonly) Class superclass;
 
 @end
-

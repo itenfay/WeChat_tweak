@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_designer;
 + (void)PBArrayAdd_name;
 + (void)PBArrayAdd_lensId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) LensIcon *iconInfo; // @synthesize iconInfo=_iconInfo;
 @property(retain, nonatomic) LensPackage *package; // @synthesize package=_package;
 @property(retain, nonatomic) PersonalDesigner *designer; // @synthesize designer=_designer;

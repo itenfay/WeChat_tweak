@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderRelatedRecommendTips, NSMutableArray, UIImageView, WCFinderCustomImageRichTextView;
 
@@ -17,7 +18,6 @@
     double _layoutWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(retain, nonatomic) UIImageView *topArrowImageView; // @synthesize topArrowImageView=_topArrowImageView;
 @property(retain, nonatomic) FinderRelatedRecommendTips *recommendTips; // @synthesize recommendTips=_recommendTips;
@@ -36,4 +36,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

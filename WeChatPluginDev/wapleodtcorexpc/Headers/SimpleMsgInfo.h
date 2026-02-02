@@ -18,7 +18,6 @@
 + (_Bool)isFinderMsg:(id)arg1;
 + (_Bool)isAppMusicMsg:(id)arg1;
 + (_Bool)isAppPayMsg:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_msgRelatedSize; // @synthesize m_msgRelatedSize=_m_msgRelatedSize;
 @property(retain, nonatomic) CMessageWrap *m_msg; // @synthesize m_msg=_m_msg;
 @property(retain, nonatomic) NSString *m_nsSessionName; // @synthesize m_nsSessionName=_m_nsSessionName;

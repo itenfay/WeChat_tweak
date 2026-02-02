@@ -24,7 +24,6 @@
     WCStoryReportUtil *_storyReportUtil;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStoryReportUtil *storyReportUtil; // @synthesize storyReportUtil=_storyReportUtil;
 @property(nonatomic) unsigned long long unreadRelatedCommentCount; // @synthesize unreadRelatedCommentCount=_unreadRelatedCommentCount;
 @property(retain, nonatomic) NSNumber *storyEntranceSwitch; // @synthesize storyEntranceSwitch=_storyEntranceSwitch;

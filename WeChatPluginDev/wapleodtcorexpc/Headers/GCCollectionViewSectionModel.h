@@ -13,7 +13,6 @@
     GCCollectionViewManager *_viewManager;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak GCCollectionViewManager *viewManager; // @synthesize viewManager=_viewManager;
 @property(retain, nonatomic) NSMutableArray *itemArray; // @synthesize itemArray=_itemArray;
 - (void)reloadViewManager;

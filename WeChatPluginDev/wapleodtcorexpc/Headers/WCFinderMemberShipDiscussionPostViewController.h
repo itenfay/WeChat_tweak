@@ -41,7 +41,6 @@
 }
 
 + (double)heightForRefQuestionObject:(id)arg1 pageStyle:(unsigned long long)arg2 isAuthor:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *finderIconImageView; // @synthesize finderIconImageView=_finderIconImageView;
 @property(nonatomic) _Bool isAuthor; // @synthesize isAuthor=_isAuthor;
 @property(copy, nonatomic) NSString *memberAQProviderUsername; // @synthesize memberAQProviderUsername=_memberAQProviderUsername;

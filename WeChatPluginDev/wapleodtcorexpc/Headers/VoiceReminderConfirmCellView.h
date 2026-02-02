@@ -24,7 +24,6 @@
     UIView *m_separatorView;
 }
 
-- (void).cxx_destruct;
 - (void)onSettingExtChanged:(long long)arg1;
 - (void)OnEndPlaying:(id)arg1 isForceStop:(_Bool)arg2;
 - (void)onDeleteRemindMsgsReturn:(_Bool)arg1 msgWrap:(id)arg2;

@@ -15,7 +15,6 @@
     HalfScreen *_halfScreen;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) HalfScreen *halfScreen; // @synthesize halfScreen=_halfScreen;
 @property(retain, nonatomic) NSString *jumpUrl; // @synthesize jumpUrl=_jumpUrl;
 @property(nonatomic) long long jumpType; // @synthesize jumpType=_jumpType;

@@ -23,7 +23,6 @@
 }
 
 + (id)paramsWithShopJumpInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPushed; // @synthesize isPushed=_isPushed;
 @property(nonatomic) double customHalfScreenHeight; // @synthesize customHalfScreenHeight=_customHalfScreenHeight;
 @property(nonatomic) _Bool linkStyle; // @synthesize linkStyle=_linkStyle;

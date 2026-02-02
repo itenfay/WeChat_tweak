@@ -17,7 +17,6 @@
     NSString *simCardIp;
 }
 
-- (void).cxx_destruct;
 - (void)onSimCardNetTypeChange;
 - (void)ReachabilityChange:(unsigned int)arg1;
 - (void)autoUpdate;

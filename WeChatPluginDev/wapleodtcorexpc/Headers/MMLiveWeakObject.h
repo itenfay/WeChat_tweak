@@ -11,7 +11,6 @@
     NSObject *_object;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) __weak NSObject *object; // @synthesize object=_object;
 - (id)initWithObject:(id)arg1;

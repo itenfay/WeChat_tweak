@@ -14,7 +14,6 @@
     UILabel *_shareLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *shareLabel; // @synthesize shareLabel=_shareLabel;
 @property(nonatomic) __weak id <ShareViewDelegate><NSObject> delegate; // @synthesize delegate=_delegate;
 - (void)onClickShareLabel;

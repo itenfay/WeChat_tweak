@@ -11,7 +11,6 @@
     FinderLiveNoticeInfo *_liveNoticeInfo;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) FinderLiveNoticeInfo *liveNoticeInfo; // @synthesize liveNoticeInfo=_liveNoticeInfo;
 @property(readonly, nonatomic) FinderJumpLiveReservationNecessaryParams *liveNoticeParams; // @synthesize liveNoticeParams=_liveNoticeParams;
 - (void)onFinderLiveNoticeWithNoticeId:(id)arg1 reserveStateChanged:(unsigned long long)arg2;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveStrokeLabel;
 
@@ -15,7 +16,6 @@
     double _labelCenterX;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double labelCenterX; // @synthesize labelCenterX=_labelCenterX;
 @property(retain, nonatomic) MMLiveStrokeLabel *label; // @synthesize label=_label;
 @property(nonatomic) _Bool removalScheduled; // @synthesize removalScheduled=_removalScheduled;
@@ -25,4 +25,3 @@
 - (id)initWithLabel:(id)arg1;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMHeadImageView;
 
@@ -14,7 +15,6 @@
     CDUnknownBlockType _onViewMsgContent;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onViewMsgContent; // @synthesize onViewMsgContent=_onViewMsgContent;
 @property(nonatomic) _Bool isFakeContact; // @synthesize isFakeContact=_isFakeContact;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
@@ -23,4 +23,3 @@
 - (void)layoutSubviews;
 
 @end
-

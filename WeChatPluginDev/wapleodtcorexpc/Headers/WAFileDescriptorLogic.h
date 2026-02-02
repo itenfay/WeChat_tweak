@@ -13,7 +13,6 @@
     NSRecursiveLock *m_genFdLock;
 }
 
-- (void).cxx_destruct;
 - (int)getFlagWithString:(id)arg1;
 - (id)genFdWithAppId:(id)arg1;
 - (id)getFilePathWithOuterFileDescriptor:(id)arg1 appId:(id)arg2;

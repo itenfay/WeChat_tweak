@@ -14,7 +14,6 @@
 }
 
 + (id)viewModelWithGroupName:(id)arg1 customizableGifts:(id)arg2 customizationInfo:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *customizableGiftItems; // @synthesize customizableGiftItems=_customizableGiftItems;
 @property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 @property(readonly, nonatomic) _Bool hasCustomizableGifts;

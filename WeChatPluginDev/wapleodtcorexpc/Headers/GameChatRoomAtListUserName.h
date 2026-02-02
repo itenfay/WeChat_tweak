@@ -37,7 +37,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *chatRoomName; // @synthesize chatRoomName=_chatRoomName;
 @property(retain, nonatomic) NSString *avatar; // @synthesize avatar=_avatar;
 @property(retain, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;

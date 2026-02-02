@@ -16,7 +16,6 @@
     unsigned long long _cellStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cellStyle; // @synthesize cellStyle=_cellStyle;
 @property(nonatomic) _Bool onlyImageOrVideo; // @synthesize onlyImageOrVideo=_onlyImageOrVideo;
 @property(nonatomic) long long favType; // @synthesize favType=_favType;

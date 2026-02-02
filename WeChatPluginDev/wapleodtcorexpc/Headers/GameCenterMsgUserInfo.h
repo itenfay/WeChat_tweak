@@ -17,7 +17,6 @@
     GameJumpInfo *_userJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameJumpInfo *userJumpInfo; // @synthesize userJumpInfo=_userJumpInfo;
 @property(retain, nonatomic) NSString *profileUrl; // @synthesize profileUrl=_profileUrl;
 @property(retain, nonatomic) NSString *badgeIconUrl; // @synthesize badgeIconUrl=_badgeIconUrl;

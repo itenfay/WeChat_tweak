@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int openType; // @synthesize openType=_openType;
 @property(retain, nonatomic) NSString *brandDesc; // @synthesize brandDesc=_brandDesc;
 @property(retain, nonatomic) NSString *brandUsername; // @synthesize brandUsername=_brandUsername;

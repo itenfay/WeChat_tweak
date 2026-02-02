@@ -14,7 +14,6 @@
     UIView *_topLine;
 }
 
-- (void).cxx_destruct;
 - (id)convertCompressString:(id)arg1 font:(id)arg2 markLocation:(unsigned long long)arg3;
 - (id)titleWithArrow:(id)arg1 contentRange:(struct _NSRange *)arg2 arrowRange:(struct _NSRange *)arg3;
 - (id)titleWithSuffix:(id)arg1 contentRange:(struct _NSRange *)arg2;

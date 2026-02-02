@@ -21,7 +21,6 @@
     NSArray *_remoteStatistics;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *remoteStatistics; // @synthesize remoteStatistics=_remoteStatistics;
 @property(retain, nonatomic) NSArray *localStatistics; // @synthesize localStatistics=_localStatistics;
 @property(nonatomic) unsigned long long receivedBytes; // @synthesize receivedBytes=_receivedBytes;

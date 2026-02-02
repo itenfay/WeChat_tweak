@@ -20,7 +20,6 @@
     _Bool m_bPositioning;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bPositioning; // @synthesize m_bPositioning;
 @property(nonatomic) __weak id <WCRedEnvelopesCommentInputToolViewDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onTextViewDidChange:(id)arg1;

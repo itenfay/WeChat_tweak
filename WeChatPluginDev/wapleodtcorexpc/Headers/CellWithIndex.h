@@ -13,7 +13,6 @@
     long long m_index;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_index; // @synthesize m_index;
 @property(retain, nonatomic) UITableViewCell *m_cell; // @synthesize m_cell;
 - (id)initWithCell:(id)arg1 andIndex:(long long)arg2;

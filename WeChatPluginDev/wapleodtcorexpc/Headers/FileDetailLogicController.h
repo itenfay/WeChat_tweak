@@ -12,7 +12,6 @@
     NSString *_tmpFilePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tmpFilePath; // @synthesize tmpFilePath=_tmpFilePath;
 @property(nonatomic) __weak id <FileDetailLogicDelegate> m_fileDetailLogicDelegate; // @synthesize m_fileDetailLogicDelegate=_m_fileDetailLogicDelegate;
 - (void)pressSessionSourceButton;

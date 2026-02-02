@@ -11,7 +11,6 @@
     WAPluginComponent_VideoPlayer *_splashAdVideoComponent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPluginComponent_VideoPlayer *splashAdVideoComponent; // @synthesize splashAdVideoComponent=_splashAdVideoComponent;
 @property(retain, nonatomic) WAPluginComponent_VideoPlayer *sysCoverViewVideoComponent; // @synthesize sysCoverViewVideoComponent=_sysCoverViewVideoComponent;
 - (id)getVideoComponentWithDest:(long long)arg1;

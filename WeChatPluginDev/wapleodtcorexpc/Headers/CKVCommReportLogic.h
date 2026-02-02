@@ -13,7 +13,6 @@
     HeavyUserRespInfo *m_heavy_cache;
 }
 
-- (void).cxx_destruct;
 @property _Bool is_running_; // @synthesize is_running_;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (void)OnReportReturn:(id)arg1 Event:(unsigned int)arg2;

@@ -30,7 +30,6 @@
 @property(nonatomic) int serverSyncDelay; // @synthesize serverSyncDelay;
 @property(nonatomic) int status; // @synthesize status;
 @property(nonatomic) _Bool analyticsEnabled; // @synthesize analyticsEnabled;
-- (void).cxx_destruct;
 - (void)setSessionId:(id)arg1;
 - (id)sessionId;
 - (void)setAesKeyEncrypt:(id)arg1;

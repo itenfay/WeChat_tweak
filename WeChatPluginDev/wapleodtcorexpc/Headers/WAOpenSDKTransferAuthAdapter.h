@@ -17,7 +17,6 @@
     WxaExternalInfo *_externalInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WxaExternalInfo *externalInfo; // @synthesize externalInfo=_externalInfo;
 @property(retain, nonatomic) WATransferParamsModel *model; // @synthesize model=_model;
 @property(retain, nonatomic) WAUserAuthorizeLogic *logic; // @synthesize logic=_logic;

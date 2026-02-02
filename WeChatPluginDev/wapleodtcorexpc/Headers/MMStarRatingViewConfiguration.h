@@ -19,7 +19,6 @@
 }
 
 + (id)defaultConfiguration;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allowHalfStar; // @synthesize allowHalfStar=_allowHalfStar;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(retain, nonatomic) UIImage *highlightStarImage; // @synthesize highlightStarImage=_highlightStarImage;

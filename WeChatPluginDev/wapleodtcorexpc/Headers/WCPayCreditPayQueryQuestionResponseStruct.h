@@ -14,7 +14,6 @@
     NSArray *m_arrQuestion;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_arrQuestion; // @synthesize m_arrQuestion;
 @property(retain, nonatomic) NSString *m_nsSessionKey; // @synthesize m_nsSessionKey;
 @property(nonatomic) unsigned int m_uiQuestionNum; // @synthesize m_uiQuestionNum;

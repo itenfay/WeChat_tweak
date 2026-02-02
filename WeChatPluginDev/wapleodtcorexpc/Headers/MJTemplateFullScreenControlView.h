@@ -16,7 +16,6 @@
     WCPlayerConfigFullScreenProgressBar *_progressBar;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerConfigFullScreenProgressBar *progressBar; // @synthesize progressBar=_progressBar;
 @property(retain, nonatomic) WCPlayerShareableButton *shareButton; // @synthesize shareButton=_shareButton;
 @property(retain, nonatomic) MJTemplateFullScreenControlViewParams *params; // @synthesize params=_params;

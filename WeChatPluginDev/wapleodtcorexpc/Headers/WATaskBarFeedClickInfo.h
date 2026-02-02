@@ -19,7 +19,6 @@
     unsigned long long _isRefresh;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long isRefresh; // @synthesize isRefresh=_isRefresh;
 @property(retain, nonatomic) NSString *extraData; // @synthesize extraData=_extraData;
 @property(retain, nonatomic) NSString *iconAppId; // @synthesize iconAppId=_iconAppId;

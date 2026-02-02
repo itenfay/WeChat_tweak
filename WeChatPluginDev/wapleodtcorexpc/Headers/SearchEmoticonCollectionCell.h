@@ -22,7 +22,6 @@
     SightIconView *_sightIconView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLocal; // @synthesize isLocal=_isLocal;
 @property(retain, nonatomic) SightIconView *sightIconView; // @synthesize sightIconView=_sightIconView;
 @property(retain, nonatomic) UILabel *purchaseLabel; // @synthesize purchaseLabel=_purchaseLabel;

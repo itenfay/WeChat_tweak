@@ -16,7 +16,6 @@
     SEL _action;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(copy, nonatomic) NSString *cancelTitle; // @synthesize cancelTitle=_cancelTitle;

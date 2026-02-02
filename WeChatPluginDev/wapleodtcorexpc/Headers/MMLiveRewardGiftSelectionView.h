@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, CALayer, CAShapeLayer, FanClubPanelInfo, FinderLiveRewardGiftExtInfo, MMCPLabel, MMFinderLiveGlobalRankSignView, MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMHeadImageView, MMLiveHalfScreenTitleBarView, MMLiveRewardGiftAttackContactBubbleView, MMLiveRewardGiftCoinButton, MMLiveRewardGiftCustomizationTipView, MMLiveRewardGiftLayout, MMLiveRewardGiftNewCustomizationSettingPanel, MMLiveRewardGiftNewCustomizationTipView, MMLiveRewardGiftPreviewWindow, MMLiveRewardGiftSendingCountMenuBar, MMNormalTipsView, MMScrollView, MMUILabel, MMUIView, NSArray, NSIndexPath, NSMutableArray, NSMutableSet, NSString, UICollectionView, UIImageView, UILabel, UIPageControl, UIScrollView, UIView;
 @protocol MMLiveRewardGiftSelectionLogicDelegate, MMLiveRewardGiftSelectionViewDelegate;
 
@@ -75,7 +77,6 @@
     MMFinderLiveRewardGiftItem *_packageSelectGiftItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool autoSelectPackageSelectGiftItem; // @synthesize autoSelectPackageSelectGiftItem=_autoSelectPackageSelectGiftItem;
 @property(retain, nonatomic) MMFinderLiveRewardGiftItem *packageSelectGiftItem; // @synthesize packageSelectGiftItem=_packageSelectGiftItem;
 @property(retain, nonatomic) NSIndexPath *preferredGiftIndexPath; // @synthesize preferredGiftIndexPath=_preferredGiftIndexPath;
@@ -270,4 +271,3 @@
 @property(readonly) Class superclass;
 
 @end
-

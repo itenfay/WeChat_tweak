@@ -32,7 +32,6 @@
     unsigned long long m_checkExposeTimeMs;
 }
 
-- (void).cxx_destruct;
 - (_Bool)initWCAopVc:(id)arg1;
 - (id)flatAllRowData;
 - (id)getAllRowDataFromCache;

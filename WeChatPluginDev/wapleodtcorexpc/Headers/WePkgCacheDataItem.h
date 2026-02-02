@@ -18,7 +18,6 @@
 }
 
 + (id)responseFromUrl:(id)arg1 cacheItem:(id)arg2 pkgData:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSMutableArray *extraHeaderList; // @synthesize extraHeaderList=_extraHeaderList;
 @property(retain, nonatomic) NSString *textEncodingName; // @synthesize textEncodingName=_textEncodingName;

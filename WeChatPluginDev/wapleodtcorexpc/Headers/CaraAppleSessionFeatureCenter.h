@@ -12,7 +12,6 @@
     CaraCppSessionFeatureCenter *_underlying;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CaraCppSessionFeatureCenter *underlying; // @synthesize underlying=_underlying;
 - (void)onSessionSend:(id)arg1;
 - (void)onConsumeSession:(id)arg1 stayTimeInterval:(float)arg2;

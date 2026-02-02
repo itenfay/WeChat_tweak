@@ -13,7 +13,6 @@
     NSURL *_URL;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) struct TMBitmapContext *bitmap;

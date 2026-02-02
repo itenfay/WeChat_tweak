@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
@@ -16,7 +18,6 @@
 + (void)p_startDownloadUpdate:(id)arg1 withVersion:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)p_startDownloadWithExpInVersion:(id)arg1;
 + (_Bool)p_checkPreparedPatchVersion:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *ppDownloadQueue; // @synthesize ppDownloadQueue=_ppDownloadQueue;
 @property(retain, nonatomic) NSMutableDictionary *downloadTaskDict; // @synthesize downloadTaskDict=_downloadTaskDict;
 - (void)p_asyncCheckPreparedUpdate;
@@ -33,4 +34,3 @@
 @property(readonly) Class superclass;
 
 @end
-

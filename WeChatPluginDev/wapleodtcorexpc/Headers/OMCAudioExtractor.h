@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OMCAudioExtractor : NSObject
 {
@@ -12,4 +13,3 @@
 + (_Bool)extractPCMWithFilePath:(id)arg1 timeRange:(CDStruct_e83c9415)arg2 sampleRate:(unsigned long long)arg3 sampleFormat:(unsigned long long)arg4 channelCount:(unsigned long long)arg5 progressHandler:(CDUnknownBlockType)arg6 pcmFrameHandler:(CDUnknownBlockType)arg7;
 
 @end
-

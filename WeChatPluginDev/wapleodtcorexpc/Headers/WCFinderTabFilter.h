@@ -16,7 +16,6 @@
 + (unsigned int)eventPageIdForType:(unsigned int)arg1;
 + (id)emptyTopicTipsForType:(unsigned int)arg1;
 + (id)emptyLocationTipsForType:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 - (id)initWithPoiStreamFilter:(id)arg1;

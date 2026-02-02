@@ -17,7 +17,6 @@
     MMFolder *_gFolder;
 }
 
-- (void).cxx_destruct;
 @property(retain) MMFolder *gFolder; // @synthesize gFolder=_gFolder;
 @property _Bool isChecking; // @synthesize isChecking=_isChecking;
 @property(retain, nonatomic) MMUIActivityIndicatorView *m_actView; // @synthesize m_actView=_m_actView;

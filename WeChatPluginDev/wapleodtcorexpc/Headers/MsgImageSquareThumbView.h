@@ -46,7 +46,6 @@
 + (_Bool)isLongImage:(id)arg1;
 + (id)getColorForIconName:(id)arg1;
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isFromFav; // @synthesize m_isFromFav;
 @property(nonatomic) _Bool m_bUseWebImg; // @synthesize m_bUseWebImg;
 @property(retain, nonatomic) MMWebImageView *m_webImgView; // @synthesize m_webImgView;

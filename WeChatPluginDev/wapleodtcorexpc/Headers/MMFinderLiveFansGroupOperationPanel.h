@@ -19,7 +19,6 @@
     double _keyBoardHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double keyBoardHeight; // @synthesize keyBoardHeight=_keyBoardHeight;
 @property(nonatomic) _Bool isPageWillClose; // @synthesize isPageWillClose=_isPageWillClose;
 @property(nonatomic) _Bool isKeyBoardShow; // @synthesize isKeyBoardShow=_isKeyBoardShow;

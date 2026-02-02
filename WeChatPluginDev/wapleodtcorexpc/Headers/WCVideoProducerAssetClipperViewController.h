@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSIndexPath, NSString, SightLocalVideoImageSlider, UICollectionView, WCVideoProducerBaseSheetView, WCVideoProducerDataSource;
 @protocol WCVideoProducerAssetClipperDelegate;
 
@@ -17,7 +19,6 @@
     NSIndexPath *_selectedIndexPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(retain, nonatomic) WCVideoProducerDataSource *cellVMData; // @synthesize cellVMData=_cellVMData;
 @property(retain, nonatomic) SightLocalVideoImageSlider *sliderView; // @synthesize sliderView=_sliderView;
@@ -89,4 +90,3 @@
 @property(readonly) Class superclass;
 
 @end
-

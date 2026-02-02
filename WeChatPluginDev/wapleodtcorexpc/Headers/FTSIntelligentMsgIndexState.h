@@ -18,7 +18,6 @@
     NSMutableDictionary *_dicSessionMaxId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool doIngWork; // @synthesize doIngWork=_doIngWork;
 @property(nonatomic) _Bool hasDeleteTask; // @synthesize hasDeleteTask=_hasDeleteTask;
 @property(retain, nonatomic) NSMutableDictionary *dicSessionMaxId; // @synthesize dicSessionMaxId=_dicSessionMaxId;

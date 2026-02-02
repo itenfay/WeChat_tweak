@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol CdnRenderStatsDelegate, OS_dispatch_queue, OS_dispatch_source;
 
@@ -27,7 +28,6 @@
 }
 
 + (CDUnknownBlockType)createReportTimer:(long long)arg1 block:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType fpsReport; // @synthesize fpsReport=_fpsReport;
 @property unsigned long long lastRenderTimeForMonitor; // @synthesize lastRenderTimeForMonitor=_lastRenderTimeForMonitor;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *monitorQueue; // @synthesize monitorQueue=_monitorQueue;
@@ -60,4 +60,3 @@
 - (id)init;
 
 @end
-

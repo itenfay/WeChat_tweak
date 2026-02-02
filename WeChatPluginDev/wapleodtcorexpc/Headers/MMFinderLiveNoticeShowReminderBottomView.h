@@ -15,7 +15,6 @@
     NSString *_topContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *topContent; // @synthesize topContent=_topContent;
 @property(retain, nonatomic) MMUIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) MMUILabel *detailLabel; // @synthesize detailLabel=_detailLabel;

@@ -30,7 +30,6 @@
 }
 
 + (void)CreateExtendInfoWithType:(unsigned int)arg1 retExtendInfo:(id *)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isFromPoiList; // @synthesize m_isFromPoiList;
 @property(retain, nonatomic) NSString *m_poiPriceTips; // @synthesize m_poiPriceTips;
 @property(retain, nonatomic) NSString *m_poiPhone; // @synthesize m_poiPhone;

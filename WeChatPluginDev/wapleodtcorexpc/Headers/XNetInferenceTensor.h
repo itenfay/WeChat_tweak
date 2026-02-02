@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void *)bufferPtr;
 - (_Bool)setDataWithBufferPtr:(const void *)arg1 length:(unsigned int)arg2;
 - (void)setObjects:(id)arg1;

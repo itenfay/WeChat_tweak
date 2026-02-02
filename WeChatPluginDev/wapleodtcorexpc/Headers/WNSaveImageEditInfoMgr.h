@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString;
 
 @interface WNSaveImageEditInfoMgr
@@ -10,7 +12,6 @@
     NSMutableArray *_arrDataSource;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrDataSource; // @synthesize arrDataSource=_arrDataSource;
 - (id)getBase64String:(id)arg1;
 - (void)getConfigInCurrentMode:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
@@ -33,4 +34,3 @@
 @property(readonly) Class superclass;
 
 @end
-

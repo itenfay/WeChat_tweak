@@ -15,7 +15,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)unsafeUnwrap;
 - (id)debugDescription;
 - (id)description;

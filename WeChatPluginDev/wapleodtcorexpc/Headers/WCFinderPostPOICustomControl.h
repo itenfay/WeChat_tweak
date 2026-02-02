@@ -20,7 +20,6 @@
     NSMutableArray *_bubbleViewArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bubbleViewArray; // @synthesize bubbleViewArray=_bubbleViewArray;
 @property(nonatomic) unsigned int poiStyle; // @synthesize poiStyle=_poiStyle;
 @property(nonatomic) double defaultHeight; // @synthesize defaultHeight=_defaultHeight;

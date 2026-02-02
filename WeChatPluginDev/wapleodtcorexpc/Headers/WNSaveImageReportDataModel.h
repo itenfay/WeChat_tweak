@@ -19,7 +19,6 @@
     unsigned long long _source;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *favId; // @synthesize favId=_favId;
 @property(nonatomic) unsigned long long downloadStatus; // @synthesize downloadStatus=_downloadStatus;

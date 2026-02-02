@@ -13,7 +13,6 @@
     NSData *_headerData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *headerData; // @synthesize headerData=_headerData;
 @property(nonatomic) unsigned long long pos; // @synthesize pos=_pos;
 

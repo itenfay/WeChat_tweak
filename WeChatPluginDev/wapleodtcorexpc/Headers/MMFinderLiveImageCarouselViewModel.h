@@ -19,7 +19,6 @@
 
 + (Class)cellClass;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) double cellWidth; // @synthesize cellWidth=_cellWidth;
 @property(nonatomic) double scrollTimeInterval; // @synthesize scrollTimeInterval=_scrollTimeInterval;
 @property(nonatomic) _Bool isShowForClearScreen; // @synthesize isShowForClearScreen=_isShowForClearScreen;

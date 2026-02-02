@@ -23,7 +23,6 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect videoRect; // @synthesize videoRect=_videoRect;
 @property(nonatomic) struct CGSize nextMTKViewSize; // @synthesize nextMTKViewSize=_nextMTKViewSize;
 @property(retain, nonatomic) NSLayoutConstraint *centerYConstraint; // @synthesize centerYConstraint=_centerYConstraint;

@@ -12,7 +12,6 @@
     NSMutableArray *_firstPageRandomArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *m_containView; // @synthesize m_containView;
 - (void)onVerifyOk:(id)arg1;
 - (void)onGetMsg:(id)arg1 PushContact:(id)arg2;

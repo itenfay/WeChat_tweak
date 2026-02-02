@@ -11,7 +11,6 @@
     id <WCCardSecondaryViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCardSecondaryViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)fieldClicked:(id)arg1;
 - (void)layoutSubviews;

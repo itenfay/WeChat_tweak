@@ -15,7 +15,6 @@
     MMCommonPickerView *_picker;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCommonPickerView *picker; // @synthesize picker=_picker;
 @property(retain, nonatomic) UIView *separatorBar; // @synthesize separatorBar=_separatorBar;
 @property(retain, nonatomic) MMFinderLiveBattleDurationItem *selectedOption; // @synthesize selectedOption=_selectedOption;

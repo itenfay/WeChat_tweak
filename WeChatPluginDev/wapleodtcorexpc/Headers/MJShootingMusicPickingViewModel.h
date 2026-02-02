@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EditVideoMusicController, MJCameraMusicTabViewModel, MJPublisherContext, MMBGMSelectedConfig, NSArray, NSMutableArray, NSMutableDictionary, NSString, OMJMusicInfo, RecommendedMusicInfo;
 @protocol MJShootingMusicPickingViewModelDelegate;
@@ -40,7 +41,6 @@
 + (int)bgmTypeWithMusicID:(id)arg1;
 + (unsigned long long)bgmIDWithMusicID:(id)arg1;
 + (id)lyricInfosWithResp:(id)arg1 musicDuration:(CDStruct_1b6d18a9)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) EditVideoMusicController *musicController; // @synthesize musicController=_musicController;
 @property(retain, nonatomic) OMJMusicInfo *templateMusicInfo; // @synthesize templateMusicInfo=_templateMusicInfo;
 @property(retain, nonatomic) NSString *templateMusicId; // @synthesize templateMusicId=_templateMusicId;
@@ -96,4 +96,3 @@
 @property(readonly) Class superclass;
 
 @end
-

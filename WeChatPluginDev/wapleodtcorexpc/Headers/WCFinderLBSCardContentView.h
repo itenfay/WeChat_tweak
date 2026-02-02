@@ -28,7 +28,6 @@
 + (double)heightForCellWithStyle:(id)arg1 width:(double)arg2;
 + (id)poiTitleAttributedStringWithPOIName:(id)arg1 poiNameWording:(id)arg2;
 + (id)favButtonTitleWithStyle:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(retain, nonatomic) WCFinderJumpInfoLBSCardScoreView *scoreView; // @synthesize scoreView=_scoreView;
 @property(retain, nonatomic) UILabel *scoreLabel; // @synthesize scoreLabel=_scoreLabel;

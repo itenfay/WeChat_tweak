@@ -18,7 +18,6 @@
     WCFinderTableViewParamModel *_tableViewParamModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderTableViewParamModel *tableViewParamModel; // @synthesize tableViewParamModel=_tableViewParamModel;
 @property(nonatomic) _Bool hasCompletelyPlay; // @synthesize hasCompletelyPlay=_hasCompletelyPlay;
 @property(nonatomic) _Bool isLandscape; // @synthesize isLandscape=_isLandscape;

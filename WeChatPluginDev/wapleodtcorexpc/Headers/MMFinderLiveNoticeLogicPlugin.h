@@ -15,7 +15,6 @@
     FinderLiveNoticeInfo *_bubbleNoticeInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int delayDisappearDurationAfterReserve; // @synthesize delayDisappearDurationAfterReserve=_delayDisappearDurationAfterReserve;
 @property(retain, nonatomic) FinderLiveNoticeInfo *bubbleNoticeInfo; // @synthesize bubbleNoticeInfo=_bubbleNoticeInfo;
 @property(retain, nonatomic) FinderLiveNoticeListInfo *noticeListInfo; // @synthesize noticeListInfo=_noticeListInfo;

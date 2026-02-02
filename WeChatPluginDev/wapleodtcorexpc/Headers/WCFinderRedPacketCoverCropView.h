@@ -26,7 +26,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldIgnoreScrollEvent; // @synthesize shouldIgnoreScrollEvent=_shouldIgnoreScrollEvent;
 @property(retain, nonatomic) UIView *playerContainerView; // @synthesize playerContainerView=_playerContainerView;
 @property(retain, nonatomic) MMUIScrollView *scrollView; // @synthesize scrollView=_scrollView;

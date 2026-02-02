@@ -13,7 +13,6 @@
     WCTTable *_notifyMsgTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *notifyMsgTable; // @synthesize notifyMsgTable=_notifyMsgTable;
 @property(retain, nonatomic) WCTDatabase *database; // @synthesize database=_database;
 - (id)getDBPath;

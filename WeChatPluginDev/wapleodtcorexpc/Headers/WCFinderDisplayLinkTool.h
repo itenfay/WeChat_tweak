@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink;
 
@@ -19,7 +20,6 @@
 }
 
 + (void)runAnimation:(double)arg1 update:(CDUnknownBlockType)arg2 timeFunc:(CDUnknownFunctionPointerType)arg3 complete:(CDUnknownBlockType)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) CDUnknownFunctionPointerType timeFunc; // @synthesize timeFunc=_timeFunc;
 @property(copy, nonatomic) CDUnknownBlockType complete; // @synthesize complete=_complete;
 @property(retain, nonatomic) WCFinderDisplayLinkTool *selfRetain; // @synthesize selfRetain=_selfRetain;
@@ -32,4 +32,3 @@
 - (id)initWithUpdater:(CDUnknownBlockType)arg1 duration:(double)arg2;
 
 @end
-

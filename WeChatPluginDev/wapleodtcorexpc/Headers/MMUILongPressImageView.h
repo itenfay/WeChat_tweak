@@ -22,7 +22,6 @@
 }
 
 + (void)initialize;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool wxHighlightedImageDirtyMark; // @synthesize wxHighlightedImageDirtyMark=_wxHighlightedImageDirtyMark;
 @property(retain, nonatomic) UIImageView *wxHighlightedImageView; // @synthesize wxHighlightedImageView=_wxHighlightedImageView;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGesture; // @synthesize longPressGesture=_longPressGesture;

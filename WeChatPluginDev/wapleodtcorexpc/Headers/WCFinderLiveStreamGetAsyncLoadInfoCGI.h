@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray;
 
 @interface WCFinderLiveStreamGetAsyncLoadInfoCGI
@@ -14,7 +16,6 @@
     CDUnknownBlockType _failure;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
 @property(retain, nonatomic) NSArray *scenesArray; // @synthesize scenesArray=_scenesArray;
@@ -25,4 +26,3 @@
 - (id)initWithObjectUidList:(id)arg1 aggregationCardIdList:(id)arg2 cardInfoList:(id)arg3 scenes:(id)arg4 commentScene:(int)arg5 triggerScene:(int)arg6 reportScene:(long long)arg7 successful:(CDUnknownBlockType)arg8 failure:(CDUnknownBlockType)arg9;
 
 @end
-

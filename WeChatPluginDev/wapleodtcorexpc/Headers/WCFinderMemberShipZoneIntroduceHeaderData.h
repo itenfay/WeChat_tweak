@@ -44,7 +44,6 @@
     WCFinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSMutableArray *statisticalInfoList; // @synthesize statisticalInfoList=_statisticalInfoList;
 @property(retain, nonatomic) WCFinderMemberCollectionInfo *memberCollectionInfo; // @synthesize memberCollectionInfo=_memberCollectionInfo;

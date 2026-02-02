@@ -13,7 +13,6 @@
     WCFinderSearchInfo *_searchInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSearchInfo *searchInfo; // @synthesize searchInfo=_searchInfo;
 @property(retain, nonatomic) MMFinderLiveConnectMicUser *user; // @synthesize user=_user;
 

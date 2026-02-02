@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CMessageWrap, MsgImgSearchPhashMemCache;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _completionBlock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isForbidSearch; // @synthesize isForbidSearch=_isForbidSearch;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) MsgImgSearchPhashMemCache *phashMemCache; // @synthesize phashMemCache=_phashMemCache;
@@ -24,4 +24,3 @@
 @property(retain, nonatomic) CMessageWrap *messageWrap; // @synthesize messageWrap=_messageWrap;
 
 @end
-

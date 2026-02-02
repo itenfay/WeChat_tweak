@@ -23,7 +23,6 @@
     struct CGSize _itemSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double totalHeight; // @synthesize totalHeight=_totalHeight;
 @property(nonatomic) double edgeTop; // @synthesize edgeTop=_edgeTop;
 @property(nonatomic) double edgeLeft; // @synthesize edgeLeft=_edgeLeft;

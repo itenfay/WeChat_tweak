@@ -17,7 +17,6 @@
     VoipDescriptionButton *_m_hangupButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_hasHangup; // @synthesize m_hasHangup=_m_hasHangup;
 @property(retain, nonatomic) VoipDescriptionButton *m_hangupButton; // @synthesize m_hangupButton=_m_hangupButton;
 @property(nonatomic) unsigned int m_callingTimes; // @synthesize m_callingTimes;

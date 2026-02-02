@@ -37,7 +37,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int cgiType; // @synthesize cgiType=_cgiType;
 @property(nonatomic) unsigned int uiCgi; // @synthesize uiCgi=_uiCgi;
 @property(retain, nonatomic) NSData *pbResponseData; // @synthesize pbResponseData=_pbResponseData;

@@ -23,7 +23,6 @@
 + (id)fetchAnimationViewForView:(id)arg1 isFromTimeline:(_Bool)arg2 dataItem:(id)arg3;
 + (double)heightForGridViewForDataItem:(id)arg1;
 + (double)heightForDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdFinderLiveLogic *finderLiveLogic; // @synthesize finderLiveLogic=_finderLiveLogic;
 @property(retain, nonatomic) WCAdFinderLivePlayerView *finderLivePlayerView; // @synthesize finderLivePlayerView=_finderLivePlayerView;
 @property(retain, nonatomic) WCAdLiveLikeAnimationView *liveLikeAnimationView; // @synthesize liveLikeAnimationView=_liveLikeAnimationView;

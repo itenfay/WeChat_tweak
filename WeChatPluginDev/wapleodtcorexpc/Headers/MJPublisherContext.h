@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderVideoTemplateInfo, MJMovieComposingDraftManager, MMBGMSelectedMusicResult, NSArray, NSData, NSDate, NSString, RecommendedMusicInfo;
 
@@ -43,7 +44,6 @@
 }
 
 + (_Bool)shouldEnablePurePicturePostWithAssetInfos:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *startRecordingTimestamp; // @synthesize startRecordingTimestamp=_startRecordingTimestamp;
 @property(retain, nonatomic) NSDate *startPreviewingTimestamp; // @synthesize startPreviewingTimestamp=_startPreviewingTimestamp;
 @property(retain, nonatomic) NSArray *wxToMaasMusicIds; // @synthesize wxToMaasMusicIds=_wxToMaasMusicIds;
@@ -83,4 +83,3 @@
 - (id)generateReportingParams;
 
 @end
-

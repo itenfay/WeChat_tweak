@@ -14,7 +14,6 @@
     UIImageView *_addressIconImgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *addressIconImgView; // @synthesize addressIconImgView=_addressIconImgView;
 @property(retain, nonatomic) NSString *maskHighlightImageName; // @synthesize maskHighlightImageName=_maskHighlightImageName;
 @property(retain, nonatomic) NSString *maskImageName; // @synthesize maskImageName=_maskImageName;

@@ -32,7 +32,6 @@
 + (void)updateBaseInfosForBaseRequest:(id)arg1 tidList:(id)arg2 scene:(int)arg3 extraKey:(id)arg4 useSessionBuffer:(_Bool)arg5;
 + (unsigned int)getBaseRequestExtFlag;
 + (id)genBaseRequest;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCGIProfile *bizCGIProfile; // @synthesize bizCGIProfile=_bizCGIProfile;
 @property(nonatomic) _Bool reportWithoutSessionBuffer; // @synthesize reportWithoutSessionBuffer=_reportWithoutSessionBuffer;
 @property(nonatomic) int innerScene; // @synthesize innerScene=_innerScene;

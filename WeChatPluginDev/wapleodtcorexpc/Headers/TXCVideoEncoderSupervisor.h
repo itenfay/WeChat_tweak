@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class TXCDispatchQueue, TXCVideoEncodeConfig;
 @protocol TXCVideoEncoderSupervisorDelegate;
@@ -25,7 +26,6 @@
     TXCVideoEncodeConfig *_encodeConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enablesRoi; // @synthesize enablesRoi=_enablesRoi;
 @property(readonly, nonatomic) TXCVideoEncodeConfig *encodeConfig; // @synthesize encodeConfig=_encodeConfig;
 @property(nonatomic) _Bool hardwareError; // @synthesize hardwareError=_hardwareError;
@@ -52,4 +52,3 @@
 - (id)initWithQueue:(id)arg1 supportsSoftware:(_Bool)arg2 supportsHevc:(_Bool)arg3 encodeConfig:(id)arg4 delegate:(id)arg5;
 
 @end
-

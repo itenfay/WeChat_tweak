@@ -19,7 +19,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bgColorDark; // @synthesize bgColorDark=_bgColorDark;
 @property(retain, nonatomic) NSString *bgColorLight; // @synthesize bgColorLight=_bgColorLight;
 @property(retain, nonatomic) NSString *iconDark; // @synthesize iconDark=_iconDark;

@@ -11,7 +11,6 @@
     MISSING_TYPE *_timeSeriesProphets;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onServiceClearData;
 - (void)onServiceInit;

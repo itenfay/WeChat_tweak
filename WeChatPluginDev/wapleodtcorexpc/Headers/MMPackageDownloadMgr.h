@@ -14,7 +14,6 @@
     NSDateFormatter *m_dateFormatter;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;

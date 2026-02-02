@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OMCComposingFactory : NSObject
 {
@@ -21,4 +22,3 @@
 + (void)createTimelineWithPHAssets:(id)arg1 aspectRatio:(id)arg2 imageOriginDuration:(CDStruct_1b6d18a9)arg3 minSegmentPreservedDuration:(CDStruct_1b6d18a9)arg4 enableHDRPlayback:(_Bool)arg5 calcDurationWithAllSegments:(_Bool)arg6 videoFrameRateHandler:(CDUnknownBlockType)arg7 postProcHandler:(CDUnknownBlockType)arg8 completionHandler:(CDUnknownBlockType)arg9;
 
 @end
-

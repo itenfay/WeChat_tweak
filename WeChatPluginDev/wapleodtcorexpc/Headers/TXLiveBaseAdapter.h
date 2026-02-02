@@ -15,7 +15,6 @@
     unsigned long long _loggingBusinessType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long loggingBusinessType; // @synthesize loggingBusinessType=_loggingBusinessType;
 @property(nonatomic) __weak id <TXLivePushJSAdapterProtocol> pusher; // @synthesize pusher=_pusher;
 @property(nonatomic) _Bool isInVoIP; // @synthesize isInVoIP=_isInVoIP;

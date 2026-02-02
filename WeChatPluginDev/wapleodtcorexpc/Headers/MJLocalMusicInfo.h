@@ -13,7 +13,6 @@
     NSString *_musicFilePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *musicFilePath; // @synthesize musicFilePath=_musicFilePath;
 @property(retain, nonatomic) OMJMusicInfo *musicInfo; // @synthesize musicInfo=_musicInfo;
 - (_Bool)isEqualToMusicData:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CdnRenderViewBase, CustomPlayerConfig, FinderLiveVoipStreamStatus, MMLiveCDNPlayerStreamWrap, MMLiveCdnStreamInfo, MMLiveCommonSEIMsg, MMLiveTask, NSArray, NSMutableDictionary, NSString, TRTCCdnPlayerManager, UIView;
 @protocol MMLiveCDNPlayerItemDelegate;
@@ -95,7 +96,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveVoipStreamStatus *streamStatus; // @synthesize streamStatus=_streamStatus;
 @property(nonatomic) unsigned long long enterSessionId; // @synthesize enterSessionId=_enterSessionId;
 @property(nonatomic) unsigned long long videoDecodeType; // @synthesize videoDecodeType=_videoDecodeType;
@@ -289,4 +289,3 @@
 @property(readonly) Class superclass;
 
 @end
-

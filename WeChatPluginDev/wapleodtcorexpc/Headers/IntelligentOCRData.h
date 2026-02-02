@@ -11,7 +11,6 @@
     IntelligentOCRItem *_ocrItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int ocrTime; // @synthesize ocrTime=_ocrTime;
 @property(retain, nonatomic) IntelligentOCRItem *ocrItem; // @synthesize ocrItem=_ocrItem;
 

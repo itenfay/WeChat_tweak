@@ -19,7 +19,6 @@
     JSAPIGetAllUseUserInfoResponse_PrivacyScopeItem *_originItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSAPIGetAllUseUserInfoResponse_PrivacyScopeItem *originItem; // @synthesize originItem=_originItem;
 @property(nonatomic) double cellHeight; // @synthesize cellHeight=_cellHeight;
 @property(nonatomic) _Bool isManaging; // @synthesize isManaging=_isManaging;

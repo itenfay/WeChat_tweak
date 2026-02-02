@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDate;
 
 @interface WCSelectTimeHalfScreenView
@@ -15,7 +17,6 @@
     NSDate *_selectEndDate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *selectEndDate; // @synthesize selectEndDate=_selectEndDate;
 @property(retain, nonatomic) NSDate *selectBeginDate; // @synthesize selectBeginDate=_selectBeginDate;
 @property(retain, nonatomic) NSDate *maxiumDate; // @synthesize maxiumDate=_maxiumDate;
@@ -31,4 +32,3 @@
 - (id)initWithTimeMin:(id)arg1 max:(id)arg2 selectBegin:(id)arg3 selectEnd:(id)arg4;
 
 @end
-

@@ -14,7 +14,6 @@
     MISSING_TYPE *cardWebDelegate;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithFromVC:(id)arg1;
 @property(nonatomic) __weak id <WCFinderCardWebViewControllerDelegate> cardWebDelegate; // @synthesize cardWebDelegate;

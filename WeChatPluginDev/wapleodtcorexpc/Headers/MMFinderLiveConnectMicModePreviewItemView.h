@@ -20,7 +20,6 @@
     unsigned long long _userRole;
 }
 
-- (void).cxx_destruct;
 @property _Bool isOtherAnchorAudioMode; // @synthesize isOtherAnchorAudioMode=_isOtherAnchorAudioMode;
 @property(nonatomic) _Bool videoAvailable; // @synthesize videoAvailable=_videoAvailable;
 @property(nonatomic) unsigned long long userRole; // @synthesize userRole=_userRole;

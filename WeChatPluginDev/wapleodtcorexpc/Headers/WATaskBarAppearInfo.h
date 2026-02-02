@@ -31,7 +31,6 @@
     NSString *_overviewExtraData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *overviewExtraData; // @synthesize overviewExtraData=_overviewExtraData;
 @property(retain, nonatomic) NSString *SSIDHash; // @synthesize SSIDHash=_SSIDHash;
 @property(retain, nonatomic) NSString *BSSIDHash; // @synthesize BSSIDHash=_BSSIDHash;

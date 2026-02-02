@@ -17,7 +17,6 @@
 }
 
 + (double)viewH;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastShootingMode; // @synthesize lastShootingMode=_lastShootingMode;
 @property(nonatomic) unsigned long long currentShootingMode; // @synthesize currentShootingMode=_currentShootingMode;
 @property(retain, nonatomic) MMUIView *dotView; // @synthesize dotView=_dotView;

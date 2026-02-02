@@ -29,7 +29,6 @@
 + (void)PBArrayAdd_iconName;
 + (void)PBArrayAdd_summary;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBlocked; // @synthesize isBlocked=_isBlocked;
 @property(nonatomic) unsigned long long visitorStatus; // @synthesize visitorStatus=_visitorStatus;
 @property(nonatomic) unsigned long long memberShipStatus; // @synthesize memberShipStatus=_memberShipStatus;

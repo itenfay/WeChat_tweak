@@ -16,7 +16,6 @@
     NSString *_fromObjectId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fromObjectId; // @synthesize fromObjectId=_fromObjectId;
 @property(nonatomic) int topicType; // @synthesize topicType=_topicType;
 @property(copy, nonatomic) NSString *topicWording; // @synthesize topicWording=_topicWording;

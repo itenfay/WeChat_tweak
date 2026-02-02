@@ -11,7 +11,6 @@
 }
 
 + (id)feedVMWithContentVM:(id)arg1 drfatVM:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedDraft *draftVM; // @synthesize draftVM=_draftVM;
 - (id)defaultIconWithSize:(struct CGSize *)arg1;
 - (double)uploadProgress;

@@ -47,7 +47,6 @@
 + (void)InsertBaseData:(id)arg1 logId:(int)arg2;
 + (void)Reoport:(id)arg1 logId:(int)arg2;
 + (id)reporterByTaskID:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *switchExtraDic; // @synthesize switchExtraDic=_switchExtraDic;
 - (void)reportStartChangeClarityWithQualityLevel:(unsigned long long)arg1 fromScene:(unsigned long long)arg2;
 - (void)reportAudienceGiftWallActionWithParams:(id)arg1;

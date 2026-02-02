@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_language;
 + (void)PBArrayAdd_updateTime;
 + (void)PBArrayAdd_acctType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *urls; // @synthesize urls=_urls;
 @property(retain, nonatomic) NSMutableDictionary *wordings; // @synthesize wordings=_wordings;
 @property(retain, nonatomic) NSString *acctType; // @synthesize acctType=_acctType;

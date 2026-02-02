@@ -15,7 +15,6 @@
     NSString *_desc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableSelect; // @synthesize disableSelect=_disableSelect;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *optionName; // @synthesize optionName=_optionName;

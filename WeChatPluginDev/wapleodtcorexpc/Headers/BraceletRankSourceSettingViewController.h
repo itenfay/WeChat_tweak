@@ -16,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onAddSportDevice:(id)arg1;
 - (_Bool)isM7Device:(id)arg1;
 - (id)makeMockAppleWatchDevice;

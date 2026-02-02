@@ -16,7 +16,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *value_color; // @synthesize value_color=_value_color;
 @property(retain, nonatomic) NSString *name_color; // @synthesize name_color=_name_color;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;

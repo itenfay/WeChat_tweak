@@ -24,7 +24,6 @@
     UINavigationController *_originalNav;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UINavigationController *originalNav; // @synthesize originalNav=_originalNav;
 @property(nonatomic) _Bool shouldRestoreNavigationBar; // @synthesize shouldRestoreNavigationBar=_shouldRestoreNavigationBar;
 @property(nonatomic) __weak UIViewController *fromVC; // @synthesize fromVC=_fromVC;

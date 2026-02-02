@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface _FixTitleColorButtonChainModel
 {
     CDUnknownBlockType _fixWidth;
@@ -12,7 +14,6 @@
 }
 
 + (Class)viewClass;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType fixHeight_O; // @synthesize fixHeight_O=_fixHeight_O;
 @property(readonly, copy, nonatomic) CDUnknownBlockType fixHeight; // @synthesize fixHeight=_fixHeight;
 @property(readonly, copy, nonatomic) CDUnknownBlockType fixWidth_O; // @synthesize fixWidth_O=_fixWidth_O;
@@ -47,4 +48,3 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType m_highlighBorderColor;
 
 @end
-

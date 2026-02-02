@@ -13,7 +13,6 @@
     CLHeading *_heading;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CLHeading *heading; // @synthesize heading=_heading;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 

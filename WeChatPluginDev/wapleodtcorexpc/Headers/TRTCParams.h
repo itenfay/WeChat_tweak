@@ -21,7 +21,6 @@
     NSString *_bussInfo;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bussInfo; // @synthesize bussInfo=_bussInfo;
 @property(copy, nonatomic) NSString *privateMapKey; // @synthesize privateMapKey=_privateMapKey;
 @property(copy, nonatomic) NSString *userDefineRecordId; // @synthesize userDefineRecordId=_userDefineRecordId;

@@ -15,7 +15,6 @@
     NSMutableArray *_moreFollowDataArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *moreFollowDataArray; // @synthesize moreFollowDataArray=_moreFollowDataArray;
 @property(retain, nonatomic) NSMutableArray *dataArray; // @synthesize dataArray=_dataArray;
 @property(retain, nonatomic) WCFinderFeedLayoutContentVM *bottomLayoutVM; // @synthesize bottomLayoutVM=_bottomLayoutVM;

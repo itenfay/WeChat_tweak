@@ -15,7 +15,6 @@
     id <WARichTextViewHelperDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WARichTextViewHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 - (double)getHeightForContent:(id)arg1 font:(id)arg2 width:(double)arg3 parserType:(unsigned long long)arg4;

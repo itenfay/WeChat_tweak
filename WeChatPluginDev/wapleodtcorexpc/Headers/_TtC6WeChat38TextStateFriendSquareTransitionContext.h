@@ -15,7 +15,6 @@
     MISSING_TYPE *cardList;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,10 +14,8 @@
     CDUnknownBlockType _filterBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType filterBlock; // @synthesize filterBlock=_filterBlock;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)initWithName:(id)arg1 filterBlock:(CDUnknownBlockType)arg2;
 
 @end
-

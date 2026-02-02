@@ -17,7 +17,6 @@
 
 + (id)fromMap:(id)arg1;
 + (id)makeWithIconId:(id)arg1 type:(id)arg2 iconColor:(id)arg3 text:(id)arg4;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSNumber *iconColor; // @synthesize iconColor=_iconColor;
 @property(retain, nonatomic) NSNumber *type; // @synthesize type=_type;

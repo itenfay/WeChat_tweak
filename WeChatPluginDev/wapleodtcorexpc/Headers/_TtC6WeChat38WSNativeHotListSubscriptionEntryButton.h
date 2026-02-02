@@ -16,7 +16,6 @@
     MISSING_TYPE *$__lazy_storage_$_spiltLine;
 }
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

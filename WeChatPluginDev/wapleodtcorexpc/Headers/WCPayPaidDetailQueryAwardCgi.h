@@ -19,7 +19,6 @@
     id <WCPayPaidDetailQueryAwardCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayPaidDetailQueryAwardCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 @property(retain, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(retain, nonatomic) NSString *activityMchId; // @synthesize activityMchId=_activityMchId;

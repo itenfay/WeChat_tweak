@@ -15,7 +15,6 @@
 
 + (id)videoParamsSourceFromMMAsset:(id)arg1;
 + (id)videoParamsSourceFromURL:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMAsset *videoMMAsset; // @synthesize videoMMAsset=_videoMMAsset;
 @property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 - (id)genVideoParamsInfoFromAVAsset:(id)arg1;

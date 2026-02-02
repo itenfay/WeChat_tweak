@@ -19,7 +19,6 @@
     MMUIButton *_moreButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *moreButton; // @synthesize moreButton=_moreButton;
 @property(retain, nonatomic) MMUIButton *allEpisodeButton; // @synthesize allEpisodeButton=_allEpisodeButton;
 @property(retain, nonatomic) MMUIButton *nextEpisodeButton; // @synthesize nextEpisodeButton=_nextEpisodeButton;

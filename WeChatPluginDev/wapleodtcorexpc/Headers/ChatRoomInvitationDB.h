@@ -13,7 +13,6 @@
     WCTTable *_table;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *table; // @synthesize table=_table;
 @property(retain, nonatomic) WCTDatabase *database; // @synthesize database=_database;
 - (unsigned int)getCountWithChatRoom:(id)arg1 afterTime:(unsigned int)arg2;

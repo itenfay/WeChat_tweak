@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSMutableArray;
 
 @interface WCFinderLiveModBasicInfoCGI
@@ -14,7 +16,6 @@
     unsigned long long _liveId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;
 @property(nonatomic) unsigned long long objectId; // @synthesize objectId=_objectId;
 @property(retain, nonatomic) NSArray *unmutableCmdItemRequestWrapList; // @synthesize unmutableCmdItemRequestWrapList=_unmutableCmdItemRequestWrapList;
@@ -29,4 +30,3 @@
 - (id)initWithFinderTaskId:(id)arg1 scene:(unsigned int)arg2;
 
 @end
-

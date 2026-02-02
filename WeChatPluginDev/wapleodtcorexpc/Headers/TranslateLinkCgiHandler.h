@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class TranslateLinkParameter;
 
 @interface TranslateLinkCgiHandler
@@ -20,7 +22,6 @@
 + (void)reportRequestTranslateLinkAsync:(_Bool)arg1;
 + (void)requestWithParamter:(id)arg1 completion:(CDUnknownBlockType)arg2 asyncCompletion:(CDUnknownBlockType)arg3;
 + (void)requestWithParamter:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TranslateLinkCgiHandler *selfRetain; // @synthesize selfRetain=_selfRetain;
 @property(copy, nonatomic) CDUnknownBlockType asyncCompletion; // @synthesize asyncCompletion=_asyncCompletion;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
@@ -39,4 +40,3 @@
 - (id)initWithParameter:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

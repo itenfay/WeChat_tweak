@@ -25,7 +25,6 @@
     struct CGRect _displayNormalizedFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveLiveRoleSignView *anonymousSignView; // @synthesize anonymousSignView=_anonymousSignView;
 @property(retain, nonatomic) MMFinderLiveGlobalRankSignView *globalRankSignView; // @synthesize globalRankSignView=_globalRankSignView;
 @property(retain, nonatomic) MMUIButton *micMutedButton; // @synthesize micMutedButton=_micMutedButton;

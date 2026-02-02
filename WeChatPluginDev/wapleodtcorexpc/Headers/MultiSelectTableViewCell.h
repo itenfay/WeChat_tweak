@@ -19,7 +19,6 @@
     _Bool _m_bCanSelected;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bCanSelected; // @synthesize m_bCanSelected=_m_bCanSelected;
 @property(nonatomic) _Bool m_bShowSelectedFlag; // @synthesize m_bShowSelectedFlag;
 @property(nonatomic) _Bool m_bIsEditting; // @synthesize m_bIsEditting;

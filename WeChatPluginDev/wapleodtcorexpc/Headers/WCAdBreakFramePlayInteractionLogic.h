@@ -15,7 +15,6 @@
     double _changeAnimationStartTimeMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPlayed; // @synthesize hasPlayed=_hasPlayed;
 @property(nonatomic) _Bool beginPosSetFlag; // @synthesize beginPosSetFlag=_beginPosSetFlag;
 @property(nonatomic) int changeAnimationTargetState; // @synthesize changeAnimationTargetState=_changeAnimationTargetState;

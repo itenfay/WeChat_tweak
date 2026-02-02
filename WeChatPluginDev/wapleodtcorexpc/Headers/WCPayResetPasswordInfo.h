@@ -42,7 +42,6 @@
     NSString *_nsCardHolderBirthDay;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsCardHolderBirthDay; // @synthesize nsCardHolderBirthDay=_nsCardHolderBirthDay;
 @property(retain, nonatomic) NSString *nsCardHolderRenewalTime; // @synthesize nsCardHolderRenewalTime=_nsCardHolderRenewalTime;
 @property(retain, nonatomic) NSString *nsCardHolderCreValidTime; // @synthesize nsCardHolderCreValidTime=_nsCardHolderCreValidTime;

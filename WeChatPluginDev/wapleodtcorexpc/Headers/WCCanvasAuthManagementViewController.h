@@ -11,7 +11,6 @@
     WCTableViewManager *_tableViewMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTableViewManager *tableViewMgr; // @synthesize tableViewMgr=_tableViewMgr;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 - (void)reportUserAction:(id)arg1 name:(id)arg2;

@@ -22,7 +22,6 @@
 }
 
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMBGMSelectedMusicDataProtocol> musicData; // @synthesize musicData=_musicData;
 @property(retain, nonatomic) MMBGMSelectedTabTableViewCellConfig *config; // @synthesize config=_config;
 @property(nonatomic) _Bool isPlayable; // @synthesize isPlayable=_isPlayable;

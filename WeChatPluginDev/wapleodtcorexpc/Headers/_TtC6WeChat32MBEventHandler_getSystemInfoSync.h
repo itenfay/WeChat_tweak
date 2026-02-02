@@ -10,7 +10,6 @@
     MISSING_TYPE *impl;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)invoke:(id)arg1;
 - (id)apiName;

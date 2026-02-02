@@ -10,7 +10,6 @@
     WSTabInfo *_tabInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WSTabInfo *tabInfo; // @synthesize tabInfo=_tabInfo;
 - (id)init;
 

@@ -11,7 +11,6 @@
     PasswordLogic *m_pswLogic;
 }
 
-- (void).cxx_destruct;
 - (void)passwordLogicPause:(id)arg1;
 - (void)passwordLogicStart:(id)arg1;
 - (void)passwordLogicCancel:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,7 +15,6 @@
 }
 
 + (id)showPicker:(id)arg1 fromVC:(id)arg2 onCancel:(CDUnknownBlockType)arg3 onComplete:(CDUnknownBlockType)arg4;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onComplete; // @synthesize onComplete=_onComplete;
 @property(copy, nonatomic) CDUnknownBlockType onCancel; // @synthesize onCancel=_onCancel;
 - (void)documentPicker:(id)arg1 didPickDocumentsAtURLs:(id)arg2;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

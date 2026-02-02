@@ -46,7 +46,6 @@
 }
 
 + (void)updateLabel:(id)arg1 WithWidth:(double)arg2 WithHeight:(double)arg3 AndLastLineWidth:(double)arg4 AndUpDownMargin:(double)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bShowCSVideo; // @synthesize m_bShowCSVideo=_m_bShowCSVideo;
 @property(nonatomic) _Bool m_bAllowBackCamera; // @synthesize m_bAllowBackCamera=_m_bAllowBackCamera;
 @property(retain, nonatomic) WavAudioPlayer *m_wavAudioPlayer; // @synthesize m_wavAudioPlayer=_m_wavAudioPlayer;

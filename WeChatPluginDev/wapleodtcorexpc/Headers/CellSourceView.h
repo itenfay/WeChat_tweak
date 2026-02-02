@@ -14,7 +14,6 @@
     UIView *_separatorLineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorLineView; // @synthesize separatorLineView=_separatorLineView;
 @property(retain, nonatomic) UIColor *fixedBackgroundColor; // @synthesize fixedBackgroundColor=_fixedBackgroundColor;
 @property(nonatomic) unsigned long long bubbleType; // @synthesize bubbleType=_bubbleType;

@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithContactInfo:(id)arg1 hasUnreadDot:(id)arg2 lastMsgTime:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *lastMsgTime; // @synthesize lastMsgTime=_lastMsgTime;
 @property(retain, nonatomic) NSNumber *hasUnreadDot; // @synthesize hasUnreadDot=_hasUnreadDot;
 @property(retain, nonatomic) BrandServiceContactInfo *contactInfo; // @synthesize contactInfo=_contactInfo;

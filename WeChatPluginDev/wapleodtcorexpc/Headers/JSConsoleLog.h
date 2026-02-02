@@ -14,7 +14,6 @@
 }
 
 + (id)extractLogInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int jsLogLevel; // @synthesize jsLogLevel=_jsLogLevel;
 @property(retain, nonatomic) NSString *jsLogInfo; // @synthesize jsLogInfo=_jsLogInfo;
 - (id)init;

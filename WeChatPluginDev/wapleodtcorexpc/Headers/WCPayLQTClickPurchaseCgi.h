@@ -10,7 +10,6 @@
     id <WCPayLQTClickPurchaseCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayLQTClickPurchaseCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (id)processCacheDataBeforeSetAsResponse:(id)arg1;
 - (void)cacheResponse:(id)arg1;

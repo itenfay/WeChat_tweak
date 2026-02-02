@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderFeedContentVM;
 @protocol WCFinderCommonBottomViewDelegate;
@@ -16,11 +17,9 @@
     CDUnknownBlockType _hiddenBottomBannerViewBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType hiddenBottomBannerViewBlock; // @synthesize hiddenBottomBannerViewBlock=_hiddenBottomBannerViewBlock;
 @property(nonatomic) __weak id <WCFinderCommonBottomViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long bannerType; // @synthesize bannerType=_bannerType;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 
 @end
-

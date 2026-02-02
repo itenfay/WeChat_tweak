@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, WCFinderCustomImageRichTextView;
 @protocol WCFinderCommentListSelectTabViewDelegate;
@@ -22,7 +23,6 @@
     WCFinderCustomImageRichTextView *_rightLinkView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCustomImageRichTextView *rightLinkView; // @synthesize rightLinkView=_rightLinkView;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(nonatomic) __weak MMUIButton *selectedButton; // @synthesize selectedButton=_selectedButton;
@@ -52,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

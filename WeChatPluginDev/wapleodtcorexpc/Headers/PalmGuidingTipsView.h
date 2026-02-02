@@ -18,7 +18,6 @@
     NSString *_currentTipText;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needFlippedLeft; // @synthesize needFlippedLeft=_needFlippedLeft;
 @property(copy, nonatomic) NSString *currentTipText; // @synthesize currentTipText=_currentTipText;
 @property(nonatomic) unsigned long long currentHandType; // @synthesize currentHandType=_currentHandType;

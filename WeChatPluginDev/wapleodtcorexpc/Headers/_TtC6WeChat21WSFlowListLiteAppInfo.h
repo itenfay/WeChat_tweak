@@ -17,7 +17,6 @@
     MISSING_TYPE *nickname;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, copy) NSString *nickname;
 @property(nonatomic, copy) NSString *title;

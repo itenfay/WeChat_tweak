@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIImage;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _action;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(retain, nonatomic) NSObject *accessibilityDescriptor; // @synthesize accessibilityDescriptor=_accessibilityDescriptor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

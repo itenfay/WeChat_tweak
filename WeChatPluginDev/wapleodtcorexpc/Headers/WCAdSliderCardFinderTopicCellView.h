@@ -16,7 +16,6 @@
     MMUILabel *_descView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *descView; // @synthesize descView=_descView;
 @property(retain, nonatomic) MMUILabel *tagView; // @synthesize tagView=_tagView;
 @property(retain, nonatomic) MMUIView *infoDividerView; // @synthesize infoDividerView=_infoDividerView;

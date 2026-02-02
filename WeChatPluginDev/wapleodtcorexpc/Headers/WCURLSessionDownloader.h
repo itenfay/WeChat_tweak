@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableData, NSString, WCURLSession, WCURLSessionDownloadTask;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _completeBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 @property(retain, nonatomic) NSMutableData *receiveData; // @synthesize receiveData=_receiveData;
 @property(retain, nonatomic) WCURLSessionDownloadTask *downloadTask; // @synthesize downloadTask=_downloadTask;
@@ -36,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

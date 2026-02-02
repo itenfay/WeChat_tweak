@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, MMCPLabel, MMHeadImageView, MMPageSheetAdapter, MMUIButton, MMUILabel, NSString, UIButton;
 
 @interface WWKFAddContactViewController
@@ -23,7 +25,6 @@
 }
 
 + (double)halfScreenHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) MMUILabel *antispamLabel; // @synthesize antispamLabel=_antispamLabel;
@@ -68,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

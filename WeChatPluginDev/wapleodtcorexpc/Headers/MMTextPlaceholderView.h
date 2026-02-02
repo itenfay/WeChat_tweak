@@ -4,15 +4,14 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMTextPlaceholderView : UIView
 {
     CDUnknownBlockType _drawRectAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType drawRectAction; // @synthesize drawRectAction=_drawRectAction;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end
-

@@ -14,7 +14,6 @@
     NSArray *_arrConfigTagNameList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bNotCheckIfUrlMatchToSessionUrl; // @synthesize bNotCheckIfUrlMatchToSessionUrl=_bNotCheckIfUrlMatchToSessionUrl;
 @property(retain, nonatomic) NSArray *arrConfigTagNameList; // @synthesize arrConfigTagNameList=_arrConfigTagNameList;
 @property(copy, nonatomic) NSString *mainFrameSessionId; // @synthesize mainFrameSessionId=_mainFrameSessionId;

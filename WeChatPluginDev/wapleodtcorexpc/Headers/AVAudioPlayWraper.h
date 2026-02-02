@@ -10,7 +10,6 @@
     AVAudioPlayer *audioPlayer;
 }
 
-- (void).cxx_destruct;
 - (void)playWithPath:(id)arg1 volume:(float)arg2;
 - (void)playWithPath:(id)arg1;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;

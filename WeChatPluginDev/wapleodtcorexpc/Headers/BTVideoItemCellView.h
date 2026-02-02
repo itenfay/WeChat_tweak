@@ -16,7 +16,6 @@
     BTVideoItemCellAutoPlayerView *m_lastAddedPlayerView;
 }
 
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)layoutSubviewsNormalItem;
 - (void)layoutSubviewsTopItem;

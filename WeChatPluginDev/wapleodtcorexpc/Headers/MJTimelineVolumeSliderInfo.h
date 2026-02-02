@@ -14,7 +14,6 @@
     MJPublisherSlider *_slider;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJPublisherSlider *slider; // @synthesize slider=_slider;
 @property(retain, nonatomic) MMUILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

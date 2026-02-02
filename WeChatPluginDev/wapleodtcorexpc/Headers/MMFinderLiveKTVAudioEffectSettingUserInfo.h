@@ -13,7 +13,6 @@
     MMFinderLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 

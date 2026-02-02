@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderCommByPass, NSArray, NSData, NSMutableArray, NSString, UIViewController, WCFinderAppendTabDatasModel, WCFinderPostSessionModel, WCFinderRedDotCtrlInfo;
 
@@ -52,7 +53,6 @@
     unsigned long long _appendDatasScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long appendDatasScene; // @synthesize appendDatasScene=_appendDatasScene;
 @property(nonatomic) _Bool notUpdateContextId; // @synthesize notUpdateContextId=_notUpdateContextId;
 @property(nonatomic) _Bool redDotShowOnFinderMentionEntry; // @synthesize redDotShowOnFinderMentionEntry=_redDotShowOnFinderMentionEntry;
@@ -112,4 +112,3 @@
 - (id)_initWithEntryScene:(unsigned long long)arg1 entryCardType:(unsigned long long)arg2;
 
 @end
-

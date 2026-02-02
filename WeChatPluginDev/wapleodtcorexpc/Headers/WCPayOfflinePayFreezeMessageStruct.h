@@ -14,7 +14,6 @@
     NSString *m_nsFreezeOfflinePayMessage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiFreezeOfflinePayType; // @synthesize m_uiFreezeOfflinePayType;
 @property(retain, nonatomic) NSString *m_nsFreezeOfflinePayMessage; // @synthesize m_nsFreezeOfflinePayMessage;
 @property(nonatomic) _Bool m_bFreezeOfflinePay; // @synthesize m_bFreezeOfflinePay;

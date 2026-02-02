@@ -16,7 +16,6 @@
     NSString *_fromSessionIdInfo;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fromSessionIdInfo; // @synthesize fromSessionIdInfo=_fromSessionIdInfo;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;

@@ -23,7 +23,6 @@
     UILabel *_itemAdditionalDescLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *itemAdditionalDescLabel; // @synthesize itemAdditionalDescLabel=_itemAdditionalDescLabel;
 @property(retain, nonatomic) UIButton *payButton; // @synthesize payButton=_payButton;
 @property(retain, nonatomic) RichTextView *agreementTextView; // @synthesize agreementTextView=_agreementTextView;

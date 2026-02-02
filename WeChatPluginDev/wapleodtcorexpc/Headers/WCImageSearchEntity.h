@@ -19,7 +19,6 @@
     unsigned long long _initiativeSearchSource;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long initiativeSearchSource; // @synthesize initiativeSearchSource=_initiativeSearchSource;
 @property(copy, nonatomic) NSString *messageUUID; // @synthesize messageUUID=_messageUUID;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;

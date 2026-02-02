@@ -14,7 +14,6 @@
     NSString *_urlKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *urlKey; // @synthesize urlKey=_urlKey;
 @property(retain, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
 @property(retain, nonatomic) NSString *imageURL; // @synthesize imageURL=_imageURL;

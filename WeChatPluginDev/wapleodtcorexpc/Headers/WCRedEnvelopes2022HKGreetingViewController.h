@@ -72,7 +72,6 @@
     CEmoticonWrap *_m_emoticonWrap;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bEnableDownloadEmoticon; // @synthesize m_bEnableDownloadEmoticon=_m_bEnableDownloadEmoticon;
 @property(retain, nonatomic) CEmoticonWrap *m_emoticonWrap; // @synthesize m_emoticonWrap=_m_emoticonWrap;
 @property(retain, nonatomic) EmoticonCustomAddLogicController *m_emoticonCustomAddLogic; // @synthesize m_emoticonCustomAddLogic=_m_emoticonCustomAddLogic;

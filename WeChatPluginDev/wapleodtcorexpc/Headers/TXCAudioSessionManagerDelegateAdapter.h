@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)deviceOrientationDidChange;
 - (void)audioSession:(id)arg1 didChangeOtherAppPlayoutState:(_Bool)arg2;
 - (void)audioSession:(id)arg1 didChangeOutputVolume:(int)arg2;

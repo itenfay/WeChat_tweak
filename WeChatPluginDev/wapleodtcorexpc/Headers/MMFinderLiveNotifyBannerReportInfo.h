@@ -13,7 +13,6 @@
     unsigned long long _style;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) NSString *msgId; // @synthesize msgId=_msgId;
 

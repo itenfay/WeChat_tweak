@@ -13,7 +13,6 @@
     NSString *_msg_id;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float click_score; // @synthesize click_score=_click_score;
 @property(retain, nonatomic) NSString *msg_id; // @synthesize msg_id=_msg_id;
 

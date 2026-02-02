@@ -14,7 +14,6 @@
     double _repeatCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool remainPreviousAnimation; // @synthesize remainPreviousAnimation=_remainPreviousAnimation;
 @property(nonatomic) double repeatCount; // @synthesize repeatCount=_repeatCount;
 @property(retain, nonatomic) NSArray *keyTimes; // @synthesize keyTimes=_keyTimes;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GCTableViewSecionModel, GameInteractContentServer, GameLifeNotifyInteractiveMsgCell, NSString;
 
 @interface GameCenterMsgListInteractTabViewController
@@ -12,7 +14,6 @@
     GameLifeNotifyInteractiveMsgCell *_noticeCell;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameLifeNotifyInteractiveMsgCell *noticeCell; // @synthesize noticeCell=_noticeCell;
 @property(retain, nonatomic) GameInteractContentServer *interActServer; // @synthesize interActServer=_interActServer;
 @property(retain, nonatomic) GCTableViewSecionModel *noticeSectionModel; // @synthesize noticeSectionModel=_noticeSectionModel;
@@ -58,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

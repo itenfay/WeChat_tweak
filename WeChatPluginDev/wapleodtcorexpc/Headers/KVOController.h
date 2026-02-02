@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMapTable;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)controllerWithObserver:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id observer; // @synthesize observer=_observer;
 - (void)_unobserveAll;
 - (void)_unobserve:(id)arg1;
@@ -33,4 +33,3 @@
 - (id)initWithObserver:(id)arg1 retainObserved:(_Bool)arg2;
 
 @end
-

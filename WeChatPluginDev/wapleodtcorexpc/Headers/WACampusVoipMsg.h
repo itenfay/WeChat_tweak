@@ -27,7 +27,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long styleType; // @synthesize styleType=_styleType;
 @property(nonatomic) long long createTime; // @synthesize createTime=_createTime;
 @property(nonatomic) long long receiveTime; // @synthesize receiveTime=_receiveTime;

@@ -19,7 +19,6 @@
     MMVoidCallback *_forgetPwdCallback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMVoidCallback *forgetPwdCallback; // @synthesize forgetPwdCallback=_forgetPwdCallback;
 @property(retain, nonatomic) MMVoidCallback *cancelCallback; // @synthesize cancelCallback=_cancelCallback;
 @property(retain, nonatomic) MMVoidCallback *failCallback; // @synthesize failCallback=_failCallback;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FTSContactSearchUtilLogic, NSArray, NSString, WCFinderMentionFriendContactSearchTask, WCFinderMentionUserSection;
 
@@ -22,7 +23,6 @@
     unsigned long long _searchSequence;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long searchSequence; // @synthesize searchSequence=_searchSequence;
 @property(retain, nonatomic) WCFinderMentionFriendContactSearchTask *friendSeachTask; // @synthesize friendSeachTask=_friendSeachTask;
 @property(retain, nonatomic) FTSContactSearchUtilLogic *contactSearchLogic; // @synthesize contactSearchLogic=_contactSearchLogic;
@@ -44,4 +44,3 @@
 - (id)init;
 
 @end
-

@@ -19,7 +19,6 @@
     NSString *_playUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *playUrl; // @synthesize playUrl=_playUrl;
 @property(retain, nonatomic) NSString *anchorNickname; // @synthesize anchorNickname=_anchorNickname;
 @property(retain, nonatomic) NSString *streamId; // @synthesize streamId=_streamId;

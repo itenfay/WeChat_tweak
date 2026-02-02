@@ -17,7 +17,6 @@
     NSString *nsExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiSponsorID; // @synthesize uiSponsorID;
 @property(retain, nonatomic) NSString *nsExtInfo; // @synthesize nsExtInfo;
 @property(nonatomic) unsigned int uiScene; // @synthesize uiScene;

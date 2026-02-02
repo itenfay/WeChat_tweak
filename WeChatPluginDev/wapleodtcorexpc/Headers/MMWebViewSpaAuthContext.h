@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,11 +15,9 @@
     CDUnknownBlockType _authBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType authBlock; // @synthesize authBlock=_authBlock;
 @property(retain, nonatomic) NSString *reqUrl; // @synthesize reqUrl=_reqUrl;
 @property(retain, nonatomic) NSString *callBackId; // @synthesize callBackId=_callBackId;
 - (void)dealloc;
 
 @end
-

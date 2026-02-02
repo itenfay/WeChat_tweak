@@ -17,7 +17,6 @@
     NSDictionary *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extInfo; // @synthesize extInfo=_extInfo;
 @property(retain, nonatomic) NSString *swiperId; // @synthesize swiperId=_swiperId;
 @property(retain, nonatomic) NSDictionary *wording; // @synthesize wording=_wording;

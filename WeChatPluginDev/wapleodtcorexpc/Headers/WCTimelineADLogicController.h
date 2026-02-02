@@ -14,7 +14,6 @@
     id <WCTimelineLogicControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCTimelineLogicControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool canLogAdContext; // @synthesize canLogAdContext=_canLogAdContext;
 - (void)Register;

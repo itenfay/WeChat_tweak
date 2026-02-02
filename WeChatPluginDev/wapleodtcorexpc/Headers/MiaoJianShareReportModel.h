@@ -15,7 +15,6 @@
     NSString *_localID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localID; // @synthesize localID=_localID;
 @property(nonatomic) unsigned int templateType; // @synthesize templateType=_templateType;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;

@@ -19,7 +19,6 @@
     EdgeComputingThresholdController *thresholdController;
 }
 
-- (void).cxx_destruct;
 - (id)edgeComputing:(id)arg1 andData:(id)arg2;
 - (void)onSqlConfigSame:(id)arg1;
 - (void)onSqlConfigOffline:(id)arg1;

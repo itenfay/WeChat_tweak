@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LiveChooseClarityCacheInfo, MMFinderLiveChooseClarityView, MMFinderLiveTask, MMLiveConnectMicLogic, NSString, WCFinderLiveAudienceLogReporter;
 
@@ -20,7 +21,6 @@
     LiveChooseClarityCacheInfo *_cacheInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LiveChooseClarityCacheInfo *cacheInfo; // @synthesize cacheInfo=_cacheInfo;
 @property(nonatomic) long long oldVideoQualityLevel; // @synthesize oldVideoQualityLevel=_oldVideoQualityLevel;
 @property(retain, nonatomic) MMFinderLiveChooseClarityView *clarityView; // @synthesize clarityView=_clarityView;
@@ -54,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

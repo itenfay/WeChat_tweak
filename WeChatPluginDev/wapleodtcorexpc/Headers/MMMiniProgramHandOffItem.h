@@ -13,7 +13,6 @@
     NSString *_appusername;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appusername; // @synthesize appusername=_appusername;
 @property(copy, nonatomic) NSString *appentrypage; // @synthesize appentrypage=_appentrypage;
 @property(copy, nonatomic) NSString *appid; // @synthesize appid=_appid;

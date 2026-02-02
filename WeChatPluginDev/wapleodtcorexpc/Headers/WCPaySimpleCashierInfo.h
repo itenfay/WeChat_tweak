@@ -14,7 +14,6 @@
     NSString *_bind_serial;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSString *bind_serial; // @synthesize bind_serial=_bind_serial;
 @property(retain) NSString *bank_type; // @synthesize bank_type=_bank_type;
 @property unsigned int use_simple_cashier; // @synthesize use_simple_cashier=_use_simple_cashier;

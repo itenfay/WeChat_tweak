@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TXCAudioSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)setPreferredInput:(id)arg1 error:(id *)arg2;
 - (_Bool)overrideOutputAudioPort:(unsigned long long)arg1 error:(id *)arg2;

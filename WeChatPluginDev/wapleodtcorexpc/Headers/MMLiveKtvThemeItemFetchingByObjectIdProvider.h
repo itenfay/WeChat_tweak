@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,7 +15,6 @@
     NSString *_anchorFinderUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *anchorFinderUsername; // @synthesize anchorFinderUsername=_anchorFinderUsername;
 @property(nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;
 @property(nonatomic) unsigned long long objectId; // @synthesize objectId=_objectId;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

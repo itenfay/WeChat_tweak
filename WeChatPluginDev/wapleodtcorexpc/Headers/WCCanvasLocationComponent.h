@@ -15,7 +15,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;
 @property(retain, nonatomic) UIView *topLineView; // @synthesize topLineView=_topLineView;
 @property(retain, nonatomic) UILabel *m_poiNameLabel; // @synthesize m_poiNameLabel=_m_poiNameLabel;

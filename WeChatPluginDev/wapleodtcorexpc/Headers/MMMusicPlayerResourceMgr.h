@@ -14,7 +14,6 @@
     MVVideoTransitionResourceConfig *_curConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MVVideoTransitionResourceConfig *curConfig; // @synthesize curConfig=_curConfig;
 @property(nonatomic) unsigned int kVideoResrouceCount; // @synthesize kVideoResrouceCount=_kVideoResrouceCount;
 @property(nonatomic) _Bool hasLoadVideoResourcePath; // @synthesize hasLoadVideoResourcePath=_hasLoadVideoResourcePath;

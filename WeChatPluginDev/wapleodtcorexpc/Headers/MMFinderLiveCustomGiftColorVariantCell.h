@@ -13,7 +13,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *colorView; // @synthesize colorView=_colorView;
 - (void)layoutSubviews;
 @property(retain, nonatomic) UIColor *color;

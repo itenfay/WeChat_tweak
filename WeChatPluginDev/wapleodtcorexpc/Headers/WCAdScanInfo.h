@@ -16,7 +16,6 @@
     NSString *_descIcon;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int scanGestureType; // @synthesize scanGestureType=_scanGestureType;
 @property(retain, nonatomic) NSString *descIcon; // @synthesize descIcon=_descIcon;
 @property(retain, nonatomic) NSString *detectSucIcon; // @synthesize detectSucIcon=_detectSucIcon;

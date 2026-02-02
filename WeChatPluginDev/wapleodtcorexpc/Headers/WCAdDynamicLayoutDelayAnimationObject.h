@@ -15,7 +15,6 @@
     UIView *_view;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(retain, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 @property(nonatomic) unsigned long long animationOptions; // @synthesize animationOptions=_animationOptions;

@@ -19,7 +19,6 @@
 }
 
 + (id)paramsWithMentionType:(long long)arg1 scene:(unsigned long long)arg2 finderUsername:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long aggregatedRootMentionID; // @synthesize aggregatedRootMentionID=_aggregatedRootMentionID;
 @property(nonatomic) unsigned long long fetchMode; // @synthesize fetchMode=_fetchMode;
 @property(copy, nonatomic) NSData *pageBuffer; // @synthesize pageBuffer=_pageBuffer;

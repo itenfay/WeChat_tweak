@@ -19,7 +19,6 @@
     id <MMChatBackgroundSettingViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bFromSetting; // @synthesize bFromSetting=_bFromSetting;
 @property(nonatomic) __weak id <MMChatBackgroundSettingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *m_allItems; // @synthesize m_allItems;

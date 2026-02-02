@@ -30,7 +30,6 @@
     WCFinderDataItem *_finderDataItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataItem *finderDataItem; // @synthesize finderDataItem=_finderDataItem;
 @property(retain, nonatomic) CEmoticonWrap *emoticonWrap; // @synthesize emoticonWrap=_emoticonWrap;
 @property(retain, nonatomic) NSString *m_nsFileMD5; // @synthesize m_nsFileMD5;

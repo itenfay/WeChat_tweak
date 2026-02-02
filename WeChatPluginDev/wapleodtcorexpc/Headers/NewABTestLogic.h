@@ -13,7 +13,6 @@
     NewABTestXMLParser *_xmlParser;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUpdatingABTestFromSvr; // @synthesize isUpdatingABTestFromSvr=_isUpdatingABTestFromSvr;
 @property(retain, nonatomic) NewABTestXMLParser *xmlParser; // @synthesize xmlParser=_xmlParser;
 @property(nonatomic) unsigned int uiClientLastUpdateTime; // @synthesize uiClientLastUpdateTime=_uiClientLastUpdateTime;

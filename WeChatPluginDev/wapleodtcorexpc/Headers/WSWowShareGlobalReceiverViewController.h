@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ColikeAppInfo, MMGrowTextView, MMUIButton, MMUILabel, NSString, UIScrollView, WSWowShareReceiverVideoContentView;
 
 @interface WSWowShareGlobalReceiverViewController
@@ -22,7 +24,6 @@
 }
 
 + (_Bool)canPresentWowGloabalReceiverPage:(id)arg1 appId:(id)arg2 appName:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disappearIsFromSubmit; // @synthesize disappearIsFromSubmit=_disappearIsFromSubmit;
 @property(copy, nonatomic) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
 @property(retain, nonatomic) NSString *docId; // @synthesize docId=_docId;
@@ -65,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

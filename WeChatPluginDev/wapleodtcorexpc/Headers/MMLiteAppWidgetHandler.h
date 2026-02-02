@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LiteAppJsApiPluginScheduler, NSMutableDictionary, NSString;
 
@@ -25,7 +26,6 @@
     long long _storeUiStatusBarStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long storeUiStatusBarStyle; // @synthesize storeUiStatusBarStyle=_storeUiStatusBarStyle;
 @property(retain, nonatomic) NSMutableDictionary *extraData; // @synthesize extraData=_extraData;
 @property(retain, nonatomic) LiteAppJsApiPluginScheduler *jsApiPluginScheduler; // @synthesize jsApiPluginScheduler=_jsApiPluginScheduler;
@@ -43,4 +43,3 @@
 - (id)initWithAppId:(id)arg1 appUuid:(unsigned int)arg2;
 
 @end
-

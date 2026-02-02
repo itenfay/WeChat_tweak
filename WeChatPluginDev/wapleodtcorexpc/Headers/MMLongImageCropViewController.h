@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMImageCropTransitionContext, MMLongImageCropResult, MMLongImageCropSliderBarView, MMLongImageCropTipsView, MMUIButton, NSString, UIImage, UIImageView, UIScrollView, UIView;
 @protocol MMLongImageCropViewControllerDelelgate;
 
@@ -32,7 +34,6 @@
     double _bottomCroppedRatio;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBottomCropTracking; // @synthesize isBottomCropTracking=_isBottomCropTracking;
 @property(nonatomic) _Bool isTopCropTracking; // @synthesize isTopCropTracking=_isTopCropTracking;
 @property(nonatomic) double bottomCroppedRatio; // @synthesize bottomCroppedRatio=_bottomCroppedRatio;
@@ -105,4 +106,3 @@
 @property(readonly) Class superclass;
 
 @end
-

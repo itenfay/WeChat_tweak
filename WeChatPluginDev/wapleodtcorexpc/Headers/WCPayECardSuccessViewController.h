@@ -16,7 +16,6 @@
     UIButton *_doneButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) UILabel *detail; // @synthesize detail=_detail;
 @property(retain, nonatomic) UIImageView *icon; // @synthesize icon=_icon;

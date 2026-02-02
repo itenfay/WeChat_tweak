@@ -13,7 +13,6 @@
     long long _fileEncryptType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long fileEncryptType; // @synthesize fileEncryptType=_fileEncryptType;
 @property(nonatomic) _Bool showsToastForSwitchingLandscape; // @synthesize showsToastForSwitchingLandscape=_showsToastForSwitchingLandscape;
 @property(nonatomic) _Bool automaticallyAdjustsWebScrollViewInsets; // @synthesize automaticallyAdjustsWebScrollViewInsets=_automaticallyAdjustsWebScrollViewInsets;

@@ -15,7 +15,6 @@
     unsigned long long _paidMicCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long paidMicCount; // @synthesize paidMicCount=_paidMicCount;
 @property(nonatomic) unsigned long long livePurchasedCount; // @synthesize livePurchasedCount=_livePurchasedCount;
 @property(retain, nonatomic) FinderJumpInfo *paidMicJumpInfo; // @synthesize paidMicJumpInfo=_paidMicJumpInfo;

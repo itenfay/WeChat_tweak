@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMAnimatedImageDecoder, MMWebImageRequest, MMWebImageViewChainModel, NSObject, UIImage, UIView;
 @protocol MMWebImageViewDelegate, OS_dispatch_queue;
 
@@ -31,7 +33,6 @@
 
 + (id)getLoadedImageData:(id)arg1;
 + (CDUnknownBlockType)zz_create;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageRequest *imageRequest; // @synthesize imageRequest=_imageRequest;
 @property(retain, nonatomic) UIImage *lastedImageSnapShot; // @synthesize lastedImageSnapShot=_lastedImageSnapShot;
 @property(nonatomic) _Bool useDissloveImageUpdate; // @synthesize useDissloveImageUpdate=_useDissloveImageUpdate;
@@ -99,4 +100,3 @@
 - (void)displayWithImage:(id)arg1 data:(id)arg2;
 
 @end
-

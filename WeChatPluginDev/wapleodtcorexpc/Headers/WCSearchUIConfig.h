@@ -33,7 +33,6 @@
 + (id)verticalSearchConfigFor:(id)arg1;
 + (id)commonConfigFor:(id)arg1;
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(nonatomic) double halfPageHeightRatio; // @synthesize halfPageHeightRatio=_halfPageHeightRatio;
 @property(nonatomic) _Bool hideHalfPageNav; // @synthesize hideHalfPageNav=_hideHalfPageNav;
 @property(nonatomic) double searchBarTransitionOffset; // @synthesize searchBarTransitionOffset=_searchBarTransitionOffset;

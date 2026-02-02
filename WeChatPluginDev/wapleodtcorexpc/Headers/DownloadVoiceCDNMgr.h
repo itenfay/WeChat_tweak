@@ -18,7 +18,6 @@
     NSRecursiveLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) _Bool bDownloading; // @synthesize bDownloading=_bDownloading;
 @property(retain, nonatomic) NSMutableDictionary *readyDownloadItems; // @synthesize readyDownloadItems=_readyDownloadItems;

@@ -14,7 +14,6 @@
     MMLiveBizArticleMoreView *_moreView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveBizArticleMoreView *moreView; // @synthesize moreView=_moreView;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) MMLiveBizArticleListViewModel *viewModel; // @synthesize viewModel=_viewModel;

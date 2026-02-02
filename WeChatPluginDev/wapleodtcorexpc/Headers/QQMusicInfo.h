@@ -50,7 +50,6 @@
 + (void)PBArrayAdd_songMid;
 + (void)PBArrayAdd_songId;
 + (void)PBArrayAdd_type;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int songType; // @synthesize songType=_songType;
 @property(nonatomic) unsigned int offset; // @synthesize offset=_offset;
 @property(nonatomic) int copyright; // @synthesize copyright=_copyright;

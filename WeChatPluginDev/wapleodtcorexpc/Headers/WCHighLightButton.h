@@ -13,7 +13,6 @@
     UIColor *_normalColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *normalColor; // @synthesize normalColor=_normalColor;
 @property(retain, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 - (void)setHighlighted:(_Bool)arg1;

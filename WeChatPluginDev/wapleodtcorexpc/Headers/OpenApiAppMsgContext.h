@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, CMessageWrap, NSString, WXMediaInternalMessage;
 
@@ -18,7 +19,6 @@
     CDUnknownBlockType _genCallback;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool appBrandWithShareTicket; // @synthesize appBrandWithShareTicket=_appBrandWithShareTicket;
 @property(copy, nonatomic) CDUnknownBlockType genCallback; // @synthesize genCallback=_genCallback;
 @property(copy, nonatomic) CDUnknownBlockType handleCallback; // @synthesize handleCallback=_handleCallback;
@@ -28,4 +28,3 @@
 @property(retain, nonatomic) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;
 
 @end
-

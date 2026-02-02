@@ -19,7 +19,6 @@
     MMVoidBoolCallback *_onFocusChangeCallback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMVoidBoolCallback *onFocusChangeCallback; // @synthesize onFocusChangeCallback=_onFocusChangeCallback;
 @property(retain, nonatomic) MMVoidStringCallback *textChangedCallback; // @synthesize textChangedCallback=_textChangedCallback;
 @property(retain, nonatomic) MMVoidCallback *textEndEditingCallBack; // @synthesize textEndEditingCallBack=_textEndEditingCallBack;

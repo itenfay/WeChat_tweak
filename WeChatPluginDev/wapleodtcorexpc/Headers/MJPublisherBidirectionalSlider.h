@@ -11,7 +11,6 @@
     CALayer *_highlightedTrackLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *highlightedTrackLayer; // @synthesize highlightedTrackLayer=_highlightedTrackLayer;
 @property(retain, nonatomic) UIColor *highlightedTrackTintColor; // @synthesize highlightedTrackTintColor=_highlightedTrackTintColor;
 - (double)ratioForValue:(double)arg1;

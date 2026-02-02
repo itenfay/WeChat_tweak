@@ -14,7 +14,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *statusView; // @synthesize statusView=_statusView;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

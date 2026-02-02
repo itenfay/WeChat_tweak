@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveDisplayLink, MMLiveTaskId, NSMutableArray;
 
@@ -30,7 +31,6 @@
     MMLiveDisplayLink *_timer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveDisplayLink *timer; // @synthesize timer=_timer;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSMutableArray *headImageContactList; // @synthesize headImageContactList=_headImageContactList;
@@ -61,4 +61,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

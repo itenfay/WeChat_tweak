@@ -22,7 +22,6 @@
     id <WNTextViewOperationDelegate> _operationDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int enterNoteScene; // @synthesize enterNoteScene=_enterNoteScene;
 @property(nonatomic) _Bool needUpdateAccessbility; // @synthesize needUpdateAccessbility=_needUpdateAccessbility;
 @property(nonatomic) __weak id <WNTextViewOperationDelegate> operationDelegate; // @synthesize operationDelegate=_operationDelegate;

@@ -13,7 +13,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *miaojianSdkPrefix; // @synthesize miaojianSdkPrefix=_miaojianSdkPrefix;
 
 @end

@@ -38,7 +38,6 @@
     ContactsAuthorityManageModifyContactLogic *_contactsAuthorityManageModifyContactLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactsAuthorityManageModifyContactLogic *contactsAuthorityManageModifyContactLogic; // @synthesize contactsAuthorityManageModifyContactLogic=_contactsAuthorityManageModifyContactLogic;
 @property(retain, nonatomic) ContactsSearchController *searchController; // @synthesize searchController=_searchController;
 @property(retain, nonatomic) RichTextView *titleTextView; // @synthesize titleTextView=_titleTextView;

@@ -15,7 +15,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (id)makeSeekSourceName:(long long)arg1;
 - (id)makeLoadStateName:(long long)arg1;
 - (id)makePlaybackStateName:(long long)arg1;

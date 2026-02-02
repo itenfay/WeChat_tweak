@@ -13,7 +13,6 @@
     UIView *m_highlightMaskView;
 }
 
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)initHighlightMaskView;

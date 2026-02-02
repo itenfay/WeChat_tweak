@@ -31,7 +31,6 @@
     unsigned long long _countDown;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long countDown; // @synthesize countDown=_countDown;
 @property(retain, nonatomic) PhoneAuthManagePhoneLogic *logic; // @synthesize logic=_logic;
 @property(nonatomic) _Bool confirmCodeEntered; // @synthesize confirmCodeEntered=_confirmCodeEntered;

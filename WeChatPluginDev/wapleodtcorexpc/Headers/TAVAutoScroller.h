@@ -16,7 +16,6 @@
     double _earEdgeInset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double earEdgeInset; // @synthesize earEdgeInset=_earEdgeInset;
 @property(nonatomic) double autoScrollInset; // @synthesize autoScrollInset=_autoScrollInset;
 @property(nonatomic) float autoScrollSpeed; // @synthesize autoScrollSpeed=_autoScrollSpeed;

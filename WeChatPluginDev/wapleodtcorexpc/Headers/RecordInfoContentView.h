@@ -57,7 +57,6 @@
     MMTimer *_formattingTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *formattingTimer; // @synthesize formattingTimer=_formattingTimer;
 @property(retain, nonatomic) NSString *formatedText; // @synthesize formatedText=_formatedText;
 @property(retain, nonatomic) NSString *textToFormat; // @synthesize textToFormat=_textToFormat;

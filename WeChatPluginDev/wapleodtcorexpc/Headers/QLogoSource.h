@@ -17,7 +17,6 @@
     NSString *_logoNightURL;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *logoNightURL; // @synthesize logoNightURL=_logoNightURL;
 @property(copy, nonatomic) NSString *logoURL; // @synthesize logoURL=_logoURL;
 @property(copy, nonatomic) NSString *logoName; // @synthesize logoName=_logoName;

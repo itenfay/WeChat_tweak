@@ -10,7 +10,6 @@
     WCFinderPlayerViewForTing *_finderPlayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPlayerViewForTing *finderPlayer; // @synthesize finderPlayer=_finderPlayer;
 - (void)finderPlayerViewForTing:(id)arg1 onCurrentTimeUpdated:(double)arg2 duration:(double)arg3;
 - (void)finderPlayerViewForTing:(id)arg1 onVideoFrameOut:(id)arg2;

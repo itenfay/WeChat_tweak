@@ -23,7 +23,6 @@
 + (id)currentMMResInfo;
 + (id)currentDebugPkgInfo;
 + (id)newSessionPublicLibInfo;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int libType; // @synthesize libType=_libType;
 @property(copy, nonatomic) NSString *webPrefetchJS; // @synthesize webPrefetchJS=_webPrefetchJS;
 @property(copy, nonatomic) NSString *webSkeletonHtmlString; // @synthesize webSkeletonHtmlString=_webSkeletonHtmlString;

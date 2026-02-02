@@ -14,7 +14,6 @@
     GameCenterJSEventLogicHandler *_jsEventHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameCenterJSEventLogicHandler *jsEventHandler; // @synthesize jsEventHandler=_jsEventHandler;
 @property(retain) NSThread *thread; // @synthesize thread=_thread;
 @property(retain) NSMutableDictionary *timerObjs; // @synthesize timerObjs=_timerObjs;

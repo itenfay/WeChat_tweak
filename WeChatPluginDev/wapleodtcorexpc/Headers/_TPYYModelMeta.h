@@ -23,7 +23,6 @@
 }
 
 + (id)metaWithClass:(Class)arg1;
-- (void).cxx_destruct;
 - (id)initWithClass:(Class)arg1;
 
 @end

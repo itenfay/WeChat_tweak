@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveWecoinLabelView, MMUIButton, UIButton;
 
 @interface MMFinderLivePaidConnectMicAudienceBidPanel
@@ -17,7 +19,6 @@
     UIButton *_bidButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *bidButton; // @synthesize bidButton=_bidButton;
 @property(retain, nonatomic) MMUIButton *minusButton; // @synthesize minusButton=_minusButton;
 @property(retain, nonatomic) MMUIButton *plusButton; // @synthesize plusButton=_plusButton;
@@ -36,4 +37,3 @@
 - (id)initWithMinPrice:(unsigned long long)arg1 incrementStepPrice:(unsigned long long)arg2;
 
 @end
-

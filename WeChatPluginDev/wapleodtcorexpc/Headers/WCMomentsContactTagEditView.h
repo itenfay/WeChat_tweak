@@ -16,7 +16,6 @@
     struct UIEdgeInsets _layoutMargins;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderedDictionary *tagNameToTagData; // @synthesize tagNameToTagData=_tagNameToTagData;
 @property(nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(retain, nonatomic) FavTagEditView *tagEditView; // @synthesize tagEditView=_tagEditView;

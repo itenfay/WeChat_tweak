@@ -12,7 +12,6 @@
     MISSING_TYPE *viewManaged;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

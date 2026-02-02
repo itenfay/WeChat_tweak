@@ -12,7 +12,6 @@
     FWFInstanceManager *_instanceManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FWFInstanceManager *instanceManager; // @synthesize instanceManager=_instanceManager;
 - (void)setJavaScriptEnabledForPreferencesWithIdentifier:(id)arg1 isEnabled:(id)arg2 error:(id *)arg3;
 - (void)createFromWebViewConfigurationWithIdentifier:(id)arg1 configurationIdentifier:(id)arg2 error:(id *)arg3;

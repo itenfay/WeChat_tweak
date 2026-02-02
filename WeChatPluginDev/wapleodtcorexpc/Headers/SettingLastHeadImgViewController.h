@@ -13,7 +13,6 @@
     ImageScrollView *_scrollView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ImageScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIImage *originalImage; // @synthesize originalImage=_originalImage;
 @property(nonatomic) __weak id <SettingLastHeadImgViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

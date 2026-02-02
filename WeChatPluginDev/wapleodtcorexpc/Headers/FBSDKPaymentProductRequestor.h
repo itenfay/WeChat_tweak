@@ -17,7 +17,6 @@
 }
 
 + (void)initialize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SKProductsRequest *productRequest; // @synthesize productRequest=_productRequest;
 @property(retain, nonatomic) SKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 - (id)fetchDeviceReceipt;

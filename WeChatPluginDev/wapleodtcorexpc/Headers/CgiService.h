@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSLock, NSMapTable, NSString;
 
 @interface CgiService
@@ -13,7 +15,6 @@
 
 + (void)handleResultWithExpacedClass:(Class)arg1 result:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)sharedService;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMapTable *mapTable; // @synthesize mapTable=_mapTable;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

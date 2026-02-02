@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AnyPromise, FinderClubInfo, FinderJumpInfo, MMFinderProfileLiveNoticeContext, NSNumber, NSString, UIColor, WCFinderBGCover, WCFinderContact, WCFinderDataItem, WCFinderFriendsAlsoFollowViewModel, WCFinderJustWatchContoller, WCFinderProfileADPlugin, WCFinderProfileRenderProfile, WCFinderPushProfileParams, WCFinderSteamProfileHeaderTheme, WCFinderStreamProfileExtInfo, WCFinderUserMessage;
 @protocol WCFinderProfilePullableFeedViewModel, WCFinderStreamProfileHeadDataDelegate, WCFinderStreamProfileHeadDataVCDelegate;
@@ -53,7 +54,6 @@
 }
 
 + (id)coverMaskColor;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cacheSourceFeedSessionBuffer; // @synthesize cacheSourceFeedSessionBuffer=_cacheSourceFeedSessionBuffer;
 @property(nonatomic) _Bool hasRedPacketEventEntrance; // @synthesize hasRedPacketEventEntrance=_hasRedPacketEventEntrance;
 @property(nonatomic) _Bool showWXProfileChecker; // @synthesize showWXProfileChecker=_showWXProfileChecker;
@@ -150,4 +150,3 @@
 @property(readonly) Class superclass;
 
 @end
-

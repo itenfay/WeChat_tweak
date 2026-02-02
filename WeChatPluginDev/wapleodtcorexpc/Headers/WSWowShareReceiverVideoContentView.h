@@ -18,7 +18,6 @@
     UIView *_bottomLine;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) MMUILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;

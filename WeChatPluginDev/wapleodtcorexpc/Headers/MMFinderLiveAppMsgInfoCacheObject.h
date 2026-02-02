@@ -4,16 +4,15 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMFinderLiveAppMsgInfoCacheObject : NSObject
 {
     CDUnknownBlockType _processAppMsgBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType processAppMsgBlock; // @synthesize processAppMsgBlock=_processAppMsgBlock;
 - (void)process;
 - (id)initWithProcessAppMsgBlock:(CDUnknownBlockType)arg1;
 
 @end
-

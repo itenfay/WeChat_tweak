@@ -14,7 +14,6 @@
     struct _NSRange _selectRange;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *selectText; // @synthesize selectText=_selectText;
 @property(nonatomic) struct _NSRange selectRange; // @synthesize selectRange=_selectRange;
 @property(nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;

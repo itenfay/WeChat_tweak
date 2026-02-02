@@ -14,7 +14,6 @@
     TPCertificateMgr *_certificateMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPCertificateMgr *certificateMgr; // @synthesize certificateMgr=_certificateMgr;
 @property(retain, nonatomic) AVAssetResourceLoadingRequest *loadingRequest; // @synthesize loadingRequest=_loadingRequest;
 @property(retain, nonatomic) NSString *contentKeyUrl; // @synthesize contentKeyUrl=_contentKeyUrl;

@@ -17,7 +17,6 @@
 + (id)Instance;
 + (void)initialize;
 + (void)PBArrayAdd_m_itemList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_itemList; // @synthesize m_itemList=_m_itemList;
 - (void)saveToFile;
 - (void)removeItemWithProductId:(id)arg1;

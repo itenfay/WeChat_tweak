@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, NSString, UIPanGestureRecognizer, VOIPVideoRender, VoIPInvitationBreadthInviteView, VoIPInvitationBreadthQuickReplyView, VoIPInvitationFullScreenView, VoIPInvitationInfo, XImageViewRenderer;
 @protocol VoIPInvitationBreadthViewDelegate;
@@ -45,7 +46,6 @@
     struct CGPoint _quickReplyViewPanStartPos;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType setupSceneThemSameUILayoutBlock; // @synthesize setupSceneThemSameUILayoutBlock=_setupSceneThemSameUILayoutBlock;
 @property(retain, nonatomic) VoIPInvitationFullScreenView *fullScreenView; // @synthesize fullScreenView=_fullScreenView;
 @property(nonatomic) _Bool wasQuickReplyViewDraggedOverThreshold; // @synthesize wasQuickReplyViewDraggedOverThreshold=_wasQuickReplyViewDraggedOverThreshold;
@@ -131,4 +131,3 @@
 @property(readonly) Class superclass;
 
 @end
-

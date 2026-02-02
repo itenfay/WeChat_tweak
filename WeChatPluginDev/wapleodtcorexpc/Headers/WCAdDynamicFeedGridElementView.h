@@ -13,7 +13,6 @@
     WCImageView *_imageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;

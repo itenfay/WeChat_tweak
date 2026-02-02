@@ -45,7 +45,6 @@
     struct CGPoint _currentOrigin;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *avatarItems; // @synthesize avatarItems=_avatarItems;
 @property(nonatomic) long long avatarsRolled; // @synthesize avatarsRolled=_avatarsRolled;
 @property(retain, nonatomic) NSMutableDictionary *avatarCache; // @synthesize avatarCache=_avatarCache;

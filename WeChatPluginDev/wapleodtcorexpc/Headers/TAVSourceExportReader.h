@@ -13,7 +13,6 @@
     AVAssetReader *_audioReader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAssetReader *audioReader; // @synthesize audioReader=_audioReader;
 @property(retain, nonatomic) AVAssetReader *videoReader; // @synthesize videoReader=_videoReader;
 - (id)restartAudioReaderForAsset:(id)arg1 timeRange:(CDStruct_e83c9415)arg2 settings:(id)arg3 audioMix:(id)arg4;

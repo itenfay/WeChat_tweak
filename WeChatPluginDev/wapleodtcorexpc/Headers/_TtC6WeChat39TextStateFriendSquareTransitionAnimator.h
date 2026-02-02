@@ -15,7 +15,6 @@
     MISSING_TYPE *completion;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)interruptibleAnimatorForTransition:(id)arg1;
 - (void)animationEnded:(_Bool)arg1;

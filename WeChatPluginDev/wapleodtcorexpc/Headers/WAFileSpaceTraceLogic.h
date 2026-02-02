@@ -18,7 +18,6 @@
     unsigned long long _scanPhase;
 }
 
-- (void).cxx_destruct;
 @property unsigned int lastUpdateStatusTime; // @synthesize lastUpdateStatusTime=_lastUpdateStatusTime;
 @property(nonatomic) unsigned int updateCountSinceLastScan; // @synthesize updateCountSinceLastScan=_updateCountSinceLastScan;
 @property unsigned long long scanPhase; // @synthesize scanPhase=_scanPhase;

@@ -12,7 +12,6 @@
     UIViewController *_popingViewController;
 }
 
-- (void).cxx_destruct;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
 - (void)disMissSelf;

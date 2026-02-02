@@ -14,7 +14,6 @@
     NSData *_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSString *resourceUrl; // @synthesize resourceUrl=_resourceUrl;
 @property(retain, nonatomic) NSString *mainUrl; // @synthesize mainUrl=_mainUrl;

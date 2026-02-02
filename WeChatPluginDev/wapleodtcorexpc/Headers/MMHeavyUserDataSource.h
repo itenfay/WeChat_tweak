@@ -24,7 +24,6 @@
     id <MMHeavyUserDataSourceDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMHeavyUserDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)clearAll;
 - (double)getLiveWatchRate;

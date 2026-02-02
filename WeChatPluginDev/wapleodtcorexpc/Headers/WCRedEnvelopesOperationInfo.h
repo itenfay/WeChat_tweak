@@ -18,7 +18,6 @@
     unsigned int m_uiOsskey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiOsskey; // @synthesize m_uiOsskey;
 @property(nonatomic) __weak id m_inSender; // @synthesize m_inSender;
 @property(retain, nonatomic) NSString *m_nsOpShowType; // @synthesize m_nsOpShowType;

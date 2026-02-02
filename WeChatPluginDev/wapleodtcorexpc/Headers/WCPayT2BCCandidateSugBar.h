@@ -17,7 +17,6 @@
     UIScrollView *_scrollView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) NSString *m_inputText; // @synthesize m_inputText=_m_inputText;
 @property(retain, nonatomic) NSMutableArray *m_candidateViewArray; // @synthesize m_candidateViewArray=_m_candidateViewArray;

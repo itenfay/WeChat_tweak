@@ -15,7 +15,6 @@
     UILabel *_label;
 }
 
-- (void).cxx_destruct;
 @property(retain) UILabel *label; // @synthesize label=_label;
 @property(retain) WCPayWebImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain) NSString *desc; // @synthesize desc=_desc;

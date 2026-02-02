@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebPrefetchDownloadTask, MMWebPrefetchResPkgDownloadRequest, NSURLSession;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _completionHandler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCancel; // @synthesize isCancel=_isCancel;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) MMWebPrefetchDownloadTask *downloadPkgTask; // @synthesize downloadPkgTask=_downloadPkgTask;
@@ -37,4 +37,3 @@
 - (id)initWithRequest:(id)arg1 urlSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end
-

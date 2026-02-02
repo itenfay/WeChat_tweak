@@ -14,7 +14,6 @@
 }
 
 + (_Bool)canMsgWrapUseLanTransfer:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *clientTaskInfo; // @synthesize clientTaskInfo=_clientTaskInfo;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *lanTransferClientQueue; // @synthesize lanTransferClientQueue=_lanTransferClientQueue;
 @property(retain, nonatomic) WCLanTransferSSCQueue *sscQueue; // @synthesize sscQueue=_sscQueue;

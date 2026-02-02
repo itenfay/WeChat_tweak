@@ -17,7 +17,6 @@
     id <MMMusicSearchVideoDataProviderDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMMusicSearchVideoDataProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)notifyOnDataChanged:(_Bool)arg1 isClearAll:(_Bool)arg2;
 - (void)loadData:(id)arg1 isFirstPage:(_Bool)arg2;

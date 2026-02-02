@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AnyPromise, CContact, MMUIViewController, NSString, RingBackInfoDisplaySheetView, RingBackPlaySoundReporter_23653, RingToneAvPlayer, RingToneDetail, RingTonePlaySoundReporter_23613, VideoRingNetProvider;
 
@@ -34,7 +35,6 @@
     RingBackPlaySoundReporter_23653 *_ringBackReporter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEnd; // @synthesize isEnd=_isEnd;
 @property(nonatomic) _Bool shouldUseNewVolumeStrategy; // @synthesize shouldUseNewVolumeStrategy=_shouldUseNewVolumeStrategy;
 @property(nonatomic) float defaultVolume; // @synthesize defaultVolume=_defaultVolume;
@@ -102,4 +102,3 @@
 @property(readonly) Class superclass;
 
 @end
-

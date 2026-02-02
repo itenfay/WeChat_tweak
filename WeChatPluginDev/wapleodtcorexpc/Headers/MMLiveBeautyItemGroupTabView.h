@@ -16,7 +16,6 @@
     UILabel *_label;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) __weak id <MMLiveBeautyItemGroupTabViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;

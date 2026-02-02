@@ -13,7 +13,6 @@
     WCFinderFeedFlowDecorationViewLayoutAttributes *_attr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedFlowDecorationViewLayoutAttributes *attr; // @synthesize attr=_attr;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 - (void)updateGradientUI;

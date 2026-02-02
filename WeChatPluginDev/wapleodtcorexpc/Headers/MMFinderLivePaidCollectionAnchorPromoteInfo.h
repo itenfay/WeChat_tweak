@@ -11,7 +11,6 @@
 }
 
 + (id)createPaidCollectionInfoFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderPaidCollectionInfo *paidCollectionInfo; // @synthesize paidCollectionInfo=_paidCollectionInfo;
 - (_Bool)shouldSkipReportOnPromoteManagerPanelStart;
 - (id)promoteKey;

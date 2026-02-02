@@ -11,7 +11,6 @@
     OpenApiParameter *_parameter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) OpenApiParameter *parameter; // @synthesize parameter=_parameter;
 - (void)onPreEnterWechatDone;

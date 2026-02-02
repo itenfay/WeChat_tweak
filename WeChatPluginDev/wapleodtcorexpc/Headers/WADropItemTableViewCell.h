@@ -21,7 +21,6 @@
     NSString *_value;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showSplit; // @synthesize showSplit=_showSplit;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *userData; // @synthesize userData=_userData;

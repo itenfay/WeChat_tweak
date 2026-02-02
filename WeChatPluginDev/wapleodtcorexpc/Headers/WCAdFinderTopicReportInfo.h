@@ -13,7 +13,6 @@
     NSMutableArray *_reportItemList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *reportItemList; // @synthesize reportItemList=_reportItemList;
 @property(nonatomic) unsigned int infoBarClickCount; // @synthesize infoBarClickCount=_infoBarClickCount;
 

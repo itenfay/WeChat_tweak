@@ -12,7 +12,6 @@
     MMUILabel *_subtitleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UIColor *subtitleColor; // @synthesize subtitleColor=_subtitleColor;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;

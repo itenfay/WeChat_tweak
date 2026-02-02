@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_msgList;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *msgList; // @synthesize msgList=_msgList;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 - (id)getPBPropertyTable;

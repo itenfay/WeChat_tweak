@@ -24,7 +24,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderParseContentModel *parseModel; // @synthesize parseModel=_parseModel;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
 

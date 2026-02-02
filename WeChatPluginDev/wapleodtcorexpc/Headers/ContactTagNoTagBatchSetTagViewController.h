@@ -19,7 +19,6 @@
     id <ContactTagNoTagBatchSetTagViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ContactTagNoTagBatchSetTagViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(nonatomic) _Bool needReloadWhenAppear; // @synthesize needReloadWhenAppear=_needReloadWhenAppear;
 @property(nonatomic) unsigned int m_uiFromScene; // @synthesize m_uiFromScene=_m_uiFromScene;

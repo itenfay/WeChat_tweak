@@ -46,7 +46,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) unsigned int enterSubscene; // @synthesize enterSubscene=_enterSubscene;
 @property(nonatomic) unsigned int enterScene; // @synthesize enterScene=_enterScene;

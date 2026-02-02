@@ -22,7 +22,6 @@
 + (id)nullableFromMap:(id)arg1;
 + (id)fromMap:(id)arg1;
 + (id)makeWithPagId:(id)arg1 filepath:(id)arg2 isFromAsset:(id)arg3 width:(id)arg4 height:(id)arg5 repeatCount:(id)arg6 autoPlay:(id)arg7 maxFrameRate:(id)arg8;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *maxFrameRate; // @synthesize maxFrameRate=_maxFrameRate;
 @property(retain, nonatomic) NSNumber *autoPlay; // @synthesize autoPlay=_autoPlay;
 @property(retain, nonatomic) NSNumber *repeatCount; // @synthesize repeatCount=_repeatCount;

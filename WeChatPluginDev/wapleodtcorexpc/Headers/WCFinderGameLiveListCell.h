@@ -19,7 +19,6 @@
     UIImageView *_selectStateImg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *selectStateImg; // @synthesize selectStateImg=_selectStateImg;
 @property(nonatomic) _Bool isSelectGame; // @synthesize isSelectGame=_isSelectGame;
 @property(retain, nonatomic) UIView *checkIconView; // @synthesize checkIconView=_checkIconView;

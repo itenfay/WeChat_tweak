@@ -57,7 +57,6 @@
 }
 
 + (unsigned int)splashADStateReportValueWithCheckState:(unsigned long long)arg1 showState:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool injectFinishedWhenSendSholdShowSplashAD; // @synthesize injectFinishedWhenSendSholdShowSplashAD=_injectFinishedWhenSendSholdShowSplashAD;
 @property(nonatomic) unsigned long long publicLibVersion; // @synthesize publicLibVersion=_publicLibVersion;
 @property(nonatomic) double codeBlockTimeThreshold; // @synthesize codeBlockTimeThreshold=_codeBlockTimeThreshold;

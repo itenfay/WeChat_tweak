@@ -17,7 +17,6 @@
     id <MMMusicFlexEditBarCellDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property __weak id <MMMusicFlexEditBarCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onTapGes:(id)arg1;
 - (double)cellWidthPerSecond;

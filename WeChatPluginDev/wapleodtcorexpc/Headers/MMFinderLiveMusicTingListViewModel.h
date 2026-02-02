@@ -21,7 +21,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFetchingNextPage; // @synthesize isFetchingNextPage=_isFetchingNextPage;
 @property(nonatomic) unsigned int continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(nonatomic) unsigned int tabType; // @synthesize tabType=_tabType;

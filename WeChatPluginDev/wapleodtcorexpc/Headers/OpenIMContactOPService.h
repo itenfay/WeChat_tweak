@@ -12,7 +12,6 @@
     NSString *m_openImContactOPlogCacheDateFilePath;
 }
 
-- (void).cxx_destruct;
 - (_Bool)p_saveOpenImContactOPlogCacheDataFileInternal;
 - (id)p_getOpenIMContactOPItemIdWithOplog:(unsigned int)arg1 oplogData:(id)arg2;
 - (id)p_getOpenImContactOPlogCacheDataFilePath;

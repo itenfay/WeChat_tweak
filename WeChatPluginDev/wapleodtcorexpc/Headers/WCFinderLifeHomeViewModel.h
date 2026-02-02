@@ -24,7 +24,6 @@
     WCFinderGetLocationToken *_locToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderGetLocationToken *locToken; // @synthesize locToken=_locToken;
 @property(retain, nonatomic) NSMutableArray *postedDataItems; // @synthesize postedDataItems=_postedDataItems;
 @property(retain, nonatomic) MMTimer *locationFetchTimer; // @synthesize locationFetchTimer=_locationFetchTimer;

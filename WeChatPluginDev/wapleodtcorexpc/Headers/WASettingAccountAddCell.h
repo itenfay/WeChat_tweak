@@ -12,7 +12,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMWebImageView *iconView; // @synthesize iconView=_iconView;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

@@ -13,7 +13,6 @@
     double _maxTitleWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxTitleWidth; // @synthesize maxTitleWidth=_maxTitleWidth;
 @property(nonatomic) double horizonPadding; // @synthesize horizonPadding=_horizonPadding;
 @property(nonatomic) unsigned int separators; // @synthesize separators=_separators;

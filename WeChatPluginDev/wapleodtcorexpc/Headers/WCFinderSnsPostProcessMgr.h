@@ -16,7 +16,6 @@
     MJPublisher *_mjPublisher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJPublisher *mjPublisher; // @synthesize mjPublisher=_mjPublisher;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
 @property(retain, nonatomic) NSMutableArray *assetArray; // @synthesize assetArray=_assetArray;

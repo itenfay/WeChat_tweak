@@ -14,7 +14,6 @@
     ConsumeWecoinResponse *_consumeResponse;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ConsumeWecoinResponse *consumeResponse; // @synthesize consumeResponse=_consumeResponse;
 @property(retain, nonatomic) PrepareWecoinConsumeResponse *prepareConsumeResponse; // @synthesize prepareConsumeResponse=_prepareConsumeResponse;
 @property(copy, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;

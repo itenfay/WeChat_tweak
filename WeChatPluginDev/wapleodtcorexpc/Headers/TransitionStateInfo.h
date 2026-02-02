@@ -13,7 +13,6 @@
     NSDictionary *_extraInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extraInfo; // @synthesize extraInfo=_extraInfo;
 @property(nonatomic) long long transitionState; // @synthesize transitionState=_transitionState;
 

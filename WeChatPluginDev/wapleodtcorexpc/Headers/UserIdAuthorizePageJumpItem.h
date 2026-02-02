@@ -11,7 +11,6 @@
     NSString *_url;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 

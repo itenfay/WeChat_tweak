@@ -13,7 +13,6 @@
     WCTableViewNormalCellManager *_delCellInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTableViewNormalCellManager *delCellInfo; // @synthesize delCellInfo=_delCellInfo;
 @property(retain, nonatomic) WCTableViewNormalCellManager *editNameCellInfo; // @synthesize editNameCellInfo=_editNameCellInfo;
 - (unsigned long long)logid;

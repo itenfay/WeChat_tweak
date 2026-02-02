@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAShapeLayer, FinderLiveNoticeInfo, MMUIButton, MMUILabel, MMUIView, WCFinderLiveBindingNoticeMainView;
 
 @interface WCFinderLiveBindingNoticeView
@@ -18,7 +20,6 @@
     MMUIButton *_bindingButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *bindingButton; // @synthesize bindingButton=_bindingButton;
 @property(retain, nonatomic) MMUIButton *createButton; // @synthesize createButton=_createButton;
 @property(retain, nonatomic) WCFinderLiveBindingNoticeMainView *mainView; // @synthesize mainView=_mainView;
@@ -40,4 +41,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

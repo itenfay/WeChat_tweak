@@ -19,7 +19,6 @@
     UIView *_maskLayerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *maskLayerView; // @synthesize maskLayerView=_maskLayerView;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;

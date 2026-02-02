@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSString, RichTextView, UIView, WCFinderContact, WCFinderHeadImageView;
 
 @interface WCFinderGroupMemberCreateMasterSheet
@@ -17,7 +19,6 @@
     WCFinderContact *_createContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *createContact; // @synthesize createContact=_createContact;
 @property(retain, nonatomic) RichTextView *nickNameLabel; // @synthesize nickNameLabel=_nickNameLabel;
 @property(retain, nonatomic) RichTextView *aggrementView; // @synthesize aggrementView=_aggrementView;
@@ -51,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

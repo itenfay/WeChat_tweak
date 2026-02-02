@@ -10,7 +10,6 @@
     NewLifeMMKVKeyModel *_kvModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeMMKVKeyModel *kvModel; // @synthesize kvModel=_kvModel;
 - (_Bool)enableAffSyncLogic;
 - (id)generateClientInfo;

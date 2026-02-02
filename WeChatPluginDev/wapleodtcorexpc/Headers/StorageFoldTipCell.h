@@ -14,7 +14,6 @@
     MMUILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) _Bool isFold; // @synthesize isFold=_isFold;

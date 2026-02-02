@@ -14,7 +14,6 @@
     NSString *_chatName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *chatName; // @synthesize chatName=_chatName;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSEvent, NSString, WCPayPayMoneyFromOverseaH5WalletLogic;
 
 @interface WebviewJSEventHandler_getH5TransactionRequest
@@ -12,7 +14,6 @@
     JSEvent *_event;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEvent *event; // @synthesize event=_event;
 @property(retain, nonatomic) WCPayPayMoneyFromOverseaH5WalletLogic *controlLogic; // @synthesize controlLogic=_controlLogic;
 @property(nonatomic) _Bool closeWebAfterPayDetailBack; // @synthesize closeWebAfterPayDetailBack=_closeWebAfterPayDetailBack;
@@ -37,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

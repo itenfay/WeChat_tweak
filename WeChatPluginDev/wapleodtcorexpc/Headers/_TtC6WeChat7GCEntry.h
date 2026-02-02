@@ -18,7 +18,6 @@
     MISSING_TYPE *headerFileds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, copy) NSDictionary *headerFileds;
 @property(nonatomic, copy) NSString *dataStr;
 @property(nonatomic, copy) NSString *textEncodingName;

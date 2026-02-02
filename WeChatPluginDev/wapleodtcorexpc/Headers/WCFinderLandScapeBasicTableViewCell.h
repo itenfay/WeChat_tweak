@@ -12,7 +12,6 @@
     id <WCFinderLandScapeBasicTableViewCellDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderLandScapeBasicTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (int)getCommentScene;
 - (void)setShowMaskView:(_Bool)arg1;

@@ -21,7 +21,6 @@
     NSMapTable *_segmentVMsByID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *segmentVMsByID; // @synthesize segmentVMsByID=_segmentVMsByID;
 @property(readonly, nonatomic) double viewHeight; // @synthesize viewHeight=_viewHeight;
 @property(readonly, nonatomic) UBValueSignal *durationDidChangeSignal; // @synthesize durationDidChangeSignal=_durationDidChangeSignal;

@@ -15,7 +15,6 @@
     MMLiveFullScreenTipsView *_privateJoinBlockView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveFullScreenTipsView *privateJoinBlockView; // @synthesize privateJoinBlockView=_privateJoinBlockView;
 @property(nonatomic) _Bool supressMinimizeWindowAutoupdate; // @synthesize supressMinimizeWindowAutoupdate=_supressMinimizeWindowAutoupdate;
 @property(nonatomic) _Bool postponeJoinLive; // @synthesize postponeJoinLive=_postponeJoinLive;

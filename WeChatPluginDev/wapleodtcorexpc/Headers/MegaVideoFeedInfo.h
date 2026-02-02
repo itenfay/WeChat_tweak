@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithFeedId:(id)arg1 nonceId:(id)arg2 finderObjectData:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterStandardTypedData *finderObjectData; // @synthesize finderObjectData=_finderObjectData;
 @property(copy, nonatomic) NSString *nonceId; // @synthesize nonceId=_nonceId;
 @property(copy, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;

@@ -18,7 +18,6 @@
     WCSpecialEnteranceRepoter *m_specialEnteranceRepoter;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)getHashCode:(id)arg1;
 - (_Bool)isInvisibleOut:(long long)arg1;
 - (void)onGesture:(id)arg1 withTarget:(id)arg2 withAction:(id)arg3;

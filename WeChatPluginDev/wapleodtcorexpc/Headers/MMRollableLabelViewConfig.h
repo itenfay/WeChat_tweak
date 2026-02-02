@@ -22,7 +22,6 @@
     struct UIEdgeInsets _contentInset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double iconTextPading; // @synthesize iconTextPading=_iconTextPading;
 @property(nonatomic) struct CGSize pagSize; // @synthesize pagSize=_pagSize;
 @property(nonatomic) _Bool autoAnimation; // @synthesize autoAnimation=_autoAnimation;

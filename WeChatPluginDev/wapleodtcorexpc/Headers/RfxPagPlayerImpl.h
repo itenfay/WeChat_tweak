@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)flush;
 - (void)prepare;
 - (void)setProgress:(double)arg1;

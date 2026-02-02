@@ -21,7 +21,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_birthday;
 + (void)PBArrayAdd_updateTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *birthday; // @synthesize birthday=_birthday;
 @property(nonatomic) unsigned int updateTime; // @synthesize updateTime=_updateTime;
 - (id)jsonDesc;

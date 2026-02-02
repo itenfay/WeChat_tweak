@@ -16,7 +16,6 @@
     MMWebCanvasViewProxy *_proxyDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasStopped; // @synthesize hasStopped=_hasStopped;
 @property(retain, nonatomic) MMWebCanvasViewProxy *proxyDelegate; // @synthesize proxyDelegate=_proxyDelegate;
 @property(nonatomic) __weak id <MMWebCanvasViewEventDelegate> eventDelegate; // @synthesize eventDelegate=_eventDelegate;

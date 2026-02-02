@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderLiveSetProductRecommendWordCGI
@@ -15,7 +17,6 @@
     NSString *_anchorFinderUsrName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *anchorFinderUsrName; // @synthesize anchorFinderUsrName=_anchorFinderUsrName;
 @property(retain, nonatomic) NSString *recommendWord; // @synthesize recommendWord=_recommendWord;
 @property(nonatomic) unsigned long long product_id; // @synthesize product_id=_product_id;
@@ -28,4 +29,3 @@
 - (id)initWithLiveTaskId:(id)arg1 scene:(long long)arg2 product_id:(unsigned long long)arg3 recommendWord:(id)arg4 finderUsrName:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

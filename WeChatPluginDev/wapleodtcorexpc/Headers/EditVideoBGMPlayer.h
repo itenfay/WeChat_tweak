@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVPlayer;
 @protocol EditVideoBGMPlayerDelegate;
@@ -20,7 +21,6 @@
     AVPlayer *_player;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasStartedPlaying; // @synthesize hasStartedPlaying=_hasStartedPlaying;
 @property(nonatomic) _Bool hasReadyToPlayObserver; // @synthesize hasReadyToPlayObserver=_hasReadyToPlayObserver;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
@@ -60,4 +60,3 @@
 - (id)init;
 
 @end
-

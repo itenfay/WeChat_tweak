@@ -15,7 +15,6 @@
     GetA8KeyLogic *_a8KeyLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <OpenProfileBlockViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onOpenProfile:(int)arg1 WithErrMsg:(id)arg2 WithContact:(id)arg3 Ticket:(id)arg4;
 - (void)onReturn;

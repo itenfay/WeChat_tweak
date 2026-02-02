@@ -13,7 +13,6 @@
 }
 
 + (id)platformViewWithView:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 - (id)initWithView:(id)arg1;
 

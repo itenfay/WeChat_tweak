@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, NSString, UILabel, WCFinderDataItem, WCFinderFeedImageCDNView, WCFinderLiveNowView, WCFinderStaticCoverCollectionViewCellConfig, WCFinderStaticCoverInfoView;
 @protocol WCFinderLiveIconAnimationProtocol;
@@ -31,7 +32,6 @@
 }
 
 + (_Bool)shouldShowRedPacketItemWithDataItem:(id)arg1 config:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *liveCoverEffectLabel; // @synthesize liveCoverEffectLabel=_liveCoverEffectLabel;
 @property(retain, nonatomic) UIView *infoMaskView; // @synthesize infoMaskView=_infoMaskView;
 @property(retain, nonatomic) WCFinderFeedImageCDNView *backGroundCoverView; // @synthesize backGroundCoverView=_backGroundCoverView;
@@ -95,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

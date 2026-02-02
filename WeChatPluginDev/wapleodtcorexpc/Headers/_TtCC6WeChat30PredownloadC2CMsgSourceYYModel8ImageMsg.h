@@ -17,7 +17,6 @@
     MISSING_TYPE *cdnbigimgurl_pd;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) NSNumber *cdnbigimgurl_pd; // @synthesize cdnbigimgurl_pd;
 @property(nonatomic, retain) NSNumber *cdnbigimgurl_pd_pri; // @synthesize cdnbigimgurl_pd_pri;

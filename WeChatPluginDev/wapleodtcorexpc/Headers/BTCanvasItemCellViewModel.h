@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWebCanvasItemData, NSString;
 @protocol BTCanvasItemCellViewModelDelegate;
 
@@ -17,7 +19,6 @@
     unsigned long long _appearTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasExposedOnce; // @synthesize hasExposedOnce=_hasExposedOnce;
 @property(nonatomic) unsigned long long appearTime; // @synthesize appearTime=_appearTime;
 @property(nonatomic) unsigned long long initializeTime; // @synthesize initializeTime=_initializeTime;
@@ -71,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

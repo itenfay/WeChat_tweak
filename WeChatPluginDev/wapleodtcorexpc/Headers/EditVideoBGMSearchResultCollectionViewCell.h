@@ -12,7 +12,6 @@
     MMMusicPickerContentView *_musicPickerContentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicPickerContentView *musicPickerContentView; // @synthesize musicPickerContentView=_musicPickerContentView;
 - (id)initWithFrame:(struct CGRect)arg1;
 

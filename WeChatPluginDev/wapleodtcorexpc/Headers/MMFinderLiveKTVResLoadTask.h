@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _timeoutCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType timeoutCallback; // @synthesize timeoutCallback=_timeoutCallback;
 @property(retain, nonatomic) NSString *taskKey; // @synthesize taskKey=_taskKey;
 - (void)timeoutToLoad;
@@ -22,4 +22,3 @@
 - (id)initWithTaskKey:(id)arg1;
 
 @end
-

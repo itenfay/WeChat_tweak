@@ -13,7 +13,6 @@
     UIButton *_nextButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *nextButton; // @synthesize nextButton=_nextButton;
 @property(retain, nonatomic) WCRedesignTextItem *passwordTextItem; // @synthesize passwordTextItem=_passwordTextItem;
 @property(nonatomic) __weak id <WCAccountPasswordInputViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

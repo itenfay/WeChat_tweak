@@ -14,7 +14,6 @@
     UIImage *_selectedCoverImage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool membersExclusiveEnabled; // @synthesize membersExclusiveEnabled=_membersExclusiveEnabled;
 @property(nonatomic) _Bool commentConversionEnabled; // @synthesize commentConversionEnabled=_commentConversionEnabled;
 @property(retain, nonatomic) UIImage *selectedCoverImage; // @synthesize selectedCoverImage=_selectedCoverImage;

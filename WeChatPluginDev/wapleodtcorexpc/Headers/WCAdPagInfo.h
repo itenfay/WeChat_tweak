@@ -17,7 +17,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pagThumbUrl; // @synthesize pagThumbUrl=_pagThumbUrl;
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(nonatomic) double width; // @synthesize width=_width;

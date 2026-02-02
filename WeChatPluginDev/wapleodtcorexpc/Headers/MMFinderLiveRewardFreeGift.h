@@ -17,7 +17,6 @@
 }
 
 + (id)createFromPBGiftInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLocalInserted; // @synthesize isLocalInserted=_isLocalInserted;
 @property(retain, nonatomic) NSString *giftId; // @synthesize giftId=_giftId;
 @property(nonatomic) unsigned long long expireTime; // @synthesize expireTime=_expireTime;

@@ -11,7 +11,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SKStoreProductViewController *productViewController; // @synthesize productViewController=_productViewController;
 - (void)doAppStoreColorReport;
 - (void)reportSKLoadingTimeWithBeginTime:(unsigned long long)arg1;

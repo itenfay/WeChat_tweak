@@ -11,7 +11,6 @@
     NSString *_displayName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NavigateMap *map; // @synthesize map=_map;
 - (id)initWithMap:(id)arg1 DisplayName:(id)arg2;

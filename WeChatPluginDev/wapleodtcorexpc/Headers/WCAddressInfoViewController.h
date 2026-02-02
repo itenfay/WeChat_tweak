@@ -36,7 +36,6 @@
     MMLocatingCoordinateLogic *_locatingLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLocatingCoordinateLogic *locatingLogic; // @synthesize locatingLogic=_locatingLogic;
 @property(retain, nonatomic) UIButton *clearPasteButton; // @synthesize clearPasteButton=_clearPasteButton;
 @property(retain, nonatomic) UIButton *doubleResolveButton; // @synthesize doubleResolveButton=_doubleResolveButton;

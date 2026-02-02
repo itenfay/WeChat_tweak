@@ -12,7 +12,6 @@
     UIImageView *_bgImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *bgImageView; // @synthesize bgImageView=_bgImageView;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;

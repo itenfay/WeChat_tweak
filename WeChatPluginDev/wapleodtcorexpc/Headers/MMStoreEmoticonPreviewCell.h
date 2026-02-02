@@ -12,7 +12,6 @@
     EmotionLinkInfo *_linkInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didLoadCacheLinkInfo; // @synthesize didLoadCacheLinkInfo=_didLoadCacheLinkInfo;
 @property(retain, nonatomic) EmotionLinkInfo *linkInfo; // @synthesize linkInfo=_linkInfo;
 @property(nonatomic) _Bool disableDownload; // @synthesize disableDownload=_disableDownload;

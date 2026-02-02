@@ -20,7 +20,6 @@
     NSString *_jumpLink;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *jumpLink; // @synthesize jumpLink=_jumpLink;
 @property(retain, nonatomic) NSString *jumpDesc; // @synthesize jumpDesc=_jumpDesc;
 @property(nonatomic) _Bool isShowDetailButton; // @synthesize isShowDetailButton=_isShowDetailButton;

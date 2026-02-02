@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class KSUPnPController_AVTransport, KSUPnPDevice;
 
 @interface MMLiveCastDeviceViewItem
@@ -11,7 +13,6 @@
     KSUPnPController_AVTransport *_AVTransportController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) KSUPnPController_AVTransport *AVTransportController; // @synthesize AVTransportController=_AVTransportController;
 @property(readonly, nonatomic) KSUPnPDevice *device; // @synthesize device=_device;
 - (void)stopCastingWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -20,4 +21,3 @@
 - (id)initWithDevice:(id)arg1;
 
 @end
-

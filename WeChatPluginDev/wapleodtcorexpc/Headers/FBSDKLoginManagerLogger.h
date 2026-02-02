@@ -18,7 +18,6 @@
 }
 
 + (id)loggerFromParameters:(id)arg1;
-- (void).cxx_destruct;
 - (void)logEvent:(id)arg1 result:(id)arg2 error:(id)arg3;
 - (void)logEvent:(id)arg1 params:(id)arg2;
 - (id)_parametersForNewEvent;

@@ -14,7 +14,6 @@
     struct CGRect _cropFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *overlayLayer; // @synthesize overlayLayer=_overlayLayer;
 @property(retain, nonatomic) XEffectEffectManager *effectMgr; // @synthesize effectMgr=_effectMgr;
 @property(nonatomic) struct CGRect cropFrame; // @synthesize cropFrame=_cropFrame;

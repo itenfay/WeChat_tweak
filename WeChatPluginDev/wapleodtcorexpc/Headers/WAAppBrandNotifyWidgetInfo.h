@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_WidgePkgSize;
 + (void)PBArrayAdd_WidgetPkgMd5;
 + (void)PBArrayAdd_WidgetPkgType;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int WidgePkgSize; // @synthesize WidgePkgSize=_WidgePkgSize;
 @property(retain, nonatomic) NSString *WidgetPkgMd5; // @synthesize WidgetPkgMd5=_WidgetPkgMd5;
 @property(nonatomic) unsigned int WidgetPkgType; // @synthesize WidgetPkgType=_WidgetPkgType;

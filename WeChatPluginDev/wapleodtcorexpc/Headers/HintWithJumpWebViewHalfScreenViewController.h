@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, OrientationSafePageSheetContainer;
 
 @interface HintWithJumpWebViewHalfScreenViewController
@@ -18,7 +20,6 @@
     OrientationSafePageSheetContainer *container;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
 - (double)bottomViewBottomMargin;
@@ -42,4 +43,3 @@
 @property(readonly) Class superclass;
 
 @end
-

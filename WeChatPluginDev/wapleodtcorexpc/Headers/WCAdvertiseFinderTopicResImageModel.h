@@ -17,7 +17,6 @@
     double _totalSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double totalSize; // @synthesize totalSize=_totalSize;
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(nonatomic) double width; // @synthesize width=_width;

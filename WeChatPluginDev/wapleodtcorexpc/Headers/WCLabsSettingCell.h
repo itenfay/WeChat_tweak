@@ -18,7 +18,6 @@
 }
 
 + (double)heightForLabsItem:(id)arg1;
-- (void).cxx_destruct;
 - (void)initMaskView;
 - (void)initBadgeView;
 - (void)initThumbImageView;

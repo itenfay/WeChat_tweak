@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -12,7 +13,6 @@
     CDUnknownBlockType _m_block;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType m_block; // @synthesize m_block=_m_block;
 - (void)onWCPayPrivacyViewControllerClickAgree:(_Bool)arg1 marketingSwitchClosed:(_Bool)arg2;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
@@ -27,4 +27,3 @@
 @property(readonly) Class superclass;
 
 @end
-

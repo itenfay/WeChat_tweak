@@ -17,7 +17,6 @@
     UIImage *_searchIconImage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) UIImage *searchIconImage; // @synthesize searchIconImage=_searchIconImage;
 @property(retain, nonatomic) UIImage *renderedIconImage; // @synthesize renderedIconImage=_renderedIconImage;

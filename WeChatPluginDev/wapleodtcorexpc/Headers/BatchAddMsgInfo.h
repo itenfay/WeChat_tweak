@@ -21,7 +21,6 @@
     NSString *_clusterType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNeedChangeDisplay; // @synthesize isNeedChangeDisplay=_isNeedChangeDisplay;
 @property(nonatomic) _Bool isNotify; // @synthesize isNotify=_isNotify;
 @property(nonatomic) _Bool addDBResult; // @synthesize addDBResult=_addDBResult;

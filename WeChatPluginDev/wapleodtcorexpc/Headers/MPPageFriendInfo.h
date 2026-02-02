@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_friendReadCount;
 + (void)PBArrayAdd_friendReadCountStr;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int friendReadCount; // @synthesize friendReadCount=_friendReadCount;
 @property(copy, nonatomic) NSString *friendReadCountStr; // @synthesize friendReadCountStr=_friendReadCountStr;
 @property(readonly, copy) NSString *description;

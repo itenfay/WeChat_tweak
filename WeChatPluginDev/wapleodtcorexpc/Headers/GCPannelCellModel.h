@@ -10,7 +10,6 @@
     GCPannelItem *_pannelItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCPannelItem *pannelItem; // @synthesize pannelItem=_pannelItem;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (Class)bindCellClass;

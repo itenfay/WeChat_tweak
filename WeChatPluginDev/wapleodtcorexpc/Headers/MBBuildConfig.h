@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MagicBrushBiz, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
 @protocol IMBBizInfoDelegate, IMBExternalViewDelegate, IMBJsApiDelegate, IMBNetwork, IMBPkgManagement, IMBProfilerDelegate, IMBStorage, IMBVConsoleDelegate, IMBViewDelegate, wxAudioFileLoaderDelegate;
@@ -35,7 +36,6 @@
     NSDictionary *_extEnvContents;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *extEnvContents; // @synthesize extEnvContents=_extEnvContents;
 @property(retain, nonatomic) NSMutableDictionary *jsApiPool; // @synthesize jsApiPool=_jsApiPool;
 @property(retain, nonatomic) NSMutableDictionary *extJsApiInfoPool; // @synthesize extJsApiInfoPool=_extJsApiInfoPool;
@@ -81,4 +81,3 @@
 - (id)init;
 
 @end
-

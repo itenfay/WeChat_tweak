@@ -11,7 +11,6 @@
     NSString *_UUID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(nonatomic) unsigned int networkType; // @synthesize networkType=_networkType;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

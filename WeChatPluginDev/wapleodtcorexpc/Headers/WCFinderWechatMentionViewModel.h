@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSMutableSet, WCFinderListLoadingStateModel;
 @protocol WCFinderWechatMentionViewModelDelegate;
@@ -24,7 +25,6 @@
     double _cacheContainerWith;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cacheContainerWith; // @synthesize cacheContainerWith=_cacheContainerWith;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(nonatomic) _Bool hadFetchData; // @synthesize hadFetchData=_hadFetchData;
@@ -54,4 +54,3 @@
 - (id)initWithDelegate:(id)arg1 type:(unsigned long long)arg2;
 
 @end
-

@@ -18,7 +18,6 @@
     NSRecursiveLock *m_oLock;
 }
 
-- (void).cxx_destruct;
 @property _Bool m_bNeedContinue; // @synthesize m_bNeedContinue;
 - (unsigned int)setFailOplog:(id)arg1;
 - (void)deleteOplog:(id)arg1;

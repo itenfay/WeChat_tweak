@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, OrderedDictionary;
 
 @interface BrandTimelineKeepHolderMgr
@@ -10,7 +12,6 @@
     OrderedDictionary *_cachedWebVCDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderedDictionary *cachedWebVCDict; // @synthesize cachedWebVCDict=_cachedWebVCDict;
 - (void)onServiceClearData;
 - (void)onServiceInit;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

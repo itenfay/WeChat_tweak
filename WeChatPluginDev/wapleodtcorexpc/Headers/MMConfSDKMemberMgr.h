@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSArray, NSMutableArray, NSString;
 
@@ -30,7 +31,6 @@
     NSString *_mHiresScreenUsername;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mHiresScreenUsername; // @synthesize mHiresScreenUsername=_mHiresScreenUsername;
 @property(copy, nonatomic) NSString *mSubcribeBigUsername; // @synthesize mSubcribeBigUsername=_mSubcribeBigUsername;
 @property(nonatomic) int mRoutId; // @synthesize mRoutId=_mRoutId;
@@ -68,4 +68,3 @@
 - (id)init;
 
 @end
-

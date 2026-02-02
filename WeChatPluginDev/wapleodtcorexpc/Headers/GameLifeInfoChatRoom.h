@@ -13,7 +13,6 @@
     NSString *_entranceOpenChatroomname;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *entranceOpenChatroomname; // @synthesize entranceOpenChatroomname=_entranceOpenChatroomname;
 @property(retain, nonatomic) NSString *topChatRoomName; // @synthesize topChatRoomName=_topChatRoomName;
 

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCEditVideoShareLongVideoModel : NSObject
 {
@@ -31,4 +32,3 @@
 - (id)initWithEntrance:(unsigned long long)arg1;
 
 @end
-

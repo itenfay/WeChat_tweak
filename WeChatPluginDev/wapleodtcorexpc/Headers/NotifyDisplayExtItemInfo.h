@@ -13,7 +13,6 @@
     NSString *_reason;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 

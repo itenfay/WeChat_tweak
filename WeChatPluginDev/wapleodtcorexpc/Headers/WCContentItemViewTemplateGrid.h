@@ -33,7 +33,6 @@
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
 + (double)heightForDataItem:(id)arg1 showDetail:(_Bool)arg2;
 + (struct CGSize)fetchImageSizeForAdWithPlayIcon:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentFullScreenDisplayMediaIndex; // @synthesize currentFullScreenDisplayMediaIndex=_currentFullScreenDisplayMediaIndex;
 @property(retain, nonatomic) WCAdLiveDisplayView *liveDisplayView; // @synthesize liveDisplayView=_liveDisplayView;
 @property(retain, nonatomic) WCAdCommonInteractionLogic *commonInteractionLogic; // @synthesize commonInteractionLogic=_commonInteractionLogic;

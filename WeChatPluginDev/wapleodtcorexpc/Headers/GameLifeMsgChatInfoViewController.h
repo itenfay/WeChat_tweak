@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CBaseContact, MMTableViewInfo, NSString;
 @protocol GameLifeMsgChatInfoViewControllerDelegate;
 
@@ -17,7 +19,6 @@
     MMTableViewInfo *_tableViewMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableViewInfo *tableViewMgr; // @synthesize tableViewMgr=_tableViewMgr;
 @property(retain, nonatomic) CBaseContact *realChatContact; // @synthesize realChatContact=_realChatContact;
 @property(retain, nonatomic) CBaseContact *sessionContact; // @synthesize sessionContact=_sessionContact;
@@ -57,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

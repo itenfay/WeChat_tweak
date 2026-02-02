@@ -23,7 +23,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *chatRoomName; // @synthesize chatRoomName=_chatRoomName;
 @property(nonatomic) unsigned long long historyId; // @synthesize historyId=_historyId;
 - (id)initWithHistoryID:(unsigned long long)arg1 chatName:(id)arg2;

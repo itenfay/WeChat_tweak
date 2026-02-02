@@ -16,7 +16,6 @@
 }
 
 + (double)getCollectionViewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *disabledMsgInfo; // @synthesize disabledMsgInfo=_disabledMsgInfo;
 @property(retain, nonatomic) SimpleMsgInfo *selectedMsgInfo; // @synthesize selectedMsgInfo=_selectedMsgInfo;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

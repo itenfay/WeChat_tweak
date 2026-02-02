@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderRealNameVerifyCGI
@@ -14,7 +16,6 @@
     CDUnknownBlockType _failure;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType success; // @synthesize success=_success;
 @property(copy, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
@@ -26,4 +27,3 @@
 - (id)initWithOpType:(int)arg1 finderUsername:(id)arg2 authToken:(id)arg3 success:(CDUnknownBlockType)arg4 failure:(CDUnknownBlockType)arg5;
 
 @end
-

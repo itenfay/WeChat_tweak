@@ -11,7 +11,6 @@
     NSString *_qrCodeUri;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *qrCodeUri; // @synthesize qrCodeUri=_qrCodeUri;
 @property(retain, nonatomic) UINavigationController *navVC; // @synthesize navVC=_navVC;
 - (void)getQrSelectiveGoInfoFailWithErrorCode:(unsigned int)arg1 errorMsg:(id)arg2;

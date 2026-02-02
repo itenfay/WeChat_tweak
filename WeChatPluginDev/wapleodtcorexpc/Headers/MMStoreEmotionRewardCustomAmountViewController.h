@@ -18,7 +18,6 @@
     NSPredicate *m_regexPredicate;
 }
 
-- (void).cxx_destruct;
 - (void)onClose;
 - (void)onClickRewardBtn;
 - (void)textFieldDidChanged:(id)arg1;

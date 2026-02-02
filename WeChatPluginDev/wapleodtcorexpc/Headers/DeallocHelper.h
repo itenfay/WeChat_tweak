@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface DeallocHelper : NSObject
 {
@@ -14,8 +15,6 @@
 + (void)dettachObject:(id)arg1 key:(const void *)arg2;
 + (void)attachToObject:(id)arg1 key:(const void *)arg2 whenDeallocDoThis:(CDUnknownBlockType)arg3;
 + (_Bool)exist:(id)arg1 forKey:(const void *)arg2;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end
-

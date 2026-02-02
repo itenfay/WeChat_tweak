@@ -16,7 +16,6 @@
     NSString *_clickContactUserName_24;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int enterPos_27; // @synthesize enterPos_27=_enterPos_27;
 @property(nonatomic) unsigned int newMsgContactCount_26; // @synthesize newMsgContactCount_26=_newMsgContactCount_26;
 @property(nonatomic) _Bool hasNewMsg_25; // @synthesize hasNewMsg_25=_hasNewMsg_25;

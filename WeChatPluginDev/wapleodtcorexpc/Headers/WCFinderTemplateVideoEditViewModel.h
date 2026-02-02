@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJTemplateMovieSession, NSArray, NSMutableArray, NSString, OMJMovieOptions;
 
@@ -20,7 +21,6 @@
 
 + (id)movieOptionsWithLyricEnable:(_Bool)arg1 ostMuted:(_Bool)arg2 bgmMuted:(_Bool)arg3;
 + (id)genOutputParmsWithTemplateInfo:(id)arg1 musicInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool onlyImageEdit; // @synthesize onlyImageEdit=_onlyImageEdit;
 @property(retain, nonatomic) NSArray *templateInfos; // @synthesize templateInfos=_templateInfos;
 @property(retain, nonatomic) NSArray *assetInfos; // @synthesize assetInfos=_assetInfos;
@@ -70,4 +70,3 @@
 - (id)initWithMaterialInfos:(id)arg1 firstVideoPath:(id)arg2;
 
 @end
-

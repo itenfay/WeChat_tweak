@@ -15,7 +15,6 @@
 + (id)readAudioDataFromWAVFileAtPath:(id)arg1;
 + (id)readPCMDataFromWAVFileAtPath:(id)arg1;
 + (_Bool)createWAVFileFromPCMData:(id)arg1 sampleRate:(long long)arg2 outputPath:(id)arg3;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *basePath; // @synthesize basePath=_basePath;
 - (_Bool)createWAVFileFromPCMData:(id)arg1 forIdentifier:(id)arg2 roleID:(id)arg3 textHash:(unsigned long long)arg4 sampleRate:(long long)arg5;
 - (_Bool)createWAVFileFromPCMData:(id)arg1 forText:(id)arg2 roleID:(id)arg3 sampleRate:(long long)arg4;

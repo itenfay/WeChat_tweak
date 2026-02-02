@@ -11,7 +11,6 @@
 }
 
 + (id)createLiveMemberShipZoneAnchorPromoteInfoFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderMemberZonePromoteInfoItem *memberZoneItem; // @synthesize memberZoneItem=_memberZoneItem;
 - (id)promoteKey;
 

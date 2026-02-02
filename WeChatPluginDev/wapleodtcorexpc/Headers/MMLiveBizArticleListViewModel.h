@@ -23,7 +23,6 @@
     NSString *_searchQuery;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 @property(readonly, nonatomic) NSMutableArray *articleList; // @synthesize articleList=_articleList;
 @property(readonly, nonatomic) long long requestType; // @synthesize requestType=_requestType;

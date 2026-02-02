@@ -25,7 +25,6 @@
     unsigned int m_uiSource;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiSource; // @synthesize m_uiSource;
 @property(nonatomic) _Bool m_bWifi; // @synthesize m_bWifi;
 @property(nonatomic) _Bool m_bHDImg; // @synthesize m_bHDImg;

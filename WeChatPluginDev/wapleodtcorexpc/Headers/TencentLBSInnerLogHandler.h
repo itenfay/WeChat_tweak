@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OS_dispatch_queue;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 @property _Bool isSetLogBlock; // @synthesize isSetLogBlock=_isSetLogBlock;
 @property(copy, nonatomic) CDUnknownBlockType logPrintBlock; // @synthesize logPrintBlock=_logPrintBlock;
@@ -25,4 +25,3 @@
 - (id)init;
 
 @end
-

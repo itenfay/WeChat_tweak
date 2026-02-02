@@ -18,7 +18,6 @@
     UIImageView *_icon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

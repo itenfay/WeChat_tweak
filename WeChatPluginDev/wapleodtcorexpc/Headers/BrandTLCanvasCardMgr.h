@@ -17,7 +17,6 @@
 + (_Bool)isAdRequestOpen;
 + (_Bool)isHighFreshOpen;
 + (_Bool)isAdCardOpen;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 - (void)reportMonitorIdKey:(unsigned int)arg1;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveFlowActionInvocationContext, MMLiveFlowInvocationContext;
 
@@ -15,11 +16,9 @@
     CDUnknownBlockType _completionBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) MMLiveFlowActionInvocationContext *actionInvocationContext; // @synthesize actionInvocationContext=_actionInvocationContext;
 @property(retain, nonatomic) MMLiveFlowInvocationContext *flowInvocationContext; // @synthesize flowInvocationContext=_flowInvocationContext;
 @property(retain, nonatomic) id input; // @synthesize input=_input;
 
 @end
-

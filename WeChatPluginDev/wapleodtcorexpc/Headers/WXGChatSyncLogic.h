@@ -33,7 +33,6 @@
 }
 
 + (id)unsignedcharToHexString:(char *)arg1 withSize:(unsigned int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXGChatSyncDataPacker *dataPacker; // @synthesize dataPacker=_dataPacker;
 @property(copy, nonatomic) NSString *deviceContext; // @synthesize deviceContext=_deviceContext;
 - (void)reportAppMsgFailed;

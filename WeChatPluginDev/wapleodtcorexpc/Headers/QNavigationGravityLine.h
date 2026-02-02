@@ -14,7 +14,6 @@
     struct CLLocationCoordinate2D _destination;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CLLocationCoordinate2D destination; // @synthesize destination=_destination;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) double width; // @synthesize width=_width;

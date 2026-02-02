@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_action;
 + (void)PBArrayAdd_dataPath;
 + (void)PBArrayAdd_className;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool encrypt; // @synthesize encrypt=_encrypt;
 @property(retain, nonatomic) NSString *expect; // @synthesize expect=_expect;
 @property(nonatomic) unsigned int action; // @synthesize action=_action;

@@ -21,7 +21,6 @@
     WCPayTransferMoneyControlLogic *_m_transferMoneyControlLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayTransferMoneyControlLogic *m_transferMoneyControlLogic; // @synthesize m_transferMoneyControlLogic=_m_transferMoneyControlLogic;
 @property(retain, nonatomic) WCPayOverseaFacingReceiveTransferCancelCgi *m_facingTransferCancelCgi; // @synthesize m_facingTransferCancelCgi=_m_facingTransferCancelCgi;
 @property(retain, nonatomic) WCPayOverseaFacingTransferOrderResponse *m_facingTransferOrderResp; // @synthesize m_facingTransferOrderResp=_m_facingTransferOrderResp;

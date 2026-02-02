@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UITableView, UITableViewDiffableDataSource, UIView, WCFinderAnimationLoadingView, WCFinderCollectionFeedListViewModel, WCFinderCollectionHalfDescHeader, WCFinderCollectionHalfHeaderRefreshView, WCFinderCollectionHalfViewParams, WCFinderPaidCollectionConsumeLogic, WCFinderPaymentBottomView, WCFinderRefreshTableFooterView, WCFinderStreamProfileDragBarView;
 @protocol WCFinderCollectionHalfScreenViewControllerDelegate;
 
@@ -32,7 +34,6 @@
     NSString *_targetTidWhenStartConsume;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *targetTidWhenStartConsume; // @synthesize targetTidWhenStartConsume=_targetTidWhenStartConsume;
 @property(retain, nonatomic) WCFinderPaidCollectionConsumeLogic *courseConsumeLogic; // @synthesize courseConsumeLogic=_courseConsumeLogic;
 @property(retain, nonatomic) UITableViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
@@ -127,4 +128,3 @@
 @property(readonly) Class superclass;
 
 @end
-

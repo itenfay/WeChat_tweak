@@ -18,7 +18,6 @@
     NSString *_m_walletTpaCountry;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_walletTpaCountryMask; // @synthesize m_walletTpaCountryMask=_m_walletTpaCountryMask;
 @property(nonatomic) unsigned int m_walletBalance; // @synthesize m_walletBalance=_m_walletBalance;
 @property(retain, nonatomic) NSString *m_walletTpaCountry; // @synthesize m_walletTpaCountry=_m_walletTpaCountry;

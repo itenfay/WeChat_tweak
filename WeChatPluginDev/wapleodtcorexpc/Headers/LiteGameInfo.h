@@ -14,7 +14,6 @@
     NSString *_liteGameDeveloper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *liteGameDeveloper; // @synthesize liteGameDeveloper=_liteGameDeveloper;
 @property(retain, nonatomic) NSString *liteGameIconUrl; // @synthesize liteGameIconUrl=_liteGameIconUrl;
 @property(retain, nonatomic) NSString *liteGameName; // @synthesize liteGameName=_liteGameName;

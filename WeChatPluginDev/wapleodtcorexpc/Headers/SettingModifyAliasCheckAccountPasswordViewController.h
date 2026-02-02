@@ -23,7 +23,6 @@
     NSString *_m_ssesionID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_ssesionID; // @synthesize m_ssesionID=_m_ssesionID;
 @property(nonatomic) __weak id <SettingModifyAliasViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) NSString *m_checkCanSetAliasTicket; // @synthesize m_checkCanSetAliasTicket=_m_checkCanSetAliasTicket;

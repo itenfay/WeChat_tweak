@@ -12,7 +12,6 @@
     UIColor *_color;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 
 @end

@@ -12,7 +12,6 @@
     WCTimeLineFooterView *_footerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTimeLineFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UIView *emptyFooterView; // @synthesize emptyFooterView=_emptyFooterView;
 @property(retain, nonatomic) FTSContext *context; // @synthesize context=_context;

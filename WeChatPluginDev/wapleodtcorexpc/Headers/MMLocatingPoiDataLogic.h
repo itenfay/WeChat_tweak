@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLocationPoiDetailModel, NSString, WCFinderPOIParamsModel, WCFinderPOIRelatedStreamViewModel;
 
@@ -18,7 +19,6 @@
     double _lastStreamRequestTime;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double lastStreamRequestTime; // @synthesize lastStreamRequestTime=_lastStreamRequestTime;
 @property(retain, nonatomic) WCFinderPOIParamsModel *paramsModel; // @synthesize paramsModel=_paramsModel;
 @property(readonly, nonatomic) MMLocationPoiDetailModel *detailModel; // @synthesize detailModel=_detailModel;
@@ -41,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

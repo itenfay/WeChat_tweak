@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ChatMigrationGetConnectInfo, NSArray, NSData, NSString, WXGMigrationClientEntryViewController, WXGMigrationClientLogic, WXGMigrationImportMessageHelper;
 
 @interface WXGMigrationClientMgr
@@ -34,7 +36,6 @@
 }
 
 + (_Bool)isClientRestart;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool continueWhenSpaceNotEnough; // @synthesize continueWhenSpaceNotEnough=_continueWhenSpaceNotEnough;
 @property(nonatomic) unsigned long long totalSessionSize; // @synthesize totalSessionSize=_totalSessionSize;
 @property(nonatomic) unsigned long long inMemoryMigrationSize; // @synthesize inMemoryMigrationSize=_inMemoryMigrationSize;
@@ -110,4 +111,3 @@
 @property(readonly) Class superclass;
 
 @end
-

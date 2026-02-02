@@ -25,7 +25,6 @@
 }
 
 + (double)cellHeightInWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveNowView *liveNowView; // @synthesize liveNowView=_liveNowView;
 @property(retain, nonatomic) WCFinderFeedStaticCoverContactView *contactView; // @synthesize contactView=_contactView;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;

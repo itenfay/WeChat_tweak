@@ -13,7 +13,6 @@
     NSString *_type;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int expireTime; // @synthesize expireTime=_expireTime;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 - (void)encodeWithCoder:(id)arg1;

@@ -23,7 +23,6 @@
 }
 
 + (void)initialize;
-- (void).cxx_destruct;
 @property(nonatomic) __weak RTEAttachmentViewProvider *attachmentViewProvider; // @synthesize attachmentViewProvider=_attachmentViewProvider;
 @property(nonatomic) __weak id <RTETextViewDataDelegate> dataDelegate; // @synthesize dataDelegate=_dataDelegate;
 @property(nonatomic) __weak id <RTETextViewSectionDelegate> sectionDelegate; // @synthesize sectionDelegate=_sectionDelegate;

@@ -19,7 +19,6 @@
     double _iconHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double iconHeight; // @synthesize iconHeight=_iconHeight;
 @property(nonatomic) double iconWidth; // @synthesize iconWidth=_iconWidth;
 @property(retain, nonatomic) NSMutableArray *actions; // @synthesize actions=_actions;

@@ -13,7 +13,6 @@
     TBSReadWriteLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TBSReadWriteLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableDictionary *pool; // @synthesize pool=_pool;
 - (id)init;

@@ -17,7 +17,6 @@
     NSString *_type;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromCombineTab; // @synthesize isFromCombineTab=_isFromCombineTab;
 @property(nonatomic) int networkType; // @synthesize networkType=_networkType;
 @property(nonatomic) _Bool isFromAlbum; // @synthesize isFromAlbum=_isFromAlbum;

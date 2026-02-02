@@ -14,7 +14,6 @@
     NSString *_playUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *playUrl; // @synthesize playUrl=_playUrl;
 @property(nonatomic) int playId; // @synthesize playId=_playId;
 @property(nonatomic) long long definitionId; // @synthesize definitionId=_definitionId;

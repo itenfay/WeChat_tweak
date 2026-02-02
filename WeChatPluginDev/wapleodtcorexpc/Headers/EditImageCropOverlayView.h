@@ -14,7 +14,6 @@
     struct CGRect _brightFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
 @property(retain, nonatomic) CALayer *blackLayer; // @synthesize blackLayer=_blackLayer;
 @property(nonatomic) long long cropOverlayViewStyle; // @synthesize cropOverlayViewStyle=_cropOverlayViewStyle;

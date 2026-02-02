@@ -15,7 +15,6 @@
     struct CGAffineTransformComponents _transformComponentsAtGesetureBeginning;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *manipulatedView; // @synthesize manipulatedView=_manipulatedView;
 @property(nonatomic) struct CGPoint currentTouchPosition; // @synthesize currentTouchPosition=_currentTouchPosition;
 @property(nonatomic) struct CGAffineTransformComponents transformComponentsAtGesetureBeginning; // @synthesize transformComponentsAtGesetureBeginning=_transformComponentsAtGesetureBeginning;

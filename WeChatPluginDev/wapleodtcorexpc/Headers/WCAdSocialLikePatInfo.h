@@ -19,7 +19,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool supportDoubleClick; // @synthesize supportDoubleClick=_supportDoubleClick;
 @property(nonatomic) double fullScreenVibrateDelayTime; // @synthesize fullScreenVibrateDelayTime=_fullScreenVibrateDelayTime;
 @property(nonatomic) double fullScreenCanCloseDelayTime; // @synthesize fullScreenCanCloseDelayTime=_fullScreenCanCloseDelayTime;

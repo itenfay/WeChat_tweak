@@ -16,7 +16,6 @@
     NSMutableDictionary *_userNameImgViewDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *userNameImgViewDict; // @synthesize userNameImgViewDict=_userNameImgViewDict;
 @property(retain, nonatomic) UIView *iconArrayContainerView; // @synthesize iconArrayContainerView=_iconArrayContainerView;
 @property(retain, nonatomic) MMUIButton *rightLightImageBtn; // @synthesize rightLightImageBtn=_rightLightImageBtn;

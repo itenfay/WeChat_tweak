@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, UIView, WebViewA8KeyLogicImpl, WebViewJSLogicImpl, WebviewJSEventHandlerBase;
 @protocol WXCustomWebViewControllerDelegate, YYWebViewInterface;
 
@@ -12,7 +14,6 @@
 }
 
 + (_Bool)CanHandlerEvent:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WebviewJSEventHandlerBase *handler; // @synthesize handler=_handler;
 - (void)onEndEvent:(id)arg1 withResult:(id)arg2;
 - (id)GetCurrentWebviewViewController;
@@ -83,4 +84,3 @@
 @property(readonly) Class superclass;
 
 @end
-

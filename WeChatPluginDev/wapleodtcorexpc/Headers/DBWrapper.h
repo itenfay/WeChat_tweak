@@ -13,7 +13,6 @@
     NSMutableArray *_arrMsgInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrMsgInfo; // @synthesize arrMsgInfo=_arrMsgInfo;
 @property(retain, nonatomic) WCTDatabase *db; // @synthesize db=_db;
 - (id)copyWithZone:(struct _NSZone *)arg1;

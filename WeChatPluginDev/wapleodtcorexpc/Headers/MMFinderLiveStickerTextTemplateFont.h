@@ -20,7 +20,6 @@
 
 + (id)createRemoteDeliveredWithBackendEntity:(id)arg1;
 + (id)createLocalSourcedWithResourceId:(id)arg1 resourcePath:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extractedResourcePath; // @synthesize extractedResourcePath=_extractedResourcePath;
 @property(retain, nonatomic) NSString *unextractedResourcePath; // @synthesize unextractedResourcePath=_unextractedResourcePath;
 @property(retain, nonatomic) NSString *resourceMd5Hash; // @synthesize resourceMd5Hash=_resourceMd5Hash;

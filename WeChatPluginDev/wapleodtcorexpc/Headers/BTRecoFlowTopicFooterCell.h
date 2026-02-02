@@ -11,7 +11,6 @@
     UIImageView *_arrowImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) UILabel *hintLabel; // @synthesize hintLabel=_hintLabel;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

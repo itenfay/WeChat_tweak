@@ -17,7 +17,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(retain, nonatomic) NSMutableArray *unfavPOIItems; // @synthesize unfavPOIItems=_unfavPOIItems;
 @property(retain, nonatomic) NSMutableArray *poiItems; // @synthesize poiItems=_poiItems;

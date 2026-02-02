@@ -13,7 +13,6 @@
 }
 
 + (struct CGSize)viewSizeByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)setViewDataModel:(id)arg1;

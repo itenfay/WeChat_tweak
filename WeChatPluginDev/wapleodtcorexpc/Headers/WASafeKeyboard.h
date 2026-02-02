@@ -15,7 +15,6 @@
     NSNumber *_paramNonce;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *paramNonce; // @synthesize paramNonce=_paramNonce;
 @property(retain, nonatomic) NSNumber *paramTimeStamp; // @synthesize paramTimeStamp=_paramTimeStamp;
 @property(retain, nonatomic) NSArray *paramCustomHash; // @synthesize paramCustomHash=_paramCustomHash;

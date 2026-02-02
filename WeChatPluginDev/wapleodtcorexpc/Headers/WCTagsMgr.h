@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *tagsMap; // @synthesize tagsMap=_tagsMap;
 - (id)tagItemByType:(long long)arg1;
 - (void)registerTagItems:(id)arg1;

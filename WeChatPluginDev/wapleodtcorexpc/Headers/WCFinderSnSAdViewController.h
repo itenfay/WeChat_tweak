@@ -17,7 +17,6 @@
     NSString *_adParamInofStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *adParamInofStr; // @synthesize adParamInofStr=_adParamInofStr;
 @property(retain, nonatomic) UIView *moreRelatedMaskView; // @synthesize moreRelatedMaskView=_moreRelatedMaskView;
 @property(retain, nonatomic) UIButton *rightFollowBtn; // @synthesize rightFollowBtn=_rightFollowBtn;

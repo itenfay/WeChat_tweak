@@ -16,7 +16,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ZZLabelChainModel *couponsStateModel; // @synthesize couponsStateModel=_couponsStateModel;
 @property(retain, nonatomic) MMPaddingView *couponsTitleLabel; // @synthesize couponsTitleLabel=_couponsTitleLabel;
 @property(retain, nonatomic) MMFinderLiveNoticeAnchorPromoteInfo *noticePromoteInfo; // @synthesize noticePromoteInfo=_noticePromoteInfo;

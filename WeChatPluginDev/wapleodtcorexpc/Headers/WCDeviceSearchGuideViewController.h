@@ -13,7 +13,6 @@
     UIView *m_noWifiOrBLEView;
 }
 
-- (void).cxx_destruct;
 - (void)ReachabilityChange:(unsigned int)arg1;
 - (void)onWCDeviceBlueToothStateChanged:(int)arg1;
 - (_Bool)isWifiConnected;

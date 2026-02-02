@@ -21,7 +21,6 @@
     struct CGSize _lastLayoutScrollViewSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasStartAnimation; // @synthesize hasStartAnimation=_hasStartAnimation;
 @property(nonatomic) struct CGSize lastLayoutScrollViewSize; // @synthesize lastLayoutScrollViewSize=_lastLayoutScrollViewSize;
 @property(retain, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;

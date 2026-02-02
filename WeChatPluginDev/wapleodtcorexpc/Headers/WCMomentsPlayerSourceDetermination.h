@@ -22,7 +22,6 @@
     WCMomentsMediaPredictedResult *_predictedResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsMediaPredictedResult *predictedResult; // @synthesize predictedResult=_predictedResult;
 @property(nonatomic) _Bool canPlayHDRVideos; // @synthesize canPlayHDRVideos=_canPlayHDRVideos;
 @property(nonatomic) long long previewRequestReason; // @synthesize previewRequestReason=_previewRequestReason;

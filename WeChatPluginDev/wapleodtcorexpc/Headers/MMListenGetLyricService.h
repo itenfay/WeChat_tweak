@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface MMListenGetLyricService
@@ -11,7 +13,6 @@
     NSMutableDictionary *_musicKey2GetLyricResponseTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *musicKey2GetLyricResponseTime; // @synthesize musicKey2GetLyricResponseTime=_musicKey2GetLyricResponseTime;
 @property(retain, nonatomic) NSMutableDictionary *musicKey2GetLyricResponseItem; // @synthesize musicKey2GetLyricResponseItem=_musicKey2GetLyricResponseItem;
 - (id)genMusicKeyWithMusicInfo:(id)arg1;
@@ -31,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

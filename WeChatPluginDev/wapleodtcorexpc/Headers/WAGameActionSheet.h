@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, UIButton, UIColor, UIView, WAContact;
 @protocol WAGameActionSheetDelegate;
 
@@ -44,7 +46,6 @@
     UIView *_parentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *parentView; // @synthesize parentView=_parentView;
 @property(retain, nonatomic) UIButton *cancelBtn; // @synthesize cancelBtn=_cancelBtn;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
@@ -83,4 +84,3 @@
 - (id)STYLECOLORWithLight:(id)arg1 ligthAlpha:(double)arg2 dark:(id)arg3 darkAlpha:(double)arg4;
 
 @end
-

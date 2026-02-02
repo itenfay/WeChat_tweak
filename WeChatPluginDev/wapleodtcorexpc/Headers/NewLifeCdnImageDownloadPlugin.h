@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NewLifeCdnDownloaderCallback;
 
@@ -14,7 +15,6 @@
 
 + (void)setup;
 + (id)plugin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeCdnDownloaderCallback *downloadCallback; // @synthesize downloadCallback=_downloadCallback;
 - (void)startCdnDownloadReq:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelCdnDownloadMediaId:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

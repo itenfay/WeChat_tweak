@@ -16,7 +16,6 @@
     MMTimer *_musicMonitorTimer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool markedVideoOffsetDirty; // @synthesize markedVideoOffsetDirty=_markedVideoOffsetDirty;
 @property(retain, nonatomic) MMTimer *musicMonitorTimer; // @synthesize musicMonitorTimer=_musicMonitorTimer;
 @property(retain, nonatomic) UILabel *promptLabel; // @synthesize promptLabel=_promptLabel;

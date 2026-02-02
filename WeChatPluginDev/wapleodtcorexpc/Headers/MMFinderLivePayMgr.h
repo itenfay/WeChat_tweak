@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLivePayRequestObject, NSMutableDictionary, NSString;
 
 @interface MMFinderLivePayMgr
@@ -11,7 +13,6 @@
     MMFinderLivePayRequestObject *_currentBuyCoinPayRequest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePayRequestObject *currentBuyCoinPayRequest; // @synthesize currentBuyCoinPayRequest=_currentBuyCoinPayRequest;
 @property(retain, nonatomic) NSMutableDictionary *requestId2PayRequests; // @synthesize requestId2PayRequests=_requestId2PayRequests;
 - (id)getLiveTask:(id)arg1;
@@ -40,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

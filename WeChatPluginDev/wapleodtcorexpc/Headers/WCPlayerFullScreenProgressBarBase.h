@@ -14,7 +14,6 @@
     id <FullScreenVideoProgressBarDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSliderScrubbing; // @synthesize isSliderScrubbing=_isSliderScrubbing;
 @property(nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
 @property(nonatomic) __weak id <FullScreenVideoProgressBarDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ForwardMsgSpamDb, NSString;
 
 @interface ForwardMsgSpamMgr
@@ -10,7 +12,6 @@
     ForwardMsgSpamDb *_db;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ForwardMsgSpamDb *db; // @synthesize db=_db;
 - (id)sInt2String:(long long)arg1;
 - (void)setUsername:(id)arg1 andScene:(unsigned long long)arg2 andMsgId:(long long)arg3 andOpenStatus:(_Bool)arg4;
@@ -32,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

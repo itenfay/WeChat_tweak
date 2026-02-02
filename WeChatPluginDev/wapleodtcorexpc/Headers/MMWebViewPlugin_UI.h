@@ -17,7 +17,6 @@
     UIView *_navigationBarView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *navigationBarView; // @synthesize navigationBarView=_navigationBarView;
 @property(nonatomic) _Bool isAnimate; // @synthesize isAnimate=_isAnimate;
 @property(nonatomic) long long didStartLoadTime; // @synthesize didStartLoadTime=_didStartLoadTime;

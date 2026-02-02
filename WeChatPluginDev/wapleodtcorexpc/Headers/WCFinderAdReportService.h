@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLRUCache, NSString;
 
 @interface WCFinderAdReportService
@@ -10,7 +12,6 @@
     MMLRUCache *_adReportMetaCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLRUCache *adReportMetaCache; // @synthesize adReportMetaCache=_adReportMetaCache;
 - (id)_getAndCacheMetaWithTid:(id)arg1 scene:(int)arg2;
 - (id)_metaKeyWithTid:(id)arg1 scene:(int)arg2;
@@ -33,4 +34,3 @@
 @property(readonly) Class superclass;
 
 @end
-

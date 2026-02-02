@@ -14,7 +14,6 @@
     NSArray *_couponList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *couponList; // @synthesize couponList=_couponList;
 @property(nonatomic) __weak id <WCMktCardItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)cardBtnClick:(id)arg1;

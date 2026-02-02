@@ -11,7 +11,6 @@
     NSString *m_nsTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsTitle; // @synthesize m_nsTitle;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

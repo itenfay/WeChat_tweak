@@ -15,7 +15,6 @@
     double _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSArray *wordList; // @synthesize wordList=_wordList;
 - (void)_startAnimations;

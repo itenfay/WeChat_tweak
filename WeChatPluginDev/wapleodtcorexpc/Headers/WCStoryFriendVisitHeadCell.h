@@ -16,7 +16,6 @@
     MMCPLabel *_userNameLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCPLabel *userNameLabel; // @synthesize userNameLabel=_userNameLabel;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
 @property(retain, nonatomic) WCStoryComment *comment; // @synthesize comment=_comment;

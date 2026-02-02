@@ -10,7 +10,6 @@
     id <WCRedEnvGetPacketStoryCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCRedEnvGetPacketStoryCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (unsigned long long)getCgiNewDNSBusinessType;
 - (id)getLocalStoryInfo:(id)arg1;

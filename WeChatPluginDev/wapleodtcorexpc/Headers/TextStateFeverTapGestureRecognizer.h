@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIGestureRecognizer.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UITouch;
 
@@ -19,7 +20,6 @@
     struct CGPoint _originPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInLongPress; // @synthesize isInLongPress=_isInLongPress;
 @property(nonatomic) struct CGPoint originPoint; // @synthesize originPoint=_originPoint;
 @property(retain, nonatomic) UITouch *activeTouch; // @synthesize activeTouch=_activeTouch;
@@ -42,4 +42,3 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end
-

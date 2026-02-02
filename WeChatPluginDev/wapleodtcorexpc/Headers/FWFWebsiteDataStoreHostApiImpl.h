@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FWFInstanceManager;
 
@@ -12,7 +13,6 @@
     FWFInstanceManager *_instanceManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FWFInstanceManager *instanceManager; // @synthesize instanceManager=_instanceManager;
 - (void)removeDataFromDataStoreWithIdentifier:(id)arg1 ofTypes:(id)arg2 modifiedSince:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)createDefaultDataStoreWithIdentifier:(id)arg1 error:(id *)arg2;
@@ -21,4 +21,3 @@
 - (id)initWithInstanceManager:(id)arg1;
 
 @end
-

@@ -15,7 +15,6 @@
     NSMutableArray *_m_selectCardTypeList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_selectCardTypeList; // @synthesize m_selectCardTypeList=_m_selectCardTypeList;
 @property(retain, nonatomic) NSArray *m_allCardTypeList; // @synthesize m_allCardTypeList=_m_allCardTypeList;
 @property(retain, nonatomic) WCPayCardBinInfo *m_selectCardTypeInfo; // @synthesize m_selectCardTypeInfo=_m_selectCardTypeInfo;

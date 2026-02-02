@@ -15,7 +15,6 @@
 }
 
 + (id)entryWithRange:(struct _NSRange)arg1 contact:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(retain, nonatomic) CContact *mentionContact; // @synthesize mentionContact=_mentionContact;
 @property(nonatomic) struct _NSRange mentionRange; // @synthesize mentionRange=_mentionRange;

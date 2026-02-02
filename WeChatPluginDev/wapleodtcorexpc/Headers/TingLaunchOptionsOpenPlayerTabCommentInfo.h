@@ -10,7 +10,6 @@
     NSString *_commentId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *commentId; // @synthesize commentId=_commentId;
 
 @end

@@ -13,7 +13,6 @@
     UIImageView *_arrowImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)setSelected:(_Bool)arg1;

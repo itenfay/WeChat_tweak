@@ -18,7 +18,6 @@
     NSString *_groupId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;
 @property(copy, nonatomic) NSString *codecs; // @synthesize codecs=_codecs;
 @property(nonatomic) float framerate; // @synthesize framerate=_framerate;

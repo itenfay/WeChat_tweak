@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 @protocol WAShareAppMessageThumbImagePoolDelegate;
@@ -16,7 +17,6 @@
 
 + (double)getCompressRatioWithImage:(id)arg1;
 + (id)generateKey;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *thumbImageDictionary; // @synthesize thumbImageDictionary=_thumbImageDictionary;
 @property(nonatomic) __weak id <WAShareAppMessageThumbImagePoolDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleWebImageWithURLString:(id)arg1 shouldCrop:(_Bool)arg2 cropSize:(struct CGSize)arg3 useOriginImage:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
@@ -30,4 +30,3 @@
 - (void)registerSnapImageForKey:(id)arg1 shouldCrop:(_Bool)arg2 cropSize:(struct CGSize)arg3;
 
 @end
-

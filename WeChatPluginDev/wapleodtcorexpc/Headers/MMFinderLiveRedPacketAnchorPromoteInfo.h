@@ -11,7 +11,6 @@
 }
 
 + (id)createRedPacketAnchorPromoteInfoFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLivePromoteInfoRedPacketCover *redPacketInfo; // @synthesize redPacketInfo=_redPacketInfo;
 - (id)promoteKey;
 

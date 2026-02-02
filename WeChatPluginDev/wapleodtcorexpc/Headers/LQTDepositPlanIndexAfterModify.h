@@ -13,7 +13,6 @@
     id <LQTDepositPlanIndexAfterModifyDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property __weak id <LQTDepositPlanIndexAfterModifyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onWCPayLQTDepositPlanIndexCgiError:(id)arg1 errorCode:(unsigned int)arg2;
 - (void)onWCPayLQTDepositPlanIndexCgiResponseOK:(id)arg1 fromServer:(_Bool)arg2;

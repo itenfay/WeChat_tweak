@@ -24,7 +24,6 @@
     NSMutableArray *arrCCList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrCCList; // @synthesize arrCCList;
 @property(retain, nonatomic) NSMutableArray *arrToList; // @synthesize arrToList;
 @property(nonatomic) unsigned long long uiUin; // @synthesize uiUin;

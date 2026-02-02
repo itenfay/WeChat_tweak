@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveEcGetLiveConfigResponse, FinderLiveSquareStyleInfo, NSData, NSString, WCFinderLiveHomePageInitialParams;
 
@@ -26,7 +27,6 @@
     double _skeletonAnimationDelay;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double skeletonAnimationDelay; // @synthesize skeletonAnimationDelay=_skeletonAnimationDelay;
 @property(nonatomic) _Bool enableSkeleton; // @synthesize enableSkeleton=_enableSkeleton;
 @property(copy, nonatomic) CDUnknownBlockType containerContextBlock; // @synthesize containerContextBlock=_containerContextBlock;
@@ -56,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSString, WebSearchContext, WebSearchUseCase;
 @protocol WebSearchHomePage><WSWebViewPluginableProtocol;
@@ -15,7 +16,6 @@
     WebSearchContext *_originalContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WebSearchContext *originalContext; // @synthesize originalContext=_originalContext;
 @property(retain, nonatomic) WebSearchUseCase *searchUseCase; // @synthesize searchUseCase=_searchUseCase;
 @property(nonatomic) __weak MMUIViewController<WebSearchHomePage><WSWebViewPluginableProtocol> *homePage; // @synthesize homePage=_homePage;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -21,7 +21,6 @@
     _Bool _hideDefaultLoadingView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideDefaultLoadingView; // @synthesize hideDefaultLoadingView=_hideDefaultLoadingView;
 - (void)onCancelEditLoginUserInfo;
 - (void)onEditLoginUserInfo;

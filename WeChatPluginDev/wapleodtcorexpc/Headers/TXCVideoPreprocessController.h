@@ -26,7 +26,6 @@
     TXCVideoPreprocessSupervisor *_supervisor;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TXCVideoPreprocessSupervisor *supervisor; // @synthesize supervisor=_supervisor;
 @property(retain, nonatomic) TXCRoiRegionTransformFilter *roiRegionTransformFilter; // @synthesize roiRegionTransformFilter=_roiRegionTransformFilter;
 @property(retain, nonatomic) TXCLookupFilter *lutFilter; // @synthesize lutFilter=_lutFilter;

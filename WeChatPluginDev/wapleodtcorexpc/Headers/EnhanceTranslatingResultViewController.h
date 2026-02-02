@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EnhanceTranslatingImageCdnObject, NSString, OCRTransReport, UIButton, UIImage, UIImageView, UILabel, UIScrollView, WCImageTranslateLogic;
 
 @interface EnhanceTranslatingResultViewController
@@ -25,7 +27,6 @@
     WCImageTranslateLogic *_imgTranslateLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCImageTranslateLogic *imgTranslateLogic; // @synthesize imgTranslateLogic=_imgTranslateLogic;
 @property(retain, nonatomic) UILabel *saveLabel; // @synthesize saveLabel=_saveLabel;
 @property(retain, nonatomic) UILabel *translateLabel; // @synthesize translateLabel=_translateLabel;
@@ -81,4 +82,3 @@
 @property(readonly) Class superclass;
 
 @end
-

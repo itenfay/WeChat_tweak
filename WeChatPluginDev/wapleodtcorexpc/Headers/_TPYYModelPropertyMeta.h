@@ -28,7 +28,6 @@
 }
 
 + (id)metaWithClassInfo:(id)arg1 propertyInfo:(id)arg2 generic:(Class)arg3;
-- (void).cxx_destruct;
 
 @end
 

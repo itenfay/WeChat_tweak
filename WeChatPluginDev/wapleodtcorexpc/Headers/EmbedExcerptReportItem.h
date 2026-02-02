@@ -19,7 +19,6 @@
     NSString *_contentMd5;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int opType; // @synthesize opType=_opType;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *contentMd5; // @synthesize contentMd5=_contentMd5;

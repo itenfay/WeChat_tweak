@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveMusicVolumnContentView;
 
@@ -15,7 +16,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveMusicVolumnContentView *contentView; // @synthesize contentView=_contentView;
 @property(copy, nonatomic) CDUnknownBlockType volumnAdjustCallback; // @synthesize volumnAdjustCallback=_volumnAdjustCallback;
 @property(nonatomic) _Bool showing; // @synthesize showing=_showing;
@@ -30,4 +30,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

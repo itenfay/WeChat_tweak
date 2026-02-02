@@ -13,7 +13,6 @@
     UIColor *_color;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(retain, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;

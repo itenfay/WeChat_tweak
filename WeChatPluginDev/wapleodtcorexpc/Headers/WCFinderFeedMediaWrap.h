@@ -84,7 +84,6 @@
 + (id)mediaWrapWithMediaInfo:(id)arg1 scene:(int)arg2 codingFormatType:(id)arg3;
 + (id)mediaWrapOfContentVM:(id)arg1 codingFormatType:(id)arg2;
 + (id)mediaWrapOfContentVM:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *targetSpecH266InfoStr; // @synthesize targetSpecH266InfoStr=_targetSpecH266InfoStr;
 @property(retain, nonatomic) NSMutableArray *arrDataSource; // @synthesize arrDataSource=_arrDataSource;
 @property(retain, nonatomic) WCFinderFeedPreloadObjectInfo *feedPreloadObjectInfo; // @synthesize feedPreloadObjectInfo=_feedPreloadObjectInfo;

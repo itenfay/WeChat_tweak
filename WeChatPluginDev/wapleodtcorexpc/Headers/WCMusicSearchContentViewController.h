@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCMusicSearchWorker;
 @protocol WCMusicSearchContentViewControllerDelegate;
 
@@ -13,7 +15,6 @@
     WCMusicSearchWorker *_searchWorker;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMusicSearchWorker *searchWorker; // @synthesize searchWorker=_searchWorker;
 @property(nonatomic) _Bool isLiteMode; // @synthesize isLiteMode=_isLiteMode;
 @property(nonatomic) __weak id <WCMusicSearchContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

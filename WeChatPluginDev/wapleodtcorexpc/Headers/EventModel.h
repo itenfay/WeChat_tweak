@@ -17,7 +17,6 @@
     ParametersModel *_Parameters;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ParametersModel *Parameters; // @synthesize Parameters=_Parameters;
 @property(nonatomic) long long Duration; // @synthesize Duration=_Duration;
 @property(copy, nonatomic) NSString *Path; // @synthesize Path=_Path;

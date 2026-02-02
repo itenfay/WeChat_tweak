@@ -15,7 +15,6 @@
     WXSceneDataObject *_sceneDataObject;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXSceneDataObject *sceneDataObject; // @synthesize sceneDataObject=_sceneDataObject;
 @property(retain, nonatomic) NSString *toUserOpenId; // @synthesize toUserOpenId;
 @property(nonatomic) int scene; // @synthesize scene;

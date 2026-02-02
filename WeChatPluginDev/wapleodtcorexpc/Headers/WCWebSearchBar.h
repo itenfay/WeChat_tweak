@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIButton, UIView;
 
 @interface WCWebSearchBar
@@ -14,7 +16,6 @@
     UIView *_seperatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperatorView; // @synthesize seperatorView=_seperatorView;
 @property(nonatomic) _Bool didExposedClearButton; // @synthesize didExposedClearButton=_didExposedClearButton;
 @property(nonatomic) _Bool didExposedCancelButton; // @synthesize didExposedCancelButton=_didExposedCancelButton;
@@ -31,4 +32,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

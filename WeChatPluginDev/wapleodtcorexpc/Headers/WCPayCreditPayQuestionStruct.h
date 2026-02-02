@@ -21,7 +21,6 @@
     _Bool m_bTwoLevel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bUsed; // @synthesize m_bUsed;
 @property(nonatomic) unsigned int m_uiMaxLength; // @synthesize m_uiMaxLength;
 @property(retain, nonatomic) NSString *m_nsTips; // @synthesize m_nsTips;

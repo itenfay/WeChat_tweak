@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GWHaowanAlbumBadNetView, GameRecommendVideoListView, MMAlbumForGameHaowan, MMUIButton, NSArray, NSMutableArray, NSMutableSet, NSString, UICollectionView, UIView;
 @protocol GameVideoAlbumControllerDelegate;
 
@@ -27,7 +29,6 @@
     GWHaowanAlbumBadNetView *_badNetView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GWHaowanAlbumBadNetView *badNetView; // @synthesize badNetView=_badNetView;
 @property(retain, nonatomic) GameRecommendVideoListView *recommendListView; // @synthesize recommendListView=_recommendListView;
 @property(copy, nonatomic) NSArray *recommendVideoList; // @synthesize recommendVideoList=_recommendVideoList;
@@ -93,4 +94,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -22,7 +22,6 @@
     WCSKAdNetworkItem *_skAdItem;
 }
 
-- (void).cxx_destruct;
 - (_Bool)launchAppleStoreWithSchemeUrl:(id)arg1 action:(unsigned int)arg2 jumpAppStoreFlag:(int)arg3 context:(id)arg4 getError:(id *)arg5;
 - (_Bool)hasPermissionToLaunchWebStore;
 - (id)launchAppleStoreErrorWithCode:(long long)arg1 description:(id)arg2;

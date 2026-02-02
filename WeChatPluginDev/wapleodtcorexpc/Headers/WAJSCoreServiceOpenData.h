@@ -24,7 +24,6 @@
     NSString *_mpShortLink;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int secFlagForSinglePageMode; // @synthesize secFlagForSinglePageMode=_secFlagForSinglePageMode;
 @property(copy, nonatomic) NSString *mpShortLink; // @synthesize mpShortLink=_mpShortLink;
 @property(nonatomic) long long enterForegroundReason; // @synthesize enterForegroundReason=_enterForegroundReason;

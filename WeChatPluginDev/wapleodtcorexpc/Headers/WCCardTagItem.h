@@ -11,7 +11,6 @@
     NSString *_color;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *color; // @synthesize color=_color;
 @property(retain, nonatomic) NSString *tag; // @synthesize tag=_tag;
 

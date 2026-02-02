@@ -19,7 +19,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MultiReaderMessageCellViewDelegate> multiReaderMessageCellViewDelegate; // @synthesize multiReaderMessageCellViewDelegate=_multiReaderMessageCellViewDelegate;
 - (_Bool)shouldOpenNewLineAtY:(double)arg1 withLineHeight:(double)arg2 richTextView:(id)arg3;
 - (void)onFinderLiveReplayStatusUpdated:(id)arg1 replayStatus:(unsigned int)arg2;

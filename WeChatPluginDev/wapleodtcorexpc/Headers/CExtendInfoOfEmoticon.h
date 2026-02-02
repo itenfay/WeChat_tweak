@@ -40,7 +40,6 @@
 }
 
 + (void)CreateExtendInfoWithType:(unsigned int)arg1 retExtendInfo:(id *)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPriceInfoUnkown; // @synthesize isPriceInfoUnkown=_isPriceInfoUnkown;
 @property(nonatomic) _Bool isNonFreeItem; // @synthesize isNonFreeItem=_isNonFreeItem;
 @property(nonatomic) unsigned int m_uiEmoticonHeight; // @synthesize m_uiEmoticonHeight=_m_uiEmoticonHeight;

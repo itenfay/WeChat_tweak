@@ -15,7 +15,6 @@
     MMUIButton *_emptyTipsRetryButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *emptyTipsRetryButton; // @synthesize emptyTipsRetryButton=_emptyTipsRetryButton;
 @property(retain, nonatomic) WCFinderRefreshTableFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) WCFinderCollectionDetailListViewModel *viewModel; // @synthesize viewModel=_viewModel;

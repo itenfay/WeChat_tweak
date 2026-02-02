@@ -16,7 +16,6 @@
     NSData *_serverId;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSData *serverId; // @synthesize serverId=_serverId;
 @property(retain) NSData *serverSessionKey; // @synthesize serverSessionKey=_serverSessionKey;
 @property(retain) NSData *clientSessionKey; // @synthesize clientSessionKey=_clientSessionKey;

@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isNormalized;
 @property(readonly, nonatomic) unsigned int enabledButtonIDBits;
 @property(readonly, nonatomic) struct UIEdgeInsets edgeInsets;

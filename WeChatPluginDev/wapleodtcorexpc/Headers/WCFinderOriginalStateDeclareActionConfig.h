@@ -16,7 +16,6 @@
     unsigned long long _mediaType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mediaType; // @synthesize mediaType=_mediaType;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(copy, nonatomic) NSString *nonceId; // @synthesize nonceId=_nonceId;

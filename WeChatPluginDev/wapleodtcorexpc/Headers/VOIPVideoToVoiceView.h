@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, MMHeadImageView, MMTimerLabel, MMUIButton, MultiTalkHDHeadView, NSString, UIImageView, UILabel, UIView, VoipDescriptionButton, VoipRecentStatusCardView, VoipRecentStatusFoldButton, VoipRecentStatusUnFoldButton;
 @protocol VOIPVideoToVoiceViewDelegate, VoipRecentStatusProperties;
 
@@ -38,7 +40,6 @@
     MMUIButton *_m_addMemberButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canClickAddMembersBtn; // @synthesize canClickAddMembersBtn=_canClickAddMembersBtn;
 @property(retain, nonatomic) MMUIButton *m_addMemberButton; // @synthesize m_addMemberButton=_m_addMemberButton;
 @property(nonatomic) unsigned int deviceStatus; // @synthesize deviceStatus=_deviceStatus;
@@ -131,4 +132,3 @@
 @property(readonly) Class superclass;
 
 @end
-

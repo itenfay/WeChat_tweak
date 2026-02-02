@@ -22,7 +22,6 @@
     double _cameraStartTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowTipsAtRetry; // @synthesize shouldShowTipsAtRetry=_shouldShowTipsAtRetry;
 @property(nonatomic) _Bool hasDetectFace; // @synthesize hasDetectFace=_hasDetectFace;
 @property(nonatomic) _Bool isWaitingToReflect; // @synthesize isWaitingToReflect=_isWaitingToReflect;

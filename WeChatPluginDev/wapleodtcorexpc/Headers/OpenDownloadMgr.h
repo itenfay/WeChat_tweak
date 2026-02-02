@@ -13,7 +13,6 @@
     EmoticonHybridDownloadProxy *m_emoticonDownloadProxy;
 }
 
-- (void).cxx_destruct;
 - (void)onEmoticonDownloadingMd5:(id)arg1 withUserInfo:(id)arg2 partLen:(unsigned long long)arg3 totalLen:(unsigned long long)arg4;
 - (void)onEmoticonDownloadMd5Failed:(id)arg1 withUserInfo:(id)arg2;
 - (void)onEmoticonDownloadMd5Ok:(id)arg1 AndFilePath:(id)arg2 withUserInfo:(id)arg3;

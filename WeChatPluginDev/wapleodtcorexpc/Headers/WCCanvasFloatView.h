@@ -13,7 +13,6 @@
     UIView *_containerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) _Bool forbiddenLayoutComponent; // @synthesize forbiddenLayoutComponent=_forbiddenLayoutComponent;
 @property(nonatomic) __weak id <WCCanvasFloatViewDelegate> delegate; // @synthesize delegate=_delegate;

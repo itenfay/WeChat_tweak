@@ -18,7 +18,6 @@
 }
 
 + (id)messageContextsFromMessageWraps:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRelatedEmoticon; // @synthesize isRelatedEmoticon=_isRelatedEmoticon;
 @property(retain, nonatomic) NSString *lensId; // @synthesize lensId=_lensId;
 @property(nonatomic) _Bool isSelf; // @synthesize isSelf=_isSelf;

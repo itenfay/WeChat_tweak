@@ -18,7 +18,6 @@
     WCPayNoticeItemView *_noticeItemView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNoticeItemView *noticeItemView; // @synthesize noticeItemView=_noticeItemView;
 @property(retain, nonatomic) UITextField *textFiled; // @synthesize textFiled=_textFiled;
 @property(retain, nonatomic) HoneyPayPrepareCardView *prepareCardView; // @synthesize prepareCardView=_prepareCardView;

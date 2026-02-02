@@ -18,7 +18,6 @@
     struct CGAffineTransform _prefferdTransform;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TAVVideoTransition> transition; // @synthesize transition=_transition;
 @property(retain, nonatomic) id <TAVVideoComposition> videoComposition; // @synthesize videoComposition=_videoComposition;
 @property(retain, nonatomic) id <TAVVideoCompositionTrack> imageSourceProvider; // @synthesize imageSourceProvider=_imageSourceProvider;

@@ -16,7 +16,6 @@
     UILabel *_cardTypeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *cardTypeLabel; // @synthesize cardTypeLabel=_cardTypeLabel;
 @property(retain, nonatomic) UIImageView *backgroundIcon; // @synthesize backgroundIcon=_backgroundIcon;
 @property(retain, nonatomic) UIImageView *icon; // @synthesize icon=_icon;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UILongPressGestureRecognizer;
 
 @interface RCDraggableButton
@@ -22,7 +24,6 @@
     CDUnknownBlockType _autoDockingDoneBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType autoDockingDoneBlock; // @synthesize autoDockingDoneBlock=_autoDockingDoneBlock;
 @property(copy, nonatomic) CDUnknownBlockType autoDockingBlock; // @synthesize autoDockingBlock=_autoDockingBlock;
 @property(copy, nonatomic) CDUnknownBlockType dragDoneBlock; // @synthesize dragDoneBlock=_dragDoneBlock;
@@ -46,4 +47,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

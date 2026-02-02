@@ -21,7 +21,6 @@
 + (unsigned int)wordStyleWithTextStyle:(unsigned long long)arg1;
 + (id)styleDict;
 + (id)restoryFromFinderCoverWordInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long textStyle; // @synthesize textStyle=_textStyle;
 @property(nonatomic) double textViewScale; // @synthesize textViewScale=_textViewScale;
 @property(nonatomic) double textLineWidth; // @synthesize textLineWidth=_textLineWidth;

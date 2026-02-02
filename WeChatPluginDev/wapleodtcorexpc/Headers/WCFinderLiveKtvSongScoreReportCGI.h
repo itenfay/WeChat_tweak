@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveKtvSongScoreReportRequest_ScoreInfo, MMFinderLiveKTVSongItem, NSData;
 
 @interface WCFinderLiveKtvSongScoreReportCGI
@@ -16,7 +18,6 @@
     CDUnknownBlockType _failureBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
@@ -30,4 +31,3 @@
 - (id)initWithLiveTaskId:(id)arg1 songItem:(id)arg2 scoreInfo:(id)arg3 finish:(_Bool)arg4 liveScene:(long long)arg5 liveCookies:(id)arg6 successBlock:(CDUnknownBlockType)arg7 failureBlock:(CDUnknownBlockType)arg8;
 
 @end
-

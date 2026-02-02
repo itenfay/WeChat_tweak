@@ -67,7 +67,6 @@
 }
 
 + (id)message;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *gameThumbData; // @synthesize gameThumbData=_gameThumbData;
 @property(copy, nonatomic) NSString *shareData; // @synthesize shareData=_shareData;
 @property(nonatomic) unsigned int videoDuration; // @synthesize videoDuration=_videoDuration;

@@ -13,7 +13,6 @@
     struct CGPoint _normalizedCenter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint normalizedCenter; // @synthesize normalizedCenter=_normalizedCenter;
 @property(retain, nonatomic) NSString *dotID; // @synthesize dotID=_dotID;
 

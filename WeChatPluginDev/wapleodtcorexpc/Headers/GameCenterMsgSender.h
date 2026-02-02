@@ -17,7 +17,6 @@
     GameCenterMsgRemarkInfo *_remarkInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameCenterMsgRemarkInfo *remarkInfo; // @synthesize remarkInfo=_remarkInfo;
 @property(retain, nonatomic) NSString *remark; // @synthesize remark=_remark;
 @property(retain, nonatomic) GameJumpInfo *msgSenderJumpInfo; // @synthesize msgSenderJumpInfo=_msgSenderJumpInfo;

@@ -13,7 +13,6 @@
 }
 
 + (double)GetHeightForCardMsg:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCardMsgViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onAction;
 - (void)onLoadImageOK:(id)arg1;

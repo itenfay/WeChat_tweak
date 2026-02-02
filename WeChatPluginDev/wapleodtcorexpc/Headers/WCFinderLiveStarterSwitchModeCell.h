@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, MMUIView, UIImageView, WCFinderLiveStarterLiveModeSubItem;
 
@@ -21,7 +22,6 @@
 
 + (id)getCurrentItemText:(id)arg1;
 + (double)getItemWidth:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *redDoctView; // @synthesize redDoctView=_redDoctView;
 @property(retain, nonatomic) MMUIButton *clickButton; // @synthesize clickButton=_clickButton;
 @property(retain, nonatomic) UIImageView *arrowIcon; // @synthesize arrowIcon=_arrowIcon;
@@ -43,4 +43,3 @@
 - (void)playCellAnimation;
 
 @end
-

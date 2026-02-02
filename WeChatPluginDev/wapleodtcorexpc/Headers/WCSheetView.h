@@ -17,7 +17,6 @@
     struct UIEdgeInsets _insets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *viewToAttributes; // @synthesize viewToAttributes=_viewToAttributes;
 @property(retain, nonatomic) NSMutableArray *privateComponentViews; // @synthesize privateComponentViews=_privateComponentViews;
 @property(nonatomic) _Bool fixedWidth; // @synthesize fixedWidth=_fixedWidth;

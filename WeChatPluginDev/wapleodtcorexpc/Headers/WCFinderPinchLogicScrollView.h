@@ -14,7 +14,6 @@
     struct CGRect _pinchContentDefaultRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect pinchContentDefaultRect; // @synthesize pinchContentDefaultRect=_pinchContentDefaultRect;
 @property(nonatomic) __weak id <WCFinderPinchLogicScrollViewDelegate> finderDelegate; // @synthesize finderDelegate=_finderDelegate;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;

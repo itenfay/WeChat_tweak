@@ -17,7 +17,6 @@
     struct CGPoint _strokeEndPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) struct CGPoint strokeEndPoint; // @synthesize strokeEndPoint=_strokeEndPoint;

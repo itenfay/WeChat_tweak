@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDictionary, NSString, WASessionContentLogicHandler;
 
 @interface WASessionContentLogicController
@@ -25,7 +27,6 @@
     CDUnknownBlockType _backFromContactCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType backFromContactCallback; // @synthesize backFromContactCallback=_backFromContactCallback;
 @property(nonatomic) _Bool isInWeAppSheetMode; // @synthesize isInWeAppSheetMode=_isInWeAppSheetMode;
 @property(retain, nonatomic) NSString *customHeadImageUrl; // @synthesize customHeadImageUrl=_customHeadImageUrl;
@@ -106,4 +107,3 @@
 @property(readonly) Class superclass;
 
 @end
-

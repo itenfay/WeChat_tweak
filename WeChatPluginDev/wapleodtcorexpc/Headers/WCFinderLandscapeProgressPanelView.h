@@ -14,7 +14,6 @@
     CAGradientLayer *_gradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) UILabel *totalProgressTimeLabel; // @synthesize totalProgressTimeLabel=_totalProgressTimeLabel;
 @property(nonatomic) unsigned long long dragState; // @synthesize dragState=_dragState;

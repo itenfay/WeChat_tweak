@@ -10,7 +10,6 @@
     id _object;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id object; // @synthesize object=_object;
 - (id)initWithObject:(id)arg1;
 

@@ -18,7 +18,6 @@
 
 + (Class)layerClass;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *markStyles; // @synthesize markStyles=_markStyles;
 - (id)textLayerForMark:(const void *)arg1 withStyle:(id)arg2;
 - (void)drawTexts:(const void *)arg1 withStyle:(id)arg2;

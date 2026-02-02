@@ -17,7 +17,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCResourceCollectionViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) ResourceMsgImageSquareThumbView *thumbView; // @synthesize thumbView=_thumbView;
 @property(retain, nonatomic) SimpleChatLogInfo *msgInfo; // @synthesize msgInfo=_msgInfo;

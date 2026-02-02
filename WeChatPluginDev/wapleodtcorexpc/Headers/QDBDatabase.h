@@ -17,7 +17,6 @@
     NSDateFormatter *_dateFormat;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
 @property(retain, nonatomic) NSDateFormatter *dateFormat; // @synthesize dateFormat=_dateFormat;
 - (void)extractSQL:(id)arg1 argumentsList:(char *)arg2 intoString:(id)arg3 arguments:(id)arg4;

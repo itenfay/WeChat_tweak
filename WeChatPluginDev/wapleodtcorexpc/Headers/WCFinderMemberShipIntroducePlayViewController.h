@@ -17,7 +17,6 @@
     unsigned long long _currentFocusIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentFocusIndex; // @synthesize currentFocusIndex=_currentFocusIndex;
 @property(retain, nonatomic) WCFinderMemberShipIntroduceListData *headerData; // @synthesize headerData=_headerData;
 @property(retain, nonatomic) WCFinderMemberShipConsumeViewModel *consumeViewModel; // @synthesize consumeViewModel=_consumeViewModel;

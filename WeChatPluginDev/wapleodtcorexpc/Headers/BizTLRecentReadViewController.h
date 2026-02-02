@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BizRecentReadFooter, BizRecentReadTipsBar, GetTimelineSettingResp, MMTableView, MMUILabel, NSMutableArray, NSMutableSet, NSString, RichTextView;
 
 @interface BizTLRecentReadViewController
@@ -23,7 +25,6 @@
     double _tableTop;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double tableTop; // @synthesize tableTop=_tableTop;
 @property(nonatomic) _Bool loadLock; // @synthesize loadLock=_loadLock;
 @property(nonatomic) _Bool hasLoadAllData; // @synthesize hasLoadAllData=_hasLoadAllData;
@@ -92,4 +93,3 @@
 @property(readonly) Class superclass;
 
 @end
-

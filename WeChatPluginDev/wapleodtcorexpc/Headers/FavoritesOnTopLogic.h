@@ -12,7 +12,6 @@
     MMUIViewController *_currentVc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIViewController *currentVc; // @synthesize currentVc=_currentVc;
 @property(retain, nonatomic) WNOpenParameter *openParameter; // @synthesize openParameter=_openParameter;
 @property(retain, nonatomic) FavoritesItem *currentOnTopNoteItem; // @synthesize currentOnTopNoteItem=_currentOnTopNoteItem;

@@ -15,7 +15,6 @@
     WXFullScreenGestureRecognizer *_fullScreenGestrure;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXFullScreenGestureRecognizer *fullScreenGestrure; // @synthesize fullScreenGestrure=_fullScreenGestrure;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;

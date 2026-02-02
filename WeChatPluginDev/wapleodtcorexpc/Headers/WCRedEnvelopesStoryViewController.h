@@ -44,7 +44,6 @@
 
 + (double)getRedSkinBeginY;
 + (_Bool)isNetworkTypeBetter4G;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasManulTapMute; // @synthesize bHasManulTapMute=_bHasManulTapMute;
 @property(nonatomic) _Bool isSecondTimeAutoShowStory; // @synthesize isSecondTimeAutoShowStory=_isSecondTimeAutoShowStory;
 @property(retain, nonatomic) MMTimer *storyPicTimer; // @synthesize storyPicTimer=_storyPicTimer;

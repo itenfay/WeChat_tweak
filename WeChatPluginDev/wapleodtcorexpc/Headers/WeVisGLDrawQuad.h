@@ -25,7 +25,6 @@
     _Bool _isInitialized;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInitialized; // @synthesize isInitialized=_isInitialized;
 - (void)drawFromTex0:(unsigned int)arg1 tex1:(unsigned int)arg2 UVTransform:(int)arg3;
 - (void)drawFromTex0:(unsigned int)arg1 UVTransform:(int)arg2;

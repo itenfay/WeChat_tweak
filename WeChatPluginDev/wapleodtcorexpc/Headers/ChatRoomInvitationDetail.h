@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_roomUsrName;
 + (void)PBArrayAdd_content;
 + (void)PBArrayAdd_invitationReasonList;
-- (void).cxx_destruct;
 @property(nonatomic) __weak ChatRoomInvitationWrap *invitationWrap; // @synthesize invitationWrap=_invitationWrap;
 @property(retain, nonatomic) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;
 @property(retain, nonatomic) NSString *roomUsrName; // @synthesize roomUsrName=_roomUsrName;

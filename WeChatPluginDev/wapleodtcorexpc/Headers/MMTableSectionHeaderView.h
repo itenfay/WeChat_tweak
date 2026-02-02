@@ -22,7 +22,6 @@
     UIView *_topLineView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool sectionSelected; // @synthesize sectionSelected=_sectionSelected;
 @property(retain, nonatomic) UIView *topLineView; // @synthesize topLineView=_topLineView;
 @property(retain, nonatomic) UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;

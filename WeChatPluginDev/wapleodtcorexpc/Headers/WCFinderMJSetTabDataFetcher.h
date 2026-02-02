@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString, WCFinderBaseCgi;
 
@@ -17,7 +18,6 @@
     WCFinderBaseCgi *_fetchCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderBaseCgi *fetchCgi; // @synthesize fetchCgi=_fetchCgi;
 @property(retain, nonatomic) NSData *lastBuff; // @synthesize lastBuff=_lastBuff;
 @property(nonatomic) unsigned long long dataLoadedState; // @synthesize dataLoadedState=_dataLoadedState;
@@ -30,4 +30,3 @@
 - (id)init;
 
 @end
-

@@ -20,7 +20,6 @@
     NSMutableArray *_m_selectedArray;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int pageSheetMarginTop; // @synthesize pageSheetMarginTop=_pageSheetMarginTop;
 @property(nonatomic) int tableViewHeight; // @synthesize tableViewHeight=_tableViewHeight;
 @property(retain, nonatomic) NSMutableArray *m_selectedArray; // @synthesize m_selectedArray=_m_selectedArray;

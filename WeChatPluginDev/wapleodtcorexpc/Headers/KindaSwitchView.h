@@ -17,7 +17,6 @@
     id <MMKImage> _m_offImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMKImage> m_offImage; // @synthesize m_offImage=_m_offImage;
 @property(retain, nonatomic) id <MMKImage> m_onImage; // @synthesize m_onImage=_m_onImage;
 @property(retain, nonatomic) MMDynamicColor *m_thumbTintColor; // @synthesize m_thumbTintColor=_m_thumbTintColor;

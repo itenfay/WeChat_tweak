@@ -13,7 +13,6 @@
     NSArray *_visibleUserNames;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int liveMode; // @synthesize liveMode=_liveMode;
 @property(retain, nonatomic) NSArray *visibleUserNames; // @synthesize visibleUserNames=_visibleUserNames;
 @property(retain, nonatomic) NSArray *visibleRoomIds; // @synthesize visibleRoomIds=_visibleRoomIds;

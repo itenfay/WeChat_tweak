@@ -23,7 +23,6 @@
     NSArray *_sectionInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sectionInfos; // @synthesize sectionInfos=_sectionInfos;
 @property(retain, nonatomic) WCFinderLivePageStayReporter *stayReporter; // @synthesize stayReporter=_stayReporter;
 @property(nonatomic) _Bool isClickStartLive; // @synthesize isClickStartLive=_isClickStartLive;

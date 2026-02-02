@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMIconItemViewConfig, MMUILabel, MMWebImageView, NSString, NSURL, UIColor, UIImage;
 @protocol MMIconItemDelegate;
@@ -23,7 +24,6 @@
     UIImage *_iconImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(retain, nonatomic) UIView *bgView; // @synthesize bgView=_bgView;
 @property(retain, nonatomic) UIColor *iconColorDM; // @synthesize iconColorDM=_iconColorDM;
@@ -55,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

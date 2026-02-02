@@ -10,7 +10,6 @@
     NavigateLogicController *_navigateLogicController;
 }
 
-- (void).cxx_destruct;
 - (void)delayNotifyCancel;
 - (void)delayNotifyOK;
 - (void)onMapItemClickOrCancel:(_Bool)arg1;

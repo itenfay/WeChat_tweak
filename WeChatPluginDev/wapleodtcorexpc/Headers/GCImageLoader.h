@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     GCImageLoader *_selfRef;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCImageLoader *selfRef; // @synthesize selfRef=_selfRef;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void)dealloc;
@@ -32,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

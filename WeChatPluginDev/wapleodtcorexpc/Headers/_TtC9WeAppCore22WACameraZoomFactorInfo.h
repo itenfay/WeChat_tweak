@@ -21,7 +21,6 @@
     MISSING_TYPE *visualFactorScale;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 @property(nonatomic) double visualFactorScale; // @synthesize visualFactorScale;

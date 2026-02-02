@@ -15,7 +15,6 @@
     NSArray *_arrSessionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrSessionInfo; // @synthesize arrSessionInfo=_arrSessionInfo;
 @property(retain, nonatomic) NSMutableSet *clickSet; // @synthesize clickSet=_clickSet;
 @property(retain, nonatomic) BrandSessionTableFooter *tableFooter; // @synthesize tableFooter=_tableFooter;

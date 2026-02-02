@@ -18,7 +18,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLiked; // @synthesize isLiked=_isLiked;
 @property(retain, nonatomic) NSString *distance; // @synthesize distance=_distance;
 @property(retain, nonatomic) TextStateWeAppV6Stranger *v6Stranger; // @synthesize v6Stranger=_v6Stranger;

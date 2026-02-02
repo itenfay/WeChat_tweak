@@ -16,7 +16,6 @@
     UIImage *m_imgIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *m_imgIcon; // @synthesize m_imgIcon;
 @property(retain, nonatomic) NSString *m_nsDesc; // @synthesize m_nsDesc;
 @property(nonatomic) unsigned int m_uiLastUpdateTime; // @synthesize m_uiLastUpdateTime;

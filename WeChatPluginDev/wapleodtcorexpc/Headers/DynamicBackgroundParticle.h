@@ -26,7 +26,6 @@
     union _GLKMatrix4 _colorMatrix;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int colorIndex; // @synthesize colorIndex=_colorIndex;
 @property(nonatomic) double colorRatio; // @synthesize colorRatio=_colorRatio;
 @property(nonatomic) union _GLKVector4 currentColor; // @synthesize currentColor=_currentColor;

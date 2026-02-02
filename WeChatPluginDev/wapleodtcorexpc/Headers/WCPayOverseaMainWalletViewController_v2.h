@@ -23,7 +23,6 @@
     WCPayComplianceHalfPage *_m_complianceHalfPage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayComplianceHalfPage *m_complianceHalfPage; // @synthesize m_complianceHalfPage=_m_complianceHalfPage;
 @property(nonatomic) _Bool m_disableResetAccessibilityFocus; // @synthesize m_disableResetAccessibilityFocus=_m_disableResetAccessibilityFocus;
 @property(nonatomic) _Bool m_hasShownKeyInfo; // @synthesize m_hasShownKeyInfo=_m_hasShownKeyInfo;

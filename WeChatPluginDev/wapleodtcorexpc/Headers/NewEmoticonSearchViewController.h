@@ -23,7 +23,6 @@
 }
 
 + (_Bool)expIfChangedBackgroundColor;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShowKeyboardTips; // @synthesize bShowKeyboardTips=_bShowKeyboardTips;
 @property(retain, nonatomic) NSDictionary *selectEmoticonParams; // @synthesize selectEmoticonParams=_selectEmoticonParams;
 @property(nonatomic) unsigned long long selectEmoticonTimeStamp; // @synthesize selectEmoticonTimeStamp=_selectEmoticonTimeStamp;

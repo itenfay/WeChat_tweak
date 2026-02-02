@@ -12,7 +12,6 @@
     unsigned long long _interval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long interval; // @synthesize interval=_interval;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(retain, nonatomic) NSString *sid; // @synthesize sid=_sid;

@@ -15,7 +15,6 @@
     NSString *_videoThumbPath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *videoThumbPath; // @synthesize videoThumbPath=_videoThumbPath;
 @property(copy, nonatomic) NSString *videoPath; // @synthesize videoPath=_videoPath;
 @property(nonatomic) int canvasId; // @synthesize canvasId=_canvasId;

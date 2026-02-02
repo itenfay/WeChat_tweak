@@ -23,7 +23,6 @@
 + (void)PBArrayAdd_candidateAppearances;
 + (void)PBArrayAdd_showType;
 + (void)PBArrayAdd_iconId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *candidateAppearances; // @synthesize candidateAppearances=_candidateAppearances;
 @property(retain, nonatomic) NSString *customIconDescription; // @synthesize customIconDescription=_customIconDescription;
 @property(nonatomic) unsigned long long flags; // @synthesize flags=_flags;

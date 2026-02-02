@@ -27,7 +27,6 @@
     NSArray *_enableViews;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRedirect; // @synthesize isRedirect=_isRedirect;
 @property(retain, nonatomic) NSArray *enableViews; // @synthesize enableViews=_enableViews;
 @property(retain, nonatomic) NSArray *enableActions; // @synthesize enableActions=_enableActions;

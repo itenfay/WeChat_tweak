@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSMutableSet, NSString, RichTextView, UICollectionViewDiffableDataSource, WCFinderAnimationLoadingView, WCFinderExtStatsReporter, WCFinderFeedArray, WCFinderFeedStaticCoverCollectionViewCell, WCFinderProfileCollectionListLayout, WCFinderProfileFeedPageHeaderContainerView, WCFinderProfileTagFeedViewModel, WCFinderStreamFooterView;
 
 @interface WCFinderStreamProfileFeedPage
@@ -25,7 +27,6 @@
     double _lastCellHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool doJustwatchSpliceAnimation; // @synthesize doJustwatchSpliceAnimation=_doJustwatchSpliceAnimation;
 @property(nonatomic) double lastCellHeight; // @synthesize lastCellHeight=_lastCellHeight;
 @property(nonatomic) __weak WCFinderFeedStaticCoverCollectionViewCell *checkJustWatchCell; // @synthesize checkJustWatchCell=_checkJustWatchCell;
@@ -146,4 +147,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveMagicEnginePerformanceRecordTask, MMLiveMetricsInfoRecordInfo, MMLiveTaskId, NSMutableDictionary, NSString;
 
@@ -16,7 +17,6 @@
 }
 
 + (_Bool)enablePerformanceStatistic;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveMagicEnginePerformanceRecordTask *currRecordTask; // @synthesize currRecordTask=_currRecordTask;
 @property(retain, nonatomic) NSMutableDictionary *performanceRecordTaskDict; // @synthesize performanceRecordTaskDict=_performanceRecordTaskDict;
 @property(retain, nonatomic) MMLiveMetricsInfoRecordInfo *latestMetricsRecordInfo; // @synthesize latestMetricsRecordInfo=_latestMetricsRecordInfo;
@@ -57,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -16,7 +16,6 @@
 }
 
 + (id)createSessionWithActor:(id)arg1 song:(id)arg2 singByActor:(_Bool)arg3 actUId:(id)arg4;
-- (void).cxx_destruct;
 @property(retain) NSString *actUniqueId; // @synthesize actUniqueId=_actUniqueId;
 @property(retain) NSString *actorSongUniqueId; // @synthesize actorSongUniqueId=_actorSongUniqueId;
 @property(retain) NSString *songUniqueId; // @synthesize songUniqueId=_songUniqueId;

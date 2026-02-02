@@ -23,7 +23,6 @@
 
 + (double)cellHeightInWidth:(double)arg1;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) InfiniteLoopContainerView *notificationListView; // @synthesize notificationListView=_notificationListView;
 @property(retain, nonatomic) WCFinderFeedImageCDNView *bgBlurImageView; // @synthesize bgBlurImageView=_bgBlurImageView;

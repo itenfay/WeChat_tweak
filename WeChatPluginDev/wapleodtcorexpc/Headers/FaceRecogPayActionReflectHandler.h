@@ -14,7 +14,6 @@
     NSString *_faceVerifyTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *faceVerifyTitle; // @synthesize faceVerifyTitle=_faceVerifyTitle;
 @property(nonatomic) _Bool hasClickBizButton; // @synthesize hasClickBizButton=_hasClickBizButton;
 @property(retain, nonatomic) NSString *otherVerifyTitle; // @synthesize otherVerifyTitle=_otherVerifyTitle;

@@ -16,7 +16,6 @@
     NSString *_errorDesc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sceneId; // @synthesize sceneId=_sceneId;
 @property(retain, nonatomic) NSString *errorDesc; // @synthesize errorDesc=_errorDesc;
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;

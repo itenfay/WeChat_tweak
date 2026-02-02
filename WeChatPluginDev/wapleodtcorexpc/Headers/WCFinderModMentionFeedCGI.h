@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderModMentionFeedCGI
@@ -12,7 +14,6 @@
     CDUnknownBlockType _failedBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(copy, nonatomic) CDUnknownBlockType successfulBlock; // @synthesize successfulBlock=_successfulBlock;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
@@ -22,4 +23,3 @@
 - (id)initWithUserName:(id)arg1 displayItems:(id)arg2 unDisplayItems:(id)arg3 successful:(CDUnknownBlockType)arg4 failed:(CDUnknownBlockType)arg5;
 
 @end
-

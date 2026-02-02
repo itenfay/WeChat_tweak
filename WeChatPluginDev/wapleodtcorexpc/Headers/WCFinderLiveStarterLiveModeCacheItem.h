@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_audioSubItem;
 + (void)PBArrayAdd_videoSubItem;
 + (void)PBArrayAdd_liveMode;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveStarterLiveModeSubItem *ktvSubItem; // @synthesize ktvSubItem=_ktvSubItem;
 @property(retain, nonatomic) WCFinderLiveStarterLiveModeGameSubItem *gameSubItem; // @synthesize gameSubItem=_gameSubItem;
 @property(retain, nonatomic) WCFinderLiveStarterLiveModeAudioSubItem *audioSubItem; // @synthesize audioSubItem=_audioSubItem;

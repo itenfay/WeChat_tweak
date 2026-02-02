@@ -15,7 +15,6 @@
     NSMutableDictionary *_tempCacheInfoDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *tempCacheInfoDict; // @synthesize tempCacheInfoDict=_tempCacheInfoDict;
 @property(nonatomic) unsigned long long memberPrice; // @synthesize memberPrice=_memberPrice;
 @property(nonatomic) int offlineScene; // @synthesize offlineScene=_offlineScene;

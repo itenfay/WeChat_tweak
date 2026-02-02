@@ -12,7 +12,6 @@
     WCCoinConsumeTipsView *_parent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCCoinConsumeTipsView *parent; // @synthesize parent=_parent;
 - (void)layout;
 

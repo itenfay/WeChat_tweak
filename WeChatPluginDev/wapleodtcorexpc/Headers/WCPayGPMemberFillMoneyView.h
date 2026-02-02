@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, MMTableView, MMUIButton, MMUILabel, MMUIView, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, UIImageView, UITextField, WCPayGPMemberFillMoneyCell;
 
 @interface WCPayGPMemberFillMoneyView
@@ -38,7 +40,6 @@
     CDUnknownBlockType _hideParamInvalidTips;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType hideParamInvalidTips; // @synthesize hideParamInvalidTips=_hideParamInvalidTips;
 @property(copy, nonatomic) CDUnknownBlockType showParamInvalidTips; // @synthesize showParamInvalidTips=_showParamInvalidTips;
 @property(copy, nonatomic) CDUnknownBlockType onMemberSelectChange; // @synthesize onMemberSelectChange=_onMemberSelectChange;
@@ -120,4 +121,3 @@
 @property(readonly) Class superclass;
 
 @end
-

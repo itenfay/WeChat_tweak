@@ -12,7 +12,6 @@
 + (id)detach;
 + (id)attach;
 + (id)name;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

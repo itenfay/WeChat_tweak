@@ -20,7 +20,6 @@
     NSString *_programLog;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *programLog; // @synthesize programLog=_programLog;
 @property(copy, nonatomic) NSString *fragmentShaderLog; // @synthesize fragmentShaderLog=_fragmentShaderLog;
 @property(copy, nonatomic) NSString *vertexShaderLog; // @synthesize vertexShaderLog=_vertexShaderLog;

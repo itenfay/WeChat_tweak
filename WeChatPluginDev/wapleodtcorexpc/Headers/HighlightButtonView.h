@@ -10,7 +10,6 @@
     MMUIView *_highlightMaskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *highlightMaskView; // @synthesize highlightMaskView=_highlightMaskView;
 - (void)setHighlighted:(_Bool)arg1;
 

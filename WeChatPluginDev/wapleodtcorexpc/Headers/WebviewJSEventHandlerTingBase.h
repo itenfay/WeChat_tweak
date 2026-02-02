@@ -10,7 +10,6 @@
     id <TingEventPluginProtocol> _outterTingPlugin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TingEventPluginProtocol> outterTingPlugin; // @synthesize outterTingPlugin=_outterTingPlugin;
 - (id)tingPlugin;
 

@@ -16,7 +16,6 @@
     RouteInfo *_route_info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RouteInfo *route_info; // @synthesize route_info=_route_info;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

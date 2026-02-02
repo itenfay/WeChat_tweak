@@ -14,7 +14,6 @@
 }
 
 + (id)localSourceVersionForScene:(int)arg1 isBingSource:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sources; // @synthesize sources=_sources;
 - (void)save:(_Bool)arg1;
 - (id)initWithArray:(id)arg1;

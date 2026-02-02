@@ -16,7 +16,6 @@
     MISSING_TYPE *bottomSeparator;
 }
 
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

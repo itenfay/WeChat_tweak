@@ -17,7 +17,6 @@
 + (Class)cardClass;
 + (Class)classWithMode:(unsigned long long)arg1;
 + (id)cardMode2CardClassMap;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveHomePageAggregationBaseCard *currentCard; // @synthesize currentCard=_currentCard;
 @property(retain, nonatomic) WCFinderLiveHomePageFeedAggregationCardVM *feedVM; // @synthesize feedVM=_feedVM;
 @property(nonatomic) __weak id <WCFinderLiveHomePageAggregationCardCellDelegate> delegate; // @synthesize delegate=_delegate;

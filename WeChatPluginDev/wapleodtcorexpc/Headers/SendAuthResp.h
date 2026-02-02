@@ -13,7 +13,6 @@
     NSString *country;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *country; // @synthesize country;
 @property(copy, nonatomic) NSString *lang; // @synthesize lang;
 @property(copy, nonatomic) NSString *state; // @synthesize state;

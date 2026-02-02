@@ -165,7 +165,6 @@
 + (void)PBArrayAdd_enterTime;
 + (void)PBArrayAdd_enterScene;
 + (void)PBArrayAdd_sessionId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int enterCoExistStatusCount; // @synthesize enterCoExistStatusCount=_enterCoExistStatusCount;
 @property(nonatomic) unsigned int livePhotoLongPressPv; // @synthesize livePhotoLongPressPv=_livePhotoLongPressPv;
 @property(nonatomic) unsigned int clickUnSelectPhotoPv; // @synthesize clickUnSelectPhotoPv=_clickUnSelectPhotoPv;

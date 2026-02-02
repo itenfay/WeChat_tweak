@@ -15,7 +15,6 @@
     _Bool _needRecord;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needRecord; // @synthesize needRecord=_needRecord;
 - (void)printWidgetEvent:(id)arg1;
 - (void)keyboardWillHide:(id)arg1;

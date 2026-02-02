@@ -13,7 +13,6 @@
     WCCanvasComponentItem *_actionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasComponentItem *actionButton; // @synthesize actionButton=_actionButton;
 @property(nonatomic) _Bool isFullClickable; // @synthesize isFullClickable=_isFullClickable;
 @property(retain, nonatomic) NSString *descColor; // @synthesize descColor=_descColor;

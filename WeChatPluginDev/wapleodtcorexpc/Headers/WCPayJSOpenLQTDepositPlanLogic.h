@@ -11,7 +11,6 @@
     id <WCPayJSOpenLQTDepositPlanLogicDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property __weak id <WCPayJSOpenLQTDepositPlanLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)onWCBaseLogicDidStop:(unsigned int)arg1;
 - (void)startLQTFixedDepositPlanList;

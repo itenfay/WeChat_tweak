@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,7 +16,6 @@
     CDStruct_4b68193d _param;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool called; // @synthesize called=_called;
 @property(retain, nonatomic) NSString *sizeKey; // @synthesize sizeKey=_sizeKey;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
@@ -26,4 +26,3 @@
 - (id)initWithParam:(CDStruct_4b68193d)arg1 callback:(CDUnknownBlockType)arg2;
 
 @end
-

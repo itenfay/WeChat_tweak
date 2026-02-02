@@ -23,7 +23,6 @@
     CMessageWrap *_digestMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *digestMsg; // @synthesize digestMsg=_digestMsg;
 @property(retain, nonatomic) CMessageWrap *lastMsg; // @synthesize lastMsg=_lastMsg;
 @property(nonatomic) unsigned long long boxLatestMsgTime; // @synthesize boxLatestMsgTime=_boxLatestMsgTime;

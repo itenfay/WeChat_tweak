@@ -48,7 +48,6 @@
     NSString *_rejectStatusWording;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useCustomNotifySetting; // @synthesize useCustomNotifySetting=_useCustomNotifySetting;
 @property(nonatomic) unsigned int noticeType; // @synthesize noticeType=_noticeType;
 @property(retain, nonatomic) NSString *rejectStatusWording; // @synthesize rejectStatusWording=_rejectStatusWording;

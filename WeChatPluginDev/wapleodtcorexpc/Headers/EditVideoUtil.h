@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface EditVideoUtil
 {
 }
@@ -36,4 +38,3 @@
 + (void)asyncGetInformationOfVideoWithPath:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 
 @end
-

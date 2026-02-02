@@ -10,7 +10,6 @@
     UIView *m_unreadImageView;
 }
 
-- (void).cxx_destruct;
 - (void)startVideoVoip;
 - (void)tapVoipNodeView;
 - (void)startVoiceVoip;

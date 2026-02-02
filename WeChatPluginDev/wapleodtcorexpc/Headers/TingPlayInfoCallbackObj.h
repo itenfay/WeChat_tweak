@@ -4,14 +4,13 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TingPlayInfoCallbackObj : NSObject
 {
     CDUnknownBlockType _statusCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType statusCallback; // @synthesize statusCallback=_statusCallback;
 
 @end
-

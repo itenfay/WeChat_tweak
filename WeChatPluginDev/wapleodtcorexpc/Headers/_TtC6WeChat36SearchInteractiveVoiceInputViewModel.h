@@ -38,7 +38,6 @@
     MISSING_TYPE *voiceIdArray;
 }
 
-- (void).cxx_destruct;
 - (id)getCurrentExposeId;
 - (id)getCurrentResultText;
 - (void)dealloc;

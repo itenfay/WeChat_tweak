@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderPremovieAdReportCGI
@@ -13,7 +15,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(copy, nonatomic) NSString *reportBypData; // @synthesize reportBypData=_reportBypData;
@@ -25,4 +26,3 @@
 - (id)initWithTid:(id)arg1 scene:(int)arg2 ReportData:(id)arg3 reportBypData:(id)arg4 successBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 
 @end
-

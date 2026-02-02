@@ -15,7 +15,6 @@
     UIImageView *_arrowImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideLogo; // @synthesize hideLogo=_hideLogo;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;

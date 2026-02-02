@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UIImage, UIImageView;
 
@@ -18,7 +19,6 @@
     CDUnknownBlockType _autoTranslatingFinishedHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType autoTranslatingFinishedHandler; // @synthesize autoTranslatingFinishedHandler=_autoTranslatingFinishedHandler;
 @property(copy, nonatomic) CDUnknownBlockType imageClickHandler; // @synthesize imageClickHandler=_imageClickHandler;
 @property(copy, nonatomic) CDUnknownBlockType cancelHandler; // @synthesize cancelHandler=_cancelHandler;
@@ -35,4 +35,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

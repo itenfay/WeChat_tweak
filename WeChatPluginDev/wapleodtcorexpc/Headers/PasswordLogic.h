@@ -27,7 +27,6 @@
     BaseResponseErrMsg *_m_errInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BaseResponseErrMsg *m_errInfo; // @synthesize m_errInfo=_m_errInfo;
 @property(retain, nonatomic) id m_oUserData; // @synthesize m_oUserData;
 @property(nonatomic) _Bool m_bCan_Verify_Pwd_Use_Old_WTBuf; // @synthesize m_bCan_Verify_Pwd_Use_Old_WTBuf;

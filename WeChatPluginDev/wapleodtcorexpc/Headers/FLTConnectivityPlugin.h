@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, Reachability;
 
@@ -14,7 +15,6 @@
 }
 
 + (void)registerWithRegistrar:(id)arg1;
-- (void).cxx_destruct;
 - (id)onCancelWithArguments:(id)arg1;
 - (id)onListenWithArguments:(id)arg1 eventSink:(CDUnknownBlockType)arg2;
 - (void)onReachabilityDidChange:(id)arg1;
@@ -28,4 +28,3 @@
 @property(readonly) Class superclass;
 
 @end
-

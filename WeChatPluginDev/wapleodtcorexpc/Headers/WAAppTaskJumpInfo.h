@@ -14,7 +14,6 @@
     NSString *_agentId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *agentId; // @synthesize agentId=_agentId;
 @property(nonatomic) unsigned int sourceType; // @synthesize sourceType=_sourceType;
 @property(retain, nonatomic) NSString *sourceAppID; // @synthesize sourceAppID=_sourceAppID;

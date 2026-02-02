@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, PagingGetGamePlayTogetherDynamicItem;
 
 @interface WCFinderLiveGetGameTeamInfoCGI
@@ -14,7 +16,6 @@
     NSData *_liveCookies;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int liveScene; // @synthesize liveScene=_liveScene;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
 @property(retain, nonatomic) PagingGetGamePlayTogetherDynamicItem *pagingGetDynamicItem; // @synthesize pagingGetDynamicItem=_pagingGetDynamicItem;
@@ -26,4 +27,3 @@
 - (id)initWithLiveTaskId:(id)arg1 finderDataItem:(id)arg2 liveCookies:(id)arg3 liveScene:(long long)arg4 pagingGetDynamicItem:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

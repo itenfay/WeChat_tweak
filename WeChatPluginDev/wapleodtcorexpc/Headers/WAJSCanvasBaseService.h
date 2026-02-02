@@ -18,7 +18,6 @@
     WAJSNativeBufferBase *_nativeBufferBase;
 }
 
-- (void).cxx_destruct;
 @property(retain) WAJSNativeBufferBase *nativeBufferBase; // @synthesize nativeBufferBase=_nativeBufferBase;
 @property(retain, nonatomic) NSMutableArray *eventHandlersContext; // @synthesize eventHandlersContext=_eventHandlersContext;
 @property(retain, nonatomic) NSMutableArray *eventHandlers; // @synthesize eventHandlers=_eventHandlers;

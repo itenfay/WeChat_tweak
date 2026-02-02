@@ -17,7 +17,6 @@
     UIButton *_confirmBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *confirmBtn; // @synthesize confirmBtn=_confirmBtn;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *imgView; // @synthesize imgView=_imgView;

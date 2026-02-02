@@ -14,7 +14,6 @@
     struct CGRect _bound;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(nonatomic) struct CGRect bound; // @synthesize bound=_bound;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;

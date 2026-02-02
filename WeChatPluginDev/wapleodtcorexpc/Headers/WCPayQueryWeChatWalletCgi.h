@@ -11,7 +11,6 @@
     id <WCPayQueryWeChatWalletCgiDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isServerResponse; // @synthesize m_isServerResponse=_m_isServerResponse;
 @property __weak id <WCPayQueryWeChatWalletCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (id)getLocalBalanceInfo;

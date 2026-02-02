@@ -54,7 +54,6 @@
     FinderLiveAnchorQuestEntrance *_anchorQuestEntance;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableDescExtend; // @synthesize enableDescExtend=_enableDescExtend;
 @property(retain, nonatomic) FinderLiveAnchorQuestEntrance *anchorQuestEntance; // @synthesize anchorQuestEntance=_anchorQuestEntance;
 @property(nonatomic) unsigned long long liveFunctionSwitchFlags; // @synthesize liveFunctionSwitchFlags=_liveFunctionSwitchFlags;

@@ -13,7 +13,6 @@
     id <MMLiveContactSelectViewControllerDelegate> _liveContactDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveContactSelectViewControllerDelegate> liveContactDelegate; // @synthesize liveContactDelegate=_liveContactDelegate;
 @property(retain, nonatomic) MMLiveContactSelectView *selectView; // @synthesize selectView=_selectView;
 @property(nonatomic) long long currentSelectType; // @synthesize currentSelectType=_currentSelectType;

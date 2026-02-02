@@ -19,7 +19,6 @@
     _Bool m_bRepeatSend;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bRepeatSend; // @synthesize m_bRepeatSend;
 @property(retain, nonatomic) NSString *m_nsBindSerial; // @synthesize m_nsBindSerial;
 @property(retain, nonatomic) NSString *m_nsBindCardTail; // @synthesize m_nsBindCardTail;

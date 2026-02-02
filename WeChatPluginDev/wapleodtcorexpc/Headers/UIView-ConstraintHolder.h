@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (ConstraintHolder)
 - (void)updateRightConstraint:(CDUnknownBlockType)arg1;
@@ -12,4 +13,3 @@
 - (id)vi_constraints;
 - (void)setVi_constraints:(id)arg1;
 @end
-

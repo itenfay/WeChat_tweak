@@ -23,7 +23,6 @@
     long long _step;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long step; // @synthesize step=_step;
 @property(nonatomic) long long targetCount; // @synthesize targetCount=_targetCount;
 @property(nonatomic) long long currentCount; // @synthesize currentCount=_currentCount;

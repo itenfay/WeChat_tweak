@@ -18,7 +18,6 @@
     NSMutableDictionary *_idToInfoDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *idToInfoDict; // @synthesize idToInfoDict=_idToInfoDict;
 @property(retain, nonatomic) NSMutableDictionary *idToDayDict; // @synthesize idToDayDict=_idToDayDict;
 @property(retain, nonatomic) NSMutableArray *privateDayList; // @synthesize privateDayList=_privateDayList;

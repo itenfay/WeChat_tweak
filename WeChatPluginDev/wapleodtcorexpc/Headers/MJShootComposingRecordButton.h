@@ -16,7 +16,6 @@
     CAShapeLayer *_recordProgressLayer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRecording; // @synthesize isRecording=_isRecording;
 @property(retain, nonatomic) CAShapeLayer *recordProgressLayer; // @synthesize recordProgressLayer=_recordProgressLayer;
 @property(retain, nonatomic) UIView *recordBorderView; // @synthesize recordBorderView=_recordBorderView;

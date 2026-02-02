@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WAAuthPageSheetViewModel, WAAuthorizeResultInfo, WAAuthorizeSheetInfo;
 @protocol WAAuthorizeViewControllerDelegate;
 
@@ -18,7 +20,6 @@
     WAAuthPageSheetViewModel *_psViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAuthPageSheetViewModel *psViewModel; // @synthesize psViewModel=_psViewModel;
 @property(nonatomic) long long spaceCellTagOffset; // @synthesize spaceCellTagOffset=_spaceCellTagOffset;
 @property(copy, nonatomic) CDUnknownBlockType cancelAction; // @synthesize cancelAction=_cancelAction;
@@ -58,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

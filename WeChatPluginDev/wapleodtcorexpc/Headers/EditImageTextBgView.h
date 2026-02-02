@@ -16,7 +16,6 @@
 }
 
 + (double)maxWOfRects:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(retain, nonatomic) UIColor *textBgColor; // @synthesize textBgColor=_textBgColor;

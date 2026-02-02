@@ -11,7 +11,6 @@
     UIImageView *m_arrowImageView;
 }
 
-- (void).cxx_destruct;
 - (void)onTouchUpInside;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)layoutContentView;

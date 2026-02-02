@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UPWebViewJavascriptBridgeBase, WKWebView;
 @protocol WKNavigationDelegate;
@@ -18,7 +19,6 @@
 
 + (id)bridgeForWebView:(id)arg1;
 + (void)enableLogging;
-- (void).cxx_destruct;
 - (id)_evaluateJavascript:(id)arg1;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

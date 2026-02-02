@@ -15,7 +15,6 @@
     NSArray *_iplist;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastNewDNSTime; // @synthesize lastNewDNSTime=_lastNewDNSTime;
 @property(nonatomic) _Bool bUseDCIP; // @synthesize bUseDCIP=_bUseDCIP;
 @property(copy) NSArray *iplist; // @synthesize iplist=_iplist;

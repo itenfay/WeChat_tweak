@@ -10,7 +10,6 @@
     EdgeComputingJSScriptEngine *scriptEngine;
 }
 
-- (void).cxx_destruct;
 - (id)executePureScript:(id)arg1 andData:(id)arg2;
 - (void)clear;
 - (id)getScriptArgs:(unsigned int)arg1 withClientVersion:(unsigned int)arg2 withPeriodStartTime:(unsigned long long)arg3 withPeriodEndTime:(unsigned long long)arg4;

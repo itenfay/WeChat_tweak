@@ -19,7 +19,6 @@
     MMUILabel *_loadingLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
 @property(retain, nonatomic) MMUILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) MMUIActivityIndicatorView *dataLoadingIndicator; // @synthesize dataLoadingIndicator=_dataLoadingIndicator;

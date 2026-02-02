@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EAGLView, MagicBrushCore;
 @protocol IMBExternalTextureDelegate, IMBExternalViewDelegate;
@@ -26,7 +27,6 @@
     CDUnknownBlockType _imageBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType imageBlock; // @synthesize imageBlock=_imageBlock;
 @property(nonatomic) struct __CVBuffer *copiedPixelBuffer; // @synthesize copiedPixelBuffer=_copiedPixelBuffer;
 @property(nonatomic) struct __CVBuffer *pixelbuffer; // @synthesize pixelbuffer=_pixelbuffer;
@@ -62,4 +62,3 @@
 - (id)initWithExternalViewDelegate:(id)arg1;
 
 @end
-

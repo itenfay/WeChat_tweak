@@ -32,7 +32,6 @@
     MJTemplatePlayerView *_templatePlayerView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowTemplatePlayerView; // @synthesize isShowTemplatePlayerView=_isShowTemplatePlayerView;
 @property(retain, nonatomic) MJTemplatePlayerView *templatePlayerView; // @synthesize templatePlayerView=_templatePlayerView;
 @property(retain, nonatomic) WCMediaItemWrap *mediaItemWrap; // @synthesize mediaItemWrap=_mediaItemWrap;

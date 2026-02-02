@@ -15,7 +15,6 @@
     SportRecord *_record;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SportRecord *record; // @synthesize record=_record;
 @property(nonatomic) unsigned int uiLikeState; // @synthesize uiLikeState;
 @property(nonatomic) unsigned int uiLikeCount; // @synthesize uiLikeCount;

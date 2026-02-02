@@ -22,7 +22,6 @@
     NSString *_lastReportLiveMicId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lastReportLiveMicId; // @synthesize lastReportLiveMicId=_lastReportLiveMicId;
 @property(nonatomic) _Bool hasStartedRemoteVideo; // @synthesize hasStartedRemoteVideo=_hasStartedRemoteVideo;
 @property(nonatomic) unsigned int linkCount; // @synthesize linkCount=_linkCount;

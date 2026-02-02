@@ -20,7 +20,6 @@
 }
 
 + (void)CreateExtendInfoWithType:(unsigned int)arg1 retExtendInfo:(id *)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_duration; // @synthesize m_duration;
 @property(nonatomic) unsigned int m_wordingType; // @synthesize m_wordingType;
 @property(nonatomic) __weak CMessageWrap *m_refMessageWrap; // @synthesize m_refMessageWrap;

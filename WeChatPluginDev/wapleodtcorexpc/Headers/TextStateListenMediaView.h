@@ -12,7 +12,6 @@
     double _startPlayTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double startPlayTime; // @synthesize startPlayTime=_startPlayTime;
 @property(copy, nonatomic) NSString *textStateId; // @synthesize textStateId=_textStateId;
 - (_Bool)shouldResidentMedia;

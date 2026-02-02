@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 @protocol WCFinderLiveAddFansViewModelDelegate;
@@ -18,7 +19,6 @@
     unsigned long long _liveID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long liveID; // @synthesize liveID=_liveID;
 @property(nonatomic) unsigned long long lastMaxFansId; // @synthesize lastMaxFansId=_lastMaxFansId;
 @property(nonatomic) _Bool hasMoreFans; // @synthesize hasMoreFans=_hasMoreFans;
@@ -31,4 +31,3 @@
 - (id)initWithLiveID:(unsigned long long)arg1 addFansCount:(long long)arg2;
 
 @end
-

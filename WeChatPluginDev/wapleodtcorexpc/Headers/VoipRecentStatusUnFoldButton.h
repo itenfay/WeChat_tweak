@@ -16,7 +16,6 @@
     _TtC6WeChat13DNDReportItem *_dndReportItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC6WeChat13DNDReportItem *dndReportItem; // @synthesize dndReportItem=_dndReportItem;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) _Bool isUsingMPUI; // @synthesize isUsingMPUI=_isUsingMPUI;

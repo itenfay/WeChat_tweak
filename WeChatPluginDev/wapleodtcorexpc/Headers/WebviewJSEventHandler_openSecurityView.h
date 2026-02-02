@@ -10,7 +10,6 @@
     NSDictionary *_m_handlers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *m_handlers; // @synthesize m_handlers=_m_handlers;
 - (void)registerHandler;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;

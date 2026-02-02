@@ -40,7 +40,6 @@
     NSMutableArray *_voiceIdArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *voiceIdArray; // @synthesize voiceIdArray=_voiceIdArray;
 @property(retain, nonatomic) StreamVoiceInputLogic *curInputLogic; // @synthesize curInputLogic=_curInputLogic;
 @property(retain, nonatomic) NSMutableDictionary *inputLogicDic; // @synthesize inputLogicDic=_inputLogicDic;

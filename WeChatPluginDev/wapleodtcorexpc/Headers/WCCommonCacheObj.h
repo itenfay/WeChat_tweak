@@ -34,7 +34,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *aggregateName; // @synthesize aggregateName=_aggregateName;
 @property(nonatomic) unsigned int mediaType; // @synthesize mediaType=_mediaType;
 @property(nonatomic) unsigned int lastUseTime; // @synthesize lastUseTime=_lastUseTime;

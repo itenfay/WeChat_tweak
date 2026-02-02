@@ -16,7 +16,6 @@
     long long _keyboardType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(retain, nonatomic) MMKSecureEditTextOnTextChangedCallback *m_onTextChangedCallback; // @synthesize m_onTextChangedCallback=_m_onTextChangedCallback;
 @property(nonatomic) long long m_encryptType; // @synthesize m_encryptType=_m_encryptType;

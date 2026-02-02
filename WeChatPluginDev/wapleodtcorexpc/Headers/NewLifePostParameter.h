@@ -21,7 +21,6 @@
     unsigned long long _initSelectTabIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long initSelectTabIndex; // @synthesize initSelectTabIndex=_initSelectTabIndex;
 @property(retain, nonatomic) NewLifeRedDotTipsShowInfo *profilePostRedDotInfo; // @synthesize profilePostRedDotInfo=_profilePostRedDotInfo;
 @property(retain, nonatomic) id <NewLifePostEndDelegate> postEndDelegate; // @synthesize postEndDelegate=_postEndDelegate;

@@ -17,7 +17,6 @@
     NSString *_eventNote1;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *eventNote1; // @synthesize eventNote1=_eventNote1;
 @property(retain, nonatomic) NSString *videoUrl; // @synthesize videoUrl=_videoUrl;
 @property(retain, nonatomic) NSString *videoTitle; // @synthesize videoTitle=_videoTitle;

@@ -20,7 +20,6 @@
     id <MMLiveCountdownTipsViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveCountdownTipsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long countDown; // @synthesize countDown=_countDown;
 @property(nonatomic) long long timerCountdown; // @synthesize timerCountdown=_timerCountdown;

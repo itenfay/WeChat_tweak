@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_dailyControlCount;
 + (void)PBArrayAdd_dailyControlTimestamp;
 + (void)PBArrayAdd_dicRecord;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int dailyControlCount; // @synthesize dailyControlCount=_dailyControlCount;
 @property(nonatomic) unsigned int dailyControlTimestamp; // @synthesize dailyControlTimestamp=_dailyControlTimestamp;
 @property(retain, nonatomic) NSMutableDictionary *dicRecord; // @synthesize dicRecord=_dicRecord;

@@ -14,7 +14,6 @@
     NSMutableArray *_exposeNDetailsArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *exposeNDetailsArray; // @synthesize exposeNDetailsArray=_exposeNDetailsArray;
 @property(retain, nonatomic) NSMutableArray *willFreeDetailsArray; // @synthesize willFreeDetailsArray=_willFreeDetailsArray;
 @property(nonatomic) long long penaltyCount; // @synthesize penaltyCount=_penaltyCount;

@@ -20,7 +20,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithTranslateX:(double)arg1 translateY:(double)arg2 scale:(double)arg3 cropArea:(id)arg4 imageWidth:(double)arg5 imageHeight:(double)arg6;
-- (void).cxx_destruct;
 @property(nonatomic) double imageHeight; // @synthesize imageHeight=_imageHeight;
 @property(nonatomic) double imageWidth; // @synthesize imageWidth=_imageWidth;
 @property(retain, nonatomic) FLTRect *cropArea; // @synthesize cropArea=_cropArea;

@@ -13,7 +13,6 @@
     NSMutableSet *_starSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *starSet; // @synthesize starSet=_starSet;
 @property(nonatomic) __weak id <WAMainListStarLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *starItems; // @synthesize starItems=_starItems;

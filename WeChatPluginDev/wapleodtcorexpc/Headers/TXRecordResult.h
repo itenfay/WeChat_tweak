@@ -15,7 +15,6 @@
     UIImage *_coverImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *coverImage; // @synthesize coverImage=_coverImage;
 @property(retain, nonatomic) NSString *videoPath; // @synthesize videoPath=_videoPath;
 @property(retain, nonatomic) NSString *descMsg; // @synthesize descMsg=_descMsg;

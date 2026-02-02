@@ -15,7 +15,6 @@
     UITapGestureRecognizer *_tapGR;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGR; // @synthesize tapGR=_tapGR;
 @property(nonatomic) _Bool hasBeenTouched; // @synthesize hasBeenTouched=_hasBeenTouched;
 @property(nonatomic) __weak id <MJMovieComposingTitleGuideViewDelegate> delegate; // @synthesize delegate=_delegate;

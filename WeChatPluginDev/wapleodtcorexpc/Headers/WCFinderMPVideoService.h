@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface WCFinderMPVideoService
@@ -12,7 +14,6 @@
 }
 
 + (id)playStatusWithPlayerView:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *eposeDict; // @synthesize eposeDict=_eposeDict;
 @property(retain, nonatomic) NSMutableDictionary *exportIdToTidDict; // @synthesize exportIdToTidDict=_exportIdToTidDict;
 - (int)commentScene;
@@ -41,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

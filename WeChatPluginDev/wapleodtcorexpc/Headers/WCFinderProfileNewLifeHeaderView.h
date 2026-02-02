@@ -15,7 +15,6 @@
 }
 
 + (double)topPadding;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *gadgetViews; // @synthesize gadgetViews=_gadgetViews;
 @property(retain, nonatomic) WCFinderProfileNewLifeBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) WCFinderProfileNewLifeHeaderViewModel *viewModel; // @synthesize viewModel=_viewModel;

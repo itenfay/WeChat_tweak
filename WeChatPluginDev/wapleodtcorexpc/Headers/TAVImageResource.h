@@ -10,7 +10,6 @@
     CIImage *_image;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CIImage *image; // @synthesize image=_image;
 - (id)imageAtTime:(CDStruct_1b6d18a9)arg1 renderSize:(struct CGSize)arg2;
 - (id)tracksForType:(id)arg1;

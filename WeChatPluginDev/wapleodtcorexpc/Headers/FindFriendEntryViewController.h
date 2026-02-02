@@ -70,7 +70,6 @@
 + (_Bool)shouldCheckErrorCase;
 + (_Bool)shouldCheckFinderRedDotErrorCase;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FindFriendRedDotReporter *redDotReporter; // @synthesize redDotReporter=_redDotReporter;
 @property(retain, nonatomic) FindFriendRedDotEventSender *redDotEventSender; // @synthesize redDotEventSender=_redDotEventSender;
 @property(nonatomic) _Bool isShowingMomentsRedDot; // @synthesize isShowingMomentsRedDot=_isShowingMomentsRedDot;

@@ -14,7 +14,6 @@
     UIButton *_cancelBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *cancelBtn; // @synthesize cancelBtn=_cancelBtn;
 @property(nonatomic) __weak id <WCAppAuthDetailFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onCancelBtnClick;

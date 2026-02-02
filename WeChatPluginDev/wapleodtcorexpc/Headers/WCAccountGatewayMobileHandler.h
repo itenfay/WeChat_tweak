@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MobileInfo, NSMutableArray, NSString;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)AllCelluarIpAddrList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MobileInfo *pureMobileResult; // @synthesize pureMobileResult=_pureMobileResult;
 @property(retain, nonatomic) NSMutableArray *urlDownloaders; // @synthesize urlDownloaders=_urlDownloaders;
 @property(retain, nonatomic) NSMutableArray *tokens; // @synthesize tokens=_tokens;
@@ -32,4 +32,3 @@
 - (_Bool)asyncGetMaskedMobileWithBusiness:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 
 @end
-

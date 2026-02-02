@@ -15,7 +15,6 @@
     struct CGSize _adjustedMediaSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsPageContext *pageContext; // @synthesize pageContext=_pageContext;
 @property(nonatomic) struct CGSize adjustedMediaSize; // @synthesize adjustedMediaSize=_adjustedMediaSize;
 @property(nonatomic) _Bool showsDetail; // @synthesize showsDetail=_showsDetail;

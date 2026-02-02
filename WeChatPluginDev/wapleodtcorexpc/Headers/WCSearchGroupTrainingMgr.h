@@ -23,7 +23,6 @@
     WCSearchGroupScoreCache *_scoreCache;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasReportFirstPreload; // @synthesize hasReportFirstPreload=_hasReportFirstPreload;
 @property(nonatomic) _Bool hasDoContactReload; // @synthesize hasDoContactReload=_hasDoContactReload;
 @property(nonatomic) _Bool isPreloadScoreFinish; // @synthesize isPreloadScoreFinish=_isPreloadScoreFinish;

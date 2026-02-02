@@ -16,7 +16,6 @@
     NSString *domain;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int profileType; // @synthesize profileType;
 @property(nonatomic) int scene; // @synthesize scene;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain;

@@ -17,7 +17,6 @@
 }
 
 + (id)generateWidgetFromState:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool animatable; // @synthesize animatable=_animatable;
 @property(retain, nonatomic) NSString *emotionSearchKey; // @synthesize emotionSearchKey=_emotionSearchKey;
 @property(retain, nonatomic) NSString *emotionMd5; // @synthesize emotionMd5=_emotionMd5;

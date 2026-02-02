@@ -19,7 +19,6 @@
 }
 
 + (id)FreezeBalanceMsgWithWording:(id)arg1 wordingColor:(long long)arg2 wordingSize:(int)arg3 bgColor:(long long)arg4 routeUrl:(id)arg5 leftIcon:(id)arg6 rightIcon:(id)arg7;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *rightIcon; // @synthesize rightIcon=_rightIcon;
 @property(readonly, nonatomic) NSString *leftIcon; // @synthesize leftIcon=_leftIcon;
 @property(readonly, nonatomic) NSString *routeUrl; // @synthesize routeUrl=_routeUrl;

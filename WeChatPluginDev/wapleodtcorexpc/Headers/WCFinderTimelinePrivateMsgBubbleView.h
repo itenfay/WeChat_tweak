@@ -17,7 +17,6 @@
     UIImageView *_arrowImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) WCFinderContact *finderContact; // @synthesize finderContact=_finderContact;
 @property(copy, nonatomic) NSString *currentMsgUsername; // @synthesize currentMsgUsername=_currentMsgUsername;

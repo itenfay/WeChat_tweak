@@ -12,7 +12,6 @@
     UIButton *_bigBlockBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *bigBlockBtn; // @synthesize bigBlockBtn=_bigBlockBtn;
 @property(retain, nonatomic) WCPayTransferMoneyControlLogic *transferMoneyControlLogic; // @synthesize transferMoneyControlLogic=_transferMoneyControlLogic;
 @property(retain, nonatomic) WCPayF2FMiniProgramConfirmRcvrCgi *confirmRcvrCgi; // @synthesize confirmRcvrCgi=_confirmRcvrCgi;

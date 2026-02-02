@@ -13,7 +13,6 @@
     struct CGSize _contactLabelSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double contactLabelMaxWidth; // @synthesize contactLabelMaxWidth=_contactLabelMaxWidth;
 @property(retain, nonatomic) UIFont *contactLabelFont; // @synthesize contactLabelFont=_contactLabelFont;
 @property(nonatomic) struct CGSize contactLabelSize; // @synthesize contactLabelSize=_contactLabelSize;

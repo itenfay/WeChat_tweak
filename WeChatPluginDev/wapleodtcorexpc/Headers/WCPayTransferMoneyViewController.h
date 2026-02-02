@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CgiTransferBeforeResp, CgiUnionTransferBeforeResp, GetTransferWordingResponse, KindaOpenIMInfoView, MMHeadImageView, MMTipsViewController, MMUIActivityIndicatorView, MMUILabel, NSDictionary, NSMutableString, NSString, RichTextView, UIButton, UILabel, UIView, WCPayBeforeTransferCgi, WCPayDecimalKeyboardView, WCPayGetTransferWordingCgi, WCPayMoneyTextFieldItem, WCPayNoticeBanner, WCPayRemarkPageSheet, WCPayRemarkPageSheetConfig, WCPayTextField, WCPayTransferMoneyAntiCheatUIView, WCPayUnionTransferBeforeCgi, WCUIAlertView;
 @protocol WCPayTransferMoneyViewControllerDelegate;
 
@@ -70,7 +72,6 @@
     NSString *_wechatAliasName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *wechatAliasName; // @synthesize wechatAliasName=_wechatAliasName;
 @property(nonatomic) _Bool bIsMerchantLoading; // @synthesize bIsMerchantLoading=_bIsMerchantLoading;
 @property(nonatomic) _Bool bIsSelectingAddress; // @synthesize bIsSelectingAddress=_bIsSelectingAddress;
@@ -199,4 +200,3 @@
 @property(readonly) Class superclass;
 
 @end
-

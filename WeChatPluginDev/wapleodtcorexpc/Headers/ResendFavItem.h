@@ -19,7 +19,6 @@
 + (void)PBArrayAdd_fileIdList;
 + (void)PBArrayAdd_localFavId;
 + (void)PBArrayAdd_favId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int itemStatus; // @synthesize itemStatus=_itemStatus;
 @property(retain, nonatomic) NSMutableArray *fileIdList; // @synthesize fileIdList=_fileIdList;
 @property(nonatomic) unsigned int localFavId; // @synthesize localFavId=_localFavId;

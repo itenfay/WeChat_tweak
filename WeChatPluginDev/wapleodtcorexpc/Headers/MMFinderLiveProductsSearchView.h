@@ -24,7 +24,6 @@
     NSDate *_appearDate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *appearDate; // @synthesize appearDate=_appearDate;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) _Bool isSearching; // @synthesize isSearching=_isSearching;

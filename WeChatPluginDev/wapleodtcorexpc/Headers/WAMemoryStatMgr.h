@@ -11,7 +11,6 @@
     NSMutableDictionary *_appid2KillInfo;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)getDeviceFreeMem;
 - (long long)getProcessMemUsed;
 - (void)reportWhenMemoryWarning:(unsigned int)arg1;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, NSString;
 
 @interface ChatroomMemberSelectorViewController
@@ -11,7 +13,6 @@
     NSString *_customizedTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *customizedTitle; // @synthesize customizedTitle=_customizedTitle;
 @property(readonly, nonatomic) CContact *chatroomContact; // @synthesize chatroomContact=_chatroomContact;
 - (id)headerTitleInSection:(long long)arg1;
@@ -21,4 +22,3 @@
 - (id)initWithChatroomContact:(id)arg1 selectedContacts:(id)arg2;
 
 @end
-

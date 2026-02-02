@@ -14,7 +14,6 @@
 }
 
 + (id)MagicPushMsgDBPath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *pushMsgTable; // @synthesize pushMsgTable=_pushMsgTable;
 @property(retain, nonatomic) WCTDatabase *db; // @synthesize db=_db;
 - (void)dealloc;

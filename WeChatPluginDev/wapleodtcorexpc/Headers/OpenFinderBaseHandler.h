@@ -13,7 +13,6 @@
     FinderBlockViewController *_blockVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderBlockViewController *blockVC; // @synthesize blockVC=_blockVC;
 @property(retain, nonatomic) NSString *openUrl; // @synthesize openUrl=_openUrl;
 @property(retain, nonatomic) NSDictionary *paramsDict; // @synthesize paramsDict=_paramsDict;

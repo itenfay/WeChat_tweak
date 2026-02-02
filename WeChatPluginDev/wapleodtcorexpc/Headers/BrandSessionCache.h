@@ -23,7 +23,6 @@
     BESessionBoxInfo *_affSessionBoxInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BESessionBoxInfo *affSessionBoxInfo; // @synthesize affSessionBoxInfo=_affSessionBoxInfo;
 @property(nonatomic) unsigned long long lastMsgAffMsgId; // @synthesize lastMsgAffMsgId=_lastMsgAffMsgId;
 @property(retain, nonatomic) CMessageWrap *latestMsg; // @synthesize latestMsg;

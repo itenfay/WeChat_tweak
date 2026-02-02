@@ -14,7 +14,6 @@
     NSString *_lastReportFocusTid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastReportFocusTid; // @synthesize lastReportFocusTid=_lastReportFocusTid;
 @property(retain, nonatomic) WCFinderJSAPIFeedListBehavior *behavior; // @synthesize behavior=_behavior;
 @property(retain, nonatomic) WCFInderJSAPIFeedReadReporter *readReporter; // @synthesize readReporter=_readReporter;

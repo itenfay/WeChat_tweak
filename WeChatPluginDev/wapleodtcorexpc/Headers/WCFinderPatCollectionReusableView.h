@@ -13,7 +13,6 @@
 }
 
 + (double)getPatMusicHeightWithBgmInfo:(id)arg1 titleWording:(id)arg2 screenWid:(double)arg3 enablePostFeed:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderPatCollectionReusableViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)patPostButtonShow;
 - (void)resumeMusicPlay;

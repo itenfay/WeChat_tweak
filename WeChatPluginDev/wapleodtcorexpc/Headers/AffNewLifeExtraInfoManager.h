@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMapTable;
 
@@ -16,7 +17,6 @@
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)getLocalJumpInfo:(id)arg1 scene:(int)arg2;
 - (void)unSubscribeFetchJumpInfoCompleteEvent:(id)arg1;
@@ -31,4 +31,3 @@
 - (void)attachClientInvoker:(const void *)arg1;
 
 @end
-

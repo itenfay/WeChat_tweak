@@ -27,7 +27,6 @@
 }
 
 + (id)nonAtomicSingleFileConfigFromTableItem:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiCheckUpdateSuccessTime; // @synthesize uiCheckUpdateSuccessTime=_uiCheckUpdateSuccessTime;
 @property(retain, nonatomic) NSMutableDictionary *file2DownloadFailCount; // @synthesize file2DownloadFailCount=_file2DownloadFailCount;
 @property(retain, nonatomic) NSMutableArray *nonAtomicSingleFileListDownloadSuccessed; // @synthesize nonAtomicSingleFileListDownloadSuccessed=_nonAtomicSingleFileListDownloadSuccessed;

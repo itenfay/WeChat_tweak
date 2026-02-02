@@ -11,7 +11,6 @@
     RichTextView *_descTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *descTextView; // @synthesize descTextView=_descTextView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (double)bottomViewBottomMargin;

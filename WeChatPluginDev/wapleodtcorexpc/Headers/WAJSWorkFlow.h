@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSContext, NSArray, NSMutableDictionary, NSString, NSThread, WAJSCoreService, WasmAdaptor;
 
 @interface WAJSWorkFlow
@@ -21,7 +23,6 @@
 }
 
 + (id)getBundle;
-- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *subContexts; // @synthesize subContexts=_subContexts;
 @property(nonatomic) unsigned int subContextId; // @synthesize subContextId=_subContextId;
 @property(retain, nonatomic) WasmAdaptor *wasmAdaptor; // @synthesize wasmAdaptor=_wasmAdaptor;
@@ -69,4 +70,3 @@
 @property(readonly) Class superclass;
 
 @end
-

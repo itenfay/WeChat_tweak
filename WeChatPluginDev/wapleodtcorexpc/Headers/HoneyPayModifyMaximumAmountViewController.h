@@ -18,7 +18,6 @@
     double _keyboardHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHide; // @synthesize isHide=_isHide;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(retain, nonatomic) UILabel *bottomTipsLabel; // @synthesize bottomTipsLabel=_bottomTipsLabel;

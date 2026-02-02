@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_showchat;
 + (void)PBArrayAdd_username;
 + (void)PBArrayAdd_nickname;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *showchat; // @synthesize showchat=_showchat;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;

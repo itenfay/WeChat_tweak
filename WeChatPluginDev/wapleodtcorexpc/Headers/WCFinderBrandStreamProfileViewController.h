@@ -20,7 +20,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderExtStatsReporter *extStatReporter; // @synthesize extStatReporter=_extStatReporter;
 @property(retain, nonatomic) NSIndexPath *serviceAuthBlockedIndexPath; // @synthesize serviceAuthBlockedIndexPath=_serviceAuthBlockedIndexPath;
 @property(nonatomic) _Bool displayThreeColumnSwitch; // @synthesize displayThreeColumnSwitch=_displayThreeColumnSwitch;

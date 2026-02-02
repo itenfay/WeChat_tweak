@@ -25,7 +25,6 @@
     unsigned long long _heatValue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int totalNum; // @synthesize totalNum=_totalNum;
 @property(nonatomic) unsigned long long heatValue; // @synthesize heatValue=_heatValue;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

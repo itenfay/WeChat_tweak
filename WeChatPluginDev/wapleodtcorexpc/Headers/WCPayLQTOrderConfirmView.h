@@ -14,7 +14,6 @@
     WCPayTenpayPasswordCtrlItem *_pwdTextFieldItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayTenpayPasswordCtrlItem *pwdTextFieldItem; // @synthesize pwdTextFieldItem=_pwdTextFieldItem;
 @property(retain, nonatomic) MMUIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) unsigned int money; // @synthesize money=_money;

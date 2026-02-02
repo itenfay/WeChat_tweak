@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GetRecommendFeedsResp, GetRecommendFeedsResp_RecommendFeedsConfig, NSData, NSDate, NSString;
 @protocol BTRecoFlowLogicDelegate;
@@ -37,7 +38,6 @@
     NSDate *_lastReqDateForSceneSupplement;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastReqDateForSceneSupplement; // @synthesize lastReqDateForSceneSupplement=_lastReqDateForSceneSupplement;
 @property(retain, nonatomic) NSDate *lastReqDateForSceneRefreshAfterClick; // @synthesize lastReqDateForSceneRefreshAfterClick=_lastReqDateForSceneRefreshAfterClick;
 @property(nonatomic) unsigned int subscribedCardClickActionCnt; // @synthesize subscribedCardClickActionCnt=_subscribedCardClickActionCnt;
@@ -105,4 +105,3 @@
 @property(readonly) Class superclass;
 
 @end
-

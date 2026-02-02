@@ -25,7 +25,6 @@
     double _previousPanPositionY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double previousPanPositionY; // @synthesize previousPanPositionY=_previousPanPositionY;
 @property(nonatomic) double viewTopAtPanBegin; // @synthesize viewTopAtPanBegin=_viewTopAtPanBegin;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;

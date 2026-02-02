@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCVolumeController;
 
 @interface VoIPAudioService
@@ -31,7 +33,6 @@
 
 + (void)loadStatusWithCompletion:(CDUnknownBlockType)arg1 callbackInMainThead:(_Bool)arg2;
 + (void)loadStatusWithRouteChange:(id)arg1 completion:(CDUnknownBlockType)arg2 callbackInMainThead:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInterruptingByAudioModule; // @synthesize isInterruptingByAudioModule=_isInterruptingByAudioModule;
 @property(retain, nonatomic) WCVolumeController *volumnController; // @synthesize volumnController=_volumnController;
 @property(copy, nonatomic) CDUnknownBlockType resumeAfterInterruptionBlock; // @synthesize resumeAfterInterruptionBlock=_resumeAfterInterruptionBlock;
@@ -94,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

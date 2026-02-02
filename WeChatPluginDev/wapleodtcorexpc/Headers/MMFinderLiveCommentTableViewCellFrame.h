@@ -25,7 +25,6 @@
     NSString *_layoutIdentityKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *layoutIdentityKey; // @synthesize layoutIdentityKey=_layoutIdentityKey;
 @property(nonatomic) double layoutStandardWidth; // @synthesize layoutStandardWidth=_layoutStandardWidth;
 @property(nonatomic) double cellHeightLandscape; // @synthesize cellHeightLandscape=_cellHeightLandscape;

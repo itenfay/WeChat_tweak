@@ -13,7 +13,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDaWangResponseBusiness *businessParameter; // @synthesize businessParameter=_businessParameter;
 
 // Remaining properties

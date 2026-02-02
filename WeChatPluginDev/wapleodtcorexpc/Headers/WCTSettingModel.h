@@ -13,7 +13,6 @@
 
 + (id)createWithTitle:(id)arg1 subTitle:(id)arg2 showArrow:(_Bool)arg3;
 + (id)createWithTitle:(id)arg1 subTitle:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showArrow; // @synthesize showArrow=_showArrow;
 @property(retain, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
 - (id)init;

@@ -13,7 +13,6 @@
     MISSING_TYPE *videoToken;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithVideoUrl:(id)arg1 videoToken:(id)arg2;
 @property(nonatomic, copy) NSString *videoToken;

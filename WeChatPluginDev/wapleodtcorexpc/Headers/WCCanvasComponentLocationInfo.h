@@ -14,7 +14,6 @@
     double _bottomLineSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double bottomLineSize; // @synthesize bottomLineSize=_bottomLineSize;
 @property(nonatomic) double topLineSize; // @synthesize topLineSize=_topLineSize;
 @property(retain, nonatomic) POIInfo *poiInfo; // @synthesize poiInfo=_poiInfo;

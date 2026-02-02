@@ -12,7 +12,6 @@
     MISSING_TYPE *template;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

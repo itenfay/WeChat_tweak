@@ -14,7 +14,6 @@
     NSString *_m_wording;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_readOnly; // @synthesize m_readOnly=_m_readOnly;
 @property(retain, nonatomic) NSString *m_wording; // @synthesize m_wording=_m_wording;
 @property(retain, nonatomic) NSString *m_detailUrl; // @synthesize m_detailUrl=_m_detailUrl;

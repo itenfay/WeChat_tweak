@@ -30,7 +30,6 @@
     WCPayNoticeItemView *_m_noticeBanner;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNoticeItemView *m_noticeBanner; // @synthesize m_noticeBanner=_m_noticeBanner;
 @property(retain, nonatomic) NSString *m_enterMobileNumber; // @synthesize m_enterMobileNumber=_m_enterMobileNumber;
 @property double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;

@@ -10,7 +10,6 @@
     WCFinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 - (void)createUserClosed;
 - (void)createUserFailed;

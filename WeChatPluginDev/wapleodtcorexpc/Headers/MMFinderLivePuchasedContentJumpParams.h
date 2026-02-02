@@ -17,7 +17,6 @@
     FinderJumpInfo *_livePaidMicJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderJumpInfo *livePaidMicJumpInfo; // @synthesize livePaidMicJumpInfo=_livePaidMicJumpInfo;
 @property(retain, nonatomic) MMFinderLivePurchasedFeedViewModel *livePurchasedFeedVM; // @synthesize livePurchasedFeedVM=_livePurchasedFeedVM;
 @property(nonatomic) unsigned long long livePaidMicCount; // @synthesize livePaidMicCount=_livePaidMicCount;

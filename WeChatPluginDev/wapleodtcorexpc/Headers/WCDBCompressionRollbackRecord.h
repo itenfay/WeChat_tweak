@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_rollbackTags;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *rollbackTags; // @synthesize rollbackTags=_rollbackTags;
 - (id)getPBPropertyTable;
 - (id)init;

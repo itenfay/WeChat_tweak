@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderSearchSuggestionCGI
@@ -14,7 +16,6 @@
     NSData *_sessionBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSData *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
@@ -27,4 +28,3 @@
 - (id)initWithSessionBuffer:(id)arg1 query:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failBlock:(CDUnknownBlockType)arg4;
 
 @end
-

@@ -12,7 +12,6 @@
     NSMutableSet *_commentScenes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *commentScenes; // @synthesize commentScenes=_commentScenes;
 
 @end

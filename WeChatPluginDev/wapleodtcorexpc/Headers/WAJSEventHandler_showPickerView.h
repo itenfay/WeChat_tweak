@@ -13,7 +13,6 @@
     double _pickerTime;
 }
 
-- (void).cxx_destruct;
 - (void)onConfirm:(id)arg1 values:(id)arg2;
 - (void)onCancel;
 - (void)handleJSEvent:(id)arg1;

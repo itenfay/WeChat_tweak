@@ -17,7 +17,6 @@
 
 + (id)cellID;
 + (double)cellHeightWithConfig:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLivePersonalCenterPaymentInfoCollectionCellConfig *cellConfig; // @synthesize cellConfig=_cellConfig;
 @property(retain, nonatomic) WCTableViewManager *tableViewManager; // @synthesize tableViewManager=_tableViewManager;
 @property(nonatomic) __weak id <WCFinderLivePersonalCenterPaymentInfoCollectionCellActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;

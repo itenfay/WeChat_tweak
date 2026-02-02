@@ -16,7 +16,6 @@
     UIColor *_iconColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *iconColor; // @synthesize iconColor=_iconColor;
 @property(nonatomic) double iconWid; // @synthesize iconWid=_iconWid;
 @property(retain, nonatomic) UIImageView *melodyIconView; // @synthesize melodyIconView=_melodyIconView;

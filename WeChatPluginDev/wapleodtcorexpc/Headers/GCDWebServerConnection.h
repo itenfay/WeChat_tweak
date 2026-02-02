@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GCDWebServer, GCDWebServerHandler, GCDWebServerRequest, GCDWebServerResponse, NSData, NSString;
 
@@ -26,7 +27,6 @@
 }
 
 + (void)initialize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long totalBytesWritten; // @synthesize totalBytesWritten=_bytesWritten;
 @property(readonly, nonatomic) unsigned long long totalBytesRead; // @synthesize totalBytesRead=_bytesRead;
 @property(readonly, nonatomic) NSData *remoteAddressData; // @synthesize remoteAddressData=_remoteAddress;
@@ -61,4 +61,3 @@
 - (_Bool)open;
 
 @end
-

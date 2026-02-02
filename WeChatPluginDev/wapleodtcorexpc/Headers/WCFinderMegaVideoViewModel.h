@@ -16,7 +16,6 @@
     NSMutableDictionary *_playerCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *playerCache; // @synthesize playerCache=_playerCache;
 @property(retain, nonatomic) NSMutableDictionary *bulletCache; // @synthesize bulletCache=_bulletCache;
 @property(retain, nonatomic) ForwardMessageLogicController *shareLogic; // @synthesize shareLogic=_shareLogic;

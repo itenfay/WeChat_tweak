@@ -18,7 +18,6 @@
 }
 
 + (_Bool)isFinderLiveStrongNotification:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) StrongNotificationItemAndMessagePB *lastFinderMsg; // @synthesize lastFinderMsg=_lastFinderMsg;
 @property(nonatomic) _Bool meetTheRequirementsOfStayTime; // @synthesize meetTheRequirementsOfStayTime=_meetTheRequirementsOfStayTime;
 - (_Bool)canShowFinderLocalPushImmediately;

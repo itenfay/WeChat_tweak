@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLivePIPPerformanceReportObj, MMFinderLivePIPRenderSpaceObject, MMFinderLivePictureInPictureReporter, MMFinderLiveTask, MMFinderLiveTaskId, MMFinderLiveViewController, NSMutableArray, NSMutableDictionary, NSObject, NSString, WCLoopMetricsCollector, WCPIPTextStateDescription;
 @protocol OS_dispatch_semaphore;
 
@@ -59,7 +61,6 @@
 
 + (struct CGRect)getDisplayRectWithNormalizedFrame:(struct CGRect)arg1 renderSize:(struct CGSize)arg2;
 + (id)getFillImageForVideoFrame:(id)arg1 renderSize:(struct CGSize)arg2;
-- (void).cxx_destruct;
 @property unsigned long long lastRefreshSourceTime; // @synthesize lastRefreshSourceTime=_lastRefreshSourceTime;
 @property int unvalidSourceCnt; // @synthesize unvalidSourceCnt=_unvalidSourceCnt;
 @property unsigned long long sourceUpdateLogCnt; // @synthesize sourceUpdateLogCnt=_sourceUpdateLogCnt;
@@ -334,4 +335,3 @@
 @property(readonly) Class superclass;
 
 @end
-

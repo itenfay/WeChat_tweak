@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageForwardAndEditLogicController, FavFullScreenImageButtonsContainerView, MMFullScreenItemView, MMImageActionSheet, MMScrollActionSheet, MMScrollView, NSMutableArray, NSMutableSet, NSString, ScanQRCodeLogicController, ScanQRCodeLogicParams, SimpleImgInfo, UIView, WCActionSheetWithScanWXCode;
 @protocol FavFullScreenImageViewControllerDelegate;
 
@@ -45,7 +47,6 @@
 + (id)animationShowWithRecordData:(id)arg1 originView:(id)arg2 index:(unsigned int)arg3 needEdit:(_Bool)arg4 canEdit:(_Bool)arg5 delegate:(id)arg6;
 + (id)animationShowWithRecordData:(id)arg1 originView:(id)arg2 index:(unsigned int)arg3 needEdit:(_Bool)arg4 canEdit:(_Bool)arg5;
 + (id)animationShowWithRecordData:(id)arg1 originView:(id)arg2 index:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *markTranslateSet; // @synthesize markTranslateSet=_markTranslateSet;
 @property(retain, nonatomic) MMScrollActionSheet *scrollActionSheet; // @synthesize scrollActionSheet=_scrollActionSheet;
 @property(retain, nonatomic) MMImageActionSheet *imageActionSheet; // @synthesize imageActionSheet=_imageActionSheet;
@@ -146,4 +147,3 @@
 @property(readonly) Class superclass;
 
 @end
-

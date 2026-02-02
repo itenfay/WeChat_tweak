@@ -18,7 +18,6 @@
     NSString *_profileID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *profileID; // @synthesize profileID=_profileID;
 @property(nonatomic) unsigned long long pictureMode; // @synthesize pictureMode=_pictureMode;
 - (void)_updateImageWithData:(id)arg1 state:(id)arg2;

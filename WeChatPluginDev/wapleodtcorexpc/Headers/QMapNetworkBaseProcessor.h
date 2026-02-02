@@ -12,7 +12,6 @@
     NSMutableDictionary *_rules;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *rules; // @synthesize rules=_rules;
 - (void)onResponse:(id)arg1 error:(id)arg2 request:(id)arg3 data:(id)arg4;
 - (void)onRequest:(id)arg1;

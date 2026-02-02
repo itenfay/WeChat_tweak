@@ -14,7 +14,6 @@
     NSString *_url;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int itemShowTypeFrom; // @synthesize itemShowTypeFrom=_itemShowTypeFrom;
 @property(nonatomic) unsigned int itemShowType; // @synthesize itemShowType=_itemShowType;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

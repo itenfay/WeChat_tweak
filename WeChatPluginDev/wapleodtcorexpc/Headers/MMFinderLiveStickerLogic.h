@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveStickerItemBase, MMFinderLiveStickerTextTemplateResourceRepository, MMFinderLiveTaskId, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 
@@ -22,7 +23,6 @@
     unsigned long long _preemptions;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool stickerEditing; // @synthesize stickerEditing=_stickerEditing;
 @property(nonatomic) unsigned long long preemptions; // @synthesize preemptions=_preemptions;
 @property(retain, nonatomic) MMFinderLiveStickerTextTemplateResourceRepository *textTemplateResources; // @synthesize textTemplateResources=_textTemplateResources;
@@ -88,4 +88,3 @@
 @property(readonly) Class superclass;
 
 @end
-

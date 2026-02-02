@@ -13,7 +13,6 @@
     NSString *_finderNickName;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *finderNickName; // @synthesize finderNickName=_finderNickName;
 @property(readonly, copy, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
 - (id)initWithEventName:(id)arg1 finderNickName:(id)arg2;

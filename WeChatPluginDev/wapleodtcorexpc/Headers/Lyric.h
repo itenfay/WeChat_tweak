@@ -22,7 +22,6 @@
     long long _hasSegment;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long hasSegment; // @synthesize hasSegment=_hasSegment;
 @property(nonatomic) long long offset; // @synthesize offset=_offset;
 @property(retain, nonatomic) NSString *by; // @synthesize by=_by;

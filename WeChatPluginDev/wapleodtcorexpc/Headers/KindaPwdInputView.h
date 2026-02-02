@@ -21,7 +21,6 @@
     NSString *_solfEncryptSalt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int solfEncryptVersion; // @synthesize solfEncryptVersion=_solfEncryptVersion;
 @property(retain, nonatomic) NSString *solfEncryptSalt; // @synthesize solfEncryptSalt=_solfEncryptSalt;
 @property(nonatomic) long long pwdTimestamp; // @synthesize pwdTimestamp=_pwdTimestamp;

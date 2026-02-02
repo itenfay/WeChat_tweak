@@ -13,7 +13,6 @@
     NSIndexPath *_lockedCurrentIndexPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *lockedCurrentIndexPath; // @synthesize lockedCurrentIndexPath=_lockedCurrentIndexPath;
 @property(retain, nonatomic) NSArray *layoutAttrbutes; // @synthesize layoutAttrbutes=_layoutAttrbutes;
 - (void)updateLayoutAttributes:(id)arg1;

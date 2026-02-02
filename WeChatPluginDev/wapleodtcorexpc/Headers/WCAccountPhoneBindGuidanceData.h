@@ -21,7 +21,6 @@
     NSString *_guidanceHelp_jumpUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *guidanceHelp_jumpUrl; // @synthesize guidanceHelp_jumpUrl=_guidanceHelp_jumpUrl;
 @property(retain, nonatomic) NSString *guidanceHelp_tips; // @synthesize guidanceHelp_tips=_guidanceHelp_tips;
 @property(retain, nonatomic) NSString *doubleCheckCancelText; // @synthesize doubleCheckCancelText=_doubleCheckCancelText;

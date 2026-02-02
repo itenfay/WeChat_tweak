@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIImageView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAAnimationGroup, NSString;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _completionHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) CAAnimationGroup *greenDotGroupAnimation; // @synthesize greenDotGroupAnimation=_greenDotGroupAnimation;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

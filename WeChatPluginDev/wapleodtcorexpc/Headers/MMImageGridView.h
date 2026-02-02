@@ -17,7 +17,6 @@
 }
 
 + (double)getLayoutHeightForViews:(long long)arg1 columms:(long long)arg2 unitHeight:(double)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_arrOfViews; // @synthesize m_arrOfViews;
 @property(nonatomic) long long m_columnCount; // @synthesize m_columnCount;
 @property(nonatomic) double m_stepY; // @synthesize m_stepY;

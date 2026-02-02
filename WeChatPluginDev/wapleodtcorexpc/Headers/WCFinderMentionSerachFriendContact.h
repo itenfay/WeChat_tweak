@@ -14,7 +14,6 @@
     NSString *_highlightDesc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *highlightDesc; // @synthesize highlightDesc=_highlightDesc;
 @property(retain, nonatomic) NSString *matchDesc; // @synthesize matchDesc=_matchDesc;
 @property(retain, nonatomic) WCFinderContact *finderContact; // @synthesize finderContact=_finderContact;

@@ -33,7 +33,6 @@
     NSSet *_ignoreSpecTypes;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *ignoreSpecTypes; // @synthesize ignoreSpecTypes=_ignoreSpecTypes;
 @property(nonatomic) __weak id <FTSTopHitDelegate> delegateForKFContactSearch; // @synthesize delegateForKFContactSearch=_delegateForKFContactSearch;
 @property(nonatomic) __weak id <FTSTopHitDelegate> delegateForFinderSearch; // @synthesize delegateForFinderSearch=_delegateForFinderSearch;

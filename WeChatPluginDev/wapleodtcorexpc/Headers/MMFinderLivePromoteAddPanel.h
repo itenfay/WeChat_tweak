@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, UIButton, UIView;
 
 @interface MMFinderLivePromoteAddPanel
@@ -15,7 +17,6 @@
     long long _previousOrientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long previousOrientation; // @synthesize previousOrientation=_previousOrientation;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) MMUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
@@ -34,4 +35,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

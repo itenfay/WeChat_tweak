@@ -18,7 +18,6 @@
     FinderLocation *_locationInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLocation *locationInfo; // @synthesize locationInfo=_locationInfo;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(nonatomic) int showPosition; // @synthesize showPosition=_showPosition;

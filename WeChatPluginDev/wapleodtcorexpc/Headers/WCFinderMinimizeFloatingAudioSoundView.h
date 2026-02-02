@@ -15,7 +15,6 @@
     UIView *_indicatorViewC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStub; // @synthesize isStub=_isStub;
 @property(retain, nonatomic) UIView *indicatorViewC; // @synthesize indicatorViewC=_indicatorViewC;
 @property(retain, nonatomic) UIView *indicatorViewB; // @synthesize indicatorViewB=_indicatorViewB;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageIntialView, NSString, UIImage;
 @protocol MMImageCropperDelegate;
 
@@ -15,7 +17,6 @@
     struct CGSize _rectRatioSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long cropperViewStyle; // @synthesize cropperViewStyle=_cropperViewStyle;
 @property(retain, nonatomic) UIImage *originalImage; // @synthesize originalImage=_originalImage;
 @property(nonatomic) struct CGSize rectRatioSize; // @synthesize rectRatioSize=_rectRatioSize;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

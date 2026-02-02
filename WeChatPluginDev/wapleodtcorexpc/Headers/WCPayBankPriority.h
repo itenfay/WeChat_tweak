@@ -16,7 +16,6 @@
 + (_Bool)saveBankPriorityData:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_bankinfo_array;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *bankinfo_array; // @synthesize bankinfo_array=_bankinfo_array;
 - (id)getPBPropertyTable;
 

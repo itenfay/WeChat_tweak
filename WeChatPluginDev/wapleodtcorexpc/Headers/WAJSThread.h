@@ -13,7 +13,6 @@
     WAJSCoreService *_service;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WAJSCoreService *service; // @synthesize service=_service;
 @property(readonly, nonatomic) _Bool isDebuging; // @synthesize isDebuging=_isDebuging;
 - (void)resume;

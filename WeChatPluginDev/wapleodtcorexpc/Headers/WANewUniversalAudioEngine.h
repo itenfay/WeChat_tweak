@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAudioEngine, AVAudioMixerNode, NSMutableDictionary, NSString, WAUniversalAudioPlayerCachePool;
 @protocol OS_dispatch_queue;
@@ -22,7 +23,6 @@
     AVAudioMixerNode *_mixerNode;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAudioMixerNode *mixerNode; // @synthesize mixerNode=_mixerNode;
 @property _Bool _started; // @synthesize _started=__started;
 @property(nonatomic) _Bool isSessionInterrupted; // @synthesize isSessionInterrupted=_isSessionInterrupted;
@@ -78,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

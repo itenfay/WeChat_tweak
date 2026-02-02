@@ -17,7 +17,6 @@
 }
 
 + (_Bool)enabled;
-- (void).cxx_destruct;
 - (id)init;
 - (void)updateSearchIntentionDict;
 - (id)getSugPrefixSequence;

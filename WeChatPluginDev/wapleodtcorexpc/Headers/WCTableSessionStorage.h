@@ -25,7 +25,6 @@
 
 + (void)processVersionUpdate;
 + (id)dataBaseWithSessionType:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTDatabase *customDataBase; // @synthesize customDataBase=_customDataBase;
 @property(retain, nonatomic) NSString *sessionTableName; // @synthesize sessionTableName=_sessionTableName;
 @property(copy, nonatomic) NSString *identityID; // @synthesize identityID=_identityID;

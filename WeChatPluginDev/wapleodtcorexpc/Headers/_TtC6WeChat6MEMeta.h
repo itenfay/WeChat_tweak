@@ -18,7 +18,6 @@
     MISSING_TYPE *content;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)toDictionary;
 @property(nonatomic, copy) NSString *content;

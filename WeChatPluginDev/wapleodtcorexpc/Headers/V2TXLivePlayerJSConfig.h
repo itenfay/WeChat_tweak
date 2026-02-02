@@ -24,7 +24,6 @@
     long long _renderMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needVolumeNotify; // @synthesize needVolumeNotify=_needVolumeNotify;
 @property(nonatomic) _Bool enableMessage; // @synthesize enableMessage=_enableMessage;
 @property(nonatomic) float maxCache; // @synthesize maxCache=_maxCache;

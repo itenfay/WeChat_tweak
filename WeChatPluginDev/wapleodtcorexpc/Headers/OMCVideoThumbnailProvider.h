@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, OMCClipSegment, OMJID;
 @protocol OS_dispatch_queue;
@@ -22,7 +23,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize maxPixelSize; // @synthesize maxPixelSize=_maxPixelSize;
 - (void)reopen;
 @property(readonly, nonatomic) OMJID *segmentID;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

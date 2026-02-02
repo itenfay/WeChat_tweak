@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -39,4 +40,3 @@
 - (id)initWithSendEvent:(CDUnknownBlockType)arg1;
 
 @end
-

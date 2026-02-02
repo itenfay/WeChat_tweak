@@ -13,7 +13,6 @@
     UIImageView *_arrowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) MMUILabel *slideTitleLabel; // @synthesize slideTitleLabel=_slideTitleLabel;
 - (void)updateFooterWithTitle:(id)arg1;

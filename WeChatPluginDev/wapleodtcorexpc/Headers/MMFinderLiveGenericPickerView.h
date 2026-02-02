@@ -23,7 +23,6 @@
     long long _selectedRow;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long selectedRow; // @synthesize selectedRow=_selectedRow;
 @property(retain, nonatomic) MMFinderLiveGenericPickerViewConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) UIPickerView *pickerView; // @synthesize pickerView=_pickerView;

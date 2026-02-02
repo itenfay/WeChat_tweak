@@ -16,7 +16,6 @@
     NSString *_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAcceptUserPrivacyProtectInfo; // @synthesize isAcceptUserPrivacyProtectInfo=_isAcceptUserPrivacyProtectInfo;
 @property(nonatomic) unsigned int avatarOpt; // @synthesize avatarOpt=_avatarOpt;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;

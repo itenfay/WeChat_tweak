@@ -11,7 +11,6 @@
     NSMutableArray *m_openglesContextArray;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isApplicationStateActive; // @synthesize isApplicationStateActive=_isApplicationStateActive;
 @property(retain, nonatomic) NSMutableArray *m_openglesContextArray; // @synthesize m_openglesContextArray;
 - (void)dealloc;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, UIColor, UIView;
 
@@ -38,7 +39,6 @@
     double _edgeSlideCloseThreshold;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInPreviewMode; // @synthesize isInPreviewMode=_isInPreviewMode;
 @property(nonatomic) _Bool isPushFromWebPageSheet; // @synthesize isPushFromWebPageSheet=_isPushFromWebPageSheet;
 @property(nonatomic) double edgeSlideCloseThreshold; // @synthesize edgeSlideCloseThreshold=_edgeSlideCloseThreshold;
@@ -69,4 +69,3 @@
 - (id)init;
 
 @end
-

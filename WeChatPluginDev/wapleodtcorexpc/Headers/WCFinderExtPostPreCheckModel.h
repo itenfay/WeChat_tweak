@@ -14,7 +14,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *h5Link; // @synthesize h5Link=_h5Link;
 @property(copy, nonatomic) NSString *h5Wording; // @synthesize h5Wording=_h5Wording;
 

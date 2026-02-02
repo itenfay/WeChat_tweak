@@ -14,7 +14,6 @@
     NSString *_scope;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int userAction; // @synthesize userAction=_userAction;
 @property(nonatomic) unsigned int triggeredUserUserAgreementAlert; // @synthesize triggeredUserUserAgreementAlert=_triggeredUserUserAgreementAlert;
 @property(nonatomic) unsigned int isUserPrivacyUserAgreementChecked; // @synthesize isUserPrivacyUserAgreementChecked=_isUserPrivacyUserAgreementChecked;

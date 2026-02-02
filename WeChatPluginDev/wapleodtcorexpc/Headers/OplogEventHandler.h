@@ -10,7 +10,6 @@
     NSMutableArray *m_arrOplogs;
 }
 
-- (void).cxx_destruct;
 - (void)OnProtocolConnectFail:(id)arg1;
 - (void)OnProtocolResponse:(id)arg1 shouldContinue:(_Bool *)arg2;
 - (void)OnProtocolStart:(id)arg1 shouldContinue:(_Bool *)arg2;

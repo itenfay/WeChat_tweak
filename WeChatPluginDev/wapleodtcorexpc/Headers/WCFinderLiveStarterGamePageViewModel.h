@@ -17,7 +17,6 @@
     id <WCFinderLiveStarterGamePageViewModelDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderLiveStarterGamePageViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) _Bool isFetchingData; // @synthesize isFetchingData=_isFetchingData;

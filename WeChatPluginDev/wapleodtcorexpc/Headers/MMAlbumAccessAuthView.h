@@ -23,7 +23,6 @@
     MMUIButton *_wechatAuthButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showWechatAuthStyle; // @synthesize showWechatAuthStyle=_showWechatAuthStyle;
 @property(retain, nonatomic) MMUIButton *wechatAuthButton; // @synthesize wechatAuthButton=_wechatAuthButton;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;

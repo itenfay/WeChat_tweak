@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonStoreItem, EmoticonStoreReportInfo, NSString, UserOpInfo, WCDataItem;
 
 @interface MMEmoticonDetailPageContext
@@ -24,7 +26,6 @@
     NSString *_bypassMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bypassMsg; // @synthesize bypassMsg=_bypassMsg;
 @property(retain, nonatomic) NSString *sdkRequestID; // @synthesize sdkRequestID=_sdkRequestID;
 @property(retain, nonatomic) UserOpInfo *endOpInfo; // @synthesize endOpInfo=_endOpInfo;
@@ -45,4 +46,3 @@
 - (_Bool)isValid;
 
 @end
-

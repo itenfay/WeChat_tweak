@@ -10,7 +10,6 @@
     NSString *m_uuid;
 }
 
-- (void).cxx_destruct;
 - (id)bleInstance;
 - (void)dealloc;
 - (void)onBluetoothServicesDiscovered:(id)arg1 device:(id)arg2 errorCode:(int)arg3 errMsg:(id)arg4 appid:(id)arg5;

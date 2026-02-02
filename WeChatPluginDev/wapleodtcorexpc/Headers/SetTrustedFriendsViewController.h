@@ -15,7 +15,6 @@
     SetTrustedFriendTipsView *_m_tipsView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isDeleting; // @synthesize m_isDeleting=_m_isDeleting;
 @property(retain, nonatomic) SetTrustedFriendTipsView *m_tipsView; // @synthesize m_tipsView=_m_tipsView;
 @property(retain, nonatomic) WeToast *m_toastView; // @synthesize m_toastView=_m_toastView;

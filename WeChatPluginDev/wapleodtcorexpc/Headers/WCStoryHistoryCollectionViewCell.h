@@ -16,7 +16,6 @@
     MMUILabel *_countLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *countLabel; // @synthesize countLabel=_countLabel;
 @property(retain, nonatomic) WCStoryMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(retain, nonatomic) MMUIImageView *thumbImageView; // @synthesize thumbImageView=_thumbImageView;

@@ -17,7 +17,6 @@
     double _leftRightMargin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double leftRightMargin; // @synthesize leftRightMargin=_leftRightMargin;
 @property(nonatomic) double coverWidHeightRatio; // @synthesize coverWidHeightRatio=_coverWidHeightRatio;
 @property(nonatomic) _Bool forbidModeChange; // @synthesize forbidModeChange=_forbidModeChange;

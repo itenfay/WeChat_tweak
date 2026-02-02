@@ -13,7 +13,6 @@
     long long _m_A8KeyScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_A8KeyScene; // @synthesize m_A8KeyScene=_m_A8KeyScene;
 @property(nonatomic) __weak id <ScanQRCodeUrlPrefixHandlerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (BOOL)QRCodeType;

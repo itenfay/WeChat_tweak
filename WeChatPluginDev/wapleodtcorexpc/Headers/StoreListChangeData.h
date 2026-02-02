@@ -14,7 +14,6 @@
     NSArray *_cellSetList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int recentHotNum; // @synthesize recentHotNum=_recentHotNum;
 @property(nonatomic) unsigned int topHotNum; // @synthesize topHotNum=_topHotNum;
 @property(retain, nonatomic) NSArray *cellSetList; // @synthesize cellSetList=_cellSetList;

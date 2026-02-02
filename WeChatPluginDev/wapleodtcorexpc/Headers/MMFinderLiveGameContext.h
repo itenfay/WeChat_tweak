@@ -25,7 +25,6 @@
     MMFinderLiveGameUserInfo *_gameUserInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGameUserInfo *gameUserInfo; // @synthesize gameUserInfo=_gameUserInfo;
 @property(nonatomic) _Bool notPassOpenIdOnLaunchGame; // @synthesize notPassOpenIdOnLaunchGame=_notPassOpenIdOnLaunchGame;
 @property(nonatomic) unsigned int platformId; // @synthesize platformId=_platformId;

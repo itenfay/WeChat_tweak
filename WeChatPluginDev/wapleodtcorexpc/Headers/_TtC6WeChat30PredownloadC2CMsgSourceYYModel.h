@@ -14,7 +14,6 @@
     MISSING_TYPE *imgmsg_pd;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) _TtCC6WeChat30PredownloadC2CMsgSourceYYModel8ImageMsg *imgmsg_pd; // @synthesize imgmsg_pd;
 @property(nonatomic, retain) _TtCC6WeChat30PredownloadC2CMsgSourceYYModel8VideoMsg *videomsg_pd; // @synthesize videomsg_pd;

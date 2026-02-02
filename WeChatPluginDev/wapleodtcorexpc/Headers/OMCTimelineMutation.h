@@ -14,7 +14,6 @@
     NSArray *_changedMutationInfos;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *changedMutationInfos; // @synthesize changedMutationInfos=_changedMutationInfos;
 @property(readonly, nonatomic) NSArray *removedMutationInfos; // @synthesize removedMutationInfos=_removedMutationInfos;
 @property(readonly, nonatomic) NSArray *addedMutationInfos; // @synthesize addedMutationInfos=_addedMutationInfos;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveKtvSongScoreReportRequest_ScoreInfo, MMFinderLiveKTVSongInfo, MMFinderLiveKTVSongItem, NSArray, NSData, NSMutableArray, NSMutableDictionary, NSString;
 @protocol MMLiveUniqueTaskId;
@@ -33,7 +34,6 @@
 + (int)perfectScoreStandard;
 + (int)goodScoreStandard;
 + (id)transferAverScoreToLevel:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *musicNoteList; // @synthesize musicNoteList=_musicNoteList;
 @property(retain, nonatomic) NSMutableDictionary *resourceParseTaskDict; // @synthesize resourceParseTaskDict=_resourceParseTaskDict;
 @property(retain, nonatomic) NSMutableDictionary *resourceDict; // @synthesize resourceDict=_resourceDict;
@@ -95,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -10,7 +10,6 @@
     NSString *_parentID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *parentID; // @synthesize parentID=_parentID;
 
 @end

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, MMUIView, NSString, UIButton;
 
 @interface MMFinderLiveNewAnchorTaskRewardView
@@ -17,7 +19,6 @@
     MMUIView *_rightShapes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *rightShapes; // @synthesize rightShapes=_rightShapes;
 @property(retain, nonatomic) MMUIView *leftShapes; // @synthesize leftShapes=_leftShapes;
 @property(retain, nonatomic) UIButton *completeDetailButton; // @synthesize completeDetailButton=_completeDetailButton;
@@ -37,4 +38,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

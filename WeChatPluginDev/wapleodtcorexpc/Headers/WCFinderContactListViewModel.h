@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString;
 @protocol WCFinderContactListViewModelDelegate;
@@ -18,7 +19,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFetchingData; // @synthesize isFetchingData=_isFetchingData;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) _Bool hasMoreContact; // @synthesize hasMoreContact=_hasMoreContact;
@@ -46,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

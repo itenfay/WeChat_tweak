@@ -10,7 +10,6 @@
     NSMutableDictionary *_dBMgrCache;
 }
 
-- (void).cxx_destruct;
 - (void)clear;
 - (_Bool)createTable:(id)arg1 withFields:(id)arg2 withDBManager:(id)arg3;
 - (_Bool)checkTableExist:(id)arg1 withDB:(id)arg2;

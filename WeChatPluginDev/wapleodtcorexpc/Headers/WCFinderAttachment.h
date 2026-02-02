@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_jumpInfoAttachment;
 + (void)PBArrayAdd_videoAttachment;
 + (void)PBArrayAdd_type;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderJumpInfoAttachment *jumpInfoAttachment; // @synthesize jumpInfoAttachment=_jumpInfoAttachment;
 @property(retain, nonatomic) WCFinderVideoAttachment *videoAttachment; // @synthesize videoAttachment=_videoAttachment;
 @property(nonatomic) int type; // @synthesize type=_type;

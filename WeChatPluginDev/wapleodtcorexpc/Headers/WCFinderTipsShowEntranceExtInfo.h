@@ -37,7 +37,6 @@
 + (void)PBArrayAdd_displayTabType;
 + (void)PBArrayAdd_objectNonceId;
 + (void)PBArrayAdd_objectId;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reportExtInfo; // @synthesize reportExtInfo=_reportExtInfo;
 @property(nonatomic) long long snsFriendLikeCount; // @synthesize snsFriendLikeCount=_snsFriendLikeCount;
 @property(nonatomic) int feedObjectType; // @synthesize feedObjectType=_feedObjectType;

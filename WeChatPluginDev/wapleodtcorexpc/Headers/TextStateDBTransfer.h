@@ -23,7 +23,6 @@
 + (void)clearCacheForDebug;
 + (_Bool)useAffDBTransfer;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property unsigned int affStatusMessageTransferRetryNum; // @synthesize affStatusMessageTransferRetryNum=_affStatusMessageTransferRetryNum;
 @property unsigned int affStatusMainTransferRetryNum; // @synthesize affStatusMainTransferRetryNum=_affStatusMainTransferRetryNum;
 @property _Bool affMessageDBFusing; // @synthesize affMessageDBFusing=_affMessageDBFusing;

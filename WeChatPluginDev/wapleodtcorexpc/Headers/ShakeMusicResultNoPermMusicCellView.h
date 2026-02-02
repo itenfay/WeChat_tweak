@@ -24,7 +24,6 @@
 }
 
 + (double)getCellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicPlayerContoller *musicPlayerCtrl; // @synthesize musicPlayerCtrl=_musicPlayerCtrl;
 @property(retain, nonatomic) MMUIButton *playButton; // @synthesize playButton=_playButton;
 @property(retain, nonatomic) MMUILabel *singerName; // @synthesize singerName=_singerName;

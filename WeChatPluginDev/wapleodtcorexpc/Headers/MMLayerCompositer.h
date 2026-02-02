@@ -15,7 +15,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
 - (void)setBackgroundImage:(unsigned int)arg1;
 - (void)setBackgroundColorWithR:(float)arg1 G:(float)arg2 B:(float)arg3 A:(float)arg4;

@@ -13,7 +13,6 @@
     FinderLiveGameTeamInfo_FinderGameLiveWxaExtraJoinInfo *_wxaExtraJoinInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveGameTeamInfo_FinderGameLiveWxaExtraJoinInfo *wxaExtraJoinInfo; // @synthesize wxaExtraJoinInfo=_wxaExtraJoinInfo;
 @property(retain, nonatomic) FinderLiveGameTeamInfo_WeappJumpInfo *wxaJumpInfo; // @synthesize wxaJumpInfo=_wxaJumpInfo;
 

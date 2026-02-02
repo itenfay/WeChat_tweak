@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableString;
 
 @interface RTEContentStorage
@@ -11,7 +13,6 @@
     NSMutableArray *_attributes;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) NSMutableString *textContent; // @synthesize textContent=_textContent;
 - (_Bool)isAttribute:(id)arg1 extendableAtIndex:(unsigned long long)arg2 isPreNode:(_Bool)arg3;
@@ -36,4 +37,3 @@
 - (id)initWithText:(id)arg1 attributes:(id)arg2;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -15,7 +16,6 @@
     NSMutableArray *_requests;
 }
 
-- (void).cxx_destruct;
 - (id)uniPacketFromHttpResponseData:(id)arg1 withRequestHeaders:(id)arg2 withAESKey:(id)arg3;
 - (void)addPostDataWithZipAndEncryption:(id)arg1 withData:(id)arg2 forServant:(id)arg3 withAESKey:(id)arg4;
 - (id)decodeResponseData:(id)arg1;
@@ -25,4 +25,3 @@
 - (id)init;
 
 @end
-

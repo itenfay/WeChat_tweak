@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderDataItem, WCFinderLiveProductShareItem;
 
 @interface MMFinderLiveProductShareTask
@@ -20,7 +22,6 @@
 }
 
 + (id)task;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onGetData; // @synthesize onGetData=_onGetData;
 @property(nonatomic) _Bool ignoreClickShareCommodityReport; // @synthesize ignoreClickShareCommodityReport=_ignoreClickShareCommodityReport;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
@@ -35,4 +36,3 @@
 - (id)init;
 
 @end
-

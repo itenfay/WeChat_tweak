@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSString;
 @protocol AudioCodecProtocol, AudioPlayerDelegate;
@@ -19,7 +20,6 @@
     MMTimer *_meterTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *meterTimer; // @synthesize meterTimer=_meterTimer;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(retain, nonatomic) id <AudioCodecProtocol> codec; // @synthesize codec=_codec;
@@ -57,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

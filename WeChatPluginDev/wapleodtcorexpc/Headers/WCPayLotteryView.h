@@ -44,7 +44,6 @@
     struct CGRect _maskImageViewMaskBounds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int drawLotteryType; // @synthesize drawLotteryType=_drawLotteryType;
 @property(nonatomic) _Bool isMaskViewAnimating; // @synthesize isMaskViewAnimating=_isMaskViewAnimating;
 @property(retain, nonatomic) CAAnimationGroup *animationGroup; // @synthesize animationGroup=_animationGroup;

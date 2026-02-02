@@ -18,7 +18,6 @@
     unsigned long long videoPlaybackTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long videoPlaybackTime; // @synthesize videoPlaybackTime;
 @property(nonatomic) unsigned int scene; // @synthesize scene;
 @property(retain, nonatomic) NSMutableArray *arrPlayInfo; // @synthesize arrPlayInfo;

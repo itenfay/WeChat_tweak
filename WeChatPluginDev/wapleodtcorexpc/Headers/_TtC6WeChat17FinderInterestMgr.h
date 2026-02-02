@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE, WCFinderDataItem;
 
@@ -13,10 +14,8 @@
 }
 
 + (id)shared;
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) WCFinderDataItem *dataItem; // @synthesize dataItem;
 - (id)createFinderInterestBottom:(id)arg1 showClosure:(CDUnknownBlockType)arg2 dismissClosure:(CDUnknownBlockType)arg3;
 
 @end
-

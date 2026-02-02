@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class OMJCamSink, UIView;
 @protocol OMJCamSessionDelegate;
@@ -17,7 +18,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_85cde1ea backingRenderView; // @synthesize backingRenderView=_backingRenderView;
 @property(nonatomic) SharedPtr_8d35978a backingSession; // @synthesize backingSession=_backingSession;
 @property(nonatomic) __weak id <OMJCamSessionDelegate> delegate; // @synthesize delegate=_delegate;
@@ -80,4 +80,3 @@
 - (id)initWithBackingSession:(const void *)arg1;
 
 @end
-

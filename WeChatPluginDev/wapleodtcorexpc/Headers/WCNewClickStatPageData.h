@@ -13,7 +13,6 @@
 }
 
 + (id)pageData:(id)arg1 withAppearTimeStamp:(unsigned int)arg2 withDisappearTimeStamp:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int disappearTimeStamp; // @synthesize disappearTimeStamp;
 @property(nonatomic) unsigned int appearTimeStamp; // @synthesize appearTimeStamp;
 @property(retain, nonatomic) NSString *pageID; // @synthesize pageID;

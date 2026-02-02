@@ -17,7 +17,6 @@
     struct UIEdgeInsets _extendTouchEdges;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *barButton; // @synthesize barButton=_barButton;
 @property(nonatomic) struct UIEdgeInsets extendTouchEdges; // @synthesize extendTouchEdges=_extendTouchEdges;
 @property(retain, nonatomic) MMBadgeView *badgeView; // @synthesize badgeView=_badgeView;

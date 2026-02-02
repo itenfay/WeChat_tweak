@@ -13,7 +13,6 @@
     RealNameAuthInfo *_authInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RealNameAuthInfo *authInfo; // @synthesize authInfo=_authInfo;
 @property(retain, nonatomic) WecoinTaxCutEntranceInfo *taxCutInfo; // @synthesize taxCutInfo=_taxCutInfo;
 @property(nonatomic) long long incomeBalance; // @synthesize incomeBalance=_incomeBalance;

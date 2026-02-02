@@ -31,7 +31,6 @@
 + (id)animatedImageOfData:(id)arg1 tryUIImageWhenFailed:(_Bool)arg2;
 + (id)animatedImageOfData:(id)arg1;
 + (int)frameCountForImageData:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) int decodedLoopCnt; // @synthesize decodedLoopCnt=_decodedLoopCnt;
 @property(readonly, nonatomic) _Bool isSingleFrame; // @synthesize isSingleFrame=_isSingleFrame;

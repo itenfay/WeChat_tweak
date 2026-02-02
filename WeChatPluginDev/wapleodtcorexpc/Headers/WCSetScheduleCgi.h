@@ -12,7 +12,6 @@
     WCScheduleItem *_handleItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCScheduleItem *handleItem; // @synthesize handleItem=_handleItem;
 @property(nonatomic) __weak id <WCSetScheduleCgiDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;

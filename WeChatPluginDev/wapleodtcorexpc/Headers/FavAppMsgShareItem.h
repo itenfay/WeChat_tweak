@@ -26,7 +26,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double coverPicHeight; // @synthesize coverPicHeight=_coverPicHeight;
 @property(nonatomic) double coverPicWidth; // @synthesize coverPicWidth=_coverPicWidth;
 @property(nonatomic) long long picCount; // @synthesize picCount=_picCount;

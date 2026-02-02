@@ -17,7 +17,6 @@
 }
 
 + (id)NoticeItemWithIsShowNotice:(int)arg1 wording:(id)arg2 leftIcon:(id)arg3 jumpUrl:(id)arg4 noticeId:(id)arg5;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *noticeId; // @synthesize noticeId=_noticeId;
 @property(readonly, nonatomic) NSString *jumpUrl; // @synthesize jumpUrl=_jumpUrl;
 @property(readonly, nonatomic) NSString *leftIcon; // @synthesize leftIcon=_leftIcon;

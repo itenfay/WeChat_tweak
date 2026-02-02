@@ -13,7 +13,6 @@
     double _leftMargin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double leftMargin; // @synthesize leftMargin=_leftMargin;
 @property(retain, nonatomic) UIView *itemView; // @synthesize itemView=_itemView;
 

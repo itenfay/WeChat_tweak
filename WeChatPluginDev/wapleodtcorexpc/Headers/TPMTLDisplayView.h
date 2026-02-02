@@ -20,7 +20,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(retain) TPMTLDisplayConfig *displayCfg; // @synthesize displayCfg=_displayCfg;
 @property(retain, nonatomic) id <CAMetalDrawable> currentDrawable; // @synthesize currentDrawable=_currentDrawable;
 @property(retain) id <MTLDevice> mtlDeivce; // @synthesize mtlDeivce=_mtlDeivce;

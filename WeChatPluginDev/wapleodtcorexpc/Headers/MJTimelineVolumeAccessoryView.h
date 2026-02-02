@@ -14,7 +14,6 @@
     MJPublisherButton *_volumeButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJPublisherButton *volumeButton; // @synthesize volumeButton=_volumeButton;
 @property(nonatomic) __weak id <MJSegmentReusableViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didEndDisplaying;

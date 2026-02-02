@@ -14,7 +14,6 @@
     CdnRenderContextWrapper *_cdnContextWrapper;
 }
 
-- (void).cxx_destruct;
 @property(retain) CdnRenderContextWrapper *cdnContextWrapper; // @synthesize cdnContextWrapper=_cdnContextWrapper;
 @property(retain) VisEffectRenderContextWrapper *visContextWrapper; // @synthesize visContextWrapper=_visContextWrapper;
 @property long long renderType; // @synthesize renderType=_renderType;

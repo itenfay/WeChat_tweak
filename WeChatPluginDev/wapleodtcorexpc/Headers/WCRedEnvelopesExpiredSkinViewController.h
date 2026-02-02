@@ -19,7 +19,6 @@
     WCRedEnvelopesAtmospherePagView *_atmospherePagView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCRedEnvelopesAtmospherePagView *atmospherePagView; // @synthesize atmospherePagView=_atmospherePagView;
 @property(nonatomic) unsigned int cellHeight; // @synthesize cellHeight=_cellHeight;
 @property(retain, nonatomic) WCRedEnvelopesExpiredSkinViewControllerFooter *footerView; // @synthesize footerView=_footerView;

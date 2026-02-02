@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CMessageWrap, FavDataItemWrap, FavoritesItem, FavoritesItemDataField, MMScrollActionSheet, MiniRecTransitionController, NSMutableArray, NSString, RTEAttachmentViewProvider, UIImage, WCDataItem, WNContentStorage, WNSaveImageLogic, WeNoteAffDelegateLogic, WeNoteFlutterInstance, WeNoteReportLogic;
 
 @interface WeNoteFlutterViewController
@@ -48,7 +50,6 @@
     FavoritesItemDataField *_scrollToData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShowLocateToMsg; // @synthesize bShowLocateToMsg=_bShowLocateToMsg;
 @property(retain, nonatomic) FavoritesItemDataField *scrollToData; // @synthesize scrollToData=_scrollToData;
 @property(nonatomic) _Bool bPresentedByMiniTask; // @synthesize bPresentedByMiniTask=_bPresentedByMiniTask;
@@ -188,4 +189,3 @@
 @property(readonly) Class superclass;
 
 @end
-

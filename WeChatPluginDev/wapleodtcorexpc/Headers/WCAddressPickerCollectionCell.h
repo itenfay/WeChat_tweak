@@ -19,7 +19,6 @@
     NSMutableArray *_stageData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *stageData; // @synthesize stageData=_stageData;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void)scrollViewDidScroll:(id)arg1;

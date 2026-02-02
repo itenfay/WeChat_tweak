@@ -29,7 +29,6 @@
     UIImage *_defaultCover;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *defaultCover; // @synthesize defaultCover=_defaultCover;
 @property(retain, nonatomic) NSString *thumbURL; // @synthesize thumbURL=_thumbURL;
 @property(retain, nonatomic) NSString *creativeURL; // @synthesize creativeURL=_creativeURL;

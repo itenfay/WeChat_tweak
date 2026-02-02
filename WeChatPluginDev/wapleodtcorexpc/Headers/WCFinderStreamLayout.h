@@ -25,7 +25,6 @@
 }
 
 + (Class)invalidationContextClass;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *caches; // @synthesize caches=_caches;
 @property(nonatomic) struct CGSize minSize; // @synthesize minSize=_minSize;
 @property(retain, nonatomic) NSValue *contentInsetValue; // @synthesize contentInsetValue=_contentInsetValue;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, MMUILabel, UIButton, UIView;
 
 @interface MMFinderLivePIPSettingGuidePanel
@@ -16,7 +18,6 @@
     UIButton *_jumpButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *jumpButton; // @synthesize jumpButton=_jumpButton;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;
@@ -42,4 +43,3 @@
 - (id)initWithTaskId:(id)arg1 frame:(struct CGRect)arg2;
 
 @end
-

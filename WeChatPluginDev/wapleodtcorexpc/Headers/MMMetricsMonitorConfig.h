@@ -34,7 +34,6 @@
 + (void)PBArrayAdd_gpuMonitorConfig;
 + (void)PBArrayAdd_cpuTimeProfilerConfig;
 + (void)PBArrayAdd_enabled;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMAudioMonitorConfig *audioMonitorConfig; // @synthesize audioMonitorConfig=_audioMonitorConfig;
 @property(retain, nonatomic) MMNetworkMonitorConfig *networkMonitorConfig; // @synthesize networkMonitorConfig=_networkMonitorConfig;
 @property(retain, nonatomic) MMLocationMonitorConfig *locationMonitorConfig; // @synthesize locationMonitorConfig=_locationMonitorConfig;

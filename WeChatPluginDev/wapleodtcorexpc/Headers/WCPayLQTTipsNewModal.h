@@ -22,7 +22,6 @@
     UIView *_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFof; // @synthesize isFof=_isFof;
 @property(nonatomic) _Bool isShowing; // @synthesize isShowing=_isShowing;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;

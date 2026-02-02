@@ -24,7 +24,6 @@
 
 + (_Bool)areTasksAndBonusesInModel:(id)arg1 equalTo:(id)arg2;
 + (id)modelFromBackendPkPlayerInfo:(id)arg1 liveTaskId:(id)arg2 serverUnixEpochTimeInSeconds:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long bonusPkCredit; // @synthesize bonusPkCredit=_bonusPkCredit;
 @property(nonatomic) _Bool tasksAccomplished; // @synthesize tasksAccomplished=_tasksAccomplished;
 @property(nonatomic) double creditMultiplier; // @synthesize creditMultiplier=_creditMultiplier;

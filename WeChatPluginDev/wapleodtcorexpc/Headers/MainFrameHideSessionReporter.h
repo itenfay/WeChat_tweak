@@ -15,7 +15,6 @@
     NSMutableSet *_visibleSessionSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *visibleSessionSet; // @synthesize visibleSessionSet=_visibleSessionSet;
 @property(nonatomic) long long exitHiddenStatus; // @synthesize exitHiddenStatus=_exitHiddenStatus;
 @property(nonatomic) long long enterChatType; // @synthesize enterChatType=_enterChatType;

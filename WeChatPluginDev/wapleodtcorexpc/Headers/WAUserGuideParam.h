@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -19,7 +20,6 @@
     CDUnknownBlockType _gotoAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType gotoAction; // @synthesize gotoAction=_gotoAction;
 @property(retain, nonatomic) NSString *gotoText; // @synthesize gotoText=_gotoText;
 @property(copy, nonatomic) CDUnknownBlockType confirmAction; // @synthesize confirmAction=_confirmAction;
@@ -30,4 +30,3 @@
 @property(nonatomic) unsigned int dialogType; // @synthesize dialogType=_dialogType;
 
 @end
-

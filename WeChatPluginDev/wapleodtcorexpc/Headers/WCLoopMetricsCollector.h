@@ -18,7 +18,6 @@
     double _durationPerCollectionCycle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double durationPerCollectionCycle; // @synthesize durationPerCollectionCycle=_durationPerCollectionCycle;
 @property(nonatomic) __weak id <WCLoopMetricsCollectorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didFinishCollectingMetrics:(id)arg1;

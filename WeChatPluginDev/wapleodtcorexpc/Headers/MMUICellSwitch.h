@@ -12,7 +12,6 @@
     UIView *_superContainerView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *superContainerView; // @synthesize superContainerView=_superContainerView;
 - (void)layoutSubviews;
 - (struct CGPoint)accessibilityActivationPoint;

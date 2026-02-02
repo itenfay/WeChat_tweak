@@ -14,7 +14,6 @@
     WCCoinConsumePanelDetailView *_panelDetailView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCoinConsumePanelDetailView *panelDetailView; // @synthesize panelDetailView=_panelDetailView;
 @property(nonatomic) long long wecoinBalance; // @synthesize wecoinBalance=_wecoinBalance;
 @property(retain, nonatomic) WCCoinConsumeParameter *parameter; // @synthesize parameter=_parameter;

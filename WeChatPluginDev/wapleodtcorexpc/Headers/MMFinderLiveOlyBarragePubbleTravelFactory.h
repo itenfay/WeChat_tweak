@@ -20,7 +20,6 @@
 + (id)getBarrageTravel;
 + (unsigned long long)getBarragePubbleTravelCountForLayoutStyle:(long long)arg1;
 + (id)createBarragePubbleTravelListForLayoutStyle:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveOlyBarrageTravel *barrageTravel; // @synthesize barrageTravel=_barrageTravel;
 @property(retain, nonatomic) NSMutableArray *barragePubbleTravelRouteList; // @synthesize barragePubbleTravelRouteList=_barragePubbleTravelRouteList;
 - (id)convertToBarrageTrailStageListFromInitialList:(id)arg1;

@@ -15,7 +15,6 @@
     id <WCPayGetZeroPayTokenCgiDelegate> _m_cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayGetZeroPayTokenCgiDelegate> m_cgiDelegate; // @synthesize m_cgiDelegate=_m_cgiDelegate;
 @property(copy, nonatomic) NSString *fingerdata; // @synthesize fingerdata=_fingerdata;
 @property(nonatomic) unsigned int use_touch; // @synthesize use_touch=_use_touch;

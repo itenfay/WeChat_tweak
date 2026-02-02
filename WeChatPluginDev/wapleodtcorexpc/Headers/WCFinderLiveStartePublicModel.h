@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, FinderJumpInfo, FinderLiveErrorPage, FinderLiveGuideInfo, FinderLiveNoticeInfo, FinderLivePromptInfo, FinderLiveStreamDecor, FinderLiveTagInfo, MMFinderLiveAudioModeBackgroundUploadModel, MMFinderLiveCreateLotteryViewModel, MMFinderLiveTask, MMLiveTaskId, NSArray, NSData, NSMutableArray, NSString, UIImage, UIViewController, WCFinderDataItem, WCFinderLiveShareItem, WCFinderLiveStarterSwitchModeItem, WCLocationInfo;
 
@@ -60,7 +61,6 @@
     unsigned long long _initialSelectAudioSubType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long initialSelectAudioSubType; // @synthesize initialSelectAudioSubType=_initialSelectAudioSubType;
 @property(nonatomic) __weak UIViewController *currentStarterVC; // @synthesize currentStarterVC=_currentStarterVC;
 @property(retain, nonatomic) NSMutableArray *lotteryArray; // @synthesize lotteryArray=_lotteryArray;
@@ -113,4 +113,3 @@
 @property(readonly, nonatomic) MMFinderLiveTask *currentLiveTask;
 
 @end
-

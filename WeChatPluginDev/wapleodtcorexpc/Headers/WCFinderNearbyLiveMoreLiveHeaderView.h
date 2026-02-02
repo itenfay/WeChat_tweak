@@ -16,7 +16,6 @@
 }
 
 + (double)cellHeightWithOtherTopMargin:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMWebImageView *iconImage; // @synthesize iconImage=_iconImage;
 @property(retain, nonatomic) UIView *verticalLineView; // @synthesize verticalLineView=_verticalLineView;

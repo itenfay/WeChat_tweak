@@ -13,7 +13,6 @@
     NSAttributedString *_descriptionText;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool containsIcon; // @synthesize containsIcon=_containsIcon;
 @property(retain, nonatomic) NSAttributedString *descriptionText; // @synthesize descriptionText=_descriptionText;
 

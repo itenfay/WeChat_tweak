@@ -18,7 +18,6 @@
 
 + (void)fillToSearchReq:(id)arg1 fromContext:(id)arg2;
 + (void)fillToCContact:(id)arg1 from:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ContactSearchLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *openIMContactUrl; // @synthesize openIMContactUrl=_openIMContactUrl;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

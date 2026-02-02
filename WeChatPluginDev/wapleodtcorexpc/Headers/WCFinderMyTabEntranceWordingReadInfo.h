@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_profimeReadTimeMap;
 + (void)PBArrayAdd_readTimeMap;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *profimeReadTimeMap; // @synthesize profimeReadTimeMap=_profimeReadTimeMap;
 @property(retain, nonatomic) NSMutableDictionary *readTimeMap; // @synthesize readTimeMap=_readTimeMap;
 - (id)init;

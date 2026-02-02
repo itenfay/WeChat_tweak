@@ -49,7 +49,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int receiveTime; // @synthesize receiveTime=_receiveTime;
 @property(copy, nonatomic) NSString *dataJson; // @synthesize dataJson=_dataJson;
 @property(nonatomic) unsigned int msgType; // @synthesize msgType=_msgType;

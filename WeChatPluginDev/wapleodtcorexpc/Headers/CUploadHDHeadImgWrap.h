@@ -25,7 +25,6 @@
     _Bool _isUseCdnUpload;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUseCdnUpload; // @synthesize isUseCdnUpload=_isUseCdnUpload;
 @property(retain, nonatomic) NSString *HDUrl; // @synthesize HDUrl=m_nsHDUrl;
 @property(retain, nonatomic) NSString *smallUrl; // @synthesize smallUrl=m_nsSmallUrl;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSString, UIButton, UIView, WCFinderFeedListView, WCFinderFeedPickerParams;
 @protocol WCFinderFeedPickerPreviewListViewControllerDelegate, WCFinderFeedPickerPreviewListViewModelProtocol;
 
@@ -20,7 +22,6 @@
     UIButton *_moreFeedTipsBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *moreFeedTipsBtn; // @synthesize moreFeedTipsBtn=_moreFeedTipsBtn;
 @property(retain, nonatomic) UIView *line; // @synthesize line=_line;
 @property(retain, nonatomic) MMUIButton *doneBtn; // @synthesize doneBtn=_doneBtn;
@@ -76,4 +77,3 @@
 @property(readonly) Class superclass;
 
 @end
-

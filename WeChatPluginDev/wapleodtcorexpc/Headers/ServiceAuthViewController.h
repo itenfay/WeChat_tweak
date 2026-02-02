@@ -15,7 +15,6 @@
     ServiceAuthConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ServiceAuthConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) ServiceAuthExtBlockWrapper *notifyBlockWrapper; // @synthesize notifyBlockWrapper=_notifyBlockWrapper;
 @property(nonatomic) __weak id <ServiceAuthExt> notifyDelegate; // @synthesize notifyDelegate=_notifyDelegate;

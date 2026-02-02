@@ -12,7 +12,6 @@
     UIImageView *m_thumbImageView;
 }
 
-- (void).cxx_destruct;
 - (void)OnMsgDownloadThumbOK:(id)arg1 MsgWrap:(id)arg2;
 - (void)onTouchUpInside;
 - (id)defaultThumbImage;

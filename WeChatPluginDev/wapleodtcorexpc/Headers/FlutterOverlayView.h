@@ -12,7 +12,6 @@
 
 + (Class)layerClass;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)initWithContentsScale:(double)arg1 pixelFormat:(unsigned long long)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

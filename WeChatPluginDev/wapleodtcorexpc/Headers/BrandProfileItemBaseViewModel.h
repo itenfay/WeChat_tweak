@@ -24,7 +24,6 @@
 
 + (id)createViewModelWithGroupMsg:(id)arg1;
 + (id)createViewModelWithItemMsg:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(nonatomic) _Bool isPaySubcribeOpen; // @synthesize isPaySubcribeOpen=_isPaySubcribeOpen;
 @property(copy, nonatomic) NSString *pageIdentifier; // @synthesize pageIdentifier=_pageIdentifier;

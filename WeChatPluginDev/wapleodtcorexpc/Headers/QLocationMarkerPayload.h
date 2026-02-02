@@ -15,7 +15,6 @@
     QLocationRedlinePayload *_redline;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QLocationRedlinePayload *redline; // @synthesize redline=_redline;
 @property(retain, nonatomic) QLocationCompassPayload *compass; // @synthesize compass=_compass;
 @property(retain, nonatomic) UIColor *circleFillColor; // @synthesize circleFillColor=_circleFillColor;

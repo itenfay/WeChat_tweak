@@ -37,7 +37,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int readTimestamp; // @synthesize readTimestamp=_readTimestamp;
 @property(nonatomic) unsigned int postTime; // @synthesize postTime=_postTime;
 @property(retain, nonatomic) NSString *readTid; // @synthesize readTid=_readTid;

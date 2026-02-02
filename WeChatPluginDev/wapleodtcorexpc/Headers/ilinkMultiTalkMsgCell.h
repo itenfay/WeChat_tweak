@@ -14,7 +14,6 @@
     UIView *_lineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) ilinkConfSDKMember *member; // @synthesize member=_member;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;

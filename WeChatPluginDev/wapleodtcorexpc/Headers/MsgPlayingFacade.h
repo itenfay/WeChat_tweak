@@ -18,7 +18,6 @@
 + (_Bool)newFeatureOn;
 + (void)tryReportEnterSession:(id)arg1 info:(struct MsgPlayingReportInfo)arg2;
 + (void)reportMsg:(id)arg1 info:(struct MsgPlayingReportInfo)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *currentInterruptMsg; // @synthesize currentInterruptMsg=_currentInterruptMsg;
 @property(retain, nonatomic) CBaseContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) MinimizeNewTransitionController *transitionController; // @synthesize transitionController=_transitionController;

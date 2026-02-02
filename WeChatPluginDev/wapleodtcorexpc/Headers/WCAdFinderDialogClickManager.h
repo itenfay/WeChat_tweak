@@ -16,7 +16,6 @@
     WCAdvertiseInfo *_advertiseInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int directToAppReportScene; // @synthesize directToAppReportScene=_directToAppReportScene;
 @property(nonatomic) _Bool directToAppUserConfirm; // @synthesize directToAppUserConfirm=_directToAppUserConfirm;
 @property(retain, nonatomic) WCAdvertiseInfo *advertiseInfo; // @synthesize advertiseInfo=_advertiseInfo;

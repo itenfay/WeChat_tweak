@@ -16,7 +16,6 @@
 }
 
 + (double)heightForTitle:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperator; // @synthesize seperator=_seperator;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

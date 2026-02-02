@@ -24,7 +24,6 @@
 + (unsigned int)parseDistanceStr:(id)arg1;
 + (id)genFromCContact:(id)arg1;
 + (id)genFromLBSContactInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int hasFinderFlag; // @synthesize hasFinderFlag=_hasFinderFlag;
 @property(nonatomic) unsigned int nickNameHasEmoji; // @synthesize nickNameHasEmoji=_nickNameHasEmoji;
 @property(nonatomic) unsigned int hasSignature; // @synthesize hasSignature=_hasSignature;

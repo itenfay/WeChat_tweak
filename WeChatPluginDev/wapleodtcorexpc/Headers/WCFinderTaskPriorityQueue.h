@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock, NSString;
 
@@ -15,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)createFinderTaskPQTask:(CDUnknownBlockType)arg1 priority:(unsigned long long)arg2 time:(double)arg3 asyncEnd:(_Bool)arg4;
 - (void)ignoreNonEssentialTasks:(_Bool)arg1;
 - (void)clearTasks;
@@ -41,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

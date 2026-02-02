@@ -11,7 +11,6 @@
     WCCanvasComponentReportUrlInfo *_imgUrlInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasComponentReportUrlInfo *imgUrlInfo; // @synthesize imgUrlInfo=_imgUrlInfo;
 @property(nonatomic) unsigned int swipeCount; // @synthesize swipeCount=_swipeCount;
 - (id)dictionaryRepresentation;

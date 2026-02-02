@@ -14,7 +14,6 @@
     NSMutableSet *_timerKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *timerKey; // @synthesize timerKey=_timerKey;
 @property(retain, nonatomic) NSMutableDictionary *controlData; // @synthesize controlData=_controlData;
 @property(retain, nonatomic) NSMutableDictionary *configMap; // @synthesize configMap=_configMap;

@@ -17,7 +17,6 @@
     MMWebViewController *_webviewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool reCreateAfterUsed; // @synthesize reCreateAfterUsed=_reCreateAfterUsed;
 @property(retain, nonatomic) MMWebViewController *webviewController; // @synthesize webviewController=_webviewController;
 @property(nonatomic) _Bool isPreload; // @synthesize isPreload=_isPreload;

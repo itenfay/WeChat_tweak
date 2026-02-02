@@ -19,7 +19,6 @@
     MMFinderLiveRewardGiftItem *_giftItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRewardGiftItem *giftItem; // @synthesize giftItem=_giftItem;
 @property(nonatomic) _Bool isViewAppear; // @synthesize isViewAppear=_isViewAppear;
 @property(retain, nonatomic) MMLiveGiftMagicRewardHandler *magicRewardHandler; // @synthesize magicRewardHandler=_magicRewardHandler;

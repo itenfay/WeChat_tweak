@@ -3,13 +3,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface _ZZButtonChainModel
 {
     CDUnknownBlockType _titleFont_O;
 }
 
 + (Class)viewClass;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType titleFont_O; // @synthesize titleFont_O=_titleFont_O;
 @property(readonly, copy, nonatomic) CDUnknownBlockType imageEdgeInsets_O;
 @property(readonly, copy, nonatomic) CDUnknownBlockType imageEdgeInsets;
@@ -76,4 +77,3 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType pingFangRegular;
 
 @end
-

@@ -15,7 +15,6 @@
 }
 
 + (id)emptyImage;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect attachmentFrame; // @synthesize attachmentFrame=_attachmentFrame;
 @property(nonatomic) struct CGSize attachmentSize; // @synthesize attachmentSize=_attachmentSize;
 @property(retain, nonatomic) RTEAttributeNode *attribute; // @synthesize attribute=_attribute;

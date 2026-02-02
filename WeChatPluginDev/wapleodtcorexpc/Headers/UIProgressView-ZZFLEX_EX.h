@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIProgressView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ZZProgressViewChainModel;
 
@@ -11,4 +12,3 @@
 + (CDUnknownBlockType)zz_create;
 @property(readonly, copy, nonatomic) ZZProgressViewChainModel *zz_setup;
 @end
-

@@ -37,7 +37,6 @@
     long long _messageVerifyType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long messageVerifyType; // @synthesize messageVerifyType=_messageVerifyType;
 @property(retain, nonatomic) NSString *cre_type; // @synthesize cre_type=_cre_type;
 @property(retain, nonatomic) NSString *cre_tail; // @synthesize cre_tail=_cre_tail;

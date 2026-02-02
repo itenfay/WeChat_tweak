@@ -15,7 +15,6 @@
     unsigned long long _calcBlackFrameDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useAlgorithmCover; // @synthesize useAlgorithmCover=_useAlgorithmCover;
 @property(nonatomic) unsigned long long calcBlackFrameDuration; // @synthesize calcBlackFrameDuration=_calcBlackFrameDuration;
 @property(nonatomic) unsigned long long selectTimeStamp; // @synthesize selectTimeStamp=_selectTimeStamp;

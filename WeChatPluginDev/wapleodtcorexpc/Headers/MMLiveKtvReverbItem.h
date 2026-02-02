@@ -15,7 +15,6 @@
 }
 
 + (id)reverbItemWithResource:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *thumbnailUri; // @synthesize thumbnailUri=_thumbnailUri;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

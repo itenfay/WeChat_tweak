@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithCode:(id)arg1 path:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSNumber *code; // @synthesize code=_code;
 - (id)toList;

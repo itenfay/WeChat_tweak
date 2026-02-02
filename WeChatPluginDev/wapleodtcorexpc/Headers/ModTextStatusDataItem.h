@@ -22,7 +22,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int publicVersion; // @synthesize publicVersion=_publicVersion;
 @property(retain, nonatomic) NSString *publicInfo; // @synthesize publicInfo=_publicInfo;
 @property(nonatomic) unsigned int privateVersion; // @synthesize privateVersion=_privateVersion;

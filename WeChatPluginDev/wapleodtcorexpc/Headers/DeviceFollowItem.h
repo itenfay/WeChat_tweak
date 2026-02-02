@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_uiIndex;
 + (void)PBArrayAdd_uiStep;
 + (void)PBArrayAdd_nsUserName;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiIndex; // @synthesize uiIndex=_uiIndex;
 @property(nonatomic) unsigned int uiStep; // @synthesize uiStep=_uiStep;
 @property(copy, nonatomic) NSString *nsUserName; // @synthesize nsUserName=_nsUserName;

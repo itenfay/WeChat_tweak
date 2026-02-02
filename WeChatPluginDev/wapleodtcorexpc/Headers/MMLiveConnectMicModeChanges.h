@@ -19,7 +19,6 @@
     MicSetting_PurchaseMicSetting *_paidMicSettingNew;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MicSetting_PurchaseMicSetting *paidMicSettingNew; // @synthesize paidMicSettingNew=_paidMicSettingNew;
 @property(retain, nonatomic) MicSetting_PurchaseMicSetting *paidMicSettingOld; // @synthesize paidMicSettingOld=_paidMicSettingOld;
 @property(nonatomic) _Bool isMicTalking; // @synthesize isMicTalking=_isMicTalking;

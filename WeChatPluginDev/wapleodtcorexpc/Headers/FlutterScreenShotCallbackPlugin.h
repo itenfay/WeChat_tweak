@@ -12,7 +12,6 @@
     FlutterMethodChannel *_screenShotChannel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterMethodChannel *screenShotChannel; // @synthesize screenShotChannel=_screenShotChannel;
 - (void)dealloc;
 - (void)onDetachedFromEngine:(id)arg1;

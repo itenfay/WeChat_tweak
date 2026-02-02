@@ -17,7 +17,6 @@
     BrandTemplateMsgAuthMessageBubbleModel *_messageBubbleModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandTemplateMsgAuthMessageBubbleModel *messageBubbleModel; // @synthesize messageBubbleModel=_messageBubbleModel;
 @property(retain, nonatomic) MMUIButton *moreLiveButton; // @synthesize moreLiveButton=_moreLiveButton;
 @property(retain, nonatomic) FinderNotifyMoreLiveInfo *moreLiveConfig; // @synthesize moreLiveConfig=_moreLiveConfig;

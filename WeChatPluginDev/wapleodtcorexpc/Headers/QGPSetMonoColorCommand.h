@@ -10,7 +10,6 @@
     QGPColor *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPColor *params; // @synthesize params=_params;
 
 @end

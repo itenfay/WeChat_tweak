@@ -17,7 +17,6 @@
 }
 
 + (id)getThumbPathWithChatname:(id)arg1 MsgLocalID:(unsigned int)arg2;
-- (void).cxx_destruct;
 - (void)OnDelMsg:(id)arg1 DelAll:(_Bool)arg2;
 - (void)OnDelMsg:(id)arg1 MsgWrap:(id)arg2;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;

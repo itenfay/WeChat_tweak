@@ -14,7 +14,6 @@
     NSString *_exposedItemsString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *exposedItemsString; // @synthesize exposedItemsString=_exposedItemsString;
 @property(nonatomic) unsigned long long switchType; // @synthesize switchType=_switchType;
 @property(nonatomic) unsigned long long entranceType; // @synthesize entranceType=_entranceType;

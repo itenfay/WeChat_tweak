@@ -21,7 +21,6 @@
     Channel *_channel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCache; // @synthesize isCache=_isCache;
 @property(retain, nonatomic) Channel *channel; // @synthesize channel=_channel;
 @property(retain, nonatomic) NSString *cantSendReason; // @synthesize cantSendReason=_cantSendReason;

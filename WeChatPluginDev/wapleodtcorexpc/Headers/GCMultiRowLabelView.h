@@ -13,7 +13,6 @@
     NSMutableArray *_labelArray;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int rowCnt; // @synthesize rowCnt=_rowCnt;
 @property(retain, nonatomic) NSMutableArray *labelArray; // @synthesize labelArray=_labelArray;
 - (void)layoutSubviews;

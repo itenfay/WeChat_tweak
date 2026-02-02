@@ -13,7 +13,6 @@
     TXCBeautifyBaseFilter *_youtuBeautyBlurFilter2;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCBeautifyBaseFilter *youtuBeautyBlurFilter2; // @synthesize youtuBeautyBlurFilter2=_youtuBeautyBlurFilter2;
 @property(retain, nonatomic) TXCBeautifyBaseFilter *youtuBeautyBlurFilter1; // @synthesize youtuBeautyBlurFilter1=_youtuBeautyBlurFilter1;
 @property(nonatomic) float horizontalTexelSpacing; // @synthesize horizontalTexelSpacing=_horizontalTexelSpacing;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJAIAssetGenerateRequest, MJAIAssetGenerateResult, MMTimer, NSError, NSString;
 
@@ -23,7 +24,6 @@
     long long _maxRetryTimes;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int queryCount; // @synthesize queryCount=_queryCount;
 @property(nonatomic) unsigned int nextQueryInterval; // @synthesize nextQueryInterval=_nextQueryInterval;
 @property(nonatomic) long long maxRetryTimes; // @synthesize maxRetryTimes=_maxRetryTimes;
@@ -56,4 +56,3 @@
 - (id)initWithRequest:(id)arg1 timeoutInterval:(double)arg2;
 
 @end
-

@@ -13,7 +13,6 @@
     WAProfileRelatedViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAProfileRelatedViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)openBrandContact:(id)arg1;

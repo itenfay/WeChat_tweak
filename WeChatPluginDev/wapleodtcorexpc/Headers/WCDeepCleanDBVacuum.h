@@ -16,7 +16,6 @@
     unsigned long long _freeSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long freeSize; // @synthesize freeSize=_freeSize;
 @property(nonatomic) _Bool bStop; // @synthesize bStop;
 @property(nonatomic) _Bool bCleanning; // @synthesize bCleanning;

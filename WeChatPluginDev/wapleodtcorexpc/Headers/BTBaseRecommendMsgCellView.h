@@ -14,7 +14,6 @@
     MMUIButton *_feedbackBtn;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMUIButton *feedbackBtn; // @synthesize feedbackBtn=_feedbackBtn;
 @property(readonly, nonatomic) BTRecommendSectionData *sectionData; // @synthesize sectionData=_sectionData;
 - (void)handleLongPress:(id)arg1;

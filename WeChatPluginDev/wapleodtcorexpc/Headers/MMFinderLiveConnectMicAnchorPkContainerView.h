@@ -23,7 +23,6 @@
     UIView *_tableHeaderView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isApplicant; // @synthesize isApplicant=_isApplicant;
 @property(nonatomic) _Bool isPkDisabled; // @synthesize isPkDisabled=_isPkDisabled;
 @property(retain, nonatomic) UIView *tableHeaderView; // @synthesize tableHeaderView=_tableHeaderView;

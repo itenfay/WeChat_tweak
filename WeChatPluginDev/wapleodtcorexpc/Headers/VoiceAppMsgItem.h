@@ -16,7 +16,6 @@
     NSString *_voice_key_words;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *voice_key_words; // @synthesize voice_key_words=_voice_key_words;
 @property(nonatomic) long long format; // @synthesize format=_format;
 @property(nonatomic) long long playtime; // @synthesize playtime=_playtime;

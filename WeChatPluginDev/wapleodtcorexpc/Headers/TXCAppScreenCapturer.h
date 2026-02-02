@@ -18,7 +18,6 @@
     NSMutableSet *_subscribers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *subscribers; // @synthesize subscribers=_subscribers;
 @property(retain, nonatomic) TXCVideoCaptureConfig *config; // @synthesize config=_config;
 @property _Bool isRunning; // @synthesize isRunning=_isRunning;

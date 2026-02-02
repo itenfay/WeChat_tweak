@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class KSUPnPDevice, KSUPnPDeviceService, NSString, NSURL;
 
@@ -14,7 +15,6 @@
     KSUPnPDeviceService *_service;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) KSUPnPDeviceService *service; // @synthesize service=_service;
 @property(readonly, nonatomic) __weak KSUPnPDevice *device; // @synthesize device=_device;
 @property(readonly, copy, nonatomic) NSString *propertiesDescription;
@@ -34,4 +34,3 @@
 - (id)stringBySanitizingAndEscapingForXML:(id)arg1;
 
 @end
-

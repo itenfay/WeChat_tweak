@@ -4,9 +4,9 @@
 //
 
 #import <Foundation/NSArray.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSArray (GCArrayToDict)
 - (id)gcArrayPassingTest:(CDUnknownBlockType)arg1;
 - (id)gcToDictWithKeyBlock:(CDUnknownBlockType)arg1;
 @end
-

@@ -13,7 +13,6 @@
     NSString *_mSessionInAllTabRedDotReportString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mSessionInAllTabRedDotReportString; // @synthesize mSessionInAllTabRedDotReportString=_mSessionInAllTabRedDotReportString;
 @property(retain, nonatomic) NSMutableDictionary *tabRedDotInfoMap; // @synthesize tabRedDotInfoMap=_tabRedDotInfoMap;
 - (void)clearSessionIn;

@@ -15,7 +15,6 @@
     MagicPkgInfoDBMgr *_magicDBMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MagicPkgInfoDBMgr *magicDBMgr; // @synthesize magicDBMgr=_magicDBMgr;
 - (void)onExptItemListChange;
 - (id)getMagicPkgVersion;

@@ -10,7 +10,6 @@
     NSString *_noticeId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *noticeId; // @synthesize noticeId=_noticeId;
 
 // Remaining properties

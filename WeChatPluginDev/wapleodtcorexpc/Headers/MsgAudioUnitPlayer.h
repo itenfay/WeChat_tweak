@@ -14,7 +14,6 @@
     int _soundControlMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNeedUnmuteLongVideoPlay; // @synthesize isNeedUnmuteLongVideoPlay=_isNeedUnmuteLongVideoPlay;
 @property(nonatomic) int soundControlMode; // @synthesize soundControlMode=_soundControlMode;
 - (void)EndNotifyOnMainThread;

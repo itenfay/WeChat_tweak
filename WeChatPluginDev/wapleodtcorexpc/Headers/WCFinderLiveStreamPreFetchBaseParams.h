@@ -20,7 +20,6 @@
     NSMutableArray *_unreadDataItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *unreadDataItems; // @synthesize unreadDataItems=_unreadDataItems;
 @property(copy, nonatomic) NSString *byPassInfo; // @synthesize byPassInfo=_byPassInfo;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;

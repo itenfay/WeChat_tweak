@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BrandTemplateMsgAuthSettingPageModel, MMTemplateMsgScopeItem, NSString, WATemplateAudioPlayer;
 
 @interface MMTemplateMsgAuthScopeSettingViewController
@@ -14,7 +16,6 @@
     WATemplateAudioPlayer *_audioPlayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WATemplateAudioPlayer *audioPlayer; // @synthesize audioPlayer=_audioPlayer;
 @property(nonatomic) unsigned int uiType; // @synthesize uiType=_uiType;
 @property(retain, nonatomic) BrandTemplateMsgAuthSettingPageModel *pageModel; // @synthesize pageModel=_pageModel;
@@ -45,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

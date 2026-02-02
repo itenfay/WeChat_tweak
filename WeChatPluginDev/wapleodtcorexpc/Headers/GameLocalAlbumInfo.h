@@ -13,7 +13,6 @@
     NSString *_defaultTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *defaultTitle; // @synthesize defaultTitle=_defaultTitle;
 @property(retain, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;
 @property(retain, nonatomic) NSString *gameName; // @synthesize gameName=_gameName;

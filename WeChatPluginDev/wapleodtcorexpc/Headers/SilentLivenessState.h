@@ -66,7 +66,6 @@
 
 + (id)parseAdvise:(int)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool firstStableStatePass; // @synthesize firstStableStatePass=_firstStableStatePass;
 @property(nonatomic) int sameUITipCount; // @synthesize sameUITipCount=_sameUITipCount;
 @property(retain, nonatomic) NSMutableArray *currentFacePoints; // @synthesize currentFacePoints=_currentFacePoints;

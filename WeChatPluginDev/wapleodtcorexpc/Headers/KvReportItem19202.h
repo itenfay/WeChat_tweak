@@ -29,7 +29,6 @@
     long long _menuid_39;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int addContactScene_40; // @synthesize addContactScene_40=_addContactScene_40;
 @property(nonatomic) long long menuid_39; // @synthesize menuid_39=_menuid_39;
 @property(nonatomic) unsigned int upMsgSubType_38; // @synthesize upMsgSubType_38=_upMsgSubType_38;

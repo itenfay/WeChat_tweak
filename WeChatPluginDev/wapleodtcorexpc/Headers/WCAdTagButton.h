@@ -21,7 +21,6 @@
 }
 
 + (struct CGSize)calcTagButtonSizeForTagInfo:(id)arg1 maxWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdURLImageView *topButtonIcon; // @synthesize topButtonIcon=_topButtonIcon;
 @property(retain, nonatomic) UIButton *topButton; // @synthesize topButton=_topButton;
 @property(retain, nonatomic) WCAdURLImageView *bgImageView; // @synthesize bgImageView=_bgImageView;

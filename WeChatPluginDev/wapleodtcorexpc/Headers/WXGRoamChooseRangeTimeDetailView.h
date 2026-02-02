@@ -13,7 +13,6 @@
     UILabel *_dateTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStartTime; // @synthesize isStartTime=_isStartTime;
 @property(retain, nonatomic) UILabel *dateTipsLabel; // @synthesize dateTipsLabel=_dateTipsLabel;
 @property(retain, nonatomic) UILabel *dateLabel; // @synthesize dateLabel=_dateLabel;

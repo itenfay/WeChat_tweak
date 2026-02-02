@@ -13,7 +13,6 @@
     long long _lastAction;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lastAction; // @synthesize lastAction=_lastAction;
 @property(retain, nonatomic) NSString *lastSceneInfo; // @synthesize lastSceneInfo=_lastSceneInfo;
 @property(nonatomic) long long lastScene; // @synthesize lastScene=_lastScene;

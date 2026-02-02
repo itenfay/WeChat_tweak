@@ -13,7 +13,6 @@
     WCMultiLanguageItem *_wording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMultiLanguageItem *wording; // @synthesize wording=_wording;
 @property(retain, nonatomic) NSString *reasonId; // @synthesize reasonId=_reasonId;
 - (id)initWithCoder:(id)arg1;

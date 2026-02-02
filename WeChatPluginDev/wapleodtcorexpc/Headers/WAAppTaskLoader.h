@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WAAppTaskLoaderContext, WALoadingViewController, WASerialWorkFlow;
 @protocol WAAppTaskLoaderDelegate, WAMinimizeDelegate;
@@ -45,7 +46,6 @@
 + (id)genLoadingVCWithContext:(id)arg1;
 + (CDUnknownBlockType)blockSetupAppServiceAndWebView;
 + (CDUnknownBlockType)blockWeAppOverseaPrivacyConfirm;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType preCheckCacheVersionCompletion; // @synthesize preCheckCacheVersionCompletion=_preCheckCacheVersionCompletion;
 @property(retain, nonatomic) WALoadingViewController *loadingVC; // @synthesize loadingVC=_loadingVC;
 @property(nonatomic) __weak id <WAMinimizeDelegate> minimizeDelegate; // @synthesize minimizeDelegate=_minimizeDelegate;
@@ -127,4 +127,3 @@
 @property(readonly) Class superclass;
 
 @end
-

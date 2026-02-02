@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -21,7 +22,6 @@
     NSString *_articleUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *articleUrl; // @synthesize articleUrl=_articleUrl;
 @property(copy, nonatomic) NSString *finderUserName; // @synthesize finderUserName=_finderUserName;
 @property(nonatomic) _Bool subscribeBizLive; // @synthesize subscribeBizLive=_subscribeBizLive;
@@ -34,4 +34,3 @@
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 
 @end
-

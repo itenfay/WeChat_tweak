@@ -17,7 +17,6 @@
     NSString *_sub_title_clicked;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sub_title_clicked; // @synthesize sub_title_clicked=_sub_title_clicked;
 @property(nonatomic) unsigned int groupType; // @synthesize groupType=_groupType;
 @property(retain, nonatomic) NSString *group_username; // @synthesize group_username=_group_username;

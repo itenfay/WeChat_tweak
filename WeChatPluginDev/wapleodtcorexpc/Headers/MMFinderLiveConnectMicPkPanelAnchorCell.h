@@ -12,7 +12,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveConnectMicPkPanelCellDelegate> cellDelegate; // @synthesize cellDelegate;
 
 // Remaining properties

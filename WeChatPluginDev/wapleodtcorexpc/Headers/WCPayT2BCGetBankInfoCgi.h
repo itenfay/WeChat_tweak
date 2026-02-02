@@ -10,7 +10,6 @@
     id <WCPayT2BCGetBankInfoCgiDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetResponse:(id)arg1;
 - (void)startRequest:(id)arg1;

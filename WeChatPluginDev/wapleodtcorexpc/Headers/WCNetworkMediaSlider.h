@@ -23,7 +23,6 @@
     NSArray *_markArr;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *markArr; // @synthesize markArr=_markArr;
 @property(retain, nonatomic) UIImage *thumbImage; // @synthesize thumbImage=_thumbImage;
 @property(nonatomic) _Bool showThumb; // @synthesize showThumb=_showThumb;

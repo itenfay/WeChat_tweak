@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_width;
 + (void)PBArrayAdd_emojiInfoObj;
 + (void)PBArrayAdd_md5;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int size; // @synthesize size=_size;
 @property(nonatomic) unsigned int height; // @synthesize height=_height;
 @property(nonatomic) unsigned int width; // @synthesize width=_width;

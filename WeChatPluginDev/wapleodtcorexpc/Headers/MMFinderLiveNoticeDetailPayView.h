@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveNoticeInfo, MMFinderLivePrepayTiersPanelViewModel, NSString;
 
 @interface MMFinderLiveNoticeDetailPayView
@@ -13,7 +15,6 @@
     FinderLiveNoticeInfo *_noticeInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveNoticeInfo *noticeInfo; // @synthesize noticeInfo=_noticeInfo;
 @property(nonatomic) _Bool isTicket; // @synthesize isTicket=_isTicket;
 @property(retain, nonatomic) MMFinderLivePrepayTiersPanelViewModel *tiersViewModel; // @synthesize tiersViewModel=_tiersViewModel;
@@ -37,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

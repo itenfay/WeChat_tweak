@@ -13,7 +13,6 @@
 
 + (id)contactFromShareCardMsgContentForFTS:(id)arg1;
 + (id)contactFromShareCardMsgContent:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsCardDescIcon; // @synthesize m_nsCardDescIcon=_m_nsCardDescIcon;
 @property(retain, nonatomic) NSString *m_nsCardDesc; // @synthesize m_nsCardDesc=_m_nsCardDesc;
 - (void)genContactFromShareCardMsgWrapContent:(id)arg1;

@@ -10,7 +10,6 @@
     id <JSCanvasEventHandlerContextDelegate> _canvasContext;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <JSCanvasEventHandlerContextDelegate> canvasContext; // @synthesize canvasContext=_canvasContext;
 
 @end

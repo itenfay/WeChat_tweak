@@ -13,7 +13,6 @@
     NSString *_remoteSdp;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *remoteSdp; // @synthesize remoteSdp=_remoteSdp;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 

@@ -10,7 +10,6 @@
     _TtC6WeChat16MagicLiveCardBiz *_biz;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC6WeChat16MagicLiveCardBiz *biz; // @synthesize biz=_biz;
 - (id)getBizPkgInfo;
 - (id)getBizPkgVersion;

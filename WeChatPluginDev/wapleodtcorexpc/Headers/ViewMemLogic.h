@@ -19,7 +19,6 @@
     struct CGPoint _m_bContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint m_bContentOffset; // @synthesize m_bContentOffset=_m_bContentOffset;
 @property(nonatomic) _Bool m_bShowWithGrid; // @synthesize m_bShowWithGrid=_m_bShowWithGrid;
 @property(retain, nonatomic) CContact *m_oContact; // @synthesize m_oContact=_m_oContact;

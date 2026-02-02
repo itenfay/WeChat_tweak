@@ -18,7 +18,6 @@
     unsigned long long _prefechNextTabPullType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long prefechNextTabPullType; // @synthesize prefechNextTabPullType=_prefechNextTabPullType;
 @property(nonatomic) unsigned long long prefechPreTabPullType; // @synthesize prefechPreTabPullType=_prefechPreTabPullType;
 @property(nonatomic) unsigned long long prefechTabPullType; // @synthesize prefechTabPullType=_prefechTabPullType;

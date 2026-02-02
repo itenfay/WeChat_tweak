@@ -11,7 +11,6 @@
     UILabel *_listLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *listLabel; // @synthesize listLabel=_listLabel;
 @property(retain, nonatomic) UIButton *checkBtn; // @synthesize checkBtn=_checkBtn;
 - (void)updateCheck;

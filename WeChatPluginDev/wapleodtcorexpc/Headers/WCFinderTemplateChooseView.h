@@ -13,7 +13,6 @@
     UICollectionView *_collectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) unsigned long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(nonatomic) __weak id <WCFinderTemplateChooseViewDelegate> delegate; // @synthesize delegate=_delegate;

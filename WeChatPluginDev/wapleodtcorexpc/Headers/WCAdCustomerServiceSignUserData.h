@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIViewController;
 
@@ -13,9 +14,7 @@
     CDUnknownBlockType _completeBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 
 @end
-

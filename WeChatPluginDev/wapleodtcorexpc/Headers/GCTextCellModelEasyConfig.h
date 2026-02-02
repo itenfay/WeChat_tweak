@@ -14,7 +14,6 @@
     GCTextCellLayoutInfo *_layoutInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showHead; // @synthesize showHead=_showHead;
 @property(retain, nonatomic) GCTextCellLayoutInfo *layoutInfo; // @synthesize layoutInfo=_layoutInfo;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;

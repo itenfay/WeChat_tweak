@@ -10,7 +10,6 @@
     GameCgiGetInfoAndJump *_launchGame;
 }
 
-- (void).cxx_destruct;
 - (void)handleJSEvent:(id)arg1;
 
 @end

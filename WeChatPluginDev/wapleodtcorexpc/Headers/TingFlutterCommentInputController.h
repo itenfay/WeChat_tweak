@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CommentInputRequest, EmoticonBoardView, FinderCommentInfo, NSArray, NSMutableArray, NSString, TingMusicCommentCallBack, UIButton, UIImageView, UIView, WCCommentInputView, WCFinderCommentDetailTextView, WCFinderCommentIdentityActionSheetView, WCFinderHeadImageView, WCInputController;
 @protocol FlutterCommentMentionDelegate;
 
@@ -40,7 +42,6 @@
     struct _NSRange _commentTextViewLatestSelectionRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rightButtons; // @synthesize rightButtons=_rightButtons;
 @property(retain, nonatomic) TingMusicCommentCallBack *commentCallback; // @synthesize commentCallback=_commentCallback;
 @property(retain, nonatomic) FinderCommentInfo *replyCommentInfo; // @synthesize replyCommentInfo=_replyCommentInfo;
@@ -161,4 +162,3 @@
 @property(readonly) Class superclass;
 
 @end
-

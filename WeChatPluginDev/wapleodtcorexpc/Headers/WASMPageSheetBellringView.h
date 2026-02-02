@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, UIButton;
 
@@ -17,7 +18,6 @@
 }
 
 + (struct CGSize)viewSize;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType showTipsView; // @synthesize showTipsView=_showTipsView;
 @property(copy, nonatomic) CDUnknownBlockType selectedAction; // @synthesize selectedAction=_selectedAction;
 @property(retain, nonatomic) UIButton *iconButton; // @synthesize iconButton=_iconButton;
@@ -30,4 +30,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

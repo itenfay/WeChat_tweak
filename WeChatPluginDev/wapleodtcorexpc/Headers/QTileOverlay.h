@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSCache, NSMutableDictionary, NSString, QMediator, QTileDataDownloader;
 
@@ -26,7 +27,6 @@
 }
 
 + (id)getTileOverlayCachePath;
-- (void).cxx_destruct;
 @property(nonatomic) long long LevelsOfReuse; // @synthesize LevelsOfReuse=_LevelsOfReuse;
 @property(retain, nonatomic) NSMutableDictionary *downloadingTasks; // @synthesize downloadingTasks=_downloadingTasks;
 @property(retain, nonatomic) QTileDataDownloader *tileDownloader; // @synthesize tileDownloader=_tileDownloader;
@@ -70,4 +70,3 @@
 @property(readonly) Class superclass;
 
 @end
-

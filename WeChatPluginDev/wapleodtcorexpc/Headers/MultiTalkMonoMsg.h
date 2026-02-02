@@ -19,7 +19,6 @@
 + (id)cancelMsg;
 + (id)notFriendInviteMsg;
 + (id)inviteMsg;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_msgReceiveTime; // @synthesize m_msgReceiveTime=_m_msgReceiveTime;
 @property(retain, nonatomic) WXLocalNotificationInfo *m_notificationInfo; // @synthesize m_notificationInfo=_m_notificationInfo;
 @property(retain, nonatomic) NSString *m_fromUser; // @synthesize m_fromUser=_m_fromUser;

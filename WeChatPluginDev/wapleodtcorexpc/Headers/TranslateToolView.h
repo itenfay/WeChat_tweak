@@ -33,7 +33,6 @@
     TextInputTranslatingMgr *_translatingMgr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShowing; // @synthesize bShowing=_bShowing;
 @property(retain, nonatomic) TextInputTranslatingMgr *translatingMgr; // @synthesize translatingMgr=_translatingMgr;
 @property(nonatomic) unsigned int translatingWordingIndex; // @synthesize translatingWordingIndex=_translatingWordingIndex;

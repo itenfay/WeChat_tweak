@@ -32,7 +32,6 @@
     WCTimelineMissReadBreakLayerExposureRecord *_missReadBtnExposureRecord;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isJumpToFirstMissReadRecord; // @synthesize isJumpToFirstMissReadRecord=_isJumpToFirstMissReadRecord;
 @property(retain, nonatomic) WCTimelineMissReadBreakLayerExposureRecord *missReadBtnExposureRecord; // @synthesize missReadBtnExposureRecord=_missReadBtnExposureRecord;
 @property(retain, nonatomic) WCTimelineMissReadJumpBtnClickReportRecord *clickReportRecord; // @synthesize clickReportRecord=_clickReportRecord;

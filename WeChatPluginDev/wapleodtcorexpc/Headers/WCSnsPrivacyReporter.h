@@ -19,7 +19,6 @@
     _Bool _bOutsider;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bOutsider; // @synthesize bOutsider=_bOutsider;
 - (void)finishByCancel:(_Bool)arg1;
 - (id)formatUsrs:(id)arg1;

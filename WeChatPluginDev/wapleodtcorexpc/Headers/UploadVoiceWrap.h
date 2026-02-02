@@ -46,7 +46,6 @@
 + (void)PBArrayAdd_m_uiOffset;
 + (void)PBArrayAdd_m_uiCreateTime;
 + (void)PBArrayAdd_m_uiLocalID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *aesKey; // @synthesize aesKey=_aesKey;
 @property(retain, nonatomic) NSString *voiceUrl; // @synthesize voiceUrl=_voiceUrl;
 @property(retain, nonatomic) NSString *m_nsMsgSource; // @synthesize m_nsMsgSource=_m_nsMsgSource;

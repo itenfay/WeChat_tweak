@@ -10,7 +10,6 @@
     id <WCPayWalletGetAllFunctionCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayWalletGetAllFunctionCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (unsigned long long)getCgiNewDNSBusinessType;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;

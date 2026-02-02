@@ -18,7 +18,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int shareTime; // @synthesize shareTime=_shareTime;
 @property(retain, nonatomic) NSString *senderNickName; // @synthesize senderNickName=_senderNickName;
 @property(retain, nonatomic) NSString *senderUserName; // @synthesize senderUserName=_senderUserName;

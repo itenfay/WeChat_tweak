@@ -13,7 +13,6 @@
     unsigned long long _interval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long interval; // @synthesize interval=_interval;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;
 @property(retain, nonatomic) NSString *pagePathId; // @synthesize pagePathId=_pagePathId;

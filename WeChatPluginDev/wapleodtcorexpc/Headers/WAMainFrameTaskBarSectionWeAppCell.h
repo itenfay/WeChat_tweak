@@ -31,7 +31,6 @@
 + (double)itemWidth;
 + (double)itemSizeFactor;
 + (struct CGSize)viewSizeByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *headImageUrl; // @synthesize headImageUrl=_headImageUrl;
 @property(retain, nonatomic) WAAppItemData *taskItem; // @synthesize taskItem=_taskItem;
 @property(retain, nonatomic) UIImageView *fromOuterTagView; // @synthesize fromOuterTagView=_fromOuterTagView;

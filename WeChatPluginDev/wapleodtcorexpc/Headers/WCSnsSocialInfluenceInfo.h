@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_maxLikeCount;
 + (void)PBArrayAdd_expId;
 + (void)PBArrayAdd_layerId;
-- (void).cxx_destruct;
 @property(nonatomic) int maxCommentCount; // @synthesize maxCommentCount=_maxCommentCount;
 @property(nonatomic) int maxLikeCount; // @synthesize maxLikeCount=_maxLikeCount;
 @property(retain, nonatomic) NSString *expId; // @synthesize expId=_expId;

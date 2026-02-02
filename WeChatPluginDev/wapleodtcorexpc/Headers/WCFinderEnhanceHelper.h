@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderEnhanceHelper : NSObject
 {
@@ -12,4 +13,3 @@
 + (void)disposeEnhanceInsertFeedsWithContentVM:(id)arg1 eventType:(int)arg2 contentVMProvider:(CDUnknownBlockType)arg3 disposeAction:(CDUnknownBlockType)arg4;
 
 @end
-

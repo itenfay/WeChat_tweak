@@ -15,7 +15,6 @@
 }
 
 + (id)sharedReporter;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *skipReportScenes; // @synthesize skipReportScenes=_skipReportScenes;
 @property(retain, nonatomic) NSMutableDictionary *infoDict; // @synthesize infoDict=_infoDict;
 @property(retain, nonatomic) NSMutableArray *infoBuffer; // @synthesize infoBuffer=_infoBuffer;

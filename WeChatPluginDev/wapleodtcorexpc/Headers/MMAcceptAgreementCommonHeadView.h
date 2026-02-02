@@ -22,7 +22,6 @@
     long long _contentAlignment;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long contentAlignment; // @synthesize contentAlignment=_contentAlignment;
 @property(nonatomic) _Bool largeContentFont; // @synthesize largeContentFont=_largeContentFont;
 @property(nonatomic) double m_contentViewMargin; // @synthesize m_contentViewMargin=_m_contentViewMargin;

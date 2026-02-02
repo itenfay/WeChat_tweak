@@ -17,7 +17,6 @@
     NSMutableDictionary *_discoveryContentCacheForUserComments;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *discoveryContentCacheForUserComments; // @synthesize discoveryContentCacheForUserComments=_discoveryContentCacheForUserComments;
 @property(retain, nonatomic) NSMutableDictionary *discoveryContentCacheForDataItems; // @synthesize discoveryContentCacheForDataItems=_discoveryContentCacheForDataItems;
 @property(retain, nonatomic) WCHotwordRegExpReplacer *hotwordRegExpReplacer; // @synthesize hotwordRegExpReplacer=_hotwordRegExpReplacer;

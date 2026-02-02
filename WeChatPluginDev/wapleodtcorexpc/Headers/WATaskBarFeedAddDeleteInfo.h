@@ -20,7 +20,6 @@
     unsigned long long _indexTo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long indexTo; // @synthesize indexTo=_indexTo;
 @property(nonatomic) unsigned long long indexFrom; // @synthesize indexFrom=_indexFrom;
 @property(nonatomic) unsigned long long page; // @synthesize page=_page;

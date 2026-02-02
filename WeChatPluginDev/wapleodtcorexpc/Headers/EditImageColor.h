@@ -14,7 +14,6 @@
     NSString *_accessibility;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accessibility; // @synthesize accessibility=_accessibility;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;

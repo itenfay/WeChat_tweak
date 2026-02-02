@@ -16,7 +16,6 @@
     double _reqTimeLast;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double reqTimeLast; // @synthesize reqTimeLast=_reqTimeLast;
 @property(retain, nonatomic) NSArray *allAppArr; // @synthesize allAppArr=_allAppArr;
 @property(retain, nonatomic) NSArray *recentAppArr; // @synthesize recentAppArr=_recentAppArr;

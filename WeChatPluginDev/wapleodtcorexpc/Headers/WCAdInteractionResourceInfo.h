@@ -49,7 +49,6 @@
     Class _reportDataHendlerClass;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) Class reportDataHendlerClass; // @synthesize reportDataHendlerClass=_reportDataHendlerClass;
 @property(nonatomic) _Bool needExposedInfo; // @synthesize needExposedInfo=_needExposedInfo;
 @property(nonatomic) _Bool clockwise; // @synthesize clockwise=_clockwise;

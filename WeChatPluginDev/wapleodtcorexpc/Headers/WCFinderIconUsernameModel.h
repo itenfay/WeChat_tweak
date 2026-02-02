@@ -13,7 +13,6 @@
     NSString *_wxUsername;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *wxUsername; // @synthesize wxUsername=_wxUsername;
 @property(copy, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;
 

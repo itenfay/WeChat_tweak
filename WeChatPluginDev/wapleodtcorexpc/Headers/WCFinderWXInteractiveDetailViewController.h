@@ -14,7 +14,6 @@
 }
 
 + (id)genDeleteTransferCtxByCommentScene:(int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderShareCustomTransition *animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) WCFinderWXInteractiveDetailViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) WCFinderFeedListView *feedListView; // @synthesize feedListView=_feedListView;

@@ -12,7 +12,6 @@
     WCFinderFeedArrayObserver *_observerHead;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedArrayObserver *observerHead; // @synthesize observerHead=_observerHead;
 - (void)notifyDataChanged:(id)arg1 sender:(id)arg2;
 - (void)unSink:(id)arg1;

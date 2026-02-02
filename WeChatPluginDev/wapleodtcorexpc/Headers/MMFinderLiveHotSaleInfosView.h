@@ -19,7 +19,6 @@
     MMFinderLiveHotSaleInfoView *_lastInfoView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveHotSaleInfoView *lastInfoView; // @synthesize lastInfoView=_lastInfoView;
 @property(retain, nonatomic) MMFinderLiveHotSaleInfoView *currentInfoView; // @synthesize currentInfoView=_currentInfoView;
 @property(retain, nonatomic) MMFinderLiveHotSaleInfoView *nextInfoView; // @synthesize nextInfoView=_nextInfoView;

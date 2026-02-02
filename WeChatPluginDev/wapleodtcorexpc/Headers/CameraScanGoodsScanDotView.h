@@ -11,7 +11,6 @@
     CAAnimationGroup *_groupAnimation;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)stopAnimation;

@@ -15,7 +15,6 @@
     NSArray *_chat_msgs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *chat_msgs; // @synthesize chat_msgs=_chat_msgs;
 @property(retain, nonatomic) NSArray *verify_msgs; // @synthesize verify_msgs=_verify_msgs;
 @property(retain, nonatomic) NSString *receive_user; // @synthesize receive_user=_receive_user;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveMusicSettingOperationBar, MMUILabel, NSString, UIColor, UIFont;
 
@@ -34,7 +35,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAdaptToDarkLight; // @synthesize shouldAdaptToDarkLight=_shouldAdaptToDarkLight;
 @property(retain, nonatomic) MMFinderLiveMusicSettingOperationBar *settingOpertionBar; // @synthesize settingOpertionBar=_settingOpertionBar;
 @property(retain, nonatomic) MMUILabel *subtitleView; // @synthesize subtitleView=_subtitleView;
@@ -77,4 +77,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

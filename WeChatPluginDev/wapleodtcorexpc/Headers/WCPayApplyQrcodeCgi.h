@@ -12,7 +12,6 @@
     NSData *_saveNotifyInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *saveNotifyInfo; // @synthesize saveNotifyInfo=_saveNotifyInfo;
 @property(nonatomic) __weak id <WCPayApplyQrcodeCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)didFailWithError:(id)arg1;

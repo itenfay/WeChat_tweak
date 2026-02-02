@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData;
 
 @interface WCFinderPostTipsStreamCgi
@@ -16,7 +18,6 @@
 }
 
 + (id)cachedHashKeyWithScene:(int)arg1 byPass:(id)arg2 lastBuffer:(id)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(copy, nonatomic) CDUnknownBlockType successfulBlock; // @synthesize successfulBlock=_successfulBlock;
 @property(copy, nonatomic) NSData *lastBuf; // @synthesize lastBuf=_lastBuf;
@@ -35,4 +36,3 @@
 - (id)initWithScene:(int)arg1 byPass:(id)arg2 lastBuffer:(id)arg3 isPrefetch:(_Bool)arg4 successful:(CDUnknownBlockType)arg5 failed:(CDUnknownBlockType)arg6;
 
 @end
-

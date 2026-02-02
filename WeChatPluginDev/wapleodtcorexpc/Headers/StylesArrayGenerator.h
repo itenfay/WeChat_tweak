@@ -12,7 +12,6 @@
     double _nextLineY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double nextLineY; // @synthesize nextLineY=_nextLineY;
 @property(nonatomic) struct _NSParserPosition stPosition; // @synthesize stPosition=_stPosition;
 - (id)getParsedStyles;

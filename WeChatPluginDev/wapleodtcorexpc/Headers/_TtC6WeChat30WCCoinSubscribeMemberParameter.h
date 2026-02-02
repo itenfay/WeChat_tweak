@@ -18,7 +18,6 @@
     MISSING_TYPE *sessionId;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithTitle:(id)arg1 priceTiers:(id)arg2 protocolWording:(id)arg3 tips:(id)arg4;
 @property(nonatomic, copy) NSString *sessionId;

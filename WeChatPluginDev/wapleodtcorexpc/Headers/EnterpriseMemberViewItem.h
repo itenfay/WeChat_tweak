@@ -13,7 +13,6 @@
     NSString *m_nsBrandName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsBrandName; // @synthesize m_nsBrandName;
 @property(retain, nonatomic) NSString *m_nsAddUrl; // @synthesize m_nsAddUrl;
 @property(nonatomic) unsigned int m_uiViewType; // @synthesize m_uiViewType;

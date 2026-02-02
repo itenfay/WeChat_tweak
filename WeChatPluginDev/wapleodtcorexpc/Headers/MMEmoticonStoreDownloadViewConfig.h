@@ -22,7 +22,6 @@
     NSArray *_additionalAvaliableBtnTypes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *additionalAvaliableBtnTypes; // @synthesize additionalAvaliableBtnTypes=_additionalAvaliableBtnTypes;
 @property(nonatomic) _Bool useStaticWidth; // @synthesize useStaticWidth=_useStaticWidth;
 @property(nonatomic) _Bool isDownloadCancelEnabled; // @synthesize isDownloadCancelEnabled=_isDownloadCancelEnabled;

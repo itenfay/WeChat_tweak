@@ -15,7 +15,6 @@
     WCAdSliderCardProductInfo *_productInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdSliderCardProductInfo *productInfo; // @synthesize productInfo=_productInfo;
 @property(retain, nonatomic) WCAdSliderCardOpeningAnimationInfo *openingAnimation; // @synthesize openingAnimation=_openingAnimation;
 @property(retain, nonatomic) WCAdSliderCardSlideJumpInfo *slideJumpInfo; // @synthesize slideJumpInfo=_slideJumpInfo;

@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)seekTo:(int)arg1;
 - (unsigned long long)readFrames:(int)arg1 asS16:(short *)arg2;
 @property(readonly, nonatomic) unsigned long long framesRemain;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MatrixMemoryFile, NSLock, NSString, WCMemoryStatRecordBaseInfo;
 
@@ -22,7 +23,6 @@
 + (id)loadRecordByPath:(id)arg1;
 + (id)newRecordForCurrentRun;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)memoryDataPath;
 - (id)recordInfoPath;
 - (id)recordBasePath;
@@ -46,4 +46,3 @@
 - (id)initWithBaseInfo:(id)arg1;
 
 @end
-

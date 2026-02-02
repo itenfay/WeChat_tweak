@@ -26,7 +26,6 @@
     id <POICreateDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <POICreateDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *currentSearchID; // @synthesize currentSearchID=_currentSearchID;
 @property(nonatomic) unsigned int createPOICellIndex; // @synthesize createPOICellIndex=_createPOICellIndex;

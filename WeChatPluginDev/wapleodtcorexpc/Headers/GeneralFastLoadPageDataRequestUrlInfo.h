@@ -16,7 +16,6 @@
 }
 
 + (id)generateRequestUrlInfoIfSupport:(_Bool)arg1 itemShowType:(unsigned int)arg2 url:(id)arg3 openScene:(unsigned int)arg4 preloadType:(unsigned int)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int itemShowType; // @synthesize itemShowType=_itemShowType;
 @property(nonatomic) unsigned int openScene; // @synthesize openScene=_openScene;
 @property(nonatomic) unsigned int preloadType; // @synthesize preloadType=_preloadType;

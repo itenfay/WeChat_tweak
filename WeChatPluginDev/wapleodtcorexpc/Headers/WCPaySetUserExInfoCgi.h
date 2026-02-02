@@ -11,7 +11,6 @@
     WCPaySetUserExInfoCgiRequest *_cgiRequest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPaySetUserExInfoCgiRequest *cgiRequest; // @synthesize cgiRequest=_cgiRequest;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetTenPayError:(id)arg1;

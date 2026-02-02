@@ -21,7 +21,6 @@
     WCFinderJumpInfo *_jumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(retain, nonatomic) NSArray *displayList; // @synthesize displayList=_displayList;
 @property(retain, nonatomic) NSString *xml; // @synthesize xml=_xml;

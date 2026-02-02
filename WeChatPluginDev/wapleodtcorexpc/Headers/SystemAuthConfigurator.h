@@ -13,7 +13,6 @@
     SystemAuthConfig *_updatedConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SystemAuthConfig *updatedConfig; // @synthesize updatedConfig=_updatedConfig;
 @property(retain, nonatomic) SystemAuthConfig *defaultConfig; // @synthesize defaultConfig=_defaultConfig;
 @property(readonly, nonatomic) NSDictionary *webSceneMap;

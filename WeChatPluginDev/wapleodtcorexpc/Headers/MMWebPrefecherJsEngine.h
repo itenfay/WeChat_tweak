@@ -15,7 +15,6 @@
     NSMutableDictionary *_dictClientJsContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictClientJsContext; // @synthesize dictClientJsContext=_dictClientJsContext;
 @property(retain, nonatomic) NSDictionary *configInfo; // @synthesize configInfo=_configInfo;
 @property(retain, nonatomic) NSMutableDictionary *dicModuleKeyJSContexts; // @synthesize dicModuleKeyJSContexts=_dicModuleKeyJSContexts;

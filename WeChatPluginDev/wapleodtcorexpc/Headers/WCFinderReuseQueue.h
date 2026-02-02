@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *registerInfos; // @synthesize registerInfos=_registerInfos;
 - (void)enqueueObject:(id)arg1;
 - (id)dequeueObject:(id)arg1;

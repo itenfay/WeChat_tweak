@@ -18,7 +18,6 @@
     double _timestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) long long rssi; // @synthesize rssi=_rssi;
 @property(nonatomic) double accuracy; // @synthesize accuracy=_accuracy;

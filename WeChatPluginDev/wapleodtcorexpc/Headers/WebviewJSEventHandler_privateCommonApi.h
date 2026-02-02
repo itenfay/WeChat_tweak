@@ -11,7 +11,6 @@
 }
 
 + (_Bool)isValidPrivateUrl:(id)arg1;
-- (void).cxx_destruct;
 - (void)handleAccessSystemInfo;
 - (void)handleAccessLastUser;
 - (_Bool)syncHanleWithOpcode:(id)arg1 params:(id)arg2;

@@ -25,7 +25,6 @@
     NSMutableDictionary *m_taskEventPair;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *m_taskEventPair; // @synthesize m_taskEventPair;
 @property(nonatomic) int m_enterScence; // @synthesize m_enterScence;
 @property(retain, nonatomic) NSMutableDictionary *m_directions; // @synthesize m_directions;

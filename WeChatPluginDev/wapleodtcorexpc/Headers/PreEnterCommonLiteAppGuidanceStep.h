@@ -16,7 +16,6 @@
     NSString *_scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needSyncEscape; // @synthesize needSyncEscape=_needSyncEscape;
 @property(nonatomic) int escapeChoise; // @synthesize escapeChoise=_escapeChoise;
 @property(retain, nonatomic) NSString *scene; // @synthesize scene=_scene;

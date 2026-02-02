@@ -13,7 +13,6 @@
     QMediator *_mediator;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak QMediator *mediator; // @synthesize mediator=_mediator;
 @property(retain, nonatomic) QL4Config *config; // @synthesize config=_config;
 - (id)initWithMediator:(id)arg1;

@@ -11,7 +11,6 @@
     NSString *_staticImgUuid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *staticImgUuid; // @synthesize staticImgUuid=_staticImgUuid;
 @property(retain, nonatomic) ForwardMessageLogicController *logic; // @synthesize logic=_logic;
 - (id)getCurrentViewController;

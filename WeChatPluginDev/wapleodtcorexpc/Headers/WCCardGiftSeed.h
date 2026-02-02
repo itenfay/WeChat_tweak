@@ -11,7 +11,6 @@
     NSString *_toUserName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *toUserName; // @synthesize toUserName=_toUserName;
 @property(retain, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;
 

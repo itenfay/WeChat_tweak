@@ -15,7 +15,6 @@
 
 + (struct CGSize)getImageSizeWithWidth:(double)arg1 andHeight:(double)arg2;
 + (double)heightForMedia:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect fromRect; // @synthesize fromRect=_fromRect;
 @property(retain, nonatomic) UIView *hlView; // @synthesize hlView=_hlView;
 @property(retain, nonatomic) MMWebImageView *contentImageView; // @synthesize contentImageView=_contentImageView;

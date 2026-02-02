@@ -25,7 +25,6 @@
     TextStateItemView *_textStateView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStateItemView *textStateView; // @synthesize textStateView=_textStateView;
 @property(nonatomic) _Bool bIsDisplayCenter; // @synthesize bIsDisplayCenter=_bIsDisplayCenter;
 @property(nonatomic) double preferHeadImageLen; // @synthesize preferHeadImageLen=_preferHeadImageLen;

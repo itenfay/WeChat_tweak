@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, MultiDeviceActionButton, MultiDeviceManageInfo, UIImageView, WCAgreementCheckBox;
 @protocol MultiDeviceCardViewDelegate;
@@ -32,7 +33,6 @@
     MMUIButton *_logoutButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *logoutButton; // @synthesize logoutButton=_logoutButton;
 @property(retain, nonatomic) MMUILabel *logoutLabel; // @synthesize logoutLabel=_logoutLabel;
 @property(retain, nonatomic) UIView *footerSeparator; // @synthesize footerSeparator=_footerSeparator;
@@ -75,4 +75,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

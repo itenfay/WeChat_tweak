@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSMutableSet, NSString, QAOIMarkerManager, QAnnotationContainerView, QAppKeyCheck, QBaseVisualLayerManager, QBasicMapView, QBasicMapViewLayer, QBrandPromotionServer, QConfigManager, QConfigPreference, QCustomLayerManager, QDataChecker, QEngineResourceManager, QHandDrawTileOverlay, QIndoorBuilding, QIndoorLevel, QIndoorManager, QIntersectionOverlayManager, QL4Manager, QLayerManager, QLocalStateCollector, QMapContentView, QMapDataManager, QMapDataSafetyInternalManager, QMapViewAccessibilityElement, QMarkerManager, QMediator, QOverlayContainer, QPointEventMananger, QScaleView, QStatisticer, QStyleManager, QTileOverlayManager, QTrafficManager, QUniversalMapCounter, QUserLocation, QUserLocationAccessibilityElement, QUserLocationManager, QUserLocationPresentation, QWorldTileOverlay, QWorldTileOverlayCustomProvider, TBRegionChangeDistributor, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer;
 @protocol QMapViewDelegate;
@@ -111,7 +112,6 @@
 + (struct CLLocationCoordinate2D)correct84CoordinateTo02:(struct CLLocationCoordinate2D)arg1;
 + (_Bool)isLocal:(struct CLLocationCoordinate2D)arg1;
 + (_Bool)shouldCorrect84CoordinateTo02:(struct CLLocationCoordinate2D)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) QMapDataSafetyInternalManager *dataSafetyInternalManager; // @synthesize dataSafetyInternalManager=_dataSafetyInternalManager;
 @property(nonatomic) long long internalMapLanguage; // @synthesize internalMapLanguage=_internalMapLanguage;
 @property(nonatomic) _Bool internalAnnotationAccessibilityFrameClipToBounds; // @synthesize internalAnnotationAccessibilityFrameClipToBounds=_internalAnnotationAccessibilityFrameClipToBounds;
@@ -583,4 +583,3 @@
 @property(readonly) Class superclass;
 
 @end
-

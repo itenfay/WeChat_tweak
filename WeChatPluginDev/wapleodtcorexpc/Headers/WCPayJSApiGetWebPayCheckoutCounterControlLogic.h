@@ -20,7 +20,6 @@
     NSString *_kindaPayBindSerial;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *kindaPayBindSerial; // @synthesize kindaPayBindSerial=_kindaPayBindSerial;
 @property(retain, nonatomic) UIView *m_deskView; // @synthesize m_deskView=_m_deskView;
 @property(nonatomic) __weak id <WCPayCheckoutCounterLogicDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;

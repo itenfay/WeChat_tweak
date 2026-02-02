@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMLiveTaskId, MMUIButton, MMUILabel, NSArray, NSString, UIButton, UICollectionView, UIImageView, UITapGestureRecognizer;
 @protocol MMLiveBeautyLogicProvider, MMLiveBeautyOperationContainerViewDelegate;
@@ -29,7 +30,6 @@
     UIButton *_button;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) id <MMLiveBeautyLogicProvider> beautyLogicProvider; // @synthesize beautyLogicProvider=_beautyLogicProvider;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
@@ -87,4 +87,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -32,7 +32,6 @@
     CMessageWrap *_originalMsgWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *originalMsgWrap; // @synthesize originalMsgWrap=_originalMsgWrap;
 @property(copy, nonatomic) NSString *publisherId; // @synthesize publisherId=_publisherId;
 @property(copy, nonatomic) NSString *shareMsgSvrID; // @synthesize shareMsgSvrID=_shareMsgSvrID;

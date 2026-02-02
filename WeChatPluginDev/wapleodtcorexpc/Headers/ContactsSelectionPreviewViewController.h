@@ -17,7 +17,6 @@
     UIView *_bottomBar;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomBar; // @synthesize bottomBar=_bottomBar;
 @property(retain, nonatomic) UIButton *selectAllButton; // @synthesize selectAllButton=_selectAllButton;
 @property(retain, nonatomic) UIButton *completeButton; // @synthesize completeButton=_completeButton;

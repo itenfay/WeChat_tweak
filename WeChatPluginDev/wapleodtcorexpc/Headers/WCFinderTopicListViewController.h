@@ -53,7 +53,6 @@
     NSData *_byPassInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showHighlightTopicStyle; // @synthesize showHighlightTopicStyle=_showHighlightTopicStyle;
 @property(retain, nonatomic) NSData *byPassInfo; // @synthesize byPassInfo=_byPassInfo;
 @property(retain, nonatomic) WCFinderPostMgr *postMgr; // @synthesize postMgr=_postMgr;

@@ -18,7 +18,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperateLine; // @synthesize seperateLine=_seperateLine;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;

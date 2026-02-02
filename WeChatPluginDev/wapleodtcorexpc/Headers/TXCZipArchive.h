@@ -16,7 +16,6 @@
     NSString *_password;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(nonatomic) __weak id <TXCZipArchiveDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)overWrite:(id)arg1;

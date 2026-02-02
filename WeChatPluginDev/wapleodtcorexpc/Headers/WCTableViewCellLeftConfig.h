@@ -41,7 +41,6 @@
     NSNumber *_customViewRightMargin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool titleCenter; // @synthesize titleCenter=_titleCenter;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) NSNumber *customViewRightMargin; // @synthesize customViewRightMargin=_customViewRightMargin;

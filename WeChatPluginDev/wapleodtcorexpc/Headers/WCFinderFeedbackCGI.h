@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString;
 
 @interface WCFinderFeedbackCGI
@@ -20,7 +22,6 @@
     unsigned long long _liveScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int satisfactionQuestSubType; // @synthesize satisfactionQuestSubType=_satisfactionQuestSubType;
 @property(nonatomic) unsigned long long liveScene; // @synthesize liveScene=_liveScene;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
@@ -38,4 +39,3 @@
 - (id)initWithFeedbackType:(unsigned long long)arg1 subType:(long long)arg2 subTypeList:(id)arg3 objectID:(unsigned long long)arg4 nonceID:(id)arg5 sessionBuffer:(id)arg6 scene:(int)arg7 liveScene:(unsigned long long)arg8 sessionExtraKey:(id)arg9 satisfactionQuestSubType:(int)arg10 successBlock:(CDUnknownBlockType)arg11 failBlock:(CDUnknownBlockType)arg12;
 
 @end
-

@@ -15,7 +15,6 @@
     NSString *_pageTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pageTitle; // @synthesize pageTitle=_pageTitle;
 @property(nonatomic) unsigned long long pageStayTime; // @synthesize pageStayTime=_pageStayTime;
 @property(nonatomic) unsigned long long enterTimestamp; // @synthesize enterTimestamp=_enterTimestamp;

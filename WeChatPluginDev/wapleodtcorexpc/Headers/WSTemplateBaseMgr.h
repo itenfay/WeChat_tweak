@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSOperationQueue, NSString, WSTemplatePackageManager, _TtC6WeChat21WSTemplateMgrReporter;
 
 @interface WSTemplateBaseMgr
@@ -15,7 +17,6 @@
 }
 
 + (id)getServiceOfType:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WSTemplatePackageManager *packageMgr; // @synthesize packageMgr=_packageMgr;
 @property(retain, nonatomic) _TtC6WeChat21WSTemplateMgrReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) long long activeTemplateCount; // @synthesize activeTemplateCount=_activeTemplateCount;
@@ -74,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

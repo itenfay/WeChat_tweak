@@ -27,7 +27,6 @@
     NSString *_streamId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *streamId; // @synthesize streamId=_streamId;
 @property(copy, nonatomic) NSArray *mixUsers; // @synthesize mixUsers=_mixUsers;
 @property(nonatomic) int audioCodec; // @synthesize audioCodec=_audioCodec;

@@ -19,7 +19,6 @@
     long long _inputType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long inputType; // @synthesize inputType=_inputType;
 @property(nonatomic) unsigned long long zOrder; // @synthesize zOrder=_zOrder;
 @property(nonatomic) long long height; // @synthesize height=_height;

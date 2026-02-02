@@ -16,7 +16,6 @@
     WCFinderCollectionFeedListVCParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCollectionFeedListVCParams *params; // @synthesize params=_params;
 @property(retain, nonatomic) WCFinderEmptyTipsView *emptyTipsView; // @synthesize emptyTipsView=_emptyTipsView;
 @property(retain, nonatomic) WCFinderCollectionFeedListViewModel *viewModel; // @synthesize viewModel=_viewModel;

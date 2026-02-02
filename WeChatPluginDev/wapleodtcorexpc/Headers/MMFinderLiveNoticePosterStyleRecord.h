@@ -28,7 +28,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int styleVersion; // @synthesize styleVersion=_styleVersion;
 @property(retain, nonatomic) FinderLiveQRCodePosterStyle *style; // @synthesize style=_style;
 @property(nonatomic) unsigned long long elementIndex; // @synthesize elementIndex=_elementIndex;

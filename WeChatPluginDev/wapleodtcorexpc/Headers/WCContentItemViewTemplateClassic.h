@@ -25,7 +25,6 @@
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2 appID:(id)arg3;
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
 + (_Bool)isMusicMVType:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTimeLineCellMusicPlayerView *musicView; // @synthesize musicView=_musicView;
 @property(nonatomic) _Bool closeAdLongVideoForViewDetail; // @synthesize closeAdLongVideoForViewDetail=_closeAdLongVideoForViewDetail;
 @property(nonatomic) _Bool bSceneFromSearch; // @synthesize bSceneFromSearch=_bSceneFromSearch;

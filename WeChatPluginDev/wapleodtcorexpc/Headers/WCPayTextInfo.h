@@ -14,7 +14,6 @@
 }
 
 + (id)genFromUnion:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) WCPayJumpInfo *jump_info; // @synthesize jump_info=_jump_info;
 @property(retain) NSString *wording; // @synthesize wording=_wording;
 

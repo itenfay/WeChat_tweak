@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray;
 
 @interface WCMusicSearchCgi
@@ -13,7 +15,6 @@
     CDUnknownBlockType _resultBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
 @property(retain, nonatomic) NSMutableArray *batchMusicList; // @synthesize batchMusicList=_batchMusicList;
 @property(nonatomic) long long minBatchSize; // @synthesize minBatchSize=_minBatchSize;
@@ -24,4 +25,3 @@
 - (id)initWithScene:(unsigned long long)arg1 searchKey:(id)arg2 requestBuffer:(id)arg3 minBatchSize:(long long)arg4 resultBlock:(CDUnknownBlockType)arg5;
 
 @end
-

@@ -17,7 +17,6 @@
     AppHardWareRankMessageViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AppHardWareRankMessageViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) unsigned long long cgiStartTime; // @synthesize cgiStartTime=_cgiStartTime;
 @property(nonatomic) long long step; // @synthesize step=_step;

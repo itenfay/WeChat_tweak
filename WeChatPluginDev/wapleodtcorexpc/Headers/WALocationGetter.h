@@ -16,7 +16,6 @@
 }
 
 + (_Bool)isUserDenyToLocationService;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WALocationCacheInfo *cacheInfo; // @synthesize cacheInfo=_cacheInfo;
 @property(retain, nonatomic) LocationRetriever *locationRetriever; // @synthesize locationRetriever=_locationRetriever;
 @property(readonly, nonatomic) double requiredHorizonAccuracy; // @synthesize requiredHorizonAccuracy=_requiredHorizonAccuracy;

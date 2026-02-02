@@ -12,7 +12,6 @@
     unsigned int _currentIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int currentIndex; // @synthesize currentIndex=_currentIndex;
 - (void)sendImagePreviewIndexChangeEvent;
 - (void)photoVCDidScrollToIndex:(unsigned int)arg1;

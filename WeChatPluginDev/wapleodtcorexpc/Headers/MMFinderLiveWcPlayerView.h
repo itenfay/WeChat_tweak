@@ -22,7 +22,6 @@
     NSString *_audioManagerGroupName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *audioManagerGroupName; // @synthesize audioManagerGroupName=_audioManagerGroupName;
 @property(retain, nonatomic) MMFinderLiveWcPlayerViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;

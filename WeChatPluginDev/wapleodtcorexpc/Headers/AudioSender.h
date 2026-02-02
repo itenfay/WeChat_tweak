@@ -17,7 +17,6 @@
 }
 
 + (_Bool)IsVoiceUseCdnUpload;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMNewVoiceInputCacheLogic *transcacheLogic; // @synthesize transcacheLogic=_transcacheLogic;
 - (_Bool)StopRecordingInTransState:(_Bool)arg1;
 - (void)ResendVoiceMsg:(id)arg1 MsgWrap:(id)arg2;

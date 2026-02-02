@@ -21,7 +21,6 @@
 + (void)PBArrayAdd_samplePeriod;
 + (void)PBArrayAdd_nextUpdateInterval;
 + (void)PBArrayAdd_configVersion;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *versionBuffer; // @synthesize versionBuffer=_versionBuffer;
 @property(retain, nonatomic) NSArray *arrEventConfig; // @synthesize arrEventConfig=_arrEventConfig;
 @property(nonatomic) unsigned int samplePeriod; // @synthesize samplePeriod=_samplePeriod;

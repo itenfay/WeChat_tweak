@@ -18,7 +18,6 @@
     WCFinderFeedDetailStatusView *_statusView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasReportPageAction; // @synthesize hasReportPageAction=_hasReportPageAction;
 @property(retain, nonatomic) WCFinderFeedDetailStatusView *statusView; // @synthesize statusView=_statusView;
 @property(retain, nonatomic) WCFinderLandScapeVCParams *params; // @synthesize params=_params;

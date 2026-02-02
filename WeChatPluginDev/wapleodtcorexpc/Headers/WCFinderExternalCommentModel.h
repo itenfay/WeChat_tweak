@@ -13,7 +13,6 @@
     NSString *_postContent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int sourceScene; // @synthesize sourceScene=_sourceScene;
 @property(copy, nonatomic) NSString *postContent; // @synthesize postContent=_postContent;
 - (_Bool)isValid;

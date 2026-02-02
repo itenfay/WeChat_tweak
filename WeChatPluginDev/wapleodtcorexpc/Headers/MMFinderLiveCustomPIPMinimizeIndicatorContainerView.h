@@ -13,7 +13,6 @@
     MMFinderLivePIPMinimizeIndicatorView *_ktvIndicatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePIPMinimizeIndicatorView *ktvIndicatorView; // @synthesize ktvIndicatorView=_ktvIndicatorView;
 @property(retain, nonatomic) MMLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 - (void)hideKTVIndicator;

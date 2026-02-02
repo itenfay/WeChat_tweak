@@ -16,7 +16,6 @@
     RingToneSettingCellHandler *_ringToneSettingCellHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RingToneSettingCellHandler *ringToneSettingCellHandler; // @synthesize ringToneSettingCellHandler=_ringToneSettingCellHandler;
 @property(retain, nonatomic) GetWecoinBalanceResponse *wecoinBalanceResponse; // @synthesize wecoinBalanceResponse=_wecoinBalanceResponse;
 - (void)registerYReportSdk;

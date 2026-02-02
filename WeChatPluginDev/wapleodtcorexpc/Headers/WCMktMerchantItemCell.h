@@ -25,7 +25,6 @@
 }
 
 + (double)calcCellHeightWithMerchantData:(id)arg1 isExpandCardList:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *merchantAreaBtn; // @synthesize merchantAreaBtn=_merchantAreaBtn;
 @property(retain, nonatomic) UIView *sepBarView; // @synthesize sepBarView=_sepBarView;
 @property(retain, nonatomic) UIButton *expandBtn; // @synthesize expandBtn=_expandBtn;

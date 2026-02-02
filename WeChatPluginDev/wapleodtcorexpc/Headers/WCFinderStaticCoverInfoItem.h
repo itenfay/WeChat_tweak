@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NSURL, UIColor, UIFont, UIImage, UIView;
 
@@ -29,7 +30,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) double flexGrow; // @synthesize flexGrow=_flexGrow;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 @property(nonatomic) double iconMarginRight; // @synthesize iconMarginRight=_iconMarginRight;
@@ -51,4 +51,3 @@
 - (id)init;
 
 @end
-

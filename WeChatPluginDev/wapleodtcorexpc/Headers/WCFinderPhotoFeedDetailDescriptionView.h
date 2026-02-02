@@ -21,7 +21,6 @@
     struct CGPoint _hitPoint;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *ipRegionAndPostTimeLabel; // @synthesize ipRegionAndPostTimeLabel=_ipRegionAndPostTimeLabel;
 @property(retain, nonatomic) WCFinderMaskButton *collectionButton; // @synthesize collectionButton=_collectionButton;
 @property(nonatomic) struct CGPoint hitPoint; // @synthesize hitPoint=_hitPoint;

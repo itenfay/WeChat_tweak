@@ -15,7 +15,6 @@
     NSIndexPath *_willDeleteIndexPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *willDeleteIndexPath; // @synthesize willDeleteIndexPath=_willDeleteIndexPath;
 @property(retain, nonatomic) UIView *emptyView; // @synthesize emptyView=_emptyView;
 @property(retain, nonatomic) UIButton *headerContentCoverBtn; // @synthesize headerContentCoverBtn=_headerContentCoverBtn;

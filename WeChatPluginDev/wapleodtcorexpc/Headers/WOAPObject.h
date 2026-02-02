@@ -11,7 +11,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(nonatomic) long long objType; // @synthesize objType=_objType;
 

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MagicBrushBiz, NSString, WKWebView, WeAvatarPackageLogic, WebGLAudioManager;
 
@@ -18,7 +19,6 @@
 }
 
 + (void)setAvatarViewHidden:(_Bool)arg1 InViews:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect glFrame; // @synthesize glFrame=_glFrame;
 @property(nonatomic) unsigned char isOnRNNoise; // @synthesize isOnRNNoise=_isOnRNNoise;
 @property(retain, nonatomic) WeAvatarPackageLogic *pkgLogic; // @synthesize pkgLogic=_pkgLogic;
@@ -58,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

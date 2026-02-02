@@ -10,7 +10,6 @@
     NSMutableDictionary *_digestWording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *digestWording; // @synthesize digestWording=_digestWording;
 - (id)toXML;
 - (_Bool)fromXML:(struct XmlReaderNode_t *)arg1;

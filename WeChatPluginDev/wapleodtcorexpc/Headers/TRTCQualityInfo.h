@@ -13,7 +13,6 @@
     long long _quality;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long quality; // @synthesize quality=_quality;
 @property(copy, nonatomic) NSString *userId; // @synthesize userId=_userId;
 

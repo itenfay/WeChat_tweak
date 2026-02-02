@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
@@ -15,7 +16,6 @@
     NSMutableDictionary *_fileInfoDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *fileInfoDict; // @synthesize fileInfoDict=_fileInfoDict;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) CDUnknownBlockType onDataChanged; // @synthesize onDataChanged=_onDataChanged;
@@ -31,4 +31,3 @@
 - (id)initWithType:(unsigned long long)arg1;
 
 @end
-

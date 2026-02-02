@@ -24,7 +24,6 @@
     UILabel *_discountLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *discountLabel; // @synthesize discountLabel=_discountLabel;
 @property(retain, nonatomic) UILabel *fullPriceLabel; // @synthesize fullPriceLabel=_fullPriceLabel;
 @property(retain, nonatomic) UILabel *discountPriceLabel; // @synthesize discountPriceLabel=_discountPriceLabel;

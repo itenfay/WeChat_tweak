@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CALayer, MISSING_TYPE;
 
@@ -14,7 +15,6 @@
     MISSING_TYPE *transition;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)clean;
 - (void)insertTo:(id)arg1 complete:(CDUnknownBlockType)arg2;
@@ -24,4 +24,3 @@
 @property(nonatomic, retain) CALayer *layer; // @synthesize layer;
 
 @end
-

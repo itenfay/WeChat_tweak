@@ -22,7 +22,6 @@
 + (id)bundleModelArray;
 + (id)defaultModelArray;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isNeedUpdate; // @synthesize isNeedUpdate=_isNeedUpdate;
 @property(readonly, nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(retain, nonatomic) NSString *sha1; // @synthesize sha1=_sha1;

@@ -53,7 +53,6 @@
     WCPayBankCardInfo *_m_bankCardInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBankCardInfo *m_bankCardInfo; // @synthesize m_bankCardInfo=_m_bankCardInfo;
 @property(retain, nonatomic) NSArray *m_arrCreRule; // @synthesize m_arrCreRule=_m_arrCreRule;
 @property(retain, nonatomic) NSString *m_nsBankNamePinYin; // @synthesize m_nsBankNamePinYin=_m_nsBankNamePinYin;

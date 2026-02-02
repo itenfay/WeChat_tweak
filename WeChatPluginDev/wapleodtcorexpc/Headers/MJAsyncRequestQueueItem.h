@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJSpeechAudioData, NSArray, NSString;
 
@@ -29,7 +30,6 @@
 + (id)ttsGroupItemWithAudioID:(id)arg1 roleID:(id)arg2 isCloneTimbre:(_Bool)arg3 captionItems:(id)arg4 audioDuration:(CDStruct_1b6d18a9)arg5 completionHandler:(CDUnknownBlockType)arg6;
 + (id)ttsItemWithText:(id)arg1 roleID:(id)arg2 isCloneTimbre:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (id)stsItemWithAudioID:(id)arg1 roleID:(id)arg2 audioData:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType speechCloneGroupCompletionHandler; // @synthesize speechCloneGroupCompletionHandler=_speechCloneGroupCompletionHandler;
 @property(readonly, nonatomic) CDUnknownBlockType sttGroupCompletionHandler; // @synthesize sttGroupCompletionHandler=_sttGroupCompletionHandler;
 @property(readonly, nonatomic) CDUnknownBlockType ttsGroupCompletionHandler; // @synthesize ttsGroupCompletionHandler=_ttsGroupCompletionHandler;
@@ -49,4 +49,3 @@
 - (id)initWithType:(unsigned long long)arg1 roleID:(id)arg2 audioID:(id)arg3 audioData:(id)arg4 text:(id)arg5 captionItems:(id)arg6 audioDuration:(CDStruct_1b6d18a9)arg7 isCloneTimbre:(_Bool)arg8 stsCompletionHandler:(CDUnknownBlockType)arg9 ttsCompletionHandler:(CDUnknownBlockType)arg10 ttsGroupCompletionHandler:(CDUnknownBlockType)arg11 sttGroupCompletionHandler:(CDUnknownBlockType)arg12 speechCloneGroupCompletionHandler:(CDUnknownBlockType)arg13;
 
 @end
-

@@ -21,7 +21,6 @@
 }
 
 + (long long)convertStringToNEConfidence:(id)arg1;
-- (void).cxx_destruct;
 - (void)deliverNetworkCommand:(id)arg1;
 - (void)onDeliverNetworkCommandWhenTimeout;
 - (void)cancelDeliverTimeoutTimer;

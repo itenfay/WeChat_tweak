@@ -36,7 +36,6 @@
     WCHKActivitySummaryLogic *_mActivitySummaryLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCHKActivitySummaryLogic *mActivitySummaryLogic; // @synthesize mActivitySummaryLogic=_mActivitySummaryLogic;
 @property(retain, nonatomic) WCDeviceM7Logic *m7Logic; // @synthesize m7Logic=_m7Logic;
 @property(retain, nonatomic) WCHKWorkoutLogic *mWorkoutLogic; // @synthesize mWorkoutLogic=_mWorkoutLogic;

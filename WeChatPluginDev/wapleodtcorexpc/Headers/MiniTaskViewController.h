@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, MiniTaskCollectioViewMaskLayer, MiniTaskCollectionViewLayout, MiniTaskDurantionCounter, MiniTaskDynamicBgView, MiniTaskPanGestureHandler, MiniTaskViewControllerContext, MultiTaskPageActionInfo, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UICollectionView, UIImageView, UIView, WCScheduleLogicController;
 
 @interface MiniTaskViewController
@@ -32,7 +34,6 @@
     MiniTaskPanGestureHandler *_leftPanPopGestureHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MiniTaskPanGestureHandler *leftPanPopGestureHandler; // @synthesize leftPanPopGestureHandler=_leftPanPopGestureHandler;
 @property(retain, nonatomic) MMUILabel *gestureExitEducationLabel; // @synthesize gestureExitEducationLabel=_gestureExitEducationLabel;
 @property(retain, nonatomic) MMUIButton *exitButton; // @synthesize exitButton=_exitButton;
@@ -185,4 +186,3 @@
 @property(readonly) Class superclass;
 
 @end
-

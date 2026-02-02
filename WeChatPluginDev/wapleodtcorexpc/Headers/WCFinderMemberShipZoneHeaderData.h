@@ -29,7 +29,6 @@
     NSString *_memberCenterURL;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBlocked; // @synthesize isBlocked=_isBlocked;
 @property(copy, nonatomic) NSString *memberCenterURL; // @synthesize memberCenterURL=_memberCenterURL;
 @property(nonatomic) _Bool allowActivity; // @synthesize allowActivity=_allowActivity;

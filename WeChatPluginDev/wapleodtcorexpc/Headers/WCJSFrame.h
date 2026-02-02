@@ -17,7 +17,6 @@
     NSMutableArray *_subFrames;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *subFrames; // @synthesize subFrames=_subFrames;
 @property(nonatomic) int repeatCount; // @synthesize repeatCount=_repeatCount;
 @property(nonatomic) int column; // @synthesize column=_column;

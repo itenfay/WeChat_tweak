@@ -11,7 +11,6 @@
     double _initStartPlayTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double initStartPlayTime; // @synthesize initStartPlayTime=_initStartPlayTime;
 @property(retain, nonatomic) WCFinderSimplePlayerView *finderPlayer; // @synthesize finderPlayer=_finderPlayer;
 - (void)onVideoHiddenBufferingView;

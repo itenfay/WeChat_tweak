@@ -17,7 +17,6 @@
     NSString *_m_placeorderReserves;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int desc_has_address; // @synthesize desc_has_address=_desc_has_address;
 @property(retain, nonatomic) NSString *m_placeorderReserves; // @synthesize m_placeorderReserves=_m_placeorderReserves;
 @property(retain, nonatomic) NSString *m_addressRemark; // @synthesize m_addressRemark=_m_addressRemark;

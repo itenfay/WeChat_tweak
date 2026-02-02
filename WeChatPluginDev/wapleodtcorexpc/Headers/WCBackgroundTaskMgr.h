@@ -11,7 +11,6 @@
     NSMutableArray *_runners;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEnabled; // @synthesize isEnabled=_isEnabled;
 @property(retain, nonatomic) NSMutableArray *runners; // @synthesize runners=_runners;
 - (_Bool)unregisterTask:(id)arg1;

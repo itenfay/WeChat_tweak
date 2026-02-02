@@ -11,7 +11,6 @@
     WCTTable *m_table;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *m_table; // @synthesize m_table;
 @property(retain, nonatomic) WCTDatabase *m_db; // @synthesize m_db;
 - (_Bool)setAddress:(id)arg1 ByLocation:(struct CLLocationCoordinate2D)arg2 ByLanguage:(id)arg3;

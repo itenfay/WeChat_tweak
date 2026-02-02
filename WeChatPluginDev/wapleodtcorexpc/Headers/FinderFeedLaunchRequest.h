@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithFeedId:(long long)arg1 nonceId:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nonceId; // @synthesize nonceId=_nonceId;
 @property(nonatomic) long long feedId; // @synthesize feedId=_feedId;
 - (id)toList;

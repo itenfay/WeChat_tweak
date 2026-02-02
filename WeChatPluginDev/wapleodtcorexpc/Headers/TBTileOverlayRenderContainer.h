@@ -12,7 +12,6 @@
     NSMutableArray *_tileOverlayRenders;
 }
 
-- (void).cxx_destruct;
 - (id)viewForOverlay:(id)arg1;
 - (id)tileOverlayViewWithTag:(int)arg1;
 - (_Bool)isEmpty;

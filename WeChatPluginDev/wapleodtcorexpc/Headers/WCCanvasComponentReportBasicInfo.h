@@ -12,7 +12,6 @@
     unsigned long long _stayTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long stayTime; // @synthesize stayTime=_stayTime;
 @property(nonatomic) unsigned int exposureCount; // @synthesize exposureCount=_exposureCount;
 @property(retain, nonatomic) NSString *cid; // @synthesize cid=_cid;

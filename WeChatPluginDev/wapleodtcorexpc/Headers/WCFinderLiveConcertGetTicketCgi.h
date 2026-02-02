@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderLiveConcertGetTicketCgi
@@ -21,7 +23,6 @@
     unsigned long long _paramSource;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long paramSource; // @synthesize paramSource=_paramSource;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
@@ -46,4 +47,3 @@
 - (id)initWithLiveTaskId:(id)arg1 liveCookies:(id)arg2 audienceFinderUsername:(id)arg3 receive:(_Bool)arg4 needPageItem:(_Bool)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

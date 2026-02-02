@@ -12,7 +12,6 @@
     NSString *_entityId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *entityId; // @synthesize entityId=_entityId;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;

@@ -22,7 +22,6 @@
     NSString *_reqId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reqId; // @synthesize reqId=_reqId;
 @property(retain, nonatomic) StoreEmoticonTopicProxyLogic *topicVCPorxy; // @synthesize topicVCPorxy=_topicVCPorxy;
 @property(nonatomic) _Bool hitExpt; // @synthesize hitExpt=_hitExpt;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCMusicListenHistoryTitleView, WCMusicSearchReporter;
 @protocol WCMusicListenHistoryViewControllerDelegate;
 
@@ -14,7 +16,6 @@
     WCMusicListenHistoryTitleView *_historyTitleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMusicListenHistoryTitleView *historyTitleView; // @synthesize historyTitleView=_historyTitleView;
 @property(retain, nonatomic) WCMusicSearchReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) __weak id <WCMusicListenHistoryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -37,4 +38,3 @@
 - (void)viewDidLoad;
 
 @end
-

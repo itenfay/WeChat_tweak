@@ -71,7 +71,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRemoteHRenderFitMode; // @synthesize isRemoteHRenderFitMode=_isRemoteHRenderFitMode;
 @property(retain, nonatomic) MMLiveCDNPlayerViewStartPlayStateInfo *startPlayStateInfo; // @synthesize startPlayStateInfo=_startPlayStateInfo;
 @property(nonatomic) _Bool paidLiveTrialEndedChecked; // @synthesize paidLiveTrialEndedChecked=_paidLiveTrialEndedChecked;

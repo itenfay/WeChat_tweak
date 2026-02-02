@@ -16,7 +16,6 @@
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *patWraps; // @synthesize patWraps=_patWraps;
 @property(nonatomic) unsigned long long patCount; // @synthesize patCount=_patCount;
 @property(retain, nonatomic) NSString *chatUserName; // @synthesize chatUserName=_chatUserName;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTipsViewController, NSString, VoIPInvitationInfo, VoIPInvitationViewController;
 @protocol VoIPInvitationViewInfo;
 
@@ -16,7 +18,6 @@
 
 + (_Bool)isSupportingMultiTalk;
 + (id)defaultService;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType interrputBlock; // @synthesize interrputBlock=_interrputBlock;
 @property(retain, nonatomic) MMTipsViewController *tipsViewController; // @synthesize tipsViewController=_tipsViewController;
 @property(retain, nonatomic) VoIPInvitationInfo *acceptedInvitationInfo; // @synthesize acceptedInvitationInfo=_acceptedInvitationInfo;
@@ -66,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

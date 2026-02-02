@@ -30,7 +30,6 @@
     NSDictionary *_extDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extDict; // @synthesize extDict=_extDict;
 @property(retain, nonatomic) NSString *stateText; // @synthesize stateText;
 @property(retain, nonatomic) NSString *stateIconId; // @synthesize stateIconId;

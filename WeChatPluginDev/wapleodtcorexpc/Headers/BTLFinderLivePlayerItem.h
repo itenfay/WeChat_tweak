@@ -25,7 +25,6 @@
     struct __CVBuffer *_pixelBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCallbackFirstFrame; // @synthesize hasCallbackFirstFrame=_hasCallbackFirstFrame;
 @property(nonatomic) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
 @property(nonatomic) _Bool isDestory; // @synthesize isDestory=_isDestory;

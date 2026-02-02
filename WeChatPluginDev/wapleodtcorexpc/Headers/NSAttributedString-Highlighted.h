@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSAttributedString.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSDictionary, NSNumber, NSParagraphStyle, NSShadow, NSString, UIColor, UIFont, YYTextBorder, YYTextDecoration, YYTextShadow;
 
@@ -109,4 +110,3 @@
 - (id)yy_attributesAtIndex:(unsigned long long)arg1;
 - (id)safeAttributedSubstringFromRange:(struct _NSRange)arg1;
 @end
-

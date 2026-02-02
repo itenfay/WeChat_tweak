@@ -22,7 +22,6 @@
     NSMutableDictionary *_dicMultiSelectedUsrIndex;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicMultiSelectedUsrIndex; // @synthesize dicMultiSelectedUsrIndex=_dicMultiSelectedUsrIndex;
 @property(retain, nonatomic) NSMutableArray *arrMultiSelectedUsr; // @synthesize arrMultiSelectedUsr=_arrMultiSelectedUsr;
 @property(nonatomic) _Bool multiSelect; // @synthesize multiSelect=_multiSelect;

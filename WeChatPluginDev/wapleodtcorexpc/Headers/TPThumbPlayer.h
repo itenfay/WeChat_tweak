@@ -41,7 +41,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerLogContext *log; // @synthesize log=_log;
 @property(retain, nonatomic) TPThumbPlayerWrapper *thumbPlayerWrapper; // @synthesize thumbPlayerWrapper=_thumbPlayerWrapper;
 @property(nonatomic) _Bool enableSnapshot; // @synthesize enableSnapshot=_enableSnapshot;

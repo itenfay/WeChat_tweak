@@ -15,7 +15,6 @@
 }
 
 + (id)cacheWithModel:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cacheMaxTtlSec; // @synthesize cacheMaxTtlSec=_cacheMaxTtlSec;
 @property(nonatomic) unsigned long long cacheTimeSec; // @synthesize cacheTimeSec=_cacheTimeSec;
 @property(retain, nonatomic) MMFinderLiveNavLiveStreamBaseModel *model; // @synthesize model=_model;

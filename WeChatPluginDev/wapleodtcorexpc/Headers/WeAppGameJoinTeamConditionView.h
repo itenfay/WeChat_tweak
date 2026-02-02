@@ -20,7 +20,6 @@
     WeAppGameJoinTeamConditionItemView *_lastConditionItemView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WeAppGameJoinTeamConditionItemView *lastConditionItemView; // @synthesize lastConditionItemView=_lastConditionItemView;
 @property(retain, nonatomic) NSString *conditionDesc; // @synthesize conditionDesc=_conditionDesc;
 @property(nonatomic) int conditionId; // @synthesize conditionId=_conditionId;

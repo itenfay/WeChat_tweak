@@ -19,7 +19,6 @@
 }
 
 + (id)responseFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int stnErrType; // @synthesize stnErrType=_stnErrType;
 @property(nonatomic) int stnErrCode; // @synthesize stnErrCode=_stnErrCode;
 @property(retain, nonatomic) WACgiProfileInfo *cgiProfile; // @synthesize cgiProfile=_cgiProfile;

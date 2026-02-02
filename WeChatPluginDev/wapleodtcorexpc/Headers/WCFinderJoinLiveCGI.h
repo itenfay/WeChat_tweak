@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderDataItem;
 
 @interface WCFinderJoinLiveCGI
@@ -22,7 +24,6 @@
 }
 
 + (id)prefetchCacheHashKey:(int)arg1 taskKey:(id)arg2 scene:(unsigned long long)arg3 liveId:(unsigned long long)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requestTime; // @synthesize requestTime=_requestTime;
 @property(nonatomic) unsigned long long fetchType; // @synthesize fetchType=_fetchType;
 @property(nonatomic) unsigned long long fromSrc; // @synthesize fromSrc=_fromSrc;
@@ -52,4 +53,3 @@
 - (id)initWithLiveTaskId:(id)arg1 finderDataItem:(id)arg2 scene:(unsigned long long)arg3 entranceQRCodeURL:(id)arg4 liveCookies:(id)arg5 livePkId:(id)arg6 sessionBuffer:(id)arg7 commentScene:(int)arg8 fromSrc:(unsigned long long)arg9 fetchType:(unsigned long long)arg10 successBlock:(CDUnknownBlockType)arg11 failBlock:(CDUnknownBlockType)arg12;
 
 @end
-

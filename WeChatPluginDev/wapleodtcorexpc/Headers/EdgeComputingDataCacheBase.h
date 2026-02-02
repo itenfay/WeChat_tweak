@@ -15,7 +15,6 @@
     id <IEdgeComputingCacheStrategyProtocol> _cacheStrategy;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(nonatomic) unsigned int storageMode; // @synthesize storageMode=_storageMode;
 @property(retain, nonatomic) id <IEdgeComputingCacheStrategyProtocol> cacheStrategy; // @synthesize cacheStrategy=_cacheStrategy;

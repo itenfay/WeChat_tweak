@@ -33,7 +33,6 @@
     id <ProductDetailViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ProductDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool canDelete; // @synthesize canDelete=_canDelete;
 @property(nonatomic) _Bool canEditTag; // @synthesize canEditTag=_canEditTag;

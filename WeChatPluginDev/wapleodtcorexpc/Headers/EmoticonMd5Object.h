@@ -19,7 +19,6 @@
 + (void)PBArrayAdd_emojiInfoObj;
 + (void)PBArrayAdd_m_status;
 + (void)PBArrayAdd_m_md5;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int emojiInfoValidVersion; // @synthesize emojiInfoValidVersion=_emojiInfoValidVersion;
 @property(retain, nonatomic) EmojiInfoObj *emojiInfoObj; // @synthesize emojiInfoObj=_emojiInfoObj;
 @property(nonatomic) unsigned int m_status; // @synthesize m_status=_m_status;

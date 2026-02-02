@@ -16,7 +16,6 @@
 }
 
 + (void)onManualAuthFinished;
-- (void).cxx_destruct;
 - (void)OnGetSvrError:(id)arg1 Url:(id)arg2 Tips:(id)arg3;
 - (void)OnGetLoginDisaster:(id)arg1 Tips:(id)arg2 Url:(id)arg3 isManualAuth:(_Bool)arg4;
 - (void)showFullScreenSvrErrorTip:(id)arg1 urlStr:(id)arg2 timeOut:(unsigned int)arg3;

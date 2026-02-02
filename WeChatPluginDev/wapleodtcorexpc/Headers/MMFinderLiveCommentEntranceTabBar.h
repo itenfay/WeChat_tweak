@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveBoxId, MMFinderLiveCommentEntranceView, MMFinderLiveTaskId, NSMutableArray, UIScrollView;
 
@@ -20,7 +21,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(nonatomic) __weak MMFinderLiveCommentEntranceView *currSelectEntranceView; // @synthesize currSelectEntranceView=_currSelectEntranceView;
 @property(retain, nonatomic) FinderLiveBoxId *currSelectBox; // @synthesize currSelectBox=_currSelectBox;
@@ -55,4 +55,3 @@
 - (id)initWithLiveTaskId:(id)arg1;
 
 @end
-

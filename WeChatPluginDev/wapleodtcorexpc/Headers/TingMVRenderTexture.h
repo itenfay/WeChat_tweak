@@ -19,7 +19,6 @@
     NSString *_listenId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *listenId; // @synthesize listenId=_listenId;
 @property(retain, nonatomic) NSString *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) TingMVTextureUpdateListenerApi *listener; // @synthesize listener=_listener;

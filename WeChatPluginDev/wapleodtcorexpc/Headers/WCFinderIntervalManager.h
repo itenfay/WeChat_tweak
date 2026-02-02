@@ -12,7 +12,6 @@
     NSMutableArray *_intervals;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *intervals; // @synthesize intervals=_intervals;
 - (_Bool)isNumberInIntervals:(long long)arg1;
 - (void)addIntervalFrom:(long long)arg1 to:(long long)arg2;

@@ -13,7 +13,6 @@
     struct UIEdgeInsets _imageTagPadding;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCImageFullScreenTagView *imageTagView; // @synthesize imageTagView=_imageTagView;
 @property(nonatomic) struct UIEdgeInsets imageTagPadding; // @synthesize imageTagPadding=_imageTagPadding;
 @property(nonatomic) struct UIEdgeInsets imageTagSafeArea; // @synthesize imageTagSafeArea=_imageTagSafeArea;

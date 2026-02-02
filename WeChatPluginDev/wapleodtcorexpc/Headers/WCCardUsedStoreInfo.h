@@ -22,7 +22,6 @@
     NSString *_appBrandPass;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appBrandPass; // @synthesize appBrandPass=_appBrandPass;
 @property(retain, nonatomic) NSString *appBrandUserName; // @synthesize appBrandUserName=_appBrandUserName;
 @property(retain, nonatomic) NSString *jumpUrl; // @synthesize jumpUrl=_jumpUrl;

@@ -23,7 +23,6 @@
 + (double)liveSmallRedDotLen;
 + (id)liveSmallRedDot;
 + (id)smallRedDot;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *bgColor; // @synthesize bgColor=_bgColor;
 @property(nonatomic) unsigned long long shape; // @synthesize shape=_shape;
 @property(nonatomic) double badgeFontSize; // @synthesize badgeFontSize=_badgeFontSize;

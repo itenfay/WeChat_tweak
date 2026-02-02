@@ -16,7 +16,6 @@
     NSMutableDictionary *_adPullCompareCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *adPullCompareCache; // @synthesize adPullCompareCache=_adPullCompareCache;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dataSaveQueue; // @synthesize dataSaveQueue=_dataSaveQueue;
 @property(retain, nonatomic) WCAdvertiseCommentUploadMgr *m_adCommentUploader; // @synthesize m_adCommentUploader;

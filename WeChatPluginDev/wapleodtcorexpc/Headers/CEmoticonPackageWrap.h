@@ -84,7 +84,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sortAbsoluteIndex; // @synthesize sortAbsoluteIndex=_sortAbsoluteIndex;
 @property(retain, nonatomic) NSString *ConStrRes3; // @synthesize ConStrRes3;
 @property(retain, nonatomic) NSString *designerIPSetKey; // @synthesize designerIPSetKey;

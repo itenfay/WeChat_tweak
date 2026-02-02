@@ -18,7 +18,6 @@
     NSString *_audiencePauseWording;
 }
 
-- (void).cxx_destruct;
 @property(copy) NSString *audiencePauseWording; // @synthesize audiencePauseWording=_audiencePauseWording;
 @property unsigned long long pausedAccumulatedTime; // @synthesize pausedAccumulatedTime=_pausedAccumulatedTime;
 @property unsigned long long timeMs; // @synthesize timeMs=_timeMs;

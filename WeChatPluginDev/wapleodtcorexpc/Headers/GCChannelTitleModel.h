@@ -11,7 +11,6 @@
     unsigned long long _nubmerCnt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long nubmerCnt; // @synthesize nubmerCnt=_nubmerCnt;
 @property(retain, nonatomic) NSString *titleName; // @synthesize titleName=_titleName;
 - (id)numberTitle;

@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_delayShowInfo;
 + (void)PBArrayAdd_preloadInfo;
 + (void)PBArrayAdd_socialInfluenceInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSnsRepeatUrlInfo *repeatUrlInfo; // @synthesize repeatUrlInfo=_repeatUrlInfo;
 @property(retain, nonatomic) WCSnsDelayShowInfo *delayShowInfo; // @synthesize delayShowInfo=_delayShowInfo;
 @property(retain, nonatomic) WCSnsPreLoadInfo *preloadInfo; // @synthesize preloadInfo=_preloadInfo;

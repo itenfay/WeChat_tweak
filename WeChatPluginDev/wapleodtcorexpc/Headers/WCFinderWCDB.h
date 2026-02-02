@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDateFormatter, NSMutableDictionary, WCFinderThreadSafeLRUCache, WCTDatabase, WCTTable;
 @protocol OS_dispatch_queue;
@@ -89,7 +90,6 @@
 + (void)destoryAllDBFileByReInit;
 + (_Bool)deleteDBFileWithPath:(id)arg1;
 + (_Bool)isLowEnd;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool replaceFinderObjectByVersion; // @synthesize replaceFinderObjectByVersion=_replaceFinderObjectByVersion;
 @property(retain, nonatomic) WCTTable *finderPrefetchFeatureTable; // @synthesize finderPrefetchFeatureTable=_finderPrefetchFeatureTable;
 @property(retain, nonatomic) WCFinderThreadSafeLRUCache *jumpInfoContainerLastSafeCache; // @synthesize jumpInfoContainerLastSafeCache=_jumpInfoContainerLastSafeCache;
@@ -593,4 +593,3 @@
 - (void)updateKeywordList:(id)arg1;
 
 @end
-

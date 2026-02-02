@@ -16,7 +16,6 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TrackRoomHeadListItemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 - (void)onSingleTap:(id)arg1;

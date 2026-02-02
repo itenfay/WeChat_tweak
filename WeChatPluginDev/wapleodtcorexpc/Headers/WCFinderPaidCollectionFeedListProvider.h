@@ -24,7 +24,6 @@
     FinderPaidCollectionInfo *_paidCollection;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderPaidCollectionInfo *paidCollection; // @synthesize paidCollection=_paidCollection;
 @property(nonatomic) _Bool hasFetchData; // @synthesize hasFetchData=_hasFetchData;
 @property(copy, nonatomic) NSString *fromTid; // @synthesize fromTid=_fromTid;

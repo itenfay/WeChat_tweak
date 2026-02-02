@@ -17,7 +17,6 @@
     unsigned long long m_userState;
 }
 
-- (void).cxx_destruct;
 - (void)userDidLogout;
 - (void)userWillLogin;
 - (void)commonInClearData:(id)arg1;

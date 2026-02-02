@@ -12,7 +12,6 @@
     id <MonoServiceMsgDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MonoServiceMsgDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)localNotificationInfo;

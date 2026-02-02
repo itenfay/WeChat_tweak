@@ -14,7 +14,6 @@
 }
 
 + (id)reportInfoWithID:(id)arg1 creationDate:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, retain, nonatomic) NSString *reportID; // @synthesize reportID=_reportID;
 - (long long)compare:(id)arg1;

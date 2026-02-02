@@ -16,7 +16,6 @@
     NSNumber *_videoThumbMsgSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *videoThumbMsgSize; // @synthesize videoThumbMsgSize=_videoThumbMsgSize;
 @property(copy, nonatomic) NSString *sourceUsername; // @synthesize sourceUsername=_sourceUsername;
 @property(copy, nonatomic) NSString *sourceDisplayname; // @synthesize sourceDisplayname=_sourceDisplayname;

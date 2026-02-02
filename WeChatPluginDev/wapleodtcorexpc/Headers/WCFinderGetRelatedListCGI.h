@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCFinderGetRelatedListParams;
 
 @interface WCFinderGetRelatedListCGI
@@ -13,7 +15,6 @@
 }
 
 + (id)prefetchCacheHashKey:(id)arg1 viewScene:(int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderGetRelatedListParams *params; // @synthesize params=_params;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
@@ -34,4 +35,3 @@
 - (id)initWithParams:(id)arg1 successful:(CDUnknownBlockType)arg2 failure:(CDUnknownBlockType)arg3;
 
 @end
-

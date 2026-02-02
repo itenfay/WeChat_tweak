@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCFinderSearchEventRequestParams;
 
 @interface WCFinderSearchEventCGI
@@ -12,7 +14,6 @@
     WCFinderSearchEventRequestParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSearchEventRequestParams *params; // @synthesize params=_params;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
@@ -22,4 +23,3 @@
 - (id)initWithParams:(id)arg1 successBlock:(CDUnknownBlockType)arg2 failBlock:(CDUnknownBlockType)arg3;
 
 @end
-

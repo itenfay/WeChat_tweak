@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, __AnyPromise;
 
@@ -22,7 +23,6 @@
 + (id)promiseWithBooleanAdapterBlock:(CDUnknownBlockType)arg1;
 + (id)promiseWithIntegerAdapterBlock:(CDUnknownBlockType)arg1;
 + (id)promiseWithAdapterBlock:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id value;
 @property(readonly, nonatomic) _Bool fulfilled;
 @property(readonly, nonatomic) _Bool rejected;
@@ -47,4 +47,3 @@
 @property(nonatomic, readonly) NSString *description;
 
 @end
-

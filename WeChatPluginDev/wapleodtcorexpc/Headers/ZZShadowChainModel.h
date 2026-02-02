@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ZZShadowModel;
 
@@ -12,7 +13,6 @@
     ZZShadowModel *_object;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) ZZShadowModel *object; // @synthesize object=_object;
 - (CDUnknownBlockType)opacity;
 - (CDUnknownBlockType)radius;
@@ -20,4 +20,3 @@
 - (CDUnknownBlockType)offset;
 
 @end
-

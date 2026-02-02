@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_shoppingMallUrl;
 + (void)PBArrayAdd_shoppingMallTitle;
 + (void)PBArrayAdd_emptyTips;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowShoppingMall; // @synthesize isShowShoppingMall=_isShowShoppingMall;
 @property(retain, nonatomic) NSString *shoppingMallUrl; // @synthesize shoppingMallUrl=_shoppingMallUrl;
 @property(retain, nonatomic) NSString *shoppingMallTitle; // @synthesize shoppingMallTitle=_shoppingMallTitle;

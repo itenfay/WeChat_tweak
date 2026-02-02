@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderSearchCGI
@@ -16,7 +18,6 @@
 }
 
 + (id)hotwordSessionBufferKey;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
@@ -30,4 +31,3 @@
 - (id)initWithQueryText:(id)arg1 requestID:(id)arg2 scene:(int)arg3 lastBuffer:(id)arg4 objHotwordInfoBuff:(id)arg5 optionalParams:(id)arg6 successful:(CDUnknownBlockType)arg7 failure:(CDUnknownBlockType)arg8;
 
 @end
-

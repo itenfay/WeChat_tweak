@@ -23,7 +23,6 @@
 + (void)PBArrayAdd_username;
 + (unsigned long long)columnType;
 + (id)unarchiveWithWCTValue:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *mentionContact; // @synthesize mentionContact=_mentionContact;
 @property(nonatomic) unsigned long long length; // @synthesize length=_length;
 @property(nonatomic) unsigned long long start; // @synthesize start=_start;

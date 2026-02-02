@@ -12,7 +12,6 @@
     NSString *m_errStr;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *m_errStr; // @synthesize m_errStr;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

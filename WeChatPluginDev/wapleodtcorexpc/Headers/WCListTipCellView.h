@@ -12,7 +12,6 @@
 
 + (id)terminatorViewParamsWithTip:(id)arg1 subTip:(id)arg2;
 + (double)heightOfCellWithTip:(id)arg1 subTip:(id)arg2 width:(double)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTerminatorView *terminatorView; // @synthesize terminatorView=_terminatorView;
 - (void)terminatorViewDidClickSubtitle:(id)arg1;
 - (void)configureWithTip:(id)arg1 subTip:(id)arg2;

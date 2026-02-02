@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class LOTAnimationView, MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMUIButton, MMUILabel, MMUIView, NSString, UILongPressGestureRecognizer;
 @protocol MMLiveRewardGiftSendingMoreLogicDelegate;
 
@@ -27,7 +29,6 @@
     UILongPressGestureRecognizer *_sendButtonLongPressGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *sendButtonLongPressGesture; // @synthesize sendButtonLongPressGesture=_sendButtonLongPressGesture;
 @property(retain, nonatomic) MMUILabel *sendingCountLabel; // @synthesize sendingCountLabel=_sendingCountLabel;
 @property(retain, nonatomic) MMUIButton *sendButton; // @synthesize sendButton=_sendButton;
@@ -77,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

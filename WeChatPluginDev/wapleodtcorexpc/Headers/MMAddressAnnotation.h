@@ -17,7 +17,6 @@
     struct CLLocationCoordinate2D _coordinate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *floorName; // @synthesize floorName=_floorName;
 @property(retain, nonatomic) NSString *buildingId; // @synthesize buildingId=_buildingId;
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;

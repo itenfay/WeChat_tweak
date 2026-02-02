@@ -14,7 +14,6 @@
     NSString *_category;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) int scene; // @synthesize scene=_scene;

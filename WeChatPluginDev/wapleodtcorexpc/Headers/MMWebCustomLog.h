@@ -26,7 +26,6 @@
     unsigned long long _shareTimelineTimes;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long shareTimelineTimes; // @synthesize shareTimelineTimes=_shareTimelineTimes;
 @property(nonatomic) unsigned long long sendToFriendsTimes; // @synthesize sendToFriendsTimes=_sendToFriendsTimes;
 @property(nonatomic) unsigned long long toScene; // @synthesize toScene=_toScene;

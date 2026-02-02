@@ -14,7 +14,6 @@
 }
 
 + (id)uniqueIdOfMusicData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *set; // @synthesize set=_set;
 @property(retain, nonatomic) NSMutableArray *array; // @synthesize array=_array;
 - (void)removeAllObjects;

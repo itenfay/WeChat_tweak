@@ -20,7 +20,6 @@
     WCFinderFeedMediaWrap *_finderMediaWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedMediaWrap *finderMediaWrap; // @synthesize finderMediaWrap=_finderMediaWrap;
 @property(retain, nonatomic) NSString *videoPath; // @synthesize videoPath=_videoPath;
 @property(retain, nonatomic) MMMusicEditVideoMediaWrap *mediaWrap; // @synthesize mediaWrap=_mediaWrap;

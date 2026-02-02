@@ -14,7 +14,6 @@
     long long _errCode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long errCode; // @synthesize errCode=_errCode;
 @property(retain, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(retain, nonatomic) NSString *audioUrl; // @synthesize audioUrl=_audioUrl;

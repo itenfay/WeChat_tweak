@@ -17,7 +17,6 @@
     id <TPAssetResourceLoadingContentInformationRequestDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TPAssetResourceLoadingContentInformationRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool usePollingMode; // @synthesize usePollingMode=_usePollingMode;
 @property(copy, nonatomic) NSString *dataReadFilePath; // @synthesize dataReadFilePath=_dataReadFilePath;

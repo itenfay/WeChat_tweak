@@ -32,7 +32,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int versionType; // @synthesize versionType=_versionType;
 @property(nonatomic) unsigned int appType; // @synthesize appType=_appType;
 @property(retain, nonatomic) NSData *control_bytes; // @synthesize control_bytes=_control_bytes;

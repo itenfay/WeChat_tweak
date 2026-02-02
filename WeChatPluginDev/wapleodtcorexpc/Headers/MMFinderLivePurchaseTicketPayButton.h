@@ -14,7 +14,6 @@
     MMUILabel *_rightLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *rightLabel; // @synthesize rightLabel=_rightLabel;
 @property(retain, nonatomic) MMUIImageView *coinImageView; // @synthesize coinImageView=_coinImageView;
 @property(retain, nonatomic) MMUILabel *leftLabel; // @synthesize leftLabel=_leftLabel;

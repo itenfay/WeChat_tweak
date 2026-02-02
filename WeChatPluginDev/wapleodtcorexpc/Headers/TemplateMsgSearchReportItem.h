@@ -15,7 +15,6 @@
     unsigned long long _OperatePage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long OperatePage; // @synthesize OperatePage=_OperatePage;
 @property(retain, nonatomic) NSString *OperateResult; // @synthesize OperateResult=_OperateResult;
 @property(nonatomic) unsigned long long TimeSecond; // @synthesize TimeSecond=_TimeSecond;

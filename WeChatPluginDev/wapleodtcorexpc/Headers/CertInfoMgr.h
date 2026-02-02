@@ -14,7 +14,6 @@
 }
 
 + (id)GetPathOfIcon:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *m_tLastUpdate; // @synthesize m_tLastUpdate;
 @property(retain, nonatomic) NSMutableDictionary *m_dicCertInfo; // @synthesize m_dicCertInfo;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

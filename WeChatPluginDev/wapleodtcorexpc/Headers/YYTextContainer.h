@@ -28,7 +28,6 @@
 + (id)containerWithPath:(id)arg1;
 + (id)containerWithSize:(struct CGSize)arg1 insets:(struct UIEdgeInsets)arg2;
 + (id)containerWithSize:(struct CGSize)arg1;
-- (void).cxx_destruct;
 @property(copy) id <YYTextLinePositionModifier> linePositionModifier;
 @property(copy) NSAttributedString *truncationToken;
 @property unsigned long long truncationType;

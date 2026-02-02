@@ -19,7 +19,6 @@
     MMUIButton *_doneButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) MMUIButton *deleteAllButton; // @synthesize deleteAllButton=_deleteAllButton;
 @property(retain, nonatomic) MMUIButton *editButton; // @synthesize editButton=_editButton;

@@ -12,7 +12,6 @@
     WCFinderLiveAudienceComodityLogReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveAudienceComodityLogReporter *reporter; // @synthesize reporter=_reporter;
 - (void)reportEvent:(id)arg1 parameters:(id)arg2;
 @property(readonly, nonatomic) NSString *entrySource;

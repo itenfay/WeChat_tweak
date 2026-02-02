@@ -17,7 +17,6 @@
     UIImageView *_accessoryView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UISlider *uiSlider; // @synthesize uiSlider=_uiSlider;

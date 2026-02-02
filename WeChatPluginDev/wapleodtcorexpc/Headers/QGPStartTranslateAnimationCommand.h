@@ -10,7 +10,6 @@
     QGPStartTranslateAnimationParam *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPStartTranslateAnimationParam *params; // @synthesize params=_params;
 
 @end

@@ -39,7 +39,6 @@
     NSString *_netType;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *netType; // @synthesize netType=_netType;
 @property(nonatomic) unsigned long long protocolType; // @synthesize protocolType=_protocolType;
 @property(nonatomic) unsigned long long channelType; // @synthesize channelType=_channelType;

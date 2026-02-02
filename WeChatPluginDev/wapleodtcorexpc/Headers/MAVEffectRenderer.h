@@ -21,7 +21,6 @@
     MAVMetalContext *_context;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MAVMetalContext *context; // @synthesize context=_context;
 - (void)checkOutput;
 - (id)getTexture;

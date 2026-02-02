@@ -14,7 +14,6 @@
     id <MMLiveOnlineUserLogicDelegate> _logicDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveOnlineUserLogicDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 - (_Bool)kickAudience:(id)arg1;

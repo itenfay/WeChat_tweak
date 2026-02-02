@@ -17,7 +17,6 @@
     NSArray *_arrBufferTimes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrBufferTimes; // @synthesize arrBufferTimes=_arrBufferTimes;
 @property(retain, nonatomic) NSObject *playbackTimeObserver; // @synthesize playbackTimeObserver=_playbackTimeObserver;
 @property(nonatomic) float currentPlayedSec; // @synthesize currentPlayedSec=_currentPlayedSec;

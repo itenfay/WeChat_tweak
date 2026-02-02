@@ -14,7 +14,6 @@
     GameJumpInfo *_secondLineJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameJumpInfo *secondLineJumpInfo; // @synthesize secondLineJumpInfo=_secondLineJumpInfo;
 @property(retain, nonatomic) NSString *secondLineIconUrl; // @synthesize secondLineIconUrl=_secondLineIconUrl;
 @property(retain, nonatomic) NSString *secondLineContent; // @synthesize secondLineContent=_secondLineContent;

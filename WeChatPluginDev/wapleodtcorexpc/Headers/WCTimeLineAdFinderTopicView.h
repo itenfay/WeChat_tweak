@@ -13,7 +13,6 @@
 }
 
 + (double)heightForMedia:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *relationTextLabel; // @synthesize relationTextLabel=_relationTextLabel;
 @property(retain, nonatomic) MMUIButton *topicInfoBar; // @synthesize topicInfoBar=_topicInfoBar;
 @property(retain, nonatomic) WCAdSliderCardView *sliderCard; // @synthesize sliderCard=_sliderCard;

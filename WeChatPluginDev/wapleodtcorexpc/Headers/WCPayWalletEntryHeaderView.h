@@ -35,7 +35,6 @@
 
 + (double)getHeaderContentHeight;
 + (double)getHeaderViewHeightWithBannerData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *reddotForBalance; // @synthesize reddotForBalance=_reddotForBalance;
 @property(retain, nonatomic) UIImageView *reddotForOfflinePay; // @synthesize reddotForOfflinePay=_reddotForOfflinePay;
 @property(retain, nonatomic) MMUILabel *balanceMoneyLabel; // @synthesize balanceMoneyLabel=_balanceMoneyLabel;

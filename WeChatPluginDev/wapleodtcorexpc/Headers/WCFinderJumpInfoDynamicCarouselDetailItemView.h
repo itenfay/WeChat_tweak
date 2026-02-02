@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, MMWebImageView, NSString, WCFinderJumpInfoDynamicCarouselDetailSubViewItem;
 
@@ -17,7 +18,6 @@
 
 + (id)createTextLabel;
 + (id)createIconImageView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(copy, nonatomic) CDUnknownBlockType contentSizeDidChangeBlock; // @synthesize contentSizeDidChangeBlock=_contentSizeDidChangeBlock;
@@ -41,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

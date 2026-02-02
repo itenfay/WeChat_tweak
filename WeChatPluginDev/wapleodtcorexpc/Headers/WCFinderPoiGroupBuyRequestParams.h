@@ -16,7 +16,6 @@
     NSString *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) NSString *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(retain, nonatomic) NSString *jumpInfoToGroupbuyByPass; // @synthesize jumpInfoToGroupbuyByPass=_jumpInfoToGroupbuyByPass;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveKSKitLyricPreparingView, MMFinderLiveKSKitLyricSentence, MMFinderLiveKSKitLyricWrapper, NSMutableArray, NSString;
 
 @interface MMFinderLiveKSKitLyricContainerView
@@ -37,7 +39,6 @@
 }
 
 + (CDUnknownBlockType)createReportTimer:(long long)arg1 block:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property double lastRefreshTime; // @synthesize lastRefreshTime=_lastRefreshTime;
 @property long long fpsCounter; // @synthesize fpsCounter=_fpsCounter;
 @property(nonatomic) int maxRefreshFPS; // @synthesize maxRefreshFPS=_maxRefreshFPS;
@@ -132,4 +133,3 @@
 @property(readonly) Class superclass;
 
 @end
-

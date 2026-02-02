@@ -14,7 +14,6 @@
     NSDictionary *_invocationHandlerTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *invocationHandlerTable; // @synthesize invocationHandlerTable=_invocationHandlerTable;
 @property(retain, nonatomic) TPPlayerAdapter *playerAdapter; // @synthesize playerAdapter=_playerAdapter;
 @property(retain, nonatomic) TPPlayerEventPublisher *publisher; // @synthesize publisher=_publisher;

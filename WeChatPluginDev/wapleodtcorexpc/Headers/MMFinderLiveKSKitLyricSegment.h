@@ -17,7 +17,6 @@
 
 + (id)parseLyricSentence:(id)arg1;
 + (id)parseLyricSegment:(id)arg1 sentence:(id)arg2 wordBeginIndex:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *lyricWordList; // @synthesize lyricWordList=_lyricWordList;
 @property(readonly, nonatomic) int endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) int duration; // @synthesize duration=_duration;

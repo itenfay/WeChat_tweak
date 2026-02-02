@@ -25,7 +25,6 @@
     struct CGPoint _oriPosition;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) UIView *allButtonsView; // @synthesize allButtonsView=_allButtonsView;

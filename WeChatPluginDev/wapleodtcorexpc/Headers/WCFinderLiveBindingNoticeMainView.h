@@ -19,7 +19,6 @@
 }
 
 + (id)getReserveString:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *reserveLabel; // @synthesize reserveLabel=_reserveLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMUILabel *timeLabel; // @synthesize timeLabel=_timeLabel;

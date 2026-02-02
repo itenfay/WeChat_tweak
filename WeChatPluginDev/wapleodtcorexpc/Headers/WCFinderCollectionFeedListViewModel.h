@@ -15,7 +15,6 @@
 }
 
 + (id)viewModelWithParams:(id)arg1 provider:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <WCFinderCollectionFeedListProvider> provider; // @synthesize provider=_provider;
 @property(retain, nonatomic) WCFinderCollectionHalfViewParams *params; // @synthesize params=_params;
 @property(readonly, nonatomic) WCFinderFeedArray *feedArray;

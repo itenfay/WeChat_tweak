@@ -10,7 +10,6 @@
     NSString *_chatSessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *chatSessionId; // @synthesize chatSessionId=_chatSessionId;
 - (_Bool)navigationController:(id)arg1 shouldUsePresentWhenPushViewController:(id)arg2 animated:(_Bool)arg3 scene:(unsigned long long)arg4;
 - (void)onWeAppSessionMsgBtnClick:(id)arg1;

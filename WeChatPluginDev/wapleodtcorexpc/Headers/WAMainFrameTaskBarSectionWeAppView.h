@@ -36,7 +36,6 @@
 + (_Bool)isIpadNotSplit;
 + (int)contentHeight:(id)arg1 maxShowCount:(long long)arg2;
 + (id)titleFont;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *moreIcon; // @synthesize moreIcon=_moreIcon;
 @property(retain, nonatomic) UIView *moreContainer; // @synthesize moreContainer=_moreContainer;
 @property(retain, nonatomic) UILabel *moreLabel; // @synthesize moreLabel=_moreLabel;

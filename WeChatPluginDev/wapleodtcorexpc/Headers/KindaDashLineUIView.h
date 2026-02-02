@@ -15,7 +15,6 @@
     CAShapeLayer *_shapePayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *shapePayer; // @synthesize shapePayer=_shapePayer;
 @property(nonatomic) _Bool vertical; // @synthesize vertical=_vertical;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;

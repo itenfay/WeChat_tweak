@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_nicknameList;
 + (void)PBArrayAdd_detail;
 + (void)PBArrayAdd_usernameList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *nicknameList; // @synthesize nicknameList=_nicknameList;
 @property(retain, nonatomic) NSString *detail; // @synthesize detail=_detail;
 @property(retain, nonatomic) NSArray *usernameList; // @synthesize usernameList=_usernameList;

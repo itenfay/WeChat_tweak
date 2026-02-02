@@ -17,7 +17,6 @@
     MiniTaskCollectioViewMaskLayerConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MiniTaskCollectioViewMaskLayerConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) CALayer *bigGuardLayer; // @synthesize bigGuardLayer=_bigGuardLayer;
 @property(retain, nonatomic) CALayer *guardLayer; // @synthesize guardLayer=_guardLayer;

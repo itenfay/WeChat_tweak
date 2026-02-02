@@ -19,7 +19,6 @@
     UIScreenEdgePanGestureRecognizer *_popBackInteractivePopGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *popBackInteractivePopGesture; // @synthesize popBackInteractivePopGesture=_popBackInteractivePopGesture;
 @property(retain, nonatomic) WAAppDismissAnimateTransition *dismissAnimateTransition; // @synthesize dismissAnimateTransition=_dismissAnimateTransition;
 @property(retain, nonatomic) WCStoryDismissInteractiveTransition *dismissInteractiveTransition; // @synthesize dismissInteractiveTransition=_dismissInteractiveTransition;

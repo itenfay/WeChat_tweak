@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, TencentLBSSensorManager;
 @protocol OS_dispatch_source;
@@ -25,7 +26,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property int mSteps; // @synthesize mSteps=_mSteps;
 @property double bleArriveTime; // @synthesize bleArriveTime=_bleArriveTime;
 @property(nonatomic) long long startpdrT; // @synthesize startpdrT=_startpdrT;
@@ -51,4 +51,3 @@
 - (id)init;
 
 @end
-

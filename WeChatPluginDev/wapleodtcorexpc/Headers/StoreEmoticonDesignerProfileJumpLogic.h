@@ -12,7 +12,6 @@
     StoreEmoticonDesignerProfileJumpConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StoreEmoticonDesignerProfileJumpConfig *config; // @synthesize config=_config;
 - (void)showFailTips;
 - (void)openFinderVC:(id)arg1;

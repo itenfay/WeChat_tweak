@@ -19,7 +19,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableForward; // @synthesize disableForward=_disableForward;
 @property(nonatomic) unsigned long long miniProgramType; // @synthesize miniProgramType=_miniProgramType;
 @property(nonatomic) _Bool withShareTicket; // @synthesize withShareTicket=_withShareTicket;

@@ -37,7 +37,6 @@
 }
 
 + (id)stickerRecordAttributesFromItem:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long actionSceneOrientation; // @synthesize actionSceneOrientation=_actionSceneOrientation;
 @property(nonatomic) double normalizedTransformComponentsTranslationY; // @synthesize normalizedTransformComponentsTranslationY=_normalizedTransformComponentsTranslationY;
 @property(nonatomic) double normalizedTransformComponentsTranslationX; // @synthesize normalizedTransformComponentsTranslationX=_normalizedTransformComponentsTranslationX;

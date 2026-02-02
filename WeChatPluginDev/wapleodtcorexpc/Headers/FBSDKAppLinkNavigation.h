@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FBSDKAppLink, NSDictionary;
 
@@ -24,7 +25,6 @@
 + (void)resolveAppLink:(id)arg1 resolver:(id)arg2 handler:(CDUnknownBlockType)arg3;
 + (id)callbackAppLinkDataForAppWithName:(id)arg1 url:(id)arg2;
 + (id)navigationWithAppLink:(id)arg1 extras:(id)arg2 appLinkData:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FBSDKAppLink *appLink; // @synthesize appLink=_appLink;
 @property(copy, nonatomic) NSDictionary *appLinkData; // @synthesize appLinkData=_appLinkData;
 @property(copy, nonatomic) NSDictionary *extras; // @synthesize extras=_extras;
@@ -35,4 +35,3 @@
 - (id)stringByEscapingQueryString:(id)arg1;
 
 @end
-

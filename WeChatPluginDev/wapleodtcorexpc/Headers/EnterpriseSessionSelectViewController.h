@@ -16,7 +16,6 @@
     id <EnterpriseSessionSelectViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EnterpriseSessionSelectViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)confirmSelect;
 - (void)cancelSelect:(id)arg1;

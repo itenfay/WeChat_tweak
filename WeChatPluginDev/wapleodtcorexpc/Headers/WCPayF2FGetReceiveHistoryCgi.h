@@ -16,7 +16,6 @@
     id <WCPayF2FGetReceiveHistoryCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayF2FGetReceiveHistoryCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 @property(nonatomic) unsigned int svrRettryNum; // @synthesize svrRettryNum=_svrRettryNum;
 @property(nonatomic) unsigned int maxItemPerTime; // @synthesize maxItemPerTime=_maxItemPerTime;

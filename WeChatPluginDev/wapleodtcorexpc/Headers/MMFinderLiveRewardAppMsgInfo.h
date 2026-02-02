@@ -35,7 +35,6 @@
     NSArray *_pkValueExtraItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pkValueExtraItem; // @synthesize pkValueExtraItem=_pkValueExtraItem;
 @property(nonatomic) unsigned int extraPKValue; // @synthesize extraPKValue=_extraPKValue;
 @property(nonatomic) _Bool showAttackEffectUpgradeSubNotification; // @synthesize showAttackEffectUpgradeSubNotification=_showAttackEffectUpgradeSubNotification;

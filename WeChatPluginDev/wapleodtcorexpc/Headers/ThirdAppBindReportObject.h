@@ -15,7 +15,6 @@
     unsigned long long _bindStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long bindStatus; // @synthesize bindStatus=_bindStatus;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic, getter=isBound) _Bool bind; // @synthesize bind=_bind;

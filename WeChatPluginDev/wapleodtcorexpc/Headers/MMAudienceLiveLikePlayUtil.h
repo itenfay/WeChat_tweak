@@ -10,7 +10,6 @@
     MMLiveLikeButton *_likeButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveLikeButton *likeButton; // @synthesize likeButton=_likeButton;
 - (void)hideLiveLike;
 - (void)showLiveLike;

@@ -14,7 +14,6 @@
     MISSING_TYPE *hasReportedExit;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithListAdapter:(id)arg1;
 - (void)reportExitPageWithType:(unsigned long long)arg1;

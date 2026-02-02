@@ -19,7 +19,6 @@
 
 + (double)heightForOrder:(id)arg1 inWidth:(double)arg2 estimate:(_Bool)arg3;
 + (_Bool)shouldUseComponentForOrder:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *rightChevronView; // @synthesize rightChevronView=_rightChevronView;
 @property(retain, nonatomic) UILabel *refererNameView; // @synthesize refererNameView=_refererNameView;
 @property(retain, nonatomic) UIImageView *finderLogoView; // @synthesize finderLogoView=_finderLogoView;

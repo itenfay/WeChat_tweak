@@ -24,7 +24,6 @@
 
 + (void)reportFriendAssistAction:(unsigned long long)arg1 forContact:(id)arg2;
 + (void)OnViewDetail:(id)arg1 prarentViewController:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *expandedContacts; // @synthesize expandedContacts=_expandedContacts;
 @property(nonatomic) _Bool fromSayHelloButton; // @synthesize fromSayHelloButton=_fromSayHelloButton;
 @property(nonatomic) unsigned int m_uiScene; // @synthesize m_uiScene;

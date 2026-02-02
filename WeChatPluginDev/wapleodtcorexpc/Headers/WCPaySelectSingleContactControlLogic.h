@@ -15,7 +15,6 @@
     JSApiSelectSessionViewController *_selectSessionVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSApiSelectSessionViewController *selectSessionVC; // @synthesize selectSessionVC=_selectSessionVC;
 @property(copy, nonatomic) NSString *selectContactVCTitle; // @synthesize selectContactVCTitle=_selectContactVCTitle;
 @property(nonatomic) _Bool onlyShowContactList; // @synthesize onlyShowContactList=_onlyShowContactList;

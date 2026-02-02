@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageForwardAndEditLogicController, ForwardMessageLogicController, MMScrollView, NSArray, NSMutableArray, NSSet, NSString, ShareDataToOpenSDKController, UINavigationController, UIPageControl, UIView, WCImageFullScreenButtonsContainerView, WCImageFullScreenViewContainer, WCMomentsInvisibleTipsView, WCMomentsPageContext;
 @protocol WCImageFullScreenViewControllerDelegate, WCImageFullScreenViewControllerNavigatingDelegate;
 
@@ -48,7 +50,6 @@
     unsigned long long _needsEditMediaIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long needsEditMediaIndex; // @synthesize needsEditMediaIndex=_needsEditMediaIndex;
 @property(copy, nonatomic) NSSet *currentVisibleIndexSet; // @synthesize currentVisibleIndexSet=_currentVisibleIndexSet;
 @property(nonatomic) _Bool isShareEmbedExcerptEnabled; // @synthesize isShareEmbedExcerptEnabled=_isShareEmbedExcerptEnabled;
@@ -166,4 +167,3 @@
 @property(readonly) Class superclass;
 
 @end
-

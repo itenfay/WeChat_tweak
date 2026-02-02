@@ -14,7 +14,6 @@
 
 + (id)gestureSet;
 + (id)gestureSetWithPoints:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pointArray; // @synthesize pointArray=_pointArray;
 @property(retain, nonatomic) WCGestureVector *vector; // @synthesize vector=_vector;
 @property(readonly, nonatomic) _Bool isStandardized; // @synthesize isStandardized=_isStandardized;

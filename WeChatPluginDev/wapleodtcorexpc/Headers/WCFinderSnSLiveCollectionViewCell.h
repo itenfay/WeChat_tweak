@@ -15,7 +15,6 @@
     UILabel *_shareTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *shareTipsLabel; // @synthesize shareTipsLabel=_shareTipsLabel;
 @property(retain, nonatomic) UIView *avatorContainerView; // @synthesize avatorContainerView=_avatorContainerView;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;

@@ -21,7 +21,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1 WithErrorType:(unsigned int)arg2 ErrorMsg:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WalletMixSpGenprepayResp *m_walletMixSpGenprepayResp; // @synthesize m_walletMixSpGenprepayResp=_m_walletMixSpGenprepayResp;
 @property(retain, nonatomic) NSString *m_productId; // @synthesize m_productId=_m_productId;
 @property(retain, nonatomic) NSString *m_appSource; // @synthesize m_appSource=_m_appSource;

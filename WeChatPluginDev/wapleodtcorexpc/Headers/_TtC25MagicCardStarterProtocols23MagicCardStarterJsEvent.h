@@ -13,7 +13,6 @@
     MISSING_TYPE *eventData;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithEventName:(id)arg1 eventData:(id)arg2;
 @property(nonatomic, copy) NSDictionary *eventData;

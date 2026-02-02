@@ -15,7 +15,6 @@
 }
 
 + (_Bool)shouldShowSetPermissionsWithUserName:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <SetPermissionsViewControllerDelegate> viewDelegate; // @synthesize viewDelegate=_viewDelegate;
 @property(nonatomic) _Bool m_bIsDisableAllPermissionContact; // @synthesize m_bIsDisableAllPermissionContact=_m_bIsDisableAllPermissionContact;
 @property(retain, nonatomic) NSString *m_moreLimitFootTitle; // @synthesize m_moreLimitFootTitle=_m_moreLimitFootTitle;

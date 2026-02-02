@@ -28,7 +28,6 @@
     WCRedesignVerifyCodeTextItem *_verifyCodeTextItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCRedesignVerifyCodeTextItem *verifyCodeTextItem; // @synthesize verifyCodeTextItem=_verifyCodeTextItem;
 @property(retain, nonatomic) WCButtonListView *bottomButtonView; // @synthesize bottomButtonView=_bottomButtonView;
 @property(retain, nonatomic) WCRedesignTextItem *passwordTextItem; // @synthesize passwordTextItem=_passwordTextItem;

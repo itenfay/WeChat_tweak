@@ -18,7 +18,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveTagListCollectionViewConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) WCFinderLiveTagListCollectionView *tagListView; // @synthesize tagListView=_tagListView;
 @property(nonatomic) unsigned long long commentScene; // @synthesize commentScene=_commentScene;

@@ -4,6 +4,7 @@
 //
 
 #import <MMRouter/MMRouterAuthorizer.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMRouterAuthorizer (WeChat)
 + (void)ShowCannotUseTip:(id)arg1;
@@ -13,4 +14,3 @@
 - (id)universalAuth;
 - (CDUnknownBlockType)doUniversalAuth;
 @end
-

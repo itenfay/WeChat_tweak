@@ -24,7 +24,6 @@
     long long _outPlaybackTimeMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long outPlaybackTimeMs; // @synthesize outPlaybackTimeMs=_outPlaybackTimeMs;
 @property(nonatomic) _Bool forbidBackToBizApp; // @synthesize forbidBackToBizApp=_forbidBackToBizApp;
 @property(nonatomic) _Bool videoAllowVioce; // @synthesize videoAllowVioce=_videoAllowVioce;

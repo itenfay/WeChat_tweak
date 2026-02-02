@@ -15,7 +15,6 @@
     id <WCPayCardListViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayCardListViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)OnResetPasswordCancel:(id)arg1;
 - (void)honeyPayReceiverCardDetailLogicDidUnbindCard:(id)arg1;

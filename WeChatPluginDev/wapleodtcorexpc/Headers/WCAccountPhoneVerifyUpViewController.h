@@ -19,7 +19,6 @@
     long long _storedBarStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long storedBarStyle; // @synthesize storedBarStyle=_storedBarStyle;
 @property(retain, nonatomic) NSDictionary *storedTitleTextAttributes; // @synthesize storedTitleTextAttributes=_storedTitleTextAttributes;
 @property(retain, nonatomic) UIButton *sentAndNextButton; // @synthesize sentAndNextButton=_sentAndNextButton;

@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_categorys;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *categorys; // @synthesize categorys=_categorys;
 - (id)getOrCreateInfoWithCategory:(unsigned long long)arg1;
 - (id)getPBPropertyTable;

@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_dicHadGetContactDetialMigrateAssociateChatRoom;
 + (void)PBArrayAdd_dicActiveUserWaitForOpenImMigrate;
 + (void)PBArrayAdd_migrateOpenImChatRoomList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicActiveUserWaitForOpenImMigrate; // @synthesize dicActiveUserWaitForOpenImMigrate=_dicActiveUserWaitForOpenImMigrate;
 @property(retain, nonatomic) NSMutableDictionary *dicHadGetContactDetialMigrateAssociateChatRoom; // @synthesize dicHadGetContactDetialMigrateAssociateChatRoom=_dicHadGetContactDetialMigrateAssociateChatRoom;
 @property(retain, nonatomic) NSMutableArray *migrateOpenImChatRoomList; // @synthesize migrateOpenImChatRoomList=_migrateOpenImChatRoomList;

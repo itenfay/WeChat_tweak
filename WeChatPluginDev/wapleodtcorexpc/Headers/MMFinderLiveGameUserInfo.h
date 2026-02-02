@@ -39,7 +39,6 @@
     NSMutableArray *_bannerList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int maxVisibleUserCount; // @synthesize maxVisibleUserCount=_maxVisibleUserCount;
 @property(nonatomic) unsigned int redpacketChatroomSelectStatus; // @synthesize redpacketChatroomSelectStatus=_redpacketChatroomSelectStatus;
 @property(nonatomic) unsigned int durationMs; // @synthesize durationMs=_durationMs;

@@ -10,7 +10,6 @@
     MultiTalkMonoMsg *_m_monoMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultiTalkMonoMsg *m_monoMsg; // @synthesize m_monoMsg=_m_monoMsg;
 
 @end

@@ -14,7 +14,6 @@
 }
 
 + (id)checkTextStateForAddOrModify:(id)arg1;
-- (void).cxx_destruct;
 @property _Bool affDBTransferFinish; // @synthesize affDBTransferFinish=_affDBTransferFinish;
 @property _Bool useAffDB; // @synthesize useAffDB=_useAffDB;
 @property(retain, nonatomic) WCTextStateDB *affDB; // @synthesize affDB=_affDB;

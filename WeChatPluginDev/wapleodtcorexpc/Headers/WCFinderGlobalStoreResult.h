@@ -14,7 +14,6 @@
     NSString *_errMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(nonatomic) long long errCode; // @synthesize errCode=_errCode;
 @property(retain, nonatomic) NSObject *result; // @synthesize result=_result;

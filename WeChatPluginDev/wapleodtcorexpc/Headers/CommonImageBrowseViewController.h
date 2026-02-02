@@ -16,7 +16,6 @@
     id <CommonImageBrowserDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <CommonImageBrowserDelegate> m_delegate; // @synthesize m_delegate;
 @property(nonatomic) _Bool needActionSheet; // @synthesize needActionSheet=m_needActionSheet;
 @property(nonatomic) _Bool needDeleteAction; // @synthesize needDeleteAction=m_needDeleteAction;

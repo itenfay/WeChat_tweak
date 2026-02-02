@@ -14,7 +14,6 @@
     ReceiveChatroomMsgResponse *_roomResponse;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromCache; // @synthesize isFromCache=_isFromCache;
 @property(retain, nonatomic) ReceiveChatroomMsgResponse *roomResponse; // @synthesize roomResponse=_roomResponse;
 @property(retain, nonatomic) NSArray *messageArray; // @synthesize messageArray=_messageArray;

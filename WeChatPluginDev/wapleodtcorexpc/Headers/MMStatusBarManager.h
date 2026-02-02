@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMStatusBarCustomInfo, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface MMStatusBarManager
@@ -13,7 +15,6 @@
     NSMutableArray *_statusBarActions;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRunningStatusBarAction; // @synthesize isRunningStatusBarAction=_isRunningStatusBarAction;
 @property(retain, nonatomic) NSMutableArray *statusBarActions; // @synthesize statusBarActions=_statusBarActions;
 @property(retain, nonatomic) NSMutableDictionary *customStatusTable; // @synthesize customStatusTable=_customStatusTable;
@@ -46,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

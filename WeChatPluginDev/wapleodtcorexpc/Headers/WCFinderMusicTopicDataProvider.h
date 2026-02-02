@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableDictionary, NSString;
 
@@ -22,7 +23,6 @@
     NSMutableDictionary *_loadingStateDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *loadingStateDic; // @synthesize loadingStateDic=_loadingStateDic;
 @property(retain, nonatomic) NSMutableDictionary *cgiPromiseDic; // @synthesize cgiPromiseDic=_cgiPromiseDic;
 @property(retain, nonatomic) NSMutableDictionary *listRespInfoDic; // @synthesize listRespInfoDic=_listRespInfoDic;
@@ -45,4 +45,3 @@
 - (id)initMusicTopicId:(unsigned long long)arg1 encryptedMusicId:(id)arg2 byPassInfo:(id)arg3 commentScene:(int)arg4 refObjectid:(id)arg5;
 
 @end
-

@@ -21,7 +21,6 @@
     NSObject<OS_dispatch_queue> *_importQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *importQueue; // @synthesize importQueue=_importQueue;
 @property(retain, nonatomic) WXGMigrationMsgItemDB *msgItemDB; // @synthesize msgItemDB=_msgItemDB;
 @property(retain, nonatomic) WXGImportMessageHelper *importMessageHelper; // @synthesize importMessageHelper=_importMessageHelper;

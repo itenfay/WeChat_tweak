@@ -27,7 +27,6 @@
 }
 
 + (double)DefaultHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *backgroundButton; // @synthesize backgroundButton=_backgroundButton;
 @property(nonatomic) int layoutScene; // @synthesize layoutScene=_layoutScene;
 @property(retain, nonatomic) UIButton *defaultLabel; // @synthesize defaultLabel=_defaultLabel;

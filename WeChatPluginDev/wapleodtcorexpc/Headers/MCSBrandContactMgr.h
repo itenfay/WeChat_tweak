@@ -14,7 +14,6 @@
     _Bool _bNeedSave;
 }
 
-- (void).cxx_destruct;
 - (void)onMMDynamicConfigUpdated;
 - (void)onAppTerminate;
 - (void)onClearData;

@@ -16,7 +16,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) _Bool shouldAnimation; // @synthesize shouldAnimation=_shouldAnimation;
 @property(nonatomic) unsigned long long fillMode; // @synthesize fillMode=_fillMode;

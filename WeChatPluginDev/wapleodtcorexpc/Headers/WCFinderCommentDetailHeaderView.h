@@ -19,7 +19,6 @@
 }
 
 + (double)headerViewHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useMultipleTabStyle; // @synthesize useMultipleTabStyle=_useMultipleTabStyle;
 @property(nonatomic) __weak id <WCFinderCommentDetailHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WCFinderCommentListSelectTabView *selectTabView; // @synthesize selectTabView=_selectTabView;

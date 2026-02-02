@@ -12,7 +12,6 @@
     unsigned long long _itemStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long itemStatus; // @synthesize itemStatus=_itemStatus;
 @property(nonatomic) _Bool isSelectable; // @synthesize isSelectable=_isSelectable;
 @property(copy, nonatomic) NSString *richTextTitle; // @synthesize richTextTitle=_richTextTitle;

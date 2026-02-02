@@ -17,7 +17,6 @@
 + (void)PBArrayAdd_layoutEndTime;
 + (void)PBArrayAdd_announceMent;
 + (void)PBArrayAdd_cardTpId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int top; // @synthesize top=_top;
 @property(nonatomic) unsigned int layoutEndTime; // @synthesize layoutEndTime=_layoutEndTime;
 @property(retain, nonatomic) NSString *announceMent; // @synthesize announceMent=_announceMent;

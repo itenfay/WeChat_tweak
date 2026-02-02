@@ -18,7 +18,6 @@
 }
 
 + (struct CGSize)defaultSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveIconButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;

@@ -11,7 +11,6 @@
     NSString *productExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productExtInfo; // @synthesize productExtInfo;
 @property(retain, nonatomic) JSEvent *jsEvent; // @synthesize jsEvent;
 - (void)OnBrandIAPGetResult:(id)arg1 Error:(int)arg2;

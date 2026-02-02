@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMLiveStarterTestSpeedManager : NSObject
 {
@@ -14,7 +15,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isComplete; // @synthesize isComplete=_isComplete;
 @property(copy, nonatomic) CDUnknownBlockType testSpeedBlock; // @synthesize testSpeedBlock=_testSpeedBlock;
 - (void)forceStopRequest;
@@ -24,4 +24,3 @@
 - (void)testSpeedRequestWithModel:(id)arg1 testSpeedBlock:(CDUnknownBlockType)arg2;
 
 @end
-

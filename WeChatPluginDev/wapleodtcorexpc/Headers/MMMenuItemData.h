@@ -23,7 +23,6 @@
     struct CGSize _menuSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double menuItemWidth; // @synthesize menuItemWidth=_menuItemWidth;
 @property(nonatomic) double menuItemInnerGap; // @synthesize menuItemInnerGap=_menuItemInnerGap;
 @property(nonatomic) double minWidth; // @synthesize minWidth=_minWidth;

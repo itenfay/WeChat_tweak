@@ -13,7 +13,6 @@
 }
 
 + (id)genRingBackDetailSubRequestPB:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *vc; // @synthesize vc=_vc;
 @property(retain, nonatomic) RingToneDetail *ringDetail; // @synthesize ringDetail=_ringDetail;
 @property(retain, nonatomic) StatusFooterJumpRingtone *ring; // @synthesize ring=_ring;

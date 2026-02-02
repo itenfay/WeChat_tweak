@@ -18,7 +18,6 @@
     MMUIActivityIndicatorView *_smallLoadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *smallLoadingView; // @synthesize smallLoadingView=_smallLoadingView;
 @property(retain, nonatomic) EmoticonCustomAddLogicController *addEmoticonLogic; // @synthesize addEmoticonLogic=_addEmoticonLogic;
 @property(retain, nonatomic) UIView *_bkgView; // @synthesize _bkgView;

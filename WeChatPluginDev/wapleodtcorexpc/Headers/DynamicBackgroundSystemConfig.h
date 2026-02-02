@@ -26,7 +26,6 @@
     NSMutableArray *_colorConfigs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *colorConfigs; // @synthesize colorConfigs=_colorConfigs;
 @property(nonatomic) double backgroundDuration; // @synthesize backgroundDuration=_backgroundDuration;
 @property(nonatomic) unsigned int framePerSecond; // @synthesize framePerSecond=_framePerSecond;

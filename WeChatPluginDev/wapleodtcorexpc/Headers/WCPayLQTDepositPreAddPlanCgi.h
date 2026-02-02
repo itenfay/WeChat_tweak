@@ -10,7 +10,6 @@
     id <WCPayLQTDepositPreAddPlanCgiDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)cacheResponse:(id)arg1;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetResponse:(id)arg1;

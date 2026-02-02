@@ -47,7 +47,6 @@
 + (id)imageButtonForSVGImageName:(id)arg1;
 + (double)getRedEnvelopeButtonIconSize;
 + (struct UIEdgeInsets)getRedEnvelopeButtonEdgeInsets;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize redEnvelopeButtonTargetSize; // @synthesize redEnvelopeButtonTargetSize=_redEnvelopeButtonTargetSize;
 @property(retain, nonatomic) TextStateFeverTapGestureRecognizer *feverTapGesture; // @synthesize feverTapGesture=_feverTapGesture;
 @property(retain, nonatomic) MMUIButton *moreButton; // @synthesize moreButton=_moreButton;

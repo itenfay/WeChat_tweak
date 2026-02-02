@@ -16,7 +16,6 @@
     unsigned long long _sdpExchangeType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sdpExchangeType; // @synthesize sdpExchangeType=_sdpExchangeType;
 @property(copy, nonatomic) NSString *serverUrl; // @synthesize serverUrl=_serverUrl;
 @property(copy, nonatomic) NSString *streamUrl; // @synthesize streamUrl=_streamUrl;

@@ -14,7 +14,6 @@
     _Bool m_needSwitchFileType;
 }
 
-- (void).cxx_destruct;
 - (void)OnCdnDownload:(id)arg1;
 - (void)OnCdnDownloadProgress:(id)arg1;
 - (void)realStopDownloadFavMedia:(id)arg1;

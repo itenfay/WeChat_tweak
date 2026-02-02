@@ -15,7 +15,6 @@
     UILabel *m_entranceLabel;
 }
 
-- (void).cxx_destruct;
 - (void)initView;
 - (id)getInfo;
 - (id)initWithWXBorrowMoneyItem:(id)arg1;

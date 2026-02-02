@@ -17,7 +17,6 @@
     UIImage *_stillImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *stillImage; // @synthesize stillImage=_stillImage;
 @property(copy, nonatomic) NSString *appGroupId; // @synthesize appGroupId=_appGroupId;
 @property(retain, nonatomic) NSValue *encodeExpectResolution; // @synthesize encodeExpectResolution=_encodeExpectResolution;

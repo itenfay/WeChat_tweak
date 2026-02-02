@@ -16,7 +16,6 @@
     NSArray *_pinnedCertificates;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool validatesCertificateChain; // @synthesize validatesCertificateChain=_validatesCertificateChain;
 @property(nonatomic) _Bool TLSSkipHostnameCheck; // @synthesize TLSSkipHostnameCheck=_TLSSkipHostnameCheck;
 @property(readonly, nonatomic) NSArray *pinnedCertificates; // @synthesize pinnedCertificates=_pinnedCertificates;

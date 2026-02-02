@@ -25,7 +25,6 @@
     long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
 @property(nonatomic) unsigned int m_setLimitedModePwdType; // @synthesize m_setLimitedModePwdType=_m_setLimitedModePwdType;
 @property(retain, nonatomic) NSString *m_inputPassword; // @synthesize m_inputPassword=_m_inputPassword;

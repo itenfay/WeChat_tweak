@@ -20,7 +20,6 @@
     NSString *_normalTips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *normalTips; // @synthesize normalTips=_normalTips;
 @property(nonatomic) double pulldownHeight; // @synthesize pulldownHeight=_pulldownHeight;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;

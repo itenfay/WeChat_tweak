@@ -18,7 +18,6 @@
     NSString *_packageVersion;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int subScene; // @synthesize subScene=_subScene;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(nonatomic) unsigned int requestId; // @synthesize requestId=_requestId;

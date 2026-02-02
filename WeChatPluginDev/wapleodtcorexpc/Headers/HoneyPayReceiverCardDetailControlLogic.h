@@ -15,7 +15,6 @@
     HoneyPayReceiverCardDetailViewController *_detailVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) HoneyPayReceiverCardDetailViewController *detailVC; // @synthesize detailVC=_detailVC;
 @property(retain, nonatomic) WCPayGetPayPwdTokenCgi *getPayPwdTokenCgi; // @synthesize getPayPwdTokenCgi=_getPayPwdTokenCgi;
 @property(retain, nonatomic) WCPayUnbindHoneyPayCardCgi *unbindCgi; // @synthesize unbindCgi=_unbindCgi;

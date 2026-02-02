@@ -14,7 +14,6 @@
     id <TAVVideoCompositionTrack> _track;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TAVVideoCompositionTrack> track; // @synthesize track=_track;
 @property(retain, nonatomic) CIImage *image; // @synthesize image=_image;
 

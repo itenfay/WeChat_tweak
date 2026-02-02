@@ -15,7 +15,6 @@
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)saveStoreItemToCache:(id)arg1;
 - (id)loadStoreItemFromCache:(id)arg1;

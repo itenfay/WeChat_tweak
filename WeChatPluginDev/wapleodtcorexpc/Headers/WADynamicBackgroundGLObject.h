@@ -13,7 +13,6 @@
     union _GLKMatrix4 _modelMatrix;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) union _GLKMatrix4 modelMatrix; // @synthesize modelMatrix=_modelMatrix;
 @property(retain, nonatomic) WADynamicBackgroundGLContext *context; // @synthesize context=_context;
 - (void)draw:(id)arg1;

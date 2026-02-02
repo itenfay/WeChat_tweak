@@ -15,7 +15,6 @@
     NSString *_leftTimeString;
 }
 
-- (void).cxx_destruct;
 - (void)setLeftTime:(id)arg1;
 - (void)setSpeed:(float)arg1;
 - (void)setCurrentSessionCount:(unsigned long long)arg1 totalSessionCount:(unsigned long long)arg2;

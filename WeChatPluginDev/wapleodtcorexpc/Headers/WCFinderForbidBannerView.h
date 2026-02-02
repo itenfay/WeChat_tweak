@@ -12,7 +12,6 @@
     RichTextView *_textView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) UIImageView *infoImageView; // @synthesize infoImageView=_infoImageView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;

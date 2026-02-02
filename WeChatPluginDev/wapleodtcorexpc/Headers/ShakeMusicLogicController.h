@@ -12,7 +12,6 @@
     unsigned int m_sessionId;
 }
 
-- (void).cxx_destruct;
 - (unsigned int)getSessionId;
 - (id)getMsgForState:(unsigned int)arg1;
 - (_Bool)isShowBannerView;

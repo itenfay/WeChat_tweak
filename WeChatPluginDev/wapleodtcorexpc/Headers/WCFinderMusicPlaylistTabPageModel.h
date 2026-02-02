@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiteAppParam, FinderMusicBaikeSummary, MMListenCategoryItem, NSArray, NSString, WCFinderStreamLoadingState, WCFinderStreamProfileMusicPlaylist;
 @protocol WCFinderStreamProfileMusicPlaylistDelegate;
 
@@ -25,7 +27,6 @@
 + (int)tabId;
 + (_Bool)allowLimitMode;
 + (_Bool)shouldDisplay:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderMusicBaikeSummary *baikeSummary; // @synthesize baikeSummary=_baikeSummary;
 @property(retain, nonatomic) MMListenCategoryItem *musicCategory; // @synthesize musicCategory=_musicCategory;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
@@ -59,4 +60,3 @@
 - (_Bool)shouldDisplayTab;
 
 @end
-

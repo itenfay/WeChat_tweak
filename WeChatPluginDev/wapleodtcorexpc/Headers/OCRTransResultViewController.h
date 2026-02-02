@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLoadingView, NSArray, NSMutableDictionary, NSString, OCRTransReport, UIButton, UIColor, UIImage, UIImageView, UILabel, UIScrollView, UIView, WCImageTranslateLogic;
 
 @interface OCRTransResultViewController
@@ -52,7 +54,6 @@
     struct CGRect _imageCropRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCImageTranslateLogic *imgTranslateLogic; // @synthesize imgTranslateLogic=_imgTranslateLogic;
 @property(retain, nonatomic) UIButton *moreBtn; // @synthesize moreBtn=_moreBtn;
 @property(retain, nonatomic) UIImageView *scanLineImgView; // @synthesize scanLineImgView=_scanLineImgView;
@@ -122,4 +123,3 @@
 @property(readonly) Class superclass;
 
 @end
-

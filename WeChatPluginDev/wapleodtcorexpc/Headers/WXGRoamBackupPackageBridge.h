@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AffRoamProviderCallback, NSMutableDictionary, NSOperationQueue, NSRecursiveLock, NSString, WXGRoamBackendHandler, WXGRoamCloudHandler;
 @protocol OS_dispatch_queue, WXGRoamBackupPackageBridgeDelegate;
@@ -30,7 +31,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *mapLock; // @synthesize mapLock=_mapLock;
 @property(retain, nonatomic) NSOperationQueue *getPackageOperationQueue; // @synthesize getPackageOperationQueue=_getPackageOperationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *loadMediaQueue; // @synthesize loadMediaQueue=_loadMediaQueue;
@@ -120,4 +120,3 @@
 @property(readonly) Class superclass;
 
 @end
-

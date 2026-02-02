@@ -17,7 +17,6 @@
     unsigned long long _downloadScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableDownloadResumption; // @synthesize enableDownloadResumption=_enableDownloadResumption;
 @property(nonatomic) _Bool needGzip; // @synthesize needGzip=_needGzip;
 @property(nonatomic) unsigned long long downloadScene; // @synthesize downloadScene=_downloadScene;

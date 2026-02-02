@@ -29,7 +29,6 @@
     id <MainFrameHeaderDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MainFrameHeaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) FTSVoiceSearchBarController *searchBar; // @synthesize searchBar=m_searchBar;
 - (void)cancelExptDebug;

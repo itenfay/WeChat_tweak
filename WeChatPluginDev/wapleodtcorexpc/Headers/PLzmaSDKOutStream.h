@@ -13,7 +13,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (id)initWithPath:(id)arg1;

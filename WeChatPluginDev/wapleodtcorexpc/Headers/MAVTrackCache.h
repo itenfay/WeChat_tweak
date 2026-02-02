@@ -16,7 +16,6 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *resourceCache; // @synthesize resourceCache=_resourceCache;
 @property(retain, nonatomic) NSMutableDictionary *imageCache; // @synthesize imageCache=_imageCache;
 @property(nonatomic) CDStruct_1b6d18a9 imageDuration; // @synthesize imageDuration=_imageDuration;

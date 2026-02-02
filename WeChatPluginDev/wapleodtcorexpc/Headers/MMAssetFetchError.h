@@ -16,7 +16,6 @@
 + (id)errorWithCode:(long long)arg1 info:(id)arg2;
 + (id)errorWithCode:(long long)arg1;
 + (id)defaultError;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *errorInfo; // @synthesize errorInfo=_errorInfo;
 @property(nonatomic) long long code; // @synthesize code=_code;
 

@@ -25,7 +25,6 @@
 }
 
 + (id)genPreCheckerIdentifierWithAppid:(id)arg1 appVersion:(unsigned long long)arg2 debugType:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WACacheVersionPreChecker *preChecker; // @synthesize preChecker=_preChecker;
 @property(retain, nonatomic) WACacheVersionPreCheckerContextResult *checkResult; // @synthesize checkResult=_checkResult;
 @property(retain, nonatomic) NSArray *parallelDownloadModuleNames; // @synthesize parallelDownloadModuleNames=_parallelDownloadModuleNames;

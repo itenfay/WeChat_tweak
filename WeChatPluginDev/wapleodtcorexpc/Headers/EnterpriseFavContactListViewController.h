@@ -13,7 +13,6 @@
     UIView *_emptyView;
 }
 
-- (void).cxx_destruct;
 - (void)onBatchModifyEnterpriseContact:(id)arg1;
 - (void)JumpToChatRoom:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

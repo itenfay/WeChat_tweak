@@ -15,7 +15,6 @@
     UploadElement *_m_uploadElement;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UploadElement *m_uploadElement; // @synthesize m_uploadElement=_m_uploadElement;
 @property(retain, nonatomic) FileFragment *m_filefragment; // @synthesize m_filefragment=_m_filefragment;
 - (id)initWithUploadElement:(id)arg1 fileFragment:(id)arg2;

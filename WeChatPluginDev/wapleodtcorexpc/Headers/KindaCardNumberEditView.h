@@ -15,7 +15,6 @@
     MMDynamicColor *_m_textColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMDynamicColor *m_textColor; // @synthesize m_textColor=_m_textColor;
 @property(retain, nonatomic) MMDynamicColor *m_hintColor; // @synthesize m_hintColor=_m_hintColor;
 @property(nonatomic) _Bool m_bFocus; // @synthesize m_bFocus=_m_bFocus;

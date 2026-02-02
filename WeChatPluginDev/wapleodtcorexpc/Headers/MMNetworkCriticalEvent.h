@@ -19,7 +19,6 @@
     NSDictionary *_eventInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *eventInfo; // @synthesize eventInfo=_eventInfo;
 @property(nonatomic) unsigned long long eventSubTag; // @synthesize eventSubTag=_eventSubTag;
 @property(nonatomic) unsigned long long eventTag; // @synthesize eventTag=_eventTag;

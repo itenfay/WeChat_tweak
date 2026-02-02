@@ -12,7 +12,6 @@
     MessagePageSheetPresentationController *_presentationController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MessagePageSheetPresentationController *presentationController; // @synthesize presentationController=_presentationController;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (void)callFromViewControllerAppear;

@@ -15,7 +15,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *backgroundColor; // @synthesize backgroundColor=_backgroundColor;

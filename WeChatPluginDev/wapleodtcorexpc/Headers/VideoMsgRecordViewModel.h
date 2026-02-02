@@ -10,7 +10,6 @@
     UIImage *_urlImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *urlImage; // @synthesize urlImage=_urlImage;
 - (void)ImageDidLoad:(id)arg1 Url:(id)arg2;
 - (id)cellViewClassName;

@@ -10,7 +10,6 @@
     NSString *_numberRequestId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *numberRequestId; // @synthesize numberRequestId=_numberRequestId;
 
 @end

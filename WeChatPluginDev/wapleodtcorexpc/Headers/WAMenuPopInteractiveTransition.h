@@ -19,7 +19,6 @@
     UIGestureRecognizer *_gesture;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIGestureRecognizer *gesture; // @synthesize gesture=_gesture;
 @property(retain, nonatomic) NSString *debugInfo; // @synthesize debugInfo=_debugInfo;
 @property(nonatomic) _Bool shouldAutoComplete; // @synthesize shouldAutoComplete=_shouldAutoComplete;

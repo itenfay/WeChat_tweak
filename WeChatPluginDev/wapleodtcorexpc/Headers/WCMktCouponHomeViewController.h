@@ -15,7 +15,6 @@
     NSString *_currentSelectCardDetailMerchantID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentSelectCardDetailMerchantID; // @synthesize currentSelectCardDetailMerchantID=_currentSelectCardDetailMerchantID;
 @property(retain, nonatomic) UIView *emptyView; // @synthesize emptyView=_emptyView;
 @property(retain, nonatomic) UIButton *headerContentCoverBtn; // @synthesize headerContentCoverBtn=_headerContentCoverBtn;

@@ -19,7 +19,6 @@
     UIView *_bottomSeparatorLine;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDisabled; // @synthesize isDisabled=_isDisabled;
 @property(retain, nonatomic) UIView *bottomSeparatorLine; // @synthesize bottomSeparatorLine=_bottomSeparatorLine;
 @property(retain, nonatomic) UIView *topSeparatorLine; // @synthesize topSeparatorLine=_topSeparatorLine;

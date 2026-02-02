@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GameVideoAlbumDataFetcher, NSArray, NSMutableArray, NSString;
 @protocol GameDataChangedObserver;
 
@@ -22,7 +24,6 @@
     NSMutableArray *_combinVideoList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasReceiveCommonVideoList; // @synthesize hasReceiveCommonVideoList=_hasReceiveCommonVideoList;
 @property(retain, nonatomic) NSMutableArray *combinVideoList; // @synthesize combinVideoList=_combinVideoList;
 @property(nonatomic) __weak id <GameDataChangedObserver> changedObserver; // @synthesize changedObserver=_changedObserver;
@@ -63,4 +64,3 @@
 @property(readonly) Class superclass;
 
 @end
-

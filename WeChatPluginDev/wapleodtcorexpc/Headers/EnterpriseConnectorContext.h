@@ -13,7 +13,6 @@
     NSString *_contextEnterpriseChat;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contextEnterpriseChat; // @synthesize contextEnterpriseChat=_contextEnterpriseChat;
 @property(retain, nonatomic) NSString *contextBrand; // @synthesize contextBrand=_contextBrand;
 

@@ -16,7 +16,6 @@
 }
 
 + (_Bool)canUseInSafemode;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isServiceRemoved; // @synthesize isServiceRemoved=m_isServiceRemoved;
 - (void)onServiceClearData;
 - (void)onServiceResumeBackgroundTask:(unsigned long long)arg1;

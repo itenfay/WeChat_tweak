@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCTableLiveSessionStorage;
 
@@ -14,7 +15,6 @@
     NSString *_logName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *logName; // @synthesize logName=_logName;
 @property(retain, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
 @property(retain, nonatomic) WCTableLiveSessionStorage *sessionStorage; // @synthesize sessionStorage=_sessionStorage;
@@ -36,4 +36,3 @@
 - (id)initWithSessionType:(id)arg1 logName:(id)arg2;
 
 @end
-

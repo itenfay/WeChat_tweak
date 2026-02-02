@@ -14,7 +14,6 @@
     NSString *_desc;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(copy, nonatomic) NSString *fromPluginNickName; // @synthesize fromPluginNickName=_fromPluginNickName;
 @property(nonatomic) unsigned int timestamp; // @synthesize timestamp=_timestamp;

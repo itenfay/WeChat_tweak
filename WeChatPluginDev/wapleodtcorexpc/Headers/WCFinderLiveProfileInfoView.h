@@ -13,7 +13,6 @@
     FinderAudienceLiveInfoItem *_item;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderAudienceLiveInfoItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) UIView *seperatorLine; // @synthesize seperatorLine=_seperatorLine;
 @property(retain, nonatomic) MMUILabel *valueLabel; // @synthesize valueLabel=_valueLabel;

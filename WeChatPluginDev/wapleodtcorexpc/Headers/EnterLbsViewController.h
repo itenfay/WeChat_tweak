@@ -12,7 +12,6 @@
     UILabel *m_labNoHello;
 }
 
-- (void).cxx_destruct;
 - (void)onFriendAssistUnreadCountChanged;
 - (void)UpdateView;
 - (void)OnOpenLbs;

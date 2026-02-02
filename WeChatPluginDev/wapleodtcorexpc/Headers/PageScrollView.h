@@ -17,7 +17,6 @@
     double m_padding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double m_padding; // @synthesize m_padding;
 @property(nonatomic) __weak id <PageScrollViewDelegate> pageDelegate; // @synthesize pageDelegate=_pageDelegate;
 @property(nonatomic) __weak id <PageScrollViewDataSource> pageDataSource; // @synthesize pageDataSource=_pageDataSource;

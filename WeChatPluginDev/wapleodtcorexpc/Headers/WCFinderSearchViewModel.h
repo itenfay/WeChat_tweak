@@ -23,7 +23,6 @@
     WCFinderSearchItemReportQueue *_itemReportQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool alreadyInputInputText; // @synthesize alreadyInputInputText=_alreadyInputInputText;
 @property(retain, nonatomic) WCFinderSearchItemReportQueue *itemReportQueue; // @synthesize itemReportQueue=_itemReportQueue;
 @property(retain, nonatomic) NSArray *displaySections; // @synthesize displaySections=_displaySections;

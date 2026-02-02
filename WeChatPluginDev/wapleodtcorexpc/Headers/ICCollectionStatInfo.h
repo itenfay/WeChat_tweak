@@ -13,7 +13,6 @@
     NSDate *_firstScreenEndTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *firstScreenEndTime; // @synthesize firstScreenEndTime=_firstScreenEndTime;
 @property(retain, nonatomic) NSDate *firstScreenStartTime; // @synthesize firstScreenStartTime=_firstScreenStartTime;
 - (void)clear;

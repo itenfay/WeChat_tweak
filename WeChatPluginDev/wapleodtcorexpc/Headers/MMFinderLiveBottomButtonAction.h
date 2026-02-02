@@ -14,7 +14,6 @@
     NSArray *_selectorNames;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *selectorNames; // @synthesize selectorNames=_selectorNames;
 @property(nonatomic) __weak MMUIButton *button; // @synthesize button=_button;
 @property(nonatomic) __weak id target; // @synthesize target=_target;

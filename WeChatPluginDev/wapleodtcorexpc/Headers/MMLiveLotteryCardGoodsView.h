@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveLotteryInfo, MMUILabel, MMUIView, UIImageView, UITapGestureRecognizer;
 
 @interface MMLiveLotteryCardGoodsView
@@ -15,7 +17,6 @@
     MMFinderLiveLotteryInfo *_lotteryInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveLotteryInfo *lotteryInfo; // @synthesize lotteryInfo=_lotteryInfo;
 @property(retain, nonatomic) UITapGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
 @property(retain, nonatomic) MMUILabel *goodsTitleLabel; // @synthesize goodsTitleLabel=_goodsTitleLabel;
@@ -30,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

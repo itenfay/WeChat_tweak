@@ -46,7 +46,6 @@
 + (id)musicTopicConfig;
 + (id)lifeHomeConfig;
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderStaticCoverCellMenuHandle> longPressMenuHandle; // @synthesize longPressMenuHandle=_longPressMenuHandle;
 @property(copy, nonatomic) NSString *customPostTimeContent; // @synthesize customPostTimeContent=_customPostTimeContent;
 @property(retain, nonatomic) UIColor *customPostTimeColor; // @synthesize customPostTimeColor=_customPostTimeColor;

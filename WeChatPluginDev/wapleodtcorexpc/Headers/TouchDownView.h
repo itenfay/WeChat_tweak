@@ -11,7 +11,6 @@
     id target;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id target; // @synthesize target;
 @property(nonatomic) SEL callBack; // @synthesize callBack;
 

@@ -15,7 +15,6 @@
     UIBarButtonItem *_moreRightButtonItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showTransparentNaviBar; // @synthesize showTransparentNaviBar=_showTransparentNaviBar;
 @property(retain, nonatomic) UIBarButtonItem *moreRightButtonItem; // @synthesize moreRightButtonItem=_moreRightButtonItem;
 @property(copy, nonatomic) NSString *navigationBarTitle; // @synthesize navigationBarTitle=_navigationBarTitle;

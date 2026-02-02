@@ -16,7 +16,6 @@
     MultiTalkJumpAppWordingInfo *_enWordingInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultiTalkJumpAppWordingInfo *enWordingInfo; // @synthesize enWordingInfo=_enWordingInfo;
 @property(retain, nonatomic) MultiTalkJumpAppWordingInfo *zhHKWordingInfo; // @synthesize zhHKWordingInfo=_zhHKWordingInfo;
 @property(retain, nonatomic) MultiTalkJumpAppWordingInfo *zhCNWordingInfo; // @synthesize zhCNWordingInfo=_zhCNWordingInfo;

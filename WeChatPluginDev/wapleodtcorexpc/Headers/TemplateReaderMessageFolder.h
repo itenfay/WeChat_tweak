@@ -13,7 +13,6 @@
     ChatTimeNodeRightButtonInfo *_rightButtonInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatTimeNodeRightButtonInfo *rightButtonInfo; // @synthesize rightButtonInfo=_rightButtonInfo;
 @property(nonatomic) __weak ChatTimeViewModel *timeViewModel; // @synthesize timeViewModel=_timeViewModel;
 @property(nonatomic) __weak TemplateReaderMessageFolderViewModel *folderViewModel; // @synthesize folderViewModel=_folderViewModel;

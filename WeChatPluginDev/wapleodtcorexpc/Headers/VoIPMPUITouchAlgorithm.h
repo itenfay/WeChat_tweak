@@ -38,7 +38,6 @@
 
 + (double)distanceBetweenPoint:(struct CGPoint)arg1 andPoint:(struct CGPoint)arg2;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize willFoldSize; // @synthesize willFoldSize=_willFoldSize;
 @property(nonatomic) struct CGRect beganToScaleFrame; // @synthesize beganToScaleFrame=_beganToScaleFrame;
 @property(nonatomic) double initialDistance; // @synthesize initialDistance=_initialDistance;

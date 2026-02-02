@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveFloatMsg, NSString;
 
 @interface MMFinderLiveQuickReplyBarrageModel
@@ -15,7 +17,6 @@
     CDUnknownBlockType _onSelectedDidChange;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onSelectedDidChange; // @synthesize onSelectedDidChange=_onSelectedDidChange;
 @property(retain, nonatomic) MMFinderLiveFloatMsg *floatMsg; // @synthesize floatMsg=_floatMsg;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
@@ -25,4 +26,3 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
-

@@ -13,7 +13,6 @@
 
 + (double)preferHeight;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveSensitiveDataItem *sensitiveDataItem; // @synthesize sensitiveDataItem=_sensitiveDataItem;
 @property(retain, nonatomic) RichTextView *sensitiveTextView; // @synthesize sensitiveTextView=_sensitiveTextView;
 - (void)updateSensitiveDataItem:(id)arg1;

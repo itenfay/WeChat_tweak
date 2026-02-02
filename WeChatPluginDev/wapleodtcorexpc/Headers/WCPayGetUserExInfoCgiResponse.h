@@ -16,7 +16,6 @@
     NSArray *_nationalityExcludeArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *nationalityExcludeArray; // @synthesize nationalityExcludeArray=_nationalityExcludeArray;
 @property(nonatomic) _Bool needNationality; // @synthesize needNationality=_needNationality;
 @property(retain, nonatomic) NSArray *professions; // @synthesize professions=_professions;

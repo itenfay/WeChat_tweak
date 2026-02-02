@@ -13,7 +13,6 @@
     UIView *_wc_contentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *wc_contentView; // @synthesize wc_contentView=_wc_contentView;
 @property(nonatomic) double contentWidth; // @synthesize contentWidth=_contentWidth;
 - (void)reLayoutContentView;

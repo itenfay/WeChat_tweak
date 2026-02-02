@@ -77,7 +77,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int updatableMsgType; // @synthesize updatableMsgType=_updatableMsgType;
 @property(nonatomic) unsigned int lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;
 @property(nonatomic) int updatableContentUpdateInterval; // @synthesize updatableContentUpdateInterval=_updatableContentUpdateInterval;

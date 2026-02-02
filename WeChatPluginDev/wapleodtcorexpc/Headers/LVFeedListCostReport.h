@@ -19,7 +19,6 @@
     unsigned long long _exitTimeCost;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool feedCountWhenShow; // @synthesize feedCountWhenShow=_feedCountWhenShow;
 @property(nonatomic) _Bool watchLaterCountWhenShow; // @synthesize watchLaterCountWhenShow=_watchLaterCountWhenShow;
 @property(nonatomic) _Bool isShowBeforeEnter; // @synthesize isShowBeforeEnter=_isShowBeforeEnter;

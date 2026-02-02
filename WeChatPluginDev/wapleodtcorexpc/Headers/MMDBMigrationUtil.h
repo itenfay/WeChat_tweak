@@ -10,7 +10,6 @@
     NSString *m_flagPath;
 }
 
-- (void).cxx_destruct;
 - (void)setFlagFinished:(unsigned long long)arg1;
 - (_Bool)isFlagFinished:(unsigned long long)arg1;
 - (unsigned long long)readValueFromFile;

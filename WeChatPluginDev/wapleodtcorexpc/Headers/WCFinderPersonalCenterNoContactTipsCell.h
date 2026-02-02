@@ -13,7 +13,6 @@
 }
 
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)_layoutLabel;

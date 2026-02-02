@@ -20,7 +20,6 @@
     NSString *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(copy, nonatomic) NSString *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) _Bool isRequesting; // @synthesize isRequesting=_isRequesting;

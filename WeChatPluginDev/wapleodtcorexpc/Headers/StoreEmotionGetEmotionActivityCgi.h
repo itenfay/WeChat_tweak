@@ -14,7 +14,6 @@
     NSString *_linkId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *linkId; // @synthesize linkId=_linkId;
 @property(nonatomic) __weak id <StoreEmotionGetEmotionActivityCgiDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *md5; // @synthesize md5=m_md5;

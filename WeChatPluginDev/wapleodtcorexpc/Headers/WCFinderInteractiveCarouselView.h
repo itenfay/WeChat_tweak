@@ -18,7 +18,6 @@
     WCFinderPanelHotCommentView *_hotCommentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPanelHotCommentView *hotCommentView; // @synthesize hotCommentView=_hotCommentView;
 @property(retain, nonatomic) WCFinderPanelRingToneGuideView *ringToneGuideView; // @synthesize ringToneGuideView=_ringToneGuideView;
 @property(nonatomic) __weak WCFinderInteractivePanelConfigParamsModel *paramsModel; // @synthesize paramsModel=_paramsModel;

@@ -19,7 +19,6 @@
     MMUIViewController *_viewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSString *lensId; // @synthesize lensId=_lensId;

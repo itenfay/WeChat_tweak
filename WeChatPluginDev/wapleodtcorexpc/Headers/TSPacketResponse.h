@@ -13,7 +13,6 @@
     NSMutableDictionary *_externals;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *externals; // @synthesize externals=_externals;
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;
 - (id)init;

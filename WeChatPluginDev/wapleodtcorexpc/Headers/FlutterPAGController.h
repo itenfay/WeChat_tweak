@@ -30,7 +30,6 @@
 }
 
 + (void)setFlutterUpdatePath:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGViewListenerApi *pagViewListener; // @synthesize pagViewListener=_pagViewListener;
 @property(nonatomic) _Bool couldProduceFrame; // @synthesize couldProduceFrame=_couldProduceFrame;
 @property(nonatomic) _Bool isReleased; // @synthesize isReleased=_isReleased;

@@ -18,7 +18,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithAppid:(id)arg1 version_type:(id)arg2 data_buffer:(id)arg3 path:(id)arg4;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) FlutterStandardTypedData *data_buffer; // @synthesize data_buffer=_data_buffer;
 @property(retain, nonatomic) NSNumber *version_type; // @synthesize version_type=_version_type;

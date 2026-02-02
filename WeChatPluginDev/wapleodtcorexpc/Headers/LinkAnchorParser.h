@@ -18,7 +18,6 @@
 
 + (id)stringByStrippingHref:(id)arg1;
 + (id)newInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceUrl; // @synthesize sourceUrl=_sourceUrl;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 - (id)openWeAppLogoCustomImageContent;

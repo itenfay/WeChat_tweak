@@ -12,7 +12,6 @@
     NSString *_excerptUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *excerptUrl; // @synthesize excerptUrl=_excerptUrl;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSString *excerptKey; // @synthesize excerptKey=_excerptKey;

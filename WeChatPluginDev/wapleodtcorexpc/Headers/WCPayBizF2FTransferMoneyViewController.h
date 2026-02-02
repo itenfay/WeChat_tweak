@@ -47,7 +47,6 @@
     WCPayBizF2FTransferMoneyFaovrPageSheet *_m_favorPageSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBizF2FTransferMoneyFaovrPageSheet *m_favorPageSheet; // @synthesize m_favorPageSheet=_m_favorPageSheet;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(retain, nonatomic) UIView *m_footerMask; // @synthesize m_footerMask=_m_footerMask;

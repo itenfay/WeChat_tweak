@@ -18,7 +18,6 @@
     struct CGPoint _beginDraggingOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint beginDraggingOffset; // @synthesize beginDraggingOffset=_beginDraggingOffset;
 @property(nonatomic) __weak id <WCCanvasComponentDelegate> componentDelegate; // @synthesize componentDelegate=_componentDelegate;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;

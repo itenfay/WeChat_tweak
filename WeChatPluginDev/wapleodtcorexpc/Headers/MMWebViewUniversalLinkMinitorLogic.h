@@ -15,7 +15,6 @@
     unsigned long long _uiLastNavigationTimeStampInMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int navigateActionMatchControlAction; // @synthesize navigateActionMatchControlAction=_navigateActionMatchControlAction;
 @property(nonatomic) unsigned long long uiLastNavigationTimeStampInMs; // @synthesize uiLastNavigationTimeStampInMs=_uiLastNavigationTimeStampInMs;
 @property(copy, nonatomic) NSString *nsLastWebViewNavigationUrl; // @synthesize nsLastWebViewNavigationUrl=_nsLastWebViewNavigationUrl;

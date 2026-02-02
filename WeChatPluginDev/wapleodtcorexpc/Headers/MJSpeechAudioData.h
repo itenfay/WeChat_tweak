@@ -13,7 +13,6 @@
     long long _encodeType;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long encodeType; // @synthesize encodeType=_encodeType;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 - (id)description;

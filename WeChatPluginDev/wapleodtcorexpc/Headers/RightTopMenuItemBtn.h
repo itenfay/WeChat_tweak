@@ -10,7 +10,6 @@
     RightTopMenuItemBtnData *m_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RightTopMenuItemBtnData *m_data; // @synthesize m_data;
 - (id)initWithBtnData:(id)arg1 showNew:(_Bool)arg2;
 - (struct CGRect)titleRectForContentRect:(struct CGRect)arg1;

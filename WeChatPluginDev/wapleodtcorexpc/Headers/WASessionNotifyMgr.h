@@ -12,7 +12,6 @@
 
 + (void)saveToNotifyInfoToFile:(id)arg1;
 + (id)loadNotifyInfoFromFile;
-- (void).cxx_destruct;
 - (void)updateSessionNotifyIsOpen:(_Bool)arg1 userNameList:(id)arg2;
 - (void)updateSessionNotifyToOpen:(id)arg1;
 - (void)updateSessionNotifyToClose:(id)arg1;

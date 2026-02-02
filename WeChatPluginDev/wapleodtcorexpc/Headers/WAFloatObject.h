@@ -19,7 +19,6 @@
     struct CGPoint _position;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double time; // @synthesize time=_time;
 @property(nonatomic) double textWidth; // @synthesize textWidth=_textWidth;
 @property(nonatomic) double speed; // @synthesize speed=_speed;

@@ -29,7 +29,6 @@
     MMSystemAuthCancellableToken *_requestAuthToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMSystemAuthCancellableToken *requestAuthToken; // @synthesize requestAuthToken=_requestAuthToken;
 @property(nonatomic) __weak SettingMyAccountExtInfoViewController *extInfoVC; // @synthesize extInfoVC=_extInfoVC;
 @property(nonatomic) int currentAuthLogType; // @synthesize currentAuthLogType=_currentAuthLogType;

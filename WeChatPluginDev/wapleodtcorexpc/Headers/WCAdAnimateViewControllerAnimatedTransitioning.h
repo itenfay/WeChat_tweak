@@ -17,7 +17,6 @@
     long long _adTransitionType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long adTransitionType; // @synthesize adTransitionType=_adTransitionType;
 @property(retain, nonatomic) PAGView *pagAnimationView; // @synthesize pagAnimationView=_pagAnimationView;
 @property(retain, nonatomic) UIView *originView; // @synthesize originView=_originView;

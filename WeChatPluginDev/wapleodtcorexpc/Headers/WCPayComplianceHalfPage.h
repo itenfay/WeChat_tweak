@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,7 +16,6 @@
 
 + (id)showWithPbData:(id)arg1 closedActionHandler:(CDUnknownBlockType)arg2;
 + (id)showWithData:(id)arg1 closedActionHandler:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long sessionId; // @synthesize sessionId=_sessionId;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 - (void)call:(id)arg1;
@@ -32,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

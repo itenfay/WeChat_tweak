@@ -23,7 +23,6 @@
     NSString *m_nsSignature;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsSignature; // @synthesize m_nsSignature;
 @property(retain, nonatomic) NSString *m_nsCity; // @synthesize m_nsCity;
 @property(retain, nonatomic) NSString *m_nsProvince; // @synthesize m_nsProvince;

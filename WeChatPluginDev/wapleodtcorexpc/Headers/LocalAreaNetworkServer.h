@@ -23,7 +23,6 @@
 }
 
 + (void)stopServer;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <LocalAreaNetworkServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (unsigned long long)getServerOpenTime;
 - (unsigned long long)getTotalReceiveLength;

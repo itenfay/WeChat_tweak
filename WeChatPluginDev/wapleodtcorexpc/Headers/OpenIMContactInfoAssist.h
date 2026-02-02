@@ -37,7 +37,6 @@
     MMTableViewInfo *_actionTableViewInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableViewInfo *actionTableViewInfo; // @synthesize actionTableViewInfo=_actionTableViewInfo;
 @property(retain, nonatomic) UIView *bottomActionView; // @synthesize bottomActionView=_bottomActionView;
 @property(nonatomic) __weak id <ContactInfoAssistDelegate> delegate; // @synthesize delegate=_delegate;

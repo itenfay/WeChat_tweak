@@ -91,7 +91,6 @@
 + (void)PBArrayAdd_m_nsTitle;
 + (void)PBArrayAdd_m_nsMusicID;
 + (id)singerNameFromArray:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AudioFileBehaviorReporter *behaviorReporter; // @synthesize behaviorReporter=_behaviorReporter;
 @property(nonatomic) _Bool ignoreCache; // @synthesize ignoreCache=_ignoreCache;
 @property(nonatomic) __weak UIViewController *m_mvViewController; // @synthesize m_mvViewController=_m_mvViewController;

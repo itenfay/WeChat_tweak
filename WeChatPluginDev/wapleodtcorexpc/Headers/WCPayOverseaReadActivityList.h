@@ -22,7 +22,6 @@
 + (id)cacheObjectWithTpaCountry:(unsigned int)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_m_set;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_tpaCountry; // @synthesize m_tpaCountry=_m_tpaCountry;
 @property(retain, nonatomic) NSMutableSet *m_set; // @synthesize m_set=_m_set;
 - (void)saveToCacheV2;

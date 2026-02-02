@@ -18,7 +18,6 @@
     SEL _willDisplayAction;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) SEL willDisplayAction; // @synthesize willDisplayAction=_willDisplayAction;
 @property(nonatomic) __weak id displayTarget; // @synthesize displayTarget=_displayTarget;
 @property(retain, nonatomic) NSString *nsPathKey; // @synthesize nsPathKey=_nsPathKey;

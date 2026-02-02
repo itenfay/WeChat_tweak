@@ -21,7 +21,6 @@
     double _dropViewOriginY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double dropViewOriginY; // @synthesize dropViewOriginY=_dropViewOriginY;
 @property(readonly, nonatomic) MMDropableTitleView *titleView; // @synthesize titleView=_titleView;
 @property(readonly, nonatomic) _Bool isShowingItems; // @synthesize isShowingItems=_isShowingItems;

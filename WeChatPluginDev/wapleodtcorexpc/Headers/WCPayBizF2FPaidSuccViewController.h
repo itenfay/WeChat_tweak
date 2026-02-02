@@ -12,7 +12,6 @@
     WCPayTransferMoneyPaidSuccessViewV2 *_m_layoutV2;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayTransferMoneyPaidSuccessViewV2 *m_layoutV2; // @synthesize m_layoutV2=_m_layoutV2;
 @property(nonatomic) __weak id <WCPayBizF2FPaidSuccViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onWCPayTransferMoneyPaidSuccessViewV2ReturnWithoutDrawLottery;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MiniGameVideoFile, NSMutableDictionary, NSString, RichTextView, UIButton, UIView, WCPlayerConfigControlView, WCPlayerView;
 
 @interface GameVideoRecordShareViewController
@@ -23,7 +25,6 @@
     _Bool _toolViewHidden;
 }
 
-- (void).cxx_destruct;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
@@ -78,4 +79,3 @@
 @property(readonly) Class superclass;
 
 @end
-

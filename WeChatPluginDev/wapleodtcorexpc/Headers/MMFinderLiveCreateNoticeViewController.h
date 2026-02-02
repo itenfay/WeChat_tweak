@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderNewUserPrepareResponse, MMCommonActionSheetPicker, MMFInderLiveCreateNoticeSelectModeView, MMFinderHeaderInfoView, MMFinderLiveCreateNoticeReporter, MMFinderLiveModNoticeView, MMFinderLiveNoticeDetailChooseView, MMFinderLiveNoticeModReminderView, MMFinderLiveNoticeShowReminderBottomView, MMLiveScrollGradientMaskingView, MMTextView, MMUIActivityIndicatorView, MMUIButton, MMUIView, NSArray, NSDate, NSDateFormatter, NSMutableArray, NSString, UIButton, UICollectionView, UICollectionViewFlowLayout, UIGestureRecognizer, UIImageView, UILabel, UIScrollView, UIView, WCFinderContact, WCFinderCreateLiveViewModel;
 @protocol MMFinderLiveCreateNoticeViewControllerDelegate;
 
@@ -81,7 +83,6 @@
 }
 
 + (id)adaptedPageSheetWithFinderContact:(id)arg1 createLiveVM:(id)arg2 defaultsToUntimedNotice:(_Bool)arg3 src:(long long)arg4 reporter:(id)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableDescExtend; // @synthesize enableDescExtend=_enableDescExtend;
 @property(retain, nonatomic) MMFinderLiveModNoticeView *modNoticeView; // @synthesize modNoticeView=_modNoticeView;
 @property(nonatomic) _Bool untimedNoticeCreationEnabled; // @synthesize untimedNoticeCreationEnabled=_untimedNoticeCreationEnabled;
@@ -256,4 +257,3 @@
 @property(readonly) Class superclass;
 
 @end
-

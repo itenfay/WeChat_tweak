@@ -19,7 +19,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fingerdata; // @synthesize fingerdata=_fingerdata;
 @property(nonatomic) _Bool is_open_touch_pay; // @synthesize is_open_touch_pay=_is_open_touch_pay;
 @property(copy, nonatomic) NSString *wallet_lock_status_name; // @synthesize wallet_lock_status_name=_wallet_lock_status_name;

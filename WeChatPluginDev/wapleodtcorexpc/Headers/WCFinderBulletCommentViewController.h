@@ -15,7 +15,6 @@
     WCFinderBulletInputView *_bulletInputView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderBulletInputView *bulletInputView; // @synthesize bulletInputView=_bulletInputView;
 @property(retain, nonatomic) UIButton *backgroundButton; // @synthesize backgroundButton=_backgroundButton;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;

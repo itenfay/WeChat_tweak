@@ -15,7 +15,6 @@
 }
 
 + (id)copyLayer:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *highLightPenTraceBoarderLayer; // @synthesize highLightPenTraceBoarderLayer=_highLightPenTraceBoarderLayer;
 @property(retain, nonatomic) CAShapeLayer *highLightPenTraceLayer; // @synthesize highLightPenTraceLayer=_highLightPenTraceLayer;
 @property(retain, nonatomic) CAShapeLayer *normalPenTraceLayer; // @synthesize normalPenTraceLayer=_normalPenTraceLayer;

@@ -43,7 +43,6 @@
     long long _resourceIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoopPlay; // @synthesize isLoopPlay=_isLoopPlay;
 @property(nonatomic) long long resourceIndex; // @synthesize resourceIndex=_resourceIndex;
 @property(nonatomic) unsigned int subtypeId; // @synthesize subtypeId=_subtypeId;

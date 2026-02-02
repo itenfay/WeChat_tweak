@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithFuncId:(long long)arg1 uri:(id)arg2 data:(id)arg3 longPolling:(_Bool)arg4 longPollingTimeout:(long long)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) long long longPollingTimeout; // @synthesize longPollingTimeout=_longPollingTimeout;
 @property(nonatomic) _Bool longPolling; // @synthesize longPolling=_longPolling;
 @property(retain, nonatomic) FlutterStandardTypedData *data; // @synthesize data=_data;

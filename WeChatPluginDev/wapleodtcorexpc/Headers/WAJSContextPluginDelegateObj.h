@@ -11,7 +11,6 @@
     NSObject *_weakDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool delegateMark; // @synthesize delegateMark=_delegateMark;
 @property(nonatomic) __weak NSObject *weakDelegate; // @synthesize weakDelegate=_weakDelegate;
 

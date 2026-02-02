@@ -16,7 +16,6 @@
 + (id)MPPageCommonIdentityWithUrl:(id)arg1;
 + (id)identityWithBizStr:(id)arg1 midStr:(id)arg2 indexStr:(id)arg3;
 + (id)parseMPPageIdentityWithMPPageFullUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *dataLock; // @synthesize dataLock=_dataLock;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *slotMMKV; // @synthesize slotMMKV=_slotMMKV;
 - (void)updateUrlMappingWithOriginalUrl:(id)arg1 bizUin:(unsigned int)arg2 msgId:(unsigned int)arg3 itemIdx:(unsigned int)arg4;

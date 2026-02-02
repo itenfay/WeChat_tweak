@@ -12,7 +12,6 @@
     FWFInstanceManager *_instanceManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FWFInstanceManager *instanceManager; // @synthesize instanceManager=_instanceManager;
 - (void)setOpaqueForViewWithIdentifier:(id)arg1 isOpaque:(id)arg2 error:(id *)arg3;
 - (void)setBackgroundColorForViewWithIdentifier:(id)arg1 toValue:(id)arg2 error:(id *)arg3;

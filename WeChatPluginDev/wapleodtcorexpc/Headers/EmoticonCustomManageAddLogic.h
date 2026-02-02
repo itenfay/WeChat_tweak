@@ -21,7 +21,6 @@
 }
 
 + (id)typeNumberForImageData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMSnackBar *snackBar; // @synthesize snackBar=_snackBar;
 @property(nonatomic) _Bool disableAutoShowSucToast; // @synthesize disableAutoShowSucToast=_disableAutoShowSucToast;
 @property(nonatomic) _Bool newSnackStyle; // @synthesize newSnackStyle=_newSnackStyle;

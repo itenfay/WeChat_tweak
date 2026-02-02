@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)calculateHeightsWithDecibels:(const void *)arg1 outputHeights:(void *)arg2;
 - (id)initWithMaxHeight:(float)arg1 minDecibel:(float)arg2 powerRatio:(float)arg3;
 

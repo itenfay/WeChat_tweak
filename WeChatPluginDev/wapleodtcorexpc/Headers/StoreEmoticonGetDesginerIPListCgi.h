@@ -13,7 +13,6 @@
     NSData *_context;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int designerUin; // @synthesize designerUin=_designerUin;
 @property(retain, nonatomic) NSData *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <StoreEmoticonGetDesginerIPListCgiDelegate> delegate; // @synthesize delegate=_delegate;

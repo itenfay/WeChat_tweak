@@ -13,7 +13,6 @@
     WCAdAlphaVideoView *_alphaVideoView;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool bTimelineScene; // @synthesize bTimelineScene=_bTimelineScene;
 @property(readonly, nonatomic) WCAdAlphaVideoView *alphaVideoView; // @synthesize alphaVideoView=_alphaVideoView;
 @property(readonly, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;

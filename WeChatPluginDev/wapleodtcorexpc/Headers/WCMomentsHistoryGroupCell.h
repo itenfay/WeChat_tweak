@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, ContactsItemView, UIButton, UIImageView, UIView;
 
 @interface WCMomentsHistoryGroupCell
@@ -16,7 +18,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType detailCallback; // @synthesize detailCallback=_detailCallback;
 @property(retain, nonatomic) CContact *historyGroupContact; // @synthesize historyGroupContact=_historyGroupContact;
 @property(retain, nonatomic) UIView *seperatorLine; // @synthesize seperatorLine=_seperatorLine;
@@ -35,4 +36,3 @@
 - (void)updateWithHistoryGroupContact:(id)arg1 checked:(_Bool)arg2 clickedDetail:(CDUnknownBlockType)arg3;
 
 @end
-

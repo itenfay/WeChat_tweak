@@ -20,7 +20,6 @@
 
 + (id)buildNodeWithXmlElement:(struct XmlReaderNode_t *)arg1;
 + (id)loadNodeWithXMLFile:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *childNodes; // @synthesize childNodes=_childNodes;
 @property(retain, nonatomic) NSArray *viewAttrs; // @synthesize viewAttrs=_viewAttrs;
 @property(retain, nonatomic) NSArray *layouts; // @synthesize layouts=_layouts;

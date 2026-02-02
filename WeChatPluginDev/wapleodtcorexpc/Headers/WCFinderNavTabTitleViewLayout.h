@@ -15,7 +15,6 @@
     double _navTabPaddingButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double navTabPaddingButton; // @synthesize navTabPaddingButton=_navTabPaddingButton;
 @property(nonatomic) double expectPadding; // @synthesize expectPadding=_expectPadding;
 @property(nonatomic) long long selectedIdx; // @synthesize selectedIdx=_selectedIdx;

@@ -13,7 +13,6 @@
     unsigned long long _pixelFormat;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)rendererType;
 - (id)drawToTarget:(id)arg1 coordinate:(id)arg2;
 - (void)setDisplayConfig:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GCCollectionViewManager, GCLoadingMoreCellModel, NSMutableArray, NSMutableDictionary;
 
@@ -23,7 +24,6 @@
     long long _channelId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoadCacheData; // @synthesize isLoadCacheData=_isLoadCacheData;
 @property(nonatomic) long long channelId; // @synthesize channelId=_channelId;
 @property(nonatomic) _Bool isNormalDataSource; // @synthesize isNormalDataSource=_isNormalDataSource;
@@ -75,4 +75,3 @@
 - (id)init;
 
 @end
-

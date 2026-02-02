@@ -15,7 +15,6 @@
     WCTError *_error;
 }
 
-- (void).cxx_destruct;
 - (void)tryDispose;
 - (void)saveChangesAndError:(_Bool)arg1;
 - (id)finalizeStatementWhenDispose;

@@ -13,7 +13,6 @@
     id <WXCustomWebViewControllerProtocol> _proxyWebviewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNeedReInitFromSuspend; // @synthesize isNeedReInitFromSuspend=_isNeedReInitFromSuspend;
 @property(nonatomic) __weak id <WXCustomWebViewControllerProtocol> proxyWebviewController; // @synthesize proxyWebviewController=_proxyWebviewController;
 - (void)tryReInitProxyWhenEnterForground;

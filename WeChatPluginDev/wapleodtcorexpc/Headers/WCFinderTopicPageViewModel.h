@@ -31,7 +31,6 @@
     NSData *_byPassInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *byPassInfo; // @synthesize byPassInfo=_byPassInfo;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

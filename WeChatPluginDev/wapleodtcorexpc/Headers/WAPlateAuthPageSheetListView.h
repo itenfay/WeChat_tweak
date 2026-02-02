@@ -11,7 +11,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 - (id)plateFormatString:(id)arg1;
 - (id)pageSheet;

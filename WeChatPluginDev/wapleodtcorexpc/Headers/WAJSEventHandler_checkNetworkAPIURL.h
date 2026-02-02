@@ -10,7 +10,6 @@
     WANetworkConfigBase *_netConfig;
 }
 
-- (void).cxx_destruct;
 - (void)handleJSEvent:(id)arg1;
 
 @end

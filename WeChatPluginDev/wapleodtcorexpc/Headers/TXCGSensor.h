@@ -20,7 +20,6 @@
 }
 
 + (long long)currentInterfaceOrientation;
-- (void).cxx_destruct;
 @property long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(readonly, nonatomic) TXCDispatchQueue *queue; // @synthesize queue=_queue;
 @property(nonatomic) long long homeOrientation; // @synthesize homeOrientation=_homeOrientation;

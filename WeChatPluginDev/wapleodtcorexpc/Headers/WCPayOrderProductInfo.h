@@ -19,7 +19,6 @@
     unsigned int m_uiJumpType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsJumpUrl; // @synthesize m_nsJumpUrl;
 @property(nonatomic) unsigned int m_uiJumpType; // @synthesize m_uiJumpType;
 @property(nonatomic) unsigned int m_uiProductCount; // @synthesize m_uiProductCount;

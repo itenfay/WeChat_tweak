@@ -15,7 +15,6 @@
     NSString *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) unsigned int timeStamp; // @synthesize timeStamp=_timeStamp;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

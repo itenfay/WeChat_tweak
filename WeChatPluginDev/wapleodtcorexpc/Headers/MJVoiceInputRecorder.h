@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, SimpleAudioRecorder;
 @protocol MJVoiceInputRecorderDelegate;
@@ -18,7 +19,6 @@
 }
 
 + (double)durationFromPCMBufLength:(long long)arg1 bitsPerChannel:(long long)arg2 channelCount:(long long)arg3 sampleRate:(long long)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int outputPCMBufferLength; // @synthesize outputPCMBufferLength=_outputPCMBufferLength;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) SimpleAudioRecorder *recorder; // @synthesize recorder=_recorder;
@@ -50,4 +50,3 @@
 @property(readonly) Class superclass;
 
 @end
-

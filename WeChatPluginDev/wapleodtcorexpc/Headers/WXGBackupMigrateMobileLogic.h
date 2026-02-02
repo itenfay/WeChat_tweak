@@ -22,7 +22,6 @@
     NSString *_lastSessionName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bProcessFinish; // @synthesize bProcessFinish=_bProcessFinish;
 @property(copy, nonatomic) NSString *lastSessionName; // @synthesize lastSessionName=_lastSessionName;
 @property(nonatomic) _Bool bFirstTag; // @synthesize bFirstTag=_bFirstTag;

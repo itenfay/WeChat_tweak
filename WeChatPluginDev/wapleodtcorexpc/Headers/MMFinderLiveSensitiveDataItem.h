@@ -13,7 +13,6 @@
 }
 
 + (id)createWithSenstiveText:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sensitiveText; // @synthesize sensitiveText=_sensitiveText;
 
 @end

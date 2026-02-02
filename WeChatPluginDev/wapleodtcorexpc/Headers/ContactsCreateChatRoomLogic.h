@@ -17,7 +17,6 @@
     NSMutableArray *m_arrNeedVerifyUsrName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiUseChatState; // @synthesize m_uiUseChatState;
 @property(nonatomic) __weak id <ContactsCreateChatRoomLogicDelegate> m_Delegate; // @synthesize m_Delegate;
 - (id)genOpenIMErrorString:(id)arg1 needVerify:(_Bool *)arg2;

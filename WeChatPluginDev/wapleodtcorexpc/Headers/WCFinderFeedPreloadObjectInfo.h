@@ -34,7 +34,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderPreloadObjectInfo *objectInfo; // @synthesize objectInfo=_objectInfo;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(nonatomic) double interestFactor; // @synthesize interestFactor=_interestFactor;

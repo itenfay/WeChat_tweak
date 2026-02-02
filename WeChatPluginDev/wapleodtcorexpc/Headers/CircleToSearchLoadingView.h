@@ -10,7 +10,6 @@
     MMUIImageView *_scanLineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIImageView *scanLineView; // @synthesize scanLineView=_scanLineView;
 - (void)stopLoading;
 - (void)startLoading;

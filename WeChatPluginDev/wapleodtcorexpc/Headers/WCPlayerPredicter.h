@@ -23,7 +23,6 @@
     NSString *_allBitrateInKB;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *allBitrateInKB; // @synthesize allBitrateInKB=_allBitrateInKB;
 @property(retain, nonatomic) NSMutableArray *arrDataSource; // @synthesize arrDataSource=_arrDataSource;
 @property(retain, nonatomic) NSObject<WCPlayerMediaExt> *mediaWrap; // @synthesize mediaWrap=_mediaWrap;

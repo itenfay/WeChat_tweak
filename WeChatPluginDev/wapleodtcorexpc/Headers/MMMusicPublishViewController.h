@@ -16,7 +16,6 @@
     UIImage *_customCoverImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *customCoverImage; // @synthesize customCoverImage=_customCoverImage;
 @property(nonatomic) unsigned long long fromScene; // @synthesize fromScene=_fromScene;
 - (void)ImageDidFail:(id)arg1;

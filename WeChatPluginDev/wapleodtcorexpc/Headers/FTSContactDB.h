@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FTSDB;
 
@@ -12,7 +13,6 @@
     FTSDB *_database;
 }
 
-- (void).cxx_destruct;
 - (id)searchContact:(id)arg1 contactType:(int)arg2 withHelper:(id)arg3 andCancelBlock:(CDUnknownBlockType)arg4;
 - (_Bool)deleteIndexForUsername:(id)arg1 indexRecord:(id)arg2;
 - (_Bool)deleteIndexForContacts:(id)arg1 indexRecord:(id)arg2;
@@ -24,4 +24,3 @@
 - (_Bool)initDB:(id)arg1;
 
 @end
-

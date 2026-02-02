@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSMutableSet, NSString;
 @protocol WCFinderMemberShipDraftViewModelDelegate;
@@ -22,7 +23,6 @@
     NSMutableSet *_tidContainSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *tidContainSet; // @synthesize tidContainSet=_tidContainSet;
 @property(nonatomic) _Bool isFetchingData; // @synthesize isFetchingData=_isFetchingData;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
@@ -65,4 +65,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -12,7 +12,6 @@
     NSArray *_templeteMessageList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *templeteMessageList; // @synthesize templeteMessageList=_templeteMessageList;
 @property(nonatomic) long long backButtonType; // @synthesize backButtonType=_backButtonType;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

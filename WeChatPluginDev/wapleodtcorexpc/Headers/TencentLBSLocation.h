@@ -33,7 +33,6 @@
 }
 
 + (_Bool)supportsSecureCoding;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *poiList; // @synthesize poiList=_poiList;
 @property(copy, nonatomic) NSString *street_no; // @synthesize street_no=_street_no;
 @property(copy, nonatomic) NSString *street; // @synthesize street=_street;

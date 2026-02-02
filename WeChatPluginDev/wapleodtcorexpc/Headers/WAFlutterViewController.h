@@ -12,7 +12,6 @@
     NSMutableSet *_touchSet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRealAppear; // @synthesize isRealAppear=_isRealAppear;
 @property(retain, nonatomic) NSMutableSet *touchSet; // @synthesize touchSet=_touchSet;
 @property(retain, nonatomic) FlutterEngine *skylineEngine; // @synthesize skylineEngine=_skylineEngine;

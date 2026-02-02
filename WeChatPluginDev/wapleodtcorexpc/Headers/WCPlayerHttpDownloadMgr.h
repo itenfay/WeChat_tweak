@@ -14,7 +14,6 @@
     NSMutableDictionary *_dicMediaTaskInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int maxHttpConcurrent; // @synthesize maxHttpConcurrent=_maxHttpConcurrent;
 @property(nonatomic) int videoPreloadQueueMaxCount; // @synthesize videoPreloadQueueMaxCount=_videoPreloadQueueMaxCount;
 @property(retain, nonatomic) NSMutableDictionary *dicMediaTaskInfo; // @synthesize dicMediaTaskInfo=_dicMediaTaskInfo;

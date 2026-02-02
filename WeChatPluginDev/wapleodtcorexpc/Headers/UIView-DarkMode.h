@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (DarkMode)
 - (long long)findOverrideStyleFromResponders;
@@ -20,4 +21,3 @@
 - (void)setLayerShadowColor:(id)arg1;
 - (void)setLayerBorderColor:(id)arg1;
 @end
-

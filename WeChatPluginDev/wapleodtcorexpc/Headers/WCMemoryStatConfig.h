@@ -17,7 +17,6 @@
 }
 
 + (id)defaultConfiguration;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *memgraphCategories; // @synthesize memgraphCategories=_memgraphCategories;
 @property(retain, nonatomic) NSDictionary *observedCategories; // @synthesize observedCategories=_observedCategories;
 @property(nonatomic) unsigned long long reportStrategy; // @synthesize reportStrategy=_reportStrategy;

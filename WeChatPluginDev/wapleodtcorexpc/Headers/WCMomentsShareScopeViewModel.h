@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, WCDataItem;
 
@@ -23,7 +24,6 @@
     CDUnknownBlockType _hostDataItemUpdateBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType hostDataItemUpdateBlock; // @synthesize hostDataItemUpdateBlock=_hostDataItemUpdateBlock;
 @property(nonatomic) long long loadMoreThreshold; // @synthesize loadMoreThreshold=_loadMoreThreshold;
 @property(nonatomic) double targetListHeight; // @synthesize targetListHeight=_targetListHeight;
@@ -58,4 +58,3 @@
 - (id)initWithHostDataItem:(id)arg1 isNeedForceUpdate:(_Bool)arg2;
 
 @end
-

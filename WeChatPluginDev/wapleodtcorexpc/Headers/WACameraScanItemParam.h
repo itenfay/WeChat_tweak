@@ -14,7 +14,6 @@
     NSString *_descStr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHideAlbumBtn; // @synthesize isHideAlbumBtn=_isHideAlbumBtn;
 @property(retain, nonatomic) NSString *descStr; // @synthesize descStr=_descStr;
 @property(retain, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CSCScanSessionReportFFEInfo, CameraScanGoodsExtensionDetectorConfig, MMTimer, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSRecursiveLock, NSString;
 @protocol CameraScanGoodsExtensionDetectorDelegate, OS_dispatch_queue;
 
@@ -29,7 +31,6 @@
 }
 
 + (void)logInfoFFEConfig:(struct Config)arg1 prefix:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *detectedTrackIdLock; // @synthesize detectedTrackIdLock=_detectedTrackIdLock;
 @property(retain, nonatomic) CSCScanSessionReportFFEInfo *engineLogInfo; // @synthesize engineLogInfo=_engineLogInfo;
 @property(nonatomic) unsigned long long popAndRequestTaskCount; // @synthesize popAndRequestTaskCount=_popAndRequestTaskCount;
@@ -101,4 +102,3 @@
 @property(readonly) Class superclass;
 
 @end
-

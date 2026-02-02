@@ -48,7 +48,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLocal; // @synthesize isLocal=_isLocal;
 @property(nonatomic) long long clickTimes; // @synthesize clickTimes=_clickTimes;
 @property(nonatomic) long long displayTimes; // @synthesize displayTimes=_displayTimes;

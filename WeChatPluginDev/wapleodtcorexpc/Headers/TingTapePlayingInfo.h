@@ -16,7 +16,6 @@
     TingTapeItem *_tapeItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingTapeItem *tapeItem; // @synthesize tapeItem=_tapeItem;
 @property(retain, nonatomic) TingItem *playingItem; // @synthesize playingItem=_playingItem;
 @property(copy, nonatomic) NSString *coverUrl; // @synthesize coverUrl=_coverUrl;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSDictionary, NSMutableArray, NSString, WAPermissionInfo, WAPermissionUserAuthImpl;
 @protocol WAPermissionHandlerDelegate;
@@ -35,7 +36,6 @@
     NSDictionary *_dicLaunchParameter;
 }
 
-- (void).cxx_destruct;
 @property _Bool isRestrictedBySecFlag; // @synthesize isRestrictedBySecFlag=_isRestrictedBySecFlag;
 @property _Bool isFromBackground; // @synthesize isFromBackground=_isFromBackground;
 @property(retain) NSDictionary *dicLaunchParameter; // @synthesize dicLaunchParameter=_dicLaunchParameter;
@@ -112,4 +112,3 @@
 @property(readonly) Class superclass;
 
 @end
-

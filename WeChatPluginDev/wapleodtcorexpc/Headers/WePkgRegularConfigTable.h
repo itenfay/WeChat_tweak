@@ -34,7 +34,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WePkgRegularConfigExt *ext; // @synthesize ext=_ext;
 @property(retain, nonatomic) NSString *entranceDomain; // @synthesize entranceDomain=_entranceDomain;
 @property(nonatomic) unsigned int pkgType; // @synthesize pkgType=_pkgType;

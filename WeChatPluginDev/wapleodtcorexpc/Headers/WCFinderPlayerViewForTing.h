@@ -10,7 +10,6 @@
     id <WCFinderPlayerViewForTingDelegate> _tingDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderPlayerViewForTingDelegate> tingDelegate; // @synthesize tingDelegate=_tingDelegate;
 - (void)onVideoPlayFail:(unsigned long long)arg1 errorCode:(int)arg2 LocalizedErrorDes:(id)arg3;
 - (void)hiddenBufferingView;

@@ -13,7 +13,6 @@
     NSString *_titleForMore;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *titleForMore; // @synthesize titleForMore=_titleForMore;
 @property(nonatomic) unsigned long long maxDisplayItemsCount; // @synthesize maxDisplayItemsCount=_maxDisplayItemsCount;
 - (id)init;

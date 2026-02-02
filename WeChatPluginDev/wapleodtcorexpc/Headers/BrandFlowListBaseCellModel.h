@@ -20,7 +20,6 @@
     NSString *_recommendExtraData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *recommendExtraData; // @synthesize recommendExtraData=_recommendExtraData;
 @property(retain, nonatomic) NSString *negativeFeedbackTitle; // @synthesize negativeFeedbackTitle=_negativeFeedbackTitle;
 @property(retain, nonatomic) NSArray *negativeFeedbackReason; // @synthesize negativeFeedbackReason=_negativeFeedbackReason;

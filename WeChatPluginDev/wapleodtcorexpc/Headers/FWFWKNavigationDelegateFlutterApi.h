@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol FlutterBinaryMessenger;
 
@@ -12,10 +13,8 @@
     NSObject<FlutterBinaryMessenger> *_binaryMessenger;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<FlutterBinaryMessenger> *binaryMessenger; // @synthesize binaryMessenger=_binaryMessenger;
 - (void)didFinishNavigationForDelegateWithIdentifier:(id)arg1 webViewIdentifier:(id)arg2 URL:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)initWithBinaryMessenger:(id)arg1;
 
 @end
-

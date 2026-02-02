@@ -99,7 +99,6 @@
 + (id)ParseFromNewDictionary:(id)arg1;
 + (id)GetValidFeedBackArray:(id)arg1;
 + (id)GetMainFeedBackButtonDic:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasTriggerRecommendInsert; // @synthesize hasTriggerRecommendInsert=_hasTriggerRecommendInsert;
 @property(nonatomic) _Bool hasShowAttachView; // @synthesize hasShowAttachView=_hasShowAttachView;
 @property(retain, nonatomic) WSVideoModel *attachVideoModel; // @synthesize attachVideoModel=_attachVideoModel;

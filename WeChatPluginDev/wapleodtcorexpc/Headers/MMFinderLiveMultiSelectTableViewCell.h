@@ -20,7 +20,6 @@
     id <MMFinderLiveMultiSelectTableViewCellDelegate> _multiSelectDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveMultiSelectTableViewCellDelegate> multiSelectDelegate; // @synthesize multiSelectDelegate=_multiSelectDelegate;
 @property(retain, nonatomic) UIImageView *m_selectedImageView; // @synthesize m_selectedImageView;
 @property(nonatomic) _Bool m_bAnimated; // @synthesize m_bAnimated;

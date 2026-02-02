@@ -16,7 +16,6 @@
     UIImageView *_shineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *shineView; // @synthesize shineView=_shineView;
 @property(retain, nonatomic) MMLiveGradientLayerView *bottomBorderView; // @synthesize bottomBorderView=_bottomBorderView;
 @property(retain, nonatomic) MMLiveGradientLayerView *topBorderView; // @synthesize topBorderView=_topBorderView;

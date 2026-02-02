@@ -14,7 +14,6 @@
 + (double)itemsFontSize;
 + (id)titleFont;
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ServiceNotifyMessageItem *serviceNotifyMsgItem; // @synthesize serviceNotifyMsgItem=_serviceNotifyMsgItem;
 - (double)calculateHeight;
 - (struct CGSize)measureContentViewSize:(struct CGSize)arg1;

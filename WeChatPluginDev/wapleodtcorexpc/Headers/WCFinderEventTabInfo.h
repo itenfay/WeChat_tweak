@@ -15,7 +15,6 @@
     NSArray *_filterList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *filterList; // @synthesize filterList=_filterList;
 @property(nonatomic) unsigned long long topicId; // @synthesize topicId=_topicId;
 @property(copy, nonatomic) NSString *tabName; // @synthesize tabName=_tabName;

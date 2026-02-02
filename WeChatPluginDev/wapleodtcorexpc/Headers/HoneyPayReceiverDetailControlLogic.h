@@ -15,7 +15,6 @@
     WCPayGetHoneyPayCardCgi *_getCardCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool receiveCardSuccess; // @synthesize receiveCardSuccess=_receiveCardSuccess;
 @property(retain, nonatomic) WCPayGetHoneyPayCardCgi *getCardCgi; // @synthesize getCardCgi=_getCardCgi;
 @property(retain, nonatomic) WCPayQryHoneyUserDetailCgi *detailCgi; // @synthesize detailCgi=_detailCgi;

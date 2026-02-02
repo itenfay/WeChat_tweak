@@ -16,7 +16,6 @@
     _Bool m_hasMsgToDownload;
 }
 
-- (void).cxx_destruct;
 - (void)ReachabilityChange:(unsigned int)arg1;
 - (void)HandleModifyFavItemResp:(id)arg1 Event:(unsigned int)arg2;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

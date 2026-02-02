@@ -17,7 +17,6 @@
     NSString *attachID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *attachID; // @synthesize attachID;
 @property(nonatomic) unsigned int dataSize; // @synthesize dataSize;
 @property(retain, nonatomic) NSData *data; // @synthesize data;

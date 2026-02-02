@@ -75,7 +75,6 @@
 + (void)PBArrayAdd_timeLineThumbName;
 + (void)PBArrayAdd_localId;
 + (void)PBArrayAdd_objectId;
-- (void).cxx_destruct;
 @property(nonatomic) long long sourceCommentScene; // @synthesize sourceCommentScene=_sourceCommentScene;
 @property(copy, nonatomic) NSString *shareUsername; // @synthesize shareUsername=_shareUsername;
 @property(copy, nonatomic) NSString *lastGMsgID; // @synthesize lastGMsgID=_lastGMsgID;

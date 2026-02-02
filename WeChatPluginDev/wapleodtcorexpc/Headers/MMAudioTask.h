@@ -38,7 +38,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long stackHash; // @synthesize stackHash=_stackHash;
 @property(retain, nonatomic) MMMetricsStackInfo *stack; // @synthesize stack=_stack;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;

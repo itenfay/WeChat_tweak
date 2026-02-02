@@ -14,7 +14,6 @@
     NSArray *_relateWeappList;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *relateWeappList; // @synthesize relateWeappList=_relateWeappList;
 @property(copy, nonatomic) NSString *mainTitle; // @synthesize mainTitle=_mainTitle;
 @property(retain, nonatomic) NSArray *infoList; // @synthesize infoList=_infoList;

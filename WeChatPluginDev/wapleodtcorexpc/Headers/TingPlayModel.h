@@ -25,7 +25,6 @@
 + (id)modelWithCategoryItem:(id)arg1 listContext:(id)arg2 index:(unsigned long long)arg3 scene:(int)arg4;
 + (id)modelWithCategoryItem:(id)arg1 presetItems:(id)arg2 index:(unsigned long long)arg3 scene:(int)arg4;
 + (id)modelWithTingItem:(id)arg1 scene:(int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMListenCategoryItem *initialCategoryItem; // @synthesize initialCategoryItem=_initialCategoryItem;
 @property(retain, nonatomic) TingItem *initialTingItem; // @synthesize initialTingItem=_initialTingItem;
 @property(retain, nonatomic) TingListSourceContext *listContext; // @synthesize listContext=_listContext;

@@ -14,7 +14,6 @@
     NSMutableArray *_layers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *layers; // @synthesize layers=_layers;
 @property(retain, nonatomic) NSMutableArray *headerViews; // @synthesize headerViews=_headerViews;
 @property(retain, nonatomic) UIImage *defaultImage; // @synthesize defaultImage=_defaultImage;

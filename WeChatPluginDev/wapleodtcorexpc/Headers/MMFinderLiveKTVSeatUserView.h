@@ -23,7 +23,6 @@
 
 + (double)preferHeight;
 + (double)preferWidth;
-- (void).cxx_destruct;
 @property(nonatomic) int score; // @synthesize score=_score;
 @property(nonatomic) _Bool isPreparing; // @synthesize isPreparing=_isPreparing;
 @property(nonatomic) _Bool isTalking; // @synthesize isTalking=_isTalking;

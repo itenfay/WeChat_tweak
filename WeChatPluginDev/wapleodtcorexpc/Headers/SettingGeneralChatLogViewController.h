@@ -15,7 +15,6 @@
     UITableView *_mainTableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *mainTableView; // @synthesize mainTableView=_mainTableView;
 @property(retain, nonatomic) NSMutableArray *cellHeightArr; // @synthesize cellHeightArr=_cellHeightArr;
 @property(retain, nonatomic) NSArray *actionArray; // @synthesize actionArray=_actionArray;

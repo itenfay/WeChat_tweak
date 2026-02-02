@@ -14,7 +14,6 @@
     WCFinderPushFeedViewProductParams *_productInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPushFeedViewProductParams *productInfo; // @synthesize productInfo=_productInfo;
 @property(copy, nonatomic) NSString *uxinfo; // @synthesize uxinfo=_uxinfo;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;

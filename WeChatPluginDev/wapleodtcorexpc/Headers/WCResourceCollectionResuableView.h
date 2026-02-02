@@ -17,7 +17,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sectionIndex; // @synthesize sectionIndex=_sectionIndex;
 @property(retain, nonatomic) UIButton *selectButton; // @synthesize selectButton=_selectButton;
 @property(nonatomic) __weak id <WCResourceHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;

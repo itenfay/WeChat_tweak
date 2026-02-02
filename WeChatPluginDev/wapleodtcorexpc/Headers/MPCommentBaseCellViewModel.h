@@ -22,7 +22,6 @@
     double _headerMargin;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double headerMargin; // @synthesize headerMargin=_headerMargin;
 @property(readonly, nonatomic) unsigned int likeCount; // @synthesize likeCount=_likeCount;
 @property(readonly, nonatomic) _Bool isLike; // @synthesize isLike=_isLike;

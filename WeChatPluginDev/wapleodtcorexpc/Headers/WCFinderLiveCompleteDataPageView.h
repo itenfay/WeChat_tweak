@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AnchorCloseLivePageDataUnit, NSString, UICollectionView, WCFinderLiveCompleteDataModel;
 
 @interface WCFinderLiveCompleteDataPageView
@@ -15,7 +17,6 @@
     UICollectionView *_collectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) WCFinderLiveCompleteDataModel *dataModel; // @synthesize dataModel=_dataModel;
 @property(retain, nonatomic) AnchorCloseLivePageDataUnit *pageDataUnit; // @synthesize pageDataUnit=_pageDataUnit;
@@ -49,4 +50,3 @@
 @property(readonly) Class superclass;
 
 @end
-

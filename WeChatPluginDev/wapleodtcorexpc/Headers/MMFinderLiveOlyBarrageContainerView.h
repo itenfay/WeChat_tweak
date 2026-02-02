@@ -24,7 +24,6 @@
     CDStruct_78c249a6 _currLiveCircle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInBackground; // @synthesize isInBackground=_isInBackground;
 @property(nonatomic) _Bool isLandscape; // @synthesize isLandscape=_isLandscape;
 @property(nonatomic) _Bool isShowMinimizeWindow; // @synthesize isShowMinimizeWindow=_isShowMinimizeWindow;

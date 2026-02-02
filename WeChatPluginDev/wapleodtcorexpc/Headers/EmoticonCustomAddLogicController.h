@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AddEmoticonWrap, EmoticonCameraReportObject, EmoticonCheckCameraFollowLogic, EmoticonCustomManageAddLogic, MMUIViewController, NSString;
 @protocol EmoticonCustomAddLogicControllerDelegate, MMUIViewControllerDelegate;
@@ -29,7 +30,6 @@
 + (_Bool)shouldEnableEmoticonCameraNewYearPendant;
 + (_Bool)shouldShowEmoticonCameraFollow;
 + (_Bool)shouldShowEmoticonCameraEntrance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonCheckCameraFollowLogic *checkCameraFollowLogic; // @synthesize checkCameraFollowLogic=_checkCameraFollowLogic;
 @property(retain, nonatomic) EmoticonCustomManageAddLogic *addEmoticonLogic; // @synthesize addEmoticonLogic=_addEmoticonLogic;
 @property(nonatomic) unsigned long long recentPulledByCameraEmoticonLabelTime; // @synthesize recentPulledByCameraEmoticonLabelTime=_recentPulledByCameraEmoticonLabelTime;
@@ -66,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

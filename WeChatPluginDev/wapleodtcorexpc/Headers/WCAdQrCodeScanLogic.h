@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, ScanQRCodeLogicController, WCAdQrCodeScanInfo, WCAdvertiseInfo;
 
@@ -19,7 +20,6 @@
     ScanQRCodeLogicController *_scanQRCodeLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ScanQRCodeLogicController *scanQRCodeLogic; // @synthesize scanQRCodeLogic=_scanQRCodeLogic;
 @property(nonatomic) _Bool qrCodeProcessing; // @synthesize qrCodeProcessing=_qrCodeProcessing;
 @property(copy, nonatomic) CDUnknownBlockType scanResultBlock; // @synthesize scanResultBlock=_scanResultBlock;
@@ -55,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

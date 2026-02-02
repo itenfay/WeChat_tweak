@@ -28,7 +28,6 @@
     struct CGSize _multiContentSizeInBright;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double multiFirstLineOriginXInBright; // @synthesize multiFirstLineOriginXInBright=_multiFirstLineOriginXInBright;
 @property(retain, nonatomic) NSMutableArray *multiArrStylesInBright; // @synthesize multiArrStylesInBright=_multiArrStylesInBright;
 @property(nonatomic) struct CGSize multiContentSizeInBright; // @synthesize multiContentSizeInBright=_multiContentSizeInBright;

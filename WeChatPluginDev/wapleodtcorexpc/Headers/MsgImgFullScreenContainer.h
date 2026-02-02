@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIViewController, NSMutableDictionary, NSString;
 @protocol MsgImgFullScreenContainerDelegate;
 
@@ -19,7 +21,6 @@
     MMUIViewController *m_viewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceDisableScroll; // @synthesize forceDisableScroll=_forceDisableScroll;
 @property(nonatomic) _Bool m_bFromPicker; // @synthesize m_bFromPicker;
 @property(nonatomic) int m_iCurrentPage; // @synthesize m_iCurrentPage;
@@ -81,4 +82,3 @@
 @property(readonly) Class superclass;
 
 @end
-

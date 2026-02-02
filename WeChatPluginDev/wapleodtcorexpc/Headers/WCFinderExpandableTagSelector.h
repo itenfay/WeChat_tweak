@@ -32,7 +32,6 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *userManualSelecteds; // @synthesize userManualSelecteds=_userManualSelecteds;
 @property(retain, nonatomic) NSMutableSet *displayItems; // @synthesize displayItems=_displayItems;
 @property(nonatomic) struct DelegateFlag delegateFlag; // @synthesize delegateFlag=_delegateFlag;

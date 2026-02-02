@@ -35,7 +35,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int liveTime; // @synthesize liveTime=_liveTime;
 @property(nonatomic) unsigned int expireTime; // @synthesize expireTime=_expireTime;
 @property(nonatomic) unsigned int sdkMode; // @synthesize sdkMode=_sdkMode;

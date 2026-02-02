@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_iconIdList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *iconIdList; // @synthesize iconIdList=_iconIdList;
 - (id)init;
 - (id)getPBPropertyTable;

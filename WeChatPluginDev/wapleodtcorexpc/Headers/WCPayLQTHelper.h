@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCPayLQTHelper : NSObject
 {
@@ -22,4 +23,3 @@
 + (id)operateIdFromUrl:(id)arg1;
 
 @end
-

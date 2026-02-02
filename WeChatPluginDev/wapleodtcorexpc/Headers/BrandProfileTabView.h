@@ -23,7 +23,6 @@
     UIView *_indicatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(retain, nonatomic) NSMutableArray *buttonList; // @synthesize buttonList=_buttonList;
 @property(nonatomic) long long indicatorIgnoreIndex; // @synthesize indicatorIgnoreIndex=_indicatorIgnoreIndex;

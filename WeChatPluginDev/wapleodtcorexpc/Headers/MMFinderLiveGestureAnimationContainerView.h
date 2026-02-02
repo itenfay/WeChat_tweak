@@ -16,7 +16,6 @@
     NSMutableDictionary *_playingInstances;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *playingInstances; // @synthesize playingInstances=_playingInstances;
 @property(nonatomic) unsigned int audioId; // @synthesize audioId=_audioId;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;

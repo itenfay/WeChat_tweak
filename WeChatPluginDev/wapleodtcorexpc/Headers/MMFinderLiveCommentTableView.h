@@ -10,7 +10,6 @@
     UIPanGestureRecognizer *_specialLiveAnimatorGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *specialLiveAnimatorGestureRecognizer; // @synthesize specialLiveAnimatorGestureRecognizer=_specialLiveAnimatorGestureRecognizer;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

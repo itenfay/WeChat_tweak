@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveFaceEncodeTask, MMLiveTask, NSMutableArray;
 @protocol OS_dispatch_queue;
@@ -18,7 +19,6 @@
     double _lastSEISendTime;
 }
 
-- (void).cxx_destruct;
 @property double lastSEISendTime; // @synthesize lastSEISendTime=_lastSEISendTime;
 @property(nonatomic) int sendFPS; // @synthesize sendFPS=_sendFPS;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *encodingQueue; // @synthesize encodingQueue=_encodingQueue;
@@ -45,4 +45,3 @@
 - (id)initWithLiveTask:(id)arg1;
 
 @end
-

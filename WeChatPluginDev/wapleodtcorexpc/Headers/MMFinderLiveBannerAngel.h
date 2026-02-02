@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveBannerCellViewModel, NSArray, NSString;
 @protocol MMFinderLiveBannerAngelDelegate;
 
@@ -18,7 +20,6 @@
 }
 
 + (Class)cellClassWithBannerInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveBannerCellViewModel *scrollingVM; // @synthesize scrollingVM=_scrollingVM;
 @property(copy, nonatomic) CDUnknownBlockType scrollAnimationCompleteAction; // @synthesize scrollAnimationCompleteAction=_scrollAnimationCompleteAction;
 @property(nonatomic) _Bool isInScrollAnimated; // @synthesize isInScrollAnimated=_isInScrollAnimated;
@@ -66,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

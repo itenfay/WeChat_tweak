@@ -16,7 +16,6 @@
     unsigned long long _materialId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int videoPlayTotalTimeInMs; // @synthesize videoPlayTotalTimeInMs=_videoPlayTotalTimeInMs;
 @property(nonatomic) unsigned int videoPlayCount; // @synthesize videoPlayCount=_videoPlayCount;
 @property(nonatomic) unsigned int videoTimeInMs; // @synthesize videoTimeInMs=_videoTimeInMs;

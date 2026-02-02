@@ -20,7 +20,6 @@
     NSString *_swiperId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *swiperId; // @synthesize swiperId=_swiperId;
 @property(retain, nonatomic) NSDictionary *wording; // @synthesize wording=_wording;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;

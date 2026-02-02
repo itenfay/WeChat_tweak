@@ -17,7 +17,6 @@
     UIButton *_openOrCloseButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showElderModeToast; // @synthesize showElderModeToast=_showElderModeToast;
 @property(retain, nonatomic) UIButton *openOrCloseButton; // @synthesize openOrCloseButton=_openOrCloseButton;
 @property(retain, nonatomic) UIView *gradientMaskView; // @synthesize gradientMaskView=_gradientMaskView;

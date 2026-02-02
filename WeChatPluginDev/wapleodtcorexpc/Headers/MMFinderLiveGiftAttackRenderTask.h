@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveGiftAttackItem, GiftAttackRenderScriptObj, MMFinderLiveGiftPlayItem, MMLiveStorageCleanupPinningToken, MMLiveTask, MMLiveTaskId, MMWeEffectManager, NSString;
 
@@ -45,7 +46,6 @@
 }
 
 + (id)baseResourceDir;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *resourcesPinningToken; // @synthesize resourcesPinningToken=_resourcesPinningToken;
 @property(nonatomic) int faceEffectIncreaseTimesRecord; // @synthesize faceEffectIncreaseTimesRecord=_faceEffectIncreaseTimesRecord;
 @property(nonatomic) int faceEffectIncreaseTimes; // @synthesize faceEffectIncreaseTimes=_faceEffectIncreaseTimes;
@@ -139,4 +139,3 @@
 - (id)initWithGiftPlayItem:(id)arg1 attackUserName:(id)arg2 attackItem:(id)arg3 liveTaskId:(id)arg4 identifier:(int)arg5;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MBBuildConfig, MBReporter, MBRuntime, MagicBrushService, NSArray, NSHashTable, NSMutableDictionary, NSString, UIView;
 
@@ -25,7 +26,6 @@
     MBReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MBReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) double createdTime; // @synthesize createdTime=_createdTime;
 @property(retain, nonatomic) NSMutableDictionary *publicServicesDict; // @synthesize publicServicesDict=_publicServicesDict;
@@ -95,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

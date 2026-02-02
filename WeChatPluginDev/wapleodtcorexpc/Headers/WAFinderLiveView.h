@@ -10,7 +10,6 @@
     MMFinderLiveFrontEndPreviewView *_liveView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFrontEndPreviewView *liveView; // @synthesize liveView=_liveView;
 - (void)layoutSubviews;
 - (void)sendEvent:(id)arg1 data:(id)arg2;

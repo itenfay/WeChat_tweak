@@ -13,7 +13,6 @@
     MMWebImageView *_iconImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)configWithItem:(id)arg1;

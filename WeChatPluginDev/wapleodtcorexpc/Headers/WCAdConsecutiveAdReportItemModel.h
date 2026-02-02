@@ -13,7 +13,6 @@
     NSString *_reserveSnsId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reserveSnsId; // @synthesize reserveSnsId=_reserveSnsId;
 @property(retain, nonatomic) NSString *snsId; // @synthesize snsId=_snsId;
 

@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) SharedPtr_35b112bd backingService; // @synthesize backingService=_backingService;
 @property(nonatomic) __weak id <OMJCDNBridgeServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)notifyUploadFailureWithTaskKey:(id)arg1 error:(id)arg2;

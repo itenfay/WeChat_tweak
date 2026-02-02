@@ -19,7 +19,6 @@
 
 + (id)paramsWithLiveID:(unsigned long long)arg1 finderUsername:(id)arg2;
 + (id)paramsWithDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderGetLiveInfoReq_FinderGetLiveInfoSceneNotificationInfo *notificationInfo; // @synthesize notificationInfo=_notificationInfo;
 @property(retain, nonatomic) FinderGetLiveInfoReq_LiveADBypassInfo *liveADByPassInfo; // @synthesize liveADByPassInfo=_liveADByPassInfo;
 @property(nonatomic) int scene; // @synthesize scene=_scene;

@@ -41,7 +41,6 @@
 + (id)cachedTextureWithPath:(id)arg1 loadOnQueue:(id)arg2 callback:(id)arg3 cache:(id)arg4 fileSystem:(id)arg5 glContext:(id)arg6;
 + (id)cachedTextureWithPathDeprecated:(id)arg1 loadOnQueue:(id)arg2 callback:(id)arg3 cache:(id)arg4 fileSystem:(id)arg5 glContext:(id)arg6;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) sk_sp_851faaab skImage; // @synthesize skImage=_skImage;
 @property(nonatomic) _Bool loadFailedForBackground; // @synthesize loadFailedForBackground=_loadFailedForBackground;
 @property(readonly, nonatomic) _Bool isExternalTexture; // @synthesize isExternalTexture=_isExternalTexture;

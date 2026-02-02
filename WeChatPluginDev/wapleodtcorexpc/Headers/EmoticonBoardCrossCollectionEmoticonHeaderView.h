@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionReusableView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonBoardCrossCollectionEmoticonHeaderModel, MMBadgeView, MMUILabel, MMWebImageView, NSString, PersonalDesigner, UIImageView, UILabel, UITapGestureRecognizer, UIView, WXKeyBoardTipsView;
 
@@ -23,7 +24,6 @@
     PersonalDesigner *_designer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PersonalDesigner *designer; // @synthesize designer=_designer;
 @property(retain, nonatomic) WXKeyBoardTipsView *keyboardTipsView; // @synthesize keyboardTipsView=_keyboardTipsView;
 @property(retain, nonatomic) UIView *voiceOverView; // @synthesize voiceOverView=_voiceOverView;
@@ -54,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

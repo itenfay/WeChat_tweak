@@ -14,7 +14,6 @@
     id <WCTimelineDataProviderDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCTimelineDataProviderDelegate> delegate; // @synthesize delegate;
 - (void)saveServerSession:(id)arg1;
 - (void)parsePattern:(id)arg1;

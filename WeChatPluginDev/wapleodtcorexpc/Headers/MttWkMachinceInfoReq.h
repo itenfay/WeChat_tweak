@@ -13,7 +13,6 @@
 + (id)jceType;
 + (void)initialize;
 @property(retain, nonatomic, getter=phoneID, setter=setPhoneID:) NSString *jcev2_p_0_r_phoneID; // @synthesize jcev2_p_0_r_phoneID;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

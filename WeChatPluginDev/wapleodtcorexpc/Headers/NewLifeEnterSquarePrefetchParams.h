@@ -19,7 +19,6 @@
     FinderObject *_reddotFinderObject;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderObject *reddotFinderObject; // @synthesize reddotFinderObject=_reddotFinderObject;
 @property(nonatomic) long long contextIdEntryScene; // @synthesize contextIdEntryScene=_contextIdEntryScene;
 @property(retain, nonatomic) NewLifePostJumpFlowParams *postJumpReportParams; // @synthesize postJumpReportParams=_postJumpReportParams;

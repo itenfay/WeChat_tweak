@@ -11,7 +11,6 @@
     struct CGPoint _touchPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint touchPoint; // @synthesize touchPoint=_touchPoint;
 @property(nonatomic) __weak UIView *viewToMagnify; // @synthesize viewToMagnify=_viewToMagnify;
 - (void)drawRect:(struct CGRect)arg1;

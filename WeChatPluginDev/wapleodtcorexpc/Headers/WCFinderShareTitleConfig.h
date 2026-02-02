@@ -13,7 +13,6 @@
     NSString *_fontColor;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fontColor; // @synthesize fontColor=_fontColor;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 

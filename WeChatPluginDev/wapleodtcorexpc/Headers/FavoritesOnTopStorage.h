@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_favLocalId;
 + (void)PBArrayAdd_mesLocalID;
 + (void)PBArrayAdd_chatUser;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastReportTime; // @synthesize lastReportTime=_lastReportTime;
 @property(nonatomic) _Bool bEditable; // @synthesize bEditable=_bEditable;
 @property(retain, nonatomic) NSString *timeLineId; // @synthesize timeLineId=_timeLineId;

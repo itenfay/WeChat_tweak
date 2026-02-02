@@ -10,7 +10,6 @@
     WxSmCertUtil *_smCertUtil;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WxSmCertUtil *smCertUtil; // @synthesize smCertUtil=_smCertUtil;
 - (id)getTsmSignUserId;
 - (void)updateTsmCertWithCAVersion:(id)arg1 rootCaChains:(id)arg2;

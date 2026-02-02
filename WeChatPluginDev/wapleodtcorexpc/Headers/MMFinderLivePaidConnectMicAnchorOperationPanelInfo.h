@@ -18,7 +18,6 @@
 }
 
 + (id)fromPurchaseMicInfoResp:(id)arg1 allMicUsersList:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *applyingUserList; // @synthesize applyingUserList=_applyingUserList;
 @property(retain, nonatomic) NSArray *connectedUserList; // @synthesize connectedUserList=_connectedUserList;
 @property(nonatomic) double serviceRating; // @synthesize serviceRating=_serviceRating;

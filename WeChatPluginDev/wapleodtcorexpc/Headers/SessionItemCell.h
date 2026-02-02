@@ -16,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *sizeLabel; // @synthesize sizeLabel=_sizeLabel;
 @property(readonly, nonatomic) shared_ptr_5102c92c sessionItem; // @synthesize sessionItem=_sessionItem;
 @property(retain, nonatomic) UIButton *detailButton; // @synthesize detailButton=_detailButton;

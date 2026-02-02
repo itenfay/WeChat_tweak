@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderDataItem, WCFinderFeedStreamGetLiveMsgCGI, WCFinderPreviewLiveCGI;
 
@@ -27,7 +28,6 @@
     NSData *_multiStyleInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *multiStyleInfo; // @synthesize multiStyleInfo=_multiStyleInfo;
 @property(nonatomic) long long getLiveMsgScene; // @synthesize getLiveMsgScene=_getLiveMsgScene;
 @property(nonatomic) int joinLiveType; // @synthesize joinLiveType=_joinLiveType;
@@ -55,4 +55,3 @@
 - (id)initWithDataItem:(id)arg1 scene:(int)arg2 joinLiveType:(int)arg3 getLiveMsgScene:(long long)arg4 multiStyleInfo:(id)arg5;
 
 @end
-

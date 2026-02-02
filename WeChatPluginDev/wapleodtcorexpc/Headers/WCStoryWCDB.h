@@ -26,7 +26,6 @@
     NSMutableDictionary *_dicZonePageTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicZonePageTable; // @synthesize dicZonePageTable=_dicZonePageTable;
 @property(retain, nonatomic) WCTTable *userRelatedCommentTable; // @synthesize userRelatedCommentTable=_userRelatedCommentTable;
 @property(retain, nonatomic) WCTTable *userDataTable; // @synthesize userDataTable=_userDataTable;

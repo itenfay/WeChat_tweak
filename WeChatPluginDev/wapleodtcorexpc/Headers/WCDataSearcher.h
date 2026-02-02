@@ -14,7 +14,6 @@
     NSMutableArray *_arrResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrResult; // @synthesize arrResult=_arrResult;
 @property(retain, nonatomic) NSString *lastQuery; // @synthesize lastQuery=_lastQuery;
 @property(nonatomic) Class resultCellClass; // @synthesize resultCellClass=_resultCellClass;

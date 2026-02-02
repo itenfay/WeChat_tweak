@@ -125,7 +125,6 @@
 + (void)PBArrayAdd_mid;
 + (void)PBArrayAdd_tid;
 + (id)WCCover_mediaItemFromServerObject:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSightVideoCompositeTask *cachedSightCompositeTask; // @synthesize cachedSightCompositeTask=_cachedSightCompositeTask;
 @property(retain, nonatomic) NSString *RISKY_savedSightCompositeTaskId; // @synthesize RISKY_savedSightCompositeTaskId=_RISKY_savedSightCompositeTaskId;
 @property(nonatomic) long long livePhotoStillImageTimeMs; // @synthesize livePhotoStillImageTimeMs=_livePhotoStillImageTimeMs;

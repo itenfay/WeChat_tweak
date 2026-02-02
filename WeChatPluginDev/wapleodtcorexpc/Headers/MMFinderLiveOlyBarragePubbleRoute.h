@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveOlyBarragePubbleCell, MMFinderLiveOlyBarrageTravel;
 
@@ -16,7 +17,6 @@
     struct CGPoint _currentCenter;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType displayFinishCompletion; // @synthesize displayFinishCompletion=_displayFinishCompletion;
 @property(nonatomic) _Bool hasInvokeContinueDisplay; // @synthesize hasInvokeContinueDisplay=_hasInvokeContinueDisplay;
 @property(nonatomic) struct CGPoint currentCenter; // @synthesize currentCenter=_currentCenter;
@@ -35,4 +35,3 @@
 - (void)startFloatingWithDuration:(double)arg1;
 
 @end
-

@@ -17,7 +17,6 @@
     MMMusicMVTrackItem *_refTrackItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMMusicMVTrackItem *refTrackItem; // @synthesize refTrackItem=_refTrackItem;
 @property(retain, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl=_thumbUrl;
 @property(retain, nonatomic) NSString *videoLocalPath; // @synthesize videoLocalPath=_videoLocalPath;

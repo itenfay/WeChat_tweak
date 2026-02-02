@@ -19,7 +19,6 @@
 @property(retain) NSString *compiledModelFilePath; // @synthesize compiledModelFilePath=_compiledModelFilePath;
 @property(retain) NSString *mlModelFilePath; // @synthesize mlModelFilePath=_mlModelFilePath;
 @property(retain) MLModel *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (_Bool)build:(id)arg1;
 - (id)saveModel:(struct Model *)arg1;
 - (_Bool)cleanup;

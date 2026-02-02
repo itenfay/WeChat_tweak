@@ -28,7 +28,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithAppid:(id)arg1 username:(id)arg2 path:(id)arg3 scene:(id)arg4 scene_note:(id)arg5 extra_data:(id)arg6 referrer_info_extra_data:(id)arg7 app_version:(id)arg8 isHalfPage:(id)arg9 ecs_open_scene:(id)arg10 isSilentLaunch:(id)arg11 viewModeExtraData:(id)arg12 bForbidExpandGesture:(id)arg13 featureList:(id)arg14;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *featureList; // @synthesize featureList=_featureList;
 @property(retain, nonatomic) NSNumber *bForbidExpandGesture; // @synthesize bForbidExpandGesture=_bForbidExpandGesture;
 @property(retain, nonatomic) EcsMiniProgramLaunchViewModeExtraData *viewModeExtraData; // @synthesize viewModeExtraData=_viewModeExtraData;

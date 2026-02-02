@@ -16,7 +16,6 @@
     NSData *_aad;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *aad; // @synthesize aad=_aad;
 @property(retain, nonatomic) NSData *iv; // @synthesize iv=_iv;
 @property(retain, nonatomic) NSData *tag; // @synthesize tag=_tag;

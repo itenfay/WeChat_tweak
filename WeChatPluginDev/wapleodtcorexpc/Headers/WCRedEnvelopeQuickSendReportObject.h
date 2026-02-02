@@ -13,7 +13,6 @@
     NSString *_materialId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *materialId; // @synthesize materialId=_materialId;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 

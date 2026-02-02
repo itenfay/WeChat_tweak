@@ -34,7 +34,6 @@
 + (void)clearSession:(id)arg1;
 + (void)clearUnReadCount:(id)arg1;
 + (void)updateSessionDB:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_hasIniitialUnread; // @synthesize m_hasIniitialUnread=_m_hasIniitialUnread;
 @property(nonatomic) __weak id <BadRoomLogicControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(nonatomic) unsigned int m_firstDownGetSeq; // @synthesize m_firstDownGetSeq;

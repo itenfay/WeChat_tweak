@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_priority;
 + (void)PBArrayAdd_bizData;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int priority; // @synthesize priority=_priority;
 @property(copy, nonatomic) NSString *bizData; // @synthesize bizData=_bizData;
 @property(readonly, copy) NSString *description;

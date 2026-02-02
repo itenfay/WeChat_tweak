@@ -55,7 +55,6 @@
     NSString *_SpeedAfter_66;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *SpeedAfter_66; // @synthesize SpeedAfter_66=_SpeedAfter_66;
 @property(copy, nonatomic) NSString *SpeedBefore_65; // @synthesize SpeedBefore_65=_SpeedBefore_65;
 @property(nonatomic) unsigned int firstRenderTime_64; // @synthesize firstRenderTime_64=_firstRenderTime_64;

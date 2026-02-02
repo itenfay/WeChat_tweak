@@ -26,7 +26,6 @@
     NSString *_resultUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *resultUrl; // @synthesize resultUrl=_resultUrl;
 @property(retain, nonatomic) NSString *userId; // @synthesize userId=_userId;
 @property(retain, nonatomic) NSString *secretKey; // @synthesize secretKey=_secretKey;

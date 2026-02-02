@@ -11,7 +11,6 @@
     MMUILabel *m_titleLabel;
 }
 
-- (void).cxx_destruct;
 - (void)updateCellWithLableTip:(id)arg1;
 - (void)layoutSubviews;
 - (void)setupSubviews;

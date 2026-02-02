@@ -13,7 +13,6 @@
     CLLocation *_location;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int wlanUse; // @synthesize wlanUse=_wlanUse;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 - (id)description;

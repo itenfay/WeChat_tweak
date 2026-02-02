@@ -23,7 +23,6 @@
 
 + (void)handleMessage:(id)arg1 ChatName:(id)arg2 Des:(unsigned int)arg3 ShouldChange:(_Bool)arg4;
 + (id)getLocalUsrName:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastLocalID; // @synthesize lastLocalID=_lastLocalID;
 @property(nonatomic) unsigned int oneQueryLimitCnt; // @synthesize oneQueryLimitCnt=_oneQueryLimitCnt;
 @property(nonatomic) _Bool bStopGet; // @synthesize bStopGet=_bStopGet;

@@ -19,7 +19,6 @@
     unsigned long long _deviceSearchType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long deviceSearchType; // @synthesize deviceSearchType=_deviceSearchType;
 @property(nonatomic) __weak id <WCDeviceSearchLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onBLEHardDeviceSearch:(id)arg1 modContact:(id)arg2 respData:(id)arg3 errorCode:(int)arg4;

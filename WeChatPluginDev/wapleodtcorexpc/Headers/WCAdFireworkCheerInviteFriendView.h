@@ -17,7 +17,6 @@
     UIButton *_inviteButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool contentShowFlag; // @synthesize contentShowFlag=_contentShowFlag;
 @property(retain, nonatomic) UIButton *inviteButton; // @synthesize inviteButton=_inviteButton;
 @property(retain, nonatomic) MMUIView *bgView; // @synthesize bgView=_bgView;

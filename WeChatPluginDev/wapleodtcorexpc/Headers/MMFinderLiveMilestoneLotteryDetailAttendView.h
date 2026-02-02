@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveMilestoneLotteryCouponInfo, MMFinderLiveMilestoneLotteryViewModel, MMUIButton, MMWebImageView, NSString, UIButton, UILabel, UIView;
 
 @interface MMFinderLiveMilestoneLotteryDetailAttendView
@@ -30,7 +32,6 @@
     struct CGSize _lastLayoutSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastLayoutSize; // @synthesize lastLayoutSize=_lastLayoutSize;
 @property(nonatomic) unsigned long long countdownSeconds; // @synthesize countdownSeconds=_countdownSeconds;
 @property(retain, nonatomic) UIButton *accountProfileButton; // @synthesize accountProfileButton=_accountProfileButton;
@@ -87,4 +88,3 @@
 @property(readonly) Class superclass;
 
 @end
-

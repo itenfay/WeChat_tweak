@@ -12,7 +12,6 @@
     _Bool _tryConnect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool tryConnect; // @synthesize tryConnect=_tryConnect;
 @property(retain, nonatomic) WCDevice *device; // @synthesize device=_device;
 @property(nonatomic) int connectState; // @synthesize connectState=_connectState;

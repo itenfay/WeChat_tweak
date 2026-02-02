@@ -19,7 +19,6 @@
     UILabel *_likeCountLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *likeCountLabel; // @synthesize likeCountLabel=_likeCountLabel;
 @property(retain, nonatomic) UIImageView *likeIcon; // @synthesize likeIcon=_likeIcon;
 @property(retain, nonatomic) UIImageView *playIcon; // @synthesize playIcon=_playIcon;

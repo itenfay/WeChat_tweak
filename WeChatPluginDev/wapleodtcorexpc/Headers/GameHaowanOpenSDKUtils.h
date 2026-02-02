@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface GameHaowanOpenSDKUtils
 {
 }
@@ -16,4 +18,3 @@
 + (id)createViewControllerFromOpenSDKWithAppId:(id)arg1 andExtra:(id)arg2 andData:(id)arg3 resultBlock:(CDUnknownBlockType)arg4;
 
 @end
-

@@ -21,7 +21,6 @@
     NSString *_dynamicOfflineCode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int offlineCodeStatus; // @synthesize offlineCodeStatus=_offlineCodeStatus;
 @property(retain, nonatomic) NSString *dynamicOfflineCode; // @synthesize dynamicOfflineCode=_dynamicOfflineCode;
 @property(retain, nonatomic) NSString *dynamicCode; // @synthesize dynamicCode=_dynamicCode;

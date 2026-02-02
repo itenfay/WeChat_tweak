@@ -15,7 +15,6 @@
     NSString *_videoPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *videoPath; // @synthesize videoPath=_videoPath;
 @property(retain, nonatomic) NSString *thumbUri; // @synthesize thumbUri=_thumbUri;
 @property(nonatomic) _Bool useCDN; // @synthesize useCDN=_useCDN;

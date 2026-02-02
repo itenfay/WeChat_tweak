@@ -25,7 +25,6 @@
 }
 
 + (double)heightForTableViewCell;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasLayouted; // @synthesize hasLayouted=_hasLayouted;
 @property(nonatomic) double errorTipsCenterY; // @synthesize errorTipsCenterY=_errorTipsCenterY;
 @property(nonatomic) __weak PickLocationManager *pickLocationManager; // @synthesize pickLocationManager=_pickLocationManager;

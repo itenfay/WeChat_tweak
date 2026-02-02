@@ -14,7 +14,6 @@
     long long _liveShareScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceDarkMode; // @synthesize forceDarkMode=_forceDarkMode;
 @property(nonatomic) long long liveShareScene; // @synthesize liveShareScene=_liveShareScene;
 @property(retain, nonatomic) NSArray *itemArrayConfig; // @synthesize itemArrayConfig=_itemArrayConfig;

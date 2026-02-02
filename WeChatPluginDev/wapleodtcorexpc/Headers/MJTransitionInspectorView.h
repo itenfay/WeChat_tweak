@@ -13,7 +13,6 @@
     MMUIActivityIndicatorView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <MJTransitionInspectorViewDelegate> delegate; // @synthesize delegate=_delegate;

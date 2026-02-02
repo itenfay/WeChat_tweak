@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, UIPanGestureRecognizer, UITextField, UIView;
 
@@ -24,7 +25,6 @@
     UIPanGestureRecognizer *_pan;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEditing; // @synthesize isEditing=_isEditing;
 @property(nonatomic) _Bool isInDeleteState; // @synthesize isInDeleteState=_isInDeleteState;
 @property(retain, nonatomic) UIPanGestureRecognizer *pan; // @synthesize pan=_pan;
@@ -68,4 +68,3 @@
 @property(readonly) Class superclass;
 
 @end
-

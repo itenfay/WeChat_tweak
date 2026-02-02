@@ -19,7 +19,6 @@
     struct CGPoint _markdotCenter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long openHalfResultPageTimeStampInMs; // @synthesize openHalfResultPageTimeStampInMs=_openHalfResultPageTimeStampInMs;
 @property(retain, nonatomic) NSString *svrRespInfoText; // @synthesize svrRespInfoText=_svrRespInfoText;
 @property(nonatomic) _Bool hasDidShakingAnimationOnce; // @synthesize hasDidShakingAnimationOnce=_hasDidShakingAnimationOnce;

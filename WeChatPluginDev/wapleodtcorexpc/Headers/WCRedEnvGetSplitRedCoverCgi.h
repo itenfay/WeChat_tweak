@@ -10,7 +10,6 @@
     id <WCRedEnvGetSplitRedCoverCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCRedEnvGetSplitRedCoverCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (unsigned long long)getCgiNewDNSBusinessType;
 - (void)didFailWithError:(id)arg1;

@@ -26,7 +26,6 @@
 
 + (_Bool)isLowEnd;
 + (double)_finderLiveCacheValidDate;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cleanQueue; // @synthesize cleanQueue=_cleanQueue;
 @property(retain, nonatomic) WCTTable *uhpLiveBadgesTable; // @synthesize uhpLiveBadgesTable=_uhpLiveBadgesTable;
 @property(retain, nonatomic) WCTTable *questionAndAnswerMsgRecordsTable; // @synthesize questionAndAnswerMsgRecordsTable=_questionAndAnswerMsgRecordsTable;

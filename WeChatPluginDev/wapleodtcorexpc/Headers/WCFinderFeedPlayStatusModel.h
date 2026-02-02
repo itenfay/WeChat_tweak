@@ -31,7 +31,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long hadReadTimestamp; // @synthesize hadReadTimestamp=_hadReadTimestamp;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;

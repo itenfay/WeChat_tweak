@@ -11,7 +11,6 @@
     NSString *_ipSetKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ipSetKey; // @synthesize ipSetKey=_ipSetKey;
 @property(retain, nonatomic) NSArray *tipDataArray; // @synthesize tipDataArray=_tipDataArray;
 

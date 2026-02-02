@@ -23,7 +23,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canRecordFPS; // @synthesize canRecordFPS=_canRecordFPS;
 @property(nonatomic) _Bool canReportFPS_MMData29222; // @synthesize canReportFPS_MMData29222=_canReportFPS_MMData29222;
 @property(nonatomic) _Bool canReportFPS_IDKey1408_MMData20222; // @synthesize canReportFPS_IDKey1408_MMData20222=_canReportFPS_IDKey1408_MMData20222;

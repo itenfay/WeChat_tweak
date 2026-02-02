@@ -43,7 +43,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(nonatomic) unsigned int reportId; // @synthesize reportId=_reportId;
 @property(retain, nonatomic) NSData *launchResponseData; // @synthesize launchResponseData=_launchResponseData;

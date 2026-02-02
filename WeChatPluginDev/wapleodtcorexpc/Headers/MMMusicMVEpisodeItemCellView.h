@@ -24,7 +24,6 @@
     UIView *_videoCoverView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *videoCoverView; // @synthesize videoCoverView=_videoCoverView;
 @property(retain, nonatomic) UILabel *videoHiddenPromptLabel; // @synthesize videoHiddenPromptLabel=_videoHiddenPromptLabel;
 @property(retain, nonatomic) UIImageView *videoHiddenPromptImageView; // @synthesize videoHiddenPromptImageView=_videoHiddenPromptImageView;

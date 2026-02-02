@@ -11,7 +11,6 @@
     MMUILabel *_signLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *signLabel; // @synthesize signLabel=_signLabel;
 @property(retain, nonatomic) MMUIView *signBackView; // @synthesize signBackView=_signBackView;
 - (id)getSelfAccessibility;

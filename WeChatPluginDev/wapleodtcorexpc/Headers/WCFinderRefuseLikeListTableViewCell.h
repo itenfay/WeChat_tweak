@@ -14,7 +14,6 @@
 }
 
 + (id)cellId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;
 @property(retain, nonatomic) WCFinderHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
 @property(retain, nonatomic) UILabel *nickName; // @synthesize nickName=_nickName;

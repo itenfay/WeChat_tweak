@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIImageView, UILabel, UIView, WCFinderFeedContentVM;
 
 @interface WCFinderTipBarView
@@ -12,7 +14,6 @@
     UIImageView *_rightArrowImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *rightArrowImageView; // @synthesize rightArrowImageView=_rightArrowImageView;
 @property(retain, nonatomic) UIView *rightTipView; // @synthesize rightTipView=_rightTipView;
 @property(retain, nonatomic) UILabel *topTipsBarLabel; // @synthesize topTipsBarLabel=_topTipsBarLabel;
@@ -27,4 +28,3 @@
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM;
 
 @end
-

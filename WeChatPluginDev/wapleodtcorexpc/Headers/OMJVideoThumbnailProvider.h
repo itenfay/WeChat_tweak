@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol OS_dispatch_queue;
@@ -19,7 +20,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)cancelAllTasks;
 - (void)cancelTask:(long long)arg1;
 - (void)onRequestCompleteForTimeRange:(struct XTMTimeRange)arg1 resultHandler:(CDUnknownBlockType)arg2 resultType:(int)arg3 videoFrame:(SharedPtr_43d2f63a)arg4 taskID:(unsigned int)arg5;
@@ -39,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

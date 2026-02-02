@@ -10,7 +10,6 @@
     MMFinderLivePromoteDisplayLeaseToken *_weakToken;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLivePromoteDisplayLeaseToken *weakToken; // @synthesize weakToken=_weakToken;
 - (void)setToken:(id)arg1;
 - (id)token;

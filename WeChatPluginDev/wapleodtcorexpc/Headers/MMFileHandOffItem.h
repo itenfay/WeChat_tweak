@@ -24,7 +24,6 @@
 }
 
 + (id)modelPropertyBlacklistForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *messageWrap; // @synthesize messageWrap=_messageWrap;
 @property(copy, nonatomic) NSString *mediaid; // @synthesize mediaid=_mediaid;
 @property(nonatomic) unsigned int sdkversion; // @synthesize sdkversion=_sdkversion;

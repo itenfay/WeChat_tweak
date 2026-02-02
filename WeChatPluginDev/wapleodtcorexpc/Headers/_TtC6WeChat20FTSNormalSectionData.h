@@ -10,7 +10,6 @@
     MISSING_TYPE *rows;
 }
 
-- (void).cxx_destruct;
 - (id)initWithType:(unsigned long long)arg1 data:(id)arg2 searchItemCount:(long long)arg3;
 - (id)initWithType:(unsigned long long)arg1 array:(id)arg2 isDetailSearch:(_Bool)arg3 searchText:(id)arg4;
 - (id)initWithType:(unsigned long long)arg1 favs:(id)arg2 isDetailSearch:(_Bool)arg3;

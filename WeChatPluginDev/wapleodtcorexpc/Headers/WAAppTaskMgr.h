@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTimer, NSDictionary, NSMutableArray, NSObject, NSString, TencentLBSLocation, WAMemoryPressureRecord, WAThreadSafeMutableDictionary;
 @protocol OS_dispatch_source;
 
@@ -29,7 +31,6 @@
 + (id)minimizeTaskDataFromWeAppTask:(id)arg1 isManually:(_Bool)arg2;
 + (id)minimizationTaskKeyWithAppID:(id)arg1 debbugMode:(unsigned int)arg2;
 + (id)lastAppIDWithViewController:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int locationCacheTime; // @synthesize locationCacheTime=_locationCacheTime;
 @property(retain, nonatomic) TencentLBSLocation *locationCache; // @synthesize locationCache=_locationCache;
 @property(copy, nonatomic) NSString *currentMatrixScene; // @synthesize currentMatrixScene=_currentMatrixScene;
@@ -244,4 +245,3 @@
 @property(readonly) Class superclass;
 
 @end
-

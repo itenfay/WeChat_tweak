@@ -13,7 +13,6 @@
     RichTextView *_linkView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *linkView; // @synthesize linkView=_linkView;
 @property(retain, nonatomic) UIView *footerContainerView; // @synthesize footerContainerView=_footerContainerView;
 @property(retain, nonatomic) SafeDeviceData *currentDevice; // @synthesize currentDevice=_currentDevice;

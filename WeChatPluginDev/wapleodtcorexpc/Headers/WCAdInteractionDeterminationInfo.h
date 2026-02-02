@@ -16,7 +16,6 @@
     struct CGRect _positionArea;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double triggerPercentage; // @synthesize triggerPercentage=_triggerPercentage;
 @property(nonatomic) struct CGRect positionArea; // @synthesize positionArea=_positionArea;
 @property(retain, nonatomic) NSString *resourceId; // @synthesize resourceId=_resourceId;

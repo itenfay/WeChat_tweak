@@ -12,7 +12,6 @@
     id <BTBaseItemCellViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BTBaseItemCellViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) __weak id <BTBaseItemCellViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)updateCellOnPageAppear;

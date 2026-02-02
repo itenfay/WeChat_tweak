@@ -20,7 +20,6 @@
     UIViewController *_viewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) SearchVoiceInputViewController *searchVoiceInputViewController; // @synthesize searchVoiceInputViewController=_searchVoiceInputViewController;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;

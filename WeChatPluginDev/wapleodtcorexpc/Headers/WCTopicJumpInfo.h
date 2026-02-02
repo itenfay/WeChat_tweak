@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class SearchTagJumpRequest, SearchTagJumpResponse, WCTopicReportBaseItem;
 
@@ -22,7 +23,6 @@
     CDUnknownBlockType _handler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int eventId; // @synthesize eventId=_eventId;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) _Bool openWeAppWithoutAlert; // @synthesize openWeAppWithoutAlert=_openWeAppWithoutAlert;
@@ -40,4 +40,3 @@
 - (_Bool)isTrash;
 
 @end
-

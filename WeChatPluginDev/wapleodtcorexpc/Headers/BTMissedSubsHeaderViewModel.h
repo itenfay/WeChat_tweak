@@ -10,7 +10,6 @@
     BTRecommendAccountData *_accountData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BTRecommendAccountData *accountData; // @synthesize accountData=_accountData;
 - (void)updateCellHeight:(double)arg1;
 - (double)viewHeight;

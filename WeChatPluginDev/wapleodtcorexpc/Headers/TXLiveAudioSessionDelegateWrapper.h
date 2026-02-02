@@ -13,7 +13,6 @@
     id <TXLiveAudioSessionDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property __weak id <TXLiveAudioSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)setPreferredInput:(id)arg1 error:(id *)arg2;
 - (_Bool)overrideOutputAudioPort:(unsigned long long)arg1 error:(id *)arg2;

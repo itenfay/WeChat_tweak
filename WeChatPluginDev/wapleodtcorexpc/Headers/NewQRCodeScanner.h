@@ -65,7 +65,6 @@
 
 + (id)imageFromLockedCVImageBuffer:(struct __CVBuffer *)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *variablesLock; // @synthesize variablesLock=_variablesLock;
 @property(nonatomic) struct opaqueCMSampleBuffer *currentSampleBuffer; // @synthesize currentSampleBuffer=_currentSampleBuffer;
 @property(nonatomic) struct CGPoint markDotCenter; // @synthesize markDotCenter=_markDotCenter;

@@ -10,7 +10,6 @@
     NSString *_enterpriseChatScene;
 }
 
-- (void).cxx_destruct;
 - (void)onInitiateBizChat:(id)arg1 errorCode:(int)arg2 extDic:(id)arg3;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;
 

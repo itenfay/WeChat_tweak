@@ -13,7 +13,6 @@
     MMUILabel *_label;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIColor *bubbleBackgroundColor; // @synthesize bubbleBackgroundColor=_bubbleBackgroundColor;
 @property(nonatomic) double bubbleCornerRadius; // @synthesize bubbleCornerRadius=_bubbleCornerRadius;

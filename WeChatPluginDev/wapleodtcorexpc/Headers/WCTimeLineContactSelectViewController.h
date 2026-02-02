@@ -11,7 +11,6 @@
     id <WCTimeLineContactSelectViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 - (id)getSafeSearchViewController;
 - (_Bool)onFilterContactCandidate:(id)arg1;
 - (void)onSelectContact:(id)arg1;

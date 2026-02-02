@@ -12,7 +12,6 @@
     NSArray *_mpLinkPrefixes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *mpLinkPrefixes; // @synthesize mpLinkPrefixes=_mpLinkPrefixes;
 - (id)initWithMpLinkPrefixes:(id)arg1;
 - (id)init;

@@ -15,7 +15,6 @@
     WCTTable *_tableEmoticonSetInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCTTable *tableEmoticonSetInfo; // @synthesize tableEmoticonSetInfo=_tableEmoticonSetInfo;
 @property(retain) WCTTable *m_tableEmoticonPackage; // @synthesize m_tableEmoticonPackage=_m_tableEmoticonPackage;
 @property(retain) WCTTable *m_tableEmoticon; // @synthesize m_tableEmoticon=_m_tableEmoticon;

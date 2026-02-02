@@ -14,7 +14,6 @@
     _Bool _bSpaceSeperated;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bSpaceSeperated; // @synthesize bSpaceSeperated=_bSpaceSeperated;
 @property(retain, nonatomic) NSMutableArray *arrKeywordItem; // @synthesize arrKeywordItem=_arrKeywordItem;
 @property(retain, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;

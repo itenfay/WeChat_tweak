@@ -17,7 +17,6 @@
     UIButton *_nextButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *nextButton; // @synthesize nextButton=_nextButton;
 @property(retain, nonatomic) RichTextView *protoTextView; // @synthesize protoTextView=_protoTextView;
 @property(retain, nonatomic) MMUIButton *checkBox; // @synthesize checkBox=_checkBox;

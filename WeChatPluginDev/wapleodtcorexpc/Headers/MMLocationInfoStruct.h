@@ -15,7 +15,6 @@
 }
 
 + (id)LocationInfoStructWithProvince:(id)arg1 city:(id)arg2 district:(id)arg3;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *district; // @synthesize district=_district;
 @property(readonly, nonatomic) NSString *city; // @synthesize city=_city;
 @property(readonly, nonatomic) NSString *province; // @synthesize province=_province;

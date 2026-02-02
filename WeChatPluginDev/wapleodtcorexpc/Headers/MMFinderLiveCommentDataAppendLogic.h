@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveBoxId, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveCommentDataMgr;
 
@@ -13,7 +14,6 @@
     FinderLiveBoxId *_boxIdObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveBoxId *boxIdObj; // @synthesize boxIdObj=_boxIdObj;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 - (id)appendCommentContentFromMySelf:(id)arg1 toUser:(id)arg2 postType:(unsigned long long)arg3 poiAddrSubStr:(id)arg4 callback:(CDUnknownBlockType)arg5 extra:(id)arg6;
@@ -24,4 +24,3 @@
 - (id)initWithTaskId:(id)arg1 boxId:(id)arg2;
 
 @end
-

@@ -34,7 +34,6 @@
 }
 
 + (id)TabItemWithTabView:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveConnectMicIncomingAudienceSettingsPanel *audienceSettingsPanel; // @synthesize audienceSettingsPanel=_audienceSettingsPanel;
 @property(nonatomic) _Bool isAudiencePkEnable; // @synthesize isAudiencePkEnable=_isAudiencePkEnable;
 @property(nonatomic) _Bool isMultiAnchorMicEnabled; // @synthesize isMultiAnchorMicEnabled=_isMultiAnchorMicEnabled;

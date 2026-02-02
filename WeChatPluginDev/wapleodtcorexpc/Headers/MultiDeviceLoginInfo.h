@@ -35,7 +35,6 @@
     NSString *_deviceName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showPrivacyAgree; // @synthesize showPrivacyAgree=_showPrivacyAgree;
 @property(nonatomic) _Bool showSyncChat; // @synthesize showSyncChat=_showSyncChat;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;

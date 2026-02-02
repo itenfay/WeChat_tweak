@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLivePromoteExtInfo, FinderLivePromoteMsgInfo, MMFinderLiveCouponItem, MMFinderLivePromoteDisplayLease, MMFinderLivePromoteDisplayRecordInfo, MMFinderLivePromotePubbleContainerView, MMFinderLiveSyncPromoteModel, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveQueue, NSData, NSMutableArray, NSMutableDictionary, NSString;
 
@@ -39,7 +40,6 @@
     MMFinderLivePromoteDisplayLease *_currentPrecedingDisplayLease;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePromoteDisplayLease *currentPrecedingDisplayLease; // @synthesize currentPrecedingDisplayLease=_currentPrecedingDisplayLease;
 @property(retain, nonatomic) MMLiveQueue *displayLeases; // @synthesize displayLeases=_displayLeases;
 @property(retain, nonatomic) NSMutableArray *actionReportItemList; // @synthesize actionReportItemList=_actionReportItemList;
@@ -149,4 +149,3 @@
 @property(readonly) Class superclass;
 
 @end
-

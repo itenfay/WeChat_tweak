@@ -10,7 +10,6 @@
     NSMutableDictionary *_feedId2EncryptIdMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *feedId2EncryptIdMap; // @synthesize feedId2EncryptIdMap=_feedId2EncryptIdMap;
 - (void)onGetFeedId:(id)arg1 forEncryptId:(id)arg2;
 - (void)onFinderDataItemIsLikedUpdateByExtention:(id)arg1;

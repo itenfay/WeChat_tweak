@@ -12,7 +12,6 @@
     JSApiScopeConfirmWindow *_confirmWindow;
 }
 
-- (void).cxx_destruct;
 - (void)onScopeWindowCancel:(id)arg1;
 - (void)onScopeWindowConfirm:(id)arg1 withScope:(id)arg2;
 - (void)onConfirmViewCancel;

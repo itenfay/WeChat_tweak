@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMSnackBarConfig, NSOperation, UIViewController;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)snackBar;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperation *afterHideOperation; // @synthesize afterHideOperation=_afterHideOperation;
 @property(nonatomic) __weak UIViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 @property(copy, nonatomic) CDUnknownBlockType willAppearHandlerBlock; // @synthesize willAppearHandlerBlock=_willAppearHandlerBlock;
@@ -51,4 +51,3 @@
 - (id)init;
 
 @end
-

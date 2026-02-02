@@ -12,7 +12,6 @@
     UIStackView *_stackView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(readonly, nonatomic) UIImageView *customImageView; // @synthesize customImageView=_customImageView;
 @property(readonly, nonatomic) UILabel *customTitleLabel; // @synthesize customTitleLabel=_customTitleLabel;

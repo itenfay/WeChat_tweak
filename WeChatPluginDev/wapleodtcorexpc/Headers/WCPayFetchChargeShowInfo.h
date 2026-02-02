@@ -14,7 +14,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayFetchChargeShowInfoContent *show_info; // @synthesize show_info=_show_info;
 @property(nonatomic) unsigned int m_id; // @synthesize m_id=_m_id;
 - (void)genFromDic:(id)arg1;

@@ -15,7 +15,6 @@
     CDStruct_c519178c _bounds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
 @property(nonatomic) CDStruct_c519178c bounds; // @synthesize bounds=_bounds;

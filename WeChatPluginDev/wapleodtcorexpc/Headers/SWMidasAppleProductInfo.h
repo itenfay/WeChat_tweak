@@ -22,7 +22,6 @@
     MISSING_TYPE *promotionalOfferInfos;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 - (_Bool)isEqual:(id)arg1;

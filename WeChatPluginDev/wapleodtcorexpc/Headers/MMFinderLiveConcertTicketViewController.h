@@ -29,7 +29,6 @@
     NSString *_currentItemUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *currentItemUrl; // @synthesize currentItemUrl=_currentItemUrl;
 @property(retain, nonatomic) MMUIButton *itemButton; // @synthesize itemButton=_itemButton;
 @property(nonatomic) unsigned long long sourceScene; // @synthesize sourceScene=_sourceScene;

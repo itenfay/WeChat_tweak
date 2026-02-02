@@ -13,7 +13,6 @@
     CdnSnsTaskInfo *_curTaskInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CdnSnsTaskInfo *curTaskInfo; // @synthesize curTaskInfo=_curTaskInfo;
 @property(retain, nonatomic) NSMutableArray *arrQueue; // @synthesize arrQueue=_arrQueue;
 - (void)OnCdnDownload:(id)arg1;

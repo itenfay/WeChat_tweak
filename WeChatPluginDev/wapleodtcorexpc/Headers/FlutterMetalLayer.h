@@ -29,7 +29,6 @@
 }
 
 + (_Bool)enabled;
-- (void).cxx_destruct;
 @property _Bool presentsWithTransaction; // @synthesize presentsWithTransaction=_presentsWithTransaction;
 @property _Bool wantsExtendedDynamicRangeContent; // @synthesize wantsExtendedDynamicRangeContent=_wantsExtendedDynamicRangeContent;
 @property struct CGColorSpace *colorspace; // @synthesize colorspace=_colorspace;

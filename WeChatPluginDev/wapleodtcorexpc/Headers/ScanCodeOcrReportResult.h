@@ -16,7 +16,6 @@
     NSString *_ocrText;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float clsScore; // @synthesize clsScore=_clsScore;
 @property(nonatomic) int cls; // @synthesize cls=_cls;
 @property(nonatomic) float colorScore; // @synthesize colorScore=_colorScore;

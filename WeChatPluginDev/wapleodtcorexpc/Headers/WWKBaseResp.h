@@ -11,7 +11,6 @@
     NSString *_errStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errStr; // @synthesize errStr=_errStr;
 @property(nonatomic) int errCode; // @synthesize errCode=_errCode;
 - (_Bool)deserializeWithDictionary:(id)arg1;

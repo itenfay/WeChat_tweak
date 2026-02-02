@@ -52,7 +52,6 @@
     glVideoSharpen *_sharpenFilter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool fitView; // @synthesize fitView=_fitView;
 @property(nonatomic) _Bool isApplicationStateActive; // @synthesize isApplicationStateActive=_isApplicationStateActive;
 @property(retain, nonatomic) glVideoSharpen *sharpenFilter; // @synthesize sharpenFilter=_sharpenFilter;

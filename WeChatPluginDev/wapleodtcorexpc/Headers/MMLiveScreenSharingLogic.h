@@ -18,7 +18,6 @@
     NSString *_currentReportedFileType;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *currentReportedFileType; // @synthesize currentReportedFileType=_currentReportedFileType;
 @property(retain, nonatomic) NSDate *currentReportedStartTime; // @synthesize currentReportedStartTime=_currentReportedStartTime;
 @property(retain, nonatomic) MMLiveScreenSharingViewController *presentationScreenSharingViewController; // @synthesize presentationScreenSharingViewController=_presentationScreenSharingViewController;

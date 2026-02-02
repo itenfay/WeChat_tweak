@@ -14,7 +14,6 @@
 }
 
 + (id)instance;
-- (void).cxx_destruct;
 - (_Bool)recordExist:(id)arg1;
 - (long long)getHasMsgClicked:(id)arg1;
 - (void)delete:(id)arg1;

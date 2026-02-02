@@ -30,7 +30,6 @@
     NSString *_moduleName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int downloadComponentType; // @synthesize downloadComponentType=_downloadComponentType;
 @property(nonatomic) unsigned int requestSourceLaunchFlag; // @synthesize requestSourceLaunchFlag=_requestSourceLaunchFlag;
 @property(nonatomic) unsigned int requestSourceIsPreHot; // @synthesize requestSourceIsPreHot=_requestSourceIsPreHot;

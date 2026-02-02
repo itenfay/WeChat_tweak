@@ -18,7 +18,6 @@
     OrderedDictionary *_rewardQuotaOptions;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int curRewardQuota; // @synthesize curRewardQuota=_curRewardQuota;
 @property(retain, nonatomic) OrderedDictionary *rewardQuotaOptions; // @synthesize rewardQuotaOptions=_rewardQuotaOptions;
 @property(retain, nonatomic) MMTableView *rewardQuotaOptionTableView; // @synthesize rewardQuotaOptionTableView=_rewardQuotaOptionTableView;

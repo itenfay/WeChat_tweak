@@ -36,7 +36,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UITableViewCell *fansNoticeCell; // @synthesize fansNoticeCell=_fansNoticeCell;
 @property(nonatomic) _Bool hasReportImageClicked; // @synthesize hasReportImageClicked=_hasReportImageClicked;
 @property(nonatomic) _Bool hasReportNoticeExposed; // @synthesize hasReportNoticeExposed=_hasReportNoticeExposed;

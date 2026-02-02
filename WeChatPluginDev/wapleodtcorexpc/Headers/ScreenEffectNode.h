@@ -13,7 +13,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *effectId; // @synthesize effectId=_effectId;
 @property(nonatomic) unsigned long long effectVersion; // @synthesize effectVersion=_effectVersion;
 @property(nonatomic) int delay; // @synthesize delay=_delay;

@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_between3To7;
 + (void)PBArrayAdd_between1To3;
 + (void)PBArrayAdd_lessThan1;
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 - (void)add:(id)arg1;

@@ -15,7 +15,6 @@
     double _buttonCornerRadius;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double buttonCornerRadius; // @synthesize buttonCornerRadius=_buttonCornerRadius;
 @property(nonatomic) _Bool alignCenter; // @synthesize alignCenter=_alignCenter;
 @property(nonatomic) __weak id <FavTagEditViewDelegate> m_delegate; // @synthesize m_delegate;

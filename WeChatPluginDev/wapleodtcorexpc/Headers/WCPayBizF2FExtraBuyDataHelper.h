@@ -14,7 +14,6 @@
     ExtraBuyInfo *_getFavorRespData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ExtraBuyInfo *getFavorRespData; // @synthesize getFavorRespData=_getFavorRespData;
 @property(retain, nonatomic) ExtraBuyInfo *data; // @synthesize data=_data;
 @property(nonatomic) _Bool isGetFavorRequesting; // @synthesize isGetFavorRequesting=_isGetFavorRequesting;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, POIFlutterAPI, POIFlutterDataReport, WCFinderPOIRelatedStreamViewModel;
 @protocol FinderPOIPluginDelegate;
@@ -20,7 +21,6 @@
     NSMutableDictionary *_exposeTimeDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *exposeTimeDict; // @synthesize exposeTimeDict=_exposeTimeDict;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) NSMutableDictionary *pageViewModels; // @synthesize pageViewModels=_pageViewModels;
@@ -62,4 +62,3 @@
 @property(readonly) Class superclass;
 
 @end
-

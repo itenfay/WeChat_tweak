@@ -18,7 +18,6 @@
 }
 
 + (id)gameChatVcOpenConfigWithIsInTab:(_Bool)arg1 tabbarHeight:(double)arg2 reportParam:(id)arg3 sourceScene:(unsigned int)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *focusMsgId; // @synthesize focusMsgId=_focusMsgId;
 @property(nonatomic) unsigned long long selectTab; // @synthesize selectTab=_selectTab;
 @property(nonatomic) double tabbarHeight; // @synthesize tabbarHeight=_tabbarHeight;

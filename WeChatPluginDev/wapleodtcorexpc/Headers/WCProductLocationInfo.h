@@ -17,7 +17,6 @@
     NSString *address;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float longitude; // @synthesize longitude;
 @property(nonatomic) float latitude; // @synthesize latitude;
 @property(retain, nonatomic) NSString *address; // @synthesize address;

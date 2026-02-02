@@ -16,7 +16,6 @@
     MISSING_TYPE *animationDuration;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius;

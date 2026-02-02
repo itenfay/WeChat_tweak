@@ -13,7 +13,6 @@
     unsigned long long _startUploadTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long startUploadTime; // @synthesize startUploadTime=_startUploadTime;
 @property(retain, nonatomic) NSMutableArray *resIds; // @synthesize resIds=_resIds;
 @property(nonatomic) float lastPercent; // @synthesize lastPercent=_lastPercent;

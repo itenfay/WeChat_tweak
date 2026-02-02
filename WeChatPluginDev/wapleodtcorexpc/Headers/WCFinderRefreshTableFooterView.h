@@ -23,7 +23,6 @@
     WCFinderAnimationLoadingView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoadingVisible; // @synthesize isLoadingVisible=_isLoadingVisible;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UITapGestureRecognizer *singleGestureRecognizer; // @synthesize singleGestureRecognizer=_singleGestureRecognizer;

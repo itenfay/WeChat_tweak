@@ -21,7 +21,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long finderFeedCount; // @synthesize finderFeedCount=_finderFeedCount;
 @property(nonatomic) long long friendFollowCount; // @synthesize friendFollowCount=_friendFollowCount;
 @property(retain, nonatomic) NSString *finderObjectNonceId; // @synthesize finderObjectNonceId=_finderObjectNonceId;

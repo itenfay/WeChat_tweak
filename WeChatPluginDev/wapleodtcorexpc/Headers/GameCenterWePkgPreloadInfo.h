@@ -14,7 +14,6 @@
     long long _displayTypeWithWePkg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int alwaysDisplayAfterTime; // @synthesize alwaysDisplayAfterTime=_alwaysDisplayAfterTime;
 @property(nonatomic) long long displayTypeWithWePkg; // @synthesize displayTypeWithWePkg=_displayTypeWithWePkg;
 @property(retain, nonatomic) NSString *pkgId; // @synthesize pkgId=_pkgId;

@@ -14,7 +14,6 @@
 }
 
 + (id)CGIWithDelegate:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int eventID; // @synthesize eventID=_eventID;
 @property(nonatomic) __weak id <WCOutCouponCgiDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

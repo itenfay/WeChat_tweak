@@ -13,7 +13,6 @@
     _Bool _hiddenHeaderView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hiddenHeaderView; // @synthesize hiddenHeaderView=_hiddenHeaderView;
 @property(nonatomic) _Bool hiddenEditButton; // @synthesize hiddenEditButton=_hiddenEditButton;
 - (void)calculateHeight;

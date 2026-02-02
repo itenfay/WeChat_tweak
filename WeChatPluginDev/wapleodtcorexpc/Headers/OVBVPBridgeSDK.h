@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OVBVPBridgeSDK : NSObject
 {
@@ -35,4 +36,3 @@
 + (void)applicationDidEnterBackground;
 
 @end
-

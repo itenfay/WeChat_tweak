@@ -14,7 +14,6 @@
     ShakeMusicLogicController *m_shakeMusicLogic;
 }
 
-- (void).cxx_destruct;
 - (void)SetShakeList:(id)arg1 andScene:(unsigned int)arg2;
 - (void)updateShakeLocation;
 - (id)getMsgForState:(unsigned int)arg1;

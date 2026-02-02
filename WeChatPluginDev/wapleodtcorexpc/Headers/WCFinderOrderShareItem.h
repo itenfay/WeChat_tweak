@@ -29,7 +29,6 @@
 + (void)PBArrayAdd_productsCount;
 + (void)PBArrayAdd_products;
 + (void)PBArrayAdd_orderID;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(copy, nonatomic) NSString *productImageURL; // @synthesize productImageURL=_productImageURL;

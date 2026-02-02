@@ -15,7 +15,6 @@
     unsigned long long _cellCountInCanBeInvitedMicUserSection;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cellCountInCanBeInvitedMicUserSection; // @synthesize cellCountInCanBeInvitedMicUserSection=_cellCountInCanBeInvitedMicUserSection;
 @property(nonatomic) unsigned long long cellCountInApplyingMicUserSection; // @synthesize cellCountInApplyingMicUserSection=_cellCountInApplyingMicUserSection;
 @property(nonatomic) unsigned long long cellCountInMicUserSection; // @synthesize cellCountInMicUserSection=_cellCountInMicUserSection;

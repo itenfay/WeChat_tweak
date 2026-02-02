@@ -12,7 +12,6 @@
     NSString *_bankType;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bankType; // @synthesize bankType=_bankType;
 @property(copy, nonatomic) NSString *showPhone; // @synthesize showPhone=_showPhone;
 @property(copy, nonatomic) NSString *phoneId; // @synthesize phoneId=_phoneId;

@@ -16,7 +16,6 @@
     NSString *_currentLensId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentLensId; // @synthesize currentLensId=_currentLensId;
 @property(retain, nonatomic) NSMutableArray *failLensIds; // @synthesize failLensIds=_failLensIds;
 @property(retain, nonatomic) NSMutableArray *successLensInfos; // @synthesize successLensInfos=_successLensInfos;

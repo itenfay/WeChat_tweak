@@ -12,7 +12,6 @@
     NSString *jumpToItemId;
 }
 
-- (void).cxx_destruct;
 - (void)procssCgiFailResponse:(id)arg1;
 - (void)procssCgiSuccessResponse:(id)arg1 request:(id)arg2;
 - (void)startCgiRequest:(id)arg1;

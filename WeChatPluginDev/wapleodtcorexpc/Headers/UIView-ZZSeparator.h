@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (ZZSeparator)
 - (id)separatorArray;
@@ -13,4 +14,3 @@
 - (CDUnknownBlockType)removeSeparator;
 - (CDUnknownBlockType)addSeparator;
 @end
-

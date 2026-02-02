@@ -23,7 +23,6 @@
     id <MMMusicFlexEditBarSortHelperDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMMusicFlexEditBarSortHelperDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onLongPressGes:(id)arg1;
 - (id)genShadowViewWithRealView:(id)arg1;

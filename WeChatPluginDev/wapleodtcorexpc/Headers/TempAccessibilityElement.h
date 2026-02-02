@@ -12,7 +12,6 @@
     UIView *_view;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (_Bool)accessibilityActivate;
 - (id)initWithView:(id)arg1;

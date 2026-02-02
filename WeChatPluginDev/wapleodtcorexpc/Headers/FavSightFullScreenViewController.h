@@ -18,7 +18,6 @@
     MMScrollActionSheet *_scrollActionSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMScrollActionSheet *scrollActionSheet; // @synthesize scrollActionSheet=_scrollActionSheet;
 @property(nonatomic) __weak id <FavSightFullScreenViewControllerDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onTapSightIconView;

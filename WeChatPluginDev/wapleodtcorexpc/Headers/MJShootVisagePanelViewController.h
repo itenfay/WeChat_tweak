@@ -16,7 +16,6 @@
     double _cellHorizontalPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cellHorizontalPadding; // @synthesize cellHorizontalPadding=_cellHorizontalPadding;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

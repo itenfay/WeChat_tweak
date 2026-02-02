@@ -22,7 +22,6 @@
     NSString *m_branderNickName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_branderNickName; // @synthesize m_branderNickName;
 @property(retain, nonatomic) NSString *m_branderUserName; // @synthesize m_branderUserName;
 @property(retain, nonatomic) NSArray *m_aryEducationList; // @synthesize m_aryEducationList;

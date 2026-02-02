@@ -14,7 +14,6 @@
     NSString *_mKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mKey; // @synthesize mKey=_mKey;
 @property(copy, nonatomic) NSString *mPrefix; // @synthesize mPrefix=_mPrefix;
 @property(copy, nonatomic) NSString *mPath; // @synthesize mPath=_mPath;

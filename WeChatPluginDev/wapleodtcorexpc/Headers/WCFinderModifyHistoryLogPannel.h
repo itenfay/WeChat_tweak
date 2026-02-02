@@ -12,7 +12,6 @@
 }
 
 + (id)buildWithFeedInitialInfo:(id)arg1 historyArray:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *historyArray; // @synthesize historyArray=_historyArray;
 @property(retain, nonatomic) FeedRecord *initialInfo; // @synthesize initialInfo=_initialInfo;
 - (void)displayOnView:(id)arg1;

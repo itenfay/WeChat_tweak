@@ -15,7 +15,6 @@
     MMWebImageView *_leftUpImgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *leftUpImgView; // @synthesize leftUpImgView=_leftUpImgView;
 @property(retain, nonatomic) UILabel *useAsTextLabel; // @synthesize useAsTextLabel=_useAsTextLabel;
 @property(retain, nonatomic) UIView *normalContainerView; // @synthesize normalContainerView=_normalContainerView;

@@ -10,7 +10,6 @@
     JSEvent *_event;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEvent *event; // @synthesize event=_event;
 - (void)returnResult:(id)arg1 code:(long long)arg2 message:(id)arg3;
 - (unsigned long long)jumpTypeWithTabType:(int)arg1;

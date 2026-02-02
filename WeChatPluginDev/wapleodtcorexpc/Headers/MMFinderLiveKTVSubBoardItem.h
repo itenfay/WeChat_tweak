@@ -17,7 +17,6 @@
     NSMutableArray *_songItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *songItems; // @synthesize songItems=_songItems;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) _Bool hasNext; // @synthesize hasNext=_hasNext;

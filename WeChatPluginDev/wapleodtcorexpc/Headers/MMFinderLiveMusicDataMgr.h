@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString;
 
 @interface MMFinderLiveMusicDataMgr
@@ -16,7 +18,6 @@
 
 + (_Bool)isEqualBetween:(id)arg1 with:(id)arg2;
 + (_Bool)isArray:(id)arg1 equalArray:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool recentSynchronizeResult; // @synthesize recentSynchronizeResult=_recentSynchronizeResult;
 @property(nonatomic) _Bool hasMusicInfo; // @synthesize hasMusicInfo=_hasMusicInfo;
 @property(retain, nonatomic) NSMutableArray *briefMusicInfos; // @synthesize briefMusicInfos=_briefMusicInfos;
@@ -48,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

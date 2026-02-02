@@ -11,7 +11,6 @@
     MMWebViewController *_webViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebViewController *webViewController; // @synthesize webViewController=_webViewController;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void)leftButtonAction;

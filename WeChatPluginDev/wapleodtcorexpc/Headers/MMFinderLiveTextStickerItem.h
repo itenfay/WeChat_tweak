@@ -13,7 +13,6 @@
     MMFinderLiveStickerTextTemplateItem *_selectedTemplate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveStickerTextTemplateItem *selectedTemplate; // @synthesize selectedTemplate=_selectedTemplate;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;

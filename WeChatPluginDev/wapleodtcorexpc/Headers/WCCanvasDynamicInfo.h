@@ -11,7 +11,6 @@
     NSString *_keypath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *keypath; // @synthesize keypath=_keypath;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 - (id)initWithCoder:(id)arg1;

@@ -17,7 +17,6 @@
     id _currentCellData;
 }
 
-- (void).cxx_destruct;
 - (void)addTagViews:(id)arg1;
 - (void)renderWithCellData:(id)arg1;
 - (void)setupGameVideoAlbumCell;

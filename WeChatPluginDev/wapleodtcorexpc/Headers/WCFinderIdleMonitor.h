@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTimer, NSString, WCFinderPriorityQueue, WCFinderPriorityTask;
 
 @interface WCFinderIdleMonitor
@@ -14,7 +16,6 @@
     CDUnknownBlockType _firstFrameMediaWrapCreateBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType firstFrameMediaWrapCreateBlock; // @synthesize firstFrameMediaWrapCreateBlock=_firstFrameMediaWrapCreateBlock;
 @property(copy, nonatomic) CDUnknownBlockType defaultMediaWrapCreateBlock; // @synthesize defaultMediaWrapCreateBlock=_defaultMediaWrapCreateBlock;
 @property(retain, nonatomic) MMTimer *checkIdleTimer; // @synthesize checkIdleTimer=_checkIdleTimer;
@@ -55,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

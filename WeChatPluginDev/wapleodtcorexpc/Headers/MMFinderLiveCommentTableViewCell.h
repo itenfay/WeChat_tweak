@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveContact, MMFinderLiveCommentTableViewCellFrame, MMLiveCommentPubbleCell, MMLiveLongPressRecognizer, MMLiveTaskId, MMUIButton, NSString, PAGView, UIColor, UITapGestureRecognizer, UIView, WCFinderAnimationLoadingView;
 
 @interface MMFinderLiveCommentTableViewCell
@@ -42,7 +44,6 @@
 + (_Bool)isSupportDoubleTap:(id)arg1;
 + (_Bool)isSupportLongPress:(id)arg1;
 + (_Bool)isSupportTap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveContact *peerContact; // @synthesize peerContact=_peerContact;
 @property(copy, nonatomic) CDUnknownBlockType customAppendCompletion; // @synthesize customAppendCompletion=_customAppendCompletion;
 @property(nonatomic) _Bool isCustomAppending; // @synthesize isCustomAppending=_isCustomAppending;
@@ -177,4 +178,3 @@
 @property(readonly) Class superclass;
 
 @end
-

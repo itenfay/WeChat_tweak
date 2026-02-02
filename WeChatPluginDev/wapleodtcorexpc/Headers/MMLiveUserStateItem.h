@@ -16,7 +16,6 @@
     unsigned long long _rewardAmountInHeat;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long rewardAmountInHeat; // @synthesize rewardAmountInHeat=_rewardAmountInHeat;
 @property(readonly, nonatomic) unsigned long long disableCommentDef; // @synthesize disableCommentDef=_disableCommentDef;
 @property(readonly, nonatomic) NSString *headImageUrl; // @synthesize headImageUrl=_headImageUrl;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTableView, MMUIActivityIndicatorView, MMUILabel, NSString, UIImageView, UIView, WCAppAuthLogicController, WCDataSearcher, WCTimeLineFooterView;
 
 @interface WCAppAuthListViewController
@@ -25,7 +27,6 @@
     MMUIActivityIndicatorView *_searchActivityIndicatorView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 @property(nonatomic) _Bool isAppear; // @synthesize isAppear=_isAppear;
 @property(nonatomic) _Bool bSearchWording; // @synthesize bSearchWording=_bSearchWording;
@@ -123,4 +124,3 @@
 @property(readonly) Class superclass;
 
 @end
-

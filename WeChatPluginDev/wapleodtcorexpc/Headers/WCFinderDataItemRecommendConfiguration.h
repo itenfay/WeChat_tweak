@@ -25,7 +25,6 @@
 + (void)PBArrayAdd_favRelateListEnable;
 + (void)PBArrayAdd_config;
 + (void)PBArrayAdd_maxUnreadCount;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool likeRelateListEnable; // @synthesize likeRelateListEnable=_likeRelateListEnable;
 @property(nonatomic) _Bool favRelateListEnableOnClick; // @synthesize favRelateListEnableOnClick=_favRelateListEnableOnClick;
 @property(nonatomic) _Bool favRelateListEnable; // @synthesize favRelateListEnable=_favRelateListEnable;

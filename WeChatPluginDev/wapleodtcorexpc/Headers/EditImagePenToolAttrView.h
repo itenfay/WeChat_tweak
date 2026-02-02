@@ -23,7 +23,6 @@
     UIView *_separator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;
 @property(retain, nonatomic) CAGradientLayer *colorBarMaskLayer; // @synthesize colorBarMaskLayer=_colorBarMaskLayer;
 @property(retain, nonatomic) TextStateBlurButton *eraserButton; // @synthesize eraserButton=_eraserButton;

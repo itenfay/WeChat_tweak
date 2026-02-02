@@ -12,7 +12,6 @@
     MMUIButton *_floorBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *floorBtn; // @synthesize floorBtn=_floorBtn;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCFinderProfileADPlugin, WCFinderStreamLoadingState, WCFinderUserPageParams;
 
@@ -27,7 +28,6 @@
     NSMutableArray *_tempStorageUpFeeds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *tempStorageUpFeeds; // @synthesize tempStorageUpFeeds=_tempStorageUpFeeds;
 @property(retain, nonatomic) NSMutableArray *waitFetchingBlock; // @synthesize waitFetchingBlock=_waitFetchingBlock;
 @property(nonatomic) _Bool isLoadingFristPage; // @synthesize isLoadingFristPage=_isLoadingFristPage;
@@ -78,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

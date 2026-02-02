@@ -12,7 +12,6 @@
     StorageFootPanelView *_footPanelView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StorageFootPanelView *footPanelView; // @synthesize footPanelView=_footPanelView;
 @property(retain, nonatomic) ResourceBrowseCollectionView *sessionBrowseView; // @synthesize sessionBrowseView=_sessionBrowseView;
 @property(retain, nonatomic) NSMutableArray *sessionMsgInfos; // @synthesize sessionMsgInfos=_sessionMsgInfos;

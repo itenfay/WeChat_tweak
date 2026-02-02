@@ -19,7 +19,6 @@
 
 + (id)metaDataWithOMJTemplate:(id)arg1;
 + (id)metaDataWithMJTemplate:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *aiModelType; // @synthesize aiModelType=_aiModelType;
 @property(readonly, nonatomic) unsigned long long minimumAndroidSDKVersion; // @synthesize minimumAndroidSDKVersion=_minimumAndroidSDKVersion;
 @property(readonly, nonatomic) unsigned long long minimumiOSSDKVersion; // @synthesize minimumiOSSDKVersion=_minimumiOSSDKVersion;

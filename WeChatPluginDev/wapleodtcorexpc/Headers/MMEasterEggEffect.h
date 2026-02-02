@@ -16,7 +16,6 @@
     UIView *_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) __weak id <MMEasterEggEffectDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *sceneId; // @synthesize sceneId=_sceneId;

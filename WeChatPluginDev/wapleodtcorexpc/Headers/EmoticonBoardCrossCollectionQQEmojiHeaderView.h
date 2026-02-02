@@ -15,7 +15,6 @@
     UILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) double topMargin; // @synthesize topMargin=_topMargin;
 @property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;

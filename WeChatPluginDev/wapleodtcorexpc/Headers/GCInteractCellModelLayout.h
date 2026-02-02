@@ -25,7 +25,6 @@
     GCLabelDynamicLayout *_markLabelLayout;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCLabelDynamicLayout *markLabelLayout; // @synthesize markLabelLayout=_markLabelLayout;
 @property(retain, nonatomic) GCLabelDynamicLayout *wechatNickLabelLayout; // @synthesize wechatNickLabelLayout=_wechatNickLabelLayout;
 @property(retain, nonatomic) GCLabelDynamicLayout *rightFollowBtnLayout; // @synthesize rightFollowBtnLayout=_rightFollowBtnLayout;

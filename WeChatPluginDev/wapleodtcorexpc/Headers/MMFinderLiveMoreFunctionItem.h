@@ -27,7 +27,6 @@
     id _detailExtraInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id detailExtraInfo; // @synthesize detailExtraInfo=_detailExtraInfo;
 @property(retain, nonatomic) NSString *accessibilityIdentifier; // @synthesize accessibilityIdentifier=_accessibilityIdentifier;
 @property(retain, nonatomic) NSString *redDotPath; // @synthesize redDotPath=_redDotPath;

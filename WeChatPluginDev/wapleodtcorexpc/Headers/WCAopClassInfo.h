@@ -26,7 +26,6 @@
     SEL _selector;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isClassMethod; // @synthesize isClassMethod=_isClassMethod;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(nonatomic) struct WCAopIMP *aopIMP; // @synthesize aopIMP=_aopIMP;

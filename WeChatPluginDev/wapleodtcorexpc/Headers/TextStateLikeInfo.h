@@ -79,7 +79,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) StatusCommentMessageThumb *messageThumbData; // @synthesize messageThumbData=_messageThumbData;
 @property(retain, nonatomic) NSString *affUserName; // @synthesize affUserName=_affUserName;
 @property(nonatomic) unsigned int source; // @synthesize source=_source;

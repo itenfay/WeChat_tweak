@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_sendBulletComments;
 + (void)PBArrayAdd_redPacketCoverUrl;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sendBulletComments; // @synthesize sendBulletComments=_sendBulletComments;
 @property(retain, nonatomic) NSString *redPacketCoverUrl; // @synthesize redPacketCoverUrl=_redPacketCoverUrl;
 - (id)initWithCoder:(id)arg1;

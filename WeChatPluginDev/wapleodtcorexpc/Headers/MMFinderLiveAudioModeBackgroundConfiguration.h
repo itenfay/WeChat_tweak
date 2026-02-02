@@ -19,7 +19,6 @@
 }
 
 + (id)configurationWithLiveRoomImg:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *remoteAnimatedFallbackImageUri; // @synthesize remoteAnimatedFallbackImageUri=_remoteAnimatedFallbackImageUri;
 @property(retain, nonatomic) UIImage *localAnimatedFallbackImage; // @synthesize localAnimatedFallbackImage=_localAnimatedFallbackImage;
 @property(retain, nonatomic) NSString *remoteAnimatedVideoUri; // @synthesize remoteAnimatedVideoUri=_remoteAnimatedVideoUri;

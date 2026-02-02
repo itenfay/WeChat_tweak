@@ -16,7 +16,6 @@
     NSURL *_fileURL;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showsOrientationLockedToast; // @synthesize showsOrientationLockedToast=_showsOrientationLockedToast;
 @property(nonatomic) _Bool showsCancelBarButtonItem; // @synthesize showsCancelBarButtonItem=_showsCancelBarButtonItem;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;

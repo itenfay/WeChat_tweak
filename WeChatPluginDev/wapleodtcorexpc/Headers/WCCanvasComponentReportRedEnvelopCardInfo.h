@@ -15,7 +15,6 @@
     NSString *_giveCardId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *giveCardId; // @synthesize giveCardId=_giveCardId;
 @property(nonatomic) unsigned int linkClkCnt; // @synthesize linkClkCnt=_linkClkCnt;
 @property(nonatomic) unsigned int btnClkCnt; // @synthesize btnClkCnt=_btnClkCnt;

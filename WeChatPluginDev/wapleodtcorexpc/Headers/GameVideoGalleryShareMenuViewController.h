@@ -3,12 +3,13 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface GameVideoGalleryShareMenuViewController
 {
     CDUnknownBlockType _clickItemBlock;
 }
 
-- (void).cxx_destruct;
 - (_Bool)hideOkButton;
 - (_Bool)dismissWhenTapOutside;
 - (double)contentHeight;
@@ -19,4 +20,3 @@
 - (id)initWithClickItemBlock:(CDUnknownBlockType)arg1;
 
 @end
-

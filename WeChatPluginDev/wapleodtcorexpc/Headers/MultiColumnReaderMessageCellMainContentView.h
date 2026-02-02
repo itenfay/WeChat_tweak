@@ -12,7 +12,6 @@
     NSString *m_accessibilityLabel;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityLabel;
 - (void)layoutSubviews;

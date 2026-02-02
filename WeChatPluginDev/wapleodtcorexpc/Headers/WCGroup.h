@@ -15,7 +15,6 @@
 }
 
 + (_Bool)isFixedGroup:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *memberList; // @synthesize memberList;
 @property(retain, nonatomic) NSString *name; // @synthesize name;
 @property(retain, nonatomic) NSString *gid; // @synthesize gid;

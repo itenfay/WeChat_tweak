@@ -21,7 +21,6 @@
     unsigned long long _lastCastingTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastCastingTime; // @synthesize lastCastingTime=_lastCastingTime;
 @property(nonatomic) unsigned long long projectionSearchTime; // @synthesize projectionSearchTime=_projectionSearchTime;
 @property(nonatomic) _Bool castingDeviceViewItemDidChanged; // @synthesize castingDeviceViewItemDidChanged=_castingDeviceViewItemDidChanged;

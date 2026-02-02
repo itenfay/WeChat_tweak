@@ -12,7 +12,6 @@
     NSMutableArray *_normalPriorityBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *normalPriorityBuffer; // @synthesize normalPriorityBuffer=_normalPriorityBuffer;
 @property(retain, nonatomic) NSMutableArray *highPriorityBuffer; // @synthesize highPriorityBuffer=_highPriorityBuffer;
 @property(retain, nonatomic) NSMutableArray *immediatePriorityBuffer; // @synthesize immediatePriorityBuffer=_immediatePriorityBuffer;

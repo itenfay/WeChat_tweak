@@ -11,7 +11,6 @@
     UIImage *_mvThumbImage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) UIImage *mvThumbImage; // @synthesize mvThumbImage=_mvThumbImage;
 - (void)onClickToPlayMusic:(id)arg1 playState:(long long)arg2 clickedOnBtn:(_Bool)arg3;
 - (void)onLoadImageOK:(id)arg1;

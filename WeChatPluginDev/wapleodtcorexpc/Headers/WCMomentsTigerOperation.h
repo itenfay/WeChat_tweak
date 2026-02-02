@@ -16,7 +16,6 @@
     double _lastClickTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastClickTime; // @synthesize lastClickTime=_lastClickTime;
 @property(nonatomic) unsigned long long clickCount; // @synthesize clickCount=_clickCount;
 @property(nonatomic) double lastDisplayTime; // @synthesize lastDisplayTime=_lastDisplayTime;

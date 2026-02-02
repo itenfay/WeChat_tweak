@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MJPublisherRouter : NSObject
 {
@@ -34,4 +35,3 @@
 + (void)presentShootComposingVCWithPublisher:(id)arg1 fromVC:(id)arg2 delegate:(id)arg3;
 
 @end
-

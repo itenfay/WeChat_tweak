@@ -19,7 +19,6 @@
     id <MMMusicLyricVcCalculatorDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMMusicLyricVcCalculatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)arrTimes;
 - (id)arrLyrics;

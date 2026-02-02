@@ -11,7 +11,6 @@
     id _m_userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain) id m_userInfo; // @synthesize m_userInfo=_m_userInfo;
 @property __weak id <WCPayVoidCallbackDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)call;

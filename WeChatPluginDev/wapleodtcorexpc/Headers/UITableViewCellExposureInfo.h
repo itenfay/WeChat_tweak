@@ -13,7 +13,6 @@
     struct CGRect _cellViewRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double exposureRatio; // @synthesize exposureRatio=_exposureRatio;
 @property(nonatomic) struct CGRect cellViewRect; // @synthesize cellViewRect=_cellViewRect;
 @property(nonatomic) struct CGRect intersectionRect; // @synthesize intersectionRect=_intersectionRect;

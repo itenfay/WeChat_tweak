@@ -48,7 +48,6 @@
     UILabel *_brandLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain) UILabel *brandLabel; // @synthesize brandLabel=_brandLabel;
 @property(retain) UIView *upgradeLine; // @synthesize upgradeLine=_upgradeLine;
 @property(retain) MMUIButton *upgradeButton; // @synthesize upgradeButton=_upgradeButton;

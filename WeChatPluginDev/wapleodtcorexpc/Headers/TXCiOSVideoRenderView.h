@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAEAGLLayer, NSString, TXCCameraFocusSquareView, TXCDispatchQueue;
 @protocol TXIGlContext, TXIVideoRenderViewDelegate;
@@ -22,7 +23,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCCameraFocusSquareView *focusSquareView; // @synthesize focusSquareView=_focusSquareView;
 @property(nonatomic) _Bool isGlObjectsInvalid; // @synthesize isGlObjectsInvalid=_isGlObjectsInvalid;
 @property(nonatomic) struct CGSize viewSize; // @synthesize viewSize=_viewSize;
@@ -57,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

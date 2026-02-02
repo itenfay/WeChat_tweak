@@ -13,7 +13,6 @@
     NSMapTable *_pageMaps;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *pageMaps; // @synthesize pageMaps=_pageMaps;
 @property(retain, nonatomic) NSArray *pages; // @synthesize pages=_pages;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

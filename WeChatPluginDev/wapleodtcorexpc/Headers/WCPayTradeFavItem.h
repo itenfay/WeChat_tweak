@@ -26,7 +26,6 @@
     NSArray *_bind_serial_list;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *bind_serial_list; // @synthesize bind_serial_list=_bind_serial_list;
 @property(retain, nonatomic) NSString *m_nsBankLogoUrl; // @synthesize m_nsBankLogoUrl;
 @property(retain, nonatomic) NSString *m_nsBankName; // @synthesize m_nsBankName;

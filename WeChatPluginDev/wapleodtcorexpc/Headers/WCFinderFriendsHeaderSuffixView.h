@@ -15,7 +15,6 @@
     WCFinderDynamicRichTextView *_appendTisTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDynamicRichTextView *appendTisTextView; // @synthesize appendTisTextView=_appendTisTextView;
 @property(retain, nonatomic) WCFinderDynamicRichTextView *likeInfoTextView; // @synthesize likeInfoTextView=_likeInfoTextView;
 @property(retain, nonatomic) UIView *headerContainerView; // @synthesize headerContainerView=_headerContainerView;

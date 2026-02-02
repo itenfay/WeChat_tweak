@@ -17,7 +17,6 @@
     NSArray *_needUploadPids;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_hasStartLogic; // @synthesize m_hasStartLogic=_m_hasStartLogic;
 @property(nonatomic) _Bool m_isActive; // @synthesize m_isActive=_m_isActive;
 @property(retain, nonatomic) NSArray *needUploadPids; // @synthesize needUploadPids=_needUploadPids;

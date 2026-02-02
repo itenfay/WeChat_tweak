@@ -49,7 +49,6 @@
 }
 
 + (id)shared;
-- (void).cxx_destruct;
 @property(nonatomic) int callTraceMinCost; // @synthesize callTraceMinCost=_callTraceMinCost;
 @property(nonatomic) int callTraceMaxDepth; // @synthesize callTraceMaxDepth=_callTraceMaxDepth;
 @property(retain, nonatomic) NSMutableArray *scoreRecords; // @synthesize scoreRecords=_scoreRecords;

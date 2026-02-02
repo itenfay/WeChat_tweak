@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_videoLen;
 + (void)PBArrayAdd_videoUrlStr;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int videoLen; // @synthesize videoLen=_videoLen;
 @property(retain, nonatomic) NSString *videoUrlStr; // @synthesize videoUrlStr=_videoUrlStr;
 - (id)getPBPropertyTable;

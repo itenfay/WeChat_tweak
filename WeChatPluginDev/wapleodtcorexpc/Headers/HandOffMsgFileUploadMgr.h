@@ -17,7 +17,6 @@
     long long _lastUploadProgressTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lastUploadProgressTime; // @synthesize lastUploadProgressTime=_lastUploadProgressTime;
 @property(retain, nonatomic) NSMutableDictionary *bigFileUploadRespDict; // @synthesize bigFileUploadRespDict=_bigFileUploadRespDict;
 @property(retain, nonatomic) NSMutableDictionary *msgInfoDict; // @synthesize msgInfoDict=_msgInfoDict;

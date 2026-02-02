@@ -24,7 +24,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) long long seq; // @synthesize seq=_seq;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 

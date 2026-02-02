@@ -25,7 +25,6 @@
     unsigned long long _refreshNum;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long refreshNum; // @synthesize refreshNum=_refreshNum;
 @property(copy, nonatomic) NSString *seeLaterSessionID; // @synthesize seeLaterSessionID=_seeLaterSessionID;
 @property(copy, nonatomic) NSData *seeLaterLastBuffer; // @synthesize seeLaterLastBuffer=_seeLaterLastBuffer;

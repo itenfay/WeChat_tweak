@@ -15,7 +15,6 @@
     WCCgiBlockHelper *_getLoginQRCodeCgiHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCgiBlockHelper *getLoginQRCodeCgiHelper; // @synthesize getLoginQRCodeCgiHelper=_getLoginQRCodeCgiHelper;
 @property(nonatomic) __weak id <QRCodeLoginLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CheckQRCodeLoginCGI *m_checkQRCodeLoginCGI; // @synthesize m_checkQRCodeLoginCGI;

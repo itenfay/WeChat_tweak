@@ -13,7 +13,6 @@
     MMTableViewInfo *_tableViewInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableViewInfo *tableViewInfo; // @synthesize tableViewInfo=_tableViewInfo;
 @property(nonatomic) double startLoadCleanData; // @synthesize startLoadCleanData=_startLoadCleanData;
 @property(nonatomic) unsigned long long maxChatLogDBSize; // @synthesize maxChatLogDBSize=_maxChatLogDBSize;

@@ -26,7 +26,6 @@
     WCPayFaceHBCgi *_invalidataUrlCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayFaceHBCgi *invalidataUrlCgi; // @synthesize invalidataUrlCgi=_invalidataUrlCgi;
 - (void)OnQueryRedEnvelopesDetailRequest:(id)arg1 Error:(id)arg2;
 - (void)didWCPayFaceHBCgi:(id)arg1 Response:(id)arg2 Error:(id)arg3 Key:(id)arg4;

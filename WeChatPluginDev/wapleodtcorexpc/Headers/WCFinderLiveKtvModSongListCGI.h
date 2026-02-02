@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveKtvSongReportInfo, NSData, NSString;
 
 @interface WCFinderLiveKtvModSongListCGI
@@ -21,7 +23,6 @@
 }
 
 + (id)generateActionSync:(unsigned int)arg1 liveTaskId:(id)arg2 liveCookies:(id)arg3 scene:(unsigned int)arg4 targetUser:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failureBlock:(CDUnknownBlockType)arg7;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) FinderLiveKtvSongReportInfo *addSongReportInfo; // @synthesize addSongReportInfo=_addSongReportInfo;
@@ -43,4 +44,3 @@
 - (id)initWithLiveTaskId:(id)arg1 liveCookies:(id)arg2 scene:(unsigned int)arg3 modType:(unsigned int)arg4 songId:(id)arg5 uniqueId:(id)arg6 addSongReportInfo:(id)arg7 successBlock:(CDUnknownBlockType)arg8 failureBlock:(CDUnknownBlockType)arg9;
 
 @end
-

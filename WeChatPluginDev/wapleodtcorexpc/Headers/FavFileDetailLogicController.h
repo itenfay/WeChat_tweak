@@ -12,7 +12,6 @@
     FavoritesItemDataField *_favData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableAutoDownload; // @synthesize disableAutoDownload=_disableAutoDownload;
 @property(retain, nonatomic) FavoritesItemDataField *favData; // @synthesize favData=_favData;
 @property(retain, nonatomic) FavoritesItem *favItem; // @synthesize favItem=_favItem;

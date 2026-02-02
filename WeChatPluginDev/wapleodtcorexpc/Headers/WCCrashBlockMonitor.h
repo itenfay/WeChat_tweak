@@ -21,7 +21,6 @@
 }
 
 + (_Bool)p_isDumpTypeRelatedToFOOM:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBlockMonitorMgr *blockMonitor; // @synthesize blockMonitor=_blockMonitor;
 @property(nonatomic) _Bool bInstallSuccess; // @synthesize bInstallSuccess=_bInstallSuccess;
 @property(retain, nonatomic) WCBlockMonitorConfiguration *bmConfiguration; // @synthesize bmConfiguration=_bmConfiguration;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MinimizeViewController, NSString;
 @protocol MinimizeWindowDelegate;
@@ -19,7 +20,6 @@
     struct CGRect _inputToolFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowingRecordOperateView; // @synthesize isShowingRecordOperateView=_isShowingRecordOperateView;
 @property(nonatomic) long long statusBarOrientation; // @synthesize statusBarOrientation=_statusBarOrientation;
 @property(nonatomic) struct CGRect inputToolFrame; // @synthesize inputToolFrame=_inputToolFrame;
@@ -96,4 +96,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_playPosition;
 + (void)PBArrayAdd_contact;
 + (void)PBArrayAdd_megaVideo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) WCFinderMediaInfo *mediaInfo; // @synthesize mediaInfo=_mediaInfo;
 @property(nonatomic) double playPosition; // @synthesize playPosition=_playPosition;

@@ -13,7 +13,6 @@
     NSString *_enterTips;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *enterTips; // @synthesize enterTips=_enterTips;
 @property(nonatomic, getter=shouldShowEnterTips) _Bool showEnterTips; // @synthesize showEnterTips=_showEnterTips;
 - (id)description;

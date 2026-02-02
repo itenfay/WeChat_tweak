@@ -14,7 +14,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *qrCodeUrlUpdateDic; // @synthesize qrCodeUrlUpdateDic=_qrCodeUrlUpdateDic;
 @property(retain, nonatomic) WXFullScreenGestureRecognizer *gesture; // @synthesize gesture=_gesture;
 @property(retain, nonatomic) UIImageView *m_imageView; // @synthesize m_imageView=_m_imageView;

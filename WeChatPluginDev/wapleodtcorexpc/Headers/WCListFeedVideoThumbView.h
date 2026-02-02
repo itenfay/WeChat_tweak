@@ -13,7 +13,6 @@
     SightIconView *_iconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SightIconView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) MMWebImageView *webImageView; // @synthesize webImageView=_webImageView;
 

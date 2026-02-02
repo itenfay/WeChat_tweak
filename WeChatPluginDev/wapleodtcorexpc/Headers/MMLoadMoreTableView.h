@@ -16,7 +16,6 @@
     UIView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float stopLoadingAnimationDuration; // @synthesize stopLoadingAnimationDuration=_stopLoadingAnimationDuration;
 @property(nonatomic) float startLoadingAnimationDuration; // @synthesize startLoadingAnimationDuration=_startLoadingAnimationDuration;
 @property(nonatomic) _Bool disableLoadMore; // @synthesize disableLoadMore=_disableLoadMore;

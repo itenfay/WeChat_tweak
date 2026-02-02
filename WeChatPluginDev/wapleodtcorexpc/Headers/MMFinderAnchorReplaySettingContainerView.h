@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, MMWebImageView, NSString, UITapGestureRecognizer;
 
@@ -22,7 +23,6 @@
     NSString *_liveCoverUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *liveCoverUrl; // @synthesize liveCoverUrl=_liveCoverUrl;
 @property(nonatomic) _Bool isMemberLive; // @synthesize isMemberLive=_isMemberLive;
 @property(nonatomic) _Bool isChargableLive; // @synthesize isChargableLive=_isChargableLive;
@@ -43,4 +43,3 @@
 - (void)updateData:(unsigned int)arg1 isMemberLive:(_Bool)arg2 isChargableLive:(_Bool)arg3 liveCoverUrl:(id)arg4;
 
 @end
-

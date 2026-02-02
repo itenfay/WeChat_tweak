@@ -11,7 +11,6 @@
     WCFinderFeedFriendsLikeListViewController *_tmpLikeListVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderFeedFriendsLikeListViewController *tmpLikeListVC; // @synthesize tmpLikeListVC=_tmpLikeListVC;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 - (void)onFriendsLikeListViewControllerDisappear;

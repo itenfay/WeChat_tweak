@@ -11,7 +11,6 @@
 }
 
 + (id)valueWithNonretainedObject:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id nonretainedObjectValue; // @synthesize nonretainedObjectValue=_nonretainedObjectValue;
 - (_Bool)isEqual:(id)arg1;
 

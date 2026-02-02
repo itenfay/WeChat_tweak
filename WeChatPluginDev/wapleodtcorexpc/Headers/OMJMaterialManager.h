@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OMJMaterialManager : NSObject
 {
@@ -11,7 +12,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) SharedPtr_153997a4 backingMaterialManager; // @synthesize backingMaterialManager=_backingMaterialManager;
 - (id)getMaterialInfoWithMaterialID:(id)arg1;
 - (id)getColorStyleMaterialInfosOfMaterial:(id)arg1;
@@ -31,4 +31,3 @@
 - (id)initWithBackingMaterialManager:(const void *)arg1;
 
 @end
-

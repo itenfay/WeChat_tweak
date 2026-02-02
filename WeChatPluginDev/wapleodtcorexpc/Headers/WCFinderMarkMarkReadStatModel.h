@@ -37,7 +37,6 @@
 + (void)PBArrayAdd_markReadSubScene;
 + (void)PBArrayAdd_markReadScene;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long startEffectiveExposeTimeMs; // @synthesize startEffectiveExposeTimeMs=_startEffectiveExposeTimeMs;
 @property(nonatomic) unsigned long long effectiveExposeTimeMs; // @synthesize effectiveExposeTimeMs=_effectiveExposeTimeMs;
 @property(nonatomic) unsigned long long startExposeMs; // @synthesize startExposeMs=_startExposeMs;

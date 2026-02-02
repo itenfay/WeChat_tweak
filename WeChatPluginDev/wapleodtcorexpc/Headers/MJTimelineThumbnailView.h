@@ -19,7 +19,6 @@
     struct CGRect _currentBounds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *playheadView; // @synthesize playheadView=_playheadView;
 @property(retain, nonatomic) id <OMCThumbnailProvider> thumbnailProvider; // @synthesize thumbnailProvider=_thumbnailProvider;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;

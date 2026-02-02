@@ -32,7 +32,6 @@
     NSDictionary *_m_dicBanners;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *m_dicBanners; // @synthesize m_dicBanners=_m_dicBanners;
 @property(retain, nonatomic) WCPayNoticeItemView *noticeItemView; // @synthesize noticeItemView=_noticeItemView;
 @property(retain, nonatomic) WCPayBalanceChargeLQTEntryView *lqtEntryView; // @synthesize lqtEntryView=_lqtEntryView;

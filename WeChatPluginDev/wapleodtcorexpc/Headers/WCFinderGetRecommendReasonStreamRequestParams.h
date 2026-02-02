@@ -16,7 +16,6 @@
     FinderClientStatus *_clientStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int prefetchType; // @synthesize prefetchType=_prefetchType;
 @property(retain, nonatomic) FinderClientStatus *clientStatus; // @synthesize clientStatus=_clientStatus;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

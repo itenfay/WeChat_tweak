@@ -10,7 +10,6 @@
     id <TXCVideoDecodeReportDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TXCVideoDecodeReportDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onProcessFrame:(id)arg1 isFirstFrame:(_Bool)arg2;
 - (void)onTickLog:(long long)arg1 inDuration:(long long)arg2;

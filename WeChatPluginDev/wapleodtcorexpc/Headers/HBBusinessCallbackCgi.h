@@ -11,7 +11,6 @@
     id <HBBusinessCallbackCgiDelegate> _m_cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <HBBusinessCallbackCgiDelegate> m_cgiDelegate; // @synthesize m_cgiDelegate=_m_cgiDelegate;
 @property(nonatomic) unsigned long long requestType; // @synthesize requestType=_requestType;
 - (void)didFailWithError:(id)arg1;

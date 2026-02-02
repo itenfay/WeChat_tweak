@@ -15,7 +15,6 @@
     NSMutableDictionary *_dicReportCostTimeAndResult;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHadReportSearch; // @synthesize isHadReportSearch=_isHadReportSearch;
 @property(retain, nonatomic) NSMutableDictionary *dicReportCostTimeAndResult; // @synthesize dicReportCostTimeAndResult=_dicReportCostTimeAndResult;
 @property(nonatomic) unsigned long long buildIndexEndTime; // @synthesize buildIndexEndTime=_buildIndexEndTime;

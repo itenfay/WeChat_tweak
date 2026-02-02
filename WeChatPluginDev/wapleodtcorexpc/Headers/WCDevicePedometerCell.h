@@ -12,7 +12,6 @@
 }
 
 + (double)cellHeightForTitle:(id)arg1 detail:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMDeviceHeadImageView *headView; // @synthesize headView=_headView;
 - (void)layoutSubviews;

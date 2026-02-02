@@ -14,7 +14,6 @@
     id <MMFinderFeedNoticeLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderFeedNoticeLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMFinderFeedNoticeModel *model; // @synthesize model=_model;
 - (void)presentLiveConcertTicketForNoticeInfo:(id)arg1 reportingScene:(unsigned long long)arg2;

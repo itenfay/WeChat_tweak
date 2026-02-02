@@ -14,7 +14,6 @@
     FinderLiveErrorPage *_errorPage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveErrorPage *errorPage; // @synthesize errorPage=_errorPage;
 @property(retain, nonatomic) NSString *msg; // @synthesize msg=_msg;
 @property(nonatomic) int ret; // @synthesize ret=_ret;

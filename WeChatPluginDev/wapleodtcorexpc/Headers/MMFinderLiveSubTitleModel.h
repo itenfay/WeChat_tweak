@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveTaskId, NSString;
 
@@ -17,7 +18,6 @@
     long long _lastEngIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lastEngIndex; // @synthesize lastEngIndex=_lastEngIndex;
 @property(nonatomic) long long lastChnIndex; // @synthesize lastChnIndex=_lastChnIndex;
 @property(retain, nonatomic) NSString *currEngSession; // @synthesize currEngSession=_currEngSession;
@@ -39,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

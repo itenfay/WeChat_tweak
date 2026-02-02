@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithContentUrl:(id)arg1 itemShowType:(id)arg2 title:(id)arg3 username:(id)arg4 nickname:(id)arg5;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

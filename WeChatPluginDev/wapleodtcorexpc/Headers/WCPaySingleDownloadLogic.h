@@ -14,7 +14,6 @@
     NSMutableDictionary *_downloadTaskDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *downloadTaskDict; // @synthesize downloadTaskDict=_downloadTaskDict;
 @property(retain, nonatomic) NSMutableArray *arrDownloadingTaskQueue; // @synthesize arrDownloadingTaskQueue=_arrDownloadingTaskQueue;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;

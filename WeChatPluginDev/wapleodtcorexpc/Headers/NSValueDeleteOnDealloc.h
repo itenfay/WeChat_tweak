@@ -10,7 +10,6 @@
     NSValue *_value;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *value; // @synthesize value=_value;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;

@@ -22,7 +22,6 @@
     double _btnWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double btnWidth; // @synthesize btnWidth=_btnWidth;
 @property(retain, nonatomic) NSString *reportName; // @synthesize reportName=_reportName;
 @property(nonatomic) unsigned long long colorType; // @synthesize colorType=_colorType;

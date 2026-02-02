@@ -21,7 +21,6 @@
     WCButtonListView *_bottomWatchLiveButtonView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCButtonListView *bottomWatchLiveButtonView; // @synthesize bottomWatchLiveButtonView=_bottomWatchLiveButtonView;
 - (void)setDelegate:(id)arg1;
 - (void)cancleOneClickLogin;

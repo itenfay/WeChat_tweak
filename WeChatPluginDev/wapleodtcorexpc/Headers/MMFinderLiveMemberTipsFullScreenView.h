@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView;
 
 @interface MMFinderLiveMemberTipsFullScreenView
@@ -15,7 +17,6 @@
     UIView *_parentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int requestActionSeq; // @synthesize requestActionSeq=_requestActionSeq;
 @property(nonatomic) _Bool isAppear; // @synthesize isAppear=_isAppear;
 @property(nonatomic) __weak UIView *parentView; // @synthesize parentView=_parentView;
@@ -36,4 +37,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 liveTask:(id)arg2;
 
 @end
-

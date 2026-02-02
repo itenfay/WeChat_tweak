@@ -16,7 +16,6 @@
     double _updateTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double updateTime; // @synthesize updateTime=_updateTime;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;

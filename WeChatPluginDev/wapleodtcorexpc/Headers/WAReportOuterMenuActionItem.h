@@ -19,7 +19,6 @@
     NSString *_imageUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;
 @property(retain, nonatomic) NSString *shareTitle; // @synthesize shareTitle=_shareTitle;
 @property(nonatomic) long long shareActionType; // @synthesize shareActionType=_shareActionType;

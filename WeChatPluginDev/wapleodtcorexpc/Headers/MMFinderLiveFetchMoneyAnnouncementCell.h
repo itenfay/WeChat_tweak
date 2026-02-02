@@ -12,7 +12,6 @@
     id <MMFinderLiveFetchMoneyAnnouncementCellDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveFetchMoneyAnnouncementCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMFinderLiveFetchMoneyAnnouncementView *announcementView; // @synthesize announcementView=_announcementView;
 - (void)clickMMFinderLiveFetchMoneyAnnouncementView:(id)arg1;

@@ -13,7 +13,6 @@
     MISSING_TYPE *edgeInset;
 }
 
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

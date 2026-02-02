@@ -17,7 +17,6 @@
     NSMutableArray *_urlArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *urlArray; // @synthesize urlArray=_urlArray;
 @property(retain, nonatomic) NSString *x509desc; // @synthesize x509desc=_x509desc;
 @property(retain, nonatomic) NSData *certificateData; // @synthesize certificateData=_certificateData;

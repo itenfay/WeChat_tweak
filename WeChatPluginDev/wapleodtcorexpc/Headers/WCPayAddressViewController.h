@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString, UIButton, UILabel, UIView, WCBaseTextFieldItem, WCPayAreaItem, WCPayCss;
 @protocol WCPayAddressViewControllerDelegate;
 
@@ -23,7 +25,6 @@
     double _keyboardHeight;
 }
 
-- (void).cxx_destruct;
 @property double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(retain) NSMutableArray *itemArray; // @synthesize itemArray=_itemArray;
 @property(retain) WCPayCss *css; // @synthesize css=_css;
@@ -82,4 +83,3 @@
 @property(readonly) Class superclass;
 
 @end
-

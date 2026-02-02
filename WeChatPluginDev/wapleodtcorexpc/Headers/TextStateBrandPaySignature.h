@@ -11,7 +11,6 @@
     NSString *_paySignature;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *paySignature; // @synthesize paySignature=_paySignature;
 @property(retain, nonatomic) NSString *payTransactionId; // @synthesize payTransactionId=_payTransactionId;
 - (id)description;

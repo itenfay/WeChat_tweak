@@ -15,7 +15,6 @@
     WCAdFinderDialogClickManager *_clickManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdFinderDialogClickManager *clickManager; // @synthesize clickManager=_clickManager;
 @property(retain, nonatomic) WCAdFinderDialogCloseBarView *closeBarView; // @synthesize closeBarView=_closeBarView;
 @property(retain, nonatomic) WCAdFinderDialogContainView *dialogContainView; // @synthesize dialogContainView=_dialogContainView;

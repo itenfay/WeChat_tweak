@@ -11,7 +11,6 @@
     NSString *_peripheralName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *peripheralName; // @synthesize peripheralName=_peripheralName;
 @property(nonatomic) unsigned long long uploadTimeInterval; // @synthesize uploadTimeInterval=_uploadTimeInterval;
 

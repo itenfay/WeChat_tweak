@@ -22,7 +22,6 @@
 
 + (double)labelWidth:(id)arg1 maxWidth:(double)arg2 font:(id)arg3 cpKey:(id)arg4;
 + (double)labelHeight:(id)arg1 maxWidth:(double)arg2 font:(id)arg3 cpKey:(id)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHighlighted; // @synthesize isHighlighted=_isHighlighted;
 @property(retain, nonatomic) UIColor *hlBackgroundColor; // @synthesize hlBackgroundColor=_hlBackgroundColor;
 @property(retain, nonatomic) NSString *prefixTitle; // @synthesize prefixTitle=_prefixTitle;

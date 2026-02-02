@@ -25,7 +25,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSwitch; // @synthesize isSwitch=_isSwitch;
 @property(nonatomic) _Bool isFromPicker; // @synthesize isFromPicker=_isFromPicker;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;

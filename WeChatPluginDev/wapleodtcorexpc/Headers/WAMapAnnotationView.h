@@ -25,7 +25,6 @@
     struct CGAffineTransform _calloutTrans;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *pointView; // @synthesize pointView=_pointView;
 @property(retain, nonatomic) PaddingLabel *paddingLabel; // @synthesize paddingLabel=_paddingLabel;
 @property(nonatomic) struct CGAffineTransform calloutTrans; // @synthesize calloutTrans=_calloutTrans;

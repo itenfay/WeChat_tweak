@@ -16,7 +16,6 @@
     MISSING_TYPE *session;
 }
 
-- (void).cxx_destruct;
 - (void)reportThatEnterAudio;
 - (void)reportThatEnterMusic;
 - (void)reportThatEntryExpose;

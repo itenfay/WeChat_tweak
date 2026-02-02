@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onScroll:(float)arg1 y:(float)arg2;
 - (id)initWithCpp:(const void *)arg1;
 

@@ -16,7 +16,6 @@
     GroupNoticeItem *_item;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GroupNoticeItem *item; // @synthesize item=_item;
 @property(nonatomic) __weak id <GroupNoticeItemDownloaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_tryDownloadPart;

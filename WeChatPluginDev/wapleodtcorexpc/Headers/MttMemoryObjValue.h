@@ -16,7 +16,6 @@
 @property(retain, nonatomic) MttMemory *obj; // @synthesize obj=_obj;
 @property(nonatomic) int pos; // @synthesize pos=_pos;
 @property(nonatomic) int tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 - (id)JSONObject;
 
 @end

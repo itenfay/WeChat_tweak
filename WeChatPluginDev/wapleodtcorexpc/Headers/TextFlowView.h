@@ -21,7 +21,6 @@
     struct CGSize _textSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int spaceLength; // @synthesize spaceLength=_spaceLength;
 - (void)setTextColor:(id)arg1;
 - (void)setTextAlignment:(long long)arg1;

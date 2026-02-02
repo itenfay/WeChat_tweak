@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (Extend)
 + (_Bool)isView:(id)arg1 superViewOfView:(id)arg2;
@@ -27,4 +28,3 @@
 - (void)autoresizingWithHorizontalCenter;
 - (id)rootDesc;
 @end
-

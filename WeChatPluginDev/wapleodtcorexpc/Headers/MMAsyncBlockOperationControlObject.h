@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMAsyncBlockOperationControlObject : NSObject
 {
@@ -11,7 +12,6 @@
     CDUnknownBlockType _endBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType endBlock; // @synthesize endBlock=_endBlock;
 @property(nonatomic) _Bool hasMarkFinished; // @synthesize hasMarkFinished=_hasMarkFinished;
 - (void)configWithEndBlock:(CDUnknownBlockType)arg1;
@@ -19,4 +19,3 @@
 - (void)dealloc;
 
 @end
-

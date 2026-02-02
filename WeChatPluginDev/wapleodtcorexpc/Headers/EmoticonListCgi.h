@@ -19,7 +19,6 @@
     id <EmoticonListCgiDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int requestEventID; // @synthesize requestEventID=_requestEventID;
 @property(nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
 @property(nonatomic) __weak id <EmoticonListCgiDelegate> delegate; // @synthesize delegate=_delegate;

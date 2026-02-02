@@ -12,7 +12,6 @@
     NSMutableArray *_dataArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *dataArray; // @synthesize dataArray=_dataArray;
 - (void)reportExplosure;
 - (void)configureWithDataArray:(id)arg1;

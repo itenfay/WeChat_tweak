@@ -34,7 +34,6 @@
 + (_Bool)isWeAppAppId:(id)arg1;
 + (_Bool)isWeAppUserName:(id)arg1;
 + (id)contactListWithWeAppContactList:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isExtInfoValid; // @synthesize m_isExtInfoValid=_m_isExtInfoValid;
 @property(retain, nonatomic) NSDictionary *externalInfoJSONCache; // @synthesize externalInfoJSONCache=_externalInfoJSONCache;
 @property(copy, nonatomic) NSString *m_nsImgStatus; // @synthesize m_nsImgStatus=_m_nsImgStatus;

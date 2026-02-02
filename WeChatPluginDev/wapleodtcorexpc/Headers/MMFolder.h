@@ -32,7 +32,6 @@
 + (void)PBArrayAdd_subFiles;
 + (void)PBArrayAdd_size;
 + (void)PBArrayAdd_name;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBizFileMatchNode *m_bizMatchNode; // @synthesize m_bizMatchNode=_m_bizMatchNode;
 @property(nonatomic) long long m_storeTimeType; // @synthesize m_storeTimeType=_m_storeTimeType;
 @property(nonatomic) int m_onlyWeChatFileClass; // @synthesize m_onlyWeChatFileClass=_m_onlyWeChatFileClass;

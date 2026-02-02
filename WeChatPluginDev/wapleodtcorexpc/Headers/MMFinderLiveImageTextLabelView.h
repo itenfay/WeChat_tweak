@@ -15,7 +15,6 @@
 
 + (struct CGSize)sizeWithParams:(id)arg1;
 + (double)widthWithParams:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *rightImageView; // @synthesize rightImageView=_rightImageView;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) MMWebImageView *leftImageView; // @synthesize leftImageView=_leftImageView;

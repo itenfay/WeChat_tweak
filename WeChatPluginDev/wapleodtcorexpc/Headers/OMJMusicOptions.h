@@ -15,7 +15,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_c29e59e1 backingInfo; // @synthesize backingInfo=_backingInfo;
 @property(readonly, nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;
 @property(readonly, nonatomic) OMJMusicInfo *musicInfo; // @synthesize musicInfo=_musicInfo;

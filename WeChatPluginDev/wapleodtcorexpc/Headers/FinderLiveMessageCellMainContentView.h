@@ -13,7 +13,6 @@
     NSString *_accessibilityString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *accessibilityString; // @synthesize accessibilityString=_accessibilityString;
 @property(copy, nonatomic) NSArray *accessibilityElementArr; // @synthesize accessibilityElementArr=_accessibilityElementArr;
 - (unsigned long long)accessibilityTraits;

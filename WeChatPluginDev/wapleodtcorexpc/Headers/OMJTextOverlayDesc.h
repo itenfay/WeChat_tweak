@@ -13,7 +13,6 @@
     NSDictionary *_layerStyles;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *layerStyles; // @synthesize layerStyles=_layerStyles;
 @property(retain, nonatomic) NSDictionary *textStyles; // @synthesize textStyles=_textStyles;
 @property(nonatomic) double maximumWidth; // @synthesize maximumWidth=_maximumWidth;

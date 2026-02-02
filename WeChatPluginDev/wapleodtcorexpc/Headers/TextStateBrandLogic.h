@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString, TextStateBrandBaseSignature, TextStatePublishSourceInfo, TextStatusBrandInfo;
 @protocol TextStateBrandLogicDelegate;
@@ -20,7 +21,6 @@
     TextStatePublishSourceInfo *_sourceInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStatePublishSourceInfo *sourceInfo; // @synthesize sourceInfo=_sourceInfo;
 @property(nonatomic) unsigned int action; // @synthesize action=_action;
 @property(retain, nonatomic) TextStatusBrandInfo *brandInfo; // @synthesize brandInfo=_brandInfo;
@@ -39,4 +39,3 @@
 - (id)initWithURLString:(id)arg1;
 
 @end
-

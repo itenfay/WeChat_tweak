@@ -41,7 +41,6 @@
     NSTimer *_clearTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *clearTimer; // @synthesize clearTimer=_clearTimer;
 @property(retain, nonatomic) NSString *innerAmount; // @synthesize innerAmount=_innerAmount;
 @property(retain, nonatomic) NSString *enterAmount; // @synthesize enterAmount=_enterAmount;

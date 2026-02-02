@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
@@ -21,7 +23,6 @@
 }
 
 + (_Bool)isKeyValidWithKey:(id)arg1 keyType:(unsigned long long)arg2;
-- (void).cxx_destruct;
 - (id)getUsernameForAppid:(id)arg1;
 - (void)onCgiResponse:(id)arg1 forEvent:(unsigned int)arg2;
 - (void)workThread_processBatchWxaAttrSyncWithRequestedBufferDic:(id)arg1 response:(id)arg2 completeHandlerOnMainThread:(CDUnknownBlockType)arg3;
@@ -105,4 +106,3 @@
 @property(readonly) Class superclass;
 
 @end
-

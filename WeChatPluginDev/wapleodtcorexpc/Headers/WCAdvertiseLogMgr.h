@@ -17,7 +17,6 @@
     NSMutableArray *tempLogs;
 }
 
-- (void).cxx_destruct;
 - (unsigned int)getMaxSendSize;
 - (unsigned int)getRandomInternalTime;
 - (unsigned int)getExceptionMaxTime;

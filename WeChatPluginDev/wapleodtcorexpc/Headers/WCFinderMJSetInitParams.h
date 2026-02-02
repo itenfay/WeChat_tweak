@@ -15,7 +15,6 @@
 
 + (id)paramsWithTemplateShortUrl:(id)arg1;
 + (id)paramsWithTemplateTopicId:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMJSetOptionalParams *optionalParams; // @synthesize optionalParams=_optionalParams;
 @property(retain, nonatomic) WCFinderMJSetNecessaryParams *necessaryParams; // @synthesize necessaryParams=_necessaryParams;
 - (id)initWithTemplateShortUrl:(id)arg1;

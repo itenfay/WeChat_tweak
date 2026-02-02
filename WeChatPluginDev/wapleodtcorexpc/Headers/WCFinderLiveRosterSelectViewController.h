@@ -20,7 +20,6 @@
     double _tableHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceDarkMode; // @synthesize forceDarkMode=_forceDarkMode;
 @property(nonatomic) double tableHeight; // @synthesize tableHeight=_tableHeight;
 @property(retain, nonatomic) UIView *tableViewFooter; // @synthesize tableViewFooter=_tableViewFooter;

@@ -19,7 +19,6 @@
     struct CGSize _m_msgCellViewSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) _Bool m_msgCellViewSizeValid; // @synthesize m_msgCellViewSizeValid=_m_msgCellViewSizeValid;
 @property(nonatomic) struct CGSize m_msgCellViewSize; // @synthesize m_msgCellViewSize=_m_msgCellViewSize;

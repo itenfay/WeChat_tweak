@@ -18,7 +18,6 @@
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedCssParser;
 + (void)initialize;
-- (void).cxx_destruct;
 - (void)startWithDelegate:(id)arg1;
 - (_Bool)isParsing;
 - (void)onScriptFunctionWithSelectors:(id)arg1 withStatements:(id)arg2;

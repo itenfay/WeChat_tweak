@@ -19,7 +19,6 @@
 }
 
 + (id)lineView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmotionActivity *emotionActivity; // @synthesize emotionActivity=_emotionActivity;
 @property(retain, nonatomic) PersonalDesigner *personalDesigner; // @synthesize personalDesigner=_personalDesigner;
 - (void)stopLoading;

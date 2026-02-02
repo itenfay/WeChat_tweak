@@ -18,7 +18,6 @@
     QOverlayContainer *_container;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int fillId; // @synthesize fillId=_fillId;
 @property(nonatomic) int strokeId; // @synthesize strokeId=_strokeId;
 @property(nonatomic) __weak QOverlayContainer *container; // @synthesize container=_container;

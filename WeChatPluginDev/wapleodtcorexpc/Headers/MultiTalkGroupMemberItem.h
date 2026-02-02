@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_status;
 + (void)PBArrayAdd_inviteUserName;
 + (void)PBArrayAdd_userName;
-- (void).cxx_destruct;
 @property(nonatomic) int holdStatus; // @synthesize holdStatus=_holdStatus;
 @property(nonatomic) long long inviteTime; // @synthesize inviteTime=_inviteTime;
 @property(nonatomic) int reason; // @synthesize reason=_reason;

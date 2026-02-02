@@ -13,7 +13,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveConnectMicModePreviewView *previewView; // @synthesize previewView=_previewView;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

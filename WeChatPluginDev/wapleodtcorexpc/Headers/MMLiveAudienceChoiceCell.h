@@ -19,7 +19,6 @@
 
 + (id)createLayoutWithSize;
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *voteProgressView; // @synthesize voteProgressView=_voteProgressView;
 @property(retain, nonatomic) MMUILabel *selectCountLabel; // @synthesize selectCountLabel=_selectCountLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

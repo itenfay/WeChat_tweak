@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class LiteAppEmbedViewController, LiteAppJsApiPluginScheduler, LiteAppJsApiPlugin_LocalJSAgent, LiteAppViewController, MMLiteAppJsApiLogicImpl, MMLiteAppModalTransitionAnimator, MMLiteAppPlatformView, MMLiteAppVCView, MMLiteAppViewControllerTransitionMgr, NSMutableDictionary, NSString, UIPanGestureRecognizer, WSWebViewPluginScheduler, WebViewA8KeyLogicImpl;
 @protocol LiteAppLifeCycleCallbackDelegate, UIViewControllerTransitioningDelegate, WXCustomWebViewControllerDelegate;
 
@@ -41,7 +43,6 @@
 }
 
 + (_Bool)resolveInstanceMethod:(SEL)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *halfScreenPanGestureRecognizer; // @synthesize halfScreenPanGestureRecognizer=_halfScreenPanGestureRecognizer;
 @property(retain, nonatomic) MMLiteAppVCView *customView; // @synthesize customView=_customView;
 @property(nonatomic) _Bool sizeChangeSnapshot; // @synthesize sizeChangeSnapshot=_sizeChangeSnapshot;
@@ -187,4 +188,3 @@
 @property(readonly) Class superclass;
 
 @end
-

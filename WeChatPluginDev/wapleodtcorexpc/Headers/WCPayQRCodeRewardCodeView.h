@@ -18,7 +18,6 @@
     UIButton *_photoHitButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *photoHitButton; // @synthesize photoHitButton=_photoHitButton;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(retain, nonatomic) UIImageView *headImgView; // @synthesize headImgView=_headImgView;

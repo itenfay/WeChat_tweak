@@ -11,7 +11,6 @@
     MISSING_TYPE *engine2BizContext;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)createServiceBizWithBizName:(id)arg1 flutterEngine:(id)arg2 jsapiList:(id)arg3;
 - (void)onServiceTerminate;

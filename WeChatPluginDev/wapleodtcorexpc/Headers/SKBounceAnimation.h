@@ -15,7 +15,6 @@
 }
 
 + (id)animationWithKeyPath:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id byValue; // @synthesize byValue;
 - (id)valueArrayForStartValue:(double)arg1 endValue:(double)arg2;
 - (id)createColorArrayFromRed:(id)arg1 green:(id)arg2 blue:(id)arg3 alpha:(id)arg4;

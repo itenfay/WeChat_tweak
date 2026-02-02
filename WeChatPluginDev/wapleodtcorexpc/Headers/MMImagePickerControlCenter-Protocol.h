@@ -4,6 +4,7 @@
 //
 
 #import "NSObject-Protocol.h"
+typedef void (^CDUnknownBlockType)(void);
 
 @class EditImageAttr, EditVideoAttr, MMAsset, MMAssetInfo, MMAssetPickerController, MMAssetPickerControllerState, MMAssetPickerInterceptor, MMFinderLiveImagePickerParams, MMImagePickerReportInfo, MMImagePreviewBrowserController, MMImagePreviewControllerActionFlow, NSArray, NSDictionary, NSError, NSMutableDictionary, NSNumber, NSString, SightDraft, UIButton, UINavigationController, UIViewController, WCFinderDataItem, WCFinderEditOptionModel, WCFinderPickerTemplateParams, WCFinderPostSessionModel;
 @protocol MMAssetPickerUserActionTipsProtocol, MMSightCameraViewControllerDelegate;
@@ -181,4 +182,3 @@
 - (void)increasePreviewCount;
 - (void)failToFetchAssets:(NSArray *)arg1;
 @end
-

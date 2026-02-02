@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CommonAffCgiCpp : NSObject
 {
@@ -14,4 +15,3 @@
 + (void)request:(id)arg1 callback:(CDUnknownBlockType)arg2;
 
 @end
-

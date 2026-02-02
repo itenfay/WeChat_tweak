@@ -21,7 +21,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithIsNetwork:(id)arg1 startTimeStamp:(id)arg2 endTimeStamp:(id)arg3 downloadFail:(id)arg4 downloadErrorCode:(id)arg5 decodeFail:(id)arg6 url:(id)arg7;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSNumber *decodeFail; // @synthesize decodeFail=_decodeFail;
 @property(retain, nonatomic) NSNumber *downloadErrorCode; // @synthesize downloadErrorCode=_downloadErrorCode;

@@ -23,7 +23,6 @@
     struct CGRect _originRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStatTimerHelper *timerHelper; // @synthesize timerHelper=_timerHelper;
 @property(retain, nonatomic) WCAdInteractionView *floatAreaView; // @synthesize floatAreaView=_floatAreaView;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;

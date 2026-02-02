@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, MMWebImageView, UIButton, UIImageView, UILabel, UIView, WCFinderHeadImageView;
 
 @interface MMLiveFollowConfirmView
@@ -25,7 +27,6 @@
     long long _friendFollowCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long friendFollowCount; // @synthesize friendFollowCount=_friendFollowCount;
 @property(nonatomic) _Bool isPop; // @synthesize isPop=_isPop;
 @property(retain, nonatomic) UIView *horiLine; // @synthesize horiLine=_horiLine;
@@ -55,4 +56,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -15,7 +15,6 @@
     NSString *_simpleTransitionAnimationMD5;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *simpleTransitionAnimationMD5; // @synthesize simpleTransitionAnimationMD5=_simpleTransitionAnimationMD5;
 @property(retain, nonatomic) NSString *simpleTransitionAnimationUrl; // @synthesize simpleTransitionAnimationUrl=_simpleTransitionAnimationUrl;
 @property(nonatomic) double triggerGForce; // @synthesize triggerGForce=_triggerGForce;

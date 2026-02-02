@@ -23,7 +23,6 @@
     MISSING_TYPE *randomNum;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)removeCoverWithFrameSetId:(id)arg1;
 - (void)setGestureRectsWithBizName:(id)arg1 frameSetId:(id)arg2 canvasId:(unsigned int)arg3 rects:(id)arg4;

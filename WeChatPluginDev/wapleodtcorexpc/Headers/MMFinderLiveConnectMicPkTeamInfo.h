@@ -13,7 +13,6 @@
     MMFinderLiveConnectMicPkUIConf *_uiConf;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveConnectMicPkUIConf *uiConf; // @synthesize uiConf=_uiConf;
 @property(retain, nonatomic) NSMutableArray *teams; // @synthesize teams=_teams;
 - (id)firstValidTeam;

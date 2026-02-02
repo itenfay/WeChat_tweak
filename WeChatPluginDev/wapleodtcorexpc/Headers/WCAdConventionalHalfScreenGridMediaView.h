@@ -15,7 +15,6 @@
     long long _currentIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(nonatomic) long long clickIndex; // @synthesize clickIndex=_clickIndex;
 @property(retain, nonatomic) UIPageControl *pageCtrl; // @synthesize pageCtrl=_pageCtrl;

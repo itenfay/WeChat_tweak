@@ -16,7 +16,6 @@
     MMImageExifLogInfo *_exifLogInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMImageExifLogInfo *exifLogInfo; // @synthesize exifLogInfo=_exifLogInfo;
 @property(retain, nonatomic) NSString *assetId; // @synthesize assetId=_assetId;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;

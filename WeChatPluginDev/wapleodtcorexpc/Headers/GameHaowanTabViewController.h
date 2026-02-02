@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GameVideoAlbumController, MMAssetPickerController, MMImagePickerManagerOptionObj, MMUIButton, MMUIViewController, NSArray, NSString, UINavigationController, UIView;
 @protocol GameVideoAlbumControllerDelegate, MMImagePickerManagerDelegate;
 
@@ -26,7 +28,6 @@
     MMUIButton *_gameVideoTabBtn;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInPreview; // @synthesize isInPreview=_isInPreview;
 @property(retain, nonatomic) MMUIButton *gameVideoTabBtn; // @synthesize gameVideoTabBtn=_gameVideoTabBtn;
 @property(retain, nonatomic) MMUIButton *albumTabBtn; // @synthesize albumTabBtn=_albumTabBtn;
@@ -79,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -13,7 +13,6 @@
     NSObject<OS_dispatch_queue> *m_taskQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *m_taskQueue; // @synthesize m_taskQueue;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)onUploadUserData:(id)arg1;

@@ -18,7 +18,6 @@
     WAWebViewController *_currentWebviewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidShadow; // @synthesize forbidShadow=_forbidShadow;
 @property(nonatomic) _Bool toVCOffsetEnable; // @synthesize toVCOffsetEnable=_toVCOffsetEnable;
 @property(nonatomic) _Bool maskEnable; // @synthesize maskEnable=_maskEnable;

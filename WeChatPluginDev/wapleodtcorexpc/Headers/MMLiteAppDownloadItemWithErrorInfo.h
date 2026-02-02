@@ -13,7 +13,6 @@
     MMLiteAppDownloadItem *_downloadItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiteAppDownloadItem *downloadItem; // @synthesize downloadItem=_downloadItem;
 @property(retain, nonatomic) MMLiteAppErrorReportInfo *errorReportInfo; // @synthesize errorReportInfo=_errorReportInfo;
 - (id)initWithInfo:(id)arg1 downloadItem:(id)arg2;

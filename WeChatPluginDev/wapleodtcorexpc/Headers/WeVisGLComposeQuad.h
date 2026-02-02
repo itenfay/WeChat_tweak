@@ -24,7 +24,6 @@
     _Bool _isInitialized;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInitialized; // @synthesize isInitialized=_isInitialized;
 - (const char *)getUVScaleOffsetNameAtIndex:(int)arg1;
 - (unsigned int)getTextureToBindAtIndex:(int)arg1;

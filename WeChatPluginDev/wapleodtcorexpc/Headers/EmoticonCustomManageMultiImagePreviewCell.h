@@ -12,7 +12,6 @@
     UIImageView *_imgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *imgView; // @synthesize imgView=_imgView;
 - (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;

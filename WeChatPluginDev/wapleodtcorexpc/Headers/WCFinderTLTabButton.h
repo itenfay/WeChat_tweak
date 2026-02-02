@@ -31,7 +31,6 @@
     struct CGSize _iconSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(retain, nonatomic) UIColor *normalColor; // @synthesize normalColor=_normalColor;

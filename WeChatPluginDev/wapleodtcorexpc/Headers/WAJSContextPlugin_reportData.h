@@ -11,7 +11,6 @@
     id <IReportMiniProgramDelegate> _weappDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IReportMiniProgramDelegate> weappDelegate; // @synthesize weappDelegate=_weappDelegate;
 @property(nonatomic) __weak id <IReportMiniProgramDelegate> webDelegate; // @synthesize webDelegate=_webDelegate;
 - (void)onCgiResponse:(id)arg1 forEvent:(unsigned int)arg2;

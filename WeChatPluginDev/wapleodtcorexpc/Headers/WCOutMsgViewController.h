@@ -13,7 +13,6 @@
     NSMutableArray *_arrMsgInMemory;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasMoreItems; // @synthesize bHasMoreItems=_bHasMoreItems;
 @property(retain, nonatomic) NSMutableArray *arrMsgInMemory; // @synthesize arrMsgInMemory=_arrMsgInMemory;
 @property(retain, nonatomic) WCTimeLineFooterView *footerView; // @synthesize footerView=_footerView;

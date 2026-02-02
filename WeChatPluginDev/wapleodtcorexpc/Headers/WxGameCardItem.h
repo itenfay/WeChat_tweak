@@ -14,7 +14,6 @@
     NSString *_clientExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int msgtype; // @synthesize msgtype=_msgtype;
 @property(retain, nonatomic) NSString *clientExtInfo; // @synthesize clientExtInfo=_clientExtInfo;
 @property(retain, nonatomic) NSString *minPkgVersion; // @synthesize minPkgVersion=_minPkgVersion;

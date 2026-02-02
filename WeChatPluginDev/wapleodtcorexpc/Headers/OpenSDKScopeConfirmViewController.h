@@ -35,7 +35,6 @@
     NSMutableArray *_scopeInfoList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int fromScene; // @synthesize fromScene=_fromScene;
 @property(retain, nonatomic) NSMutableArray *scopeInfoList; // @synthesize scopeInfoList=_scopeInfoList;
 @property(nonatomic) __weak id <MMAuthorizeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

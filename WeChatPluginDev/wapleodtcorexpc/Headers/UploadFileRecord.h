@@ -11,7 +11,6 @@
     NSString *_weburl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *weburl; // @synthesize weburl=_weburl;
 

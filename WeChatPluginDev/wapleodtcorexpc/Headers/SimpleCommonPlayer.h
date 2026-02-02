@@ -10,7 +10,6 @@
     AVAudioPlayer *_m_audioPlayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAudioPlayer *m_audioPlayer; // @synthesize m_audioPlayer=_m_audioPlayer;
 - (void)setNumberOfLoops:(long long)arg1;
 - (void)audioPlayerBeginInterruption:(id)arg1;

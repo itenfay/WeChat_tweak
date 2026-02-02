@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithTextureId:(id)arg1 textureWidth:(id)arg2 textureHeight:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *textureHeight; // @synthesize textureHeight=_textureHeight;
 @property(retain, nonatomic) NSNumber *textureWidth; // @synthesize textureWidth=_textureWidth;
 @property(retain, nonatomic) NSNumber *textureId; // @synthesize textureId=_textureId;

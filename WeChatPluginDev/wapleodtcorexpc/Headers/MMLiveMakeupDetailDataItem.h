@@ -21,7 +21,6 @@
     MMLiveBeautyBadgeItem *_badge;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveBeautyBadgeItem *badge; // @synthesize badge=_badge;
 @property(retain, nonatomic) NSString *saveKey; // @synthesize saveKey=_saveKey;
 @property(nonatomic) float value; // @synthesize value=_value;

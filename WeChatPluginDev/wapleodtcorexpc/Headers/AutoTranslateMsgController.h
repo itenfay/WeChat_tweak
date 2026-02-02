@@ -17,7 +17,6 @@
     NSMutableArray *_autoTranslateQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *autoTranslateQueue; // @synthesize autoTranslateQueue=_autoTranslateQueue;
 @property(retain, nonatomic) AutoTranslateMsgReport *report; // @synthesize report=_report;
 @property(retain, nonatomic) CMessageWrap *currentMsgWrap; // @synthesize currentMsgWrap=_currentMsgWrap;

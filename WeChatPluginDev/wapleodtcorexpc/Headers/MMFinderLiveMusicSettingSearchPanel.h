@@ -28,7 +28,6 @@
 
 + (id)createSearchBar;
 + (id)showWithTaskId:(id)arg1 frame:(struct CGRect)arg2 musicLists:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *curSearchText; // @synthesize curSearchText=_curSearchText;
 @property(retain, nonatomic) MMFinderLiveMusicSettingSearchTableViewModel *searchTableViewModel; // @synthesize searchTableViewModel=_searchTableViewModel;
 @property(retain, nonatomic) MMFinderLiveMusicSettingSearchViewModel *searchViewModel; // @synthesize searchViewModel=_searchViewModel;

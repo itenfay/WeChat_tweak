@@ -20,7 +20,6 @@
     WCFinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLive; // @synthesize isLive=_isLive;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;

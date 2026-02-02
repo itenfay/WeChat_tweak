@@ -24,7 +24,6 @@
 }
 
 + (_Bool)supportMetal;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long imageMode; // @synthesize imageMode=_imageMode;
 @property(retain, nonatomic) CIImage *CIImage; // @synthesize CIImage=_CIImage;
 @property(retain, nonatomic) TAVFrame *currentFrame; // @synthesize currentFrame=_currentFrame;

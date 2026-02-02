@@ -54,7 +54,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderEventWordingInfo *wordingInfo; // @synthesize wordingInfo=_wordingInfo;
 @property(nonatomic) unsigned long long hiddenMark; // @synthesize hiddenMark=_hiddenMark;
 @property(nonatomic) unsigned long long eventAttendCount; // @synthesize eventAttendCount=_eventAttendCount;

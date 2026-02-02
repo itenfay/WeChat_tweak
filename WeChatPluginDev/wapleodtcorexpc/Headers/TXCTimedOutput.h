@@ -20,7 +20,6 @@
     NSObject<OS_dispatch_source> *_timer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(nonatomic) _Bool isLastObjectOutput; // @synthesize isLastObjectOutput=_isLastObjectOutput;
 @property(readonly, nonatomic) _Bool keepsLastObject; // @synthesize keepsLastObject=_keepsLastObject;

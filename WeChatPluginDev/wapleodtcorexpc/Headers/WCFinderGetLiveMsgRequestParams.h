@@ -12,7 +12,6 @@
     FinderLiveButtonDisplayInfo *_buttonDisplayInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveButtonDisplayInfo *buttonDisplayInfo; // @synthesize buttonDisplayInfo=_buttonDisplayInfo;
 
 @end

@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_content;
 + (void)PBArrayAdd_language;
 + (void)PBArrayAdd_updateTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *quanpin; // @synthesize quanpin=_quanpin;
 @property(retain, nonatomic) NSString *pinyin; // @synthesize pinyin=_pinyin;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;

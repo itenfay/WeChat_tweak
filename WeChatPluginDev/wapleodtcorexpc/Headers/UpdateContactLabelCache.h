@@ -13,7 +13,6 @@
     NSString *updateLabelName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *updateLabelName; // @synthesize updateLabelName;
 @property(retain, nonatomic) NSString *oldLabelName; // @synthesize oldLabelName;
 

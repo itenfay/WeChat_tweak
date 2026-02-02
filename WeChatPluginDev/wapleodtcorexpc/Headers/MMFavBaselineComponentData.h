@@ -21,7 +21,6 @@
     NSString *_nameTailContent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldHideSourceNameLabel; // @synthesize shouldHideSourceNameLabel=_shouldHideSourceNameLabel;
 @property(retain, nonatomic) NSString *nameTailContent; // @synthesize nameTailContent=_nameTailContent;
 @property(retain, nonatomic) UIImage *logoImage; // @synthesize logoImage=_logoImage;

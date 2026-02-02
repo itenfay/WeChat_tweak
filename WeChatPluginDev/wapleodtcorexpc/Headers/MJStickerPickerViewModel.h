@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJSegmentViewModel, NSArray, NSIndexPath, NSMutableDictionary, NSString, OMJMaterialManager;
 
@@ -17,7 +18,6 @@
     NSMutableDictionary *_downloadStatus;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *downloadStatus; // @synthesize downloadStatus=_downloadStatus;
 @property(copy, nonatomic) NSArray *materialItems; // @synthesize materialItems=_materialItems;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

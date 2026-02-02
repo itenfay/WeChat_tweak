@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCAdvertiseUIUtil : NSObject
 {
@@ -66,4 +67,3 @@
 + (id)fetchValidTableViewForSubView:(id)arg1;
 
 @end
-

@@ -12,7 +12,6 @@
     AffWCRTEDelegateCallback *m_callBack;
 }
 
-- (void).cxx_destruct;
 - (void)resetCopyAttachmentInPasteBored;
 - (id)getAttachmentExpiredWording;
 - (id)getCurrentTranslateLanguage;

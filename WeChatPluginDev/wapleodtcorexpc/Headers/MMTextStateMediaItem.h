@@ -46,7 +46,6 @@
 + (void)PBArrayAdd_createTime;
 + (void)PBArrayAdd_duration;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsUseLivePhoto; // @synthesize bIsUseLivePhoto=_bIsUseLivePhoto;
 @property(nonatomic) _Bool bIsLivePhoto; // @synthesize bIsLivePhoto=_bIsLivePhoto;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;

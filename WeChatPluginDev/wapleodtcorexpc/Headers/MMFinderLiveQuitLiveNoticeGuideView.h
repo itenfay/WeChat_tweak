@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveNoticeInfo, MMUILabel, MMWebImageView, NSString, UIScrollView, UIView, WCFinderContact, WCFinderHeadImageView;
 
 @interface MMFinderLiveQuitLiveNoticeGuideView
@@ -21,7 +23,6 @@
     MMUILabel *_timeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) MMUILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) MMUILabel *nickLabel; // @synthesize nickLabel=_nickLabel;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

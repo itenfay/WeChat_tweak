@@ -24,7 +24,6 @@
     long long _logoIconType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canShowBackgroundColorView; // @synthesize canShowBackgroundColorView=_canShowBackgroundColorView;
 @property(nonatomic) _Bool canShowClickBar; // @synthesize canShowClickBar=_canShowClickBar;
 @property(nonatomic) _Bool doOnce; // @synthesize doOnce=_doOnce;

@@ -12,7 +12,6 @@
     FlutterMemoryHost *_memoryHost;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterMemoryHost *memoryHost; // @synthesize memoryHost=_memoryHost;
 - (void)freeMemory;
 - (void)onAttachedToEngine:(id)arg1;

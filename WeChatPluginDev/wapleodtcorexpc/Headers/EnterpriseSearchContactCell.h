@@ -13,7 +13,6 @@
     UIView *_separatorBottomView;
 }
 
-- (void).cxx_destruct;
 - (void)updateEnterpriseSearchCellWithData:(id)arg1 isLastCell:(_Bool)arg2;
 - (void)initView;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

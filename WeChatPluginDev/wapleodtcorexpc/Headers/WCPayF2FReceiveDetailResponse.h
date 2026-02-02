@@ -15,7 +15,6 @@
     NSArray *_recordList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *recordList; // @synthesize recordList=_recordList;
 @property(retain, nonatomic) WCPayF2FReceiveDetailSummaryItem *summaryItem; // @synthesize summaryItem=_summaryItem;
 @property(retain, nonatomic) NSString *retMsg; // @synthesize retMsg=_retMsg;

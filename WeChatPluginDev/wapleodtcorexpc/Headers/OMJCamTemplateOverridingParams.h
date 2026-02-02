@@ -15,7 +15,6 @@
     NSDictionary *_assetInfosByKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *assetInfosByKey; // @synthesize assetInfosByKey=_assetInfosByKey;
 @property(retain, nonatomic) OMJCamMusicDesc *musicDesc; // @synthesize musicDesc=_musicDesc;
 @property(retain, nonatomic) OMJCamFilterDesc *filterDesc; // @synthesize filterDesc=_filterDesc;

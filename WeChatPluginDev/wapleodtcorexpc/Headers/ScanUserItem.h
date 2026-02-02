@@ -13,7 +13,6 @@
     NSString *_nickname;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 - (void)encodeWithCoder:(id)arg1;

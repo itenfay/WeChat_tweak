@@ -14,7 +14,6 @@
 }
 
 + (id)stickerInfoFromInfoString:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productId; // @synthesize productId=_productId;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;
 - (id)covertToJsonString;

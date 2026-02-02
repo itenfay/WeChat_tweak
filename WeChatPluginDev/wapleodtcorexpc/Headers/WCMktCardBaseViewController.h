@@ -11,7 +11,6 @@
     NSString *_viewControllerTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *viewControllerTitle; // @synthesize viewControllerTitle=_viewControllerTitle;
 @property(nonatomic) _Bool isFromJsapi; // @synthesize isFromJsapi=_isFromJsapi;
 - (void)viewDidLoad;

@@ -53,7 +53,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *feedContentVMAddress; // @synthesize feedContentVMAddress=_feedContentVMAddress;
 @property(retain, nonatomic) NSString *contextID; // @synthesize contextID=_contextID;
 @property(nonatomic) double maxPlaybackTime; // @synthesize maxPlaybackTime=_maxPlaybackTime;

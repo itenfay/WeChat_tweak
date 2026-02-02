@@ -16,7 +16,6 @@
     NSMutableArray *_gameUserInfoList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showSearch; // @synthesize showSearch=_showSearch;
 @property(retain, nonatomic) NSMutableArray *gameUserInfoList; // @synthesize gameUserInfoList=_gameUserInfoList;
 @property(retain, nonatomic) MMLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;

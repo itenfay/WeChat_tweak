@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIActivityIndicatorView, UIButton, UIImageView, UILabel;
 
 @interface WCPlayLiveWithoutLoginQRCodeViewController
@@ -16,7 +18,6 @@
     UIButton *_refreshButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *refreshButton; // @synthesize refreshButton=_refreshButton;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
@@ -41,4 +42,3 @@
 - (void)dealloc;
 
 @end
-

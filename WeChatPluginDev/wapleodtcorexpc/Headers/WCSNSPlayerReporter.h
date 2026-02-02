@@ -12,7 +12,6 @@
     NSString *_respFlag;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *respFlag; // @synthesize respFlag=_respFlag;
 @property(copy, nonatomic) NSString *reqFlag; // @synthesize reqFlag=_reqFlag;
 @property(retain, nonatomic) WCMediaItem *mediaWrap; // @synthesize mediaWrap=_mediaWrap;

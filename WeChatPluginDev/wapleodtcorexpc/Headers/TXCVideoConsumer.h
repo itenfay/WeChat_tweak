@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TXCDispatchQueue, TXCVideoDecodeConfig, TXCVideoDecodeReport, TXCVideoDecoderSupervisor, TXCVideoRenderConfig, TXCVideoRenderReport, TXCVideoResultHandler, TXCVideoStreamSnapshot;
 @protocol TXIGlContext, TXILocalVideoRenderer, TXIVideoConsumerDelegate, TXIVideoDecoderInterface, TXIVideoRenderer;
@@ -35,7 +36,6 @@
 
 + (void)setLogDelegate:(id)arg1;
 + (struct DecodeAbility)decodeAbility;
-- (void).cxx_destruct;
 @property(nonatomic) long long lastTicks; // @synthesize lastTicks=_lastTicks;
 @property(readonly, copy, nonatomic) CDUnknownBlockType inputLog; // @synthesize inputLog=_inputLog;
 @property(readonly, nonatomic) TXCVideoResultHandler *resultHandler; // @synthesize resultHandler=_resultHandler;
@@ -101,4 +101,3 @@
 @property(readonly) Class superclass;
 
 @end
-

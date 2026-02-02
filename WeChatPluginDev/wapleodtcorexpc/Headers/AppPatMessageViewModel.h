@@ -15,7 +15,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AppPatMessageRefreshContext *refreshContext; // @synthesize refreshContext=_refreshContext;
 @property(nonatomic) struct CGSize expandButtonSize; // @synthesize expandButtonSize=_expandButtonSize;
 @property(retain, nonatomic) NSArray *patBackgroundSizes; // @synthesize patBackgroundSizes=_patBackgroundSizes;

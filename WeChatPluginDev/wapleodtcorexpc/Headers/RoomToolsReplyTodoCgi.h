@@ -13,7 +13,6 @@
     ChatRoomToolMessageEventInfo *_eventInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatRoomToolMessageEventInfo *eventInfo; // @synthesize eventInfo=_eventInfo;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <RoomToolsReplyTodoDelegate> delegate; // @synthesize delegate=_delegate;

@@ -14,7 +14,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;

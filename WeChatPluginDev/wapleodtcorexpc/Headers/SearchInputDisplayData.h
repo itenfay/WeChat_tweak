@@ -14,7 +14,6 @@
     NSString *_resultText;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEnd; // @synthesize isEnd=_isEnd;
 @property(retain, nonatomic) NSString *resultText; // @synthesize resultText=_resultText;
 @property(nonatomic) unsigned long long inputId; // @synthesize inputId=_inputId;

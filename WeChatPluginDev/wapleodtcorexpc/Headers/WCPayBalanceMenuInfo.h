@@ -17,7 +17,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_balance_menu_item;
 + (void)PBArrayAdd_is_show_menu;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *balance_menu_item; // @synthesize balance_menu_item=_balance_menu_item;
 @property(nonatomic) _Bool is_show_menu; // @synthesize is_show_menu=_is_show_menu;
 - (void)genFromDic:(id)arg1;

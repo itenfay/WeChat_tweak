@@ -15,7 +15,6 @@
     NSMutableArray *_actionAndScales;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDoubleTapZoom; // @synthesize isDoubleTapZoom=_isDoubleTapZoom;
 @property(retain, nonatomic) NSMutableArray *actionAndScales; // @synthesize actionAndScales=_actionAndScales;
 @property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;

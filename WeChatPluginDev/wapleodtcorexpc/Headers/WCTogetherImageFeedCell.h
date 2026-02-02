@@ -14,7 +14,6 @@
 
 + (double)heightForItemContentViewWithViewItem:(id)arg1 inTableView:(id)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *imageCountLabel; // @synthesize imageCountLabel=_imageCountLabel;
 @property(copy, nonatomic) NSArray *imageViews; // @synthesize imageViews=_imageViews;
 @property(retain, nonatomic) WCGridView *imageGridView; // @synthesize imageGridView=_imageGridView;

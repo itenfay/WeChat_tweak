@@ -20,7 +20,6 @@
     NSString *_migrateFromUsername;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *migrateFromUsername; // @synthesize migrateFromUsername=_migrateFromUsername;
 @property(nonatomic) long long costTime; // @synthesize costTime=_costTime;
 @property(nonatomic) _Bool isCustomLoading; // @synthesize isCustomLoading=_isCustomLoading;

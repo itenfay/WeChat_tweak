@@ -18,7 +18,6 @@
     id <TenpaySecureCtrlDelegate> ctrlDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bFormatBankCard; // @synthesize bFormatBankCard;
 @property(nonatomic) __weak id <TenpaySecureCtrlDelegate> ctrlDelegate; // @synthesize ctrlDelegate;
 @property(nonatomic) struct _NSRange selectedRange;

@@ -13,7 +13,6 @@
     UIColor *_highlightColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(nonatomic) double lineSpace; // @synthesize lineSpace=_lineSpace;
 - (void)setText:(id)arg1 highlightKeyWord:(id)arg2;

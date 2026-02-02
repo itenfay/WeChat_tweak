@@ -15,7 +15,6 @@
     NSString *_interestsDescription;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *interestsDescription; // @synthesize interestsDescription=_interestsDescription;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;

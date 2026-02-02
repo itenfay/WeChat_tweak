@@ -12,7 +12,6 @@
 }
 
 + (id)createWithIcon:(id)arg1 title:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showArrow; // @synthesize showArrow=_showArrow;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 - (id)init;

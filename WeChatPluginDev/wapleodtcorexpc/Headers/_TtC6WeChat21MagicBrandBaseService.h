@@ -11,7 +11,6 @@
     MISSING_TYPE *cardHeightCachedMMKV;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)getAppConfigWithBizName:(id)arg1;
 - (void)destroyBrandServiceBizWithScene:(long long)arg1;

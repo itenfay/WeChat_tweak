@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDate, NSObject;
 @protocol OS_dispatch_queue;
 
@@ -13,7 +15,6 @@
     NSDate *_lastCallTaskDate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastCallTaskDate; // @synthesize lastCallTaskDate=_lastCallTaskDate;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -23,4 +24,3 @@
 - (id)initWithInterval:(double)arg1 onQueue:(id)arg2 taskBlock:(CDUnknownBlockType)arg3;
 
 @end
-

@@ -18,7 +18,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;

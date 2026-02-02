@@ -28,7 +28,6 @@
     NSDictionary *_headers;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSDictionary *headers; // @synthesize headers=_headers;
 @property int maxCacheItems; // @synthesize maxCacheItems=_maxCacheItems;
 @property(retain) NSString *cacheFolderPath; // @synthesize cacheFolderPath=_cacheFolderPath;

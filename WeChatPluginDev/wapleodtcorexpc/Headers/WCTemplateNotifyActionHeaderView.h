@@ -14,7 +14,6 @@
 }
 
 + (id)createWithFrame:(struct CGRect)arg1 iconUrl:(id)arg2 title:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMWebImageView *headerView; // @synthesize headerView=_headerView;
 - (void)layoutSubviews;

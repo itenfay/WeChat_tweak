@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CLLocation, CLLocationManager, NSMutableArray, NSNumber, NSString, NSThread, TencentLBSLocation, TencentLBSLocationReGeocoder, TencentLBSPedometer, TencentLBSTrace, TencentLBSWifiLocation;
 @protocol OS_dispatch_source, TencentLBSLocationManagerDelegate;
@@ -77,7 +78,6 @@
 + (void)upLoadData;
 + (long long)accuracyAuthorization;
 + (void)setTencentCoreLogWtihBlock:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType singleFixContinueBlock; // @synthesize singleFixContinueBlock=_singleFixContinueBlock;
 @property(copy) CDUnknownBlockType bleResultBlock; // @synthesize bleResultBlock=_bleResultBlock;
 @property(copy) CDUnknownBlockType pdrResultCallback; // @synthesize pdrResultCallback=_pdrResultCallback;
@@ -209,4 +209,3 @@
 @property(readonly) Class superclass;
 
 @end
-

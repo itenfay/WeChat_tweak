@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface WCPlayerDownloadMgr
@@ -10,7 +12,6 @@
     NSMutableDictionary *_dicTaskInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicTaskInfo; // @synthesize dicTaskInfo=_dicTaskInfo;
 - (void)onDownloadTaskFinish:(id)arg1;
 - (void)CleanAllDownloadTaskInfoWithTaskIdentifier:(id)arg1;
@@ -31,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

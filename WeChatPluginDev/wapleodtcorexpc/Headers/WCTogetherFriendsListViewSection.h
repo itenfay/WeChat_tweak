@@ -12,7 +12,6 @@
     WCTogetherFriendsListViewItem *_viewItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTogetherFriendsListViewItem *viewItem; // @synthesize viewItem=_viewItem;
 
 @end

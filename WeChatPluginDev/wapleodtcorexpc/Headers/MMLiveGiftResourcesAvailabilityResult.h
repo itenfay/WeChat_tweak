@@ -15,7 +15,6 @@
     NSArray *_resourceDownloadWorkItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *resourceDownloadWorkItems; // @synthesize resourceDownloadWorkItems=_resourceDownloadWorkItems;
 @property(retain, nonatomic) NSArray *availableResources; // @synthesize availableResources=_availableResources;
 @property(retain, nonatomic) NSArray *missingResources; // @synthesize missingResources=_missingResources;

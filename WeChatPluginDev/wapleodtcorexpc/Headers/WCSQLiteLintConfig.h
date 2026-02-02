@@ -11,7 +11,6 @@
 }
 
 + (id)defaultConfiguration;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *ennableCheckers; // @synthesize ennableCheckers=_ennableCheckers;
 
 @end

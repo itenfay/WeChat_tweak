@@ -21,7 +21,6 @@
     AVPlayer *_innerPlayer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPausedBeforeReset; // @synthesize isPausedBeforeReset=_isPausedBeforeReset;
 @property(nonatomic) _Bool isReuse; // @synthesize isReuse=_isReuse;
 @property(nonatomic) _Bool isObserving; // @synthesize isObserving=_isObserving;

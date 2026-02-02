@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class HwClientEncryptFileInfo, ILinkDeviceData, NSMutableArray, NSString;
 @protocol MsgToDeviceDelegate;
@@ -19,7 +20,6 @@
     HwClientEncryptFileInfo *_clienEncryptFileInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) HwClientEncryptFileInfo *clienEncryptFileInfo; // @synthesize clienEncryptFileInfo=_clienEncryptFileInfo;
 @property(retain, nonatomic) NSString *fileKey; // @synthesize fileKey=_fileKey;
 @property(nonatomic) int state; // @synthesize state=_state;
@@ -42,4 +42,3 @@
 - (id)initWithMsg:(id)arg1;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableParagraphStyle;
 
@@ -12,7 +13,6 @@
     NSMutableParagraphStyle *_object;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableParagraphStyle *object; // @synthesize object=_object;
 @property(readonly, copy, nonatomic) CDUnknownBlockType hyphenationFactor;
 @property(readonly, copy, nonatomic) CDUnknownBlockType paragraphSpacingBefore;
@@ -30,4 +30,3 @@
 - (id)initWithObject:(id)arg1;
 
 @end
-

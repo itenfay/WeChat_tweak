@@ -20,7 +20,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardBtnInfo *clickActionInfo; // @synthesize clickActionInfo=_clickActionInfo;
 @property(retain, nonatomic) NSString *clickIconDark; // @synthesize clickIconDark=_clickIconDark;
 @property(retain, nonatomic) NSString *clickIconLight; // @synthesize clickIconLight=_clickIconLight;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, WCTDatabase, WCTTable;
 @protocol MinimizeEventRouteDelegate><MinimizeTransitionInterface;
 
@@ -17,7 +19,6 @@
 
 + (_Bool)__checkRecTaskDataValid:(id)arg1;
 + (id)db_repairConfigPath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicTaskKey2NotifyDelegate; // @synthesize dicTaskKey2NotifyDelegate=_dicTaskKey2NotifyDelegate;
 @property(retain, nonatomic) WCTTable *tablePinedRecordsInfo; // @synthesize tablePinedRecordsInfo=_tablePinedRecordsInfo;
 @property(retain, nonatomic) WCTTable *tableUsedRecordsInfo; // @synthesize tableUsedRecordsInfo=_tableUsedRecordsInfo;
@@ -115,4 +116,3 @@
 @property(readonly) Class superclass;
 
 @end
-

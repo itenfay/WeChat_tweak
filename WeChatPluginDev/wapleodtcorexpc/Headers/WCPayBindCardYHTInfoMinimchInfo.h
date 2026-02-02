@@ -16,7 +16,6 @@
     NSString *_minimch_ext_msg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *minimch_ext_msg; // @synthesize minimch_ext_msg=_minimch_ext_msg;
 @property(nonatomic) unsigned int minimch_system_state; // @synthesize minimch_system_state=_minimch_system_state;
 @property(nonatomic) unsigned int minimch_user_state; // @synthesize minimch_user_state=_minimch_user_state;

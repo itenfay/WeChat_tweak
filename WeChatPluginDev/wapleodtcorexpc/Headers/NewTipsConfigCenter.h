@@ -13,7 +13,6 @@
     NSMutableSet *_xlabNewTipsConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *xlabNewTipsConfig; // @synthesize xlabNewTipsConfig=_xlabNewTipsConfig;
 @property(retain, nonatomic) NSMutableDictionary *dictNewTipsConfig; // @synthesize dictNewTipsConfig=_dictNewTipsConfig;
 - (id)GetPathOfNewTipsConfig;

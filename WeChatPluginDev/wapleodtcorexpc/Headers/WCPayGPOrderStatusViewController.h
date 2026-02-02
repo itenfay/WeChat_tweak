@@ -27,7 +27,6 @@
     struct CGRect _picImgFromRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNoticeItemView *noticeItemView; // @synthesize noticeItemView=_noticeItemView;
 @property(retain) WCActionSheet *m_actionSheet; // @synthesize m_actionSheet=_m_actionSheet;
 @property(nonatomic) _Bool bIsHeaderViewThemeExpand; // @synthesize bIsHeaderViewThemeExpand=_bIsHeaderViewThemeExpand;

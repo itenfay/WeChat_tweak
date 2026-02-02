@@ -13,7 +13,6 @@
     UIColor *_color;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) NSNumber *location; // @synthesize location=_location;
 - (id)initWithLocation:(id)arg1 color:(id)arg2;

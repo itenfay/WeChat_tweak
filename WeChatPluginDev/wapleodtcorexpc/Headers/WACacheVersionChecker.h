@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WACacheVersionCheckerContext, WACacheVersionPreChecker, WAInfoData, WAPackageConfig;
 
@@ -31,7 +32,6 @@
 
 + (void)checkCacheReadyWithAppid:(id)arg1 debugModeType:(unsigned int)arg2 checkerContext:(id)arg3 completeHandler:(CDUnknownBlockType)arg4 progressHandler:(CDUnknownBlockType)arg5;
 + (id)getErrMsgFromErrorCode:(long long)arg1 debugType:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WACacheVersionCheckerContext *checkerContext; // @synthesize checkerContext=_checkerContext;
 @property(nonatomic) unsigned int debugType; // @synthesize debugType=_debugType;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
@@ -65,4 +65,3 @@
 - (id)initWithAppID:(id)arg1 debugType:(unsigned int)arg2;
 
 @end
-

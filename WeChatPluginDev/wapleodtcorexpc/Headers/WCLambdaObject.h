@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCLambdaObject : NSObject
 {
@@ -11,11 +12,9 @@
 }
 
 + (id)createWithLambda:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType lambdaAction; // @synthesize lambdaAction=_lambdaAction;
 - (void)execute;
 - (void)executeWithData:(id)arg1;
 - (id)initWithLambda:(CDUnknownBlockType)arg1;
 
 @end
-

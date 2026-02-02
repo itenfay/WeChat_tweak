@@ -14,7 +14,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) double autoHideDuration; // @synthesize autoHideDuration=_autoHideDuration;
 @property(nonatomic) __weak id <MMNotificationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

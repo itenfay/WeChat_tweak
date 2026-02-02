@@ -23,7 +23,6 @@
 }
 
 + (float)p_getGaussianCDFWithMu:(float)arg1 withStd:(float)arg2 withValue:(float)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMHeavyUserEvaluatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (unsigned long long)p_evaluateHeavyUserPoint;
 - (void)p_reloadData;

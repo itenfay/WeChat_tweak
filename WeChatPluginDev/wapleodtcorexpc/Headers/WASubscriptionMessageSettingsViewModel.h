@@ -15,7 +15,6 @@
     SubscribeMsgResp *_originRes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SubscribeMsgResp *originRes; // @synthesize originRes=_originRes;
 @property(nonatomic) _Bool globalSwitch; // @synthesize globalSwitch=_globalSwitch;
 @property(nonatomic) _Bool dataReady; // @synthesize dataReady=_dataReady;

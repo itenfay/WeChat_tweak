@@ -20,7 +20,6 @@
     NSString *_openid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *openid; // @synthesize openid=_openid;
 @property(copy, nonatomic) NSString *commid; // @synthesize commid=_commid;
 @property(copy, nonatomic) NSString *qq; // @synthesize qq=_qq;

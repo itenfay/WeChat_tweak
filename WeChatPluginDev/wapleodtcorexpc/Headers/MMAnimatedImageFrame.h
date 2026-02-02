@@ -13,7 +13,6 @@
     double _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 

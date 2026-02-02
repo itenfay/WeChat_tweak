@@ -16,7 +16,6 @@
     NSMutableDictionary *_contentIdToTimeOffset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *contentIdToTimeOffset; // @synthesize contentIdToTimeOffset=_contentIdToTimeOffset;
 @property(nonatomic) _Bool needCleanRefresh; // @synthesize needCleanRefresh=_needCleanRefresh;
 @property(nonatomic) _Bool useLink; // @synthesize useLink=_useLink;

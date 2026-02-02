@@ -21,7 +21,6 @@
     WCStatTimerHelper *_playTimeHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStatTimerHelper *playTimeHelper; // @synthesize playTimeHelper=_playTimeHelper;
 @property(nonatomic) unsigned int maxPlayTime; // @synthesize maxPlayTime=_maxPlayTime;
 @property(nonatomic) unsigned long long playedTime; // @synthesize playedTime=_playedTime;

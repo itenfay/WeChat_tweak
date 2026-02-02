@@ -26,7 +26,6 @@
     NSMutableArray *_depth;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *depth; // @synthesize depth=_depth;
 @property(retain, nonatomic) NSString *config; // @synthesize config=_config;
 @property(retain, nonatomic) NSString *action_str; // @synthesize action_str=_action_str;

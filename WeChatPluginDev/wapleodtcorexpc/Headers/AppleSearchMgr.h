@@ -12,7 +12,6 @@
     unsigned int m_patternLockLogicTag;
 }
 
-- (void).cxx_destruct;
 - (void)walletLockVerifySuccess:(id)arg1;
 - (id)getViewController;
 - (void)indexActivities;

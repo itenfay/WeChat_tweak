@@ -10,7 +10,6 @@
     TrueKindaOnePxLineView *_line;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TrueKindaOnePxLineView *line; // @synthesize line=_line;
 - (id)getView;
 

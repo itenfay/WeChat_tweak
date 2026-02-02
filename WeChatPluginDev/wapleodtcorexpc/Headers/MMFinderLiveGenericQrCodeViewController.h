@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveShareLiveQRCodeInfo, ForwardMessageLogicController, MMFinderLiveGenericQrCodeView, MMFinderLiveNoticePosterModel, MMFinderLiveTaskId, MMLiveVerticalTextButtonView, MMScrollActionSheet, MMUIButton, NSString, UIView, WCFinderContact, WCForwardViewController;
 
 @interface MMFinderLiveGenericQrCodeViewController
@@ -26,7 +28,6 @@
     WCForwardViewController *_forwardVc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCForwardViewController *forwardVc; // @synthesize forwardVc=_forwardVc;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogic; // @synthesize forwardLogic=_forwardLogic;
 @property(retain, nonatomic) MMScrollActionSheet *shareActionSheet; // @synthesize shareActionSheet=_shareActionSheet;
@@ -89,4 +90,3 @@
 @property(readonly) Class superclass;
 
 @end
-

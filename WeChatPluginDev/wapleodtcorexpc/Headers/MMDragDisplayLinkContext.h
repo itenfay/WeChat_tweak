@@ -19,7 +19,6 @@
     CAMediaTimingFunction *_timingFunction;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
 @property(nonatomic) double totalDuration; // @synthesize totalDuration=_totalDuration;
 @property(nonatomic) double endAlpha; // @synthesize endAlpha=_endAlpha;

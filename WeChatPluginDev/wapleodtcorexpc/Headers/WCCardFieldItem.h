@@ -35,7 +35,6 @@
 + (void)PBArrayAdd_auxTitle;
 + (void)PBArrayAdd_subTitle;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nonceId; // @synthesize nonceId=_nonceId;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
 @property(retain, nonatomic) NSString *cellCenterIconUrl; // @synthesize cellCenterIconUrl=_cellCenterIconUrl;

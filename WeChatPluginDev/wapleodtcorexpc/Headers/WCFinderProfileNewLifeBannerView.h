@@ -14,7 +14,6 @@
     UIImageView *_arrowImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) MMUILabel *wordingLabel; // @synthesize wordingLabel=_wordingLabel;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;

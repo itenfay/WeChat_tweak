@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ForwardMessageLogicController, NSString, WAWebViewController;
 
@@ -17,7 +18,6 @@
 
 + (void)shareScreenshotWithAssetId:(id)arg1 webVC:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WAWebViewController *webVC; // @synthesize webVC=_webVC;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogicController; // @synthesize forwardLogicController=_forwardLogicController;
@@ -39,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, PAGView, UIImageView, UILabel, WCFinderFeedContentVM, WCFinderFullCollectionToolbarItemButton;
 @protocol WCFinderFeedToolbarActionDelegate;
@@ -43,7 +44,6 @@
     WCFinderFeedContentVM *_contentVM;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(retain, nonatomic) PAGView *likeExplosionView; // @synthesize likeExplosionView=_likeExplosionView;
 @property(nonatomic) unsigned char thumbHeartEduShowing; // @synthesize thumbHeartEduShowing=_thumbHeartEduShowing;
@@ -122,4 +122,3 @@
 @property(readonly) Class superclass;
 
 @end
-

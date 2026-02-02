@@ -10,7 +10,6 @@
     TextStateBrandLogic *_brandLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStateBrandLogic *brandLogic; // @synthesize brandLogic=_brandLogic;
 - (void)onTextStatePublishCancelled;
 - (void)onTextStatePublished;

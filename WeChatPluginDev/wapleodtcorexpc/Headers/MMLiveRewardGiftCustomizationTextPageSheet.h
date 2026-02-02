@@ -28,7 +28,6 @@
     UIButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) UIButton *clearButton; // @synthesize clearButton=_clearButton;
 @property(retain, nonatomic) UILabel *hintLabel; // @synthesize hintLabel=_hintLabel;

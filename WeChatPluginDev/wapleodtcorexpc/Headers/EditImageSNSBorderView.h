@@ -18,7 +18,6 @@
     UIView *_rightShadowLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *rightShadowLine; // @synthesize rightShadowLine=_rightShadowLine;
 @property(retain, nonatomic) UIView *leftShadowLine; // @synthesize leftShadowLine=_leftShadowLine;
 @property(retain, nonatomic) UIView *bottomShadowLine; // @synthesize bottomShadowLine=_bottomShadowLine;

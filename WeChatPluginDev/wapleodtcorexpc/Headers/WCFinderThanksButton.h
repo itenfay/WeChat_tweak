@@ -23,7 +23,6 @@
 + (id)titleTextWithConfig:(id)arg1 thanksState:(_Bool)arg2;
 + (id)thanksIconImageWithConfig:(id)arg1 thankState:(_Bool)arg2;
 + (double)buttonWidthWithConfig:(id)arg1 thankState:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool thankState; // @synthesize thankState=_thankState;
 @property(nonatomic) _Bool buttonBgAnimating; // @synthesize buttonBgAnimating=_buttonBgAnimating;
 @property(nonatomic) _Bool iconPagAnimating; // @synthesize iconPagAnimating=_iconPagAnimating;

@@ -15,7 +15,6 @@
 }
 
 + (_Bool)shouldDispalyWithAchievementInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AchievementInfo *achievementInfo; // @synthesize achievementInfo=_achievementInfo;
 @property(retain, nonatomic) NSMutableArray *authIconViews; // @synthesize authIconViews=_authIconViews;
 @property(nonatomic) _Bool displayCovered; // @synthesize displayCovered=_displayCovered;

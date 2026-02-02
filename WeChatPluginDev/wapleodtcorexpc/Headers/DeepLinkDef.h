@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class DeepLinkBitSet, NSString;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)DeepLinkDefWithName:(id)arg1 Link:(id)arg2 PermissionBitSet:(unsigned long long)arg3 LinkBlock:(CDUnknownBlockType)arg4 Flag:(unsigned int)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int flag; // @synthesize flag;
 @property(retain, nonatomic) DeepLinkBitSet *dlBitset; // @synthesize dlBitset;
 @property(retain, nonatomic) NSString *linkName; // @synthesize linkName;
@@ -29,4 +29,3 @@
 - (id)init;
 
 @end
-

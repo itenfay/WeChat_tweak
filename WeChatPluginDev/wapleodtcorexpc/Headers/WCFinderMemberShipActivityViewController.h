@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UILabel, UITableViewDiffableDataSource, UIView, UIViewController, WCFinderEventDelegate, WCFinderMSPostHeader, WCFinderMemberShipActivityViewModel, WCFinderRefreshTableFooterView, WCFinderReuseQueue, WCFinderTabSwitchView;
 @protocol WCFinderCommentBaseViewProtocol;
 
@@ -20,7 +22,6 @@
     UILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) WCFinderMSPostHeader *postHeaderView; // @synthesize postHeaderView=_postHeaderView;
 @property(retain, nonatomic) UIView *originView; // @synthesize originView=_originView;
@@ -92,4 +93,3 @@
 @property(readonly) Class superclass;
 
 @end
-

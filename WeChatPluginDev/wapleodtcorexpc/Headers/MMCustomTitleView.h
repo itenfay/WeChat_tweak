@@ -13,7 +13,6 @@
     GeneralHStack *_secondStack;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GeneralHStack *secondStack; // @synthesize secondStack=_secondStack;
 @property(retain, nonatomic) GeneralHStack *firstStack; // @synthesize firstStack=_firstStack;
 - (void)setSubTitle:(id)arg1;

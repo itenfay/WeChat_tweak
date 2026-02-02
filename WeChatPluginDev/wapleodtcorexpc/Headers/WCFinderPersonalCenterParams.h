@@ -17,7 +17,6 @@
     NSString *_refObjectid;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int refCommentScene; // @synthesize refCommentScene=_refCommentScene;
 @property(copy, nonatomic) NSString *refObjectid; // @synthesize refObjectid=_refObjectid;
 @property(retain, nonatomic) WCFinderDataItem *fromDataItem; // @synthesize fromDataItem=_fromDataItem;

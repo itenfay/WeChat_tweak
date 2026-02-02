@@ -12,7 +12,6 @@
     MemoryMappedKV *_mmkv;
 }
 
-- (void).cxx_destruct;
 - (void)cleanResourceFilesForResType:(unsigned int)arg1;
 - (void)cleanMMKVFile;
 - (void)cleanAllResourceFiles;

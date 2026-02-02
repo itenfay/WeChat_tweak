@@ -17,7 +17,6 @@
     NSString *_URLString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *URLString; // @synthesize URLString=_URLString;
 @property(retain, nonatomic) WCCgiBlockHelper *cgiBlockHelper; // @synthesize cgiBlockHelper=_cgiBlockHelper;
 @property(retain, nonatomic) MMEasterEggRedEnvelopeCoverActivityInfo *activityInfo; // @synthesize activityInfo=_activityInfo;

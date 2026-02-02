@@ -11,7 +11,6 @@
     NSString *mPathPrefix;
 }
 
-- (void).cxx_destruct;
 - (id)traversePath:(id)arg1;
 - (_Bool)accept:(id)arg1;
 - (_Bool)saveFile:(id)arg1 specifiedPath:(id)arg2 error:(id *)arg3;

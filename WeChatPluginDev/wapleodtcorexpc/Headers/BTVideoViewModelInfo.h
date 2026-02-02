@@ -15,7 +15,6 @@
     NSArray *_exposureItemList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *exposureItemList; // @synthesize exposureItemList=_exposureItemList;
 @property(retain, nonatomic) id <BTItemCellViewModelVideoPlayProtocol> curFocusItemCellViewModelVideoPlay; // @synthesize curFocusItemCellViewModelVideoPlay=_curFocusItemCellViewModelVideoPlay;
 @property(nonatomic) _Bool isWifiOrDawang; // @synthesize isWifiOrDawang=_isWifiOrDawang;

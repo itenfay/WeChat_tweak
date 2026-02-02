@@ -11,7 +11,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
 
 @end

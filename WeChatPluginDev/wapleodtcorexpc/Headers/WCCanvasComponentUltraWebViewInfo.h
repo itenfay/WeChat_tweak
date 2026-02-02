@@ -13,7 +13,6 @@
     double _webViewHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideWebViewProgress; // @synthesize hideWebViewProgress=_hideWebViewProgress;
 @property(nonatomic) double webViewHeight; // @synthesize webViewHeight=_webViewHeight;
 @property(nonatomic) double webViewWidth; // @synthesize webViewWidth=_webViewWidth;

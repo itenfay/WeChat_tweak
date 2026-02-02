@@ -13,7 +13,6 @@
     WCPayNewBindCardFavorInfo *_wcpay_new_bind_card_info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNewBindCardFavorInfo *wcpay_new_bind_card_info; // @synthesize wcpay_new_bind_card_info=_wcpay_new_bind_card_info;
 @property(retain, nonatomic) NSArray *bind_serial_favor_info_list; // @synthesize bind_serial_favor_info_list=_bind_serial_favor_info_list;
 

@@ -13,7 +13,6 @@
     GameJumpInfo *_contentPicJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameJumpInfo *contentPicJumpInfo; // @synthesize contentPicJumpInfo=_contentPicJumpInfo;
 @property(retain, nonatomic) NSString *contentPicUrl; // @synthesize contentPicUrl=_contentPicUrl;
 

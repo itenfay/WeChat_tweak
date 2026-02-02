@@ -40,7 +40,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sessionType; // @synthesize sessionType=_sessionType;
 @property(nonatomic) unsigned long long disabledAppPanelIdFlag; // @synthesize disabledAppPanelIdFlag=_disabledAppPanelIdFlag;
 @property(nonatomic) unsigned long long disabledStaticPanelIdFlag; // @synthesize disabledStaticPanelIdFlag=_disabledStaticPanelIdFlag;

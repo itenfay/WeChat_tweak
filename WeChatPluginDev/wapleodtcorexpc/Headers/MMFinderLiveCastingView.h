@@ -18,7 +18,6 @@
     MMUILabel *_deviceLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *deviceLabel; // @synthesize deviceLabel=_deviceLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;

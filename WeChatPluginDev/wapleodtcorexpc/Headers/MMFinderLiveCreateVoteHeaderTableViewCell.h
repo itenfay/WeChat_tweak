@@ -25,7 +25,6 @@
 + (double)cellHeightWithQuestionText:(id)arg1 maxWidth:(double)arg2;
 + (id)reuseId;
 + (id)TEXTVIEW_FONT;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *durationArrowImageView; // @synthesize durationArrowImageView=_durationArrowImageView;
 @property(retain, nonatomic) UILabel *durationDescLabel; // @synthesize durationDescLabel=_durationDescLabel;
 @property(retain, nonatomic) UILabel *durationTitleLabel; // @synthesize durationTitleLabel=_durationTitleLabel;

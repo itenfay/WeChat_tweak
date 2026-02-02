@@ -16,7 +16,6 @@
     POITapGestureRecognizer *_recognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) POITapGestureRecognizer *recognizer; // @synthesize recognizer=_recognizer;
 @property(retain, nonatomic) UIButton *selectedButt; // @synthesize selectedButt=_selectedButt;
 @property(retain, nonatomic) UIView *mySelectedBackgroundView; // @synthesize mySelectedBackgroundView=_mySelectedBackgroundView;

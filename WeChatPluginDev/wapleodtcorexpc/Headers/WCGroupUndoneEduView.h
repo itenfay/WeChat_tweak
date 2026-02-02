@@ -23,7 +23,6 @@
     MMPageSheetAdapter *_adapter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMPageSheetAdapter *adapter; // @synthesize adapter=_adapter;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

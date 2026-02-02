@@ -14,7 +14,6 @@
     UIButton *_expressionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *expressionButton; // @synthesize expressionButton=_expressionButton;
 @property(nonatomic) __weak id <WCCommonInputViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setInputMode:(unsigned long long)arg1;

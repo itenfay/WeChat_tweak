@@ -15,7 +15,6 @@
     MMUIButton *_syncChatCheckbox;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showSyncChat; // @synthesize showSyncChat=_showSyncChat;
 @property(retain, nonatomic) MMUIButton *syncChatCheckbox; // @synthesize syncChatCheckbox=_syncChatCheckbox;
 @property(retain, nonatomic) KidsWatchButton *loginButton; // @synthesize loginButton=_loginButton;

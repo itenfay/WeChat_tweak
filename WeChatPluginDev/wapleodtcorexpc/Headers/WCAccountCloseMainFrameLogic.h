@@ -13,7 +13,6 @@
     id <WCAccountCloseMainFrameLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAccountCloseMainFrameLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)endCloseMainFrame;
 - (void)startLogic:(unsigned int)arg1 lastAutoAuthTime:(unsigned long long)arg2;

@@ -15,7 +15,6 @@
     NSArray *_m_arrMemberList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_arrMemberList; // @synthesize m_arrMemberList=_m_arrMemberList;
 @property(retain, nonatomic) CContact *m_chatRoomContact; // @synthesize m_chatRoomContact=_m_chatRoomContact;
 @property(nonatomic) __weak id <ChatRoomAdminMgrLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

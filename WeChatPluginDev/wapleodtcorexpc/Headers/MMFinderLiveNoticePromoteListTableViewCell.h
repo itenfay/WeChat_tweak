@@ -28,7 +28,6 @@
 + (id)getReserveString:(id)arg1;
 + (double)exactHeightForLiveNotice:(id)arg1;
 + (double)estimatedHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool added; // @synthesize added=_added;
 @property(retain, nonatomic) ZZLabelChainModel *couponsStateModel; // @synthesize couponsStateModel=_couponsStateModel;
 @property(retain, nonatomic) MMPaddingView *couponsTitleLabel; // @synthesize couponsTitleLabel=_couponsTitleLabel;

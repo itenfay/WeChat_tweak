@@ -16,7 +16,6 @@
 }
 
 + (id)layoutWithFoldLayout:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalCount; // @synthesize totalCount=_totalCount;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) NSMutableArray *dataItems; // @synthesize dataItems=_dataItems;

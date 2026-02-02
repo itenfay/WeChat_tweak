@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 @protocol TXIVideoDecoderSupervisorInterface;
 
@@ -12,7 +14,6 @@
 }
 
 + (_Bool)isSupported;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TXIVideoDecoderSupervisorInterface> supervisor; // @synthesize supervisor;
 - (void)resetDecoderOnComplete:(CDUnknownBlockType)arg1;
 - (id)initWithQueue:(id)arg1 config:(id)arg2;
@@ -27,4 +28,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -22,7 +22,6 @@
     long long _m_startRecordTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_startRecordTime; // @synthesize m_startRecordTime=_m_startRecordTime;
 @property(nonatomic) _Bool m_hasStart; // @synthesize m_hasStart=_m_hasStart;
 @property(retain, nonatomic) MMContext *m_context; // @synthesize m_context=_m_context;

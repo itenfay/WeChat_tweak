@@ -44,7 +44,6 @@
     FTSMsgSearchResultHandler *_searchResultHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSMsgSearchResultHandler *searchResultHandler; // @synthesize searchResultHandler=_searchResultHandler;
 @property(nonatomic) _Bool isFirstSearch; // @synthesize isFirstSearch=_isFirstSearch;
 @property(retain, nonatomic) SearchMatchTip *restrictTalkerMatchTip; // @synthesize restrictTalkerMatchTip=_restrictTalkerMatchTip;

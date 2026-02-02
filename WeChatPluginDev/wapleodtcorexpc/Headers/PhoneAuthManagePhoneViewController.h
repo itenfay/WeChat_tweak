@@ -21,7 +21,6 @@
     PhoneAuthManagePhoneLogic *_logic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PhoneAuthManagePhoneLogic *logic; // @synthesize logic=_logic;
 @property(nonatomic) _Bool editMode; // @synthesize editMode=_editMode;
 @property(copy, nonatomic) NSString *compliantString; // @synthesize compliantString=_compliantString;

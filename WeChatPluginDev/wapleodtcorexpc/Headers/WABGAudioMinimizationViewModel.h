@@ -16,7 +16,6 @@
     MiniAudioTaskContentView *_taskContentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MiniAudioTaskContentView *taskContentView; // @synthesize taskContentView=_taskContentView;
 @property(nonatomic) _Bool isReadyToShow; // @synthesize isReadyToShow=_isReadyToShow;
 @property(nonatomic) __weak id <WABGAudioMinimizationViewModelDelegate> delegate; // @synthesize delegate=_delegate;

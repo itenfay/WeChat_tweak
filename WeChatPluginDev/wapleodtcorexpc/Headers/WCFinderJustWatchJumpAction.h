@@ -13,7 +13,6 @@
     WCFinderJustWatchContoller *_watchCtrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isIgnore; // @synthesize isIgnore=_isIgnore;
 @property(retain, nonatomic) WCFinderJustWatchContoller *watchCtrl; // @synthesize watchCtrl=_watchCtrl;
 - (void)complete;

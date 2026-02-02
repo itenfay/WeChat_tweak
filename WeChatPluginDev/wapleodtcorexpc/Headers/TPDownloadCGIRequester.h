@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSOperationQueue, NSRecursiveLock, NSString, NSURLSession;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source;
@@ -23,7 +24,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cgiRequestQueue; // @synthesize cgiRequestQueue=_cgiRequestQueue;
@@ -52,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

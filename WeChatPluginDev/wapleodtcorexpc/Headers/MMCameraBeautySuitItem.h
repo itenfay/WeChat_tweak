@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -18,11 +19,9 @@
 + (id)mediumItem;
 + (id)lowItem;
 + (id)offItem;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType beautyDescriptorFactory; // @synthesize beautyDescriptorFactory=_beautyDescriptorFactory;
 @property(retain, nonatomic) NSString *cameraSceneTitle; // @synthesize cameraSceneTitle=_cameraSceneTitle;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 - (id)genOMJBeautyDesc;
 
 @end
-

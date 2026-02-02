@@ -30,7 +30,6 @@
     struct UIEdgeInsets _insets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showConfirm; // @synthesize showConfirm=_showConfirm;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) UIButton *extraButton; // @synthesize extraButton=_extraButton;

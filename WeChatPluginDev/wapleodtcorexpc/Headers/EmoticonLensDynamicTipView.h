@@ -17,7 +17,6 @@
 }
 
 + (double)getHeight;
-- (void).cxx_destruct;
 @property(nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) NSArray *actionTypes; // @synthesize actionTypes=_actionTypes;
 @property(retain, nonatomic) MMTimer *startTimer; // @synthesize startTimer=_startTimer;

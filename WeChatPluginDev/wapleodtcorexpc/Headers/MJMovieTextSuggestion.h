@@ -15,7 +15,6 @@
 
 + (id)suggestionsWithRecommendTitleInfos:(id)arg1;
 + (id)suggestionWithRecommendTitleInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *viewerNumber; // @synthesize viewerNumber=_viewerNumber;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)description;

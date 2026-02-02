@@ -16,7 +16,6 @@
     WWKMessageAttachment *_attachment;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WWKMessageAttachment *attachment; // @synthesize attachment=_attachment;
 @property(copy, nonatomic) NSData *avatarData; // @synthesize avatarData=_avatarData;
 @property(copy, nonatomic) NSString *avatarUrl; // @synthesize avatarUrl=_avatarUrl;

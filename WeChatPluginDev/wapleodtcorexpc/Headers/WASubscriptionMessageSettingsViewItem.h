@@ -15,7 +15,6 @@
     SubscribeMsgItem *_originMsgItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SubscribeMsgItem *originMsgItem; // @synthesize originMsgItem=_originMsgItem;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) NSArray *detailItems; // @synthesize detailItems=_detailItems;

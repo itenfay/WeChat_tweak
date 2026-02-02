@@ -19,7 +19,6 @@
     struct CGPoint _targetContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderNoMoreView *tipsView; // @synthesize tipsView=_tipsView;
 @property(retain, nonatomic) NSIndexPath *serviceAuthBlockedIndexPath; // @synthesize serviceAuthBlockedIndexPath=_serviceAuthBlockedIndexPath;
 @property(nonatomic) __weak MMUIViewController<WCFinderFeedBaseViewControllerProtocol> *currentViewController; // @synthesize currentViewController=_currentViewController;

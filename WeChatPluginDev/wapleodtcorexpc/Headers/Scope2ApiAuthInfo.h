@@ -14,7 +14,6 @@
     NSMutableArray *_apiList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *apiList; // @synthesize apiList=_apiList;
 @property(retain, nonatomic) NSString *scopeDesc; // @synthesize scopeDesc=_scopeDesc;
 @property(nonatomic) unsigned int scopeStatus; // @synthesize scopeStatus=_scopeStatus;

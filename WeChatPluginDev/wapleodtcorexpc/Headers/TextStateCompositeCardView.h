@@ -21,7 +21,6 @@
     ColorGradientView *_bottomGradientView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ColorGradientView *bottomGradientView; // @synthesize bottomGradientView=_bottomGradientView;
 @property(retain, nonatomic) ColorGradientView *topGradientView; // @synthesize topGradientView=_topGradientView;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;

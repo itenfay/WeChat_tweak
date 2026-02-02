@@ -15,7 +15,6 @@
     NSData *_imageData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(retain, nonatomic) MMDynamicColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) KindaImage *m_defaultImage; // @synthesize m_defaultImage=_m_defaultImage;

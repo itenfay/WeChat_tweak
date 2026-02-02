@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveQuestActivity, MMTimer, NSMutableArray, NSString, UICollectionView;
 
@@ -21,7 +22,6 @@
 
 + (void)reportForActiviyClick:(id)arg1;
 + (void)reportForActiviyExpose:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) _Bool isAutoScrollInterrupt; // @synthesize isAutoScrollInterrupt=_isAutoScrollInterrupt;
 @property(retain, nonatomic) FinderLiveQuestActivity *lastVisibleActiviy; // @synthesize lastVisibleActiviy=_lastVisibleActiviy;
@@ -60,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

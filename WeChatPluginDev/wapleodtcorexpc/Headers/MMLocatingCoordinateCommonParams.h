@@ -16,7 +16,6 @@
     id _requestObj;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) id requestObj; // @synthesize requestObj=_requestObj;
 @property(retain, nonatomic) QIndoorInfo *indoorInfo; // @synthesize indoorInfo=_indoorInfo;
 @property(nonatomic) long long type; // @synthesize type=_type;

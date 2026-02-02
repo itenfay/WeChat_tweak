@@ -16,7 +16,6 @@
     struct AudioChannels3aProcessorInterface *_backingDenoiser;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct AudioChannels3aProcessorInterface *backingDenoiser; // @synthesize backingDenoiser=_backingDenoiser;
 @property(retain, nonatomic) NSString *processingIdentifier; // @synthesize processingIdentifier=_processingIdentifier;
 @property(readonly, nonatomic) NSData *lastRemainingData; // @synthesize lastRemainingData=_lastRemainingData;

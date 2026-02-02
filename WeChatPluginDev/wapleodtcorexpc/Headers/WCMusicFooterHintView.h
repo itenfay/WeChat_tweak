@@ -14,7 +14,6 @@
     WCMusicFooterNoMoreView *_noMoreView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMusicFooterNoMoreView *noMoreView; // @synthesize noMoreView=_noMoreView;
 @property(retain, nonatomic) WCMusicLoadingHintView *loadingView; // @synthesize loadingView=_loadingView;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;

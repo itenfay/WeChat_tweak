@@ -13,7 +13,6 @@
     UIImageView *_headingImageView;
 }
 
-- (void).cxx_destruct;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)setHeading:(double)arg1;
 - (void)bringToFront;

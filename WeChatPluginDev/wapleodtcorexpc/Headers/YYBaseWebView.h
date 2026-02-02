@@ -4,6 +4,7 @@
 //
 
 #import <WebKit/WKWebView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, NSURLRequest, UIScrollView, YYWKWebViewScriptMessageHandler, YYWKWebViewScriptMessageReplyHandler;
 @protocol YYWebViewDelegate;
@@ -24,7 +25,6 @@
 }
 
 + (id)processPool;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needReportLocalStorageRecovery; // @synthesize needReportLocalStorageRecovery=_needReportLocalStorageRecovery;
 @property(nonatomic) _Bool didCheckLocalStorageAlive; // @synthesize didCheckLocalStorageAlive=_didCheckLocalStorageAlive;
 @property(nonatomic) _Bool hasCheckLocalStorageAlive; // @synthesize hasCheckLocalStorageAlive=_hasCheckLocalStorageAlive;
@@ -89,4 +89,3 @@
 @property(readonly) Class superclass;
 
 @end
-

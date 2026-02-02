@@ -10,7 +10,6 @@
     CMessageWrap *m_oMessageWrap;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isStreamingPlayMode;
 - (id)getFormalVideoPath;
 - (void)genThumbIfNeed;

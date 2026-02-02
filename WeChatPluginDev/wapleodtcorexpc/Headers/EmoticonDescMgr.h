@@ -15,7 +15,6 @@
     NSMutableSet *_requestingPids;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *requestingPids; // @synthesize requestingPids=_requestingPids;
 @property(retain, nonatomic) EmoticonDescRecommandLogic *descRecommandLogic; // @synthesize descRecommandLogic=_descRecommandLogic;
 @property(retain, nonatomic) NSMutableDictionary *m_emoticonPackageDescCount; // @synthesize m_emoticonPackageDescCount=_m_emoticonPackageDescCount;

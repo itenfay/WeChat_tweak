@@ -18,7 +18,6 @@
 + (void)preHeatSearchH5WithForceDarkMode:(_Bool)arg1;
 + (void)removeCache;
 + (id)getPreloadInstanceWith:(id)arg1 webviewOwner:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WSResultViewLogic *resultViewLogic; // @synthesize resultViewLogic=_resultViewLogic;
 @property(retain, nonatomic) WSJSEventHandler *deprecatedSearchEventHandler; // @synthesize deprecatedSearchEventHandler=_deprecatedSearchEventHandler;
 @property(retain, nonatomic) WSLocalTemplateConfig *config; // @synthesize config=_config;

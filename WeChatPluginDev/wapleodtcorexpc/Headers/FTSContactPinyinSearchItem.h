@@ -25,7 +25,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reservedText; // @synthesize reservedText=_reservedText;
 @property(retain, nonatomic) NSString *pinyinContent; // @synthesize pinyinContent=_pinyinContent;
 

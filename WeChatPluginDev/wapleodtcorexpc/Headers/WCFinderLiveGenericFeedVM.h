@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, WCFinderFeedContentVM, WCFinderLiveStreamElementModel;
 @protocol WCFinderLiveFeedGenericPageContextBase, WCFinderLiveGenericFeedVMDelegate;
@@ -22,7 +23,6 @@
 
 + (id)getUrlHashForKey:(id)arg1;
 + (Class)concreteFeedVMClassWithModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *mainColor; // @synthesize mainColor=_mainColor;
 @property(nonatomic) _Bool isSkeleton; // @synthesize isSkeleton=_isSkeleton;
 @property(retain, nonatomic) id <WCFinderLiveFeedGenericPageContextBase> ctx; // @synthesize ctx=_ctx;
@@ -52,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

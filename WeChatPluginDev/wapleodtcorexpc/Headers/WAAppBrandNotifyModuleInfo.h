@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_dicModuleState;
 + (void)PBArrayAdd_enteranceModule;
 + (void)PBArrayAdd_arrModuleList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *chatToolList; // @synthesize chatToolList=_chatToolList;
 @property(retain, nonatomic) NSMutableDictionary *dicModuleState; // @synthesize dicModuleState=_dicModuleState;
 @property(retain, nonatomic) NSString *enteranceModule; // @synthesize enteranceModule=_enteranceModule;

@@ -17,7 +17,6 @@
 }
 
 + (id)fromServerObj:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BSBusinessProductItem *productItem; // @synthesize productItem=_productItem;
 @property(retain, nonatomic) BSBusinessCommonItem *commonItem; // @synthesize commonItem=_commonItem;
 @property(retain, nonatomic) BSBusinessContactItem *contactItem; // @synthesize contactItem=_contactItem;

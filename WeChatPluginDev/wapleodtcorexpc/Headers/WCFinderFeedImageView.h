@@ -19,7 +19,6 @@
     UILabel *_retryLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *retryLabel; // @synthesize retryLabel=_retryLabel;
 @property(retain, nonatomic) UIImageView *retryImageView; // @synthesize retryImageView=_retryImageView;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;

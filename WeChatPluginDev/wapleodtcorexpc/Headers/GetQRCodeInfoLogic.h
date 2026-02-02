@@ -13,7 +13,6 @@
     id <GetQRCodeInfoLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <GetQRCodeInfoLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) float cgiTimeout; // @synthesize cgiTimeout=_cgiTimeout;
 - (void)dealloc;

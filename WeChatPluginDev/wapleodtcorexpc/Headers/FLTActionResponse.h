@@ -18,7 +18,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithCmdId:(id)arg1 errCode:(long long)arg2 errMsg:(id)arg3 proto:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FLTPlatformProto *proto; // @synthesize proto=_proto;
 @property(copy, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(nonatomic) long long errCode; // @synthesize errCode=_errCode;

@@ -13,7 +13,6 @@
 
 + (_Bool)prepositionEnabled;
 + (_Bool)uiEnabled;
-- (void).cxx_destruct;
 - (id)init;
 - (id)objectForIndexPath:(id)arg1;
 - (void)onExposeItem:(id)arg1 indexPath:(id)arg2;

@@ -18,7 +18,6 @@
     MMUILabel *_buttonLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *buttonLabel; // @synthesize buttonLabel=_buttonLabel;
 @property(retain, nonatomic) MMWebImageView *rightIconImageView; // @synthesize rightIconImageView=_rightIconImageView;
 @property(retain, nonatomic) MMWebImageView *leftIconImageView; // @synthesize leftIconImageView=_leftIconImageView;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class SnsTopListResponse;
 
 @interface WCHomepageStarCGI
@@ -13,7 +15,6 @@
     SnsTopListResponse *_responseToProcess;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SnsTopListResponse *responseToProcess; // @synthesize responseToProcess=_responseToProcess;
 @property(nonatomic) unsigned long long currentContinueReqCount; // @synthesize currentContinueReqCount=_currentContinueReqCount;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
@@ -26,4 +27,3 @@
 - (id)init;
 
 @end
-

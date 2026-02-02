@@ -12,7 +12,6 @@
     id <GameLifeConversationCellDelegate> _gameLifeDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <GameLifeConversationCellDelegate> gameLifeDelegate; // @synthesize gameLifeDelegate=_gameLifeDelegate;
 @property(retain, nonatomic) GameLifeConversationCellViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void)handlePan:(id)arg1;

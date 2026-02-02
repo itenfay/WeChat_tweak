@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_lastAlbumId;
 + (void)PBArrayAdd_assets;
 + (void)PBArrayAdd_albums;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastAlbumId; // @synthesize lastAlbumId=_lastAlbumId;
 @property(retain, nonatomic) NSMutableArray *assetKeys; // @synthesize assetKeys=_assetKeys;
 @property(retain, nonatomic) NSMutableDictionary *assets; // @synthesize assets=_assets;

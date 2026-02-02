@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -23,7 +24,6 @@
     NSString *_educationDescEveryTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int educationReportExtPosition; // @synthesize educationReportExtPosition=_educationReportExtPosition;
 @property(nonatomic) unsigned int educationReportExtType; // @synthesize educationReportExtType=_educationReportExtType;
 @property(retain, nonatomic) NSString *educationDescEveryTime; // @synthesize educationDescEveryTime=_educationDescEveryTime;
@@ -39,4 +39,3 @@
 - (id)initWithScene:(unsigned int)arg1;
 
 @end
-

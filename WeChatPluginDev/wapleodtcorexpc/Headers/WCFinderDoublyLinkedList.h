@@ -14,7 +14,6 @@
     NSMutableDictionary *_nodeDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *nodeDict; // @synthesize nodeDict=_nodeDict;
 @property(retain, nonatomic) WCFinderDoublyLinkedNode *tailNode; // @synthesize tailNode=_tailNode;
 @property(retain, nonatomic) WCFinderDoublyLinkedNode *headNode; // @synthesize headNode=_headNode;

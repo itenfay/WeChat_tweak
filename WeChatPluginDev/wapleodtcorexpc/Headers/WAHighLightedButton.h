@@ -10,7 +10,6 @@
     UIColor *_hightlightedColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *hightlightedColor; // @synthesize hightlightedColor=_hightlightedColor;
 - (void)setHighlighted:(_Bool)arg1;
 

@@ -22,7 +22,6 @@
 }
 
 + (id)reportModelWithAppId:(id)arg1 reportStage:(int)arg2 reportResult:(int)arg3 errorInfoDict:(id)arg4 externInfoDict:(id)arg5 needReport:(_Bool)arg6;
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameLaunchReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property(nonatomic) _Bool isLaunchApp; // @synthesize isLaunchApp=_isLaunchApp;
 @property(retain, nonatomic) NSString *appStoreUrl; // @synthesize appStoreUrl=_appStoreUrl;

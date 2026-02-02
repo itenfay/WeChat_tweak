@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_cache;
 + (void)PBArrayAdd_items;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProfileOverviewCacheItem *cache; // @synthesize cache=_cache;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 - (id)getPBPropertyTable;

@@ -22,7 +22,6 @@
     NSString *_saltVal;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *saltVal; // @synthesize saltVal=_saltVal;
 @property(nonatomic) __weak id <TenpayPasswordCtrlDelegate> ctrlDelegate; // @synthesize ctrlDelegate;
 - (int)getLastError;

@@ -15,7 +15,6 @@
     NSString *_headImgUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *headImgUrl; // @synthesize headImgUrl=_headImgUrl;
 @property(retain, nonatomic) WCFinderLiveHomePageFeedEntertainmentAudioRoomTalkingState *talkingStatus; // @synthesize talkingStatus=_talkingStatus;
 @property(retain, nonatomic) MMFinderLiveAudioRoomBackgroundImageInfo *bgImageInfo; // @synthesize bgImageInfo=_bgImageInfo;

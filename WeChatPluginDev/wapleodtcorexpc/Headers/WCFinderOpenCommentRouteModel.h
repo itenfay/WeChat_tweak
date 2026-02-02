@@ -32,7 +32,6 @@
     unsigned long long _viewerScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long viewerScene; // @synthesize viewerScene=_viewerScene;
 @property(copy, nonatomic) NSString *providerFinderUsername; // @synthesize providerFinderUsername=_providerFinderUsername;
 @property(nonatomic) __weak id <WCFinderPostMgrDelegate> postDelegate; // @synthesize postDelegate=_postDelegate;

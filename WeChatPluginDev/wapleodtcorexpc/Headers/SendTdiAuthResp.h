@@ -12,7 +12,6 @@
     NSData *_tdiAuthParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *tdiAuthParams; // @synthesize tdiAuthParams=_tdiAuthParams;
 @property(retain, nonatomic) NSData *tdiAuthBuffer; // @synthesize tdiAuthBuffer=_tdiAuthBuffer;
 @property(copy, nonatomic) NSString *tdiExtInfo; // @synthesize tdiExtInfo=_tdiExtInfo;

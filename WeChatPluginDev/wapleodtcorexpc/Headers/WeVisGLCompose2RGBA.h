@@ -13,7 +13,6 @@
     _Bool _isInitialized;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInitialized; // @synthesize isInitialized=_isInitialized;
 - (void)composeElements:(id)arg1 transpose:(_Bool)arg2 rotation:(int)arg3;
 - (void)setOutputWidth:(int)arg1 outputHeight:(int)arg2;

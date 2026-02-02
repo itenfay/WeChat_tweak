@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, WCFinderFeedArray, WCFinderProfileLiveDataFetcher, WCFinderStreamLoadingState;
 @protocol WCFinderProfileLivePlaybackViewModelDelegate, WCFinderProfileLivePlaybackViewModelShowTabDelegate;
 
@@ -23,7 +25,6 @@
 + (_Bool)allowLimitMode;
 + (_Bool)shouldDisplay:(id)arg1;
 + (int)tabId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFetchingData; // @synthesize isFetchingData=_isFetchingData;
 @property(retain, nonatomic) WCFinderProfileLiveDataFetcher *dataFetcher; // @synthesize dataFetcher=_dataFetcher;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
@@ -67,4 +68,3 @@
 @property(readonly) Class superclass;
 
 @end
-

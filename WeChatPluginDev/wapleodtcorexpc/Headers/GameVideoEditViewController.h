@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditVideoLogicItem, MMAsset, NSDictionary, NSNumber, NSString, UIImage, WAAppActionSheet;
 @protocol GameVideoEditViewControllerDelegate;
 
@@ -30,7 +32,6 @@
 + (id)createWithCallback:(id)arg1 options:(id)arg2 callback:(CDUnknownBlockType)arg3;
 + (id)createWithAsset:(id)arg1 andDelegate:(id)arg2;
 + (id)createWithVideoPath:(id)arg1 andDelegate:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *compositionProps; // @synthesize compositionProps=_compositionProps;
 @property(nonatomic) unsigned long long compostionStartTime; // @synthesize compostionStartTime=_compostionStartTime;
 @property(retain, nonatomic) EditVideoLogicItem *editVideoLogicItem; // @synthesize editVideoLogicItem=_editVideoLogicItem;
@@ -104,4 +105,3 @@
 @property(readonly) Class superclass;
 
 @end
-

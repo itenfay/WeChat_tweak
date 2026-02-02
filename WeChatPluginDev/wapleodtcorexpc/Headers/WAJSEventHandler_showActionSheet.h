@@ -10,7 +10,6 @@
     WAWebActionSheet *_actionSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAWebActionSheet *actionSheet; // @synthesize actionSheet=_actionSheet;
 - (void)onSelected:(long long)arg1;
 - (void)onCancel;

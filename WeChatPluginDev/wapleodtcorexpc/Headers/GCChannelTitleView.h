@@ -17,7 +17,6 @@
     id <GCChannelTitleDelegate> _channelTitleDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <GCChannelTitleDelegate> channelTitleDelegate; // @synthesize channelTitleDelegate=_channelTitleDelegate;
 @property(nonatomic) unsigned long long selectIndex; // @synthesize selectIndex=_selectIndex;
 @property(retain, nonatomic) NSMutableArray *titleArray; // @synthesize titleArray=_titleArray;

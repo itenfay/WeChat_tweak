@@ -20,7 +20,6 @@
 }
 
 + (id)showWithTaskId:(id)arg1 dataItem:(id)arg2 delegate:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *qqMusicTipsLabel; // @synthesize qqMusicTipsLabel=_qqMusicTipsLabel;
 @property(retain, nonatomic) MMUIImageView *qqMusicTipsArrowIcon; // @synthesize qqMusicTipsArrowIcon=_qqMusicTipsArrowIcon;
 @property(retain, nonatomic) MMUIImageView *qqMusicTipsLogoIcon; // @synthesize qqMusicTipsLogoIcon=_qqMusicTipsLogoIcon;

@@ -18,7 +18,6 @@
     NSString *_controlCenterDisplayTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *controlCenterDisplayTitle; // @synthesize controlCenterDisplayTitle=_controlCenterDisplayTitle;
 @property(retain, nonatomic) MMWebImageView *fullCoverView; // @synthesize fullCoverView=_fullCoverView;
 @property(retain, nonatomic) MinimizeAudioTaskExtendCoverView *coverView; // @synthesize coverView=_coverView;

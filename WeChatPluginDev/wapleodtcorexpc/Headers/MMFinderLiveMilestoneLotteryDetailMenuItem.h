@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveMilestoneLotteryMetaInfo_MetaInfo, NSString;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _selectCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType selectCallback; // @synthesize selectCallback=_selectCallback;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
@@ -26,4 +26,3 @@
 @property(retain, nonatomic) FinderLiveMilestoneLotteryMetaInfo_MetaInfo *metaInfo; // @synthesize metaInfo=_metaInfo;
 
 @end
-

@@ -17,7 +17,6 @@
 }
 
 + (double)viewH;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCameraEffectPanelViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) CAGradientLayer *maskLayer; // @synthesize maskLayer=_maskLayer;

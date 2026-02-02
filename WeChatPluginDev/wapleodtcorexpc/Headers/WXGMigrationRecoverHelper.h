@@ -18,7 +18,6 @@
     unsigned long long _totalBackupMediaSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalBackupMediaSize; // @synthesize totalBackupMediaSize=_totalBackupMediaSize;
 @property(nonatomic) unsigned long long totalBackupTextSize; // @synthesize totalBackupTextSize=_totalBackupTextSize;
 @property(retain, nonatomic) WXGMigrationMsgItemDB *msgItemDB; // @synthesize msgItemDB=_msgItemDB;

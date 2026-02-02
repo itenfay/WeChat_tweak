@@ -13,7 +13,6 @@
     QArcOverlayAnimation *_animation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enable3D; // @synthesize enable3D=_enable3D;
 @property(retain, nonatomic) QArcOverlayAnimation *animation; // @synthesize animation=_animation;
 @property(retain, nonatomic) QArcStyle *style; // @synthesize style=_style;

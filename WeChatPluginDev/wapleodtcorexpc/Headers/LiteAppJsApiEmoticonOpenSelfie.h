@@ -10,7 +10,6 @@
     EmoticonCustomAddLogicController *_emoticonAddLogicController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonCustomAddLogicController *emoticonAddLogicController; // @synthesize emoticonAddLogicController=_emoticonAddLogicController;
 - (void)onAddEmoticonDetectIfDismissViewController:(id)arg1;
 - (void)onAddEmoticonFinishedWithWrap:(id)arg1 isSucceeded:(_Bool)arg2;

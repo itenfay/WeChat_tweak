@@ -22,7 +22,6 @@
 }
 
 + (void)buildSongBasicInfo:(id)arg1 withBasicInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) int hasAdded; // @synthesize hasAdded=_hasAdded;
 @property(nonatomic) int hasSongFileid; // @synthesize hasSongFileid=_hasSongFileid;
 @property(nonatomic) int hasNote; // @synthesize hasNote=_hasNote;

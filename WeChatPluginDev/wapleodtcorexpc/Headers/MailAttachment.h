@@ -15,7 +15,6 @@
     unsigned long long m_uiSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_uiSize; // @synthesize m_uiSize;
 @property(retain, nonatomic) NSString *m_nsName; // @synthesize m_nsName;
 @property(retain, nonatomic) NSString *m_nsDataID; // @synthesize m_nsDataID;

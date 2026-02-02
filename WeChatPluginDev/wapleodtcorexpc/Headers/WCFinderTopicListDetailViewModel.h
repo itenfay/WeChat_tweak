@@ -37,7 +37,6 @@
 
 + (unsigned long long)getReportMusicTypeWithBgmInfo:(id)arg1 topicType:(int)arg2;
 + (id)initWithTopicType:(int)arg1 lastBuffer:(id)arg2 latestRequestID:(id)arg3 queryText:(id)arg4 queryContinueFlag:(_Bool)arg5 dataSources:(id)arg6 latitude:(id)arg7 longitude:(id)arg8 refObjectid:(id)arg9 tabType:(int)arg10 innerTabType:(int)arg11 fromType:(int)arg12 poiTopicRecommend:(id)arg13 sectionInfo:(id)arg14 bgmInfo:(id)arg15 eventTopicId:(unsigned long long)arg16 byPassInfo:(id)arg17 listForceShowRingtoneGuide:(_Bool)arg18 listJumpCarouselHighPriorty:(_Bool)arg19;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *byPassInfo; // @synthesize byPassInfo=_byPassInfo;
 @property(retain, nonatomic) WCFinderSectionInfo *sectionInfo; // @synthesize sectionInfo=_sectionInfo;
 @property(retain, nonatomic) WCFinderTopicInfo *poiTopicRecommend; // @synthesize poiTopicRecommend=_poiTopicRecommend;

@@ -12,7 +12,6 @@
     NSMutableDictionary *m_md5ConverterDic;
 }
 
-- (void).cxx_destruct;
 - (void)convertEmoticonMessageWrap:(id)arg1;
 - (void)initMd5ConverterDic;
 - (id)init;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, RichTextView, UIButton;
 
@@ -14,7 +15,6 @@
     UIButton *_checkbox;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *checkbox; // @synthesize checkbox=_checkbox;
 @property(copy, nonatomic) CDUnknownBlockType onLinckClickedBlock; // @synthesize onLinckClickedBlock=_onLinckClickedBlock;
 @property(retain, nonatomic) RichTextView *textView; // @synthesize textView=_textView;
@@ -38,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

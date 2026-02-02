@@ -25,7 +25,6 @@
     UIViewController *_contextViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *contextViewController; // @synthesize contextViewController=_contextViewController;
 @property(nonatomic) double delayTime; // @synthesize delayTime=_delayTime;
 @property(nonatomic) _Bool isForbidRightGesture; // @synthesize isForbidRightGesture=_isForbidRightGesture;

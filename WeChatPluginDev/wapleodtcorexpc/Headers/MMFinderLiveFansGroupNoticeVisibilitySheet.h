@@ -16,7 +16,6 @@
     MMFinderLivePickerView *_pickerView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLivePickerView *pickerView; // @synthesize pickerView=_pickerView;
 @property(retain, nonatomic) MMFinderLiveFansGroupAnchorEditFansNoticeInfo *editedInfo; // @synthesize editedInfo=_editedInfo;
 @property(retain, nonatomic) MMFinderLiveFansGroupAnchorEditFansNoticeInfo *info; // @synthesize info=_info;

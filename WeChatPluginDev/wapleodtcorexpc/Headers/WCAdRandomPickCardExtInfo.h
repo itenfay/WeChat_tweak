@@ -17,7 +17,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_redPacketCoverUrl;
 + (void)PBArrayAdd_cardDynamicInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *redPacketCoverUrl; // @synthesize redPacketCoverUrl=_redPacketCoverUrl;
 @property(retain, nonatomic) NSString *cardDynamicInfo; // @synthesize cardDynamicInfo=_cardDynamicInfo;
 - (id)initWithCoder:(id)arg1;

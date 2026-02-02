@@ -22,7 +22,6 @@
     NSArray *_searchResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *searchResult; // @synthesize searchResult=_searchResult;
 @property(retain, nonatomic) id <WCFinderAuthorityListViewModelProtocol> viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UIImageView *retryImageView; // @synthesize retryImageView=_retryImageView;

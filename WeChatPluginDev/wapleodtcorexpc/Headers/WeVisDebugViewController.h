@@ -16,7 +16,6 @@
     UILabel *_modelPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *modelPath; // @synthesize modelPath=_modelPath;
 @property(retain, nonatomic) UIButton *searchModelPathBtn; // @synthesize searchModelPathBtn=_searchModelPathBtn;
 @property(retain, nonatomic) UITextField *modelPathSearch; // @synthesize modelPathSearch=_modelPathSearch;

@@ -20,7 +20,6 @@
 + (id)itemsFont;
 + (id)titleFont;
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(retain, nonatomic) AnyPromise *loadLiveInfoPromise; // @synthesize loadLiveInfoPromise=_loadLiveInfoPromise;
 @property(retain, nonatomic) NSDate *startAutoPlay; // @synthesize startAutoPlay=_startAutoPlay;

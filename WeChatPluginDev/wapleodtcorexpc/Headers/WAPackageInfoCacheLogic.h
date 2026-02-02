@@ -16,7 +16,6 @@
     NSMutableDictionary *_dicCacheFileAccessedTimeRecord;
 }
 
-- (void).cxx_destruct;
 - (long long)getAccessedTimeWithFullUrl:(id)arg1;
 - (void)setAccessedTimeToCurrentTimeWithFullUrl:(id)arg1;
 - (long long)getUnpackTime;

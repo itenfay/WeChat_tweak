@@ -21,7 +21,6 @@
     UITapGestureRecognizer *_insideTapGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *insideTapGestureRecognizer; // @synthesize insideTapGestureRecognizer=_insideTapGestureRecognizer;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UILabel *labelView; // @synthesize labelView=_labelView;

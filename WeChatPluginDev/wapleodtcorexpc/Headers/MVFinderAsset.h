@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMusicFinderVideoCellModel, MVImageLoader, WCFinderDataItem;
 
 @interface MVFinderAsset
@@ -13,7 +15,6 @@
     MVImageLoader *_imageLoader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MVImageLoader *imageLoader; // @synthesize imageLoader=_imageLoader;
 @property(retain, nonatomic) WCFinderDataItem *draftModel; // @synthesize draftModel=_draftModel;
 @property(retain, nonatomic) MMMusicFinderVideoCellModel *finderVideoModel; // @synthesize finderVideoModel=_finderVideoModel;
@@ -43,4 +44,3 @@
 - (id)initWithFinderVideoModel:(id)arg1;
 
 @end
-

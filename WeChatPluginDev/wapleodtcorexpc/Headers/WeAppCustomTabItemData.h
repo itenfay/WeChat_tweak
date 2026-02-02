@@ -18,7 +18,6 @@
     UIColor *_badgeValueColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *badgeValueColor; // @synthesize badgeValueColor=_badgeValueColor;
 @property(retain, nonatomic) NSString *badgeValue; // @synthesize badgeValue=_badgeValue;
 @property(nonatomic) _Bool isSmallRedDot; // @synthesize isSmallRedDot=_isSmallRedDot;

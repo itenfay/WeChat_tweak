@@ -23,7 +23,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) double snapDistance; // @synthesize snapDistance=_snapDistance;
 @property(readonly, nonatomic) NSMutableArray *anchoredSegmentSnapTimes; // @synthesize anchoredSegmentSnapTimes=_anchoredSegmentSnapTimes;
 @property(readonly, nonatomic) _Bool shouldSnapToVisualAnchoredSegments; // @synthesize shouldSnapToVisualAnchoredSegments=_shouldSnapToVisualAnchoredSegments;

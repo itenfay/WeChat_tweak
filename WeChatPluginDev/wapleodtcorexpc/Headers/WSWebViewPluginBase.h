@@ -18,7 +18,6 @@
 + (id)InstanceFrom:(id)arg1;
 + (id)GetExistInstanceFrom:(id)arg1;
 + (id)GetInstanceFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *debugModuleName; // @synthesize debugModuleName=_debugModuleName;
 @property(nonatomic) __weak id <WSWebViewPluginableProtocol> webviewOwner; // @synthesize webviewOwner=_webviewOwner;
 - (id)curViewController;

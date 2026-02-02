@@ -15,7 +15,6 @@
     WCAssetStateView *_stateView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAssetStateView *stateView; // @synthesize stateView=_stateView;
 @property(retain, nonatomic) UIImageView *livePhotoIconView; // @synthesize livePhotoIconView=_livePhotoIconView;
 @property(retain, nonatomic) UIView *statusContainerView; // @synthesize statusContainerView=_statusContainerView;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GCMultiChannelContainerView, GCMultiMessageViewModelConfig, GCTipLabel, NSMutableArray, NSString;
 
@@ -19,7 +20,6 @@
     GCTipLabel *_bottomTip;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasBtmTip; // @synthesize hasBtmTip=_hasBtmTip;
 @property(retain, nonatomic) GCTipLabel *bottomTip; // @synthesize bottomTip=_bottomTip;
 @property(retain, nonatomic) GCTipLabel *unreadCntView; // @synthesize unreadCntView=_unreadCntView;
@@ -73,4 +73,3 @@
 @property(readonly) Class superclass;
 
 @end
-

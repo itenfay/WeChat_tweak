@@ -26,7 +26,6 @@
     unsigned long long _overloadedType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long overloadedType; // @synthesize overloadedType=_overloadedType;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain, nonatomic) NSString *bizName; // @synthesize bizName=_bizName;

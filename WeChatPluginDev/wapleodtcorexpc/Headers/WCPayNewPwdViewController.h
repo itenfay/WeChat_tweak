@@ -30,7 +30,6 @@
     WCPayTenpayPasswordCtrlItem *_passwordTextField;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayTenpayPasswordCtrlItem *passwordTextField; // @synthesize passwordTextField=_passwordTextField;
 @property(retain, nonatomic) NSString *seChallenge; // @synthesize seChallenge=_seChallenge;
 @property(nonatomic) _Bool canUseBiotricAuth; // @synthesize canUseBiotricAuth=_canUseBiotricAuth;

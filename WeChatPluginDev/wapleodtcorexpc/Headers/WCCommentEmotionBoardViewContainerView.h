@@ -10,7 +10,6 @@
     EmoticonBoardView *_emotionBoardView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonBoardView *emotionBoardView; // @synthesize emotionBoardView=_emotionBoardView;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)addEmotionBoardView:(id)arg1;

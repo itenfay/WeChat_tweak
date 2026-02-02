@@ -13,7 +13,6 @@
     WCFinderDataItem *_dataItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 

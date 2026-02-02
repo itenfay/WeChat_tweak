@@ -21,7 +21,6 @@
 + (void)handleWechatProfilePhoneNumber:(id)arg1;
 + (void)handlePhoneNumber:(id)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;

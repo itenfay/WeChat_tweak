@@ -15,7 +15,6 @@
     NSMutableArray *_lotteryMethodDataArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *lotteryMethodDataArray; // @synthesize lotteryMethodDataArray=_lotteryMethodDataArray;
 @property(nonatomic) __weak id <MMFinderLiveLotteryMethodOperationTableDataDelegate> dataDelegate; // @synthesize dataDelegate=_dataDelegate;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;

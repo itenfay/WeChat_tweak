@@ -22,7 +22,6 @@
 
 + (id)generateSeparator;
 + (double)standardHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomSeparator; // @synthesize bottomSeparator=_bottomSeparator;
 @property(retain, nonatomic) UIView *topSeparator; // @synthesize topSeparator=_topSeparator;
 @property(nonatomic) unsigned int separators; // @synthesize separators=_separators;

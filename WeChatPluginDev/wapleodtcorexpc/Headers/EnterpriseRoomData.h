@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_m_nsOwner;
 + (void)PBArrayAdd_m_uiMaxMemberCount;
 + (void)PBArrayAdd_m_aryMemberList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsOwner; // @synthesize m_nsOwner=_m_nsOwner;
 @property(nonatomic) unsigned int m_uiMaxMemberCount; // @synthesize m_uiMaxMemberCount=_m_uiMaxMemberCount;
 @property(retain, nonatomic) NSMutableArray *m_aryMemberList; // @synthesize m_aryMemberList=_m_aryMemberList;

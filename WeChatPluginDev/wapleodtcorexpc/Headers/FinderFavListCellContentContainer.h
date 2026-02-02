@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel, WCFinderInteractionLabelGroupView;
 
@@ -17,7 +18,6 @@
     struct CGSize _layoutSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;
 @property(retain, nonatomic) WCFinderInteractionLabelGroupView *bottomInteractLabel; // @synthesize bottomInteractLabel=_bottomInteractLabel;
 @property(retain, nonatomic) WCFinderInteractionLabelGroupView *nicknameTailLabel; // @synthesize nicknameTailLabel=_nicknameTailLabel;
@@ -32,4 +32,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

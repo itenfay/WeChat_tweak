@@ -50,7 +50,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int editFlag; // @synthesize editFlag=_editFlag;
 @property(nonatomic) int uploadState; // @synthesize uploadState=_uploadState;
 @property(retain, nonatomic) NSString *cdnUrl; // @synthesize cdnUrl=_cdnUrl;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIActivityIndicatorView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ZZActivityIndicatorViewChainModel;
 
@@ -11,4 +12,3 @@
 + (CDUnknownBlockType)zz_create;
 @property(readonly, copy, nonatomic) ZZActivityIndicatorViewChainModel *zz_setup;
 @end
-

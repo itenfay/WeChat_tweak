@@ -19,7 +19,6 @@
     UIImageView *_indicatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic) double sideLength; // @synthesize sideLength=_sideLength;

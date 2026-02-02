@@ -16,7 +16,6 @@
     RichTextView *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) RichTextView *stateLabel; // @synthesize stateLabel=_stateLabel;
 @property(nonatomic) __weak id <WCFinderProfileAudioFullPostViewCellDataSource> dataSource; // @synthesize dataSource=_dataSource;

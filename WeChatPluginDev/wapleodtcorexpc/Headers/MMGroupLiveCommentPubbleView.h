@@ -16,7 +16,6 @@
 + (struct CGSize)sizeForComment:(id)arg1 inCommentPubbleMaxWidth:(double)arg2 withArrStyles:(id *)arg3;
 + (double)maxDisplayLabelWidthForComment:(id)arg1 inCommentPubbleMaxWidth:(double)arg2;
 + (double)maxDisplayLabelWidthForComment:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMGroupLiveCommentTableViewCellFrame *cellFrame; // @synthesize cellFrame=_cellFrame;
 @property(retain, nonatomic) RichTextView *commentLabel; // @synthesize commentLabel=_commentLabel;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;

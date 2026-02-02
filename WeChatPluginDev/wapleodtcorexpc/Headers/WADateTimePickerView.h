@@ -24,7 +24,6 @@
     _Bool _didAdjustSelectedRowToSeparatorStyle;
 }
 
-- (void).cxx_destruct;
 - (void)adjustPickerSelectedRowToSeparatorStyle:(id)arg1;
 - (void)onCancel;
 - (void)onConfirm;

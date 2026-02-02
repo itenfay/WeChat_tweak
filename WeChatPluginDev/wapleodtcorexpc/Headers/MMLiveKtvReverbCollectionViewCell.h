@@ -14,7 +14,6 @@
     UIView *_borderView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *borderView; // @synthesize borderView=_borderView;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;

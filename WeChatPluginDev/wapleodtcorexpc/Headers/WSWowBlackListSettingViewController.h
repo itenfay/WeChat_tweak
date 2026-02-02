@@ -17,7 +17,6 @@
     WSPersonalizedRecommendManager *_personalizedRecommendManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WSPersonalizedRecommendManager *personalizedRecommendManager; // @synthesize personalizedRecommendManager=_personalizedRecommendManager;
 @property(nonatomic) _Bool isRequestBlockByClick; // @synthesize isRequestBlockByClick=_isRequestBlockByClick;
 @property(nonatomic) _Bool isRequestHideByClick; // @synthesize isRequestHideByClick=_isRequestHideByClick;

@@ -14,7 +14,6 @@
 }
 
 + (void)setGenearlPasteboardString:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IWCRichTextLabelDelegate> richTextLabelDelegate; // @synthesize richTextLabelDelegate=_richTextLabelDelegate;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;
 - (id)getRichTextLabelWithDelegate:(id)arg1;

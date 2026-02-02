@@ -17,7 +17,6 @@
     NSString *_defaultAvatarFileId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sessionId; // @synthesize sessionId=_sessionId;
 @property(copy, nonatomic) NSString *defaultAvatarFileId; // @synthesize defaultAvatarFileId=_defaultAvatarFileId;
 @property(copy, nonatomic) NSString *defaultAvatarUrl; // @synthesize defaultAvatarUrl=_defaultAvatarUrl;

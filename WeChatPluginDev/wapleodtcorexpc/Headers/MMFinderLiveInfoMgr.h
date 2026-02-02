@@ -17,7 +17,6 @@
     NSMutableDictionary *_waitResultAudioRoomBackgroundImageInfoDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *waitResultAudioRoomBackgroundImageInfoDict; // @synthesize waitResultAudioRoomBackgroundImageInfoDict=_waitResultAudioRoomBackgroundImageInfoDict;
 @property(retain, nonatomic) OrderedDictionary *cachedAudioRoomBackgroundImageInfoDict; // @synthesize cachedAudioRoomBackgroundImageInfoDict=_cachedAudioRoomBackgroundImageInfoDict;
 @property(nonatomic) _Bool isInBackground; // @synthesize isInBackground=_isInBackground;

@@ -14,7 +14,6 @@
     MMUIButton *_switchButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *switchButton; // @synthesize switchButton=_switchButton;
 @property(nonatomic) __weak id <WCCommonInputViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onTapSwitchButton:(id)arg1;

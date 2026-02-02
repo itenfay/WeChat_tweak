@@ -37,7 +37,6 @@
 + (id)sharedDeviceInfo;
 + (void)initialize;
 + (void)extendDictionaryWithDeviceInfo:(id)arg1;
-- (void).cxx_destruct;
 - (id)_generateEncoding;
 - (void)_collectGroup1Data;
 - (_Bool)_isGroup1Expired;

@@ -10,7 +10,6 @@
     ContactTagData *_m_tagData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactTagData *m_tagData; // @synthesize m_tagData=_m_tagData;
 - (void)onSelectedOrCancelContact:(id)arg1 isSelected:(_Bool)arg2;
 - (id)getReloadContactDataList;

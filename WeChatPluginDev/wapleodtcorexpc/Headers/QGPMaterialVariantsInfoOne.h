@@ -10,7 +10,6 @@
     NSString *_name;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 
 @end

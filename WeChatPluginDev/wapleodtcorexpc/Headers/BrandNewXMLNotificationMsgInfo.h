@@ -11,7 +11,6 @@
     NSString *_webPageUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *webPageUrl; // @synthesize webPageUrl=_webPageUrl;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 

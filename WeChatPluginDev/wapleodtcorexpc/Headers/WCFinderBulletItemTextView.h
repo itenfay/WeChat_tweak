@@ -14,7 +14,6 @@
     UIImageView *_userIdentityImg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *userIdentityImg; // @synthesize userIdentityImg=_userIdentityImg;
 @property(retain, nonatomic) RichTextView *contentTextView; // @synthesize contentTextView=_contentTextView;
 @property(nonatomic) __weak WCFinderBulletItem *item; // @synthesize item=_item;

@@ -26,7 +26,6 @@
     MMFinderLiveAnchorCustomizeRewardResourceUrl *_giftPreviewAnimationUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int customFlag; // @synthesize customFlag=_customFlag;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardResourceUrl *giftPreviewAnimationUrl; // @synthesize giftPreviewAnimationUrl=_giftPreviewAnimationUrl;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardResourceUrl *giftAnimationUrl; // @synthesize giftAnimationUrl=_giftAnimationUrl;

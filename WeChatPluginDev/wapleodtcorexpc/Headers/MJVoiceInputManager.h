@@ -22,7 +22,6 @@
     MJVoiceInputProcessor *_processor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJVoiceInputProcessor *processor; // @synthesize processor=_processor;
 @property(retain, nonatomic) MJVoiceInputRecorder *recorder; // @synthesize recorder=_recorder;
 @property(retain, nonatomic) NSString *reachRecordingDurationLimitToastText; // @synthesize reachRecordingDurationLimitToastText=_reachRecordingDurationLimitToastText;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIScrollView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ZZScrollViewChainModel;
 
@@ -11,4 +12,3 @@
 + (CDUnknownBlockType)zz_create;
 @property(readonly, copy, nonatomic) ZZScrollViewChainModel *zz_setup;
 @end
-

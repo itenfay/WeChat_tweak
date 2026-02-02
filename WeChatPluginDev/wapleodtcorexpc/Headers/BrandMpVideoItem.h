@@ -33,7 +33,6 @@
 + (void)PBArrayAdd_videoUrl;
 + (void)PBArrayAdd_videoVid;
 + (void)PBArrayAdd_mpUrl;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidForward; // @synthesize forbidForward=_forbidForward;
 @property(copy, nonatomic) NSString *videoUrlNew; // @synthesize videoUrlNew=_videoUrlNew;
 @property(nonatomic) unsigned int subscene; // @synthesize subscene=_subscene;

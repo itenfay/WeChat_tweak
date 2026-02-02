@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class KSAudioPlayer, LZFileCacheManager;
 @protocol KSAudioLogProtocol, OS_dispatch_queue;
@@ -21,7 +22,6 @@
 + (void)setCachePath:(id)arg1;
 + (id)sharedInstance;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(nonatomic) __weak KSAudioPlayer *curAudioPlayer; // @synthesize curAudioPlayer=_curAudioPlayer;
 @property(retain) id <KSAudioLogProtocol> logObj; // @synthesize logObj=_logObj;
 - (void)log:(int)arg1 file:(const char *)arg2 func:(const char *)arg3 line:(int)arg4 EFDict:(id)arg5 msg:(id)arg6;
@@ -45,4 +45,3 @@
 - (id)init;
 
 @end
-

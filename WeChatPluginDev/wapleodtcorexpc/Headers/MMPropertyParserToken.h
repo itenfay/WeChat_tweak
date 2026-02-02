@@ -14,7 +14,6 @@
     NSString *_setter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int attributes; // @synthesize attributes=_attributes;
 @property(retain, nonatomic) NSString *setter; // @synthesize setter=_setter;
 @property(retain, nonatomic) NSString *getter; // @synthesize getter=_getter;

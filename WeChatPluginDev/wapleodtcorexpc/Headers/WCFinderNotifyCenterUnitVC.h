@@ -23,7 +23,6 @@
     NSMutableSet *_highlightedExpandedMentionIDSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *highlightedExpandedMentionIDSet; // @synthesize highlightedExpandedMentionIDSet=_highlightedExpandedMentionIDSet;
 @property(retain, nonatomic) WCFinderMagicAnimationLogic *magicAnimLogic; // @synthesize magicAnimLogic=_magicAnimLogic;
 @property(retain, nonatomic) WCFinderNotifyCenterCellViewModel *showProfileViewModel; // @synthesize showProfileViewModel=_showProfileViewModel;

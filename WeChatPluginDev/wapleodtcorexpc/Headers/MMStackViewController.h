@@ -10,7 +10,6 @@
     MMScrollStack *_stackView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMScrollStack *stackView; // @synthesize stackView=_stackView;
 - (void)initUIDebug;
 - (void)initStackView;

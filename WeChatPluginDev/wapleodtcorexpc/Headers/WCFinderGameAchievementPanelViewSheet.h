@@ -14,7 +14,6 @@
     UIPageControl *_pageCtrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPageControl *pageCtrl; // @synthesize pageCtrl=_pageCtrl;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;

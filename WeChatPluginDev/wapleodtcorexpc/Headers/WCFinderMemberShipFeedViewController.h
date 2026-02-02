@@ -11,7 +11,6 @@
     WCFinderProfileCollectionListLayout *_collectionListLayout;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProfileCollectionListLayout *collectionListLayout; // @synthesize collectionListLayout=_collectionListLayout;
 @property(retain, nonatomic) WCFinderMemberShipFeedTabViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void)headerContainerClickedCollectionMoreButton:(id)arg1;

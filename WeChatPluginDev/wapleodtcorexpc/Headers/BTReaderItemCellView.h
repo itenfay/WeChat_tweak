@@ -20,7 +20,6 @@
     BTFinderRecommendRedPacketView *_redPacketView;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BTFinderRecommendRedPacketView *redPacketView; // @synthesize redPacketView=_redPacketView;
 @property(readonly, nonatomic) BTRichTextTagView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) unsigned int itemIndex; // @synthesize itemIndex=_itemIndex;

@@ -12,7 +12,6 @@
     MMLiveInfoItem *_liveInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveInfoItem *liveInfo; // @synthesize liveInfo=_liveInfo;
 @property(readonly, nonatomic) NSString *roomId;
 @property(readonly, nonatomic) unsigned long long liveId;

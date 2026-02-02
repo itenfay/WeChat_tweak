@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, FinderNpsSurveyQuestion, FinderNpsSurveyTaskConf, MMUIButton, NPSFlutterVC, NSHashTable, NSString, UILabel, UILongPressGestureRecognizer, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, WCFinderAdReportInfo, WCFinderAnimationLoadingView, WCFinderBulletGroupView, WCFinderCommonBottomBannerView, WCFinderCustomPanelSheet, WCFinderFeedContentVM, WCFinderFeedSubtitleView, WCFinderFeedbackView, WCFinderFullInteractivePanelView, WCFinderFullNewMultiMediaView, WCFinderHalfMoveModel, WCFinderInteractivePanelConfigParamsModel, WCFinderLandscapeBackButton, WCFinderLandscapeProgressPanelView, WCFinderLongPressRateEduView, WCFinderLongPressRatePlayStateModel, WCFinderMemberShipPaymentGuideView, WCFinderMoreRelatedContentView, WCFinderNpsSurveyView, WCFinderPlaybackSpeedView, WCFinderPortraitPressRateEduView, WCFinderPortraitProgressPanelView, WCFinderPremovieAdBaseHelper, WCFinderProgressControlPanelConfigParamsModel, WCFinderProgressGuideView, WCFinderShortTapGestureRecognizer, WCFinderTLRedCoverBubbleView, WCFinderTableViewParamModel, WCFinderTipBarView;
 @protocol WCFinderFullMultiMediaTableViewCellDelegate, WCFinderNpsSurveyContextInfoDelegate;
 
@@ -95,7 +97,6 @@
 + (double)cellHeightWithIsSubScene:(_Bool)arg1;
 + (double)getInteractiveBottomLineIsSubScene:(_Bool)arg1 tableViewFrame:(struct CGRect)arg2;
 + (double)getInteractiveBottomLineIsSubScene:(_Bool)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLandscapeBackButton *landScapeBackButton; // @synthesize landScapeBackButton=_landScapeBackButton;
 @property(nonatomic) unsigned long long videoPinchState; // @synthesize videoPinchState=_videoPinchState;
 @property(nonatomic) _Bool bNeedShowNPSSurvey; // @synthesize bNeedShowNPSSurvey=_bNeedShowNPSSurvey;
@@ -751,4 +752,3 @@
 @property(readonly) Class superclass;
 
 @end
-

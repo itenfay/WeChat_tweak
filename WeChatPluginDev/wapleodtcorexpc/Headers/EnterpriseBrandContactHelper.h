@@ -14,7 +14,6 @@
     id <EnterpriseBrandContactHelperDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EnterpriseBrandContactHelperDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onEnterpriseBrandSyncToSvrCompleted:(id)arg1 extParams:(id)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;

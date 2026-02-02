@@ -23,7 +23,6 @@
     unsigned int _wcNotificationCellIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int wcNotificationCellIndex; // @synthesize wcNotificationCellIndex=_wcNotificationCellIndex;
 @property(nonatomic) _Bool m_bIsShowContactVerifySectionIndexAtFirst; // @synthesize m_bIsShowContactVerifySectionIndexAtFirst;
 @property(nonatomic) _Bool m_bIsShowPhoneSectionIndexAtFirst; // @synthesize m_bIsShowPhoneSectionIndexAtFirst;

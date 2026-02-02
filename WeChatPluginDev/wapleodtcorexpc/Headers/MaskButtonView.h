@@ -10,7 +10,6 @@
     MMUIView *_maskButtonHighlightedView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *maskButtonHighlightedView; // @synthesize maskButtonHighlightedView=_maskButtonHighlightedView;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)layoutSubviews;

@@ -15,7 +15,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize videoSize; // @synthesize videoSize=_videoSize;
 @property(retain, nonatomic) NSString *thumbImgUrl; // @synthesize thumbImgUrl=_thumbImgUrl;
 @property(retain, nonatomic) UIButton *fakeNextBtn; // @synthesize fakeNextBtn=_fakeNextBtn;

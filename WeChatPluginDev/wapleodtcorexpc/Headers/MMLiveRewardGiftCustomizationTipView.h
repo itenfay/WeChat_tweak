@@ -25,7 +25,6 @@
     UIButton *_textCustomizationButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *textCustomizationButton; // @synthesize textCustomizationButton=_textCustomizationButton;
 @property(retain, nonatomic) UIView *separatorBar; // @synthesize separatorBar=_separatorBar;
 @property(retain, nonatomic) UICollectionView *colorsCollectionView; // @synthesize colorsCollectionView=_colorsCollectionView;

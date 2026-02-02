@@ -12,7 +12,6 @@
     void *_callback;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) void *callback; // @synthesize callback=_callback;
 @property(nonatomic) __weak MBJSCRuntime *runtime; // @synthesize runtime=_runtime;
 @property(nonatomic) __weak JSContext *context; // @synthesize context=_context;

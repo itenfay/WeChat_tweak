@@ -3,13 +3,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WAAppTrialInfoLoader
 {
     CDUnknownBlockType m_completeBlock;
     unsigned int _appServiceType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int appServiceType; // @synthesize appServiceType=_appServiceType;
 - (void)updateNotifyInfoWithDownloadUrl:(id)arg1 md5Str:(id)arg2 extInfo:(id)arg3 oldNotify:(id)arg4;
 - (void)sendRequest:(id)arg1 Retry:(unsigned int)arg2;
@@ -19,4 +20,3 @@
 - (void)loadTrialInfoWithPack:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

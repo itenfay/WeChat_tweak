@@ -12,7 +12,6 @@
     NSDictionary *_userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 - (void)setBlurEffectColorWithStatus:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;

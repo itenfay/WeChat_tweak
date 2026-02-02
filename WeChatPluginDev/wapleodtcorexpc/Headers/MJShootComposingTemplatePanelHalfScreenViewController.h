@@ -15,7 +15,6 @@
     MJShootComposingTemplatePanelView *_panelView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJShootComposingTemplatePanelView *panelView; // @synthesize panelView=_panelView;
 @property(readonly, nonatomic) MJShootComposingTemplatePanelViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) __weak id <MJShootComposingTemplatePanelHalfScreenViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

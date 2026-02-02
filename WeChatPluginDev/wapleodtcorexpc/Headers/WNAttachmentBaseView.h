@@ -20,7 +20,6 @@
     FavFullScreenImageViewController *_favImageVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak FavFullScreenImageViewController *favImageVC; // @synthesize favImageVC=_favImageVC;
 @property(retain, nonatomic) UITextField *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UITextField *titleLabel; // @synthesize titleLabel=_titleLabel;

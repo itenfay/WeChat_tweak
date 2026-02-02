@@ -12,7 +12,6 @@
     NSMutableSet *_needShowRecommendFollowSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *needShowRecommendFollowSet; // @synthesize needShowRecommendFollowSet=_needShowRecommendFollowSet;
 @property(nonatomic) _Bool needShowRecommendFollowView; // @synthesize needShowRecommendFollowView=_needShowRecommendFollowView;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *bizProfileSlotKV; // @synthesize bizProfileSlotKV=_bizProfileSlotKV;

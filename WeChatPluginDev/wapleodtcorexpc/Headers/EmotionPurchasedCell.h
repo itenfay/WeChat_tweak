@@ -15,7 +15,6 @@
     UILabel *_timeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) UILabel *priceLabel; // @synthesize priceLabel=_priceLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

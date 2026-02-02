@@ -19,7 +19,6 @@
     NSMutableArray *_downloadingList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *downloadingList; // @synthesize downloadingList=_downloadingList;
 @property(retain, nonatomic) QMapRepeatTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) QTrafficServerEngine *server; // @synthesize server=_server;

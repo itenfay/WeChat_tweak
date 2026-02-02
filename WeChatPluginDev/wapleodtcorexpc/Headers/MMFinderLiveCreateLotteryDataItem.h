@@ -17,7 +17,6 @@
 }
 
 + (id)initLotteryMethodDataItemWithTitle:(id)arg1 stateTitle:(id)arg2 isSelect:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveLotteryMethodItem *lotteryMethodItem; // @synthesize lotteryMethodItem=_lotteryMethodItem;
 @property(nonatomic) _Bool isFromStaterVC; // @synthesize isFromStaterVC=_isFromStaterVC;
 @property(nonatomic) _Bool isSelect; // @synthesize isSelect=_isSelect;

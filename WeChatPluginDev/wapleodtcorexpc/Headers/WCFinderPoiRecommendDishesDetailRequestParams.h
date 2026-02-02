@@ -15,7 +15,6 @@
     NSString *_poiBasicInfoBypassData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(copy, nonatomic) NSString *poiBasicInfoBypassData; // @synthesize poiBasicInfoBypassData=_poiBasicInfoBypassData;
 @property(nonatomic) unsigned long long topicId; // @synthesize topicId=_topicId;

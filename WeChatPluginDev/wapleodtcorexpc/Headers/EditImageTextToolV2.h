@@ -29,7 +29,6 @@
 }
 
 + (id)generateWidgetFromState:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCEditViewControllerUIConfig *uiConfig; // @synthesize uiConfig=_uiConfig;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) __weak id <EditImageTextToolV2Delegate> textDelegate; // @synthesize textDelegate=_textDelegate;

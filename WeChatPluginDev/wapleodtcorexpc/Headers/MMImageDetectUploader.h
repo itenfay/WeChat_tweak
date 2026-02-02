@@ -15,7 +15,6 @@
     NSMutableDictionary *_clientMsgID2DetectMediaInfoMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *clientMsgID2DetectMediaInfoMap; // @synthesize clientMsgID2DetectMediaInfoMap=_clientMsgID2DetectMediaInfoMap;
 @property(retain, nonatomic) NSMutableDictionary *clientMsgID2ContextMap; // @synthesize clientMsgID2ContextMap=_clientMsgID2ContextMap;
 @property(nonatomic) __weak id <MMImageDetectUploaderDelegate> delegate; // @synthesize delegate=_delegate;

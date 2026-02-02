@@ -18,7 +18,6 @@
 }
 
 + (id)fromServerObj:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *jumpUrl; // @synthesize jumpUrl=_jumpUrl;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) BSBusinessServiceInfo *serviceInfo; // @synthesize serviceInfo=_serviceInfo;

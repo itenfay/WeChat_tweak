@@ -20,7 +20,6 @@
     struct CGRect _referenceFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *fireworkCheerAttractingView; // @synthesize fireworkCheerAttractingView=_fireworkCheerAttractingView;
 @property(retain, nonatomic) PAGView *attractingPlayer; // @synthesize attractingPlayer=_attractingPlayer;
 @property(retain, nonatomic) UIView *cheerPlayerContainer; // @synthesize cheerPlayerContainer=_cheerPlayerContainer;

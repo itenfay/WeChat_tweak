@@ -18,7 +18,6 @@
     UILabel *_noUserLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showLoading; // @synthesize showLoading=_showLoading;
 @property(retain, nonatomic) UILabel *noUserLabel; // @synthesize noUserLabel=_noUserLabel;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;

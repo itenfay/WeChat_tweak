@@ -17,7 +17,6 @@
     UIFont *_tabFont;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *tabFont; // @synthesize tabFont=_tabFont;
 @property(retain, nonatomic) UIColor *tabColor; // @synthesize tabColor=_tabColor;
 @property(retain, nonatomic) UIColor *tabIndicatorColor; // @synthesize tabIndicatorColor=_tabIndicatorColor;

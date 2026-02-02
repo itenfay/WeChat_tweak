@@ -51,7 +51,6 @@
 + (_Bool)isUnreadRedDotCtrlInfoType:(unsigned long long)arg1;
 + (_Bool)shouldAbortAllRedDotFromActionType:(unsigned long long)arg1 subReasonType:(unsigned long long)arg2 fromCtrlInfo:(id)arg3;
 + (_Bool)willCheckAbortPrefetchFromActionType:(unsigned long long)arg1 subReasonType:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long nativeFilterRedDotFlag; // @synthesize nativeFilterRedDotFlag=_nativeFilterRedDotFlag;
 @property(retain, nonatomic) NSMutableArray *allRegisterCurrentExposePath; // @synthesize allRegisterCurrentExposePath=_allRegisterCurrentExposePath;
 @property(retain, nonatomic) NSMutableDictionary *periodRedDotDic; // @synthesize periodRedDotDic=_periodRedDotDic;

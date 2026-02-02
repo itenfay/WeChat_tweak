@@ -15,7 +15,6 @@
 }
 
 + (struct CGSize)cellSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;

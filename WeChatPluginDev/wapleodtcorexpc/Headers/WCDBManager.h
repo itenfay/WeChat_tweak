@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MemoryMappedKV, NSArray, NSMutableDictionary, NSMutableSet, NSString;
 @protocol OS_dispatch_queue;
@@ -60,7 +61,6 @@
 + (void)tryReportCompressionError:(id)arg1;
 + (id)compressRecordPathFor:(long long)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property _Bool showWhereDatabase; // @synthesize showWhereDatabase=_showWhereDatabase;
 @property(readonly, nonatomic) NSArray *routerInfos; // @synthesize routerInfos=_routerInfos;
 - (void)saveRepairInfo:(id)arg1;
@@ -139,4 +139,3 @@
 @property(readonly) Class superclass;
 
 @end
-

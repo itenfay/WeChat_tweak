@@ -14,7 +14,6 @@
 }
 
 + (id)batchConvert:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double unfoldHeight; // @synthesize unfoldHeight=_unfoldHeight;
 @property(nonatomic) _Bool unfold; // @synthesize unfold=_unfold;
 @property(retain, nonatomic) NSMutableArray *recentRewardGiftItems; // @synthesize recentRewardGiftItems=_recentRewardGiftItems;

@@ -18,7 +18,6 @@
     id <WebImageScrollViewDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useWindowFrame; // @synthesize useWindowFrame=_useWindowFrame;
 @property __weak id <WebImageScrollViewDelegate> m_delegate; // @synthesize m_delegate;
 - (id)getQuitAnimationView;

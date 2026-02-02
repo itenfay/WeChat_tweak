@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MTLRenderPassDescriptor, NSString, TAVMediaMetalView;
 @protocol MTLBuffer, MTLRenderPipelineState, MTLTexture;
@@ -22,7 +23,6 @@
 }
 
 + (id)convertPixelBuffer:(struct __CVBuffer *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool firstFrameDidAppear; // @synthesize firstFrameDidAppear=_firstFrameDidAppear;
 @property(nonatomic) struct CGSize textureSize; // @synthesize textureSize=_textureSize;
 @property(retain, nonatomic) TAVMediaMetalView *metalView; // @synthesize metalView=_metalView;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

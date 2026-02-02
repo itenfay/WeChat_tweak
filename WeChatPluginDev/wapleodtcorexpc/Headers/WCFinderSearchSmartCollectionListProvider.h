@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderCollectionInfo, NSString, WCFinderFeedArray, WCFinderShareFeedDataProvider;
 
@@ -21,7 +22,6 @@
 
 + (id)newListProvider:(id)arg1 contentVM:(id)arg2 feedMapper:(CDUnknownBlockType)arg3;
 + (id)inlineProvider:(id)arg1 contentVM:(id)arg2 feedMapper:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool filterCollectionId; // @synthesize filterCollectionId=_filterCollectionId;
 @property(copy, nonatomic) CDUnknownBlockType feedMapper; // @synthesize feedMapper=_feedMapper;
 @property(nonatomic) _Bool hasMoreCollectionBottom; // @synthesize hasMoreCollectionBottom=_hasMoreCollectionBottom;
@@ -54,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

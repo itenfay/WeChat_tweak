@@ -50,7 +50,6 @@
 + (void)checkRunloopDuration;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBlockMonitorConfigHandler *monitorConfigHandler; // @synthesize monitorConfigHandler=_monitorConfigHandler;
 @property(nonatomic) __weak id <WCBlockMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)makeThreadProfile;

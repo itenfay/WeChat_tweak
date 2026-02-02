@@ -16,7 +16,6 @@
 }
 
 + (_Bool)isContentSection:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long count; // @synthesize count=_count;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;

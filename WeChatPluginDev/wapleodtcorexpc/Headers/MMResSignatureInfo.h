@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_signatureData;
 + (void)PBArrayAdd_version;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *signatureData; // @synthesize signatureData=_signatureData;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 - (id)getPBPropertyTable;

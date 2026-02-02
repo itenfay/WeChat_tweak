@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTask, MMFinderLiveTaskId, MMLiveActionSheetFlowLayoutView, MMLiveShopShelfDragBar, MMScrollActionSheetItemView, NSArray, NSString, UIPanGestureRecognizer, WCFinderLiveAnchorLogReporter, WCFinderLiveStarterReporter, WCLiveStarterScrollActionSheetViewModel;
 
 @interface WCLiveStarterScrollActionSheet
@@ -29,7 +31,6 @@
     MMLiveShopShelfDragBar *_dragBar;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldHideRewardWishItem; // @synthesize shouldHideRewardWishItem=_shouldHideRewardWishItem;
 @property(readonly, nonatomic) _Bool shouldHideFansGroupItem; // @synthesize shouldHideFansGroupItem=_shouldHideFansGroupItem;
 @property(readonly, nonatomic) _Bool shouldHideLinkItem; // @synthesize shouldHideLinkItem=_shouldHideLinkItem;
@@ -97,4 +98,3 @@
 @property(readonly) Class superclass;
 
 @end
-

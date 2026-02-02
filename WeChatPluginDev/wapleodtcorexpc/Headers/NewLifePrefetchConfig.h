@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, NewLifePagePreloadCache, NewLifeStreamResponse;
 
@@ -39,7 +40,6 @@
 + (void)PBArrayAdd_type;
 + (id)configFromRedDotTipsShowInfo:(id)arg1;
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disablePrefetchWhenPageExists; // @synthesize disablePrefetchWhenPageExists=_disablePrefetchWhenPageExists;
 @property(nonatomic) unsigned int pullType; // @synthesize pullType=_pullType;
 @property(retain, nonatomic) NSString *identifierId; // @synthesize identifierId=_identifierId;
@@ -79,4 +79,3 @@
 @property(readonly) Class superclass;
 
 @end
-

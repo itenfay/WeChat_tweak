@@ -13,7 +13,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contentText; // @synthesize contentText;
 - (id)init;
 

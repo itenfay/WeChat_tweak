@@ -58,7 +58,6 @@
     struct CGPoint m_bContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMPageSheetAdapter *pageSheetAdapter; // @synthesize pageSheetAdapter=_pageSheetAdapter;
 @property(nonatomic) _Bool hasClickSearch; // @synthesize hasClickSearch=_hasClickSearch;
 @property(retain, nonatomic) WCColorProxy *colorProxy; // @synthesize colorProxy=_colorProxy;

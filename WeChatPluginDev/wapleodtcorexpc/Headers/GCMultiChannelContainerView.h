@@ -16,7 +16,6 @@
     UIView *_scrollContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *scrollContainerView; // @synthesize scrollContainerView=_scrollContainerView;
 @property(retain, nonatomic) NSMutableArray *msgViewModelConfigArray; // @synthesize msgViewModelConfigArray=_msgViewModelConfigArray;
 @property(nonatomic) __weak GCMultiMessageViewModel *viewModel; // @synthesize viewModel=_viewModel;

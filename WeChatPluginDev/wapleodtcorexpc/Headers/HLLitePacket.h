@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class HLCarriorInfo, NSData, NSDate, NSDictionary, NSError, NSString, NSURLSessionDataTask;
 @protocol OS_dispatch_queue;
@@ -32,7 +33,6 @@
     NSURLSessionDataTask *_task;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSessionDataTask *task; // @synthesize task=_task;
 @property(nonatomic) long long recvlength; // @synthesize recvlength=_recvlength;
 @property(retain, nonatomic) NSString *serverIP; // @synthesize serverIP=_serverIP;
@@ -56,4 +56,3 @@
 - (id)init;
 
 @end
-

@@ -16,7 +16,6 @@
 }
 
 + (id)getLikeCountLabel:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveLikePostTask *postingTask; // @synthesize postingTask=_postingTask;
 @property(nonatomic) double lastRespTimeInterval; // @synthesize lastRespTimeInterval=_lastRespTimeInterval;
 @property(nonatomic) unsigned int nextReqInterval; // @synthesize nextReqInterval=_nextReqInterval;

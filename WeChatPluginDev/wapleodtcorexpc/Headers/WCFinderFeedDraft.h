@@ -58,7 +58,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDraftUploadProgress *progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) WCFinderEditTextWidgetStateArray *coverTextWidgetState; // @synthesize coverTextWidgetState=_coverTextWidgetState;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class RingDownloadInfo;
 
@@ -15,7 +16,6 @@
     NSObject *_selfHolder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *selfHolder; // @synthesize selfHolder=_selfHolder;
 @property(copy, nonatomic) CDUnknownBlockType resolve; // @synthesize resolve=_resolve;
 @property(nonatomic) _Bool isDownloading; // @synthesize isDownloading=_isDownloading;
@@ -26,4 +26,3 @@
 - (id)initWithDownloadInfo:(id)arg1;
 
 @end
-

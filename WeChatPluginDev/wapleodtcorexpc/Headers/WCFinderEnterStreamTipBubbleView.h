@@ -13,7 +13,6 @@
     UIImageView *_arrowImgView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canJump; // @synthesize canJump=_canJump;
 @property(retain, nonatomic) UIImageView *arrowImgView; // @synthesize arrowImgView=_arrowImgView;
 @property(retain, nonatomic) WCFinderCustomImageRichTextView *richTextView; // @synthesize richTextView=_richTextView;

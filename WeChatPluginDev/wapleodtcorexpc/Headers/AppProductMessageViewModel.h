@@ -11,7 +11,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 - (id)productItem;
 - (id)thumbImage;
 - (id)descText;

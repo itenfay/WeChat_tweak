@@ -26,7 +26,6 @@
 + (void)initialize;
 + (id)newInstance;
 + (id)getAlphaSet;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *currentStyles; // @synthesize currentStyles=_currentStyles;
 @property(nonatomic) long long inlineVerticalAlign; // @synthesize inlineVerticalAlign=_inlineVerticalAlign;
 @property(nonatomic) _Bool lineBreakByClipping; // @synthesize lineBreakByClipping=_lineBreakByClipping;

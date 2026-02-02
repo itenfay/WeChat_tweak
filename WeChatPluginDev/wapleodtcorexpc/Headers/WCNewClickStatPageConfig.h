@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_bNeedAction;
 + (void)PBArrayAdd_pageID;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bNeedAction; // @synthesize bNeedAction=_bNeedAction;
 @property(retain, nonatomic) NSString *pageID; // @synthesize pageID=_pageID;
 - (id)getPBPropertyTable;

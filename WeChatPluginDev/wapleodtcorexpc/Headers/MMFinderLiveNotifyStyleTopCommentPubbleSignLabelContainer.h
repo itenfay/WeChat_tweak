@@ -17,7 +17,6 @@
 }
 
 + (struct CGSize)calcContainerSizeWithCommentItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGlobalRankSignView *globalRankSignView; // @synthesize globalRankSignView=_globalRankSignView;
 @property(retain, nonatomic) MMFinderLiveLiveRoleSignView *roleSignView; // @synthesize roleSignView=_roleSignView;
 @property(retain, nonatomic) MMFinderLiveLiveRoleSignView *mysteriousSignView; // @synthesize mysteriousSignView=_mysteriousSignView;

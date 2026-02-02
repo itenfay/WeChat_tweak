@@ -18,7 +18,6 @@
 }
 
 + (id)trimHandleWithStyle:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *snapIndicatorDot; // @synthesize snapIndicatorDot=_snapIndicatorDot;
 @property(retain, nonatomic) MMUIView *snapIndicatorLine; // @synthesize snapIndicatorLine=_snapIndicatorLine;
 @property(retain, nonatomic) UIImageView *handleIconView; // @synthesize handleIconView=_handleIconView;

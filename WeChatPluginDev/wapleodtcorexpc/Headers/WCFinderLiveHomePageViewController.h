@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveHomePageBottomPlayerView, MMFinderLiveHomePageBottomPlayerViewModel, MMFinderLiveIconTransitionCarouselView, MMUIButton, NSString, UIImage, UILabel, UIView, WCFinderFeedFlowView, WCFinderLiveHomePageInitialParams, WCFinderLiveHomePageScrollActionSheet, WCFinderLiveHomePageTabLiveStreamSectionCollectionViewCell, WCFinderLiveHomePageViewModel, WCFinderRedDotCtrlInfo, _TtC6WeChat22MMFinderLiveFPSMonitor;
 @protocol WCFinderLiveHomePageViewControllerDelegate;
 
@@ -37,7 +39,6 @@
 }
 
 + (double)calculateRecommendAreaTwoColumnCellWidthInVC:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC6WeChat22MMFinderLiveFPSMonitor *fpsMonitor; // @synthesize fpsMonitor=_fpsMonitor;
 @property(nonatomic) __weak WCFinderLiveHomePageTabLiveStreamSectionCollectionViewCell *tabLiveStreamCell; // @synthesize tabLiveStreamCell=_tabLiveStreamCell;
 @property(retain, nonatomic) UIImage *cellSnapshot; // @synthesize cellSnapshot=_cellSnapshot;
@@ -238,4 +239,3 @@
 @property(readonly) Class superclass;
 
 @end
-

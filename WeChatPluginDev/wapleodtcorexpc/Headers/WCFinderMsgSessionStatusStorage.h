@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, WCTDatabase, WCTTable;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _recoverBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType recoverBlock; // @synthesize recoverBlock=_recoverBlock;
 @property(retain, nonatomic) NSMutableDictionary *sessionStatusDic; // @synthesize sessionStatusDic=_sessionStatusDic;
 @property(retain, nonatomic) WCTTable *sessionStatusTable; // @synthesize sessionStatusTable=_sessionStatusTable;
@@ -40,4 +40,3 @@
 - (void)dealloc;
 
 @end
-

@@ -19,7 +19,6 @@
     MMUIButton *_learnMoreButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *learnMoreButton; // @synthesize learnMoreButton=_learnMoreButton;
 @property(retain, nonatomic) UIButton *approveButton; // @synthesize approveButton=_approveButton;
 @property(retain, nonatomic) UIButton *rejectButton; // @synthesize rejectButton=_rejectButton;

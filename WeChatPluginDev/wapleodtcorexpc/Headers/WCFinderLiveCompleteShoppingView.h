@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderGetWindowProductProfileCardInfoResponse, MMUIButton, MMWebImageView, NSString, UIButton, UICollectionView, UILabel;
 
@@ -26,7 +27,6 @@
 }
 
 + (_Bool)shouldShowShoppingViewWithProductInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *internalClickButton; // @synthesize internalClickButton=_internalClickButton;
 @property(retain, nonatomic) UILabel *saleLabel; // @synthesize saleLabel=_saleLabel;
 @property(retain, nonatomic) UIView *seperator; // @synthesize seperator=_seperator;
@@ -68,4 +68,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -47,7 +47,6 @@
     NSString *_anchorTaskGuideId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int anchorTaskGuideType; // @synthesize anchorTaskGuideType=_anchorTaskGuideType;
 @property(retain, nonatomic) NSString *anchorTaskGuideId; // @synthesize anchorTaskGuideId=_anchorTaskGuideId;
 @property(nonatomic) unsigned int purchaseLivePreviewDuration; // @synthesize purchaseLivePreviewDuration=_purchaseLivePreviewDuration;

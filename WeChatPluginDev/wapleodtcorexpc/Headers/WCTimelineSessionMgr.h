@@ -28,7 +28,6 @@
     _Bool _isInSession;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isInSession; // @synthesize isInSession=_isInSession;
 - (void)_recordNextPageLocationsWithRequest:(id)arg1 pageType:(long long)arg2;
 - (void)onTimelineRequest:(id)arg1 didPrepareWithPageType:(long long)arg2;

@@ -16,7 +16,6 @@
     id <FavoritesUploadProccessorDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavoritesUploadProccessorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak FavoritesUploadBaseProccessor *nextProccessor; // @synthesize nextProccessor;
 - (_Bool)containsFavItem:(id)arg1;

@@ -13,7 +13,6 @@
     unsigned long long m_type;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=m_type;
 @property(retain, nonatomic) UIImage *buttonImage; // @synthesize buttonImage=m_buttonImage;
 - (id)accessibilityLabel;

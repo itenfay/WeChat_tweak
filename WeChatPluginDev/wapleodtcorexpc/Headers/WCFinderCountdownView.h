@@ -17,7 +17,6 @@
     long long _countdownLimit;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long countdownLimit; // @synthesize countdownLimit=_countdownLimit;
 @property(nonatomic) long long curCountdownNum; // @synthesize curCountdownNum=_curCountdownNum;
 @property(retain, nonatomic) UILabel *countdownTips; // @synthesize countdownTips=_countdownTips;

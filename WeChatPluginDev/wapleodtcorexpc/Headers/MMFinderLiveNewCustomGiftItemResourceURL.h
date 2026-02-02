@@ -15,7 +15,6 @@
 
 + (_Bool)isResourceURLPBValid:(id)arg1 business:(id)arg2;
 + (id)transferFromResourceUrlPB:(id)arg1 business:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 - (id)copyWithZone:(struct _NSZone *)arg1;

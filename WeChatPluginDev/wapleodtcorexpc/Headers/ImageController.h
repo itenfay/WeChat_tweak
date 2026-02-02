@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CaptureVideoInfo, MMLoadingView, NSString, UINavigationController, UIViewController;
 @protocol ImageControllerDelegate;
 
@@ -17,7 +19,6 @@
     unsigned long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_supportHeif; // @synthesize m_supportHeif=_m_supportHeif;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(nonatomic) _Bool m_isJustReturnMMAsset; // @synthesize m_isJustReturnMMAsset;
@@ -72,4 +73,3 @@
 @property(readonly) Class superclass;
 
 @end
-

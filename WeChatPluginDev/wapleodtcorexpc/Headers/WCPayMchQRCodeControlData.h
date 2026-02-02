@@ -17,7 +17,6 @@
     NSMutableArray *_arrFacingReceiveMoneyPayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrFacingReceiveMoneyPayer; // @synthesize arrFacingReceiveMoneyPayer=_arrFacingReceiveMoneyPayer;
 @property(nonatomic) int mchCodeMoneyScene; // @synthesize mchCodeMoneyScene=_mchCodeMoneyScene;
 @property(retain, nonatomic) VoiceOperateSwitchMchResponse *voiceOperateResp; // @synthesize voiceOperateResp=_voiceOperateResp;

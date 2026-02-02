@@ -10,7 +10,6 @@
     MISSING_TYPE *exptId;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (_Bool)isMagicBrushNanoOpen;
 - (void)onServiceClearData;

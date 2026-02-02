@@ -14,7 +14,6 @@
 }
 
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;
 @property(nonatomic) double avatarLeftMargin; // @synthesize avatarLeftMargin=_avatarLeftMargin;
 

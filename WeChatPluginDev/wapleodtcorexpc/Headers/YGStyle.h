@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
@@ -99,7 +100,6 @@
     UIView *_view;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(copy, nonatomic) CDUnknownBlockType userInteractionEnabled; // @synthesize userInteractionEnabled=_userInteractionEnabled;
 @property(copy, nonatomic) CDUnknownBlockType cornerRadius; // @synthesize cornerRadius=_cornerRadius;
@@ -195,4 +195,3 @@
 - (id)initWithView:(id)arg1;
 
 @end
-

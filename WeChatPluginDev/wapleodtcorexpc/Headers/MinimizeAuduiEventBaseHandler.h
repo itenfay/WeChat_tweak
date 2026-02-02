@@ -16,7 +16,6 @@
 
 + (id)tapeSourceIconForPlayingInfo:(id)arg1;
 + (id)tapeTintColorForPlayingInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMinimizeAudioEventHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MinimizeAudioPanelPlayingInfo *playingInfo; // @synthesize playingInfo=_playingInfo;
 - (void)onPlayingInfoBizIdReplacedByNewBizId:(id)arg1;

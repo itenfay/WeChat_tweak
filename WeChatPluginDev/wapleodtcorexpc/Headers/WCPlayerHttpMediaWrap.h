@@ -26,7 +26,6 @@
     unsigned long long _downloadType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int filetype; // @synthesize filetype=_filetype;
 @property(nonatomic) int apptype; // @synthesize apptype=_apptype;
 @property(nonatomic) unsigned long long downloadType; // @synthesize downloadType=_downloadType;

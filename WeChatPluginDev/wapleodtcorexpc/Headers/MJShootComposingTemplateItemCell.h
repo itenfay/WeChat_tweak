@@ -14,7 +14,6 @@
     MMWebImageView *_iconImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) UILabel *versionLabel; // @synthesize versionLabel=_versionLabel;
 @property(nonatomic) _Bool isCellSelected; // @synthesize isCellSelected=_isCellSelected;

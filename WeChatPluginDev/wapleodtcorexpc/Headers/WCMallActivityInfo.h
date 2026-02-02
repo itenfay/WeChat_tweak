@@ -21,7 +21,6 @@
     NSString *_m_nsActivityUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsActivityUrl; // @synthesize m_nsActivityUrl=_m_nsActivityUrl;
 @property(nonatomic) unsigned int m_uiActivityType; // @synthesize m_uiActivityType=_m_uiActivityType;
 @property(nonatomic) unsigned int m_uiIsMsgReserved; // @synthesize m_uiIsMsgReserved;

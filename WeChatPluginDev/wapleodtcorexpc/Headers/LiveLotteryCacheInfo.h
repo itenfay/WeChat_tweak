@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_liveStartTime;
 + (void)PBArrayAdd_lotteryId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int liveStartTime; // @synthesize liveStartTime=_liveStartTime;
 @property(retain, nonatomic) NSString *lotteryId; // @synthesize lotteryId=_lotteryId;
 - (id)getPBPropertyTable;

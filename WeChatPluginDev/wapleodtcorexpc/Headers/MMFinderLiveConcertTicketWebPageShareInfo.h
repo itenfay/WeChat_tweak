@@ -15,7 +15,6 @@
     NSString *_thumbnailUri;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *thumbnailUri; // @synthesize thumbnailUri=_thumbnailUri;
 @property(retain, nonatomic) NSString *contentDescription; // @synthesize contentDescription=_contentDescription;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

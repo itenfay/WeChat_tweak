@@ -16,7 +16,6 @@
 
 + (_Bool)checkBpmIsVaild:(float)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *configString; // @synthesize configString=_configString;
 - (id)configName;

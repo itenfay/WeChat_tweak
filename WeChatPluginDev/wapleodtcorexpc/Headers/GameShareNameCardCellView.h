@@ -12,7 +12,6 @@
     UILabel *_descLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) UIImageView *headImageView; // @synthesize headImageView=_headImageView;

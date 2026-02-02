@@ -11,7 +11,6 @@
     BTRichTextTagView *_titleTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BTRichTextTagView *titleTextView; // @synthesize titleTextView=_titleTextView;
 @property(retain, nonatomic) MMWebImageView *coverImgView; // @synthesize coverImgView=_coverImgView;
 - (unsigned long long)contentViewRaddiCorners;

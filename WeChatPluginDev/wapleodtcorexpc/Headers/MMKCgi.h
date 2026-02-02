@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onResp:(int)arg1 responseData:(id)arg2 extraInfo:(id)arg3;
 - (long long)getNewDNSBusinessType;
 - (id)getRouteInfo;

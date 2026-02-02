@@ -18,7 +18,6 @@
     struct CGRect _originFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long browseScene; // @synthesize browseScene=_browseScene;
 @property(nonatomic) _Bool isMuted; // @synthesize isMuted=_isMuted;
 @property(nonatomic) struct CGRect originFrame; // @synthesize originFrame=_originFrame;

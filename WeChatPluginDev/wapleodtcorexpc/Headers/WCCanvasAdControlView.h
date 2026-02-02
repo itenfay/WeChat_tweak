@@ -19,7 +19,6 @@
     unsigned long long _playerMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBufferViewShow; // @synthesize isBufferViewShow=_isBufferViewShow;
 @property(nonatomic) unsigned long long playerMode; // @synthesize playerMode=_playerMode;
 @property(retain, nonatomic) MMTimer *autoHideControlViewTimer; // @synthesize autoHideControlViewTimer=_autoHideControlViewTimer;

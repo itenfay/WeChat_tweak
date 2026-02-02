@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_accessTime;
 + (void)PBArrayAdd_mid;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bPreloadCompleted; // @synthesize bPreloadCompleted=_bPreloadCompleted;
 @property(nonatomic) unsigned int totalSize; // @synthesize totalSize=_totalSize;
 @property(nonatomic) _Bool bNonAutoClean; // @synthesize bNonAutoClean=_bNonAutoClean;

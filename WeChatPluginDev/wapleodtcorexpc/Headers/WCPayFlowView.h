@@ -13,7 +13,6 @@
     double _interval;
 }
 
-- (void).cxx_destruct;
 @property double interval; // @synthesize interval=_interval;
 @property(retain) NSArray *views; // @synthesize views=_views;
 - (void)updateView;

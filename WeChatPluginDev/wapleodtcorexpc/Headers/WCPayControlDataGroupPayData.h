@@ -42,7 +42,6 @@
     NSString *_payerSolitaireContent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsImportFromSolitaire; // @synthesize bIsImportFromSolitaire=_bIsImportFromSolitaire;
 @property(retain, nonatomic) NSString *payerSolitaireContent; // @synthesize payerSolitaireContent=_payerSolitaireContent;
 @property(retain, nonatomic) WCPayGPSolitaireData *solitaireData; // @synthesize solitaireData=_solitaireData;

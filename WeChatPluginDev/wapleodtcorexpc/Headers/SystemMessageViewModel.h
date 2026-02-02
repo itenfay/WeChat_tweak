@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSMutableArray, NSString;
 
 @interface SystemMessageViewModel
@@ -15,7 +17,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *customRotorElements; // @synthesize customRotorElements=_customRotorElements;
 @property(nonatomic) int customRotorElementIndex; // @synthesize customRotorElementIndex=_customRotorElementIndex;
 @property(nonatomic) _Bool isFirstAccess; // @synthesize isFirstAccess=_isFirstAccess;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

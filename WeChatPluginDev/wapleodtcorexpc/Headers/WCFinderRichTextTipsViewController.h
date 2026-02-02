@@ -18,7 +18,6 @@
     UIButton *_cancelButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) RichTextView *tipsLabel; // @synthesize tipsLabel=_tipsLabel;

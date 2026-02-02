@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_m_activityLink;
 + (void)PBArrayAdd_m_activityMsgContent;
 + (void)PBArrayAdd_m_activityId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_activityExpiredTime; // @synthesize m_activityExpiredTime=_m_activityExpiredTime;
 @property(retain, nonatomic) NSString *m_activityTips; // @synthesize m_activityTips=_m_activityTips;
 @property(retain, nonatomic) NSString *m_activityJumpFuncId; // @synthesize m_activityJumpFuncId=_m_activityJumpFuncId;

@@ -12,7 +12,6 @@
 
 + (unsigned int)convertStyle:(long long)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setBeautyLowComplexity:(_Bool)arg1;
 - (void)setMotionMute:(_Bool)arg1;
 - (void)selectMotionTemplate:(id)arg1;

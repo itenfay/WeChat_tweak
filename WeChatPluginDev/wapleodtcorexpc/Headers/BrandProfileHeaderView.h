@@ -51,7 +51,6 @@
     NSString *_lastSignatureStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastSignatureStr; // @synthesize lastSignatureStr=_lastSignatureStr;
 @property(nonatomic) _Bool lastHasStar; // @synthesize lastHasStar=_lastHasStar;
 @property(nonatomic) double nicknameLabelWidth; // @synthesize nicknameLabelWidth=_nicknameLabelWidth;

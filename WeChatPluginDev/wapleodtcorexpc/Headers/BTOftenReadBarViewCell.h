@@ -20,7 +20,6 @@
 + (double)barViewHeight;
 + (double)headerViewHeight;
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pageIndexBeforeScroll; // @synthesize pageIndexBeforeScroll=_pageIndexBeforeScroll;
 @property(nonatomic) unsigned long long itemNumPerPage; // @synthesize itemNumPerPage=_itemNumPerPage;
 @property(retain, nonatomic) NSMutableArray *itemViewArr; // @synthesize itemViewArr=_itemViewArr;

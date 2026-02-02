@@ -12,7 +12,6 @@
     NSString *_instanceName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *instanceName; // @synthesize instanceName=_instanceName;
 
 @end

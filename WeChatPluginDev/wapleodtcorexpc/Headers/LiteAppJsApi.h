@@ -17,7 +17,6 @@
     NSString *_apiName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *apiName; // @synthesize apiName=_apiName;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(nonatomic) unsigned int localId; // @synthesize localId=_localId;

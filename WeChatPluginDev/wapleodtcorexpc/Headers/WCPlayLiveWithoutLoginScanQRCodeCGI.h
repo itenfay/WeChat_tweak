@@ -15,7 +15,6 @@
     NSMutableArray *_eventIdDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *eventIdDic; // @synthesize eventIdDic=_eventIdDic;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workerThreadQueue; // @synthesize workerThreadQueue=_workerThreadQueue;
 @property(nonatomic) __weak id <WCPlayLiveWithoutLoginScanQRCodeDelegate> delegate; // @synthesize delegate=_delegate;

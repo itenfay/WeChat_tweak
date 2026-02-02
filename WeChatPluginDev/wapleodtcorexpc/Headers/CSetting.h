@@ -17,7 +17,6 @@
 
 + (id)mmkvPathWithUsername:(id)arg1;
 + (_Bool)resolveInstanceMethod:(SEL)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_patSuffixVersion; // @synthesize m_patSuffixVersion=_m_patSuffixVersion;
 @property(retain, nonatomic) NSString *m_patSuffix; // @synthesize m_patSuffix=_m_patSuffix;
 - (void)removeObjectForKey:(id)arg1;

@@ -15,7 +15,6 @@
 }
 
 + (struct CGSize)getHeadImageSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsRemarkName; // @synthesize m_nsRemarkName;
 @property(retain, nonatomic) RadarSearchMember *member; // @synthesize member=_member;
 - (void)initDisplayNameView;

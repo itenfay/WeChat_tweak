@@ -17,7 +17,6 @@
     UIView<MultiLineTextView> *_customView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView<MultiLineTextView> *customView; // @synthesize customView=_customView;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(retain, nonatomic) NSString *svgIconName; // @synthesize svgIconName=_svgIconName;

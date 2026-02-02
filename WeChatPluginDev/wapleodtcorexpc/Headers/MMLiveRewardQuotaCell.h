@@ -13,7 +13,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int rewardQuota; // @synthesize rewardQuota=_rewardQuota;
 @property(retain, nonatomic) MMUILabel *rewardQuotaLabel; // @synthesize rewardQuotaLabel=_rewardQuotaLabel;
 @property(retain, nonatomic) UIImageView *selectionIndicatorView; // @synthesize selectionIndicatorView=_selectionIndicatorView;

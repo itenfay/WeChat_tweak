@@ -16,7 +16,6 @@
     NSString *_m_brandResortNewDigestStrategyInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_brandResortNewBoldDigestExposeCountInMainSession; // @synthesize m_brandResortNewBoldDigestExposeCountInMainSession=_m_brandResortNewBoldDigestExposeCountInMainSession;
 @property(nonatomic) unsigned int m_brandResortNewDigestExposeCountInMainSession; // @synthesize m_brandResortNewDigestExposeCountInMainSession=_m_brandResortNewDigestExposeCountInMainSession;
 @property(retain, nonatomic) NSString *m_brandResortNewDigestStrategyInfo; // @synthesize m_brandResortNewDigestStrategyInfo=_m_brandResortNewDigestStrategyInfo;

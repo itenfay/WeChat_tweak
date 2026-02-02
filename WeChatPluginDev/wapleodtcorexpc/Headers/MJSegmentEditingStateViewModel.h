@@ -12,7 +12,6 @@
     OMCSegment *_segment;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMCSegment *segment; // @synthesize segment=_segment;
 - (void)_leaveEditingState;
 - (void)segmentLeaveEditingStateIfNeeded:(id)arg1;

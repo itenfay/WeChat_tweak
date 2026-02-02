@@ -14,7 +14,6 @@
 }
 
 + (id)strategyWithConfig:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *contextList; // @synthesize contextList=_contextList;
 @property(retain, nonatomic) TPStrategyConfig *config; // @synthesize config=_config;
 - (_Bool)isPlayerTypeValidForCurrentPlayerScene;

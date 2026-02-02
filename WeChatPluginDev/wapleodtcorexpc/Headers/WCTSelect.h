@@ -10,7 +10,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)firstObject;
 - (id)allObjects;
 - (id)ofClass:(Class)arg1;

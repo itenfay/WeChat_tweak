@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderHistoryTools : NSObject
 {
@@ -16,4 +17,3 @@
 + (void)openHistory:(CDUnknownBlockType)arg1;
 
 @end
-

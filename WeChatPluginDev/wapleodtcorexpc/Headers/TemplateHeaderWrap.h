@@ -53,7 +53,6 @@
     EcsJumpInfo *_ecsJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EcsJumpInfo *ecsJumpInfo; // @synthesize ecsJumpInfo=_ecsJumpInfo;
 @property(retain, nonatomic) EcsKfTempleteMsgOrderInfo *ecsKfTempleteMsgOrderInfo; // @synthesize ecsKfTempleteMsgOrderInfo=_ecsKfTempleteMsgOrderInfo;
 @property(retain, nonatomic) NSString *header_background_color_darkmode; // @synthesize header_background_color_darkmode=_header_background_color_darkmode;

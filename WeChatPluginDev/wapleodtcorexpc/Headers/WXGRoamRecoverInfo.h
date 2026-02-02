@@ -17,7 +17,6 @@
 + (id)loadRecoverInfoFromFile;
 + (void)initialize;
 + (void)PBArrayAdd_recoverMap;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *markLock; // @synthesize markLock=_markLock;
 @property(retain, nonatomic) NSMutableDictionary *recoverMap; // @synthesize recoverMap=_recoverMap;
 - (void)saveRecoverTime:(unsigned long long)arg1 withKey:(id)arg2;

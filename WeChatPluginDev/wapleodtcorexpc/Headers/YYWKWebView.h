@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, UIScreenEdgePanGestureRecognizer;
 
 @interface YYWKWebView
@@ -16,7 +18,6 @@
 + (void)hookWKChildScrollViewWithSEL:(SEL)arg1;
 + (void)hookWKChildScrollView;
 + (unsigned int)getViewIdFromView:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIScreenEdgePanGestureRecognizer *swipeBackGesture; // @synthesize swipeBackGesture=_swipeBackGesture;
 @property(nonatomic) _Bool isSettingAllowsBackForwardNavigationGestures; // @synthesize isSettingAllowsBackForwardNavigationGestures=_isSettingAllowsBackForwardNavigationGestures;
 - (void)buildMenuWithBuilder:(id)arg1;
@@ -53,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

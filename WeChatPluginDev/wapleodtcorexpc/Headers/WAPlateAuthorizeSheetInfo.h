@@ -14,7 +14,6 @@
 }
 
 + (id)convertPlateListFromProto:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAcceptProtocol; // @synthesize isAcceptProtocol=_isAcceptProtocol;
 @property(retain, nonatomic) NSString *createSubDesc; // @synthesize createSubDesc=_createSubDesc;
 @property(retain, nonatomic) NSString *defaultPlateStr; // @synthesize defaultPlateStr=_defaultPlateStr;

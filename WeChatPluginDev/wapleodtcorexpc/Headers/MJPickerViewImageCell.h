@@ -12,7 +12,6 @@
     UIImage *_image;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void)commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;

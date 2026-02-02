@@ -20,7 +20,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *jump_wording; // @synthesize jump_wording=_jump_wording;
 @property(copy, nonatomic) NSString *tinyapp_path; // @synthesize tinyapp_path=_tinyapp_path;
 @property(copy, nonatomic) NSString *tinyapp_username; // @synthesize tinyapp_username=_tinyapp_username;

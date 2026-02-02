@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FWFInstanceManager;
 
@@ -12,7 +13,6 @@
     FWFInstanceManager *_instanceManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FWFInstanceManager *instanceManager; // @synthesize instanceManager=_instanceManager;
 - (void)setCookieForStoreWithIdentifier:(id)arg1 cookie:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)createFromWebsiteDataStoreWithIdentifier:(id)arg1 dataStoreIdentifier:(id)arg2 error:(id *)arg3;
@@ -20,4 +20,3 @@
 - (id)initWithInstanceManager:(id)arg1;
 
 @end
-

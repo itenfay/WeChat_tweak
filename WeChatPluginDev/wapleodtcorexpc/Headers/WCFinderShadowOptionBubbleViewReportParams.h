@@ -14,7 +14,6 @@
     NSString *_refFeedId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *refFeedId; // @synthesize refFeedId=_refFeedId;
 @property(copy, nonatomic) NSString *rightViewReportId; // @synthesize rightViewReportId=_rightViewReportId;
 @property(copy, nonatomic) NSString *bubbleViewReportId; // @synthesize bubbleViewReportId=_bubbleViewReportId;

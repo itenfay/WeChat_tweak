@@ -21,7 +21,6 @@
     NSMutableDictionary *_customSetters;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *customSetters; // @synthesize customSetters=_customSetters;
 @property(nonatomic) SEL customGetter; // @synthesize customGetter=_customGetter;
 @property(nonatomic) _Bool isMutable; // @synthesize isMutable=_isMutable;

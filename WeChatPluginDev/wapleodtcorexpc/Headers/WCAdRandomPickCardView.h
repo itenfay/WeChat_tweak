@@ -21,7 +21,6 @@
 }
 
 + (struct CGSize)calcViewSizeForPickCardInfo:(id)arg1 maxWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldResumeBackgroundPagPlaying; // @synthesize shouldResumeBackgroundPagPlaying=_shouldResumeBackgroundPagPlaying;
 @property(retain, nonatomic) PAGView *backgroundPagView; // @synthesize backgroundPagView=_backgroundPagView;
 @property(nonatomic) _Bool shouldResumeCardItemsView; // @synthesize shouldResumeCardItemsView=_shouldResumeCardItemsView;

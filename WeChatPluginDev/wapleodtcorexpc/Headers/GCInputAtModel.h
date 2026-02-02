@@ -34,7 +34,6 @@
     unsigned long long _fetchCnt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool reported; // @synthesize reported=_reported;
 @property(nonatomic) unsigned long long fetchCnt; // @synthesize fetchCnt=_fetchCnt;
 @property(nonatomic) _Bool hasReceiveResponse; // @synthesize hasReceiveResponse=_hasReceiveResponse;

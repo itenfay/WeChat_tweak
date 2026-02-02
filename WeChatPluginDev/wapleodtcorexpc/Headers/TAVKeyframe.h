@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol TAVKeyframeValue;
 
@@ -14,7 +15,6 @@
     CDStruct_1b6d18a9 _time;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType timingFunction; // @synthesize timingFunction=_timingFunction;
 @property(retain, nonatomic) id <TAVKeyframeValue> value; // @synthesize value=_value;
 @property(nonatomic) CDStruct_1b6d18a9 time; // @synthesize time=_time;
@@ -22,4 +22,3 @@
 - (id)initWithTime:(CDStruct_1b6d18a9)arg1 value:(id)arg2;
 
 @end
-

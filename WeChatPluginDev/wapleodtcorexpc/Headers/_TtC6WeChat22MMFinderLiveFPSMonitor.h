@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE, _TtC6WeChat27MMFinderLiveFPSPeriodResult;
 
@@ -19,7 +20,6 @@
     MISSING_TYPE *fpsRecord;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)dealloc;
 - (void)tickWithLink:(id)arg1;
@@ -31,4 +31,3 @@
 @property(nonatomic, readonly) _Bool fpsSwitch;
 
 @end
-

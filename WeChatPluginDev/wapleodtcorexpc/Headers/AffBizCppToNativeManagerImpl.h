@@ -12,7 +12,6 @@
     AffBizCppToNativeManagerCallback *m_callBack;
 }
 
-- (void).cxx_destruct;
 - (void)getResortContextAsync:(int)arg1;
 - (void)setCallback:(id)arg1;
 - (void)markBrandListDBAsCompressFinish;

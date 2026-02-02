@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSDictionary, NSString;
 @protocol WKURLSchemeTask, XHRRequestTaskDelegate;
@@ -18,7 +19,6 @@
     CDUnknownBlockType _iOS16StringFixBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType iOS16StringFixBlock; // @synthesize iOS16StringFixBlock=_iOS16StringFixBlock;
 @property(nonatomic) _Bool stopped; // @synthesize stopped=_stopped;
 @property(nonatomic) _Bool async; // @synthesize async=_async;
@@ -34,4 +34,3 @@
 - (id)initWith:(id)arg1;
 
 @end
-

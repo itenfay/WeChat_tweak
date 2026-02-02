@@ -12,7 +12,6 @@
     id <QMapContextDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <QMapContextDelegate> delegate; // @synthesize delegate=_delegate;
 
 @end

@@ -24,7 +24,6 @@
     NSString *m_nsEncryptType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsEncryptType; // @synthesize m_nsEncryptType;
 @property(retain, nonatomic) NSString *m_nsEncryptData; // @synthesize m_nsEncryptData;
 @property(readonly, nonatomic) unsigned int m_uiAddressID; // @synthesize m_uiAddressID;

@@ -15,7 +15,6 @@
     UILabel *_noHistoryGroupTips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *noHistoryGroupTips; // @synthesize noHistoryGroupTips=_noHistoryGroupTips;
 @property(retain, nonatomic) NSMutableSet *selectedHistoryGroupContactSet; // @synthesize selectedHistoryGroupContactSet=_selectedHistoryGroupContactSet;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;

@@ -15,7 +15,6 @@
     NSString *_pathType;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *pathType; // @synthesize pathType=_pathType;
 @property(readonly, nonatomic) NSArray *path; // @synthesize path=_path;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;

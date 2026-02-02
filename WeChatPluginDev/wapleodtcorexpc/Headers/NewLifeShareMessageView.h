@@ -10,7 +10,6 @@
     NewLifeShareCoverImageView *_coverView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeShareCoverImageView *coverView; // @synthesize coverView=_coverView;
 - (void)onNewLifeDetailShareViewAnimationEnd;
 - (void)onNewLifeDetailShareViewAnimationBegin;

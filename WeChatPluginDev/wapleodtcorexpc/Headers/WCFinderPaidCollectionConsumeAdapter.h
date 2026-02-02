@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderPaidCollectionInfo;
 
@@ -13,7 +14,6 @@
     FinderPaidCollectionInfo *_paidCollectionInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int collectionType; // @synthesize collectionType=_collectionType;
 @property(retain, nonatomic) FinderPaidCollectionInfo *paidCollectionInfo; // @synthesize paidCollectionInfo=_paidCollectionInfo;
 - (id)consumeRepeatTips;
@@ -28,4 +28,3 @@
 - (id)initWithPaidCollectionInfo:(id)arg1;
 
 @end
-

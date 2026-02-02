@@ -10,7 +10,6 @@
     StoreEmotionPageShareLogic *_shareLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StoreEmotionPageShareLogic *shareLogic; // @synthesize shareLogic=_shareLogic;
 - (void)onShareEnded;
 - (id)getViewController;

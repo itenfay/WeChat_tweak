@@ -17,7 +17,6 @@
     NSString *_isAudience;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *isAudience; // @synthesize isAudience=_isAudience;
 @property(retain, nonatomic) NSString *liveId; // @synthesize liveId=_liveId;
 @property(retain, nonatomic) NSString *objectId; // @synthesize objectId=_objectId;

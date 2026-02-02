@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCEditImageOperation : NSObject
 {
@@ -12,7 +13,6 @@
     unsigned long long _operationType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long operationType; // @synthesize operationType=_operationType;
 @property(copy, nonatomic) CDUnknownBlockType redoBlock; // @synthesize redoBlock=_redoBlock;
 @property(copy, nonatomic) CDUnknownBlockType undoBlock; // @synthesize undoBlock=_undoBlock;
@@ -20,4 +20,3 @@
 - (void)undo;
 
 @end
-

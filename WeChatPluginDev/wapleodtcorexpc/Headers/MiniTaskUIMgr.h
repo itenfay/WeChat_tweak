@@ -20,7 +20,6 @@
     WADynamicBackgroundGLViewController *_dynamicBGVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastAddRecordTimestampForSwipeEdu; // @synthesize lastAddRecordTimestampForSwipeEdu=_lastAddRecordTimestampForSwipeEdu;
 @property(nonatomic) _Bool doSarcasmOnceWhenEnterTaskList; // @synthesize doSarcasmOnceWhenEnterTaskList=_doSarcasmOnceWhenEnterTaskList;
 @property(nonatomic) unsigned int flirtMiniEntryCount; // @synthesize flirtMiniEntryCount=_flirtMiniEntryCount;

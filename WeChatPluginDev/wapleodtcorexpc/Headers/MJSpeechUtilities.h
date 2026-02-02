@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MJSpeechUtilities : NSObject
 {
@@ -53,4 +54,3 @@
 + (_Bool)isValidVoiceMaterialID:(id)arg1;
 
 @end
-

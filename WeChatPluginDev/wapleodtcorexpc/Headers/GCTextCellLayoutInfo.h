@@ -21,7 +21,6 @@
     struct UIEdgeInsets _contentMarginInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int numLine; // @synthesize numLine=_numLine;
 @property(nonatomic) _Bool alignCenter; // @synthesize alignCenter=_alignCenter;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;

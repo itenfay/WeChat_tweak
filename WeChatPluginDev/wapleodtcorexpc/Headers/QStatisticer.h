@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSNumber, NSString, QAuthenStateError, TBIndoorUserBehaviourStat, TBPromoteIconBehaviourStat;
 
@@ -40,7 +41,6 @@
     QAuthenStateError *_auth;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QAuthenStateError *auth; // @synthesize auth=_auth;
 @property(retain, nonatomic) TBPromoteIconBehaviourStat *promoteIconBehaviourStat; // @synthesize promoteIconBehaviourStat=_promoteIconBehaviourStat;
 @property(retain, nonatomic) NSMutableDictionary *promote; // @synthesize promote=_promote;
@@ -104,4 +104,3 @@
 - (id)init;
 
 @end
-

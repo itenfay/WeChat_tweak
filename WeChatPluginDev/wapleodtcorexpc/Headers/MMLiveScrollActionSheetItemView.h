@@ -12,7 +12,6 @@
     MMLiveScrollActionSheetItem *_item;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveScrollActionSheetItem *item; // @synthesize item=_item;
 @property(nonatomic) __weak id <MMLiveScrollActionSheetItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)reloadData;

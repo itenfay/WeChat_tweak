@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LocationRetriever, NSString;
 
@@ -14,7 +15,6 @@
     GCLoationRetrieverBlock *_selfRef;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCLoationRetrieverBlock *selfRef; // @synthesize selfRef=_selfRef;
 @property(retain, nonatomic) LocationRetriever *retriever; // @synthesize retriever=_retriever;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -36,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

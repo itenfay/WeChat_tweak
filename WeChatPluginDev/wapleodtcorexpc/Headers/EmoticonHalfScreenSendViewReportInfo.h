@@ -17,7 +17,6 @@
     NSString *_sdkRequestID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sdkRequestID; // @synthesize sdkRequestID=_sdkRequestID;
 @property(nonatomic) long long addEmoticonSource; // @synthesize addEmoticonSource=_addEmoticonSource;
 @property(nonatomic) long long emoticonScene; // @synthesize emoticonScene=_emoticonScene;

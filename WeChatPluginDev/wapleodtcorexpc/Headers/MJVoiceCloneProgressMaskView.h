@@ -12,7 +12,6 @@
     MMUIButton *_cancelButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(nonatomic) __weak id <MJVoiceCloneProgressMaskViewDelegate> mj_delegate; // @synthesize mj_delegate=_mj_delegate;
 - (void)cancelButtonDidTouchUpInside:(id)arg1;

@@ -11,7 +11,6 @@
     double _triangleRightMargin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double triangleRightMargin; // @synthesize triangleRightMargin=_triangleRightMargin;
 @property(retain, nonatomic) MMUILabel *hintLabel; // @synthesize hintLabel=_hintLabel;
 - (void)layoutSubviews;

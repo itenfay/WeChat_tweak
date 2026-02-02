@@ -25,7 +25,6 @@
     WCPlayerConfigFullScreenProgressBarParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerConfigFullScreenProgressBarParams *params; // @synthesize params=_params;
 @property(nonatomic) int curPlayRateIndex; // @synthesize curPlayRateIndex=_curPlayRateIndex;
 @property(retain, nonatomic) NSArray *supportedPlayRateArr; // @synthesize supportedPlayRateArr=_supportedPlayRateArr;

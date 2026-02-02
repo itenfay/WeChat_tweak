@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTableView, NSMutableSet, NSString, WAContactGetter;
 
 @interface WASessionViewController
@@ -13,7 +15,6 @@
     NSString *_sceneID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)getWeappContactForUsername:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -51,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

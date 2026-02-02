@@ -39,7 +39,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int visittime; // @synthesize visittime=_visittime;
 @property(retain, nonatomic) NSString *imgurl; // @synthesize imgurl=_imgurl;
 @property(retain, nonatomic) NSString *iconurl; // @synthesize iconurl=_iconurl;

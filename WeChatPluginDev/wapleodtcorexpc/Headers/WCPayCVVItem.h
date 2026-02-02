@@ -13,7 +13,6 @@
     NSString *m_nsTipContent;
 }
 
-- (void).cxx_destruct;
 - (void)setTipBtnShowed:(_Bool)arg1;
 - (void)showCVVTip;
 - (void)setTipContent:(id)arg1 Title:(id)arg2;

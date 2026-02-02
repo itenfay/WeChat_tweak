@@ -14,7 +14,6 @@
     MinimizationTransitionContext *_transitionContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MinimizationTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(nonatomic) __weak id <MinimizationNewTransitionDelegate> delegate; // @synthesize delegate=_delegate;
 - (double)transitionDuration:(id)arg1;

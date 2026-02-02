@@ -26,7 +26,6 @@
     NSArray *_regularExpressionsThatLogFilesToKV;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNewScanner; // @synthesize isNewScanner=_isNewScanner;
 @property(nonatomic) _Bool isHighPriority; // @synthesize isHighPriority=_isHighPriority;
 @property(nonatomic) _Bool isIgnoreCowFile; // @synthesize isIgnoreCowFile=_isIgnoreCowFile;

@@ -18,7 +18,6 @@
     double lineWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth;
 @property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor;
 - (void)dealloc;

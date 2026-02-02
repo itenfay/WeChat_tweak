@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderUserPageTab, NSString, WCFinderStreamProfileHeadData;
 @protocol WCFinderStreamProfilePageModelTabDelegate;
@@ -20,7 +21,6 @@
 + (_Bool)pageIsRequired;
 + (_Bool)allowLimitMode;
 + (_Bool)shouldDisplay:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderStreamProfilePageModelTabDelegate> tabDelegate; // @synthesize tabDelegate=_tabDelegate;
 @property(retain, nonatomic) WCFinderStreamProfileHeadData *headData; // @synthesize headData=_headData;
 @property(retain, nonatomic) FinderUserPageTab *tabdef; // @synthesize tabdef=_tabdef;
@@ -54,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

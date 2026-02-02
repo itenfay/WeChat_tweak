@@ -11,7 +11,6 @@
     NSString *_extraMsg;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *extraMsg; // @synthesize extraMsg=_extraMsg;
 @property(copy, nonatomic) NSString *codeContent; // @synthesize codeContent=_codeContent;
 

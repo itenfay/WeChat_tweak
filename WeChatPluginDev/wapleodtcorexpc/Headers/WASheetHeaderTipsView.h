@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton, UIImageView, UILabel;
 
@@ -18,7 +19,6 @@
 }
 
 + (double)tipsViewHeightWithText:(id)arg1 superviewWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
@@ -32,4 +32,3 @@
 - (id)initWithTipsText:(id)arg1;
 
 @end
-

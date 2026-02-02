@@ -18,7 +18,6 @@
 + (struct CGSize)calculateTextSize:(id)arg1 config:(id)arg2;
 + (struct CGSize)cellSizeWithTitle:(id)arg1 config:(id)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveTagListCollectionViewConfig *config; // @synthesize config=_config;
 @property(nonatomic) _Bool isToggle; // @synthesize isToggle=_isToggle;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

@@ -24,7 +24,6 @@
     NSMutableArray *_businessDataFilterCache;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isReport; // @synthesize isReport=_isReport;
 @property(nonatomic) unsigned int flowSeq; // @synthesize flowSeq=_flowSeq;
 @property(retain, nonatomic) NSMutableArray *businessDataFilterCache; // @synthesize businessDataFilterCache=_businessDataFilterCache;

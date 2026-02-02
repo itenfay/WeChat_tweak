@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock, NSString;
 
@@ -25,7 +26,6 @@
     NSString *_subAppId;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)getStartPlayTime;
 - (unsigned long long)getStartRecordTime;
 - (unsigned long long)getSuccRecordTime;
@@ -69,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

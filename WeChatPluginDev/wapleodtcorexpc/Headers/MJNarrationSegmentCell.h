@@ -18,7 +18,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect currentBounds; // @synthesize currentBounds=_currentBounds;
 @property(retain, nonatomic) MJMuteLabel *muteLabel; // @synthesize muteLabel=_muteLabel;
 @property(retain, nonatomic) MJVoiceLabel *voiceLabel; // @synthesize voiceLabel=_voiceLabel;

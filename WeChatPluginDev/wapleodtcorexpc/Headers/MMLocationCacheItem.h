@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_timestamp;
 + (void)PBArrayAdd_longitude;
 + (void)PBArrayAdd_latitude;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *encryptLongitude; // @synthesize encryptLongitude=_encryptLongitude;
 @property(retain, nonatomic) NSString *encryptLatitude; // @synthesize encryptLatitude=_encryptLatitude;
 @property(nonatomic) _Bool isMarsLocation; // @synthesize isMarsLocation=_isMarsLocation;

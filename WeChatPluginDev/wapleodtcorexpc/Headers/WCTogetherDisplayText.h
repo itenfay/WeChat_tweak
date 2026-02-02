@@ -16,7 +16,6 @@
 }
 
 + (id)displayTextFromDisplayInfo:(id)arg1 isRichText:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *togetherUsers; // @synthesize togetherUsers=_togetherUsers;
 @property(readonly, copy, nonatomic) NSString *togetherText; // @synthesize togetherText=_togetherText;
 @property(readonly, nonatomic) _Bool isRichText; // @synthesize isRichText=_isRichText;

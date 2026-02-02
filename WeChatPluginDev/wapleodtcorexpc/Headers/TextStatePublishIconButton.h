@@ -25,7 +25,6 @@
     UIView *_redDotView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, getter=isShowingRedDot) _Bool showingRedDot; // @synthesize showingRedDot=_showingRedDot;
 @property(retain, nonatomic) UIView *redDotView; // @synthesize redDotView=_redDotView;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;

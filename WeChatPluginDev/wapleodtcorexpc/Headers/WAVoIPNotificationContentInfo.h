@@ -23,7 +23,6 @@
 }
 
 + (id)notificationContentFromUserInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double receiveTimestamp; // @synthesize receiveTimestamp=_receiveTimestamp;
 @property(nonatomic) _Bool isFromAPNS; // @synthesize isFromAPNS=_isFromAPNS;
 @property(retain, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;

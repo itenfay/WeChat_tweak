@@ -19,7 +19,6 @@
     CDStruct_1b6d18a9 _redPacketStartTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 redPacketStartTime; // @synthesize redPacketStartTime=_redPacketStartTime;
 @property(retain, nonatomic) OMJRecordingResultTraits *recordingResultTraits; // @synthesize recordingResultTraits=_recordingResultTraits;
 @property(retain, nonatomic) UIImage *croppedCoverImage; // @synthesize croppedCoverImage=_croppedCoverImage;

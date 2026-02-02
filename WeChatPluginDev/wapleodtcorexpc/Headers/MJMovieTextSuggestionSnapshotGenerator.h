@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJOCRProcessor, MJPlaybackViewModel, MMLRUCache, NSMutableDictionary, NSString;
 @protocol MJMovieTextSuggestionSnapshotGeneratorDelegate;
@@ -22,7 +23,6 @@
 + (id)cacheKeyForSnapshot:(id)arg1;
 + (id)cacheKeyFromTime:(CDStruct_1b6d18a9)arg1;
 + (void)uploadSnapshotToCDN:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJOCRProcessor *ocrProcessor; // @synthesize ocrProcessor=_ocrProcessor;
 @property(retain, nonatomic) NSMutableDictionary *runningTasks; // @synthesize runningTasks=_runningTasks;
 @property(retain, nonatomic) MMLRUCache *cache; // @synthesize cache=_cache;
@@ -45,4 +45,3 @@
 - (id)initWithPlaybackVM:(id)arg1;
 
 @end
-

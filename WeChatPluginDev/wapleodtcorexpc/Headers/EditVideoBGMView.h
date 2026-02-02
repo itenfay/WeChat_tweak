@@ -37,7 +37,6 @@
     NSString *_musicLogoName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *musicLogoName; // @synthesize musicLogoName=_musicLogoName;
 @property(retain, nonatomic) MMUIButton *searchBtn; // @synthesize searchBtn=_searchBtn;
 @property(retain, nonatomic) MMUIButton *originalSoundOnOffBtn; // @synthesize originalSoundOnOffBtn=_originalSoundOnOffBtn;

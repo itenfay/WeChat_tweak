@@ -13,7 +13,6 @@
 }
 
 + (id)getDebugSkylineOptionName:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 - (_Bool)getWithOption:(long long)arg1;
 - (void)setWithOption:(long long)arg1 val:(_Bool)arg2;

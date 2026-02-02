@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSObject (SafePerform)
 + (void)safeCancelPreviousPerformRequestsWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
@@ -16,4 +17,3 @@
 - (id)objectWrapperIfExist;
 - (id)objectWrapper;
 @end
-

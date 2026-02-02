@@ -16,7 +16,6 @@
     UIView *_line;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *line; // @synthesize line=_line;
 @property(retain, nonatomic) MMUIButton *anchorSettingButton; // @synthesize anchorSettingButton=_anchorSettingButton;
 @property(retain, nonatomic) MMFinderLiveShopShelfAnchorLocalLifeMiniAppButton *miniAppButton; // @synthesize miniAppButton=_miniAppButton;

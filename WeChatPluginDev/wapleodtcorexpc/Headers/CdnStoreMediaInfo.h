@@ -14,7 +14,6 @@
     unsigned long long m_uiFileTotalLen;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_uiFileTotalLen; // @synthesize m_uiFileTotalLen;
 @property(retain, nonatomic) NSString *m_nsFilePath; // @synthesize m_nsFilePath;
 @property(retain, nonatomic) NSString *m_nsClientMsgID; // @synthesize m_nsClientMsgID;

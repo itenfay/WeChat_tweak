@@ -12,7 +12,6 @@
     UIView *_disabledCover;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *disabledCover; // @synthesize disabledCover=_disabledCover;
 @property(retain, nonatomic) RichTextView *bulletCommentView; // @synthesize bulletCommentView=_bulletCommentView;
 @property(retain, nonatomic) NSString *bulletComment; // @synthesize bulletComment=_bulletComment;

@@ -14,7 +14,6 @@
     MMUILabel *_topicNumberLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *topicNumberLabel; // @synthesize topicNumberLabel=_topicNumberLabel;
 @property(retain, nonatomic) MMUILabel *topicLabel; // @synthesize topicLabel=_topicLabel;
 @property(retain, nonatomic) UIView *seperateLine; // @synthesize seperateLine=_seperateLine;

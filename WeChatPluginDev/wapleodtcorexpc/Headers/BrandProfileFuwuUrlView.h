@@ -14,7 +14,6 @@
     UIImageView *_iconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) double cachedFuwuViewHeight; // @synthesize cachedFuwuViewHeight=_cachedFuwuViewHeight;
 @property(retain, nonatomic) MMUIButton *button; // @synthesize button=_button;

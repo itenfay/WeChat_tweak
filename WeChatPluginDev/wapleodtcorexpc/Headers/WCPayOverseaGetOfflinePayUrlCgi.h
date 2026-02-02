@@ -11,7 +11,6 @@
     _Bool _didResponse;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didResponse; // @synthesize didResponse=_didResponse;
 - (void)cacheResponse:(id)arg1;
 - (void)didFailWithError:(id)arg1;

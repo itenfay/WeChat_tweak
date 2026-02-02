@@ -19,7 +19,6 @@
     UIImageView *_musicDancingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *musicDancingView; // @synthesize musicDancingView=_musicDancingView;
 @property(retain, nonatomic) UIButton *moreButton; // @synthesize moreButton=_moreButton;
 @property(retain, nonatomic) UIButton *switchButton; // @synthesize switchButton=_switchButton;

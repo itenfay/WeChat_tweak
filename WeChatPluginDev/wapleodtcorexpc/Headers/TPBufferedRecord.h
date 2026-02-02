@@ -13,7 +13,6 @@
     NSMutableArray *_bufferedStepArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bufferedStepArray; // @synthesize bufferedStepArray=_bufferedStepArray;
 @property(nonatomic) _Bool isBuffering; // @synthesize isBuffering=_isBuffering;
 

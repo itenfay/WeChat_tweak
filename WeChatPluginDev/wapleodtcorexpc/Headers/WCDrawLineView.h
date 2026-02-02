@@ -17,7 +17,6 @@
     double _paddingEnd;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBottomLine; // @synthesize isBottomLine=_isBottomLine;
 @property(nonatomic) double paddingEnd; // @synthesize paddingEnd=_paddingEnd;
 @property(nonatomic) double paddingStart; // @synthesize paddingStart=_paddingStart;

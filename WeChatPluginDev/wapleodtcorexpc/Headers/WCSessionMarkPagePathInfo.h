@@ -14,7 +14,6 @@
     NSMutableArray *_pagePaths;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pagePaths; // @synthesize pagePaths=_pagePaths;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) unsigned int index; // @synthesize index=_index;

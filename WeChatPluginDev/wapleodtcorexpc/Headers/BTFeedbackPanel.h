@@ -21,7 +21,6 @@
     id <BTFeedbackPanelDelegate> _panelDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <BTFeedbackPanelDelegate> panelDelegate; // @synthesize panelDelegate=_panelDelegate;
 - (_Bool)accessibilityPerformEscape;
 - (void)hide;

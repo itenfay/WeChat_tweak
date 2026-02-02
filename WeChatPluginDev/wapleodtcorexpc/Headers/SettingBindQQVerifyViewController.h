@@ -21,7 +21,6 @@
     NSString *m_nsImgEncryptKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsImgEncryptKey; // @synthesize m_nsImgEncryptKey;
 @property(retain, nonatomic) UIButton *m_btVerify; // @synthesize m_btVerify;
 @property(nonatomic) __weak id <ReturnToSettingAccoutDelegate> m_delReturn; // @synthesize m_delReturn;

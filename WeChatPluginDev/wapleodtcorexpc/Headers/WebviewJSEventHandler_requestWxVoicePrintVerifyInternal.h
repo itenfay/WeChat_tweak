@@ -11,7 +11,6 @@
     VoicePrintVerifyLogic *_voicePrintVerifyLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoicePrintVerifyLogic *voicePrintVerifyLogic; // @synthesize voicePrintVerifyLogic=_voicePrintVerifyLogic;
 @property(retain, nonatomic) JSEvent *cbEvent; // @synthesize cbEvent=_cbEvent;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;

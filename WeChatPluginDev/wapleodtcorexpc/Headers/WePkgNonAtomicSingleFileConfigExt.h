@@ -34,7 +34,6 @@
 + (void)PBArrayAdd_lastUnusedSeconds;
 + (void)PBArrayAdd_isClearAllPkgExceptCurrentEnabledVersion;
 + (void)PBArrayAdd_isReadyForOperationAfterCheckUpdate;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int controlCommand; // @synthesize controlCommand=_controlCommand;
 @property(nonatomic) unsigned int checkUpdateSuccessTime; // @synthesize checkUpdateSuccessTime=_checkUpdateSuccessTime;
 @property(retain, nonatomic) NSMutableDictionary *file2DownloadFailCount; // @synthesize file2DownloadFailCount=_file2DownloadFailCount;

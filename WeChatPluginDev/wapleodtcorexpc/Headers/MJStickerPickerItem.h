@@ -20,7 +20,6 @@
 + (id)noneTextAnimItem;
 + (id)pingFangItemWithType:(unsigned long long)arg1;
 + (unsigned long long)convertStickerItemTypeFrom:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMJMaterialInfo *material; // @synthesize material=_material;
 @property(nonatomic) _Bool isMultiSubtitlesSupported; // @synthesize isMultiSubtitlesSupported=_isMultiSubtitlesSupported;
 @property(nonatomic) _Bool isLocal; // @synthesize isLocal=_isLocal;

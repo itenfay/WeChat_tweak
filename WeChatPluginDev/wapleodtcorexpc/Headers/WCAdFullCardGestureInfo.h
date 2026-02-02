@@ -17,7 +17,6 @@
     NSArray *_pointsList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pointsList; // @synthesize pointsList=_pointsList;
 @property(retain, nonatomic) NSString *color; // @synthesize color=_color;
 @property(nonatomic) double distance; // @synthesize distance=_distance;

@@ -14,7 +14,6 @@
     WCTTable *_tableWebStorageGlobalConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCTTable *tableWebStorageGlobalConfig; // @synthesize tableWebStorageGlobalConfig=_tableWebStorageGlobalConfig;
 @property(retain) WCTTable *tableWebStorageConfig; // @synthesize tableWebStorageConfig=_tableWebStorageConfig;
 @property(retain, nonatomic) WCTDatabase *db; // @synthesize db=_db;

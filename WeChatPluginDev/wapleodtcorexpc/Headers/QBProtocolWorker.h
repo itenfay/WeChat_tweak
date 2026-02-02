@@ -18,7 +18,6 @@
 + (void)removeAuthenticationDelegate:(id)arg1;
 + (void)addAuthenticationDelegate:(id)arg1;
 @property(nonatomic) __weak NSURLProtocol *protocol; // @synthesize protocol=_protocol;
-- (void).cxx_destruct;
 - (void)qbProxyProtocolAfterSendRequest:(id)arg1;
 - (void)qbProxyProtocolDidFinishLoadingWithCached:(id)arg1 errCode:(long long)arg2;
 - (void)qbProxyProtocolDidStopLoading;

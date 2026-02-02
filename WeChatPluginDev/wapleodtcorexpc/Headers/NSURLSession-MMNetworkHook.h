@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSURLSession.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSURLSession (MMNetworkHook)
 + (id)mmNetworkHook_sessionWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
@@ -14,4 +15,3 @@
 - (id)mmDataTaskWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)mmDataTaskWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @end
-

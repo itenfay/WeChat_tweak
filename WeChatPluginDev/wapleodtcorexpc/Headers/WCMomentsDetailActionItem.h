@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCMomentsDetailActionItem : NSObject
 {
@@ -14,7 +15,6 @@
     CDUnknownBlockType _actionBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(copy, nonatomic) CDUnknownBlockType displayBlock; // @synthesize displayBlock=_displayBlock;
 @property(copy, nonatomic) CDUnknownBlockType getActionTipsBlock; // @synthesize getActionTipsBlock=_getActionTipsBlock;
@@ -27,4 +27,3 @@
 - (id)initWithActionType:(long long)arg1;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface RingToneSession : NSObject
 {
@@ -32,4 +33,3 @@
 + (id)fillUpFinderItemWithRing:(id)arg1 useCache:(_Bool)arg2;
 
 @end
-

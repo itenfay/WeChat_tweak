@@ -14,7 +14,6 @@
 }
 
 + (void)onCalculatLayoutInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMEmoticonView *emoticonView; // @synthesize emoticonView=_emoticonView;
 - (void)configureWithCellModel:(id)arg1;
 - (id)emoticonCellModel;

@@ -28,7 +28,6 @@
 
 + (id)descLabelFont;
 + (double)streamCellHeightWith:(id)arg1 width:(double)arg2 isShowStatus:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long showInfoType; // @synthesize showInfoType=_showInfoType;
 @property(retain, nonatomic) UILabel *maskTipsLabel; // @synthesize maskTipsLabel=_maskTipsLabel;
 @property(retain, nonatomic) UIView *oMaskView; // @synthesize oMaskView=_oMaskView;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EntranceRedDot, GameLifeFindMoreFriendEntranceInfo, GameSearchRecommendList, GetGameCenterGlobalSettingResponse, GetGameIndex4Response, GetGameIndex4TabNavResponse, JumpInfo, MMWebViewController, MemoryMappedKV, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WAAppIdToUsernameTransfer;
 
 @interface GameCenterManager
@@ -41,7 +43,6 @@
     unsigned long long _userClickGameCenterTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long userClickGameCenterTime; // @synthesize userClickGameCenterTime=_userClickGameCenterTime;
 @property(nonatomic) int netDetailFlag; // @synthesize netDetailFlag=_netDetailFlag;
 @property(nonatomic) _Bool isWeakNet; // @synthesize isWeakNet=_isWeakNet;
@@ -287,4 +288,3 @@
 @property(readonly) Class superclass;
 
 @end
-

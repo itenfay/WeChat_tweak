@@ -12,7 +12,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeShareCoverImageViewModel *innerViewModel; // @synthesize innerViewModel=_innerViewModel;
 @property(retain, nonatomic) WCFinderShareToMomentsItem *item; // @synthesize item=_item;
 - (id)cellViewClassName;

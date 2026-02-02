@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIImageView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMovieDecoder, NSString, UIImage;
 @protocol MVideoPlayerViewDelegate;
@@ -20,7 +21,6 @@
     NSString *_url;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) UIImage *firstFrame; // @synthesize firstFrame=_firstFrame;
 @property(retain, nonatomic) MMovieDecoder *decoder; // @synthesize decoder=_decoder;
@@ -49,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

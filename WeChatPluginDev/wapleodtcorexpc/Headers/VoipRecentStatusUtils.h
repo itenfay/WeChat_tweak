@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface VoipRecentStatusUtils : NSObject
 {
@@ -18,4 +19,3 @@
 + (_Bool)isEnable;
 
 @end
-

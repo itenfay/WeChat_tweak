@@ -15,7 +15,6 @@
 
 + (Class)driverClassForName:(id)arg1;
 + (_Bool)isDriverSupported:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveBeautyItem *beautyItem; // @synthesize beautyItem=_beautyItem;
 @property(nonatomic) __weak MMWeEffectManager *effectManagerStorage; // @synthesize effectManagerStorage=_effectManagerStorage;
 - (void)teardown;

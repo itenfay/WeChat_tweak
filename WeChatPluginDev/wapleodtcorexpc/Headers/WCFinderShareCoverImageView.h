@@ -22,7 +22,6 @@
     UIImageView *_liveGradientView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *liveGradientView; // @synthesize liveGradientView=_liveGradientView;
 @property(retain, nonatomic) RichTextView *mediaTitleTextView; // @synthesize mediaTitleTextView=_mediaTitleTextView;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;

@@ -15,7 +15,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sequence; // @synthesize sequence=_sequence;
 @property(retain, nonatomic) NSString *textStateId; // @synthesize textStateId=_textStateId;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;

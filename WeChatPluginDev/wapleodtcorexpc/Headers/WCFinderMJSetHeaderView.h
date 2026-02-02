@@ -21,7 +21,6 @@
 }
 
 + (double)displayHeightWithVM:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMJSetDesignerView *designerView; // @synthesize designerView=_designerView;
 @property(retain, nonatomic) UIButton *becomeCeatorButton; // @synthesize becomeCeatorButton=_becomeCeatorButton;
 @property(retain, nonatomic) UIButton *takePhotoButton; // @synthesize takePhotoButton=_takePhotoButton;

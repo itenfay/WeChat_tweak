@@ -12,7 +12,6 @@
     long long _openInitialIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long openInitialIndex; // @synthesize openInitialIndex=_openInitialIndex;
 @property(retain, nonatomic) WCFinderFeedListView *listView; // @synthesize listView=_listView;
 @property(retain, nonatomic) WCFinderInteractiveSearchListViewModel *viewModel; // @synthesize viewModel=_viewModel;

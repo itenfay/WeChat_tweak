@@ -13,7 +13,6 @@
     NSMutableArray *m_categoryArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_categoryArray; // @synthesize m_categoryArray;
 @property(retain, nonatomic) MMTableView *m_tableView; // @synthesize m_tableView;
 @property(nonatomic) __weak id <POICategoryDelegate> delegate; // @synthesize delegate=_delegate;

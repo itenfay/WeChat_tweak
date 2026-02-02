@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _prepareForReuse;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool autoCallPrepareForReuse; // @synthesize autoCallPrepareForReuse=_autoCallPrepareForReuse;
 @property(copy, nonatomic) CDUnknownBlockType prepareForReuse; // @synthesize prepareForReuse=_prepareForReuse;
 @property(copy, nonatomic) CDUnknownBlockType beforeEnqueue; // @synthesize beforeEnqueue=_beforeEnqueue;
@@ -26,4 +26,3 @@
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 
 @end
-

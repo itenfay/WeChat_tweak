@@ -16,7 +16,6 @@
     NSNumber *_digitsAlone;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic, getter=isDigitsAlone) NSNumber *digitsAlone; // @synthesize digitsAlone=_digitsAlone;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMUILabel *digitsLabel; // @synthesize digitsLabel=_digitsLabel;

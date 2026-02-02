@@ -4,15 +4,14 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMBifrostWatcher : NSObject
 {
     CDUnknownBlockType _callback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 - (void)dealloc;
 
 @end
-

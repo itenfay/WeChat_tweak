@@ -15,7 +15,6 @@
     NSError *_innerError;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *innerError; // @synthesize innerError=_innerError;
 @property(nonatomic) long long ksAudioPlayerErrorType; // @synthesize ksAudioPlayerErrorType=_ksAudioPlayerErrorType;
 @property(copy, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;

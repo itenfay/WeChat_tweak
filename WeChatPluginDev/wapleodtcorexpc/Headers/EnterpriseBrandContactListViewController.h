@@ -20,7 +20,6 @@
     EnterpriseBrandContactHelper *_helper;
 }
 
-- (void).cxx_destruct;
 - (void)registerYReportSdk;
 - (void)onBizShareInfoResult:(int)arg1 errorMsg:(id)arg2 shareInfo:(id)arg3 mainBrandUserName:(id)arg4;
 - (void)onCleanUpEnterpriseChat:(id)arg1;

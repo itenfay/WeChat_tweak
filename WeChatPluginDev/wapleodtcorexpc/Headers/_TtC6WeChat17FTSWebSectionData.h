@@ -14,7 +14,6 @@
     MISSING_TYPE *isFromVoice;
 }
 
-- (void).cxx_destruct;
 - (id)initWithType:(unsigned long long)arg1 data:(id)arg2 searchItemCount:(long long)arg3;
 @property(nonatomic, readonly) NSString *description;
 @property(nonatomic) _Bool isFromVoice; // @synthesize isFromVoice;

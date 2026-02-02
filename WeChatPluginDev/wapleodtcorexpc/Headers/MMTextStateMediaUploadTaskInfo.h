@@ -72,7 +72,6 @@
 + (void)PBArrayAdd_localInfo;
 + (void)PBArrayAdd_clientId;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLivePhoto; // @synthesize isLivePhoto=_isLivePhoto;
 @property(retain, nonatomic) NSString *nsCdnStatInfo; // @synthesize nsCdnStatInfo=_nsCdnStatInfo;
 @property(nonatomic) _Bool isSelectFromAlbum; // @synthesize isSelectFromAlbum=_isSelectFromAlbum;

@@ -11,7 +11,6 @@
 }
 
 + (void)onCalculatLayoutInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) GWImageCardCellView *imageWidget; // @synthesize imageWidget=_imageWidget;
 - (void)configureWithCellModel:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

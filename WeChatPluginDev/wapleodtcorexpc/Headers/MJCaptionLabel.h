@@ -14,7 +14,6 @@
     UIImageView *_indicatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(retain, nonatomic) UILabel *subLabel; // @synthesize subLabel=_subLabel;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;

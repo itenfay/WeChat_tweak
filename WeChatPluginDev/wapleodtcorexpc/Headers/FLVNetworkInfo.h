@@ -16,7 +16,6 @@
     NSMutableDictionary *_networkInfoDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *networkInfoDict; // @synthesize networkInfoDict=_networkInfoDict;
 @property(retain, nonatomic) NSMutableDictionary *qosHistoryDict; // @synthesize qosHistoryDict=_qosHistoryDict;
 @property(nonatomic) unsigned int lastRTTFromMars; // @synthesize lastRTTFromMars=_lastRTTFromMars;

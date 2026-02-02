@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderGetFansListCGI
@@ -14,7 +16,6 @@
     NSString *_finderUsername;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
 @property(retain, nonatomic) NSData *lastBuf; // @synthesize lastBuf=_lastBuf;
 @property(nonatomic) unsigned long long lastFansMaxId; // @synthesize lastFansMaxId=_lastFansMaxId;
@@ -26,4 +27,3 @@
 - (id)initWithLastFansMaxId:(unsigned long long)arg1 lastBuf:(id)arg2 finderUsername:(id)arg3 successful:(CDUnknownBlockType)arg4 failure:(CDUnknownBlockType)arg5;
 
 @end
-

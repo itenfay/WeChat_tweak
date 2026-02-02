@@ -19,7 +19,6 @@
     NSData *_pageBuffer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *pageBuffer; // @synthesize pageBuffer=_pageBuffer;
 @property(retain, nonatomic) NSMutableSet *mentionIDSet; // @synthesize mentionIDSet=_mentionIDSet;
 @property(retain, nonatomic) NSMutableArray *mentionList; // @synthesize mentionList=_mentionList;

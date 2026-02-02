@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIView;
 @protocol WCBaseInfoItemDelegate;
 
@@ -19,7 +21,6 @@
     CDUnknownBlockType _m_resignBlk;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType m_resignBlk; // @synthesize m_resignBlk=_m_resignBlk;
 @property(nonatomic) _Bool m_bActive; // @synthesize m_bActive;
 @property(readonly, nonatomic) _Bool m_bEnable; // @synthesize m_bEnable;
@@ -39,4 +40,3 @@
 - (void)initView:(struct CGRect)arg1;
 
 @end
-

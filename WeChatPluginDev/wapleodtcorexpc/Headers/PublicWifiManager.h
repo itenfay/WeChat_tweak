@@ -35,7 +35,6 @@
     NSMutableDictionary *_knownProtocol3HotspotsList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *knownProtocol3HotspotsList; // @synthesize knownProtocol3HotspotsList=_knownProtocol3HotspotsList;
 @property(retain, nonatomic) NSString *proto4ToConnectPassword; // @synthesize proto4ToConnectPassword=_proto4ToConnectPassword;
 @property(retain, nonatomic) NSString *proto4ToConnectSSID; // @synthesize proto4ToConnectSSID=_proto4ToConnectSSID;

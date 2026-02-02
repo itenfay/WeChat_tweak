@@ -11,7 +11,6 @@
     WCPayFaceHBGetLogic *m_faceHBGetLogic;
 }
 
-- (void).cxx_destruct;
 - (void)onStrangerContactUpdated:(id)arg1 Contact:(id)arg2;
 - (void)mergeFaceHBReceiverInfo:(id)arg1 withOldInfo:(id)arg2;
 - (id)getContactFromUserName:(id)arg1;

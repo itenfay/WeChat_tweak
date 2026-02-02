@@ -16,7 +16,6 @@
 
 + (id)savedPackageWithType:(unsigned long long)arg1 scopeId:(id)arg2;
 + (id)savedDescriptorWithScopeId:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveBeautyResourcePackageModel *filterResources; // @synthesize filterResources=_filterResources;
 @property(retain, nonatomic) MMLiveBeautyResourcePackageModel *makeupResources; // @synthesize makeupResources=_makeupResources;
 @property(retain, nonatomic) MMLiveBeautyResourcePackageModel *beautyResources; // @synthesize beautyResources=_beautyResources;

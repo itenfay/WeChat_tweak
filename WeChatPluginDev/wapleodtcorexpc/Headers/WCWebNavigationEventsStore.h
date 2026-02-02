@@ -12,7 +12,6 @@
     NSURL *_curURLInNavigation;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *curURLInNavigation; // @synthesize curURLInNavigation=_curURLInNavigation;
 @property(retain, nonatomic) WKNavigation *curNavigation; // @synthesize curNavigation=_curNavigation;
 @property(nonatomic) __weak WKWebView *curWebView; // @synthesize curWebView=_curWebView;

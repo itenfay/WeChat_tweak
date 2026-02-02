@@ -12,7 +12,6 @@
     MMLoadingView *m_loadingView;
 }
 
-- (void).cxx_destruct;
 - (void)onCleanUpEnterpriseChat:(id)arg1;
 - (void)onUpdateEnterpriseGroupMemberList:(id)arg1 errorCode:(int)arg2;
 - (void)onSessionTotalUnreadCountChange:(unsigned int)arg1;

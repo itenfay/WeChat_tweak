@@ -10,7 +10,6 @@
     NSMutableArray *_iconArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *iconArray; // @synthesize iconArray=_iconArray;
 
 @end

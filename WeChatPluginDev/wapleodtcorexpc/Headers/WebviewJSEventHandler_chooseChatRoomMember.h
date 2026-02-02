@@ -11,7 +11,6 @@
     MultiRoomContactSelectViewController *_m_viewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultiRoomContactSelectViewController *m_viewController; // @synthesize m_viewController=_m_viewController;
 - (_Bool)useCustomMemberList;
 - (void)onMultiSelectContactCancel;

@@ -14,7 +14,6 @@
     double _unit;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double unit; // @synthesize unit=_unit;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 - (float)screenAtElapse:(double)arg1;

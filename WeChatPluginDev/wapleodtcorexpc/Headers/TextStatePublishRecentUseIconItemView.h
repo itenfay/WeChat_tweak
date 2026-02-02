@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, MMWebImageView, TextStateIcon, UIStackView, UIView;
 
@@ -19,7 +20,6 @@
 
 + (double)height;
 + (double)horizonPadding;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType deleteHandler; // @synthesize deleteHandler=_deleteHandler;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) MMUILabel *iconDescriptionLabel; // @synthesize iconDescriptionLabel=_iconDescriptionLabel;
@@ -40,4 +40,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

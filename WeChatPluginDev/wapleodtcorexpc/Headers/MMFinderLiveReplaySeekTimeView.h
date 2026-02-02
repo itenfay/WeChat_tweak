@@ -17,7 +17,6 @@
     MMUILabel *_slashLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showHour; // @synthesize showHour=_showHour;
 @property(retain, nonatomic) MMUILabel *slashLabel; // @synthesize slashLabel=_slashLabel;
 @property(retain, nonatomic) MMUILabel *totalTimeLabel; // @synthesize totalTimeLabel=_totalTimeLabel;

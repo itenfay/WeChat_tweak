@@ -14,7 +14,6 @@
     Class m_elementClass;
 }
 
-- (void).cxx_destruct;
 - (_Bool)clear;
 - (id)getAll;
 - (_Bool)pop;

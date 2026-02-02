@@ -12,7 +12,6 @@
     WCPayBioPayV2UpdateAuthKeyCgi *_updateAuthKeyCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBioPayV2UpdateAuthKeyCgi *updateAuthKeyCgi; // @synthesize updateAuthKeyCgi=_updateAuthKeyCgi;
 - (void)onWCPayBioPayV2UpdateAuthKeyCgiError:(id)arg1 errorCode:(unsigned int)arg2;
 - (void)onWCPayBioPayV2UpdateAuthKeyCgiResponseOK:(id)arg1;

@@ -16,7 +16,6 @@
 }
 
 + (_Bool)shouldUsePushTransitionFromScene:(int)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool presentFromTingApp; // @synthesize presentFromTingApp=_presentFromTingApp;
 @property(nonatomic) _Bool lastPresentedFullPlayer; // @synthesize lastPresentedFullPlayer=_lastPresentedFullPlayer;
 @property(nonatomic) int lastPresentedScene; // @synthesize lastPresentedScene=_lastPresentedScene;

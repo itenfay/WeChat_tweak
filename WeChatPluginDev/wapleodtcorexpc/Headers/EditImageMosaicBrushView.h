@@ -18,7 +18,6 @@
     struct CGPath *_path;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, getter=isHighLight) _Bool highLight; // @synthesize highLight=_highLight;
 @property(nonatomic) struct CGPath *path; // @synthesize path=_path;
 - (_Bool)isPenTraceViewHighLight;

@@ -15,7 +15,6 @@
     UITableView *_searchTableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *searchTableView; // @synthesize searchTableView=_searchTableView;
 @property(retain, nonatomic) NSMutableArray *musicSearchDataItemArray; // @synthesize musicSearchDataItemArray=_musicSearchDataItemArray;
 @property(nonatomic) __weak id <MMFinderLiveMusicSettingSearchTableDelegate> searchTableDelegate; // @synthesize searchTableDelegate=_searchTableDelegate;

@@ -14,7 +14,6 @@
     unsigned long long _endTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
 @property(copy, nonatomic) NSString *sessionName; // @synthesize sessionName=_sessionName;

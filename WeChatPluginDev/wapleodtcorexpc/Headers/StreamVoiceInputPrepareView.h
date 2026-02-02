@@ -11,7 +11,6 @@
     NSArray *_animationKeyTimes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *animationKeyTimes; // @synthesize animationKeyTimes=_animationKeyTimes;
 @property(retain, nonatomic) NSMutableArray *dots; // @synthesize dots=_dots;
 - (void)stopPlayAnimation;

@@ -18,7 +18,6 @@
     UIView *_labelIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *labelIconView; // @synthesize labelIconView=_labelIconView;
 @property(retain, nonatomic) UILabel *leftLabel; // @synthesize leftLabel=_leftLabel;
 @property(nonatomic) unsigned long long curNotify; // @synthesize curNotify=_curNotify;

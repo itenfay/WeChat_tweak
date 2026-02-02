@@ -12,7 +12,6 @@
     UILabel *_valueLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UIView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(nonatomic) double indicatorHeight; // @synthesize indicatorHeight=_indicatorHeight;

@@ -10,7 +10,6 @@
     UILabel *m_textLabel;
 }
 
-- (void).cxx_destruct;
 - (long long)styleForPageSheetConfirmButton;
 - (void)onClickPageSheetConfirmButton;
 - (void)layoutSubviews;

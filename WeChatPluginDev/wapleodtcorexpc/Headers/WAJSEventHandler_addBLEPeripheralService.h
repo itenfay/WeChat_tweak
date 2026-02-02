@@ -11,7 +11,6 @@
     NSString *serviceUUID;
 }
 
-- (void).cxx_destruct;
 - (void)onBluetoothDidAddService:(id)arg1 serverID:(id)arg2 errMsg:(id)arg3 errCode:(int)arg4 appid:(id)arg5;
 - (id)bleInstance;
 - (void)dealloc;

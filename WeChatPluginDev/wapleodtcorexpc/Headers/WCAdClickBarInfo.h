@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long animHideTime; // @synthesize animHideTime=_animHideTime;
 @property(nonatomic) long long animShowTime; // @synthesize animShowTime=_animShowTime;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;

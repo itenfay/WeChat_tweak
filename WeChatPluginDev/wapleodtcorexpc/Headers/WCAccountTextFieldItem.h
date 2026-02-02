@@ -11,7 +11,6 @@
     UILabel *m_labelTip;
 }
 
-- (void).cxx_destruct;
 - (void)setTextContentType:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)adjustFieldItemWidth:(double)arg1;

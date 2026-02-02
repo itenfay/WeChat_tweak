@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)genFICEntity:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *formatName; // @synthesize formatName=_formatName;
 @property(nonatomic) unsigned int eliminationFactor; // @synthesize eliminationFactor=_eliminationFactor;
 @property(retain, nonatomic) NSString *sourceImgUrl; // @synthesize sourceImgUrl=_sourceImgUrl;
@@ -39,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

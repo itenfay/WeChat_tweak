@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FaceRecogAVRecorder, NSString, YTBizPalmRegister;
 @protocol PalmEntryLogicControllerDelegate;
@@ -21,7 +22,6 @@
     CDUnknownBlockType _m_getFaceRecordCallBack;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType m_getFaceRecordCallBack; // @synthesize m_getFaceRecordCallBack=_m_getFaceRecordCallBack;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) _Bool alreadyGetSuccessImage; // @synthesize alreadyGetSuccessImage=_alreadyGetSuccessImage;
@@ -60,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

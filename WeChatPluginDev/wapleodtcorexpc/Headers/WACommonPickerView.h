@@ -17,7 +17,6 @@
     NSArray *_items;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) UIPickerView *customPicker; // @synthesize customPicker=_customPicker;
 @property(nonatomic) long long selected; // @synthesize selected=_selected;

@@ -32,7 +32,6 @@
 }
 
 + (_Bool)emptyUserListAllowedForLayoutMode:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *unoccupiedSeatList; // @synthesize unoccupiedSeatList=_unoccupiedSeatList;
 @property(retain, nonatomic) NSArray *holeList; // @synthesize holeList=_holeList;
 @property(retain, nonatomic) NSArray *allMicUsersList; // @synthesize allMicUsersList=_allMicUsersList;

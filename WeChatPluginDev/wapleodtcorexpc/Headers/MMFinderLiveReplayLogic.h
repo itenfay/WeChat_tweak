@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveReplayTask, MMFinderLiveReplayTaskId, NSData, NSString;
 @protocol MMFinderLiveReplayLogicDelegate;
@@ -18,7 +19,6 @@
     NSData *_lastPreviewThumbReqBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int continueFailCnt; // @synthesize continueFailCnt=_continueFailCnt;
 @property(nonatomic) _Bool hasFetchedPreviewThumb; // @synthesize hasFetchedPreviewThumb=_hasFetchedPreviewThumb;
 @property(nonatomic) _Bool isFetchingPreviewThumb; // @synthesize isFetchingPreviewThumb=_isFetchingPreviewThumb;
@@ -50,4 +50,3 @@
 @property(readonly) Class superclass;
 
 @end
-

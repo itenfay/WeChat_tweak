@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderDiscoveryNearbyLiveCollectionViewCell, WCFinderLiveCompleteElementModel;
 @protocol WCFinderDiscoveryNearbyLiveCollectionViewCellDelegate;
@@ -16,7 +17,6 @@
     id <WCFinderDiscoveryNearbyLiveCollectionViewCellDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderDiscoveryNearbyLiveCollectionViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType onTap; // @synthesize onTap=_onTap;
 @property(retain, nonatomic) WCFinderDiscoveryNearbyLiveCollectionViewCell *recommendItemView; // @synthesize recommendItemView=_recommendItemView;
@@ -29,4 +29,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

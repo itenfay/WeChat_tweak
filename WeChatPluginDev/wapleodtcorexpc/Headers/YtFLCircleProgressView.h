@@ -24,7 +24,6 @@
     double _cornerRadius;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) CATextLayer *contentTextLayer; // @synthesize contentTextLayer=_contentTextLayer;
 @property(retain, nonatomic) CAShapeLayer *progressLayer; // @synthesize progressLayer=_progressLayer;

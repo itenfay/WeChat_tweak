@@ -16,7 +16,6 @@
     UILabel *_wordCountLimitLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *wordCountLimitLabel; // @synthesize wordCountLimitLabel=_wordCountLimitLabel;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) MMUITextField *textFiled; // @synthesize textFiled=_textFiled;

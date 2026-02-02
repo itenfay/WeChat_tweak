@@ -16,7 +16,6 @@
     struct CGSize _lastLayoutSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *overLoadErrorPage; // @synthesize overLoadErrorPage=_overLoadErrorPage;
 @property(retain, nonatomic) UIView *overLoadErrorText; // @synthesize overLoadErrorText=_overLoadErrorText;
 @property(retain, nonatomic) UIView *overLoadErrorIcon; // @synthesize overLoadErrorIcon=_overLoadErrorIcon;

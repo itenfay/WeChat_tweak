@@ -40,7 +40,6 @@
     NSRecursiveLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableArray *topFPSDifferenceResultList; // @synthesize topFPSDifferenceResultList=_topFPSDifferenceResultList;
 @property(nonatomic) int topFPSLimit; // @synthesize topFPSLimit=_topFPSLimit;

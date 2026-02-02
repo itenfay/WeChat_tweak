@@ -18,7 +18,6 @@
     UILabel *_productsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *productsLabel; // @synthesize productsLabel=_productsLabel;
 @property(retain, nonatomic) UIView *line; // @synthesize line=_line;
 @property(retain, nonatomic) MMLiveShopShelfDragBar *dragBar; // @synthesize dragBar=_dragBar;

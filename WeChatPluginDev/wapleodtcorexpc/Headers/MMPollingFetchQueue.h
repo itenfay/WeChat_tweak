@@ -13,7 +13,6 @@
     NSMutableArray *_list;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *list; // @synthesize list=_list;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) long long count;

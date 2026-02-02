@@ -23,7 +23,6 @@
 + (struct CGSize)cardSizeForMoment;
 + (struct CGSize)cardSizeForChat;
 + (double)cardHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) UIView *highlightedMaskView; // @synthesize highlightedMaskView=_highlightedMaskView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

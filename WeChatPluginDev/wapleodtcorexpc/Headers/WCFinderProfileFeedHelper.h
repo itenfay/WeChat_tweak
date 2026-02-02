@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderProfileFeedHelper : NSObject
 {
@@ -17,4 +18,3 @@
 + (id)cellConfigForContentVM:(id)arg1 fullScreen:(_Bool)arg2 useStreamCell:(_Bool)arg3 justWatchInfo:(id)arg4 halfScreen:(_Bool)arg5 hiddenSticker:(_Bool)arg6 useFullCover:(_Bool)arg7;
 
 @end
-

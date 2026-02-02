@@ -17,7 +17,6 @@
 + (struct CGSize)calculateCoverDisplaySize:(struct CGSize)arg1 forVM:(id)arg2;
 + (struct CGSize)calculateDisplaySize:(struct CGSize)arg1 forVM:(id)arg2 cellIdentifier:(id)arg3 showSceneIntroduce:(_Bool)arg4;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SightIconView *playIconView; // @synthesize playIconView=_playIconView;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) UIView *timeBGView; // @synthesize timeBGView=_timeBGView;

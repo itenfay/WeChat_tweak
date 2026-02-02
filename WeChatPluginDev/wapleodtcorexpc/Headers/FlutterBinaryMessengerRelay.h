@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol FlutterBinaryMessenger;
@@ -13,7 +14,6 @@
     NSObject<FlutterBinaryMessenger> *_parent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<FlutterBinaryMessenger> *parent; // @synthesize parent=_parent;
 - (void)cleanUpConnection:(long long)arg1;
 - (long long)setMessageHandlerOnChannel:(id)arg1 binaryMessageHandler:(CDUnknownBlockType)arg2 taskQueue:(id)arg3;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

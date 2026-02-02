@@ -19,7 +19,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdWheelPickerLogic *wheelPickerLogic; // @synthesize wheelPickerLogic=_wheelPickerLogic;
 @property(retain, nonatomic) WCAdConfirmHalfScreenAdapter *phoneNumAdapter; // @synthesize phoneNumAdapter=_phoneNumAdapter;
 @property(retain, nonatomic) WCAdDetermineHalfScreenView *determineHalfScreenView; // @synthesize determineHalfScreenView=_determineHalfScreenView;

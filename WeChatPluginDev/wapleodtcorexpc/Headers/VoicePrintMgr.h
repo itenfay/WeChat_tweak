@@ -13,7 +13,6 @@
     _Bool bIsEnviromentCheckMode;
 }
 
-- (void).cxx_destruct;
 - (void)OnMgrRegOkWithBioSigKey:(id)arg1 VoiceId:(unsigned int)arg2;
 - (void)OnMgrVerifyOkWithRandomKey:(id)arg1 VoiceId:(unsigned int)arg2;
 - (void)OnMgrGetMatchingResult:(int)arg1 VoiceId:(unsigned int)arg2;

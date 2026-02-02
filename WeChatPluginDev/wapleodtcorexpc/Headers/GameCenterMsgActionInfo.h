@@ -14,7 +14,6 @@
 }
 
 + (id)parseFromXml:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *jumpUrl; // @synthesize jumpUrl=_jumpUrl;
 @property(nonatomic) int type; // @synthesize type=_type;
 

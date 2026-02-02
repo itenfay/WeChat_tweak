@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_manifestUrl;
 + (void)PBArrayAdd_path;
 + (void)PBArrayAdd_domain;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *businessData; // @synthesize businessData=_businessData;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;

@@ -20,7 +20,6 @@
 + (struct CGSize)caculateWithModel:(id)arg1;
 + (double)cellHeightWithModel:(id)arg1;
 + (double)cellWidthWithModel:(id)arg1 defaultWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *countdownTimer; // @synthesize countdownTimer=_countdownTimer;
 @property(retain, nonatomic) RichTextView *barrageDescTextView; // @synthesize barrageDescTextView=_barrageDescTextView;
 @property(retain, nonatomic) MMFinderLiveSFBarrageCellView *barrageCellView; // @synthesize barrageCellView=_barrageCellView;

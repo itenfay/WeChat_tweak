@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, UITapGestureRecognizer;
 @protocol MJTimelineViewDelegate;
@@ -19,7 +20,6 @@
     struct CGRect _lastLayoutBounds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastLayoutContentSize; // @synthesize lastLayoutContentSize=_lastLayoutContentSize;
 @property(nonatomic) struct CGRect lastLayoutBounds; // @synthesize lastLayoutBounds=_lastLayoutBounds;
 @property(retain, nonatomic) NSMutableArray *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
@@ -47,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

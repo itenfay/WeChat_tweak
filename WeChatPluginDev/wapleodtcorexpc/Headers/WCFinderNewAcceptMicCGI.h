@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderContact;
 
 @interface WCFinderNewAcceptMicCGI
@@ -15,7 +17,6 @@
     NSData *_randomMicBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *randomMicBuffer; // @synthesize randomMicBuffer=_randomMicBuffer;
 @property(retain, nonatomic) NSString *applyId; // @synthesize applyId=_applyId;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
@@ -28,4 +29,3 @@
 - (id)initWithLiveTaskId:(id)arg1 liveCookies:(id)arg2 applyId:(id)arg3 toFinderContact:(id)arg4 randomMicBuffer:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

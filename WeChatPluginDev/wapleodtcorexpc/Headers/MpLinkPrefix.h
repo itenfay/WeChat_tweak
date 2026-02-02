@@ -13,7 +13,6 @@
     NSArray *_showTypeList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *showTypeList; // @synthesize showTypeList=_showTypeList;
 @property(retain, nonatomic) NSString *urlPrefix; // @synthesize urlPrefix=_urlPrefix;
 - (id)initWithUrlPrefix:(id)arg1 showTypeList:(id)arg2;

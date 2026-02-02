@@ -10,7 +10,6 @@
     NSNumber *_segType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *segType; // @synthesize segType=_segType;
 - (id)getDic;
 - (_Bool)isValidSegType;

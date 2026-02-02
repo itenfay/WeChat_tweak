@@ -14,7 +14,6 @@
     NSString *_privateWording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *privateWording; // @synthesize privateWording=_privateWording;
 @property(nonatomic) _Bool acceptButtonStatus; // @synthesize acceptButtonStatus=_acceptButtonStatus;
 @property(nonatomic) unsigned int privateStatus; // @synthesize privateStatus=_privateStatus;

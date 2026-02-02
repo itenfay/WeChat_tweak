@@ -15,7 +15,6 @@
     id <WCPayOverseasCarTipDelegate> m_tipViewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayOverseasCarTipDelegate> m_tipViewDelegate; // @synthesize m_tipViewDelegate;
 - (id)genBackgroundView;
 - (void)initBottomView;

@@ -19,7 +19,6 @@
 + (unsigned int)GetSelfMinPurchaseTargetLevel;
 + (id)GetSignIconWithRank:(unsigned int)arg1 iconSize:(double)arg2;
 + (id)GetBackgroundColorWithRank:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long limitChooseProduct; // @synthesize limitChooseProduct=_limitChooseProduct;
 @property(nonatomic) unsigned long long limitConsumeWecoin; // @synthesize limitConsumeWecoin=_limitConsumeWecoin;
 @property(retain, nonatomic) NSArray *currentLevelConfigList; // @synthesize currentLevelConfigList=_currentLevelConfigList;

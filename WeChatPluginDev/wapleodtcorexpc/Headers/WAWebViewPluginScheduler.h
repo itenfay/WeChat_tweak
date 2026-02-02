@@ -13,7 +13,6 @@
     NSMutableDictionary *_pluginName2InstanceDic;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *pluginName2InstanceDic; // @synthesize pluginName2InstanceDic=_pluginName2InstanceDic;
 @property(readonly, nonatomic) __weak WAWebViewController *ownerWebViewController; // @synthesize ownerWebViewController=_ownerWebViewController;
 - (void)handleEvent:(unsigned long long)arg1 userInfo:(id)arg2;

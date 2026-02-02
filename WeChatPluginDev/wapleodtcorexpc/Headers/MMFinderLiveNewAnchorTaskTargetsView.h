@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveNewAnchorTaskViewModel, NSString;
 
 @interface MMFinderLiveNewAnchorTaskTargetsView
@@ -14,7 +16,6 @@
     NSString *_rewardDetail;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMultiStage; // @synthesize isMultiStage=_isMultiStage;
 @property(retain, nonatomic) NSString *rewardDetail; // @synthesize rewardDetail=_rewardDetail;
 @property(retain, nonatomic) NSString *reward; // @synthesize reward=_reward;
@@ -25,4 +26,3 @@
 - (void)refreshStatus;
 
 @end
-

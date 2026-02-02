@@ -48,7 +48,6 @@
 }
 
 + (id)genFinderUnreadItemsFromFinderDataItems:(id)arg1 tabType:(int)arg2 commentScene:(int)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) StreamBackupRequest *backupRequest; // @synthesize backupRequest=_backupRequest;
 @property(retain, nonatomic) WCFinderTipsShowEntranceExtInfo *finderEntranceExtInfo; // @synthesize finderEntranceExtInfo=_finderEntranceExtInfo;
 @property(retain, nonatomic) FinderSubTabItem *subTabItem; // @synthesize subTabItem=_subTabItem;

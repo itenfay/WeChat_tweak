@@ -12,7 +12,6 @@
     FTSMsgSearchResultHandler *_handler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak FTSMsgSearchResultHandler *handler; // @synthesize handler=_handler;
 
 @end

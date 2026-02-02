@@ -19,7 +19,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize resolution; // @synthesize resolution=_resolution;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *monitorQueue; // @synthesize monitorQueue=_monitorQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *monitorTimer; // @synthesize monitorTimer=_monitorTimer;

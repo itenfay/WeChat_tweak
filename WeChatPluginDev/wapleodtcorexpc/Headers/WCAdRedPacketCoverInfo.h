@@ -16,7 +16,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *coverUrl; // @synthesize coverUrl=_coverUrl;
 @property(retain, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(retain, nonatomic) NSString *receiveUri; // @synthesize receiveUri=_receiveUri;

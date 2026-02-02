@@ -20,7 +20,6 @@
     NSString *_reddotReportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reddotReportInfo; // @synthesize reddotReportInfo=_reddotReportInfo;
 @property(retain, nonatomic) NSString *recContentUrl; // @synthesize recContentUrl=_recContentUrl;
 @property(nonatomic) unsigned int recStyle; // @synthesize recStyle=_recStyle;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIView;
 
 @interface MMLiveAnchorScreenRecordPIPHandleLogic
@@ -12,7 +14,6 @@
     UIView *_attachedGameLiveAccessoryView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *attachedGameLiveAccessoryView; // @synthesize attachedGameLiveAccessoryView=_attachedGameLiveAccessoryView;
 @property(copy, nonatomic) CDUnknownBlockType getPIPRenderSizeBlock; // @synthesize getPIPRenderSizeBlock=_getPIPRenderSizeBlock;
 @property(copy, nonatomic) CDUnknownBlockType getCustomViewBlock; // @synthesize getCustomViewBlock=_getCustomViewBlock;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -63,7 +63,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMsgContactExtInfo *contactExtInfo; // @synthesize contactExtInfo=_contactExtInfo;
 @property(retain, nonatomic) NSString *realChatSessionId; // @synthesize realChatSessionId=_realChatSessionId;
 @property(nonatomic) _Bool isSessionHolder; // @synthesize isSessionHolder=_isSessionHolder;

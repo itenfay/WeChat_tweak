@@ -14,7 +14,6 @@
 
 + (double)cellH;
 + (id)genLabel;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)setupSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

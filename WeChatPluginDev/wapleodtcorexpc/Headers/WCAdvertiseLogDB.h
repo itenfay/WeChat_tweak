@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCTDatabase, WCTTable;
 
 @interface WCAdvertiseLogDB
@@ -11,7 +13,6 @@
     WCTTable *m_table;
 }
 
-- (void).cxx_destruct;
 - (_Bool)deleteADLogs:(unsigned int)arg1 toLocalId:(unsigned int)arg2;
 - (id)getADLogs:(unsigned int)arg1 toLocalId:(unsigned int)arg2 limit:(int)arg3;
 - (_Bool)insertADLogItem:(id)arg1;
@@ -22,4 +23,3 @@
 - (id)initWithPath:(id)arg1;
 
 @end
-

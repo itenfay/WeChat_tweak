@@ -13,7 +13,6 @@
     MMFinderLiveGestureRecord *_record;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool valid; // @synthesize valid=_valid;
 @property(retain, nonatomic) MMFinderLiveGestureRecord *record; // @synthesize record=_record;
 

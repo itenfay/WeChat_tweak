@@ -11,7 +11,6 @@
     NSArray *_reportItemList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *reportItemList; // @synthesize reportItemList=_reportItemList;
 @property(nonatomic) unsigned long long totalCount; // @synthesize totalCount=_totalCount;
 

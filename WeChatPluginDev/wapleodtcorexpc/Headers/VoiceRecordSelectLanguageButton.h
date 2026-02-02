@@ -12,7 +12,6 @@
     UIView *_separatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

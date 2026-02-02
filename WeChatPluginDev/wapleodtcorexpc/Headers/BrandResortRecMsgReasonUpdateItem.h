@@ -13,7 +13,6 @@
     NSString *_recReason;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *recReason; // @synthesize recReason=_recReason;
 @property(retain, nonatomic) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;
 

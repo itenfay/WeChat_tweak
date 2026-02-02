@@ -28,7 +28,6 @@
 }
 
 + (id)showWithTaskId:(id)arg1 gift:(id)arg2 delegate:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *giftImageView; // @synthesize giftImageView=_giftImageView;
 @property(retain, nonatomic) CAGradientLayer *topOneUserGradientLayer; // @synthesize topOneUserGradientLayer=_topOneUserGradientLayer;
 @property(retain, nonatomic) UIView *topOneUserView; // @synthesize topOneUserView=_topOneUserView;

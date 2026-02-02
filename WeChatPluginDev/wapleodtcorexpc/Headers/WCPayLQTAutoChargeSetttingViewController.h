@@ -12,7 +12,6 @@
     WCPayLQTPickerPanelView *_pickerPanelView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayLQTPickerPanelView *pickerPanelView; // @synthesize pickerPanelView=_pickerPanelView;
 @property(nonatomic) __weak id <WCPayLQTAutoChargeSetttingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)timeStringFromTimeSpan:(unsigned int)arg1;

@@ -18,7 +18,6 @@
     MMUIButton *_saveBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *saveBtn; // @synthesize saveBtn=_saveBtn;
 @property(retain, nonatomic) WCFinderRedPacketCropSliderView *sliderView; // @synthesize sliderView=_sliderView;
 @property(retain, nonatomic) WCFinderRedPacketCoverCropView *coverCropView; // @synthesize coverCropView=_coverCropView;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMFinderLiveResChecker : NSObject
 {
@@ -12,4 +13,3 @@
 - (void)checkFileValidAfterDownloadSuccess:(id)arg1 expectSize:(unsigned long long)arg2 filePath:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 
 @end
-

@@ -14,7 +14,6 @@
 }
 
 + (_Bool)isResourceUrlEmpty:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *md5Hash; // @synthesize md5Hash=_md5Hash;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 - (id)initWithUrl:(id)arg1 md5:(id)arg2;

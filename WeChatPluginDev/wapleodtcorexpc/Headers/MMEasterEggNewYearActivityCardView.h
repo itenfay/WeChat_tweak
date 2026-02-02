@@ -32,7 +32,6 @@
     WCPlayerHttpMediaWrap *_creativeVideoMediaWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerHttpMediaWrap *creativeVideoMediaWrap; // @synthesize creativeVideoMediaWrap=_creativeVideoMediaWrap;
 @property(retain, nonatomic) WCPlayerPlayArgs *creativeVideoPlayerInfo; // @synthesize creativeVideoPlayerInfo=_creativeVideoPlayerInfo;
 @property(nonatomic) __weak WCPlayerConfigControlView *creativeVideoControlView; // @synthesize creativeVideoControlView=_creativeVideoControlView;

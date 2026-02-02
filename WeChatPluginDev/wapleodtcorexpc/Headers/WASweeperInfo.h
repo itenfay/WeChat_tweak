@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
@@ -19,7 +20,6 @@
     NSMutableArray *_childSweeperInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *childSweeperInfo; // @synthesize childSweeperInfo=_childSweeperInfo;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) unsigned int appServiceType; // @synthesize appServiceType=_appServiceType;
@@ -30,4 +30,3 @@
 @property(nonatomic) unsigned long long cacheSize; // @synthesize cacheSize=_cacheSize;
 
 @end
-

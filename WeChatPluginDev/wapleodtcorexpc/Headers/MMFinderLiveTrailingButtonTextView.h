@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTrailingButtonTextViewStyle, MMUIButton, NSString, RichTextView;
 
@@ -15,7 +16,6 @@
     MMFinderLiveTrailingButtonTextViewStyle *_style;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTrailingButtonTextViewStyle *style; // @synthesize style=_style;
 @property(retain, nonatomic) MMUIButton *detailButton; // @synthesize detailButton=_detailButton;
 @property(retain, nonatomic) RichTextView *subtitleTextView; // @synthesize subtitleTextView=_subtitleTextView;
@@ -39,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

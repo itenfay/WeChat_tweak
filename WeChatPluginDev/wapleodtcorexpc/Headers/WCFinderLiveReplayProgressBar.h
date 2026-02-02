@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, NSTimer, WCFinderLiveReplaySliderBar;
 @protocol WCFinderLiveReplayProgressBarDelegate;
@@ -30,7 +31,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(nonatomic) long long timeDisplayFormat; // @synthesize timeDisplayFormat=_timeDisplayFormat;
 @property(nonatomic) unsigned int displayTotalTime; // @synthesize displayTotalTime=_displayTotalTime;
 @property(nonatomic) double totalTime; // @synthesize totalTime=_totalTime;
@@ -91,4 +91,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

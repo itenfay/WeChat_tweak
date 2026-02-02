@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTimer, NSString, UITextField, UIView;
 
 @interface MMWebViewPlugin_SearchInPage
@@ -24,7 +26,6 @@
     unsigned long long m_uiResultCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_uiResultCount; // @synthesize m_uiResultCount;
 - (void)onSearchCloseBtnClicked:(id)arg1;
 - (void)searchNext:(id)arg1;
@@ -57,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

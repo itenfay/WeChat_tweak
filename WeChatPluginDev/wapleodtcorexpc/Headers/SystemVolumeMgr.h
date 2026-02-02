@@ -17,7 +17,6 @@
     _Bool _checkVolumeAfterAudioSessionActive;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool checkVolumeAfterAudioSessionActive; // @synthesize checkVolumeAfterAudioSessionActive=_checkVolumeAfterAudioSessionActive;
 - (void)onWCAudioSessionSetActive:(_Bool)arg1;
 - (_Bool)isUseVoiceProcessingIO;

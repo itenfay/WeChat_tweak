@@ -21,7 +21,6 @@
     UIView *_clipView;
 }
 
-- (void).cxx_destruct;
 @property _Bool bIsFontChange; // @synthesize bIsFontChange=_bIsFontChange;
 @property(retain) UIView *clipView; // @synthesize clipView=_clipView;
 @property(retain) UIView *container; // @synthesize container=_container;

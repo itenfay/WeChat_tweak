@@ -19,7 +19,6 @@
     struct CGSize _liveContainerSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double bottomPlayerViewTop; // @synthesize bottomPlayerViewTop=_bottomPlayerViewTop;
 @property(nonatomic) double bottomPlayerViewHeight; // @synthesize bottomPlayerViewHeight=_bottomPlayerViewHeight;
 @property(nonatomic) struct CGSize liveContainerSize; // @synthesize liveContainerSize=_liveContainerSize;

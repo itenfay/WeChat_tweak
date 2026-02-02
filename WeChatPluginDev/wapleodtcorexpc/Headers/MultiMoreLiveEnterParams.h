@@ -23,7 +23,6 @@
     unsigned long long _versionType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long versionType; // @synthesize versionType=_versionType;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(retain, nonatomic) NSString *feedNonceId; // @synthesize feedNonceId=_feedNonceId;

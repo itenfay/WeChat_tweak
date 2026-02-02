@@ -30,7 +30,6 @@
     NSMutableDictionary *_customNavBarParams;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromFinder; // @synthesize isFromFinder=_isFromFinder;
 @property(retain, nonatomic) NSMutableDictionary *customNavBarParams; // @synthesize customNavBarParams=_customNavBarParams;
 @property(retain, nonatomic) NSMutableDictionary *map; // @synthesize map=_map;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CMessageWrap, NSString, ShareDataToOpenSDKController, UINavigationController, WCUIAlertView;
 @protocol AppDetailDelegate;
 
@@ -27,7 +29,6 @@
     CDUnknownBlockType _bottomLeftString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType bottomLeftString; // @synthesize bottomLeftString=_bottomLeftString;
 @property(copy, nonatomic) CDUnknownBlockType bottomLeftAction; // @synthesize bottomLeftAction=_bottomLeftAction;
 @property(retain, nonatomic) UINavigationController *showNavigationController; // @synthesize showNavigationController=_showNavigationController;
@@ -107,4 +108,3 @@
 @property(readonly) Class superclass;
 
 @end
-

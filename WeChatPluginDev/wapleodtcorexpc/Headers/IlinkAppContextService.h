@@ -17,7 +17,6 @@
 
 + (id)iLinkPath;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) long long selfUin; // @synthesize selfUin=_selfUin;
 - (void)ReachabilityChange:(unsigned int)arg1;
 - (void)onServiceEnterForeground;

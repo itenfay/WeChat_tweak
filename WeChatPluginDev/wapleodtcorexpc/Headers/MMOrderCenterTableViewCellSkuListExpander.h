@@ -14,7 +14,6 @@
     UIImageView *_downChevronView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *downChevronView; // @synthesize downChevronView=_downChevronView;
 @property(retain, nonatomic) UILabel *labelView; // @synthesize labelView=_labelView;
 @property(nonatomic) long long remainingCount; // @synthesize remainingCount=_remainingCount;

@@ -17,7 +17,6 @@
     NSString *_meetId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool networkReachable; // @synthesize networkReachable=_networkReachable;
 @property(retain, nonatomic) NSString *meetId; // @synthesize meetId=_meetId;
 @property(retain, nonatomic) MMLiveOperationView *operationView; // @synthesize operationView=_operationView;

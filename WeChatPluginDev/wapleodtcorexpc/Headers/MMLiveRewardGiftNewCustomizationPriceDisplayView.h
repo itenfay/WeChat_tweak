@@ -16,7 +16,6 @@
     MMUILabel *_beanCntExplainLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *beanCntExplainLabel; // @synthesize beanCntExplainLabel=_beanCntExplainLabel;
 @property(retain, nonatomic) MMUILabel *beanCntLabel; // @synthesize beanCntLabel=_beanCntLabel;
 @property(retain, nonatomic) UIImageView *beanIconView; // @synthesize beanIconView=_beanIconView;

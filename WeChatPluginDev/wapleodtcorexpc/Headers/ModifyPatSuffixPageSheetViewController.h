@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonBoardView, MMGrowTextView, MMUILabel, ModifyPatSuffixLogic, NSString, PatSuffixWrap, UIButton, UIImpactFeedbackGenerator, UIView, WCInputController, WCSingleEmoticonInputView;
 
 @interface ModifyPatSuffixPageSheetViewController
@@ -27,7 +29,6 @@
     ModifyPatSuffixPageSheetViewController *_viewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ModifyPatSuffixPageSheetViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) ModifyPatSuffixLogic *modifyPatSuffixLogic; // @synthesize modifyPatSuffixLogic=_modifyPatSuffixLogic;
 @property(retain, nonatomic) PatSuffixWrap *selfPatSuffixWrap; // @synthesize selfPatSuffixWrap=_selfPatSuffixWrap;
@@ -88,4 +89,3 @@
 @property(readonly) Class superclass;
 
 @end
-

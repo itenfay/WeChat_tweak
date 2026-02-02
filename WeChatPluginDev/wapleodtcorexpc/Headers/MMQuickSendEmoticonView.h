@@ -25,7 +25,6 @@
     unsigned long long _startShowTimestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didReportSearchExposure; // @synthesize didReportSearchExposure=_didReportSearchExposure;
 @property(nonatomic) unsigned long long startShowTimestamp; // @synthesize startShowTimestamp=_startShowTimestamp;
 @property(nonatomic) double bottomX; // @synthesize bottomX=_bottomX;

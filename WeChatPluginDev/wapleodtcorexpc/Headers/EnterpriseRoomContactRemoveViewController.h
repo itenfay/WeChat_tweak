@@ -14,7 +14,6 @@
     MMTableView *_tableView;
 }
 
-- (void).cxx_destruct;
 - (void)onCancel;
 - (void)onUpdateEnterpriseGroupMemberList:(id)arg1 errorCode:(int)arg2;
 - (void)onEnterpriseContactItemViewRightButtonClick:(id)arg1;

@@ -14,7 +14,6 @@
 + (id)defaultMMkv;
 + (void)saveRunningTaskInfo:(id)arg1;
 + (id)runningTaskInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *concernedRebootTypes; // @synthesize concernedRebootTypes=_concernedRebootTypes;
 - (_Bool)isTaskSafe:(id)arg1;
 - (void)endMonitorTask:(id)arg1;

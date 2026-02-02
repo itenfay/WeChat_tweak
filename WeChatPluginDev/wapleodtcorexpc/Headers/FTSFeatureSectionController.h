@@ -10,7 +10,6 @@
     NSArray *_features;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *features; // @synthesize features=_features;
 - (void)onFTSMemorySearchResultChangedForFeatureDetailPage;
 - (void)cancelSearch;

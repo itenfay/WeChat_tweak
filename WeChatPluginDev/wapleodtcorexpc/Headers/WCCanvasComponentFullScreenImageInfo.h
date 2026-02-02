@@ -11,7 +11,6 @@
     NSString *_fullScreenImageUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int scaleType; // @synthesize scaleType=_scaleType;
 @property(retain, nonatomic) NSString *fullScreenImageUrl; // @synthesize fullScreenImageUrl=_fullScreenImageUrl;
 - (id)initWithCoder:(id)arg1;

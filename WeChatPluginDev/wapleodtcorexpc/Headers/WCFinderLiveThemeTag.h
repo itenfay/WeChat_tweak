@@ -15,7 +15,6 @@
 }
 
 + (id)finderLiveThemeTagFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int containerType; // @synthesize containerType=_containerType;
 @property(retain, nonatomic) NSString *tagValue; // @synthesize tagValue=_tagValue;
 @property(retain, nonatomic) NSString *tagText; // @synthesize tagText=_tagText;

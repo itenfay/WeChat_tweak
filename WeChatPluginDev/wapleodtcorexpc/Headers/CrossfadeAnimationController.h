@@ -16,7 +16,6 @@
     double _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDismiss; // @synthesize isDismiss=_isDismiss;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) _Bool reverse; // @synthesize reverse=_reverse;

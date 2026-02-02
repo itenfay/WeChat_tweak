@@ -15,7 +15,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tag; // @synthesize tag=_tag;
 @property(nonatomic) int actCount; // @synthesize actCount=_actCount;
 @property(nonatomic) int actType; // @synthesize actType=_actType;

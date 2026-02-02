@@ -14,7 +14,6 @@
     WCFinderRedPacketCropSliderTimeRange *_timeRangeModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRedPacketCropSliderTimeRange *timeRangeModel; // @synthesize timeRangeModel=_timeRangeModel;
 @property(retain, nonatomic) WCFinderRedPacketVideoEditCropRectModel *cropRectModel; // @synthesize cropRectModel=_cropRectModel;
 @property(copy, nonatomic) NSString *thumbPath; // @synthesize thumbPath=_thumbPath;

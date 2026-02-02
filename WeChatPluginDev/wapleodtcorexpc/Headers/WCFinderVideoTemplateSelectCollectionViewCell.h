@@ -14,7 +14,6 @@
 }
 
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *customLoadingView; // @synthesize customLoadingView=_customLoadingView;
 @property(retain, nonatomic) MMWebImageView *imageView; // @synthesize imageView=_imageView;
 - (void)onLoadImageOK:(id)arg1;

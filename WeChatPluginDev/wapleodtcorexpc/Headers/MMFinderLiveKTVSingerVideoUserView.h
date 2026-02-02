@@ -12,7 +12,6 @@
     MMFinderLiveKTVSingerVideoUserInfoView *_userInfoView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveKTVSingerVideoUserInfoView *userInfoView; // @synthesize userInfoView=_userInfoView;
 - (void)updateSingerUserInfo:(id)arg1;
 - (void)addSubview:(id)arg1;

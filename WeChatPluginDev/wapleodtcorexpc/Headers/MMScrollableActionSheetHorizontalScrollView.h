@@ -16,7 +16,6 @@
     id <MMScrollableActionSheetHorizontalScrollViewDelegate> _actionSheetDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMScrollableActionSheetHorizontalScrollViewDelegate> actionSheetDelegate; // @synthesize actionSheetDelegate=_actionSheetDelegate;
 @property(nonatomic) double bottomPadding; // @synthesize bottomPadding=_bottomPadding;
 @property(nonatomic) double topPadding; // @synthesize topPadding=_topPadding;

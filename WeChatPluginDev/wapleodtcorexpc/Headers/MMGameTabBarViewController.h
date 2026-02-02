@@ -20,7 +20,6 @@
     unsigned long long _tabCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long tabCount; // @synthesize tabCount=_tabCount;
 @property int currentSelectedIndex; // @synthesize currentSelectedIndex=_currentSelectedIndex;
 @property(retain, nonatomic) MMUIViewController *nativeHomeVC; // @synthesize nativeHomeVC=_nativeHomeVC;

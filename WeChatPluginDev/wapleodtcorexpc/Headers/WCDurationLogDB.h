@@ -12,7 +12,6 @@
     WCTTable *_table;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *table; // @synthesize table=_table;
 @property(retain, nonatomic) WCTDatabase *dataBase; // @synthesize dataBase=_dataBase;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

@@ -36,7 +36,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) int codingType; // @synthesize codingType=_codingType;
 @property(copy, nonatomic) NSData *buffer; // @synthesize buffer=_buffer;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;

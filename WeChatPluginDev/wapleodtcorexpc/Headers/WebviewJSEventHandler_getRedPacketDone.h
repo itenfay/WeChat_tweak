@@ -18,7 +18,6 @@
     WCRedEnvelopesDeleteResourceCgi *_deleteShowResourceCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsFromLoadingMoreInvalidData; // @synthesize bIsFromLoadingMoreInvalidData=_bIsFromLoadingMoreInvalidData;
 @property(retain, nonatomic) WCRedEnvelopesDeleteResourceCgi *deleteShowResourceCgi; // @synthesize deleteShowResourceCgi=_deleteShowResourceCgi;
 @property(retain, nonatomic) NSString *selectedPacketId; // @synthesize selectedPacketId=_selectedPacketId;

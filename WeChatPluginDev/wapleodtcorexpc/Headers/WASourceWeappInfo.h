@@ -20,7 +20,6 @@
 }
 
 + (id)fromXML:(void *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) unsigned int versionType; // @synthesize versionType=_versionType;
 @property(nonatomic) unsigned int showSourceView; // @synthesize showSourceView=_showSourceView;

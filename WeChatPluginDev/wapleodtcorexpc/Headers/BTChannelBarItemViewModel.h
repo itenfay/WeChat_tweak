@@ -17,7 +17,6 @@
 }
 
 + (id)itemViewClassName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MPChannelTopBarInfo *channelInfo; // @synthesize channelInfo=_channelInfo;
 @property(nonatomic) __weak BTBaseBarItemView *barItemView; // @synthesize barItemView=_barItemView;
 @property(nonatomic) _Bool hasLine; // @synthesize hasLine=_hasLine;

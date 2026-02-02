@@ -18,7 +18,6 @@
     UIImage *m_image;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *m_image; // @synthesize m_image;
 @property(retain, nonatomic) NSString *m_nicknamePinYinShort; // @synthesize m_nicknamePinYinShort;
 @property(retain, nonatomic) NSString *m_nicknamePinYin; // @synthesize m_nicknamePinYin;

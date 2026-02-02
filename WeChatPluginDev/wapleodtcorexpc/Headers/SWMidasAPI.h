@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE, SWMidasUser;
 
@@ -30,7 +31,6 @@
 + (id)availableWindowScene;
 + (void)getSubscriptionProductStatusWithSubscriptionProductIDs:(id)arg1 usingStoreKit2:(_Bool)arg2 shouldUpdateReceipt:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)setRuntimeDelegateWithDelegate:(id)arg1;
-- (void).cxx_destruct;
 - (id)init;
 - (void)dealloc;
 - (id)initWithUser:(id)arg1 process:(long long)arg2 environment:(long long)arg3 locale:(long long)arg4 reprovideDelegate:(id)arg5;
@@ -43,4 +43,3 @@
 - (void)restoreWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
-

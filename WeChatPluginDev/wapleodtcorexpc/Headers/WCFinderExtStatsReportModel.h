@@ -15,7 +15,6 @@
     NSString *_strValue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *strValue; // @synthesize strValue=_strValue;
 @property(retain, nonatomic) NSNumber *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSNumber *toTab; // @synthesize toTab=_toTab;

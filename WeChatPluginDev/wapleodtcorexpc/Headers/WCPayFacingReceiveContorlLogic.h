@@ -38,7 +38,6 @@
     long long _fixed_refresh_url_last_time_mch;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool refresh_url_has_processed_mch; // @synthesize refresh_url_has_processed_mch=_refresh_url_has_processed_mch;
 @property(nonatomic) long long fixed_refresh_url_last_time_mch; // @synthesize fixed_refresh_url_last_time_mch=_fixed_refresh_url_last_time_mch;
 @property(nonatomic) long long refresh_url_last_time_mch; // @synthesize refresh_url_last_time_mch=_refresh_url_last_time_mch;

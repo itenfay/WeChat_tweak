@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, EAGLContext, ExternalTextureHandler, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSOperationQueue, NSString, NSThread, WAEJBindingCanvasContext2D, WAEJBindingCanvasContextWebGLBase, WAEJBindingGlobalUtils, WAEJCanvasContext, WAEJClassLoader, WAEJFileSystem, WAEJFontCache, WAEJNonRetainingProxy, WAEJObjClass, WAEJObjectMemoryMgr, WAEJRenderTriggerCollection, WAEJSharedOpenGLContext, WAEJSharedTextureCache, WAEJTimerCollection;
 @protocol EJExternalTextureDelegate, EJGestureDelegate, EJNativeLogViewDelegate, EJPresentable, EJScreenCanvasDelegate, EJTouchDelegate, EJWindowEventsDelegate, WABindingDelegate;
@@ -115,7 +116,6 @@
     struct CGSize _size;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int maxCanvasSize; // @synthesize maxCanvasSize=_maxCanvasSize;
 @property(nonatomic) _Bool isGameEnv; // @synthesize isGameEnv=_isGameEnv;
 @property(nonatomic) _Bool isMagicBrushEnv; // @synthesize isMagicBrushEnv=_isMagicBrushEnv;
@@ -268,4 +268,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 context:(struct OpaqueJSContext *)arg2 name:(const char *)arg3 config:(id)arg4;
 
 @end
-

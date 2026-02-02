@@ -20,7 +20,6 @@
     NSMutableDictionary *_tencentHostRegDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *tencentHostRegDic; // @synthesize tencentHostRegDic=_tencentHostRegDic;
 @property(retain, nonatomic) NSMutableSet *weixinHostRegSet; // @synthesize weixinHostRegSet=_weixinHostRegSet;
 @property(retain, nonatomic) NSMutableDictionary *tencentHostDic; // @synthesize tencentHostDic=_tencentHostDic;

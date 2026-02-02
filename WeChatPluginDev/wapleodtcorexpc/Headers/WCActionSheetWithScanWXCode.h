@@ -25,7 +25,6 @@
 + (_Bool)isItemTitleForMultiQRCode:(id)arg1;
 + (_Bool)isItemTitleForQRCode:(id)arg1;
 + (_Bool)isItemTitleForCustomQRCode:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long actionSheetLastShowTimeStamp; // @synthesize actionSheetLastShowTimeStamp=_actionSheetLastShowTimeStamp;
 @property(retain, nonatomic) GetQRCodeInfoLogic *getQRCodeInfoLogic; // @synthesize getQRCodeInfoLogic=_getQRCodeInfoLogic;
 @property(retain, nonatomic) UILabel *companyNameLabel; // @synthesize companyNameLabel=_companyNameLabel;

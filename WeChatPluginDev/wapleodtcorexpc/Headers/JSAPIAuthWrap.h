@@ -24,7 +24,6 @@
     JSScopeAuthInfo *_scopeAuthInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSScopeAuthInfo *scopeAuthInfo; // @synthesize scopeAuthInfo=_scopeAuthInfo;
 @property(retain, nonatomic) JSAPIAuthInfo *authInfo; // @synthesize authInfo=_authInfo;
 @property(nonatomic) long long signatureType; // @synthesize signatureType=_signatureType;

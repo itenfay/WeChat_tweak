@@ -17,7 +17,6 @@
     MISSING_TYPE *disableTips;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithContentVM:(id)arg1;
 @property(nonatomic) _Bool disableTips; // @synthesize disableTips;

@@ -13,7 +13,6 @@
     NSString *nsLikeTip;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsLikeTip; // @synthesize nsLikeTip;
 @property(retain, nonatomic) NSString *nsRankId; // @synthesize nsRankId;
 @property(nonatomic) unsigned int uiLikeTime; // @synthesize uiLikeTime;

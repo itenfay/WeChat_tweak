@@ -10,7 +10,6 @@
     UIImageView *_bottomMask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *bottomMask; // @synthesize bottomMask=_bottomMask;
 - (void)dealloc;
 - (void)hide;

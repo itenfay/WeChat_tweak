@@ -12,7 +12,6 @@
     NSString *lang;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lang; // @synthesize lang;
 @property(retain, nonatomic) NSString *country; // @synthesize country;
 @property(retain, nonatomic) WXMediaMessage *message; // @synthesize message;

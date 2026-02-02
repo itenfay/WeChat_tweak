@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveQuestInstance_StageItem_TargetItem, MMFinderLiveNewAnchorTaskViewModel, MMUILabel, MMUIView, UIButton;
 
@@ -24,7 +25,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *curProgressView; // @synthesize curProgressView=_curProgressView;
 @property(retain, nonatomic) MMUIView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) MMUILabel *opLabel; // @synthesize opLabel=_opLabel;
@@ -46,4 +46,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

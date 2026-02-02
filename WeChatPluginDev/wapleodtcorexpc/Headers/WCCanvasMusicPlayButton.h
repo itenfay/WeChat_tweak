@@ -19,7 +19,6 @@
     MMUIImageView *_iconView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(retain, nonatomic) MMUIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) MMUIImageView *bgView; // @synthesize bgView=_bgView;

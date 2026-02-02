@@ -17,7 +17,6 @@
     NSString *_accessoryLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accessoryLabel; // @synthesize accessoryLabel=_accessoryLabel;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(nonatomic) long long accessoryType; // @synthesize accessoryType=_accessoryType;

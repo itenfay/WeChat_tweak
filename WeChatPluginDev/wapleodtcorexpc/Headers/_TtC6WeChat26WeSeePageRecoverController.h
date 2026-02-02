@@ -12,7 +12,6 @@
     MISSING_TYPE *renderTimeDict;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (_Bool)enableRecoverPageFor:(long long)arg1;
 - (void)clearStatus;

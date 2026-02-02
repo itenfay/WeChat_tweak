@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSOperation.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface FinalBlockOperation : NSOperation
 {
@@ -12,11 +13,9 @@
     struct atomic_flag _executed;
 }
 
-- (void).cxx_destruct;
 - (void)main;
 - (void)cancel;
 - (void)executeFinalOnce;
 - (id)initWithMainBlock:(CDUnknownBlockType)arg1 finalBlock:(CDUnknownBlockType)arg2;
 
 @end
-

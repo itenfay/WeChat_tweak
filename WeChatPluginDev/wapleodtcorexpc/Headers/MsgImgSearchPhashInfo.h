@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_bubbleTitle;
 + (void)PBArrayAdd_expiredTime;
 + (void)PBArrayAdd_phashStr;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasShowOnce; // @synthesize hasShowOnce=_hasShowOnce;
 @property(copy, nonatomic) NSString *bubbleTitle; // @synthesize bubbleTitle=_bubbleTitle;
 @property(nonatomic) unsigned int expiredTime; // @synthesize expiredTime=_expiredTime;

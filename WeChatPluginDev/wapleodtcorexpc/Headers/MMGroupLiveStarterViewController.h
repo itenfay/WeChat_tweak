@@ -29,7 +29,6 @@
     UILabel *_startTipLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *startTipLabel; // @synthesize startTipLabel=_startTipLabel;
 @property(retain, nonatomic) NSString *roomId; // @synthesize roomId=_roomId;
 @property(retain, nonatomic) NSMutableDictionary *extraInfo; // @synthesize extraInfo=_extraInfo;

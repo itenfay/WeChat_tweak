@@ -53,7 +53,6 @@
     struct CGPoint lastHitPoint;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *disabledParentGesArr; // @synthesize disabledParentGesArr=_disabledParentGesArr;
 @property(retain, nonatomic) NSMutableParagraphStyle *paragraphStyle; // @synthesize paragraphStyle=_paragraphStyle;
 @property(retain, nonatomic) NSDictionary *placeholderStyleDark; // @synthesize placeholderStyleDark=_placeholderStyleDark;

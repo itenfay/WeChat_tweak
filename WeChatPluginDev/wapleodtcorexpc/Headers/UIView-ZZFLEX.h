@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (ZZFLEX)
 @property(readonly, copy, nonatomic) CDUnknownBlockType addCollectionView;
@@ -19,4 +20,3 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType addLabel;
 @property(readonly, copy, nonatomic) CDUnknownBlockType addView;
 @end
-

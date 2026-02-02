@@ -14,7 +14,6 @@
     NSHashTable *_observers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(nonatomic) _Bool isUsed; // @synthesize isUsed=_isUsed;
 @property(retain, nonatomic) FinderUserpageAdInfo *adInfo; // @synthesize adInfo=_adInfo;

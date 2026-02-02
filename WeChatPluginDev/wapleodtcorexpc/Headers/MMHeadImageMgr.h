@@ -33,7 +33,6 @@
 + (id)getHeadImgPathForNewVersionForLoadImage:(id)arg1 forCategory:(unsigned char)arg2 isHD:(_Bool)arg3;
 + (id)getHeadImgPathForNewVersion:(id)arg1 forCategory:(unsigned char)arg2 isHD:(_Bool)arg3;
 + (id)getHeadImgPathForOldVersion:(id)arg1 isHD:(_Bool)arg2;
-- (void).cxx_destruct;
 - (void)internalUpdateUsrHeadImg:(id)arg1 withUrl:(id)arg2 forCategory:(unsigned char)arg3;
 - (void)internalUpdateUsrHeadImg:(id)arg1 forCategory:(unsigned char)arg2;
 - (_Bool)checkIsNeedUpdateBrandIcon:(id)arg1 isHeadImgExistedInLocal:(_Bool)arg2;

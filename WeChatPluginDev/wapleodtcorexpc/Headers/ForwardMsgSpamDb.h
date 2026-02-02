@@ -13,7 +13,6 @@
     WCTTable *_table;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *table; // @synthesize table=_table;
 @property(retain, nonatomic) WCTDatabase *db; // @synthesize db=_db;
 - (_Bool)saveToDb:(id)arg1;

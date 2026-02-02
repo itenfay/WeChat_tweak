@@ -14,7 +14,6 @@
     void *ocr_api;
 }
 
-- (void).cxx_destruct;
 - (long long)PassportPitchDetectionWithPassport:(void *)arg1 minAngle:(long long)arg2;
 - (id)UIImageFromCVMat:(struct Mat)arg1;
 - (id)WarpPerspectiveRect:(id)arg1 passport:(void *)arg2 padding_border:(int)arg3;

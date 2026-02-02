@@ -14,7 +14,6 @@
     int m_uiShowType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsValue; // @synthesize m_nsValue;
 @property(retain, nonatomic) NSString *m_nsName; // @synthesize m_nsName;
 @property(nonatomic) int m_uiShowType; // @synthesize m_uiShowType;

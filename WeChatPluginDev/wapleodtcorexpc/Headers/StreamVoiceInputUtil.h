@@ -18,7 +18,6 @@
 + (_Bool)IsSupportVoiceMsgRecordTranslate;
 + (id)tempAudioFilePath:(unsigned int)arg1;
 + (id)tempAudioFileFolderPath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrInputLanguage; // @synthesize arrInputLanguage=_arrInputLanguage;
 @property(retain, nonatomic) NSMutableDictionary *dicInputType; // @synthesize dicInputType=_dicInputType;
 - (void)syncLastVoiceTransLanguageType:(unsigned int)arg1;

@@ -13,7 +13,6 @@
     MISSING_TYPE *titleIconSpace;
 }
 
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

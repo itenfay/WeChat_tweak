@@ -19,7 +19,6 @@
 }
 
 + (id)cacheWithNameTextView:(id)arg1 otherViews:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool lineBreakByClipping; // @synthesize lineBreakByClipping=_lineBreakByClipping;
 @property(nonatomic) unsigned long long lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(retain, nonatomic) UIFont *nameFont; // @synthesize nameFont=_nameFont;

@@ -17,7 +17,6 @@
     UIViewController *_weakVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *weakVC; // @synthesize weakVC=_weakVC;
 @property(nonatomic) unsigned long long generateType; // @synthesize generateType=_generateType;
 @property(copy, nonatomic) NSString *taskBizKey; // @synthesize taskBizKey=_taskBizKey;

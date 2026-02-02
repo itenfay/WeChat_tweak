@@ -15,7 +15,6 @@
     UILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UIView *playerView; // @synthesize playerView=_playerView;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;

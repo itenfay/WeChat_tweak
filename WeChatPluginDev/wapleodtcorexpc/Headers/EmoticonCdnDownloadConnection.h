@@ -25,7 +25,6 @@
 + (void)keyReportDownloadOK;
 + (id)downloadUrlForEmojiInfoObj:(id)arg1 downloadType:(int *)arg2 idkey:(int *)arg3 disableExternUrl:(_Bool)arg4;
 + (id)downloadUrlForEmojiInfoObj:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableExternUrl; // @synthesize disableExternUrl=_disableExternUrl;
 @property(nonatomic) int m_decryptResult; // @synthesize m_decryptResult=_m_decryptResult;
 @property(nonatomic) _Bool m_isActive; // @synthesize m_isActive=_m_isActive;

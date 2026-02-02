@@ -23,7 +23,6 @@
 + (void)PBArrayAdd_m_lastCheckTime;
 + (void)PBArrayAdd_m_checkPaths;
 + (void)PBArrayAdd_m_hasCheckPuginTimes;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_lastCheckTime; // @synthesize m_lastCheckTime=_m_lastCheckTime;
 @property(retain, nonatomic) NSMutableArray *m_checkPaths; // @synthesize m_checkPaths=_m_checkPaths;
 @property(nonatomic) unsigned int m_hasCheckPuginTimes; // @synthesize m_hasCheckPuginTimes=_m_hasCheckPuginTimes;

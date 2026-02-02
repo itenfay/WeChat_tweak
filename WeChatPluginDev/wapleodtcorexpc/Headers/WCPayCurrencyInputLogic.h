@@ -15,7 +15,6 @@
     NSRegularExpression *_m_pattern;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRegularExpression *m_pattern; // @synthesize m_pattern=_m_pattern;
 @property(nonatomic) unsigned int m_maxLength; // @synthesize m_maxLength=_m_maxLength;
 @property(nonatomic) __weak id <WCPayCurrencyInputLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

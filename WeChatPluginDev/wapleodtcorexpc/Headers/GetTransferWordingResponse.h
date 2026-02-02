@@ -18,7 +18,6 @@
     NSString *_delayConfirmDescUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool delayConfirmSwitchFlag; // @synthesize delayConfirmSwitchFlag=_delayConfirmSwitchFlag;
 @property(copy, nonatomic) NSString *delayConfirmDescUrl; // @synthesize delayConfirmDescUrl=_delayConfirmDescUrl;
 @property(nonatomic) _Bool delayConfirmDescUrlflag; // @synthesize delayConfirmDescUrlflag=_delayConfirmDescUrlflag;

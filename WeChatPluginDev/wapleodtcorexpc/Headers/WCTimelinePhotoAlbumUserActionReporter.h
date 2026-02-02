@@ -24,7 +24,6 @@
 + (void)beginBehaviourInfoSessionWithUsername:(id)arg1 homepageType:(long long)arg2;
 + (id)reporterKeyWithUsername:(id)arg1 homepageType:(long long)arg2;
 + (id)sharedInstanceWithUsername:(id)arg1 homepageType:(long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SnsAlbumFeedBehaviour *albumFeedBehaviourSession; // @synthesize albumFeedBehaviourSession=_albumFeedBehaviourSession;
 @property(retain, nonatomic) SnsUserBehaviourInfo *userBehaviourInfoSession; // @synthesize userBehaviourInfoSession=_userBehaviourInfoSession;
 

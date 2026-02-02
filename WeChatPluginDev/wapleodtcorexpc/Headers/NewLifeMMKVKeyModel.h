@@ -14,7 +14,6 @@
     unsigned long long _userAttrFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long userAttrFlag; // @synthesize userAttrFlag=_userAttrFlag;
 @property(retain, nonatomic) NewLifePrefetchConf *prefetchConf; // @synthesize prefetchConf=_prefetchConf;
 @property(retain, nonatomic) MemoryMappedKV *internalKV; // @synthesize internalKV=_internalKV;

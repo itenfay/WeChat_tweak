@@ -21,7 +21,6 @@
     FinderGetLiveInfoResp_LiveNotificationDynamicDisplayInfo *_notificationDynamicDisplayInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderGetLiveInfoResp_LiveNotificationDynamicDisplayInfo *notificationDynamicDisplayInfo; // @synthesize notificationDynamicDisplayInfo=_notificationDynamicDisplayInfo;
 @property(retain, nonatomic) FinderNotifyMoreLiveInfo *notifyMoreLiveConfig; // @synthesize notifyMoreLiveConfig=_notifyMoreLiveConfig;
 @property(nonatomic) unsigned int autoPlayControlFlag; // @synthesize autoPlayControlFlag=_autoPlayControlFlag;

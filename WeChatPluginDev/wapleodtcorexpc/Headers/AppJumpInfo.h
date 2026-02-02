@@ -13,7 +13,6 @@
     NSString *_appStoreUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appStoreUrl; // @synthesize appStoreUrl=_appStoreUrl;
 @property(retain, nonatomic) NSString *schema; // @synthesize schema=_schema;
 

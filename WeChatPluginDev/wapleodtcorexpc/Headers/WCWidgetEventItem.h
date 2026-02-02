@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_widgetName;
 + (void)PBArrayAdd_eventSubType;
 + (void)PBArrayAdd_eventType;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int touchInterval; // @synthesize touchInterval=_touchInterval;
 @property(nonatomic) struct CGPoint touchEndPoint; // @synthesize touchEndPoint=_touchEndPoint;
 @property(nonatomic) struct CGPoint touchBeginPoint; // @synthesize touchBeginPoint=_touchBeginPoint;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString, NSURLSession;
 @protocol MMLiteAppDownloadMgrDelegate;
@@ -19,7 +20,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_7048591f cronet_cb_; // @synthesize cronet_cb_=_cronet_cb_;
 @property(retain, nonatomic) NSMutableArray *waitingItemQueue; // @synthesize waitingItemQueue=_waitingItemQueue;
 @property(retain, nonatomic) NSMutableArray *downloadingItemQueue; // @synthesize downloadingItemQueue=_downloadingItemQueue;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -10,7 +10,6 @@
     NSArray *_roomContacts;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *roomContacts; // @synthesize roomContacts=_roomContacts;
 - (void)updateWithRoomContacts:(id)arg1;
 

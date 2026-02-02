@@ -13,7 +13,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property(copy, nonatomic) NSString *type;
 @property(nonatomic) struct CGPoint endPoint;

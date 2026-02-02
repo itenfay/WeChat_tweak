@@ -15,7 +15,6 @@
     NSMutableDictionary *_jsFunctionHandlerDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *jsFunctionHandlerDic; // @synthesize jsFunctionHandlerDic=_jsFunctionHandlerDic;
 @property(retain, nonatomic) NSString *qrExtInfo; // @synthesize qrExtInfo=_qrExtInfo;
 @property(retain, nonatomic) NSString *componentId; // @synthesize componentId=_componentId;

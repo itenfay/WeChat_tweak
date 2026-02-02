@@ -19,7 +19,6 @@
     MISSING_TYPE *skipQuota;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (_Bool)isEqual:(id)arg1;
 @property(nonatomic, readonly) NSString *description;

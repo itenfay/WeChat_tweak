@@ -22,7 +22,6 @@
     MMCommonPickerView *_pickerview;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCommonPickerView *pickerview; // @synthesize pickerview=_pickerview;
 @property(retain, nonatomic) NSArray *arrLanguageNames; // @synthesize arrLanguageNames=_arrLanguageNames;
 @property(retain, nonatomic) NSArray *arrLanguageCodes; // @synthesize arrLanguageCodes=_arrLanguageCodes;

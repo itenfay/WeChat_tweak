@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSMutableArray, NSNumber, NSString, SliderPanGestureRecognizerHandler, UIPanGestureRecognizer;
 @protocol WCFinderLivePlayerSliderDelegate;
@@ -25,7 +26,6 @@
     NSMutableArray *_autoAttachDotList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *autoAttachDotList; // @synthesize autoAttachDotList=_autoAttachDotList;
 @property(nonatomic) double lastX; // @synthesize lastX=_lastX;
 @property(nonatomic) int lastTime; // @synthesize lastTime=_lastTime;
@@ -86,4 +86,3 @@
 @property(readonly) Class superclass;
 
 @end
-

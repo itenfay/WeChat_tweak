@@ -14,7 +14,6 @@
     TPRecursiveLock *_pluginListLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPRecursiveLock *pluginListLock; // @synthesize pluginListLock=_pluginListLock;
 @property(retain, nonatomic) TPWorkerQueue *pluginEventQueue; // @synthesize pluginEventQueue=_pluginEventQueue;
 @property(retain, nonatomic) NSMutableArray *pluginList; // @synthesize pluginList=_pluginList;

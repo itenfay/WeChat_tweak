@@ -13,7 +13,6 @@
     struct CGSize _thumbImageSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromOpenSDK; // @synthesize isFromOpenSDK=_isFromOpenSDK;
 @property(copy, nonatomic) NSString *appThumbUrl; // @synthesize appThumbUrl=_appThumbUrl;
 @property(copy, nonatomic) NSString *videoSource; // @synthesize videoSource=_videoSource;

@@ -14,7 +14,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCADCanvasEggAnimationElementInfo *animationElementInfo; // @synthesize animationElementInfo=_animationElementInfo;
 @property(nonatomic) long long animationType; // @synthesize animationType=_animationType;
 - (_Bool)shouldShowAnimationFromShared;

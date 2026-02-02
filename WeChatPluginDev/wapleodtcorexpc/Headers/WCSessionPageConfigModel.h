@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_pagePaths;
-- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *pagePathsDicForSid; // @synthesize pagePathsDicForSid=_pagePathsDicForSid;
 @property(retain) NSMutableDictionary *pagePathsDicForKey; // @synthesize pagePathsDicForKey=_pagePathsDicForKey;
 @property(retain, nonatomic) NSMutableArray *pagePaths; // @synthesize pagePaths=_pagePaths;

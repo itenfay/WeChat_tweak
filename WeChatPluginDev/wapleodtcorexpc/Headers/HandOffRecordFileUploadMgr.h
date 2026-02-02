@@ -15,7 +15,6 @@
     long long _lastUploadProgressTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lastUploadProgressTime; // @synthesize lastUploadProgressTime=_lastUploadProgressTime;
 @property(retain, nonatomic) CdnRecordMediaInfo *curTaskInfo; // @synthesize curTaskInfo=_curTaskInfo;
 @property(retain, nonatomic) NSMutableArray *deletingItems; // @synthesize deletingItems=_deletingItems;

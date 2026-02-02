@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMEmoticonLiteAppOpenApi : NSObject
 {
@@ -13,4 +14,3 @@
 + (void)asyncGetJumpToViewController:(CDUnknownBlockType)arg1 withFromVC:(id)arg2 forContext:(id)arg3;
 
 @end
-

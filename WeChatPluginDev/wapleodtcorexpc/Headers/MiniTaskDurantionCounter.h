@@ -12,7 +12,6 @@
     unsigned long long _baselineTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long baselineTime; // @synthesize baselineTime=_baselineTime;
 @property(nonatomic) unsigned long long storedDurantion; // @synthesize storedDurantion=_storedDurantion;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;

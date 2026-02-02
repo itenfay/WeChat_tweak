@@ -14,7 +14,6 @@
 
 + (struct CGSize)cellSize;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderHeadImageView *avatarImageView; // @synthesize avatarImageView=_avatarImageView;
 - (void)layoutUI;
 - (void)layoutSubviews;

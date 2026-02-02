@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, TenpaySecureCtrl;
 
 @interface WCPayTenpaySecureCtrlItem
@@ -13,7 +15,6 @@
     NSString *m_nsUserCredType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TenpaySecureCtrl *m_textField; // @synthesize m_textField;
 @property(retain, nonatomic) NSString *m_nsUserCredType; // @synthesize m_nsUserCredType;
 - (void)onKeyboardDidHide;
@@ -63,4 +64,3 @@
 @property(readonly) Class superclass;
 
 @end
-

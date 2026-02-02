@@ -12,7 +12,6 @@
     NSString *_latestQueryText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *latestQueryText; // @synthesize latestQueryText=_latestQueryText;
 @property(copy, nonatomic) NSString *udfKVStr; // @synthesize udfKVStr=_udfKVStr;
 @property(retain, nonatomic) WCFinderFeedPickerParams *params; // @synthesize params=_params;

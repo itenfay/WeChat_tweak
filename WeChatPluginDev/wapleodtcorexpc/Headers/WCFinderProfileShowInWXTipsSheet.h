@@ -13,7 +13,6 @@
     UIView *_cardView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *cardView; // @synthesize cardView=_cardView;
 @property(retain, nonatomic) WCFinderFittingWidthRichView *detailRichTextView; // @synthesize detailRichTextView=_detailRichTextView;
 @property(nonatomic) __weak id <WCFinderProfileShowInWXTipsSheetDelegate> delegate; // @synthesize delegate=_delegate;

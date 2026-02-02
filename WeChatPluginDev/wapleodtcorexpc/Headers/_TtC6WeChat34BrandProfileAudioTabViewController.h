@@ -18,7 +18,6 @@
     MISSING_TYPE *$__lazy_storage_$_loadingView;
 }
 
-- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(long long)arg1;
 - (void)updateSectionWidthInSectionDataList;

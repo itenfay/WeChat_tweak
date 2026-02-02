@@ -13,7 +13,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void)startHttpCheck:(id)arg1;
 - (void)startHttpCheckWithParam:(id)arg1 url:(id)arg2;

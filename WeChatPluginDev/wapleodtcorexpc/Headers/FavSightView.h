@@ -22,7 +22,6 @@
     id <FavSightViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool receiveUploadVideoFail; // @synthesize receiveUploadVideoFail=_receiveUploadVideoFail;
 @property(nonatomic) __weak id <FavSightViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool hideIcon; // @synthesize hideIcon=_hideIcon;

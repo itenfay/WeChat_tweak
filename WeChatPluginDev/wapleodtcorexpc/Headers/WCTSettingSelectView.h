@@ -10,7 +10,6 @@
     UIButton *_selectedButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *selectedButton; // @synthesize selectedButton=_selectedButton;
 - (void)loadUI:(id)arg1;
 - (void)setViewDataModel:(id)arg1;

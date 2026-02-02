@@ -10,7 +10,6 @@
     WCRedEnvelopesControlData *m_data;
 }
 
-- (void).cxx_destruct;
 - (void)OnWCRedEnvBizBaseRequestCommonSystemError:(id)arg1 HBCmdType:(long long)arg2;
 - (void)OnWCRedEnvBizBaseRequestCommonError:(id)arg1 HBCmdType:(long long)arg2;
 - (void)OnWCRedEnvEnterpriseBaseRequestCommonSystemError:(id)arg1 HBCmdType:(long long)arg2;

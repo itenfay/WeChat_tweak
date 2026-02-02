@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, RichTextView;
 @protocol WCFinderFittingWidthRichViewDelegate;
@@ -21,7 +22,6 @@
     long long _contentLineNumber;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool currentExpanded; // @synthesize currentExpanded=_currentExpanded;
 @property(nonatomic) long long contentLineNumber; // @synthesize contentLineNumber=_contentLineNumber;
 @property(copy, nonatomic) CDUnknownBlockType onClickUrl; // @synthesize onClickUrl=_onClickUrl;
@@ -56,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

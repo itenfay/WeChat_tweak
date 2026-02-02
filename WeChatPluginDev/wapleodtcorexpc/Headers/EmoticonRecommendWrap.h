@@ -14,7 +14,6 @@
     NSString *_emojiDesc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int emojiFrom; // @synthesize emojiFrom=_emojiFrom;
 @property(nonatomic) _Bool isFree; // @synthesize isFree=_isFree;
 @property(nonatomic) _Bool needPurchase; // @synthesize needPurchase=_needPurchase;

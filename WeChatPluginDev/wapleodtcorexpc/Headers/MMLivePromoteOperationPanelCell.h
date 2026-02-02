@@ -20,7 +20,6 @@
     UILabel *_customizedStateTextLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *customizedStateTextLabel; // @synthesize customizedStateTextLabel=_customizedStateTextLabel;
 @property(retain, nonatomic) UILabel *customizedTitleLabel; // @synthesize customizedTitleLabel=_customizedTitleLabel;
 @property(retain, nonatomic) UIImageView *customizedUIImageView; // @synthesize customizedUIImageView=_customizedUIImageView;

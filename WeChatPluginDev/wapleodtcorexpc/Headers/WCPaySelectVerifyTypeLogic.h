@@ -17,7 +17,6 @@
     WCPayRealnameRouteCgi *_realnameRouteCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayRealnameRouteCgi *realnameRouteCgi; // @synthesize realnameRouteCgi=_realnameRouteCgi;
 @property _Bool hasStartAddCard; // @synthesize hasStartAddCard=_hasStartAddCard;
 @property(nonatomic) int payScene; // @synthesize payScene=_payScene;

@@ -14,7 +14,6 @@
 }
 
 + (id)createTipsItemWithTitle:(id)arg1 desc:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *titleName; // @synthesize titleName=_titleName;
 

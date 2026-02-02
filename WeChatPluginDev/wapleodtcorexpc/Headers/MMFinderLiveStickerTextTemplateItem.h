@@ -22,7 +22,6 @@
 + (id)createRemoteDeliveredWithBackendEntity:(id)arg1;
 + (id)createLocalSourcedWithThumbnailPath:(id)arg1 resourceId:(id)arg2 resourcePath:(id)arg3;
 + (id)createDefault;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extractedResourcePath; // @synthesize extractedResourcePath=_extractedResourcePath;
 @property(retain, nonatomic) NSString *unextractedResourcePath; // @synthesize unextractedResourcePath=_unextractedResourcePath;
 @property(retain, nonatomic) NSString *resourceMd5Hash; // @synthesize resourceMd5Hash=_resourceMd5Hash;

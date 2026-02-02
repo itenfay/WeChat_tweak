@@ -14,7 +14,6 @@
     NSString *_name;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) int endIndex; // @synthesize endIndex=_endIndex;
 @property(nonatomic) int startIndex; // @synthesize startIndex=_startIndex;

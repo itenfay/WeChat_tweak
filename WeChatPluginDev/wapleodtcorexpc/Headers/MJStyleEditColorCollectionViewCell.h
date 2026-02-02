@@ -13,7 +13,6 @@
     UIView *_selectedView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *selectedView; // @synthesize selectedView=_selectedView;
 @property(retain, nonatomic) MMWebImageView *imageView; // @synthesize imageView=_imageView;
 - (void)updateSelected:(id)arg1;

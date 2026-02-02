@@ -33,7 +33,6 @@
     id <MMLiveObjectManipulationViewCornerAction> _bottomRightCornerActionInAccessibilityMode;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMLiveObjectManipulationViewCornerAction> bottomRightCornerActionInAccessibilityMode; // @synthesize bottomRightCornerActionInAccessibilityMode=_bottomRightCornerActionInAccessibilityMode;
 @property(retain, nonatomic) id <MMLiveObjectManipulationViewCornerAction> bottomLeftCornerActionInAccessibilityMode; // @synthesize bottomLeftCornerActionInAccessibilityMode=_bottomLeftCornerActionInAccessibilityMode;
 @property(retain, nonatomic) id <MMLiveObjectManipulationViewCornerAction> topRightCornerActionInAccessibilityMode; // @synthesize topRightCornerActionInAccessibilityMode=_topRightCornerActionInAccessibilityMode;

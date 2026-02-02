@@ -21,7 +21,6 @@
     NSRecursiveLock *_mOplogLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *mOplogLock; // @synthesize mOplogLock=_mOplogLock;
 @property(retain, nonatomic) NSMutableArray *mOplogList; // @synthesize mOplogList=_mOplogList;
 @property(retain, nonatomic) MMTimer *m_syncTimer; // @synthesize m_syncTimer;

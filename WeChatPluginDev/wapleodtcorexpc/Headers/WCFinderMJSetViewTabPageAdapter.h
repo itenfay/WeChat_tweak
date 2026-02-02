@@ -14,7 +14,6 @@
     WCFinderMJSetViewController *_hostVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderMJSetViewController *hostVC; // @synthesize hostVC=_hostVC;
 @property(nonatomic) __weak WCFinderFeedFlowView *feedFlowView; // @synthesize feedFlowView=_feedFlowView;
 @property(retain, nonatomic) WCFinderMJSetTabModel *tabModel; // @synthesize tabModel=_tabModel;

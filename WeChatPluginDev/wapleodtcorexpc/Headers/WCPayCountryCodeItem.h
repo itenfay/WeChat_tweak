@@ -16,7 +16,6 @@
     CountryCodeWrap *_currentCountryCode;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CountryCodeWrap *currentCountryCode; // @synthesize currentCountryCode=_currentCountryCode;
 @property(retain, nonatomic) UILabel *countryLabel; // @synthesize countryLabel=_countryLabel;
 @property(retain, nonatomic) NSString *noCountryCodeTip; // @synthesize noCountryCodeTip=_noCountryCodeTip;

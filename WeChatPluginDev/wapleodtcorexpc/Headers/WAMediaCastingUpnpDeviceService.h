@@ -17,7 +17,6 @@
 }
 
 + (id)deviceServiceWithInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy, nonatomic) NSString *serviceId; // @synthesize serviceId=_serviceId;
 @property(copy, nonatomic) NSString *eventSubURL; // @synthesize eventSubURL=_eventSubURL;

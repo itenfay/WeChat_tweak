@@ -14,7 +14,6 @@
     MISSING_TYPE *$__lazy_storage_$_fastSlipThreshold;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (unsigned long long)enhanceSlipTimes;
 - (void)clearRecord;

@@ -17,7 +17,6 @@
     struct CGRect _suitableVideoFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMScrollViewZoomReporter *zoomReporter; // @synthesize zoomReporter=_zoomReporter;
 @property(nonatomic) struct CGRect suitableVideoFrame; // @synthesize suitableVideoFrame=_suitableVideoFrame;
 @property(nonatomic) struct CGSize originVideoSize; // @synthesize originVideoSize=_originVideoSize;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMUIButton, MMWebImageView, NSString, RichTextView, UILabel, UIView, WCFinderAuthorContactRecommendView, WCFinderFeedContentVM, WCFinderFriendLikeCustomInfoView, WCFinderSimplePlayerView, _TtC6WeChat25WCFinderSimpleProgressBar;
 @protocol WCFinderLongVideoListCellDelegate;
@@ -33,7 +34,6 @@
     struct WCShowArea _playerViewShowArea;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needCallbackAutoPlay; // @synthesize needCallbackAutoPlay=_needCallbackAutoPlay;
 @property(retain, nonatomic) MMUIButton *landscapeButton; // @synthesize landscapeButton=_landscapeButton;
 @property(retain, nonatomic) UIView *seperateLine; // @synthesize seperateLine=_seperateLine;
@@ -90,4 +90,3 @@
 @property(readonly) Class superclass;
 
 @end
-

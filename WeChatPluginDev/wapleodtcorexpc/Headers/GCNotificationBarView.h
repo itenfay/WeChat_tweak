@@ -15,7 +15,6 @@
     JumpInfo *_jumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(retain, nonatomic) MMWebImageView *rightIcon; // @synthesize rightIcon=_rightIcon;
 @property(retain, nonatomic) UILabel *notificationLabel; // @synthesize notificationLabel=_notificationLabel;

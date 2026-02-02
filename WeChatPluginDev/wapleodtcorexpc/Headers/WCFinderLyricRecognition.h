@@ -12,7 +12,6 @@
     NSString *_audioURL;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *audioURL; // @synthesize audioURL=_audioURL;
 
 @end

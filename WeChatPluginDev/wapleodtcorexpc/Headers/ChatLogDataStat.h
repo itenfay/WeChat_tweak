@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_cacheVersion;
 + (void)PBArrayAdd_dicSessionInfo;
 + (void)PBArrayAdd_dicFileInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *markLock; // @synthesize markLock=_markLock;
 @property(nonatomic) long long cacheVersion; // @synthesize cacheVersion=_cacheVersion;
 @property(retain, nonatomic) NSMutableDictionary *dicSessionInfo; // @synthesize dicSessionInfo=_dicSessionInfo;

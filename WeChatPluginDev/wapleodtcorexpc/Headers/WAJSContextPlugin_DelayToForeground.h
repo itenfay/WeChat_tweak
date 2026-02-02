@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray;
 
 @interface WAJSContextPlugin_DelayToForeground
@@ -10,7 +12,6 @@
     NSMutableArray *_delayPerformArr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *delayPerformArr; // @synthesize delayPerformArr=_delayPerformArr;
 - (void)trimJSAPIInArray:(id)arg1;
 - (void)execute;
@@ -19,4 +20,3 @@
 - (id)init;
 
 @end
-

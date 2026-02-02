@@ -17,7 +17,6 @@
 
 + (struct CGSize)signSizeWithText:(id)arg1 font:(id)arg2 boundingSize:(struct CGSize)arg3 style:(long long)arg4;
 + (double)insetTopForStyle:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) UILabel *signLabel; // @synthesize signLabel=_signLabel;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;

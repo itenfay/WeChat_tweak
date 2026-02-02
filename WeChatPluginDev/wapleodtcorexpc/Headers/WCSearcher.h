@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMSearchPanGestureController, MMTableView, MMUISearchBar, MMUIViewController, NSArray, NSString, UIGestureRecognizer, UINavigationController, UIView, WCSearchController, WCTimeLineFooterView;
 @protocol WCSearchDelegate;
@@ -38,7 +39,6 @@
     UINavigationController *_navigationController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) NSArray *originalAccessibilityElements; // @synthesize originalAccessibilityElements=_originalAccessibilityElements;
 @property(retain, nonatomic) MMUISearchBar *searchBarNotInSearcher; // @synthesize searchBarNotInSearcher=_searchBarNotInSearcher;
@@ -126,4 +126,3 @@
 @property(readonly) Class superclass;
 
 @end
-

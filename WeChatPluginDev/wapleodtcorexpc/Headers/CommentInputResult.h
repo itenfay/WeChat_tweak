@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithInputResult:(id)arg1 realIdentityType:(id)arg2 commentInfo:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterStandardTypedData *commentInfo; // @synthesize commentInfo=_commentInfo;
 @property(retain, nonatomic) NSNumber *realIdentityType; // @synthesize realIdentityType=_realIdentityType;
 @property(copy, nonatomic) NSString *inputResult; // @synthesize inputResult=_inputResult;

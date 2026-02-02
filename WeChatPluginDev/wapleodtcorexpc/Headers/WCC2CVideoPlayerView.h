@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, CMessageWrap, MMBrandHeadImageView, MMScrollViewZoomReporter, MMUIButton, MMUILabel, MPLandingPageCgiHandler, MPLandingPageReportLogic, NSString, UIImage, WCC2CPlayerControlView, WCC2CVideoPlayerReporter, WCC2CVideoThumbImageView, WCPlayerPlayArgs, WCPlayerView, WXFullScreenGestureRecognizer;
 @protocol WCC2CVideoPlayerViewDelegate, WXVideoPlayerViewTouchDelegate;
@@ -59,7 +60,6 @@
     MPLandingPageReportLogic *_brandReportLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasRemovedFromRecentUsed; // @synthesize hasRemovedFromRecentUsed=_hasRemovedFromRecentUsed;
 @property(nonatomic) _Bool hasAddToRecentUsed; // @synthesize hasAddToRecentUsed=_hasAddToRecentUsed;
 @property(nonatomic) unsigned int brandEnterIdForReport; // @synthesize brandEnterIdForReport=_brandEnterIdForReport;
@@ -241,4 +241,3 @@
 @property(readonly) Class superclass;
 
 @end
-

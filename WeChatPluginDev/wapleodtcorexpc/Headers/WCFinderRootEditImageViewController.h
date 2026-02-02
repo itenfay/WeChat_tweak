@@ -12,7 +12,6 @@
     UILabel *_naviLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *naviLabel; // @synthesize naviLabel=_naviLabel;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
 @property(nonatomic) _Bool shouldCropPhotoInVisibleFrame; // @synthesize shouldCropPhotoInVisibleFrame=_shouldCropPhotoInVisibleFrame;

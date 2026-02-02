@@ -10,7 +10,6 @@
     NSMutableArray *_phoneInfoArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *phoneInfoArray; // @synthesize phoneInfoArray=_phoneInfoArray;
 
 @end

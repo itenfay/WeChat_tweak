@@ -12,7 +12,6 @@
     id <WAWebViewPluginPickerDelegate> _resultDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAWebViewPluginPickerDelegate> resultDelegate; // @synthesize resultDelegate=_resultDelegate;
 - (double)getContentMaxHeight;
 - (void)onDateTimeConfirm:(id)arg1;

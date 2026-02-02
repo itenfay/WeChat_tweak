@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIImageView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ZZImageViewChainModel;
 
@@ -11,4 +12,3 @@
 + (CDUnknownBlockType)zz_create;
 @property(readonly, copy, nonatomic) ZZImageViewChainModel *zz_setup;
 @end
-

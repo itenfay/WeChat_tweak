@@ -11,7 +11,6 @@
     CContact *m_Contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *m_Contact; // @synthesize m_Contact;
 @property(nonatomic) unsigned long long m_cellType; // @synthesize m_cellType;
 

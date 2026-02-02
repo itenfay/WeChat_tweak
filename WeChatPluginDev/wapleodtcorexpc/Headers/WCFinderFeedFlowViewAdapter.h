@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSMutableSet, NSString, WCFinderFeedFlowView, WCFinderStreamLoadingState;
 @protocol WCFinderFeedBaseViewControllerProtocol, WCFinderFeedFlowAdapterFeedVisitor, WCFinderFeedFlowViewAdapterDataSource><WCFinderFeedFlowViewDataSource, WCFinderFeedFlowViewAdapterDeleagte;
@@ -32,7 +33,6 @@
 
 + (id)adapterWithVC:(id)arg1 listVCScene:(int)arg2;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) int listVCScene; // @synthesize listVCScene=_listVCScene;
 @property(retain, nonatomic) NSMutableSet *registerViews; // @synthesize registerViews=_registerViews;
 @property(retain, nonatomic) id <WCFinderFeedFlowViewAdapterDataSource><WCFinderFeedFlowViewDataSource> dataWrapper; // @synthesize dataWrapper=_dataWrapper;
@@ -85,4 +85,3 @@
 @property(readonly) Class superclass;
 
 @end
-

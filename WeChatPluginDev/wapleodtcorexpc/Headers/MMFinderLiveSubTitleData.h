@@ -21,7 +21,6 @@
 }
 
 + (id)createSubTitleData:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double layoutStartOffsetX; // @synthesize layoutStartOffsetX=_layoutStartOffsetX;
 @property(nonatomic) long long layoutStartLineIndex; // @synthesize layoutStartLineIndex=_layoutStartLineIndex;
 @property(nonatomic) _Bool isLayout; // @synthesize isLayout=_isLayout;

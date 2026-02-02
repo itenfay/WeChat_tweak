@@ -10,7 +10,6 @@
     WCTableViewManager *_tableViewManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTableViewManager *tableViewManager; // @synthesize tableViewManager=_tableViewManager;
 - (void)onBuildTables;
 - (void)reloadData;

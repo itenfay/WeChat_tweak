@@ -19,7 +19,6 @@
     WCPayNFCCardTipsModal *_tipsModal;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isChargeSuccess; // @synthesize isChargeSuccess=_isChargeSuccess;
 @property(retain, nonatomic) WCPayNFCCardTipsModal *tipsModal; // @synthesize tipsModal=_tipsModal;
 @property(retain, nonatomic) WCPayNFCCardPlaceOrderCgi *placeOrderCgi; // @synthesize placeOrderCgi=_placeOrderCgi;

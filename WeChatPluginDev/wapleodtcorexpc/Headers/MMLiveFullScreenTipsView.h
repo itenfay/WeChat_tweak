@@ -20,7 +20,6 @@
     UIView *_parentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *parentView; // @synthesize parentView=_parentView;
 @property(nonatomic) __weak id <MMLiveFullScreenTipsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;

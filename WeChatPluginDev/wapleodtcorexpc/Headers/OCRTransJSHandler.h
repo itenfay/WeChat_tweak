@@ -13,7 +13,6 @@
     NSMutableDictionary *_imageTransDataCallbackID2RequestIDMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *imageTransDataCallbackID2RequestIDMap; // @synthesize imageTransDataCallbackID2RequestIDMap=_imageTransDataCallbackID2RequestIDMap;
 @property(nonatomic) long long ocrResultType; // @synthesize ocrResultType=_ocrResultType;
 @property(retain, nonatomic) NSString *imageTransDataJsonStr; // @synthesize imageTransDataJsonStr=_imageTransDataJsonStr;

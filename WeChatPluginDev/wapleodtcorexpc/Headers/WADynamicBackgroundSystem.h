@@ -20,7 +20,6 @@
 
 + (union _GLKVector4)getVector4ColorFromHex:(int)arg1 alpha:(double)arg2;
 + (id)getDefaultDynamicSystemConfigForWidth:(double)arg1 height:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool currentInDarkMode; // @synthesize currentInDarkMode=_currentInDarkMode;
 @property(nonatomic) __weak id <DynamicBackgroundSystemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double backgroundDuration; // @synthesize backgroundDuration=_backgroundDuration;

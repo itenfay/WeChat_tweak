@@ -17,7 +17,6 @@
     NSMutableArray *_textArr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *textArr; // @synthesize textArr=_textArr;
 @property(retain, nonatomic) UIButton *deleteBtn; // @synthesize deleteBtn=_deleteBtn;
 @property(retain, nonatomic) UIButton *saveBtn; // @synthesize saveBtn=_saveBtn;

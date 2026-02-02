@@ -26,7 +26,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (id)dnsHTTPWhiteList;
 - (id)urlReportWhiteList;
 - (id)ATSVideoWhiteList;

@@ -16,7 +16,6 @@
 
 + (id)captiveWifiInfo;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) TencentLBSReachability *internetReachability; // @synthesize internetReachability=_internetReachability;
 @property(retain) NSDictionary *wifiInfo; // @synthesize wifiInfo=_wifiInfo;

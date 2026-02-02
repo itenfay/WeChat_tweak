@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FaceRecog3rdVerifyConfirmLogic, FaceRecog3rdVerifyConfirmViewController, FaceRecog3rdVerifyHandler, MMUIViewController, NSString;
 @protocol FaceRecogPrivateVerifyHandlerDelegate;
 
@@ -24,7 +26,6 @@
     NSString *_verifyInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDismissed; // @synthesize isDismissed=_isDismissed;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(nonatomic) _Bool needVideo; // @synthesize needVideo=_needVideo;
@@ -71,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

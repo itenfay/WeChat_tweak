@@ -16,7 +16,6 @@
     NSString *_desc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cannotJumpVerify; // @synthesize cannotJumpVerify=_cannotJumpVerify;
 @property(nonatomic) _Bool isRealname; // @synthesize isRealname=_isRealname;
 @property(nonatomic) _Bool isFail; // @synthesize isFail=_isFail;

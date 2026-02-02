@@ -15,7 +15,6 @@
 + (id)liteapp_export_method_sync_33;
 + (id)liteapp_export_method_sync_32;
 + (id)liteapp_export_method_sync_31;
-- (void).cxx_destruct;
 @property(retain, nonatomic) LiteAppDynamicModuleCallback *callback;
 // Preceding property had unknown attributes: ?
 // Original attribute string: T@"LiteAppDynamicModuleCallback",?,&,N

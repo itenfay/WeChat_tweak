@@ -16,7 +16,6 @@
     NSString *_extData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extData; // @synthesize extData=_extData;
 @property(retain, nonatomic) NSString *businessData; // @synthesize businessData=_businessData;
 @property(retain, nonatomic) NSString *noticeId; // @synthesize noticeId=_noticeId;

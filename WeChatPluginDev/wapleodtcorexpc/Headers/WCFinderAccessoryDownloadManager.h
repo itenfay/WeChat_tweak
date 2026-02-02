@@ -16,7 +16,6 @@
     NSObject<OS_dispatch_queue> *_taskSetQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPaused; // @synthesize isPaused=_isPaused;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *taskSetQueue; // @synthesize taskSetQueue=_taskSetQueue;
 @property(retain, nonatomic) NSMutableSet *downloadTaskSet; // @synthesize downloadTaskSet=_downloadTaskSet;

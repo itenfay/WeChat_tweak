@@ -16,7 +16,6 @@
 
 + (Class)invalidationContextClass;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) long long flag; // @synthesize flag=_flag;
 @property(nonatomic) long long behavior; // @synthesize behavior=_behavior;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;

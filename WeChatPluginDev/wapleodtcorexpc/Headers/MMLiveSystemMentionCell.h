@@ -22,7 +22,6 @@
 
 + (id)ReuseIdentifier;
 + (id)getBgColor;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) MMUIButton *closeBtn; // @synthesize closeBtn=_closeBtn;
 @property(retain, nonatomic) MMUILabel *mentionTitleLabel; // @synthesize mentionTitleLabel=_mentionTitleLabel;

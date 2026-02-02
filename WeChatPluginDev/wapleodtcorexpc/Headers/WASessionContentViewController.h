@@ -11,7 +11,6 @@
     NSString *_sceneID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 - (_Bool)navigationController:(id)arg1 shouldUsePresentWhenPushViewController:(id)arg2 animated:(_Bool)arg3 scene:(unsigned long long)arg4;
 - (void)onClickTitle;

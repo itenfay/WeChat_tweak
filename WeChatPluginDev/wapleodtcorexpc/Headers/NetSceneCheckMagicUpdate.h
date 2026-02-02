@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface NetSceneCheckMagicUpdate
@@ -11,7 +13,6 @@
     NSString *_mPackageId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mPackageId; // @synthesize mPackageId=_mPackageId;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (id)getDefaultConditions;
@@ -20,4 +21,3 @@
 - (void)dealloc;
 
 @end
-

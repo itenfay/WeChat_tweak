@@ -27,7 +27,6 @@
 
 + (id)sharedInstance;
 + (void)hook;
-- (void).cxx_destruct;
 - (void)onStackReportCompleted:(_Bool)arg1;
 - (void)resetReportCount;
 - (id)stackInfosFromSamples:(id)arg1;

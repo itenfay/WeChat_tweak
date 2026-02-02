@@ -17,7 +17,6 @@
     NSRecursiveLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) unsigned long long configMaxStoreFileSize; // @synthesize configMaxStoreFileSize=_configMaxStoreFileSize;
 @property(nonatomic) _Bool isScannedStoreFile; // @synthesize isScannedStoreFile=_isScannedStoreFile;

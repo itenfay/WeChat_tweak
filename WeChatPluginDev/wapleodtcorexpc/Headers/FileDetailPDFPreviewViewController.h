@@ -11,7 +11,6 @@
     id <UIGestureRecognizerDelegate> _recognizeDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIGestureRecognizerDelegate> recognizeDelegate; // @synthesize recognizeDelegate=_recognizeDelegate;
 - (_Bool)shouldHandleSingleTapAt:(id)arg1;
 - (void)PDFViewWillClickOnLink:(id)arg1 withURL:(id)arg2;

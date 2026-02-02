@@ -15,7 +15,6 @@
     UILabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) _Bool loading; // @synthesize loading=_loading;

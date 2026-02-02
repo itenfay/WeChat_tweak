@@ -32,7 +32,6 @@
     NSString *m_ssid;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInAlert; // @synthesize isInAlert=_isInAlert;
 @property(copy, nonatomic) NSString *m_ssid; // @synthesize m_ssid;
 @property(nonatomic) _Bool m_isSsidExist; // @synthesize m_isSsidExist;

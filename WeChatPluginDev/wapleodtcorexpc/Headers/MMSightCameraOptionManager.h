@@ -26,7 +26,6 @@
     struct CGRect _containerFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *allOptionList; // @synthesize allOptionList=_allOptionList;
 @property(nonatomic) __weak id <MMSightCameraOptionControllerProtocol> optionController; // @synthesize optionController=_optionController;
 @property(nonatomic) struct CGRect containerFrame; // @synthesize containerFrame=_containerFrame;

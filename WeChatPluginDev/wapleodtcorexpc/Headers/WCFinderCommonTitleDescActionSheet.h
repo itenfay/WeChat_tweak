@@ -15,7 +15,6 @@
     RichTextView *_descTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *descTextView; // @synthesize descTextView=_descTextView;
 @property(retain, nonatomic) RichTextView *titleTextView; // @synthesize titleTextView=_titleTextView;
 @property(retain, nonatomic) UIButton *closeBtn; // @synthesize closeBtn=_closeBtn;

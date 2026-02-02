@@ -15,7 +15,6 @@
     NSArray *_arrFaceAlbumData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrFaceAlbumData; // @synthesize arrFaceAlbumData=_arrFaceAlbumData;
 @property(nonatomic) _Bool isHadFaceAlbumData; // @synthesize isHadFaceAlbumData=_isHadFaceAlbumData;
 @property(retain, nonatomic) IntelligentClassificationData *classificationData; // @synthesize classificationData=_classificationData;

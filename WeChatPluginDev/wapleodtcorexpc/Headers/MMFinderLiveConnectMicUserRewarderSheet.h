@@ -22,7 +22,6 @@
 }
 
 + (id)showWithTaskId:(id)arg1 micId:(id)arg2 boardKey:(id)arg3 boardType:(unsigned int)arg4 titleHeatValue:(unsigned long long)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *noUserLabel; // @synthesize noUserLabel=_noUserLabel;
 @property(retain, nonatomic) MMLiveHalfScreenTitleBarView *titleBar; // @synthesize titleBar=_titleBar;
 @property(retain, nonatomic) UICollectionView *onlineUsersCollectionView; // @synthesize onlineUsersCollectionView=_onlineUsersCollectionView;

@@ -12,7 +12,6 @@
     NSValue *_outputSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *outputSize; // @synthesize outputSize=_outputSize;
 @property(retain, nonatomic) NSNumber *outputRatio; // @synthesize outputRatio=_outputRatio;
 @property(retain, nonatomic) TXCVideoFrameCoords *frameCoords; // @synthesize frameCoords=_frameCoords;

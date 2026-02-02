@@ -12,7 +12,6 @@
     UIView *_line;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *line; // @synthesize line=_line;
 @property(retain, nonatomic) UILabel *controlLabel; // @synthesize controlLabel=_controlLabel;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;

@@ -22,7 +22,6 @@
     NSMutableArray *_extraInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *extraInfo; // @synthesize extraInfo=_extraInfo;
 - (void)sendAuditsStateOnce:(id)arg1;
 - (_Bool)setAuditsTraceInfo:(id)arg1 data:(id)arg2;

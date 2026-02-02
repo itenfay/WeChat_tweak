@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIView;
 
@@ -14,7 +15,6 @@
     UIView *_musicCardView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *musicCardView; // @synthesize musicCardView=_musicCardView;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) CDUnknownBlockType onFinishBlock; // @synthesize onFinishBlock=_onFinishBlock;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

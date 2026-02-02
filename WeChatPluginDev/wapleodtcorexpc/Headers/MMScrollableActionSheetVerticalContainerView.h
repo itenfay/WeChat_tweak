@@ -17,7 +17,6 @@
     NSMutableDictionary *_rowType2RowViewMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *rowType2RowViewMap; // @synthesize rowType2RowViewMap=_rowType2RowViewMap;
 @property(retain, nonatomic) NSMutableArray *rowInfoList; // @synthesize rowInfoList=_rowInfoList;
 @property(nonatomic) __weak id <MMScrollableActionSheetVerticalContainerViewDelegate> delegate; // @synthesize delegate=_delegate;

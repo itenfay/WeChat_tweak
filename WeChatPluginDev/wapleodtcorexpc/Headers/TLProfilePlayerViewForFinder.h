@@ -13,7 +13,6 @@
 }
 
 + (id)mediaWithContentVM:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TLProfileBaseMediaViewDelegate> tl_profileDelegate; // @synthesize tl_profileDelegate=_tl_profileDelegate;
 // Preceding property had unknown attributes: ?
 // Original attribute string: T@"<TLProfileBaseMediaViewDelegate>",?,W,N,V_tl_profileDelegate

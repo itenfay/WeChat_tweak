@@ -17,7 +17,6 @@
     MMUILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) _Bool isEditing; // @synthesize isEditing=_isEditing;
 @property(nonatomic) __weak id <ContactTagListBottomBarDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

@@ -15,7 +15,6 @@
     NSString *_sceneNote;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int versionType; // @synthesize versionType=_versionType;
 @property(retain, nonatomic) NSString *sceneNote; // @synthesize sceneNote=_sceneNote;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;

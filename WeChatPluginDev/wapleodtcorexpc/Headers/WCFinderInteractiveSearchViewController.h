@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderFeedFlowView, WCFinderInteractiveSearchViewModel;
 
 @interface WCFinderInteractiveSearchViewController
@@ -15,7 +17,6 @@
 }
 
 + (void)displayOnViewController:(id)arg1 tabType:(long long)arg2 closeCallback:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) long long tabType; // @synthesize tabType=_tabType;
 @property(nonatomic) unsigned long long searchKey; // @synthesize searchKey=_searchKey;
 @property(retain, nonatomic) WCFinderFeedFlowView *feedFlowView; // @synthesize feedFlowView=_feedFlowView;
@@ -68,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

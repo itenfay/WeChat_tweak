@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, TextStateIcon, TextStatePublishBrandInfo, TextStatePublishMediaInfo, UIImage;
 @protocol TextState3rdPartyHandler;
@@ -32,7 +33,6 @@
 }
 
 + (_Bool)requestDataItemFromDataItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TextState3rdPartyHandler> thirdPartyHandler; // @synthesize thirdPartyHandler=_thirdPartyHandler;
 @property(retain, nonatomic) NSArray *sourceDataItems; // @synthesize sourceDataItems=_sourceDataItems;
 @property(retain, nonatomic) NSArray *dataItems; // @synthesize dataItems=_dataItems;
@@ -70,4 +70,3 @@
 - (id)initWithFooter:(id)arg1;
 
 @end
-

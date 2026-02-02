@@ -14,7 +14,6 @@
 }
 
 + (id)taskWithDarkTask:(id)arg1 lightTask:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *darkImage; // @synthesize darkImage=_darkImage;
 @property(retain, nonatomic) UIImage *lightImage; // @synthesize lightImage=_lightImage;
 @property(retain, nonatomic) WCFinderDynamicIconFetchTask *lightIconTask; // @synthesize lightIconTask=_lightIconTask;

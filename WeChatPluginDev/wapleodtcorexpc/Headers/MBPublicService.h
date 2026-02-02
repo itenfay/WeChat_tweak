@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSPointerArray, NSString;
 
 @interface MBPublicService
@@ -15,7 +17,6 @@
     NSMutableDictionary *_canvasIdToPendingEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *canvasIdToPendingEvent; // @synthesize canvasIdToPendingEvent=_canvasIdToPendingEvent;
 @property(retain, nonatomic) NSMutableDictionary *canvasIdToBizName; // @synthesize canvasIdToBizName=_canvasIdToBizName;
 @property(nonatomic) _Bool isPrepared; // @synthesize isPrepared=_isPrepared;
@@ -48,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

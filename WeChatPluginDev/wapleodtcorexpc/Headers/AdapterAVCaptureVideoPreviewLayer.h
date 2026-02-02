@@ -12,7 +12,6 @@
     NSString *_videoGravity;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *videoGravity; // @synthesize videoGravity=_videoGravity;
 
 @end

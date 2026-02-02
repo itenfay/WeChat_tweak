@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface IConfSDKRegisterableCallbackHolder : NSObject
 {
@@ -11,10 +12,8 @@
     _Bool isContinuous;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isContinuous; // @synthesize isContinuous;
 @property(copy) CDUnknownBlockType callback; // @synthesize callback;
 - (id)initWithCallback:(CDUnknownBlockType)arg1 isContinuous:(_Bool)arg2;
 
 @end
-

@@ -13,7 +13,6 @@
     NSString *_lastClickShellKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastClickShellKey; // @synthesize lastClickShellKey=_lastClickShellKey;
 @property(nonatomic) unsigned long long topVcPageId; // @synthesize topVcPageId=_topVcPageId;
 @property(retain, nonatomic) NSString *topVcName; // @synthesize topVcName=_topVcName;

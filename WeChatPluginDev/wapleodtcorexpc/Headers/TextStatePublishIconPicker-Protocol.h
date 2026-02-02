@@ -4,6 +4,7 @@
 //
 
 #import "NSObject-Protocol.h"
+typedef void (^CDUnknownBlockType)(void);
 
 @class TextStatePublishIconList;
 
@@ -14,4 +15,3 @@
 - (void)refresh;
 - (void)resetToTop;
 @end
-

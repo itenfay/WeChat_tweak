@@ -14,7 +14,6 @@
     MISSING_TYPE *recInfo;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) _TtC6WeChat28BrandProfileRecommendBizInfo *bizInfo; // @synthesize bizInfo;
 @property(nonatomic, copy) NSString *recommendWording;

@@ -31,7 +31,6 @@
 }
 
 + (double)preferExtraHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRedPacketView *redPacketAnimationView; // @synthesize redPacketAnimationView=_redPacketAnimationView;
 @property(retain, nonatomic) UIView *redPacketContainerView; // @synthesize redPacketContainerView=_redPacketContainerView;
 @property(nonatomic) unsigned long long currHeatValue; // @synthesize currHeatValue=_currHeatValue;

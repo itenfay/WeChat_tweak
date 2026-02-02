@@ -18,7 +18,6 @@
     UIImageView *_cannotMinimizeIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *cannotMinimizeIconView; // @synthesize cannotMinimizeIconView=_cannotMinimizeIconView;
 @property(retain, nonatomic) MinimizeGesBlurCircleView *blurEffectView; // @synthesize blurEffectView=_blurEffectView;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;

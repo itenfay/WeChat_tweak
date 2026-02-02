@@ -14,7 +14,6 @@
     NSMutableArray *_tagButtonList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *tagButtonList; // @synthesize tagButtonList=_tagButtonList;
 @property(copy, nonatomic) NSArray *tagItemList; // @synthesize tagItemList=_tagItemList;
 @property(nonatomic) long long maxWidth; // @synthesize maxWidth=_maxWidth;

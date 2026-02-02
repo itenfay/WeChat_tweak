@@ -16,7 +16,6 @@
     WCFinderDataItem *_dataItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool invalid; // @synthesize invalid=_invalid;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) NSString *nonceID; // @synthesize nonceID=_nonceID;

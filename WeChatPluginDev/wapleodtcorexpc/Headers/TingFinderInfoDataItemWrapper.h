@@ -12,7 +12,6 @@
     MMListenFinderInfo *_finderInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMListenFinderInfo *finderInfo; // @synthesize finderInfo=_finderInfo;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;

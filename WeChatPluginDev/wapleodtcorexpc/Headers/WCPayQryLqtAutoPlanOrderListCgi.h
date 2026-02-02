@@ -12,7 +12,6 @@
     QryAutoPlanOrderListReq *_planDetailReq;
 }
 
-- (void).cxx_destruct;
 @property(retain) QryAutoPlanOrderListReq *planDetailReq; // @synthesize planDetailReq=_planDetailReq;
 @property __weak id <WCPayQryLqtAutoPlanOrderListCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)didFailWithError:(id)arg1;

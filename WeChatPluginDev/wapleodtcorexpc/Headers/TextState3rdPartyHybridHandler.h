@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @protocol TextState3rdPartyHandler;
 
 @interface TextState3rdPartyHybridHandler
@@ -11,7 +13,6 @@
     id <TextState3rdPartyHandler> _jumpHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TextState3rdPartyHandler> jumpHandler; // @synthesize jumpHandler=_jumpHandler;
 @property(retain, nonatomic) id <TextState3rdPartyHandler> appearHandler; // @synthesize appearHandler=_appearHandler;
 - (id)initWithBuffer:(id)arg1 keyBuffer:(id)arg2;
@@ -39,4 +40,3 @@
 - (id)initWithJumpHandler:(id)arg1 appearHandler:(id)arg2;
 
 @end
-

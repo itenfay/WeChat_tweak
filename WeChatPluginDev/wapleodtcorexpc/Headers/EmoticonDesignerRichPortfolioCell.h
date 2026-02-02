@@ -28,7 +28,6 @@
 }
 
 + (double)calcHeightWithIsShowCount:(_Bool)arg1 emojiCount:(unsigned long long)arg2 cellWidth:(double)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonPreviewWindowViewController *emoticonPreview; // @synthesize emoticonPreview=_emoticonPreview;
 @property(retain, nonatomic) UIImageView *sendImageView; // @synthesize sendImageView=_sendImageView;
 @property(retain, nonatomic) UIImageView *downloadImageView; // @synthesize downloadImageView=_downloadImageView;

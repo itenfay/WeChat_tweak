@@ -54,7 +54,6 @@
     double _m_finalDetailTitleWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double m_finalDetailTitleWidth; // @synthesize m_finalDetailTitleWidth=_m_finalDetailTitleWidth;
 @property(retain, nonatomic) UIScrollView *m_backgroundView; // @synthesize m_backgroundView=_m_backgroundView;
 @property(retain, nonatomic) UIButton *m_doneButton; // @synthesize m_doneButton=_m_doneButton;

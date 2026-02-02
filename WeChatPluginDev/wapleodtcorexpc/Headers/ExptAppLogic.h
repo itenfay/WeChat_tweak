@@ -17,7 +17,6 @@
     SafeMutableDictionary *_hitList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needNoteHitInfo; // @synthesize needNoteHitInfo=_needNoteHitInfo;
 @property(nonatomic) unsigned int reportIntervalSec; // @synthesize reportIntervalSec=_reportIntervalSec;
 @property(nonatomic) unsigned int lastReportTime; // @synthesize lastReportTime=_lastReportTime;

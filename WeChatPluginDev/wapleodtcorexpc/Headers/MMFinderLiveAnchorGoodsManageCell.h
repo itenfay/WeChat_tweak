@@ -18,7 +18,6 @@
 + (double)imageWidthForCellWidth:(double)arg1;
 + (double)cellHeightWithModel:(id)arg1 cellWidth:(double)arg2;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *backGroundClickView; // @synthesize backGroundClickView=_backGroundClickView;
 @property(retain, nonatomic) UITapGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(retain, nonatomic) MMFinderLiveGoodsCellSubInfosView *subInfosView; // @synthesize subInfosView=_subInfosView;

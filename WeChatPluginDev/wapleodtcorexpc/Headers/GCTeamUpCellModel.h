@@ -18,7 +18,6 @@
     ChatroomMsgApp *_msgApp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatroomMsgApp *msgApp; // @synthesize msgApp=_msgApp;
 @property(retain, nonatomic) JumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(retain, nonatomic) NSString *rightBtnTitle; // @synthesize rightBtnTitle=_rightBtnTitle;

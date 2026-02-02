@@ -10,7 +10,6 @@
     WCFinderFeedDetailStatusView *_statusView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedDetailStatusView *statusView; // @synthesize statusView=_statusView;
 - (void)didClickBack:(id)arg1;
 - (void)onClickCloseLeftItem;

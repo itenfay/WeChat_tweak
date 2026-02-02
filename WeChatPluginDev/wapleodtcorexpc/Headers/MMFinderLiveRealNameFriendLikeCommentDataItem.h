@@ -10,7 +10,6 @@
     MMFinderLiveRealNameFriendLikeNotificationMsg *_notificationMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRealNameFriendLikeNotificationMsg *notificationMsg; // @synthesize notificationMsg=_notificationMsg;
 - (id)initWithFriendLikeNotificationMsg:(id)arg1;
 

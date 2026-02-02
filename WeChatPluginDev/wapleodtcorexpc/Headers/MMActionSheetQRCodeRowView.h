@@ -24,7 +24,6 @@
 }
 
 + (double)rowViewHeight;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int businessType; // @synthesize businessType=_businessType;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *codeStr; // @synthesize codeStr=_codeStr;

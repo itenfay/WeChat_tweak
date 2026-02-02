@@ -20,7 +20,6 @@
     NSData *_cachedComputeResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *cachedComputeResult; // @synthesize cachedComputeResult=_cachedComputeResult;
 @property(retain, nonatomic) NSMutableData *data; // @synthesize data=_data;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

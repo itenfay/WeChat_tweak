@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveConnectMicUsersInfo, MMFinderLiveKTVContext, MMFinderLiveKTVManageLogic, MMFinderLiveKTVPerfAdjustLogic, MMFinderLiveKTVReporter, MMFinderLiveKTVStateInfo, MMLiveKtvResourceState, NSString, WCFinderDataItem;
 @protocol MMLiveUniqueTaskId;
@@ -30,7 +31,6 @@
 + (unsigned long long)getLiveId:(id)arg1;
 + (void)reportPositionMistakeLagWithTaskId:(id)arg1 cnt:(unsigned long long)arg2 allDuration:(int)arg3 averMaxAcceptMistake:(int)arg4 averPositionUpdateInterval:(int)arg5 mistakeRecords:(id)arg6 role:(unsigned long long)arg7 uniqueId:(id)arg8 viewScene:(unsigned long long)arg9;
 + (void)reportPlayFailWithTaskId:(id)arg1 error:(unsigned long long)arg2 extra:(long long)arg3 role:(unsigned long long)arg4 uniqueId:(id)arg5 songId:(id)arg6 viewScene:(unsigned long long)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveKTVReporter *reporter; // @synthesize reporter=_reporter;
 @property(copy, nonatomic) CDUnknownBlockType ktvGetAnchorSdkUserIdCallback; // @synthesize ktvGetAnchorSdkUserIdCallback=_ktvGetAnchorSdkUserIdCallback;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
@@ -58,4 +58,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

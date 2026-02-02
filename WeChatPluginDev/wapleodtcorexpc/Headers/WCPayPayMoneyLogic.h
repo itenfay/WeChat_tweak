@@ -60,7 +60,6 @@
     WCPayCustomModalView *_m_modalView;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCPayCustomModalView *m_modalView; // @synthesize m_modalView=_m_modalView;
 @property(retain, nonatomic) WCPayFollowCardBDMchCgi *followMchCgi; // @synthesize followMchCgi=_followMchCgi;
 @property(retain, nonatomic) WCPayJumpRemindControlLogic *jumpRemindControlLogic; // @synthesize jumpRemindControlLogic=_jumpRemindControlLogic;

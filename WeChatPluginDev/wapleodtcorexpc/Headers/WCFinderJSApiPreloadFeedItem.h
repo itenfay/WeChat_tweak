@@ -14,7 +14,6 @@
     NSString *_nonceId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needPreloadFirstFrame; // @synthesize needPreloadFirstFrame=_needPreloadFirstFrame;
 @property(retain, nonatomic) NSString *nonceId; // @synthesize nonceId=_nonceId;
 @property(retain, nonatomic) NSString *encryptId; // @synthesize encryptId=_encryptId;

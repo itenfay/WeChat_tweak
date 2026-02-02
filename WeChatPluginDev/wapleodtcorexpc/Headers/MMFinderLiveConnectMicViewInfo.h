@@ -19,7 +19,6 @@
     MMFinderLiveGestureAnimationContainerView *_gestureAnimationContainer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isViewHidden; // @synthesize isViewHidden=_isViewHidden;
 @property(nonatomic) _Bool useVideo; // @synthesize useVideo=_useVideo;
 @property(retain, nonatomic) MMFinderLiveGestureAnimationContainerView *gestureAnimationContainer; // @synthesize gestureAnimationContainer=_gestureAnimationContainer;

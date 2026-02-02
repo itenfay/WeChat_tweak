@@ -15,7 +15,6 @@
     double _bottomY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double bottomY; // @synthesize bottomY=_bottomY;
 @property(nonatomic) _Bool shouldStopAtNextLoop; // @synthesize shouldStopAtNextLoop=_shouldStopAtNextLoop;
 @property(retain, nonatomic) WCPayWebPagView *atmospherePagView; // @synthesize atmospherePagView=_atmospherePagView;

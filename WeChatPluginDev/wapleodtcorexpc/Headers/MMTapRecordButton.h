@@ -24,7 +24,6 @@
     UILabel *_timeLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasIgnoreUntilMaxSeconds; // @synthesize hasIgnoreUntilMaxSeconds=_hasIgnoreUntilMaxSeconds;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) UILabel *tips; // @synthesize tips=_tips;

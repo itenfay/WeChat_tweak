@@ -30,7 +30,6 @@
     double _imgHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double imgHeight; // @synthesize imgHeight=_imgHeight;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) MMAssetSelectCheckButton *selectCheckButton; // @synthesize selectCheckButton=_selectCheckButton;

@@ -34,7 +34,6 @@
     WCUIAlertView *_m_alertView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCUIAlertView *m_alertView; // @synthesize m_alertView=_m_alertView;
 @property(nonatomic) _Bool isShouldShowPlaceHolder; // @synthesize isShouldShowPlaceHolder=_isShouldShowPlaceHolder;
 @property(retain, nonatomic) UIView *m_footerMask; // @synthesize m_footerMask=_m_footerMask;

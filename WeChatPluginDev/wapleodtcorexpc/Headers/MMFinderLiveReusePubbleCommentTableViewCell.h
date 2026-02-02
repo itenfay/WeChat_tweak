@@ -10,7 +10,6 @@
     MMLiveCommentTableViewCellFrame *_cellFrame;
 }
 
-- (void).cxx_destruct;
 - (id)cellFrame;
 - (void)setupPubbleCellWithCellFrame:(id)arg1;
 - (void)setCellFrame:(id)arg1;

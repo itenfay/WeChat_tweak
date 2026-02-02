@@ -19,7 +19,6 @@
 }
 
 + (long long)calculateColumntCount:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *heightCache; // @synthesize heightCache=_heightCache;
 @property(nonatomic) long long columnCount; // @synthesize columnCount=_columnCount;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

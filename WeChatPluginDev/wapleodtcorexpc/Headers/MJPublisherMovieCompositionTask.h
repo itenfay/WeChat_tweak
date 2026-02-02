@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJMovieComposingAsyncExportInfo, NSString, UIImage;
 
 @interface MJPublisherMovieCompositionTask
@@ -14,7 +16,6 @@
     UIImage *_coverImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *coverImage; // @synthesize coverImage=_coverImage;
 @property(retain, nonatomic) NSString *exportFilePath; // @synthesize exportFilePath=_exportFilePath;
 @property(retain, nonatomic) MJMovieComposingAsyncExportInfo *asyncExportInfo; // @synthesize asyncExportInfo=_asyncExportInfo;
@@ -48,4 +49,3 @@
 - (id)description;
 
 @end
-

@@ -13,7 +13,6 @@
     NSIndexPath *_last;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *last; // @synthesize last=_last;
 @property(retain, nonatomic) NSIndexPath *first; // @synthesize first=_first;
 - (id)description;

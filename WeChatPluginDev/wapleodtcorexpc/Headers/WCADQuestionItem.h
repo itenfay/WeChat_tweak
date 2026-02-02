@@ -12,7 +12,6 @@
     NSString *wording;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int actionType; // @synthesize actionType;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording;
 @property(retain, nonatomic) NSString *itemId; // @synthesize itemId;

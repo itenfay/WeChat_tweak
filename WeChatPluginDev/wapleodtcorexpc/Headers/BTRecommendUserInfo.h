@@ -13,7 +13,6 @@
     NSString *_versionInfo;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *versionInfo; // @synthesize versionInfo=_versionInfo;
 @property(retain, nonatomic) BTRecommendFeedbackInfo *feedbackInfo; // @synthesize feedbackInfo=_feedbackInfo;
 

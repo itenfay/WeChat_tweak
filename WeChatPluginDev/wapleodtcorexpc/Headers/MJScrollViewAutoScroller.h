@@ -21,7 +21,6 @@
     struct UIEdgeInsets _autoScrollEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double minimumMoveDistance; // @synthesize minimumMoveDistance=_minimumMoveDistance;
 @property(nonatomic) struct CGPoint originalTouchPoint; // @synthesize originalTouchPoint=_originalTouchPoint;
 @property(nonatomic) struct CGPoint lastTouchPoint; // @synthesize lastTouchPoint=_lastTouchPoint;

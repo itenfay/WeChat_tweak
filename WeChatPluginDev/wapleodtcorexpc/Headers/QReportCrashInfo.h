@@ -36,7 +36,6 @@
     NSString *_os_version;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *os_version; // @synthesize os_version=_os_version;
 @property(copy, nonatomic) NSString *session_uuid; // @synthesize session_uuid=_session_uuid;
 @property(copy, nonatomic) NSString *ext; // @synthesize ext=_ext;

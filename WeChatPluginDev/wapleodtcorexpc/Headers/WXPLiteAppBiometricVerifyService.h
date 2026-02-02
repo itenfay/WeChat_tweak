@@ -4,17 +4,16 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WXPLiteAppBiometricVerifyService : NSObject
 {
     CDUnknownBlockType _biometricVerifyCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType biometricVerifyCallback; // @synthesize biometricVerifyCallback=_biometricVerifyCallback;
 - (void)authenticate:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)cancelAuthenticate;
 - (id)supportBioType;
 
 @end
-

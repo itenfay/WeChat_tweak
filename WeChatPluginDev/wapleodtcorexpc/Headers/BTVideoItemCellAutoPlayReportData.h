@@ -14,7 +14,6 @@
     unsigned long long _videoDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long videoDuration; // @synthesize videoDuration=_videoDuration;
 @property(nonatomic) unsigned long long playDuration; // @synthesize playDuration=_playDuration;
 @property(nonatomic) unsigned long long absolutePosition; // @synthesize absolutePosition=_absolutePosition;

@@ -15,7 +15,6 @@
     NSString *_seq_id;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *seq_id; // @synthesize seq_id=_seq_id;
 @property(retain, nonatomic) NSArray *intervals; // @synthesize intervals=_intervals;
 @property(nonatomic) int rand_inv; // @synthesize rand_inv=_rand_inv;

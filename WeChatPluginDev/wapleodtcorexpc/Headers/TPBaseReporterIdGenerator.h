@@ -14,7 +14,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) int instanceID; // @synthesize instanceID=_instanceID;
 @property(retain, nonatomic) TPRecursiveLock *lock; // @synthesize lock=_lock;
 - (int)reporterInstanceBaseID;

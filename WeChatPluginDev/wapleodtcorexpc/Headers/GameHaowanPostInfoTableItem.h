@@ -56,7 +56,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isBroken; // @synthesize isBroken=_isBroken;
 @property(retain, nonatomic) NSArray *mediaList; // @synthesize mediaList=_mediaList;
 @property(nonatomic) _Bool needDelAfterPost; // @synthesize needDelAfterPost=_needDelAfterPost;

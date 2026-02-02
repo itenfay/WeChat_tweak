@@ -16,7 +16,6 @@
     GroupNoticeItem *_item;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GroupNoticeItem *item; // @synthesize item=_item;
 @property(nonatomic) _Bool isHistory; // @synthesize isHistory=_isHistory;
 @property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;

@@ -19,7 +19,6 @@
 }
 
 + (id)dataItemWithResource:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isResourcePrepared; // @synthesize isResourcePrepared=_isResourcePrepared;
 @property(retain, nonatomic) NSString *resourceMd5; // @synthesize resourceMd5=_resourceMd5;
 @property(retain, nonatomic) NSString *resourceUrl; // @synthesize resourceUrl=_resourceUrl;

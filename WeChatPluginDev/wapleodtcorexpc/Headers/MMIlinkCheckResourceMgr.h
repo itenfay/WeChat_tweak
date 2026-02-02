@@ -17,7 +17,6 @@
     NSMutableDictionary *_checkingResourceDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *checkingResourceDic; // @synthesize checkingResourceDic=_checkingResourceDic;
 @property(nonatomic) __weak id <MMIlinkCheckResourceMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onReceiveAppMessageEvent:(const void *)arg1;

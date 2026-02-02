@@ -14,7 +14,6 @@
     MJPublisherButton *_retryButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJPublisherButton *retryButton; // @synthesize retryButton=_retryButton;
 @property(nonatomic) __weak id <MJSegmentReusableViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didEndDisplaying;

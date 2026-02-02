@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJShootComposingViewController, NSString, RecommendedMusicInfo;
 
@@ -16,7 +17,6 @@
     RecommendedMusicInfo *_patMusicInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RecommendedMusicInfo *patMusicInfo; // @synthesize patMusicInfo=_patMusicInfo;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) NSString *shootEntryExtInfo; // @synthesize shootEntryExtInfo=_shootEntryExtInfo;
@@ -54,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

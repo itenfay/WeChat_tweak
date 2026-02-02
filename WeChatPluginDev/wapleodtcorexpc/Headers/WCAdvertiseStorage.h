@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_uiAdCreateTime;
 + (void)PBArrayAdd_nsUsername;
 + (void)PBArrayAdd_nsAdvertiseID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *oAdvertiseData; // @synthesize oAdvertiseData=_oAdvertiseData;
 @property(nonatomic) unsigned int uiAdDisplayTime; // @synthesize uiAdDisplayTime=_uiAdDisplayTime;
 @property(nonatomic) unsigned int uiAdCreateTime; // @synthesize uiAdCreateTime=_uiAdCreateTime;

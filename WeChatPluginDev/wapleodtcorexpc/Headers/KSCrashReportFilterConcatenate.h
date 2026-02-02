@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
@@ -14,7 +15,6 @@
 }
 
 + (id)filterWithSeparatorFmt:(id)arg1 keys:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *keys; // @synthesize keys=_keys;
 @property(retain, nonatomic) NSString *separatorFmt; // @synthesize separatorFmt=_separatorFmt;
 - (void)filterReports:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

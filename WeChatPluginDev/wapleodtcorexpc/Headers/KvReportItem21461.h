@@ -25,7 +25,6 @@
     NSString *_RecInfo_31;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int InsertRet_36; // @synthesize InsertRet_36=_InsertRet_36;
 @property(nonatomic) int Pos_35; // @synthesize Pos_35=_Pos_35;
 @property(nonatomic) _Bool UseServerTime_34; // @synthesize UseServerTime_34=_UseServerTime_34;

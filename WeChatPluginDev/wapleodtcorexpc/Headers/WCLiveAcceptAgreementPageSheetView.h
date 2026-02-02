@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIImage, UIImageView, UILabel, UIView;
 
 @interface WCLiveAcceptAgreementPageSheetView
@@ -17,7 +19,6 @@
     CDUnknownBlockType _confirmCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType confirmCallback; // @synthesize confirmCallback=_confirmCallback;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
@@ -46,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

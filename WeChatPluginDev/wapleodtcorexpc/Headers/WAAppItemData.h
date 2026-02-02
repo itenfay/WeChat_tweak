@@ -61,7 +61,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCommonUseItem; // @synthesize isCommonUseItem=_isCommonUseItem;
 @property(retain, nonatomic) NSString *pagePath; // @synthesize pagePath=_pagePath;
 @property(retain, nonatomic) NSString *commuseExtraData; // @synthesize commuseExtraData=_commuseExtraData;

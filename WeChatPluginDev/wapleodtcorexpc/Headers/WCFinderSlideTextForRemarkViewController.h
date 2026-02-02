@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, SlideTextJSHandler, UIButton, UILabel, UIScreenEdgePanGestureRecognizer, WCFinderGuideLinkBubbleView, WCFinderSlideTextForRemarkVCParams, WSTemplateLogicController, WSWebViewPluginScheduler;
 
 @interface WCFinderSlideTextForRemarkViewController
@@ -28,7 +30,6 @@
     struct _NSRange _selectedRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSlideTextForRemarkVCParams *params; // @synthesize params=_params;
 @property(nonatomic) double guideBubbleMaxWidth; // @synthesize guideBubbleMaxWidth=_guideBubbleMaxWidth;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *popGesture; // @synthesize popGesture=_popGesture;
@@ -79,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

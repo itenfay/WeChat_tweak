@@ -34,7 +34,6 @@
 @property(retain, nonatomic, getter=appVersion, setter=setAppVersion:) NSString *jcev2_p_2_o_appVersion; // @synthesize jcev2_p_2_o_appVersion=_jcev2_p_2_o_appVersion;
 @property(retain, nonatomic, getter=appkey, setter=setAppkey:) NSString *jcev2_p_1_o_appkey; // @synthesize jcev2_p_1_o_appkey=_jcev2_p_1_o_appkey;
 @property(nonatomic, getter=platformId, setter=setPlatformId:) BOOL jcev2_p_0_r_platformId; // @synthesize jcev2_p_0_r_platformId=_jcev2_p_0_r_platformId;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

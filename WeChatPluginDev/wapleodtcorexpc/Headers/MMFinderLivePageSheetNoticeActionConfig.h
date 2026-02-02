@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor;
 
@@ -17,11 +18,9 @@
 
 + (id)commonAction;
 + (id)cancelAction;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *bgColor; // @synthesize bgColor=_bgColor;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(retain, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
 
 @end
-

@@ -23,7 +23,6 @@
     MMFinderLiveAudioRoomMicAudioAnimationDelegateObj *_secondWaveAnimationDelegateObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveAudioRoomMicAudioAnimationDelegateObj *secondWaveAnimationDelegateObj; // @synthesize secondWaveAnimationDelegateObj=_secondWaveAnimationDelegateObj;
 @property(retain, nonatomic) MMFinderLiveAudioRoomMicAudioAnimationDelegateObj *firstWaveAnimationDelegateObj; // @synthesize firstWaveAnimationDelegateObj=_firstWaveAnimationDelegateObj;
 @property(retain, nonatomic) CAAnimationGroup *secondWaveAnimation; // @synthesize secondWaveAnimation=_secondWaveAnimation;

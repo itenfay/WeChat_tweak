@@ -15,7 +15,6 @@
     NSString *_listName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool removeOnNil; // @synthesize removeOnNil=_removeOnNil;
 @property(retain, nonatomic) NSString *listName; // @synthesize listName=_listName;
 @property(nonatomic) unsigned int tabType; // @synthesize tabType=_tabType;

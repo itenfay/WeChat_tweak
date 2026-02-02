@@ -13,7 +13,6 @@
     WAWebViewController *_vc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WAWebViewController *vc; // @synthesize vc=_vc;
 - (void)showToast:(id)arg1;
 - (void)showTips:(id)arg1;

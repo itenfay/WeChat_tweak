@@ -13,7 +13,6 @@
     id <MailContactFilterViewDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MailContactFilterViewDelegate> m_delegate; // @synthesize m_delegate;
 @property(retain, nonatomic) NSMutableArray *m_filterArray; // @synthesize m_filterArray;
 - (void)scrollViewWillBeginDragging:(id)arg1;

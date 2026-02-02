@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonStoreReportInfo, MISSING_TYPE, NSString, PersonalDesigner;
 
 @interface _TtC6WeChat41StoreEmotionDesignerProfileViewController
@@ -52,7 +54,6 @@
     MISSING_TYPE *headerIdentifier;
 }
 
-- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)fadeRightButton;
 - (id)normalRightButton;
@@ -98,4 +99,3 @@
 @property(nonatomic, retain) EmoticonStoreReportInfo *reportInfo; // @synthesize reportInfo;
 
 @end
-

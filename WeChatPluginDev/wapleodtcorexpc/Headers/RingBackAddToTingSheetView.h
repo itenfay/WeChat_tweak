@@ -16,7 +16,6 @@
     unsigned long long _ringCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long ringCount; // @synthesize ringCount=_ringCount;
 @property(retain, nonatomic) NSMutableArray *tingInfoArray; // @synthesize tingInfoArray=_tingInfoArray;
 @property(retain, nonatomic) WCTimeLineFooterView *footerView; // @synthesize footerView=_footerView;

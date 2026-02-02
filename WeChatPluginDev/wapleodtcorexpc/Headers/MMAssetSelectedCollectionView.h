@@ -22,7 +22,6 @@
     id <MMAssetSelectedCollectionViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMAssetSelectedCollectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MMImagePickerControlCenter> controlCenter; // @synthesize controlCenter=_controlCenter;
 @property(retain, nonatomic) NSMutableArray *previewInfos; // @synthesize previewInfos=_previewInfos;

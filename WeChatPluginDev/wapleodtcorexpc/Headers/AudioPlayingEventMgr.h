@@ -16,7 +16,6 @@
 }
 
 + (void)hookAudio;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canPlaySound; // @synthesize canPlaySound=_canPlaySound;
 - (void)onWebViewControllerDisappear:(id)arg1;
 - (void)onWebViewControllerAppear:(id)arg1;

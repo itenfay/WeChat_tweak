@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMProgressViewEx, MMToastView, MMUIButton, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSTimer, NSURLRequest, SightIconView, UIColor, UIImageView, UILongPressGestureRecognizer, UIScreenEdgePanGestureRecognizer, UIView, WAAlertModel, WAAppActionSheet, WAApptaskPublicResLogic, WABaseInfoToast, WABrandTitleBar, WACacheVersionChecker, WACircleProgressLoadingViewController, WAEvaluatePopSheet, WAMenuPopInteractiveTransition, WAMenuScrollActionSheet, WAProvideApiConfig, WAWebActionSheet, WAWebErrorView, WAWebViewJSLogicImpl, WAWebViewMenuNavBarProperties, WAWebViewMutiFuncMenuView, WAWebViewPluginScheduler, WAWebviewBottomBannerView;
 @protocol IWAFileViewService, IWARecentForwardScrollViewHelper, IWASkylineView><YYWebViewInterface, WAWebViewControllerMenuActionCustomDelegate, WAWebViewDelegate><WAMinimizeDelegate, YYWebViewInterface;
 
@@ -181,7 +183,6 @@
 + (void)setNavigationAttribute:(id)arg1 webView:(id)arg2;
 + (id)pagePathFromURL:(id)arg1;
 + (id)_converSingleMenuItemsModelArrayToMMScrollActionSheetItemsArray:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isViewDidFirstAppear; // @synthesize isViewDidFirstAppear=_isViewDidFirstAppear;
 @property(nonatomic) unsigned int aliveSeed; // @synthesize aliveSeed=_aliveSeed;
 @property(retain, nonatomic) NSMutableDictionary *dicCheckAliveBlock; // @synthesize dicCheckAliveBlock=_dicCheckAliveBlock;
@@ -1010,4 +1011,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
     UIImageView *_arrow;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrow; // @synthesize arrow=_arrow;
 @property(retain, nonatomic) UIImageView *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) UILabel *balanceLabel; // @synthesize balanceLabel=_balanceLabel;

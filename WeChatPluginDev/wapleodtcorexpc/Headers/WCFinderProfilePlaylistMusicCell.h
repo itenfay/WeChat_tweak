@@ -21,7 +21,6 @@
 }
 
 + (struct CGSize)sizeThatFit:(struct CGSize)arg1 style:(long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *playInfoLabel; // @synthesize playInfoLabel=_playInfoLabel;
 @property(retain, nonatomic) UIImageView *playInfoIconView; // @synthesize playInfoIconView=_playInfoIconView;
 @property(retain, nonatomic) TingPlayStatusView *statusView; // @synthesize statusView=_statusView;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol WCFinderTaskWrapperDelegate;
@@ -27,7 +28,6 @@
 }
 
 + (id)new:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderTaskWrapperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool bAllowConcurrent; // @synthesize bAllowConcurrent=_bAllowConcurrent;
 @property(retain, nonatomic) id next; // @synthesize next=_next;
@@ -73,4 +73,3 @@
 @property(readonly) Class superclass;
 
 @end
-

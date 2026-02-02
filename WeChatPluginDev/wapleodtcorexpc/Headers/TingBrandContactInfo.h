@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithUsername:(id)arg1 isSubscribe:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *isSubscribe; // @synthesize isSubscribe=_isSubscribe;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 - (id)toList;

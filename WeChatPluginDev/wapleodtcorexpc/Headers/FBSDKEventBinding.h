@@ -23,7 +23,6 @@
 + (_Bool)isViewMatchPath:(id)arg1 path:(id)arg2;
 + (_Bool)match:(id)arg1 pathComponent:(id)arg2;
 + (_Bool)matchAnyView:(id)arg1 pathComponent:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *parameters; // @synthesize parameters=_parameters;
 @property(readonly, copy, nonatomic) NSString *pathType; // @synthesize pathType=_pathType;
 @property(readonly, nonatomic) NSArray *path; // @synthesize path=_path;

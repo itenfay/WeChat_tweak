@@ -15,7 +15,6 @@
     unsigned long long _borders;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long borders; // @synthesize borders=_borders;
 @property(retain, nonatomic) NSArray *borderPattern; // @synthesize borderPattern=_borderPattern;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;

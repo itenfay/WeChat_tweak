@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)processWithPCMData:(id)arg1;
 - (_Bool)isResourcesReady;
 - (void)releaseResources;

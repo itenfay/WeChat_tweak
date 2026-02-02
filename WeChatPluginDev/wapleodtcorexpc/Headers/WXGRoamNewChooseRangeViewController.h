@@ -33,7 +33,6 @@
     UISwitch *_timeSwitch;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UISwitch *timeSwitch; // @synthesize timeSwitch=_timeSwitch;
 @property(retain, nonatomic) UISwitch *typeSwitch; // @synthesize typeSwitch=_typeSwitch;
 @property(retain, nonatomic) UIView *timeCell; // @synthesize timeCell=_timeCell;

@@ -11,7 +11,6 @@
     unsigned int uiInterval;
 }
 
-- (void).cxx_destruct;
 - (void)updateVersion:(id)arg1;
 - (void)onResUpdateFinish:(long long)arg1 resType:(unsigned int)arg2 subResType:(unsigned int)arg3;
 - (id)getVersionFilePath;

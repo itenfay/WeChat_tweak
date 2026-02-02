@@ -15,7 +15,6 @@
 }
 
 + (id)createLikeUserInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int liveIdentity; // @synthesize liveIdentity=_liveIdentity;
 @property(retain, nonatomic) NSString *headUrl; // @synthesize headUrl=_headUrl;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;

@@ -16,7 +16,6 @@
     TBTileOverlayRenderContainer *_tileOverlayRenders;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TBTileOverlayRenderContainer *tileOverlayRenders; // @synthesize tileOverlayRenders=_tileOverlayRenders;
 @property(nonatomic) __weak QMediator *mediator; // @synthesize mediator=_mediator;
 @property(nonatomic) __weak id <QTileOverlayManagerDelegate> delegate; // @synthesize delegate=_delegate;

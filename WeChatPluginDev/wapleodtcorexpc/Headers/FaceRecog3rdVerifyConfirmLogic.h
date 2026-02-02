@@ -28,7 +28,6 @@
     NSString *_overseaAgreement;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *overseaAgreement; // @synthesize overseaAgreement=_overseaAgreement;
 @property(retain, nonatomic) NSString *overseaDesc; // @synthesize overseaDesc=_overseaDesc;
 @property(retain, nonatomic) NSString *verifyResult; // @synthesize verifyResult=_verifyResult;

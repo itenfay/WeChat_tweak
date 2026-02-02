@@ -15,7 +15,6 @@
     UIScrollView *_scrollView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) unsigned long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) NSMutableArray *tabTitles; // @synthesize tabTitles=_tabTitles;

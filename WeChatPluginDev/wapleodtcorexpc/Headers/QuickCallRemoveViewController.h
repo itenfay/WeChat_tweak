@@ -12,7 +12,6 @@
     id <QuickCallRemoveViewControllerDelegate> _removeDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <QuickCallRemoveViewControllerDelegate> removeDelegate; // @synthesize removeDelegate=_removeDelegate;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 - (void)onDone:(id)arg1;

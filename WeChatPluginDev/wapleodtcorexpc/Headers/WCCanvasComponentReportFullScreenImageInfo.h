@@ -10,7 +10,6 @@
     WCCanvasComponentReportUrlInfo *_imgUrlInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasComponentReportUrlInfo *imgUrlInfo; // @synthesize imgUrlInfo=_imgUrlInfo;
 - (id)dictionaryRepresentation;
 

@@ -20,7 +20,6 @@
     UIView *_backgroundCoverView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundCoverView; // @synthesize backgroundCoverView=_backgroundCoverView;
 @property(nonatomic) _Bool isInDarkMode; // @synthesize isInDarkMode=_isInDarkMode;
 @property(nonatomic) double manualColorRatio; // @synthesize manualColorRatio=_manualColorRatio;

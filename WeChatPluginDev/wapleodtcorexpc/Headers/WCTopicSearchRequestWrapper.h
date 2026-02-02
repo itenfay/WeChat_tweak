@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GetSearchShareResponse, NSDictionary;
 
@@ -16,7 +17,6 @@
     GetSearchShareResponse *_shareResponse;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GetSearchShareResponse *shareResponse; // @synthesize shareResponse=_shareResponse;
 @property(retain, nonatomic) NSDictionary *requestParams; // @synthesize requestParams=_requestParams;
 @property(nonatomic) _Bool isEmoticonRequest; // @synthesize isEmoticonRequest=_isEmoticonRequest;
@@ -27,4 +27,3 @@
 - (_Bool)isValidWrapper;
 
 @end
-

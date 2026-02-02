@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface LocalJSEventHandler_openUrlWithExtraWebview
 {
     CDUnknownBlockType _callbackBlock;
@@ -10,7 +12,6 @@
 
 + (void)setGlobalHasShow:(_Bool)arg1;
 + (_Bool)getGlobalHasShow;
-- (void).cxx_destruct;
 - (void)ShowWebViewControllerWithType:(unsigned long long)arg1 andWebViewVC:(id)arg2;
 - (void)delayDoAction;
 - (id)pageSheetConfigFromParams:(id)arg1;
@@ -20,4 +21,3 @@
 - (void)dealloc;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, UIButton, UIView, VoicePrintCreateLogic, VoicePrintHeaderView, VoicePrintVerifyLogic, WCSheetView;
 
 @interface VoicePrintEntryViewController
@@ -18,7 +20,6 @@
     VoicePrintVerifyLogic *_verifyLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoicePrintVerifyLogic *verifyLogic; // @synthesize verifyLogic=_verifyLogic;
 @property(retain, nonatomic) VoicePrintCreateLogic *createLogic; // @synthesize createLogic=_createLogic;
 @property(retain, nonatomic) UIView *itemsView; // @synthesize itemsView=_itemsView;
@@ -47,4 +48,3 @@
 - (void)viewDidLoad;
 
 @end
-

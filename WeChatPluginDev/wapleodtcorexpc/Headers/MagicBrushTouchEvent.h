@@ -16,7 +16,6 @@
 }
 
 + (id)fromUITouch:(id)arg1 withEvent:(id)arg2 andAction:(long long)arg3 inView:(id)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned char changed; // @synthesize changed=_changed;
 @property(nonatomic) long long action; // @synthesize action=_action;
 @property(retain, nonatomic) NSArray *touches; // @synthesize touches=_touches;

@@ -46,7 +46,6 @@
 + (void)handleUrl:(id)arg1 withBackupURL:(id)arg2 withExtraInfo:(id)arg3;
 + (void)presentUrlWithoutShare:(id)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extraInfo; // @synthesize extraInfo=_extraInfo;
 @property(nonatomic) _Bool isShowingSaftyTips; // @synthesize isShowingSaftyTips=_isShowingSaftyTips;
 @property(nonatomic) _Bool m_shouldShowDomain; // @synthesize m_shouldShowDomain=_m_shouldShowDomain;

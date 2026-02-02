@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)reportDau:(long long)arg1 code:(long long)arg2 info:(id)arg3;
 - (long long)getColdDownTime;
 - (void)sendReport;

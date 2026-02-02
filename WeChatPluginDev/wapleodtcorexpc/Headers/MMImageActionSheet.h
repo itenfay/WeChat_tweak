@@ -30,7 +30,6 @@
     unsigned long long _actionSheetLastShowTimeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long actionSheetLastShowTimeStamp; // @synthesize actionSheetLastShowTimeStamp=_actionSheetLastShowTimeStamp;
 @property(nonatomic) __weak id <MMImageActionSheetDelegate> imageDelegate; // @synthesize imageDelegate=_imageDelegate;
 @property(nonatomic) __weak MMUIViewController *curViewController; // @synthesize curViewController=_curViewController;

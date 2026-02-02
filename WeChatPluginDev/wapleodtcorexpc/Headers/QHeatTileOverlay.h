@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, QHeatTileCreationData, QHeatTileGradient, QQuadTree;
 
 @interface QHeatTileOverlay
@@ -18,7 +20,6 @@
     QQuadTree *_quadTree;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QQuadTree *quadTree; // @synthesize quadTree=_quadTree;
 @property(retain, nonatomic) QHeatTileGradient *gradient; // @synthesize gradient=_gradient;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
@@ -40,4 +41,3 @@
 - (CDStruct_c519178c)calculateBounds;
 
 @end
-

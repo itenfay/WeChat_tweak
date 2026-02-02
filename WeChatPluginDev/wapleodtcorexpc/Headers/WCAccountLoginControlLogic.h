@@ -10,7 +10,6 @@
     WCPlayLiveWithoutLoginControlLogic *_m_playLiveWthioutLoginLoigc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayLiveWithoutLoginControlLogic *m_playLiveWthioutLoginLoigc; // @synthesize m_playLiveWthioutLoginLoigc=_m_playLiveWthioutLoginLoigc;
 - (void)onOneClickPlayLiveWithoutLogin;
 - (void)onOneClickLoginGoToHelpCenter;

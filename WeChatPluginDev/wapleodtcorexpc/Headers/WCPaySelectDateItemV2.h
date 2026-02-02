@@ -29,7 +29,6 @@
 + (long long)dayOfDate:(id)arg1;
 + (long long)monthOfDate:(id)arg1;
 + (long long)yearOfDate:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPaySelectDateItemData *currentSelectedData; // @synthesize currentSelectedData=_currentSelectedData;
 @property(nonatomic) double contentMaxWidth; // @synthesize contentMaxWidth=_contentMaxWidth;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

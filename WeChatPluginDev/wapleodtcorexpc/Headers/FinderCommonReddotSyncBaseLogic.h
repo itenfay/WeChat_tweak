@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EntranceReportSwitch, FinderCommonReddotSyncTask, NSData, NSMutableArray, NSMutableDictionary, NSString;
 
@@ -19,7 +20,6 @@
     NSMutableDictionary *_switchSyncTimestampDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *switchSyncTimestampDic; // @synthesize switchSyncTimestampDic=_switchSyncTimestampDic;
 @property(retain, nonatomic) EntranceReportSwitch *entranceExposeSwitch; // @synthesize entranceExposeSwitch=_entranceExposeSwitch;
 @property(retain, nonatomic) FinderCommonReddotSyncTask *curSyncingTask; // @synthesize curSyncingTask=_curSyncingTask;
@@ -42,4 +42,3 @@
 - (id)initWithCgiNumber:(unsigned int)arg1 moduleName:(id)arg2;
 
 @end
-

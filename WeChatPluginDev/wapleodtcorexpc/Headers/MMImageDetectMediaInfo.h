@@ -24,7 +24,6 @@
     NSString *_reuploadFilePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reuploadFilePath; // @synthesize reuploadFilePath=_reuploadFilePath;
 @property(retain, nonatomic) NSString *middleFilePath; // @synthesize middleFilePath=_middleFilePath;
 @property(retain, nonatomic) NSString *hdFilePath; // @synthesize hdFilePath=_hdFilePath;

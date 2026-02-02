@@ -14,7 +14,6 @@
     VoiceTransSessionInfo *_translateSessionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoiceTransSessionInfo *translateSessionInfo; // @synthesize translateSessionInfo=_translateSessionInfo;
 @property(retain, nonatomic) NSMutableArray *translateTaskArray; // @synthesize translateTaskArray=_translateTaskArray;
 @property(retain, nonatomic) VoiceTranslateUtil *translateUtil; // @synthesize translateUtil=_translateUtil;

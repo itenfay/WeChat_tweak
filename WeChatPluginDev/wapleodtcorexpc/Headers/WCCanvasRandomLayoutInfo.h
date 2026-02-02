@@ -20,7 +20,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1 withSizeType:(long long)arg2 basicWidth:(int)arg3 basicRootFontSize:(int)arg4 widthRoundingType:(long long)arg5 heightRoundingType:(long long)arg6;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *theChosenRandomCardId; // @synthesize theChosenRandomCardId=_theChosenRandomCardId;
 @property(retain, nonatomic) WCCanvasRandomLayoutEncorePickInfo *randomEncorePickInfo; // @synthesize randomEncorePickInfo=_randomEncorePickInfo;
 @property(retain, nonatomic) WCCanvasRandomLayoutEncoreInfo *encoreInfo; // @synthesize encoreInfo=_encoreInfo;

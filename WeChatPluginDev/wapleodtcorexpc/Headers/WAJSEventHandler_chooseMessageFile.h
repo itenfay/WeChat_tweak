@@ -18,7 +18,6 @@
     unsigned long long _resWait;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool selectCanceled; // @synthesize selectCanceled=_selectCanceled;
 @property(nonatomic) _Bool showingLoading; // @synthesize showingLoading=_showingLoading;
 @property(nonatomic) unsigned long long resWait; // @synthesize resWait=_resWait;

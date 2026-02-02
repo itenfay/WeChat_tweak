@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSTimer.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSTimer (Blocks)
 + (void)jdExecuteSimpleBlock:(id)arg1;
@@ -12,4 +13,3 @@
 + (id)sc_timerWithTimeInterval:(double)arg1 repeats:(_Bool)arg2 block:(CDUnknownBlockType)arg3;
 + (void)initialize;
 @end
-

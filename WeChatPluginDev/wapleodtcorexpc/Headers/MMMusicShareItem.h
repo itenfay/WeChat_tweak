@@ -43,7 +43,6 @@
 + (void)PBArrayAdd_mvCoverUrl;
 + (void)PBArrayAdd_mvNonceId;
 + (void)PBArrayAdd_mvObjectId;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appIdForSourceDisplay; // @synthesize appIdForSourceDisplay=_appIdForSourceDisplay;
 @property(copy, nonatomic) NSString *mid; // @synthesize mid=_mid;
 @property(retain, nonatomic) NSString *mvOperationUrl; // @synthesize mvOperationUrl=_mvOperationUrl;

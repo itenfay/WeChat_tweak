@@ -15,7 +15,6 @@
     id <ContactSelectDropDownHalfScreenViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ContactSelectDropDownHalfScreenViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,10 +15,8 @@
     CDUnknownBlockType _result;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType result; // @synthesize result=_result;
 @property(retain, nonatomic) id arguments; // @synthesize arguments=_arguments;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 
 @end
-

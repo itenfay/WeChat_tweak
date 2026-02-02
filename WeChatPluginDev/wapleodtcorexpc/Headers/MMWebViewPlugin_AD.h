@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSObject;
 @protocol OS_dispatch_queue;
 
@@ -15,7 +17,6 @@
     NSMutableArray *_taskQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFetchingToken; // @synthesize isFetchingToken=_isFetchingToken;
 @property(retain, nonatomic) NSMutableArray *taskQueue; // @synthesize taskQueue=_taskQueue;
 @property(retain, nonatomic) NSMutableDictionary *dicEventID2Task; // @synthesize dicEventID2Task=_dicEventID2Task;
@@ -31,4 +32,3 @@
 - (id)init;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BTFinderItemBackgroundImageView, BTFinderItemCoverContainerView, BTFinderItemHeaderContainerView, BTFinderItemViewModel, MMUIButton, MMUILabel, MMWebImageView, NSString, RichTextView, SightIconView, UIImageView, WCFinderTagView;
 
 @interface BTFixedFinderBaseItemView
@@ -31,7 +33,6 @@
     MMUILabel *_recommendTipLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *recommendTipLabel; // @synthesize recommendTipLabel=_recommendTipLabel;
 @property(retain, nonatomic) WCFinderTagView *membershipTagView; // @synthesize membershipTagView=_membershipTagView;
 @property(retain, nonatomic) MMUILabel *createTimeLabel; // @synthesize createTimeLabel=_createTimeLabel;
@@ -96,4 +97,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
     id <WADesktopStarListReportDelegate> _reportDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WADesktopStarListReportDelegate> reportDelegate; // @synthesize reportDelegate=_reportDelegate;
 - (void)reportOnViewDidAppear;
 - (void)reportItemMoveFrom:(id)arg1 fromIndex:(long long)arg2 to:(long long)arg3;

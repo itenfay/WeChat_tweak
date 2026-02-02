@@ -17,7 +17,6 @@
     unsigned long long _m_rowCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_rightTopNew; // @synthesize m_rightTopNew=_m_rightTopNew;
 @property(nonatomic) unsigned long long m_rowCount; // @synthesize m_rowCount=_m_rowCount;
 @property(nonatomic) double m_currentTotalHeight; // @synthesize m_currentTotalHeight=_m_currentTotalHeight;

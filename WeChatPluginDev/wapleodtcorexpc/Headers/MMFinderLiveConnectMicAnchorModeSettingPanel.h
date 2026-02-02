@@ -24,7 +24,6 @@
     FinderLiveMicInfo *_micInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool directOpenPaidMicSettingOnSelection; // @synthesize directOpenPaidMicSettingOnSelection=_directOpenPaidMicSettingOnSelection;
 @property(retain, nonatomic) FinderLiveMicInfo *micInfo; // @synthesize micInfo=_micInfo;
 @property(retain, nonatomic) MicSetting_PurchaseMicSetting *purchaseMicSetting; // @synthesize purchaseMicSetting=_purchaseMicSetting;

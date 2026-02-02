@@ -18,7 +18,6 @@
     NSMutableDictionary *_m_dicMultiSelect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *m_dicMultiSelect; // @synthesize m_dicMultiSelect=_m_dicMultiSelect;
 @property(retain, nonatomic) MMUILabel *contactTitle; // @synthesize contactTitle=_contactTitle;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;

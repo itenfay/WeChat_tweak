@@ -23,7 +23,6 @@
     CDStruct_1b6d18a9 _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeStyle; // @synthesize timeStyle=_timeStyle;
 @property(retain, nonatomic) UIButton *playButton; // @synthesize playButton=_playButton;
 @property(retain, nonatomic) UISlider *progressSlider; // @synthesize progressSlider=_progressSlider;

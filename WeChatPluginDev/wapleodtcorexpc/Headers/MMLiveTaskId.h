@@ -15,7 +15,6 @@
     NSString *_exportId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *exportId; // @synthesize exportId=_exportId;
 @property(copy, nonatomic) NSString *anchorIdentityId; // @synthesize anchorIdentityId=_anchorIdentityId;
 @property(nonatomic) _Bool isInitialAudience; // @synthesize isInitialAudience=_isInitialAudience;

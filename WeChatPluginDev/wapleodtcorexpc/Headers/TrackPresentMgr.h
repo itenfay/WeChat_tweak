@@ -11,7 +11,6 @@
     _Bool _isTrackRoomListLoaded;
 }
 
-- (void).cxx_destruct;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (id)getRoomPOIByUsername:(id)arg1;
 - (_Bool)isTrackRoomExpired:(id)arg1;

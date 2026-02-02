@@ -15,7 +15,6 @@
     VoicePrintVerifyLogic *_voicePrintVerifyLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoicePrintVerifyLogic *voicePrintVerifyLogic; // @synthesize voicePrintVerifyLogic=_voicePrintVerifyLogic;
 @property(retain, nonatomic) AccountErrorInfo *errorInfo; // @synthesize errorInfo=_errorInfo;
 @property(retain, nonatomic) BaseResponseErrMsgHandler *errHandler; // @synthesize errHandler=_errHandler;

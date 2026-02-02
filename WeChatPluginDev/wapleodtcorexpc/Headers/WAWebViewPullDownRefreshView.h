@@ -25,7 +25,6 @@
     UIScrollView *_scrollView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) _Bool haveDotAnim; // @synthesize haveDotAnim=_haveDotAnim;
 @property(nonatomic) double pullBeginTime; // @synthesize pullBeginTime=_pullBeginTime;

@@ -13,7 +13,6 @@
     UIImageView *_triangleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *triangleView; // @synthesize triangleView=_triangleView;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (void)setText:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol KindaViewControllerRouteActionDelegate;
 
@@ -13,11 +14,9 @@
     CDUnknownBlockType _action;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(nonatomic) __weak id <KindaViewControllerRouteActionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)run:(id)arg1;
 - (id)initWithAction:(CDUnknownBlockType)arg1;
 
 @end
-

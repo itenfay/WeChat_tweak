@@ -107,7 +107,6 @@
 + (_Bool)isSingleBrandFinderLiveMsg:(id)arg1;
 + (_Bool)hasReaderMsgJumpToWeapp:(id)arg1;
 + (_Bool)isReaderMsgJumpToWeapp:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ProductActivity *productActivty; // @synthesize productActivty=_productActivty;
 @property(retain, nonatomic) NSString *top_msg_content; // @synthesize top_msg_content=_top_msg_content;
 @property(nonatomic) int is_top_msg; // @synthesize is_top_msg=_is_top_msg;

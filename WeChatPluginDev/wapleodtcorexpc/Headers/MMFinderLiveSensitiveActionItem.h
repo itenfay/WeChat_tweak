@@ -14,7 +14,6 @@
     unsigned long long _actionId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long actionId; // @synthesize actionId=_actionId;
 @property(retain, nonatomic) MMFinderLiveSensitiveDataItem *sensitiveItem; // @synthesize sensitiveItem=_sensitiveItem;
 @property(nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;

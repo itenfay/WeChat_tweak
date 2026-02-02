@@ -25,7 +25,6 @@
     struct CGAffineTransformComponents _normalizedTransformComponents;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *archiveImagePinningToken; // @synthesize archiveImagePinningToken=_archiveImagePinningToken;
 @property(nonatomic) long long actionSceneOrientation; // @synthesize actionSceneOrientation=_actionSceneOrientation;
 @property(nonatomic) struct CGAffineTransformComponents normalizedTransformComponents; // @synthesize normalizedTransformComponents=_normalizedTransformComponents;

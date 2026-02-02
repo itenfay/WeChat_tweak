@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary;
 
 @interface MMWebViewPlugin_CustomNavigationBar
@@ -11,7 +13,6 @@
     NSMutableDictionary *_dictNavBarItemStateStorage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictNavBarItemStateStorage; // @synthesize dictNavBarItemStateStorage=_dictNavBarItemStateStorage;
 - (void)setPageSubTitle:(id)arg1;
 - (void)setTitleColorAndUpdate:(id)arg1;
@@ -27,4 +28,3 @@
 - (id)init;
 
 @end
-

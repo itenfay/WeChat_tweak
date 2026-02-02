@@ -22,7 +22,6 @@
 @property(retain, nonatomic) NSString *name; // @synthesize name;
 @property(nonatomic) _Bool flag; // @synthesize flag;
 @property(nonatomic) long long tag; // @synthesize tag;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)compareWithTag:(id)arg1;
 - (id)init;

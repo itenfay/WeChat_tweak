@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_conType;
 + (void)PBArrayAdd_remarkPYFull;
 + (void)PBArrayAdd_remark;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int certificationFlag; // @synthesize certificationFlag=_certificationFlag;
 @property(nonatomic) unsigned int conType; // @synthesize conType=_conType;
 @property(retain, nonatomic) NSString *remarkPYFull; // @synthesize remarkPYFull=_remarkPYFull;

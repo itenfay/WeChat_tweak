@@ -22,7 +22,6 @@
 + (id)getCurrentAttributedStringWithTitle:(id)arg1 type:(unsigned long long)arg2 textColor:(id)arg3 isSameGift:(_Bool)arg4 giftCount:(long long)arg5;
 + (double)getTitleWidthWithTitle:(long long)arg1 type:(unsigned long long)arg2 textColor:(id)arg3 isSameGift:(_Bool)arg4 giftCount:(long long)arg5 height:(double)arg6;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSameGift; // @synthesize isSameGift=_isSameGift;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMWebImageView *webImageView; // @synthesize webImageView=_webImageView;

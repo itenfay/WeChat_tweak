@@ -12,7 +12,6 @@
     id <WCImageFullScreenWindowDelegate> _wc_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) id <WCImageFullScreenWindowDelegate> wc_delegate; // @synthesize wc_delegate=_wc_delegate;
 - (void)showErrorTip:(id)arg1;
 - (void)stopLoading;

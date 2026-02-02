@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol WCFImageOperation;
@@ -20,7 +21,6 @@
     CDUnknownBlockType _completionBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) id <WCFImageOperation> downloadOp; // @synthesize downloadOp=_downloadOp;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
@@ -46,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -12,7 +12,6 @@
     WCAdRandomPickCardView *_weakPickCardView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCAdRandomPickCardView *weakPickCardView; // @synthesize weakPickCardView=_weakPickCardView;
 @property(nonatomic) unsigned long long contentItemScene; // @synthesize contentItemScene=_contentItemScene;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;

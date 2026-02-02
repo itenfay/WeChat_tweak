@@ -10,7 +10,6 @@
     MJPublisher *_mjPublisher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJPublisher *mjPublisher; // @synthesize mjPublisher=_mjPublisher;
 - (unsigned long long)currentTimeInMilliseconds;
 - (id)saveCachePath;

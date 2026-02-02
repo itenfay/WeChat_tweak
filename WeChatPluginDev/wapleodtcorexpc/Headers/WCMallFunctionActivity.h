@@ -29,7 +29,6 @@
     _Bool _m_hasRedDot;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_hasRedDot; // @synthesize m_hasRedDot=_m_hasRedDot;
 @property(nonatomic) _Bool m_hasDownloadRestrict; // @synthesize m_hasDownloadRestrict;
 @property(retain, nonatomic) NSString *m_nsThirdPartyDisclaimer; // @synthesize m_nsThirdPartyDisclaimer;

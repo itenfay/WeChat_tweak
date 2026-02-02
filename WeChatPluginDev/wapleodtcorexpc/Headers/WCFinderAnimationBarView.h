@@ -12,7 +12,6 @@
     LOTAnimationView *_closeIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LOTAnimationView *closeIcon; // @synthesize closeIcon=_closeIcon;
 - (void)updateDisplayDragCloseProgress:(double)arg1;
 - (void)doLayout;

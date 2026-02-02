@@ -21,7 +21,6 @@
 }
 
 + (double)preferHeightForCoupon:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *tailBackgroundImageView; // @synthesize tailBackgroundImageView=_tailBackgroundImageView;
 @property(retain, nonatomic) MMFinderLiveCouponContainerView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) MMFinderLiveCouponItem *couponItem; // @synthesize couponItem=_couponItem;

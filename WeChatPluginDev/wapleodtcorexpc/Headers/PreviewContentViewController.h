@@ -12,7 +12,6 @@
     NSString *_curAuthorID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *curAuthorID; // @synthesize curAuthorID=_curAuthorID;
 @property(nonatomic) __weak id <PreviewContentViewControllerDelegate> m_previewContentVCDelegate; // @synthesize m_previewContentVCDelegate=_m_previewContentVCDelegate;
 - (void)autoClickPreviewBubble;

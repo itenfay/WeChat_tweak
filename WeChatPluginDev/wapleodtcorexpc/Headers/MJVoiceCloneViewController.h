@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJPlaybackViewModel, MJVoiceCloneIntroView, MJVoiceCloneMainView, MJVoiceCloneProgressMaskView, MJVoiceInputManager, MMTimer, MMUIView, NSString;
 @protocol MJVoiceCloneViewControllerDelegate;
@@ -23,7 +24,6 @@
 }
 
 + (id)genAudioID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *voiceCloneFakeProgressTimer; // @synthesize voiceCloneFakeProgressTimer=_voiceCloneFakeProgressTimer;
 @property(nonatomic) float voiceCloneFakeProgress; // @synthesize voiceCloneFakeProgress=_voiceCloneFakeProgress;
 @property(retain, nonatomic) MJVoiceCloneProgressMaskView *progressView; // @synthesize progressView=_progressView;
@@ -74,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

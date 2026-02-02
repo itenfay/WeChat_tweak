@@ -13,7 +13,6 @@
     NSMutableArray *_music;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableArray *music; // @synthesize music=_music;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;
 

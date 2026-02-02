@@ -15,7 +15,6 @@
 }
 
 + (double)viewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *toggledImageView; // @synthesize toggledImageView=_toggledImageView;
 @property(retain, nonatomic) MMUILabel *titleLable; // @synthesize titleLable=_titleLable;
 @property(nonatomic) _Bool enableToggle; // @synthesize enableToggle=_enableToggle;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderNewUserPrepareResponse, MMFinderLiveBuyTicketHandle, MMUIButton, NSMapTable, NSMutableArray, NSString, UIButton, UILabel, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UIView, WCFinderAnimationLoadingView, WCFinderCreateCoordinator, WCFinderCreateLiveViewModel, WCFinderFullScreenAnimatedTransitioning, WCFinderLiveAudienceNoticeReporter, WCFinderMultiMenuItemHelper, WCFinderPostMgr, WCFinderProfileCoverView, WCFinderProfileJustWatchTipsView, WCFinderProfileLogoutView, WCFinderProfileReporter, WCFinderPushProfileParams, WCFinderStreamBackGroundView, WCFinderStreamProfileContainer, WCFinderStreamProfileDragBarView, WCFinderStreamProfileHeaderView, WCFinderStreamProfileHeaderViewController, WCFinderStreamProfileTitleView, WCFinderStreamProfileViewModel, WCFinderTabSwitchView;
 @protocol UIViewControllerAnimatedTransitioning;
 
@@ -59,7 +61,6 @@
 }
 
 + (id)genNoticeListViewControllerWithNoticeList:(id)arg1 onReserved:(CDUnknownBlockType)arg2 targetNoticeId:(id)arg3 username:(id)arg4 nickName:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProfileJustWatchTipsView *justwatchBannerView; // @synthesize justwatchBannerView=_justwatchBannerView;
 @property(retain, nonatomic) NSMutableArray *viewDidAppearActions; // @synthesize viewDidAppearActions=_viewDidAppearActions;
 @property(nonatomic) double heightRatio; // @synthesize heightRatio=_heightRatio;
@@ -420,4 +421,3 @@
 @property(readonly) Class superclass;
 
 @end
-

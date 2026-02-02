@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, WCEditImageView, WCEditViewControllerUIConfig;
 @protocol WCEditImageOperationDelegate;
 
@@ -38,7 +40,6 @@
     struct CGRect __lastCropFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInShockZoomArea; // @synthesize isInShockZoomArea=_isInShockZoomArea;
 @property(nonatomic) _Bool shouldNotAdjustInset; // @synthesize shouldNotAdjustInset=_shouldNotAdjustInset;
 @property(retain, nonatomic) WCEditViewControllerUIConfig *uiConfig; // @synthesize uiConfig=_uiConfig;
@@ -147,4 +148,3 @@
 @property(readonly) Class superclass;
 
 @end
-

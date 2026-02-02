@@ -18,7 +18,6 @@
     struct UIEdgeInsets _imageEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMScrollableActionSheetHorizontalItemView *itemView; // @synthesize itemView=_itemView;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) struct UIEdgeInsets imageEdgeInsets; // @synthesize imageEdgeInsets=_imageEdgeInsets;

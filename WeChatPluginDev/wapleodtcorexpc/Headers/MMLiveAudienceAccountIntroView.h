@@ -21,7 +21,6 @@
     UIVisualEffectView *_visualEfView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *visualEfView; // @synthesize visualEfView=_visualEfView;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;

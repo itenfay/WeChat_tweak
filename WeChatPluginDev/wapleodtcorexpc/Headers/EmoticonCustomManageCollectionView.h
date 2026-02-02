@@ -12,7 +12,6 @@
     CADisplayLink *_scrollDisplayLink;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *scrollDisplayLink; // @synthesize scrollDisplayLink=_scrollDisplayLink;
 @property(nonatomic) double speedPercent; // @synthesize speedPercent=_speedPercent;
 @property(nonatomic) unsigned long long autoScrollType; // @synthesize autoScrollType=_autoScrollType;

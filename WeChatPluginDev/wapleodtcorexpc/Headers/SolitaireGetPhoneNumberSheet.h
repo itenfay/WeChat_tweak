@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, NSArray, NSString, UIButton, UITableView;
 @protocol SolitaireGetPhoneNumberSheetDelegate;
 
@@ -16,7 +18,6 @@
     NSArray *_phoneNumbers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *phoneNumbers; // @synthesize phoneNumbers=_phoneNumbers;
 @property(retain, nonatomic) UITableView *phoneListTableView; // @synthesize phoneListTableView=_phoneListTableView;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

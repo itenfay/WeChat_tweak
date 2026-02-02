@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTimer, MainFrameCellDataManager, MainFrameFoldReporter, NSMutableArray, NSMutableDictionary, NSString, WAContactGetter;
 @protocol MainFrameLogicControllerDelegate;
 
@@ -30,7 +32,6 @@
 + (id)getPathOfLastFrontUserName;
 + (id)getLastFrontSessionArray;
 + (_Bool)hasMainFrameCache;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MainFrameFoldReporter *foldReporter; // @synthesize foldReporter=_foldReporter;
 @property(nonatomic) _Bool hasLoadSessionData; // @synthesize hasLoadSessionData=_hasLoadSessionData;
 @property(retain, nonatomic) NSString *m_delayFoldSessionForGuide; // @synthesize m_delayFoldSessionForGuide;
@@ -135,4 +136,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
 
 + (id)readItemInDir:(id)arg1;
 + (id)buildItemAtDir:(id)arg1 type:(long long)arg2 version:(double)arg3 serverConfigPath:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonLensItemConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) NSString *itemPath; // @synthesize itemPath=_itemPath;
 - (void)setAutoAdjust:(_Bool)arg1;

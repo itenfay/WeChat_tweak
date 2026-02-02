@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, NSURL;
 
@@ -19,7 +20,6 @@
     NSURL *_wxapkgPathUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *wxapkgPathUrl; // @synthesize wxapkgPathUrl=_wxapkgPathUrl;
 @property(nonatomic) _Bool downloadFinished; // @synthesize downloadFinished=_downloadFinished;
 @property(nonatomic) unsigned int devUin; // @synthesize devUin=_devUin;
@@ -40,4 +40,3 @@
 - (void)dealloc;
 
 @end
-

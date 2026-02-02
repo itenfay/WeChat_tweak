@@ -14,7 +14,6 @@
 }
 
 + (void)preprocess:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *loadingStatus; // @synthesize loadingStatus=_loadingStatus;
 @property(retain, nonatomic) NSMutableDictionary *_speedCollection; // @synthesize _speedCollection=__speedCollection;
 @property long long reference; // @synthesize reference=_reference;

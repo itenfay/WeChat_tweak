@@ -44,7 +44,6 @@
     UIView *_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) MMUINavigationBar *customNavigationBar; // @synthesize customNavigationBar=_customNavigationBar;
 @property(retain, nonatomic) UIScrollView *sheetView; // @synthesize sheetView=_sheetView;

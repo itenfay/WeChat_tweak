@@ -18,7 +18,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double musicDuration; // @synthesize musicDuration=_musicDuration;
 @property(nonatomic) _Bool isDarkColor; // @synthesize isDarkColor=_isDarkColor;
 @property(retain, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;

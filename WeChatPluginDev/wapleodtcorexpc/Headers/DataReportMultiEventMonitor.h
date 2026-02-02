@@ -13,7 +13,6 @@
     id <DataReportMultiEventDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <DataReportMultiEventDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)messageReturn:(id)arg1 event:(unsigned int)arg2;
 - (void)messageStart:(id)arg1 event:(unsigned int)arg2;

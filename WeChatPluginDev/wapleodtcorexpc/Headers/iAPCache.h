@@ -21,7 +21,6 @@
 + (void)PBArrayAdd_dicProductLocale;
 + (void)PBArrayAdd_dicProductPrice;
 + (void)PBArrayAdd_dicBillNos;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicUnVerifyReceipt; // @synthesize dicUnVerifyReceipt=_dicUnVerifyReceipt;
 @property(retain, nonatomic) NSMutableDictionary *dicProductLocale; // @synthesize dicProductLocale=_dicProductLocale;
 @property(retain, nonatomic) NSMutableDictionary *dicProductPrice; // @synthesize dicProductPrice=_dicProductPrice;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSString;
 
@@ -17,7 +18,6 @@
     NSString *_multiUserQRCode;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *multiUserQRCode; // @synthesize multiUserQRCode=_multiUserQRCode;
 @property(retain, nonatomic) MMUIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
@@ -26,4 +26,3 @@
 @property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString, WAPermissionUserAuthTask, WxaExternalInfo;
 @protocol WAPermissionUserAuthImplDelegate;
@@ -18,7 +19,6 @@
     id <WAPermissionUserAuthImplDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAPermissionUserAuthImplDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onTransferAuthDidCompelete:(id)arg1 jsapiName:(id)arg2 transferHandler:(CDUnknownBlockType)arg3 result:(id)arg4 scene:(unsigned long long)arg5;
 - (void)authTaskComplete:(id)arg1;
@@ -49,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

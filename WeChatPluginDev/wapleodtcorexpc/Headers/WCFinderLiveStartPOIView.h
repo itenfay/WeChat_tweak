@@ -17,7 +17,6 @@
     double _maxWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(nonatomic) _Bool hideLogo; // @synthesize hideLogo=_hideLogo;
 @property(retain, nonatomic) UILabel *poiEduTipsLabel; // @synthesize poiEduTipsLabel=_poiEduTipsLabel;

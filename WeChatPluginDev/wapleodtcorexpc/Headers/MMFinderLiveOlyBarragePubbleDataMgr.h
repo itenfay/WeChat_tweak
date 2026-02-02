@@ -10,7 +10,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 - (void)onExitLiveSuccessWithLiveTaskId:(id)arg1;
 - (void)onFinderLiveOlyBarrageDataUpdate:(id)arg1 taskId:(id)arg2;

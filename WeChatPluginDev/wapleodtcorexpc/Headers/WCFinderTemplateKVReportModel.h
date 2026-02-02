@@ -16,7 +16,6 @@
     NSDictionary *_optionalUdfInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *optionalUdfInfo; // @synthesize optionalUdfInfo=_optionalUdfInfo;
 @property(nonatomic) _Bool isCameraTemplate; // @synthesize isCameraTemplate=_isCameraTemplate;
 @property(copy, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;

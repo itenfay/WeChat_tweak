@@ -15,7 +15,6 @@
     unsigned long long _actionListCount;
 }
 
-- (void).cxx_destruct;
 - (void)onMediaPlayBtnClicked;
 - (void)layoutSubviews;
 - (id)initWithDelegate:(id)arg1 actionBase:(id)arg2 actionListCount:(unsigned long long)arg3;

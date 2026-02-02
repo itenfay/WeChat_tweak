@@ -10,7 +10,6 @@
     WCImageSearchEntity *_searchEntity;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCImageSearchEntity *searchEntity; // @synthesize searchEntity=_searchEntity;
 - (void)handleWithImage;
 - (id)init;

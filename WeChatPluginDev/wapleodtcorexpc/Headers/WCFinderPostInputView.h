@@ -18,7 +18,6 @@
     WCFinderPostUsualTopicContainerView *_topicContainerView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) WCFinderPostUsualTopicContainerView *topicContainerView; // @synthesize topicContainerView=_topicContainerView;
 @property(retain, nonatomic) UIButton *expressionButton; // @synthesize expressionButton=_expressionButton;

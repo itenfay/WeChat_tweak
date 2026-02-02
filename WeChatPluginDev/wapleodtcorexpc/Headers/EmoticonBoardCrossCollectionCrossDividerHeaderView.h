@@ -12,7 +12,6 @@
     UIView *_lineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

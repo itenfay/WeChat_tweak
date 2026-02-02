@@ -20,7 +20,6 @@
     MMListenSimplePlayableInfo *_info;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) MMListenSimplePlayableInfo *info; // @synthesize info=_info;
 @property(retain, nonatomic) UIImage *defaultImage; // @synthesize defaultImage=_defaultImage;

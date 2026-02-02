@@ -14,7 +14,6 @@
     unsigned long long _ellipsisDotCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long ellipsisDotCount; // @synthesize ellipsisDotCount=_ellipsisDotCount;
 @property(retain, nonatomic) MMTimer *ellipsisRotationTimer; // @synthesize ellipsisRotationTimer=_ellipsisRotationTimer;
 @property(retain, nonatomic) NSString *internalText; // @synthesize internalText=_internalText;

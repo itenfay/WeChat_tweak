@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, WCFinderBulletStyleConfig;
 
@@ -22,7 +23,6 @@
     CDUnknownBlockType _itemConfigs;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType itemConfigs; // @synthesize itemConfigs=_itemConfigs;
 @property(retain, nonatomic) WCFinderBulletStyleConfig *defaultStyle; // @synthesize defaultStyle=_defaultStyle;
 @property(nonatomic) double lineSpacing; // @synthesize lineSpacing=_lineSpacing;
@@ -36,4 +36,3 @@
 @property(nonatomic) double gap; // @synthesize gap=_gap;
 
 @end
-

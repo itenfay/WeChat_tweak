@@ -14,7 +14,6 @@
 }
 
 + (id)infoKeyWithTid:(id)arg1 extraKey:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extraKey; // @synthesize extraKey=_extraKey;
 @property(retain, nonatomic) NSString *tid; // @synthesize tid=_tid;
 - (id)description;

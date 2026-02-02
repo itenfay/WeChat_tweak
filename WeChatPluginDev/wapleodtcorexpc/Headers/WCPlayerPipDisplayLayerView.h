@@ -20,7 +20,6 @@
     struct CGSize _frameSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lastPrintPtsSec; // @synthesize lastPrintPtsSec=_lastPrintPtsSec;
 @property(nonatomic) double boundsOffset; // @synthesize boundsOffset=_boundsOffset;
 @property(copy, nonatomic) NSString *currentVideoGravity; // @synthesize currentVideoGravity=_currentVideoGravity;

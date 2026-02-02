@@ -15,7 +15,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithKey:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 - (id)toList;
 

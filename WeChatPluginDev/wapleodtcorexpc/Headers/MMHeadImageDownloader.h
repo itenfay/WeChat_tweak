@@ -15,7 +15,6 @@
     id <HeadImgDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <HeadImgDelegate> delegate; // @synthesize delegate;
 - (void)onHDHeadImgDownloadFinish:(id)arg1;
 - (void)onHeadImgDownloadFinish:(id)arg1 Status:(id)arg2 Image:(id)arg3 Category:(unsigned char)arg4;

@@ -12,7 +12,6 @@
     NSMutableArray *_decorationAttrs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *decorationAttrs; // @synthesize decorationAttrs=_decorationAttrs;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;

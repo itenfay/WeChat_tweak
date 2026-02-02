@@ -29,7 +29,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedFavListInfoArray *favInfoFirstPageArray; // @synthesize favInfoFirstPageArray=_favInfoFirstPageArray;
 @property(nonatomic) double cacheTime; // @synthesize cacheTime=_cacheTime;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;

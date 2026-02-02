@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FBSDKGraphErrorRecoveryProcessor, FBSDKGraphRequestMetadata, FBSDKLogger, FBSDKURLSessionTask, NSHTTPURLResponse, NSMutableArray, NSOperationQueue, NSString, NSURLSession;
 @protocol FBSDKGraphRequestConnectionDelegate;
@@ -29,7 +30,6 @@
 + (id)userAgent;
 + (double)defaultConnectionTimeout;
 + (void)setDefaultConnectionTimeout:(double)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requestStartTime; // @synthesize requestStartTime=_requestStartTime;
 @property(retain, nonatomic) FBSDKLogger *logger; // @synthesize logger=_logger;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
@@ -81,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

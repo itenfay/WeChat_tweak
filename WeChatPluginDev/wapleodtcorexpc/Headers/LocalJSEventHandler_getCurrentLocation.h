@@ -10,7 +10,6 @@
     LocationRetriever *_locationRetriever;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LocationRetriever *locationRetriever; // @synthesize locationRetriever=_locationRetriever;
 - (void)onRetrieveLocationTimeOut:(id)arg1;
 - (void)onRetrieveLocationOK:(id)arg1;

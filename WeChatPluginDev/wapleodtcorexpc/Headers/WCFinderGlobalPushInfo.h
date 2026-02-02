@@ -70,7 +70,6 @@
 + (void)PBArrayAdd_body;
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_objectID;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *pushJumpParams; // @synthesize pushJumpParams=_pushJumpParams;
 @property(nonatomic) unsigned int lastDeliverTime; // @synthesize lastDeliverTime=_lastDeliverTime;
 @property(copy, nonatomic) NSString *reportExtInfo; // @synthesize reportExtInfo=_reportExtInfo;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderGetCommentDetailDataItemCGIParams;
 
 @interface WCFInderGetDetailDataItemCGI
@@ -20,7 +22,6 @@
     WCFinderGetCommentDetailDataItemCGIParams *_paramsModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderGetCommentDetailDataItemCGIParams *paramsModel; // @synthesize paramsModel=_paramsModel;
 @property(nonatomic) unsigned long long pullScene; // @synthesize pullScene=_pullScene;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
@@ -49,4 +50,3 @@
 - (id)initWithObjectId:(id)arg1 encryptedID:(id)arg2 nonceID:(id)arg3 finderUsername:(id)arg4 scene:(int)arg5 pullScene:(unsigned long long)arg6 paramsModel:(id)arg7 success:(CDUnknownBlockType)arg8 failure:(CDUnknownBlockType)arg9;
 
 @end
-

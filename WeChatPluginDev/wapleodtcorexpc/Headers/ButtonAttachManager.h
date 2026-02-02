@@ -13,7 +13,6 @@
     double _maxButtonWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxButtonWidth; // @synthesize maxButtonWidth=_maxButtonWidth;
 @property(retain, nonatomic) NSHashTable *attachedButtons; // @synthesize attachedButtons=_attachedButtons;
 - (void)trigger;

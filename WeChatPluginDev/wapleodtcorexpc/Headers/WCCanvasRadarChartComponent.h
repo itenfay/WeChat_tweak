@@ -12,7 +12,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *maskImageView; // @synthesize maskImageView=_maskImageView;
 @property(retain, nonatomic) UIImageView *bgImageView; // @synthesize bgImageView=_bgImageView;
 - (long long)dimensions;

@@ -14,7 +14,6 @@
     struct CGPoint _point;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITouch *touch; // @synthesize touch=_touch;
 @property(nonatomic) double time; // @synthesize time=_time;
 @property(nonatomic) struct CGPoint point; // @synthesize point=_point;

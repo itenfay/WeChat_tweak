@@ -20,7 +20,6 @@
     struct CGRect _rightCursorRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double dotRadius; // @synthesize dotRadius=_dotRadius;
 @property(nonatomic) double bottomLineLength; // @synthesize bottomLineLength=_bottomLineLength;
 @property(nonatomic) double rightLineLength; // @synthesize rightLineLength=_rightLineLength;

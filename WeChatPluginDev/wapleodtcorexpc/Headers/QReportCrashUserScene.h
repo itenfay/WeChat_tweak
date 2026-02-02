@@ -19,7 +19,6 @@
     NSString *_nav_version;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nav_version; // @synthesize nav_version=_nav_version;
 @property(copy, nonatomic) NSString *map_version; // @synthesize map_version=_map_version;
 @property(copy, nonatomic) NSString *nav_key; // @synthesize nav_key=_nav_key;

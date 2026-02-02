@@ -19,7 +19,6 @@
     WebvViewWebComPublicLibInfo *_sessionPublicInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WebvViewWebComPublicLibInfo *sessionPublicInfo; // @synthesize sessionPublicInfo=_sessionPublicInfo;
 @property(nonatomic) unsigned long long performance_evalMainFrameTagsJsEndTs; // @synthesize performance_evalMainFrameTagsJsEndTs=_performance_evalMainFrameTagsJsEndTs;
 @property(nonatomic) unsigned long long performance_evalMainFrameTagsJsBeginTs; // @synthesize performance_evalMainFrameTagsJsBeginTs=_performance_evalMainFrameTagsJsBeginTs;

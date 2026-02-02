@@ -44,7 +44,6 @@
     long long _drmAbility;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long drmAbility; // @synthesize drmAbility=_drmAbility;
 @property(copy, nonatomic) NSString *playerConfig; // @synthesize playerConfig=_playerConfig;
 @property(nonatomic) long long platform; // @synthesize platform=_platform;

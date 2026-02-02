@@ -11,7 +11,6 @@
     MMFinderLiveLiveRoleSignView *_mysteriousSignView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveLiveRoleSignView *mysteriousSignView; // @synthesize mysteriousSignView=_mysteriousSignView;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

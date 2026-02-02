@@ -18,7 +18,6 @@
 + (void)MMLiveReportFieldAdd_redDot;
 + (void)MMLiveReportFieldAdd_roomId;
 + (void)MMLiveReportFieldAdd_scene;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int roomRole; // @synthesize roomRole;
 @property(nonatomic) unsigned int redDot; // @synthesize redDot;
 @property(retain, nonatomic) NSString *roomId; // @synthesize roomId;

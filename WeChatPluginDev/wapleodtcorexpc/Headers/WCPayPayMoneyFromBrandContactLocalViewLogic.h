@@ -10,7 +10,6 @@
     NSString *m_nsHandleURL;
 }
 
-- (void).cxx_destruct;
 - (void)call:(id)arg1;
 - (void)OnHandleWCPayURL:(id)arg1 Error:(id)arg2;
 - (id)gotoViewController:(Class)arg1 withData:(id)arg2;

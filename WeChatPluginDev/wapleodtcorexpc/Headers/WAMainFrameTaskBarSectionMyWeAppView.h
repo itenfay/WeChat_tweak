@@ -19,7 +19,6 @@
 }
 
 + (double)totalCellHeight:(id)arg1 maxShowCount:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 @property(retain, nonatomic) SightIconView *loadingView; // @synthesize loadingView=_loadingView;
 - (void)initLoadingView;

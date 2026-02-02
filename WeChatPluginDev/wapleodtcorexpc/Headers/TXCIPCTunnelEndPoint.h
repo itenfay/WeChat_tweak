@@ -15,7 +15,6 @@
     long long _port;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long port; // @synthesize port=_port;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *host; // @synthesize host=_host;

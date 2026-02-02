@@ -19,7 +19,6 @@
     long long _roleType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long roleType; // @synthesize roleType=_roleType;
 @property(nonatomic) _Bool disableSelect; // @synthesize disableSelect=_disableSelect;
 @property(nonatomic) _Bool isFinderContact; // @synthesize isFinderContact=_isFinderContact;

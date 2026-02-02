@@ -20,7 +20,6 @@
     NSDictionary *_jsapiParams;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int cgiEventId; // @synthesize cgiEventId=_cgiEventId;
 @property(copy) NSDictionary *jsapiParams; // @synthesize jsapiParams=_jsapiParams;
 @property(retain, nonatomic) id <IWATransferProxyImplProtocol> transferBridge; // @synthesize transferBridge=_transferBridge;

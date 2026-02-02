@@ -15,7 +15,6 @@
     long long _roleType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInUpdateLiveMicEnableCgiProcess; // @synthesize isInUpdateLiveMicEnableCgiProcess=_isInUpdateLiveMicEnableCgiProcess;
 @property(nonatomic) _Bool isKeyRequesting; // @synthesize isKeyRequesting=_isKeyRequesting;
 @property(nonatomic) long long roleType; // @synthesize roleType=_roleType;

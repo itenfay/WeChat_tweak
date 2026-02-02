@@ -14,7 +14,6 @@
     MMLiveActionSheetFlowLayoutView *_anchorOrAssistantFlowLayoutView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLiveBannerMore; // @synthesize isLiveBannerMore=_isLiveBannerMore;
 @property(retain, nonatomic) MMLiveActionSheetFlowLayoutView *anchorOrAssistantFlowLayoutView; // @synthesize anchorOrAssistantFlowLayoutView=_anchorOrAssistantFlowLayoutView;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;

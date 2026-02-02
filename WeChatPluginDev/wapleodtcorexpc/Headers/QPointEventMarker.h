@@ -14,7 +14,6 @@
     NSDictionary *_eventInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *eventInfo; // @synthesize eventInfo=_eventInfo;
 - (void)setAvoidOtherAnnotations:(_Bool)arg1;
 - (_Bool)avoidOtherAnnotations;

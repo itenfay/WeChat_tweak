@@ -15,7 +15,6 @@
     CommitBindXmailRequest *_commitBindRequest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CommitBindXmailRequest *commitBindRequest; // @synthesize commitBindRequest=_commitBindRequest;
 @property(retain, nonatomic) NSString *secPwdKey; // @synthesize secPwdKey=_secPwdKey;
 @property(nonatomic) __weak id <XMailCommitBindCgiDelegate> delegate; // @synthesize delegate=_delegate;

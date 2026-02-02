@@ -12,7 +12,6 @@
     OpenBufferUploadInfo *m_oCurUploadInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenBufferUploadInfo *m_oCurUploadInfo; // @synthesize m_oCurUploadInfo;
 @property(retain, nonatomic) NSMutableArray *m_queUpload; // @synthesize m_queUpload;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

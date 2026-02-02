@@ -16,7 +16,6 @@
     MISSING_TYPE *contentInitialized;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onClickPageSheetCancelButton;
 - (void)onClickPageSheetConfirmButton;

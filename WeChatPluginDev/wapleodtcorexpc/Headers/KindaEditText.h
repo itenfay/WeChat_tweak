@@ -35,7 +35,6 @@
     KindaView *_m_toolBarView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) KindaView *m_toolBarView; // @synthesize m_toolBarView=_m_toolBarView;
 @property(retain, nonatomic) NSString *m_confirmBtnTitle; // @synthesize m_confirmBtnTitle=_m_confirmBtnTitle;
 @property(nonatomic) _Bool m_stayFocusWhenClickEnter; // @synthesize m_stayFocusWhenClickEnter=_m_stayFocusWhenClickEnter;

@@ -18,7 +18,6 @@
     NSArray *_m_chatRoomMemContactList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_chatRoomMemContactList; // @synthesize m_chatRoomMemContactList=_m_chatRoomMemContactList;
 @property(retain, nonatomic) NSArray *m_attentionMemberContactList; // @synthesize m_attentionMemberContactList=_m_attentionMemberContactList;
 @property(retain, nonatomic) CContact *m_chatRoomContact; // @synthesize m_chatRoomContact=_m_chatRoomContact;

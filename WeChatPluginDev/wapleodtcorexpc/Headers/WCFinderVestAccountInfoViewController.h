@@ -12,7 +12,6 @@
     FinderNewUserPrepareResponse *_userPrepareResponse;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderNewUserPrepareResponse *userPrepareResponse; // @synthesize userPrepareResponse=_userPrepareResponse;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;

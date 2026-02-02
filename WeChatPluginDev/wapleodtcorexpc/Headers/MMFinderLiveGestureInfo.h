@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveGestureInfo, NSString, UIColor;
 
@@ -39,7 +40,6 @@
 + (id)gestureInfoWithModel:(id)arg1;
 + (void)clearResourcesForGestureWithIdStr:(id)arg1;
 + (void)clearResourcesForGestureWithId:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id resourceDownloader; // @synthesize resourceDownloader=_resourceDownloader;
 @property(retain, nonatomic) NSString *downloadTempPath; // @synthesize downloadTempPath=_downloadTempPath;
 @property(retain, nonatomic) NSString *renderingResourceBasePath; // @synthesize renderingResourceBasePath=_renderingResourceBasePath;
@@ -85,4 +85,3 @@
 - (_Bool)resourcesDifferentFromUpdateDirective:(id)arg1;
 
 @end
-

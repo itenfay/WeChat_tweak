@@ -14,7 +14,6 @@
     UILabel *_viewerNumberLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *viewerNumberLabel; // @synthesize viewerNumberLabel=_viewerNumberLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) _Bool isEnabledViewerNumberLabel; // @synthesize isEnabledViewerNumberLabel=_isEnabledViewerNumberLabel;

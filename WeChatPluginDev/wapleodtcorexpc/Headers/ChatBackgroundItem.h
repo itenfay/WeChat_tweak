@@ -18,7 +18,6 @@
 }
 
 + (id)loadChatBackgroundItemFromPath:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long status; // @synthesize status;
 @property(nonatomic) long long version; // @synthesize version;
 @property(retain, nonatomic) NSData *thumbData; // @synthesize thumbData;

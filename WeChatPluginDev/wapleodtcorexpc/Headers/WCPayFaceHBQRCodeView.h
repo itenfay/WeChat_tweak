@@ -14,7 +14,6 @@
     NSString *m_nsQRCode;
 }
 
-- (void).cxx_destruct;
 - (void)setQRCode:(id)arg1;
 - (void)updateQRCode;
 - (id)renderDataMatrix:(id)arg1 imageDimension:(int)arg2;

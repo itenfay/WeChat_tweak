@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CAppUtil : NSObject
 {
@@ -159,4 +160,3 @@
 + (id)getGenearlPasteboard;
 
 @end
-

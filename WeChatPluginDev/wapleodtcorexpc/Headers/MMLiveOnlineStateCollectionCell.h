@@ -20,7 +20,6 @@
 
 + (struct CGSize)getCellSize;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *selectedView; // @synthesize selectedView=_selectedView;
 @property(retain, nonatomic) UIImageView *banCommentIconImageView; // @synthesize banCommentIconImageView=_banCommentIconImageView;
 @property(retain, nonatomic) MMLiveUserStateItem *onlineUserItem; // @synthesize onlineUserItem=_onlineUserItem;

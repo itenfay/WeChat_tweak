@@ -14,7 +14,6 @@
     NSMutableArray *_rangingBeaconUUIDArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *rangingBeaconUUIDArray; // @synthesize rangingBeaconUUIDArray=_rangingBeaconUUIDArray;
 @property(retain, nonatomic) MMTimer *checkTimer; // @synthesize checkTimer=_checkTimer;
 @property(retain, nonatomic) NSMutableArray *usedLocationMgrList; // @synthesize usedLocationMgrList=_usedLocationMgrList;

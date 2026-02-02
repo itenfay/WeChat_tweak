@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveFootageReplayModel, NSData;
 
 @interface WCFinderLiveGetLiveMsgWithOffsetCGI
@@ -16,7 +18,6 @@
     MMFinderLiveFootageReplayModel *_footageReplayModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFootageReplayModel *footageReplayModel; // @synthesize footageReplayModel=_footageReplayModel;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
@@ -32,4 +33,3 @@
 - (id)initWithTaskId:(id)arg1 timeOffset:(unsigned int)arg2 isContinualRequest:(_Bool)arg3 lastBuffer:(id)arg4 scenario:(int)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

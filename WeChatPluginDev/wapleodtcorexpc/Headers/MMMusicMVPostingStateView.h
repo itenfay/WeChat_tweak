@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIActivityIndicatorView, UIImageView, UILabel, UITapGestureRecognizer;
 
@@ -19,7 +20,6 @@
     UITapGestureRecognizer *_tapGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) UILabel *retryLabel; // @synthesize retryLabel=_retryLabel;
 @property(retain, nonatomic) UIImageView *retryImageView; // @synthesize retryImageView=_retryImageView;
@@ -35,4 +35,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

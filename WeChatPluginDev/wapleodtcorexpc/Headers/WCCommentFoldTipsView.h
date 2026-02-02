@@ -13,7 +13,6 @@
     WCMomentsErrTipsViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsErrTipsViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 - (void)layoutSubviews;

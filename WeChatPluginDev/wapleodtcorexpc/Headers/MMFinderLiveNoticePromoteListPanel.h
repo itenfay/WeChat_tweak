@@ -23,7 +23,6 @@
     MMFinderLiveTask *_liveTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTask *liveTask; // @synthesize liveTask=_liveTask;
 @property(retain, nonatomic) MMRefreshTableFooterView *refreshFooterView; // @synthesize refreshFooterView=_refreshFooterView;
 @property(retain, nonatomic) UITableView *noticeTableView; // @synthesize noticeTableView=_noticeTableView;

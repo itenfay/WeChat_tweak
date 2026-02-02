@@ -17,7 +17,6 @@
     MMLoadingView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) WCStoryPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(retain, nonatomic) WCStoryPreivewPageCollectionController *controller; // @synthesize controller=_controller;

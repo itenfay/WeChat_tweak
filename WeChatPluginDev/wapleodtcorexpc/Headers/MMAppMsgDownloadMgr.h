@@ -11,7 +11,6 @@
     MMAppMsgDownloadDataBase *_database;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldStopClean; // @synthesize shouldStopClean=_shouldStopClean;
 @property(retain, nonatomic) MMAppMsgDownloadDataBase *database; // @synthesize database=_database;
 - (unsigned int)getAppMsgDownloadUiPercent:(id)arg1;

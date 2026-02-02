@@ -15,7 +15,6 @@
 }
 
 + (id)buildWithTitle:(id)arg1 detail:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSString *emptyWording; // @synthesize emptyWording=_emptyWording;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

@@ -15,7 +15,6 @@
     NSString *_mapString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mapString; // @synthesize mapString=_mapString;
 @property(nonatomic) _Bool enableNewStcSection; // @synthesize enableNewStcSection=_enableNewStcSection;
 @property(retain, nonatomic) NSString *skillString; // @synthesize skillString=_skillString;

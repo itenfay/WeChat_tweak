@@ -12,7 +12,6 @@
     UINavigationController *_startViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UINavigationController *startViewController; // @synthesize startViewController=_startViewController;
 - (id)reportObjWithPosition:(long long)arg1 action:(long long)arg2;
 - (void)trackEventChooseMediaCancel;

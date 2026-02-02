@@ -14,7 +14,6 @@
 }
 
 + (id)copyLayer:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isHighLight) _Bool highLight; // @synthesize highLight=_highLight;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
 @property(retain, nonatomic) CAShapeLayer *highLightLayer; // @synthesize highLightLayer=_highLightLayer;

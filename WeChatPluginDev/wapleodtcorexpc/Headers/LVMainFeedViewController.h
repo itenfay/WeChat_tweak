@@ -13,7 +13,6 @@
 + (id)commonReportParams;
 + (id)extraPlugins;
 + (id)routeName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) LVDelayingGestureRecognizer *delayingGestureRecognizer; // @synthesize delayingGestureRecognizer=_delayingGestureRecognizer;
 - (void)releaseGesture;
 - (void)viewDidLoad;

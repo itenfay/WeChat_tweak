@@ -40,7 +40,6 @@
 + (id)defaultConfigurationForNarration;
 + (id)defaultConfigurationForTrimming;
 + (id)defaultConfigurationForClipping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useNewTimelineSelectInteraction; // @synthesize useNewTimelineSelectInteraction=_useNewTimelineSelectInteraction;
 @property(nonatomic) _Bool shouldResponseToSegmentInteraction; // @synthesize shouldResponseToSegmentInteraction=_shouldResponseToSegmentInteraction;
 @property(nonatomic) _Bool shouldTrimSnapToVisualAnchoredSegments; // @synthesize shouldTrimSnapToVisualAnchoredSegments=_shouldTrimSnapToVisualAnchoredSegments;

@@ -31,7 +31,6 @@
     NSString *_prevTextUnmarked;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowingKeyboard; // @synthesize isShowingKeyboard=_isShowingKeyboard;
 @property(nonatomic) _Bool isUsingSuggestion; // @synthesize isUsingSuggestion=_isUsingSuggestion;
 @property(nonatomic) _Bool isEditingSubText; // @synthesize isEditingSubText=_isEditingSubText;

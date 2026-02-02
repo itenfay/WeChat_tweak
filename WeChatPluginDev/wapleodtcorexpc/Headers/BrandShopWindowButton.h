@@ -11,7 +11,6 @@
     double _titleTailIconPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double titleTailIconPadding; // @synthesize titleTailIconPadding=_titleTailIconPadding;
 @property(retain, nonatomic) UIImageView *shopWindowButtonTailIcon; // @synthesize shopWindowButtonTailIcon=_shopWindowButtonTailIcon;
 - (void)layoutSubviews;

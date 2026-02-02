@@ -22,7 +22,6 @@
     UIImageView *_backgroundImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(nonatomic) _Bool isSmallPicMode; // @synthesize isSmallPicMode=_isSmallPicMode;
 @property(nonatomic) _Bool isSkinSelected; // @synthesize isSkinSelected=_isSkinSelected;

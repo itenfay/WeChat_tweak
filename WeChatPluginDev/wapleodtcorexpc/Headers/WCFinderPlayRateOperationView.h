@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderFeedContentVM;
 
@@ -16,7 +17,6 @@
     WCFinderFeedContentVM *_contentVM;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(nonatomic) __weak UIView *maskView; // @synthesize maskView=_maskView;
 @property(copy, nonatomic) CDUnknownBlockType selectAction; // @synthesize selectAction=_selectAction;
@@ -39,4 +39,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

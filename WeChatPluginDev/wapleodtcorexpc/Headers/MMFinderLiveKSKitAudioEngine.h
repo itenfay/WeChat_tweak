@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveKtvSongScoreReportRequest_ScoreInfo, MMFinderLiveKSKitMusicSong, MMFinderLiveKTVAudioEffectBaseProcesser, MMFinderLiveKTVBGMEngine, MMFinderLiveKTVBaseScorer, MMFinderLiveKTVBox, MMFinderLiveKTVReporter, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveStorageCleanupPinningToken, NSData, NSMutableArray, NSRecursiveLock, NSSet, NSString;
 @protocol MMLiveUniqueTaskId;
@@ -46,7 +47,6 @@
 + (unsigned long long)transferSingStartRetToPlayErrorType:(long long)arg1;
 + (id)createDefaultAudioSettingCache;
 + (void)notifyAudioRouteChanged:(long long)arg1 fromRoute:(long long)arg2;
-- (void).cxx_destruct;
 @property(retain) MMFinderLiveKTVReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) _Bool supportSing; // @synthesize supportSing=_supportSing;
 @property(retain, nonatomic) NSRecursiveLock *scoreInfoLock; // @synthesize scoreInfoLock=_scoreInfoLock;
@@ -202,4 +202,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -16,7 +16,6 @@
     unsigned long long _type;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *typeEncoding; // @synthesize typeEncoding=_typeEncoding;
 @property(readonly, nonatomic) long long offset; // @synthesize offset=_offset;

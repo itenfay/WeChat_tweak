@@ -16,7 +16,6 @@
     WAPackageSweeperLogic *_sweepLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPackageSweeperLogic *sweepLogic; // @synthesize sweepLogic=_sweepLogic;
 @property(nonatomic) _Bool isTempAppId; // @synthesize isTempAppId=_isTempAppId;
 @property(retain, nonatomic) WAAppTask *task; // @synthesize task=_task;

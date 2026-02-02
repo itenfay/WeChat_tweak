@@ -20,7 +20,6 @@
     struct CGSize m_imageSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) struct CGImageSource *source; // @synthesize source=_source;
 - (int)decodedLoopCnt;

@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_pageID;
 + (void)PBArrayAdd_prePageID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pageID; // @synthesize pageID=_pageID;
 @property(retain, nonatomic) NSString *prePageID; // @synthesize prePageID=_prePageID;
 - (id)getPBPropertyTable;

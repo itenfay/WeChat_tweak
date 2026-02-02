@@ -12,7 +12,6 @@
     NSMutableSet *_cancelSessionIDSet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableLocalOCR; // @synthesize enableLocalOCR=_enableLocalOCR;
 @property(retain, nonatomic) NSMutableSet *cancelSessionIDSet; // @synthesize cancelSessionIDSet=_cancelSessionIDSet;
 @property(retain, nonatomic) MMImageDetectUploader *uploader; // @synthesize uploader=_uploader;

@@ -17,7 +17,6 @@
 + (id)responseWithHTMLTemplate:(id)arg1 variables:(id)arg2;
 + (id)responseWithHTML:(id)arg1;
 + (id)responseWithText:(id)arg1;
-- (void).cxx_destruct;
 - (id)description;
 - (id)readData:(id *)arg1;
 - (id)initWithData:(id)arg1 contentType:(id)arg2;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveStreamGetAsyncLoadInfoConfig, MMFinderLiveFeedExtraInfoFetcher, MMTimer, NSString;
 
@@ -16,7 +17,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) _Bool started; // @synthesize started=_started;
 @property(retain, nonatomic) MMFinderLiveFeedExtraInfoFetcher *fetcher; // @synthesize fetcher=_fetcher;
@@ -46,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

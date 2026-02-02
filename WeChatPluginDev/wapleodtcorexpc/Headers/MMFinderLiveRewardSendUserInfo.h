@@ -16,7 +16,6 @@
     unsigned long long _sourceSendMoreBubbleHost;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sourceSendMoreBubbleHost; // @synthesize sourceSendMoreBubbleHost=_sourceSendMoreBubbleHost;
 @property(nonatomic) _Bool wecoinBalanceUpdated; // @synthesize wecoinBalanceUpdated=_wecoinBalanceUpdated;
 @property(nonatomic) long long currentBalance; // @synthesize currentBalance=_currentBalance;

@@ -15,7 +15,6 @@
     long long addressSelectedForLongPress;
 }
 
-- (void).cxx_destruct;
 - (long long)overrideUserInterfaceStyle;
 - (_Bool)canBecomeFirstResponder;
 - (void)deleteForLongPress;

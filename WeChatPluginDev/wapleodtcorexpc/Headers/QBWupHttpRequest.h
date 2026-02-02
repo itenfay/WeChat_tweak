@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSHTTPURLResponse, NSMutableData, NSMutableURLRequest;
 
@@ -20,7 +21,6 @@
 
 @property(copy) CDUnknownBlockType FailedBlock; // @synthesize FailedBlock=_FailedBlock;
 @property(copy) CDUnknownBlockType CompletionBlock; // @synthesize CompletionBlock=_CompletionBlock;
-- (void).cxx_destruct;
 - (void)requestFinished;
 - (void)failWithError:(id)arg1;
 - (void)appendPostData:(id)arg1;
@@ -33,4 +33,3 @@
 - (id)initWithURL:(id)arg1;
 
 @end
-

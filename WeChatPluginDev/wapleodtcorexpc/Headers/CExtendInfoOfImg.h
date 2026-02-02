@@ -55,7 +55,6 @@
 }
 
 + (void)CreateExtendInfoWithType:(unsigned int)arg1 retExtendInfo:(id *)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *m_dtSenderMidImg; // @synthesize m_dtSenderMidImg=_m_dtSenderMidImg;
 @property(nonatomic) _Bool m_bIsForceUpdate; // @synthesize m_bIsForceUpdate=_m_bIsForceUpdate;
 @property(nonatomic) unsigned int m_uiAppVersion; // @synthesize m_uiAppVersion=_m_uiAppVersion;

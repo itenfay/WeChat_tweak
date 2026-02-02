@@ -15,7 +15,6 @@
     NSArray *_determinationInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *determinationInfos; // @synthesize determinationInfos=_determinationInfos;
 @property(retain, nonatomic) NSArray *actionInfos; // @synthesize actionInfos=_actionInfos;
 @property(retain, nonatomic) NSArray *resourceInfos; // @synthesize resourceInfos=_resourceInfos;

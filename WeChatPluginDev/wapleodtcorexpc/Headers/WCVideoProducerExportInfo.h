@@ -15,7 +15,6 @@
     MJTemplateCompositeTask *_templateCompositeTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJTemplateCompositeTask *templateCompositeTask; // @synthesize templateCompositeTask=_templateCompositeTask;
 @property(retain, nonatomic) SightDraft *exportSightDraft; // @synthesize exportSightDraft=_exportSightDraft;
 @property(retain, nonatomic) OMJMusicInfo *musicInfo; // @synthesize musicInfo=_musicInfo;

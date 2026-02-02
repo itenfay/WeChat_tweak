@@ -15,7 +15,6 @@
     _Bool _userDidSelectOrCancel;
 }
 
-- (void).cxx_destruct;
 - (void)delayNotifyWeb:(id)arg1;
 - (void)onLocalImageSaveFinish:(id)arg1;
 - (void)MMImagePickerManagerDidPopOrDismiss:(id)arg1;

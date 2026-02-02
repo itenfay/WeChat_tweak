@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class TXCGlFrameBuffer;
 @protocol TXCCustomVideoProcessDelegate, TXICustomProcessConverter, TXIGlContext;
 
@@ -17,7 +19,6 @@
     TXCGlFrameBuffer *_dstBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCGlFrameBuffer *dstBuffer; // @synthesize dstBuffer=_dstBuffer;
 @property(retain, nonatomic) TXCGlFrameBuffer *srcBuffer; // @synthesize srcBuffer=_srcBuffer;
 @property(nonatomic) unsigned long long format; // @synthesize format=_format;
@@ -32,4 +33,3 @@
 - (id)initWithContext:(id)arg1 delegate:(id)arg2 format:(unsigned long long)arg3 bufferType:(unsigned long long)arg4;
 
 @end
-

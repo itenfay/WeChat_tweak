@@ -27,7 +27,6 @@
 @property(retain) QBASINetworkQueue *networkQueue; // @synthesize networkQueue=_networkQueue;
 @property(retain, nonatomic) NSMutableDictionary *fileObserverInfo; // @synthesize fileObserverInfo=_fileObserverInfo;
 @property(retain, nonatomic) NSMutableDictionary *fileListInfoDic; // @synthesize fileListInfoDic=_fileListInfoDic;
-- (void).cxx_destruct;
 - (void)commonFileGetFailed:(id)arg1;
 - (void)commonFileGetComplete:(id)arg1;
 - (void)notifyTheObserverWithFileName:(id)arg1;

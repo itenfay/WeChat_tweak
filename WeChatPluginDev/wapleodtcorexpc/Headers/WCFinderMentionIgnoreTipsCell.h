@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, UILabel, UIView;
 
@@ -16,7 +17,6 @@
 }
 
 + (double)heightWithWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *closeBtn; // @synthesize closeBtn=_closeBtn;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UIView *tipsContainer; // @synthesize tipsContainer=_tipsContainer;
@@ -28,4 +28,3 @@
 - (void)prepareForReuse;
 
 @end
-

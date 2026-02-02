@@ -14,7 +14,6 @@
     QTileOverlayHandler *_handler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QTileOverlayHandler *handler; // @synthesize handler=_handler;
 @property(nonatomic) __weak QTileOverlayManager *tileOverlayManager; // @synthesize tileOverlayManager=_tileOverlayManager;
 @property(retain, nonatomic) QMapContext *mapContext; // @synthesize mapContext=_mapContext;

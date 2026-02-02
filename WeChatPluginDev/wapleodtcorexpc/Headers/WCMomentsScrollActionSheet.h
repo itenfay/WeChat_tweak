@@ -16,7 +16,6 @@
 
 + (void)updateOldItem:(id)arg1 newItem:(id)arg2;
 + (struct CGSize)defaultItemSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentScrollActionSheetHeaderView *loadingHeaderView; // @synthesize loadingHeaderView=_loadingHeaderView;
 @property(retain, nonatomic) NSMutableArray *pendingItemsInRow1; // @synthesize pendingItemsInRow1=_pendingItemsInRow1;
 @property(retain, nonatomic) NSMutableArray *pendingItemsInRow0; // @synthesize pendingItemsInRow0=_pendingItemsInRow0;

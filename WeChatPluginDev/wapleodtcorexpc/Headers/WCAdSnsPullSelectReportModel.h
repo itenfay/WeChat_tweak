@@ -16,7 +16,6 @@
     NSString *_selectedSnsId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int stateType; // @synthesize stateType=_stateType;
 @property(retain, nonatomic) NSString *selectedSnsId; // @synthesize selectedSnsId=_selectedSnsId;
 @property(retain, nonatomic) NSString *sessionKeyAd; // @synthesize sessionKeyAd=_sessionKeyAd;

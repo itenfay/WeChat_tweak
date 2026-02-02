@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveGiftWallSettingView, MMFinderLiveRewardWishInputView, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMLiveRewardGiftSelectionView, MMUIButton, MMUILabel, NSArray, NSMutableArray, NSString, UIImageView, UIScrollView;
 
 @interface MMFinderLiveSaveWishListPanel
@@ -28,7 +30,6 @@
     MMFinderLiveGiftWallSettingView *_giftWallSettingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGiftWallSettingView *giftWallSettingView; // @synthesize giftWallSettingView=_giftWallSettingView;
 @property(retain, nonatomic) NSArray *lastRewardWishList; // @synthesize lastRewardWishList=_lastRewardWishList;
 @property(nonatomic) _Bool isDeleted; // @synthesize isDeleted=_isDeleted;
@@ -90,4 +91,3 @@
 @property(readonly) Class superclass;
 
 @end
-

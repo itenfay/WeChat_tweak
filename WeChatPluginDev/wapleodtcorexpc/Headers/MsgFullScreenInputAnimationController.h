@@ -15,7 +15,6 @@
     struct CGRect _textViewOriginFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MsgFullScreenInputDismissAnimator *dismissAnimator; // @synthesize dismissAnimator=_dismissAnimator;
 @property(retain, nonatomic) MsgFullScreenInputPresentAnimator *presentAnimator; // @synthesize presentAnimator=_presentAnimator;
 @property(nonatomic) struct CGRect textViewOriginFrame; // @synthesize textViewOriginFrame=_textViewOriginFrame;

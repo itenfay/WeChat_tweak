@@ -13,7 +13,6 @@
     MMUILabel *_labelVersion;
 }
 
-- (void).cxx_destruct;
 - (void)openAlgorithmWebView;
 - (void)openICPWebView;
 - (void)onTipsShowInfoChangeWithPathKey:(id)arg1;

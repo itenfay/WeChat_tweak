@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderAbstractTask : NSObject
 {
@@ -11,7 +12,6 @@
     CDUnknownBlockType _action;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(nonatomic, getter=isCancelAction) _Bool cancelAction; // @synthesize cancelAction=_cancelAction;
 - (void)asyncPreformAction:(CDUnknownBlockType)arg1 fail:(CDUnknownBlockType)arg2;
@@ -19,4 +19,3 @@
 - (id)initWithAction:(CDUnknownBlockType)arg1;
 
 @end
-

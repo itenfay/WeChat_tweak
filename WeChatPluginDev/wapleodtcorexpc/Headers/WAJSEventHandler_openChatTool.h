@@ -11,7 +11,6 @@
     MISSING_TYPE *sessionSelectController;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)OnSelectSessionCancel:(id)arg1;
 - (void)OnSelectSession:(id)arg1 SessionSelectController:(id)arg2;

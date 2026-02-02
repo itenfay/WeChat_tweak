@@ -17,7 +17,6 @@
     MMTipsViewController *_m_tipsVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTipsViewController *m_tipsVC; // @synthesize m_tipsVC=_m_tipsVC;
 @property(nonatomic) long long contentTextAlign; // @synthesize contentTextAlign=_contentTextAlign;
 @property(retain, nonatomic) NSMutableArray *m_buttonEvents; // @synthesize m_buttonEvents=_m_buttonEvents;

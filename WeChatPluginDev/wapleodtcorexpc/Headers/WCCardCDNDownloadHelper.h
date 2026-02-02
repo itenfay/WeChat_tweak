@@ -12,7 +12,6 @@
     NSMutableDictionary *_clientMsgId2DownloadInfoMap;
 }
 
-- (void).cxx_destruct;
 - (void)OnCdnDownload:(id)arg1;
 - (void)OnCdnInit;
 - (id)getMd5:(id)arg1;

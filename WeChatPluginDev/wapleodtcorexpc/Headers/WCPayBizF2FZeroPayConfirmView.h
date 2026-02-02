@@ -23,7 +23,6 @@
     NSString *_m_moneyString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_moneyString; // @synthesize m_moneyString=_m_moneyString;
 @property(retain, nonatomic) NSString *m_payTitle; // @synthesize m_payTitle=_m_payTitle;
 @property(nonatomic) _Bool m_usingBiotric; // @synthesize m_usingBiotric=_m_usingBiotric;

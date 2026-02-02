@@ -18,7 +18,6 @@
     NSArray *_giftItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *giftItems; // @synthesize giftItems=_giftItems;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UILabel *emptyLabel; // @synthesize emptyLabel=_emptyLabel;

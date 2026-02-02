@@ -58,7 +58,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *SESSION_DEL_COL_STRRES3; // @synthesize SESSION_DEL_COL_STRRES3=_SESSION_DEL_COL_STRRES3;
 @property(retain, nonatomic) NSString *SESSION_DEL_COL_STRRES2; // @synthesize SESSION_DEL_COL_STRRES2=_SESSION_DEL_COL_STRRES2;
 @property(retain, nonatomic) NSString *SESSION_DEL_COL_STRRES1; // @synthesize SESSION_DEL_COL_STRRES1=_SESSION_DEL_COL_STRRES1;

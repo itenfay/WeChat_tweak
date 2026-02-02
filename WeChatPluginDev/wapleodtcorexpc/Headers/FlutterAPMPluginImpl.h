@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterEngine, NSNumber, NSString;
 
@@ -19,7 +20,6 @@
     FlutterEngine *_engine;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRootEngine; // @synthesize isRootEngine=_isRootEngine;
 @property(nonatomic) __weak FlutterEngine *engine; // @synthesize engine=_engine;
 @property(retain, nonatomic) NSNumber *engineCreateFinishMs; // @synthesize engineCreateFinishMs=_engineCreateFinishMs;
@@ -51,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

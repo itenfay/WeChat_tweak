@@ -18,7 +18,6 @@
 + (_Bool)canGetNotifyMsgNodeFromMsgSource:(id)arg1;
 + (_Bool)canHandleBrandAttributedNotifyMsg:(id)arg1;
 + (_Bool)isBrandAttributedNotifyMsgOpen;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandNotificationPriorityItem *priorityItem; // @synthesize priorityItem=_priorityItem;
 @property(retain, nonatomic) MemoryMappedKV *notificationDigestMMKV; // @synthesize notificationDigestMMKV=_notificationDigestMMKV;
 - (_Bool)internalUpdateNotificationMsgWrap:(id)arg1 shouldShowPriorityNotification:(_Bool)arg2 withDB:(id)arg3;

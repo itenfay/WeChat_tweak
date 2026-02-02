@@ -11,7 +11,6 @@
     ICCollectionView *_collectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ICCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) ICFlowModel *model; // @synthesize model=_model;
 - (void)updateFooterViewHidden:(_Bool)arg1;

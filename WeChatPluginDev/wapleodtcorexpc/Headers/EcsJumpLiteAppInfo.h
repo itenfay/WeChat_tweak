@@ -13,7 +13,6 @@
     NSString *_defaultUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *defaultUrl; // @synthesize defaultUrl=_defaultUrl;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;

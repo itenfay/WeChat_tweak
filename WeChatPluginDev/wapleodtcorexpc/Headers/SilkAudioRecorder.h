@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSRecursiveLock;
 
 @interface SilkAudioRecorder
@@ -19,7 +21,6 @@
 + (void)outputPcmBuffer:(short *)arg1 withBufferSize:(unsigned int)arg2 WithRecorderState:(struct RecorderState *)arg3;
 + (double)GetDynmicVoiceRate;
 + (double)GetDynmicSampleRate;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *m_prepareSentLock; // @synthesize m_prepareSentLock;
 @property(nonatomic) _Bool m_isPrepareSent; // @synthesize m_isPrepareSent;
 - (void)prepareBuffers;
@@ -46,4 +47,3 @@
 - (id)init;
 
 @end
-

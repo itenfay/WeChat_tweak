@@ -20,7 +20,6 @@
     NSMutableArray *_sentenceArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sentenceArray; // @synthesize sentenceArray=_sentenceArray;
 @property(retain, nonatomic) NSMutableArray *requestingSectionArray; // @synthesize requestingSectionArray=_requestingSectionArray;
 @property(retain, nonatomic) NSMutableArray *timeSectionArray; // @synthesize timeSectionArray=_timeSectionArray;

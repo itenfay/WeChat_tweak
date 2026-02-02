@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMHeadImageView, MiniAudioTaskContentView, NSString, UIImageView;
 
@@ -16,7 +17,6 @@
     UIImageView *_animateView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *animateView; // @synthesize animateView=_animateView;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
 @property(copy, nonatomic) CDUnknownBlockType ClickContentAction; // @synthesize ClickContentAction=_ClickContentAction;
@@ -41,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

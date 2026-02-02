@@ -19,7 +19,6 @@
     NSString *_cardUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cardUsername; // @synthesize cardUsername=_cardUsername;
 @property(retain, nonatomic) NSString *emoticonProductId; // @synthesize emoticonProductId=_emoticonProductId;
 @property(retain, nonatomic) NSString *emoticonMd5; // @synthesize emoticonMd5=_emoticonMd5;

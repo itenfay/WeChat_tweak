@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GCDAsyncReadPacket, GCDAsyncSocketPreBuffer, GCDAsyncWritePacket, NSData, NSMutableArray, NSString, NSURL;
 @protocol GCDAsyncSocketDelegate, OS_dispatch_queue, OS_dispatch_source;
@@ -76,7 +77,6 @@
 + (id)socketFromConnectedSocketFD:(int)arg1 delegate:(id)arg2 delegateQueue:(id)arg3 socketQueue:(id)arg4 error:(id *)arg5;
 + (id)socketFromConnectedSocketFD:(int)arg1 delegate:(id)arg2 delegateQueue:(id)arg3 error:(id *)arg4;
 + (id)socketFromConnectedSocketFD:(int)arg1 socketQueue:(id)arg2 error:(id *)arg3;
-- (void).cxx_destruct;
 - (struct SSLContext *)sslContext;
 - (_Bool)enableBackgroundingOnSocketWithCaveat;
 - (_Bool)enableBackgroundingOnSocket;
@@ -237,4 +237,3 @@
 - (id)init;
 
 @end
-

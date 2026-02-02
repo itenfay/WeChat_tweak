@@ -16,7 +16,6 @@
     NSString *_revokeID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *revokeID; // @synthesize revokeID=_revokeID;
 @property(retain, nonatomic) NSString *liveID; // @synthesize liveID=_liveID;
 @property(retain, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;

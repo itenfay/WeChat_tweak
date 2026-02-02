@@ -12,7 +12,6 @@
     MMScrollActionSheetItem *_item;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMScrollActionSheetItem *item; // @synthesize item=_item;
 @property(nonatomic) __weak id <MMScrollActionSheetItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)highLight;

@@ -10,7 +10,6 @@
     UIView *_separatorLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
 - (void)createUI;
 - (void)layoutSubviews;

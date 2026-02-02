@@ -13,7 +13,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(retain, nonatomic) MMUIButton *startToPlayBtn; // @synthesize startToPlayBtn=_startToPlayBtn;
 @property(retain, nonatomic) MagicSclFrameSetView *frameSetView; // @synthesize frameSetView=_frameSetView;

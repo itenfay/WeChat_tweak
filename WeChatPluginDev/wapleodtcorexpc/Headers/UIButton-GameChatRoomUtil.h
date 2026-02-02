@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIButton.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIFont, UILabel, ZZButtonChainModel;
 
@@ -60,4 +61,3 @@
 - (void)fixButtonImage;
 - (void)layoutButtonWithStyle:(long long)arg1 imageTitleSpace:(double)arg2;
 @end
-

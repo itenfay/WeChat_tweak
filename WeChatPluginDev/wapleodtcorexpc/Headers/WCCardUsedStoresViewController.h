@@ -14,7 +14,6 @@
     unsigned long long _appBrandModeType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long appBrandModeType; // @synthesize appBrandModeType=_appBrandModeType;
 - (void)openAppBranWithUserName:(id)arg1 brandPass:(id)arg2;
 - (void)onNavigation:(id)arg1;

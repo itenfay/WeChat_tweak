@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLivePromoteLogic, MMFinderLivePromoteTableViewModel, MMFinderLiveTask, MMFinderLiveTaskId, MMTableView, MMUIActivityIndicatorView, MMUILabel, NSString, UIView, WCFinderCreateLiveViewModel;
 @protocol MMFinderLivePromoteManagePanelDelegate, MMFinderLivePromoteManageReportDelegate;
 
@@ -25,7 +27,6 @@
     CDUnknownBlockType _closeCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType closeCompletion; // @synthesize closeCompletion=_closeCompletion;
 @property(retain, nonatomic) WCFinderCreateLiveViewModel *createLiveVm; // @synthesize createLiveVm=_createLiveVm;
 @property(retain, nonatomic) NSString *descriptionPromptWording; // @synthesize descriptionPromptWording=_descriptionPromptWording;
@@ -95,4 +96,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -33,7 +33,6 @@
     struct CGRect _actionBtnFrameAfterAnimation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(nonatomic) double minWidth; // @synthesize minWidth=_minWidth;

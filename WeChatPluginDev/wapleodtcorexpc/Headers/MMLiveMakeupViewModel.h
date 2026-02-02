@@ -17,7 +17,6 @@
     unsigned long long _currentUsedItemIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentUsedItemIndex; // @synthesize currentUsedItemIndex=_currentUsedItemIndex;
 @property(nonatomic) __weak id <MMLiveMakeupViewModelObserver> observer; // @synthesize observer=_observer;
 @property(nonatomic) __weak NSArray *makeupEffectItems; // @synthesize makeupEffectItems=_makeupEffectItems;

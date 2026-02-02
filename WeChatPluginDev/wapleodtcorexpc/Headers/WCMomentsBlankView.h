@@ -17,7 +17,6 @@
 
 + (id)createTipsLabel;
 + (id)createTipsTextView;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(retain, nonatomic) MMUILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(copy, nonatomic) NSString *richText; // @synthesize richText=_richText;

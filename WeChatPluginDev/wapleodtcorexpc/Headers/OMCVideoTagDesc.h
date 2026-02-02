@@ -14,7 +14,6 @@
     struct CGPoint _position;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPositionNormalized; // @synthesize isPositionNormalized=_isPositionNormalized;
 @property(readonly, nonatomic) struct CGPoint position; // @synthesize position=_position;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;

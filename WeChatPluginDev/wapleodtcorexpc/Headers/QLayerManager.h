@@ -19,7 +19,6 @@
     id <glOverlayGestureClickDelegate> _glOverlayClickDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <glOverlayGestureClickDelegate> glOverlayClickDelegate; // @synthesize glOverlayClickDelegate=_glOverlayClickDelegate;
 @property(nonatomic) double deltalTimeStamp; // @synthesize deltalTimeStamp=_deltalTimeStamp;
 @property(nonatomic) __weak QUniversalMapCounter *groundOverlayCounter; // @synthesize groundOverlayCounter=_groundOverlayCounter;

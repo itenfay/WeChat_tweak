@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <ITPHeadphoneManagerImpl> headphoneManagerImpl; // @synthesize headphoneManagerImpl=_headphoneManagerImpl;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;

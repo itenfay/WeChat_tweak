@@ -12,7 +12,6 @@
     MMUILabel *_invisibleTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMUILabel *invisibleTipsLabel; // @synthesize invisibleTipsLabel=_invisibleTipsLabel;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

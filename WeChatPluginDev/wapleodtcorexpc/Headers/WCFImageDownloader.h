@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSOperationQueue, WCFImageCache, WCFImageDownloadQueue;
 
@@ -15,7 +16,6 @@
     long long _serial;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long serial; // @synthesize serial=_serial;
 @property(retain, nonatomic) WCFImageDownloadQueue *downloadQueue; // @synthesize downloadQueue=_downloadQueue;
 @property(retain, nonatomic) NSOperationQueue *decodeQueue; // @synthesize decodeQueue=_decodeQueue;
@@ -34,4 +34,3 @@
 - (id)initWithCache:(id)arg1;
 
 @end
-

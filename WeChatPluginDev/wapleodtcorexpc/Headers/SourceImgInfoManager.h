@@ -10,7 +10,6 @@
     MemoryMappedKV *_sourceInfoKv;
 }
 
-- (void).cxx_destruct;
 - (void)report28466:(int)arg1 contentId:(id)arg2 shareScene:(int)arg3 appId:(id)arg4 fromUin:(unsigned int)arg5 shareId:(id)arg6 actionId:(int)arg7 shareType:(int)arg8 ssid:(int)arg9 url:(id)arg10;
 - (void)Report:(id)arg1 actionID:(int)arg2;
 - (id)GetSourceImgInfo:(id)arg1;

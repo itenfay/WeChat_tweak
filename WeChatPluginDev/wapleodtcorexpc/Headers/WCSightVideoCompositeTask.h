@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EditVideoAttr, MMAssetForPHAssetFramework, NSError, NSString, NSURL, SightDraft, VideoCompositionAttr, VideoEncodeTask, WCMomentsPostReportSession;
 @protocol WCSightVideoCompositeTaskDelegate;
@@ -37,7 +38,6 @@
     double _taskDetachTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double taskDetachTime; // @synthesize taskDetachTime=_taskDetachTime;
 @property(nonatomic) double taskInterruptTime; // @synthesize taskInterruptTime=_taskInterruptTime;
 @property(nonatomic) double taskStopTime; // @synthesize taskStopTime=_taskStopTime;
@@ -108,4 +108,3 @@
 @property(readonly) Class superclass;
 
 @end
-

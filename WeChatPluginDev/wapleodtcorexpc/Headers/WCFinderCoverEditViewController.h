@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageTextToolV2, MMUIButton, MMUIView, NSString, NSURL, UIButton, UIImageView, UILabel, WCEditImageSafeAreaScrollView, WCFinderContact, WCFinderCoverBackGroundView, WCFinderCoverEditOptionModel, WCFinderCoverPhotoPreviewView, WCFinderCoverSelectAlbumView, WCFinderCoverVideoPreviewView, WCFinderCropRectModel, WCFinderEditTextWidgetStateArray, WCFinderVideoSliderView;
 @protocol WCFinderCoverEditViewControllerDelegate;
 
@@ -38,7 +40,6 @@
 }
 
 + (id)getCurPlayUrlWithDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCoverBackGroundView *gestureHandleView; // @synthesize gestureHandleView=_gestureHandleView;
 @property(retain, nonatomic) WCFinderCoverSelectAlbumView *selectVideoView; // @synthesize selectVideoView=_selectVideoView;
 @property(retain, nonatomic) MMUIView *pencilCloseBtn; // @synthesize pencilCloseBtn=_pencilCloseBtn;
@@ -115,4 +116,3 @@
 @property(readonly) Class superclass;
 
 @end
-

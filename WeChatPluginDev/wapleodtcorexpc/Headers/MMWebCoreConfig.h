@@ -13,7 +13,6 @@
     NSDictionary *_dictCustomWebviewEnvInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableOauthSnapShotMode; // @synthesize enableOauthSnapShotMode=_enableOauthSnapShotMode;
 @property(retain, nonatomic) NSDictionary *dictCustomWebviewEnvInfo; // @synthesize dictCustomWebviewEnvInfo=_dictCustomWebviewEnvInfo;
 @property(retain, nonatomic) NSArray *arrUserScript; // @synthesize arrUserScript=_arrUserScript;

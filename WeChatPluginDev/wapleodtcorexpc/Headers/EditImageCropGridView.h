@@ -17,7 +17,6 @@
     NSArray *_verticalGridLines;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableShowGridCorners; // @synthesize enableShowGridCorners=_enableShowGridCorners;
 @property(retain, nonatomic) NSArray *verticalGridLines; // @synthesize verticalGridLines=_verticalGridLines;
 @property(retain, nonatomic) NSArray *horizontalGridLines; // @synthesize horizontalGridLines=_horizontalGridLines;

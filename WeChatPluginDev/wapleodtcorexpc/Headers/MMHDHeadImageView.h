@@ -28,7 +28,6 @@
     MMHDHeadImageViewController *_windowContainer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMHDHeadImageViewController *windowContainer; // @synthesize windowContainer=_windowContainer;
 @property(nonatomic) long long sourceScene; // @synthesize sourceScene=_sourceScene;
 @property(nonatomic) _Bool bAlwayShowDefaultImage; // @synthesize bAlwayShowDefaultImage=_bAlwayShowDefaultImage;

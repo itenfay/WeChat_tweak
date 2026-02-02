@@ -13,7 +13,6 @@
     NSMutableArray *_contentVMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int feedType; // @synthesize feedType=_feedType;
 @property(retain, nonatomic) NSMutableArray *contentVMs; // @synthesize contentVMs=_contentVMs;
 - (int)feedViewControllerScene;

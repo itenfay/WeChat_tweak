@@ -21,7 +21,6 @@
     WCDevice *_deviceInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCDevice *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 - (void)onManageCellClicked:(long long)arg1;
 - (void)onRemarkNameEdit:(id)arg1;

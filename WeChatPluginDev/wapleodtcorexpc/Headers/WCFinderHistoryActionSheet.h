@@ -10,7 +10,6 @@
     UILabel *_header;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *header; // @synthesize header=_header;
 - (id)getCustomHeadView;
 - (void)setupHeader:(id)arg1;

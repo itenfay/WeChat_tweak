@@ -13,7 +13,6 @@
     NSString *_accessGroup;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *accessGroup; // @synthesize accessGroup=_accessGroup;
 @property(readonly, copy, nonatomic) NSString *service; // @synthesize service=_service;
 - (id)queryForKey:(id)arg1;

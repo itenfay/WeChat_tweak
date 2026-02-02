@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface GCBlockActionSheet
@@ -10,7 +12,6 @@
     CDUnknownBlockType _clickBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickBlock; // @synthesize clickBlock=_clickBlock;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (id)init;
@@ -25,4 +26,3 @@
 @property(readonly) Class superclass;
 
 @end
-

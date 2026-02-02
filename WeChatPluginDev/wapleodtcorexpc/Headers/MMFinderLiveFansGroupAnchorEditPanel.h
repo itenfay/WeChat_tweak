@@ -18,7 +18,6 @@
     NSArray *_sectionTypes;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cardDebugSwitch; // @synthesize cardDebugSwitch=_cardDebugSwitch;
 @property(retain, nonatomic) NSArray *sectionTypes; // @synthesize sectionTypes=_sectionTypes;
 @property(retain, nonatomic) MMFinderLiveFansGroupAnchorEditFansNoticeInfo *noticeInfo; // @synthesize noticeInfo=_noticeInfo;

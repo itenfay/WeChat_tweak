@@ -11,7 +11,6 @@
     CAShapeLayer *_focusBoxLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *focusBoxLayer; // @synthesize focusBoxLayer=_focusBoxLayer;
 @property(retain, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 - (void)setFocusFrame:(struct CGRect)arg1 andAnimationDuration:(double)arg2;

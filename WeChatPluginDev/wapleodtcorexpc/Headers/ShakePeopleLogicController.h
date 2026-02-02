@@ -21,7 +21,6 @@
     CLLocation *m_location;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *m_location; // @synthesize m_location;
 @property(nonatomic) _Bool m_isTaskStoped; // @synthesize m_isTaskStoped;
 @property(retain, nonatomic) ShakeGetResponse *m_getResponse; // @synthesize m_getResponse;

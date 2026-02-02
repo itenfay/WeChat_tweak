@@ -23,7 +23,6 @@
 }
 
 + (id)makeDataWrapForWCTranslate:(id)arg1;
-- (void).cxx_destruct;
 - (_Bool)canShowFavBtn;
 - (id)getContentDesc;
 - (id)getSnsTranslateDataWrap;

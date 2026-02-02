@@ -18,7 +18,6 @@
     struct UIEdgeInsets _collectionViewInset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double totalHeight; // @synthesize totalHeight=_totalHeight;
 @property(nonatomic) double cellHeight; // @synthesize cellHeight=_cellHeight;
 @property(nonatomic) struct UIEdgeInsets collectionViewInset; // @synthesize collectionViewInset=_collectionViewInset;

@@ -14,7 +14,6 @@
     id _clickTarget;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id clickTarget; // @synthesize clickTarget=_clickTarget;
 @property(nonatomic) SEL clickAction; // @synthesize clickAction=_clickAction;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;

@@ -13,7 +13,6 @@
     UIButton *_backgroundBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *backgroundBtn; // @synthesize backgroundBtn=_backgroundBtn;
 @property(readonly, nonatomic) WCGroupUndoneEduView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <WCGroupUndoneEduViewDelegate> undoneDelegate; // @synthesize undoneDelegate=_undoneDelegate;

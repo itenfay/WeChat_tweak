@@ -15,7 +15,6 @@
     NSString *_query;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;
 @property(retain, nonatomic) NSString *page; // @synthesize page=_page;
 @property(nonatomic) double heightPercent; // @synthesize heightPercent=_heightPercent;

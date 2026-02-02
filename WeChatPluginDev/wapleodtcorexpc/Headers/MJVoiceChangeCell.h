@@ -21,7 +21,6 @@
     UIControl *_deleteCloneRoleControl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIControl *deleteCloneRoleControl; // @synthesize deleteCloneRoleControl=_deleteCloneRoleControl;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UIView *iconContainerView; // @synthesize iconContainerView=_iconContainerView;

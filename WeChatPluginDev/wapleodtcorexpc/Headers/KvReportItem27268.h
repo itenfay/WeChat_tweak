@@ -17,7 +17,6 @@
     NSString *_sessionid_28;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionid_28; // @synthesize sessionid_28=_sessionid_28;
 @property(nonatomic) unsigned int ShowFinder_27; // @synthesize ShowFinder_27=_ShowFinder_27;
 @property(nonatomic) unsigned int StyleInfo_26; // @synthesize StyleInfo_26=_StyleInfo_26;

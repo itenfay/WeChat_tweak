@@ -23,7 +23,6 @@
     id <SystemImagePickViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRealAppear; // @synthesize isRealAppear=_isRealAppear;
 @property(nonatomic) __weak id <SystemImagePickViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long countLimit; // @synthesize countLimit=_countLimit;

@@ -13,7 +13,6 @@
     NSArray *_recommendWraps;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *recommendWraps; // @synthesize recommendWraps=_recommendWraps;
 @property(nonatomic) int state; // @synthesize state=_state;
 - (id)md5s;

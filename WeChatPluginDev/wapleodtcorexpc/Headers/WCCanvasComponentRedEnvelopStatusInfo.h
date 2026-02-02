@@ -12,7 +12,6 @@
     NSString *_giveCardId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *giveCardId; // @synthesize giveCardId=_giveCardId;
 @property(nonatomic) int isDoubleCard; // @synthesize isDoubleCard=_isDoubleCard;
 @property(nonatomic) int subType; // @synthesize subType=_subType;

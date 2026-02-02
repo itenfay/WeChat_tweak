@@ -21,7 +21,6 @@
     WCOutInviteFriendLogic *_inviteFriendLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCOutInviteFriendLogic *inviteFriendLogic; // @synthesize inviteFriendLogic=_inviteFriendLogic;
 - (void)updateWCOutContactsInfo;
 - (void)updateWCOutContacts:(id)arg1;

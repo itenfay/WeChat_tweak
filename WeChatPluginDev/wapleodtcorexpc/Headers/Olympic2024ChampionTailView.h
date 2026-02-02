@@ -14,7 +14,6 @@
     UIImageView *_arrowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UIView *seperatorView; // @synthesize seperatorView=_seperatorView;

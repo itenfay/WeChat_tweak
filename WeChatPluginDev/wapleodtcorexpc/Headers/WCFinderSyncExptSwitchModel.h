@@ -24,7 +24,6 @@
     NSMutableDictionary *_finderInitExptBufferDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *finderInitExptBufferDic; // @synthesize finderInitExptBufferDic=_finderInitExptBufferDic;
 @property(nonatomic) _Bool reddotPersonalExposeClearSwitch; // @synthesize reddotPersonalExposeClearSwitch=_reddotPersonalExposeClearSwitch;
 @property(retain, nonatomic) NSArray *finderGetrelatedlistSupportBackupScenes; // @synthesize finderGetrelatedlistSupportBackupScenes=_finderGetrelatedlistSupportBackupScenes;

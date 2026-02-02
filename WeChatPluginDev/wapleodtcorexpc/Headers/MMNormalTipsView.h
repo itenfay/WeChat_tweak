@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMNormalTipsViewCloseButtonConfig, MMUIButton, MMUILabel, NSAttributedString, NSString, UIColor, UIImageView;
 
 @interface MMNormalTipsView
@@ -31,7 +33,6 @@
 + (struct CGSize)viewSizeByTitle:(id)arg1 desc:(id)arg2 withCloseButton:(_Bool)arg3 minWidth:(double)arg4 maxWidth:(double)arg5;
 + (struct CGSize)viewSizeByTitle:(id)arg1 desc:(id)arg2 payment:(unsigned int)arg3 giftDesc:(id)arg4 minWidth:(double)arg5 maxWidth:(double)arg6;
 + (struct CGSize)viewSizeByTitle:(id)arg1 desc:(id)arg2 minWidth:(double)arg3 maxWidth:(double)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMNormalTipsViewCloseButtonConfig *closeButtonConfig; // @synthesize closeButtonConfig=_closeButtonConfig;
 @property(copy, nonatomic) CDUnknownBlockType tapAction; // @synthesize tapAction=_tapAction;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
@@ -64,4 +65,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 orientation:(long long)arg2 titleColor:(id)arg3 withCloseButtonConfig:(id)arg4;
 
 @end
-

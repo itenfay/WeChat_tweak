@@ -23,7 +23,6 @@
     NSString *_snsId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *snsId; // @synthesize snsId=_snsId;
 @property(nonatomic) unsigned int preloadStatus; // @synthesize preloadStatus=_preloadStatus;
 @property(nonatomic) unsigned int preloadSize; // @synthesize preloadSize=_preloadSize;

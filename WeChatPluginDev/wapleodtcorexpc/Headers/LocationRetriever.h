@@ -40,7 +40,6 @@
 + (id)getGlobalCachedLastLocation;
 + (double)getLocationAccuracy:(id)arg1;
 + (_Bool)isLocationServiceValidWithoutChallengeForAuthScene:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long authScene; // @synthesize authScene=_authScene;
 @property(nonatomic) int retrieveCallbackOverTime; // @synthesize retrieveCallbackOverTime=_retrieveCallbackOverTime;
 @property(nonatomic) int retrieveOverTime; // @synthesize retrieveOverTime=_retrieveOverTime;

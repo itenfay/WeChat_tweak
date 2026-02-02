@@ -13,7 +13,6 @@
 }
 
 + (id)DeepLinkParamWithLink:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *linkArray; // @synthesize linkArray;
 - (id)NextDeepLinkParam;
 - (id)init;

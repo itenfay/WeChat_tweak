@@ -24,7 +24,6 @@
     double _playbackRate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double playbackRate; // @synthesize playbackRate=_playbackRate;
 @property(nonatomic) _Bool readyToPlay; // @synthesize readyToPlay=_readyToPlay;
 @property(nonatomic) _Bool isSeeking; // @synthesize isSeeking=_isSeeking;

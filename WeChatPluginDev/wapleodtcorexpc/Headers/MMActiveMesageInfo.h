@@ -32,7 +32,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int activeTime; // @synthesize activeTime=_activeTime;
 @property(nonatomic) unsigned long long infoType; // @synthesize infoType=_infoType;
 @property(nonatomic) unsigned int localID; // @synthesize localID=_localID;

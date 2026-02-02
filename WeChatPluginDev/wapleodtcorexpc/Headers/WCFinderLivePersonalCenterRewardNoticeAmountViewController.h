@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveRewardQuotaSwitchInfo, MMTableView, NSString, OrderedDictionary;
 
 @interface WCFinderLivePersonalCenterRewardNoticeAmountViewController
@@ -14,7 +16,6 @@
     FinderLiveRewardQuotaSwitchInfo *_info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveRewardQuotaSwitchInfo *info; // @synthesize info=_info;
 @property(nonatomic) unsigned long long curRewardQuota; // @synthesize curRewardQuota=_curRewardQuota;
 @property(retain, nonatomic) OrderedDictionary *rewardQuotaOptions; // @synthesize rewardQuotaOptions=_rewardQuotaOptions;
@@ -40,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

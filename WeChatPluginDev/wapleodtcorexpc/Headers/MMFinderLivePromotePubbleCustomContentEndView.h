@@ -14,7 +14,6 @@
     MMUILabel *_doneTipLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *doneTipLabel; // @synthesize doneTipLabel=_doneTipLabel;
 @property(retain, nonatomic) UIImageView *doneIconView; // @synthesize doneIconView=_doneIconView;
 @property(retain, nonatomic) NSString *labelText; // @synthesize labelText=_labelText;

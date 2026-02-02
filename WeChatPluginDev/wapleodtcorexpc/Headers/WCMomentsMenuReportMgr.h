@@ -16,7 +16,6 @@
     WCMomentsMenuActionReportSession *_reportSession;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCMomentsMenuActionReportSession *reportSession; // @synthesize reportSession=_reportSession;
 @property(readonly, nonatomic) _Bool isShow; // @synthesize isShow=_isShow;
 @property(readonly, nonatomic) long long clickedActionType; // @synthesize clickedActionType=_clickedActionType;

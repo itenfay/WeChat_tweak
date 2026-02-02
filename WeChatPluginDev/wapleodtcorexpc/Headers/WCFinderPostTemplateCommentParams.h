@@ -17,7 +17,6 @@
     NSString *_refFeedId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *refFeedId; // @synthesize refFeedId=_refFeedId;
 @property(copy, nonatomic) NSString *feedNonceId; // @synthesize feedNonceId=_feedNonceId;

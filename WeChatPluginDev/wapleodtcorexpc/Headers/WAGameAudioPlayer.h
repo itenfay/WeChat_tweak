@@ -26,7 +26,6 @@
     double _playbackRate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double playbackRate; // @synthesize playbackRate=_playbackRate;
 @property(nonatomic) __weak id <IWAAudioPlayerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) id <WAAudioSource> source; // @synthesize source=_source;

@@ -25,7 +25,6 @@
 }
 
 + (id)covertRichTextToRichTextViewContent:(id)arg1 iconSize:(struct CGSize)arg2 iconColor:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDynamicRichTextParser *richTextParser; // @synthesize richTextParser=_richTextParser;
 @property(retain, nonatomic) YYLabel *label; // @synthesize label=_label;
 @property(nonatomic) struct CGSize fontIconSize; // @synthesize fontIconSize=_fontIconSize;

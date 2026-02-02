@@ -21,7 +21,6 @@
     double _progress;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain, nonatomic) CAShapeLayer *rightShapeLayer; // @synthesize rightShapeLayer=_rightShapeLayer;

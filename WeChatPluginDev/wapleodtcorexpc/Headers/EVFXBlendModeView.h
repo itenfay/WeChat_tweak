@@ -15,7 +15,6 @@
     NSString *_currentBlendModeText;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak NSString *currentBlendModeText; // @synthesize currentBlendModeText=_currentBlendModeText;
 - (id)switchBlendMode;
 - (void)initBlendModeLabel;

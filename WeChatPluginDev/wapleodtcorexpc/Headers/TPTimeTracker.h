@@ -14,7 +14,6 @@
     unsigned long long _lastState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastState; // @synthesize lastState=_lastState;
 @property(nonatomic) long long intervalMs; // @synthesize intervalMs=_intervalMs;
 @property(retain, nonatomic) NSDate *beginDate; // @synthesize beginDate=_beginDate;

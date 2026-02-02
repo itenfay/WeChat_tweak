@@ -11,7 +11,6 @@
     NSMutableDictionary *_dicUserName2CellData;
 }
 
-- (void).cxx_destruct;
 - (void)onDeleteWeAppContact:(id)arg1;
 - (void)onModifyWeAppContactList:(id)arg1;
 - (void)OnUnReadCountChange:(id)arg1;

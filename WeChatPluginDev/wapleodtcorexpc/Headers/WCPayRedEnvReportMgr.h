@@ -28,7 +28,6 @@
     double _autoCarouselStartTimestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double autoCarouselStartTimestamp; // @synthesize autoCarouselStartTimestamp=_autoCarouselStartTimestamp;
 @property(nonatomic) unsigned int redEnvelopesClickReportHbMode; // @synthesize redEnvelopesClickReportHbMode=_redEnvelopesClickReportHbMode;
 @property(nonatomic) unsigned int redEnvelopesClickReportTargetType; // @synthesize redEnvelopesClickReportTargetType=_redEnvelopesClickReportTargetType;

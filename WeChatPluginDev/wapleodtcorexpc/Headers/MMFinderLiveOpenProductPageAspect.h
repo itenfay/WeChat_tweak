@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMFinderLiveOpenProductPageAspect : NSObject
 {
@@ -11,9 +12,7 @@
     CDUnknownBlockType _openWeAppAspect;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType openWeAppAspect; // @synthesize openWeAppAspect=_openWeAppAspect;
 @property(copy, nonatomic) CDUnknownBlockType didBuildFinderLiveWeAppParams; // @synthesize didBuildFinderLiveWeAppParams=_didBuildFinderLiveWeAppParams;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFansGroupAnchorEditViewModel, MMFinderLiveFansGroupManageNavBar, MMFinderLiveFansGroupMemberLogic, MMFinderLiveFansGroupMemberTableHeaderView, MMFinderLiveFansGroupMemberTableViewModel, MMFinderLiveTaskId, MMTableView, MMUILabel, NSString, UIColor, UIImageView, WCTimeLineFooterView;
 
@@ -25,7 +26,6 @@
     UIImageView *_superfanTableHeaderBGImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *superfanTableHeaderBGImageView; // @synthesize superfanTableHeaderBGImageView=_superfanTableHeaderBGImageView;
 @property(retain, nonatomic) MMFinderLiveFansGroupAnchorEditViewModel *anchorEditViewModel; // @synthesize anchorEditViewModel=_anchorEditViewModel;
 @property(retain, nonatomic) NSString *fansGroupName; // @synthesize fansGroupName=_fansGroupName;
@@ -81,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

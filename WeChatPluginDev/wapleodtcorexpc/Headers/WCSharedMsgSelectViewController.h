@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BaseMsgContentLogicController, CContact, ChatRoomHistoryShareStat, MMUIButton, MMUILabel, NSArray, UIImageView, UIView;
 
 @interface WCSharedMsgSelectViewController
@@ -26,7 +28,6 @@
     BaseMsgContentLogicController *_logicController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BaseMsgContentLogicController *logicController; // @synthesize logicController=_logicController;
 @property(retain, nonatomic) NSArray *initialSelectedMsgs; // @synthesize initialSelectedMsgs=_initialSelectedMsgs;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
@@ -51,4 +52,3 @@
 - (id)initWithContact:(id)arg1 selectedMsgs:(id)arg2 stat:(id)arg3;
 
 @end
-

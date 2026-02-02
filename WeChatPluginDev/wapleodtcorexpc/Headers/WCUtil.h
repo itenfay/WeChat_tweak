@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCUtil : NSObject
 {
@@ -126,4 +127,3 @@
 + (double)todayTimeIntervalAtHour:(long long)arg1 minute:(long long)arg2 second:(long long)arg3;
 
 @end
-

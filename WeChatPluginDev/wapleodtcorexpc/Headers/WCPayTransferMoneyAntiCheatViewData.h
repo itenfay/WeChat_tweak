@@ -23,7 +23,6 @@
     NSString *_pagepath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pagepath; // @synthesize pagepath=_pagepath;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

@@ -12,7 +12,6 @@
     NSString *_value;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned int index; // @synthesize index=_index;

@@ -77,7 +77,6 @@
     id <MMPageSheetConfigDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMPageSheetConfigDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MMPageSheetGestureRecognizerDelegate> pageSheetGestureRecognizerDelegate; // @synthesize pageSheetGestureRecognizerDelegate=_pageSheetGestureRecognizerDelegate;
 @property(retain, nonatomic) UIView *bottomCustomSubview; // @synthesize bottomCustomSubview=_bottomCustomSubview;

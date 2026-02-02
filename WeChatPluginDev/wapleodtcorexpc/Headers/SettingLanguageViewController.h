@@ -14,7 +14,6 @@
     _Bool _showInWeCheck;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showInWeCheck; // @synthesize showInWeCheck=_showInWeCheck;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

@@ -17,7 +17,6 @@
 
 + (double)getCellBottomPadding;
 + (double)getPreferHeightWithIntimacyInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFansGroupIntimacyInfo *intimacyInfo; // @synthesize intimacyInfo=_intimacyInfo;
 @property(retain, nonatomic) MMUILabel *dailyDescLabel; // @synthesize dailyDescLabel=_dailyDescLabel;
 @property(retain, nonatomic) MMUILabel *dailyCurIntimacy; // @synthesize dailyCurIntimacy=_dailyCurIntimacy;

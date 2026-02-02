@@ -12,7 +12,6 @@
     struct CLLocationCoordinate2D _startCoord;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CLLocationCoordinate2D startCoord; // @synthesize startCoord=_startCoord;
 @property(retain, nonatomic) id <IWALocationService> locationService; // @synthesize locationService=_locationService;
 - (void)onChooseLocation:(id)arg1;

@@ -14,7 +14,6 @@
     UIView *_rightDash;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *rightDash; // @synthesize rightDash=_rightDash;
 @property(retain, nonatomic) UIView *leftDash; // @synthesize leftDash=_leftDash;
 @property(retain, nonatomic) MMUILabel *label; // @synthesize label=_label;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeListInfo, MMFinderLiveNoticeMoreViewItem, NSArray, NSMutableSet, NSString, WCFinderContact, WCFinderLiveAudienceNoticeReporter;
 @protocol MMFinderLiveNoticeListViewModelDelegate;
@@ -36,7 +37,6 @@
     NSMutableSet *_exposedNoticeIdSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *exposedNoticeIdSet; // @synthesize exposedNoticeIdSet=_exposedNoticeIdSet;
 @property(copy, nonatomic) NSArray *infoViewItems; // @synthesize infoViewItems=_infoViewItems;
 @property(retain, nonatomic) NSArray *aggregateTypeArray; // @synthesize aggregateTypeArray=_aggregateTypeArray;
@@ -117,4 +117,3 @@
 @property(readonly) Class superclass;
 
 @end
-

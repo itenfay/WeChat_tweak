@@ -12,7 +12,6 @@
     NSMutableDictionary *_coverViewDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *coverViewDic; // @synthesize coverViewDic=_coverViewDic;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)getChildViewsInCoverView;

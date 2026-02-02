@@ -11,7 +11,6 @@
 }
 
 + (id)commandWithURI:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *uri; // @synthesize uri=_uri;
 - (id)commandXMLBodyString;
 - (id)initWithURI:(id)arg1;

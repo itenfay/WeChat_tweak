@@ -16,7 +16,6 @@
     NSDateFormatter *_dateFormatter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;

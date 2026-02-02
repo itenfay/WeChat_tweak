@@ -12,7 +12,6 @@
     MPVolumeView *_volumeView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MPVolumeView *volumeView; // @synthesize volumeView=_volumeView;
 - (id)initWithFrame:(struct CGRect)arg1;
 

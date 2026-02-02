@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
@@ -36,7 +38,6 @@
 + (id)encodeLongWithoutShortVideoPostSession:(id)arg1 config:(id)arg2;
 + (id)assetForUrl:(id)arg1;
 + (id)encodingOutputPath:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *preloadArray; // @synthesize preloadArray=_preloadArray;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *ioQueue; // @synthesize ioQueue=_ioQueue;
 @property(retain, nonatomic) NSMutableDictionary *compressWatch; // @synthesize compressWatch=_compressWatch;
@@ -53,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

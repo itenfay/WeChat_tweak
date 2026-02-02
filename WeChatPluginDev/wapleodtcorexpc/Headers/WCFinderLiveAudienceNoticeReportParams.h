@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeInfo, NSString;
 
@@ -31,7 +32,6 @@
     NSString *_fromFeedID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fromFeedID; // @synthesize fromFeedID=_fromFeedID;
 @property(copy, nonatomic) NSString *feedAdReportInfo; // @synthesize feedAdReportInfo=_feedAdReportInfo;
 @property(nonatomic) _Bool isFromDetailNotice; // @synthesize isFromDetailNotice=_isFromDetailNotice;
@@ -70,4 +70,3 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType finderUsername_link;
 
 @end
-

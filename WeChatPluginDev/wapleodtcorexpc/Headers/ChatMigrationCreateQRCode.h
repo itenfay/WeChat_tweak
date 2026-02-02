@@ -10,7 +10,6 @@
     id <ChatMigrationCreateQRCodeDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ChatMigrationCreateQRCodeDelegate> m_delegate; // @synthesize m_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)getQRCodeOfflineWithIP:(id)arg1 Port:(unsigned short)arg2 WifiName:(id)arg3 PcName:(id)arg4 PcacctName:(id)arg5 TotalSize:(unsigned long long)arg6 Ticket:(id)arg7 AESKey:(id)arg8 Uin:(unsigned int)arg9;

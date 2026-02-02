@@ -35,7 +35,6 @@
 
 + (id)initFromRingBackPbDetail:(id)arg1 ringBackPbCore:(id)arg2 error:(id *)arg3;
 + (id)WeChatDefaultRing;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AnyPromise *vibrateFilePromise; // @synthesize vibrateFilePromise=_vibrateFilePromise;
 @property(nonatomic) _Bool isFetchingVibrateFile; // @synthesize isFetchingVibrateFile=_isFetchingVibrateFile;
 @property(retain, nonatomic) MMListenSimplePlayableInfo *tingInfo; // @synthesize tingInfo=_tingInfo;

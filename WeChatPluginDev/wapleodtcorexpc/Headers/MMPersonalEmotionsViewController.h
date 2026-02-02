@@ -29,7 +29,6 @@
     StoreEmoticonTopicProxyLogic *_topicVCPorxy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StoreEmoticonTopicProxyLogic *topicVCPorxy; // @synthesize topicVCPorxy=_topicVCPorxy;
 @property(nonatomic) unsigned long long searchScene; // @synthesize searchScene=_searchScene;
 - (void)OnEmoticonRecommendNewStateChangedForDesignerEmojiEntranceNew:(_Bool)arg1;

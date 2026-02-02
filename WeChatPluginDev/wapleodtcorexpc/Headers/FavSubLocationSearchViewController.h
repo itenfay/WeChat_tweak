@@ -10,7 +10,6 @@
     NSMutableArray *_arrCityDatas;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrCityDatas; // @synthesize arrCityDatas=_arrCityDatas;
 - (_Bool)isOnSearch;
 - (void)canNotSelecteDueToExceedCount;

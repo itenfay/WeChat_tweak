@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
@@ -13,7 +14,6 @@
     NSString *_mainBundleID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mainBundleID; // @synthesize mainBundleID=_mainBundleID;
 @property(retain, nonatomic) NSMutableDictionary *observerDic; // @synthesize observerDic=_observerDic;
 - (void)unregisterForNotificationsWithName:(id)arg1;
@@ -27,4 +27,3 @@
 - (id)init;
 
 @end
-

@@ -17,7 +17,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain) NSString *lastUploadPubKeyCgiName; // @synthesize lastUploadPubKeyCgiName=_lastUploadPubKeyCgiName;
 @property(nonatomic) unsigned long long pubkeyLastUpdateTime; // @synthesize pubkeyLastUpdateTime=_pubkeyLastUpdateTime;
 @property(nonatomic) basic_string_1e6f3770 privateKeyForECDSA; // @synthesize privateKeyForECDSA=_privateKeyForECDSA;

@@ -36,7 +36,6 @@
     NSString *_currentAesKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentAesKey; // @synthesize currentAesKey=_currentAesKey;
 @property(retain, nonatomic) NSString *currentFileId; // @synthesize currentFileId=_currentFileId;
 @property(retain, nonatomic) id processingItem; // @synthesize processingItem=_processingItem;

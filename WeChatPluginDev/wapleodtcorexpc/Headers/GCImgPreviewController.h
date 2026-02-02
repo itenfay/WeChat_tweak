@@ -18,7 +18,6 @@
     WCActionSheetWithScanWXCode *_m_actionSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCActionSheetWithScanWXCode *m_actionSheet; // @synthesize m_actionSheet=_m_actionSheet;
 @property(nonatomic) _Bool oriStatusBarHidden; // @synthesize oriStatusBarHidden=_oriStatusBarHidden;
 @property(nonatomic) _Bool oriNavhidden; // @synthesize oriNavhidden=_oriNavhidden;

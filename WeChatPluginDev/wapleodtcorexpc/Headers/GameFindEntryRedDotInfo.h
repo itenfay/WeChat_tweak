@@ -16,7 +16,6 @@
     GameLifeFindMoreFriendEntranceInfo *_gameLifeInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRedPointHalfExposured; // @synthesize isRedPointHalfExposured=_isRedPointHalfExposured;
 @property(nonatomic) _Bool isRedPointCompleteExposured; // @synthesize isRedPointCompleteExposured=_isRedPointCompleteExposured;
 @property(nonatomic) _Bool isRedPointExposured; // @synthesize isRedPointExposured=_isRedPointExposured;

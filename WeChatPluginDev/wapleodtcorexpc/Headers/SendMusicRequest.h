@@ -24,7 +24,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithMusicId:(id)arg1 songName:(id)arg2 singer:(id)arg3 dataUrl:(id)arg4 appid:(id)arg5 webUrl:(id)arg6 coverUrl:(id)arg7 mid:(id)arg8 lyric:(id)arg9 requestCode:(id)arg10;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *requestCode; // @synthesize requestCode=_requestCode;
 @property(copy, nonatomic) NSString *lyric; // @synthesize lyric=_lyric;
 @property(copy, nonatomic) NSString *mid; // @synthesize mid=_mid;

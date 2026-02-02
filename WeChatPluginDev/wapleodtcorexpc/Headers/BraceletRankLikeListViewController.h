@@ -13,7 +13,6 @@
     _Bool _bHasLikeUser;
 }
 
-- (void).cxx_destruct;
 - (void)onLatestRank;
 - (void)makeCell:(id)arg1 AtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

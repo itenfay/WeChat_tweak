@@ -11,7 +11,6 @@
     JSEvent *_event;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEvent *event; // @synthesize event=_event;
 @property(retain, nonatomic) WCFinderCreateCoordinator *createCoordinator; // @synthesize createCoordinator=_createCoordinator;
 - (void)finderCreateAccountCancel:(id)arg1;

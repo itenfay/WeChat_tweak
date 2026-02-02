@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTipsViewController, NSString, TransferPhoneCheckNameReq, TransferPhoneCheckNameResp, TransferPhoneDelHisRcvrReq, TransferPhoneGetHisRcvrsResp, TransferPhoneGetRcvrReq, TransferPhoneGetRcvrResp, TransferPhoneHomePageResp, TransferPhonePlaceOrderReq, TransferPhonePlaceOrderResp, TransferPhoneSuccPageResp, WCPayPayMoneyLogic, WCPayTransferPhoneCheckNameCgi, WCPayTransferPhoneDelHisRcvrCgi, WCPayTransferPhoneGetHisRcvrsCgi, WCPayTransferPhoneGetRcvrCgi, WCPayTransferPhoneHomePageCgi, WCPayTransferPhonePayCheckCgi, WCPayTransferPhonePlaceOrderCgi, WCPayTransferPhoneSuccPageCgi;
 @protocol WCPayTransferPhoneLogicDelegate;
 
@@ -38,7 +40,6 @@
     NSString *_pastedBankCardOrMobileNumer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pastedBankCardOrMobileNumer; // @synthesize pastedBankCardOrMobileNumer=_pastedBankCardOrMobileNumer;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *m_enterMobileNumber; // @synthesize m_enterMobileNumber=_m_enterMobileNumber;
@@ -159,4 +160,3 @@
 @property(readonly) Class superclass;
 
 @end
-

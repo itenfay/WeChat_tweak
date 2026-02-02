@@ -15,7 +15,6 @@
     unsigned long long _applyPrice;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long applyPrice; // @synthesize applyPrice=_applyPrice;
 @property(nonatomic) _Bool usingVideo; // @synthesize usingVideo=_usingVideo;
 @property(nonatomic) _Bool isAnonymous; // @synthesize isAnonymous=_isAnonymous;

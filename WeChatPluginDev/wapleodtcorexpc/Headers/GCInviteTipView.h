@@ -16,7 +16,6 @@
     UIImageView *_contentImgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *contentImgView; // @synthesize contentImgView=_contentImgView;
 @property(retain, nonatomic) UILabel *descView; // @synthesize descView=_descView;
 @property(retain, nonatomic) UILabel *titleView; // @synthesize titleView=_titleView;

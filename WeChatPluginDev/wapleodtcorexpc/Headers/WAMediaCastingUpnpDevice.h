@@ -27,7 +27,6 @@
 
 + (id)deviceIDWithUUID:(id)arg1 address:(id)arg2;
 + (id)deviceWithLocation:(id)arg1 usn:(id)arg2 uuid:(id)arg3 data:(id)arg4 address:(id)arg5;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *XMLString; // @synthesize XMLString=_XMLString;
 @property(copy, nonatomic) NSURL *commandBaseURL; // @synthesize commandBaseURL=_commandBaseURL;
 @property(retain, nonatomic) NSDictionary<WAMediaCastingUpnpDeviceService> *servicesDictionary; // @synthesize servicesDictionary=_servicesDictionary;

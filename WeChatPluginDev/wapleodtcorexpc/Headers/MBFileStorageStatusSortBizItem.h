@@ -13,7 +13,6 @@
     MBFileSpaceStatusBizItem *_bizItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MBFileSpaceStatusBizItem *bizItem; // @synthesize bizItem=_bizItem;
 @property(retain, nonatomic) NSString *bizName; // @synthesize bizName=_bizName;
 - (long long)compare:(id)arg1;

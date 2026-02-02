@@ -90,7 +90,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool need_pull_card_entrance; // @synthesize need_pull_card_entrance=_need_pull_card_entrance;
 @property(retain, nonatomic) NSMutableArray *unavailableQrCodeList; // @synthesize unavailableQrCodeList=_unavailableQrCodeList;
 @property(nonatomic) _Bool allUnavailable; // @synthesize allUnavailable=_allUnavailable;

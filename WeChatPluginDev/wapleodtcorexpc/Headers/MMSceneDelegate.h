@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIResponder.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UISceneSession, UIWindow, UIWindowScene;
 
@@ -15,7 +16,6 @@
     UIWindowScene *_windowScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIWindowScene *windowScene; // @synthesize windowScene=_windowScene;
 @property(nonatomic) __weak UISceneSession *sceneSession; // @synthesize sceneSession=_sceneSession;
 @property(retain, nonatomic) NSString *sceneName; // @synthesize sceneName=_sceneName;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

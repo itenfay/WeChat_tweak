@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class TXCFramebufferDrawer, TXCGlFrameBuffer;
 @protocol TXIGlContext;
 
@@ -13,7 +15,6 @@
     TXCFramebufferDrawer *_framebufferDrawer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCFramebufferDrawer *framebufferDrawer; // @synthesize framebufferDrawer=_framebufferDrawer;
 @property(retain, nonatomic) TXCGlFrameBuffer *frameBuffer; // @synthesize frameBuffer=_frameBuffer;
 @property(readonly, nonatomic) id <TXIGlContext> context; // @synthesize context=_context;
@@ -23,4 +24,3 @@
 - (id)initWithContext:(id)arg1;
 
 @end
-

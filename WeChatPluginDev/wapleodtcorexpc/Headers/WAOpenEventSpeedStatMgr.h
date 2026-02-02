@@ -49,7 +49,6 @@
     WAThreadSafeMutableDictionary *_dicAppid2InstanceId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAThreadSafeMutableDictionary *dicAppid2InstanceId; // @synthesize dicAppid2InstanceId=_dicAppid2InstanceId;
 @property(retain, nonatomic) WAThreadSafeMutableDictionary *dicUsername2InstanceId; // @synthesize dicUsername2InstanceId=_dicUsername2InstanceId;
 @property(nonatomic) unsigned int fpsLowThreshold; // @synthesize fpsLowThreshold=_fpsLowThreshold;

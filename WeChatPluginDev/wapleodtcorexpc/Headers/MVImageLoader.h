@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NSURLSessionDataTask;
 @protocol MVImageLoaderDelegate;
@@ -21,7 +22,6 @@
 + (id)md5ForURL:(id)arg1;
 + (void)saveCachedImageData:(id)arg1 onlineUrl:(id)arg2;
 + (id)cachePathForUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSURLSessionDataTask *currentTask; // @synthesize currentTask=_currentTask;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(copy, nonatomic) NSString *loadingUrlString; // @synthesize loadingUrlString=_loadingUrlString;
@@ -40,4 +40,3 @@
 - (id)init;
 
 @end
-

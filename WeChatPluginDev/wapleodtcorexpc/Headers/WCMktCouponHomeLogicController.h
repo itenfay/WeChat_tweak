@@ -24,7 +24,6 @@
     NSString *_deletingMchID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasHandleLocation; // @synthesize bHasHandleLocation=_bHasHandleLocation;
 @property(retain, nonatomic) NSString *deletingMchID; // @synthesize deletingMchID=_deletingMchID;
 @property(retain, nonatomic) NSString *deletingCardID; // @synthesize deletingCardID=_deletingCardID;

@@ -23,7 +23,6 @@
     NSString *_nextWaitingLyric;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nextWaitingLyric; // @synthesize nextWaitingLyric=_nextWaitingLyric;
 @property(retain, nonatomic) MMMusicAutoscrollLabelView *nextLabel; // @synthesize nextLabel=_nextLabel;
 @property(retain, nonatomic) MMMusicAutoscrollLabelView *currentLabel; // @synthesize currentLabel=_currentLabel;

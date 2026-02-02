@@ -12,7 +12,6 @@
     MMScrollView *_contentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMScrollView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <WCPayGPIntroViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

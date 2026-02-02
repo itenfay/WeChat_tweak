@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_templateType;
 + (void)PBArrayAdd_templateTopicId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long templateType; // @synthesize templateType=_templateType;
 @property(copy, nonatomic) NSString *templateTopicId; // @synthesize templateTopicId=_templateTopicId;
 @property(readonly, copy) NSString *description;

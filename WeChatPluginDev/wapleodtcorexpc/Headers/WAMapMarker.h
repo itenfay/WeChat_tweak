@@ -35,7 +35,6 @@
 + (void)copyLayerProperty:(id)arg1 toView:(id)arg2;
 + (void)collectBaseView:(id)arg1 inArr:(id)arg2;
 + (id)copyCoverView:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long collisionRelation; // @synthesize collisionRelation=_collisionRelation;
 @property(nonatomic) unsigned long long collisionTypeLabel; // @synthesize collisionTypeLabel=_collisionTypeLabel;
 @property(nonatomic) unsigned long long collisionTypeCallout; // @synthesize collisionTypeCallout=_collisionTypeCallout;

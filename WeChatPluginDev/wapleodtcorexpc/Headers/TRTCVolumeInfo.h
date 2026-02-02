@@ -14,7 +14,6 @@
     long long _vad;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long vad; // @synthesize vad=_vad;
 @property(nonatomic) unsigned long long volume; // @synthesize volume=_volume;
 @property(copy, nonatomic) NSString *userId; // @synthesize userId=_userId;

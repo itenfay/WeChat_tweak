@@ -15,7 +15,6 @@
     double _cellItemLeft;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cellItemLeft; // @synthesize cellItemLeft=_cellItemLeft;
 @property(retain, nonatomic) UIButton *footerButton; // @synthesize footerButton=_footerButton;
 @property(retain, nonatomic) WCPayPhoneTextItem *phoneNumberTextFieldItem; // @synthesize phoneNumberTextFieldItem=_phoneNumberTextFieldItem;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITextView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ZZTextViewChainModel;
 
@@ -11,4 +12,3 @@
 + (CDUnknownBlockType)zz_create;
 @property(readonly, copy, nonatomic) ZZTextViewChainModel *zz_setup;
 @end
-

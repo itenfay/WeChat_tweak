@@ -56,7 +56,6 @@
 @property(retain, nonatomic, getter=sQUA, setter=setSQUA:) NSString *jcev2_p_2_r_sQUA; // @synthesize jcev2_p_2_r_sQUA;
 @property(retain, nonatomic, getter=sGUID, setter=setSGUID:) NSData *jcev2_p_1_r_sGUID; // @synthesize jcev2_p_1_r_sGUID;
 @property(retain, nonatomic, getter=sIMEI, setter=setSIMEI:) NSString *jcev2_p_0_r_sIMEI; // @synthesize jcev2_p_0_r_sIMEI;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

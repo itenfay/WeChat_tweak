@@ -11,7 +11,6 @@
     id <MMStoreEmotionAllCellDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMStoreEmotionAllCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onTapGetEmoticonBtnFor:(unsigned long long)arg1;
 - (void)updateCellCornerRadiusFor:(_Bool)arg1 isFirst:(_Bool)arg2;

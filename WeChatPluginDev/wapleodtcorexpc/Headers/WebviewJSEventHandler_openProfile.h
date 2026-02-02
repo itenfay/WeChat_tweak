@@ -10,7 +10,6 @@
     JSEvent *_curEvent;
 }
 
-- (void).cxx_destruct;
 - (void)onOpenProfileEnd:(int)arg1;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;
 

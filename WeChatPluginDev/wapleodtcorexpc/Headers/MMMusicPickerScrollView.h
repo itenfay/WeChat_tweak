@@ -16,7 +16,6 @@
     NSString *_musicLogoName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *musicLogoName; // @synthesize musicLogoName=_musicLogoName;
 @property(retain, nonatomic) UITapGestureRecognizer *tap; // @synthesize tap=_tap;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;

@@ -33,7 +33,6 @@
 + (void)PBArrayAdd_comments;
 + (void)PBArrayAdd_cacheTime;
 + (void)PBArrayAdd_videoId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMegaVideoBulletCommentMutableArray *comments; // @synthesize comments=_comments;
 @property(nonatomic) unsigned long long cacheTime; // @synthesize cacheTime=_cacheTime;
 @property(copy, nonatomic) NSString *videoId; // @synthesize videoId=_videoId;

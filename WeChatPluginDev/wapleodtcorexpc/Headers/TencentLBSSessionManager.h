@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSURLSession, NSURLSessionConfiguration;
 
@@ -14,7 +15,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSessionConfiguration *sessionConfiguration; // @synthesize sessionConfiguration=_sessionConfiguration;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void)dataTaskWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -22,4 +22,3 @@
 - (id)init;
 
 @end
-

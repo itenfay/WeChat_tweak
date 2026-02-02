@@ -155,7 +155,6 @@
 + (_Bool)isBrandFollowedWithUsername:(id)arg1;
 + (_Bool)isWeWorkKFUserName:(id)arg1;
 + (_Bool)isWeAppUserName:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EncryptSecretInfo *m_encryptSecretInfo; // @synthesize m_encryptSecretInfo=_m_encryptSecretInfo;
 @property(retain, nonatomic) NSString *m_createGroupSessionId; // @synthesize m_createGroupSessionId=_m_createGroupSessionId;
 @property(retain, nonatomic) NSString *m_textStatusData; // @synthesize m_textStatusData=_m_textStatusData;

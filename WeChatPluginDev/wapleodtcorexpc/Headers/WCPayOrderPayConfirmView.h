@@ -20,7 +20,6 @@
     ABTestItem *_payABTestItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ABTestItem *payABTestItem; // @synthesize payABTestItem=_payABTestItem;
 - (id)settlement_symbol;
 - (id)settlement_type;

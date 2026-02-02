@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITextField.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ZZTextFieldChainModel;
 
@@ -11,4 +12,3 @@
 + (CDUnknownBlockType)zz_create;
 @property(readonly, copy, nonatomic) ZZTextFieldChainModel *zz_setup;
 @end
-

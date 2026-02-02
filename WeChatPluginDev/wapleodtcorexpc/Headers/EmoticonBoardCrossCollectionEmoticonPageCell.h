@@ -21,7 +21,6 @@
     NSMutableArray *_recnetUseWraps;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *recnetUseWraps; // @synthesize recnetUseWraps=_recnetUseWraps;
 @property(retain, nonatomic) MMUIActivityIndicatorView *packSyncIndicator; // @synthesize packSyncIndicator=_packSyncIndicator;
 @property(retain, nonatomic) UIView *packSyncTip; // @synthesize packSyncTip=_packSyncTip;

@@ -17,7 +17,6 @@
     NSString *_cardext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cardext; // @synthesize cardext=_cardext;
 @property(retain, nonatomic) NSString *cardid; // @synthesize cardid=_cardid;
 @property(retain, nonatomic) NSString *iconurl; // @synthesize iconurl=_iconurl;

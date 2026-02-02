@@ -31,7 +31,6 @@
 }
 
 + (unsigned long long)GetAdjustGPUTime:(struct TimeLapse)arg1 cpuLapse:(struct TimeLapse)arg2 gpuTime:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) double encodeTimeMs; // @synthesize encodeTimeMs=_encodeTimeMs;
 @property(nonatomic) double gpuCostTimeMs; // @synthesize gpuCostTimeMs=_gpuCostTimeMs;
 @property(nonatomic) double fragmentTimeMs; // @synthesize fragmentTimeMs=_fragmentTimeMs;

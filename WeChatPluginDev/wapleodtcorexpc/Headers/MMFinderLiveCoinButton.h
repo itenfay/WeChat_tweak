@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, UIImageView;
 
 @interface MMFinderLiveCoinButton
@@ -15,7 +17,6 @@
     MMUIButton *_containerButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int wecoinCount; // @synthesize wecoinCount=_wecoinCount;
 @property(retain, nonatomic) MMUIButton *containerButton; // @synthesize containerButton=_containerButton;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;
@@ -30,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

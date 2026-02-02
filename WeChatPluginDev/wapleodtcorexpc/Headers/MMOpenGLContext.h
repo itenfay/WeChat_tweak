@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EAGLContext, NSString;
 @protocol OS_dispatch_queue;
@@ -15,7 +16,6 @@
     NSString *_queueName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *queueName; // @synthesize queueName=_queueName;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *contextQueue; // @synthesize contextQueue=_contextQueue;
 - (void)runSyncOnOpenGLESProcessQueueTrue:(CDUnknownBlockType)arg1;
@@ -27,4 +27,3 @@
 - (id)init;
 
 @end
-

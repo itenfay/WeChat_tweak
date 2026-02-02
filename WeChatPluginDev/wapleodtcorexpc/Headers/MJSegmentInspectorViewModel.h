@@ -19,7 +19,6 @@
     NSArray *_adjustableProtocols;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *adjustableProtocols; // @synthesize adjustableProtocols=_adjustableProtocols;
 @property(readonly, nonatomic) UBEmptySignal *didResetSignal; // @synthesize didResetSignal=_didResetSignal;
 @property(readonly, nonatomic) UBDictionarySignal *didApplyToAllSignal; // @synthesize didApplyToAllSignal=_didApplyToAllSignal;

@@ -16,7 +16,6 @@
     WAPlateItem *_currentItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPlateItem *currentItem; // @synthesize currentItem=_currentItem;
 @property(retain, nonatomic) UIImageView *dotImg; // @synthesize dotImg=_dotImg;
 @property(retain, nonatomic) UILabel *dotLabel; // @synthesize dotLabel=_dotLabel;

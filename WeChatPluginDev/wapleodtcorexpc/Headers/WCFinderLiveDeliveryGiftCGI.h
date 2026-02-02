@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderDataItem;
 
 @interface WCFinderLiveDeliveryGiftCGI
@@ -16,7 +18,6 @@
     NSString *_comboId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *comboId; // @synthesize comboId=_comboId;
 @property(copy, nonatomic) NSString *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(retain, nonatomic) NSData *rewardExtInfo; // @synthesize rewardExtInfo=_rewardExtInfo;
@@ -30,4 +31,3 @@
 - (id)initWithFinderTaskId:(id)arg1 liveCookies:(id)arg2 rewardExtInfo:(id)arg3 sessionBuffer:(id)arg4 comboId:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

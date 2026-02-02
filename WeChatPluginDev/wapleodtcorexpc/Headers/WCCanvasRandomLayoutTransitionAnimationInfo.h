@@ -11,7 +11,6 @@
     NSString *_fileMD5;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fileMD5; // @synthesize fileMD5=_fileMD5;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 - (_Bool)isValid;

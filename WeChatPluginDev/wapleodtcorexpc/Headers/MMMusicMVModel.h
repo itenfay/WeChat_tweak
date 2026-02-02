@@ -61,7 +61,6 @@
 + (void)PBArrayAdd_originalInfo;
 + (void)PBArrayAdd_songInfo;
 + (void)PBArrayAdd_arrFixedClipTracks;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mediaType; // @synthesize mediaType=_mediaType;
 @property(retain, nonatomic) NSArray *refObjectList; // @synthesize refObjectList=_refObjectList;
 @property(nonatomic) _Bool isDeleted; // @synthesize isDeleted=_isDeleted;

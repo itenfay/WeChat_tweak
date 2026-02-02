@@ -15,7 +15,6 @@
     double _playBtnSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double playBtnSize; // @synthesize playBtnSize=_playBtnSize;
 @property(nonatomic) double contentMarginWidth; // @synthesize contentMarginWidth=_contentMarginWidth;
 @property(nonatomic) double titleTopOffset; // @synthesize titleTopOffset=_titleTopOffset;

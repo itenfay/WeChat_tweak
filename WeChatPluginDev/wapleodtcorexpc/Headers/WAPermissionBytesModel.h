@@ -15,7 +15,6 @@
     long long _mainThreadMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long mainThreadMode; // @synthesize mainThreadMode=_mainThreadMode;
 @property(nonatomic) long long apiRunMode; // @synthesize apiRunMode=_apiRunMode;
 @property(nonatomic) unsigned long long apiIndex; // @synthesize apiIndex=_apiIndex;

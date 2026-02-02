@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebImageView, NSString, UIImageView, UILabel, WCFinderJumpInfo;
 
@@ -19,7 +20,6 @@
 }
 
 + (double)height;
-- (void).cxx_destruct;
 @property(nonatomic) int showPosition; // @synthesize showPosition=_showPosition;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(retain, nonatomic) UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;
@@ -44,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

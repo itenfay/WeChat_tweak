@@ -25,7 +25,6 @@
     NSString *_guidLocalString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *guidLocalString; // @synthesize guidLocalString=_guidLocalString;
 @property(retain, nonatomic) WAMediaCastingRoutePickerRencentDevicePool *recentDevicePool; // @synthesize recentDevicePool=_recentDevicePool;
 @property(nonatomic) _Bool isSearching; // @synthesize isSearching=_isSearching;

@@ -18,7 +18,6 @@
 + (void)updateMaxWidth:(unsigned int)arg1;
 + (id)defaultConfigWithoutMaxWidthLimit;
 + (id)defaultConfigWithMaxWidthLimit;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowWxamMark; // @synthesize shouldShowWxamMark=_shouldShowWxamMark;
 @property(nonatomic) unsigned int maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(retain, nonatomic) NSString *cpKey; // @synthesize cpKey=_cpKey;

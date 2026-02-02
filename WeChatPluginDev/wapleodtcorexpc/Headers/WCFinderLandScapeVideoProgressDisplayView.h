@@ -24,7 +24,6 @@
     MMUIButton *_returnBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *returnBtn; // @synthesize returnBtn=_returnBtn;
 @property(retain, nonatomic) UIButton *bulletInputButton; // @synthesize bulletInputButton=_bulletInputButton;
 @property(retain, nonatomic) UIButton *bulletSwitchButton; // @synthesize bulletSwitchButton=_bulletSwitchButton;

@@ -11,7 +11,6 @@
     double _startHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double startHeight; // @synthesize startHeight=_startHeight;
 @property(nonatomic) __weak TextMessageViewModel *parentModel; // @synthesize parentModel=_parentModel;
 - (struct CGRect)realFrameByCurFrame:(struct CGRect)arg1;

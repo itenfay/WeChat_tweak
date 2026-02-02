@@ -25,7 +25,6 @@
     WCFinderLiveStartLotteryGoodAddView *_addView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveStartLotteryGoodAddView *addView; // @synthesize addView=_addView;
 @property(retain, nonatomic) MMUIView *changeView; // @synthesize changeView=_changeView;
 @property(nonatomic) _Bool needFilterWhiteSpace; // @synthesize needFilterWhiteSpace=_needFilterWhiteSpace;

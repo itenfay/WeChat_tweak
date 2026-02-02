@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface CLMDeleteSessionHalfScreenView
@@ -12,7 +14,6 @@
     unsigned long long _allDataSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long allDataSize; // @synthesize allDataSize=_allDataSize;
 @property(nonatomic) unsigned long long resourceSize; // @synthesize resourceSize=_resourceSize;
 @property(copy, nonatomic) CDUnknownBlockType confirmCallBack; // @synthesize confirmCallBack=_confirmCallBack;
@@ -36,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

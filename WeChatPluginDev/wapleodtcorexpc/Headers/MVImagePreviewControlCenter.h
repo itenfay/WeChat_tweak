@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveImagePickerParams, NSArray, NSMutableDictionary, NSNumber, NSString, WCFinderEditOptionModel, WCFinderPickerTemplateParams;
 @protocol MMAssetPickerUserActionTipsProtocol;
@@ -61,7 +62,6 @@
     CDUnknownBlockType _assetSelectedBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType assetSelectedBlock; // @synthesize assetSelectedBlock=_assetSelectedBlock;
 @property(nonatomic) _Bool buttonEnableAfterSend; // @synthesize buttonEnableAfterSend=_buttonEnableAfterSend;
 @property(nonatomic) _Bool imageDirectToEdit; // @synthesize imageDirectToEdit=_imageDirectToEdit;
@@ -197,4 +197,3 @@
 
 
 @end
-

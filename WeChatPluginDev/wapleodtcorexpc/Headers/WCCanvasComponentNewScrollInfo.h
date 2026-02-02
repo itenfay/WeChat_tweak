@@ -12,7 +12,6 @@
     double _bgColorAlpha;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double bgColorAlpha; // @synthesize bgColorAlpha=_bgColorAlpha;
 @property(retain, nonatomic) NSString *bgColorTheme; // @synthesize bgColorTheme=_bgColorTheme;
 @property(retain, nonatomic) WCCanvasComponentScrollGroupInfo *componentGroupList; // @synthesize componentGroupList=_componentGroupList;

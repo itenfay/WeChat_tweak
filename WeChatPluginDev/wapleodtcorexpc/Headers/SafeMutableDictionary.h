@@ -13,7 +13,6 @@
     NSRecursiveLock *_m_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *m_lock; // @synthesize m_lock=_m_lock;
 @property(retain, nonatomic) NSMutableDictionary *m_dic; // @synthesize m_dic=_m_dic;
 - (id)dictionaryAllKeys;

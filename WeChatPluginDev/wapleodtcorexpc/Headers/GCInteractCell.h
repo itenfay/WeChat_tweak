@@ -10,7 +10,6 @@
     GCInteractView *_interActView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCInteractView *interActView; // @synthesize interActView=_interActView;
 - (void)configureWithCellModel:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

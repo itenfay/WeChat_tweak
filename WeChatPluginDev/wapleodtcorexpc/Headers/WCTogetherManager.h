@@ -36,7 +36,6 @@
 + (_Bool)canShowBadgeInPostPage;
 + (_Bool)togetherPostEnabled;
 + (void)_initializeForConfigurations;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MyWCDB *database; // @synthesize database=_database;
 @property(nonatomic) __weak WCFacade *referredFacade; // @synthesize referredFacade=_referredFacade;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;

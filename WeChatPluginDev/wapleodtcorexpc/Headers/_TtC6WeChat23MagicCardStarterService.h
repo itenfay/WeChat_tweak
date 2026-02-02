@@ -11,7 +11,6 @@
     MISSING_TYPE *handleToBizCreator;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)releaseBizWithHandle:(id)arg1;
 - (id)getBizAppConfigWithHandle:(id)arg1;

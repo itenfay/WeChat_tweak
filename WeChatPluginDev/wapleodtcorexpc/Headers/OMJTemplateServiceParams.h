@@ -13,7 +13,6 @@
     id <OMJTemplateServiceProvider> _camFunServiceProvider;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <OMJTemplateServiceProvider> camFunServiceProvider; // @synthesize camFunServiceProvider=_camFunServiceProvider;
 @property(readonly, nonatomic) id <OMJTemplateServiceProvider> instaMovieServiceProvider; // @synthesize instaMovieServiceProvider=_instaMovieServiceProvider;
 - (id)initWithInstaMovieTemplateServiceProvider:(id)arg1 camFunServiceProvider:(id)arg2;

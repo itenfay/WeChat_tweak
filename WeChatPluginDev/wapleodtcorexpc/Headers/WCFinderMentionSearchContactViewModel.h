@@ -24,7 +24,6 @@
     WCFinderMentionContactSearcher *_searcher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMentionContactSearcher *searcher; // @synthesize searcher=_searcher;
 @property(retain, nonatomic) WCFinderMentionSearchSection *moreSec; // @synthesize moreSec=_moreSec;
 @property(retain, nonatomic) WCFinderMentionSearchSection *friendSec; // @synthesize friendSec=_friendSec;

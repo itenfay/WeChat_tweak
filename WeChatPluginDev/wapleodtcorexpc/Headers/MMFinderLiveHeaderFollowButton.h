@@ -10,7 +10,6 @@
     UIImageView *_icon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *icon; // @synthesize icon=_icon;
 - (void)executeFollowAnimationAgain;
 - (void)executeFollowAnimation;

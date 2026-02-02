@@ -14,7 +14,6 @@
     UILabel *_discountCount;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *discountCount; // @synthesize discountCount=_discountCount;
 @property(retain, nonatomic) UIView *discountView; // @synthesize discountView=_discountView;
 @property(retain, nonatomic) UILabel *priceLabel; // @synthesize priceLabel=_priceLabel;

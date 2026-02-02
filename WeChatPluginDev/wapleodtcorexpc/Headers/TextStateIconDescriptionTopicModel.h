@@ -11,7 +11,6 @@
     NSMutableDictionary *_iconIdToTextStateList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *iconIdToTextStateList; // @synthesize iconIdToTextStateList=_iconIdToTextStateList;
 @property(nonatomic, getter=isDataConstructed) _Bool dataConstructed; // @synthesize dataConstructed=_dataConstructed;
 - (void)privateDeleteTextState:(id)arg1;

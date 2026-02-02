@@ -15,7 +15,6 @@
     unsigned long long _seletedRowInFirstColumn;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long seletedRowInFirstColumn; // @synthesize seletedRowInFirstColumn=_seletedRowInFirstColumn;
 @property(retain, nonatomic) NSArray *syncDataSecondColumn; // @synthesize syncDataSecondColumn=_syncDataSecondColumn;
 @property(retain, nonatomic) NSArray *syncDataFirstColumn; // @synthesize syncDataFirstColumn=_syncDataFirstColumn;

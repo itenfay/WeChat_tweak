@@ -29,7 +29,6 @@
 }
 
 + (void)setAllow30FpsAnimation:(_Bool)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isWebIconDisabled; // @synthesize isWebIconDisabled=_isWebIconDisabled;
 @property(nonatomic) _Bool isInClapMode; // @synthesize isInClapMode=_isInClapMode;
 @property(nonatomic) long long businessType; // @synthesize businessType=_businessType;

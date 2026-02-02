@@ -76,7 +76,6 @@
 + (void)PBArrayAdd_localInfo;
 + (void)PBArrayAdd_clientId;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsCdnStatInfo; // @synthesize nsCdnStatInfo=_nsCdnStatInfo;
 @property(retain, nonatomic) NSString *fileId; // @synthesize fileId=_fileId;
 @property(nonatomic) long long errorType; // @synthesize errorType=_errorType;

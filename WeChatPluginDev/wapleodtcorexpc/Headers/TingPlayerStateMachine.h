@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
@@ -14,7 +15,6 @@
     NSArray *_routes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *routes; // @synthesize routes=_routes;
 @property(copy, nonatomic) CDUnknownBlockType statusChangedHandler; // @synthesize statusChangedHandler=_statusChangedHandler;
 @property(nonatomic) int status; // @synthesize status=_status;
@@ -24,4 +24,3 @@
 - (id)init;
 
 @end
-

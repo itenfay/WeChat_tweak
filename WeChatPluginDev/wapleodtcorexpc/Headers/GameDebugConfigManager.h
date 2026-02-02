@@ -11,7 +11,6 @@
     GameMultiOptionItem *_loadHtmlOptionItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameMultiOptionItem *loadHtmlOptionItem; // @synthesize loadHtmlOptionItem=_loadHtmlOptionItem;
 @property(retain, nonatomic) GameMultiOptionItem *gameWkInterceptOptionItem; // @synthesize gameWkInterceptOptionItem=_gameWkInterceptOptionItem;
 - (_Bool)measurePerformance;

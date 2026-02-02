@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 @protocol IMBFileSystem;
 
@@ -12,7 +14,6 @@
     NSMutableDictionary *_pagViewDataList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pagViewDataList; // @synthesize pagViewDataList=_pagViewDataList;
 @property(nonatomic) __weak id <IMBFileSystem> fileSystem; // @synthesize fileSystem=_fileSystem;
 - (void)ImageDidLoad:(id)arg1 Url:(id)arg2;
@@ -36,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

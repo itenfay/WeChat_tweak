@@ -17,7 +17,6 @@
     NSString *_subtitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

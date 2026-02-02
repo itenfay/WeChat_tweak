@@ -17,7 +17,6 @@
     unsigned long long _lastStartTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastStartTime; // @synthesize lastStartTime=_lastStartTime;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSString *ItemSubId; // @synthesize ItemSubId=_ItemSubId;

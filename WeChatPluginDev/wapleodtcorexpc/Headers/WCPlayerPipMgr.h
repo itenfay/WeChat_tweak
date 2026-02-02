@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString, WCAudioModule, WCPictureInPictureController, WCPipContentSourcePlayer, WCPlayerPipSessionInfo;
 
 @interface WCPlayerPipMgr
@@ -16,7 +18,6 @@
     NSMutableArray *_arrSessionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrSessionInfo; // @synthesize arrSessionInfo=_arrSessionInfo;
 @property(nonatomic) _Bool enablePictureInPictureSeekButton; // @synthesize enablePictureInPictureSeekButton=_enablePictureInPictureSeekButton;
 @property(retain, nonatomic) WCPipContentSourcePlayer *oldPipSourcePlayer; // @synthesize oldPipSourcePlayer=_oldPipSourcePlayer;
@@ -69,4 +70,3 @@
 @property(readonly) Class superclass;
 
 @end
-

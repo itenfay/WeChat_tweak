@@ -25,7 +25,6 @@
     UITapGestureRecognizer *_tapSelectGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapSelectGesture; // @synthesize tapSelectGesture=_tapSelectGesture;
 @property(retain, nonatomic) UIPanGestureRecognizer *swipeSelectGesture; // @synthesize swipeSelectGesture=_swipeSelectGesture;
 @property(retain, nonatomic) UIView *cellViewInteractiveView; // @synthesize cellViewInteractiveView=_cellViewInteractiveView;

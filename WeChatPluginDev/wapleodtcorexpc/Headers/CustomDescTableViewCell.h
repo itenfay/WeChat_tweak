@@ -13,7 +13,6 @@
     UILabel *_m_descHint;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *m_descHint; // @synthesize m_descHint=_m_descHint;
 @property(retain, nonatomic) UITextView *m_descView; // @synthesize m_descView=_m_descView;
 - (id)accessibilityElements;

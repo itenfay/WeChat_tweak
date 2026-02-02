@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_wording;
 + (void)PBArrayAdd_subType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;
 @property(nonatomic) long long subType; // @synthesize subType=_subType;
 - (id)getPBPropertyTable;

@@ -21,7 +21,6 @@
     double _scanLineBottom;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double scanLineBottom; // @synthesize scanLineBottom=_scanLineBottom;
 @property(nonatomic) double scanLineTop; // @synthesize scanLineTop=_scanLineTop;
 @property(retain, nonatomic) CAAnimationGroup *scanLineAnimation; // @synthesize scanLineAnimation=_scanLineAnimation;

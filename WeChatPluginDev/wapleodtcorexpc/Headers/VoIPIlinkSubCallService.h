@@ -12,7 +12,6 @@
     unsigned long long _endingRoomID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long endingRoomID; // @synthesize endingRoomID=_endingRoomID;
 @property(nonatomic) _Bool isWaitingForAccept; // @synthesize isWaitingForAccept=_isWaitingForAccept;
 @property(retain, nonatomic) VoIPIlinkSubCallCache *cache; // @synthesize cache=_cache;

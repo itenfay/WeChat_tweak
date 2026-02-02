@@ -24,7 +24,6 @@
     CContact *_chatroomContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *chatroomContact; // @synthesize chatroomContact=_chatroomContact;
 @property(nonatomic) __weak id <WCPayContactSelectListBaseViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(nonatomic) _Bool shouldSeparateEnterpriseContact; // @synthesize shouldSeparateEnterpriseContact=_shouldSeparateEnterpriseContact;

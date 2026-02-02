@@ -43,7 +43,6 @@
     NSRecursiveLock *_mAudioPlayLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *mAudioPlayLock; // @synthesize mAudioPlayLock=_mAudioPlayLock;
 @property(nonatomic) unsigned long long mLastDisconnectSysCallTime; // @synthesize mLastDisconnectSysCallTime;
 @property(nonatomic) unsigned int mInviteId; // @synthesize mInviteId;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveSquareStyleInfo, MMFinderLiveFeedExtraInfoFetchLogic, NSMutableDictionary, NSString, WCFinderFeedFlowView, WCFinderLiveTabInfo;
 @protocol WCFinderNearbyMoreLivePageViewModelDelegate;
@@ -32,7 +33,6 @@
     unsigned long long _autoPlayFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long autoPlayFlag; // @synthesize autoPlayFlag=_autoPlayFlag;
 @property(nonatomic) _Bool hasInitializeStyleInfo; // @synthesize hasInitializeStyleInfo=_hasInitializeStyleInfo;
 @property(retain, nonatomic) NSMutableDictionary *dataModels; // @synthesize dataModels=_dataModels;
@@ -120,4 +120,3 @@
 @property(readonly) Class superclass;
 
 @end
-

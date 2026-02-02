@@ -16,7 +16,6 @@
     MISSING_TYPE *bizVc;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)getAppId;
 - (id)getParentViewController;

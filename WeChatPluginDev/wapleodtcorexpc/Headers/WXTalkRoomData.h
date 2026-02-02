@@ -29,7 +29,6 @@
     NSMutableArray *_addrList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *addrList; // @synthesize addrList=_addrList;
 @property(nonatomic) unsigned int curGetMicEventID; // @synthesize curGetMicEventID;
 @property(nonatomic) unsigned int inviteCountWithinOneMin; // @synthesize inviteCountWithinOneMin;

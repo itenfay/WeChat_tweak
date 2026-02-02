@@ -10,7 +10,6 @@
     MMWebViewController *_webViewController;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak MMWebViewController *webViewController; // @synthesize webViewController=_webViewController;
 - (void)setWebViewOwner:(id)arg1;
 

@@ -15,7 +15,6 @@
     NSMutableDictionary *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) __weak id <BrandActionReportLogicControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) BrandServiceEnterConversationLogic *m_enterConversationLogic; // @synthesize m_enterConversationLogic;

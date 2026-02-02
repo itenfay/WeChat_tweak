@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData;
 
 @interface MMFinderLivePurchaseSuperfanClubCGI
@@ -14,7 +16,6 @@
     CDUnknownBlockType _successBlock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int consumeType; // @synthesize consumeType=_consumeType;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
@@ -26,4 +27,3 @@
 - (id)initJoinSuperfanWithTaskId:(id)arg1 liveCookies:(id)arg2 subscrptionType:(unsigned long long)arg3 subscriptionInfo:(id)arg4 successBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 
 @end
-

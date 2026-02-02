@@ -18,7 +18,6 @@
     NSArray *_arrContactTagNameList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrContactTagNameList; // @synthesize arrContactTagNameList=_arrContactTagNameList;
 @property(retain, nonatomic) NSArray *arrAllTagNameList; // @synthesize arrAllTagNameList=_arrAllTagNameList;
 @property(retain, nonatomic) NSArray *arrTagNameList; // @synthesize arrTagNameList=_arrTagNameList;

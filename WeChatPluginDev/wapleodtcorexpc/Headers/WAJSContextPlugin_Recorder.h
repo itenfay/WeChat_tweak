@@ -17,7 +17,6 @@
 }
 
 + (void)_showRecordDenied;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) _Bool isInterrupting; // @synthesize isInterrupting=_isInterrupting;
 @property(nonatomic) _Bool isCheckingPermission; // @synthesize isCheckingPermission=_isCheckingPermission;

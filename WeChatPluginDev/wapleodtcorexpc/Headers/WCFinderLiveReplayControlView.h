@@ -22,7 +22,6 @@
     struct CGSize _replayVideoInitSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *greateTimeDict; // @synthesize greateTimeDict=_greateTimeDict;
 @property(retain, nonatomic) WCFinderLiveReplayPreviewContainer *previewContainer; // @synthesize previewContainer=_previewContainer;
 @property(retain, nonatomic) MMFinderLiveReplaySeekTimeView *seekTimeView; // @synthesize seekTimeView=_seekTimeView;

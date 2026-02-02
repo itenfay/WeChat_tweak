@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WAPermissionHandler, WCWeAppBizTempSessionInfo;
 @protocol WCWeAppBizTempSessionHelperDelegate;
@@ -15,7 +16,6 @@
     WAPermissionHandler *_permissionHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPermissionHandler *permissionHandler; // @synthesize permissionHandler=_permissionHandler;
 @property(retain, nonatomic) WCWeAppBizTempSessionInfo *bizInfo; // @synthesize bizInfo=_bizInfo;
 @property(nonatomic) __weak id <WCWeAppBizTempSessionHelperDelegate> delegate; // @synthesize delegate=_delegate;
@@ -35,4 +35,3 @@
 - (void)dealloc;
 
 @end
-

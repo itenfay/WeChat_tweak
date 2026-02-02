@@ -17,7 +17,6 @@
     id <MMFinderLivePromoteDisplayLeasePromotionDelegate> _promotionDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLivePromoteDisplayLeasePromotionDelegate> promotionDelegate; // @synthesize promotionDelegate=_promotionDelegate;
 @property(nonatomic) _Bool closeButtonHidden; // @synthesize closeButtonHidden=_closeButtonHidden;
 @property(nonatomic) _Bool userDismissable; // @synthesize userDismissable=_userDismissable;

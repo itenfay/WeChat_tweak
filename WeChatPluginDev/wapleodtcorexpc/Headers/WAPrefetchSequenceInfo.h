@@ -34,7 +34,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cmdKey; // @synthesize cmdKey=_cmdKey;
 @property(nonatomic) unsigned int sequence; // @synthesize sequence=_sequence;
 @property(nonatomic) unsigned int cmdType; // @synthesize cmdType=_cmdType;

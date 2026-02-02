@@ -30,7 +30,6 @@
     id <WCSightFullPlayViewDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bIsMute; // @synthesize m_bIsMute;
 @property(nonatomic) _Bool m_isSightVisible; // @synthesize m_isSightVisible;
 @property(readonly, nonatomic) _Bool m_isSightReady; // @synthesize m_isSightReady;

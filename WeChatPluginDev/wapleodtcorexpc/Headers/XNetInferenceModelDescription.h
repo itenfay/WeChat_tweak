@@ -13,7 +13,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *outputs;
 @property(readonly, nonatomic) NSDictionary *inputs;
 - (id)initWithInputs:(id)arg1 outputs:(id)arg2;

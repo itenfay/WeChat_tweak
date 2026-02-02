@@ -16,7 +16,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(retain, nonatomic) WCMomentsTemplateInfo *templateInfo; // @synthesize templateInfo=_templateInfo;

@@ -26,7 +26,6 @@
     UIButton *_coverBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *coverBtn; // @synthesize coverBtn=_coverBtn;
 @property(retain, nonatomic) WCPayBadgeView *m_invalidView; // @synthesize m_invalidView=_m_invalidView;
 @property(retain, nonatomic) UIView *bankNoView; // @synthesize bankNoView=_bankNoView;

@@ -18,7 +18,6 @@
     double _borderImgWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double borderImgWidth; // @synthesize borderImgWidth=_borderImgWidth;
 @property(nonatomic) double scoreFontSize; // @synthesize scoreFontSize=_scoreFontSize;
 @property(nonatomic) double labelFontSize; // @synthesize labelFontSize=_labelFontSize;

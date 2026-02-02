@@ -17,7 +17,6 @@
     NSString *_delayHideVotingId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(retain, nonatomic) NSString *delayHideVotingId; // @synthesize delayHideVotingId=_delayHideVotingId;
 @property(retain, nonatomic) MMTimer *floatingViewHideTimer; // @synthesize floatingViewHideTimer=_floatingViewHideTimer;

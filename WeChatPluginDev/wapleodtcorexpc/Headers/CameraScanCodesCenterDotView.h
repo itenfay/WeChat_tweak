@@ -15,7 +15,6 @@
     CABasicAnimation *_loadingDotAnimation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CABasicAnimation *loadingDotAnimation; // @synthesize loadingDotAnimation=_loadingDotAnimation;
 @property(retain, nonatomic) UIImageView *scanGoodsGuideView; // @synthesize scanGoodsGuideView=_scanGoodsGuideView;
 @property(retain, nonatomic) UIImageView *netDisconnectView; // @synthesize netDisconnectView=_netDisconnectView;

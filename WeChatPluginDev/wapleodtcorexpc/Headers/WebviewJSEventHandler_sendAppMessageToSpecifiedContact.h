@@ -18,7 +18,6 @@
     NSMutableData *_m_recData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *m_recData; // @synthesize m_recData=_m_recData;
 @property(retain, nonatomic) NSDictionary *m_curExtraData; // @synthesize m_curExtraData=_m_curExtraData;
 @property(retain, nonatomic) JSEvent *m_curEvent; // @synthesize m_curEvent=_m_curEvent;

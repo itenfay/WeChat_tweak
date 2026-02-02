@@ -24,7 +24,6 @@
     NSString *_tmpBankName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tmpBankName; // @synthesize tmpBankName=_tmpBankName;
 @property(retain, nonatomic) NSMutableArray *currentBankCardTypeDisplayList; // @synthesize currentBankCardTypeDisplayList=_currentBankCardTypeDisplayList;
 @property(retain, nonatomic) NSMutableArray *currentBankCardTypeList; // @synthesize currentBankCardTypeList=_currentBankCardTypeList;

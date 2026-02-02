@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface CLMDeleteDataHalfScreenView
@@ -14,7 +16,6 @@
     NSString *_confirmString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *confirmString; // @synthesize confirmString=_confirmString;
 @property(copy, nonatomic) NSString *tipString; // @synthesize tipString=_tipString;
 @property(copy, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
@@ -37,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

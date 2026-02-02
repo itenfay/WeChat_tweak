@@ -4,13 +4,13 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMConfSDKNetworkMgr : NSObject
 {
     CDUnknownBlockType networkCallStatusCallback;
 }
 
-- (void).cxx_destruct;
 - (void)ReachabilityChange:(unsigned int)arg1;
 - (unsigned int)getNetworkType;
 - (int)getCurrentNetType;
@@ -18,4 +18,3 @@
 - (void)startListen:(CDUnknownBlockType)arg1;
 
 @end
-

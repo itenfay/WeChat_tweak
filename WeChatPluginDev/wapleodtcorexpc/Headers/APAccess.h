@@ -12,7 +12,6 @@
     id <APAccessDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <APAccessDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSURL *thirdPartyUrl; // @synthesize thirdPartyUrl=_thirdPartyUrl;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDiffableDataSourceSnapshot, NSMapTable, NSMutableArray, NSMutableDictionary, WCFinderFeedArray, WCFinderFeedArrayObserverList;
 
@@ -20,7 +21,6 @@
 }
 
 + (id)groupFeedArray:(CDUnknownBlockType)arg1 source:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedArrayObserverList *observer; // @synthesize observer=_observer;
 @property(retain, nonatomic) NSMapTable *itemMap; // @synthesize itemMap=_itemMap;
 @property(retain, nonatomic) NSMutableDictionary *sessionMap; // @synthesize sessionMap=_sessionMap;
@@ -41,4 +41,3 @@
 - (id)initWithGroupper:(CDUnknownBlockType)arg1;
 
 @end
-

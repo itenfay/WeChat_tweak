@@ -16,7 +16,6 @@
 }
 
 + (id)goodsInfoWithMiniAppCompleteParams:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *goodsMiniAppPath; // @synthesize goodsMiniAppPath=_goodsMiniAppPath;
 @property(copy, nonatomic) NSString *goodsMiniAppId; // @synthesize goodsMiniAppId=_goodsMiniAppId;
 @property(copy, nonatomic) NSString *goodsProductID; // @synthesize goodsProductID=_goodsProductID;

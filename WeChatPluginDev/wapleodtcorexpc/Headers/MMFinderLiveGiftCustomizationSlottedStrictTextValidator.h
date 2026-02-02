@@ -13,7 +13,6 @@
     NSCharacterSet *_nonWhitespaceCharset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSCharacterSet *nonWhitespaceCharset; // @synthesize nonWhitespaceCharset=_nonWhitespaceCharset;
 @property(retain, nonatomic) NSRegularExpression *nonAlphanumericRegex; // @synthesize nonAlphanumericRegex=_nonAlphanumericRegex;
 - (_Bool)isTrailingCharacterValid:(id)arg1 reason:(id *)arg2;

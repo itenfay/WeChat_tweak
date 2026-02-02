@@ -21,7 +21,6 @@
     _Bool isLyricsPanelType;
 }
 
-- (void).cxx_destruct;
 - (void)onTimer;
 - (double)loopAnimationDuration;
 - (double)label2AnimationMoveDistance;

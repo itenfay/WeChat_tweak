@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderInteractionThankCGIParams;
 
 @interface WCFinderInteractionThankCGI
@@ -15,7 +17,6 @@
     WCFinderInteractionThankCGIParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderInteractionThankCGIParams *params; // @synthesize params=_params;
 @property(nonatomic) _Bool thanked; // @synthesize thanked=_thanked;
 @property(copy, nonatomic) NSString *wxUsername; // @synthesize wxUsername=_wxUsername;
@@ -29,4 +30,3 @@
 - (id)initWithThanked:(_Bool)arg1 finderUsername:(id)arg2 wxUsername:(id)arg3 params:(id)arg4 success:(CDUnknownBlockType)arg5 fail:(CDUnknownBlockType)arg6;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FTSDB, NSMutableArray, NSMutableDictionary;
 @protocol OS_dispatch_queue;
@@ -21,7 +22,6 @@
     NSObject<OS_dispatch_queue> *_taskQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *taskQueue; // @synthesize taskQueue=_taskQueue;
 @property(retain, nonatomic) NSMutableDictionary *dicTask; // @synthesize dicTask=_dicTask;
 @property(retain, nonatomic) NSMutableArray *arrTask; // @synthesize arrTask=_arrTask;
@@ -39,4 +39,3 @@
 - (id)init;
 
 @end
-

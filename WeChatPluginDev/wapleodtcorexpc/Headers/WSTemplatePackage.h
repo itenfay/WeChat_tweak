@@ -24,7 +24,6 @@
 + (_Bool)verifyMD5ForTemplateFiles:(id)arg1 withMD5Map:(id)arg2 bizType:(unsigned long long)arg3;
 + (unsigned long long)verifyTemplateContentStatusForPath:(id)arg1 bizType:(unsigned long long)arg2;
 + (id)makeDictionaryFromFileInPath:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *sha1Map; // @synthesize sha1Map=_sha1Map;
 @property(copy, nonatomic) NSString *pakageName; // @synthesize pakageName=_pakageName;
 @property(retain, nonatomic) NSDictionary *configDic; // @synthesize configDic=_configDic;

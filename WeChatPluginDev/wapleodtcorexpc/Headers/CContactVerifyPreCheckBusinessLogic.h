@@ -13,7 +13,6 @@
     id <ContactVerifyPreCheckBusinessLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ContactVerifyPreCheckBusinessLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)getDeleteNotRegularContactLogic;
 - (_Bool)checkIsDeleteNotRegularContactBusiness:(int)arg1;

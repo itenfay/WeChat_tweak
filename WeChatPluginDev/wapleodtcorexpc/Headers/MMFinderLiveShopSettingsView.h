@@ -16,7 +16,6 @@
 }
 
 + (_Bool)shouldShowSettingViewForTaskID:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long disappearReason; // @synthesize disappearReason=_disappearReason;
 @property(retain, nonatomic) WCTableViewManager *tableViewManager; // @synthesize tableViewManager=_tableViewManager;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;

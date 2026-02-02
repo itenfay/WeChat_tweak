@@ -27,7 +27,6 @@
     WCUrl *_m_wcDataUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiDownloadStatus; // @synthesize m_uiDownloadStatus=_m_uiDownloadStatus;
 @property(retain, nonatomic) WCUrl *m_wcDataUrl; // @synthesize m_wcDataUrl=_m_wcDataUrl;
 @property(nonatomic) unsigned int m_uiMoovPos; // @synthesize m_uiMoovPos=_m_uiMoovPos;

@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_imageUrl;
 + (void)PBArrayAdd_toUsername;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;
 @property(retain, nonatomic) NSString *toUsername; // @synthesize toUsername=_toUsername;
 - (id)getPBPropertyTable;

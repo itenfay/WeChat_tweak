@@ -11,7 +11,6 @@
     long long _paddingTop;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long paddingTop; // @synthesize paddingTop=_paddingTop;
 @property(retain, nonatomic) MMUILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 - (id)getDateLabelText;

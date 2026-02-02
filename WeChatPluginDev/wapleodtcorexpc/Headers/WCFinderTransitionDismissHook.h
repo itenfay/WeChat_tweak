@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderTransitionDismissHook : NSObject
 {
@@ -11,9 +12,7 @@
     CDUnknownBlockType _endDismiss;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType endDismiss; // @synthesize endDismiss=_endDismiss;
 @property(copy, nonatomic) CDUnknownBlockType willDismiss; // @synthesize willDismiss=_willDismiss;
 
 @end
-

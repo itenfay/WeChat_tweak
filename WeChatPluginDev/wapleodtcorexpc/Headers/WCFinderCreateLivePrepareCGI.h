@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString;
 
 @interface WCFinderCreateLivePrepareCGI
@@ -16,7 +18,6 @@
     CDUnknownBlockType _failure;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType success; // @synthesize success=_success;
 @property(retain, nonatomic) NSMutableArray *cachedGestures; // @synthesize cachedGestures=_cachedGestures;
@@ -33,4 +34,3 @@
 - (id)initWithFinderUsername:(id)arg1 micFinderUsername:(id)arg2 micObjectId:(unsigned long long)arg3 micLiveId:(unsigned long long)arg4 success:(CDUnknownBlockType)arg5 failure:(CDUnknownBlockType)arg6;
 
 @end
-

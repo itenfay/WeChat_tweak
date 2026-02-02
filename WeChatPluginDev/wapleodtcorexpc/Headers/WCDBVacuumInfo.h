@@ -15,7 +15,6 @@
     NSString *_path;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(nonatomic) unsigned long long freeSize; // @synthesize freeSize=_freeSize;
 @property(nonatomic) unsigned long long totalSize; // @synthesize totalSize=_totalSize;

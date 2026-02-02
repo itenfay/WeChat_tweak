@@ -12,7 +12,6 @@
     struct CGRect _highlightViewFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double highlightViewCornerRadius; // @synthesize highlightViewCornerRadius=_highlightViewCornerRadius;
 @property(nonatomic) struct CGRect highlightViewFrame; // @synthesize highlightViewFrame=_highlightViewFrame;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;

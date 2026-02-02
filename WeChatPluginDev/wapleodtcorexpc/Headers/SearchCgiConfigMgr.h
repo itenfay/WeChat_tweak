@@ -14,7 +14,6 @@
     _Bool _isUpdatingCgiConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUpdatingCgiConfig; // @synthesize isUpdatingCgiConfig=_isUpdatingCgiConfig;
 - (void)onLimitedModeBizLevelChange:(long long)arg1 bizType:(long long)arg2;
 - (void)onLimitedModeChanged;

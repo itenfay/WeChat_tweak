@@ -30,7 +30,6 @@
     NSString *_gameAppId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float mMinHalfFOVVer; // @synthesize mMinHalfFOVVer=_mMinHalfFOVVer;
 @property(nonatomic) float mMaxHalfFOVVer; // @synthesize mMaxHalfFOVVer=_mMaxHalfFOVVer;
 @property(nonatomic) float mMinHalfFOVHor; // @synthesize mMinHalfFOVHor=_mMinHalfFOVHor;

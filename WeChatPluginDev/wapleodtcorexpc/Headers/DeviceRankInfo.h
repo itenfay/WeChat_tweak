@@ -22,7 +22,6 @@
     SportRecord *_record;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SportRecord *record; // @synthesize record=_record;
 @property(retain, nonatomic) NSString *m_deviceId; // @synthesize m_deviceId=_m_deviceId;
 @property(nonatomic) _Bool localLike; // @synthesize localLike=_localLike;

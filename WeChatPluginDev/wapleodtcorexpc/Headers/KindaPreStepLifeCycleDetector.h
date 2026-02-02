@@ -12,7 +12,6 @@
     MMUseCase *_usecase;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUseCase *usecase; // @synthesize usecase=_usecase;
 - (void)dealloc;
 

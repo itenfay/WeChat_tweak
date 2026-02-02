@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ContactSearchLogic, NSString, OpenIMContactInfoForThirdReqFetchContext;
 
 @interface OpenIMContactInfoForThirdMgr
@@ -11,7 +13,6 @@
     OpenIMContactInfoForThirdReqFetchContext *m_reqContext;
 }
 
-- (void).cxx_destruct;
 - (void)reportShowOpenIMProfileForThirdLogWithAction:(unsigned int)arg1 allowResultType:(unsigned int)arg2 sourceScene:(unsigned int)arg3;
 - (void)onContactSearchLogicFailForThird:(id)arg1 extInfo:(id)arg2;
 - (void)onContactSearchLogicDoneForThird:(id)arg1 thirdFromScene:(unsigned int)arg2 spamWording:(id)arg3 extInfo:(id)arg4;
@@ -28,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -26,7 +26,6 @@
 }
 
 + (_Bool)canShowDesignerEmoji;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) long long entranceScene; // @synthesize entranceScene=_entranceScene;
 @property(retain, nonatomic) EmoticonStoreReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;

@@ -55,7 +55,6 @@
     NSString *_m_nsHeadImageUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsHeadImageUrl; // @synthesize m_nsHeadImageUrl=_m_nsHeadImageUrl;
 @property(nonatomic) long long m_videoOrientation; // @synthesize m_videoOrientation=_m_videoOrientation;
 @property(nonatomic) _Bool isTalking; // @synthesize isTalking=_isTalking;

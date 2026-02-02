@@ -17,7 +17,6 @@
     RichTextView *_textView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceLayoutUI; // @synthesize forceLayoutUI=_forceLayoutUI;
 @property(nonatomic) _Bool isLastLayoutOrientationIsPortrait; // @synthesize isLastLayoutOrientationIsPortrait=_isLastLayoutOrientationIsPortrait;
 @property(retain, nonatomic) RichTextView *textView; // @synthesize textView=_textView;

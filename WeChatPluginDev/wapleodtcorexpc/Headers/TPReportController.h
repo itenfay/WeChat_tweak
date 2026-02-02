@@ -22,7 +22,6 @@
 }
 
 + (id)playerToReportProcessorEventIdMap;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *afterReporterEventHanlerTable; // @synthesize afterReporterEventHanlerTable=_afterReporterEventHanlerTable;
 @property(retain, nonatomic) NSDictionary *beforeReporterEventHanlerTable; // @synthesize beforeReporterEventHanlerTable=_beforeReporterEventHanlerTable;
 @property(nonatomic) __weak id <ITPReportInfoGetter> reportInfoGetter; // @synthesize reportInfoGetter=_reportInfoGetter;

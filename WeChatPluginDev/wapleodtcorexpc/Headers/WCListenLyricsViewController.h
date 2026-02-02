@@ -32,7 +32,6 @@
     struct CGSize _curContentSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long cacheFirstDisabledSelectRow; // @synthesize cacheFirstDisabledSelectRow=_cacheFirstDisabledSelectRow;
 @property(retain, nonatomic) NSMutableDictionary *cacheRowHeightMap; // @synthesize cacheRowHeightMap=_cacheRowHeightMap;
 @property(retain, nonatomic) WCListenLyricsPlayCell *cell; // @synthesize cell=_cell;

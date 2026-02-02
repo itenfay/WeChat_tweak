@@ -23,7 +23,6 @@
     unsigned long long _currentSessionIndex;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long currentSessionIndex; // @synthesize currentSessionIndex=_currentSessionIndex;
 @property(nonatomic) unsigned long long missReadClickedCount; // @synthesize missReadClickedCount=_missReadClickedCount;
 @property(nonatomic) unsigned long long missReadDisplayedCount; // @synthesize missReadDisplayedCount=_missReadDisplayedCount;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CLGeocoder;
 
@@ -13,11 +14,9 @@
     CLGeocoder *_geocoder;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CLGeocoder *geocoder; // @synthesize geocoder=_geocoder;
 @property(nonatomic) _Bool isReversingGeocodeLocation; // @synthesize isReversingGeocodeLocation=_isReversingGeocodeLocation;
 - (void)startLocatingWithLocations:(id)arg1 timeoutInSeconds:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)init;
 
 @end
-

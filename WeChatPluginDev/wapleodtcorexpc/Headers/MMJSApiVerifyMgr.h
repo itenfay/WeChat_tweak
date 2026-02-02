@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class JSAPIAuthWrap, NSArray, NSMutableArray, NSMutableDictionary, NSString;
 @protocol MMJSApiVerifyMgrDelegate;
@@ -35,7 +36,6 @@
     NSString *_miniProgramAppid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *miniProgramAppid; // @synthesize miniProgramAppid=_miniProgramAppid;
 @property(nonatomic) long long entryScene; // @synthesize entryScene=_entryScene;
 @property(nonatomic) unsigned long long preverifyScene; // @synthesize preverifyScene=_preverifyScene;
@@ -92,4 +92,3 @@
 - (id)init;
 
 @end
-

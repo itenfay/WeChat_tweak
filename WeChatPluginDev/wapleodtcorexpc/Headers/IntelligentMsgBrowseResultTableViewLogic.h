@@ -30,7 +30,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IntelligentMsgBrowseResultTableViewLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(nonatomic) _Bool m_bIsShowMenu; // @synthesize m_bIsShowMenu=_m_bIsShowMenu;
 @property(nonatomic) unsigned int m_style; // @synthesize m_style=_m_style;

@@ -62,7 +62,6 @@
 + (void)PBArrayAdd_username;
 + (void)PBArrayAdd_appid;
 + (void)PBArrayAdd_instanceId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int differentSkylineViewCnt; // @synthesize differentSkylineViewCnt=_differentSkylineViewCnt;
 @property(nonatomic) unsigned int skylineViewCnt; // @synthesize skylineViewCnt=_skylineViewCnt;
 @property(nonatomic) _Bool hasSkylineRuntime; // @synthesize hasSkylineRuntime=_hasSkylineRuntime;

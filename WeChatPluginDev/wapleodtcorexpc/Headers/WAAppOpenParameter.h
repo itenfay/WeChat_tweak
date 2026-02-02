@@ -55,7 +55,6 @@
     WAAppOpenDebugModeParameter *_m_debugModeParameter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAppOpenDebugModeParameter *m_debugModeParameter; // @synthesize m_debugModeParameter=_m_debugModeParameter;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) WAAppOpenCustomUIParameter *m_customUIParameter; // @synthesize m_customUIParameter=_m_customUIParameter;

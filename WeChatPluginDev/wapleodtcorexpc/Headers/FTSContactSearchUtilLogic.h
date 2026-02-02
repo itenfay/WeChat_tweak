@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FTSContactDB, FTSContactSearchTask, NSMutableArray, NSString;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _m_resultBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType m_resultBlock; // @synthesize m_resultBlock=_m_resultBlock;
 - (void)onContactSearchTaskFinish:(id)arg1;
 - (_Bool)fillResultWithSearchType:(unsigned long long)arg1;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

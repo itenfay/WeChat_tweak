@@ -10,7 +10,6 @@
     NSMutableArray *_modelList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *modelList; // @synthesize modelList=_modelList;
 - (id)generateSelectItemModelFromAssetInfo:(id)arg1;
 - (unsigned long long)previewAssetTotal;

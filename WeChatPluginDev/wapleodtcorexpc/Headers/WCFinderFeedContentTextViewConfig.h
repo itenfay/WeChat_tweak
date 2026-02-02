@@ -32,7 +32,6 @@
 
 + (unsigned long long)getCurSuffixUIStyleTypeIncludeXLabSwitch:(_Bool)arg1;
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(nonatomic) double firstLineOriginX; // @synthesize firstLineOriginX=_firstLineOriginX;
 @property(nonatomic) _Bool useGradientSuffix; // @synthesize useGradientSuffix=_useGradientSuffix;
 @property(retain, nonatomic) UIColor *suffixGradientColor; // @synthesize suffixGradientColor=_suffixGradientColor;

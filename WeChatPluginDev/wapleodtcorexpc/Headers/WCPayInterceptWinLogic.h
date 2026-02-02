@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class InterceptWin, NSString, WCPayHalfPageSheet;
 
@@ -15,7 +16,6 @@
 
 + (void)handleJumpItem:(id)arg1 didClickBlock:(CDUnknownBlockType)arg2;
 + (void)handleJumpItem:(id)arg1 isPresent:(_Bool)arg2 didClickBlock:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayHalfPageSheet *halfPageSheet; // @synthesize halfPageSheet=_halfPageSheet;
 @property(retain, nonatomic) InterceptWin *interceptWin; // @synthesize interceptWin=_interceptWin;
 - (void)handleInterceptWin:(id)arg1 isPresent:(_Bool)arg2 didClickBlock:(CDUnknownBlockType)arg3;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

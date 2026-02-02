@@ -11,7 +11,6 @@
     WCTTable *_tableFlutterUpdateInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCTTable *tableFlutterUpdateInfo; // @synthesize tableFlutterUpdateInfo=_tableFlutterUpdateInfo;
 @property(retain) WCTDatabase *db; // @synthesize db=_db;
 - (void)willRecoverDatabase;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class HbEnvelopSource, MMUIViewController, NSString, WCRedEnvelopesConfirmShowResourcesCgi, WCRedEnvelopesDeleteResourceCgi, WCRedEnvelopesGetShowResourcesCgi, WCRedEnvelopesSelectSkinViewController;
 
@@ -19,7 +20,6 @@
     MMUIViewController *_currVc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *currVc; // @synthesize currVc=_currVc;
 @property(retain, nonatomic) HbEnvelopSource *currHbEnvelopSource; // @synthesize currHbEnvelopSource=_currHbEnvelopSource;
 @property(retain, nonatomic) WCRedEnvelopesDeleteResourceCgi *deleteShowResourceCgi; // @synthesize deleteShowResourceCgi=_deleteShowResourceCgi;
@@ -51,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

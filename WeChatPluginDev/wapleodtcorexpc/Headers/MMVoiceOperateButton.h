@@ -12,7 +12,6 @@
     UIColor *_highlightedColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(retain, nonatomic) UIColor *highlightedColor; // @synthesize highlightedColor=_highlightedColor;
 @property(retain, nonatomic) UIColor *normalColor; // @synthesize normalColor=_normalColor;

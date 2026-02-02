@@ -18,7 +18,6 @@
     FinderLiveContact *_selfContact;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int selfRank; // @synthesize selfRank=_selfRank;
 @property(nonatomic) unsigned int selfIntimacyToPrevRank; // @synthesize selfIntimacyToPrevRank=_selfIntimacyToPrevRank;
 @property(retain, nonatomic) FinderLiveContact *selfContact; // @synthesize selfContact=_selfContact;

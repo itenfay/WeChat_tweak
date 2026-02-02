@@ -19,7 +19,6 @@
     NSString *_digestPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *digestPath; // @synthesize digestPath=_digestPath;
 @property(retain, nonatomic) NSString *downloadWorkingPath; // @synthesize downloadWorkingPath=_downloadWorkingPath;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;

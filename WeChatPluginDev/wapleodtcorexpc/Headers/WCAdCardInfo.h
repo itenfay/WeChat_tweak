@@ -18,7 +18,6 @@
     WCAdMultiProductsInfo *_adMultiProductsInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdMultiProductsInfo *adMultiProductsInfo; // @synthesize adMultiProductsInfo=_adMultiProductsInfo;
 @property(retain, nonatomic) WCAdSellingPointInfo *adSellingPointInfo; // @synthesize adSellingPointInfo=_adSellingPointInfo;
 @property(retain, nonatomic) WCAdPromotionInfo *adPromotionInfo; // @synthesize adPromotionInfo;

@@ -26,7 +26,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canShowDesLabel; // @synthesize canShowDesLabel=_canShowDesLabel;
 @property(retain, nonatomic) MMFinderLiveFeedHighlightTagView *highlightTagView; // @synthesize highlightTagView=_highlightTagView;
 @property(retain, nonatomic) MMFinderLiveActivityView *liveActivityView; // @synthesize liveActivityView=_liveActivityView;

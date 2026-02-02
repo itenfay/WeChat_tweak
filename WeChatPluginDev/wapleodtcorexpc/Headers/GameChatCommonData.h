@@ -17,7 +17,6 @@
     double _normalUserArrayTimeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double normalUserArrayTimeStamp; // @synthesize normalUserArrayTimeStamp=_normalUserArrayTimeStamp;
 @property(retain, nonatomic) NSMutableArray *normalUserArray; // @synthesize normalUserArray=_normalUserArray;
 @property(retain, nonatomic) NSMutableDictionary *dbDataDict; // @synthesize dbDataDict=_dbDataDict;

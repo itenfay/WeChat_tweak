@@ -16,7 +16,6 @@
     NSMutableArray *_groupCellList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int personalizedOpt; // @synthesize personalizedOpt=_personalizedOpt;
 @property(retain, nonatomic) NSMutableArray *groupCellList; // @synthesize groupCellList=_groupCellList;
 @property(retain, nonatomic) NSMutableDictionary *cellDict; // @synthesize cellDict=_cellDict;

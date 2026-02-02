@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString, WCCommentPostManager, WCCommentWCDB;
 
 @interface WCUniCommentDataService
@@ -17,7 +19,6 @@
 + (void)commentLikeChangedWithEntityId:(id)arg1 uniCommentAppName:(id)arg2 bypassBuffer:(id)arg3 bypassBufferType:(int)arg4 scene:(unsigned long long)arg5 selectedFlag:(_Bool)arg6 isDislike:(_Bool)arg7 comment:(id)arg8 successBlock:(CDUnknownBlockType)arg9 failureBlock:(CDUnknownBlockType)arg10;
 + (void)commentLikeChangedWithCommentObject:(id)arg1 scene:(unsigned long long)arg2 selectedFlag:(_Bool)arg3 isDislike:(_Bool)arg4 comment:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failureBlock:(CDUnknownBlockType)arg7;
 + (id)genFinderBaseRequest;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *tasks; // @synthesize tasks=_tasks;
 @property(retain, nonatomic) WCCommentWCDB *dataBase; // @synthesize dataBase=_dataBase;
 @property(retain, nonatomic) WCCommentPostManager *postManager; // @synthesize postManager=_postManager;
@@ -60,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

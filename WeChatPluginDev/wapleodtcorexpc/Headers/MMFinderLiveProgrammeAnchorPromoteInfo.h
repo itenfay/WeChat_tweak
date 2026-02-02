@@ -10,7 +10,6 @@
     FinderLiveProgrammePromoteInfo *_programInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveProgrammePromoteInfo *programInfo; // @synthesize programInfo=_programInfo;
 - (id)promoteKey;
 

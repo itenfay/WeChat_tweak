@@ -21,7 +21,6 @@
 + (id)scheduledTimerWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4 repeats:(_Bool)arg5;
 + (id)scheduledTimerWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4 repeats:(_Bool)arg5 queue:(id)arg6;
 + (id)timerQueue;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isrepeat; // @synthesize isrepeat=_isrepeat;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;

@@ -12,7 +12,6 @@
     MultipleTextStateCardView *_multipleCardView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultipleTextStateCardView *multipleCardView; // @synthesize multipleCardView=_multipleCardView;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

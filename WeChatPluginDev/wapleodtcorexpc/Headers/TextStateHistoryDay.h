@@ -16,7 +16,6 @@
 }
 
 + (id)identifierFromYear:(unsigned long long)arg1 month:(unsigned long long)arg2 day:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *privateInfoList; // @synthesize privateInfoList=_privateInfoList;
 @property(nonatomic) unsigned long long day; // @synthesize day=_day;
 @property(nonatomic) unsigned long long month; // @synthesize month=_month;

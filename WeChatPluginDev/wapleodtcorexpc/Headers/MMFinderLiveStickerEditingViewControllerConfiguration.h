@@ -16,7 +16,6 @@
     MMFinderLiveStickerTextTemplateResourceRepository *_textTemplateResources;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveStickerTextTemplateResourceRepository *textTemplateResources; // @synthesize textTemplateResources=_textTemplateResources;
 @property(retain, nonatomic) OMJLowerThirdImageGenerator *lowerThirdGenerator; // @synthesize lowerThirdGenerator=_lowerThirdGenerator;
 @property(nonatomic) unsigned long long operationMode; // @synthesize operationMode=_operationMode;

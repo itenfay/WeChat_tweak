@@ -14,7 +14,6 @@
     NSString *_chatSessionId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *chatSessionId; // @synthesize chatSessionId=_chatSessionId;
 @property(copy, nonatomic) COpenIMCustomToolBarItem *customToolBarItem; // @synthesize customToolBarItem=_customToolBarItem;
 @property(copy, nonatomic) NSString *finderUserName; // @synthesize finderUserName=_finderUserName;

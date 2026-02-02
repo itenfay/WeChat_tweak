@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface StoreEmotionHomePageLogic : NSObject
 {
@@ -17,4 +18,3 @@
 - (void)fetchHomePageWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 @end
-

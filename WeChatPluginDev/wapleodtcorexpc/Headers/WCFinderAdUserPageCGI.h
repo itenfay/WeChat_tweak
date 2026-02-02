@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderClientStatus, NSData, NSString;
 
 @interface WCFinderAdUserPageCGI
@@ -19,7 +21,6 @@
     NSString *_encryptedObjectId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *encryptedObjectId; // @synthesize encryptedObjectId=_encryptedObjectId;
 @property(copy, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;
 @property(retain, nonatomic) FinderClientStatus *clientStatus; // @synthesize clientStatus=_clientStatus;
@@ -36,4 +37,3 @@
 - (id)initWithContactUsername:(id)arg1 maxTid:(unsigned long long)arg2 reportScene:(unsigned long long)arg3 needFansCount:(_Bool)arg4 lastBuffer:(id)arg5 clientStatus:(id)arg6 feedID:(id)arg7 encryptedObjectid:(id)arg8 successful:(CDUnknownBlockType)arg9 failure:(CDUnknownBlockType)arg10;
 
 @end
-

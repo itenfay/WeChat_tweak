@@ -23,7 +23,6 @@
     WCFinderLiveFeedGenericCoverReportInfo *_coverReportInfo;
 }
 
-- (void).cxx_destruct;
 @property _Bool isPlayerCoverLoaded; // @synthesize isPlayerCoverLoaded=_isPlayerCoverLoaded;
 @property(retain, nonatomic) WCFinderLiveFeedGenericCoverReportInfo *coverReportInfo; // @synthesize coverReportInfo=_coverReportInfo;
 @property(retain, nonatomic) WCFinderLiveGenericFeedVM *feedVM; // @synthesize feedVM=_feedVM;

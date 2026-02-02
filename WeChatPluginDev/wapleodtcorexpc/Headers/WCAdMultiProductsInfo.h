@@ -14,7 +14,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productDesc; // @synthesize productDesc=_productDesc;
 @property(retain, nonatomic) NSArray *imageList; // @synthesize imageList=_imageList;
 - (_Bool)isValid;

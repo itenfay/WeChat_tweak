@@ -12,7 +12,6 @@
     WCFinderSearchContactReusableView *_contactView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSearchContactReusableView *contactView; // @synthesize contactView=_contactView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

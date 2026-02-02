@@ -17,7 +17,6 @@
 }
 
 + (_Bool)isNormalizedAnchorPointValid:(struct CGPoint)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_94e04e92 transformDescription; // @synthesize transformDescription=_transformDescription;
 @property(nonatomic) struct CGPoint normalizedAnchorPoint; // @synthesize normalizedAnchorPoint=_normalizedAnchorPoint;
 @property(nonatomic) struct CGRect normalizedFrame; // @synthesize normalizedFrame=_normalizedFrame;

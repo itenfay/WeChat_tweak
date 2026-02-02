@@ -15,7 +15,6 @@
     unsigned long long _workingMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableRCI; // @synthesize enableRCI=_enableRCI;
 @property(nonatomic) unsigned long long workingMode; // @synthesize workingMode=_workingMode;
 @property(retain, nonatomic) WeeffectRenderContextWrapper *sharedRenderContext; // @synthesize sharedRenderContext=_sharedRenderContext;

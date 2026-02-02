@@ -46,7 +46,6 @@
 + (void)PBArrayAdd_username;
 + (void)PBArrayAdd_cacheTime;
 + (void)PBArrayAdd_videoId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMegaVideoAttach *attach; // @synthesize attach=_attach;
 @property(nonatomic) unsigned long long cacheTime; // @synthesize cacheTime=_cacheTime;
 @property(copy, nonatomic) NSString *videoNonceId; // @synthesize videoNonceId=_videoNonceId;

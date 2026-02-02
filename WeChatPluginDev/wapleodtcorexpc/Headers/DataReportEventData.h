@@ -17,7 +17,6 @@
     unsigned long long _time;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long time; // @synthesize time=_time;
 @property(nonatomic) _Bool isBringPageInfo; // @synthesize isBringPageInfo=_isBringPageInfo;
 @property(retain, nonatomic) NSMutableArray *routeRules; // @synthesize routeRules=_routeRules;

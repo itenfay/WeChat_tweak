@@ -10,7 +10,6 @@
     MemoryMappedKV *_mappedKV;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 - (void)onServiceClearData;
 - (void)updateLocalMinimizeLiveTaskData:(id)arg1;

@@ -13,7 +13,6 @@
     MMTimer *_roamTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *roamTimer; // @synthesize roamTimer=_roamTimer;
 @property(copy, nonatomic) NSString *lastBannerString; // @synthesize lastBannerString=_lastBannerString;
 @property(copy, nonatomic) NSString *lastImageName; // @synthesize lastImageName=_lastImageName;

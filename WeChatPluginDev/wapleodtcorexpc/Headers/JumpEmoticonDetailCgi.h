@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 @protocol IJumpEmoticonDetailCgiDelegate;
 
@@ -17,7 +19,6 @@
 
 + (id)instanceWithOkBlock:(CDUnknownBlockType)arg1 failedBlock:(CDUnknownBlockType)arg2;
 + (id)instanceWithDelegate:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_urlString; // @synthesize m_urlString;
 @property(copy, nonatomic) CDUnknownBlockType m_failedBlock; // @synthesize m_failedBlock;
 @property(copy, nonatomic) CDUnknownBlockType m_okBlock; // @synthesize m_okBlock;
@@ -31,4 +32,3 @@
 - (id)init;
 
 @end
-

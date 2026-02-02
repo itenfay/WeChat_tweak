@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EditVideoBGMPlayer;
 @protocol MMBGMSelectedMusicDataProtocol;
@@ -16,7 +17,6 @@
     CDUnknownBlockType _completionHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) id <MMBGMSelectedMusicDataProtocol> firstMusicInfo; // @synthesize firstMusicInfo=_firstMusicInfo;
 @property(retain, nonatomic) EditVideoBGMPlayer *bgmPlayer; // @synthesize bgmPlayer=_bgmPlayer;
@@ -30,4 +30,3 @@
 - (void)downloadFirstMusicWithTimeout:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end
-

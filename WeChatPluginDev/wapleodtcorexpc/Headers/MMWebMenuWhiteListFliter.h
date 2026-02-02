@@ -11,7 +11,6 @@
 }
 
 + (id)baseFunctionMenuFliter;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *setAllowMenuItems; // @synthesize setAllowMenuItems=_setAllowMenuItems;
 - (_Bool)isMenuItemFliteredToHide:(id)arg1;
 - (void)appendAllowBaseMenuItem:(unsigned long long)arg1;

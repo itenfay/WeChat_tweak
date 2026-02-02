@@ -21,7 +21,6 @@
 + (void)PBArrayAdd_finderLiveItem;
 + (void)PBArrayAdd_sourceEnabled;
 + (void)PBArrayAdd_enabled;
-- (void).cxx_destruct;
 @property(nonatomic) long long enterFinderLiveMode; // @synthesize enterFinderLiveMode=_enterFinderLiveMode;
 @property(retain, nonatomic) WCFinderLiveShareItem *finderLiveItem; // @synthesize finderLiveItem=_finderLiveItem;
 @property(nonatomic) _Bool sourceEnabled; // @synthesize sourceEnabled=_sourceEnabled;

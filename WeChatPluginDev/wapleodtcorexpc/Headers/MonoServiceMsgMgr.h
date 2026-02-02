@@ -14,7 +14,6 @@
     VibrationRepeatObject *_m_vibrationObject;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VibrationRepeatObject *m_vibrationObject; // @synthesize m_vibrationObject=_m_vibrationObject;
 @property(retain, nonatomic) MonoServiceMsgHistory *m_localNotificationHistory; // @synthesize m_localNotificationHistory=_m_localNotificationHistory;
 @property(retain, nonatomic) NSMutableArray *m_logicArray; // @synthesize m_logicArray;

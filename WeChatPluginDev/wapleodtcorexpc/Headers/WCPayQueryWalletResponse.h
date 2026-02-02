@@ -14,7 +14,6 @@
     NSString *_m_walletUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_walletUrl; // @synthesize m_walletUrl=_m_walletUrl;
 @property(retain, nonatomic) NSString *m_errMsg; // @synthesize m_errMsg=_m_errMsg;
 @property(nonatomic) unsigned int m_errCode; // @synthesize m_errCode=_m_errCode;

@@ -15,7 +15,6 @@
     NSString *_orientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFullScreen; // @synthesize isFullScreen=_isFullScreen;
 @property(copy, nonatomic) NSString *orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) WAPackageConfig *pkgConfig; // @synthesize pkgConfig=_pkgConfig;

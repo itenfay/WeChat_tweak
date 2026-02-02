@@ -12,7 +12,6 @@
     CMessageWrap *_messageWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *messageWrap; // @synthesize messageWrap=_messageWrap;
 @property(nonatomic) __weak id <WCRedEnvelopesGetFullCoverInfoCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (unsigned long long)getCgiNewDNSBusinessType;

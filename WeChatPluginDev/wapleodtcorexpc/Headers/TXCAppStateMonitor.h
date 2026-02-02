@@ -21,7 +21,6 @@
 + (_Bool)isAppActive;
 + (void)start;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *activationCheckTimer; // @synthesize activationCheckTimer=_activationCheckTimer;
 @property _Bool isActive; // @synthesize isActive=_isActive;
 @property _Bool isInForeground; // @synthesize isInForeground=_isInForeground;

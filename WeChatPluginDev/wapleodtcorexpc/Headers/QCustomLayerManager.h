@@ -15,7 +15,6 @@
     QCustomLayerConfigData *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QCustomLayerConfigData *config; // @synthesize config=_config;
 @property(retain, nonatomic) NSMutableArray *layers; // @synthesize layers=_layers;
 @property(copy, nonatomic) NSString *businessKey; // @synthesize businessKey=_businessKey;

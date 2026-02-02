@@ -36,7 +36,6 @@
 + (void)PBArrayAdd_thumbUrl;
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_tvId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
 @property(nonatomic) _Bool isAutoplay; // @synthesize isAutoplay=_isAutoplay;
 @property(retain, nonatomic) NSMutableArray *actionLists; // @synthesize actionLists=_actionLists;

@@ -13,7 +13,6 @@
     AVPlayerLayer *_playerLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(nonatomic) unsigned int taskId; // @synthesize taskId=_taskId;
 - (void)setFrame:(struct CGRect)arg1;

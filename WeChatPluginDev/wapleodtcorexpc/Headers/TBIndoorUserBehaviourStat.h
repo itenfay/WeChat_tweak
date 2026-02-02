@@ -12,7 +12,6 @@
     NSMutableDictionary *_userBehaviourMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *userBehaviourMap; // @synthesize userBehaviourMap=_userBehaviourMap;
 - (void)increasePickerShowCount:(id)arg1;
 - (void)increaseCallActiveLevelAPICount:(id)arg1;

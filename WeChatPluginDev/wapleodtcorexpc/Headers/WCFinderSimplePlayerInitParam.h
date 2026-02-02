@@ -16,7 +16,6 @@
 }
 
 + (id)defaultParams;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *audioModuleGroupName; // @synthesize audioModuleGroupName=_audioModuleGroupName;
 @property(retain, nonatomic) UIColor *playerBackgroundColor; // @synthesize playerBackgroundColor=_playerBackgroundColor;
 @property(nonatomic) _Bool notShowDefaultThumb; // @synthesize notShowDefaultThumb=_notShowDefaultThumb;

@@ -11,7 +11,6 @@
     NSMutableArray *jsApis;
 }
 
-- (void).cxx_destruct;
 - (void)clear;
 - (id)executeArrayFunction:(id)arg1 withData:(id)arg2 withArgs:(id)arg3;
 - (id)executeStringFunction:(id)arg1 withData:(id)arg2 withArgs:(id)arg3;

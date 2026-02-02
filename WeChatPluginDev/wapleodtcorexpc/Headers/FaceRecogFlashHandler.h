@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVCaptureVideoPreviewLayer, CameraReflectDevice, FaceRecogAVRecorder, FaceRecogFlashParamProcessor, MMTimer, NSString;
 
 @interface FaceRecogFlashHandler
@@ -27,7 +29,6 @@
     struct CGRect _detectRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canShowNextTips; // @synthesize canShowNextTips=_canShowNextTips;
 @property(nonatomic) double tipsDuration; // @synthesize tipsDuration=_tipsDuration;
 @property(retain, nonatomic) MMTimer *tipsTimer; // @synthesize tipsTimer=_tipsTimer;
@@ -109,4 +110,3 @@
 @property(readonly) Class superclass;
 
 @end
-

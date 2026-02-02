@@ -13,7 +13,6 @@
     id <MJSegmentReusableViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MJSegmentReusableViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didEndDisplaying;
 - (void)willDisplay;

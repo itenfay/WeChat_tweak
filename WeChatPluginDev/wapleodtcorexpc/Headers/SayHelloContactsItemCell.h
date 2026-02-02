@@ -10,7 +10,6 @@
     ContactsItemView *_contactItemView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactsItemView *contactItemView; // @synthesize contactItemView=_contactItemView;
 - (void)setBackgroundColor:(id)arg1;
 - (id)accessibilityLabel;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, SightIconView, UIImageView, UILabel, UIView;
 
@@ -21,7 +22,6 @@
 
 + (double)cellHeight;
 + (id)reuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(retain, nonatomic) UILabel *sizeLabel; // @synthesize sizeLabel=_sizeLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -36,4 +36,3 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
-

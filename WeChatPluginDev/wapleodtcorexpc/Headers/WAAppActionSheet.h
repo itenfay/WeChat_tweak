@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSMutableArray, NSString, UIButton, UIImage, UILabel, UIView, UIVisualEffectView, WAContact;
 @protocol WAAppActionSheetDelegate;
 
@@ -32,7 +34,6 @@
     UIView *_parentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *parentView; // @synthesize parentView=_parentView;
 @property(retain, nonatomic) UILabel *headerTitleLabel; // @synthesize headerTitleLabel=_headerTitleLabel;
 @property(retain, nonatomic) UIButton *cancelBtn; // @synthesize cancelBtn=_cancelBtn;
@@ -80,4 +81,3 @@
 - (id)initWithUsrName:(id)arg1 appType:(unsigned long long)arg2 cancelButtonTitle:(id)arg3 destructiveButtonTitle:(id)arg4 buttonTitleArray:(id)arg5 delegate:(id)arg6;
 
 @end
-

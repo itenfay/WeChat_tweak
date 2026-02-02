@@ -17,7 +17,6 @@
     CMessageWrap *m_msg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bIsShareToChatRoom; // @synthesize m_bIsShareToChatRoom;
 @property(retain, nonatomic) CContact *m_contactShareToWho; // @synthesize m_contactShareToWho;
 @property(retain, nonatomic) CContact *m_contactToShare; // @synthesize m_contactToShare;

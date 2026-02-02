@@ -16,7 +16,6 @@
 
 + (id)imageNameWithItem:(id)arg1;
 + (id)titleWithItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *disabledTipText; // @synthesize disabledTipText=_disabledTipText;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;

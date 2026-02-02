@@ -16,7 +16,6 @@
 }
 
 + (double)cellHeightWith:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSearchContactCellContentView *cellContentView; // @synthesize cellContentView=_cellContentView;
 @property(retain, nonatomic) WCFinderSearchInfo *searchInfo; // @synthesize searchInfo=_searchInfo;
 @property(nonatomic) __weak id <WCFinderMoreLiveSearchContactCellDelegate> delegate; // @synthesize delegate=_delegate;

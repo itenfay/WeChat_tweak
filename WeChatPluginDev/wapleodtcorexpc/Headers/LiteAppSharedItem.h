@@ -14,7 +14,6 @@
     NSString *_minVersion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *minVersion; // @synthesize minVersion=_minVersion;
 @property(nonatomic) unsigned int sourceType; // @synthesize sourceType=_sourceType;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;

@@ -18,7 +18,6 @@
     MMImageBrowseView *_imageBrowseView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMImageBrowseView *imageBrowseView; // @synthesize imageBrowseView=_imageBrowseView;
 @property(retain, nonatomic) SightIconView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) MsgDataDownloadLogic *imageDownloadLogic; // @synthesize imageDownloadLogic=_imageDownloadLogic;

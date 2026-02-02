@@ -10,7 +10,6 @@
     NSMutableDictionary *m_resMap;
 }
 
-- (void).cxx_destruct;
 - (id)pathForResNamed:(id)arg1 withPID:(id)arg2;
 - (void)onPackageCancelFinish:(id)arg1;
 - (void)onPackageDownloadFinish:(id)arg1 package:(id)arg2;

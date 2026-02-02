@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveBriefMusicInfo, NSData, NSString;
 
 @interface WCFinderLiveAdjustBackgroundMusicCGI
@@ -21,7 +23,6 @@
     FinderLiveBriefMusicInfo *_song;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveBriefMusicInfo *song; // @synthesize song=_song;
 @property(nonatomic) unsigned int action; // @synthesize action=_action;
 @property(nonatomic) unsigned int curSongRatio; // @synthesize curSongRatio=_curSongRatio;
@@ -40,4 +41,3 @@
 - (id)initWithFinderUsername:(id)arg1 bizScene:(unsigned int)arg2 liveCookies:(id)arg3 liveId:(unsigned long long)arg4 objectId:(unsigned long long)arg5 curVolume:(unsigned int)arg6 curSongId:(unsigned int)arg7 curSongRatio:(unsigned int)arg8 action:(int)arg9 song:(id)arg10 successBlock:(CDUnknownBlockType)arg11 failBlock:(CDUnknownBlockType)arg12;
 
 @end
-

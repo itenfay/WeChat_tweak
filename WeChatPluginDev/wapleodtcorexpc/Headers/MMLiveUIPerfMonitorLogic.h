@@ -26,7 +26,6 @@
 
 + (id)getViewDesc:(id)arg1;
 + (id)getLayerAnimations:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPauseMonitor; // @synthesize isPauseMonitor=_isPauseMonitor;
 @property(retain, nonatomic) MMLiveBlurPerfStatisticResult *currBlurPerfStatResult; // @synthesize currBlurPerfStatResult=_currBlurPerfStatResult;
 @property(retain, nonatomic) NSMutableArray *blurPerfStatResultList; // @synthesize blurPerfStatResultList=_blurPerfStatResultList;

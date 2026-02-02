@@ -15,7 +15,6 @@
     struct CLLocationCoordinate2D _coordinate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *poiAddress; // @synthesize poiAddress=_poiAddress;
 @property(retain, nonatomic) NSString *poiName; // @synthesize poiName=_poiName;
 @property(retain, nonatomic) NSString *city; // @synthesize city=_city;

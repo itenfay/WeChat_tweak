@@ -17,7 +17,6 @@
     MMUIWindow *_fullScreenWindow;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIWindow *fullScreenWindow; // @synthesize fullScreenWindow=_fullScreenWindow;
 @property(nonatomic) double currentY; // @synthesize currentY=_currentY;
 @property(nonatomic) double descHeight; // @synthesize descHeight=_descHeight;

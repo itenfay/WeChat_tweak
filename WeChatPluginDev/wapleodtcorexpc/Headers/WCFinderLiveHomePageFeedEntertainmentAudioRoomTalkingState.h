@@ -12,7 +12,6 @@
     NSDictionary *_talkingStatusDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *talkingStatusDict; // @synthesize talkingStatusDict=_talkingStatusDict;
 
 @end

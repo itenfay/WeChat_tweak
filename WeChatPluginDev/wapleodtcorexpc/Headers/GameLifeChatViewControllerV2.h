@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CLLocation, GCBaseCellModel, GCBaseScrollView, GCCollectionView, GCCollectionViewManager, GCCollectionViewSectionModel, GCGroupSectionModel, GCGroupServer, GCMyGroupCellExpandBtnView, GCViewHolderCellModel, GameChatNoticeAndMessageView, GetCanJoinChatroomResponse, GetFirstEnterInfoResponse, GetMyChatroomResponse, MyChatroomNotice, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIButton, UIView;
 
 @interface GameLifeChatViewControllerV2
@@ -49,7 +51,6 @@
     long long _myGroupCollapseCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long myGroupCollapseCount; // @synthesize myGroupCollapseCount=_myGroupCollapseCount;
 @property(retain, nonatomic) GCMyGroupCellExpandBtnView *floatingExpandBtnView; // @synthesize floatingExpandBtnView=_floatingExpandBtnView;
 @property(retain, nonatomic) GCBaseCellModel *noticeCellModel; // @synthesize noticeCellModel=_noticeCellModel;
@@ -175,4 +176,3 @@
 @property(readonly) Class superclass;
 
 @end
-

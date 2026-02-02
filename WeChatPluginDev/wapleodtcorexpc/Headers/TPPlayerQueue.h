@@ -13,7 +13,6 @@
     NSObject<OS_dispatch_queue> *_playingQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *playingQueue; // @synthesize playingQueue=_playingQueue;
 - (void *)playingQueueKey;
 - (id)init;

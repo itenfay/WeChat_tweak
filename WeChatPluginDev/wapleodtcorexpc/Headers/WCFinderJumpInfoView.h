@@ -17,7 +17,6 @@
 }
 
 + (_Bool)shouldHiddenJumpInfoView:(id)arg1 playPos:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) int showPosition; // @synthesize showPosition=_showPosition;
 @property(retain, nonatomic) FinderJumpInfo_Style *style; // @synthesize style=_style;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;

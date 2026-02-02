@@ -16,7 +16,6 @@
     NSString *_thirdDetail;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *thirdDetail; // @synthesize thirdDetail=_thirdDetail;
 @property(copy, nonatomic) NSString *thirdTitle; // @synthesize thirdTitle=_thirdTitle;
 @property(copy, nonatomic) NSString *secondDetail; // @synthesize secondDetail=_secondDetail;

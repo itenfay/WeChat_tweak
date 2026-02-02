@@ -17,7 +17,6 @@
     MJSegmentFilterInspectorViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJSegmentFilterInspectorViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UIImageView *disableImageView; // @synthesize disableImageView=_disableImageView;
 @property(nonatomic) _Bool isCellSelected; // @synthesize isCellSelected=_isCellSelected;

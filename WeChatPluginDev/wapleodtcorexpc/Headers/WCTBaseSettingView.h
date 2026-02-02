@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSObject, NSString;
 
@@ -17,7 +18,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *cell; // @synthesize cell=_cell;
 @property(nonatomic) __weak id viewDelegate; // @synthesize viewDelegate=_viewDelegate;
 @property(copy, nonatomic) CDUnknownBlockType viewEventAction; // @synthesize viewEventAction=_viewEventAction;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

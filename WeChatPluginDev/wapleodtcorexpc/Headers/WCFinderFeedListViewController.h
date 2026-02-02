@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderAnimationLoadingView, WCFinderFeedArray, WCFinderFeedListView, WCFinderStreamLoadingState;
 
 @interface WCFinderFeedListViewController
@@ -17,7 +19,6 @@
     WCFinderAnimationLoadingView *_emptyLoadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *emptyLoadingView; // @synthesize emptyLoadingView=_emptyLoadingView;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) CDUnknownBlockType fetchMoreData; // @synthesize fetchMoreData=_fetchMoreData;
@@ -74,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

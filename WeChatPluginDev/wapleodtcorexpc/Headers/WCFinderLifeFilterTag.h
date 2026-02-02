@@ -19,7 +19,6 @@
     WCFinderLifeFilterTag *_parent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderLifeFilterTag *parent; // @synthesize parent=_parent;
 @property(nonatomic) long long level; // @synthesize level=_level;
 @property(nonatomic) unsigned long long defaultTagId; // @synthesize defaultTagId=_defaultTagId;

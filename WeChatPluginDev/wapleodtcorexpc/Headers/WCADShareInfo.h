@@ -13,7 +13,6 @@
     unsigned int memberCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int memberCount; // @synthesize memberCount;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName;
 - (id)init;

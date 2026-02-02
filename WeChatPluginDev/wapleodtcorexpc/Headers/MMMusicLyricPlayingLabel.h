@@ -13,7 +13,6 @@
     NSMutableArray *_lineMaskLayers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *lineMaskLayers; // @synthesize lineMaskLayers=_lineMaskLayers;
 @property(retain, nonatomic) CALayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 - (void)resume;

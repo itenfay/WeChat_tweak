@@ -23,7 +23,6 @@
     FTSIndexDynamicConfig *_ftsIndexDynamic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAutoRepairFtsMsgClose; // @synthesize isAutoRepairFtsMsgClose=_isAutoRepairFtsMsgClose;
 @property(nonatomic) _Bool isGlobalSearchOpenPardusSearch; // @synthesize isGlobalSearchOpenPardusSearch=_isGlobalSearchOpenPardusSearch;
 @property(nonatomic) _Bool isTopHitContainsWeApp; // @synthesize isTopHitContainsWeApp=_isTopHitContainsWeApp;

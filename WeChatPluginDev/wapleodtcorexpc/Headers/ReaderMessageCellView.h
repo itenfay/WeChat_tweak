@@ -22,7 +22,6 @@
 }
 
 + (id)itemValueLabelWithTitle:(id)arg1 width:(double)arg2 font:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) unsigned long long containerType; // @synthesize containerType=_containerType;
 @property(retain, nonatomic) NSMutableArray *cardCopyLines; // @synthesize cardCopyLines=_cardCopyLines;

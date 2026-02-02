@@ -16,7 +16,6 @@
     NSString *_tip;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int totalUnreadCount; // @synthesize totalUnreadCount=_totalUnreadCount;
 @property(nonatomic) unsigned int unreadCommentCount; // @synthesize unreadCommentCount=_unreadCommentCount;
 @property(nonatomic) unsigned int unreadLikeCount; // @synthesize unreadLikeCount=_unreadLikeCount;

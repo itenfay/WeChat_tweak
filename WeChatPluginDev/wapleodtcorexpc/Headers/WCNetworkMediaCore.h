@@ -22,7 +22,6 @@
     struct CGSize m_videoSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXAVPlayerView *playerView; // @synthesize playerView=_playerView;
 @property(nonatomic) _Bool m_isNeedRestartMusic; // @synthesize m_isNeedRestartMusic;
 @property(readonly, nonatomic) int state; // @synthesize state=m_state;

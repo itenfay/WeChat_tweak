@@ -14,7 +14,6 @@
     NSString *_timelineSessionID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *timelineSessionID; // @synthesize timelineSessionID=_timelineSessionID;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
 - (id)generateLogStringWithOperation:(id)arg1;

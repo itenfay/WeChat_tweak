@@ -13,7 +13,6 @@
 }
 
 + (double)contentHeight;
-- (void).cxx_destruct;
 - (void)onSearchPlaceHolderUpdate:(id)arg1;
 - (void)refreshSearchPlaceHolder:(id)arg1;
 - (void)layoutSubviews;

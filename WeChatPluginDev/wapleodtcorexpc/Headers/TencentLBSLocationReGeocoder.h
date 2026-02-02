@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSThread;
 
@@ -23,7 +24,6 @@
 + (void)getLevelZeroWithJSONObject:(id)arg1 tencentLocation:(id)arg2;
 + (void)getLevelThreeSubWithJSONObject:(id)arg1 tencentLocation:(id)arg2;
 + (id)getPoiWithJSONObject:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSThread *runThread; // @synthesize runThread=_runThread;
 - (_Bool)reGeocoderWithParameter:(id)arg1 withMaxTimeout:(double)arg2 coordinateType:(unsigned long long)arg3 compeltionBlock:(CDUnknownBlockType)arg4;
 - (int)getWlanUseWithDict:(id)arg1 withDef:(int)arg2;
@@ -35,4 +35,3 @@
 - (id)initWithRunThread:(id)arg1;
 
 @end
-

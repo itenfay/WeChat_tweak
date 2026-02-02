@@ -26,7 +26,6 @@
 
 + (id)decoratorViewWith:(id)arg1 header:(_Bool)arg2 width:(double)arg3 delegate:(id)arg4;
 + (void)updateExtraSection:(id)arg1 dic:(id)arg2 delegate:(id)arg3;
-- (void).cxx_destruct;
 @property _Bool isAgreedWithProtocol; // @synthesize isAgreedWithProtocol=_isAgreedWithProtocol;
 @property _Bool shouldUpdateWhenAppear; // @synthesize shouldUpdateWhenAppear=_shouldUpdateWhenAppear;
 @property(retain) WCPayTransferPhoneProtocalHalfPage *protocolHalfPage; // @synthesize protocolHalfPage=_protocolHalfPage;

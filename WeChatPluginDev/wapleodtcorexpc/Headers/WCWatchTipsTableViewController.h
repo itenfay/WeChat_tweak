@@ -12,7 +12,6 @@
     MMTableView *_mainTableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *mainTableView; // @synthesize mainTableView=_mainTableView;
 @property(retain, nonatomic) NSTimer *animationTimer; // @synthesize animationTimer=_animationTimer;
 @property(retain, nonatomic) NSArray *tips; // @synthesize tips=_tips;

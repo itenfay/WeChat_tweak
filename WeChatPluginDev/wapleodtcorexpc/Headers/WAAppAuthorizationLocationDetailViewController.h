@@ -17,7 +17,6 @@
     NSString *_locationAddressText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *locationAddressText; // @synthesize locationAddressText=_locationAddressText;
 @property(retain, nonatomic) MMLocatingCoordinateLogic *locatingLogic; // @synthesize locatingLogic=_locatingLogic;
 @property(retain, nonatomic) LocationRetriever *locationRetriever; // @synthesize locationRetriever=_locationRetriever;

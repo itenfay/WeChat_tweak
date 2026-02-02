@@ -14,7 +14,6 @@
     NSHashTable *_downloadOperations;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *downloadOperations; // @synthesize downloadOperations=_downloadOperations;
 @property(nonatomic) __weak id downloadOperationCancelToken; // @synthesize downloadOperationCancelToken=_downloadOperationCancelToken;
 @property(nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;

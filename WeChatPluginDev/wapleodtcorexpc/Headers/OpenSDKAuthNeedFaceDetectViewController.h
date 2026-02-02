@@ -28,7 +28,6 @@
 }
 
 + (_Bool)isFaceDetectInfoValid:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FaceRecogPrivateVerifyHandler *faceHandler; // @synthesize faceHandler=_faceHandler;
 @property(retain, nonatomic) MMURLHandler *urlHandler; // @synthesize urlHandler=_urlHandler;
 @property(retain, nonatomic) AuthorizeCheckBox *checkBox; // @synthesize checkBox=_checkBox;

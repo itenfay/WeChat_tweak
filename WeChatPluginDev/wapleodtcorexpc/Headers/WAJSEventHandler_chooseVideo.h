@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CaptureVideoInfo, MMLoadingView, NSString, UINavigationController;
 
 @interface WAJSEventHandler_chooseVideo
@@ -17,7 +19,6 @@
     _Bool _isCompressed;
 }
 
-- (void).cxx_destruct;
 - (void)setVideoPreviewHidden:(_Bool)arg1 inPicker:(id)arg2;
 - (void)asyncHandleCancel;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -20,7 +20,6 @@
 + (double)calcHeightForCanvasItem:(id)arg1 withMaxWidth:(double)arg2 advertiseInfo:(id)arg3 orientation:(long long)arg4;
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
 + (id)componentWithItemInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *bgButton; // @synthesize bgButton=_bgButton;
 @property(nonatomic) __weak id <WCCanvasComponentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;

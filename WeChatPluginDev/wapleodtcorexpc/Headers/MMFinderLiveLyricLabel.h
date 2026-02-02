@@ -10,7 +10,6 @@
     MMFinderLiveKSKitLyricWord *_lyricWord;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveKSKitLyricWord *lyricWord; // @synthesize lyricWord=_lyricWord;
 
 @end

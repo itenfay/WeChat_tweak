@@ -4,15 +4,14 @@
 //
 
 #import <UIKit/UIAlertController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCWebViewAlertController : UIAlertController
 {
     CDUnknownBlockType _completionHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void)dealloc;
 
 @end
-

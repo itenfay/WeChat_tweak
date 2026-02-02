@@ -14,7 +14,6 @@
     unsigned long long _maxLine;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxLine; // @synthesize maxLine=_maxLine;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSString *topic; // @synthesize topic=_topic;

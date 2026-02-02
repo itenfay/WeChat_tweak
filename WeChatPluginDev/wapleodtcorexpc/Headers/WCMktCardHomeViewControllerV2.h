@@ -11,7 +11,6 @@
     MMTableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) WCMktCardHomeLogicControllerV2 *logicController; // @synthesize logicController=_logicController;
 - (void)registerYReportSdk;

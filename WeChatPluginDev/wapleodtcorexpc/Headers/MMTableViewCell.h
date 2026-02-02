@@ -20,7 +20,6 @@
 + (id)getCellAttributeDetailTextHightlightedColor;
 + (id)getCellAttributeTextHightlightedColor;
 + (id)getCellTextHightlightedColor;
-- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets selectedBackgroundViewInsets; // @synthesize selectedBackgroundViewInsets=_selectedBackgroundViewInsets;
 @property(nonatomic) _Bool keepTouchInView; // @synthesize keepTouchInView=_keepTouchInView;
 @property(nonatomic) double deselectDuration; // @synthesize deselectDuration=_deselectDuration;

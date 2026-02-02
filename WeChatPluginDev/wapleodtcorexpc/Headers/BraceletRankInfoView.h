@@ -26,7 +26,6 @@
     DeviceBrandJumpInfo *_jumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DeviceBrandJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(nonatomic) __weak MMUIViewController *parentVC; // @synthesize parentVC=_parentVC;
 @property(retain, nonatomic) BraceletRankLikeButton *likeButton; // @synthesize likeButton=_likeButton;

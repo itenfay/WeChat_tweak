@@ -18,7 +18,6 @@
     unsigned long long _hitAndReadyCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMulinstance; // @synthesize isMulinstance=_isMulinstance;
 @property(nonatomic) int maxPreloadCount; // @synthesize maxPreloadCount=_maxPreloadCount;
 @property(nonatomic) unsigned long long hitAndReadyCount; // @synthesize hitAndReadyCount=_hitAndReadyCount;

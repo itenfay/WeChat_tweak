@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_imageTaskIDs;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *imageTaskIDs; // @synthesize imageTaskIDs=_imageTaskIDs;
 - (id)getPBPropertyTable;
 

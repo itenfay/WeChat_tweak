@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)inVisibleOnRecently;
 - (float)animationCutLinePosition;
 - (_Bool)forceShowInLightMode;

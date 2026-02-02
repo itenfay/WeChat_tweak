@@ -13,7 +13,6 @@
     MISSING_TYPE *_feedContentVM;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) WCFinderFeedContentVM *feedContentVM;
 @property(nonatomic, copy) NSString *exportId;

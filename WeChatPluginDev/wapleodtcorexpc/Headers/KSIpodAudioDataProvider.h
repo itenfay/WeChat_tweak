@@ -12,7 +12,6 @@
     NSArray *_fileTypes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *fileTypes; // @synthesize fileTypes=_fileTypes;
 - (void)exportdidComplete;
 - (id)mimeType;

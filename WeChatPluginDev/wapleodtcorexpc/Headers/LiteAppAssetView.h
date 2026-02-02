@@ -42,7 +42,6 @@
     NSMutableArray *_accessibleElements;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *accessibleElements; // @synthesize accessibleElements=_accessibleElements;
 @property(retain, nonatomic) WCLivePhotoButtonModel *livePhotoButtonModel; // @synthesize livePhotoButtonModel=_livePhotoButtonModel;
 @property(retain, nonatomic) WCLivePhotoButton *livePhotoButton; // @synthesize livePhotoButton=_livePhotoButton;

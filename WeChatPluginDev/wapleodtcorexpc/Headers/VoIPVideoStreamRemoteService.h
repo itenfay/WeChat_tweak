@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSRecursiveLock, NSString;
 
 @interface VoIPVideoStreamRemoteService
@@ -15,7 +17,6 @@
     NSRecursiveLock *_releaseRecursiveLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *releaseRecursiveLock; // @synthesize releaseRecursiveLock=_releaseRecursiveLock;
 @property(nonatomic) _Bool isTalking; // @synthesize isTalking=_isTalking;
 @property(nonatomic) _Bool isWorking; // @synthesize isWorking=_isWorking;
@@ -68,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

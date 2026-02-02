@@ -16,7 +16,6 @@
     unsigned long long _m_uploadId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_uploadId; // @synthesize m_uploadId=_m_uploadId;
 @property(nonatomic) unsigned int m_totalPackage; // @synthesize m_totalPackage=_m_totalPackage;
 @property(nonatomic) unsigned int m_packageIndex; // @synthesize m_packageIndex=_m_packageIndex;

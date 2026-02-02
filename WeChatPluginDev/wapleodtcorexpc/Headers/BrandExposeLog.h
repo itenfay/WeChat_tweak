@@ -19,7 +19,6 @@
     NSString *_idx;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isClicked; // @synthesize isClicked=_isClicked;
 @property(nonatomic) _Bool isRedDot; // @synthesize isRedDot=_isRedDot;
 @property(nonatomic) _Bool isTop; // @synthesize isTop=_isTop;

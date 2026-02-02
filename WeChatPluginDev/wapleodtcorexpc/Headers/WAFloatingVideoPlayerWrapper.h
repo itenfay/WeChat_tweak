@@ -15,7 +15,6 @@
     id <WAStreamPlayerInterface> _videoPlayerView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAStreamPlayerInterface> videoPlayerView; // @synthesize videoPlayerView=_videoPlayerView;
 @property(nonatomic) _Bool originHideCoverMask; // @synthesize originHideCoverMask=_originHideCoverMask;
 @property(nonatomic) unsigned int originControlParam; // @synthesize originControlParam=_originControlParam;

@@ -13,7 +13,6 @@
 
 + (_Bool)haveGameAppRunningInBackground;
 + (_Bool)shouldAllowPreloadByMoment:(unsigned int)arg1 jitMode:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long wkFeatureVersion; // @synthesize wkFeatureVersion=_wkFeatureVersion;
 @property(retain, nonatomic) WAPreloadAppTask *preloadTask; // @synthesize preloadTask=_preloadTask;
 - (void)resetDelayReleasePreloadTask;

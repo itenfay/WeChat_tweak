@@ -16,7 +16,6 @@
     UIView *m_headerView;
 }
 
-- (void).cxx_destruct;
 - (void)hideSubViews;
 - (void)updateWithLbsContactInfo:(id)arg1 withHeaderView:(id)arg2;
 - (void)initSubviews;

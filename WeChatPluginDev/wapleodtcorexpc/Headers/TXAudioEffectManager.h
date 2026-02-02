@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 @protocol TXAudioEffectManagerDelegate;
@@ -16,7 +17,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TXAudioEffectManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSMutableArray *effectIds; // @synthesize effectIds=_effectIds;
 - (void)resumeAudioEffect:(int)arg1;
@@ -71,4 +71,3 @@
 - (id)initWithEffectManager:(shared_ptr_08ab110d)arg1;
 
 @end
-

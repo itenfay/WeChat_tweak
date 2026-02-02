@@ -10,7 +10,6 @@
     id <FaceRecogBindVideoLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FaceRecogBindVideoLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)handleBindVideo:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

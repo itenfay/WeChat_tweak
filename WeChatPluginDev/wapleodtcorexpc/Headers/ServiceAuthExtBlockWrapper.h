@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface ServiceAuthExtBlockWrapper : NSObject
 {
@@ -12,10 +13,8 @@
     CDUnknownBlockType _onCancelServiceAuthBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onCancelServiceAuthBlock; // @synthesize onCancelServiceAuthBlock=_onCancelServiceAuthBlock;
 @property(copy, nonatomic) CDUnknownBlockType onCloseServiceBlock; // @synthesize onCloseServiceBlock=_onCloseServiceBlock;
 @property(copy, nonatomic) CDUnknownBlockType onOpenServiceBlock; // @synthesize onOpenServiceBlock=_onOpenServiceBlock;
 
 @end
-

@@ -24,7 +24,6 @@
     unsigned long long _keepAliveSeconds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long keepAliveSeconds; // @synthesize keepAliveSeconds=_keepAliveSeconds;
 @property(copy, nonatomic) NSString *minVersion; // @synthesize minVersion=_minVersion;
 @property(nonatomic) _Bool syncCheckUpdate; // @synthesize syncCheckUpdate=_syncCheckUpdate;

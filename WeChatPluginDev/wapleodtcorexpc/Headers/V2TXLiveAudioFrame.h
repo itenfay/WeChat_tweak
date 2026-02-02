@@ -14,7 +14,6 @@
     NSData *_data;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int channel; // @synthesize channel=_channel;
 @property(nonatomic) int sampleRate; // @synthesize sampleRate=_sampleRate;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;

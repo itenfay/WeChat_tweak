@@ -13,7 +13,6 @@
     NSString *_numberRequestParams;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *numberRequestParams; // @synthesize numberRequestParams=_numberRequestParams;
 @property(copy, nonatomic) NSString *numberDefaultTitle; // @synthesize numberDefaultTitle=_numberDefaultTitle;
 

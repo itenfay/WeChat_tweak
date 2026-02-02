@@ -18,7 +18,6 @@
     UIView *_barragePreviewDescView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool autoLoopAnimation; // @synthesize autoLoopAnimation=_autoLoopAnimation;
 @property(retain, nonatomic) UIView *barragePreviewDescView; // @synthesize barragePreviewDescView=_barragePreviewDescView;
 @property(retain, nonatomic) MMFinderLiveSFBarrageCellView *barragePreviewView; // @synthesize barragePreviewView=_barragePreviewView;

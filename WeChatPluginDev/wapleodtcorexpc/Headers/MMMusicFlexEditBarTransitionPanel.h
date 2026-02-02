@@ -25,7 +25,6 @@
     MMUIButton *_replayBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *replayBtn; // @synthesize replayBtn=_replayBtn;
 @property(retain, nonatomic) MMUIButton *doneBtn; // @synthesize doneBtn=_doneBtn;
 @property(retain, nonatomic) MMUIButton *cancelBtn; // @synthesize cancelBtn=_cancelBtn;

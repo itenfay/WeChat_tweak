@@ -42,7 +42,6 @@
 }
 
 + (unsigned long long)headerContentFlagByContentVM:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMaskButton *modFeedButton; // @synthesize modFeedButton=_modFeedButton;
 @property(retain, nonatomic) WCFinderCommentTranslateView *translateView; // @synthesize translateView=_translateView;
 @property(retain, nonatomic) WCFinderCommentHeatUpTipsView *heatUpTipsView; // @synthesize heatUpTipsView=_heatUpTipsView;

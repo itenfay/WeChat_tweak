@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoIPMPSystemAuthNativeAPICallback *callback; // @synthesize callback=_callback;
 - (void)requestAsync:(unsigned long long)arg1 type:(int)arg2;
 - (void)requestCameraAsync:(unsigned long long)arg1;

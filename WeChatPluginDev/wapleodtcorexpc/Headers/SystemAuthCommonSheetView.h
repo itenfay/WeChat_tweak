@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class SystemAuthBizInfo, _TtC6WeChat24SystemAuthCapabilityInfo;
 
 @interface SystemAuthCommonSheetView
@@ -15,7 +17,6 @@
     SystemAuthBizInfo *_bizInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isComplete; // @synthesize isComplete=_isComplete;
 @property(retain, nonatomic) SystemAuthBizInfo *bizInfo; // @synthesize bizInfo=_bizInfo;
 @property(retain, nonatomic) _TtC6WeChat24SystemAuthCapabilityInfo *capabilityInfo; // @synthesize capabilityInfo=_capabilityInfo;
@@ -27,4 +28,3 @@
 - (id)initWithAuthCapability:(unsigned int)arg1 scene:(unsigned long long)arg2;
 
 @end
-

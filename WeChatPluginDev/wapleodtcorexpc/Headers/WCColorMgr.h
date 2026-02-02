@@ -20,7 +20,6 @@
 + (_Bool)isUsingSpecialConfig;
 + (id)sharedInstance;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentType; // @synthesize currentType=_currentType;
 @property(retain, nonatomic) NSMutableDictionary *colorDic; // @synthesize colorDic=_colorDic;
 - (id)hexStringToColor:(id)arg1;

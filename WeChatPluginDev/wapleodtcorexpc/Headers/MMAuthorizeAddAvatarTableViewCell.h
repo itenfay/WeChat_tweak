@@ -16,7 +16,6 @@
 }
 
 + (double)cellHeightForWidth:(double)arg1 wording:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *separateLine; // @synthesize separateLine=_separateLine;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *addIconView; // @synthesize addIconView=_addIconView;

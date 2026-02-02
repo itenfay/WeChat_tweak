@@ -10,7 +10,6 @@
     WCCardTipItem *_wcCardTip;
 }
 
-- (void).cxx_destruct;
 - (void)saveWCCardTipStg;
 - (id)GetPathOfWCCardTipStorage;
 - (id)getCardTip;

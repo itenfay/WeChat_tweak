@@ -34,7 +34,6 @@
 + (id)defaultParamsFromVC:(id)arg1 dataItem:(id)arg2;
 + (id)defaultParamsFromVC:(id)arg1 contactVM:(id)arg2;
 + (id)defaultParamsFromVC:(id)arg1 contact:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableInteractiveToMinimizeWindow; // @synthesize disableInteractiveToMinimizeWindow=_disableInteractiveToMinimizeWindow;
 @property(retain, nonatomic) NSString *gameClientParams; // @synthesize gameClientParams=_gameClientParams;
 @property(retain, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;

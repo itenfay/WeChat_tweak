@@ -21,7 +21,6 @@
 }
 
 + (id)getEmojiParams;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *sharedIsolateMode; // @synthesize sharedIsolateMode=_sharedIsolateMode;
 @property(retain, nonatomic) NSString *routeJson; // @synthesize routeJson=_routeJson;
 @property(nonatomic) _Bool needGeneratedPlugin; // @synthesize needGeneratedPlugin=_needGeneratedPlugin;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableDictionary, WCFinderGlobalWordingIconConfig;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)generatorGroupConfig;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *serverFieldSetterMap; // @synthesize serverFieldSetterMap=_serverFieldSetterMap;
 @property(copy, nonatomic) CDUnknownBlockType globalConfigSetter; // @synthesize globalConfigSetter=_globalConfigSetter;
 @property(retain, nonatomic) WCFinderGlobalWordingIconConfig *globalConfig; // @synthesize globalConfig=_globalConfig;
@@ -26,4 +26,3 @@
 - (void)doSomethingMagicLogic;
 
 @end
-

@@ -22,7 +22,6 @@
     NSMutableDictionary *_liveAutoPlayControlFlagDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *liveAutoPlayControlFlagDict; // @synthesize liveAutoPlayControlFlagDict=_liveAutoPlayControlFlagDict;
 @property(retain, nonatomic) NSMutableDictionary *liveShareStatusRefreshIntevalDict; // @synthesize liveShareStatusRefreshIntevalDict=_liveShareStatusRefreshIntevalDict;
 @property(retain, nonatomic) NSMutableDictionary *liveTabPrefetchTimeDict; // @synthesize liveTabPrefetchTimeDict=_liveTabPrefetchTimeDict;

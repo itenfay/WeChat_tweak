@@ -11,7 +11,6 @@
     NSMutableDictionary *_dicPeriodDataMemoryStore;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicPeriodDataMemoryStore; // @synthesize dicPeriodDataMemoryStore=_dicPeriodDataMemoryStore;
 @property(retain, nonatomic) NSMutableDictionary *dicPrefechDataMemoryStore; // @synthesize dicPrefechDataMemoryStore=_dicPrefechDataMemoryStore;
 - (void)cleanPeriodFetchDataCache:(id)arg1;

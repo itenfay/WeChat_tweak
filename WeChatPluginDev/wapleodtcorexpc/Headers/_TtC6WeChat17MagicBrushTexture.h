@@ -19,7 +19,6 @@
     MISSING_TYPE *danger_control;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (_Bool)setFlutterCanvasMaxFps:(_Bool)arg1 duration:(int)arg2;
 - (struct __CVBuffer *)copyPixelBuffer;

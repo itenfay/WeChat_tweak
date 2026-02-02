@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithPayPackage:(id)arg1 miniShopAppId:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *miniShopAppId; // @synthesize miniShopAppId=_miniShopAppId;
 @property(copy, nonatomic) NSString *payPackage; // @synthesize payPackage=_payPackage;
 - (id)toList;

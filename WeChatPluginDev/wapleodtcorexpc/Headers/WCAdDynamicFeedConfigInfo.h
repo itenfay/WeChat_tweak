@@ -14,7 +14,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *templateId; // @synthesize templateId=_templateId;
 @property(nonatomic) long long version; // @synthesize version=_version;
 - (id)initWithCoder:(id)arg1;

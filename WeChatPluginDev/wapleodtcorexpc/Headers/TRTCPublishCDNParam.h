@@ -15,7 +15,6 @@
     NSString *_streamId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *streamId; // @synthesize streamId=_streamId;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(nonatomic) int bizId; // @synthesize bizId=_bizId;

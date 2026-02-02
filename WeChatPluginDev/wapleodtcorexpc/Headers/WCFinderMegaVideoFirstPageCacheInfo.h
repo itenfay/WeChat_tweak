@@ -35,7 +35,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cacheIndex; // @synthesize cacheIndex=_cacheIndex;
 @property(nonatomic) unsigned long long pageType; // @synthesize pageType=_pageType;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;

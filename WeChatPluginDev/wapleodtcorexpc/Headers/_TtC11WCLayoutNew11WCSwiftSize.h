@@ -13,7 +13,6 @@
     MISSING_TYPE *height;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithWidth:(double)arg1 height:(double)arg2;
 - (id)initWithSize:(struct CGSize)arg1;

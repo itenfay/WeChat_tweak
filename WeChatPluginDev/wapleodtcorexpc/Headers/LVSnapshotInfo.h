@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithImageBytes:(id)arg1 x:(id)arg2 y:(id)arg3 width:(id)arg4 height:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *height; // @synthesize height=_height;
 @property(retain, nonatomic) NSNumber *width; // @synthesize width=_width;
 @property(retain, nonatomic) NSNumber *y; // @synthesize y=_y;

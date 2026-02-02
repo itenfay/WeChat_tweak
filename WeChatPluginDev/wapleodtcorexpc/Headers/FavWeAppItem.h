@@ -23,7 +23,6 @@
     NSString *_messageExtraData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int subType; // @synthesize subType=_subType;
 @property(copy, nonatomic) NSString *messageExtraData; // @synthesize messageExtraData=_messageExtraData;
 @property(nonatomic) unsigned int flagshipFlag; // @synthesize flagshipFlag=_flagshipFlag;

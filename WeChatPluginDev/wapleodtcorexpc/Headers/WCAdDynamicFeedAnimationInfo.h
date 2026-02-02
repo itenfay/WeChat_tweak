@@ -19,7 +19,6 @@
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *modifiedProperty; // @synthesize modifiedProperty=_modifiedProperty;
 @property(retain, nonatomic) NSString *commonInterpolator; // @synthesize commonInterpolator=_commonInterpolator;
 @property(nonatomic) double commonDuration; // @synthesize commonDuration=_commonDuration;

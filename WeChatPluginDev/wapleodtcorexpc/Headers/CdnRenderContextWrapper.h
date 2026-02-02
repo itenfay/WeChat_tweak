@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CdnOpenGLContext, CdnRciContext, EAGLContext;
 
@@ -15,7 +16,6 @@
     CdnRciContext *_cdnRciContext;
 }
 
-- (void).cxx_destruct;
 @property _Bool glContextUsed; // @synthesize glContextUsed=_glContextUsed;
 @property(retain) CdnRciContext *cdnRciContext; // @synthesize cdnRciContext=_cdnRciContext;
 @property(retain) CdnOpenGLContext *cdnGLContext; // @synthesize cdnGLContext=_cdnGLContext;
@@ -30,4 +30,3 @@
 - (id)initWithCdnGLContext:(id)arg1;
 
 @end
-

@@ -10,7 +10,6 @@
     MMFinderLiveFeedStreamConnectMicUserInfoView *_micContainerView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveFeedStreamConnectMicUserInfoView *micContainerView; // @synthesize micContainerView=_micContainerView;
 - (void)updateMicUserHeatValuesInMicInfo:(id)arg1;
 - (void)updateMicUsersInMicInfo:(id)arg1;

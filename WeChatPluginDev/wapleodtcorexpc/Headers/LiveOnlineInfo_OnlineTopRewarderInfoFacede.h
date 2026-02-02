@@ -13,7 +13,6 @@
     LiveOnlineInfo_OnlineTopRewarderInfo *_onlineTopRewarderInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hiddenAvatar; // @synthesize hiddenAvatar=_hiddenAvatar;
 @property(retain, nonatomic) LiveOnlineInfo_OnlineTopRewarderInfo *onlineTopRewarderInfo; // @synthesize onlineTopRewarderInfo=_onlineTopRewarderInfo;
 

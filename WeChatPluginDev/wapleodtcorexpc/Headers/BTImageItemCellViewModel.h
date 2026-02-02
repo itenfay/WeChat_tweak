@@ -11,7 +11,6 @@
 }
 
 + (_Bool)canCreateViewModelWithReaderWrap:(id)arg1 msgWrap:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *picUrls; // @synthesize picUrls=_picUrls;
 - (unsigned long long)picNum;
 @property(readonly, nonatomic) NSString *digestStr;

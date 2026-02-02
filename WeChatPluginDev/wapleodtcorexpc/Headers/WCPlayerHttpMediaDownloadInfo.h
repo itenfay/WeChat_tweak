@@ -19,7 +19,6 @@
     WCPlayerHttpMediaWrap *_mediaWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerHttpMediaWrap *mediaWrap; // @synthesize mediaWrap=_mediaWrap;
 @property(retain, nonatomic) NSString *nsIdentifier; // @synthesize nsIdentifier=_nsIdentifier;
 @property(nonatomic) float duration; // @synthesize duration=_duration;

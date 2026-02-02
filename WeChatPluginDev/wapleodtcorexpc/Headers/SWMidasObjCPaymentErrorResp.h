@@ -16,7 +16,6 @@
     MISSING_TYPE *innerError;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 @property(nonatomic, readonly) NSError *innerError;

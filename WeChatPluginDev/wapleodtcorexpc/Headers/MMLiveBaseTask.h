@@ -43,7 +43,6 @@
     NSMutableArray *_connectMicUserInfoListFromAnchorSEIMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *connectMicUserInfoListFromAnchorSEIMsg; // @synthesize connectMicUserInfoListFromAnchorSEIMsg=_connectMicUserInfoListFromAnchorSEIMsg;
 @property(retain, nonatomic) NSMutableDictionary *currentCommentVMStateDic; // @synthesize currentCommentVMStateDic=_currentCommentVMStateDic;
 @property(nonatomic) _Bool isAllowShowAudioRoomAnchorLocation; // @synthesize isAllowShowAudioRoomAnchorLocation=_isAllowShowAudioRoomAnchorLocation;

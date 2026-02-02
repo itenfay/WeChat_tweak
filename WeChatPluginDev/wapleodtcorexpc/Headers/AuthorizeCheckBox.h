@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIImageView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface AuthorizeCheckBox : UIImageView
 {
@@ -11,7 +12,6 @@
     CDUnknownBlockType _selectBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType selectBlock; // @synthesize selectBlock=_selectBlock;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
@@ -21,4 +21,3 @@
 - (id)init;
 
 @end
-

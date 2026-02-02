@@ -14,7 +14,6 @@
     NSString *_appMsg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int pollTime; // @synthesize pollTime=_pollTime;
 @property(copy, nonatomic) NSString *appMsg; // @synthesize appMsg=_appMsg;
 @property(copy, nonatomic) NSString *ackKey; // @synthesize ackKey=_ackKey;

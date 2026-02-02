@@ -12,7 +12,6 @@
     NSMutableDictionary *_runningCgiMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *runningCgiMap; // @synthesize runningCgiMap=_runningCgiMap;
 - (void)request:(int)arg1 url:(id)arg2 reqText:(id)arg3 reqTextWx:(id)arg4 callback:(id)arg5;
 - (id)init;

@@ -12,7 +12,6 @@
 }
 
 + (id)dictionForBannerSet:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) StoreEmoticonTopicProxyLogic *proxyLogic; // @synthesize proxyLogic=_proxyLogic;
 - (void)endWithFail;
 - (void)endWithOk;

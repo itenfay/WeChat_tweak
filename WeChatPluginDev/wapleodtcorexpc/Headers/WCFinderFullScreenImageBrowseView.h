@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage, UIImageView, UIScrollView, WCFinderAnimationLoadingView, WXFullScreenGestureRecognizer;
 
@@ -19,7 +20,6 @@
 
 + (void)showInWindow:(id)arg1 imageURL:(id)arg2 dismissBlock:(CDUnknownBlockType)arg3;
 + (void)showInViewController:(id)arg1 imageURL:(id)arg2 dismissBlock:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(copy, nonatomic) CDUnknownBlockType dismissBlock; // @synthesize dismissBlock=_dismissBlock;
 @property(retain, nonatomic) WXFullScreenGestureRecognizer *fullScreenGestrure; // @synthesize fullScreenGestrure=_fullScreenGestrure;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

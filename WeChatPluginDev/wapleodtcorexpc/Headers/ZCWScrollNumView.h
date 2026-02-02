@@ -31,7 +31,6 @@
 
 + (id)dotImageWithColor:(id)arg1 width:(double)arg2 height:(double)arg3;
 + (unsigned long long)digitFromNum:(unsigned long long)arg1 withIndex:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IZCWScrollNumViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(nonatomic) _Bool isNeedShowMaskView; // @synthesize isNeedShowMaskView=_isNeedShowMaskView;

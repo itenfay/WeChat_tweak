@@ -15,7 +15,6 @@
     NewLifePostRouter *_router;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifePostRouter *router; // @synthesize router=_router;
 @property(retain, nonatomic) UIViewController *fromViewContrller; // @synthesize fromViewContrller=_fromViewContrller;
 @property(retain, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;

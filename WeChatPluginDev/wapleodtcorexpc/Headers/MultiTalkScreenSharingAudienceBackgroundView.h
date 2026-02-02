@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MultiTalkHDHeadView, NSString, UIButton, UIImageView, UILabel;
 
@@ -26,7 +27,6 @@
     CAGradientLayer *_topBarGradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *topBarGradientLayer; // @synthesize topBarGradientLayer=_topBarGradientLayer;
 @property(copy, nonatomic) CDUnknownBlockType orientationButtonCallback; // @synthesize orientationButtonCallback=_orientationButtonCallback;
 @property(nonatomic) _Bool isLandscapeSupport; // @synthesize isLandscapeSupport=_isLandscapeSupport;
@@ -61,4 +61,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 shouldSupportTapGesture:(_Bool)arg2;
 
 @end
-

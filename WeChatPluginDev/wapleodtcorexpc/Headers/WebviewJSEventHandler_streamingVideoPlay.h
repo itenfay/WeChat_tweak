@@ -14,7 +14,6 @@
     _Bool m_needHiddenMoreMenu;
 }
 
-- (void).cxx_destruct;
 - (_Bool)needHiddenMoreMenu;
 - (void)onShareVideoToTimeline:(_Bool)arg1;
 - (void)onCancelShareVideoToFriend;

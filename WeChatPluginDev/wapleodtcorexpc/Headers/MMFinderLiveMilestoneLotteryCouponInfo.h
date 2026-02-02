@@ -18,7 +18,6 @@
     NSData *_jumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int status; // @synthesize status=_status;
 @property(retain, nonatomic) NSData *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(retain, nonatomic) NSString *expireDesc; // @synthesize expireDesc=_expireDesc;

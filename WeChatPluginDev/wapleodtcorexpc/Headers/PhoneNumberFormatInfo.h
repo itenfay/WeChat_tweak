@@ -12,7 +12,6 @@
     NSString *formatRegex;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *formatRegex; // @synthesize formatRegex;
 @property(retain, nonatomic) NSString *pattern; // @synthesize pattern;
 @property(retain, nonatomic) NSString *leadingDigitsRegex; // @synthesize leadingDigitsRegex;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCCommentObject;
 @protocol WCCommentDataServiceDelegate;
@@ -18,7 +19,6 @@
 
 + (void)updateFinderComment:(id)arg1 withSelectedFlag:(_Bool)arg2 isDislike:(_Bool)arg3 entityId:(id)arg4;
 + (void)commentLikeChangedWithCommentObject:(id)arg1 scene:(unsigned long long)arg2 selectedFlag:(_Bool)arg3 isDislike:(_Bool)arg4 comment:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failureBlock:(CDUnknownBlockType)arg7;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCommentDataServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long commentAndLikeScene; // @synthesize commentAndLikeScene=_commentAndLikeScene;
 @property(nonatomic) unsigned long long pullScene; // @synthesize pullScene=_pullScene;
@@ -35,4 +35,3 @@
 - (void)getCommentWithLastBuffer:(id)arg1 refCommentId:(unsigned long long)arg2 direction:(int)arg3 successBlock:(CDUnknownBlockType)arg4 failureBlock:(CDUnknownBlockType)arg5;
 
 @end
-

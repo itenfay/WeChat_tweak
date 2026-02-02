@@ -13,7 +13,6 @@
     unsigned long long _processCount;
 }
 
-- (void).cxx_destruct;
 @property unsigned long long processCount; // @synthesize processCount=_processCount;
 @property(retain, nonatomic) NSArray *array; // @synthesize array=_array;
 - (unsigned long long)count;

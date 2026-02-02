@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView, VoIPMPUIToastTemporaryView;
 
@@ -15,7 +16,6 @@
 }
 
 + (double)contentViewHeight;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType blockDelay; // @synthesize blockDelay=_blockDelay;
 @property(retain, nonatomic) VoIPMPUIToastTemporaryView *currentTemporaryView; // @synthesize currentTemporaryView=_currentTemporaryView;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
@@ -24,4 +24,3 @@
 - (void)clearCurrentTemporaryViewAfterDuration:(double)arg1;
 
 @end
-

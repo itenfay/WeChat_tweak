@@ -24,7 +24,6 @@
 }
 
 + (int)tpKernelStateToTingEvent:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingSafeWeakProxy *safeProxy; // @synthesize safeProxy=_safeProxy;
 @property(nonatomic) long long stuckTimerCheckTimes; // @synthesize stuckTimerCheckTimes=_stuckTimerCheckTimes;
 @property(nonatomic) double lastRecordCurrentTime; // @synthesize lastRecordCurrentTime=_lastRecordCurrentTime;

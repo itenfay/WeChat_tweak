@@ -20,7 +20,6 @@
     MMFinderLiveGiftPacketViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGiftPacketViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) MMUILabel *badgeLabel; // @synthesize badgeLabel=_badgeLabel;
 @property(retain, nonatomic) MMUILabel *giftCountLabel; // @synthesize giftCountLabel=_giftCountLabel;

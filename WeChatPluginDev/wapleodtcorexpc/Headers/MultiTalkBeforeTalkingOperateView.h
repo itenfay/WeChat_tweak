@@ -19,7 +19,6 @@
     id <MultiTalkBeforeTalkingOperateViewDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MultiTalkBeforeTalkingOperateViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) MMUIButton *m_minimizeButton; // @synthesize m_minimizeButton=_m_minimizeButton;
 @property(retain, nonatomic) UIButton *m_enterCallButton; // @synthesize m_enterCallButton=_m_enterCallButton;

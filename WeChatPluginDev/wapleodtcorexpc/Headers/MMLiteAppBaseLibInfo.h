@@ -51,7 +51,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *version; // @synthesize version;
 @property(nonatomic) unsigned int ilinkVersion; // @synthesize ilinkVersion;
 @property(retain, nonatomic) NSString *path; // @synthesize path;

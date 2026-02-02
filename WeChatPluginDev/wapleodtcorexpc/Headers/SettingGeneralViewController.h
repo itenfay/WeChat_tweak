@@ -10,7 +10,6 @@
     MMTableViewInfo *m_tableViewInfo;
 }
 
-- (void).cxx_destruct;
 - (void)setupDeepLinkConfig;
 - (void)handleTingSettings;
 - (void)handleWCDBRecover;

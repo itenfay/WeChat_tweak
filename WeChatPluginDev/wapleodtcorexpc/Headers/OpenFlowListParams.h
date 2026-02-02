@@ -18,7 +18,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithClickIndex:(id)arg1 hasNewMsgWhenClick:(id)arg2 unreadMsgContactCount:(id)arg3 data:(id)arg4;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSNumber *unreadMsgContactCount; // @synthesize unreadMsgContactCount=_unreadMsgContactCount;
 @property(retain, nonatomic) NSNumber *hasNewMsgWhenClick; // @synthesize hasNewMsgWhenClick=_hasNewMsgWhenClick;

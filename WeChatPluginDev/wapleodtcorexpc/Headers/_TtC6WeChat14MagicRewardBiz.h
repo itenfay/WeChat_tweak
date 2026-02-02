@@ -21,7 +21,6 @@
     MISSING_TYPE *_rewardView;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onDestroy:(int)arg1;
 - (void)onMainScriptInjected:(id)arg1;

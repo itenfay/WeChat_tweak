@@ -29,7 +29,6 @@
 + (double)height;
 + (double)barCodeWidth;
 + (double)qrCodeWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) UIView *qRCodeBackGroundView; // @synthesize qRCodeBackGroundView=_qRCodeBackGroundView;
 @property(retain, nonatomic) QBarCodeView *imageQRView; // @synthesize imageQRView=_imageQRView;

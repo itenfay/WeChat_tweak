@@ -11,7 +11,6 @@
     id <WCPlainTextTipFullScreenViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPlainTextTipFullScreenViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)showAnimation;
 - (void)layoutSubviews;

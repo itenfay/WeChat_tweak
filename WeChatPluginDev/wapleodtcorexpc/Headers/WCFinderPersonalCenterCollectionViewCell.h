@@ -26,7 +26,6 @@
     WCFinderPersonalCenterSidesButton *_creatorCenterBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPersonalCenterSidesButton *creatorCenterBtn; // @synthesize creatorCenterBtn=_creatorCenterBtn;
 @property(retain, nonatomic) WCFinderPersonalCenterSidesButton *finderPrivateMsgBtn; // @synthesize finderPrivateMsgBtn=_finderPrivateMsgBtn;
 @property(retain, nonatomic) WCFinderPersonalCenterSidesButton *finderMsgBtn; // @synthesize finderMsgBtn=_finderMsgBtn;

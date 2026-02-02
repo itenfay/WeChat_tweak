@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_clickUrl;
 + (void)PBArrayAdd_logoUrl;
 + (void)PBArrayAdd_name;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *extraInfo; // @synthesize extraInfo=_extraInfo;
 @property(retain, nonatomic) NSData *clickUrl; // @synthesize clickUrl=_clickUrl;
 @property(retain, nonatomic) NSData *logoUrl; // @synthesize logoUrl=_logoUrl;

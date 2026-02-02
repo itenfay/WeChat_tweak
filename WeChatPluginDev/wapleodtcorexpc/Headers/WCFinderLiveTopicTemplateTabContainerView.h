@@ -16,7 +16,6 @@
     unsigned long long _selectedIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) NSArray *tabViews; // @synthesize tabViews=_tabViews;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSIndexPath, NSString;
 
@@ -22,7 +23,6 @@
 
 + (id)createIdentifierForObject:(id)arg1 setter:(CDUnknownBlockType)arg2;
 + (id)identifierForObject:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long duplicateIdx; // @synthesize duplicateIdx=_duplicateIdx;
 @property(retain, nonatomic) NSObject *extField2; // @synthesize extField2=_extField2;
 @property(nonatomic) long long extField1; // @synthesize extField1=_extField1;
@@ -37,4 +37,3 @@
 - (unsigned long long)hash;
 
 @end
-

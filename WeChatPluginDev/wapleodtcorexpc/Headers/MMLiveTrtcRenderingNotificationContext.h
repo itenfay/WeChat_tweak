@@ -14,7 +14,6 @@
     id <MMLiveTrtcRenderingNotificationDelegate> _ktvSingerPreviewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveTrtcRenderingNotificationDelegate> ktvSingerPreviewDelegate; // @synthesize ktvSingerPreviewDelegate=_ktvSingerPreviewDelegate;
 @property(nonatomic) __weak id <MMLiveTrtcRenderingNotificationDelegate> micAudiencePreviewDelegate; // @synthesize micAudiencePreviewDelegate=_micAudiencePreviewDelegate;
 @property(nonatomic) __weak id <MMLiveTrtcRenderingNotificationDelegate> micFocusPreviewDelegate; // @synthesize micFocusPreviewDelegate=_micFocusPreviewDelegate;

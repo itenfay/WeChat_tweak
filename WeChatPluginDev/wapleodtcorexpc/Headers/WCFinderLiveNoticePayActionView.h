@@ -14,7 +14,6 @@
     MMUILabel *_payLabel;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMUILabel *payLabel; // @synthesize payLabel=_payLabel;
 @property(readonly, nonatomic) MMUIButton *coinButton; // @synthesize coinButton=_coinButton;
 @property(retain, nonatomic) UIColor *contentColor; // @synthesize contentColor=_contentColor;

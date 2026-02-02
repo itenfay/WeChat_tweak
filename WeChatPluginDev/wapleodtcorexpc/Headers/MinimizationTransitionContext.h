@@ -22,7 +22,6 @@
     struct CGRect _fromViewInitFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect fromViewInitFrame; // @synthesize fromViewInitFrame=_fromViewInitFrame;
 @property(retain, nonatomic) UIView *backgroundShadowView; // @synthesize backgroundShadowView=_backgroundShadowView;
 @property(retain, nonatomic) UIView *realFromView; // @synthesize realFromView=_realFromView;

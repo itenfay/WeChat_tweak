@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 @protocol MsgDataSaveLogicDelegate;
@@ -23,7 +24,6 @@
     _Bool _saveToAlbum;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool saveToAlbum; // @synthesize saveToAlbum=_saveToAlbum;
 - (void)onDownloadCancel:(id)arg1;
 - (void)onDownloadCommonFail:(id)arg1;
@@ -52,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

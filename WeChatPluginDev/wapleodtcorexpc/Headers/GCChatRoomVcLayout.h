@@ -14,7 +14,6 @@
     GCLabelDynamicLayout *_inputChannelTitleLayout;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCLabelDynamicLayout *inputChannelTitleLayout; // @synthesize inputChannelTitleLayout=_inputChannelTitleLayout;
 @property(nonatomic) double spaceUpChatBtn; // @synthesize spaceUpChatBtn=_spaceUpChatBtn;
 @property(nonatomic) double spaceBelowChannelTitle; // @synthesize spaceBelowChannelTitle=_spaceBelowChannelTitle;

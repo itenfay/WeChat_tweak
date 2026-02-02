@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
@@ -14,7 +15,6 @@
     NSString *_currentRequestAppId;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)sendRequest:(id)arg1 Retry:(int)arg2;
 - (void)updateSessionKeyRemote:(id)arg1 privateData:(id)arg2 callback:(CDUnknownBlockType)arg3;
@@ -24,4 +24,3 @@
 - (id)init;
 
 @end
-

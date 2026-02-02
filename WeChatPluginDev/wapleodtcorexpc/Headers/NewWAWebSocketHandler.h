@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, WAAppTask, WAWebSocketConfig;
 @protocol OS_dispatch_queue;
@@ -24,7 +25,6 @@
     unsigned int _workerId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int workerId; // @synthesize workerId=_workerId;
 - (void)destroyWeAppAllSocket:(id)arg1;
 - (void)webSocket:(unsigned int)arg1 group:(id)arg2 didCloseWithCode:(long long)arg3 reason:(id)arg4;
@@ -58,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

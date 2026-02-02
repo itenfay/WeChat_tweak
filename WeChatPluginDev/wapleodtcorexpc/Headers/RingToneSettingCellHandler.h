@@ -12,7 +12,6 @@
     unsigned long long _cellType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cellType; // @synthesize cellType=_cellType;
 @property(retain, nonatomic) AnyPromise *friendsRingPromise; // @synthesize friendsRingPromise=_friendsRingPromise;
 @property(retain, nonatomic) AnyPromise *globalRingPromise; // @synthesize globalRingPromise=_globalRingPromise;

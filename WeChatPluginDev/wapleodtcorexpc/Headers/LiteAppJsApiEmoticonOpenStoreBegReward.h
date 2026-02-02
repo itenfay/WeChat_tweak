@@ -14,7 +14,6 @@
     EmotionRewardResponseInfo *_rewardInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didOpenBegVC; // @synthesize didOpenBegVC=_didOpenBegVC;
 @property(retain, nonatomic) EmotionRewardResponseInfo *rewardInfo; // @synthesize rewardInfo=_rewardInfo;
 @property(nonatomic) long long extranceScene; // @synthesize extranceScene=_extranceScene;

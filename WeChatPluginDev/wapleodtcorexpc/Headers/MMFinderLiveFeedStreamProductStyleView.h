@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FeedsPreviewLiveMultiStyleInfo_StyleFive, FeedsPreviewLiveMultiStyleInfo_StyleOne, FeedsPreviewLiveMultiStyleInfo_StyleTwo, FinderLiveSyncFeedPreviewMultiStyleInfoResp_HotShopInfo, FinderLiveSyncFeedPreviewMultiStyleInfoResp_RecommendCouponInfo, FinderWindowProductInfo, MMFinderLiveFeedStreamProductCardView, MMFinderLiveFeedStreamProductCouponView, MMFinderLiveFeedStreamProductExpandedCardView, MMFinderLiveFeedStreamProductGuideView, MMFinderLiveFeedStreamProductHotSellingView, MMFinderLiveFeedStreamWidgetBaseView, NSString;
 @protocol MMFinderLiveFeedStreamProductStyleViewDelegate;
 
@@ -25,7 +27,6 @@
     double _maxWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(retain, nonatomic) MMFinderLiveFeedStreamProductCouponView *couponStyleView; // @synthesize couponStyleView=_couponStyleView;
 @property(retain, nonatomic) MMFinderLiveFeedStreamProductHotSellingView *hotSellingStyleView; // @synthesize hotSellingStyleView=_hotSellingStyleView;
@@ -66,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

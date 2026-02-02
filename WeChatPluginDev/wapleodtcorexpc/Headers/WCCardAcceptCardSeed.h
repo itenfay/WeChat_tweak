@@ -12,7 +12,6 @@
     NSString *_cardExt;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cardExt; // @synthesize cardExt=_cardExt;
 @property(retain, nonatomic) NSString *cardTpID; // @synthesize cardTpID=_cardTpID;
 @property(nonatomic) unsigned int cardType; // @synthesize cardType=_cardType;

@@ -28,7 +28,6 @@
     NSDate *_visibleDate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *visibleDate; // @synthesize visibleDate=_visibleDate;
 @property(retain, nonatomic) UIButton *jumpGroupNoticeBtn; // @synthesize jumpGroupNoticeBtn=_jumpGroupNoticeBtn;
 @property(retain, nonatomic) MMInputMsgReferView *msgReplyView; // @synthesize msgReplyView=m_msgReplyView;

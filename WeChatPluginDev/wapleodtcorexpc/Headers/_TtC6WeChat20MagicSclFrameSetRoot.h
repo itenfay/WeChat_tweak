@@ -21,7 +21,6 @@
     MISSING_TYPE *boundFrameSets;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 - (void)resume;

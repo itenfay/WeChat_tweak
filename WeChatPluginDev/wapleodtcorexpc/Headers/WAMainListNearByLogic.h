@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WAMainListNearByLocationLogic, WANearByInfo;
 @protocol WAMainListNearByLogicDelegate;
 
@@ -18,7 +20,6 @@
     CDUnknownBlockType _updateCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateCompletion; // @synthesize updateCompletion=_updateCompletion;
 @property(retain, nonatomic) WAMainListNearByLocationLogic *locationLogic; // @synthesize locationLogic=_locationLogic;
 @property(nonatomic) _Bool isNearByDataLoaded; // @synthesize isNearByDataLoaded=_isNearByDataLoaded;
@@ -57,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

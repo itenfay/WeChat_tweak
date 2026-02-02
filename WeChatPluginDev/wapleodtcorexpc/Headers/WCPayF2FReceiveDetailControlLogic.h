@@ -22,7 +22,6 @@
     WCPayF2FAnnouncementCgi *_getAnnouncementCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isSoundOn; // @synthesize m_isSoundOn=_m_isSoundOn;
 @property(retain, nonatomic) WCPayF2FAnnouncementCgi *getAnnouncementCgi; // @synthesize getAnnouncementCgi=_getAnnouncementCgi;
 @property(nonatomic) _Bool bNeedUpdateHistoryList; // @synthesize bNeedUpdateHistoryList=_bNeedUpdateHistoryList;

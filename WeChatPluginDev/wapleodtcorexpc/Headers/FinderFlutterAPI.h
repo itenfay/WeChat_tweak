@@ -14,7 +14,6 @@
     NSString *_messageChannelSuffix;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *messageChannelSuffix; // @synthesize messageChannelSuffix=_messageChannelSuffix;
 @property(retain, nonatomic) NSObject<FlutterBinaryMessenger> *binaryMessenger; // @synthesize binaryMessenger=_binaryMessenger;
 - (id)initWithBinaryMessenger:(id)arg1 messageChannelSuffix:(id)arg2;

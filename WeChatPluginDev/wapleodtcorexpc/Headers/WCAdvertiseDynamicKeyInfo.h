@@ -13,7 +13,6 @@
     NSString *_keyPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 - (void)encodeWithCoder:(id)arg1;

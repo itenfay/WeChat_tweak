@@ -19,7 +19,6 @@
 
 + (id)infoWithFinderContact:(id)arg1;
 + (id)infoWithWchatContact:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *finderContact; // @synthesize finderContact=_finderContact;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;

@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_isShowAllscope;
 + (void)PBArrayAdd_allScopeState;
 + (void)PBArrayAdd_scopes;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int isShowAllscope; // @synthesize isShowAllscope=_isShowAllscope;
 @property(nonatomic) unsigned int allScopeState; // @synthesize allScopeState=_allScopeState;
 @property(retain, nonatomic) NSMutableArray *scopes; // @synthesize scopes=_scopes;

@@ -19,7 +19,6 @@
     long long _maxPreloadCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long maxPreloadCount; // @synthesize maxPreloadCount=_maxPreloadCount;
 @property(retain, nonatomic) NSMutableDictionary *dict; // @synthesize dict=_dict;
 @property(retain, nonatomic) NSMutableOrderedSet *operations; // @synthesize operations=_operations;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTableView, MMTimer, MMUIButton, MMUILabel, MMWebImageView, NSArray, NSString, ShakeMusicInfo, UIImageView, UIView;
 
 @interface ShakeMusicResultNoPermViewController
@@ -35,7 +37,6 @@
     long long _currentIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isScrollingLyrics; // @synthesize isScrollingLyrics=_isScrollingLyrics;
 @property(nonatomic) _Bool lyricLocatingWithAnim; // @synthesize lyricLocatingWithAnim=_lyricLocatingWithAnim;
 @property(nonatomic) _Bool shouldLayoutHeaderView; // @synthesize shouldLayoutHeaderView=_shouldLayoutHeaderView;
@@ -101,4 +102,3 @@
 @property(readonly) Class superclass;
 
 @end
-

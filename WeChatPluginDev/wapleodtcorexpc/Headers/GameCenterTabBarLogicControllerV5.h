@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface GameCenterTabBarLogicControllerV5
@@ -10,7 +12,6 @@
     CDUnknownBlockType _tabItemCompleteBlock;
 }
 
-- (void).cxx_destruct;
 - (void)onFetchGameCenterHomeTabNavV5:(id)arg1 error:(long long)arg2;
 - (void)requestHomeTabItems:(CDUnknownBlockType)arg1;
 - (id)getHomeTabItemsFromCache;
@@ -26,4 +27,3 @@
 @property(readonly) Class superclass;
 
 @end
-

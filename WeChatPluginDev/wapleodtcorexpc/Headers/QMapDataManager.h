@@ -20,7 +20,6 @@
     NSString *_cacheFolder;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool toCheckOfflineMapFolder; // @synthesize toCheckOfflineMapFolder=_toCheckOfflineMapFolder;
 @property(copy, nonatomic) NSString *cacheFolder; // @synthesize cacheFolder=_cacheFolder;
 @property(nonatomic) unsigned long long maxCacheSize; // @synthesize maxCacheSize=_maxCacheSize;

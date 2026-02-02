@@ -19,7 +19,6 @@
     _Bool m_showLoadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsNotifyKey; // @synthesize m_nsNotifyKey;
 @property(nonatomic) __weak id <AsyncImageViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long m_contentMode; // @synthesize m_contentMode;

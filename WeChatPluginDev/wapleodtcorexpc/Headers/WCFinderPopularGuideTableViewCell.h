@@ -20,7 +20,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedLayoutContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(nonatomic) __weak UIButton *backgroundBtn; // @synthesize backgroundBtn=_backgroundBtn;
 @property(copy, nonatomic) NSArray *contentArray; // @synthesize contentArray=_contentArray;

@@ -12,7 +12,6 @@
     NSString *_uin;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *uin; // @synthesize uin=_uin;
 @property(retain, nonatomic) NSMapTable *mPublicServiceOtherBizStorageMap; // @synthesize mPublicServiceOtherBizStorageMap=_mPublicServiceOtherBizStorageMap;
 @property(retain, nonatomic) NSMapTable *mMBKVMap; // @synthesize mMBKVMap=_mMBKVMap;

@@ -15,7 +15,6 @@
     NSURL *_previewImageURL;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *previewImageURL; // @synthesize previewImageURL=_previewImageURL;
 @property(retain, nonatomic) NSString *transitionName; // @synthesize transitionName=_transitionName;
 @property(retain, nonatomic) NSString *transitionID; // @synthesize transitionID=_transitionID;

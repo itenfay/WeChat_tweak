@@ -19,7 +19,6 @@
     UIPageControl *_pageCtrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPageControl *pageCtrl; // @synthesize pageCtrl=_pageCtrl;
 @property(retain, nonatomic) ImageBrowseButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) ImageBrowseButton *favButton; // @synthesize favButton=_favButton;

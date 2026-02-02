@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WeNoteFlutterInstance : NSObject
 {
@@ -14,7 +15,6 @@
 
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2 refCntManager:(void *)arg3;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)reloadNoteAsync:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)reloadNoteAsync:(CDUnknownBlockType)arg1;
@@ -60,4 +60,3 @@
 - (shared_ptr_921967b6)getDispatcher;
 
 @end
-

@@ -74,7 +74,6 @@
     PicStats *_picStat;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PicStats *picStat; // @synthesize picStat=_picStat;
 @property(retain, nonatomic) NSMutableArray *commentEnterTypeArray; // @synthesize commentEnterTypeArray=_commentEnterTypeArray;
 @property(nonatomic) unsigned long long liveIconStartExposeTs; // @synthesize liveIconStartExposeTs=_liveIconStartExposeTs;

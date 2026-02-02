@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIScrollView, UIView, WCFinderCropRectModel;
 @protocol WCFinderCoverBasePreviewViewDelegate;
 
@@ -15,7 +17,6 @@
     WCFinderCropRectModel *_cropRectModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCropRectModel *cropRectModel; // @synthesize cropRectModel=_cropRectModel;
 @property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;
@@ -29,4 +30,3 @@
 - (id)mergeEditImageFromImage:(id)arg1;
 
 @end
-

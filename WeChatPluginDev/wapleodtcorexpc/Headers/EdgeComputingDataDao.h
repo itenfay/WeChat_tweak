@@ -12,7 +12,6 @@
     EdgeComputingWCDBManager *dbManager;
 }
 
-- (void).cxx_destruct;
 - (id)getAndCheckEdgeDBPath;
 - (id)getDBTableName:(id)arg1;
 - (id)getDBFieldName:(id)arg1;

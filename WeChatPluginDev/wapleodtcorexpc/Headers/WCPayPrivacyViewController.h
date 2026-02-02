@@ -17,7 +17,6 @@
 }
 
 + (id)instanceWithDelegate:(id)arg1 html:(id)arg2;
-- (void).cxx_destruct;
 @property double currentWidth; // @synthesize currentWidth=_currentWidth;
 @property(retain, nonatomic) GetPayUserDutyResp *getPayUserDutyCgiResp; // @synthesize getPayUserDutyCgiResp=_getPayUserDutyCgiResp;
 @property(retain, nonatomic) WCPayPrivacyToolView *m_toolView; // @synthesize m_toolView=_m_toolView;

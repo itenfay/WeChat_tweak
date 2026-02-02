@@ -23,7 +23,6 @@
     NSObject *_pendingJITResultLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *pendingJITResultLock; // @synthesize pendingJITResultLock=_pendingJITResultLock;
 @property(retain, nonatomic) NSMutableArray *pendingJITResult; // @synthesize pendingJITResult=_pendingJITResult;
 @property(retain, nonatomic) NSMutableDictionary *mapArrayBuffer; // @synthesize mapArrayBuffer=_mapArrayBuffer;

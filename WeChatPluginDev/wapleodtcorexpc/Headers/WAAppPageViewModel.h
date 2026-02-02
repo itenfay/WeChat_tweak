@@ -16,7 +16,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(retain, nonatomic) CContact *appContact; // @synthesize appContact=_appContact;
 - (void)reportEcsData:(id)arg1;

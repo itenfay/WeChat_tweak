@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CMMotionManager, MMObject, MMWindowController, MemoryMappedKV, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, SightDraftMgr, UIImage, WCSightCameraBeautyConfig, WXSourceColorProperties;
 @protocol SightCaptureLogic;
 
@@ -39,7 +41,6 @@
 }
 
 + (id)generateSessionID;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nsTmpMoviePath; // @synthesize nsTmpMoviePath=_nsTmpMoviePath;
 @property(retain, nonatomic) WCSightCameraBeautyConfig *sightCameraBeautyConfig; // @synthesize sightCameraBeautyConfig=_sightCameraBeautyConfig;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
@@ -301,4 +302,3 @@
 @property(readonly) Class superclass;
 
 @end
-

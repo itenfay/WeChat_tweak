@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UILabel;
 
@@ -15,7 +16,6 @@
     UILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak UIButton *continueView; // @synthesize continueView=_continueView;
 @property(nonatomic) __weak UIButton *actionButton; // @synthesize actionButton=_actionButton;
@@ -29,4 +29,3 @@
 - (id)init;
 
 @end
-

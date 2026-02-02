@@ -27,7 +27,6 @@
     _Bool _cancelSendRecording;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cancelSendRecording; // @synthesize cancelSendRecording=_cancelSendRecording;
 @property(nonatomic) unsigned int iFromSendAgain; // @synthesize iFromSendAgain=_iFromSendAgain;
 @property(retain, nonatomic) MMInputToolView *toolView; // @synthesize toolView=_inputToolView;

@@ -12,7 +12,6 @@
     NSMutableArray *_selectedRows;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *selectedRows; // @synthesize selectedRows=_selectedRows;
 @property(nonatomic) __weak id <WCTableViewMultiSelectionSectionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)reloadCells:(id)arg1;

@@ -14,7 +14,6 @@
     UIImpactFeedbackGenerator *_feedbackGenerator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(retain, nonatomic) MMUIButton *favButton; // @synthesize favButton=_favButton;
 @property(retain, nonatomic) MJShootFavTemplateAuthorButton *authorButton; // @synthesize authorButton=_authorButton;

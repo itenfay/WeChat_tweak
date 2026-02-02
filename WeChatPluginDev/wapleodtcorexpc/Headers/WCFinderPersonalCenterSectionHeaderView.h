@@ -19,7 +19,6 @@
 }
 
 + (double)headerViewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *settingButton; // @synthesize settingButton=_settingButton;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) WCFinderAccountSelectedButton *accountSelectButton; // @synthesize accountSelectButton=_accountSelectButton;

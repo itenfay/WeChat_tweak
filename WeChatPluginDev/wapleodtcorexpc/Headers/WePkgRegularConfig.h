@@ -27,7 +27,6 @@
 }
 
 + (id)regularConfigFromTableItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *nonAtomicSingleFileList; // @synthesize nonAtomicSingleFileList=_nonAtomicSingleFileList;
 @property(retain, nonatomic) NSMutableArray *atomicSingleFileList; // @synthesize atomicSingleFileList=_atomicSingleFileList;
 @property(nonatomic) unsigned int uiBigPackageSizeInBytes; // @synthesize uiBigPackageSizeInBytes=_uiBigPackageSizeInBytes;

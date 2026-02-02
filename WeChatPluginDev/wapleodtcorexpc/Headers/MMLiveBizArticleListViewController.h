@@ -15,7 +15,6 @@
     WCSearchBar *_searchBar;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(retain, nonatomic) MMLiveBizArticleMoreView *moreView; // @synthesize moreView=_moreView;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;

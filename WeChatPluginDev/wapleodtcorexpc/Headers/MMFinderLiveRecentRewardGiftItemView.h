@@ -15,7 +15,6 @@
     MMFinderLiveRecentRewardGiftItem *_giftItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRecentRewardGiftItem *giftItem; // @synthesize giftItem=_giftItem;
 @property(retain, nonatomic) MMUILabel *giftCountLabel; // @synthesize giftCountLabel=_giftCountLabel;
 @property(retain, nonatomic) UIImageView *giftImageView; // @synthesize giftImageView=_giftImageView;

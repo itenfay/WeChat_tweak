@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -24,4 +25,3 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType writeBlock; // @dynamic writeBlock;
 
 @end
-

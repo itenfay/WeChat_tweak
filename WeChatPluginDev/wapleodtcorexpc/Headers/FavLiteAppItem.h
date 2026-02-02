@@ -20,7 +20,6 @@
     NSString *_fallbackUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fallbackUrl; // @synthesize fallbackUrl=_fallbackUrl;
 @property(retain, nonatomic) NSString *pagePath; // @synthesize pagePath=_pagePath;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;

@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_uniqueId;
 + (void)PBArrayAdd_type;
 + (void)PBArrayAdd_tipsId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShowParentTips; // @synthesize bShowParentTips=_bShowParentTips;
 @property(retain, nonatomic) NSString *filterClassName; // @synthesize filterClassName=_filterClassName;
 @property(retain, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;

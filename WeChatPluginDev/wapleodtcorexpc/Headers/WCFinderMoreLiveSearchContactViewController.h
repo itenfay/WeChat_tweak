@@ -20,7 +20,6 @@
     WCFinderSearchContactViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSearchContactViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UIImageView *retryImageView; // @synthesize retryImageView=_retryImageView;
 @property(retain, nonatomic) UITapGestureRecognizer *stateRetryGesture; // @synthesize stateRetryGesture=_stateRetryGesture;

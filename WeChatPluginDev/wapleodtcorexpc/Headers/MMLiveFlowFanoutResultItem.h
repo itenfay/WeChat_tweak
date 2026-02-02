@@ -12,7 +12,6 @@
     id _result;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id result; // @synthesize result=_result;
 @property(retain, nonatomic) id input; // @synthesize input=_input;
 @property(nonatomic) _Bool succeeded; // @synthesize succeeded=_succeeded;

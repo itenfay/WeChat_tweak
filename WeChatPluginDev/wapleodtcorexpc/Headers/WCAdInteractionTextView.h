@@ -10,7 +10,6 @@
     MMUILabel *_labelView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *labelView; // @synthesize labelView=_labelView;
 - (void)organizeSubContentViews;
 

@@ -116,7 +116,6 @@
 + (id)stateUpload;
 + (id)stateCompressNormalVideo;
 + (id)stateGetVideo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *actionTraceArray; // @synthesize actionTraceArray=_actionTraceArray;
 @property(nonatomic) unsigned int clickMusicWidgetToolCount; // @synthesize clickMusicWidgetToolCount=_clickMusicWidgetToolCount;
 @property(nonatomic) unsigned int isRotated; // @synthesize isRotated=_isRotated;

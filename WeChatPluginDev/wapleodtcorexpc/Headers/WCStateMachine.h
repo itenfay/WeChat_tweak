@@ -17,7 +17,6 @@
     NSMutableSet *_events;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) NSMutableSet *events; // @synthesize events=_events;
 @property(readonly, nonatomic) NSMutableSet *states; // @synthesize states=_states;

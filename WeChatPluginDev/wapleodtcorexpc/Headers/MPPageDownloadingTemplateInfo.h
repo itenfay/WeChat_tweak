@@ -15,7 +15,6 @@
     MPPageDownloadedTemplateRecord *_record;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(nonatomic) _Bool isInvalid; // @synthesize isInvalid=_isInvalid;
 @property(retain, nonatomic) MPPageDownloadedTemplateRecord *record; // @synthesize record=_record;

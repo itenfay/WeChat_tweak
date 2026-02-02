@@ -15,7 +15,6 @@
     WCTimeLineAdLookbookCardBrandNewAnimationDisplayLink *_brandNewAnimationDisplayLink;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTimeLineAdLookbookCardBrandNewAnimationDisplayLink *brandNewAnimationDisplayLink; // @synthesize brandNewAnimationDisplayLink=_brandNewAnimationDisplayLink;
 @property(retain, nonatomic) UIView *brandNewMediaView; // @synthesize brandNewMediaView=_brandNewMediaView;
 @property(nonatomic) long long brandNewAnimatingState; // @synthesize brandNewAnimatingState=_brandNewAnimatingState;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, NSString, UIButton, WCUITextField;
 
 @interface WCRedesignTextItem
@@ -18,7 +20,6 @@
 }
 
 + (struct CGRect)mainRectForBounds:(struct CGRect)arg1 textField:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canButtonBreakLine; // @synthesize canButtonBreakLine=_canButtonBreakLine;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
@@ -60,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

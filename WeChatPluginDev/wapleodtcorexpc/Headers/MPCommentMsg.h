@@ -27,7 +27,6 @@
     NSMutableArray *_replyList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) NSMutableArray *replyList; // @synthesize replyList=_replyList;
 @property(retain, nonatomic) MPCommentReply *reply; // @synthesize reply=_reply;

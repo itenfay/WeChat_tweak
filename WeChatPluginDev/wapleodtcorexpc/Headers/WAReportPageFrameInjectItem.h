@@ -17,7 +17,6 @@
     NSString *_lazyLoadKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lazyLoadKey; // @synthesize lazyLoadKey=_lazyLoadKey;
 @property(nonatomic) _Bool isFromTaskPreload; // @synthesize isFromTaskPreload=_isFromTaskPreload;
 @property(nonatomic) unsigned int pageFrameLength; // @synthesize pageFrameLength=_pageFrameLength;

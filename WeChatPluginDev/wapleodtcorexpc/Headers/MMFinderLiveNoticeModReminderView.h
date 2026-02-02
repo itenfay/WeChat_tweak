@@ -18,7 +18,6 @@
     MMFinderLiveNoticeModReminderSubView *_manualReminderSubView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveNoticeModReminderSubView *manualReminderSubView; // @synthesize manualReminderSubView=_manualReminderSubView;
 @property(retain, nonatomic) MMFinderLiveNoticeModReminderSubView *autoReminderSubView; // @synthesize autoReminderSubView=_autoReminderSubView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

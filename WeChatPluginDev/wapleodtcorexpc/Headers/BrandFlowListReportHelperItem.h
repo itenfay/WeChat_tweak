@@ -19,7 +19,6 @@
     unsigned long long _startEnterBackgroundTimeInMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long startEnterBackgroundTimeInMs; // @synthesize startEnterBackgroundTimeInMs=_startEnterBackgroundTimeInMs;
 @property(nonatomic) unsigned long long totalStayBackgroundTimeInMs; // @synthesize totalStayBackgroundTimeInMs=_totalStayBackgroundTimeInMs;
 @property(nonatomic) unsigned long long beginExposeTimeInMs; // @synthesize beginExposeTimeInMs=_beginExposeTimeInMs;

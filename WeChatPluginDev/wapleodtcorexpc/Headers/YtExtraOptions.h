@@ -16,7 +16,6 @@
     NSString *_mp_business_buffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mp_business_buffer; // @synthesize mp_business_buffer=_mp_business_buffer;
 @property(retain, nonatomic) NSString *req_type; // @synthesize req_type=_req_type;
 @property(retain, nonatomic) NSString *person_type; // @synthesize person_type=_person_type;

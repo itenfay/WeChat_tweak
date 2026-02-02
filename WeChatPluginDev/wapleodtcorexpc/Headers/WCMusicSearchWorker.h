@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -12,7 +13,6 @@
     NSMutableDictionary *_completionDictionary;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *completionDictionary; // @synthesize completionDictionary=_completionDictionary;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (_Bool)checkCGIBaseRespSuccess:(id)arg1 error:(id *)arg2;
@@ -25,4 +25,3 @@
 - (unsigned int)searchWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

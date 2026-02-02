@@ -19,7 +19,6 @@
     ContactSearchMonitor *_monitor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactSearchMonitor *monitor; // @synthesize monitor=_monitor;
 @property(retain, nonatomic) NSMutableDictionary *dicMultiKeywordMatchFlag; // @synthesize dicMultiKeywordMatchFlag=_dicMultiKeywordMatchFlag;
 @property(nonatomic) _Bool hasAllContactLoaded; // @synthesize hasAllContactLoaded=_hasAllContactLoaded;

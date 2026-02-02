@@ -36,7 +36,6 @@
     SimpleCommonConfig *_simpleCommonConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool supportCommentEmoticon; // @synthesize supportCommentEmoticon=_supportCommentEmoticon;
 @property(retain, nonatomic) SimpleCommonConfig *simpleCommonConfig; // @synthesize simpleCommonConfig=_simpleCommonConfig;
 @property(retain, nonatomic) FinderFriendTabConfig *friendTabConfig; // @synthesize friendTabConfig=_friendTabConfig;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFlutterInstance, MMFlutterPageStyle;
 
@@ -14,11 +15,9 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) MMFlutterPageStyle *style; // @synthesize style=_style;
 @property(retain, nonatomic) MMFlutterInstance *instance; // @synthesize instance=_instance;
 - (_Bool)showFromViewController:(id)arg1;
 
 @end
-

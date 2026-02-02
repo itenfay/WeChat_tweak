@@ -12,7 +12,6 @@
     NSNumber *_discoveryEntranceUseFake;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *discoveryEntranceUseFake; // @synthesize discoveryEntranceUseFake=_discoveryEntranceUseFake;
 
 @end

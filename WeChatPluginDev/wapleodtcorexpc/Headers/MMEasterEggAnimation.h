@@ -16,7 +16,6 @@
     long long _animationType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int maxViewSize; // @synthesize maxViewSize=_maxViewSize;
 @property(nonatomic) int minViewSize; // @synthesize minViewSize=_minViewSize;
 @property(nonatomic) int viewCount; // @synthesize viewCount=_viewCount;

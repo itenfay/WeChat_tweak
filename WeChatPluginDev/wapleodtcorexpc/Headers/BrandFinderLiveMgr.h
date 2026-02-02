@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CMessageWrap, MemoryMappedKV, NSMutableSet, NSString, WCEliminatedSlotMMKV;
 
 @interface BrandFinderLiveMgr
@@ -34,7 +36,6 @@
 + (_Bool)isWebViewTopBarSwitchOpen;
 + (_Bool)isBizProfileSwitchOpen;
 + (unsigned int)defValueForLiveStatusControl;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *brandLiveExposedDateKV; // @synthesize brandLiveExposedDateKV=_brandLiveExposedDateKV;
 @property(retain, nonatomic) NSMutableSet *setWaitingUsername; // @synthesize setWaitingUsername=_setWaitingUsername;
@@ -126,4 +127,3 @@
 @property(readonly) Class superclass;
 
 @end
-

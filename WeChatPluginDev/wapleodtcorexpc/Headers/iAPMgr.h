@@ -21,7 +21,6 @@
 + (unsigned int)getIdKeyPreparePurchaseFailed;
 + (unsigned int)getIdKeyIdIAP;
 + (unsigned int)getBizTypeOfProductID:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) JailBreakHelper *m_jailBreakHelper; // @synthesize m_jailBreakHelper;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (long long)covertErrcode:(unsigned int)arg1;

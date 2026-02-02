@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class QDrawMonitor;
 
@@ -12,7 +13,6 @@
     QDrawMonitor *_drawMonitor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QDrawMonitor *drawMonitor; // @synthesize drawMonitor=_drawMonitor;
 - (void)onAfterDrawframeWithBlock:(CDUnknownBlockType)arg1;
 - (void)onBeforeDrawframe;
@@ -20,4 +20,3 @@
 - (id)init;
 
 @end
-

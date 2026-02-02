@@ -16,7 +16,6 @@
     NSArray *_batchList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *batchList; // @synthesize batchList=_batchList;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;
 @property(retain, nonatomic) MMFinderLiveRewardGiftItem *giftItem; // @synthesize giftItem=_giftItem;

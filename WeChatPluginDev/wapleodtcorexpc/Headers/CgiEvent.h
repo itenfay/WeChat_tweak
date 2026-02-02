@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ProtobufCGIWrap;
 
@@ -15,10 +16,8 @@
 }
 
 + (id)eventWithId:(unsigned int)arg1 pbWrap:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ProtobufCGIWrap *pbWrap; // @synthesize pbWrap=_pbWrap;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) unsigned int eventId; // @synthesize eventId=_eventId;
 
 @end
-

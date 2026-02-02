@@ -11,7 +11,6 @@
     WCCoinNewUserTipsDetailView *_tipsDetailView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCoinNewUserTipsDetailView *tipsDetailView; // @synthesize tipsDetailView=_tipsDetailView;
 @property(retain, nonatomic) WecoinNewUserTips *tips; // @synthesize tips=_tips;
 - (void)didClickDone;

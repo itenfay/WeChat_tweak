@@ -13,7 +13,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)getLKID;
 - (id)getWAID;
 - (void)handleFpExtids:(id)arg1;

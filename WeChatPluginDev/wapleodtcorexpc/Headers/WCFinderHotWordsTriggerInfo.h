@@ -41,7 +41,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *bypassInfo; // @synthesize bypassInfo=_bypassInfo;
 @property(nonatomic) long long jumpScene; // @synthesize jumpScene=_jumpScene;
 @property(nonatomic) int jumpDest; // @synthesize jumpDest=_jumpDest;

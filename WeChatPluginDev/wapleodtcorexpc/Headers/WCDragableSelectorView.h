@@ -15,7 +15,6 @@
     id <WCDragableSelectorViewDelegate> _dragDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool scrollEnabled; // @synthesize scrollEnabled=_scrollEnabled;
 @property(nonatomic) __weak id <WCDragableSelectorViewDelegate> dragDelegate; // @synthesize dragDelegate=_dragDelegate;
 - (_Bool)onEndCollectionViewCellMovement:(long long)arg1;

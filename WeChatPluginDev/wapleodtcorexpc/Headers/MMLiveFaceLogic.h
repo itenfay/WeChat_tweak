@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMLiveStorageCleanupPinningToken, MMLiveTaskId, MMWeEffectManager;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)baseResourceDir;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 @property(nonatomic) double lastRefreshTime; // @synthesize lastRefreshTime=_lastRefreshTime;
 @property _Bool isFaceDetectionStarted; // @synthesize isFaceDetectionStarted=_isFaceDetectionStarted;
@@ -36,4 +36,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

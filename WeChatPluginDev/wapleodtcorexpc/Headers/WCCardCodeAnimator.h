@@ -20,7 +20,6 @@
     id <WCCardCodeAnimatorDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(nonatomic) _Bool bRotateRight; // @synthesize bRotateRight=_bRotateRight;
 @property(nonatomic) __weak id <WCCardCodeAnimatorDelegate> delegate; // @synthesize delegate=_delegate;

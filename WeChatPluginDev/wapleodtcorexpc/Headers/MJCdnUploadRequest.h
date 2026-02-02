@@ -15,7 +15,6 @@
     NSString *_filePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int fileType; // @synthesize fileType=_fileType;
 @property(copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(nonatomic) int appType; // @synthesize appType=_appType;

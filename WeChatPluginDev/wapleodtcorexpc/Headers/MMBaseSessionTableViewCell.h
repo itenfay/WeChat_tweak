@@ -33,7 +33,6 @@
 }
 
 + (double)cellHeightForLayoutParam:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMBaseSessionCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)GetNickNameTailView;
 - (id)accessibilityLabel;

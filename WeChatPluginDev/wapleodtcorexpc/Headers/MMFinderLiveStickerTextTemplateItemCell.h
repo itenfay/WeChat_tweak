@@ -14,7 +14,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 - (void)layoutSubviews;

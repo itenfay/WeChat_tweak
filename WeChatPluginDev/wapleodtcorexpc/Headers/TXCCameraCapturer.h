@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVCaptureConnection, AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMetadataOutput, AVCaptureSession, AVCaptureVideoDataOutput, NSMutableSet, NSString, TXCCameraCaptureConfig, TXCDispatchQueue;
 @protocol OS_dispatch_queue;
@@ -35,7 +36,6 @@
 + (id)presetOfResolution:(struct CGSize)arg1;
 + (id)deviceOfPosition:(_Bool)arg1;
 + (id)deviceWithConfig:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCustomCaptureSize; // @synthesize isCustomCaptureSize=_isCustomCaptureSize;
 @property _Bool isRunning; // @synthesize isRunning=_isRunning;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
@@ -105,4 +105,3 @@
 @property(readonly) Class superclass;
 
 @end
-

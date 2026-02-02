@@ -15,7 +15,6 @@
     MMUIViewController *_currentVc;
 }
 
-- (void).cxx_destruct;
 @property __weak MMUIViewController *currentVc; // @synthesize currentVc=_currentVc;
 @property(retain) UILabel *label; // @synthesize label=_label;
 @property(retain) WCPayLQTPickerView *picker; // @synthesize picker=_picker;

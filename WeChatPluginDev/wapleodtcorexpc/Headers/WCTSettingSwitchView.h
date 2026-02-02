@@ -10,7 +10,6 @@
     UISwitch *_switchControl;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UISwitch *switchControl; // @synthesize switchControl=_switchControl;
 - (void)loadUI:(id)arg1;
 - (void)setViewDataModel:(id)arg1;

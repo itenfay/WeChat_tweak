@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMLiveViewController, MMUIButton, NSString, UIColor, UIImage, UIImageView, UILabel, UIView, WCLiveBlurButtonAnimationHandler, WCLiveBlurButtonBackView;
 
 @interface WCLiveBlurButton
@@ -34,7 +36,6 @@
     UIImageView *_blurBackView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *blurBackView; // @synthesize blurBackView=_blurBackView;
 @property(nonatomic) _Bool hiddenValue; // @synthesize hiddenValue=_hiddenValue;
 @property(retain, nonatomic) UIImageView *customBgImageView; // @synthesize customBgImageView=_customBgImageView;
@@ -120,4 +121,3 @@
 @property(readonly) Class superclass;
 
 @end
-

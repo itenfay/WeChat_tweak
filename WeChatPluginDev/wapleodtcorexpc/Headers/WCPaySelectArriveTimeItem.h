@@ -17,7 +17,6 @@
     WCPayTransBankItem *_m_bankItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayTransBankItem *m_bankItem; // @synthesize m_bankItem=_m_bankItem;
 @property(nonatomic) __weak id <WCPaySelectArriveTimeItemDelegate> m_selectArriveItemDelegate; // @synthesize m_selectArriveItemDelegate=_m_selectArriveItemDelegate;
 @property(nonatomic) __weak UITableViewCell *fatherCell; // @synthesize fatherCell=_fatherCell;

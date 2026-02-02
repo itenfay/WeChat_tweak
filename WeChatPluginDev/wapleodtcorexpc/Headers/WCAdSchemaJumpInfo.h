@@ -17,7 +17,6 @@
     WCAdSchemaDoubleLinkInfo *_doubleLinkInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdSchemaDoubleLinkInfo *doubleLinkInfo; // @synthesize doubleLinkInfo=_doubleLinkInfo;
 @property(retain, nonatomic) WCAdOpenAppHalfScreenInfo *openAppHalfScreenInfo; // @synthesize openAppHalfScreenInfo=_openAppHalfScreenInfo;
 @property(nonatomic) _Bool bInternalJump; // @synthesize bInternalJump=_bInternalJump;

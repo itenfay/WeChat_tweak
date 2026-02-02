@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSOperationQueue, NSString, SolitaireOperation;
 @protocol SolitaireAnalysiserDelegate;
@@ -18,7 +19,6 @@
     NSMutableDictionary *_dicChatNameOperation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicChatNameOperation; // @synthesize dicChatNameOperation=_dicChatNameOperation;
 @property(retain, nonatomic) NSOperationQueue *analysisQueue; // @synthesize analysisQueue=_analysisQueue;
 @property(retain, nonatomic) SolitaireOperation *analysisOperation; // @synthesize analysisOperation=_analysisOperation;
@@ -34,4 +34,3 @@
 - (void)onAddNewTextMsg:(id)arg1;
 
 @end
-

@@ -37,7 +37,6 @@
     double _waitFilterStartTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double waitFilterStartTime; // @synthesize waitFilterStartTime=_waitFilterStartTime;
 @property(retain, nonatomic) PacketFilterResponse *filterResponse; // @synthesize filterResponse=_filterResponse;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *waitFilterSemaphore; // @synthesize waitFilterSemaphore=_waitFilterSemaphore;

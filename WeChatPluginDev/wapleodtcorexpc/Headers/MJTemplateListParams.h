@@ -17,7 +17,6 @@
 }
 
 + (id)defaultParams;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *musicId; // @synthesize musicId=_musicId;
 @property(copy, nonatomic) NSString *categoryKey; // @synthesize categoryKey=_categoryKey;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;

@@ -12,7 +12,6 @@
     id <WCPaySubLogicDelegate> m_baseDelegate;
 }
 
-- (void).cxx_destruct;
 - (id)initWithBaseDelegate:(id)arg1;
 
 @end

@@ -16,7 +16,6 @@
     UIColor *_bgColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canMultiSelect; // @synthesize canMultiSelect=_canMultiSelect;
 @property(retain, nonatomic) UIColor *bgColor; // @synthesize bgColor=_bgColor;
 @property(nonatomic) double cellHeight; // @synthesize cellHeight=_cellHeight;

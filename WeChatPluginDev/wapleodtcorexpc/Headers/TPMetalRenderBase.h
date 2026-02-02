@@ -31,7 +31,6 @@
     TPMetalColorHelper *_colorHelper;
 }
 
-- (void).cxx_destruct;
 @property _Bool renderOptYuv420; // @synthesize renderOptYuv420=_renderOptYuv420;
 @property int rendererLucidFlag; // @synthesize rendererLucidFlag=_rendererLucidFlag;
 @property int rendererSharpenFlag; // @synthesize rendererSharpenFlag=_rendererSharpenFlag;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMMusicFadeOutLayer, NSString, TextStateIcon, TextStateMediaEffectCompositeView;
 @protocol TextState3rdPartyHandler, TextStateBaseMediaView, TextStateBaseMediaViewDelegate;
@@ -40,7 +41,6 @@
 }
 
 + (id)containerViewFromUsername:(id)arg1 model:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool firstRefreshBackground; // @synthesize firstRefreshBackground=_firstRefreshBackground;
 @property(nonatomic) _Bool autoPausedWhenEnterBackground; // @synthesize autoPausedWhenEnterBackground=_autoPausedWhenEnterBackground;
 @property(nonatomic) _Bool wantToPlay; // @synthesize wantToPlay=_wantToPlay;
@@ -106,4 +106,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -16,7 +16,6 @@
     long long _maxSeconds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long maxSeconds; // @synthesize maxSeconds=_maxSeconds;
 @property(nonatomic) long long minSeconds; // @synthesize minSeconds=_minSeconds;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

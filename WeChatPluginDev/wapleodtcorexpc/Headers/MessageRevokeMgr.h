@@ -10,7 +10,6 @@
     NSMutableArray *_arrRevokeInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrRevokeInfo; // @synthesize arrRevokeInfo=_arrRevokeInfo;
 - (void)onRevokeMsg:(id)arg1;
 - (void)onGetSvrIdWithUploadMsg:(id)arg1 SvrId:(unsigned long long)arg2;

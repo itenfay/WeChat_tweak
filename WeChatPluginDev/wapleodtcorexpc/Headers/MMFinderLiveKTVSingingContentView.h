@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveKSKitAudioEngine, MMFinderLiveKSKitLyricContainerView, MMFinderLiveKSKitNoteAdjustProgressView, MMFinderLiveKTVReporter, MMUILabel, NSString, PAGView;
 
 @interface MMFinderLiveKTVSingingContentView
@@ -25,7 +27,6 @@
     MMFinderLiveKTVReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain) MMFinderLiveKTVReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) NSString *ktvThemeResourceFetchSessionToken; // @synthesize ktvThemeResourceFetchSessionToken=_ktvThemeResourceFetchSessionToken;
 @property(nonatomic) int sumPerfectScoreCnt; // @synthesize sumPerfectScoreCnt=_sumPerfectScoreCnt;
@@ -108,4 +109,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -26,7 +26,6 @@
     NSString *_chatName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bInSearch; // @synthesize bInSearch=_bInSearch;
 @property(retain, nonatomic) NSString *chatName; // @synthesize chatName=_chatName;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

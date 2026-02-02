@@ -16,7 +16,6 @@
     NSMutableDictionary *_dictionaryImages;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictionaryImages; // @synthesize dictionaryImages=_dictionaryImages;
 @property(retain, nonatomic) CATextLayer *textLayer; // @synthesize textLayer=_textLayer;
 @property(retain, nonatomic) NSMutableDictionary *dictionaryFontSizes; // @synthesize dictionaryFontSizes=_dictionaryFontSizes;

@@ -17,7 +17,6 @@
 
 + (id)getNickNameForDataItem:(id)arg1;
 + (double)getCommentViewLeftMarginCurOri;
-- (void).cxx_destruct;
 - (_Bool)isShowRewardContainer;
 - (void)rewardDetailViewTapped;
 - (void)initRewardTipView;

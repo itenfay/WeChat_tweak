@@ -10,7 +10,6 @@
     WSContactSearchLogic *_searchContactLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WSContactSearchLogic *searchContactLogic; // @synthesize searchContactLogic=_searchContactLogic;
 - (void)onReturnWSContactResult:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

@@ -14,7 +14,6 @@
     NSArray *_accepterList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *accepterList; // @synthesize accepterList=_accepterList;
 @property(retain, nonatomic) MMTableView *giftTableView; // @synthesize giftTableView=_giftTableView;
 @property(retain, nonatomic) WCGiftCardData *giftCardData; // @synthesize giftCardData=_giftCardData;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CMessageWrap, MsgImgDataLogic, UIView;
 @protocol MsgImgFullScreenViewControllerDelegate;
@@ -27,7 +28,6 @@
     struct CGRect _originFrame;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType customBottomLeftActioin; // @synthesize customBottomLeftActioin=_customBottomLeftActioin;
 @property(copy, nonatomic) CDUnknownBlockType customBottomLeftString; // @synthesize customBottomLeftString=_customBottomLeftString;
 @property(nonatomic) _Bool bIsEditMode; // @synthesize bIsEditMode=_bIsEditMode;
@@ -46,4 +46,3 @@
 - (id)init;
 
 @end
-

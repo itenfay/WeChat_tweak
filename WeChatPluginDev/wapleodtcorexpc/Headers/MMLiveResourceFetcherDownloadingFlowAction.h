@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveFlowActionInvocationContext, MMLiveFlowInvocationContext, MMLiveResourceFetcherTask, NSString;
 
 @interface MMLiveResourceFetcherDownloadingFlowAction
@@ -15,7 +17,6 @@
     CDUnknownBlockType _completionBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) _Bool cdnCalledBack; // @synthesize cdnCalledBack=_cdnCalledBack;
 @property(retain, nonatomic) NSString *internalTaskId; // @synthesize internalTaskId=_internalTaskId;
@@ -26,4 +27,3 @@
 - (void)invokeWithInput:(id)arg1 flowInvocationContext:(id)arg2 actionInvocationContext:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 
 @end
-

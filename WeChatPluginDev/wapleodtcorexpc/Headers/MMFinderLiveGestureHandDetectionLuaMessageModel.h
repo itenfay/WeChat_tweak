@@ -17,7 +17,6 @@
     NSArray *_scale;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *scale; // @synthesize scale=_scale;
 @property(retain, nonatomic) NSArray *rotation; // @synthesize rotation=_rotation;
 @property(retain, nonatomic) NSArray *transY; // @synthesize transY=_transY;

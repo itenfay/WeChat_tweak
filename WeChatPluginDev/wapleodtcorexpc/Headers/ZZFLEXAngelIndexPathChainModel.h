@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
@@ -12,7 +13,6 @@
     NSArray *_listData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *listData; // @synthesize listData=_listData;
 - (CDUnknownBlockType)bySectionTagAndDataModel;
 - (CDUnknownBlockType)byDataModel;
@@ -21,4 +21,3 @@
 - (id)initWithListData:(id)arg1;
 
 @end
-

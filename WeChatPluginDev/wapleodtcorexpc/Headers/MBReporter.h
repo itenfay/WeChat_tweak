@@ -20,7 +20,6 @@
 }
 
 + (id)correctReportString:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool skipReport; // @synthesize skipReport=_skipReport;
 @property(nonatomic) double destroyBeginTime; // @synthesize destroyBeginTime=_destroyBeginTime;
 @property(nonatomic) double startBeginTime; // @synthesize startBeginTime=_startBeginTime;

@@ -13,7 +13,6 @@
     id <WAAppOperateLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAAppOperateLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *m_starOperations; // @synthesize m_starOperations;
 @property(retain, nonatomic) NSMutableDictionary *m_operationInfo; // @synthesize m_operationInfo;

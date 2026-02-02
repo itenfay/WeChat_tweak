@@ -18,7 +18,6 @@
 }
 
 + (id)genFromUnion:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) WCPayJumpInfo *jump_info; // @synthesize jump_info=_jump_info;
 @property(retain) NSString *btn_wording; // @synthesize btn_wording=_btn_wording;
 @property unsigned int is_show_btn; // @synthesize is_show_btn=_is_show_btn;

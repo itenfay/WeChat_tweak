@@ -15,7 +15,6 @@
     struct CGRect _contentArea;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect contentArea; // @synthesize contentArea=_contentArea;
 @property(retain, nonatomic) UIImageView *rightDecoratorView; // @synthesize rightDecoratorView=_rightDecoratorView;
 @property(retain, nonatomic) UIImageView *leftDecoratorView; // @synthesize leftDecoratorView=_leftDecoratorView;

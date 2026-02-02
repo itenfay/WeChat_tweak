@@ -35,7 +35,6 @@
     unsigned long long _maxLikeCountOnce;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isContentShow; // @synthesize isContentShow=_isContentShow;
 @property(nonatomic) unsigned long long maxLikeCountOnce; // @synthesize maxLikeCountOnce=_maxLikeCountOnce;
 @property(nonatomic) _Bool isShakeForLike; // @synthesize isShakeForLike=_isShakeForLike;

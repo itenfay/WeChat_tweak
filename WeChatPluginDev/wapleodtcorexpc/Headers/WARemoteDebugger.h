@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSMutableDictionary, NSString, WAAppTask, WARemoteDebugChannel, WARemoteDebugRecvQueue, WARemoteDebugSendQueue, WARemoteDebug_BaseReq, WCStateMachine, WKWebView;
 
@@ -36,7 +37,6 @@
     NSString *_connectJSCID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasConnected; // @synthesize hasConnected=_hasConnected;
 @property(copy, nonatomic) NSString *connectJSCID; // @synthesize connectJSCID=_connectJSCID;
 @property(retain, nonatomic) NSMutableDictionary *jscID2IDWrapMap; // @synthesize jscID2IDWrapMap=_jscID2IDWrapMap;
@@ -155,4 +155,3 @@
 @property(readonly) Class superclass;
 
 @end
-

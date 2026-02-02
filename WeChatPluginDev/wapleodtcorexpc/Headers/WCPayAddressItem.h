@@ -20,7 +20,6 @@
     UILabel *_label;
 }
 
-- (void).cxx_destruct;
 @property(retain) UILabel *label; // @synthesize label=_label;
 @property(retain) NSString *address; // @synthesize address=_address;
 @property(retain) NSString *city; // @synthesize city=_city;

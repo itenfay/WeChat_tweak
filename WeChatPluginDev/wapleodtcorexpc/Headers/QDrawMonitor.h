@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSThread, NSTimer;
 
@@ -18,7 +19,6 @@
     NSTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool exitThread; // @synthesize exitThread=_exitThread;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSThread *monitorThread; // @synthesize monitorThread=_monitorThread;
@@ -38,4 +38,3 @@
 - (id)init;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FlutterMethodChannel, NSMutableDictionary, NSString, WxaFlutterViewLifeCycle;
 
 @interface WxaFlutterViewController
@@ -19,7 +21,6 @@
     FlutterMethodChannel *_channel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterMethodChannel *channel; // @synthesize channel=_channel;
 @property(readonly, nonatomic) _Bool hasDealloc; // @synthesize hasDealloc=_hasDealloc;
 @property(nonatomic) _Bool needKeepAlive; // @synthesize needKeepAlive=_needKeepAlive;
@@ -60,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

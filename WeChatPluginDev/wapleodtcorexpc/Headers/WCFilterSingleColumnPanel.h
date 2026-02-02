@@ -10,7 +10,6 @@
     MMTableView *m_tableView;
 }
 
-- (void).cxx_destruct;
 - (void)updateHeightWithFilterItems;
 - (void)configSelectedIndex:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

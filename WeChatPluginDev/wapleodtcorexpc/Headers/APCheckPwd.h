@@ -12,7 +12,6 @@
     UIViewController *_viewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) __weak id <APCheckPwdDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

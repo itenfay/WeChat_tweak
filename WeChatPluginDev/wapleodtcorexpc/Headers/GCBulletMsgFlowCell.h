@@ -19,7 +19,6 @@
 
 + (double)labelHeightForMsgPack:(id)arg1 withWidth:(double)arg2;
 + (id)msgContentOfPack:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *msgLabel; // @synthesize msgLabel=_msgLabel;
 @property(retain, nonatomic) MMWebImageView *avatarIcon; // @synthesize avatarIcon=_avatarIcon;
 @property(nonatomic) _Bool isThinStyle; // @synthesize isThinStyle=_isThinStyle;

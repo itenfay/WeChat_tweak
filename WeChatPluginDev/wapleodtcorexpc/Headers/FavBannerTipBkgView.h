@@ -13,7 +13,6 @@
     UIImageView *m_oArrowImageView;
 }
 
-- (void).cxx_destruct;
 - (void)setBgImageNormal;
 - (void)setBgImageHl;
 - (void)layoutSubviews;

@@ -13,7 +13,6 @@
     NSString *_boardKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int boardType; // @synthesize boardType=_boardType;
 @property(copy, nonatomic) NSString *boardKey; // @synthesize boardKey=_boardKey;
 @property(retain, nonatomic) FinderLiveContact *finderLiveContact; // @synthesize finderLiveContact=_finderLiveContact;

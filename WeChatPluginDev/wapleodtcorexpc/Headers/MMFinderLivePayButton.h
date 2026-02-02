@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class LOTAnimationView, MMUIButton, MMUILabel, UIImageView, UIView;
 
 @interface MMFinderLivePayButton
@@ -24,7 +26,6 @@
     LOTAnimationView *_breatheAnimationView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LOTAnimationView *breatheAnimationView; // @synthesize breatheAnimationView=_breatheAnimationView;
 @property(nonatomic) unsigned int priceInWecoin; // @synthesize priceInWecoin=_priceInWecoin;
 @property(retain, nonatomic) MMUILabel *payTipsLabel; // @synthesize payTipsLabel=_payTipsLabel;
@@ -56,4 +57,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -15,7 +15,6 @@
     UIView *_fromView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *fromView; // @synthesize fromView=_fromView;
 @property(nonatomic) _Bool shouldFadeInFadeOut; // @synthesize shouldFadeInFadeOut=_shouldFadeInFadeOut;
 @property(nonatomic) _Bool shouldRotateToPortrait; // @synthesize shouldRotateToPortrait=_shouldRotateToPortrait;

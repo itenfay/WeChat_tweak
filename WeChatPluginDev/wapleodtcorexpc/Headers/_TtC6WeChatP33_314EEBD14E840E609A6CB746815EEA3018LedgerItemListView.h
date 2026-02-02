@@ -16,7 +16,6 @@
     MISSING_TYPE *tapAction;
 }
 
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (id)init;

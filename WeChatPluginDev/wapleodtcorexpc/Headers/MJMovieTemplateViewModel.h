@@ -12,7 +12,6 @@
     OrderedDictionary *_showedTemplateListMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderedDictionary *showedTemplateListMap; // @synthesize showedTemplateListMap=_showedTemplateListMap;
 @property(retain, nonatomic) MJPublisherContext *publisherContext; // @synthesize publisherContext=_publisherContext;
 @property(retain, nonatomic) OMJPublisherSessionMetrics *publisherSessionMetrics; // @synthesize publisherSessionMetrics=_publisherSessionMetrics;

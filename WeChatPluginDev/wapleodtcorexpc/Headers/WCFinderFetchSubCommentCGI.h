@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderFetchSubCommentCGI
@@ -21,7 +23,6 @@
     unsigned long long _identityScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int pullScene; // @synthesize pullScene=_pullScene;
 @property(nonatomic) unsigned long long identityScene; // @synthesize identityScene=_identityScene;
 @property(nonatomic) unsigned long long rootCommentID; // @synthesize rootCommentID=_rootCommentID;
@@ -40,4 +41,3 @@
 - (id)initWithObjectid:(unsigned long long)arg1 nonceID:(id)arg2 rootCommentID:(unsigned long long)arg3 scene:(int)arg4 pullScene:(int)arg5 identityScene:(unsigned long long)arg6 rootCommentLastBuffer:(id)arg7 direction:(unsigned long long)arg8 successBlock:(CDUnknownBlockType)arg9 failureBlock:(CDUnknownBlockType)arg10;
 
 @end
-

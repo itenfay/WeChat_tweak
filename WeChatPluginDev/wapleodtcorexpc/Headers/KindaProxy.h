@@ -11,7 +11,6 @@
 }
 
 + (id)proxyWithObject:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id object; // @synthesize object=_object;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;

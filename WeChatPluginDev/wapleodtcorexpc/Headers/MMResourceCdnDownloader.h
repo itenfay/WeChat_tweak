@@ -19,7 +19,6 @@
 }
 
 + (unsigned int)genIncreaseSequence;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool waitForCDNInit; // @synthesize waitForCDNInit=_waitForCDNInit;
 @property(retain, nonatomic) NSArray *arrDnsIp; // @synthesize arrDnsIp=_arrDnsIp;
 @property(retain, nonatomic) NSString *resUrl; // @synthesize resUrl=_resUrl;

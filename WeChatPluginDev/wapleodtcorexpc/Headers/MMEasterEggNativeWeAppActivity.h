@@ -18,7 +18,6 @@
     NSDictionary *_prizeDict;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int probability; // @synthesize probability=_probability;
 @property(retain, nonatomic) NSDictionary *prizeDict; // @synthesize prizeDict=_prizeDict;
 @property(retain, nonatomic) WCCgiBlockHelper *cgiBlockHelper; // @synthesize cgiBlockHelper=_cgiBlockHelper;

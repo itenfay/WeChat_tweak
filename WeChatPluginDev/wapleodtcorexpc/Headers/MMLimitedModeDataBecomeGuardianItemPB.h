@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_becomeGuardianTime;
 + (void)PBArrayAdd_wardUserName;
 + (void)PBArrayAdd_guardianUserName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ticket; // @synthesize ticket=_ticket;
 @property(nonatomic) unsigned int becomeGuardianTime; // @synthesize becomeGuardianTime=_becomeGuardianTime;
 @property(retain, nonatomic) NSString *wardUserName; // @synthesize wardUserName=_wardUserName;

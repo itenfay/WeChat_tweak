@@ -11,7 +11,6 @@
     NSString *_key;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNumber; // @synthesize isNumber=_isNumber;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 - (Class)bindCellClass;

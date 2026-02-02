@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMusicInfo, MMPageSheetAdapter, NSArray, NSString, UIViewController, WCMusicListenHistoryViewController, WCMusicSearchContentViewController, WCMusicSearchContext, WCMusicSearchReporter, WCMusicSmartBoxViewController, WCStateMachine;
 
 @interface WCMusicSearchMainViewController
@@ -23,7 +25,6 @@
     WCMusicSearchReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMusicSearchReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(retain, nonatomic) WCMusicListenHistoryViewController *historyViewController; // @synthesize historyViewController=_historyViewController;
@@ -83,4 +84,3 @@
 @property(readonly) Class superclass;
 
 @end
-

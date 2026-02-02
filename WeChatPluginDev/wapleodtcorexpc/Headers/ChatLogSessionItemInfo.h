@@ -74,7 +74,6 @@
 + (void)PBArrayAdd_msgCount;
 + (void)PBArrayAdd_username;
 + (void)PBArrayAdd_session;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long rawVideoCount; // @synthesize rawVideoCount=_rawVideoCount;
 @property(nonatomic) unsigned long long rawVideoSize; // @synthesize rawVideoSize=_rawVideoSize;
 @property(nonatomic) unsigned long long rawImageCount; // @synthesize rawImageCount=_rawImageCount;

@@ -10,7 +10,6 @@
     NSMutableDictionary *_stackCache;
 }
 
-- (void).cxx_destruct;
 - (void)removeByEngineGroupId:(id)arg1;
 - (id)ofEngineGroupId:(id)arg1;
 - (void)dealloc;

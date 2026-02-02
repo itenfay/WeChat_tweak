@@ -14,7 +14,6 @@
     long long _msgSvrID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long msgSvrID; // @synthesize msgSvrID=_msgSvrID;
 @property(retain, nonatomic) NSArray *mediaArray; // @synthesize mediaArray=_mediaArray;
 @property(retain, nonatomic) BakChatMsgItem *bakchatMsgItem; // @synthesize bakchatMsgItem=_bakchatMsgItem;

@@ -10,7 +10,6 @@
     CLLocation *_location;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (unsigned int)sendDetailPageDataQuickRequest:(unsigned long long)arg1 Keyword:(id)arg2;

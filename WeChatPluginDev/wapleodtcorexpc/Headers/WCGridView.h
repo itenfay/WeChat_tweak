@@ -12,7 +12,6 @@
     NSArray *_itemViews;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *itemViews; // @synthesize itemViews=_itemViews;
 - (void)layoutItemViews;
 - (void)layoutSubviews;

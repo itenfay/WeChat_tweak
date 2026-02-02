@@ -28,7 +28,6 @@
     struct UIEdgeInsets _contentInset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) long long beginDraggingIndex; // @synthesize beginDraggingIndex=_beginDraggingIndex;

@@ -17,7 +17,6 @@
     MPPageFastLoadWXPicDecoder *_wxPicDecoder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MPPageFastLoadWXPicDecoder *wxPicDecoder; // @synthesize wxPicDecoder=_wxPicDecoder;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *imageDecodeQueue; // @synthesize imageDecodeQueue=_imageDecodeQueue;
 @property(retain, nonatomic) NSMutableSet *activeTaskSet; // @synthesize activeTaskSet=_activeTaskSet;

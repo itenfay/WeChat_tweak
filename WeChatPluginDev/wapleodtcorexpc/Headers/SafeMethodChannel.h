@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterMethodChannel, NSMutableArray;
 
@@ -16,7 +17,6 @@
 }
 
 + (id)methodChannelWithName:(id)arg1 binaryMessenger:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mWaitingInvokeCall; // @synthesize mWaitingInvokeCall=_mWaitingInvokeCall;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(retain, nonatomic) FlutterMethodChannel *channel; // @synthesize channel=_channel;
@@ -28,4 +28,3 @@
 - (id)init;
 
 @end
-

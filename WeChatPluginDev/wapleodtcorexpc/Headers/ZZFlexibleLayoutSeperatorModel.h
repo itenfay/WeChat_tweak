@@ -13,7 +13,6 @@
     struct CGSize _size;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 - (id)initWithSize:(struct CGSize)arg1 andColor:(id)arg2;

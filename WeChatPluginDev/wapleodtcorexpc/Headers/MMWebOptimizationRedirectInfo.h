@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_redirectUrl;
 + (void)PBArrayAdd_referUrl;
 + (void)PBArrayAdd_identifier;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastModifiedTime; // @synthesize lastModifiedTime=_lastModifiedTime;
 @property(nonatomic) unsigned int maxCacheTime; // @synthesize maxCacheTime=_maxCacheTime;
 @property(copy, nonatomic) NSString *redirectUrl; // @synthesize redirectUrl=_redirectUrl;

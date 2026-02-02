@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSCache, NSMutableDictionary, QAOILayerMarkerEngine, QMapContext, QMediator, QOverlayContainer, QUniversalMapCounter;
 
@@ -20,7 +21,6 @@
     NSCache *_poiImagePathCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSCache *poiImagePathCache; // @synthesize poiImagePathCache=_poiImagePathCache;
 @property(retain, nonatomic) NSMutableDictionary *textMarkerHolder; // @synthesize textMarkerHolder=_textMarkerHolder;
 @property(retain, nonatomic) NSMutableDictionary *markerHolder; // @synthesize markerHolder=_markerHolder;
@@ -54,4 +54,3 @@
 - (id)init;
 
 @end
-

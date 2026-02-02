@@ -12,7 +12,6 @@
     WCTTable *m_tableAirKiss;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *m_tableAirKiss; // @synthesize m_tableAirKiss;
 @property(retain, nonatomic) WCTTable *m_tableAccount; // @synthesize m_tableAccount;
 @property(retain, nonatomic) WCTDatabase *m_db; // @synthesize m_db;

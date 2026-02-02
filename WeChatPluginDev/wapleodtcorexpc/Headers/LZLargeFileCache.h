@@ -11,7 +11,6 @@
     NSMutableData *_readBufData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *readBufData; // @synthesize readBufData=_readBufData;
 @property(nonatomic) long long curFileOffset; // @synthesize curFileOffset=_curFileOffset;
 - (_Bool)readFileInner:(id)arg1 range:(struct _LzRange)arg2 data:(id *)arg3;

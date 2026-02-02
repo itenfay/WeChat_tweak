@@ -44,7 +44,6 @@
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_userName;
 + (void)PBArrayAdd_eventID;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nsNewXMLScene; // @synthesize nsNewXMLScene=_nsNewXMLScene;
 @property(nonatomic) unsigned int isDispose; // @synthesize isDispose=_isDispose;
 @property(nonatomic) unsigned int nReply; // @synthesize nReply=_nReply;

@@ -10,7 +10,6 @@
     MISSING_TYPE *context;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)stopLogic;
 - (void)startLogic;

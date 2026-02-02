@@ -14,7 +14,6 @@
     id <OnGotAppMsgHandleDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <OnGotAppMsgHandleDelegate> m_delegate; // @synthesize m_delegate;
 - (void)OnSendMessageCancel:(id)arg1;
 - (void)OnSendMessageOK:(id)arg1;

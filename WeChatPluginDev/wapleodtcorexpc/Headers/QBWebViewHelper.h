@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface QBWebViewHelper : NSObject
 {
@@ -36,4 +37,3 @@
 + (void)initialize;
 
 @end
-

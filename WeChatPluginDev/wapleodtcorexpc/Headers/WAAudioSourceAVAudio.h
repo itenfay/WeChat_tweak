@@ -23,7 +23,6 @@
     id <WAAudioSourceDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAAudioSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool loop; // @synthesize loop=_loop;
 @property(nonatomic) _Bool obeyMuteSwitch; // @synthesize obeyMuteSwitch=_obeyMuteSwitch;

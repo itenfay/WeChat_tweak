@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCURLSession, WCURLSessionDownloadTask;
 
 @interface MMKSWCSessionDownloader
@@ -11,7 +13,6 @@
     WCURLSessionDownloadTask *_downloadTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCURLSessionDownloadTask *downloadTask; // @synthesize downloadTask=_downloadTask;
 @property(retain, nonatomic) WCURLSession *urlSession; // @synthesize urlSession=_urlSession;
 - (void)reportDownloadCompleteWithSuccess:(_Bool)arg1;
@@ -35,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

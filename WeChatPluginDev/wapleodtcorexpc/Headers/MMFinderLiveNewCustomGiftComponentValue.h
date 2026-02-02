@@ -19,7 +19,6 @@
 
 + (_Bool)isComponentValuePBValid:(id)arg1 business:(id)arg2;
 + (id)transferFromComponentValuePB:(id)arg1 business:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool usePag; // @synthesize usePag=_usePag;
 @property(retain, nonatomic) MMFinderLiveNewCustomGiftItemResourceURL *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(nonatomic) _Bool customTextDisabled; // @synthesize customTextDisabled=_customTextDisabled;

@@ -14,7 +14,6 @@
 }
 
 + (id)finderLiveStreamElementModelFrom:(id)arg1 indexPath:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 - (void)resetExposeSession;

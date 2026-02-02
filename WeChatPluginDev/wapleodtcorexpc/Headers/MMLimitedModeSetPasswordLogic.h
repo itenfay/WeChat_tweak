@@ -12,7 +12,6 @@
     id <MMLimitedModeSetPasswordLogicDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLimitedModeSetPasswordLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)onSetTeenagerModePwdResp:(id)arg1;

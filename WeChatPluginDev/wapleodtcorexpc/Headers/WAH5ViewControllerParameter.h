@@ -17,7 +17,6 @@
     NSNumber *_isForceFullScreen;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useOfflinePkgIfExist; // @synthesize useOfflinePkgIfExist=_useOfflinePkgIfExist;
 @property(nonatomic) _Bool isForceRotateToPortrait; // @synthesize isForceRotateToPortrait=_isForceRotateToPortrait;
 @property(retain, nonatomic) NSNumber *isForceFullScreen; // @synthesize isForceFullScreen=_isForceFullScreen;

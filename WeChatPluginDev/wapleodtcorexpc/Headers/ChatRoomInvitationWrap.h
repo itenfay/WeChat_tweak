@@ -46,7 +46,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatRoomInvitationDetail *invitationDetail; // @synthesize invitationDetail=_invitationDetail;
 @property(retain, nonatomic) NSString *allMsgIdList; // @synthesize allMsgIdList=_allMsgIdList;
 @property(retain, nonatomic) NSString *memberList; // @synthesize memberList=_memberList;

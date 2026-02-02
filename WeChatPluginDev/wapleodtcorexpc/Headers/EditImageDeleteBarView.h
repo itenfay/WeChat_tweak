@@ -14,7 +14,6 @@
     unsigned long long _editImageUIStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long editImageUIStyle; // @synthesize editImageUIStyle=_editImageUIStyle;
 @property(retain, nonatomic) UILabel *_tipLabel; // @synthesize _tipLabel;
 @property(nonatomic) _Bool _isSelected; // @synthesize _isSelected;

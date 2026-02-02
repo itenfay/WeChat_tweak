@@ -16,7 +16,6 @@
     int _state;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) __weak id <MotionDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

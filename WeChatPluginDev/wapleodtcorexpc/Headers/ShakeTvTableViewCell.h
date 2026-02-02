@@ -13,7 +13,6 @@
     UILabel *_subTitleLabel;
 }
 
-- (void).cxx_destruct;
 - (void)setSubTitle:(id)arg1;
 - (void)updateWithShakeItemBase:(id)arg1;
 

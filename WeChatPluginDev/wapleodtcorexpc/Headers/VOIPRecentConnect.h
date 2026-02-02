@@ -19,7 +19,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_m_voiceRecentConnectUserName;
 + (void)PBArrayAdd_m_videoRecentConnectUserName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_voiceRecentConnectUserName; // @synthesize m_voiceRecentConnectUserName=_m_voiceRecentConnectUserName;
 @property(retain, nonatomic) NSMutableArray *m_videoRecentConnectUserName; // @synthesize m_videoRecentConnectUserName=_m_videoRecentConnectUserName;
 - (void)saveToCache;

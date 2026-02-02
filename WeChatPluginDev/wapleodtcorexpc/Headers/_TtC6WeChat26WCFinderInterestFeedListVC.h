@@ -12,7 +12,6 @@
     MISSING_TYPE *$__lazy_storage_$_finderFeedListView;
 }
 
-- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)popSelf;
 - (void)viewDidLoad;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJPublisher, MMUIViewController, NSString, WCActionSheetWithHeadAvatar, WCFinderCreateCoordinator, WCFinderPostActionSheetConfigArray;
 @protocol WCFinderPostMgrDelegate;
@@ -31,7 +32,6 @@
 + (_Bool)canShowCameraBtn;
 + (_Bool)enableIpadPostMedia;
 + (_Bool)enableMJPublishEntry:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long publisherEnterType; // @synthesize publisherEnterType=_publisherEnterType;
 @property(retain, nonatomic) MJPublisher *mjPublisher; // @synthesize mjPublisher=_mjPublisher;
 @property(retain, nonatomic) WCActionSheetWithHeadAvatar *publishActionSheet; // @synthesize publishActionSheet=_publishActionSheet;
@@ -134,4 +134,3 @@
 @property(readonly) Class superclass;
 
 @end
-

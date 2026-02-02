@@ -15,7 +15,6 @@
 
 + (double)defaultHeight;
 + (id)defaultIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdFireworkCheerInviteFriendView *adFireworkCheerInviteFriendView; // @synthesize adFireworkCheerInviteFriendView=_adFireworkCheerInviteFriendView;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(nonatomic) __weak id <WCAdFireworkCheerInviteFriendCellDelegate> delegate; // @synthesize delegate=_delegate;

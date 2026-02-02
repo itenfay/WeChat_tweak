@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WePkgPackage;
 
@@ -14,7 +15,6 @@
     WePkgPackage *_pkg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WePkgPackage *pkg; // @synthesize pkg=_pkg;
 - (void)onWepkgNoNeedUpdate:(id)arg1 version:(id)arg2;
 - (void)onWekgUpdateFailed:(id)arg1 errorStr:(id)arg2;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

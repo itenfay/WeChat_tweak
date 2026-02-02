@@ -10,7 +10,6 @@
     MMFinderLiveFeedStreamProductStyleView *_guideStyleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFeedStreamProductStyleView *guideStyleView; // @synthesize guideStyleView=_guideStyleView;
 - (void)onLiveFeedStreamProductStyleViewClicked:(id)arg1 jump2Type:(unsigned long long)arg2 productInfo:(id)arg3;
 - (void)setTaskId:(id)arg1;

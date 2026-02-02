@@ -15,7 +15,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *jumpUrl; // @synthesize jumpUrl=_jumpUrl;
 @property(retain, nonatomic) NSString *cover; // @synthesize cover=_cover;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

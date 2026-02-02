@@ -26,7 +26,6 @@
 + (id)getAccessibilityStr:(id)arg1 dataItem:(id)arg2;
 + (_Bool)isAdvertiserPreferComment:(id)arg1 dataItem:(id)arg2;
 + (double)getContentViewHeight:(id)arg1 dataItem:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCommentListContentBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *emotionView; // @synthesize emotionView=_emotionView;
 @property(retain, nonatomic) WCUserComment *comment; // @synthesize comment=_comment;

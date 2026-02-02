@@ -18,7 +18,6 @@
 + (id)getOplog:(id)arg1;
 + (_Bool)isUserInfoNotReady;
 + (_Bool)hasSetWxPasswd;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowingElderModeAlert; // @synthesize isShowingElderModeAlert=_isShowingElderModeAlert;
 - (void)onModifySelfContact:(id)arg1;
 - (void)onAuthOK;

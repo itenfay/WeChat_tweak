@@ -24,7 +24,6 @@
     ShareOpenSDKStateItem *m_stateItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ShareOpenSDKStateItem *m_stateItem; // @synthesize m_stateItem;
 @property(retain, nonatomic) id m_userInfo; // @synthesize m_userInfo;
 @property(retain, nonatomic) NSURL *m_iconImgUrl; // @synthesize m_iconImgUrl;

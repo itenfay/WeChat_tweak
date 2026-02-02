@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIView;
 @protocol TXLivePushJSAdapterProtocol;
 
@@ -21,7 +23,6 @@
     struct __CVBuffer *_lastOutputFrameBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int currentCanvasId; // @synthesize currentCanvasId=_currentCanvasId;
 @property(nonatomic) struct __CVBuffer *lastOutputFrameBuffer; // @synthesize lastOutputFrameBuffer=_lastOutputFrameBuffer;
 @property(nonatomic) _Bool isPublishingWhenEnterBackground; // @synthesize isPublishingWhenEnterBackground=_isPublishingWhenEnterBackground;
@@ -86,4 +87,3 @@
 @property(readonly) Class superclass;
 
 @end
-

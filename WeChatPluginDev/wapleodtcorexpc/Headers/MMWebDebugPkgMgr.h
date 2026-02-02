@@ -14,7 +14,6 @@
 + (id)arrSessionCommonDebugPkgDescItem;
 + (id)arrCommonDebugPkgDescItem;
 + (id)dicCmmonAppId2Desc;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 - (id)__pkgFilePathForAppId:(id)arg1;
 - (id)__pkgDirPath;

@@ -17,7 +17,6 @@
     WCPayProfession *_profession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayProfession *profession; // @synthesize profession=_profession;
 @property(nonatomic) double contentMaxWidth; // @synthesize contentMaxWidth=_contentMaxWidth;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

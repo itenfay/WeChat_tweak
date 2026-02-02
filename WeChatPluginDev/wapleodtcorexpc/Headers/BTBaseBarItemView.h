@@ -23,7 +23,6 @@
 }
 
 + (double)iconWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *markView; // @synthesize markView=_markView;
 @property(retain, nonatomic) UIView *markWrapperView; // @synthesize markWrapperView=_markWrapperView;
 @property(retain, nonatomic) UIImageView *borderView; // @synthesize borderView=_borderView;

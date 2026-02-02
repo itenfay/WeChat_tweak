@@ -29,7 +29,6 @@
 + (id)genTopicTitleWithType:(int)arg1 topicTitle:(id)arg2 topicLocation:(id)arg3 showHighlightTopic:(_Bool)arg4;
 + (double)getFadeInStartOffsetWithTopicType:(int)arg1 imageUrl:(id)arg2 topicTitle:(id)arg3 topicLocation:(id)arg4 topicDetailLocation:(id)arg5 topicCount:(unsigned long long)arg6 totalWatchCount:(unsigned long long)arg7;
 + (double)getTopicListSectionHeaderViewHeightWithTopicType:(int)arg1 imageUrl:(id)arg2 topicTitle:(id)arg3 topicLocation:(id)arg4 topicDetailLocation:(id)arg5 topicCount:(unsigned long long)arg6 totalWatchCount:(unsigned long long)arg7 width:(double)arg8 wordsTopicExt:(id)arg9 optionParams:(id)arg10;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *btnContainer; // @synthesize btnContainer=_btnContainer;
 @property(retain, nonatomic) MMUIButton *postNewLifeBtn; // @synthesize postNewLifeBtn=_postNewLifeBtn;
 @property(retain, nonatomic) FinderWordsTopicExtInfo *wordsTopicExt; // @synthesize wordsTopicExt=_wordsTopicExt;

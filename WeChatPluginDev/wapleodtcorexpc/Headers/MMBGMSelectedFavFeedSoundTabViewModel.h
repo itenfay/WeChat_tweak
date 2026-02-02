@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMBGMUniqueMutableArray, NSData;
 @protocol MMBGMSelectedFavFeedSoundTabViewModelDelegate;
 
@@ -14,7 +16,6 @@
     NSData *_sessionBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(nonatomic) _Bool hasMore; // @synthesize hasMore=_hasMore;
 @property(retain, nonatomic) MMBGMUniqueMutableArray *musicItem; // @synthesize musicItem=_musicItem;
@@ -31,4 +32,3 @@
 - (void)loadData;
 
 @end
-

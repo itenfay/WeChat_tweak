@@ -12,7 +12,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 - (id)additionalAccessibilityDescription;
 - (id)getReferImage;
 - (id)getReferImageViewWithSize:(struct CGSize)arg1;

@@ -25,7 +25,6 @@
     id <FavSearchBarDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldEdit; // @synthesize shouldEdit=_shouldEdit;
 @property(nonatomic) __weak id <FavSearchBarDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)getTextFieldRealText;

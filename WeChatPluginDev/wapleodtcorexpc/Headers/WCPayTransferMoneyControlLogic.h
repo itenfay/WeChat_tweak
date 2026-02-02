@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CgiUnionTransferPlaceOrderResp, JSEvent, MMTipsViewController, NSString, WCPayBizF2FTransferControlLogic, WCPayF2FMiddlePageSubLogic, WCPayF2FPayCheckCgi, WCPayInterceptWinLogic, WCPayPayMoneyLogic, WCPayTipsPageSheet, WCPayTransferAmountReInputPageStruct, WCPayTransferPayCheckCgi, WCPayTransferPrepayResponseStruct, WCPayUnionTransferPayCheckCgi, WCPayUnionTransferPlaceOrderCgi;
 
 @interface WCPayTransferMoneyControlLogic
@@ -54,7 +56,6 @@
     long long _transferPrepayRequestErrorCode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long transferPrepayRequestErrorCode; // @synthesize transferPrepayRequestErrorCode=_transferPrepayRequestErrorCode;
 @property(nonatomic) _Bool needReportScreenShotPage; // @synthesize needReportScreenShotPage=_needReportScreenShotPage;
 @property(retain, nonatomic) WCPayInterceptWinLogic *interceptWinLogic; // @synthesize interceptWinLogic=_interceptWinLogic;
@@ -182,4 +183,3 @@
 @property(readonly) Class superclass;
 
 @end
-

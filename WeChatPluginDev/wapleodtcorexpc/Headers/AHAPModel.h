@@ -15,7 +15,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *Pattern; // @synthesize Pattern=_Pattern;
 @property(retain, nonatomic) MetadataModel *Metadata; // @synthesize Metadata=_Metadata;
 @property(nonatomic) long long Version; // @synthesize Version=_Version;

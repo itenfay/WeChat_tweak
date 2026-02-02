@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, NSString, UIView, WCFinderStarterLiveViewModel;
 
 @interface WCStartGroupLiveHalfScreenView
@@ -17,7 +19,6 @@
     unsigned long long _showType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long showType; // @synthesize showType=_showType;
 @property(retain, nonatomic) WCFinderStarterLiveViewModel *starterViewModel; // @synthesize starterViewModel=_starterViewModel;
 @property(retain, nonatomic) MMUILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
@@ -55,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

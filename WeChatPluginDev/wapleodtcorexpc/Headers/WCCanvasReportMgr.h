@@ -21,7 +21,6 @@
 }
 
 + (void)tryToReportDownloadInfoWithUrl:(id)arg1 mediaType:(unsigned int)arg2 isPreload:(unsigned int)arg3 costTime:(unsigned long long)arg4 retCode:(long long)arg5 scene:(unsigned int)arg6 downloadSize:(long long)arg7 startDownloadTime:(unsigned long long)arg8;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasDynamicDataLoader *dataLoader; // @synthesize dataLoader=_dataLoader;
 @property(nonatomic) unsigned long long lastSightStreamVideoPlayCompleteTime; // @synthesize lastSightStreamVideoPlayCompleteTime=_lastSightStreamVideoPlayCompleteTime;
 @property(nonatomic) unsigned long long lastStreamVideoPlayCompleteTime; // @synthesize lastStreamVideoPlayCompleteTime=_lastStreamVideoPlayCompleteTime;

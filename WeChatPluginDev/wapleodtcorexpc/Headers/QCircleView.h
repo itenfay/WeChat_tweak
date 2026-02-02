@@ -11,7 +11,6 @@
     NSArray *_lineDashPattern;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *lineDashPattern; // @synthesize lineDashPattern=_lineDashPattern;
 @property(nonatomic) unsigned long long lineType; // @synthesize lineType=_lineType;
 - (void)updateOverlayPoints:(struct CLLocationCoordinate2D *)arg1 pointCount:(int)arg2;

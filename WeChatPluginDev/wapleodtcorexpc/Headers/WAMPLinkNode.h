@@ -14,7 +14,6 @@
     NSString *_nickName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
 @property(nonatomic) unsigned int appVersion; // @synthesize appVersion=_appVersion;
 @property(nonatomic) unsigned int debugModeType; // @synthesize debugModeType=_debugModeType;

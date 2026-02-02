@@ -17,7 +17,6 @@
     unsigned int m_uiCurEventID;
 }
 
-- (void).cxx_destruct;
 - (void)onDeleteContact:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (_Bool)isBrandModContact:(id)arg1;

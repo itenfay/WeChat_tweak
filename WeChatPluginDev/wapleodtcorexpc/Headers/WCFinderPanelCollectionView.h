@@ -21,7 +21,6 @@
     UILabel *_episodeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *episodeLabel; // @synthesize episodeLabel=_episodeLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;

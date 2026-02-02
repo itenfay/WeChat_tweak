@@ -10,7 +10,6 @@
     MISSING_TYPE *biz;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)getParentViewController;
 - (id)pluginWhiteList;

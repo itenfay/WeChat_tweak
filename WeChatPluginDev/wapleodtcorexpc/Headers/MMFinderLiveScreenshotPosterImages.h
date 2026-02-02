@@ -15,7 +15,6 @@
     NSDictionary *_posterImageConfigurations;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *posterImageConfigurations; // @synthesize posterImageConfigurations=_posterImageConfigurations;
 @property(retain, nonatomic) NSArray *primaryImageMaskingDescriptors; // @synthesize primaryImageMaskingDescriptors=_primaryImageMaskingDescriptors;
 @property(retain, nonatomic) NSArray *associatedImages; // @synthesize associatedImages=_associatedImages;

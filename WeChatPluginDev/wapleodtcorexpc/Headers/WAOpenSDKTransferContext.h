@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol OS_dispatch_group;
@@ -16,7 +17,6 @@
     NSObject<OS_dispatch_group> *_group;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
 @property(copy) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property int errorCode; // @synthesize errorCode=_errorCode;
@@ -25,4 +25,3 @@
 - (void)addUpdateDeepLinkRequestWithTicket:(id)arg1 result:(id)arg2 context:(id)arg3;
 
 @end
-

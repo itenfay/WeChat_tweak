@@ -21,7 +21,6 @@
     RichTextView *_contentLabel2;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *contentLabel2; // @synthesize contentLabel2=_contentLabel2;
 @property(retain, nonatomic) RichTextView *contentLabel1; // @synthesize contentLabel1=_contentLabel1;
 @property(retain, nonatomic) UIImageView *dot2; // @synthesize dot2=_dot2;

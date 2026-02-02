@@ -14,7 +14,6 @@
     unsigned long long _targetType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long targetType; // @synthesize targetType=_targetType;
 @property(retain, nonatomic) NSString *hightlightQuery; // @synthesize hightlightQuery=_hightlightQuery;
 @property(nonatomic) _Bool showLongSeparatorLine; // @synthesize showLongSeparatorLine=_showLongSeparatorLine;

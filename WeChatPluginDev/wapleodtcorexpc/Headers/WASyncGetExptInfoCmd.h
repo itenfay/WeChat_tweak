@@ -10,7 +10,6 @@
     NSString *_exptInfo;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *exptInfo; // @synthesize exptInfo=_exptInfo;
 
 @end

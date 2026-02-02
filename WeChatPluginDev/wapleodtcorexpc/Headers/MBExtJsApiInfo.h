@@ -14,7 +14,6 @@
     NSString *_apiName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *apiName; // @synthesize apiName=_apiName;
 @property(nonatomic) _Bool isRunOnMainThread; // @synthesize isRunOnMainThread=_isRunOnMainThread;
 @property(nonatomic) _Bool isSync; // @synthesize isSync=_isSync;

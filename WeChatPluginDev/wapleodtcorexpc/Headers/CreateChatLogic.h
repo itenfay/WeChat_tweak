@@ -20,7 +20,6 @@
     NSMutableArray *_selectedMsgList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *selectedMsgList; // @synthesize selectedMsgList=_selectedMsgList;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) SelectContactsViewController *m_SelectContactsViewController; // @synthesize m_SelectContactsViewController;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CIColor, NSArray;
 @protocol TAVVideoComposition, TAVVideoCompositionMixer;
@@ -25,7 +26,6 @@
 + (void)reloadStartTimeWithProviders:(id)arg1 transitionTime:(CDUnknownBlockType)arg2;
 + (void)reloadAudioStartTimeWithProviders:(id)arg1;
 + (void)reloadVideoStartTimeWithProviders:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TAVVideoCompositionMixer> videoCompositionMixer; // @synthesize videoCompositionMixer=_videoCompositionMixer;
 @property(retain, nonatomic) id <TAVVideoComposition> videoComposition; // @synthesize videoComposition=_videoComposition;
 @property(retain, nonatomic) NSArray *audios; // @synthesize audios=_audios;
@@ -40,4 +40,3 @@
 - (CDStruct_1b6d18a9)getTotalDuration;
 
 @end
-

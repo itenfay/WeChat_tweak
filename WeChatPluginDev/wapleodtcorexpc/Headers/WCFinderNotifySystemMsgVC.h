@@ -14,7 +14,6 @@
     WCFinderNotifySystemMsgVM *_vm;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderNotifySystemMsgVM *vm; // @synthesize vm=_vm;
 @property(retain, nonatomic) UITableViewDiffableDataSource *tableViewDataSource; // @synthesize tableViewDataSource=_tableViewDataSource;
 @property(retain, nonatomic) WCFinderDataLoadTips *dataLoadTips; // @synthesize dataLoadTips=_dataLoadTips;

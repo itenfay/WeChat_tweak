@@ -3,13 +3,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface MJTemplateGetInfoByShortURLCGI
 {
     CDUnknownBlockType _successfulBlock;
     CDUnknownBlockType _failedBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(copy, nonatomic) CDUnknownBlockType successfulBlock; // @synthesize successfulBlock=_successfulBlock;
 - (void)finderCgiDidFailWithError:(id)arg1 response:(id)arg2;
@@ -17,4 +18,3 @@
 - (id)initWithShortURL:(id)arg1 type:(unsigned long long)arg2 scene:(unsigned long long)arg3 successfulBlock:(CDUnknownBlockType)arg4 failedBlock:(CDUnknownBlockType)arg5;
 
 @end
-

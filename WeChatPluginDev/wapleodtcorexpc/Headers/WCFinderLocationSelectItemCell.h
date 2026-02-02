@@ -19,7 +19,6 @@
 }
 
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLocationSelectItem *item; // @synthesize item=_item;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;
 @property(retain, nonatomic) UIView *seperatorLine; // @synthesize seperatorLine=_seperatorLine;

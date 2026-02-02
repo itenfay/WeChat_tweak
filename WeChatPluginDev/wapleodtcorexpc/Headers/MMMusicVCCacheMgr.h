@@ -14,7 +14,6 @@
 
 + (id)openParamsWithMusicInfo:(id)arg1;
 + (id)openParamsWithMVModel:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool curCachedVCReusable; // @synthesize curCachedVCReusable=_curCachedVCReusable;
 - (void)clearCachedVC;
 - (void)markSelfPopedOrDismissed:(id)arg1;

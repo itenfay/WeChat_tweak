@@ -21,7 +21,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_m_typeInfoList;
 + (void)PBArrayAdd_m_functionList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_typeInfoList; // @synthesize m_typeInfoList=_m_typeInfoList;
 @property(retain, nonatomic) NSArray *m_functionList; // @synthesize m_functionList=_m_functionList;
 - (void)saveToCacheWithTpaCountry:(unsigned int)arg1;

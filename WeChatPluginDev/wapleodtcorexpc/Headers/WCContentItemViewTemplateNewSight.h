@@ -19,7 +19,6 @@
 }
 
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCommonInteractionLogic *commonInteractionLogic; // @synthesize commonInteractionLogic=_commonInteractionLogic;
 @property(retain, nonatomic) WCAdFinderLiveLogic *finderLiveLogic; // @synthesize finderLiveLogic=_finderLiveLogic;
 @property(retain, nonatomic) WCAdFinderLivePlayerView *finderLivePlayerView; // @synthesize finderLivePlayerView=_finderLivePlayerView;

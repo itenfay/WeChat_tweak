@@ -13,7 +13,6 @@
     MMAdaptiveBubbleShapeView *_shapeView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMAdaptiveBubbleShapeView *shapeView; // @synthesize shapeView=_shapeView;
 @property(retain, nonatomic) UIView *highlightCoverView; // @synthesize highlightCoverView=_highlightCoverView;
 @property(retain, nonatomic) MMAdaptiveBubbleParams *parames; // @synthesize parames=_parames;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIFont, UIImageView, UILabel, WCProgressCircleView;
 
@@ -21,7 +22,6 @@
     struct CGSize _progressCircleViewSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *labelTextColor; // @synthesize labelTextColor=_labelTextColor;
 @property(retain, nonatomic) UIFont *labelTextFont; // @synthesize labelTextFont=_labelTextFont;
 @property(nonatomic) double labelTextMarginTop; // @synthesize labelTextMarginTop=_labelTextMarginTop;
@@ -56,4 +56,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

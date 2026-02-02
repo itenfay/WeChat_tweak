@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_url;
 + (void)PBArrayAdd_name;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSData *name; // @synthesize name=_name;
 - (id)getPBPropertyTable;

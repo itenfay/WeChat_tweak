@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_thumbUrl;
 + (void)PBArrayAdd_link;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl=_thumbUrl;
 @property(retain, nonatomic) NSString *link; // @synthesize link=_link;

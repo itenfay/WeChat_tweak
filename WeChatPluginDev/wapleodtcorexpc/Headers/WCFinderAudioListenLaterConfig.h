@@ -20,7 +20,6 @@
     NSString *_nonce_id;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nonce_id; // @synthesize nonce_id=_nonce_id;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
 @property(nonatomic) long long duration; // @synthesize duration=_duration;

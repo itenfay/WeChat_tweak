@@ -15,7 +15,6 @@
     WCPayNoticeItemView *_noticeItemView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNoticeItemView *noticeItemView; // @synthesize noticeItemView=_noticeItemView;
 @property(retain, nonatomic) WCPayAgreementView *agreementView; // @synthesize agreementView=_agreementView;
 @property(retain, nonatomic) UIView *introInfosView; // @synthesize introInfosView=_introInfosView;

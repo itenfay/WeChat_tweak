@@ -23,7 +23,6 @@
     NSString *m_nsMediaType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bNeedStorage; // @synthesize m_bNeedStorage=_m_bNeedStorage;
 @property(nonatomic) int m_appType; // @synthesize m_appType;
 @property(nonatomic) int m_bizId; // @synthesize m_bizId;

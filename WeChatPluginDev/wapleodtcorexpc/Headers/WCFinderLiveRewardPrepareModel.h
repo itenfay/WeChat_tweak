@@ -18,7 +18,6 @@
 }
 
 + (id)CreatePrepareModelWithScene:(unsigned long long)arg1 sceneFlag:(unsigned long long)arg2 rewardPrepareResp:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *mBufferMap; // @synthesize mBufferMap=_mBufferMap;
 @property(retain, nonatomic) NSDictionary *bufferMap; // @synthesize bufferMap=_bufferMap;
 @property(retain, nonatomic) FinderLivePkValueExtraCtx *pkValueCtx; // @synthesize pkValueCtx=_pkValueCtx;

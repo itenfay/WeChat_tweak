@@ -17,7 +17,6 @@
     MMUIViewController *_loadingViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *loadingViewController; // @synthesize loadingViewController=_loadingViewController;
 @property(retain, nonatomic) KindaProxy *kindaProxy; // @synthesize kindaProxy=_kindaProxy;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;

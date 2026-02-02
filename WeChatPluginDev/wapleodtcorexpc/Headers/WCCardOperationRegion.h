@@ -14,7 +14,6 @@
     NSString *_thumbUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl=_thumbUrl;
 @property(nonatomic) unsigned int endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

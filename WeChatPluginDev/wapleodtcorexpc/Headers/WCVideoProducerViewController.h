@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMBGMSelectHalfScreenViewController, MMUIButton, NSMutableArray, NSString, UIImageView, UIView, WCColorProxy, WCMomentsCompositorTemplatePanelViewController, WCVideoProducerAssetClipperViewController, WCVideoProducerMusicBarViewController, WCVideoProducerMusicInfoMarqueeView, WCVideoProducerMusicSearcherViewController, WCVideoProducerTemplateBarViewController, WCVideoProducerTemplateFlowViewController, WCVideoProducerViewModel;
 @protocol WCVideoProducerViewControllerDelegate;
 
@@ -29,7 +31,6 @@
     UIImageView *_previewThumbView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *previewThumbView; // @synthesize previewThumbView=_previewThumbView;
 @property(retain, nonatomic) UIView *previewRenderView; // @synthesize previewRenderView=_previewRenderView;
 @property(retain, nonatomic) WCVideoProducerMusicInfoMarqueeView *musicInfoMarqueeView; // @synthesize musicInfoMarqueeView=_musicInfoMarqueeView;
@@ -224,4 +225,3 @@
 @property(readonly) Class superclass;
 
 @end
-

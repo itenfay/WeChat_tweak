@@ -15,7 +15,6 @@
     MJSpeechManager *_speechManager;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJSpeechManager *speechManager; // @synthesize speechManager=_speechManager;
 @property(readonly, nonatomic) __weak MJTimelineViewModel *timelineVM; // @synthesize timelineVM=_timelineVM;
 @property(readonly, nonatomic) __weak MJPlaybackViewModel *playbackVM; // @synthesize playbackVM=_playbackVM;

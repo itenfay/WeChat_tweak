@@ -12,7 +12,6 @@
     NSMutableDictionary *_downloadingTasks;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *downloadingTasks; // @synthesize downloadingTasks=_downloadingTasks;
 @property(nonatomic) __weak id <EmoticonLensIconDownloaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)OnCdnDownload:(id)arg1;

@@ -14,7 +14,6 @@
     id <MMFinderLiveConcertRecentForwardScrollViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveConcertRecentForwardScrollViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long contentType; // @synthesize contentType=_contentType;
 - (void)relayoutScrollSheet;

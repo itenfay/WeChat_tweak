@@ -19,7 +19,6 @@
 }
 
 + (double)pinViewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *m_extraContentView; // @synthesize m_extraContentView;
 @property(nonatomic) _Bool m_bCallOutViewEnable; // @synthesize m_bCallOutViewEnable;
 - (void)applyPinViewScale:(double)arg1;

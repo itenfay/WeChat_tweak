@@ -11,7 +11,6 @@
     MMUILabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)initSubViews;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -23,7 +23,6 @@
     unsigned int _colCount;
 }
 
-- (void).cxx_destruct;
 - (void)onUpdateEnterpriseGroupName:(id)arg1 errorCode:(int)arg2;
 - (void)onUpdateEnterpriseGroupMemberList:(id)arg1 errorCode:(int)arg2;
 - (void)onCreateEnterpriseGroup:(id)arg1 errorCode:(int)arg2 extDic:(id)arg3;

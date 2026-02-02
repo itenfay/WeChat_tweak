@@ -12,7 +12,6 @@
     MISSING_TYPE *$__lazy_storage_$_menuActionReporter;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)reportMenuActionWithType:(long long)arg1;
 - (void)reportExitWithType:(unsigned long long)arg1;

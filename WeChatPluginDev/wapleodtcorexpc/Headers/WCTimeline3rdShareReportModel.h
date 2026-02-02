@@ -16,7 +16,6 @@
 + (void)updateOutcome:(unsigned int)arg1 serverItem:(id)arg2 localItem:(id)arg3;
 + (void)bindDataItemIfSupport:(id)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *supportClass; // @synthesize supportClass=_supportClass;
 @property(retain, nonatomic) WCTimeline3rdShareBaseReporter *reporter; // @synthesize reporter=_reporter;
 - (Class)classForAppID:(id)arg1;

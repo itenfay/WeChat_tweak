@@ -15,7 +15,6 @@
     struct _NSRange _dataRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerLoadingRequest *loadingRequest; // @synthesize loadingRequest=_loadingRequest;
 @property(nonatomic) float downloadSec; // @synthesize downloadSec=_downloadSec;
 @property(nonatomic) struct _NSRange dataRange; // @synthesize dataRange=_dataRange;

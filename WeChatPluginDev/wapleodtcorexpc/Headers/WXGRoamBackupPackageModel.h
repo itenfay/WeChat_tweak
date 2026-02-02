@@ -26,7 +26,6 @@
     unsigned long long _sortNum;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sortNum; // @synthesize sortNum=_sortNum;
 @property(nonatomic) _Bool hasPermission; // @synthesize hasPermission=_hasPermission;
 @property(nonatomic) unsigned long long totalCount; // @synthesize totalCount=_totalCount;

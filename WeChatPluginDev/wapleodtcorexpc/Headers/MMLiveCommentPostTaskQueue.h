@@ -16,7 +16,6 @@
     unsigned long long _currMaxPostTaskID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currMaxPostTaskID; // @synthesize currMaxPostTaskID=_currMaxPostTaskID;
 @property(retain, nonatomic) NSMutableDictionary *postingDict; // @synthesize postingDict=_postingDict;
 @property(retain, nonatomic) NSMutableArray *pendingQueue; // @synthesize pendingQueue=_pendingQueue;

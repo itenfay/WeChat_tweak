@@ -13,7 +13,6 @@
     LiteAppStore *_store;
 }
 
-- (void).cxx_destruct;
 - (void)OnImageLoad:(id)arg1 success:(_Bool)arg2;
 - (void)ImageDidFail:(id)arg1;
 - (void)ImageDidLoadWithData:(id)arg1 Url:(id)arg2;

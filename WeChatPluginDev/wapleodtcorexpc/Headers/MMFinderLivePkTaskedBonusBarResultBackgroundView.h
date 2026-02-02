@@ -13,7 +13,6 @@
     MMFinderLivePkTaskedBonusBarBackgroundLowView *_failedBackgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePkTaskedBonusBarBackgroundLowView *failedBackgroundView; // @synthesize failedBackgroundView=_failedBackgroundView;
 @property(retain, nonatomic) MMFinderLivePkTaskedBonusBarBackgroundHighView *succeededBackgroundView; // @synthesize succeededBackgroundView=_succeededBackgroundView;
 - (void)layoutSubviews;

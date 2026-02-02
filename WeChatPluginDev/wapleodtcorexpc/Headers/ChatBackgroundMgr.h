@@ -17,7 +17,6 @@
     struct CGRect m_cacheRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_cancelingItems; // @synthesize m_cancelingItems;
 @property(retain, nonatomic) NSMutableArray *m_downloadingItems; // @synthesize m_downloadingItems;
 @property(retain, nonatomic) NSMutableArray *m_serverItems; // @synthesize m_serverItems;

@@ -14,7 +14,6 @@
     MISSING_TYPE *cdnvideourl_pd;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) NSNumber *cdnvideourl_pd; // @synthesize cdnvideourl_pd;
 @property(nonatomic, retain) NSNumber *cdnvideourl_pd_pri; // @synthesize cdnvideourl_pd_pri;

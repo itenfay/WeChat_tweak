@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (LiveSkeletonAOP)
 - (void)ls_unAopLayoutAnimation;
@@ -11,4 +12,3 @@
 - (void)ls_unAopLayoutLayer;
 - (void)ls_aopLayoutLayerWithBlock:(CDUnknownBlockType)arg1;
 @end
-

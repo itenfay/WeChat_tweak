@@ -14,7 +14,6 @@
     FakeMainFrameCellData *m_cellData;
 }
 
-- (void).cxx_destruct;
 - (id)getLabelNameColor;
 - (void)updateNameLabel;
 - (void)updateTimeLabel;

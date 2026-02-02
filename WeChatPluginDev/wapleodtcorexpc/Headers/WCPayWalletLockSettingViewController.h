@@ -12,7 +12,6 @@
     WCPayPaySecurityCgi *_m_securityCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayPaySecurityCgi *m_securityCgi; // @synthesize m_securityCgi=_m_securityCgi;
 @property(nonatomic) __weak id <WCPayWalletLockSettingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)clickModifyPatternLock;

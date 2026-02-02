@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class InteractionLabel, MMTimer, MMUIButton, NSString, UIImageView;
 
 @interface MMAssetUserActionTipsView
@@ -19,7 +21,6 @@
     struct CGSize _lastSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastSize; // @synthesize lastSize=_lastSize;
 @property(retain, nonatomic) UIImageView *rightFireworksImageView; // @synthesize rightFireworksImageView=_rightFireworksImageView;
 @property(retain, nonatomic) UIImageView *leftFireworksImageView; // @synthesize leftFireworksImageView=_leftFireworksImageView;
@@ -60,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

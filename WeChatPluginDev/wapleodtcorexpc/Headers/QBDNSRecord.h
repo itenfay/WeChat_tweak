@@ -16,7 +16,6 @@
 }
 
 @property(readonly, nonatomic) NSString *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)expired;

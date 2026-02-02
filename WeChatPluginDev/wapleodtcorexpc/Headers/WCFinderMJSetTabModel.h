@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSString, WCFinderMJSetTabDataFetcher;
 @protocol WCFinderMJSetTabModelDelegate;
@@ -20,7 +21,6 @@
     NSMutableArray *_mutContentVMS;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutContentVMS; // @synthesize mutContentVMS=_mutContentVMS;
 @property(retain, nonatomic) WCFinderMJSetTabDataFetcher *dataFetcher; // @synthesize dataFetcher=_dataFetcher;
 @property(readonly, nonatomic) unsigned long long dataFetchTime; // @synthesize dataFetchTime=_dataFetchTime;
@@ -55,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

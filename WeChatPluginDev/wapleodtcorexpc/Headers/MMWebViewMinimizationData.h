@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_publisherUserName;
 + (void)PBArrayAdd_iconUrl;
 + (void)PBArrayAdd_webViewUrl;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AppMsgShareItem *webShareItem; // @synthesize webShareItem=_webShareItem;
 @property(copy, nonatomic) NSString *webViewFullUrl; // @synthesize webViewFullUrl=_webViewFullUrl;
 @property(retain, nonatomic) NSString *strWebExtInfo; // @synthesize strWebExtInfo=_strWebExtInfo;

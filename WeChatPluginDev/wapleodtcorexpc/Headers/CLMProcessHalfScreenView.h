@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIActivityIndicatorView, NSString, UIImageView, UILabel;
 
 @interface CLMProcessHalfScreenView
@@ -21,7 +23,6 @@
     NSString *_finishTip;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *finishTip; // @synthesize finishTip=_finishTip;
 @property(copy, nonatomic) NSString *finishTitle; // @synthesize finishTitle=_finishTitle;
 @property(copy, nonatomic) NSString *stopActionName; // @synthesize stopActionName=_stopActionName;
@@ -54,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

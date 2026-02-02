@@ -20,7 +20,6 @@
 }
 
 + (id)reuseKey;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *selectedBorderLayer; // @synthesize selectedBorderLayer=_selectedBorderLayer;
 @property(retain, nonatomic) MMUIButton *deleteBtn; // @synthesize deleteBtn=_deleteBtn;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;

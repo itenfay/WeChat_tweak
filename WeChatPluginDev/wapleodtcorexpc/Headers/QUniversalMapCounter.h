@@ -25,7 +25,6 @@
     TBMapCommonCounter *_offlineMapCounter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TBMapCommonCounter *offlineMapCounter; // @synthesize offlineMapCounter=_offlineMapCounter;
 @property(retain, nonatomic) TBMapCommonCounter *aoiLayerCounter; // @synthesize aoiLayerCounter=_aoiLayerCounter;
 @property(retain, nonatomic) TBMapCommonCounter *groundOverlayCounter; // @synthesize groundOverlayCounter=_groundOverlayCounter;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, PAGView, UIButton, UIImageView;
 
 @interface MMFinderLiveAnchorRecordShowView
@@ -19,7 +21,6 @@
     UIButton *_actionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMUIButton *detailButton; // @synthesize detailButton=_detailButton;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -42,4 +43,3 @@
 - (double)getShowViewHeightWithPauseStatus:(_Bool)arg1;
 
 @end
-

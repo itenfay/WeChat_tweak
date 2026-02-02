@@ -21,7 +21,6 @@
     struct CGSize _outputSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonCameraEffectConfig *effectConfig; // @synthesize effectConfig=_effectConfig;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) unsigned long long fastFPS; // @synthesize fastFPS=_fastFPS;

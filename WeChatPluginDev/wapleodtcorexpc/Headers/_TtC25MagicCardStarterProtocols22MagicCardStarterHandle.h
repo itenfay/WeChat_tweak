@@ -14,7 +14,6 @@
     MISSING_TYPE *instanecKey;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

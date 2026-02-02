@@ -13,7 +13,6 @@
     NSArray *_singerInfoArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *singerInfoArray; // @synthesize singerInfoArray=_singerInfoArray;
 @property(retain, nonatomic) WCFinderHorizontalSlideView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <WCFinderMultiMusicianInfoViewDelegate> delegate; // @synthesize delegate=_delegate;

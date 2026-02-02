@@ -23,7 +23,6 @@
     PublicWifiCache *_acache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PublicWifiCache *acache; // @synthesize acache=_acache;
 @property(nonatomic) int retryCount; // @synthesize retryCount=_retryCount;
 @property(retain, nonatomic) NSURLConnection *ping32BlackUrlConnection; // @synthesize ping32BlackUrlConnection=_ping32BlackUrlConnection;

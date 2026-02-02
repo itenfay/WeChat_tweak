@@ -13,7 +13,6 @@
     NSArray *_textList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *textList; // @synthesize textList=_textList;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;
 - (_Bool)isValid;

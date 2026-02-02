@@ -29,7 +29,6 @@
     NSString *_noteId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNoteEditable; // @synthesize isNoteEditable=_isNoteEditable;
 @property(nonatomic) unsigned int viewImageCount; // @synthesize viewImageCount=_viewImageCount;
 @property(retain, nonatomic) NSString *noteId; // @synthesize noteId=_noteId;

@@ -13,7 +13,6 @@
     CContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) __weak MMUIViewController *viewController; // @synthesize viewController=_viewController;
 - (id)description;

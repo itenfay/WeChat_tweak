@@ -27,7 +27,6 @@
     NSMutableSet *_redpointUpdateListenerSet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool insideUpdateRedPointInfo; // @synthesize insideUpdateRedPointInfo=_insideUpdateRedPointInfo;
 @property(nonatomic) _Bool needUpdateRedPointInfo; // @synthesize needUpdateRedPointInfo=_needUpdateRedPointInfo;
 @property(retain, nonatomic) NSMutableSet *redpointUpdateListenerSet; // @synthesize redpointUpdateListenerSet=_redpointUpdateListenerSet;

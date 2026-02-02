@@ -14,7 +14,6 @@
     UIImageView *_privateMsgIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *privateMsgIconView; // @synthesize privateMsgIconView=_privateMsgIconView;
 @property(retain, nonatomic) UIView *seperateLineView; // @synthesize seperateLineView=_seperateLineView;
 @property(retain, nonatomic) UIView *privateMsgAreaView; // @synthesize privateMsgAreaView=_privateMsgAreaView;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MISSING_TYPE;
 
 @interface _TtC6WeChat23MagicNewPlayableService
@@ -21,7 +23,6 @@
     MISSING_TYPE *mainScriptInjected;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onJSException:(id)arg1 msg:(id)arg2 extra:(id)arg3;
 - (void)onCanvasViewFirstFrameRendered:(unsigned int)arg1;
@@ -45,4 +46,3 @@
 - (void)startWithConfig:(id)arg1;
 
 @end
-

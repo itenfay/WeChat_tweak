@@ -19,7 +19,6 @@
 }
 
 + (id)singlton;
-- (void).cxx_destruct;
 @property(retain, nonatomic) QDBDatabase *db; // @synthesize db=_db;
 @property(retain, nonatomic) NSString *dbpath; // @synthesize dbpath=_dbpath;
 @property(retain, nonatomic) QDataStoreSelectorCustomWorldmap *customWorldmap; // @synthesize customWorldmap=_customWorldmap;

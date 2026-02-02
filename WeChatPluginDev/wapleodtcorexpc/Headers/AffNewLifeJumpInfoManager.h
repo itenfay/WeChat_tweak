@@ -13,7 +13,6 @@
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)config:(id)arg1 uin:(id)arg2 clientVersion:(int)arg3 isStandalone:(_Bool)arg4 isDebug:(_Bool)arg5 resetData:(_Bool)arg6 adOpen:(_Bool)arg7;
 - (id)zidlObjToHolder;

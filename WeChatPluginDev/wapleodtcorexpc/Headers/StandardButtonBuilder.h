@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton;
 
@@ -16,7 +17,6 @@
     NSString *_btnIconName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *btnIconName; // @synthesize btnIconName=_btnIconName;
 @property(nonatomic) _Bool btnLoading; // @synthesize btnLoading=_btnLoading;
 @property(nonatomic) unsigned long long btnStyle; // @synthesize btnStyle=_btnStyle;
@@ -39,4 +39,3 @@
 - (id)init;
 
 @end
-

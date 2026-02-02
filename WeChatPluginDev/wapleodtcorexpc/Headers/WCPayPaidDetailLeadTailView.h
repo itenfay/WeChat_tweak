@@ -20,7 +20,6 @@
     NSString *_settledContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *settledContent; // @synthesize settledContent=_settledContent;
 @property(nonatomic) _Bool bIsSettled; // @synthesize bIsSettled=_bIsSettled;
 @property(retain, nonatomic) MMUIButton *coverBtn; // @synthesize coverBtn=_coverBtn;

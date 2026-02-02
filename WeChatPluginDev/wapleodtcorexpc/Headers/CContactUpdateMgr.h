@@ -20,7 +20,6 @@
     ContactProfileRecommendLogic *_contactProfileRecommendLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactProfileRecommendLogic *contactProfileRecommendLogic; // @synthesize contactProfileRecommendLogic=_contactProfileRecommendLogic;
 @property(retain, nonatomic) WCChatRoomMemberNoNickDataInfo *chatRoomMemberNoNickDataInfo; // @synthesize chatRoomMemberNoNickDataInfo=_chatRoomMemberNoNickDataInfo;
 @property(retain, nonatomic) NSMutableSet *m_updateEncryptSecretInfoSet; // @synthesize m_updateEncryptSecretInfoSet=_m_updateEncryptSecretInfoSet;

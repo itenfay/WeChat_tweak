@@ -17,7 +17,6 @@
 + (id)responseWithFile:(id)arg1 byteRange:(struct _NSRange)arg2;
 + (id)responseWithFile:(id)arg1 isAttachment:(_Bool)arg2;
 + (id)responseWithFile:(id)arg1;
-- (void).cxx_destruct;
 - (id)description;
 - (void)close;
 - (id)readData:(id *)arg1;

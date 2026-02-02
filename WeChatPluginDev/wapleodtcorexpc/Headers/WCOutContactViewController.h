@@ -37,7 +37,6 @@
     WCSearcher *_searcher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSearcher *searcher; // @synthesize searcher=_searcher;
 @property(retain, nonatomic) WCOActivityMsgInfo *activityInfo; // @synthesize activityInfo=_activityInfo;
 @property(retain, nonatomic) MMUIImageView *activityImgView; // @synthesize activityImgView=_activityImgView;

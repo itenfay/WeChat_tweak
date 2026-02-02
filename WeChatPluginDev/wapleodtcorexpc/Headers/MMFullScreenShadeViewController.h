@@ -11,7 +11,6 @@
     MMFullScreenShadeConfig *_shadeConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFullScreenShadeConfig *shadeConfig; // @synthesize shadeConfig=_shadeConfig;
 @property(retain, nonatomic) MMUILabel *remindTextLabel; // @synthesize remindTextLabel=_remindTextLabel;
 - (void)onClicked;

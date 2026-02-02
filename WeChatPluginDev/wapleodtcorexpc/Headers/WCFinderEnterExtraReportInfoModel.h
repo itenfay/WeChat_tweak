@@ -15,7 +15,6 @@
     unsigned long long _pipEnterType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pipEnterType; // @synthesize pipEnterType=_pipEnterType;
 @property(nonatomic) unsigned long long isPIPEnter; // @synthesize isPIPEnter=_isPIPEnter;
 @property(copy, nonatomic) NSString *redDotTipsUuid; // @synthesize redDotTipsUuid=_redDotTipsUuid;

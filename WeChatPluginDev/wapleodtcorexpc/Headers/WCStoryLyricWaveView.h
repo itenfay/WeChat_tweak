@@ -11,7 +11,6 @@
     UIColor *_waveColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *waveColor; // @synthesize waveColor=_waveColor;
 @property(retain, nonatomic) NSArray *animationLayers; // @synthesize animationLayers=_animationLayers;
 - (id)createDurationArray;

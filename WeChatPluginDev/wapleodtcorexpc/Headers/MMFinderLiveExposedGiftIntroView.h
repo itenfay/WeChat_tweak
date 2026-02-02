@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveCoinButton, MMFinderLiveTaskId, NSString, UIButton, UILabel, UIView;
 
 @interface MMFinderLiveExposedGiftIntroView
@@ -17,7 +19,6 @@
     MMFinderLiveCoinButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int wecoinCount; // @synthesize wecoinCount=_wecoinCount;
 @property(retain, nonatomic) MMFinderLiveCoinButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
@@ -45,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -10,7 +10,6 @@
     JSEvent *_jsEvent;
 }
 
-- (void).cxx_destruct;
 - (void)OnJsapiAddInvoiceFail;
 - (void)OnJsapiAddInvoiceCancel;
 - (void)OnJsapiAddInvoiceSuccess:(id)arg1;

@@ -14,7 +14,6 @@
     WCPayPayMoneyLogic *_paymoneyLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsPayMoneySucc; // @synthesize bIsPayMoneySucc=_bIsPayMoneySucc;
 @property(retain, nonatomic) WCPayPayMoneyLogic *paymoneyLogic; // @synthesize paymoneyLogic=_paymoneyLogic;
 @property(retain, nonatomic) NSString *prepayId; // @synthesize prepayId=_prepayId;

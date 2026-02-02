@@ -65,7 +65,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct Expression filterCondition; // @synthesize filterCondition=_filterCondition;
 @property(readonly, nonatomic) NSString *sourceTable; // @synthesize sourceTable=_sourceTable;
 @property(readonly, nonatomic) NSString *table; // @synthesize table=_table;

@@ -13,7 +13,6 @@
     UIImage *_iconImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic) SEL exposeAction; // @synthesize exposeAction=_exposeAction;
 

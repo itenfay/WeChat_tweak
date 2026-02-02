@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -18,7 +19,6 @@
     CDUnknownBlockType _onRightButtonClick;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onRightButtonClick; // @synthesize onRightButtonClick=_onRightButtonClick;
 @property(retain, nonatomic) NSString *rightButtonTitle; // @synthesize rightButtonTitle=_rightButtonTitle;
 @property(copy, nonatomic) CDUnknownBlockType onLeftButtonClick; // @synthesize onLeftButtonClick=_onLeftButtonClick;
@@ -28,4 +28,3 @@
 @property(nonatomic) unsigned int iconType; // @synthesize iconType=_iconType;
 
 @end
-

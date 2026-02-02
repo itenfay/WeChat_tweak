@@ -57,7 +57,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderObjectWordingInfo *asyncReasonInfo; // @synthesize asyncReasonInfo=_asyncReasonInfo;
 @property(retain, nonatomic) DynamicReason *dynamicReason; // @synthesize dynamicReason=_dynamicReason;
 @property(retain, nonatomic) NSString *innerRecommendReason; // @synthesize innerRecommendReason=_innerRecommendReason;

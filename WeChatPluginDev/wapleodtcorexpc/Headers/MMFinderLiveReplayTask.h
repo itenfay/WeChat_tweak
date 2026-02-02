@@ -14,7 +14,6 @@
     MMFinderLiveReplayView *_replayView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveReplayView *replayView; // @synthesize replayView=_replayView;
 @property(nonatomic) _Bool isLivePausedReplayLiveForOuter; // @synthesize isLivePausedReplayLiveForOuter=_isLivePausedReplayLiveForOuter;
 @property(nonatomic) _Bool isLivePausedForBarrage; // @synthesize isLivePausedForBarrage=_isLivePausedForBarrage;

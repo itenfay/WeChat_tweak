@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_m_uiNewArriveCount;
 + (void)PBArrayAdd_m_uiSoundStatus;
 + (void)PBArrayAdd_m_arrShakeList;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiNewArriveCount; // @synthesize m_uiNewArriveCount=_m_uiNewArriveCount;
 @property(nonatomic) unsigned int m_uiSoundStatus; // @synthesize m_uiSoundStatus=_m_uiSoundStatus;
 @property(retain, nonatomic) NSMutableArray *m_arrShakeList; // @synthesize m_arrShakeList=_m_arrShakeList;

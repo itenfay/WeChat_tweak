@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveOlyBarrageTravel, NSArray, NSMutableArray;
 
@@ -17,7 +18,6 @@
     NSMutableArray *_displayingPubbleList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasStartPlay; // @synthesize hasStartPlay=_hasStartPlay;
 @property(retain, nonatomic) NSMutableArray *displayingPubbleList; // @synthesize displayingPubbleList=_displayingPubbleList;
 @property(retain, nonatomic) MMFinderLiveOlyBarrageTravel *barrageTravel; // @synthesize barrageTravel=_barrageTravel;
@@ -39,4 +39,3 @@
 - (id)initWithBarrageTravelList:(id)arg1;
 
 @end
-

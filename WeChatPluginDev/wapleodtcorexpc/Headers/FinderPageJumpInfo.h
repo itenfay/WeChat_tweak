@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithFinderUin:(id)arg1 finderUsername:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
 @property(retain, nonatomic) NSNumber *finderUin; // @synthesize finderUin=_finderUin;
 - (id)toList;

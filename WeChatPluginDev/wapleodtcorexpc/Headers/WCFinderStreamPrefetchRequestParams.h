@@ -26,7 +26,6 @@
 }
 
 + (id)prefetchParamsFromStreamParams:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderSubTabItem *subTabItem; // @synthesize subTabItem=_subTabItem;
 @property(retain, nonatomic) NSArray *otherTabUnreadCacheFeeds; // @synthesize otherTabUnreadCacheFeeds=_otherTabUnreadCacheFeeds;
 @property(nonatomic) int refreshStatus; // @synthesize refreshStatus=_refreshStatus;

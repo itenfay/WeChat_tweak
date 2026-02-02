@@ -14,7 +14,6 @@
     WCPayPayMoneyFromOverseaH5WalletLogic *m_payMoneyFromOverseaH5WalletLogic;
 }
 
-- (void).cxx_destruct;
 - (void)cancelPayMoneyFromOverseaH5WalletLogic:(id)arg1;
 - (void)failToPayMoneyFromOverseaH5WalletLogic:(id)arg1;
 - (void)succToPayMoneyFromOverseaH5WalletLogic:(id)arg1;

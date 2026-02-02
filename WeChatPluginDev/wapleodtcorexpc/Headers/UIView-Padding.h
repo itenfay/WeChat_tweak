@@ -4,9 +4,9 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (Padding)
 - (CDUnknownBlockType)paddingViewIn;
 - (CDUnknownBlockType)paddingView;
 @end
-

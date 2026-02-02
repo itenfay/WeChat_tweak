@@ -23,7 +23,6 @@
     TBDistributerParameter *_centerParameter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TBDistributerParameter *centerParameter; // @synthesize centerParameter=_centerParameter;
 @property(retain, nonatomic) TBDistributerParameter *zoomParameter; // @synthesize zoomParameter=_zoomParameter;
 @property(nonatomic) _Bool isChanging; // @synthesize isChanging=_isChanging;

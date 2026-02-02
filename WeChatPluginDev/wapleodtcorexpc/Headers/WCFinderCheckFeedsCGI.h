@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray;
 
 @interface WCFinderCheckFeedsCGI
@@ -13,7 +15,6 @@
     NSArray *_unreadItems;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *unreadItems; // @synthesize unreadItems=_unreadItems;
 @property(copy, nonatomic) NSArray *readItems; // @synthesize readItems=_readItems;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
@@ -23,4 +24,3 @@
 - (id)initWithReadItems:(id)arg1 unreadItems:(id)arg2 scene:(int)arg3 prefetchType:(int)arg4 lastCheckBuffer:(id)arg5 liveBaseInfo:(id)arg6 successBlock:(CDUnknownBlockType)arg7 failBlock:(CDUnknownBlockType)arg8;
 
 @end
-

@@ -15,7 +15,6 @@
     long long _layoutType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long layoutType; // @synthesize layoutType=_layoutType;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(readonly, nonatomic) UILabel *rightLabel; // @synthesize rightLabel=_rightLabel;

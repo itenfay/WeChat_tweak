@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UINavigationBar, UPWKWebViewJavascriptBridge, WKWebView;
 @protocol UPWebPayDelegate;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool subPage; // @synthesize subPage=_subPage;
 @property(copy, nonatomic) NSString *startPage; // @synthesize startPage=_startPage;
 @property(nonatomic) __weak id <UPWebPayDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 runJavaScriptTextInputPanelWithPrompt:(id)arg2 defaultText:(id)arg3 initiatedByFrame:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)webView:(id)arg1 runJavaScriptAlertPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -59,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

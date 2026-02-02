@@ -18,7 +18,6 @@
 + (id)dictionaryForXMLData:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 + (id)dictionaryForXMLString:(id)arg1 error:(id *)arg2;
 + (id)dictionaryForXMLData:(id)arg1 error:(id *)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *errorPointer; // @synthesize errorPointer=_errorPointer;
 @property(retain, nonatomic) NSMutableString *textInProgress; // @synthesize textInProgress=_textInProgress;
 @property(retain, nonatomic) NSMutableArray *dictionaryStack; // @synthesize dictionaryStack=_dictionaryStack;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVCaptureDevice, AVCaptureDeviceInput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, MMTimer, NSMutableString, NSObject, NSRecursiveLock, NSString;
 @protocol CameraScannerViewDelegate, OS_dispatch_queue;
 
@@ -40,7 +42,6 @@
 + (void)releaseInstance;
 + (void)stopInstanceIfNeed;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool stopTimerCheck; // @synthesize stopTimerCheck=_stopTimerCheck;
 @property(nonatomic) float cameraDefaultZoomFactor; // @synthesize cameraDefaultZoomFactor=_cameraDefaultZoomFactor;
 @property(nonatomic) _Bool currentDeviceIsUltraWideAngleCamera; // @synthesize currentDeviceIsUltraWideAngleCamera=_currentDeviceIsUltraWideAngleCamera;
@@ -128,4 +129,3 @@
 @property(readonly) Class superclass;
 
 @end
-

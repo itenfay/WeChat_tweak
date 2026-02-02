@@ -27,7 +27,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithUserName:(id)arg1 nickName:(id)arg2 orderId:(id)arg3 msgId:(id)arg4 svrId:(id)arg5 isExposed:(id)arg6 isValidExposed:(id)arg7 isExpand:(id)arg8 isPlaceTop:(id)arg9 createTime:(id)arg10 rankSessionId:(id)arg11 isBigPic:(id)arg12 items:(id)arg13;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSNumber *isBigPic; // @synthesize isBigPic=_isBigPic;
 @property(copy, nonatomic) NSString *rankSessionId; // @synthesize rankSessionId=_rankSessionId;

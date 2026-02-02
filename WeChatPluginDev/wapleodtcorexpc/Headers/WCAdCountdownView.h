@@ -23,7 +23,6 @@
     MMTimer *_updateTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *updateTimer; // @synthesize updateTimer=_updateTimer;
 @property(retain, nonatomic) MMUILabel *secondNumLabel; // @synthesize secondNumLabel=_secondNumLabel;
 @property(retain, nonatomic) MMUILabel *timeSeparator2Label; // @synthesize timeSeparator2Label=_timeSeparator2Label;

@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TencenLBSZipArchive *zipAchive; // @synthesize zipAchive=_zipAchive;
 - (void)ErrorMessage:(id)arg1;
 - (_Bool)zipDir:(id)arg1 tozipPath:(id)arg2;

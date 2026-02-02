@@ -12,7 +12,6 @@
     WCPayUnionTransferNotifyCgi *_unionNotifyCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayUnionTransferNotifyCgi *unionNotifyCgi; // @synthesize unionNotifyCgi=_unionNotifyCgi;
 @property(nonatomic) _Bool bIsOpenIM; // @synthesize bIsOpenIM=_bIsOpenIM;
 @property(retain, nonatomic) JSEvent *event; // @synthesize event=_event;

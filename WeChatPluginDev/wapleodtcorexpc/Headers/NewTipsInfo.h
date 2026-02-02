@@ -48,7 +48,6 @@
 + (void)PBArrayAdd_operate;
 + (void)PBArrayAdd_priority;
 + (void)PBArrayAdd_tipsId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicShowInfo; // @synthesize dicShowInfo=_dicShowInfo;
 @property(nonatomic) unsigned int tipsDisposeTime; // @synthesize tipsDisposeTime=_tipsDisposeTime;
 @property(nonatomic) unsigned int realBeginShowTime; // @synthesize realBeginShowTime=_realBeginShowTime;

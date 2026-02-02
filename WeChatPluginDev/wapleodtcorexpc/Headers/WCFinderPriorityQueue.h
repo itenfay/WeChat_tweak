@@ -12,7 +12,6 @@
     NSMutableArray *_heap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *heap; // @synthesize heap=_heap;
 - (void)removeExpiredTasks;
 - (void)removeTaskByGroupId:(id)arg1;

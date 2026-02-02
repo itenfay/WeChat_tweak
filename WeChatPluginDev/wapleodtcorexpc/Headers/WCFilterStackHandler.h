@@ -12,7 +12,6 @@
     WCStackFeatPool *_stackFeatPool;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStackFeatPool *stackFeatPool; // @synthesize stackFeatPool=_stackFeatPool;
 - (unsigned long long)addStackFeat:(unsigned long long)arg1;
 - (void)saveStackFeat;

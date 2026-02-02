@@ -12,7 +12,6 @@
     NSString *_userData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userData; // @synthesize userData=_userData;
 - (id)getUserData;
 

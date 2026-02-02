@@ -17,7 +17,6 @@
     NSArray *_keywords;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *keywords; // @synthesize keywords=_keywords;
 @property(retain, nonatomic) NSString *matchText; // @synthesize matchText=_matchText;
 @property(nonatomic) unsigned int matchField; // @synthesize matchField=_matchField;

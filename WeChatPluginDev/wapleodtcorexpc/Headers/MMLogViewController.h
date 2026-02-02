@@ -39,7 +39,6 @@
     NSString *_lastSpeedInfoText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastSpeedInfoText; // @synthesize lastSpeedInfoText=_lastSpeedInfoText;
 @property(nonatomic) unsigned long long lastUpdateProgressUploadSize; // @synthesize lastUpdateProgressUploadSize=_lastUpdateProgressUploadSize;
 @property(nonatomic) unsigned long long lastUpdateProgressTime; // @synthesize lastUpdateProgressTime=_lastUpdateProgressTime;

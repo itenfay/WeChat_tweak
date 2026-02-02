@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView;
 
 @interface WCPayOpenTouchIDAuthConfirmView
@@ -12,7 +14,6 @@
     UIView *_contentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(copy, nonatomic) CDUnknownBlockType okBlock; // @synthesize okBlock=_okBlock;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
@@ -34,4 +35,3 @@
 - (id)initWithType:(int)arg1;
 
 @end
-

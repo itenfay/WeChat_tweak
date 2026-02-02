@@ -22,7 +22,6 @@
     struct CGRect _rect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QIntersectionOverlayHandler *handler; // @synthesize handler=_handler;
 @property(nonatomic) __weak QIntersectionOverlayManager *container; // @synthesize container=_container;
 @property(nonatomic) unsigned long long rightBottomCornerRadius; // @synthesize rightBottomCornerRadius=_rightBottomCornerRadius;

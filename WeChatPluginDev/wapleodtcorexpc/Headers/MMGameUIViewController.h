@@ -14,7 +14,6 @@
     NSMutableArray *_visibleStateArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *visibleStateArray; // @synthesize visibleStateArray=_visibleStateArray;
 @property(nonatomic) unsigned int currentScene; // @synthesize currentScene=_currentScene;
 @property(nonatomic) unsigned int sourceScene; // @synthesize sourceScene=_sourceScene;

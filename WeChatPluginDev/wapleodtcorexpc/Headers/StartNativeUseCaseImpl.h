@@ -12,7 +12,6 @@
     NSDictionary *_option;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *option; // @synthesize option=_option;
 @property(nonatomic) __weak UIViewController *vc; // @synthesize vc=_vc;
 @property(retain, nonatomic) LiteAppDynamicModuleCallback *callBack; // @synthesize callBack=_callBack;

@@ -20,7 +20,6 @@
 + (id)metalTextureFromRGBPixelBuffer:(struct __CVBuffer *)arg1 textureCache:(struct __CVMetalTextureCache *)arg2;
 + (id)uploadPixelBuffer:(struct __CVBuffer *)arg1 textureCache:(struct __CVMetalTextureCache *)arg2;
 + (_Bool)supportGPUUpload:(struct __CVBuffer *)arg1;
-- (void).cxx_destruct;
 - (id)uploadPixelBuffer:(struct __CVBuffer *)arg1;
 - (id)cpuUploadPixelBuffer:(struct __CVBuffer *)arg1;
 - (void)updateTexture:(unsigned long long)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 withBytes:(const void *)arg4 bytesPerRow:(unsigned long long)arg5 pixelFormat:(unsigned long long)arg6;

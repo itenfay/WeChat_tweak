@@ -14,7 +14,6 @@
     NSString *_costLevel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *costLevel; // @synthesize costLevel=_costLevel;
 @property(retain, nonatomic) NSString *uxInfo; // @synthesize uxInfo=_uxInfo;
 @property(retain, nonatomic) NSString *snsId; // @synthesize snsId=_snsId;

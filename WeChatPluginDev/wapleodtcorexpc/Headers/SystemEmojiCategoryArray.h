@@ -13,7 +13,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 
 // Remaining properties

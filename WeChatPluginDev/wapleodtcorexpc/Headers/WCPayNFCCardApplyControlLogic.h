@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ApplyNFCCardResponse, EXTPKG_mmpayapplynfccardbo_CardPasskitInfo, NSString, OrderCreateOrderResponse, OrderQueryOrderResponse, WCPayNFCCardPlaceOrderCgi, WCPayNFCCardQueryOrderCgi;
 @protocol WCPayNFCCardApplyControlLogicDelegate;
 
@@ -19,7 +21,6 @@
     WCPayNFCCardQueryOrderCgi *_queryOrderCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNFCCardQueryOrderCgi *queryOrderCgi; // @synthesize queryOrderCgi=_queryOrderCgi;
 @property(retain, nonatomic) WCPayNFCCardPlaceOrderCgi *placeOrderCgi; // @synthesize placeOrderCgi=_placeOrderCgi;
 @property(retain, nonatomic) NSString *outTradeNo; // @synthesize outTradeNo=_outTradeNo;
@@ -61,4 +62,3 @@
 @property(readonly) Class superclass;
 
 @end
-

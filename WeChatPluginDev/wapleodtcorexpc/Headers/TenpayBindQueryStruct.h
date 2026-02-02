@@ -13,7 +13,6 @@
     NSString *m_nsQQ;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsQQ; // @synthesize m_nsQQ;
 @property(retain, nonatomic) NSString *m_nsImportCode; // @synthesize m_nsImportCode;
 

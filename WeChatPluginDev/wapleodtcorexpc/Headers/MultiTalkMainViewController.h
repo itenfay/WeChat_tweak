@@ -117,7 +117,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *prevPortType; // @synthesize prevPortType=_prevPortType;
 @property(retain, nonatomic) AVRoutePickerView *avRouteView; // @synthesize avRouteView=_avRouteView;
 @property(nonatomic) _Bool isViewAppeared; // @synthesize isViewAppeared=_isViewAppeared;

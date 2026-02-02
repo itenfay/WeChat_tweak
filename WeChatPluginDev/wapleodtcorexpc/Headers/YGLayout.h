@@ -18,7 +18,6 @@
 }
 
 + (void)initialize;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *view_id; // @synthesize view_id=_view_id;
 @property(readonly, nonatomic) _Bool isUIView; // @synthesize isUIView=_isUIView;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WAMediaCastingUpnpCommandRunner : NSObject
 {
@@ -13,4 +14,3 @@
 + (void)runCommand:(id)arg1 device:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 @end
-

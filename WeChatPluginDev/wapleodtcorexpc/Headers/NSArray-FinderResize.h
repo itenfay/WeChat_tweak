@@ -4,8 +4,8 @@
 //
 
 #import <Foundation/NSArray.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSArray (FinderResize)
 - (id)resize:(id)arg1 creator:(CDUnknownBlockType)arg2 updator:(CDUnknownBlockType)arg3 remove:(CDUnknownBlockType)arg4;
 @end
-

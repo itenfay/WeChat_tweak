@@ -42,7 +42,6 @@
 }
 
 + (id)modelPropertyBlacklistForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) NSString *cre_begin_date; // @synthesize cre_begin_date=_cre_begin_date;
 @property(retain) NSString *encrypt_cre_effect_date; // @synthesize encrypt_cre_effect_date=_encrypt_cre_effect_date;
 @property(retain) NSString *phone_no_origin; // @synthesize phone_no_origin=_phone_no_origin;

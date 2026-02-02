@@ -14,7 +14,6 @@
 }
 
 + (void)log:(id)arg1 isOnline:(_Bool)arg2;
-- (void).cxx_destruct;
 - (void)sendEventNotify:(long long)arg1 msg:(id)arg2;
 - (void)sendEventNotify:(long long)arg1 param:(id)arg2;
 - (void)onNetworkQuality:(long long)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveVerticalTextButtonViewConfig, UIButton, UILabel;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _actionBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(retain, nonatomic) MMLiveVerticalTextButtonViewConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
@@ -28,4 +28,3 @@
 - (id)initWithConfig:(id)arg1 actionBlock:(CDUnknownBlockType)arg2;
 
 @end
-

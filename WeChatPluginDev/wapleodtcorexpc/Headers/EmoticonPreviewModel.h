@@ -20,7 +20,6 @@
     struct CGRect _originFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(nonatomic) _Bool enableOperation; // @synthesize enableOperation=_enableOperation;

@@ -53,7 +53,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *MSG_REVOKE_COL_STRRES3; // @synthesize MSG_REVOKE_COL_STRRES3=_MSG_REVOKE_COL_STRRES3;
 @property(retain, nonatomic) NSString *MSG_REVOKE_COL_STRRES2; // @synthesize MSG_REVOKE_COL_STRRES2=_MSG_REVOKE_COL_STRRES2;
 @property(retain, nonatomic) NSString *MSG_REVOKE_COL_STRRES1; // @synthesize MSG_REVOKE_COL_STRRES1=_MSG_REVOKE_COL_STRRES1;

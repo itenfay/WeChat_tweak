@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel;
 
@@ -15,7 +16,6 @@
     UIView *_highLightMask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highLightMask; // @synthesize highLightMask=_highLightMask;
 @property(retain, nonatomic) UIImageView *arrow; // @synthesize arrow=_arrow;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -29,4 +29,3 @@
 - (id)init;
 
 @end
-

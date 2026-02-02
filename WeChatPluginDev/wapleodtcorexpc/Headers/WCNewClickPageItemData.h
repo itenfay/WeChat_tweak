@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_count;
 + (void)PBArrayAdd_costTime;
 + (void)PBArrayAdd_pageID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicWidgetDatas; // @synthesize dicWidgetDatas=_dicWidgetDatas;
 @property(nonatomic) unsigned int specialPV; // @synthesize specialPV=_specialPV;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;

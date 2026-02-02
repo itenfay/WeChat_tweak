@@ -16,7 +16,6 @@
     NSMutableArray *_invalidCharacterArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *invalidCharacterArray; // @synthesize invalidCharacterArray=_invalidCharacterArray;
 @property(retain, nonatomic) NSMutableArray *selectBkArray; // @synthesize selectBkArray=_selectBkArray;
 @property(retain, nonatomic) NSMutableArray *mentionArray; // @synthesize mentionArray=_mentionArray;

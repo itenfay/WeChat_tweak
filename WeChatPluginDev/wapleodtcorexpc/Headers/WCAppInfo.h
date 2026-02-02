@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_version;
 + (void)PBArrayAdd_appName;
 + (void)PBArrayAdd_appID;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHidden; // @synthesize isHidden=_isHidden;
 @property(nonatomic) _Bool isNewMusicStyle; // @synthesize isNewMusicStyle=_isNewMusicStyle;
 @property(nonatomic) _Bool clickable; // @synthesize clickable=_clickable;

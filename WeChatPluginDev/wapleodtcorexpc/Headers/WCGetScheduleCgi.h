@@ -16,7 +16,6 @@
     NSMutableArray *_scheduleItems;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCancel; // @synthesize isCancel=_isCancel;
 @property(nonatomic) _Bool isRunning; // @synthesize isRunning=_isRunning;
 @property(retain, nonatomic) NSMutableArray *scheduleItems; // @synthesize scheduleItems=_scheduleItems;

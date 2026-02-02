@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AccessCardLogicController, NSIndexPath, NSMutableArray, NSString, ShareMessageConfirmLogicHelper, UIScrollView, WCActionSheet, WCCardBaseCardDetailContentView, WCNewCardDetailLogicController, WCNewShareCardConsumedView, WCShareCardCodeView, WeToast;
 @protocol WCNewCardDetailViewControllerDelegate;
 
@@ -45,7 +47,6 @@
     long long _currentTipViewIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long currentTipViewIndex; // @synthesize currentTipViewIndex=_currentTipViewIndex;
 @property(retain, nonatomic) NSMutableArray *arrBlackUserLabelID; // @synthesize arrBlackUserLabelID=_arrBlackUserLabelID;
 @property(retain, nonatomic) NSMutableArray *arrGroupUserLabelID; // @synthesize arrGroupUserLabelID=_arrGroupUserLabelID;
@@ -225,4 +226,3 @@
 @property(readonly) Class superclass;
 
 @end
-

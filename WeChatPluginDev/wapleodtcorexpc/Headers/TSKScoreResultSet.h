@@ -13,7 +13,6 @@
     TSKMidiScoreResult *_pyinScoreResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TSKMidiScoreResult *pyinScoreResult; // @synthesize pyinScoreResult=_pyinScoreResult;
 @property(retain, nonatomic) TSKMidiScoreResult *acfScoreResult; // @synthesize acfScoreResult=_acfScoreResult;
 - (id)copyWithZone:(struct _NSZone *)arg1;

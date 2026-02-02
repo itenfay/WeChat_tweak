@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableSet;
 
@@ -13,7 +14,6 @@
     NSMutableSet *_setMMUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *setMMUsername; // @synthesize setMMUsername=_setMMUsername;
 @property(retain, nonatomic) NSMutableArray *arrSourceGroup; // @synthesize arrSourceGroup=_arrSourceGroup;
 - (id)getRelatedChatRoom:(id)arg1 containMembers:(id)arg2;
@@ -28,4 +28,3 @@
 - (void)asyncGetRelatedChatRoomWithInfo:(id)arg1 completeBlock:(CDUnknownBlockType)arg2;
 
 @end
-

@@ -21,7 +21,6 @@
     NSString *_accessibilityLabel;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(nonatomic) _Bool tabViewNotBindRedDotPath; // @synthesize tabViewNotBindRedDotPath=_tabViewNotBindRedDotPath;
 @property(nonatomic) _Bool preLoadWhileScrolling; // @synthesize preLoadWhileScrolling=_preLoadWhileScrolling;

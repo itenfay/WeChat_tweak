@@ -14,7 +14,6 @@
     FinderPaidCollectionInfo *_paidCollectionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderPaidCollectionInfo *paidCollectionInfo; // @synthesize paidCollectionInfo=_paidCollectionInfo;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

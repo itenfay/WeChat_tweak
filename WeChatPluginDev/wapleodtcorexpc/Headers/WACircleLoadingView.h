@@ -22,7 +22,6 @@
     CAShapeLayer *_pointLayer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic) float progressWidth; // @synthesize progressWidth=_progressWidth;
 @property(nonatomic) float backLineWidth; // @synthesize backLineWidth=_backLineWidth;

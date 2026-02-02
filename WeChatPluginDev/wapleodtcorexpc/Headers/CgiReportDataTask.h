@@ -15,7 +15,6 @@
     unsigned long long _doCgiReqTimeMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long doCgiReqTimeMs; // @synthesize doCgiReqTimeMs=_doCgiReqTimeMs;
 @property(nonatomic) unsigned int doCgiReqCount; // @synthesize doCgiReqCount=_doCgiReqCount;
 @property(retain, nonatomic) CgiReportDataModel *dataModel; // @synthesize dataModel=_dataModel;

@@ -23,7 +23,6 @@
     UIButton *_cancelButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool lockOrientation; // @synthesize lockOrientation=_lockOrientation;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;

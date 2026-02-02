@@ -18,7 +18,6 @@
     unsigned int wordingComplexExchangeValue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int wordingComplexExchangeValue; // @synthesize wordingComplexExchangeValue;
 @property(retain, nonatomic) NSString *wordingComplexString; // @synthesize wordingComplexString;
 @property(retain, nonatomic) NSMutableArray *arrUserName; // @synthesize arrUserName;

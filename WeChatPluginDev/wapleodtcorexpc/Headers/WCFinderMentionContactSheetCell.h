@@ -15,7 +15,6 @@
     struct CGSize _lastSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FavAttributeCPLabel *summaryLabel; // @synthesize summaryLabel=_summaryLabel;
 @property(retain, nonatomic) FavAttributeCPLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *avatarView; // @synthesize avatarView=_avatarView;

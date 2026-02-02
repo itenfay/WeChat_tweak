@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE, WAApptaskPublicResLogic;
 
@@ -13,7 +14,6 @@
     MISSING_TYPE *pubResLogic;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)getFileDataByPath:(id)arg1;
 - (id)readFile:(id)arg1 position:(long long)arg2 length:(long long)arg3 error:(id *)arg4;
@@ -23,4 +23,3 @@
 - (id)provideFileSystem;
 
 @end
-

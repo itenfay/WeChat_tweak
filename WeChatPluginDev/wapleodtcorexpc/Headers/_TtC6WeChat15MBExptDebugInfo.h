@@ -17,7 +17,6 @@
 }
 
 + (id)fromExptWithExptKey:(id)arg1;
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 

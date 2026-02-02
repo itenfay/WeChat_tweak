@@ -28,7 +28,6 @@
     NSString *_currentNonceId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bLongVideo; // @synthesize bLongVideo=_bLongVideo;
 @property(copy, nonatomic) NSString *currentNonceId; // @synthesize currentNonceId=_currentNonceId;
 @property(copy, nonatomic) NSString *currentTid; // @synthesize currentTid=_currentTid;

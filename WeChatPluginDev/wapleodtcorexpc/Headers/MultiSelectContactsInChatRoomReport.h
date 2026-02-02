@@ -18,7 +18,6 @@
     NSMutableDictionary *_dicSelectionOperation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicSelectionOperation; // @synthesize dicSelectionOperation=_dicSelectionOperation;
 - (void)reportDataWithEnterScene:(unsigned int)arg1 andExitScene:(unsigned int)arg2;
 - (void)recordClkClearAllButtonCnt;

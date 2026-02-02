@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveConnectMicPkUser, MMLiveIconButton, UILabel, UIView, WCFinderHeadImageView;
 
@@ -22,7 +23,6 @@
 + (double)cellWidth;
 + (double)cellHeight;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableChangeTeam; // @synthesize disableChangeTeam=_disableChangeTeam;
 @property(retain, nonatomic) MMFinderLiveConnectMicPkUser *micUser; // @synthesize micUser=_micUser;
 @property(retain, nonatomic) WCFinderHeadImageView *avatarImageView; // @synthesize avatarImageView=_avatarImageView;
@@ -39,4 +39,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -18,7 +18,6 @@
     NSArray *_range;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *range; // @synthesize range=_range;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *version; // @synthesize version=_version;

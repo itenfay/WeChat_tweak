@@ -27,7 +27,6 @@
     struct CGSize _resourceHeaderSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool inAllActionProgress; // @synthesize inAllActionProgress=_inAllActionProgress;
 @property(retain, nonatomic) WCFilterView *filterView; // @synthesize filterView=_filterView;
 @property(nonatomic) unsigned long long eCollectonViewOrder; // @synthesize eCollectonViewOrder=_eCollectonViewOrder;

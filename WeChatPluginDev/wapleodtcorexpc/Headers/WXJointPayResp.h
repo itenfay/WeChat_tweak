@@ -10,7 +10,6 @@
     NSString *_returnKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *returnKey; // @synthesize returnKey=_returnKey;
 
 @end

@@ -14,7 +14,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *managerButton; // @synthesize managerButton=_managerButton;
 @property(retain, nonatomic) WAAuthManagerBottomViewModel *viewDataModel; // @synthesize viewDataModel=_viewDataModel;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -21,7 +21,6 @@
 }
 
 + (id)timelineStoryDataVM;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastReadMaxTid; // @synthesize lastReadMaxTid=_lastReadMaxTid;
 @property(nonatomic) _Bool hasReloadDataItem; // @synthesize hasReloadDataItem=_hasReloadDataItem;
 @property(retain, nonatomic) MMTimer *reloadNotifyThrottle; // @synthesize reloadNotifyThrottle=_reloadNotifyThrottle;

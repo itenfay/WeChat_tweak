@@ -174,7 +174,6 @@
 + (void)PBArrayAdd_liveStatus;
 + (void)PBArrayAdd_onlineCnt;
 + (void)PBArrayAdd_liveId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) LiveSdkParams *sdkParams; // @synthesize sdkParams=_sdkParams;
 @property(retain, nonatomic) NSString *replayCommentVisibilityOptionWording; // @synthesize replayCommentVisibilityOptionWording=_replayCommentVisibilityOptionWording;
 @property(nonatomic) _Bool disableShareCardExpose; // @synthesize disableShareCardExpose=_disableShareCardExpose;

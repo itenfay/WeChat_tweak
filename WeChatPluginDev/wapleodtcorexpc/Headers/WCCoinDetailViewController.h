@@ -15,7 +15,6 @@
     WCCoinNewUserTipsView *_tipsView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didBuyCoin; // @synthesize didBuyCoin=_didBuyCoin;
 @property(retain, nonatomic) WCCoinNewUserTipsView *tipsView; // @synthesize tipsView=_tipsView;
 @property(retain, nonatomic) GetWecoinPageInfoResponse *pageInfoResponse; // @synthesize pageInfoResponse=_pageInfoResponse;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonStoreItem, GetEmotionDetailRequest, NSString;
 
 @interface StoreEmotionGetDetailCgi
@@ -18,7 +20,6 @@
     EmoticonStoreItem *_originItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonStoreItem *originItem; // @synthesize originItem=_originItem;
 @property(readonly, nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
 @property(nonatomic) unsigned long long lastRequestTime; // @synthesize lastRequestTime=_lastRequestTime;
@@ -40,4 +41,3 @@
 @property(retain, nonatomic) GetEmotionDetailRequest *request; // @dynamic request;
 
 @end
-

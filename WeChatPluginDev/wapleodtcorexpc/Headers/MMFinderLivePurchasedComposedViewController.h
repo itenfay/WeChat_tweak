@@ -12,7 +12,6 @@
     MMLiteAppViewController *_paidMicViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiteAppViewController *paidMicViewController; // @synthesize paidMicViewController=_paidMicViewController;
 @property(retain, nonatomic) WCFinderNavTabTitleView *customTitleView; // @synthesize customTitleView=_customTitleView;
 @property(retain, nonatomic) MMFinderLivePurchasedComposedViewControllerOpenParams *openParam; // @synthesize openParam=_openParam;

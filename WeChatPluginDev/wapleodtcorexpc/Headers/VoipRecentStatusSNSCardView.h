@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, RichTextView, UIImageView, UILabel, UIView, WCDataItem;
 @protocol VoipRecentStatusProperties;
 
@@ -23,7 +25,6 @@
     UIView *_openPageHotView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *openPageHotView; // @synthesize openPageHotView=_openPageHotView;
 @property(retain, nonatomic) UILabel *positionLabel; // @synthesize positionLabel=_positionLabel;
 @property(retain, nonatomic) RichTextView *descriptionRichTextView; // @synthesize descriptionRichTextView=_descriptionRichTextView;
@@ -53,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

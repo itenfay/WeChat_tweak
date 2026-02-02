@@ -38,7 +38,6 @@
     NSArray *_tmpSelectChatroomContacts;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMultiSelectOpenForChatroom; // @synthesize isMultiSelectOpenForChatroom=_isMultiSelectOpenForChatroom;
 @property(retain, nonatomic) NSArray *tmpSelectChatroomContacts; // @synthesize tmpSelectChatroomContacts=_tmpSelectChatroomContacts;
 @property(nonatomic) _Bool isImportTagFromGroupEnable; // @synthesize isImportTagFromGroupEnable=_isImportTagFromGroupEnable;

@@ -15,7 +15,6 @@
     UIColor *_descColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *descColor; // @synthesize descColor=_descColor;
 @property(retain, nonatomic) UIFont *descFont; // @synthesize descFont=_descFont;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

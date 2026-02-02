@@ -13,7 +13,6 @@
     UIImageView *_tickImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *tickImageView; // @synthesize tickImageView=_tickImageView;
 @property(retain, nonatomic) UILabel *conditionLabel; // @synthesize conditionLabel=_conditionLabel;
 - (double)gcFelxibleLayoutWidth;

@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_array;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *array; // @synthesize array=_array;
 - (id)init;
 - (id)getPBPropertyTable;

@@ -13,7 +13,6 @@
     id <WCPayGetProfessionViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayGetProfessionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *professions; // @synthesize professions=_professions;
 @property(retain, nonatomic) WCPayProfession *selectedProfession; // @synthesize selectedProfession=_selectedProfession;

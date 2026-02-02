@@ -24,7 +24,6 @@
     UIView *_parentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *parentView; // @synthesize parentView=_parentView;
 @property(nonatomic) __weak id <WAGameReviewPopSheetDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onLoadImageFail:(id)arg1 extraInfo:(id)arg2;

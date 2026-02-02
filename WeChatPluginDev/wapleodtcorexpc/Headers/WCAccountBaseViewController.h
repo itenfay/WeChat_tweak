@@ -12,7 +12,6 @@
     WCSheetView *_sheetView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSheetView *sheetView; // @synthesize sheetView=_sheetView;
 - (void)onKeyboardChangingHeight:(double)arg1;
 - (void)onKeyboardWillChangeHeight:(double)arg1;

@@ -24,7 +24,6 @@
     MMUIViewController *_curViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *curViewController; // @synthesize curViewController=_curViewController;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *imagePath; // @synthesize imagePath=_imagePath;

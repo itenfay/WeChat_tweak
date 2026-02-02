@@ -25,7 +25,6 @@
     UIButton *_finishButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool dismissForHelp; // @synthesize dismissForHelp=_dismissForHelp;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
 @property(retain, nonatomic) UIButton *finishButton; // @synthesize finishButton=_finishButton;

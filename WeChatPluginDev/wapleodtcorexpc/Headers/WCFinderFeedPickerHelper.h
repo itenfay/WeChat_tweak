@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderFeedPickerViewController;
 
@@ -15,7 +16,6 @@
 }
 
 + (void)pickPostedFeedFromVC:(id)arg1 config:(CDUnknownBlockType)arg2 onCancel:(CDUnknownBlockType)arg3 onFinish:(CDUnknownBlockType)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderFeedPickerViewController *picker; // @synthesize picker=_picker;
 @property(copy, nonatomic) CDUnknownBlockType onFinish; // @synthesize onFinish=_onFinish;
 @property(copy, nonatomic) CDUnknownBlockType onCancel; // @synthesize onCancel=_onCancel;
@@ -32,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

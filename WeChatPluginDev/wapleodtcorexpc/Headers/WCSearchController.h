@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UISearchController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUISearchBar;
 @protocol WCSearchControllDelegate;
@@ -15,7 +16,6 @@
     MMUISearchBar *_wcSearchBar;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUISearchBar *wcSearchBar; // @synthesize wcSearchBar=_wcSearchBar;
 @property(nonatomic) _Bool forceFixSearchContainerTop; // @synthesize forceFixSearchContainerTop=_forceFixSearchContainerTop;
 @property(nonatomic) __weak id <WCSearchControllDelegate> wcSearchControllDelegate; // @synthesize wcSearchControllDelegate=_wcSearchControllDelegate;
@@ -34,4 +34,3 @@
 - (id)initWithSearchResultsController:(id)arg1;
 
 @end
-

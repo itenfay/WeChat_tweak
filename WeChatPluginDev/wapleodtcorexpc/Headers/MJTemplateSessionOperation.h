@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _statusChangedHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType statusChangedHandler; // @synthesize statusChangedHandler=_statusChangedHandler;
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -29,4 +29,3 @@
 - (id)initWithSessionKey:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end
-

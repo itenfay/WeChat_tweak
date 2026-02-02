@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveCameraOperationItem, MMUIButton, MMUILabel, UIView;
 
@@ -19,7 +20,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *badgeLabel; // @synthesize badgeLabel=_badgeLabel;
 @property(retain, nonatomic) UIView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) MMUILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
@@ -33,4 +33,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

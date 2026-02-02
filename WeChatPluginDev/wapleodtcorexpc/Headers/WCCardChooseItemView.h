@@ -15,7 +15,6 @@
 }
 
 + (double)heightForChooseItemView:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCardChooseItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)genInvoiceView;
 - (void)updateCellSelectStatus:(_Bool)arg1;

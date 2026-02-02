@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_avatarUrl;
 + (void)PBArrayAdd_nickName;
 + (void)PBArrayAdd_userName;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *avatarUrl; // @synthesize avatarUrl=_avatarUrl;
 @property(copy, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;

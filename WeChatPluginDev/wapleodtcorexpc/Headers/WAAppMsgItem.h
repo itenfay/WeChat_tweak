@@ -40,7 +40,6 @@
     NSString *_weAppPageThumbRawUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int secFlagForSinglePageMode; // @synthesize secFlagForSinglePageMode=_secFlagForSinglePageMode;
 @property(retain, nonatomic) NSString *weAppPageThumbRawUrl; // @synthesize weAppPageThumbRawUrl=_weAppPageThumbRawUrl;
 @property(retain, nonatomic) NSMutableDictionary *dynamicInfo; // @synthesize dynamicInfo=_dynamicInfo;

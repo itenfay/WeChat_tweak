@@ -19,7 +19,6 @@
     NSString *_doublecheck_ok;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideclosebtn; // @synthesize hideclosebtn=_hideclosebtn;
 @property(retain, nonatomic) NSString *doublecheck_ok; // @synthesize doublecheck_ok=_doublecheck_ok;
 @property(retain, nonatomic) NSString *doublecheck_cancel; // @synthesize doublecheck_cancel=_doublecheck_cancel;

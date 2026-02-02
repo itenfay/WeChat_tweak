@@ -16,7 +16,6 @@
 + (id)unarchiveWithWCTValue:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_regionText;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *regionText; // @synthesize regionText=_regionText;
 @property(readonly, copy) NSString *description;
 - (id)genFinderRegionInfo;

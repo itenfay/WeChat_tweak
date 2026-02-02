@@ -11,7 +11,6 @@
     TingItem *_tingItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingItem *tingItem; // @synthesize tingItem=_tingItem;
 @property(retain, nonatomic) TingSharedAudioView *audioContentView; // @synthesize audioContentView=_audioContentView;
 - (void)onClickAsRefer;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMusicRoundCorneredBarButton, UIImageView, UILabel, WCPlayerView;
 @protocol MMMusicNoAnyVideoViewPlayerDelegate;
 
@@ -18,7 +20,6 @@
     CDUnknownBlockType _onTappedBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onTappedBlock; // @synthesize onTappedBlock=_onTappedBlock;
 @property(nonatomic) unsigned long long videoEpisodeIndex; // @synthesize videoEpisodeIndex=_videoEpisodeIndex;
 @property(nonatomic) __weak id <MMMusicNoAnyVideoViewPlayerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -44,4 +45,3 @@
 - (id)init;
 
 @end
-

@@ -29,7 +29,6 @@
     WCFinderRedDotCtrlInfo *_ctrlInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRedDotCtrlInfo *ctrlInfo; // @synthesize ctrlInfo=_ctrlInfo;
 @property(retain, nonatomic) NSMutableArray *containerContext; // @synthesize containerContext=_containerContext;
 @property(nonatomic) unsigned long long cacheDurationInSeconds; // @synthesize cacheDurationInSeconds=_cacheDurationInSeconds;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderObjectHelpPromotionInfo, NSMutableArray, NSString, UIButton, UILabel, UITapGestureRecognizer, WCFinderFeedContentVM;
 
@@ -23,7 +24,6 @@
     UITapGestureRecognizer *_nicknameGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *nicknameGesture; // @synthesize nicknameGesture=_nicknameGesture;
 @property(nonatomic) __weak WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(retain, nonatomic) FinderObjectHelpPromotionInfo *promotions; // @synthesize promotions=_promotions;
@@ -49,4 +49,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

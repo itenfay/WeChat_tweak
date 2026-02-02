@@ -32,7 +32,6 @@
     unsigned long long _micRms2000Count;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long micRms2000Count; // @synthesize micRms2000Count=_micRms2000Count;
 @property(nonatomic) unsigned long long micRms300Count; // @synthesize micRms300Count=_micRms300Count;
 @property(nonatomic) unsigned long long micRms50Count; // @synthesize micRms50Count=_micRms50Count;

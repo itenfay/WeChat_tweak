@@ -18,7 +18,6 @@
     WCPayPayPwdViewController *_pwdVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayPayPwdViewController *pwdVC; // @synthesize pwdVC=_pwdVC;
 @property(retain, nonatomic) HoneyPaySelectCardTypeViewController *selectCardTypeVC; // @synthesize selectCardTypeVC=_selectCardTypeVC;
 @property(retain, nonatomic) WCPayGetPayPwdTokenCgi *getPayPwdTokenCgi; // @synthesize getPayPwdTokenCgi=_getPayPwdTokenCgi;

@@ -30,7 +30,6 @@
     MMFinderLiveLotteryRecordExpiredTipView *_expiredTipView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveLotteryRecordExpiredTipView *expiredTipView; // @synthesize expiredTipView=_expiredTipView;
 @property(retain, nonatomic) NSString *expiredWording; // @synthesize expiredWording=_expiredWording;
 @property(nonatomic) unsigned int isUrlExpired; // @synthesize isUrlExpired=_isUrlExpired;

@@ -13,7 +13,6 @@
     NSArray *_styleList;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *styleList; // @synthesize styleList=_styleList;
 @property(readonly, nonatomic) _Bool mapStyleEnabled; // @synthesize mapStyleEnabled=_mapStyleEnabled;
 - (id)initWithJSON:(id)arg1;

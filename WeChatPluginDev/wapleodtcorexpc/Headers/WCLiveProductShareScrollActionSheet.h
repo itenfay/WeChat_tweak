@@ -10,7 +10,6 @@
     MMFinderLiveECBaseShareTask *_shareTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveECBaseShareTask *shareTask; // @synthesize shareTask=_shareTask;
 - (void)showInView:(id)arg1;
 - (id)loadItemArray;

@@ -16,7 +16,6 @@
     MMImageDetectUploader *_uploader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMImageDetectUploader *uploader; // @synthesize uploader=_uploader;
 @property(retain, nonatomic) WCImageSearchEntity *searchEntity; // @synthesize searchEntity=_searchEntity;
 @property(retain, nonatomic) WCWebSearchViewControllerNewH5 *webSearchVC; // @synthesize webSearchVC=_webSearchVC;

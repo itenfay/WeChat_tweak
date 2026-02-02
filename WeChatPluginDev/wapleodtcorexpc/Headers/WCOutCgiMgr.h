@@ -11,7 +11,6 @@
     WCOutGetProductListCgi *_getproductlistCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCOutGetProductListCgi *getproductlistCgi; // @synthesize getproductlistCgi=_getproductlistCgi;
 @property(retain, nonatomic) WCOutCouponCgi *couponCgi; // @synthesize couponCgi=_couponCgi;
 - (void)WCOutGetProductListCgiDidFail:(id)arg1;

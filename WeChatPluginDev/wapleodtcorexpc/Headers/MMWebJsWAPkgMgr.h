@@ -17,7 +17,6 @@
 + (id)getPkgInfoWithAppId:(id)arg1;
 + (id)getValidMetaPkgWithAppId:(id)arg1 builtInPkgPath:(id)arg2;
 + (id)tryGetDebugPkgWithAppId:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 - (_Bool)isAppSupportFrameSetWithRegexp:(id)arg1 appId:(id)arg2 path:(id)arg3;
 - (_Bool)isAppSupportFrameSet:(id)arg1 appId:(id)arg2 path:(id)arg3;

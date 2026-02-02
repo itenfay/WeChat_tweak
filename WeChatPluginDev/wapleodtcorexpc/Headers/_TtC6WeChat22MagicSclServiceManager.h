@@ -11,7 +11,6 @@
     MISSING_TYPE *sclDelegate;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)getPkgInfo;
 - (id)getPkgVersion;

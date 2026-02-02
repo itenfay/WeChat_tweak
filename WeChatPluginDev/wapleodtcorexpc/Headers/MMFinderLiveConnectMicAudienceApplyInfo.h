@@ -14,7 +14,6 @@
     NSData *_inviteMicBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *inviteMicBuffer; // @synthesize inviteMicBuffer=_inviteMicBuffer;
 @property(nonatomic) _Bool isInvitedByAnchor; // @synthesize isInvitedByAnchor=_isInvitedByAnchor;
 @property(nonatomic) unsigned long long micIndex; // @synthesize micIndex=_micIndex;

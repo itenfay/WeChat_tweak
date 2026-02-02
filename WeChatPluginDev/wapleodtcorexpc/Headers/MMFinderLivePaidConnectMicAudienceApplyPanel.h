@@ -33,7 +33,6 @@
     UIView *_connectMethodBottomLine;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allowConsultInput; // @synthesize allowConsultInput=_allowConsultInput;
 @property(nonatomic) _Bool allowAnonymous; // @synthesize allowAnonymous=_allowAnonymous;
 @property(retain, nonatomic) UIView *connectMethodBottomLine; // @synthesize connectMethodBottomLine=_connectMethodBottomLine;

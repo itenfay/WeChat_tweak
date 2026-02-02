@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_province;
 + (void)PBArrayAdd_country;
 + (void)PBArrayAdd_sex;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *textStatusExtInfo; // @synthesize textStatusExtInfo=_textStatusExtInfo;
 @property(retain, nonatomic) NSString *textStatusID; // @synthesize textStatusID=_textStatusID;
 @property(retain, nonatomic) NSString *patSuffix; // @synthesize patSuffix=_patSuffix;

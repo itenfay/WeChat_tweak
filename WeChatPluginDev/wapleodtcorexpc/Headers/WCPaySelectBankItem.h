@@ -19,7 +19,6 @@
     WCPaySelectBankViewController *_m_selectBankViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPaySelectBankViewController *m_selectBankViewController; // @synthesize m_selectBankViewController=_m_selectBankViewController;
 @property(retain, nonatomic) WCPayT2BCGetBankListCgi *m_getBankListCgi; // @synthesize m_getBankListCgi=_m_getBankListCgi;
 @property(nonatomic) _Bool m_isUnselectable; // @synthesize m_isUnselectable=_m_isUnselectable;

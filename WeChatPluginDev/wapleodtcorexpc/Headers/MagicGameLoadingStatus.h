@@ -16,7 +16,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(retain, nonatomic) NSString *requestKey; // @synthesize requestKey=_requestKey;
 @property(retain, nonatomic) NSNumber *loadingSpeed; // @synthesize loadingSpeed=_loadingSpeed;

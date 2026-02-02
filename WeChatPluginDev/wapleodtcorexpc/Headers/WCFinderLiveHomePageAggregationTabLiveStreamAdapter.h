@@ -18,7 +18,6 @@
     WCFinderMoreLiveTagListHeaderView *_tagListHeaderView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMoreLiveTagListHeaderView *tagListHeaderView; // @synthesize tagListHeaderView=_tagListHeaderView;
 @property(retain, nonatomic) WCFinderLiveFeedGenericAutoPlayModel *autoPlayCtx; // @synthesize autoPlayCtx=_autoPlayCtx;
 @property(retain, nonatomic) WCFinderLiveHomePageAggregationTabLiveStreamVM *vm; // @synthesize vm=_vm;

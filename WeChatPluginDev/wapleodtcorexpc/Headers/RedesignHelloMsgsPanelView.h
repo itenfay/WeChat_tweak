@@ -18,7 +18,6 @@
 }
 
 + (id)getHelloMsgArrayContacts:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsUserName; // @synthesize nsUserName=_nsUserName;
 @property(retain, nonatomic) NSString *nsChatName; // @synthesize nsChatName=_nsChatName;
 - (void)onLongPressMenuViewCopy:(id)arg1;

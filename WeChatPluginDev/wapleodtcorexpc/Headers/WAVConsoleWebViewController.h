@@ -13,7 +13,6 @@
     struct CGRect _viewRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect viewRect; // @synthesize viewRect=_viewRect;
 @property(nonatomic) __weak YYBaseWebView *logicWebView; // @synthesize logicWebView=_logicWebView;
 @property(retain, nonatomic) NSDictionary *dictExtInfo; // @synthesize dictExtInfo=_dictExtInfo;

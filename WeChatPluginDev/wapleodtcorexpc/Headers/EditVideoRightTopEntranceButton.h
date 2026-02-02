@@ -16,7 +16,6 @@
 + (id)finderEntranceForShortVideo;
 + (id)finderEntranceForLongVideo;
 + (id)WeSeeEntrance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImageView *logoImageView; // @synthesize logoImageView=_logoImageView;

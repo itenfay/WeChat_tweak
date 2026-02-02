@@ -14,7 +14,6 @@
     NSMutableDictionary *_userName2ProfileResponse;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool localDataLoaded; // @synthesize localDataLoaded=_localDataLoaded;
 @property(retain, nonatomic) NSMutableDictionary *userName2ProfileResponse; // @synthesize userName2ProfileResponse=_userName2ProfileResponse;
 @property(retain, nonatomic) NSMutableSet *setAppID2PlayedAudio; // @synthesize setAppID2PlayedAudio=_setAppID2PlayedAudio;

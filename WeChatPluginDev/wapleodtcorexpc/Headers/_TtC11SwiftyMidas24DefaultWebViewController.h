@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
@@ -20,7 +21,6 @@
     MISSING_TYPE *showWebViewCompletion;
 }
 
-- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -32,4 +32,3 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 
 @end
-

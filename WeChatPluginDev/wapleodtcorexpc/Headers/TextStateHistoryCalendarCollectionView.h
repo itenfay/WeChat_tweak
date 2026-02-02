@@ -14,7 +14,6 @@
     UITapGestureRecognizer *_tapGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) TextStateHistoryCalendar *calendar; // @synthesize calendar=_calendar;
 - (_Bool)shouldShowYearForSection:(unsigned long long)arg1;

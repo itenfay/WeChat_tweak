@@ -22,7 +22,6 @@
     QPolyline *_animationLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QPolyline *animationLine; // @synthesize animationLine=_animationLine;
 @property(retain, nonatomic) QProgressAnimation *appearAnimation; // @synthesize appearAnimation=_appearAnimation;
 @property(nonatomic) _Bool internal; // @synthesize internal=_internal;

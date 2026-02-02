@@ -13,7 +13,6 @@
     NSDictionary *_param;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *param; // @synthesize param=_param;
 @property(retain, nonatomic) JSEvent *jsEvent; // @synthesize jsEvent=_jsEvent;
 @property(nonatomic) __weak id <WCPayJSLaunchGroupPayPfLogicDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;

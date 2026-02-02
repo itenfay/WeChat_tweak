@@ -10,7 +10,6 @@
     JSEvent *m_event;
 }
 
-- (void).cxx_destruct;
 - (void)onNoWifiCancel;
 - (void)onUserCancel;
 - (void)onAirKissReturn:(_Bool)arg1;

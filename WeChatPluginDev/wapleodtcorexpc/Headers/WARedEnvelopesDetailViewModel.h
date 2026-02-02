@@ -30,7 +30,6 @@
     NSString *_errorwording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorwording; // @synthesize errorwording=_errorwording;
 @property(retain, nonatomic) RealNameInfo *realNameInfo; // @synthesize realNameInfo=_realNameInfo;
 @property(retain, nonatomic) NSString *amountTitle; // @synthesize amountTitle=_amountTitle;

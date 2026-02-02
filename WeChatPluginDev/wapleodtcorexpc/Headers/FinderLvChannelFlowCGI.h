@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, WCFinderRedDotCtrlInfo;
 
 @interface FinderLvChannelFlowCGI
@@ -17,7 +19,6 @@
 }
 
 + (id)prefetchCacheHashKey:(int)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
@@ -39,4 +40,3 @@
 - (id)initWithWithPullType:(unsigned long long)arg1 tabType:(int)arg2 finderCtrlInfo:(id)arg3 prefetchData:(id)arg4 lastBuffer:(id)arg5 successful:(CDUnknownBlockType)arg6 failure:(CDUnknownBlockType)arg7;
 
 @end
-

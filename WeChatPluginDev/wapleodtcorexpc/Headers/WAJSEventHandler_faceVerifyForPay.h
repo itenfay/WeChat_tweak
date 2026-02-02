@@ -10,7 +10,6 @@
     FaceRecogPayHandler *_faceHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FaceRecogPayHandler *faceHandler; // @synthesize faceHandler=_faceHandler;
 - (void)faceRecogPayHandlerDidCancel:(id)arg1;
 - (void)faceRecogPayHandlerDidFinish:(id)arg1;

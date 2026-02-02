@@ -17,7 +17,6 @@
 + (id)shareDataParamsFromShareData:(id)arg1;
 + (_Bool)needForceToPortraitWithShareType:(id)arg1;
 + (id)shareDataFromShareDataParams:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needUploadFirst; // @synthesize needUploadFirst=_needUploadFirst;
 @property(retain, nonatomic) MMScrollActionSheet *pluginShareActionSheet; // @synthesize pluginShareActionSheet=_pluginShareActionSheet;
 @property(retain, nonatomic) NSMutableDictionary *dictShareDataForShareTimeline; // @synthesize dictShareDataForShareTimeline=_dictShareDataForShareTimeline;

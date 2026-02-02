@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UIImageView, UILabel;
 
@@ -17,7 +18,6 @@
     UIView *_highlightView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) UIImageView *arrowIcon; // @synthesize arrowIcon=_arrowIcon;
 @property(retain, nonatomic) UIButton *authButton; // @synthesize authButton=_authButton;
@@ -35,4 +35,3 @@
 - (id)initWithAuthBlock:(CDUnknownBlockType)arg1;
 
 @end
-

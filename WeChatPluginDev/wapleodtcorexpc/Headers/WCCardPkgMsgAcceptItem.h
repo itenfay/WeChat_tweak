@@ -17,7 +17,6 @@
     NSString *cardExt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int actionType; // @synthesize actionType;
 @property(nonatomic) unsigned int endTime; // @synthesize endTime;
 @property(retain, nonatomic) NSString *cardExt; // @synthesize cardExt;

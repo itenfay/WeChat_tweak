@@ -17,7 +17,6 @@
 
 + (double)cellViewEstimateWidth;
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveShareCardExposeReportAdapter *exposeReportAdapter; // @synthesize exposeReportAdapter=_exposeReportAdapter;
 @property(readonly, nonatomic) int cellViewType; // @synthesize cellViewType=_cellViewType;
 @property(readonly, nonatomic) double gradientLayerHeight; // @synthesize gradientLayerHeight=_gradientLayerHeight;

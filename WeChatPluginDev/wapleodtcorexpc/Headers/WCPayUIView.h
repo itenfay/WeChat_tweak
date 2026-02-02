@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, UIView;
 
 @interface WCPayUIView
@@ -14,7 +16,6 @@
     UIView *_hightLightMask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *hightLightMask; // @synthesize hightLightMask=_hightLightMask;
 @property(copy, nonatomic) CDUnknownBlockType tapAction; // @synthesize tapAction=_tapAction;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
@@ -28,4 +29,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

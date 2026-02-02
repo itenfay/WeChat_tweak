@@ -10,7 +10,6 @@
     UIView *m_authorMarkView;
 }
 
-- (void).cxx_destruct;
 - (double)maskViewHeaderOffset;
 - (void)layoutSubviews;
 - (void)initSubViews;

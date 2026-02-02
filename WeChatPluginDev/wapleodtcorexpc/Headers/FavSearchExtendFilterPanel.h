@@ -21,7 +21,6 @@
     id <FavSearchExtendFilterPanelDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavSearchExtendFilterPanelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)updateEditingTagTo:(id)arg1;
 - (void)updateTag:(id)arg1 to:(id)arg2;

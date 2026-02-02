@@ -18,7 +18,6 @@
 
 + (id)finderTaskWithFeedId:(id)arg1 nonceId:(id)arg2;
 + (id)defaultTask;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonCustomCreatePreProcessConfig *preprocessConfig; // @synthesize preprocessConfig=_preprocessConfig;
 @property(retain, nonatomic) NSString *nonceId; // @synthesize nonceId=_nonceId;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;

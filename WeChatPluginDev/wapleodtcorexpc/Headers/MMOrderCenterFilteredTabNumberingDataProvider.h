@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -12,7 +13,6 @@
     NSString *_filteringAppId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filteringAppId; // @synthesize filteringAppId=_filteringAppId;
 - (void)landingPageTabCountItemsWithForce:(_Bool)arg1 successBlock:(CDUnknownBlockType)arg2 failBlock:(CDUnknownBlockType)arg3;
 - (id)initWithFilteringAppId:(id)arg1;
@@ -27,4 +27,3 @@
 @property(readonly) Class superclass;
 
 @end
-

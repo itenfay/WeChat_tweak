@@ -12,7 +12,6 @@
     WCPayTransferPhoneProtocaDetailView *_contentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayTransferPhoneProtocaDetailView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <WCPayTransferPhoneProtocalHalfPageDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (double)bottomViewBottomMargin;

@@ -28,7 +28,6 @@
     double _applyMashV2DesclabelHeight;
 }
 
-- (void).cxx_destruct;
 @property double applyMashV2DesclabelHeight; // @synthesize applyMashV2DesclabelHeight=_applyMashV2DesclabelHeight;
 @property __weak id <WCPayQRCoverPageViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) WCPayCss *css; // @synthesize css=_css;

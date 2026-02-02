@@ -27,7 +27,6 @@
     WCMomentsPostReportSession *_postReportSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsPostReportSession *postReportSession; // @synthesize postReportSession=_postReportSession;
 @property(nonatomic) long long contactsSelectorType; // @synthesize contactsSelectorType=_contactsSelectorType;
 @property(retain, nonatomic) NSString *noResultTipText; // @synthesize noResultTipText=_noResultTipText;

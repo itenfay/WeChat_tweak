@@ -23,7 +23,6 @@
 + (id)reuseIdentifier;
 + (double)musicTabContentViewHeightFromWidth:(double)arg1;
 + (double)musicVideoContentViewHeightFromWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *topContentView; // @synthesize topContentView=_topContentView;
 @property(nonatomic) _Bool hiddenTopTitle; // @synthesize hiddenTopTitle=_hiddenTopTitle;

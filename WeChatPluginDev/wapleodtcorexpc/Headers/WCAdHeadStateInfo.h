@@ -16,7 +16,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *readStateDarkImageUrl; // @synthesize readStateDarkImageUrl=_readStateDarkImageUrl;
 @property(copy, nonatomic) NSString *unreadStateDarkImageUrl; // @synthesize unreadStateDarkImageUrl=_unreadStateDarkImageUrl;
 @property(copy, nonatomic) NSString *readStateImageUrl; // @synthesize readStateImageUrl=_readStateImageUrl;

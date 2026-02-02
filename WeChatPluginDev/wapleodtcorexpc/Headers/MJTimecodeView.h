@@ -26,7 +26,6 @@
 }
 
 + (id)timecodeFontOfSize:(double)arg1 weight:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
 @property(nonatomic) CDStruct_1b6d18a9 frameDuration; // @synthesize frameDuration=_frameDuration;
 - (void)updateDurationLabel;

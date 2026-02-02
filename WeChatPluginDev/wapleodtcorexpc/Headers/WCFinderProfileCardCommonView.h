@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _onClick;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onClick; // @synthesize onClick=_onClick;
 @property(retain, nonatomic) UIImageView *tailIconView; // @synthesize tailIconView=_tailIconView;
 @property(retain, nonatomic) UILabel *summaryLabel; // @synthesize summaryLabel=_summaryLabel;
@@ -31,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

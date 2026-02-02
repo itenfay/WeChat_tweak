@@ -14,7 +14,6 @@
     id <WCNetworkMediaInfoDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCNetworkMediaInfoDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *vid; // @synthesize vid=_vid;

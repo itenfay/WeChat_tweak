@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithAppId:(id)arg1 checkUpdate:(_Bool)arg2 syncCheckUpdate:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool syncCheckUpdate; // @synthesize syncCheckUpdate=_syncCheckUpdate;
 @property(nonatomic) _Bool checkUpdate; // @synthesize checkUpdate=_checkUpdate;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;

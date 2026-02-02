@@ -15,7 +15,6 @@
     unsigned long long _height;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(readonly, nonatomic) unsigned long long width; // @synthesize width=_width;
 @property(nonatomic) unsigned int texture; // @synthesize texture=_texture;

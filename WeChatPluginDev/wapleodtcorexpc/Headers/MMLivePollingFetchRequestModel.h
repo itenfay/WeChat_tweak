@@ -15,7 +15,6 @@
     NSArray *_reqBufferArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *reqBufferArray; // @synthesize reqBufferArray=_reqBufferArray;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;

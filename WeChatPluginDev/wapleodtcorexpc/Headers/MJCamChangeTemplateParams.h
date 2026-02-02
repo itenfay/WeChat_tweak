@@ -16,7 +16,6 @@
     OMJMusicInfo *_selectedMusicInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMJMusicInfo *selectedMusicInfo; // @synthesize selectedMusicInfo=_selectedMusicInfo;
 @property(retain, nonatomic) OMJCamMetaTraits *camMetaTraits; // @synthesize camMetaTraits=_camMetaTraits;
 @property(retain, nonatomic) OMJCamGestureRecognizerSettings *gestureSettings; // @synthesize gestureSettings=_gestureSettings;

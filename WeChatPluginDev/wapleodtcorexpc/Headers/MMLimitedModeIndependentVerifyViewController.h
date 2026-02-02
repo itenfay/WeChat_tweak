@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ForwardMessageLogicController, MMLimitedModeSetPasswordLogic, MMLimitedModeVerifyPasswordLogic, MMUIButton, MMUILabel, MMUITextField, NSString, WCPayInputView;
 @protocol MMLimitedModeIndependentVerifyViewControllerDelegate;
 
@@ -26,7 +28,6 @@
     ForwardMessageLogicController *_forwardMsgLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardMsgLogic; // @synthesize forwardMsgLogic=_forwardMsgLogic;
 @property(retain, nonatomic) WCPayInputView *payInputView; // @synthesize payInputView=_payInputView;
 @property(copy, nonatomic) CDUnknownBlockType m_closeBlock; // @synthesize m_closeBlock=_m_closeBlock;
@@ -79,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

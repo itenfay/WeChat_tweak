@@ -20,7 +20,6 @@
     double _iconNamePostfixSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double iconNamePostfixSize; // @synthesize iconNamePostfixSize=_iconNamePostfixSize;
 @property(retain, nonatomic) UIColor *detailTextColor; // @synthesize detailTextColor=_detailTextColor;
 @property(retain, nonatomic) UIColor *displayNameColor; // @synthesize displayNameColor=_displayNameColor;

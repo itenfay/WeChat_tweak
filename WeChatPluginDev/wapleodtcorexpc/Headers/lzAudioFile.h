@@ -35,7 +35,6 @@
 }
 
 + (void)initialize;
-- (void).cxx_destruct;
 @property(nonatomic) void *seekAudioBuf; // @synthesize seekAudioBuf=_seekAudioBuf;
 @property(retain, nonatomic) NSArray *audioFileTypes; // @synthesize audioFileTypes=_audioFileTypes;
 @property(nonatomic) unsigned int audioFileId; // @synthesize audioFileId=_audioFileId;

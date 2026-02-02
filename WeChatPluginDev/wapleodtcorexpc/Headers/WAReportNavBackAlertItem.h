@@ -12,7 +12,6 @@
     NSString *_eventNote;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *eventNote; // @synthesize eventNote=_eventNote;
 @property(nonatomic) long long eventId; // @synthesize eventId=_eventId;
 @property(nonatomic) long long timestampOfDialog; // @synthesize timestampOfDialog=_timestampOfDialog;

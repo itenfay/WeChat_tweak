@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithUsername:(id)arg1 avatarUrl:(id)arg2 nickname:(id)arg3 isFollowed:(id)arg4 followState:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *followState; // @synthesize followState=_followState;
 @property(retain, nonatomic) NSNumber *isFollowed; // @synthesize isFollowed=_isFollowed;
 @property(copy, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;

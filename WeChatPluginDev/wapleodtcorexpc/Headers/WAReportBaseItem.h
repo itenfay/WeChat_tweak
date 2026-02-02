@@ -35,7 +35,6 @@
     NSMutableArray *_paramArr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *paramArr; // @synthesize paramArr=_paramArr;
 @property(nonatomic) unsigned int exptIOSUseByteCode; // @synthesize exptIOSUseByteCode=_exptIOSUseByteCode;
 @property(nonatomic) unsigned int engineType; // @synthesize engineType=_engineType;

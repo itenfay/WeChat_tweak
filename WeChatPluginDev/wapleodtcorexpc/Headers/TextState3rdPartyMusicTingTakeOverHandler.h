@@ -12,7 +12,6 @@
 }
 
 + (id)openParamsFormMusicBuffer:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStateListenMediaView *mediaView; // @synthesize mediaView=_mediaView;
 @property(retain, nonatomic) MMMusicVideoStatusOpenParams *params; // @synthesize params=_params;
 - (id)reportActivityId;

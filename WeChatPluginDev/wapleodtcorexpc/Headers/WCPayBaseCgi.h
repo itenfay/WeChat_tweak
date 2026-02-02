@@ -32,7 +32,6 @@
     WXPBGeneratedMessage *_cacheResponse;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXPBGeneratedMessage *cacheResponse; // @synthesize cacheResponse=_cacheResponse;
 @property(retain, nonatomic) WCPayIdKeyRegularReporter *idKeyReporter; // @synthesize idKeyReporter=_idKeyReporter;
 @property(nonatomic) unsigned int eventID; // @synthesize eventID=_eventID;

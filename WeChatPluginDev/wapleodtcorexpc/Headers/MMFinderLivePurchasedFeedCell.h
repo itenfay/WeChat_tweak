@@ -20,7 +20,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPurchasedItem *purchasedItem; // @synthesize purchasedItem=_purchasedItem;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) MMUILabel *statusLabel; // @synthesize statusLabel=_statusLabel;

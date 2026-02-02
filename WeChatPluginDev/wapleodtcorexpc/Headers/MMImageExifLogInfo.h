@@ -77,7 +77,6 @@
 + (void)PBArrayAdd_originWidth;
 + (void)PBArrayAdd_mediaType;
 + (void)PBArrayAdd_localID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *rawImageMetadata; // @synthesize rawImageMetadata=_rawImageMetadata;
 @property(nonatomic) unsigned long long uploadMediaType; // @synthesize uploadMediaType=_uploadMediaType;
 @property(copy, nonatomic) NSString *md5; // @synthesize md5=_md5;

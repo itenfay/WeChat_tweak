@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OS_dispatch_queue, WXVoIPAudioHardwareSystemNotificationsLifelongObserverDelegate;
 
@@ -15,7 +16,6 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property _Bool isAPPActive; // @synthesize isAPPActive=_isAPPActive;
 @property _Bool isInterrupted; // @synthesize isInterrupted=_isInterrupted;
@@ -36,4 +36,3 @@
 - (id)init:(id)arg1;
 
 @end
-

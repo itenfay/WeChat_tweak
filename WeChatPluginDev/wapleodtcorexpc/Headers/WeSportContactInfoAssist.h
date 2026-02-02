@@ -11,7 +11,6 @@
     ForwardMessageLogicController *m_forwardLogic;
 }
 
-- (void).cxx_destruct;
 - (void)cancelFocus;
 - (void)onWCDeviceUnbindEnd:(id)arg1 Error:(id)arg2;
 - (void)uninstallPlugin;

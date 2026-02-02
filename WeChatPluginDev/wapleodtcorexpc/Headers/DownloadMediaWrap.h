@@ -19,7 +19,6 @@
 }
 
 + (id)getDownloadID:(id)arg1 downloadType:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long requestType; // @synthesize requestType;
 @property(retain, nonatomic) UIImage *resultImage; // @synthesize resultImage;
 @property(nonatomic) _Bool isDownloading; // @synthesize isDownloading;

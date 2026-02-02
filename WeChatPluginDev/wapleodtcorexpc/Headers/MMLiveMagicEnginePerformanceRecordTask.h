@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveMagicEnginePerformanceRecord, MMLiveMetricsInfoRecordInfo, NSMutableArray, NSString;
 
@@ -26,7 +27,6 @@
     MMLiveMagicEnginePerformanceRecord *_editorMedianGPUIncreaseRecord;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveMagicEnginePerformanceRecord *editorMedianGPUIncreaseRecord; // @synthesize editorMedianGPUIncreaseRecord=_editorMedianGPUIncreaseRecord;
 @property(retain, nonatomic) MMLiveMagicEnginePerformanceRecord *editorMedianCPUIncreaseRecord; // @synthesize editorMedianCPUIncreaseRecord=_editorMedianCPUIncreaseRecord;
 @property(retain, nonatomic) MMLiveMagicEnginePerformanceRecord *editorMedianMemoryIncreaseRecord; // @synthesize editorMedianMemoryIncreaseRecord=_editorMedianMemoryIncreaseRecord;
@@ -62,4 +62,3 @@
 - (id)initWithGiftName:(id)arg1 productId:(id)arg2;
 
 @end
-

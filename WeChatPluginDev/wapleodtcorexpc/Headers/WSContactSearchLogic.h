@@ -16,7 +16,6 @@
     NSString *_taskKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *taskKey; // @synthesize taskKey=_taskKey;
 @property(nonatomic) unsigned int bussinessType; // @synthesize bussinessType=_bussinessType;
 @property(retain, nonatomic) NSString *newestQueryText; // @synthesize newestQueryText=_newestQueryText;

@@ -21,7 +21,6 @@
 + (_Bool)shouldTingAppPresentWithMiniAnimation;
 + (_Bool)isTingViewControllerTop:(id)arg1;
 + (_Bool)dissambeVersionIsTingViewControllerTop;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictNextLaunchOptions; // @synthesize dictNextLaunchOptions=_dictNextLaunchOptions;
 @property(nonatomic) _Bool disableMinimizeTask; // @synthesize disableMinimizeTask=_disableMinimizeTask;
 @property(retain, nonatomic) TingMinimizeBaseTask *task; // @synthesize task=_task;

@@ -10,7 +10,6 @@
     NSString *_tagName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;
 
 @end

@@ -33,7 +33,6 @@
     NSMutableDictionary *_followerBaseViewDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *followerBaseViewDic; // @synthesize followerBaseViewDic=_followerBaseViewDic;
 @property(nonatomic) __weak WABaseView *followBaseView; // @synthesize followBaseView=_followBaseView;
 @property(retain, nonatomic) UIColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;

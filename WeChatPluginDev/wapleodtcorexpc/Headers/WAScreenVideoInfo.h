@@ -14,7 +14,6 @@
     NSString *_videoplaydesc;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *videoplaydesc; // @synthesize videoplaydesc=_videoplaydesc;
 @property(copy, nonatomic) NSString *videothumburl; // @synthesize videothumburl=_videothumburl;
 @property(copy, nonatomic) NSString *videoremoteurl; // @synthesize videoremoteurl=_videoremoteurl;

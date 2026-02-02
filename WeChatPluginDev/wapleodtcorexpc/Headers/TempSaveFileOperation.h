@@ -14,7 +14,6 @@
 }
 
 + (id)operationWithModel:(id)arg1 filePath:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(retain, nonatomic) WCTempSaveModel *model; // @synthesize model=_model;
 - (void)main;

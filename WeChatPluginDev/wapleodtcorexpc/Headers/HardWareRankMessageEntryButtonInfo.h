@@ -20,7 +20,6 @@
     struct CGSize _iconSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *highlightBackgroundColor; // @synthesize highlightBackgroundColor=_highlightBackgroundColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) struct CGSize iconSize; // @synthesize iconSize=_iconSize;

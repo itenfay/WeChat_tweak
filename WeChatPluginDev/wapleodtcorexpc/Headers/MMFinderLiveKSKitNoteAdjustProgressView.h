@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveKSKitMusicNoteContentView, MMFinderLiveKSKitMusicNoteScrollView, MMFinderLiveKSKitProgessPreparingView, NSMutableArray, NSString, PAGView, UIImageView, UIView;
 
 @interface MMFinderLiveKSKitNoteAdjustProgressView
@@ -34,7 +36,6 @@
     MMFinderLiveKSKitProgessPreparingView *_progressPreparingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveKSKitProgessPreparingView *progressPreparingView; // @synthesize progressPreparingView=_progressPreparingView;
 @property(nonatomic) _Bool isNoteHasUpdated; // @synthesize isNoteHasUpdated=_isNoteHasUpdated;
 @property(nonatomic) _Bool isNoteUpdated; // @synthesize isNoteUpdated=_isNoteUpdated;
@@ -129,4 +130,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
     NSMutableArray *_preloadedWebStores;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasIgnoreLongPressWhenCmtViewShow; // @synthesize hasIgnoreLongPressWhenCmtViewShow=_hasIgnoreLongPressWhenCmtViewShow;
 @property(nonatomic) _Bool hasForcePortaitWhenCmtViewShow; // @synthesize hasForcePortaitWhenCmtViewShow=_hasForcePortaitWhenCmtViewShow;
 @property(retain, nonatomic) NSMutableArray *preloadedWebStores; // @synthesize preloadedWebStores=_preloadedWebStores;

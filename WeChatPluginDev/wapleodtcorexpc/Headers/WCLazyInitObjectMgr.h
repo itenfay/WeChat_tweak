@@ -17,7 +17,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *threadLock; // @synthesize threadLock=_threadLock;
 @property(nonatomic) _Bool bDelayLoad; // @synthesize bDelayLoad=_bDelayLoad;
 @property(nonatomic) double currentTimeDis; // @synthesize currentTimeDis=_currentTimeDis;

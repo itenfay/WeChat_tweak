@@ -4,6 +4,7 @@
 //
 
 #import "NSObject-Protocol.h"
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol MMEmoticonLiteAppCreator;
 
@@ -16,4 +17,3 @@
 - (_Bool)isValid;
 - (_Bool)allowsInEmoticonLimited;
 @end
-

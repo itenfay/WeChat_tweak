@@ -14,7 +14,6 @@
     struct CGRect _rect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 @property(retain, nonatomic) CALayer *layer; // @synthesize layer=_layer;
 @property(retain, nonatomic) UIImage *img; // @synthesize img=_img;

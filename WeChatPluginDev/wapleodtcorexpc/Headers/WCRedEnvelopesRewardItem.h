@@ -23,7 +23,6 @@
 + (void)PBArrayAdd_receiveAmount;
 + (void)PBArrayAdd_createTime;
 + (void)PBArrayAdd_userName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ticket; // @synthesize ticket=_ticket;
 @property(retain, nonatomic) NSString *sendId; // @synthesize sendId=_sendId;
 @property(nonatomic) unsigned long long receiveAmount; // @synthesize receiveAmount=_receiveAmount;

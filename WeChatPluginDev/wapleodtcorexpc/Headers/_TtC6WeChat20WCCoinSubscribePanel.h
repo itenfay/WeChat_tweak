@@ -13,7 +13,6 @@
     MISSING_TYPE *continuation;
 }
 
-- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)pageSheetDidClose:(_Bool)arg1;
 - (void)viewDidTransitionToNewSize;

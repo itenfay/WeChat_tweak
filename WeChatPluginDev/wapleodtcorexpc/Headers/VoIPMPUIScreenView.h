@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIImageView, UILabel, UIView, VoIPMPUIScreenWindowView;
 
 @interface VoIPMPUIScreenView
@@ -65,7 +67,6 @@
     struct CGSize _windowViewSubBeforeSplitSize;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType detectSplitPreprationBlock; // @synthesize detectSplitPreprationBlock=_detectSplitPreprationBlock;
 @property(copy, nonatomic) CDUnknownBlockType dismissingSplitTipsBlock; // @synthesize dismissingSplitTipsBlock=_dismissingSplitTipsBlock;
 @property(retain, nonatomic) UIImageView *splitBackgroundImageView; // @synthesize splitBackgroundImageView=_splitBackgroundImageView;
@@ -142,4 +143,3 @@
 - (void)moveWindowViewSubToOrigin:(struct CGPoint)arg1 withSize:(struct CGSize)arg2;
 
 @end
-

@@ -11,7 +11,6 @@
     UIImageView *_foldImgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *foldImgView; // @synthesize foldImgView=_foldImgView;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)didSelectItemAtIndexPath:(id)arg1;

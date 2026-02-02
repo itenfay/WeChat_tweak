@@ -32,7 +32,6 @@
     _TtC6WeChat42TextStateSquareMixHeaderCollectionViewCell *_mixHeaderCell;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needUpdateHistoryInfo; // @synthesize needUpdateHistoryInfo=_needUpdateHistoryInfo;
 @property(retain, nonatomic) _TtC6WeChat42TextStateSquareMixHeaderCollectionViewCell *mixHeaderCell; // @synthesize mixHeaderCell=_mixHeaderCell;
 @property(nonatomic) __weak TextStateCardListViewController *cardListViewController; // @synthesize cardListViewController=_cardListViewController;

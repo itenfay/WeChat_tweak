@@ -12,7 +12,6 @@
     NSObject *_forwardAccesbility;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject *forwardAccesbility; // @synthesize forwardAccesbility=_forwardAccesbility;
 - (id)accessibilityElementAtIndex:(long long)arg1;
 - (long long)indexOfAccessibilityElement:(id)arg1;

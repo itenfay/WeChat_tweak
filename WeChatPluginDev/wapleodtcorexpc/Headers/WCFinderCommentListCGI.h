@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderGetCommentListCtx, NSData, NSString;
 
 @interface WCFinderCommentListCGI
@@ -25,7 +27,6 @@
     NSString *_enterSessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *enterSessionId; // @synthesize enterSessionId=_enterSessionId;
 @property(retain, nonatomic) FinderGetCommentListCtx *commentCtx; // @synthesize commentCtx=_commentCtx;
 @property(retain, nonatomic) NSData *likeListBuffer; // @synthesize likeListBuffer=_likeListBuffer;
@@ -52,4 +53,3 @@
 - (id)init;
 
 @end
-

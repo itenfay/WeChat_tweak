@@ -15,7 +15,6 @@
     NSString *_curAlbumId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSeeking; // @synthesize isSeeking=_isSeeking;
 @property(nonatomic) _Bool isNotifyMusicStateChange; // @synthesize isNotifyMusicStateChange=_isNotifyMusicStateChange;
 @property(retain, nonatomic) NSString *curAlbumId; // @synthesize curAlbumId=_curAlbumId;

@@ -19,7 +19,6 @@
 }
 
 + (id)templateInfoWithOMJTemplateInfo:(id)arg1 OMJMusicInfo:(id)arg2 templateType:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long templateType; // @synthesize templateType=_templateType;
 @property(nonatomic) unsigned long long minimumAndroidSDKVersion; // @synthesize minimumAndroidSDKVersion=_minimumAndroidSDKVersion;
 @property(nonatomic) unsigned long long minimumiOSSDKVersion; // @synthesize minimumiOSSDKVersion=_minimumiOSSDKVersion;

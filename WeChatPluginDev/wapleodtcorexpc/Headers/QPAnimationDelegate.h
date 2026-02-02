@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _onComplete;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onComplete; // @synthesize onComplete=_onComplete;
 @property(copy, nonatomic) CDUnknownBlockType onStart; // @synthesize onStart=_onStart;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
@@ -29,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

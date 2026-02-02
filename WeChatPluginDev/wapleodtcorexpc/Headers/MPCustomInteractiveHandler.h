@@ -15,7 +15,6 @@
     UIPercentDrivenInteractiveTransition *_transitioning;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPercentDrivenInteractiveTransition *transitioning; // @synthesize transitioning=_transitioning;
 @property(nonatomic) __weak id <MPCustomInteractiveHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool shouldForceCancel; // @synthesize shouldForceCancel=_shouldForceCancel;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
@@ -17,7 +18,6 @@
 
 + (void)reportExposeToSvrWithScene:(unsigned int)arg1 cellModel:(id)arg2 cellPos:(unsigned int)arg3;
 + (void)sendFeedBackReqWithModel:(id)arg1 selectedReasonArr:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int subSceneToAppendUrl; // @synthesize subSceneToAppendUrl=_subSceneToAppendUrl;
 @property(nonatomic) unsigned int sceneToAppendUrl; // @synthesize sceneToAppendUrl=_sceneToAppendUrl;
 @property(nonatomic) _Bool isFetching; // @synthesize isFetching=_isFetching;
@@ -31,4 +31,3 @@
 - (void)dealloc;
 
 @end
-

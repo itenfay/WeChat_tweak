@@ -11,7 +11,6 @@
     struct CGRect _menuFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect menuFrame; // @synthesize menuFrame=_menuFrame;
 @property(nonatomic) __weak id <MMMenuWindowDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

@@ -22,7 +22,6 @@
     double _floatTopY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double floatTopY; // @synthesize floatTopY=_floatTopY;
 @property(nonatomic) _Bool setMoreActionFloat; // @synthesize setMoreActionFloat=_setMoreActionFloat;
 @property(nonatomic) _Bool addActionShadow; // @synthesize addActionShadow=_addActionShadow;

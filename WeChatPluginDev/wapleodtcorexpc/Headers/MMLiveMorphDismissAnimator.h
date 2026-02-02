@@ -19,7 +19,6 @@
     struct CGRect _targetFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMLiveMorphDismissSource> sourceContext; // @synthesize sourceContext=_sourceContext;
 @property(retain, nonatomic) UIView *customSnapView; // @synthesize customSnapView=_customSnapView;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;

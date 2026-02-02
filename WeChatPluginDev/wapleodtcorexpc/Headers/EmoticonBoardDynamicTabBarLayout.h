@@ -18,7 +18,6 @@
     struct UIEdgeInsets _inset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *indexPaths; // @synthesize indexPaths=_indexPaths;
 @property(retain, nonatomic) NSIndexPath *maskSelectedIndexPath; // @synthesize maskSelectedIndexPath=_maskSelectedIndexPath;
 @property(nonatomic) _Bool useMaskSelection; // @synthesize useMaskSelection=_useMaskSelection;

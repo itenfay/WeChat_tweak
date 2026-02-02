@@ -18,7 +18,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *infoButton; // @synthesize infoButton=_infoButton;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMUIButton *checkBoxButton; // @synthesize checkBoxButton=_checkBoxButton;

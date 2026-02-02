@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType crashReportExtraInfoChangedBlock; // @synthesize crashReportExtraInfoChangedBlock=_crashReportExtraInfoChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType currentLiteAppChangedBlock; // @synthesize currentLiteAppChangedBlock=_currentLiteAppChangedBlock;
 @property(retain, nonatomic) NSMutableArray *datas; // @synthesize datas=_datas;
@@ -28,4 +28,3 @@
 - (id)init;
 
 @end
-

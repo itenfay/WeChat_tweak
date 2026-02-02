@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, NSURLSession;
 
 @interface GameCenterPrefetchManager
@@ -10,7 +12,6 @@
     NSURLSession *_urlSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 - (void)prefetchUrlArray:(id)arg1;
 - (void)prefetchUrlModel:(id)arg1;
@@ -27,4 +28,3 @@
 @property(readonly) Class superclass;
 
 @end
-

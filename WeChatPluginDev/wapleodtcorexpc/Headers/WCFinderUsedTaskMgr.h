@@ -10,7 +10,6 @@
     WCFinderFeedContentVM *_contentVM;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 - (void)onRemoveMinimizedTask:(id)arg1;
 - (_Bool)onEnterMinimizedTask:(id)arg1 openContext:(id)arg2 taskEnterScene:(unsigned int)arg3;

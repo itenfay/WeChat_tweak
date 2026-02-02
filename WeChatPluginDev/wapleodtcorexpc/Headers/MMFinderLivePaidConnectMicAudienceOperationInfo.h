@@ -16,7 +16,6 @@
     unsigned long long _bidGap;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long bidGap; // @synthesize bidGap=_bidGap;
 @property(nonatomic) unsigned long long waitingCount; // @synthesize waitingCount=_waitingCount;
 @property(nonatomic) unsigned long long minBidAmount; // @synthesize minBidAmount=_minBidAmount;

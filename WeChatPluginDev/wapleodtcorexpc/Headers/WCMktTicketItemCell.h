@@ -22,7 +22,6 @@
     CAGradientLayer *_gradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) WCPayWebImageView *cardBackgroundView; // @synthesize cardBackgroundView=_cardBackgroundView;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AffRoamTransferStats, MMProgressView, MMUIActivityIndicatorView, NSString, SightIconView, UIButton, UIImageView, UILabel, UIView, WXGRoamBackupPackageDetailCell;
 
@@ -56,7 +57,6 @@
     struct _NSRange _linkRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SightIconView *sightIconView; // @synthesize sightIconView=_sightIconView;
 @property(nonatomic) struct _NSRange linkRange; // @synthesize linkRange=_linkRange;
 @property(nonatomic) unsigned long long transferSize; // @synthesize transferSize=_transferSize;
@@ -156,4 +156,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double sectionEnd; // @synthesize sectionEnd=_sectionEnd;
 @property(nonatomic) double sectionBegin; // @synthesize sectionBegin=_sectionBegin;
 @property(retain, nonatomic) NSArray *tagInfoList; // @synthesize tagInfoList=_tagInfoList;

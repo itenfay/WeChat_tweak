@@ -14,7 +14,6 @@
     double _width;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(retain, nonatomic) ScreenshotView *screenshotView; // @synthesize screenshotView=_screenshotView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;

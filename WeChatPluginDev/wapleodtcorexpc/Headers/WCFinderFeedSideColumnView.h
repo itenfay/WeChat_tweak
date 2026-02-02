@@ -19,7 +19,6 @@
     CAShapeLayer *_maskLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(retain, nonatomic) NSMutableArray *feedViews; // @synthesize feedViews=_feedViews;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;

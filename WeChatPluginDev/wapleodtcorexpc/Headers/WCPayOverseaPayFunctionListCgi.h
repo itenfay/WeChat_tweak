@@ -14,7 +14,6 @@
     id <WCPayOverseaPayFunctionListCgiDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isCgiEnd; // @synthesize m_isCgiEnd=_m_isCgiEnd;
 @property(nonatomic) unsigned int m_tpaCountry; // @synthesize m_tpaCountry=_m_tpaCountry;
 @property(nonatomic) __weak id <WCPayOverseaPayFunctionListCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

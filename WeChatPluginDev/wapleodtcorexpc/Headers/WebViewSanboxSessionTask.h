@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSContext, NSArray, NSMutableArray, NSMutableDictionary, NSObject, NSRecursiveLock, NSString, NSURLSession, WebViewSanboxSessionTaskDebugControl, WebViewSanboxTaskAuthInfo, WebViewWebComVerifyInfo, WebvViewWebComPublicLibInfo;
 @protocol OS_dispatch_queue, WebViewSanboxSessionTaskDelegate;
 
@@ -42,7 +44,6 @@
     WebViewSanboxSessionTaskDebugControl *_debugControl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WebViewSanboxSessionTaskDebugControl *debugControl; // @synthesize debugControl=_debugControl;
 @property(retain, nonatomic) NSRecursiveLock *workQueueStateLock; // @synthesize workQueueStateLock=_workQueueStateLock;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
@@ -168,4 +169,3 @@
 - (void)downloadAppContextResouce:(id)arg1 fileMd5:(id)arg2 completeBlock:(CDUnknownBlockType)arg3;
 
 @end
-

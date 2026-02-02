@@ -29,7 +29,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) OMJID *blankMapperID; // @synthesize blankMapperID=_blankMapperID;
 @property(nonatomic) double storylineYOffset; // @synthesize storylineYOffset=_storylineYOffset;
 @property(nonatomic) struct UIEdgeInsets timelineViewContentInsets; // @synthesize timelineViewContentInsets=_timelineViewContentInsets;

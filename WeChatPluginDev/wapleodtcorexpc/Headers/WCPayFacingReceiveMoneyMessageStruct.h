@@ -26,7 +26,6 @@
     NSString *_mchPayerHeadImgUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int codeType; // @synthesize codeType=_codeType;
 @property(retain, nonatomic) NSString *mchPayerHeadImgUrl; // @synthesize mchPayerHeadImgUrl=_mchPayerHeadImgUrl;
 @property(nonatomic) unsigned int m_expireTime; // @synthesize m_expireTime=_m_expireTime;

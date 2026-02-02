@@ -15,7 +15,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BubbleInfo *thirdC2CBubbleInfo; // @synthesize thirdC2CBubbleInfo=_thirdC2CBubbleInfo;
 @property(retain, nonatomic) WCPayNetImageResource *m_miniIconResource; // @synthesize m_miniIconResource=_m_miniIconResource;
 @property(retain, nonatomic) WCPayNetImageResource *m_iconResource; // @synthesize m_iconResource=_m_iconResource;

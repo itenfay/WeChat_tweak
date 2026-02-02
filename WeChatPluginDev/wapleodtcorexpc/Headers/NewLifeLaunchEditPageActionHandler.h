@@ -10,7 +10,6 @@
     NewLifeEditImageLogicController *_editImageLogicController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeEditImageLogicController *editImageLogicController; // @synthesize editImageLogicController=_editImageLogicController;
 - (void)onNewLifeEditImageLogicControllerDidFinishEdit:(id)arg1;
 - (void)handleRequest:(id)arg1;

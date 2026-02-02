@@ -18,7 +18,6 @@
     NSArray *_gameUserInfoList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *gameUserInfoList; // @synthesize gameUserInfoList=_gameUserInfoList;
 @property(retain, nonatomic) UICollectionView *recentlyPalyedGameCollectionView; // @synthesize recentlyPalyedGameCollectionView=_recentlyPalyedGameCollectionView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

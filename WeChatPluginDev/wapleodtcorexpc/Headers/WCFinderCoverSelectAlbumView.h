@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIImageView, UILabel;
 
 @interface WCFinderCoverSelectAlbumView
@@ -13,7 +15,6 @@
     UILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
@@ -21,4 +22,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 iconName:(id)arg2 text:(id)arg3 clickBlock:(CDUnknownBlockType)arg4;
 
 @end
-

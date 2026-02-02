@@ -13,7 +13,6 @@
     WAMapAnnotationView *_markerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAMapAnnotationView *markerView; // @synthesize markerView=_markerView;
 @property(retain, nonatomic) UIButton *tapButton; // @synthesize tapButton=_tapButton;
 @property(nonatomic) __weak id <WAClusterViewDelegate> delegate; // @synthesize delegate=_delegate;

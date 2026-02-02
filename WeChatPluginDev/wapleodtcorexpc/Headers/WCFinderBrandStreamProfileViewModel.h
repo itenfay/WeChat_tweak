@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderBizInfo_BizInfo, FinderJustWatchControl, NSData, NSDictionary, NSMutableArray, NSMutableSet, NSString, WCFinderCGIProfile, WCFinderCoverLoadCostTime;
 @protocol WCFinderBrandStreamProfileViewModelDelegate;
@@ -33,7 +34,6 @@
     NSString *_pendingCheckJustWatchTid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pendingCheckJustWatchTid; // @synthesize pendingCheckJustWatchTid=_pendingCheckJustWatchTid;
 @property(retain, nonatomic) NSMutableArray *pendingFetchJustWatchFeedBlocks; // @synthesize pendingFetchJustWatchFeedBlocks=_pendingFetchJustWatchFeedBlocks;
 @property(retain, nonatomic) FinderBizInfo_BizInfo *bizInfo; // @synthesize bizInfo=_bizInfo;
@@ -92,4 +92,3 @@
 @property(readonly) Class superclass;
 
 @end
-

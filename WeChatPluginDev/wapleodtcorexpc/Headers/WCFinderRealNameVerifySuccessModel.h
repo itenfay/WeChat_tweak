@@ -15,7 +15,6 @@
     NSString *_faceVerifyUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needFaceVerify; // @synthesize needFaceVerify=_needFaceVerify;
 @property(retain, nonatomic) NSString *faceVerifyUrl; // @synthesize faceVerifyUrl=_faceVerifyUrl;
 @property(retain, nonatomic) NSString *verifyUrl; // @synthesize verifyUrl=_verifyUrl;

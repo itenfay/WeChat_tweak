@@ -18,7 +18,6 @@
     XVisComposeElement *_element;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) XVisComposeElement *element; // @synthesize element=_element;
 - (void)bindYUVTypeToUniformBuffer:(void *)arg1;
 - (void)setYUVTypeUniformIndex:(unsigned int)arg1;

@@ -15,7 +15,6 @@
 }
 
 + (id)packageKeyWithAppId:(id)arg1 version:(unsigned long long)arg2 isDebugMode:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *setCacheFileInfoKey; // @synthesize setCacheFileInfoKey=_setCacheFileInfoKey;
 @property(retain, nonatomic) NSMutableSet *setPackageFilePath; // @synthesize setPackageFilePath=_setPackageFilePath;
 @property(nonatomic) unsigned long long packageType; // @synthesize packageType=_packageType;

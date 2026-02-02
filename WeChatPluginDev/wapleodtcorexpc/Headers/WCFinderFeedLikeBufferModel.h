@@ -34,7 +34,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) long long incFriendLikeCount; // @synthesize incFriendLikeCount=_incFriendLikeCount;
 @property(retain, nonatomic) NSData *likeBuffer; // @synthesize likeBuffer=_likeBuffer;
 @property(nonatomic) int scene; // @synthesize scene=_scene;

@@ -14,7 +14,6 @@
     MISSING_TYPE *provider;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)setServerValueWithIsOn:(_Bool)arg1;
 - (id)getServerValue;

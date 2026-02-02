@@ -24,7 +24,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedInfoSubTidArray *firstPageTidArray; // @synthesize firstPageTidArray=_firstPageTidArray;
 @property(copy, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
 

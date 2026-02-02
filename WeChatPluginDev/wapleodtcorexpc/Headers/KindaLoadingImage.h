@@ -11,7 +11,6 @@
     long long _m_loadingImageStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_loadingImageStyle; // @synthesize m_loadingImageStyle=_m_loadingImageStyle;
 @property(retain, nonatomic) MMUIActivityIndicatorView *m_loadingImage; // @synthesize m_loadingImage=_m_loadingImage;
 - (void)stopAnimating;

@@ -13,7 +13,6 @@
     struct _NSRange _range;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(retain, nonatomic) NSString *giftId; // @synthesize giftId=_giftId;
 

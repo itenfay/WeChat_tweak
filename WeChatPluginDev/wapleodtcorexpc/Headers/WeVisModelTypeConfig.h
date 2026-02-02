@@ -16,7 +16,6 @@
     NSString *_filepath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filepath; // @synthesize filepath=_filepath;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;
 @property(nonatomic) long long subtype; // @synthesize subtype=_subtype;

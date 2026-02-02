@@ -14,7 +14,6 @@
     UIImageView *_thumbImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *thumbImageView; // @synthesize thumbImageView=_thumbImageView;
 @property(retain, nonatomic) WCPlayerView *wcPlayerView; // @synthesize wcPlayerView=_wcPlayerView;
 @property(retain, nonatomic) WCCanvasAdControlView *controlView; // @synthesize controlView=_controlView;

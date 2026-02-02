@@ -14,7 +14,6 @@
     NSString *m_msgId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_msgId; // @synthesize m_msgId;
 @property(retain, nonatomic) NSString *m_errMsg; // @synthesize m_errMsg;
 @property(nonatomic) unsigned int m_errCode; // @synthesize m_errCode;

@@ -14,7 +14,6 @@
     NSString *_Description;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *Description; // @synthesize Description=_Description;
 @property(copy, nonatomic) NSString *Created; // @synthesize Created=_Created;
 @property(copy, nonatomic) NSString *Project; // @synthesize Project=_Project;

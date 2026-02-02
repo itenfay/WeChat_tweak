@@ -17,7 +17,6 @@
     struct CLLocationCoordinate2D _internalGeoReferencePoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasSetGeoPoint; // @synthesize hasSetGeoPoint=_hasSetGeoPoint;
 @property(nonatomic) struct CLLocationCoordinate2D internalGeoReferencePoint; // @synthesize internalGeoReferencePoint=_internalGeoReferencePoint;
 @property(nonatomic) double maxIntensity; // @synthesize maxIntensity=_maxIntensity;

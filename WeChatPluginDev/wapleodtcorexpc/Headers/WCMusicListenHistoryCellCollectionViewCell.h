@@ -18,7 +18,6 @@
     struct UIEdgeInsets _collectionViewContentInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cellMinHeight; // @synthesize cellMinHeight=_cellMinHeight;
 @property(retain, nonatomic) UIView *selectedMaskView; // @synthesize selectedMaskView=_selectedMaskView;
 @property(retain, nonatomic) MMUILabel *singerLabel; // @synthesize singerLabel=_singerLabel;

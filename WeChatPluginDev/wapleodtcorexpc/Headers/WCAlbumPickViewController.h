@@ -40,7 +40,6 @@
     WCFinderSnsPostProcessMgr *_finderPostMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSnsPostProcessMgr *finderPostMgr; // @synthesize finderPostMgr=_finderPostMgr;
 @property(retain, nonatomic) UIView *bottomBarBlurView; // @synthesize bottomBarBlurView=_bottomBarBlurView;
 @property(retain, nonatomic) UIView *accessLimitTipView; // @synthesize accessLimitTipView=_accessLimitTipView;

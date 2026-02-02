@@ -12,7 +12,6 @@
 
 + (id)getFilterLog:(id)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)initWithCpp:(const void *)arg1;
 
 @end

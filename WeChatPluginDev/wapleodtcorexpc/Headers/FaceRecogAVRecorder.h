@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FaceRecogVideoWriter, NSData, NSString, SPXAudioRecorder;
 @protocol OS_dispatch_queue;
@@ -31,7 +32,6 @@
     unsigned long long _videoTimeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long videoTimeStamp; // @synthesize videoTimeStamp=_videoTimeStamp;
 @property(nonatomic) unsigned long long audioTimeStamp; // @synthesize audioTimeStamp=_audioTimeStamp;
 @property(nonatomic) unsigned int voiceId; // @synthesize voiceId=_voiceId;
@@ -81,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

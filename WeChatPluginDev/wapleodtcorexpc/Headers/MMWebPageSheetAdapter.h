@@ -17,7 +17,6 @@
     MMWebViewController *_webVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebViewController *webVC; // @synthesize webVC=_webVC;
 @property(retain, nonatomic) MMWebPageSheetConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) MMScrollActionSheet *actionSheet; // @synthesize actionSheet=_actionSheet;

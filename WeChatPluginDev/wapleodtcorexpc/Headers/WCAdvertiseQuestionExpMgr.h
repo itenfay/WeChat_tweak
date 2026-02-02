@@ -11,7 +11,6 @@
     WCADQuestionStatItem *adQuestItem;
 }
 
-- (void).cxx_destruct;
 - (void)reportHasnotDoQuest:(id)arg1;
 - (void)clearLastReportItemId;
 - (id)getLastReportItemId;

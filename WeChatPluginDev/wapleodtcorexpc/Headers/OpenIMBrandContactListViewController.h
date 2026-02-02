@@ -17,7 +17,6 @@
     NSMutableArray *m_arrAccountDeletedOpenIMContact;
 }
 
-- (void).cxx_destruct;
 - (void)registerYReportSdk;
 - (void)onGetOpenImResourceDone:(id)arg1;
 - (void)showContactInfoView:(id)arg1;

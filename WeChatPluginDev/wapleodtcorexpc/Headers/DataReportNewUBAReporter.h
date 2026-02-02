@@ -13,7 +13,6 @@
     NSNumber *m_isReportAllUBA;
 }
 
-- (void).cxx_destruct;
 - (void)realReportFlutterAllOutEvent;
 - (void)reportFlutterAllOutEvent:(id)arg1 time:(unsigned long long)arg2 params:(id)arg3;
 - (void)reportLogId:(unsigned long long)arg1 time:(unsigned long long)arg2;

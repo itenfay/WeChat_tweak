@@ -12,7 +12,6 @@
     TipsView *_tipsView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak TipsView *tipsView; // @synthesize tipsView=_tipsView;
 - (_Bool)accessibilityActivate;
 - (id)initWithTipsView:(id)arg1;

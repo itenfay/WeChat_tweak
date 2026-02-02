@@ -13,7 +13,6 @@
     OMJSpatialInfo *_spatialInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMJSpatialInfo *spatialInfo; // @synthesize spatialInfo=_spatialInfo;
 @property(retain, nonatomic) NSString *lyricsStyleID; // @synthesize lyricsStyleID=_lyricsStyleID;
 - (id)description;

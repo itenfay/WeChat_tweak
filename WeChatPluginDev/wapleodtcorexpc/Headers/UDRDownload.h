@@ -12,7 +12,6 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-- (void).cxx_destruct;
 - (void)downloadUDR:(id)arg1 resource:(id)arg2 scene:(long long)arg3 extInfo:(id)arg4 fullPkg:(_Bool)arg5;
 - (void)onServiceInit;
 

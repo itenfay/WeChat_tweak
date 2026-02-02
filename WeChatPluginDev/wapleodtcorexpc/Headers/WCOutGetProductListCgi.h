@@ -14,7 +14,6 @@
 }
 
 + (id)cgiWithDelegate:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCOutGetProductListCgiDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int eventID; // @synthesize eventID=_eventID;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

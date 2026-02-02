@@ -49,7 +49,6 @@
 + (void)PBArrayAdd_type;
 + (void)PBArrayAdd_scene;
 + (void)PBArrayAdd_mediaTagName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *customAppUninstalledWording4EnUs; // @synthesize customAppUninstalledWording4EnUs=_customAppUninstalledWording4EnUs;
 @property(retain, nonatomic) NSString *customAppUninstalledWording4ZhTw; // @synthesize customAppUninstalledWording4ZhTw=_customAppUninstalledWording4ZhTw;
 @property(retain, nonatomic) NSString *customAppUninstalledWording; // @synthesize customAppUninstalledWording=_customAppUninstalledWording;

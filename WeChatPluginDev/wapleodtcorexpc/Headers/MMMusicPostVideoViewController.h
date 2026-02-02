@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMusicMVModel, MMMusicPostVideoTabAlbumController, MMMusicPostVideoTabFinderController, MMMusicPostVideoTabView, MMScrollView, MMUIButton, NSMutableArray, NSString;
 @protocol MMMusicPostVideoDelegate, MMMusicPostVideoVCDataSource;
 
@@ -27,7 +29,6 @@
 }
 
 + (double)getHeightByMode:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicPostVideoTabFinderController *tabFinderVC; // @synthesize tabFinderVC=_tabFinderVC;
 @property(retain, nonatomic) MMMusicPostVideoTabAlbumController *tabAlbumVC; // @synthesize tabAlbumVC=_tabAlbumVC;
 @property(nonatomic) double minDuration; // @synthesize minDuration=_minDuration;
@@ -89,4 +90,3 @@
 @property(readonly) Class superclass;
 
 @end
-

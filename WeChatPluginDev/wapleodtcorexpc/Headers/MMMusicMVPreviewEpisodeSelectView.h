@@ -14,7 +14,6 @@
     UICollectionView *_collectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) id <MMMusicMVPreviewEpisodeSelectViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

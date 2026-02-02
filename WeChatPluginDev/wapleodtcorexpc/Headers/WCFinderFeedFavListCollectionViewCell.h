@@ -20,7 +20,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;
 @property(retain, nonatomic) WCFinderThanksButton *thanksButton; // @synthesize thanksButton=_thanksButton;
 @property(retain, nonatomic) FinderFavListCellContentContainer *contentContainer; // @synthesize contentContainer=_contentContainer;

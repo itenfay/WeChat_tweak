@@ -20,7 +20,6 @@
 
 + (_Bool)isChineseAddress:(id)arg1;
 + (_Bool)isValidAddress:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *country; // @synthesize country=_country;
 @property(retain, nonatomic) NSString *postalCode; // @synthesize postalCode=_postalCode;
 @property(retain, nonatomic) NSString *region; // @synthesize region=_region;

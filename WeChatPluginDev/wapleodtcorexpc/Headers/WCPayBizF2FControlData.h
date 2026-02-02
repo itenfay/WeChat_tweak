@@ -32,7 +32,6 @@
     CgiF2FDynamicCodeResp *_m_f2fDynamicCodeResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CgiF2FDynamicCodeResp *m_f2fDynamicCodeResp; // @synthesize m_f2fDynamicCodeResp=_m_f2fDynamicCodeResp;
 @property(retain, nonatomic) BusiF2FSucPageResp *m_bizSucPageResp; // @synthesize m_bizSucPageResp=_m_bizSucPageResp;
 @property(retain, nonatomic) BusiF2FPlaceOrderReq *m_placeOrderReq; // @synthesize m_placeOrderReq=_m_placeOrderReq;

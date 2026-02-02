@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderModFeedSettingCGI
@@ -17,7 +19,6 @@
     NSString *_nonceID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nonceID; // @synthesize nonceID=_nonceID;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
@@ -33,4 +34,3 @@
 - (id)initWithFeedID:(unsigned long long)arg1 nonceID:(id)arg2 userName:(id)arg3 isSwitchON:(_Bool)arg4 settingScene:(int)arg5 oplogScene:(int)arg6 successBlock:(CDUnknownBlockType)arg7 failBlock:(CDUnknownBlockType)arg8;
 
 @end
-

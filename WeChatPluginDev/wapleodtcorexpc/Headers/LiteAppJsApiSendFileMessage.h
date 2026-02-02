@@ -15,7 +15,6 @@
     MMLiteAppDownloadMgr *_downloadMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiteAppDownloadMgr *downloadMgr; // @synthesize downloadMgr=_downloadMgr;
 - (void)OnForwardMessageException:(id)arg1;
 - (void)OnForwardMessageCancel:(id)arg1;

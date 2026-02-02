@@ -14,7 +14,6 @@
     NSString *_nearbyListID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int clicktime; // @synthesize clicktime=_clicktime;
 @property(copy, nonatomic) NSString *nearbyListID; // @synthesize nearbyListID=_nearbyListID;
 @property(nonatomic) unsigned int appCount; // @synthesize appCount=_appCount;

@@ -18,7 +18,6 @@
     MISSING_TYPE *exposedSet;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)reportExposed;
 - (id)initWithScene:(long long)arg1;

@@ -15,7 +15,6 @@
     long long _errorCode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long end; // @synthesize end=_end;

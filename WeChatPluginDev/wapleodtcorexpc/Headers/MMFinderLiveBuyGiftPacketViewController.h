@@ -31,7 +31,6 @@
     MMUILabel *_announcementLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *announcementLabel; // @synthesize announcementLabel=_announcementLabel;
 @property(retain, nonatomic) MMUIButton *purchaseButton; // @synthesize purchaseButton=_purchaseButton;
 @property(retain, nonatomic) MMUILabel *priceInWecoinLabel; // @synthesize priceInWecoinLabel=_priceInWecoinLabel;

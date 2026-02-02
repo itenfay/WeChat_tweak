@@ -12,7 +12,6 @@
 }
 
 + (id)createFromDbItem:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBroken; // @synthesize isBroken=_isBroken;
 @property(retain, nonatomic) NSString *postId; // @synthesize postId=_postId;
 

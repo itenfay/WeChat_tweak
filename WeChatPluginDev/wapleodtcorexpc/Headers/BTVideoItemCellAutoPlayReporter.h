@@ -15,7 +15,6 @@
     _Bool m_reportOnVideoPauseOnce;
 }
 
-- (void).cxx_destruct;
 - (void)doReport:(unsigned int)arg1 buffDuration:(unsigned long long)arg2;
 - (unsigned int)getAutoPlayId;
 - (unsigned long long)getPlayDuration;

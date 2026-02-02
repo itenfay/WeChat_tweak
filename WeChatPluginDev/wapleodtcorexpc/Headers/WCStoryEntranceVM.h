@@ -17,7 +17,6 @@
 
 + (_Bool)hasUnreadStory;
 + (id)entranceViewModel;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowStoryEntrace; // @synthesize shouldShowStoryEntrace=_shouldShowStoryEntrace;
 @property(retain, nonatomic) MMTimer *reloadNotifyThrottle; // @synthesize reloadNotifyThrottle=_reloadNotifyThrottle;
 @property(retain, nonatomic) NSMutableDictionary *userContactDict; // @synthesize userContactDict=_userContactDict;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CMessageWrap, ImageBrowseButton, ImageScrollView, NSData, UIImage, WCC2CShadowLabel;
 @protocol WCC2CImageScrollViewDelegate;
@@ -28,7 +29,6 @@
     CDUnknownBlockType _customBottomLeftString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType customBottomLeftString; // @synthesize customBottomLeftString=_customBottomLeftString;
 @property(copy, nonatomic) CDUnknownBlockType customBottomLeftAction; // @synthesize customBottomLeftAction=_customBottomLeftAction;
 @property(retain, nonatomic) NSData *originImageDataFromPhotos; // @synthesize originImageDataFromPhotos=_originImageDataFromPhotos;
@@ -83,4 +83,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 msgWrap:(id)arg2;
 
 @end
-

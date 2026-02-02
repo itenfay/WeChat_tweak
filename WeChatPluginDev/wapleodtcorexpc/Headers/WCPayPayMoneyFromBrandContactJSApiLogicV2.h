@@ -24,7 +24,6 @@
     NSString *_qrcodeSenderName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *qrcodeSenderName; // @synthesize qrcodeSenderName=_qrcodeSenderName;
 @property(retain, nonatomic) NSString *qrcodeSenderMsgId; // @synthesize qrcodeSenderMsgId=_qrcodeSenderMsgId;
 @property(nonatomic) int codeScene; // @synthesize codeScene=_codeScene;

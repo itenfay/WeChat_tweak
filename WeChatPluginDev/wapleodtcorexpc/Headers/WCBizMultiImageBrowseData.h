@@ -15,7 +15,6 @@
     _Bool m_bCached;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *m_oWaitBackGroundImg; // @synthesize m_oWaitBackGroundImg;
 @property(nonatomic) unsigned int m_uiStartIndex; // @synthesize m_uiStartIndex;
 @property(nonatomic) _Bool m_bCached; // @synthesize m_bCached;

@@ -21,7 +21,6 @@
 + (id)getWAQMapAPIKey;
 + (void)initLocationService;
 + (id)createLocationService;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 @property(retain, nonatomic) WCTimelinePOIPickerViewController *pickPoiController; // @synthesize pickPoiController=_pickPoiController;
 @property(retain, nonatomic) MMPickLocationViewController *pickLocationController; // @synthesize pickLocationController=_pickLocationController;

@@ -42,7 +42,6 @@
     struct CGSize _textSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCContentItemFinderViewModel *finderViewModel; // @synthesize finderViewModel=_finderViewModel;
 @property(copy, nonatomic) NSString *linkSubtitle; // @synthesize linkSubtitle=_linkSubtitle;
 @property(copy, nonatomic) NSString *linkTitle; // @synthesize linkTitle=_linkTitle;

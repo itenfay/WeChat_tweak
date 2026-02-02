@@ -15,7 +15,6 @@
     NSString *_m_authContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_authContent; // @synthesize m_authContent=_m_authContent;
 @property(retain, nonatomic) NSString *m_challenge; // @synthesize m_challenge=_m_challenge;
 @property(nonatomic) unsigned long long m_authMode; // @synthesize m_authMode=_m_authMode;

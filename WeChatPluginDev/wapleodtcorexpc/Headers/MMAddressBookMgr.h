@@ -28,7 +28,6 @@
 + (void)InternalLoadMobile:(id)arg1 Email:(id)arg2 PhoneContacts:(id)arg3;
 + (id)validEmail:(id)arg1;
 + (id)validPhoneNumber:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bTempCanSyncAddressBook; // @synthesize m_bTempCanSyncAddressBook;
 - (unsigned int)getAddressBookStatusForAuthScene:(unsigned long long)arg1;
 - (unsigned int)getAddressBookStatus;

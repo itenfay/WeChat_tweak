@@ -11,7 +11,6 @@
     NSMutableArray *_relateWeappList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *relateWeappList; // @synthesize relateWeappList=_relateWeappList;
 @property(retain, nonatomic) NSString *teamName; // @synthesize teamName=_teamName;
 - (void)reloadListUI;

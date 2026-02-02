@@ -15,7 +15,6 @@
     NSMutableDictionary *_dicPreFetchResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicPreFetchResult; // @synthesize dicPreFetchResult=_dicPreFetchResult;
 @property(retain, nonatomic) NSMutableSet *setPreFetching; // @synthesize setPreFetching=_setPreFetching;
 @property(retain, nonatomic) WAPackageDownloadPreConnectLogic *preConnectLogic; // @synthesize preConnectLogic=_preConnectLogic;

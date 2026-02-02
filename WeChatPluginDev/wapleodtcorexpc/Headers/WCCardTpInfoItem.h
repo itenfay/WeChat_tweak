@@ -14,7 +14,6 @@
     NSString *_userCardId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userCardId; // @synthesize userCardId=_userCardId;
 @property(retain, nonatomic) NSString *appid; // @synthesize appid=_appid;
 @property(retain, nonatomic) NSString *openCardParams; // @synthesize openCardParams=_openCardParams;

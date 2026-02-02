@@ -14,7 +14,6 @@
 
 + (id)findProtocol:(id)arg1;
 + (id)getMethodListString:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *resetButton; // @synthesize resetButton=_resetButton;
 @property(retain, nonatomic) UIButton *convertButton; // @synthesize convertButton=_convertButton;
 @property(retain, nonatomic) UITextView *interpretTextView; // @synthesize interpretTextView=_interpretTextView;

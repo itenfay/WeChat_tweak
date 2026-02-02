@@ -10,7 +10,6 @@
     NSArray *m_arrContactNameList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_arrContactNameList; // @synthesize m_arrContactNameList;
 - (id)init;
 

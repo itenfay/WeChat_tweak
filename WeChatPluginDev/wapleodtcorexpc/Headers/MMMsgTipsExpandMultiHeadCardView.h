@@ -20,7 +20,6 @@
     UIButton *_button;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) UIView *separatorLineView; // @synthesize separatorLineView=_separatorLineView;
 @property(retain, nonatomic) NSMutableArray *headImageViewList; // @synthesize headImageViewList=_headImageViewList;

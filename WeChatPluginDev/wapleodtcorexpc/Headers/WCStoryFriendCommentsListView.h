@@ -14,7 +14,6 @@
     UILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <WCStoryFriendCommentsListViewDataSource> dataSource; // @synthesize dataSource=_dataSource;

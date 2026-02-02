@@ -22,7 +22,6 @@
     unsigned long long _curAskedProductId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long curAskedProductId; // @synthesize curAskedProductId=_curAskedProductId;
 @property(retain, nonatomic) MMFinderLiveGoodsViewModel *selectedGoodsViewModel; // @synthesize selectedGoodsViewModel=_selectedGoodsViewModel;
 @property(retain, nonatomic) NSMutableArray *goodsViewModels; // @synthesize goodsViewModels=_goodsViewModels;

@@ -41,7 +41,6 @@
     struct CGSize _topSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *maskbackView; // @synthesize maskbackView=_maskbackView;
 @property(retain, nonatomic) WCMultiGiftPersonView *multiGiftPersonView; // @synthesize multiGiftPersonView=_multiGiftPersonView;
 @property(retain, nonatomic) WCMultiGiftView *multiGiftView; // @synthesize multiGiftView=_multiGiftView;

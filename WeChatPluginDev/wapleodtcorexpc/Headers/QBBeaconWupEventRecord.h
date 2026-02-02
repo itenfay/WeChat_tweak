@@ -28,7 +28,6 @@
 @property(retain, nonatomic, getter=eventName, setter=setEventName:) NSString *jcev2_p_2_o_eventName; // @synthesize jcev2_p_2_o_eventName=_jcev2_p_2_o_eventName;
 @property(retain, nonatomic, getter=srcIp, setter=setSrcIp:) NSString *jcev2_p_1_o_srcIp; // @synthesize jcev2_p_1_o_srcIp=_jcev2_p_1_o_srcIp;
 @property(retain, nonatomic, getter=apn, setter=setApn:) NSString *jcev2_p_0_o_apn; // @synthesize jcev2_p_0_o_apn=_jcev2_p_0_o_apn;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

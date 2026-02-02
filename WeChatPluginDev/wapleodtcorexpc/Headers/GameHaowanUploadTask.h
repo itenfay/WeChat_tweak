@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSDictionary, NSObject, NSString;
 @protocol GameHaowanUploadTaskDelegate;
 
@@ -16,7 +18,6 @@
     NSDictionary *_trackEventProps;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *trackEventProps; // @synthesize trackEventProps=_trackEventProps;
 @property(nonatomic) __weak id <GameHaowanUploadTaskDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject *continueData; // @synthesize continueData=_continueData;
@@ -39,4 +40,3 @@
 @property(retain, nonatomic) NSString *postId;
 
 @end
-

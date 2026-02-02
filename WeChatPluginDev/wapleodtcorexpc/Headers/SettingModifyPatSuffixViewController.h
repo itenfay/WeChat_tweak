@@ -26,7 +26,6 @@
     WCCommonInputPanelLogic *_inputPanelLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCommonInputPanelLogic *inputPanelLogic; // @synthesize inputPanelLogic=_inputPanelLogic;
 @property(retain, nonatomic) UIView *inputBackgroundView; // @synthesize inputBackgroundView=_inputBackgroundView;
 @property(retain, nonatomic) MMGrowTextView *textView; // @synthesize textView=_textView;

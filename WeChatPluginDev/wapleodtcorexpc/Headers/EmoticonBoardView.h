@@ -52,7 +52,6 @@
 + (void)destroyInstance;
 + (_Bool)isChatInstanceAvailable;
 + (id)shareInstanceForChat;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldTreatFrameUpdateTenderly; // @synthesize shouldTreatFrameUpdateTenderly=_shouldTreatFrameUpdateTenderly;
 @property(retain, nonatomic) CADisplayLink *expandDisplayLink; // @synthesize expandDisplayLink=_expandDisplayLink;
 @property(nonatomic) _Bool lastExpandedStates; // @synthesize lastExpandedStates=_lastExpandedStates;

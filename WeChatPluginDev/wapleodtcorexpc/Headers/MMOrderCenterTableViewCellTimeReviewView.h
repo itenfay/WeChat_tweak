@@ -19,7 +19,6 @@
 + (id)timeStringForOrder:(id)arg1;
 + (_Bool)shouldUseComponentForOrder:(id)arg1;
 + (double)heightForOrder:(id)arg1 inWidth:(double)arg2 estimate:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCustomerOrderInfo *order; // @synthesize order=_order;
 @property(retain, nonatomic) MMUIButton *rateButton; // @synthesize rateButton=_rateButton;
 @property(nonatomic) __weak id <MMOrderCenterTableViewCellComponentAggregatedDelegate> delegate; // @synthesize delegate=_delegate;

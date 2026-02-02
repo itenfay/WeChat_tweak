@@ -13,7 +13,6 @@
     unsigned int m_uiDataWrited;
 }
 
-- (void).cxx_destruct;
 - (void)flush;
 - (_Bool)writeBytes:(unsigned int)arg1 len:(unsigned int)arg2 buffer:(void *)arg3 sync:(_Bool)arg4;
 - (_Bool)writeBytes:(unsigned int)arg1 len:(unsigned int)arg2 buffer:(void *)arg3;

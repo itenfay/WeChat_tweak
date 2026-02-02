@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _showCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType showCompletion; // @synthesize showCompletion=_showCompletion;
 @property(copy, nonatomic) CDUnknownBlockType hideCompletion; // @synthesize hideCompletion=_hideCompletion;
 @property(retain, nonatomic) UIImageView *outerBorderView; // @synthesize outerBorderView=_outerBorderView;
@@ -30,4 +30,3 @@
 - (id)init;
 
 @end
-

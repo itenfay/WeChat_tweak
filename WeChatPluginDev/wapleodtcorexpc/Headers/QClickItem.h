@@ -20,7 +20,6 @@
     NSString *_poiId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *poiId; // @synthesize poiId=_poiId;
 @property(nonatomic) int overlayID; // @synthesize overlayID=_overlayID;
 @property(retain, nonatomic) NSString *buildingName; // @synthesize buildingName=_buildingName;

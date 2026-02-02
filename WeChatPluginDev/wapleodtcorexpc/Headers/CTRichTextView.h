@@ -35,7 +35,6 @@
     struct _NSRange _highlightedRange;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *lineRanges; // @synthesize lineRanges=_lineRanges;
 @property(readonly, nonatomic) NSString *originalContent; // @synthesize originalContent=_originalContent;
 @property(nonatomic) _Bool isHighlightedBackgroundStyle; // @synthesize isHighlightedBackgroundStyle=_isHighlightedBackgroundStyle;

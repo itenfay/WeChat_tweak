@@ -18,7 +18,6 @@
     FinderUserPageReqPreload *_preload;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderUserPageReqPreload *preload; // @synthesize preload=_preload;
 @property(nonatomic) unsigned int enterType; // @synthesize enterType=_enterType;
 @property(retain, nonatomic) NSString *feedTid; // @synthesize feedTid=_feedTid;

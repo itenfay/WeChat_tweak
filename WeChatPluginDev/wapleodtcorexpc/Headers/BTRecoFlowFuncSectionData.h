@@ -12,7 +12,6 @@
     NSString *_hintTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *hintTitle; // @synthesize hintTitle=_hintTitle;
 @property(retain, nonatomic) NSString *flowHeaderTitle; // @synthesize flowHeaderTitle=_flowHeaderTitle;
 @property(nonatomic) unsigned long long funcType; // @synthesize funcType=_funcType;

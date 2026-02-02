@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CommonTingNativeControllerCommonDataObjc : NSObject
 {
@@ -22,4 +23,3 @@
 + (void)followFinderAccount:(id)arg1 isCancel:(_Bool)arg2 tingItemData:(id)arg3 requestScene:(long long)arg4 extraInfo:(id)arg5 callback:(CDUnknownBlockType)arg6;
 
 @end
-

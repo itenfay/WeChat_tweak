@@ -13,7 +13,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderEventConfigModel *eventConfig; // @synthesize eventConfig=_eventConfig;
 
 @end

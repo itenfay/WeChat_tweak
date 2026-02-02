@@ -15,7 +15,6 @@
     NSString *_link;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *link; // @synthesize link=_link;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;

@@ -14,7 +14,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (id)makeSeekTypeName:(long long)arg1;
 - (id)makeBusinessIDName:(long long)arg1;
 - (void)dealloc;

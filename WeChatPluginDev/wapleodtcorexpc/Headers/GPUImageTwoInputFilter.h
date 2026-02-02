@@ -22,7 +22,6 @@
     _Bool secondFrameCheckDisabled;
 }
 
-- (void).cxx_destruct;
 - (void)newFrameReadyAtTime:(CDStruct_1b6d18a9)arg1 atIndex:(long long)arg2;
 - (struct CGSize)rotatedSize:(struct CGSize)arg1 forIndex:(long long)arg2;
 - (void)setInputRotation:(unsigned long long)arg1 atIndex:(long long)arg2;

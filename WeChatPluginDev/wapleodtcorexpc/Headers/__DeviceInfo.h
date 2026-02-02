@@ -24,7 +24,6 @@
     NSData *_m_sessionBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int m_cryptMethod; // @synthesize m_cryptMethod=_m_cryptMethod;
 @property(nonatomic) short m_seq; // @synthesize m_seq=_m_seq;
 @property(retain, nonatomic) NSData *m_sessionBuffer; // @synthesize m_sessionBuffer=_m_sessionBuffer;

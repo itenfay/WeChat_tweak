@@ -13,7 +13,6 @@
     NSString *sendId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sendId; // @synthesize sendId;
 @property(nonatomic) unsigned long long amount; // @synthesize amount;
 - (id)init;

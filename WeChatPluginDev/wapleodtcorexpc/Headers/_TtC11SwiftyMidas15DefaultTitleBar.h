@@ -18,7 +18,6 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)closeButtonDidClicked;

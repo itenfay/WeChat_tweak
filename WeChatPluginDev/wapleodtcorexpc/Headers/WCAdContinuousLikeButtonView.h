@@ -20,7 +20,6 @@
     MMUIView *_adMaskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *adMaskView; // @synthesize adMaskView=_adMaskView;
 @property(retain, nonatomic) WCAdURLImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) MMUILabel *titleView; // @synthesize titleView=_titleView;

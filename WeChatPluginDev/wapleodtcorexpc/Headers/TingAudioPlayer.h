@@ -10,7 +10,6 @@
     WCAudioPlayer *_player;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAudioPlayer *player; // @synthesize player=_player;
 - (void)wcAudioPlayer:(id)arg1 currentTime:(double)arg2 displayTime:(double)arg3 duration:(double)arg4;
 - (void)wcAudioPlayer:(id)arg1 onEvent:(unsigned long long)arg2 audioInfo:(id)arg3 error:(id)arg4;

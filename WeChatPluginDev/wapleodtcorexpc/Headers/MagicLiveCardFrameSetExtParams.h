@@ -17,7 +17,6 @@
     NSString *_gameClientParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *gameClientParams; // @synthesize gameClientParams=_gameClientParams;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;
 @property(retain, nonatomic) NSString *promotionRecommendInfo; // @synthesize promotionRecommendInfo=_promotionRecommendInfo;

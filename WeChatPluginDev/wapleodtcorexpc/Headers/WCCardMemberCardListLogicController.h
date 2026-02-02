@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableOrderedSet, NSString;
 
 @interface WCCardMemberCardListLogicController
@@ -13,7 +15,6 @@
     CDUnknownBlockType _giftCompleteBlcok;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType giftCompleteBlcok; // @synthesize giftCompleteBlcok=_giftCompleteBlcok;
 @property(copy, nonatomic) CDUnknownBlockType delCompleteBlcok; // @synthesize delCompleteBlcok=_delCompleteBlcok;
 @property(copy, nonatomic) CDUnknownBlockType fetchDataCompleteBlcok; // @synthesize fetchDataCompleteBlcok=_fetchDataCompleteBlcok;
@@ -41,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

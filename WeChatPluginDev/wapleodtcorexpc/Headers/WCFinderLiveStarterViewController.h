@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, FinderCreateLiveWarnPage, MMFinderLiveAudioRoomInfoView, MMFinderLiveBannerView, MMFinderLiveNewAnchorTaskEntranceView, MMFinderLiveNoticeModReminderView, MMFinderLiveNoticeShowReminderView, MMFinderLiveSetQuickReplyView, MMFinderLiveSharePubbleTipView, MMFinderLiveSpeedTestNotifyModel, MMFinderLiveTask, MMLiveBeautyOperationContainerView, MMLiveCameraOperationPageSheet, MMLiveCategorySelectButton, MMLiveControlItem, MMLiveCountdownTipsView, MMLiveDecorationOperationPanel, MMLiveFilterOperationPanel, MMLiveMakeupOperationPanel, MMLiveMusicOperationPanel, MMLiveNoticeSelectButton, MMLiveRoomSelectButton, MMLiveScreenMapSelectButton, MMLiveStarterTestSpeedManager, MMLiveStarterWeakNetTipView, MMLiveSystemMentionsView, MMLiveVisibilitySelectButton, MMLiveVisionEffectsOperationPanel, MMStarterLiveMoreFunctionManager, MMTimer, MMUIButton, MMUIMaskContainerView, NSMutableArray, NSMutableSet, NSSet, NSString, RichTextView, UIPinchGestureRecognizer, UIScrollView, UITapGestureRecognizer, UIView, WCActionSheet, WCFinderLiveChooseLiveModeView, WCFinderLiveControlItemCell, WCFinderLiveStartPOIView, WCFinderLiveStarterSwitchModeView, WCFinderLiveStarterThemeGuideView;
 @protocol WCFinderLiveStarterViewControllerDelegate;
 
@@ -100,7 +102,6 @@
     WCFinderLiveControlItemCell *_rewardWishCell;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int targetItemType; // @synthesize targetItemType=_targetItemType;
 @property(retain, nonatomic) WCFinderLiveControlItemCell *rewardWishCell; // @synthesize rewardWishCell=_rewardWishCell;
 @property(retain, nonatomic) WCFinderLiveControlItemCell *promoteCell; // @synthesize promoteCell=_promoteCell;
@@ -641,4 +642,3 @@
 @property(readonly) Class superclass;
 
 @end
-

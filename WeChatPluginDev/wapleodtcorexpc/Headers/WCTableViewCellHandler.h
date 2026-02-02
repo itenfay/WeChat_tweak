@@ -13,7 +13,6 @@
     DelaySwitchSettingLogic *_delaySwitchLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DelaySwitchSettingLogic *delaySwitchLogic; // @synthesize delaySwitchLogic=_delaySwitchLogic;
 @property(nonatomic) __weak MMUIViewController *viewController; // @synthesize viewController=_viewController;
 - (void)MMUIViewControllerWillDisppear:(id)arg1;

@@ -10,7 +10,6 @@
     WARedEnvelopesOpenLogic *m_openLogic;
 }
 
-- (void).cxx_destruct;
 - (void)onWARedEnvelopesOpenLogicComplete;
 - (void)onWARedEnvelopesOpenLogicError:(id)arg1 errCode:(long long)arg2;
 - (void)onWARedEnvelopesOpenLogicBack;

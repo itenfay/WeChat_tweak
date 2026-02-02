@@ -18,7 +18,6 @@
     BusiF2FZeroCallBackReq *_m_request;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_currentRetryTimes; // @synthesize m_currentRetryTimes=_m_currentRetryTimes;
 @property(retain, nonatomic) BusiF2FZeroCallBackReq *m_request; // @synthesize m_request=_m_request;
 @property(retain, nonatomic) WCPayBusiF2FZeroCallBackCgi *m_zeroPayCgi; // @synthesize m_zeroPayCgi=_m_zeroPayCgi;

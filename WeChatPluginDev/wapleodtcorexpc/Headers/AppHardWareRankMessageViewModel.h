@@ -11,7 +11,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 - (void)onClickOlympic2024Button;
 - (_Bool)canShowOlympic2024Entry;
 - (_Bool)canShowTextStateEntry;

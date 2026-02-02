@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TRKReportReceiving> receiver; // @synthesize receiver=_receiver;
 - (void)reportEvent:(id)arg1 andParams:(id)arg2;
 - (void)setReportReceiver:(id)arg1;

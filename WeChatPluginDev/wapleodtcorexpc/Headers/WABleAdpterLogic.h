@@ -19,7 +19,6 @@
     id <WABleAdpterLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WABleAdpterLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WABlueToothDevicePool *devices; // @synthesize devices=_devices;
 - (void)centralManagerUpdateStateTimeout;

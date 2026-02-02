@@ -14,7 +14,6 @@
     NSString *_link;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *link; // @synthesize link=_link;
 @property(copy, nonatomic) NSString *tail; // @synthesize tail=_tail;
 @property(copy, nonatomic) NSString *desc; // @synthesize desc=_desc;

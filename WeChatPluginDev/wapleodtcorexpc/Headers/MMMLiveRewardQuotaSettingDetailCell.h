@@ -14,7 +14,6 @@
     UIView *_separatorLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
 @property(retain, nonatomic) MMUIButton *arrowButton; // @synthesize arrowButton=_arrowButton;
 @property(retain, nonatomic) MMUILabel *rewardQuotaLabel; // @synthesize rewardQuotaLabel=_rewardQuotaLabel;

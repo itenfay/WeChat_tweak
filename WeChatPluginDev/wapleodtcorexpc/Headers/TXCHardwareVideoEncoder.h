@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, TXCDispatchQueue, TXCDroppableDispatcher, TXCRetrier, TXCVideoEncodeConfig, TXCVideoEncoderSupervisor;
 
 @interface TXCHardwareVideoEncoder
@@ -35,7 +37,6 @@
 }
 
 + (void)releaseSession:(struct OpaqueVTCompressionSession *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long frameDurationFlag; // @synthesize frameDurationFlag=_frameDurationFlag;
 @property(nonatomic) long long droppedFrameCount; // @synthesize droppedFrameCount=_droppedFrameCount;
 @property(copy, nonatomic) CDUnknownBlockType stuckChecker; // @synthesize stuckChecker=_stuckChecker;
@@ -87,4 +88,3 @@
 @property(readonly) Class superclass;
 
 @end
-

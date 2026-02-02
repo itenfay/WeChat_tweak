@@ -14,7 +14,6 @@
     NSString *_filename;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, copy, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;

@@ -14,7 +14,6 @@
     UIPercentDrivenInteractiveTransition *_interactivePopTransition;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPercentDrivenInteractiveTransition *interactivePopTransition; // @synthesize interactivePopTransition=_interactivePopTransition;
 @property(nonatomic) __weak id <EmoticonCustomManagePopInteractiveTransitionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)handlePopBackInteractivePopGesture:(id)arg1;

@@ -22,7 +22,6 @@
     NSNumber *_iconDark;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasShow; // @synthesize hasShow=_hasShow;
 @property(nonatomic) NSNumber *iconDark; // @synthesize iconDark=_iconDark;
 @property(nonatomic) _Bool isWebViewLayoutUnderNav; // @synthesize isWebViewLayoutUnderNav=_isWebViewLayoutUnderNav;

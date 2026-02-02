@@ -130,7 +130,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool checkShouldDownloadFullPkgByInvalidateCodeCmd; // @synthesize checkShouldDownloadFullPkgByInvalidateCodeCmd=_checkShouldDownloadFullPkgByInvalidateCodeCmd;
 @property(copy, nonatomic) NSString *needBackupDomain; // @synthesize needBackupDomain=_needBackupDomain;
 @property(nonatomic) _Bool needForceLatestVersion; // @synthesize needForceLatestVersion=_needForceLatestVersion;

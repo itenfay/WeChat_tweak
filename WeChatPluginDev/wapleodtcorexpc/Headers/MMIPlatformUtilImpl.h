@@ -15,7 +15,6 @@
 
 + (id)getRedDotTipsId:(id)arg1;
 + (id)getRedDotKey:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLocatingCoordinateLogic *logic; // @synthesize logic=_logic;
 @property(retain, nonatomic) NSMutableArray *lanageCallbacks; // @synthesize lanageCallbacks=_lanageCallbacks;
 - (void)reportScreenshotKeyPage:(id)arg1 data:(id)arg2;

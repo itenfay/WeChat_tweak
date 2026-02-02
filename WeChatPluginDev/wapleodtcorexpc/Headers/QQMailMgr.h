@@ -17,7 +17,6 @@
 
 + (_Bool)isXmailVerified;
 + (_Bool)canBindXmail;
-- (void).cxx_destruct;
 @property(retain, nonatomic) XMailUploadAttachmentLogic *uploadAttachMentLogic; // @synthesize uploadAttachMentLogic=_uploadAttachMentLogic;
 @property(retain, nonatomic) XMailSearchMailAddrLogic *searchMailAddrLogic; // @synthesize searchMailAddrLogic=_searchMailAddrLogic;
 @property(retain, nonatomic) NSMutableDictionary *m_dicCookie; // @synthesize m_dicCookie;

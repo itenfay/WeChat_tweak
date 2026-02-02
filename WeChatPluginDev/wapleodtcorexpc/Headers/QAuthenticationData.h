@@ -18,7 +18,6 @@
     QL4Config *_l4Config;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) QL4Config *l4Config; // @synthesize l4Config=_l4Config;
 @property(readonly, nonatomic) int pointEventCloudControl; // @synthesize pointEventCloudControl=_pointEventCloudControl;
 @property(readonly, nonatomic) QMapPromoteConfig *promoteConfig; // @synthesize promoteConfig=_promoteConfig;

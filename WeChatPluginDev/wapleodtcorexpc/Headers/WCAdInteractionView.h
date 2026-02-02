@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSDictionary, NSMutableDictionary, NSString, WCAdInteractionContentView;
 @protocol WCAdInteractionViewDelegate;
 
@@ -17,7 +19,6 @@
     NSMutableDictionary *_firedTimeEventCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *firedTimeEventCache; // @synthesize firedTimeEventCache=_firedTimeEventCache;
 @property(retain, nonatomic) WCAdInteractionContentView *baseContentView; // @synthesize baseContentView=_baseContentView;
 @property(retain, nonatomic) NSArray *determinationInfos; // @synthesize determinationInfos=_determinationInfos;
@@ -74,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

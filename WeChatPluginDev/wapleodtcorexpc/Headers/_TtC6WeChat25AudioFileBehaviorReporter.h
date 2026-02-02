@@ -17,7 +17,6 @@
     MISSING_TYPE *action;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)reportWithAction:(long long)arg1;
 - (id)initWithSource:(unsigned long long)arg1 fileExt:(id)arg2 fileMD5:(id)arg3 msgSvrID:(long long)arg4 chatName:(id)arg5;

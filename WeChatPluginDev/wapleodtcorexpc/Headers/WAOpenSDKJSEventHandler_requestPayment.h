@@ -10,7 +10,6 @@
     NSMutableDictionary *_dic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dic; // @synthesize dic=_dic;
 - (void)onWCPayJSApiResult:(id)arg1 needCloseWebview:(_Bool)arg2 tinyappUsername:(id)arg3 tinyappPath:(id)arg4;
 - (void)onWCPayJSApiResult:(id)arg1 needCloseWebview:(_Bool)arg2;

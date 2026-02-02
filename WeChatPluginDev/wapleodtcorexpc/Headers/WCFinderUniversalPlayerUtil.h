@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderUniversalPlayerUtil : NSObject
 {
@@ -16,4 +17,3 @@
 + (void)asyncGetMediaWrapWithJSON:(id)arg1 scene:(int)arg2 complectionBlock:(CDUnknownBlockType)arg3 errorCallBcakBlock:(CDUnknownBlockType)arg4;
 
 @end
-

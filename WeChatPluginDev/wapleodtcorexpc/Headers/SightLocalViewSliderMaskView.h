@@ -41,7 +41,6 @@
     struct CGRect _validFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInLargeMode; // @synthesize isInLargeMode=_isInLargeMode;
 @property(retain, nonatomic) WCVideoCropImageSliderTouch *lastTouch; // @synthesize lastTouch=_lastTouch;
 @property(nonatomic, getter=isEndFlagOnTouch) _Bool endFlagOnTouch; // @synthesize endFlagOnTouch=_endFlagOnTouch;

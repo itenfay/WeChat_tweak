@@ -13,7 +13,6 @@
 }
 
 + (id)createEffect:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *effectArray; // @synthesize effectArray=_effectArray;
 - (_Bool)isEffectArrayEmpty;
 - (void)reset;

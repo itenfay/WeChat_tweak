@@ -12,7 +12,6 @@
     FaceRecogBaseViewController *_vc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak FaceRecogBaseViewController *vc; // @synthesize vc=_vc;
 @property(nonatomic) __weak id <FaceRecogBaseViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)procedureDidDoneLoading;

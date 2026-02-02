@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WAAuthorizeResultInfo, WANickNameAndHeaderAuthViewModel, WANicknameAndHeadAuthorizeSheetInfo;
 @protocol IWAAuthorizeAddAvatarService, WAAuthorizePageDelegate;
 
@@ -16,7 +18,6 @@
 }
 
 + (id)convertAvatarInfoListFromProto:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <IWAAuthorizeAddAvatarService> authorizeAddAvatarProxyService; // @synthesize authorizeAddAvatarProxyService=_authorizeAddAvatarProxyService;
 @property(nonatomic) unsigned int sessionId; // @synthesize sessionId=_sessionId;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
@@ -63,4 +64,3 @@
 @property(readonly) Class superclass;
 
 @end
-

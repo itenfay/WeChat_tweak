@@ -14,7 +14,6 @@
     AACWeakTimer *_dynamicTtimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AACWeakTimer *dynamicTtimer; // @synthesize dynamicTtimer=_dynamicTtimer;
 @property(nonatomic) float time; // @synthesize time=_time;
 @property(copy, nonatomic) NSArray *parameters; // @synthesize parameters=_parameters;

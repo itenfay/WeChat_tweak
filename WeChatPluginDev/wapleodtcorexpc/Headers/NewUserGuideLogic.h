@@ -22,7 +22,6 @@
 + (void)removeConfig;
 + (id)loadConfig;
 + (id)getConfigPath;
-- (void).cxx_destruct;
 - (void)removeVoipAndPhoneTip:(_Bool)arg1;
 - (void)showVoipAndPhoneTip:(id)arg1 frame:(struct CGRect)arg2 sel:(SEL)arg3 target:(id)arg4;
 - (void)removeVoiceTip:(_Bool)arg1;

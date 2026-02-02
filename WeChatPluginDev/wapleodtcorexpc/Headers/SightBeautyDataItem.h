@@ -15,7 +15,6 @@
     NSString *_titleLocalLanguageKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float value; // @synthesize value=_value;
 @property(nonatomic) float defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(copy, nonatomic) NSString *titleLocalLanguageKey; // @synthesize titleLocalLanguageKey=_titleLocalLanguageKey;

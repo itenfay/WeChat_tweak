@@ -18,7 +18,6 @@
     unsigned long long _viewTag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long viewTag; // @synthesize viewTag=_viewTag;
 @property(retain, nonatomic) WCFinderMemberShipMoreCollectionCoverView *coverView; // @synthesize coverView=_coverView;
 @property(retain, nonatomic) RichTextView *updateTimeTextView; // @synthesize updateTimeTextView=_updateTimeTextView;

@@ -13,7 +13,6 @@
     struct CGSize _lineSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lineSize; // @synthesize lineSize=_lineSize;
 @property(retain, nonatomic) UIView *centerDot; // @synthesize centerDot=_centerDot;
 @property(retain, nonatomic) UIView *rightLine; // @synthesize rightLine=_rightLine;

@@ -14,7 +14,6 @@
     MISSING_TYPE *value;
 }
 
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)updateWithValue:(double)arg1 animation:(_Bool)arg2;
 - (void)updateWithValue:(double)arg1;

@@ -17,7 +17,6 @@
     struct CGPoint _originPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bDraged; // @synthesize bDraged=_bDraged;
 @property(nonatomic) struct CGPoint originPoint; // @synthesize originPoint=_originPoint;
 @property(retain, nonatomic) UIColor *cursorColor; // @synthesize cursorColor=_cursorColor;

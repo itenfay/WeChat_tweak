@@ -21,7 +21,6 @@
 + (id)FuncDefWithFunc:(id)arg1 Selector:(SEL)arg2 FuncType:(long long)arg3 PermissionBitSet3:(unsigned int)arg4 RunInWebViewType:(unsigned long long)arg5;
 + (id)FuncDefWithFunc:(id)arg1 Selector:(SEL)arg2 FuncType:(long long)arg3 PermissionBitSet2:(unsigned int)arg4 RunInWebViewType:(unsigned long long)arg5;
 + (id)FuncDefWithFunc:(id)arg1 Selector:(SEL)arg2 FuncType:(long long)arg3 PermissionBitSet:(unsigned int)arg4 RunInWebViewType:(unsigned long long)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long runInWebViewType; // @synthesize runInWebViewType=_runInWebViewType;
 @property(nonatomic) long long permissionByteIndex; // @synthesize permissionByteIndex;
 @property(copy, nonatomic) JSAPIPermissionBitSet *permissionBitset; // @synthesize permissionBitset;

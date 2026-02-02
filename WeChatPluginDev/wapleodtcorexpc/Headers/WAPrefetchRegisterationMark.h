@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_dicGetCodeSequenceCheckMarks;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicGetCodeSequenceCheckMarks; // @synthesize dicGetCodeSequenceCheckMarks=_dicGetCodeSequenceCheckMarks;
 - (id)getPBPropertyTable;
 

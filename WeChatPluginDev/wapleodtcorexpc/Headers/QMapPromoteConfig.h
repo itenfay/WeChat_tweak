@@ -15,7 +15,6 @@
     NSDictionary *_json;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *json; // @synthesize json=_json;
 @property(readonly, nonatomic) unsigned int minZoom; // @synthesize minZoom=_minZoom;
 @property(readonly, nonatomic) unsigned int maxZoom; // @synthesize maxZoom=_maxZoom;

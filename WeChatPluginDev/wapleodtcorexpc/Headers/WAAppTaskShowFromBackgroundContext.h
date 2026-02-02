@@ -13,7 +13,6 @@
     UIViewController *_lastVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *lastVC; // @synthesize lastVC=_lastVC;
 @property(nonatomic) __weak WAWebViewController *showWebView; // @synthesize showWebView=_showWebView;
 

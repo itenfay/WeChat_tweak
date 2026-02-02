@@ -13,7 +13,6 @@
     MMUILabel *_detailLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 - (id)accessibilityLabel;
 - (void)onFullTextBtnClick;

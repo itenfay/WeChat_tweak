@@ -20,7 +20,6 @@
     long long _rotation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long rotation; // @synthesize rotation=_rotation;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) unsigned int height; // @synthesize height=_height;

@@ -12,7 +12,6 @@
     long long _menuUIStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long menuUIStyle; // @synthesize menuUIStyle=_menuUIStyle;
 @property(retain, nonatomic) NSArray *arrMenuItems; // @synthesize arrMenuItems=_arrMenuItems;
 @property(nonatomic) unsigned int forbigFlag; // @synthesize forbigFlag=_forbigFlag;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWebImageView, RichTextView, UILabel;
 
 @interface WCFinderBriefCardView
@@ -15,7 +17,6 @@
 }
 
 + (double)cardHeight;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickAction; // @synthesize clickAction=_clickAction;
 @property(retain, nonatomic) RichTextView *guideTextView; // @synthesize guideTextView=_guideTextView;
 @property(retain, nonatomic) RichTextView *introTextView; // @synthesize introTextView=_introTextView;
@@ -26,4 +27,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -18,7 +18,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_fansInteractionData;
 + (void)PBArrayAdd_userInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContactFansInteractionData *fansInteractionData; // @synthesize fansInteractionData=_fansInteractionData;
 @property(retain, nonatomic) FinderIdentityInfo *userInfo; // @synthesize userInfo=_userInfo;
 - (id)archivedWCTValue;

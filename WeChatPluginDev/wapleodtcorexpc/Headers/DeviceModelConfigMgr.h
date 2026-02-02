@@ -17,7 +17,6 @@
 + (unsigned int)parseVersionFromString:(id)arg1;
 + (id)matchCurrentWechatVersion:(id)arg1 WxVersion:(unsigned int)arg2;
 + (id)matchWxVersion:(unsigned int)arg1 platform:(id)arg2 iosVersion:(id)arg3 fromArray:(id)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) int m_oldVersion; // @synthesize m_oldVersion=_m_oldVersion;
 @property(retain, nonatomic) NSDictionary *m_dicFromModelJson; // @synthesize m_dicFromModelJson;
 - (_Bool)save:(id)arg1;

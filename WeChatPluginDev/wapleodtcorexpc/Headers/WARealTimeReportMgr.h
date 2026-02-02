@@ -14,7 +14,6 @@
     ReportDeviceInfo *_deviceInfo;
 }
 
-- (void).cxx_destruct;
 - (void)onReportResponse:(id)arg1;
 - (void)onCgiResponse:(id)arg1 forEvent:(unsigned int)arg2;
 - (void)realTimeReportInfo;

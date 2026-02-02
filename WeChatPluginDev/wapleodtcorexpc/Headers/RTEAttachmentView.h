@@ -17,7 +17,6 @@
     id <RTEAttachmentViewDelegate> _providerDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int colorType; // @synthesize colorType=_colorType;
 @property(nonatomic) __weak id <RTEAttachmentViewDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
 @property(nonatomic) _Bool bNeedLayout; // @synthesize bNeedLayout=_bNeedLayout;

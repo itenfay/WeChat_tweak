@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OS_dispatch_queue;
 
@@ -20,7 +21,6 @@
 + (id)reachabilityForInternetConnection;
 + (id)reachabilityWithAddress:(const struct sockaddr *)arg1;
 + (id)reachabilityWithHostname:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id reachabilityObject; // @synthesize reachabilityObject;
 @property(copy, nonatomic) CDUnknownBlockType unreachableBlock; // @synthesize unreachableBlock;
 @property(copy, nonatomic) CDUnknownBlockType reachableBlock; // @synthesize reachableBlock;
@@ -47,4 +47,3 @@
 - (id)initWithReachabilityRef:(struct __SCNetworkReachability *)arg1;
 
 @end
-

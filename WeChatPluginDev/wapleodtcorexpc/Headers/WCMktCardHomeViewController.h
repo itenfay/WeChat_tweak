@@ -12,7 +12,6 @@
     NSString *_currentSelectCardDetailMerchantID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentSelectCardDetailMerchantID; // @synthesize currentSelectCardDetailMerchantID=_currentSelectCardDetailMerchantID;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) WCMktCardHomeLogicController *logicController; // @synthesize logicController=_logicController;

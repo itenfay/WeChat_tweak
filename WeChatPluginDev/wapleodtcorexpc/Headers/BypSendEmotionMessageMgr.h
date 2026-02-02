@@ -18,7 +18,6 @@
     WCCgiBlockHelper *_curCgiBlockHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCgiBlockHelper *curCgiBlockHelper; // @synthesize curCgiBlockHelper=_curCgiBlockHelper;
 @property(nonatomic) __weak id <BypSendEmotionMessageMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)OnWillRevokeMsg:(id)arg1 revokeContext:(id)arg2;

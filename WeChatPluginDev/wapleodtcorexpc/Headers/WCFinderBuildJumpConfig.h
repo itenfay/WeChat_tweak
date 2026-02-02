@@ -17,7 +17,6 @@
     NSString *_ext_buff_string;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *ext_buff_string; // @synthesize ext_buff_string=_ext_buff_string;
 @property(nonatomic) int business_type; // @synthesize business_type=_business_type;
 @property(copy, nonatomic) NSString *icon_url; // @synthesize icon_url=_icon_url;

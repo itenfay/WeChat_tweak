@@ -15,7 +15,6 @@
     UILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UIView *rightLineView; // @synthesize rightLineView=_rightLineView;
 @property(retain, nonatomic) UIView *logoView; // @synthesize logoView=_logoView;

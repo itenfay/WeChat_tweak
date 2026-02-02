@@ -13,7 +13,6 @@
     MMWebCanvasBizPkgInfo *_bizPkgInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebCanvasBizPkgInfo *bizPkgInfo; // @synthesize bizPkgInfo=_bizPkgInfo;
 @property(retain, nonatomic) MMWebCanvasBasePkgInfo *basePkgInfo; // @synthesize basePkgInfo=_basePkgInfo;
 - (id)description;

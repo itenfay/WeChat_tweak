@@ -11,7 +11,6 @@
     MemoryMappedKV *m_pushInfos;
 }
 
-- (void).cxx_destruct;
 - (id)notificaitonIdentifier:(long long)arg1;
 - (id)messageWrapFromPushInfo:(id)arg1;
 - (id)notificationInfoForMessage:(id)arg1 withEnabledNotificationSettings:(id)arg2 isFromVoipPush:(_Bool)arg3;

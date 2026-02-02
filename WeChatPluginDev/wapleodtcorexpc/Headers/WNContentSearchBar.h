@@ -21,7 +21,6 @@
     id <WNContentSearchBaroperationDelegate> _operationDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WNContentSearchBaroperationDelegate> operationDelegate; // @synthesize operationDelegate=_operationDelegate;
 @property(nonatomic) __weak id <WNContentSearchBarDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)textFieldShouldReturn:(id)arg1;

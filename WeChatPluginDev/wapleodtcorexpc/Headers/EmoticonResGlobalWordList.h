@@ -16,7 +16,6 @@
 + (void)clearAll;
 + (id)pathRelativeToDir:(id)arg1;
 + (id)getCachedWordList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonWordListMeta *meta; // @synthesize meta=_meta;
 @property(retain, nonatomic) NSMutableSet *words; // @synthesize words=_words;
 - (id)init;

@@ -29,7 +29,6 @@
 + (struct CGSize)mediaViewSize;
 + (double)sectionHeightWith:(id)arg1 width:(double)arg2 forceExpand:(_Bool)arg3 isAuthorView:(_Bool)arg4;
 + (_Bool)showMediaWithComment:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderUniCommentMediaView *mediaView; // @synthesize mediaView=_mediaView;
 @property(nonatomic) _Bool isSelfPost; // @synthesize isSelfPost=_isSelfPost;
 @property(retain, nonatomic) MMUIButton *moreActionButton; // @synthesize moreActionButton=_moreActionButton;

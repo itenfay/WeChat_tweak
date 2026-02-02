@@ -30,7 +30,6 @@
     id <GCDWebServerBodyWriter> _writer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *remoteAddressData; // @synthesize remoteAddressData=_remoteAddress;
 @property(retain, nonatomic) NSData *localAddressData; // @synthesize localAddressData=_localAddress;
 @property(readonly, nonatomic) _Bool usesChunkedTransferEncoding; // @synthesize usesChunkedTransferEncoding=_chunked;

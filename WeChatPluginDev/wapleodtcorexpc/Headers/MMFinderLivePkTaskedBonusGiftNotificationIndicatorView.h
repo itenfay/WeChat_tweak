@@ -14,7 +14,6 @@
     NSMutableArray *_pool;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pool; // @synthesize pool=_pool;
 @property(retain, nonatomic) NSMutableArray *inDisplayItems; // @synthesize inDisplayItems=_inDisplayItems;
 @property(nonatomic) double labelDisplayCenterX; // @synthesize labelDisplayCenterX=_labelDisplayCenterX;

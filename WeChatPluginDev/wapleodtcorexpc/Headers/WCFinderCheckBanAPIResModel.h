@@ -18,7 +18,6 @@
     long long _limitCtrlInfoReceiveTs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long limitCtrlInfoReceiveTs; // @synthesize limitCtrlInfoReceiveTs=_limitCtrlInfoReceiveTs;
 @property(nonatomic) long long willFreeGapCount; // @synthesize willFreeGapCount=_willFreeGapCount;
 @property(nonatomic) long long willPenaltyGapCount; // @synthesize willPenaltyGapCount=_willPenaltyGapCount;

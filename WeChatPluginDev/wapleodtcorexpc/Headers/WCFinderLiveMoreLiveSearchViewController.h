@@ -23,7 +23,6 @@
     NSString *_searchText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(retain, nonatomic) UIPanGestureRecognizer *fakePopViewGesture; // @synthesize fakePopViewGesture=_fakePopViewGesture;
 @property(nonatomic) unsigned long long footerRefreshState; // @synthesize footerRefreshState=_footerRefreshState;

@@ -12,7 +12,6 @@
 
 + (id)getConfigFilePath;
 + (_Bool)isMMLiveHeavyUser;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicMainThreadMonitorCongfig; // @synthesize dicMainThreadMonitorCongfig=_dicMainThreadMonitorCongfig;
 - (_Bool)getCorruptCrashUploadEnabled;
 - (_Bool)getJscBacktraceEnabled;

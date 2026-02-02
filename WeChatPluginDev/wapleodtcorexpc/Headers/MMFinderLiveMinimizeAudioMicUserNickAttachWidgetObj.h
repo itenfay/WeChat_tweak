@@ -12,7 +12,6 @@
     struct CGRect _normalizedFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect normalizedFrame; // @synthesize normalizedFrame=_normalizedFrame;
 @property(retain, nonatomic) UILabel *nickLabel; // @synthesize nickLabel=_nickLabel;
 @property(nonatomic) __weak UILabel *rootNickLabel; // @synthesize rootNickLabel=_rootNickLabel;

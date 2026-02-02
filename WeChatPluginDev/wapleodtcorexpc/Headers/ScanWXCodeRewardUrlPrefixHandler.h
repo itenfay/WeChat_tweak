@@ -10,7 +10,6 @@
     WCPayQRCodeRewardPayControlLogic *_qrcodeRewardPayerLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayQRCodeRewardPayControlLogic *qrcodeRewardPayerLogic; // @synthesize qrcodeRewardPayerLogic=_qrcodeRewardPayerLogic;
 - (BOOL)QRCodeType;
 - (void)onQRCodeRewardPayLogicStop;

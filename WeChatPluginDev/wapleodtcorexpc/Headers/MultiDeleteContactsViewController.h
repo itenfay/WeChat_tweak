@@ -23,7 +23,6 @@
 
 + (void)reportMultiDeleteContactsWithAction:(unsigned long long)arg1 actionInfo:(id)arg2;
 + (void)reportMultiDeleteContactsWithAction:(unsigned long long)arg1 query:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *viewInfoContact; // @synthesize viewInfoContact=_viewInfoContact;
 @property(retain, nonatomic) ContactBatchModifyLogic *contactBatchModifyLogic; // @synthesize contactBatchModifyLogic=_contactBatchModifyLogic;
 @property(retain, nonatomic) NSMutableDictionary *dicSelectedContacts; // @synthesize dicSelectedContacts=_dicSelectedContacts;

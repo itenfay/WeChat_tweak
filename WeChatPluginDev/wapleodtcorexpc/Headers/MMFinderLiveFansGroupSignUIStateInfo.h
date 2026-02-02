@@ -25,7 +25,6 @@
     struct CGSize _fanGroupIconSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *fanGroupTextFont; // @synthesize fanGroupTextFont=_fanGroupTextFont;
 @property(nonatomic) double fansGroupIconLeft; // @synthesize fansGroupIconLeft=_fansGroupIconLeft;
 @property(nonatomic) _Bool isFansGroupIconCenter; // @synthesize isFansGroupIconCenter=_isFansGroupIconCenter;

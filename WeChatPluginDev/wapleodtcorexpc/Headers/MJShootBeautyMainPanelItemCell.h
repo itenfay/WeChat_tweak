@@ -21,7 +21,6 @@
     UIControl *_detailAdjustControl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIControl *detailAdjustControl; // @synthesize detailAdjustControl=_detailAdjustControl;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMUIView *borderView; // @synthesize borderView=_borderView;

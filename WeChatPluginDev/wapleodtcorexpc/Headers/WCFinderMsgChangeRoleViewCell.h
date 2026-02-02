@@ -20,7 +20,6 @@
     UILabel *_globalSelectedLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *globalSelectedLabel; // @synthesize globalSelectedLabel=_globalSelectedLabel;
 @property(nonatomic) __weak UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UILabel *usernameLabel; // @synthesize usernameLabel=_usernameLabel;

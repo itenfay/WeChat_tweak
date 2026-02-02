@@ -15,7 +15,6 @@
     unsigned long long _preferredMemoryUsageAfterPurge;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long preferredMemoryUsageAfterPurge; // @synthesize preferredMemoryUsageAfterPurge=_preferredMemoryUsageAfterPurge;
 @property(nonatomic) unsigned long long memoryCapacity; // @synthesize memoryCapacity=_memoryCapacity;
 @property(nonatomic) unsigned long long currentMemoryUsage; // @synthesize currentMemoryUsage=_currentMemoryUsage;

@@ -19,7 +19,6 @@
     struct CGRect _displayNormalizedFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveConnectMicFocusedUserInfoView *userInfoView; // @synthesize userInfoView=_userInfoView;
 @property(retain, nonatomic) MMFinderLiveTaskId *finderLiveTaskId; // @synthesize finderLiveTaskId=_finderLiveTaskId;
 @property(nonatomic) struct CGRect displayNormalizedFrame; // @synthesize displayNormalizedFrame=_displayNormalizedFrame;

@@ -16,7 +16,6 @@
     double _imageHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsPoliticalLeader; // @synthesize bIsPoliticalLeader=_bIsPoliticalLeader;
 @property(nonatomic) unsigned int faceClusterTime; // @synthesize faceClusterTime=_faceClusterTime;
 @property(nonatomic) double imageHeight; // @synthesize imageHeight=_imageHeight;

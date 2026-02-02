@@ -19,7 +19,6 @@
     NSMutableArray *_moreButtonTypes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *moreButtonTypes; // @synthesize moreButtonTypes=_moreButtonTypes;
 @property(retain, nonatomic) UIButton *bothDeviceButton; // @synthesize bothDeviceButton=_bothDeviceButton;
 @property(retain, nonatomic) UIButton *nextButton; // @synthesize nextButton=_nextButton;

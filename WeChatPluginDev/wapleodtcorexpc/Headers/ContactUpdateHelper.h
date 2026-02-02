@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,7 +15,6 @@
     CDUnknownBlockType _m_block;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType m_block; // @synthesize m_block=_m_block;
 @property(retain, nonatomic) NSString *m_userName; // @synthesize m_userName=_m_userName;
 @property(retain, nonatomic) NSString *m_moduleName; // @synthesize m_moduleName=_m_moduleName;
@@ -38,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

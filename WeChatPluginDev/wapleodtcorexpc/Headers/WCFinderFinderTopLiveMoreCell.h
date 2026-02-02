@@ -13,7 +13,6 @@
     UILabel *_moreLiveLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *moreLiveLabel; // @synthesize moreLiveLabel=_moreLiveLabel;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 - (id)initWithFrame:(struct CGRect)arg1;

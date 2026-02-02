@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, lzCacheCleanManager;
 @protocol OS_dispatch_queue;
@@ -20,7 +21,6 @@
 
 + (void)validCachePath:(id)arg1 obj:(id)arg2;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType normalFilterBlock; // @synthesize normalFilterBlock=_normalFilterBlock;
 @property(readonly, nonatomic) lzCacheCleanManager *cleanMgr; // @synthesize cleanMgr=_cleanMgr;
 - (void)cleanFileCaching:(id)arg1;
@@ -40,4 +40,3 @@
 - (id)init;
 
 @end
-

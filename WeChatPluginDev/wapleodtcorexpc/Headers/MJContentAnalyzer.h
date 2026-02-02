@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MJContentAnalyzer : NSObject
 {
@@ -14,4 +15,3 @@
 - (void)analyzeWithContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end
-

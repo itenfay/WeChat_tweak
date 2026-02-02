@@ -17,7 +17,6 @@
     NSString *_musicLogoName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *musicLogoName; // @synthesize musicLogoName=_musicLogoName;
 @property(nonatomic) _Bool isFromBgmSearch; // @synthesize isFromBgmSearch=_isFromBgmSearch;
 @property(retain, nonatomic) RecommendedMusicInfo *musicInfo; // @synthesize musicInfo=_musicInfo;

@@ -19,7 +19,6 @@
     MISSING_TYPE *$__lazy_storage_$_byPassInfo;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 @property(nonatomic, readonly) _Bool showInDiscoverPage;

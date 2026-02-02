@@ -24,7 +24,6 @@
     long long _simpleFlipStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long simpleFlipStatus; // @synthesize simpleFlipStatus=_simpleFlipStatus;
 @property(nonatomic) long long viewStatus; // @synthesize viewStatus=_viewStatus;
 @property(retain, nonatomic) MMUIButton *coverButton; // @synthesize coverButton=_coverButton;

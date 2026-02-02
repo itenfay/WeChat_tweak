@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIFont, UIImage, UIView;
 
@@ -35,7 +36,6 @@
     CDUnknownBlockType _accessoryActionHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType accessoryActionHandler; // @synthesize accessoryActionHandler=_accessoryActionHandler;
 @property(copy, nonatomic) CDUnknownBlockType customViewCenter; // @synthesize customViewCenter=_customViewCenter;
 @property(nonatomic) double customTitleLeft; // @synthesize customTitleLeft=_customTitleLeft;
@@ -64,4 +64,3 @@
 - (id)init;
 
 @end
-

@@ -18,7 +18,6 @@
     struct CGSize _cropSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useOriginImageForSignature; // @synthesize useOriginImageForSignature=_useOriginImageForSignature;
 @property(nonatomic) struct CGSize cropSize; // @synthesize cropSize=_cropSize;
 @property(nonatomic) _Bool shouldCrop; // @synthesize shouldCrop=_shouldCrop;

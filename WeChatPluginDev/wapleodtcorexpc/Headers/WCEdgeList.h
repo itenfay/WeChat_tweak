@@ -12,7 +12,6 @@
     UIView *_view;
 }
 
-- (void).cxx_destruct;
 - (id)right;
 - (id)hCenter;
 - (id)left;

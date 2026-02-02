@@ -17,7 +17,6 @@
     struct CGRect _containerFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *btnGridLineIcon; // @synthesize btnGridLineIcon=_btnGridLineIcon;
 @property(retain, nonatomic) WCElasticLayoutView *elasticLayoutView; // @synthesize elasticLayoutView=_elasticLayoutView;
 @property(nonatomic) struct CGRect containerFrame; // @synthesize containerFrame=_containerFrame;

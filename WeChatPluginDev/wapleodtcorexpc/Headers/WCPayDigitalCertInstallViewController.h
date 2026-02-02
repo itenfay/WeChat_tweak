@@ -19,7 +19,6 @@
     id <WCPayDigitalCertInstallViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int cert_encrypt_type; // @synthesize cert_encrypt_type=_cert_encrypt_type;
 @property(nonatomic) __weak id <WCPayDigitalCertInstallViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) WCPayUserInfo *m_userInfo; // @synthesize m_userInfo=_m_userInfo;

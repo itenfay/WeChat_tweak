@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, MMTableView, NSArray, NSString;
 @protocol MMFinderLiveProductsTableViewDelegate;
@@ -17,7 +18,6 @@
     NSArray *_goodsViewModels;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *goodsViewModels; // @synthesize goodsViewModels=_goodsViewModels;
 @property(copy, nonatomic) CDUnknownBlockType reprocessGoodsViewModel; // @synthesize reprocessGoodsViewModel=_reprocessGoodsViewModel;
 @property(nonatomic) __weak id <MMFinderLiveProductsTableViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -55,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -17,7 +17,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRecordListLotteryInfo *milestoneLotteryInfo; // @synthesize milestoneLotteryInfo=_milestoneLotteryInfo;
 @property(retain, nonatomic) MMFinderLiveLotteryInfo *lotteryInfo; // @synthesize lotteryInfo=_lotteryInfo;
 @property(nonatomic) unsigned int supportMultiType; // @synthesize supportMultiType=_supportMultiType;

@@ -19,7 +19,6 @@
     unsigned long long _addressMgrId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long addressMgrId; // @synthesize addressMgrId=_addressMgrId;
 - (id)getLocaleCountryCode;
 - (id)getCarrierCountryCode;

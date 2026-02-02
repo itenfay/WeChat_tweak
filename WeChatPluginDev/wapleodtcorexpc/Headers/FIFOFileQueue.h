@@ -10,7 +10,6 @@
     NSMutableArray *m_arrItems;
 }
 
-- (void).cxx_destruct;
 - (_Bool)syncData;
 - (id)getItemAtIndex:(unsigned long long)arg1;
 - (_Bool)removeItems:(id)arg1;

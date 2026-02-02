@@ -18,7 +18,6 @@
 
 + (id)imageConfigWithTintColor:(id)arg1 bounds:(struct CGRect)arg2 rotationAngle:(double)arg3 opacity:(double)arg4 scale:(double)arg5;
 + (id)imageConfigWithTintColor:(id)arg1 bounds:(struct CGRect)arg2 rotationAngle:(double)arg3 opacity:(double)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) double rescale; // @synthesize rescale=_rescale;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 @property(nonatomic) double rotationAngle; // @synthesize rotationAngle=_rotationAngle;

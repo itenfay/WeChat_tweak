@@ -29,7 +29,6 @@
 + (id)selectAllContactsTitle;
 + (id)selectContactTitle;
 + (id)selectTagTitle;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAllContactsSelected; // @synthesize isAllContactsSelected=_isAllContactsSelected;
 @property(retain, nonatomic) NSMutableSet *selectedContactTags; // @synthesize selectedContactTags=_selectedContactTags;
 @property(retain, nonatomic) NSMutableSet *selectedContacts; // @synthesize selectedContacts=_selectedContacts;

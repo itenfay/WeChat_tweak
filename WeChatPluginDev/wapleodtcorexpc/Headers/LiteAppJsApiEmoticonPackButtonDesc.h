@@ -10,7 +10,6 @@
     NSString *_pid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pid; // @synthesize pid=_pid;
 - (void)onGetEmoticonDownloadFlag:(unsigned int)arg1 andButtonDesc:(id)arg2;
 - (void)invokeJsApi:(id)arg1 param:(id)arg2 isFromView:(_Bool)arg3;

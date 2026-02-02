@@ -12,7 +12,6 @@
     EmoticonViewWithPreview *_emoticonPreviewView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonViewWithPreview *emoticonPreviewView; // @synthesize emoticonPreviewView=_emoticonPreviewView;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

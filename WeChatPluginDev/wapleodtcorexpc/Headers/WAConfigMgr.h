@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MemoryMappedKV, NSDictionary, NSMutableDictionary, NSRecursiveLock, NSString, WAAppBrandNotifyStorage, WAAppBrandPluginNotifyStorage, WAEnableCopyPathMenuNotifyStorage, WAPackageSweeperLogic;
 
 @interface WAConfigMgr
@@ -77,7 +79,6 @@
 + (_Bool)isDeviceSupportWeApp;
 + (int)benchMarkLevel;
 + (_Bool)isOverSeaUser;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *frameCaptureModeKv; // @synthesize frameCaptureModeKv=_frameCaptureModeKv;
 @property(retain, nonatomic) NSMutableDictionary *dicFrameCaptureMode; // @synthesize dicFrameCaptureMode=_dicFrameCaptureMode;
 @property(retain) NSMutableDictionary *cacheChannelMsgs; // @synthesize cacheChannelMsgs=_cacheChannelMsgs;
@@ -379,4 +380,3 @@
 @property(readonly) Class superclass;
 
 @end
-

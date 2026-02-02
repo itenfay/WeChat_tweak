@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_videoPath;
 + (void)PBArrayAdd_thumbPath;
 + (void)PBArrayAdd_mode;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *originalAssetId; // @synthesize originalAssetId=_originalAssetId;
 @property(retain, nonatomic) NSString *moviePath; // @synthesize moviePath=_moviePath;
 @property(retain, nonatomic) UIImage *thumbImg; // @synthesize thumbImg=_thumbImg;

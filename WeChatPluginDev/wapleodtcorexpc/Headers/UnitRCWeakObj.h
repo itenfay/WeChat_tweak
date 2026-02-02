@@ -12,7 +12,6 @@
 }
 
 + (id)initWithObj:(id)arg1;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)lock;

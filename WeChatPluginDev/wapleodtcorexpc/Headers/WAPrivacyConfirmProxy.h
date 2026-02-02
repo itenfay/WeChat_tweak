@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WAOverseaPrivacyConfirmLogic, WOAPPrivacyConfirmLogic;
 
@@ -15,7 +16,6 @@
 
 + (_Bool)isNeedOverseaPrivacyConfirm;
 + (_Bool)isNeedPrivacyConfirm;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAOverseaPrivacyConfirmLogic *overseaPrivacyLogic; // @synthesize overseaPrivacyLogic=_overseaPrivacyLogic;
 @property(retain, nonatomic) WOAPPrivacyConfirmLogic *privacyConfirmLogic; // @synthesize privacyConfirmLogic=_privacyConfirmLogic;
 - (void)requestOverseaPrivacyWithCompletion:(CDUnknownBlockType)arg1;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

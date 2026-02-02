@@ -12,7 +12,6 @@
     MMLiveLikeAnimationUtil *_likeAnimationUtil;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveLikeAnimationUtil *likeAnimationUtil; // @synthesize likeAnimationUtil=_likeAnimationUtil;
 @property(retain, nonatomic) MMAudienceLiveLikePlayUtil *likePlayUtil; // @synthesize likePlayUtil=_likePlayUtil;
 @property(retain, nonatomic) WCLiveBottomTextButton *likeUnClickableButton; // @synthesize likeUnClickableButton=_likeUnClickableButton;

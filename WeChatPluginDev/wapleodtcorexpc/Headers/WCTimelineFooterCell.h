@@ -18,7 +18,6 @@
 + (double)defaultHeight;
 + (double)separatorHeight;
 + (id)defaultIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperatorLine; // @synthesize seperatorLine=_seperatorLine;
 @property(retain, nonatomic) WCMomentsPostShareButton *postShareButton; // @synthesize postShareButton=_postShareButton;
 @property(nonatomic) __weak id <WCTimelineFooterCellDelegate> delegate; // @synthesize delegate=_delegate;

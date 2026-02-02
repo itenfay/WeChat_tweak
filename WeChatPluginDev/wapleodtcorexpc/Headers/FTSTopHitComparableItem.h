@@ -14,7 +14,6 @@
     NSString *_typeKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int clickScore; // @synthesize clickScore=_clickScore;
 @property(retain, nonatomic) NSString *typeKey; // @synthesize typeKey=_typeKey;
 @property(retain, nonatomic) id topHitItem; // @synthesize topHitItem=_topHitItem;

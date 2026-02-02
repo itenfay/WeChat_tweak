@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (GameChatRoomTap)
 + (id)gcSvgImgWithData:(id)arg1 color:(id)arg2 size:(struct CGSize)arg3 dynamicImg:(_Bool)arg4;
@@ -42,4 +43,3 @@
 - (void)gcAddTapGesture:(id)arg1;
 - (id)gcAddTapGestureWithTarget:(id)arg1 selector:(SEL)arg2;
 @end
-

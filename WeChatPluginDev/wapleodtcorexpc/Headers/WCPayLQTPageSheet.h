@@ -22,7 +22,6 @@
     NSString *_mainContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mainContent; // @synthesize mainContent=_mainContent;
 @property(retain, nonatomic) PopUpWithHalfDialog *pageData; // @synthesize pageData=_pageData;
 @property(retain, nonatomic) RichTextView *textView; // @synthesize textView=_textView;

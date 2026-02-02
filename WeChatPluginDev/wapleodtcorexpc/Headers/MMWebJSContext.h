@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class JSContext, MMWebJsTimerHandler, NSString, NSThread, WasmAdaptor;
 @protocol MMWebJSContextWasmDelegate, OS_dispatch_queue;
@@ -20,7 +21,6 @@
     CDUnknownBlockType _exceptionHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType exceptionHandler; // @synthesize exceptionHandler=_exceptionHandler;
 @property(nonatomic) _Bool isWasmInit; // @synthesize isWasmInit=_isWasmInit;
 @property(retain, nonatomic) WasmAdaptor *wasmAdaptor; // @synthesize wasmAdaptor=_wasmAdaptor;
@@ -57,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

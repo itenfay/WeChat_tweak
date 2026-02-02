@@ -10,7 +10,6 @@
     NSMutableDictionary *_postingMVModeldDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *postingMVModeldDic; // @synthesize postingMVModeldDic=_postingMVModeldDic;
 - (void)reportFinderPostFailure:(id)arg1;
 - (void)reportFinderPostSuccess:(id)arg1;

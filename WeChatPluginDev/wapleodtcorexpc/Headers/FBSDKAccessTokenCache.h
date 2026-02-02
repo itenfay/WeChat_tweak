@@ -12,7 +12,6 @@
     FBSDKKeychainStore *_keychainStore;
 }
 
-- (void).cxx_destruct;
 - (void)clearCache;
 @property(copy, nonatomic) FBSDKAccessToken *accessToken;
 - (id)init;

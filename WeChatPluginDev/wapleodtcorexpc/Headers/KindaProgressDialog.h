@@ -17,7 +17,6 @@
     MMLoadingView *_m_customGlobalView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLoadingView *m_customGlobalView; // @synthesize m_customGlobalView=_m_customGlobalView;
 @property(retain, nonatomic) WCBizLoadingView *m_payGlobalView; // @synthesize m_payGlobalView=_m_payGlobalView;
 @property(retain, nonatomic) MMLoadingView *m_normalGlobalView; // @synthesize m_normalGlobalView=_m_normalGlobalView;

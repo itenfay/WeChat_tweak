@@ -12,7 +12,6 @@
     NSString *_byPassInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *byPassInfo; // @synthesize byPassInfo=_byPassInfo;
 
 @end

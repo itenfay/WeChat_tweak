@@ -12,7 +12,6 @@
     WCFinderCardsEntryCenterStoreInfo *_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCardsEntryCenterStoreInfo *data; // @synthesize data=_data;
 @property(readonly, nonatomic) FinderJumpInfo *jumpInfo;
 @property(readonly, nonatomic) _Bool needPreload;

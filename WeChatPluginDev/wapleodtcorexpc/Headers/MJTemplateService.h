@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLRUCache, NSMutableArray, NSString, NSURLSessionDownloadTask;
 
 @interface MJTemplateService
@@ -18,7 +20,6 @@
 
 + (id)_cachePreviewFilePathFromUrlStr:(id)arg1;
 + (id)localPathWithUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *highPriorityTaskQueue; // @synthesize highPriorityTaskQueue=_highPriorityTaskQueue;
 @property(retain, nonatomic) NSMutableArray *taskQueue; // @synthesize taskQueue=_taskQueue;
 @property(retain, nonatomic) NSURLSessionDownloadTask *currentTemplateDownloadTask; // @synthesize currentTemplateDownloadTask=_currentTemplateDownloadTask;
@@ -72,4 +73,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
     UIImageView *_loadingRing;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *loadingRing; // @synthesize loadingRing=_loadingRing;
 @property(retain, nonatomic) MMLiveDashedLabelView *dashedLabel; // @synthesize dashedLabel=_dashedLabel;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;

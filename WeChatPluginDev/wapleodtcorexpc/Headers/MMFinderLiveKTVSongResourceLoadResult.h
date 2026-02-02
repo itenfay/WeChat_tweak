@@ -13,7 +13,6 @@
     NSString *_resourcePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *resourcePath; // @synthesize resourcePath=_resourcePath;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 

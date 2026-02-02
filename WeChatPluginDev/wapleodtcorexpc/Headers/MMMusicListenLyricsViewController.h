@@ -11,7 +11,6 @@
     long long _curState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long curState; // @synthesize curState=_curState;
 - (void)onMusicPlayStatusChanged;
 - (void)onUpdateCurOffset:(double)arg1;

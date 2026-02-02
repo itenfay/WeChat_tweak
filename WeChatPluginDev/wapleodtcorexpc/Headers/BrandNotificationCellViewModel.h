@@ -17,7 +17,6 @@
 }
 
 + (_Bool)canCreateViewModelWithMsgWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double viewHeight; // @synthesize viewHeight=_viewHeight;
 @property(nonatomic) struct CGSize contactLabelSize; // @synthesize contactLabelSize=_contactLabelSize;
 @property(retain, nonatomic) NSMutableArray *contactLabelStyles; // @synthesize contactLabelStyles=_contactLabelStyles;

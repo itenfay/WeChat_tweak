@@ -16,7 +16,6 @@
     NSString *_fontFamily;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bold; // @synthesize bold=_bold;
 @property(nonatomic) _Bool italic; // @synthesize italic=_italic;
 @property(retain, nonatomic) NSString *fontFamily; // @synthesize fontFamily=_fontFamily;

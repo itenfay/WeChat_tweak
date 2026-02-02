@@ -14,7 +14,6 @@
     MJShootBubbleSwitch *_bubbleSwitch;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJShootBubbleSwitch *bubbleSwitch; // @synthesize bubbleSwitch=_bubbleSwitch;
 @property(retain, nonatomic) NSArray *switchItems; // @synthesize switchItems=_switchItems;
 @property(nonatomic) long long selectedFaceGender; // @synthesize selectedFaceGender=_selectedFaceGender;

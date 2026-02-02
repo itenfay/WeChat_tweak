@@ -10,7 +10,6 @@
     WCUIAlertView *_editTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCUIAlertView *editTextView; // @synthesize editTextView=_editTextView;
 - (void)onEditTextViewConfirmed;
 - (void)onEditTextViewCancelled;

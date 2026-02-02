@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UnitRCThreadUtilsObjc : NSObject
 {
@@ -12,4 +13,3 @@
 + (void)runOnMainThread:(CDUnknownBlockType)arg1;
 
 @end
-

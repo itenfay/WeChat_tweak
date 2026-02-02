@@ -14,7 +14,6 @@
 }
 
 + (id)MagicPkgInfoDBPath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *pkgInfoTable; // @synthesize pkgInfoTable=_pkgInfoTable;
 @property(retain, nonatomic) WCTDatabase *db; // @synthesize db=_db;
 - (void)dealloc;

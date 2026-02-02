@@ -24,7 +24,6 @@
 }
 
 + (id)imageWithColor:(id)arg1 andBounds:(struct CGRect)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool onlyFlutter; // @synthesize onlyFlutter=_onlyFlutter;
 @property(retain, nonatomic) UIImage *rightImage; // @synthesize rightImage=_rightImage;
 @property(retain, nonatomic) UIImage *centerImage; // @synthesize centerImage=_centerImage;

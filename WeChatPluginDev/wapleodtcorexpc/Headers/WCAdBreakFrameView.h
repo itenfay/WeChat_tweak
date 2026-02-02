@@ -21,7 +21,6 @@
     struct CGRect _clickViewFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdBreakFramePlayBaseLogic *playLogic; // @synthesize playLogic=_playLogic;
 @property(retain, nonatomic) MMUIButton *clickView; // @synthesize clickView=_clickView;
 @property(nonatomic) struct CGRect clickViewFrame; // @synthesize clickViewFrame=_clickViewFrame;

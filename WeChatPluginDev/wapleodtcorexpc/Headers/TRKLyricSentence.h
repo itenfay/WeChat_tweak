@@ -17,7 +17,6 @@
     NSString *_text;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSArray *segments; // @synthesize segments=_segments;
 @property(retain, nonatomic) NSArray *characters; // @synthesize characters=_characters;

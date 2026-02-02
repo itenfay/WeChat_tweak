@@ -15,7 +15,6 @@
     struct _opaque_pthread_mutex_t _lock;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TXCDispatchQueue *outputQueue; // @synthesize outputQueue=_outputQueue;
 @property(readonly, nonatomic) TXCDispatchQueue *queue; // @synthesize queue=_queue;
 @property(nonatomic) struct _opaque_pthread_mutex_t lock; // @synthesize lock=_lock;

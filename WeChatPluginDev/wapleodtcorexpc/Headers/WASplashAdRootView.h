@@ -10,7 +10,6 @@
     WAJSContextPlugin_NativeViewsComponent *_component;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAJSContextPlugin_NativeViewsComponent *component; // @synthesize component=_component;
 - (id)rootView;
 - (struct CGRect)rootViewFrame;

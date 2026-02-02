@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class Channel, EmoticonBoardView, GCInputChannelTipView, GCInputToolBaseViewConfig, GameChatInputController, MMGrowTextView, MMQuickSendEmoticonView, MMUILabel, NSMutableArray, NSString, UIButton, UIColor, UIFont;
 @protocol GameChatInputToolViewDelegate;
@@ -35,7 +36,6 @@
 }
 
 + (double)inputToolViewInitialHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCInputChannelTipView *channelTipVIew; // @synthesize channelTipVIew=_channelTipVIew;
 @property(retain, nonatomic) UIButton *expressionButton; // @synthesize expressionButton=_expressionButton;
 @property(retain, nonatomic) MMUILabel *countTipLabel; // @synthesize countTipLabel=_countTipLabel;
@@ -128,4 +128,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -18,7 +18,6 @@
     UIView *_bottomLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) UIImageView *rightImageView; // @synthesize rightImageView=_rightImageView;
 @property(retain, nonatomic) UIImageView *leftImageView; // @synthesize leftImageView=_leftImageView;

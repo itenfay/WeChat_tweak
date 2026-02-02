@@ -13,7 +13,6 @@
     NSArray *_realItemArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *realItemArray; // @synthesize realItemArray=_realItemArray;
 @property(retain, nonatomic) MMLiveActionSheetFlowLayoutView *flowLayoutView; // @synthesize flowLayoutView=_flowLayoutView;
 @property(retain, nonatomic) MMLiveShopShelfDragBar *dragBar; // @synthesize dragBar=_dragBar;

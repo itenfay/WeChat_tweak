@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMMsgCommonTipsView, MMMsgContentTipsItem, MMMsgHeaderTipsView, MMMsgTipsExpandView, MMUIButton, NSMutableArray, NSString, UIButton, UIImageView;
 @protocol MMMsgContentNavBarDelegate;
@@ -32,7 +33,6 @@
     MMUIButton *_closeButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UIView *expandBottomView; // @synthesize expandBottomView=_expandBottomView;
 @property(retain, nonatomic) MMMsgTipsExpandView *expandCustomView; // @synthesize expandCustomView=_expandCustomView;
@@ -98,4 +98,3 @@
 @property(readonly) Class superclass;
 
 @end
-

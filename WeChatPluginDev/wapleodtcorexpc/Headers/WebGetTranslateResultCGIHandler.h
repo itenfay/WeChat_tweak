@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebTransPack, NSDate, NSString;
 
@@ -19,7 +20,6 @@
 }
 
 + (void)sendRequestWithSendPack:(id)arg1 webUrl:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long interval; // @synthesize interval=_interval;
 @property(retain, nonatomic) NSDate *receiveTime; // @synthesize receiveTime=_receiveTime;
 @property(retain, nonatomic) NSDate *sendTime; // @synthesize sendTime=_sendTime;
@@ -36,4 +36,3 @@
 - (id)initWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
-

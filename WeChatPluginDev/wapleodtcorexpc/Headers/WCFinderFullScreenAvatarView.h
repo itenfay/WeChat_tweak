@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage, UIImageView, UIScrollView, WCFinderFullScreenAvatarConfig, WXFullScreenGestureRecognizer;
 
@@ -19,7 +20,6 @@
     struct CGRect _originRect;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissBlock; // @synthesize dismissBlock=_dismissBlock;
 @property(nonatomic) _Bool loading; // @synthesize loading=_loading;
 @property(retain, nonatomic) WXFullScreenGestureRecognizer *fullScreenGestrure; // @synthesize fullScreenGestrure=_fullScreenGestrure;
@@ -54,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -12,7 +12,6 @@
     EmoticonBoardIPMergeTipView *_tipView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonBoardIPMergeTipView *tipView; // @synthesize tipView=_tipView;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MVImageLoader, MusicCallbackApi, NSString;
 
 @interface MusicSerachFlutterViewController
@@ -15,7 +17,6 @@
 }
 
 + (id)createInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MVImageLoader *imageDownloader; // @synthesize imageDownloader=_imageDownloader;
 @property(retain, nonatomic) MusicCallbackApi *flutterMusicPlayerCallBack; // @synthesize flutterMusicPlayerCallBack=_flutterMusicPlayerCallBack;
 @property(copy, nonatomic) NSString *toUseranme; // @synthesize toUseranme=_toUseranme;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

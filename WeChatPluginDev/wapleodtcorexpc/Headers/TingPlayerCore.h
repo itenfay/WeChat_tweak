@@ -17,7 +17,6 @@
     NSMutableArray *_pendingStopList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingStopList; // @synthesize pendingStopList=_pendingStopList;
 @property(retain, nonatomic) TingTPResourceLoader *resourceLoader; // @synthesize resourceLoader=_resourceLoader;
 @property(retain, nonatomic) TingBizPlayer *holdBizPlayer; // @synthesize holdBizPlayer=_holdBizPlayer;

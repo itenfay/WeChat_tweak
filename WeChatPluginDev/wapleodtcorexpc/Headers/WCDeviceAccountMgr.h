@@ -10,7 +10,6 @@
     WCDeviceAccountWCDB *m_devAccountDB;
 }
 
-- (void).cxx_destruct;
 - (_Bool)setAirKissData:(id)arg1 ForKey:(id)arg2;
 - (id)getAirKissDataForKey:(id)arg1;
 - (void)delDeviceInfoForDeviceType:(id)arg1 AndDeviceId:(id)arg2;

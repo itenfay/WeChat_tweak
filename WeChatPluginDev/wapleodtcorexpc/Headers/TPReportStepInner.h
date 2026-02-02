@@ -13,7 +13,6 @@
     id <ITPReportParams> _stepParam;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <ITPReportParams> stepParam; // @synthesize stepParam=_stepParam;
 @property(nonatomic) unsigned long long step; // @synthesize step=_step;
 

@@ -14,7 +14,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutaAdjustStrategyParamLevelList; // @synthesize mutaAdjustStrategyParamLevelList=_mutaAdjustStrategyParamLevelList;
 @property(retain, nonatomic) NSMutableArray *mutaAdjustStrategyParamList; // @synthesize mutaAdjustStrategyParamList=_mutaAdjustStrategyParamList;
 @property(readonly, nonatomic) NSArray *adjustStrategyParamLevelList;

@@ -27,7 +27,6 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) float progressSliderStartTime; // @synthesize progressSliderStartTime=_progressSliderStartTime;
 @property(retain, nonatomic) WCPlayerShareableButton *shareableButton; // @synthesize shareableButton=_shareableButton;

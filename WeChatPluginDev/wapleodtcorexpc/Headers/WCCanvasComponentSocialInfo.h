@@ -24,7 +24,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cardDynamicInfo; // @synthesize cardDynamicInfo=_cardDynamicInfo;
 @property(retain, nonatomic) NSString *friendAvatarDescCommon; // @synthesize friendAvatarDescCommon=_friendAvatarDescCommon;
 @property(retain, nonatomic) NSString *friendAvatarDescWithFriends; // @synthesize friendAvatarDescWithFriends=_friendAvatarDescWithFriends;

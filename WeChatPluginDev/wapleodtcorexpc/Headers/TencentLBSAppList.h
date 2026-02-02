@@ -15,7 +15,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *last; // @synthesize last=_last;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *docPath; // @synthesize docPath=_docPath;

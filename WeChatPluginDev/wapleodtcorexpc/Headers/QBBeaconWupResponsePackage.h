@@ -28,7 +28,6 @@
 @property(retain, nonatomic, getter=sBuffer, setter=setSBuffer:) NSData *jcev2_p_2_o_sBuffer; // @synthesize jcev2_p_2_o_sBuffer=_jcev2_p_2_o_sBuffer;
 @property(nonatomic, getter=cmd, setter=setCmd:) int jcev2_p_1_r_cmd; // @synthesize jcev2_p_1_r_cmd=_jcev2_p_1_r_cmd;
 @property(nonatomic, getter=result, setter=setResult:) BOOL jcev2_p_0_r_result; // @synthesize jcev2_p_0_r_result=_jcev2_p_0_r_result;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

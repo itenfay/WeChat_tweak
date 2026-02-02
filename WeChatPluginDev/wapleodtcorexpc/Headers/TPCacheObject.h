@@ -15,7 +15,6 @@
     double _saveTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double saveTime; // @synthesize saveTime=_saveTime;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;

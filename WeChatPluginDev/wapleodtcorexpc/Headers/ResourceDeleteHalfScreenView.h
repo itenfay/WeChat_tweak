@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface ResourceDeleteHalfScreenView
@@ -15,7 +17,6 @@
     unsigned long long _filterType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool checkDeleteAll; // @synthesize checkDeleteAll=_checkDeleteAll;
 @property(nonatomic) unsigned long long filterType; // @synthesize filterType=_filterType;
 @property(nonatomic) unsigned long long allDataSize; // @synthesize allDataSize=_allDataSize;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

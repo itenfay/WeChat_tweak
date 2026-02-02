@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMAlbum, MMAlbumAccessAuthView, MMAlbumAuthorizationReportObject, MMAlbumDropPickerController, MMAlbumDropableTitleWithMultipleSectionView, MMAsset, MMAssetDragSelectHelper, MMAssetPickerActionBottomView, MMAssetPickerControllerProxyObjectForAllAsset, MMAssetPickerControllerState, MMAssetPickerSlider, MMAssetUserActionTipsView, MMDropableTitleView, MMImagePickerVideoCompressQueue, MMScrollView, MMSightCameraViewController, MMTableView, MMUIButton, MMUIImageView, MMUILabel, NSDateFormatter, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIButton, UIImageView, UILabel, UIView, VideoEncodeTask, WCFinderFeedPickerViewController, WCFinderPreviewEditVideoCompositionTask, WCFinderSyncComposeResModel;
 @protocol MMAssetPickerControllerDelegate, MMImagePickerControlCenter, UIViewControllerPreviewing;
 
@@ -100,7 +102,6 @@
     struct UIEdgeInsets _additionalTableViewInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMAssetUserActionTipsView *userActionTipsView; // @synthesize userActionTipsView=_userActionTipsView;
 @property(nonatomic) _Bool isAssetScrollViewUserDragging; // @synthesize isAssetScrollViewUserDragging=_isAssetScrollViewUserDragging;
 @property(retain, nonatomic) MMDropableTitleView *defaultDropableTitle; // @synthesize defaultDropableTitle=_defaultDropableTitle;
@@ -498,4 +499,3 @@
 @property(readonly) Class superclass;
 
 @end
-

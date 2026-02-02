@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, OMJMoviePlayer, UIView;
 
 @interface MJTemplateMoviePlayer
@@ -17,7 +19,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 lastStoppedTime; // @synthesize lastStoppedTime=_lastStoppedTime;
 @property(nonatomic) _Bool isAudioEnabled; // @synthesize isAudioEnabled=_isAudioEnabled;
 @property(nonatomic) int loopCount; // @synthesize loopCount=_loopCount;
@@ -68,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

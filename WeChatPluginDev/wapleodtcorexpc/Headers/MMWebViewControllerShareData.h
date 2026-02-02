@@ -19,7 +19,6 @@
     NSString *_floatBallTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *floatBallTitle; // @synthesize floatBallTitle=_floatBallTitle;
 @property(copy, nonatomic) NSString *fromScene; // @synthesize fromScene=_fromScene;
 @property(copy, nonatomic) NSDictionary *reportExtInfo; // @synthesize reportExtInfo=_reportExtInfo;

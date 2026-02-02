@@ -13,7 +13,6 @@
     NSString *_resourceName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int resourceVersion; // @synthesize resourceVersion=_resourceVersion;
 @property(retain, nonatomic) NSString *resourceName; // @synthesize resourceName=_resourceName;
 

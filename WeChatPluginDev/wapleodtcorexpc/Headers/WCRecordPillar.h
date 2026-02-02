@@ -19,7 +19,6 @@
     CALayer *_superLayer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak CALayer *superLayer; // @synthesize superLayer=_superLayer;
 @property(nonatomic) float lastEndTo; // @synthesize lastEndTo=_lastEndTo;
 @property(nonatomic) float lastStartTo; // @synthesize lastStartTo=_lastStartTo;

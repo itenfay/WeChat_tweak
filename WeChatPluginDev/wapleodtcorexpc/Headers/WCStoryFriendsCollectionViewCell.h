@@ -17,7 +17,6 @@
     NSMutableArray *_storyHeadImageViewArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *storyHeadImageViewArray; // @synthesize storyHeadImageViewArray=_storyHeadImageViewArray;
 @property(retain, nonatomic) MMUIButton *unreadCountButton; // @synthesize unreadCountButton=_unreadCountButton;
 @property(retain, nonatomic) UIImageView *favourImageView; // @synthesize favourImageView=_favourImageView;

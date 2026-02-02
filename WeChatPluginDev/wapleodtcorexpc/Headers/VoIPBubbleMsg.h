@@ -25,7 +25,6 @@
     unsigned long long _inviteid64;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int callee_memberid; // @synthesize callee_memberid=_callee_memberid;
 @property(nonatomic) int caller_memberid; // @synthesize caller_memberid=_caller_memberid;
 @property(nonatomic) unsigned int business; // @synthesize business=_business;

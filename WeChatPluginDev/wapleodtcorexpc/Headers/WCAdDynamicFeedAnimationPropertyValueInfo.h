@@ -18,7 +18,6 @@
 
 + (_Bool)shouldValueParseAsColorWithName:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *colorDark; // @synthesize colorDark=_colorDark;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *color; // @synthesize color=_color;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;

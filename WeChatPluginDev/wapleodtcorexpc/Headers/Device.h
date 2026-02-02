@@ -32,7 +32,6 @@
     CBCharacteristic *_pedometerProfileTargetCharacter;
 }
 
-- (void).cxx_destruct;
 @property(retain) CBCharacteristic *pedometerProfileTargetCharacter; // @synthesize pedometerProfileTargetCharacter=_pedometerProfileTargetCharacter;
 @property(retain) CBCharacteristic *pedometerProfileCurMeasurementCharacter; // @synthesize pedometerProfileCurMeasurementCharacter=_pedometerProfileCurMeasurementCharacter;
 @property int profileType; // @synthesize profileType=_profileType;

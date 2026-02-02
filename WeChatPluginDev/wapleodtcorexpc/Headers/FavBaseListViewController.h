@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FavAddressDataController, FavBaseTableDataController, FavSearchBar, FavSearchExtendFilterPanel, FavSearchTopFilterView, MMTableView, MMUIActivityIndicatorView, MMUILabel, MMUIView, MsgFastBrowseView, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIColor, UIView, WCFinderBusinessCustomListDetailViewController, WCFinderFeedFlowView;
 
 @interface FavBaseListViewController
@@ -53,7 +55,6 @@
     NSArray *_displayItemTypes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *displayItemTypes; // @synthesize displayItemTypes=_displayItemTypes;
 @property(nonatomic) unsigned int enterPageTimeInS; // @synthesize enterPageTimeInS=_enterPageTimeInS;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
@@ -199,4 +200,3 @@
 @property(readonly) Class superclass;
 
 @end
-

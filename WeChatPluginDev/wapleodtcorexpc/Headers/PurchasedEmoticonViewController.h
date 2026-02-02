@@ -14,7 +14,6 @@
     ModEmotionRecordCgi *_modRecordCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ModEmotionRecordCgi *modRecordCgi; // @synthesize modRecordCgi=_modRecordCgi;
 @property(nonatomic) double labelMaxWidth; // @synthesize labelMaxWidth;
 @property(retain, nonatomic) EmoticonStoreFootView *m_tailView; // @synthesize m_tailView;

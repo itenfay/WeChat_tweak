@@ -20,7 +20,6 @@
     _Bool _bForNewMsg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bForNewMsg; // @synthesize bForNewMsg=_bForNewMsg;
 @property(retain, nonatomic) NSMutableArray *msgList; // @synthesize msgList=_msgList;
 - (void)onShareCardAfterConsumed:(_Bool)arg1;

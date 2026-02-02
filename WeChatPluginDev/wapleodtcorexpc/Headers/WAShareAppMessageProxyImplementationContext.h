@@ -14,7 +14,6 @@
     WAShareAppMessageForwardLogicControllerComponent *_forwardLogicControllerComponent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAShareAppMessageForwardLogicControllerComponent *forwardLogicControllerComponent; // @synthesize forwardLogicControllerComponent=_forwardLogicControllerComponent;
 @property(nonatomic) __weak WAWebViewPlugin_ReportPageEvent *reportPageEventPlugin; // @synthesize reportPageEventPlugin=_reportPageEventPlugin;
 @property(nonatomic) __weak WAWebViewPlugin_WeAppMsg *shareAppMessagePlugin; // @synthesize shareAppMessagePlugin=_shareAppMessagePlugin;

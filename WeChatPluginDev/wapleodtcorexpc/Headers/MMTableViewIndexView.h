@@ -27,7 +27,6 @@
     NSMutableDictionary *_gestureCancelTouchStatus;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *gestureCancelTouchStatus; // @synthesize gestureCancelTouchStatus=_gestureCancelTouchStatus;
 @property(nonatomic) int extendHitWidth; // @synthesize extendHitWidth=_extendHitWidth;
 @property(nonatomic) int operationCount; // @synthesize operationCount=_operationCount;

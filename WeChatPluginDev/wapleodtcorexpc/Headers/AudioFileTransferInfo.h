@@ -16,7 +16,6 @@
     double _maxAudioDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxAudioDuration; // @synthesize maxAudioDuration=_maxAudioDuration;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;

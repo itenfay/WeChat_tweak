@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderLiveGetPkWinningConditionArgumentOptionsCgi
@@ -15,7 +17,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) unsigned int battleScene; // @synthesize battleScene=_battleScene;
@@ -28,4 +29,3 @@
 - (id)initWithTaskId:(id)arg1 winningCondition:(unsigned long long)arg2 micVirtualRoomId:(id)arg3 liveCookies:(id)arg4 battleScene:(unsigned int)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

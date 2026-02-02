@@ -17,7 +17,6 @@
 
 + (void)clearInstance;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *uiConfig; // @synthesize uiConfig=_uiConfig;
 @property(retain, nonatomic) NSDictionary *sdkConfig; // @synthesize sdkConfig=_sdkConfig;
 - (id)getMd5:(id)arg1;

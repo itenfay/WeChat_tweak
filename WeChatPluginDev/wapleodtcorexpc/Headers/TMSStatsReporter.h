@@ -15,7 +15,6 @@
 
 + (id)commonCrashValueDict:(id)arg1;
 + (id)reporter;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *commomParams; // @synthesize commomParams=_commomParams;
 @property(nonatomic) _Bool isShowLog; // @synthesize isShowLog=_isShowLog;
 - (void)setBeaconAdditionalParams;

@@ -12,7 +12,6 @@
     CdnDownloadTaskInfo *_taskInfo;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CdnDownloadTaskInfo *taskInfo; // @synthesize taskInfo=_taskInfo;
 @property(readonly, copy, nonatomic) NSString *filePath;
 - (id)initWithTaskInfo:(id)arg1;

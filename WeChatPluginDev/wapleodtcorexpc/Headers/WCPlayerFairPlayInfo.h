@@ -14,7 +14,6 @@
     NSString *_contentKeyUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool drmCompatible; // @synthesize drmCompatible=_drmCompatible;
 @property(retain, nonatomic) NSString *contentKeyUrl; // @synthesize contentKeyUrl=_contentKeyUrl;
 @property(retain, nonatomic) NSString *certificateUrl; // @synthesize certificateUrl=_certificateUrl;

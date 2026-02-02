@@ -34,7 +34,6 @@
     unsigned long long _currentAlertType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentAlertType; // @synthesize currentAlertType=_currentAlertType;
 @property(nonatomic) _Bool bHasRefreshTextFieldDefaultNumber; // @synthesize bHasRefreshTextFieldDefaultNumber=_bHasRefreshTextFieldDefaultNumber;
 @property(retain, nonatomic) NSDictionary *specialItem; // @synthesize specialItem=_specialItem;

@@ -26,7 +26,6 @@
     WCFinderJumpInfo *_jumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(nonatomic) unsigned long long operatingType; // @synthesize operatingType=_operatingType;
 @property(retain, nonatomic) MMUIButton *episodeBtn; // @synthesize episodeBtn=_episodeBtn;

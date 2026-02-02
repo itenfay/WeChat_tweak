@@ -12,7 +12,6 @@
     MTLRenderPassDescriptor *_renderPassDesc;
 }
 
-- (void).cxx_destruct;
 - (id)renderPassDescriptor;
 - (unsigned long long)type;
 - (id)initWithTexture:(id)arg1;

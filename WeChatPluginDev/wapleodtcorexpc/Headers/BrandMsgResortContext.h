@@ -15,7 +15,6 @@
     NSMutableArray *_arrContextItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrContextItem; // @synthesize arrContextItem=_arrContextItem;
 @property(nonatomic) unsigned long long limitMaxSequenceId; // @synthesize limitMaxSequenceId=_limitMaxSequenceId;
 @property(nonatomic) unsigned int limitMaxWeight; // @synthesize limitMaxWeight=_limitMaxWeight;

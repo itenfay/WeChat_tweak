@@ -13,7 +13,6 @@
     NSDate *_failedTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *failedTime; // @synthesize failedTime=_failedTime;
 @property(retain, nonatomic) FavSourceIdFiltersAndCtx *failedFilter; // @synthesize failedFilter=_failedFilter;
 

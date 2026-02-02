@@ -209,7 +209,6 @@
 + (void)PBArrayAdd_type;
 + (void)PBArrayAdd_tid;
 + (void)PBArrayAdd_cid;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int newlifeSharingFlags; // @synthesize newlifeSharingFlags=_newlifeSharingFlags;
 @property(nonatomic) unsigned int finderSharingFlags; // @synthesize finderSharingFlags=_finderSharingFlags;
 @property(retain, nonatomic) NSString *discoveryContentDesc; // @synthesize discoveryContentDesc=_discoveryContentDesc;

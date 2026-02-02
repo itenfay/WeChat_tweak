@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCLivePhotoMaker : NSObject
 {
@@ -23,4 +24,3 @@
 - (void)makeLivePhotoWithImagePath:(id)arg1 videoPath:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end
-

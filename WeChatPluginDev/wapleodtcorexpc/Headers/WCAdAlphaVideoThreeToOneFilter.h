@@ -12,7 +12,6 @@
     CIImage *inputImage;
 }
 
-- (void).cxx_destruct;
 - (id)outputImage;
 - (id)init;
 

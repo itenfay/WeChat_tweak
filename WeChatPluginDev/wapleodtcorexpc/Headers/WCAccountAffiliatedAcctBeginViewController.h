@@ -12,7 +12,6 @@
     MMUIButton *_helpButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *helpButton; // @synthesize helpButton=_helpButton;
 @property(nonatomic) __weak id <WCAccountAffiliatedAcctDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onTapHelpButton;

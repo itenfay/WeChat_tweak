@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCStoryUserPageCgiObj
@@ -16,7 +18,6 @@
     unsigned long long _maxId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int source; // @synthesize source=_source;
 @property(nonatomic) unsigned long long maxId; // @synthesize maxId=_maxId;
 @property(retain, nonatomic) NSString *chatRoomName; // @synthesize chatRoomName=_chatRoomName;
@@ -31,4 +32,3 @@
 - (id)initWithUserName:(id)arg1 MaxId:(unsigned long long)arg2 ChatRoomName:(id)arg3;
 
 @end
-

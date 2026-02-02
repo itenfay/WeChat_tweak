@@ -12,7 +12,6 @@
     NSMutableDictionary *_controllMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *controllMap; // @synthesize controllMap=_controllMap;
 - (void)readExptConfig;
 - (void)onExptItemListChange;

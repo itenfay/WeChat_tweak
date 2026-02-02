@@ -33,7 +33,6 @@
     NSString *_m_nsGMailAccount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiGMailSwitch; // @synthesize m_uiGMailSwitch=_m_uiGMailSwitch;
 @property(nonatomic) unsigned int m_uiGMailStatus; // @synthesize m_uiGMailStatus=_m_uiGMailStatus;
 @property(retain, nonatomic) NSString *m_nsGMailAccount; // @synthesize m_nsGMailAccount=_m_nsGMailAccount;

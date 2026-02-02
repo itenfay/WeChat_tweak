@@ -20,7 +20,6 @@
     UIColor *_emptySeperatorColorColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool colorProxyUseDarkMode; // @synthesize colorProxyUseDarkMode=_colorProxyUseDarkMode;
 @property(retain, nonatomic) UIColor *emptySeperatorColorColor; // @synthesize emptySeperatorColorColor=_emptySeperatorColorColor;
 @property(retain, nonatomic) UIColor *footerTextColor; // @synthesize footerTextColor=_footerTextColor;

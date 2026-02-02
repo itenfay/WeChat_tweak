@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ContactTagCreateTagHalfScreenViewController, ContactTagListBottomBar, ContactTagSearchPanel, MMTableView, MMTableViewMultipleReorder, NSArray, NSMutableArray, NSMutableSet, NSString, UIBarButtonItem, UIButton, UILabel, UIView, WCDataSearcher;
 
 @interface ContactTagListViewController
@@ -32,7 +34,6 @@
     NSArray *_noTagMembers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *noTagMembers; // @synthesize noTagMembers=_noTagMembers;
 @property(nonatomic) double cellHeightWithOutDetailLine; // @synthesize cellHeightWithOutDetailLine=_cellHeightWithOutDetailLine;
 @property(nonatomic) double cellHeightWithDetailLine; // @synthesize cellHeightWithDetailLine=_cellHeightWithDetailLine;
@@ -158,4 +159,3 @@
 @property(readonly) Class superclass;
 
 @end
-

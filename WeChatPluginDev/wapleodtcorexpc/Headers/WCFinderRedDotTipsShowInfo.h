@@ -66,7 +66,6 @@
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_count;
 + (void)PBArrayAdd_showType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderTipsShowInfo_IconSize *bigCardImageSize; // @synthesize bigCardImageSize=_bigCardImageSize;
 @property(retain, nonatomic) FinderPopupShowInfo *popupShowInfo; // @synthesize popupShowInfo=_popupShowInfo;
 @property(copy, nonatomic) NSString *redDotDetailInfoReport; // @synthesize redDotDetailInfoReport=_redDotDetailInfoReport;

@@ -17,7 +17,6 @@
     struct UIEdgeInsets _bubbleEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets bubbleEdgeInsets; // @synthesize bubbleEdgeInsets=_bubbleEdgeInsets;
 @property(nonatomic) struct UIEdgeInsets contentEdgeInsets; // @synthesize contentEdgeInsets=_contentEdgeInsets;
 @property(nonatomic) struct CGSize arrowSize; // @synthesize arrowSize=_arrowSize;

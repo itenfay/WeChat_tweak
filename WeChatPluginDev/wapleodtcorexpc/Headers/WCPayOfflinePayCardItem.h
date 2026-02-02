@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_cardId;
 + (void)PBArrayAdd_bindSerial;
 + (void)PBArrayAdd_bankType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *forbidWord; // @synthesize forbidWord=_forbidWord;
 @property(nonatomic) long long cardId; // @synthesize cardId=_cardId;
 @property(retain, nonatomic) NSString *bindSerial; // @synthesize bindSerial=_bindSerial;

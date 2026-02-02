@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCAdDB, WCAdDynamicCanvasLogic, WCAdDynamicUpdateLogic, WCAdLoadCanvasLogic, WCAdQrCodeScanLogic, WCAdStatePublishReportData, WCCanvasDynamicDataLoader, WCEliminatedSlotMMKV, WWKFContactOpLogic;
 @protocol WCLogicMgrDelegate;
 
@@ -33,7 +35,6 @@
     WCAdDynamicCanvasLogic *_adDynamicCanvasLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicCanvasLogic *adDynamicCanvasLogic; // @synthesize adDynamicCanvasLogic=_adDynamicCanvasLogic;
 @property(retain, nonatomic) WWKFContactOpLogic *kfContactOpLogic; // @synthesize kfContactOpLogic=_kfContactOpLogic;
 @property(retain, nonatomic) WCAdQrCodeScanLogic *adQrCodeScanLogic; // @synthesize adQrCodeScanLogic=_adQrCodeScanLogic;
@@ -169,4 +170,3 @@
 @property(readonly) Class superclass;
 
 @end
-

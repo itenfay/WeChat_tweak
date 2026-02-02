@@ -20,7 +20,6 @@
 + (void)clearTempSightDraftFile;
 + (void)recoveSightDraftFileIfNeeded:(id)arg1;
 + (void)copySightDraftToSingletonPath:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *draftID; // @synthesize draftID=_draftID;
 @property(readonly, nonatomic) unsigned long long draftType; // @synthesize draftType=_draftType;
 @property(readonly, copy, nonatomic) NSString *userName; // @synthesize userName=_userName;

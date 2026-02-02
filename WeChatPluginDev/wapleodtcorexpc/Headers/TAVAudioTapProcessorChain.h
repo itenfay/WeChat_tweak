@@ -13,7 +13,6 @@
     struct AudioStreamBasicDescription _processingFormat;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct AudioStreamBasicDescription processingFormat; // @synthesize processingFormat=_processingFormat;
 @property(copy, nonatomic) NSArray *nodes; // @synthesize nodes=_nodes;
 - (id)copyWithZone:(struct _NSZone *)arg1;

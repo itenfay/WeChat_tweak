@@ -17,7 +17,6 @@
     NSObject *_storeData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *storeData; // @synthesize storeData=_storeData;
 @property(copy, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;

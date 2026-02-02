@@ -16,7 +16,6 @@
     WCFinderUpdateTopicModel *_inputTextTopicModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderUpdateTopicModel *inputTextTopicModel; // @synthesize inputTextTopicModel=_inputTextTopicModel;
 @property(retain, nonatomic) NSArray *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

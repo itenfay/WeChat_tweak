@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface BrandTLTableView
@@ -15,7 +17,6 @@
     double _firstVisibleCellOriginY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double firstVisibleCellOriginY; // @synthesize firstVisibleCellOriginY=_firstVisibleCellOriginY;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) _Bool reportSwitch; // @synthesize reportSwitch=_reportSwitch;
@@ -33,4 +34,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 style:(long long)arg2;
 
 @end
-

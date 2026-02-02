@@ -19,7 +19,6 @@
     _Bool _shouldExpand;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ProductKeyValueTableCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isExpanded; // @synthesize isExpanded=_isExpanded;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;

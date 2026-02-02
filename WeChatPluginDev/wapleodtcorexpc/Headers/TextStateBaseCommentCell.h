@@ -19,7 +19,6 @@
     TextStateItemView *_stateView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStateItemView *stateView; // @synthesize stateView=_stateView;
 @property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;
 @property(nonatomic) long long section; // @synthesize section=_section;

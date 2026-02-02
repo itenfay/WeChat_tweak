@@ -13,7 +13,6 @@
     WCFinderVideoSliderViewResult *_sliderResult;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int modeStyle; // @synthesize modeStyle=_modeStyle;
 @property(retain, nonatomic) WCFinderVideoSliderViewResult *sliderResult; // @synthesize sliderResult=_sliderResult;
 

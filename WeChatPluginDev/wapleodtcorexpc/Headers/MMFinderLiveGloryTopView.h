@@ -20,7 +20,6 @@
     MMFinderLiveSharePubbleTipView *_tipsPubbleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveSharePubbleTipView *tipsPubbleView; // @synthesize tipsPubbleView=_tipsPubbleView;
 @property(retain, nonatomic) MMFinderLiveGloryTopItemView *top3UserView; // @synthesize top3UserView=_top3UserView;
 @property(retain, nonatomic) MMFinderLiveGloryTopItemView *top2UserView; // @synthesize top2UserView=_top2UserView;

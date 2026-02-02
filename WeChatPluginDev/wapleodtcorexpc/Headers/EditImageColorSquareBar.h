@@ -15,7 +15,6 @@
     UIScrollView *_scrollView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) long long colorIndex; // @synthesize colorIndex=_colorIndex;
 @property(retain, nonatomic) NSArray *colorArr; // @synthesize colorArr=_colorArr;

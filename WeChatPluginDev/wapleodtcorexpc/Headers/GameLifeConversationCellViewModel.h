@@ -15,7 +15,6 @@
 }
 
 + (id)cellDataForConversation:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBaseSessionCellData *cellData; // @synthesize cellData=_cellData;
 @property(retain, nonatomic) GameLifeConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak GameLifeConversationCell *cell; // @synthesize cell=_cell;

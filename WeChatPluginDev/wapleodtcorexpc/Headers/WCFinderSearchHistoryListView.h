@@ -19,7 +19,6 @@
     WCFinderSearchReportModel *_reportModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSearchReportModel *reportModel; // @synthesize reportModel=_reportModel;
 @property(retain, nonatomic) WCFinderSearchSuggestionViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;

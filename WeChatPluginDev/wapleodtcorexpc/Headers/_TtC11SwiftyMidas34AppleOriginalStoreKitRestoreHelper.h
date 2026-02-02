@@ -12,7 +12,6 @@
     MISSING_TYPE *completion;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)dealloc;
 

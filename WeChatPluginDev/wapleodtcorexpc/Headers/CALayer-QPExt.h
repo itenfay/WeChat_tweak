@@ -4,6 +4,7 @@
 //
 
 #import <QuartzCore/CALayer.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CALayer (QPExt)
 @property(nonatomic, setter=qp_setTransformRotation:) double qp_transformRotation;
@@ -12,4 +13,3 @@
 - (void)qp_addAnimation:(id)arg1;
 - (id)qp_snapshotImage;
 @end
-

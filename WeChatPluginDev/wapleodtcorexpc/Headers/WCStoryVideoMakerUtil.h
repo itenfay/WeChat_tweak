@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCStoryVideoMakerUtil : NSObject
 {
@@ -20,4 +21,3 @@
 + (void)playVideoToControllerWithCompletionBlock:(CDUnknownBlockType)arg1;
 
 @end
-

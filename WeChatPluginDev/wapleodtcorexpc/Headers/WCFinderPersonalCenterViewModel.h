@@ -23,7 +23,6 @@
     NSString *_finderPrivateMsgTailText;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool logoutCacheFlag; // @synthesize logoutCacheFlag=_logoutCacheFlag;
 @property(retain, nonatomic) NSString *finderPrivateMsgTailText; // @synthesize finderPrivateMsgTailText=_finderPrivateMsgTailText;
 @property(retain, nonatomic) WCFinderDataItem *fromDataItem; // @synthesize fromDataItem=_fromDataItem;

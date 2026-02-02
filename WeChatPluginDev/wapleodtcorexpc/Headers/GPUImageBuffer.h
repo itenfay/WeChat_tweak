@@ -11,7 +11,6 @@
     unsigned long long _bufferSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long bufferSize; // @synthesize bufferSize=_bufferSize;
 - (void)renderToTextureWithVertices:(const float *)arg1 textureCoordinates:(const float *)arg2;
 - (void)newFrameReadyAtTime:(CDStruct_1b6d18a9)arg1 atIndex:(long long)arg2;

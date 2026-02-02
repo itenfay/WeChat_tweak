@@ -16,7 +16,6 @@
     NSArray *_sortedCardItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sortedCardItems; // @synthesize sortedCardItems=_sortedCardItems;
 @property(retain, nonatomic) NSMutableArray *itemViews; // @synthesize itemViews=_itemViews;
 @property(nonatomic) long long viewType; // @synthesize viewType=_viewType;

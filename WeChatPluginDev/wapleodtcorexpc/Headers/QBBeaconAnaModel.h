@@ -60,7 +60,6 @@
 @property(retain, nonatomic) NSString *qua; // @synthesize qua;
 @property(retain, nonatomic) NSString *appVersion; // @synthesize appVersion;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

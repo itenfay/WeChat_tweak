@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, WCFinderContact;
 @protocol WCFinderBlackListViewModelDelegate;
@@ -17,7 +18,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) _Bool hasMoreContact; // @synthesize hasMoreContact=_hasMoreContact;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
@@ -29,4 +29,3 @@
 - (id)initWithContact:(id)arg1;
 
 @end
-

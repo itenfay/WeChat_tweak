@@ -14,7 +14,6 @@
     double _cellHeightRatio;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cellHeightRatio; // @synthesize cellHeightRatio=_cellHeightRatio;
 @property(retain, nonatomic) WCFinderFeedPickerParams *params; // @synthesize params=_params;
 @property(nonatomic) _Bool isPlanePickerStyle; // @synthesize isPlanePickerStyle=_isPlanePickerStyle;

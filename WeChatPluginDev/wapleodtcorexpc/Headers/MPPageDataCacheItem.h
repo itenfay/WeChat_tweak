@@ -61,7 +61,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSArray *itemPictureUrls; // @synthesize itemPictureUrls=_itemPictureUrls;
 @property(copy, nonatomic) NSString *pageKeyUrl; // @synthesize pageKeyUrl=_pageKeyUrl;

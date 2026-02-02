@@ -19,7 +19,6 @@
     NSURLSession *_session;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(nonatomic) unsigned long long pkgType; // @synthesize pkgType=_pkgType;
 @property(nonatomic) _Bool bUseSerialMode; // @synthesize bUseSerialMode=_bUseSerialMode;

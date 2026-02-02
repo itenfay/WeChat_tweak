@@ -16,7 +16,6 @@
     WCPlayerReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) unsigned int taskId; // @synthesize taskId=_taskId;
 @property(nonatomic) unsigned int threshold; // @synthesize threshold=_threshold;

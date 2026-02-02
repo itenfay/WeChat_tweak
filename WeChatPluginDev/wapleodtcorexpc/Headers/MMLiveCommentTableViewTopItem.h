@@ -16,7 +16,6 @@
     long long _originalCommentIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long originalCommentIndex; // @synthesize originalCommentIndex=_originalCommentIndex;
 @property(retain, nonatomic) MMFinderLiveCommentTableViewCellFrame *originalCellFrame; // @synthesize originalCellFrame=_originalCellFrame;
 @property(nonatomic) _Bool deleteOriginCell; // @synthesize deleteOriginCell=_deleteOriginCell;

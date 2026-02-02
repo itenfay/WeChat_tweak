@@ -18,7 +18,6 @@
     NSMutableSet *_animationPlayCommandReceivedGoals;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *animationPlayCommandReceivedGoals; // @synthesize animationPlayCommandReceivedGoals=_animationPlayCommandReceivedGoals;
 @property(retain, nonatomic) NSMutableSet *receivedGoals; // @synthesize receivedGoals=_receivedGoals;
 @property(retain, nonatomic) NSMutableSet *dismissedGoals; // @synthesize dismissedGoals=_dismissedGoals;

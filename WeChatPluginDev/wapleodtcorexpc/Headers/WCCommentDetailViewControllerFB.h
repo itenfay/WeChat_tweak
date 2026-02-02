@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, CEmoticonWrap, EmoticonBoardView, MMCPLabel, MMGrowTextView, MMHeadImageView, MMTableView, MMUIButton, MMUILabel, MMURLHandler, NSArray, NSMutableArray, NSMutableDictionary, NSObject, NSString, RichTextView, SharePreConfirmSheetView, SharePreConfirmView, SnsAlbumFeedBehaviour, TextStateItemView, UIButton, UILabel, UIView, UrlLabel, WCADPageWrap, WCAdActionLinkDetailView, WCAdBreakFrameTagView, WCAdBreakFrameView, WCAdCommonBarContainerView, WCAdContinuousLikeBannerAnimationView, WCAdContinuousLikeTagView, WCAdHeadStateView, WCAdHighlightTagView, WCAdInteractionLabelView, WCAdInteractionTagView, WCAdPreviewMaskView, WCAdRandomPickCardView, WCAdSocialLikeCheerPlayerView, WCAdSocialLikeView, WCAdStateSettingBarView, WCAdTagButton, WCAdWeGameGiftTagView, WCAdvertiseActionFloatView, WCAdvertiseFeedbackBaseView, WCAlbumForwardFinderUtil, WCCommentItem, WCCommentReport, WCCommentView, WCContentItem, WCContentItemBaseView, WCDataItem, WCHeaderGridView, WCInputController, WCMomentsAnimatedFireworksView, WCMomentsClickHandler, WCMomentsFinderShareViewModel, WCMomentsInputAreaReportInfo, WCMomentsInvisibleTipsView, WCMomentsNewLifeShareViewModel, WCMomentsPageContext, WCMomentsPostSessionController, WCMomentsPostShareButton, WCMomentsShareScopeMgr, WCMomentsSpringTextContainerView, WCMomentsStarGuideButton, WCMomentsStarGuideViewModel, WCMomentsTigerReporter, WCMomentsWeAppLogoNameView, WCOperateFloatView, WCPasteTextLengthLogic, WCSnsCommentDetailRewardView, WCTimelineCommentEmotionReport, WCTimelineExtBean, WCTogetherHistoryReportSession, WCTogetherTailReporter, WCUserComment;
 @protocol WCCommentDetailViewControllerFBDelegate;
 
@@ -150,7 +152,6 @@
 }
 
 + (id)makeDataWrapForWCTranslate:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didShowModifyShareScopeInActionSheet; // @synthesize didShowModifyShareScopeInActionSheet=_didShowModifyShareScopeInActionSheet;
 @property(copy, nonatomic) NSArray *actionItems; // @synthesize actionItems=_actionItems;
 @property(retain, nonatomic) WCMomentsAnimatedFireworksView *animatedFireworksView; // @synthesize animatedFireworksView=_animatedFireworksView;
@@ -613,4 +614,3 @@
 @property(readonly) Class superclass;
 
 @end
-

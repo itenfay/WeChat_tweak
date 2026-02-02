@@ -19,7 +19,6 @@
     double _lastBannerY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastBannerY; // @synthesize lastBannerY=_lastBannerY;
 @property(nonatomic) int lastBannerStyle; // @synthesize lastBannerStyle=_lastBannerStyle;
 @property(nonatomic) double animationOffsetY; // @synthesize animationOffsetY=_animationOffsetY;

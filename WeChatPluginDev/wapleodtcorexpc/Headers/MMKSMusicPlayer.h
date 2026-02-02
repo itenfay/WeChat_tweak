@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class KSSongInfo, NSMutableDictionary, NSString;
 @protocol KSAudioPlayerProtocol;
 
@@ -24,7 +26,6 @@
     NSMutableDictionary *_referrerDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *referrerDict; // @synthesize referrerDict=_referrerDict;
 @property(nonatomic) _Bool isInBackground; // @synthesize isInBackground=_isInBackground;
 @property(nonatomic) _Bool useCronetDownloader; // @synthesize useCronetDownloader=_useCronetDownloader;
@@ -103,4 +104,3 @@
 @property(readonly) Class superclass;
 
 @end
-

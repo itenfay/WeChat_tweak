@@ -15,7 +15,6 @@
     NSMapTable *_instancesToIdentifiers;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSMapTable *instancesToIdentifiers; // @synthesize instancesToIdentifiers=_instancesToIdentifiers;
 @property(retain) NSMapTable *identifiersToInstances; // @synthesize identifiersToInstances=_identifiersToInstances;
 @property(retain) NSObject<OS_dispatch_queue> *lockQueue; // @synthesize lockQueue=_lockQueue;

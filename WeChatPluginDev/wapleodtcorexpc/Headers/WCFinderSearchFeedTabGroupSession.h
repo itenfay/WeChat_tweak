@@ -13,7 +13,6 @@
     NSMutableArray *_mutTabs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutTabs; // @synthesize mutTabs=_mutTabs;
 - (id)description;
 - (void)clean;

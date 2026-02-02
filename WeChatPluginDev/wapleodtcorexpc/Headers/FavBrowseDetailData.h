@@ -43,7 +43,6 @@
 
 + (id)creatDataWithItem:(id)arg1 EntranceScene:(unsigned int)arg2 EntranceIndex:(unsigned int)arg3 SearchText:(id)arg4 TimeIntervalToOpen:(unsigned int)arg5 SearchTagScene:(unsigned int)arg6;
 + (id)creatDataWithItem:(id)arg1 EntranceScene:(unsigned int)arg2 EntranceIndex:(unsigned int)arg3 SearchText:(id)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bResumeSecondBrowse; // @synthesize bResumeSecondBrowse=_bResumeSecondBrowse;
 @property(nonatomic) _Bool bResumeFirstBrowse; // @synthesize bResumeFirstBrowse=_bResumeFirstBrowse;
 @property(nonatomic) unsigned int searchTagScene; // @synthesize searchTagScene=_searchTagScene;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSString, NSValue, UIColor, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UIScrollView, UITapGestureRecognizer, UIView, WCFinderCustomImageRichTextView, WCFinderStreamProfileDragBarView;
 @protocol WCFinderFeedBaseViewControllerProtocol;
 
@@ -40,7 +42,6 @@
 }
 
 + (id)findPreViewController:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double previousPanPosition; // @synthesize previousPanPosition=_previousPanPosition;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *edgePanGes; // @synthesize edgePanGes=_edgePanGes;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGes; // @synthesize panGes=_panGes;
@@ -124,4 +125,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class QUniversalMapCounter, QWorldTileOverlayDataProvider;
 
 @interface QWorldTileOverlay
@@ -16,7 +18,6 @@
     QWorldTileOverlayDataProvider *_darkProvider;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int sceneType; // @synthesize sceneType=_sceneType;
 @property(retain, nonatomic) QWorldTileOverlayDataProvider *darkProvider; // @synthesize darkProvider=_darkProvider;
 @property(retain, nonatomic) QWorldTileOverlayDataProvider *normalProvider; // @synthesize normalProvider=_normalProvider;
@@ -33,4 +34,3 @@
 - (id)provider;
 
 @end
-

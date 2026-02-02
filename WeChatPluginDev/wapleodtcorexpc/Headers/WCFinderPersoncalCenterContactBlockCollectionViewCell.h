@@ -23,7 +23,6 @@
 
 + (_Bool)canShowIncomeView;
 + (id)cellID;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showIncomeEntrance; // @synthesize showIncomeEntrance=_showIncomeEntrance;
 @property(retain, nonatomic) WCFinderPersonalCenterSidesButton *incomeButton; // @synthesize incomeButton=_incomeButton;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;

@@ -12,7 +12,6 @@
     struct CGRect _previousEffectiveCroppedRect;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect previousEffectiveCroppedRect; // @synthesize previousEffectiveCroppedRect=_previousEffectiveCroppedRect;
 @property(readonly, nonatomic) __weak MJPlaybackViewModel *playbackVM; // @synthesize playbackVM=_playbackVM;
 @property(readonly, nonatomic) __weak MJTimelineViewModel *timelineVM; // @synthesize timelineVM=_timelineVM;

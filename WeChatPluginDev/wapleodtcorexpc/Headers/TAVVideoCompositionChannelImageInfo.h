@@ -13,7 +13,6 @@
     TAVVideoCompositionTransitionInfo *_transitionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TAVVideoCompositionTransitionInfo *transitionInfo; // @synthesize transitionInfo=_transitionInfo;
 @property(copy, nonatomic) NSArray *images; // @synthesize images=_images;
 

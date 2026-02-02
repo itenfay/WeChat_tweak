@@ -20,7 +20,6 @@
     UIView *_contentBackgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *contentBackgroundView; // @synthesize contentBackgroundView=_contentBackgroundView;
 @property(retain, nonatomic) MJSegmentMuteInfoOverlay *muteInfoOverlay; // @synthesize muteInfoOverlay=_muteInfoOverlay;
 @property(retain, nonatomic) MJSegmentDurationInfoOverlay *durationInfoOverlay; // @synthesize durationInfoOverlay=_durationInfoOverlay;

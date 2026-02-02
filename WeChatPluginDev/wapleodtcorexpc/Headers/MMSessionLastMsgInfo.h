@@ -24,7 +24,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) long long lastMsgServerId; // @synthesize lastMsgServerId=_lastMsgServerId;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 

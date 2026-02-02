@@ -24,7 +24,6 @@
 + (long long)genAllTabFlag;
 + (long long)convertTabFlagToTabType:(long long)arg1;
 + (long long)convertTabTypeToTabFlag:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderBaseCgi *cgi; // @synthesize cgi=_cgi;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

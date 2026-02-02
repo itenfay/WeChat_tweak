@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class PAGView;
 
@@ -14,7 +15,6 @@
     struct CGPoint _anchorPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint anchorPoint; // @synthesize anchorPoint=_anchorPoint;
 @property(retain, nonatomic) PAGView *animationView; // @synthesize animationView=_animationView;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
@@ -27,4 +27,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

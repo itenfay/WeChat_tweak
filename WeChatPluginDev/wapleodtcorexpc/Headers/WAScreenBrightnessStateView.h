@@ -15,7 +15,6 @@
     float _curBrightValue;
 }
 
-- (void).cxx_destruct;
 - (void)updateScreenBrightness;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

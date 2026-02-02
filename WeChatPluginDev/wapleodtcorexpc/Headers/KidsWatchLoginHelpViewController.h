@@ -10,7 +10,6 @@
     KidsWatchInfoCardView *_infoCardView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) KidsWatchInfoCardView *infoCardView; // @synthesize infoCardView=_infoCardView;
 - (void)initSubviews;
 - (void)viewDidLoad;

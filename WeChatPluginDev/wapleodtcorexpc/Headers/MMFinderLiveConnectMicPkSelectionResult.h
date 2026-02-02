@@ -21,7 +21,6 @@
     unsigned long long _selectedLayoutMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectedLayoutMode; // @synthesize selectedLayoutMode=_selectedLayoutMode;
 @property(nonatomic) _Bool interactive; // @synthesize interactive=_interactive;
 @property(retain, nonatomic) MMFinderLiveBattleDurationItem *selectedDuration; // @synthesize selectedDuration=_selectedDuration;

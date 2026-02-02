@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,10 +16,8 @@
 }
 
 + (id)configItemFromBoolValueArray:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didSelectBlock; // @synthesize didSelectBlock=_didSelectBlock;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(nonatomic) unsigned long long itemType; // @synthesize itemType=_itemType;
 
 @end
-

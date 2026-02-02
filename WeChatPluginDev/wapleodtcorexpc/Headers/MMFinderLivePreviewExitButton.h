@@ -15,7 +15,6 @@
 }
 
 + (struct CGSize)viewSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *gesture; // @synthesize gesture=_gesture;
 @property(retain, nonatomic) MMUIButton *backgroundButton; // @synthesize backgroundButton=_backgroundButton;
 @property(retain, nonatomic) MMUIImageView *imageView; // @synthesize imageView=_imageView;

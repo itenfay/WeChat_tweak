@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TPVideoInfo, UIView;
 @protocol ITPPlayer, OS_dispatch_source, WCTPPlayerDelegate;
@@ -45,7 +46,6 @@
     long long _callbackPosition;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isOpenAudioQueueNewLatency; // @synthesize isOpenAudioQueueNewLatency=_isOpenAudioQueueNewLatency;
 @property(nonatomic) long long callbackPosition; // @synthesize callbackPosition=_callbackPosition;
 @property(nonatomic) unsigned int switchCount; // @synthesize switchCount=_switchCount;
@@ -147,4 +147,3 @@
 @property(readonly) Class superclass;
 
 @end
-

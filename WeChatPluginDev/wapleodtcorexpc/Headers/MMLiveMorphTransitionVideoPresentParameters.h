@@ -14,7 +14,6 @@
     UIView *_audioRoomView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasScaledAudioRoomView; // @synthesize hasScaledAudioRoomView=_hasScaledAudioRoomView;
 @property(retain, nonatomic) UIView *audioRoomView; // @synthesize audioRoomView=_audioRoomView;
 @property(retain, nonatomic) UIView *micUserBackContainerView; // @synthesize micUserBackContainerView=_micUserBackContainerView;

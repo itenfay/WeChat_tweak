@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString, NSThread, WAContact, WAJITRuntime;
 @protocol IWXEngineAPI, OS_dispatch_queue;
 
@@ -27,7 +29,6 @@
 }
 
 + (unsigned long long)getFeatBit:(_Bool)arg1 enableNativeRender:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain) NSThread *thread; // @synthesize thread=_thread;
 @property(nonatomic) long long wkFeatureVersion; // @synthesize wkFeatureVersion=_wkFeatureVersion;
 @property(nonatomic) unsigned long long jitBeginTimeStampInMs; // @synthesize jitBeginTimeStampInMs=_jitBeginTimeStampInMs;
@@ -113,4 +114,3 @@
 @property(readonly) Class superclass;
 
 @end
-

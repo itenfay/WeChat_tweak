@@ -49,7 +49,6 @@
     UIView *_updateContentRightNaviBarView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *updateContentRightNaviBarView; // @synthesize updateContentRightNaviBarView=_updateContentRightNaviBarView;
 @property(retain, nonatomic) ContentReddotBubbleView *m_contentReddotBubbleView; // @synthesize m_contentReddotBubbleView=_m_contentReddotBubbleView;
 @property(nonatomic) _Bool isReddotExposureHasCount; // @synthesize isReddotExposureHasCount=_isReddotExposureHasCount;

@@ -17,7 +17,6 @@
 + (long long)itemCountPerLine:(double)arg1;
 + (double)itemGapPerLine:(double)arg1;
 + (double)itemWidthWithCellWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *itemModels; // @synthesize itemModels=_itemModels;
 @property(retain, nonatomic) NSMutableArray *itemViewList; // @synthesize itemViewList=_itemViewList;
 @property(nonatomic) unsigned long long startIndex; // @synthesize startIndex=_startIndex;

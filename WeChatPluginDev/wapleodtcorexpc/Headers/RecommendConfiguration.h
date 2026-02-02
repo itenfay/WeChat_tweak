@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_preLoadTime;
 + (void)PBArrayAdd_showPercentage;
 + (void)PBArrayAdd_showTime;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *logic; // @synthesize logic=_logic;
 @property(nonatomic) double preLoadPercentage; // @synthesize preLoadPercentage=_preLoadPercentage;
 @property(nonatomic) double preLoadTime; // @synthesize preLoadTime=_preLoadTime;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSMutableSet, WCFinderContact, WCFinderFeedContentVM;
 @protocol WCFinderFeedFavListViewModelDelegate;
@@ -26,7 +27,6 @@
     WCFinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) unsigned long long commentMaxDisplayNameCount; // @synthesize commentMaxDisplayNameCount=_commentMaxDisplayNameCount;
 @property(retain, nonatomic) NSMutableSet *favIDSet; // @synthesize favIDSet=_favIDSet;
@@ -50,4 +50,3 @@
 - (id)initWithContentVM:(id)arg1;
 
 @end
-

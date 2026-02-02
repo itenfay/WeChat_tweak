@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLivePromoteListBaseViewItem, MMUIButton, MMUILabel, MMWebImageView, UIView;
 
 @interface MMFinderLivePromoteListBaseTableViewCell
@@ -19,7 +21,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool editHidePushButton; // @synthesize editHidePushButton=_editHidePushButton;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
@@ -43,4 +44,3 @@
 - (void)updateWithViewItem:(id)arg1;
 
 @end
-

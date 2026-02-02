@@ -19,7 +19,6 @@
 }
 
 + (double)getTagHeaderViewHeight:(id)arg1 screenSize:(struct CGSize)arg2 showTotalTag:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *arrowButton; // @synthesize arrowButton=_arrowButton;
 @property(retain, nonatomic) NSMutableArray *categoryArray; // @synthesize categoryArray=_categoryArray;
 @property(retain, nonatomic) NSMutableArray *buttonArray; // @synthesize buttonArray=_buttonArray;

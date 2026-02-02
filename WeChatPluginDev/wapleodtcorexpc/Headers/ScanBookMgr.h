@@ -20,7 +20,6 @@
     MMTimer *_uploadTimer;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)saveProductItem:(id)arg1;
 - (id)getLocalProductItemById:(id)arg1;

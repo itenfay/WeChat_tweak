@@ -14,7 +14,6 @@
     id <WAJSCanvasJSEventHandlerContextDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAJSCanvasJSEventHandlerContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;
 - (id)getSessionID;

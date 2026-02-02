@@ -17,7 +17,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPreview; // @synthesize isPreview=_isPreview;
 @property(nonatomic) long long cardType; // @synthesize cardType=_cardType;
 @property(nonatomic) long long entryScene; // @synthesize entryScene=_entryScene;

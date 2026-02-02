@@ -23,7 +23,6 @@
     NSMutableArray *_audioTrackInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *audioTrackInfo; // @synthesize audioTrackInfo=_audioTrackInfo;
 @property(retain, nonatomic) NSMutableArray *overlayTrackInfo; // @synthesize overlayTrackInfo=_overlayTrackInfo;
 @property(retain, nonatomic) NSMutableArray *mainAudioTrackInfo; // @synthesize mainAudioTrackInfo=_mainAudioTrackInfo;

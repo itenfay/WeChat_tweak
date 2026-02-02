@@ -19,7 +19,6 @@
     NSString *_pwdNonce;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pwdNonce; // @synthesize pwdNonce=_pwdNonce;
 @property(nonatomic) long long pwdEncryptMode; // @synthesize pwdEncryptMode=_pwdEncryptMode;
 @property(nonatomic) long long vcTag; // @synthesize vcTag=_vcTag;

@@ -12,7 +12,6 @@
     MBExternalViewStub *_viewStub;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MBExternalViewStub *viewStub; // @synthesize viewStub=_viewStub;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

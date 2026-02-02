@@ -17,7 +17,6 @@
     NSArray *_svrRetChangeHistory;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *svrRetChangeHistory; // @synthesize svrRetChangeHistory=_svrRetChangeHistory;
 @property(nonatomic) _Bool bHasLoadAddressBook; // @synthesize bHasLoadAddressBook=_bHasLoadAddressBook;
 @property(nonatomic) _Bool bIsAddressBookLoading; // @synthesize bIsAddressBookLoading=_bIsAddressBookLoading;

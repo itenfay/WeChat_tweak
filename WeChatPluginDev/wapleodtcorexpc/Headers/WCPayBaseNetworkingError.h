@@ -13,7 +13,6 @@
 
 + (id)errorWithErrorDesc:(id)arg1 errorCode:(int)arg2;
 + (id)errorWithErrorDesc:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;
 @property(copy, nonatomic) NSString *errorDesc; // @synthesize errorDesc=_errorDesc;
 - (id)init;

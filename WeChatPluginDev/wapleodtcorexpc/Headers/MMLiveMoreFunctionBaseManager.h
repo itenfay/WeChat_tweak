@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, MMLiveAnchorMoreFunctionOperationView, NSMutableArray, NSString;
 @protocol MMLiveMoreFunctionManagerDelegate;
@@ -24,7 +25,6 @@
 }
 
 + (id)getMoreFunctionItemsWithTaskId:(id)arg1 viewType:(unsigned long long)arg2 isGameLive:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType redDotClickBlock; // @synthesize redDotClickBlock=_redDotClickBlock;
 @property(copy, nonatomic) CDUnknownBlockType redDotExposeBlock; // @synthesize redDotExposeBlock=_redDotExposeBlock;
 @property(copy, nonatomic) CDUnknownBlockType redDotQueryBlock; // @synthesize redDotQueryBlock=_redDotQueryBlock;
@@ -74,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

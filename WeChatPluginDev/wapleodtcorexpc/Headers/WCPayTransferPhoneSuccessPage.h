@@ -24,7 +24,6 @@
     NSMutableArray *_keyValueArray;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSMutableArray *keyValueArray; // @synthesize keyValueArray=_keyValueArray;
 @property(retain) TransferPhoneSuccPageResp *succResp; // @synthesize succResp=_succResp;
 @property(retain) WCPayCss *css; // @synthesize css=_css;

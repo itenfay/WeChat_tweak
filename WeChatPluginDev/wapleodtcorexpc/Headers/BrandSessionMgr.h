@@ -17,7 +17,6 @@
     MemoryMappedKV *_mappedKV;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 @property(retain, nonatomic) BrandSessionCache *m_sessionCache; // @synthesize m_sessionCache;
 - (void)handleStrategyResp:(id)arg1;

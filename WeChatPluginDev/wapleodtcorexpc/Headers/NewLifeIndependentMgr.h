@@ -10,7 +10,6 @@
     MMLRUCache *_localGlobalFavFlagCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLRUCache *localGlobalFavFlagCache; // @synthesize localGlobalFavFlagCache=_localGlobalFavFlagCache;
 - (void)OnAddNewFavoritesItems:(id)arg1;
 - (void)OnDelFavoritesItems:(id)arg1;

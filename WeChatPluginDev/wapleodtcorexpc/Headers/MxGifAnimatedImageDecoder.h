@@ -23,7 +23,6 @@
 + (int)frameCountForImageData:(id)arg1;
 + (double)frameDurationInSecondForDuration:(double)arg1;
 + (id)cgImageWithData:(id)arg1 maxWidth:(unsigned int)arg2 scale:(double)arg3;
-- (void).cxx_destruct;
 - (int)decodedLoopCnt;
 - (_Bool)isSingleFrame;
 - (_Bool)hasDecodeOneLoop;

@@ -25,7 +25,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sendMsgTicket; // @synthesize sendMsgTicket=_sendMsgTicket;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 

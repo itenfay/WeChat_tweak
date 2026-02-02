@@ -14,7 +14,6 @@
 }
 
 + (_Bool)getRingRecommendOption;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <RingRecommendSwitchDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)ringVerifyIndividualRecommend:(id)arg1;
 - (void)reloadTableData;

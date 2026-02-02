@@ -14,7 +14,6 @@
     RichTextView *_mainTitleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *mainTitleView; // @synthesize mainTitleView=_mainTitleView;
 @property(retain, nonatomic) MMURLHandler *urlHandler; // @synthesize urlHandler=_urlHandler;
 @property(retain, nonatomic) WAAppIdToUsernameTransfer *appIdTransfer; // @synthesize appIdTransfer=_appIdTransfer;

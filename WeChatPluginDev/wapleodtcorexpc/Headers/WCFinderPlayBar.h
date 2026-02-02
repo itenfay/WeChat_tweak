@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton, UILabel, WCPlayerView, WXVideoSlider;
 @protocol WCFinderPlayBarDelegate;
@@ -21,7 +22,6 @@
 }
 
 + (id)playBarWithMakeView:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double moveBeginProgress; // @synthesize moveBeginProgress=_moveBeginProgress;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) UILabel *countTimeLabel; // @synthesize countTimeLabel=_countTimeLabel;
@@ -82,4 +82,3 @@
 @property(readonly) Class superclass;
 
 @end
-

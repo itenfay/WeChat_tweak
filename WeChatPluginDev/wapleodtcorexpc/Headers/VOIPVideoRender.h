@@ -12,7 +12,6 @@
     EAGLView_v2 *_glview;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EAGLView_v2 *glview; // @synthesize glview=_glview;
 - (id)snapshot;
 - (id)getView;

@@ -26,7 +26,6 @@
     NSDate *_waitingRespTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *waitingRespTime; // @synthesize waitingRespTime=_waitingRespTime;
 @property(retain, nonatomic) MMTimer *checkUploadQueueTimer; // @synthesize checkUploadQueueTimer=_checkUploadQueueTimer;
 @property(nonatomic) unsigned long long totalBytes; // @synthesize totalBytes=_totalBytes;

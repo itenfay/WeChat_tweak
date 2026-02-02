@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 @protocol WCFinderRefuseLikeListModelDelegate;
@@ -17,7 +18,6 @@
     NSMutableDictionary *_retryModTypeInfoDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *retryModTypeInfoDic; // @synthesize retryModTypeInfoDic=_retryModTypeInfoDic;
 @property(retain, nonatomic) NSMutableArray *failModTypeInfoList; // @synthesize failModTypeInfoList=_failModTypeInfoList;
 @property(retain, nonatomic) NSMutableArray *currentModTypeInfoList; // @synthesize currentModTypeInfoList=_currentModTypeInfoList;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -39,7 +39,6 @@
     InvoiceFooterView *_footerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) InvoiceFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) UIImageView *qrcodeView; // @synthesize qrcodeView=_qrcodeView;

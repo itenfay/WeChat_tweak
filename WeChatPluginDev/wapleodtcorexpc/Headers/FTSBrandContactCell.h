@@ -22,7 +22,6 @@
     WCTagsView *_tagsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTagsView *tagsView; // @synthesize tagsView=_tagsView;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(nonatomic) _Bool bShouldHighlight; // @synthesize bShouldHighlight=_bShouldHighlight;

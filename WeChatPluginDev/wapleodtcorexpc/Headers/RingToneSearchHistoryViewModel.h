@@ -17,7 +17,6 @@
     NSMutableArray *_searchTextArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *searchTextArray; // @synthesize searchTextArray=_searchTextArray;
 @property(copy, nonatomic) NSString *searchKeyWord; // @synthesize searchKeyWord=_searchKeyWord;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *slotKv; // @synthesize slotKv=_slotKv;

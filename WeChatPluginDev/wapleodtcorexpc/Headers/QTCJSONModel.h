@@ -30,7 +30,6 @@
 + (id)arrayOfModelsFromData:(id)arg1 error:(id *)arg2;
 + (id)arrayOfModelsFromDictionaries:(id)arg1;
 + (void)load;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

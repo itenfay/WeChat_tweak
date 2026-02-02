@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, MMTimer, MMUIImageView, MMUILabel, NSData, NSMutableArray, NSString, UIButton, UICollectionView, UIView, WCFinderNavLiveStreamPreFetchParams;
 
 @interface MMLiveSquareGuideView
@@ -28,7 +30,6 @@
     UICollectionView *_videoCollectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *videoCollectionView; // @synthesize videoCollectionView=_videoCollectionView;
 @property(retain, nonatomic) MMUIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) MMUILabel *goSquareLabel; // @synthesize goSquareLabel=_goSquareLabel;
@@ -88,4 +89,3 @@
 @property(readonly) Class superclass;
 
 @end
-

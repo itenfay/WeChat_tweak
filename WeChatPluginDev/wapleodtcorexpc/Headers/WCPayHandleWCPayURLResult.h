@@ -16,7 +16,6 @@
     NSString *nsAppSource;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsUUID; // @synthesize nsUUID;
 @property(retain, nonatomic) NSString *nsAppSource; // @synthesize nsAppSource;
 @property(retain, nonatomic) NSString *nsAppID; // @synthesize nsAppID;

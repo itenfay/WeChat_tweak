@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UILabel, WCAdRandomPickCardInfo, WCAdURLImageView;
 @protocol WCAdRandomPickCardDescriptionViewDelegate;
 
@@ -20,7 +22,6 @@
 }
 
 + (double)calcViewHeightForPickCardInfo:(id)arg1 maxWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *doneTitleLabel; // @synthesize doneTitleLabel=_doneTitleLabel;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *introduceTitleLabel; // @synthesize introduceTitleLabel=_introduceTitleLabel;
@@ -51,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

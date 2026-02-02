@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKTVConnectMicSessionInfo, MMFinderLiveTask, MMFinderLiveTaskId, NSMutableDictionary, NSString;
 
@@ -20,7 +21,6 @@
     CDUnknownBlockType _requestSongCheckResultBlock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowingMysteriousNoticeView; // @synthesize isShowingMysteriousNoticeView=_isShowingMysteriousNoticeView;
 @property(copy, nonatomic) CDUnknownBlockType requestSongCheckResultBlock; // @synthesize requestSongCheckResultBlock=_requestSongCheckResultBlock;
 @property(nonatomic) unsigned long long recordPermissionCheckResult; // @synthesize recordPermissionCheckResult=_recordPermissionCheckResult;
@@ -69,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

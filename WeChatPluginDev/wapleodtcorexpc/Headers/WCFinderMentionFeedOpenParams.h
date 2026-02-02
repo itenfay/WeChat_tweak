@@ -21,7 +21,6 @@
     WCFinderJumpInfo *_enterShowJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int customTLFollowEnterType; // @synthesize customTLFollowEnterType=_customTLFollowEnterType;
 @property(retain, nonatomic) WCFinderJumpInfo *enterShowJumpInfo; // @synthesize enterShowJumpInfo=_enterShowJumpInfo;
 @property(retain, nonatomic) NSString *authorThankTips; // @synthesize authorThankTips=_authorThankTips;

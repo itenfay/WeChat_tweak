@@ -13,7 +13,6 @@
     TAVAudioTapProcessorChain *_audioProcessingChain;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TAVAudioTapProcessorChain *audioProcessingChain; // @synthesize audioProcessingChain=_audioProcessingChain;
 @property(nonatomic) struct opaqueMTAudioProcessingTap *tapRef; // @synthesize tapRef=_tapRef;
 - (id)copyWithZone:(struct _NSZone *)arg1;

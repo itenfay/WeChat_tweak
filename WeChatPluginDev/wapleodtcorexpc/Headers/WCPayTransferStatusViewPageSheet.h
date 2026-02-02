@@ -11,7 +11,6 @@
     TipsInfo *_viewData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TipsInfo *viewData; // @synthesize viewData=_viewData;
 @property(retain, nonatomic) UIView *tipsContainerView; // @synthesize tipsContainerView=_tipsContainerView;
 - (void)onClickPageSheetConfirmButton;

@@ -27,7 +27,6 @@
     UIImageView *_sliderThumbImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCheckedSliderThumbImageView; // @synthesize hasCheckedSliderThumbImageView=_hasCheckedSliderThumbImageView;
 @property(nonatomic) __weak UIImageView *sliderThumbImageView; // @synthesize sliderThumbImageView=_sliderThumbImageView;
 @property(nonatomic) int maxValue; // @synthesize maxValue=_maxValue;

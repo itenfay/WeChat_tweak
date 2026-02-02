@@ -14,7 +14,6 @@
     NSString *_jumpUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *jumpUrl; // @synthesize jumpUrl=_jumpUrl;
 @property(nonatomic) unsigned int maxVersion; // @synthesize maxVersion=_maxVersion;
 @property(nonatomic) unsigned int minVersion; // @synthesize minVersion=_minVersion;

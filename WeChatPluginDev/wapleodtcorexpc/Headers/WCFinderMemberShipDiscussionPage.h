@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderFeedArray, WCFinderStreamLoadingState;
 
@@ -23,7 +24,6 @@
     NSString *_redirectFeedID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *redirectFeedID; // @synthesize redirectFeedID=_redirectFeedID;
 @property(copy, nonatomic) CDUnknownBlockType cacheFeedFetcher; // @synthesize cacheFeedFetcher=_cacheFeedFetcher;
 @property(copy, nonatomic) CDUnknownBlockType postingFeedFetcher; // @synthesize postingFeedFetcher=_postingFeedFetcher;
@@ -45,4 +45,3 @@
 - (id)init;
 
 @end
-

@@ -17,7 +17,6 @@
     NSMutableDictionary *_commentPostingQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *commentPostingQueue; // @synthesize commentPostingQueue=_commentPostingQueue;
 @property(copy, nonatomic) NSString *postingCommentPath; // @synthesize postingCommentPath=_postingCommentPath;
 @property(copy, nonatomic) NSString *queuePath; // @synthesize queuePath=_queuePath;

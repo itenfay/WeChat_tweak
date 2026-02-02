@@ -33,7 +33,6 @@
     RingToneSearchHistoryListView *_historyListView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RingToneSearchHistoryListView *historyListView; // @synthesize historyListView=_historyListView;
 @property(nonatomic) _Bool needRefreshTable; // @synthesize needRefreshTable=_needRefreshTable;
 @property(nonatomic) _Bool isPreFetchDone; // @synthesize isPreFetchDone=_isPreFetchDone;

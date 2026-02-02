@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderContactLiveInfo, FinderJumpInfo, FinderLiveBattleReportInfo, FinderLiveBoxId, FinderLiveEcGetLiveConfigResponse, FinderLiveErrorPage, FinderLiveFeedbackEntranceInfo, FinderLiveFlashSaleInfo, FinderLiveGetUserGameConfigResponse_GeneralCreateLivePrepareInfo, FinderLiveGuideInfo, FinderLiveModeInfo, FinderLivePromotionEntrance, FinderLiveQoSInfo, FinderLiveResourcePackage, FinderLiveTabInfo, FinderLiveTagInfo, FinderLiveUserAttrUserSetting, LiveDescInfo, LiveWeappJumpInfo, MMFinderJoinLiveContext, MMFinderLiveAccountInfo, MMFinderLiveAudioModeBackgroundConfiguration, MMFinderLiveCommentDataFetchEngne, MMFinderLiveConcertInfo, MMFinderLiveConnectMicUser, MMFinderLiveConnectMicUsersInfo, MMFinderLiveContentVM, MMFinderLiveContext, MMFinderLiveEventInfo, MMFinderLiveFansGroupInfo, MMFinderLiveGameContext, MMFinderLiveGestureLogic, MMFinderLiveGiftCustomizationCommitLogic, MMFinderLiveGiftGoalLogic, MMFinderLiveGiftNewCustomizationCommitLogic, MMFinderLiveGoodsPromotionReplayFloatView, MMFinderLiveLandscapeBarrageSettingInfo, MMFinderLiveLocalAudioModeTimeRecorder, MMFinderLiveMusicSettingOperationPanel, MMFinderLiveOperationView, MMFinderLiveOperationViewModel, MMFinderLiveOrientationReportRecoder, MMFinderLivePIPCustomHandleLogic, MMFinderLiveReplayStopgapLogic, MMFinderLiveSFBarrageView, MMFinderLiveScreenshotPosterLogic, MMFinderLiveShopContext, MMFinderLiveStickerCompositingLogic, MMFinderLiveStickerLogic, MMFinderLiveTaskId, MMFinderLiveTaskPluginObj, MMFinderLiveViewController, MMLiveAdsParams, MMLiveAudioRoomModeTimeRecorder, MMLiveBeautyResourcesDescriptor, MMLiveCustomRenderPIPHandleLogic, MMLiveGiftResourcesEnsuranceHelper, MMLiveTaskId, MMTimer, NSArray, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, OrderedDictionary, PAGRenderStatistics, SongListInfo, SpamRisk, UIImage, WCFinderContact, WCFinderCreateLivePrepareResponseModel, WCFinderDataItem, WCFinderLiveEventsReporter, WCFinderLiveShareItem, WCFinderLiveStarterLiveModeSubItem, WCFinderLiveSwitchStreamStatistic, WCFinderRedDotTipsShowInfo, WCFinderStarterLiveViewModel, WCLocationInfo, _TtC6WeChat26MMFinderLiveTaskKaraEnergy, _TtC6WeChat27MMFinderLiveTaskKaraQuality;
 
 @interface MMFinderLiveTask
@@ -296,7 +298,6 @@
 + (int)getPreLiveIDCdnQuality;
 + (_Bool)isSecondaryDeviceFlagValid:(unsigned int)arg1;
 + (_Bool)checkFinderDataItemIsValidForLive:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long anchorMainSupportOrientationMaskForRotate; // @synthesize anchorMainSupportOrientationMaskForRotate=_anchorMainSupportOrientationMaskForRotate;
 @property(nonatomic) unsigned long long currAnchorMainSupportOrientationMask; // @synthesize currAnchorMainSupportOrientationMask=_currAnchorMainSupportOrientationMask;
 @property(nonatomic) _Bool isForbidLandScape; // @synthesize isForbidLandScape=_isForbidLandScape;
@@ -1014,4 +1015,3 @@
 @property(nonatomic) unsigned long long videoEncoderParamMode;
 
 @end
-

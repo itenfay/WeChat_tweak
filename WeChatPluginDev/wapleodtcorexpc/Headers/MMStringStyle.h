@@ -19,7 +19,6 @@
     NSMutableDictionary *_attributes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *attributes; // @synthesize attributes=_attributes;
 @property(retain, nonatomic) UIColor *strikethroughColor; // @synthesize strikethroughColor=_strikethroughColor;
 @property(nonatomic) long long strikethroughStyle; // @synthesize strikethroughStyle=_strikethroughStyle;

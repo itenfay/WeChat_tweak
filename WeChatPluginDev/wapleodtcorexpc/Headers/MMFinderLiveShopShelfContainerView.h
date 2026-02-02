@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIPanGestureRecognizer;
 @protocol MMFinderLiveShopShelfContainerDelegate;
@@ -20,7 +21,6 @@
     UIPanGestureRecognizer *_panGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(nonatomic) double previousPanPositionY; // @synthesize previousPanPositionY=_previousPanPositionY;
 @property(nonatomic) double viewTopAtPanBegin; // @synthesize viewTopAtPanBegin=_viewTopAtPanBegin;
@@ -53,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

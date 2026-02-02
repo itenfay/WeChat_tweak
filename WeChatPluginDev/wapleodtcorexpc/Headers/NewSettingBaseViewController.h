@@ -11,7 +11,6 @@
     NSString *m_nsTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsTitle; // @synthesize m_nsTitle;
 @property(readonly, nonatomic) MMTableViewInfo *tableViewInfo;
 - (void)reloadTableData;

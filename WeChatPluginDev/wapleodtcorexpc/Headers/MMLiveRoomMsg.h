@@ -22,7 +22,6 @@
     MMFinderLiveRewardGiftItem *_comboRewardProduct;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int rankingPosition; // @synthesize rankingPosition=_rankingPosition;
 @property(nonatomic) unsigned int comboRewardCount; // @synthesize comboRewardCount=_comboRewardCount;
 @property(retain, nonatomic) MMFinderLiveRewardGiftItem *comboRewardProduct; // @synthesize comboRewardProduct=_comboRewardProduct;

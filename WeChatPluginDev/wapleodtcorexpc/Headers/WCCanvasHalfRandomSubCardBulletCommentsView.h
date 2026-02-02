@@ -17,7 +17,6 @@
     NSMutableArray *_bulletCommentViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bulletCommentViews; // @synthesize bulletCommentViews=_bulletCommentViews;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) NSArray *bulletComments; // @synthesize bulletComments=_bulletComments;

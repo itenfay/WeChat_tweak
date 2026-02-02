@@ -18,7 +18,6 @@
     id <WCPayOfflineAckMsgCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayOfflineAckMsgCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 @property(nonatomic) _Bool bIsMsgFromPull; // @synthesize bIsMsgFromPull=_bIsMsgFromPull;
 @property(nonatomic) _Bool bIsPosEnabled; // @synthesize bIsPosEnabled=_bIsPosEnabled;

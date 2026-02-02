@@ -18,7 +18,6 @@
 + (void)setupRegister:(id)arg1;
 + (id)appendHalfStyleArgument:(id)arg1 isHalfScreen:(_Bool)arg2;
 + (id)sectionDefines;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needSaveCacheHeight; // @synthesize needSaveCacheHeight=_needSaveCacheHeight;
 @property(nonatomic) struct CGSize displaySize; // @synthesize displaySize=_displaySize;
 @property(retain, nonatomic) OpenLiteAppInfo *liteAppInfo; // @synthesize liteAppInfo=_liteAppInfo;

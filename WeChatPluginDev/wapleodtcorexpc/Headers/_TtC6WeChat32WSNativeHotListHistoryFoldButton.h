@@ -14,7 +14,6 @@
     MISSING_TYPE *arrowUp;
 }
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

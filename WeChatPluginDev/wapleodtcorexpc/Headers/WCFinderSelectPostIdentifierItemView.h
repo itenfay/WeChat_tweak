@@ -23,7 +23,6 @@
     UIView *_lineView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *lineView; // @synthesize lineView=_lineView;
 @property(nonatomic) __weak UILabel *mentionLabel; // @synthesize mentionLabel=_mentionLabel;
 @property(nonatomic) __weak UIView *mentionView; // @synthesize mentionView=_mentionView;

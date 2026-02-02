@@ -17,7 +17,6 @@
 }
 
 + (void)cancelLoginWithLoginUrlStr:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showingVerifyWebView; // @synthesize showingVerifyWebView=_showingVerifyWebView;
 @property(retain, nonatomic) MultiDeviceLoginConfirmInfo *confirmInfo; // @synthesize confirmInfo=_confirmInfo;
 @property(retain, nonatomic) MultiDeviceLoginInfo *info; // @synthesize info=_info;

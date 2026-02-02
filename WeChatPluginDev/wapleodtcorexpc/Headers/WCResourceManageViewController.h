@@ -31,7 +31,6 @@
 }
 
 + (id)getDateWithoutHMS:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long viewType; // @synthesize viewType=_viewType;
 @property(nonatomic) unsigned int eFilterEndTime; // @synthesize eFilterEndTime=_eFilterEndTime;
 @property(nonatomic) unsigned int eFilterStartTime; // @synthesize eFilterStartTime=_eFilterStartTime;

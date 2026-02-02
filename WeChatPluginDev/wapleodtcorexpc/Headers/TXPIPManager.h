@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVMutableComposition, AVMutableVideoComposition, AVPictureInPictureController, AVPlayer, AVPlayerItem, AVPlayerLayer, NSMutableDictionary, NSString, TXPIPRenderView, WCPIPCustomHandleLogic;
 
 @interface TXPIPManager
@@ -42,7 +44,6 @@
     CDUnknownBlockType _actionBlock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needAutoStopPIP; // @synthesize needAutoStopPIP=_needAutoStopPIP;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(nonatomic) unsigned long long currentVideoCondition; // @synthesize currentVideoCondition=_currentVideoCondition;
@@ -187,4 +188,3 @@
 @property(readonly) Class superclass;
 
 @end
-

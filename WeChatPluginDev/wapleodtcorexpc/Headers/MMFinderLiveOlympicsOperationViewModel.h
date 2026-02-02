@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class TorchCert;
 
@@ -15,7 +16,6 @@
     TorchCert *_torchCert;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TorchCert *torchCert; // @synthesize torchCert=_torchCert;
 @property(nonatomic) unsigned long long participantCount; // @synthesize participantCount=_participantCount;
 @property(nonatomic) unsigned long long certificateId; // @synthesize certificateId=_certificateId;
@@ -25,4 +25,3 @@
 - (id)init;
 
 @end
-

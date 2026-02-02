@@ -13,7 +13,6 @@
     NSMutableArray *_arrDests;
 }
 
-- (void).cxx_destruct;
 - (void)resetChain;
 - (_Bool)chainPipeline;
 - (id)getFinalFilterChain;

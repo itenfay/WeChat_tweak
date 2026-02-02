@@ -26,7 +26,6 @@
 
 + (id)msgKeyWithRoomID:(unsigned long long)arg1;
 + (id)defaultServiceType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXLocalNotificationInfo *m_notificationInfo; // @synthesize m_notificationInfo=_m_notificationInfo;
 @property(nonatomic) unsigned long long recvTime; // @synthesize recvTime=_recvTime;
 @property(nonatomic) _Bool isFromIlink; // @synthesize isFromIlink=_isFromIlink;

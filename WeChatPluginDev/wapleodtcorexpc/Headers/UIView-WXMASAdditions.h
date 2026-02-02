@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WXMASViewAttribute;
 
@@ -41,4 +42,3 @@
 - (id)mas_updateConstraints:(CDUnknownBlockType)arg1;
 - (id)mas_makeConstraints:(CDUnknownBlockType)arg1;
 @end
-

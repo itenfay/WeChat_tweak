@@ -16,7 +16,6 @@
     _Bool _m_noResponseClick;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_noResponseClick; // @synthesize m_noResponseClick=_m_noResponseClick;
 @property(nonatomic) _Bool forbidDetailPage; // @synthesize forbidDetailPage=_forbidDetailPage;
 @property(nonatomic) __weak id <SimpleImgInfoDelegate> m_delegate; // @synthesize m_delegate;

@@ -14,7 +14,6 @@
 
 + (id)overviewSectionTypes;
 + (_Bool)pluginEnable:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProfileOverviewSection *overview; // @synthesize overview=_overview;
 @property(retain, nonatomic) AnyPromise *firstPageFetcher; // @synthesize firstPageFetcher=_firstPageFetcher;
 @property(retain, nonatomic) WCFinderFeedArray *feedArray; // @synthesize feedArray=_feedArray;

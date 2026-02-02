@@ -12,7 +12,6 @@
     _Bool _disableSave;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableSave; // @synthesize disableSave=_disableSave;
 - (void)setMmtlsCtrlFlag:(unsigned int)arg1 force:(_Bool)arg2;
 - (void)clearLocalInfo;

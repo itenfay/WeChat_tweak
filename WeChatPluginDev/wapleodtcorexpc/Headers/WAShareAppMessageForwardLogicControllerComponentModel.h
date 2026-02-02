@@ -15,7 +15,6 @@
     unsigned long long _shareImageType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long shareImageType; // @synthesize shareImageType=_shareImageType;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *sceneNote; // @synthesize sceneNote=_sceneNote;

@@ -33,7 +33,6 @@
     WCPayTransferToBankCardFillInfoViewController *_m_fillInfoVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int entryScene; // @synthesize entryScene=_entryScene;
 @property(retain, nonatomic) WCPayTransferToBankCardFillInfoViewController *m_fillInfoVC; // @synthesize m_fillInfoVC=_m_fillInfoVC;
 @property(retain, nonatomic) NSString *bankCardNumber; // @synthesize bankCardNumber=_bankCardNumber;

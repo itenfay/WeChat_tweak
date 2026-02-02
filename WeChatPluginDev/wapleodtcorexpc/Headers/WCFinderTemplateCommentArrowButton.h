@@ -12,7 +12,6 @@
 }
 
 + (double)heightWithTitle:(id)arg1 maxWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) MMWebImageView *iconView; // @synthesize iconView=_iconView;
 - (void)layoutWithMaxWidth:(double)arg1;

@@ -11,7 +11,6 @@
     WAContactGetter *_contactGetter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAContactGetter *contactGetter; // @synthesize contactGetter=_contactGetter;
 @property(nonatomic) __weak MMUIViewController *vc; // @synthesize vc=_vc;
 - (void)doOpenWebVcWithUrl:(id)arg1;

@@ -16,7 +16,6 @@
     id <WCMJCameraMusicPlayableData> _musicData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <WCMJCameraMusicPlayableData> musicData; // @synthesize musicData=_musicData;
 @property(retain, nonatomic) NSMutableArray *musicIds; // @synthesize musicIds=_musicIds;
 @property(nonatomic) long long ostSoundOn; // @synthesize ostSoundOn=_ostSoundOn;

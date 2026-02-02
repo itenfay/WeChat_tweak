@@ -20,7 +20,6 @@
 + (id)getTestJumpInfo;
 + (id)backEndColorFromColor:(id)arg1;
 + (id)backEndColorFromColorStr:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <GCGroupNoticeViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableDictionary *linkJumpInfoDict; // @synthesize linkJumpInfoDict=_linkJumpInfoDict;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;

@@ -17,7 +17,6 @@
     NSString *_preDownloadRequestkey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *preDownloadRequestkey; // @synthesize preDownloadRequestkey=_preDownloadRequestkey;
 @property(nonatomic) unsigned int receiveCmdTimeStamp; // @synthesize receiveCmdTimeStamp=_receiveCmdTimeStamp;
 @property(copy, nonatomic) NSString *cmdKey; // @synthesize cmdKey=_cmdKey;

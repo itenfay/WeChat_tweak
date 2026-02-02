@@ -13,7 +13,6 @@
     MMCPLabel *_nickNameLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCPLabel *nickNameLabel; // @synthesize nickNameLabel=_nickNameLabel;
 @property(retain, nonatomic) MMUIView *headBackGroundView; // @synthesize headBackGroundView=_headBackGroundView;
 @property(retain, nonatomic) MMHeadImageView *headView; // @synthesize headView=_headView;

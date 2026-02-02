@@ -25,7 +25,6 @@
     NSMutableDictionary *_redDotReportStateDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *redDotReportStateDict; // @synthesize redDotReportStateDict=_redDotReportStateDict;
 @property double timeout; // @synthesize timeout=_timeout;
 @property(retain, nonatomic) NSDictionary *bannerDict; // @synthesize bannerDict=_bannerDict;

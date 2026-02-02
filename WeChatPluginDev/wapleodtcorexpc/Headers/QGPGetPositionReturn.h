@@ -10,7 +10,6 @@
     QGPLatLng *_value;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPLatLng *value; // @synthesize value=_value;
 - (id)initWithLat:(double)arg1 lng:(double)arg2 altitude:(double)arg3;
 

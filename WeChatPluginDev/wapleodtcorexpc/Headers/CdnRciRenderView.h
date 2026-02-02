@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class XImageViewRenderer;
 
 @interface CdnRciRenderView
@@ -30,7 +32,6 @@
 }
 
 + (_Bool)checkInitParamValidWithRenderMode:(long long)arg1 renderScene:(long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) XImageViewRenderer *renderer; // @synthesize renderer=_renderer;
 @property(nonatomic) _Bool mReceivedFirstFrame; // @synthesize mReceivedFirstFrame=_mReceivedFirstFrame;
 @property(nonatomic) _Bool isInitProgram; // @synthesize isInitProgram=_isInitProgram;
@@ -88,4 +89,3 @@
 - (id)initRemoteViewWithFrame:(struct CGRect)arg1 renderMode:(long long)arg2 renderScene:(long long)arg3;
 
 @end
-

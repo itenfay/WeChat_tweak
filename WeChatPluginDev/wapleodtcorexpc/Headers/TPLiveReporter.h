@@ -15,7 +15,6 @@
     TPTimer *_livePeroidTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPTimer *livePeroidTimer; // @synthesize livePeroidTimer=_livePeroidTimer;
 @property(retain, nonatomic) TPWorkerQueue *reportQueue; // @synthesize reportQueue=_reportQueue;
 @property(nonatomic, getter=isBuffering) _Bool buffering; // @synthesize buffering=_buffering;

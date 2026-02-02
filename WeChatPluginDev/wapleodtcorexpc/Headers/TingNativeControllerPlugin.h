@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterEventChannel, NSString, TingFlutterPlayController, TingLaterListenChannel, TingPlayerAdvertisement, UIViewController, WCFinderCreateCoordinator;
 
@@ -29,7 +30,6 @@
 
 + (_Bool)isEngineListenItemInfoEvent:(id)arg1;
 + (_Bool)isEngineCategoryInfoEvent:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType buyWcCoinCompletion; // @synthesize buyWcCoinCompletion=_buyWcCoinCompletion;
 @property(copy, nonatomic) CDUnknownBlockType consumeWcCoinCompletion; // @synthesize consumeWcCoinCompletion=_consumeWcCoinCompletion;
 @property(retain, nonatomic) TingPlayerAdvertisement *playerAdvertisement; // @synthesize playerAdvertisement=_playerAdvertisement;
@@ -168,4 +168,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -11,7 +11,6 @@
     id _reqBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id reqBuffer; // @synthesize reqBuffer=_reqBuffer;
 @property(nonatomic) long long cmdId; // @synthesize cmdId=_cmdId;
 - (id)initWithCmdId:(long long)arg1;

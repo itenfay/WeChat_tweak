@@ -16,7 +16,6 @@
     NSMutableArray *_viewItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *viewItems; // @synthesize viewItems=_viewItems;
 @property(nonatomic) _Bool showsFooterSeparatorLine; // @synthesize showsFooterSeparatorLine=_showsFooterSeparatorLine;
 @property(copy, nonatomic) NSString *dateText; // @synthesize dateText=_dateText;

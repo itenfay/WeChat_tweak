@@ -56,7 +56,6 @@
     NSArray *_fuwuInfoList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool friendSubscribePageUseFastLoad; // @synthesize friendSubscribePageUseFastLoad=_friendSubscribePageUseFastLoad;
 @property(nonatomic) _Bool shouldShowFriendSubscribeEntrance; // @synthesize shouldShowFriendSubscribeEntrance=_shouldShowFriendSubscribeEntrance;
 @property(retain, nonatomic) NSArray *fuwuInfoList; // @synthesize fuwuInfoList=_fuwuInfoList;

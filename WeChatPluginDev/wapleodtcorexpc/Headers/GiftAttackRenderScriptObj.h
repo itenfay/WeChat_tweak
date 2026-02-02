@@ -14,7 +14,6 @@
     long long _state;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSString *resourcePath; // @synthesize resourcePath=_resourcePath;
 @property(nonatomic) long long scriptId; // @synthesize scriptId=_scriptId;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CountryCodeWrap, NSString, PhoneNumberFormatLogic, WCRedesignButtonItem, WCRedesignTextItem;
 @protocol MMUIViewControllerDelegate, WCBaseInfoItemDelegate;
@@ -20,7 +21,6 @@
     CDUnknownBlockType _onCountryCodeChanged;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onCountryCodeChanged; // @synthesize onCountryCodeChanged=_onCountryCodeChanged;
 @property(copy, nonatomic) CDUnknownBlockType onSetNeedsLayout; // @synthesize onSetNeedsLayout=_onSetNeedsLayout;
 @property(retain, nonatomic) CountryCodeWrap *countryCodeWrap; // @synthesize countryCodeWrap=_countryCodeWrap;
@@ -58,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

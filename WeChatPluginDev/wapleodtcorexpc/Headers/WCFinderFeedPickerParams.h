@@ -28,7 +28,6 @@
     NSString *_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(retain, nonatomic) NSData *enterExtBuf; // @synthesize enterExtBuf=_enterExtBuf;
 @property(nonatomic) int enterScene; // @synthesize enterScene=_enterScene;

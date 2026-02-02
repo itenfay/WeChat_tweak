@@ -10,7 +10,6 @@
     NSMutableDictionary *_chatroomLiveInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *chatroomLiveInfos; // @synthesize chatroomLiveInfos=_chatroomLiveInfos;
 - (void)onLiveCountChanged:(id)arg1;
 - (_Bool)shouldShowGroupReddot:(id)arg1;

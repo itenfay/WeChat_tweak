@@ -17,7 +17,6 @@
     MISSING_TYPE *shouldStopPaymentWhenSameProductNeedReproviding;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 - (id)initWithShouldContinueWhenStorefrontChanged:(_Bool)arg1 shouldShowHudTextWhenProcessing:(_Bool)arg2 iOS15PreferredReceiptType:(long long)arg3 metaTrackEventID:(id)arg4;

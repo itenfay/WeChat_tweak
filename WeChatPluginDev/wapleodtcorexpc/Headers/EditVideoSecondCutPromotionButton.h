@@ -15,7 +15,6 @@
     unsigned long long _editVideoEntrance;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long editVideoEntrance; // @synthesize editVideoEntrance=_editVideoEntrance;
 @property(retain, nonatomic) MMUIImageView *arrowImageView; // @synthesize arrowImageView;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel;

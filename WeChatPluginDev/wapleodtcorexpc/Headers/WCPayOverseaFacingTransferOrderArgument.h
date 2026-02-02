@@ -19,7 +19,6 @@
     NSString *_nsQRCodeId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiIsSetAmount; // @synthesize uiIsSetAmount=_uiIsSetAmount;
 @property(retain, nonatomic) NSString *nsQRCodeId; // @synthesize nsQRCodeId=_nsQRCodeId;
 @property(nonatomic) int iCurrency; // @synthesize iCurrency=_iCurrency;

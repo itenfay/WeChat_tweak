@@ -22,7 +22,6 @@
     NSString *_appID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isWebviewFirstLoad; // @synthesize isWebviewFirstLoad=_isWebviewFirstLoad;
 @property(nonatomic) unsigned int requestID; // @synthesize requestID=_requestID;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;

@@ -10,7 +10,6 @@
     NSMutableArray *_configItemArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *configItemArray; // @synthesize configItemArray=_configItemArray;
 - (void)onSwitchValueChaged:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

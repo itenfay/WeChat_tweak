@@ -20,7 +20,6 @@
     unsigned long long _exposeTs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long exposeTs; // @synthesize exposeTs=_exposeTs;
 @property(nonatomic) unsigned long long preloadTs; // @synthesize preloadTs=_preloadTs;
 @property(nonatomic) unsigned long long contextLaunchTs; // @synthesize contextLaunchTs=_contextLaunchTs;

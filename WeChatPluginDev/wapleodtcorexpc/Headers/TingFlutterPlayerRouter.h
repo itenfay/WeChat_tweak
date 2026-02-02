@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFlutterInstance, NSString, TingAppNavigationController, TingFlutterViewController, TingPlayerManager, UIViewController;
 @protocol ITingApp;
 
@@ -14,7 +16,6 @@
     TingPlayerManager *_playTaskController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingPlayerManager *playTaskController; // @synthesize playTaskController=_playTaskController;
 @property(retain, nonatomic) TingFlutterViewController *playerVC; // @synthesize playerVC=_playerVC;
 @property(retain, nonatomic) MMFlutterInstance *playerInstance; // @synthesize playerInstance=_playerInstance;
@@ -48,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -17,7 +17,6 @@
 
 + (int)tabId;
 + (_Bool)shouldDisplay:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *collectionIDSet; // @synthesize collectionIDSet=_collectionIDSet;
 @property(retain, nonatomic) NSMutableArray *paidCollectionList; // @synthesize paidCollectionList=_paidCollectionList;
 @property(copy, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

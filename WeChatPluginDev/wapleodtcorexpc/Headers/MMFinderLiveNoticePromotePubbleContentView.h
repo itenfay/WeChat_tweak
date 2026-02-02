@@ -23,7 +23,6 @@
     MMFinderLiveBuyTicketHandle *_ticketHandle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveBuyTicketHandle *ticketHandle; // @synthesize ticketHandle=_ticketHandle;
 @property(nonatomic) _Bool isLastHasPay; // @synthesize isLastHasPay=_isLastHasPay;
 @property(nonatomic) _Bool isLastReserved; // @synthesize isLastReserved=_isLastReserved;

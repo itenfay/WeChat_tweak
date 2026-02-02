@@ -15,7 +15,6 @@
 }
 
 + (id)sharedThread;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRunLoop *runLoop; // @synthesize runLoop=_runLoop;
 - (void)main;
 - (id)init;

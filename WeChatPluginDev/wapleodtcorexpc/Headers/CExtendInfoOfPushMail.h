@@ -14,7 +14,6 @@
 }
 
 + (void)CreateExtendInfoWithType:(unsigned int)arg1 retExtendInfo:(id *)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak CMessageWrap *m_refMessageWrap; // @synthesize m_refMessageWrap;
 @property(retain, nonatomic) PushMailWrap *m_oPushMailWrap; // @synthesize m_oPushMailWrap;
 - (id)messageFTSText;

@@ -24,7 +24,6 @@
     struct CGRect _finalLiveFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isGesturePanEnter; // @synthesize isGesturePanEnter=_isGesturePanEnter;
 @property(nonatomic) __weak UIView *transitionToView; // @synthesize transitionToView=_transitionToView;
 @property(nonatomic) double snapshotLiveViewTopOffset; // @synthesize snapshotLiveViewTopOffset=_snapshotLiveViewTopOffset;

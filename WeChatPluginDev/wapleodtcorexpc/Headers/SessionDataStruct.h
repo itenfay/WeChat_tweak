@@ -13,7 +13,6 @@
     unsigned long long _enterTimeMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterTimeMs; // @synthesize enterTimeMs=_enterTimeMs;
 @property(retain, nonatomic) NSString *sid; // @synthesize sid=_sid;
 

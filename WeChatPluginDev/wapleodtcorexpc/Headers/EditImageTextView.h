@@ -16,7 +16,6 @@
     struct UIEdgeInsets _minimumContentInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCEditVideoColorConfig *colorConfig; // @synthesize colorConfig=_colorConfig;
 @property(retain, nonatomic) EditImageTextBgView *textBgView; // @synthesize textBgView=_textBgView;
 @property(nonatomic) struct UIEdgeInsets minimumContentInsets; // @synthesize minimumContentInsets=_minimumContentInsets;

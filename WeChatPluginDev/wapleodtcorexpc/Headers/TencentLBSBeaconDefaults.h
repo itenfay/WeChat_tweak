@@ -14,7 +14,6 @@
 }
 
 + (id)sharedDefaults;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *defaultPower; // @synthesize defaultPower=_defaultPower;
 @property(readonly, copy, nonatomic) NSArray *supportedProximityUUIDs; // @synthesize supportedProximityUUIDs=_supportedProximityUUIDs;
 @property(readonly, copy, nonatomic) NSUUID *defaultProximityUUID;

@@ -13,7 +13,6 @@
     UIColor *_fanGroupCustomBGColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *fanGroupCustomBGColor; // @synthesize fanGroupCustomBGColor=_fanGroupCustomBGColor;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
 

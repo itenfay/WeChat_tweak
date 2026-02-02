@@ -13,7 +13,6 @@
 }
 
 + (id)proxyWithTarget:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 - (void)audioPlayerDecodeErrorDidOccur:(id)arg1 error:(id)arg2;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;

@@ -18,7 +18,6 @@
     NSMutableDictionary *_seperatorViewMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *seperatorViewMap; // @synthesize seperatorViewMap=_seperatorViewMap;
 @property(retain, nonatomic) NSMutableArray *horizontalScrollViewList; // @synthesize horizontalScrollViewList=_horizontalScrollViewList;
 @property(retain, nonatomic) UIView<MMScrollableActionSheetCustomFooterViewInterface> *customFooterView; // @synthesize customFooterView=_customFooterView;

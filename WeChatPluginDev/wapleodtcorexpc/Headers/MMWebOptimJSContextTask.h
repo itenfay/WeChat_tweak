@@ -14,7 +14,6 @@
     MMWebOptimJSContextTaskConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebOptimJSContextTaskConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) JSVirtualMachine *jsVirtualMachine; // @synthesize jsVirtualMachine=_jsVirtualMachine;
 @property(retain, nonatomic) JSContext *devContext; // @synthesize devContext=_devContext;

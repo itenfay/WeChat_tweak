@@ -15,7 +15,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveNowView *liveTagView; // @synthesize liveTagView=_liveTagView;
 @property(retain, nonatomic) MMLiveCDNPlayerView *playerView; // @synthesize playerView=_playerView;
 @property(retain, nonatomic) BTFinderLiveItemViewModel *viewModel; // @synthesize viewModel=_viewModel;

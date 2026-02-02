@@ -10,7 +10,6 @@
     MJSpeechAudioData *_audioData;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJSpeechAudioData *audioData; // @synthesize audioData=_audioData;
 - (id)description;
 - (id)initWithAudioData:(id)arg1;

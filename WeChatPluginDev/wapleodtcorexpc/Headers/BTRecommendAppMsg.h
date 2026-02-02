@@ -29,7 +29,6 @@
     NSString *_finderFeedXml;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *finderFeedXml; // @synthesize finderFeedXml=_finderFeedXml;
 @property(retain, nonatomic) AppMsgShareItem *shareItem; // @synthesize shareItem=_shareItem;
 @property(copy, nonatomic) NSString *recInfo; // @synthesize recInfo=_recInfo;

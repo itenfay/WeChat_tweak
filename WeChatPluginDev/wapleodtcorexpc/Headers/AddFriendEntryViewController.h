@@ -21,7 +21,6 @@
     unsigned int _inviteScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int inviteScene; // @synthesize inviteScene=_inviteScene;
 @property(nonatomic) unsigned int searchScene; // @synthesize searchScene=_searchScene;
 @property(nonatomic) _Bool m_bShowInvite; // @synthesize m_bShowInvite=_m_bShowInvite;

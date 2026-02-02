@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_textForTimeLabel;
 + (void)PBArrayAdd_textForNameLabel;
 + (void)PBArrayAdd_userName;
-- (void).cxx_destruct;
 @property _Bool bTopCell; // @synthesize bTopCell=_bTopCell;
 @property _Bool bNormalCell; // @synthesize bNormalCell=_bNormalCell;
 @property double widthForNameLabel; // @synthesize widthForNameLabel=_widthForNameLabel;

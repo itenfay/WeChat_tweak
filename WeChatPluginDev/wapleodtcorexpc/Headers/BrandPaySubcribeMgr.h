@@ -11,7 +11,6 @@
     MemoryMappedKV *_mappedKV;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPaySubscribeOpen; // @synthesize isPaySubscribeOpen=_isPaySubscribeOpen;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 - (void)onExptItemListChange;

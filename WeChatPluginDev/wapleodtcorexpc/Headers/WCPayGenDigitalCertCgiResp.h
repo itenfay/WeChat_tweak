@@ -20,7 +20,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1 WithErrorType:(unsigned int)arg2 ErrorMsg:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *m_userInfo; // @synthesize m_userInfo=_m_userInfo;
 @property(retain, nonatomic) NSString *m_retMsg; // @synthesize m_retMsg=_m_retMsg;
 @property(nonatomic) unsigned int m_retCode; // @synthesize m_retCode=_m_retCode;

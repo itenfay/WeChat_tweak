@@ -12,7 +12,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)update;
 - (void)cancel;
 - (void)start;

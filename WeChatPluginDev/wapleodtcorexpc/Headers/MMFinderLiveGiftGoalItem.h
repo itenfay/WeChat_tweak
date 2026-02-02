@@ -16,7 +16,6 @@
     unsigned long long _stagingUnixEpochTimeInSeconds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long stagingUnixEpochTimeInSeconds; // @synthesize stagingUnixEpochTimeInSeconds=_stagingUnixEpochTimeInSeconds;
 @property(nonatomic) unsigned long long currentCount; // @synthesize currentCount=_currentCount;
 @property(nonatomic) unsigned long long targetCount; // @synthesize targetCount=_targetCount;

@@ -18,7 +18,6 @@
     UIView *_lastLineView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *lastLineView; // @synthesize lastLineView=_lastLineView;
 @property(copy, nonatomic) NSString *headerImageURL; // @synthesize headerImageURL=_headerImageURL;
 @property(nonatomic) __weak MMWebImageView *headerImageView; // @synthesize headerImageView=_headerImageView;

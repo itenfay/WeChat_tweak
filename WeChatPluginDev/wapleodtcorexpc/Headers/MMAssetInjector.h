@@ -19,7 +19,6 @@
     MMAssetInfo *_boundAsset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMAssetInfo *boundAsset; // @synthesize boundAsset=_boundAsset;
 @property(nonatomic) _Bool shouldKeepTimeRange; // @synthesize shouldKeepTimeRange=_shouldKeepTimeRange;
 @property(nonatomic) _Bool shouldHideEditPageTopRightEntrance; // @synthesize shouldHideEditPageTopRightEntrance=_shouldHideEditPageTopRightEntrance;

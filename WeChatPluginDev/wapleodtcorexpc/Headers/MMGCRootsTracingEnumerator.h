@@ -14,7 +14,6 @@
     MMGCRootsTracingGraphElement *_object;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMGCRootsTracingGraphElement *object; // @synthesize object=_object;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

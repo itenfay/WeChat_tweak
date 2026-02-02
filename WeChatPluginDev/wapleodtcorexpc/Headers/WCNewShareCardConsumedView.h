@@ -36,7 +36,6 @@
     unsigned long long _fromScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long fromScene; // @synthesize fromScene=_fromScene;
 @property(retain, nonatomic) NSMutableArray *arrBlackUserLabelID; // @synthesize arrBlackUserLabelID=_arrBlackUserLabelID;
 @property(retain, nonatomic) NSMutableArray *arrGroupUserLabelID; // @synthesize arrGroupUserLabelID=_arrGroupUserLabelID;

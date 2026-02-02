@@ -27,7 +27,6 @@
     MISSING_TYPE *myStatusList;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithSessionId:(id)arg1 sceneSessionId:(id)arg2 scene:(long long)arg3;
 

@@ -13,7 +13,6 @@
     NSString *_mainUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mainUrl; // @synthesize mainUrl=_mainUrl;
 @property(retain, nonatomic) NSMutableArray *recordArray; // @synthesize recordArray=_recordArray;
 - (id)description;

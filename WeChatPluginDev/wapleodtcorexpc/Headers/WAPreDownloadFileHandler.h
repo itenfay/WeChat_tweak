@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSNumber, NSString, NSURLSession, WADownloadFileConfig;
 @protocol OS_dispatch_queue;
@@ -20,7 +21,6 @@
     NSNumber *__hasDownloadedFileSize;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSNumber *_hasDownloadedFileSize; // @synthesize _hasDownloadedFileSize=__hasDownloadedFileSize;
 - (void)downloadFileTaskDidEnd:(id)arg1;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
@@ -58,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

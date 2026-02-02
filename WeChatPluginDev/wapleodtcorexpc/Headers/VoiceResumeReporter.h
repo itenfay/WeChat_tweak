@@ -22,7 +22,6 @@
 + (void)updateVoiceStopReason:(unsigned int)arg1;
 + (void)reportAction:(unsigned int)arg1;
 + (id)reporter;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int playTime; // @synthesize playTime=_playTime;
 @property(nonatomic) unsigned int totalTime; // @synthesize totalTime=_totalTime;
 @property(retain, nonatomic) NSString *voiceId; // @synthesize voiceId=_voiceId;

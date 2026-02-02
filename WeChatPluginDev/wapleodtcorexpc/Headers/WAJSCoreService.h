@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSContext, JSVirtualMachine, MMContext, MMLockstepHandle, MMTCPHandle, MMTimer, MMUDPHandle, NSArray, NSCondition, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, NSThread, WAAppTaskExtInfo, WAApptaskPublicResLogic, WAContact, WAJSBindingUtilsAdaptor, WAJSCServiceInjectExtendScriptModel, WAJSContextPluginScheduler, WAJSCoreServiceOpenData, WAJSDebuggerConnection, WAJSThread, WAMagicARAdaptor, WAOpenGLView, WAPackageConfig, WAProvideApiConfig, WAWebViewController, WXAudioNative, WasmAdaptor, WeMediaApi, WeXNetAdaptor, WxaExternalInfo;
 @protocol IWASkylineRuntime, IWXCanvasAdaptorAPI, IWXPhysxAdaptorAPI, WAJSCoreServiceDelegate, WAJSCoreServiceRemoteDelegate, WAJSServiceProtocol;
 
@@ -108,7 +110,6 @@
 
 + (void)setTransitInfo:(id)arg1 toDicParam:(id)arg2;
 + (void)setRefererInfo:(id)arg1 toDicParam:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictWXAudioExpt; // @synthesize dictWXAudioExpt=_dictWXAudioExpt;
 @property(retain, nonatomic) NSMutableArray *codeLaunchEvaluateRet; // @synthesize codeLaunchEvaluateRet=_codeLaunchEvaluateRet;
 @property(retain, nonatomic) NSMutableArray *preloadEvaluateRet; // @synthesize preloadEvaluateRet=_preloadEvaluateRet;
@@ -463,4 +464,3 @@
 @property(readonly) Class superclass;
 
 @end
-

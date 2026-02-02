@@ -15,7 +15,6 @@
     NSMutableArray *_recordsList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int initialUpdatedTimeStamp; // @synthesize initialUpdatedTimeStamp=_initialUpdatedTimeStamp;
 @property(retain, nonatomic) NSMutableArray *recordsList; // @synthesize recordsList=_recordsList;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

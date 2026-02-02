@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_expiredTime;
 + (void)PBArrayAdd_baseTime;
 + (void)PBArrayAdd_searchID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicData; // @synthesize dicData=_dicData;
 @property(retain, nonatomic) NSString *lang; // @synthesize lang=_lang;
 @property(nonatomic) unsigned int h5Version; // @synthesize h5Version=_h5Version;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderRedDotTipsShowInfo;
 @protocol WCFinderPersonalCenterCellProtocol;
@@ -20,7 +21,6 @@
 
 + (id)buttonItemWithTitle:(id)arg1 clickBlock:(CDUnknownBlockType)arg2;
 + (id)itemWithCellClass:(Class)arg1 clickBlock:(CDUnknownBlockType)arg2 setupBlock:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderPersonalCenterCellProtocol> weakCell; // @synthesize weakCell=_weakCell;
 @property(copy, nonatomic) CDUnknownBlockType clickBlock; // @synthesize clickBlock=_clickBlock;
 @property(copy, nonatomic) CDUnknownBlockType setupBlock; // @synthesize setupBlock=_setupBlock;
@@ -33,4 +33,3 @@
 - (double)displayCellHeight;
 
 @end
-

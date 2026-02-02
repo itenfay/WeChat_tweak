@@ -12,7 +12,6 @@
     MMFlutterHybridNavPageState *_pageState;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFlutterHybridNavPageState *pageState; // @synthesize pageState=_pageState;
 - (void)viewDidDisappear;
 - (void)viewWillDisappear;

@@ -14,7 +14,6 @@
     NSMutableArray *_mActions;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mActions; // @synthesize mActions=_mActions;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

@@ -13,7 +13,6 @@
     NSString *_buf;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *buf; // @synthesize buf=_buf;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 

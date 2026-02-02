@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderJumpInfo, FinderLiveAdInfo, FinderLiveCheerInfo, FinderLiveFunctionReminderNotificationInfo, FinderLiveGamePlayTogether_AudienceThreeDimensionalTipsInfo, FinderLiveGiftWallInfo, FinderLiveRewardWishListInfo, FinderShopCouponInfo, FinderWindowProductInfo, LiveOnlineInfo, MMAudienceLiveLikePlayUtil, MMFinderJoinLiveContext, MMFinderLiveAdsItem, MMFinderLiveBottomButtonStyleManager, MMFinderLiveGoodsItem, MMFinderLiveLotteryDisplayLogic, MMFinderLiveLotteryPacketDisplayLogic, MMFinderLiveOperationBottomButtonAnimator, MMFinderLiveOperationView, MMFinderLivePackageGiftRecommendInfo, MMFinderLiveRecommendUserSendGiftInfo, MMFinderLiveRewardFreeGiftManager, MMFinderLiveRewardGiftItem, MMFinderLiveRewardRecievingLogic, MMFinderLiveRewardSendingLogic, MMFinderLiveSyncPromotionInfo, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHotAnimationViewModel, MMLiveLikeAnimationUtil, MMLiveLikeClapVoicePlayQueue, MMLiveLikeDataMgr, MMLiveLikePlayUtil, MMLiveVoteViewModel, NSArray, NSData, NSMutableDictionary, NSMutableSet, NSString, UIColor, WCFinderDataItem, WCFinderLiveStarterReporter;
 @protocol WCFinderRedDotInterfaceProtocol;
@@ -140,7 +141,6 @@
 + (_Bool)transferLegacyRedDotWithPaths:(id)arg1 type:(unsigned int)arg2 groupId:(id)arg3;
 + (void)transferLegacyRedDotIfNeeded;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPreloadRewardGiftList; // @synthesize hasPreloadRewardGiftList=_hasPreloadRewardGiftList;
 @property(retain, nonatomic) NSMutableDictionary *bottomButtonStyleConfigReportDict; // @synthesize bottomButtonStyleConfigReportDict=_bottomButtonStyleConfigReportDict;
 @property(retain, nonatomic) NSMutableSet *customStyleButtonTypes; // @synthesize customStyleButtonTypes=_customStyleButtonTypes;
@@ -336,4 +336,3 @@
 @property(readonly) Class superclass;
 
 @end
-

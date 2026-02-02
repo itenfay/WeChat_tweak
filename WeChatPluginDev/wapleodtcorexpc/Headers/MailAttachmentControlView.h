@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MailAttachment, NSMutableArray, NSString, UIButton, UIImageView, UILabel, UINavigationController, UIView;
 @protocol MailAttachmentControlViewDelegate;
 
@@ -25,7 +27,6 @@
     CDUnknownBlockType _assetSelectedBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType assetSelectedBlock; // @synthesize assetSelectedBlock=_assetSelectedBlock;
 @property(retain, nonatomic) MailAttachment *m_lastAttachment; // @synthesize m_lastAttachment;
 @property(nonatomic) __weak id <MailAttachmentControlViewDelegate> m_delegate; // @synthesize m_delegate;
@@ -76,4 +77,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
     _Bool _bAsTopHit;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) FTSFeatureItem *featureItem; // @synthesize featureItem=_featureItem;
 - (id)getTopHitDescrpition;
 - (void)layoutSubviews;

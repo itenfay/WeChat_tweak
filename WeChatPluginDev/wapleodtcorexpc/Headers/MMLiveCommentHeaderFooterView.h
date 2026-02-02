@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewHeaderFooterView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveCommentDataItem, MMLiveCommentPubbleCell, MMLiveCommentPubbleCellFrame, MMUIButton;
 
@@ -20,7 +21,6 @@
     MMUIButton *_pubbleButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowMenu; // @synthesize isShowMenu=_isShowMenu;
 @property(retain, nonatomic) MMUIButton *pubbleButton; // @synthesize pubbleButton=_pubbleButton;
 @property(retain, nonatomic) MMLiveCommentPubbleCell *pubbleCell; // @synthesize pubbleCell=_pubbleCell;
@@ -39,4 +39,3 @@
 - (void)createPubbleCellWithCellFrame:(id)arg1 section:(long long)arg2 topSection:(long long)arg3;
 
 @end
-

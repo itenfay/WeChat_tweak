@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,7 +15,6 @@
 }
 
 + (void)registerWithRegistrar:(id)arg1;
-- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType orientationRetrieved; // @synthesize orientationRetrieved=_orientationRetrieved;
 @property(retain) id observer; // @synthesize observer=_observer;
 - (id)onCancelWithArguments:(id)arg1;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

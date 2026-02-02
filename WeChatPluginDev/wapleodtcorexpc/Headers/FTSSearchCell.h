@@ -13,7 +13,6 @@
     NSString *_showSuffix;
 }
 
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)updateSearchTip:(id)arg1 suffix:(id)arg2;
 - (void)updateStatus:(_Bool)arg1;

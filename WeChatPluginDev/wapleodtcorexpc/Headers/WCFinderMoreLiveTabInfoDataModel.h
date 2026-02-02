@@ -29,7 +29,6 @@
     unsigned long long _refreshInterval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasEndLiveNeedRefresh; // @synthesize hasEndLiveNeedRefresh=_hasEndLiveNeedRefresh;
 @property(nonatomic) unsigned long long refreshInterval; // @synthesize refreshInterval=_refreshInterval;
 @property(retain, nonatomic) NSMutableArray *fetchRelatedTidList; // @synthesize fetchRelatedTidList=_fetchRelatedTidList;

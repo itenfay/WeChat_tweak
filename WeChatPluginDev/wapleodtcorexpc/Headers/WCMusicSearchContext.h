@@ -14,7 +14,6 @@
     NSObject *_customRequestExtraData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *customRequestExtraData; // @synthesize customRequestExtraData=_customRequestExtraData;
 @property(nonatomic) unsigned int offset; // @synthesize offset=_offset;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;

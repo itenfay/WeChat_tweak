@@ -12,7 +12,6 @@
     unsigned int _eventID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int eventID; // @synthesize eventID=_eventID;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)clearLocationCache;

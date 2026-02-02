@@ -22,7 +22,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdLookbookBrandNewItem *brandNewItemInfo; // @synthesize brandNewItemInfo=_brandNewItemInfo;
 @property(nonatomic) _Bool hideItemTitle; // @synthesize hideItemTitle=_hideItemTitle;
 @property(retain, nonatomic) NSString *charmImageUrl; // @synthesize charmImageUrl=_charmImageUrl;

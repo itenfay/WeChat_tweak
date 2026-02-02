@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAudioSessionDataSourceDescription, FinderMusicReportInfo, MJAITemplateAssetOptions, MJCameraTemplateReportObject, MJMovieComposingAssetsClassifyHelper, MJPublisherContext, MJShootBeautyInspectorViewModel, MJShootComposingTemplatePanelViewModel, MJShootFaceEffectInspectorViewModel, MJShootFilterInspectorViewModel, MJShootMakeupInspectorViewModel, MJShootingMusicPickingViewModel, MJTemplateCamoSession, MMAssetForPHAssetFramework, MMBGMSelectedMusicResult, MMCameraTemplateItem, MMImagePickerManagerOptionObj, NSMutableDictionary, NSString, OMCGeographicInfo, OMJCDNBridgeService, OMJCaptureSession, OMJPublisherSessionMetrics, RecommendedMusicInfo, WCFinderFeedVideoFetcher, WCShortVideoToolBarInitParams;
 @protocol MJShootComposingViewModelDelegate;
 
@@ -74,7 +76,6 @@
     OMCGeographicInfo *_userLocation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMCGeographicInfo *userLocation; // @synthesize userLocation=_userLocation;
 @property(retain, nonatomic) OMJCaptureSession *captureSession; // @synthesize captureSession=_captureSession;
 @property(nonatomic) unsigned long long templatePanelState; // @synthesize templatePanelState=_templatePanelState;
@@ -264,4 +265,3 @@
 @property(readonly) Class superclass;
 
 @end
-

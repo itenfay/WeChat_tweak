@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, TSMotionTracker, TSTouchTrackRecognizer, UIView;
 @protocol OS_dispatch_source;
@@ -21,7 +22,6 @@
     NSMutableArray *_touches;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *touches; // @synthesize touches=_touches;
 @property double intervalForMotionTracker; // @synthesize intervalForMotionTracker=_intervalForMotionTracker;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
@@ -46,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

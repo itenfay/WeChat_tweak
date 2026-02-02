@@ -11,7 +11,6 @@
     NSMutableArray *_webImageViewList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *webImageViewList; // @synthesize webImageViewList=_webImageViewList;
 @property(retain, nonatomic) MMWebImageView *coverView; // @synthesize coverView=_coverView;
 - (void)updateWithAggregationTitle:(id)arg1 recommendTag:(id)arg2 recommendWording:(id)arg3 itemMessage:(id)arg4 cellWidth:(double)arg5 friendSeenHeadImgUrl:(id)arg6 iconType:(unsigned int)arg7;

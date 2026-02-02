@@ -10,7 +10,6 @@
     ChatroomMsgSheetCard *_sheetCard;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatroomMsgSheetCard *sheetCard; // @synthesize sheetCard=_sheetCard;
 - (Class)bindCellClass;
 - (id)bindMsgSheetCardCell;

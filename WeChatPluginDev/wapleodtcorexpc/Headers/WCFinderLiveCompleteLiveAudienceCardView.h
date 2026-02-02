@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveCDNPlayerView, MMUIButton, MMUIView, NSString, UILabel, WCFinderDataItem, WCFinderSimplePlayerView;
 
@@ -22,7 +23,6 @@
     MMUIButton *_playButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *playButton; // @synthesize playButton=_playButton;
 @property(retain, nonatomic) WCFinderSimplePlayerView *replayPlayerView; // @synthesize replayPlayerView=_replayPlayerView;
 @property(retain, nonatomic) MMLiveCDNPlayerView *livePlayerView; // @synthesize livePlayerView=_livePlayerView;
@@ -60,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

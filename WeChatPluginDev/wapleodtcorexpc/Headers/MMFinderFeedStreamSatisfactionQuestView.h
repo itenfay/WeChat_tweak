@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, UILabel;
 
@@ -17,7 +18,6 @@
 }
 
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *wordingViews; // @synthesize wordingViews=_wordingViews;
 @property(retain, nonatomic) UIView *wordingContainer; // @synthesize wordingContainer=_wordingContainer;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -30,4 +30,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

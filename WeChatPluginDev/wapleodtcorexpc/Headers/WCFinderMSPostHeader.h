@@ -18,7 +18,6 @@
 }
 
 + (double)headerHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *inputHintLabel; // @synthesize inputHintLabel=_inputHintLabel;
 @property(retain, nonatomic) UIView *inputBackgroundView; // @synthesize inputBackgroundView=_inputBackgroundView;
 @property(retain, nonatomic) UILabel *nickNameLabel; // @synthesize nickNameLabel=_nickNameLabel;

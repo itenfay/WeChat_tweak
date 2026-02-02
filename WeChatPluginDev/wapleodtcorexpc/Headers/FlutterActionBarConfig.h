@@ -17,7 +17,6 @@
 
 + (id)fromMap:(id)arg1;
 + (id)makeWithShowPlatform:(id)arg1 titleConfig:(id)arg2 leftItem:(id)arg3 rightItem:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterActionBarIconConfig *rightItem; // @synthesize rightItem=_rightItem;
 @property(retain, nonatomic) FlutterActionBarIconConfig *leftItem; // @synthesize leftItem=_leftItem;
 @property(retain, nonatomic) FlutterActionBarTitleConfig *titleConfig; // @synthesize titleConfig=_titleConfig;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GCChatRoomServer;
 
@@ -14,7 +15,6 @@
     long long _requestSeq;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long requestSeq; // @synthesize requestSeq=_requestSeq;
 @property(nonatomic) long long channelId; // @synthesize channelId=_channelId;
 @property(retain, nonatomic) GCChatRoomServer *chatRoomServer; // @synthesize chatRoomServer=_chatRoomServer;
@@ -26,4 +26,3 @@
 - (id)initWithChatRoomServer:(id)arg1;
 
 @end
-

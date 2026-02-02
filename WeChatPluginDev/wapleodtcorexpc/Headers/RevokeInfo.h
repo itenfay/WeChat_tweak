@@ -21,7 +21,6 @@
     RevokeMsgRequest *_request;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RevokeMsgRequest *request; // @synthesize request=_request;
 @property(nonatomic) long long result; // @synthesize result=_result;
 @property(nonatomic) unsigned long long cost; // @synthesize cost=_cost;

@@ -30,7 +30,6 @@
     NSMutableArray *_assetReportInfos;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUseSlider; // @synthesize isUseSlider=_isUseSlider;
 @property(retain, nonatomic) NSMutableArray *assetReportInfos; // @synthesize assetReportInfos=_assetReportInfos;
 @property(nonatomic) unsigned long long startTimeStamp; // @synthesize startTimeStamp=_startTimeStamp;

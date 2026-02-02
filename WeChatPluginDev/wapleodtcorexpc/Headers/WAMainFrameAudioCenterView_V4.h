@@ -27,7 +27,6 @@
     UIImageView *_loadingIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *loadingIconView; // @synthesize loadingIconView=_loadingIconView;
 @property(retain, nonatomic) UIImageView *arrowIconView; // @synthesize arrowIconView=_arrowIconView;
 @property(retain, nonatomic) UIView *redDotView; // @synthesize redDotView=_redDotView;

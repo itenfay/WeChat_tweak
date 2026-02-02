@@ -12,7 +12,6 @@
     NSHashTable *_stickerViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *stickerViews; // @synthesize stickerViews=_stickerViews;
 - (void)removeStickerView:(id)arg1;
 - (void)addStickerView:(id)arg1;

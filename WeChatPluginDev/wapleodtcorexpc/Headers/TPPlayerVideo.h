@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, TPDrmMediaAsset;
 @protocol TPPlayerVideoPrivateDelegate;
@@ -19,7 +20,6 @@
     id <TPPlayerVideoPrivateDelegate> _privateDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TPPlayerVideoPrivateDelegate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
 @property(retain, nonatomic) NSMutableArray *slices; // @synthesize slices=_slices;
 @property(retain, nonatomic) TPDrmMediaAsset *drmAsset; // @synthesize drmAsset=_drmAsset;
@@ -46,4 +46,3 @@
 - (id)init;
 
 @end
-

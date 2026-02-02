@@ -23,7 +23,6 @@
 + (void)HandleDisplayLink:(id)arg1;
 + (void)StopDisplayLink;
 + (void)StartDisplayLink;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (long long)animatorId;
 - (void)resume;

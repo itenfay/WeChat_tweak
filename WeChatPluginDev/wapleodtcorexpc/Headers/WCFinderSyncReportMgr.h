@@ -16,7 +16,6 @@
     EntranceExposeContent_ExposeRecord *_liveRecord;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastEnterFinderEntryTs; // @synthesize lastEnterFinderEntryTs=_lastEnterFinderEntryTs;
 @property(nonatomic) unsigned int lastEnterLiveTs; // @synthesize lastEnterLiveTs=_lastEnterLiveTs;
 @property(retain, nonatomic) EntranceExposeContent_ExposeRecord *liveRecord; // @synthesize liveRecord=_liveRecord;

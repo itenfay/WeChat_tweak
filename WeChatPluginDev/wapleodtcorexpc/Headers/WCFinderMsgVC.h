@@ -13,7 +13,6 @@
     WCFinderPrivacySettingHelper *_helper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPrivacySettingHelper *helper; // @synthesize helper=_helper;
 @property(retain, nonatomic) WCTableViewSectionManager *msgSwitchSection; // @synthesize msgSwitchSection=_msgSwitchSection;
 @property(retain, nonatomic) WCTableViewManager *tableViewManager; // @synthesize tableViewManager=_tableViewManager;

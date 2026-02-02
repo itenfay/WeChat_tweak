@@ -37,7 +37,6 @@
     FinderLiveGameTeamInfo_GameTeamUpInfoForAndience *_gameTeamupInfoForAudience;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveGameTeamInfo_GameTeamUpInfoForAndience *gameTeamupInfoForAudience; // @synthesize gameTeamupInfoForAudience=_gameTeamupInfoForAudience;
 @property(retain, nonatomic) FinderLiveGameTeamInfo_FinderGameLiveAppInfo *gameAppInfo; // @synthesize gameAppInfo=_gameAppInfo;
 @property(retain, nonatomic) FinderLiveGameTeamInfo_FinderGameLiveWxaExtraJoinInfo *wxaExtraJoinInfo; // @synthesize wxaExtraJoinInfo=_wxaExtraJoinInfo;

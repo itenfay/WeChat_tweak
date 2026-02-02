@@ -38,7 +38,6 @@
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
 + (id)unreadCommentWithStoryComment:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int commentType; // @synthesize commentType=_commentType;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;
 @property(retain, nonatomic) NSString *commentId; // @synthesize commentId=_commentId;

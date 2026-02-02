@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, FinderJumpInfo_LiteApp, NSString;
 
@@ -26,7 +27,6 @@
     CDUnknownBlockType _compleBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType compleBlock; // @synthesize compleBlock=_compleBlock;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
@@ -45,4 +45,3 @@
 - (void)updateComplaintAppWithLiteAppId:(id)arg1 liteQuery:(id)arg2;
 
 @end
-

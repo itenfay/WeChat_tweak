@@ -13,7 +13,6 @@
     NSMutableSet *m_disabledAppIdSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *disabledAppIdSet; // @synthesize disabledAppIdSet=m_disabledAppIdSet;
 - (void)disableEasterEggWithAppId:(id)arg1;
 - (id)easterEggWithMessage:(id)arg1;

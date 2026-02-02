@@ -17,7 +17,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showFooterBtn; // @synthesize showFooterBtn=_showFooterBtn;
 @property(nonatomic) _Bool showHeaderBtn; // @synthesize showHeaderBtn=_showHeaderBtn;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

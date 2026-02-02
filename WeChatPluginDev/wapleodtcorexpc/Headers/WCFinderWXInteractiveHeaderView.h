@@ -16,7 +16,6 @@
     MMUIButton *_favBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *favBtn; // @synthesize favBtn=_favBtn;
 @property(retain, nonatomic) MMUIButton *fingerBtn; // @synthesize fingerBtn=_fingerBtn;
 @property(retain, nonatomic) MMUIButton *likeBtn; // @synthesize likeBtn=_likeBtn;

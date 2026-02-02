@@ -19,7 +19,6 @@
 + (void)PBArrayAdd_groupIconURL;
 + (void)PBArrayAdd_localeToGroupDescriptionDict;
 + (void)PBArrayAdd_groupId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *groupDescription; // @synthesize groupDescription=_groupDescription;
 @property(retain, nonatomic) NSMutableDictionary *localeToGroupDescriptionDict; // @synthesize localeToGroupDescriptionDict=_localeToGroupDescriptionDict;
 @property(retain, nonatomic) NSString *groupIconURL; // @synthesize groupIconURL=_groupIconURL;

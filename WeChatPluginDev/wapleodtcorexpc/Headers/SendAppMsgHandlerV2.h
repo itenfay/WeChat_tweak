@@ -38,7 +38,6 @@
 
 + (void)reportShareMsg:(id)arg1 contacts:(id)arg2 openSDKVersion:(id)arg3 shareSource:(unsigned long long)arg4;
 + (void)reportShareAppMsgInSessionMsgArr:(id)arg1 contacts:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenApiAppMsgGenerator *appMsgGenerator; // @synthesize appMsgGenerator=_appMsgGenerator;
 @property(retain, nonatomic) NSString *musicDataCDNMsgID; // @synthesize musicDataCDNMsgID=_musicDataCDNMsgID;
 @property(retain, nonatomic) NSMutableDictionary *extraInfo; // @synthesize extraInfo=_extraInfo;

@@ -26,7 +26,6 @@
 }
 
 + (id)getThumbIDWithChatName:(id)arg1 MsgLocalID:(unsigned int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tmpThumbID; // @synthesize tmpThumbID=_tmpThumbID;
 @property(retain, nonatomic) UIView *extraView; // @synthesize extraView=_extraView;
 @property(copy, nonatomic) NSString *floorName; // @synthesize floorName=_floorName;

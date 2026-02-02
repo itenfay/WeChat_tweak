@@ -17,7 +17,6 @@
     MISSING_TYPE *hasRequest;
 }
 
-- (void).cxx_destruct;
 - (void)onPlayingItemUpdateWithPlayingItem:(id)arg1;
 - (void)dealloc;
 

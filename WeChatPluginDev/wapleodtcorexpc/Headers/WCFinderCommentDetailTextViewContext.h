@@ -14,7 +14,6 @@
     struct _NSRange _backupStartRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange backupStartRange; // @synthesize backupStartRange=_backupStartRange;
 @property(copy, nonatomic) NSString *lastReplacementText; // @synthesize lastReplacementText=_lastReplacementText;
 @property(nonatomic) struct _NSRange lastReplacementRange; // @synthesize lastReplacementRange=_lastReplacementRange;

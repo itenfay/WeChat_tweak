@@ -25,7 +25,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double velocityRange; // @synthesize velocityRange=_velocityRange;
 @property(nonatomic) double velocity; // @synthesize velocity=_velocity;
 @property(nonatomic) double lifetime; // @synthesize lifetime=_lifetime;

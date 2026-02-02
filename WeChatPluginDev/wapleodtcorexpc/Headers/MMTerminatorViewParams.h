@@ -23,7 +23,6 @@
 }
 
 + (id)defaultParams;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSubtitleUserInteractionEnabled; // @synthesize isSubtitleUserInteractionEnabled=_isSubtitleUserInteractionEnabled;
 @property(retain, nonatomic) UIColor *subtitleColor; // @synthesize subtitleColor=_subtitleColor;
 @property(retain, nonatomic) UIFont *subtitleFont; // @synthesize subtitleFont=_subtitleFont;

@@ -12,7 +12,6 @@
     NSString *_codeId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *codeId; // @synthesize codeId=_codeId;
 
 @end

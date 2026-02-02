@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMRollableLabelView, MMRollableLabelViewConfig;
 
 @interface WCFinderLiveBannerSearchCell
@@ -14,7 +16,6 @@
 }
 
 + (struct CGSize)bannerSizeByInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMRollableLabelViewConfig *subTitleConfig; // @synthesize subTitleConfig=_subTitleConfig;
 @property(retain, nonatomic) MMRollableLabelViewConfig *masterTitleConfig; // @synthesize masterTitleConfig=_masterTitleConfig;
 @property(retain, nonatomic) MMRollableLabelView *subTitleTextView; // @synthesize subTitleTextView=_subTitleTextView;
@@ -33,4 +34,3 @@
 - (void)prepareForReuse;
 
 @end
-

@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_mimeTypeDic;
 + (void)PBArrayAdd_textFiles;
 + (void)PBArrayAdd_mediaFiles;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *mimeTypeDic; // @synthesize mimeTypeDic=_mimeTypeDic;
 @property(retain, nonatomic) NSMutableSet *textFiles; // @synthesize textFiles=_textFiles;
 @property(retain, nonatomic) NSMutableSet *mediaFiles; // @synthesize mediaFiles=_mediaFiles;

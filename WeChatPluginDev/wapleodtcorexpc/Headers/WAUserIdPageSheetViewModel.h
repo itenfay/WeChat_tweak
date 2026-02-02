@@ -10,7 +10,6 @@
     UserIdAuthorizePageInfo *_userIdPageInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UserIdAuthorizePageInfo *userIdPageInfo; // @synthesize userIdPageInfo=_userIdPageInfo;
 
 @end

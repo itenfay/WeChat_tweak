@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderMention_FinderMentionThankInfo_RedPackageInfo, NSDictionary, NSString, UIView, UIViewController, WCFinderDataItem, WCFinderJustWatchCollectionFeedItem, WCFinderJustWatchFeedInfo, WCFinderProfilePreloadInfo, WCFinderShareEntranceMessageInfo;
 @protocol WCFinderFeedBaseViewControllerProtocol;
@@ -70,7 +71,6 @@
 }
 
 + (id)defaultParams;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType profileCloseCallback; // @synthesize profileCloseCallback=_profileCloseCallback;
 @property(retain, nonatomic) WCFinderJustWatchFeedInfo *jumpFeedInfo; // @synthesize jumpFeedInfo=_jumpFeedInfo;
 @property(copy, nonatomic) NSDictionary *additionalClientUdfKV; // @synthesize additionalClientUdfKV=_additionalClientUdfKV;
@@ -135,4 +135,3 @@
 - (id)init;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, UIImageView, UILabel;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)iconImageWithType:(long long)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickBlock; // @synthesize clickBlock=_clickBlock;
 @property(retain, nonatomic) NSArray *iconImageArray; // @synthesize iconImageArray=_iconImageArray;
 @property(nonatomic) double kMidInterval; // @synthesize kMidInterval=_kMidInterval;
@@ -61,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

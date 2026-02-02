@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAssetWriter, AVAssetWriterInput, NSString;
 
 @interface FaceRecogVideoWriter
@@ -15,7 +17,6 @@
 }
 
 + (id)writerForPath:(id)arg1 Height:(long long)arg2 width:(long long)arg3 channels:(int)arg4 samples:(double)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hadStartSession; // @synthesize hadStartSession=_hadStartSession;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) AVAssetWriterInput *audioInput; // @synthesize audioInput=_audioInput;
@@ -33,4 +34,3 @@
 - (void)dealloc;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMCPLabel, MMHeadImageView, MMUIViewController, NSString, TLProfileDragAnimateHelper, TLProfileModel, TLProfileNicknameContainerView, UIImageView, UITableView, UIView;
 
 @interface TLProfileExpandableHeaderView
@@ -30,7 +32,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *accessibilityView; // @synthesize accessibilityView=_accessibilityView;
 @property(nonatomic) _Bool showSignature; // @synthesize showSignature=_showSignature;
 @property(retain, nonatomic) MMCPLabel *signatureLabel; // @synthesize signatureLabel=_signatureLabel;
@@ -77,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
     int _height;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)pixelFormatFromFrame:(struct TPFrame *)arg1;
 - (void)uploadTexturesToCommandEncoder:(id)arg1;
 - (_Bool)setupTexturesForFrame:(struct TPFrame *)arg1;

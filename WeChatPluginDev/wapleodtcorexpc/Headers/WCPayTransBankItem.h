@@ -21,7 +21,6 @@
     NSArray *_m_enterTimeList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_enterTimeList; // @synthesize m_enterTimeList=_m_enterTimeList;
 @property(retain, nonatomic) NSString *m_nsPinYin; // @synthesize m_nsPinYin=_m_nsPinYin;
 @property(nonatomic) unsigned long long m_minPondage; // @synthesize m_minPondage=_m_minPondage;

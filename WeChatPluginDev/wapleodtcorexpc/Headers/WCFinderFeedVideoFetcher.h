@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderFeedContentVM, WCFinderFeedMediaWrap;
 
@@ -16,7 +17,6 @@
 
 + (id)localFilePathOfMediaWrap:(id)arg1;
 + (id)fetcherWithContentVM:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedMediaWrap *currentDownloadingMediaWrap; // @synthesize currentDownloadingMediaWrap=_currentDownloadingMediaWrap;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

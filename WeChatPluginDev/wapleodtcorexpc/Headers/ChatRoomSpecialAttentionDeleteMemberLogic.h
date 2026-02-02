@@ -15,7 +15,6 @@
     CContact *_m_deleteAttentionContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *m_deleteAttentionContact; // @synthesize m_deleteAttentionContact=_m_deleteAttentionContact;
 @property(retain, nonatomic) NSArray *m_attentionMemberContactList; // @synthesize m_attentionMemberContactList=_m_attentionMemberContactList;
 @property(nonatomic) __weak id <ChatRoomSpecialAttentionMemberPageLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 @protocol _TtP6WeChat26IMBSclExternalViewDelegate_;
@@ -27,7 +28,6 @@
     MISSING_TYPE *magicbrush;
 }
 
-- (void).cxx_destruct;
 - (void)onCanvasViewFirstFrameRendered:(unsigned int)arg1;
 - (void)onCanvasViewDestroy:(unsigned int)arg1 view:(id)arg2;
 - (void)onCanvasViewLayout:(unsigned int)arg1 view:(id)arg2 left:(float)arg3 top:(float)arg4 width:(float)arg5 height:(float)arg6;
@@ -66,4 +66,3 @@
 - (void)resetReport;
 
 @end
-

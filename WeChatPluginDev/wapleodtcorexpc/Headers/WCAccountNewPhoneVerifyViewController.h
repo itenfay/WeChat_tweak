@@ -18,7 +18,6 @@
     UIButton *_nextButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *nextButton; // @synthesize nextButton=_nextButton;
 @property(retain, nonatomic) MMUIButton *changePageButton; // @synthesize changePageButton=_changePageButton;
 @property(retain, nonatomic) WCAccountNewPhoneVerifyPageView *pageView; // @synthesize pageView=_pageView;

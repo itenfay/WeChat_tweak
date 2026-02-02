@@ -25,7 +25,6 @@
     WCRedEnvelopesExpiredSkinViewControllerFooter *_footerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCRedEnvelopesExpiredSkinViewControllerFooter *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) __weak id <WCRedEnvelopeSelectSkinFlowViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) HbEnvelopSource *currentSource; // @synthesize currentSource=_currentSource;

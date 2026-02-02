@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) __weak SemanticsObject *semanticsObject; // @synthesize semanticsObject=_semanticsObject;
 - (_Bool)accessibilityScroll:(long long)arg1;
 - (id)accessibilityContainer;

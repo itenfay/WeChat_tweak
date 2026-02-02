@@ -17,7 +17,6 @@
     struct objc_ivar *_ivar;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStrong; // @synthesize isStrong=_isStrong;
 @property(readonly, nonatomic) struct objc_ivar *ivar; // @synthesize ivar=_ivar;
 @property(readonly, nonatomic) unsigned long long index; // @synthesize index=_index;

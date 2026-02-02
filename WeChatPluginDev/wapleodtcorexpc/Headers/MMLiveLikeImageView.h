@@ -12,7 +12,6 @@
     MMLiveLikeAnimationRoute *_animationRoute;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveLikeAnimationRoute *animationRoute; // @synthesize animationRoute=_animationRoute;
 
 @end

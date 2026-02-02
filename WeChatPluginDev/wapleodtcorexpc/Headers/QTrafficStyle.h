@@ -21,7 +21,6 @@
     UIColor *_seriouseCongestedBorderColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(nonatomic) int borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(retain, nonatomic) UIColor *seriouseCongestedBorderColor; // @synthesize seriouseCongestedBorderColor=_seriouseCongestedBorderColor;

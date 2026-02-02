@@ -13,7 +13,6 @@
 }
 
 + (id)fromProto:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *plateStr; // @synthesize plateStr=_plateStr;
 - (id)init;
 

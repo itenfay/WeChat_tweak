@@ -14,7 +14,6 @@
 + (CDStruct_3ec1b870)calcaulateBounds:(struct CGPoint)arg1 icon:(id)arg2 position:(const struct CLLocationCoordinate2D *)arg3 zoomLevel:(double *)arg4;
 + (id)groundOverlayWithCoordinate:(struct CLLocationCoordinate2D)arg1 zoomLevel:(double)arg2 anchor:(struct CGPoint)arg3 icon:(id)arg4;
 + (id)groundOverlayWithBounds:(CDStruct_3ec1b870)arg1 icon:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 - (void)recordGLoverlayCount:(id)arg1;
 - (_Bool)validateDisplayLevelParam:(long long)arg1;

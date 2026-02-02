@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ForwardMessageLogicController, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSString, WCFinderContact, WCFinderProfileOverviewPageModel, WCFinderProfilePrivateViewModel, WCFinderPushProfileParams, WCFinderStreamProfileHeadData, WCFinderStreamProfilePageItem;
 @protocol WCFinderStreamProfileViewModelDelegate;
@@ -47,7 +48,6 @@
 + (id)supportPluginClasses;
 + (id)localPageClasses;
 + (id)supportPageClasses;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderProfileOverviewPageModel *overviewModel; // @synthesize overviewModel=_overviewModel;
 @property(nonatomic) int selectedPageIdWhenDataLoaded; // @synthesize selectedPageIdWhenDataLoaded=_selectedPageIdWhenDataLoaded;
 @property(retain, nonatomic) NSString *selectedPageWhenDataLoaded; // @synthesize selectedPageWhenDataLoaded=_selectedPageWhenDataLoaded;
@@ -190,4 +190,3 @@
 @property(readonly) Class superclass;
 
 @end
-

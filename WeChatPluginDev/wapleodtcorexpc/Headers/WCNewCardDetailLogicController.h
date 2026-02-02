@@ -43,7 +43,6 @@
     WCCardOfflineCodeConfigData *_codeConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCardOfflineCodeConfigData *codeConfig; // @synthesize codeConfig=_codeConfig;
 @property(nonatomic) unsigned int offlineCodeStatus; // @synthesize offlineCodeStatus=_offlineCodeStatus;
 @property(retain, nonatomic) NSString *dynamicCode; // @synthesize dynamicCode=_dynamicCode;

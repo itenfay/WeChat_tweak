@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSTimer;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _block;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) double timeInterval; // @synthesize timeInterval=_timeInterval;
 @property(nonatomic) _Bool addedInToRunloop; // @synthesize addedInToRunloop=_addedInToRunloop;
@@ -34,4 +34,3 @@
 - (_Bool)isOutOfMaxRetry;
 
 @end
-

@@ -19,7 +19,6 @@
     struct CGPoint _toPosition;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *previousCenter; // @synthesize previousCenter=_previousCenter;
 @property(retain, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
 @property(retain, nonatomic) NSNumber *persistOpacity; // @synthesize persistOpacity=_persistOpacity;

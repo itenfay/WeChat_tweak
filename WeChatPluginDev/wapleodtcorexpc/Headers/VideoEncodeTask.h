@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ABAReportPrams, AVAsset, AVMutableVideoComposition, NSMutableArray, NSString, NSURL, VideoEncodeParams;
 
@@ -29,7 +30,6 @@
 
 + (_Bool)isCancel:(id)arg1;
 + (id)errorWithCode:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ABAReportPrams *videoScoreParams; // @synthesize videoScoreParams=_videoScoreParams;
 @property(copy, nonatomic) NSString *exportFilePath; // @synthesize exportFilePath=_exportFilePath;
 @property(retain, nonatomic) NSMutableArray *audioSessionStatus; // @synthesize audioSessionStatus=_audioSessionStatus;
@@ -73,4 +73,3 @@
 - (id)init;
 
 @end
-

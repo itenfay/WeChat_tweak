@@ -27,7 +27,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) double cacheReaderStyleCoverContainerViewHeight; // @synthesize cacheReaderStyleCoverContainerViewHeight=_cacheReaderStyleCoverContainerViewHeight;
 @property(nonatomic) double cacheViewHeight; // @synthesize cacheViewHeight=_cacheViewHeight;
 @property(nonatomic) _Bool isTitleUp; // @synthesize isTitleUp=_isTitleUp;

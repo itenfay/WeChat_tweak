@@ -16,7 +16,6 @@
     unsigned long long _enterScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(copy, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 @property(retain, nonatomic) NSURL *dirURL; // @synthesize dirURL=_dirURL;

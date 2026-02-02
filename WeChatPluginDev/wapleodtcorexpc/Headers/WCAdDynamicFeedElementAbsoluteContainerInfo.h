@@ -14,7 +14,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicFeedElementRollTextInfo *rollTextInfo; // @synthesize rollTextInfo=_rollTextInfo;
 @property(retain, nonatomic) WCAdDynamicFeedElementPromotionInfo *promotionInfo; // @synthesize promotionInfo=_promotionInfo;
 - (id)initWithCoder:(id)arg1;

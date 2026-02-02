@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderProfileJustWatchTools : NSObject
 {
@@ -13,4 +14,3 @@
 + (void)ensurePullableJustWatchData:(id)arg1 watchAction:(id)arg2 headData:(id)arg3 pullableFeedModelCreator:(CDUnknownBlockType)arg4;
 
 @end
-

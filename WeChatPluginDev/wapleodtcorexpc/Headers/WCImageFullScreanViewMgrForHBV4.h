@@ -10,7 +10,6 @@
     WCImageFullScreenWindowForHBV4 *m_view;
 }
 
-- (void).cxx_destruct;
 - (void)onWindowAnimationHide;
 - (void)onWindowAnimationWillHide;
 - (void)showErrorTip:(id)arg1;

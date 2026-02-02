@@ -22,7 +22,6 @@
     MMCPUCriticalEvent *_criticalEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCPUCriticalEvent *criticalEvent; // @synthesize criticalEvent=_criticalEvent;
 @property(nonatomic) double lastReportTime; // @synthesize lastReportTime=_lastReportTime;
 @property(nonatomic) double reportRatio; // @synthesize reportRatio=_reportRatio;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveTaskId, MMPollingFetchQueue, NSData, NSMutableDictionary, NSTimer;
 
@@ -20,7 +21,6 @@
     NSMutableDictionary *_taskIntervalCache;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasStoped; // @synthesize hasStoped=_hasStoped;
 @property(readonly, nonatomic) NSMutableDictionary *taskIntervalCache; // @synthesize taskIntervalCache=_taskIntervalCache;
 @property(readonly, nonatomic) NSMutableDictionary *executeTaskMap; // @synthesize executeTaskMap=_executeTaskMap;
@@ -58,4 +58,3 @@
 - (id)initWithTaskId:(id)arg1 requestParamsMaker:(CDUnknownBlockType)arg2;
 
 @end
-

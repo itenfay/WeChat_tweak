@@ -19,7 +19,6 @@
     UIView *_separateLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separateLine; // @synthesize separateLine=_separateLine;
 @property(retain, nonatomic) UIScrollView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UIButton *selectStreetButton; // @synthesize selectStreetButton=_selectStreetButton;

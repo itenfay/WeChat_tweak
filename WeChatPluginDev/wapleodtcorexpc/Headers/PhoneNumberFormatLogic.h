@@ -10,7 +10,6 @@
     NSMutableDictionary *m_dicConfig;
 }
 
-- (void).cxx_destruct;
 - (id)getPrivacyPhoneNumFromFullPhoneNum:(id)arg1;
 - (id)getPhoneNumFromFullPhoneNum:(id)arg1;
 - (id)getCountryCodeFromFullPhoneNum:(id)arg1;

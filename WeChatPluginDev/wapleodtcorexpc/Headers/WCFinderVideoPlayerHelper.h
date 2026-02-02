@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderVideoPlayerHelper : NSObject
 {
@@ -15,4 +16,3 @@
 + (void)updatePlayerPreloadInfo:(id)arg1 playerView:(id)arg2;
 
 @end
-

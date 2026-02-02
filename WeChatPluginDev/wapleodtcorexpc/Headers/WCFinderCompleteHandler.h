@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderCompleteHandler : NSObject
 {
@@ -14,7 +15,6 @@
 }
 
 + (id)handlerWithComplete:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCanceled; // @synthesize isCanceled=_isCanceled;
 @property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
@@ -26,4 +26,3 @@
 - (void)dealloc;
 
 @end
-

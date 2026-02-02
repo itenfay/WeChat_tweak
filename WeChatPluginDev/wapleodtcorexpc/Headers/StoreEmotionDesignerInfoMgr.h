@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface StoreEmotionDesignerInfoMgr
@@ -13,7 +15,6 @@
     NSMutableDictionary *_getDesignerBlockDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *getDesignerBlockDic; // @synthesize getDesignerBlockDic=_getDesignerBlockDic;
 @property(retain, nonatomic) NSMutableDictionary *getDesignerAcctInfoCgiDic; // @synthesize getDesignerAcctInfoCgiDic=_getDesignerAcctInfoCgiDic;
 @property(retain, nonatomic) NSMutableDictionary *designerIdDecodeDic; // @synthesize designerIdDecodeDic=_designerIdDecodeDic;
@@ -55,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

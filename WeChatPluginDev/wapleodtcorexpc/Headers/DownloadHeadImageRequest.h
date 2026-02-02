@@ -16,7 +16,6 @@
     NSString *url;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUseWxpc; // @synthesize isUseWxpc;
 @property(nonatomic) unsigned char category; // @synthesize category;
 @property(nonatomic) unsigned int requestCount; // @synthesize requestCount;

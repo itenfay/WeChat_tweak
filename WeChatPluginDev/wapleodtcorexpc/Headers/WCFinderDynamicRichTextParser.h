@@ -14,7 +14,6 @@
 }
 
 + (id)parserWithRichText:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSString *richText; // @synthesize richText=_richText;
 - (id)createRichTextContentWithColor:(id)arg1 iconSize:(struct CGSize)arg2;

@@ -69,7 +69,6 @@
 + (void)PBArrayAdd_conType;
 + (void)PBArrayAdd_aliasName;
 + (void)PBArrayAdd_userName;
-- (void).cxx_destruct;
 @property(nonatomic) long long referMsgId; // @synthesize referMsgId=_referMsgId;
 @property(retain, nonatomic) NSString *atUserList; // @synthesize atUserList=_atUserList;
 @property(nonatomic) unsigned int draftTime; // @synthesize draftTime=_draftTime;

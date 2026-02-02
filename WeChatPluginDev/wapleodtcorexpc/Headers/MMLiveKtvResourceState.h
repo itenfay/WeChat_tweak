@@ -16,7 +16,6 @@
     MMLiveStorageCleanupPinningToken *_themeResourcesPinToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *themeResourcesPinToken; // @synthesize themeResourcesPinToken=_themeResourcesPinToken;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) MMLiveKtvThemeItem *currentTheme; // @synthesize currentTheme=_currentTheme;

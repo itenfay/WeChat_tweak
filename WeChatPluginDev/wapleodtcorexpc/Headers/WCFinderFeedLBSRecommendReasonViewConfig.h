@@ -18,7 +18,6 @@
 
 + (id)summaryConfig;
 + (id)titleConfig;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceUnbold; // @synthesize forceUnbold=_forceUnbold;
 @property(nonatomic) unsigned long long lineLimit; // @synthesize lineLimit=_lineLimit;
 @property(nonatomic) _Bool haveSplit; // @synthesize haveSplit=_haveSplit;

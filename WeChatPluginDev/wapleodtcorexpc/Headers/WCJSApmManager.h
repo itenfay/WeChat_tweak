@@ -12,7 +12,6 @@
 }
 
 + (id)weappInfoForName:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) JSApmABTestItem *abtest; // @synthesize abtest=_abtest;
 - (void)setupJSC2;

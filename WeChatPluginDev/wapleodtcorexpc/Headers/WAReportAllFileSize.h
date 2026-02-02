@@ -18,7 +18,6 @@
     long long _runtimeFileOccupation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool runtimeSpaceStaticsEnable; // @synthesize runtimeSpaceStaticsEnable=_runtimeSpaceStaticsEnable;
 @property(nonatomic) long long runtimeFileOccupation; // @synthesize runtimeFileOccupation=_runtimeFileOccupation;
 @property(nonatomic) _Bool isTriggerAllAppClean; // @synthesize isTriggerAllAppClean=_isTriggerAllAppClean;

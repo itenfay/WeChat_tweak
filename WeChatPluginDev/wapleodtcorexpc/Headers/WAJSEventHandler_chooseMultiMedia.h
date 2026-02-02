@@ -27,7 +27,6 @@
     long long _pickAlbumType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPickerCustom; // @synthesize isPickerCustom=_isPickerCustom;
 @property(nonatomic) long long pickAlbumType; // @synthesize pickAlbumType=_pickAlbumType;
 @property(nonatomic) unsigned long long sightCameraMode; // @synthesize sightCameraMode=_sightCameraMode;

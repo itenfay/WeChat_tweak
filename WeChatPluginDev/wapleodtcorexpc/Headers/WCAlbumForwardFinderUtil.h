@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSMutableArray, NSString, WCDataItem, WCFinderSnsPostProcessMgr;
 
@@ -23,7 +24,6 @@
 + (long long)mediaListType:(id)arg1;
 + (id)selectMediaListFilePaths:(id)arg1;
 + (id)selectMediaListNotDownloadFinish:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSnsPostProcessMgr *finderPostMgr; // @synthesize finderPostMgr=_finderPostMgr;
 @property(nonatomic) __weak MMUIViewController *currentVc; // @synthesize currentVc=_currentVc;
 @property(retain, nonatomic) NSMutableArray *prepardDownloadMediaInfos; // @synthesize prepardDownloadMediaInfos=_prepardDownloadMediaInfos;
@@ -55,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

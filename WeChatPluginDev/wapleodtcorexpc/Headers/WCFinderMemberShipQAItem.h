@@ -21,7 +21,6 @@
 + (void)PBArrayAdd_refAnswerObject;
 + (void)PBArrayAdd_refAnswerContent;
 + (void)PBArrayAdd_qaType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *likeList; // @synthesize likeList=_likeList;
 @property(retain, nonatomic) WCFinderDataItem *refAnswerObject; // @synthesize refAnswerObject=_refAnswerObject;
 @property(copy, nonatomic) NSString *refAnswerContent; // @synthesize refAnswerContent=_refAnswerContent;

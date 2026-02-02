@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, PAGView;
 
@@ -20,7 +21,6 @@
     long long _countDownAnimDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long countDownAnimDuration; // @synthesize countDownAnimDuration=_countDownAnimDuration;
 @property(retain, nonatomic) PAGView *countDownPAGView; // @synthesize countDownPAGView=_countDownPAGView;
 @property(nonatomic) long long prepareAnimDuration; // @synthesize prepareAnimDuration=_prepareAnimDuration;
@@ -61,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

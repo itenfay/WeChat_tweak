@@ -40,7 +40,6 @@
 + (void)PBArrayAdd_nearbyList;
 + (void)PBArrayAdd_memberCardList;
 + (void)PBArrayAdd_expiringList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SecEntranceCardList *secEntranceCardList; // @synthesize secEntranceCardList=_secEntranceCardList;
 @property(nonatomic) unsigned int homePageCardNum; // @synthesize homePageCardNum=_homePageCardNum;
 @property(retain, nonatomic) CardsHomePageList *cardsHomePageList; // @synthesize cardsHomePageList=_cardsHomePageList;

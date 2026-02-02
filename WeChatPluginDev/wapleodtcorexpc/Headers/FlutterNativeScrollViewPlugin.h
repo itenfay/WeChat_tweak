@@ -14,7 +14,6 @@
     UIView *_flutterView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *flutterView; // @synthesize flutterView=_flutterView;
 @property(retain, nonatomic) FlutterNativeScrollView *nativeScrollView; // @synthesize nativeScrollView=_nativeScrollView;
 @property(retain, nonatomic) FlutterMethodChannel *channel; // @synthesize channel=_channel;

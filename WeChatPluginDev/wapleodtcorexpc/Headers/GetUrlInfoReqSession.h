@@ -20,7 +20,6 @@
 + (id)sns:(id)arg1 snsId:(id)arg2;
 + (id)groupChat:(id)arg1 msgUserName:(id)arg2;
 + (id)singleChat:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *msgUserName; // @synthesize msgUserName=_msgUserName;
 @property(retain, nonatomic) NSString *objId; // @synthesize objId=_objId;
 @property(nonatomic) unsigned int sessionType; // @synthesize sessionType=_sessionType;

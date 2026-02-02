@@ -23,7 +23,6 @@
 }
 
 + (id)generateStateButtonWithHasText:(_Bool)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) ColorGradientView *gradientView; // @synthesize gradientView=_gradientView;
 @property(retain, nonatomic) MMUIButton *privacyButton; // @synthesize privacyButton=_privacyButton;

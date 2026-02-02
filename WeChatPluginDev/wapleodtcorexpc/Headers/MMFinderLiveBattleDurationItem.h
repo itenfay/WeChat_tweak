@@ -14,7 +14,6 @@
 }
 
 + (id)itemsWithBackendArray:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(nonatomic) unsigned int interval; // @synthesize interval=_interval;
 - (_Bool)isEqual:(id)arg1;

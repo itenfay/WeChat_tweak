@@ -15,7 +15,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderExtPostPreCheckModel *preCheckModel; // @synthesize preCheckModel=_preCheckModel;
 @property(copy, nonatomic) NSString *extParams; // @synthesize extParams=_extParams;
 @property(nonatomic) unsigned long long extType; // @synthesize extType=_extType;

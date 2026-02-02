@@ -12,7 +12,6 @@
     FTSIntelligentMsgSearchResultHandler *_handler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak FTSIntelligentMsgSearchResultHandler *handler; // @synthesize handler=_handler;
 
 @end

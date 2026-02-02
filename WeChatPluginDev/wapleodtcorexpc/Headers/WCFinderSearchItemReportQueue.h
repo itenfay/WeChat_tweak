@@ -17,7 +17,6 @@
     long long _lastReportExposeTimeInMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lastReportExposeTimeInMs; // @synthesize lastReportExposeTimeInMs=_lastReportExposeTimeInMs;
 @property(retain, nonatomic) NSMutableArray *pendingReportItems; // @synthesize pendingReportItems=_pendingReportItems;
 @property(retain, nonatomic) NSMutableSet *reportedItems; // @synthesize reportedItems=_reportedItems;

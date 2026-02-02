@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, UIView, WCFinderTransitionAnimatorList, WCFinderTransitionUserInfo;
 @protocol WCFinderTrailingAnimatorDelegate;
@@ -19,7 +20,6 @@
     UIView *_copyedTabBar;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *copyedTabBar; // @synthesize copyedTabBar=_copyedTabBar;
 @property(retain, nonatomic) UIView *cellMaskView; // @synthesize cellMaskView=_cellMaskView;
 @property(retain, nonatomic) NSMutableArray *completions; // @synthesize completions=_completions;
@@ -41,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

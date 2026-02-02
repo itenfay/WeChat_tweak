@@ -27,7 +27,6 @@
     NSMutableSet *_keywordSet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int firstScreenAssetNum; // @synthesize firstScreenAssetNum=_firstScreenAssetNum;
 @property(nonatomic) int firstAssetIndex; // @synthesize firstAssetIndex=_firstAssetIndex;
 @property(retain, nonatomic) NSMutableSet *keywordSet; // @synthesize keywordSet=_keywordSet;

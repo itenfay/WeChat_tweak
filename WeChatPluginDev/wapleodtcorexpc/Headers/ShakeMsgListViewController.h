@@ -16,7 +16,6 @@
     int _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 - (void)onShakeMsgUnreadCountChanged;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

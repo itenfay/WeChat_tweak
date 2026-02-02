@@ -54,7 +54,6 @@
     NSString *_extra_buy_title;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enable_union_pay; // @synthesize enable_union_pay=_enable_union_pay;
 @property(retain, nonatomic) NSString *extra_buy_title; // @synthesize extra_buy_title=_extra_buy_title;
 @property(retain, nonatomic) NSString *favor_title; // @synthesize favor_title=_favor_title;

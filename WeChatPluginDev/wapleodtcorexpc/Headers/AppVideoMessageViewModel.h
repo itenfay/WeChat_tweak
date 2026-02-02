@@ -15,7 +15,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CContact *bizContact; // @synthesize bizContact=_bizContact;
 @property(readonly, nonatomic) NSString *coverImgUrl; // @synthesize coverImgUrl=_coverImgUrl;
 @property(readonly, nonatomic) _Bool isWSVideo; // @synthesize isWSVideo=_isWSVideo;

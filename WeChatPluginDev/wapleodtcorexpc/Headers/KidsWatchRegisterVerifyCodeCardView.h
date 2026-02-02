@@ -23,7 +23,6 @@
     unsigned long long _countdown;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long countdown; // @synthesize countdown=_countdown;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) UIButton *sendVerifyCodeButton; // @synthesize sendVerifyCodeButton=_sendVerifyCodeButton;

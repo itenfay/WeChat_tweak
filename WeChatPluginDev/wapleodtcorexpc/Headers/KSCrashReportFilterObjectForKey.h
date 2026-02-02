@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,7 +15,6 @@
 }
 
 + (id)filterWithKey:(id)arg1 allowNotFound:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allowNotFound; // @synthesize allowNotFound=_allowNotFound;
 @property(retain, nonatomic) id key; // @synthesize key=_key;
 - (void)filterReports:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

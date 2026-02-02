@@ -11,7 +11,6 @@
     long long _finishedLength;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long finishedLength; // @synthesize finishedLength=_finishedLength;
 @property(retain, nonatomic) NSString *fileKey; // @synthesize fileKey=_fileKey;
 - (void)OnCdnUpload:(id)arg1;

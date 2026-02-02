@@ -18,7 +18,6 @@
     SpeakTextLogicV2 *_speakLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SpeakTextLogicV2 *speakLogic; // @synthesize speakLogic=_speakLogic;
 @property(retain, nonatomic) NSString *reportIdentifier; // @synthesize reportIdentifier=_reportIdentifier;
 @property(nonatomic) __weak id <SpeakTextLogicControllerDelegate> delegate; // @synthesize delegate=_delegate;

@@ -14,7 +14,6 @@
     UIImageView *_selectedImgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *selectedImgView; // @synthesize selectedImgView=_selectedImgView;
 @property(retain, nonatomic) UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
 @property(retain, nonatomic) UILabel *nickLabel; // @synthesize nickLabel=_nickLabel;

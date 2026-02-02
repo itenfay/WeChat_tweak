@@ -12,7 +12,6 @@
     NSString *_command;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *command; // @synthesize command=_command;
 @property(retain, nonatomic) NSMutableSet *updatedRedDotTipsPaths; // @synthesize updatedRedDotTipsPaths=_updatedRedDotTipsPaths;
 @property(retain, nonatomic) NSMutableSet *observerRedDotTipsPaths; // @synthesize observerRedDotTipsPaths=_observerRedDotTipsPaths;

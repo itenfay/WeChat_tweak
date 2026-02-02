@@ -14,7 +14,6 @@
 }
 
 + (double)headerHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *sectionNameLabel; // @synthesize sectionNameLabel=_sectionNameLabel;
 @property(retain, nonatomic) NSString *sectionName; // @synthesize sectionName=_sectionName;
 - (void)layoutSubviews;

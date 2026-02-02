@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_deeplinkUrl;
 + (void)PBArrayAdd_brandUserName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deeplinkUrl; // @synthesize deeplinkUrl=_deeplinkUrl;
 @property(retain, nonatomic) NSString *brandUserName; // @synthesize brandUserName=_brandUserName;
 - (void)encodeWithCoder:(id)arg1;

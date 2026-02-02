@@ -12,7 +12,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *extData; // @synthesize extData=_extData;
 @property(copy, nonatomic) NSString *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
 

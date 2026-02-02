@@ -22,7 +22,6 @@
 
 + (id)getVersion;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) YTFaceTracker *YTFaceTracker; // @synthesize YTFaceTracker=_YTFaceTracker;
 @property(nonatomic) int defaultDetectInterval; // @synthesize defaultDetectInterval=_defaultDetectInterval;
 @property(nonatomic) CDStruct_0edc81f6 trackResInfo; // @synthesize trackResInfo=_trackResInfo;

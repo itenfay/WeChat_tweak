@@ -27,7 +27,6 @@
 
 + (double)maxWidthWithSuperviewWidth:(double)arg1 leftMargin:(double)arg2 taskId:(id)arg3;
 + (double)minHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveConnectMicUser *connectMicUserInfo; // @synthesize connectMicUserInfo=_connectMicUserInfo;
 @property(retain, nonatomic) MMFinderLiveClockCountdownView *paidMicCountdownView; // @synthesize paidMicCountdownView=_paidMicCountdownView;
 @property(retain, nonatomic) PAGView *soundIndicatorView; // @synthesize soundIndicatorView=_soundIndicatorView;

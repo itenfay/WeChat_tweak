@@ -42,7 +42,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *showTimestampEncryptKey; // @synthesize showTimestampEncryptKey;
 @property(nonatomic) unsigned int localUpdateTime; // @synthesize localUpdateTime;
 @property(nonatomic) _Bool needInsertShowTimestamp; // @synthesize needInsertShowTimestamp;

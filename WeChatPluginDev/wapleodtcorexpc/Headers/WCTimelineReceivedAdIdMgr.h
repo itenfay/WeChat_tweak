@@ -10,7 +10,6 @@
     NSMutableArray *_receivedAdList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *receivedAdList; // @synthesize receivedAdList=_receivedAdList;
 - (_Bool)isAdReceived:(id)arg1;
 - (void)deleteAdvertiseDateItemList:(id)arg1;

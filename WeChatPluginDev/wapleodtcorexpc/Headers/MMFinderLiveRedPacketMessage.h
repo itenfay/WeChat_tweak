@@ -15,7 +15,6 @@
     NSString *_redPacketId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *redPacketId; // @synthesize redPacketId=_redPacketId;
 @property(copy, nonatomic) NSString *finderNonceId; // @synthesize finderNonceId=_finderNonceId;
 @property(copy, nonatomic) NSString *finderObjectId; // @synthesize finderObjectId=_finderObjectId;

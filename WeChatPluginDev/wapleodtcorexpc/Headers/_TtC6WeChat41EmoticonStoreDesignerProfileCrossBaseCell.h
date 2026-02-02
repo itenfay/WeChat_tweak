@@ -18,7 +18,6 @@
     MISSING_TYPE *layoutHorizontalInset;
 }
 
-- (void).cxx_destruct;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDecelerating:(id)arg1;

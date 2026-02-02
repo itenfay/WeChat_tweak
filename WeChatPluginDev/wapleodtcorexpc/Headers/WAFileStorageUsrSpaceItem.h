@@ -15,7 +15,6 @@
     double _sizeInBytes;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastOpenTime; // @synthesize lastOpenTime=_lastOpenTime;
 @property(nonatomic) double sizeInBytes; // @synthesize sizeInBytes=_sizeInBytes;
 @property(copy, nonatomic) NSString *usrDir; // @synthesize usrDir=_usrDir;

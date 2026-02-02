@@ -13,7 +13,6 @@
     NSString *_widgetId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *widgetId; // @synthesize widgetId=_widgetId;
 @property(retain, nonatomic) NSString *subSessionId; // @synthesize subSessionId=_subSessionId;
 @property(retain, nonatomic) NSString *tagId; // @synthesize tagId=_tagId;

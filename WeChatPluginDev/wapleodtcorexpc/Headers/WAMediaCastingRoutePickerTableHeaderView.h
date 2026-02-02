@@ -15,7 +15,6 @@
     MMProgressViewEx *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMProgressViewEx *loadingView; // @synthesize loadingView=_loadingView;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) MMUILabel *label; // @synthesize label=_label;

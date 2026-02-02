@@ -11,7 +11,6 @@
 }
 
 + (_Bool)canCreateViewModelWithSectionData:(id)arg1 accountIndex:(unsigned int)arg2 appMsgIndex:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *titleArrStyles; // @synthesize titleArrStyles=_titleArrStyles;
 - (_Bool)isShowLargeCover;
 - (id)coverUrl;

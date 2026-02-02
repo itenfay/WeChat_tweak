@@ -19,7 +19,6 @@
     WCCommentLikeView *_commentLikeView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCommentLikeView *commentLikeView; // @synthesize commentLikeView=_commentLikeView;
 @property(nonatomic) long long section; // @synthesize section=_section;
 @property(nonatomic) _Bool enableShowFinder; // @synthesize enableShowFinder=_enableShowFinder;

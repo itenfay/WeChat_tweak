@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
@@ -15,7 +16,6 @@
     NSData *_thumbImageData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasFinished; // @synthesize hasFinished=_hasFinished;
 @property(retain, nonatomic) NSData *thumbImageData; // @synthesize thumbImageData=_thumbImageData;
 @property(retain, nonatomic) NSString *currentDownloadingUrl; // @synthesize currentDownloadingUrl=_currentDownloadingUrl;
@@ -39,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

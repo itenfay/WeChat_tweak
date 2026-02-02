@@ -20,7 +20,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableCustomAudio; // @synthesize enableCustomAudio=_enableCustomAudio;
 @property(nonatomic) _Bool isInRoom; // @synthesize isInRoom=_isInRoom;
 @property(retain, nonatomic) NSMutableArray *videoPixelBufferList; // @synthesize videoPixelBufferList=_videoPixelBufferList;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, NSString;
 
 @interface MMAssetForLocalVideo
@@ -12,7 +14,6 @@
     AVAsset *_avAsset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAsset *avAsset; // @synthesize avAsset=_avAsset;
 @property(retain, nonatomic) NSString *localFilePath; // @synthesize localFilePath=_localFilePath;
 @property(retain, nonatomic) NSString *localAssetId; // @synthesize localAssetId=_localAssetId;
@@ -42,4 +43,3 @@
 - (id)initWithUrl:(id)arg1 IsNeedOrigin:(_Bool)arg2;
 
 @end
-

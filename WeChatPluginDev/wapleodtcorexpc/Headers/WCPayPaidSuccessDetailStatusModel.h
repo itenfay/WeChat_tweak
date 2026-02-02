@@ -15,7 +15,6 @@
     NSString *_detailColor;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *detailColor; // @synthesize detailColor=_detailColor;
 @property(copy, nonatomic) NSString *titleColor; // @synthesize titleColor=_titleColor;
 @property(copy, nonatomic) NSString *detail; // @synthesize detail=_detail;

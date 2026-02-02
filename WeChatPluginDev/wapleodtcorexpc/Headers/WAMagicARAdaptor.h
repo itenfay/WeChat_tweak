@@ -14,7 +14,6 @@
     id <WAMagicARAdaptorDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 - (void)releaseContext;
 - (struct __CVBuffer *)getCurCVPixelBuffer;
 - (id)initWithJSContext:(struct OpaqueJSContext *)arg1 parent:(struct OpaqueJSValue *)arg2 delegate:(id)arg3;

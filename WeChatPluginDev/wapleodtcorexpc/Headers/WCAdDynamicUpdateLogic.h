@@ -13,7 +13,6 @@
     NSMutableDictionary *_updateTimeDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *updateTimeDic; // @synthesize updateTimeDic=_updateTimeDic;
 @property(nonatomic) __weak id <WCLogicMgrDelegate> wcLogicMgrDelegate; // @synthesize wcLogicMgrDelegate=_wcLogicMgrDelegate;
 @property(nonatomic) __weak id <WCAdDynamicUpdateLogicDelegate> delegate; // @synthesize delegate=_delegate;

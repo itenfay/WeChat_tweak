@@ -16,7 +16,6 @@
     NSMutableSet *_eventIdDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *eventIdDic; // @synthesize eventIdDic=_eventIdDic;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workerThreadQueue; // @synthesize workerThreadQueue=_workerThreadQueue;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;

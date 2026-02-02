@@ -19,7 +19,6 @@
     NSMutableArray *_separatorViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *separatorViews; // @synthesize separatorViews=_separatorViews;
 @property(retain, nonatomic) NSMutableArray *menuItemViews; // @synthesize menuItemViews=_menuItemViews;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;

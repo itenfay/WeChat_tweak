@@ -23,7 +23,6 @@
     UIImageView *blurBgImageView;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isMakeUnKey; // @synthesize isMakeUnKey=_isMakeUnKey;
 @property(readonly, nonatomic) _Bool isMakeUnVisible; // @synthesize isMakeUnVisible=_isMakeUnVisible;
 @property(nonatomic) _Bool isNeedNavCtrl; // @synthesize isNeedNavCtrl;

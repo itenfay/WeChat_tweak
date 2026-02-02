@@ -10,7 +10,6 @@
     OpenApiParameter *_parameter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenApiParameter *parameter; // @synthesize parameter=_parameter;
 - (void)cancelOpenProfile;
 - (void)createWechatOpenProfile;

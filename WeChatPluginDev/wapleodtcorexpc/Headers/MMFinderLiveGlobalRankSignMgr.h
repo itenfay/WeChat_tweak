@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveTask, NSMutableDictionary, NSString;
 
 @interface MMFinderLiveGlobalRankSignMgr
@@ -12,7 +14,6 @@
     NSMutableDictionary *_pendingRankSignDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pendingRankSignDict; // @synthesize pendingRankSignDict=_pendingRankSignDict;
 @property(retain, nonatomic) NSMutableDictionary *animatingRankSignDict; // @synthesize animatingRankSignDict=_animatingRankSignDict;
 @property(nonatomic) unsigned long long currAnimatedRankSignCnt; // @synthesize currAnimatedRankSignCnt=_currAnimatedRankSignCnt;
@@ -52,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

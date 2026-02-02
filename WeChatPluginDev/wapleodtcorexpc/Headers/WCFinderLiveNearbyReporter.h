@@ -15,7 +15,6 @@
     _Bool m_isInHalfPage;
 }
 
-- (void).cxx_destruct;
 - (void)reportNearbyStartLiveAction:(unsigned long long)arg1;
 - (void)reportNearbyStartLiveClick:(unsigned long long)arg1;
 - (void)onNearbyStartLiveAction:(unsigned long long)arg1;

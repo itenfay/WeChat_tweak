@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -16,7 +17,6 @@
     NSMutableDictionary *_layoutCache;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool onlySearchAppSymbol; // @synthesize onlySearchAppSymbol=_onlySearchAppSymbol;
 @property(readonly, nonatomic) _Bool shouldCacheLayouts; // @synthesize shouldCacheLayouts=_shouldCacheLayouts;
 @property(readonly, nonatomic) NSMutableDictionary *layoutCache; // @synthesize layoutCache=_layoutCache;
@@ -27,4 +27,3 @@
 - (id)initWithTransformerBlock:(CDUnknownBlockType)arg1 shouldIncludeBlockAddress:(_Bool)arg2;
 
 @end
-

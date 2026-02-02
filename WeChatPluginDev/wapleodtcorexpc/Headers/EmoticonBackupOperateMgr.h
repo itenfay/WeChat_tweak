@@ -19,7 +19,6 @@
 }
 
 + (void)reportAddBackupEmoticon:(id)arg1 failedWithReason:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *operationKey; // @synthesize operationKey=_operationKey;
 @property(retain, nonatomic) EmoticonCameraReportObject *m_reportObject; // @synthesize m_reportObject=_m_reportObject;
 @property(retain, nonatomic) OrderedDictionary *m_uploadEmoticonQueue; // @synthesize m_uploadEmoticonQueue=_m_uploadEmoticonQueue;

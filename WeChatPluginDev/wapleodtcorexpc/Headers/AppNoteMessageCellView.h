@@ -11,7 +11,6 @@
     UILabel *m_contentLabel;
 }
 
-- (void).cxx_destruct;
 - (void)onTouchUpInside;
 - (id)operationMenuItems;
 - (_Bool)canShowFavoriteMenuItem;

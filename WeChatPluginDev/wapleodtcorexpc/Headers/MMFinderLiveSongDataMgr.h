@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface MMFinderLiveSongDataMgr
@@ -16,7 +18,6 @@
 }
 
 + (void)setupOrderSongCommentDataItem:(id)arg1 taskId:(id)arg2 clipSongNameToAdpated:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *blockSongMap; // @synthesize blockSongMap=_blockSongMap;
 @property(nonatomic) unsigned long long currSyncronizeSeq; // @synthesize currSyncronizeSeq=_currSyncronizeSeq;
 @property(nonatomic) _Bool hasMusicInfo; // @synthesize hasMusicInfo=_hasMusicInfo;
@@ -41,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString, WAPackageDownloadTask;
 @protocol WAPackageDownloadTaskDelegate;
@@ -25,7 +26,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *headerDic; // @synthesize headerDic=_headerDic;
 @property _Bool isCanceled; // @synthesize isCanceled=_isCanceled;
 @property unsigned long long taskStartTime; // @synthesize taskStartTime=_taskStartTime;
@@ -47,4 +47,3 @@
 - (void)dealloc;
 
 @end
-

@@ -12,7 +12,6 @@
     struct CGRect _currentBounds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect currentBounds; // @synthesize currentBounds=_currentBounds;
 @property(retain, nonatomic) MJCaptionLabel *captionLabel; // @synthesize captionLabel=_captionLabel;
 @property(retain, nonatomic) MJSegmentViewModel *segmentVM; // @synthesize segmentVM=_segmentVM;

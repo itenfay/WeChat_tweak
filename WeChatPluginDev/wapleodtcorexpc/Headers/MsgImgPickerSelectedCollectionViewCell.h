@@ -14,7 +14,6 @@
     SimpleMsgInfo *_msgInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SimpleMsgInfo *msgInfo; // @synthesize msgInfo=_msgInfo;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) _Bool isShowBorder; // @synthesize isShowBorder=_isShowBorder;

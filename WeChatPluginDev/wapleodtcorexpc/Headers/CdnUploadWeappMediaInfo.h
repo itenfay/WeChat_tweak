@@ -20,7 +20,6 @@
     NSData *_thumbFileData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int snsUploadVersion; // @synthesize snsUploadVersion=_snsUploadVersion;
 @property(nonatomic) _Bool isStorageMode; // @synthesize isStorageMode=_isStorageMode;
 @property(retain, nonatomic) NSData *thumbFileData; // @synthesize thumbFileData=_thumbFileData;

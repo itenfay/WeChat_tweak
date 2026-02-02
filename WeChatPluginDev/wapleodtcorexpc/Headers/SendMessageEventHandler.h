@@ -12,7 +12,6 @@
     CMMDB *m_oMMDB;
 }
 
-- (void).cxx_destruct;
 - (void)LoadMsgFromDB;
 - (void)handleSendSuccessMsg:(id)arg1;
 - (void)HandleSendFail;

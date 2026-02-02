@@ -10,7 +10,6 @@
     WCRedEnvelopesControlData *m_data;
 }
 
-- (void).cxx_destruct;
 - (void)refreshViewWithData:(id)arg1;
 - (void)setupWithData:(id)arg1;
 - (void)viewDidLayoutSubviews;

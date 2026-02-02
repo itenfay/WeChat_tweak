@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class LiteAppEmbedViewConsumer, LiteAppPageConfig, LiteAppReferrerInfo, LiteAppStore, MMLiteAppReporter, NSMutableDictionary, NSString, UIColor, UIViewController, WxaLiteAppStartReport;
 @protocol LiteAppEmbedViewControllerDelegate, LiteAppParentViewControllerDelegate, UIGestureRecognizerDelegate;
 
@@ -46,7 +48,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCheckCoreText; // @synthesize hasCheckCoreText=_hasCheckCoreText;
 @property(nonatomic) struct CGSize delayUpdateSize; // @synthesize delayUpdateSize=_delayUpdateSize;
 @property(nonatomic) struct CGSize lastSize; // @synthesize lastSize=_lastSize;
@@ -135,4 +136,3 @@
 @property(readonly) Class superclass;
 
 @end
-

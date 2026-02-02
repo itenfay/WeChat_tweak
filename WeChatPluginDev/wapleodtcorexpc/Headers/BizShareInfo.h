@@ -23,7 +23,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithUrl:(id)arg1 title:(id)arg2 imgUrl:(id)arg3 desc:(id)arg4 itemShowType:(id)arg5 srcUsername:(id)arg6 displayUsername:(id)arg7 msgSvrId:(id)arg8 msgId:(id)arg9;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *msgId; // @synthesize msgId=_msgId;
 @property(copy, nonatomic) NSString *msgSvrId; // @synthesize msgSvrId=_msgSvrId;
 @property(copy, nonatomic) NSString *displayUsername; // @synthesize displayUsername=_displayUsername;

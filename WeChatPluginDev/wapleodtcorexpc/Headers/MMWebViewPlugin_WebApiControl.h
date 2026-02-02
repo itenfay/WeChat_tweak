@@ -14,7 +14,6 @@
 }
 
 + (_Bool)isJsApiCompatibileInChildMode:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *setJsApiIndexForFrequnceLimit; // @synthesize setJsApiIndexForFrequnceLimit=_setJsApiIndexForFrequnceLimit;
 @property(retain, nonatomic) NSMutableDictionary *dictJsapiFrequencyLimitCount; // @synthesize dictJsapiFrequencyLimitCount=_dictJsapiFrequencyLimitCount;
 @property(retain, nonatomic) NSMutableDictionary *dictInvokeCountInMin; // @synthesize dictInvokeCountInMin=_dictInvokeCountInMin;

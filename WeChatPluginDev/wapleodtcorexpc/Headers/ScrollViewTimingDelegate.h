@@ -19,7 +19,6 @@
     struct CGPoint _deltaContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint deltaContentOffset; // @synthesize deltaContentOffset=_deltaContentOffset;
 @property(nonatomic) struct CGPoint beginContentOffset; // @synthesize beginContentOffset=_beginContentOffset;
 @property(nonatomic) double beginTime; // @synthesize beginTime=_beginTime;

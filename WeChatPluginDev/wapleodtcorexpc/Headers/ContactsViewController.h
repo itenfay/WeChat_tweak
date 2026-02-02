@@ -21,7 +21,6 @@
     WCSearchBar *_searchBar;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(copy, nonatomic) NSArray *favourContactArray; // @synthesize favourContactArray=_favourContactArray;
 @property(retain, nonatomic) NSMutableArray *m_brandContactGroupList; // @synthesize m_brandContactGroupList;

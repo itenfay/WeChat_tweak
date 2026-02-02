@@ -35,7 +35,6 @@
     WCPayWebPagView *_atmospherePagView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowPag; // @synthesize isShowPag=_isShowPag;
 @property(retain, nonatomic) WCPayWebPagView *atmospherePagView; // @synthesize atmospherePagView=_atmospherePagView;
 @property(retain, nonatomic) WCPayWebPagView *pagView; // @synthesize pagView=_pagView;

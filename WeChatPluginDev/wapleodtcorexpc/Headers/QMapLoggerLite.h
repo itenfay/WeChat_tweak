@@ -13,7 +13,6 @@
     NSString *_text;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) _Bool status; // @synthesize status=_status;
 

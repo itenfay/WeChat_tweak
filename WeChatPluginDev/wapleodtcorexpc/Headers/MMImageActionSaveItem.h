@@ -10,7 +10,6 @@
     NSString *_messageUuid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *messageUuid; // @synthesize messageUuid=_messageUuid;
 - (void)handleWithImage;
 - (id)init;

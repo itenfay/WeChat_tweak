@@ -31,7 +31,6 @@
     struct CGSize _resamplingSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VOIPVideoRender *render; // @synthesize render=_render;
 @property(retain, nonatomic) WeVisVoipEffectMgr *wevisEffectMgr; // @synthesize wevisEffectMgr=_wevisEffectMgr;
 @property(nonatomic) struct CGSize resamplingSize; // @synthesize resamplingSize=_resamplingSize;

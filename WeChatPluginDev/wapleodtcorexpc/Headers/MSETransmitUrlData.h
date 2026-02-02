@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_contentUrl;
 + (void)PBArrayAdd_thumUrl;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contentUrl; // @synthesize contentUrl=_contentUrl;
 @property(retain, nonatomic) NSString *thumPath; // @synthesize thumPath=_thumPath;
 @property(retain, nonatomic) NSString *thumUrl; // @synthesize thumUrl=_thumUrl;

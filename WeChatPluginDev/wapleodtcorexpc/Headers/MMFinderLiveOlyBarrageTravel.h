@@ -13,7 +13,6 @@
     NSMutableArray *_linearAnimateStageList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *linearAnimateStageList; // @synthesize linearAnimateStageList=_linearAnimateStageList;
 @property(retain, nonatomic) NSMutableArray *trailStageList; // @synthesize trailStageList=_trailStageList;
 - (double)outerInnerRoundScalePercent;

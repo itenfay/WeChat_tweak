@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, UIImageView, UILabel;
 
@@ -17,7 +18,6 @@
     MMUIButton *_closeButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UILabel *concertNameLabel; // @synthesize concertNameLabel=_concertNameLabel;
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
@@ -42,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

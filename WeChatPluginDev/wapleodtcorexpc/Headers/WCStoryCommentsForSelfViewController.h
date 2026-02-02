@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, EmoticonBoardView, MMCPLabel, MMGrowTextView, MMHeadImageView, MMTableView, MMUILabel, NSString, UIButton, UILabel, UIView, UIVisualEffectView, WCInputController, WCStoryComment, WCStoryCommentsForSelfShowViewModel, WCStoryPreviewReportObj;
 
 @interface WCStoryCommentsForSelfViewController
@@ -35,7 +37,6 @@
     struct CGRect _commentBtnFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *privacyTipsLabel; // @synthesize privacyTipsLabel=_privacyTipsLabel;
 @property(retain, nonatomic) MMUILabel *charsCountTipLabel; // @synthesize charsCountTipLabel=_charsCountTipLabel;
 @property(retain, nonatomic) UILabel *colonLabel; // @synthesize colonLabel=_colonLabel;
@@ -135,4 +136,3 @@
 @property(readonly) Class superclass;
 
 @end
-

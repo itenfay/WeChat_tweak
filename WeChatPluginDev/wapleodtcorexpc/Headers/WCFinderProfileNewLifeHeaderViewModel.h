@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString;
 
@@ -22,7 +23,6 @@
     CDUnknownBlockType _headerRefreshHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType headerRefreshHandler; // @synthesize headerRefreshHandler=_headerRefreshHandler;
 @property(copy, nonatomic) CDUnknownBlockType bannerShowHandler; // @synthesize bannerShowHandler=_bannerShowHandler;
 @property(copy, nonatomic) CDUnknownBlockType bannerTapHandler; // @synthesize bannerTapHandler=_bannerTapHandler;
@@ -38,4 +38,3 @@
 - (double)heightForWidth:(double)arg1;
 
 @end
-

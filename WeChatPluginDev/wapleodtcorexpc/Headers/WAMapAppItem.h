@@ -18,7 +18,6 @@
     NSString *_queryUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *queryUrl; // @synthesize queryUrl=_queryUrl;
 @property(retain, nonatomic) NSString *installUrl; // @synthesize installUrl=_installUrl;
 @property(retain, nonatomic) NSString *navigateUrl; // @synthesize navigateUrl=_navigateUrl;

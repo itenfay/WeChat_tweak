@@ -11,7 +11,6 @@
     WAPlateAuthPageSheetViewModel *_paViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPlateAuthPageSheetViewModel *paViewModel; // @synthesize paViewModel=_paViewModel;
 - (id)subViewModel;
 - (id)customSubviewClassList;

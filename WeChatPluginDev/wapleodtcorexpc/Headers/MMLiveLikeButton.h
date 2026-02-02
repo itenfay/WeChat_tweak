@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLivePanGestureRecognizer, NSString, PAGView, UIImageView;
 
 @interface MMLiveLikeButton
@@ -36,7 +38,6 @@
     unsigned long long _buttonTextLocation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStopShockAfterLargeTimes; // @synthesize isStopShockAfterLargeTimes=_isStopShockAfterLargeTimes;
 @property(nonatomic) _Bool isStopShockAfterLittleTimes; // @synthesize isStopShockAfterLittleTimes=_isStopShockAfterLittleTimes;
 @property(nonatomic) _Bool isStopShock; // @synthesize isStopShock=_isStopShock;
@@ -123,4 +124,3 @@
 @property(readonly) Class superclass;
 
 @end
-

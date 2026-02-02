@@ -21,7 +21,6 @@
     MISSING_TYPE *$__lazy_storage_$_dataSource;
 }
 
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)onPopOrDismissed;
 - (void)onViewAppear;

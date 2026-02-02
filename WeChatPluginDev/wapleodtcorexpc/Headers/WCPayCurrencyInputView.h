@@ -17,7 +17,6 @@
     double _fontSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(retain, nonatomic) UITextField *m_numberTextFiled; // @synthesize m_numberTextFiled=_m_numberTextFiled;
 @property(retain, nonatomic) UILabel *m_currencyLabel; // @synthesize m_currencyLabel=_m_currencyLabel;

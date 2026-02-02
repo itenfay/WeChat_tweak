@@ -25,7 +25,6 @@
     NSString *_lqtmobile;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int default_card_state; // @synthesize default_card_state=_default_card_state;
 @property(nonatomic) _Bool bSupportOfflinePay; // @synthesize bSupportOfflinePay=_bSupportOfflinePay;
 @property(retain, nonatomic) NSString *lqtmobile; // @synthesize lqtmobile=_lqtmobile;

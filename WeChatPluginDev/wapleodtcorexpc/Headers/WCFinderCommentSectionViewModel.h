@@ -32,7 +32,6 @@
 }
 
 + (id)commentSectionViewModelWithRootComment:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *subCommentIDSet; // @synthesize subCommentIDSet=_subCommentIDSet;
 @property(retain, nonatomic) WCFinderComment *rootComment; // @synthesize rootComment=_rootComment;
 @property(nonatomic) _Bool needReCalCellH; // @synthesize needReCalCellH=_needReCalCellH;

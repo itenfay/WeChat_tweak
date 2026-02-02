@@ -24,7 +24,6 @@
 }
 
 + (double)cellHeightWithIsSubScene:(_Bool)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAuthInfoIconView *authIconView; // @synthesize authIconView=_authIconView;
 @property(retain, nonatomic) UILabel *moreLabel; // @synthesize moreLabel=_moreLabel;
 @property(retain, nonatomic) UILabel *cycleLabel; // @synthesize cycleLabel=_cycleLabel;

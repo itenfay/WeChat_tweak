@@ -17,7 +17,6 @@
     unsigned long long _totalSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalSize; // @synthesize totalSize=_totalSize;
 @property(retain, nonatomic) NSArray *otherUserMapids; // @synthesize otherUserMapids=_otherUserMapids;
 @property(retain, nonatomic) NSArray *otherUserPaths; // @synthesize otherUserPaths=_otherUserPaths;

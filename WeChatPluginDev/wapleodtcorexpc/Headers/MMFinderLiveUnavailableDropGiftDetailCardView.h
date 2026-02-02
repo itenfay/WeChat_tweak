@@ -12,7 +12,6 @@
     UIColor *_titleColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

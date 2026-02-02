@@ -18,7 +18,6 @@
     struct CGSize _maskTextureSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize maskTextureSize; // @synthesize maskTextureSize=_maskTextureSize;
 @property(retain, nonatomic) MMLiveTextureBuffer *maskTexBuffer; // @synthesize maskTexBuffer=_maskTexBuffer;
 @property(nonatomic) int maskTexture; // @synthesize maskTexture=_maskTexture;

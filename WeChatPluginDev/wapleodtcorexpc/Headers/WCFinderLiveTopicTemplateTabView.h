@@ -16,7 +16,6 @@
     UILabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;

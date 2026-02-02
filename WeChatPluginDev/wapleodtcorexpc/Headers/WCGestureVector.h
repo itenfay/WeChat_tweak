@@ -11,7 +11,6 @@
 }
 
 + (id)vector;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *doubleValueArray; // @synthesize doubleValueArray=_doubleValueArray;
 - (void)setDouble:(double)arg1 atIndex:(long long)arg2;
 - (double)doubleAtIndex:(long long)arg1;

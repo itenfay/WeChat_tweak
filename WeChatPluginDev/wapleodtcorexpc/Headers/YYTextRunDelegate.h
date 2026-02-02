@@ -15,7 +15,6 @@
     double _width;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(nonatomic) double descent; // @synthesize descent=_descent;
 @property(nonatomic) double ascent; // @synthesize ascent=_ascent;

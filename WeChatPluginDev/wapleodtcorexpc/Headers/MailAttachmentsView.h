@@ -18,7 +18,6 @@
     MailAttachment *m_mailAttachment;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MailAttachmentsViewDelegate> m_delegate; // @synthesize m_delegate;
 - (void)OnUploadData:(id)arg1 filename:(id)arg2 errorCode:(int)arg3 errMsg:(id)arg4;
 - (void)cancelUpload;

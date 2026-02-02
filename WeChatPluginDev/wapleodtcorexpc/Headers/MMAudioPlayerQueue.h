@@ -14,7 +14,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) float m_volume; // @synthesize m_volume=_m_volume;
 @property(retain, nonatomic) NSMutableArray *m_audioQueue; // @synthesize m_audioQueue=_m_audioQueue;
 - (void)checkQueue;

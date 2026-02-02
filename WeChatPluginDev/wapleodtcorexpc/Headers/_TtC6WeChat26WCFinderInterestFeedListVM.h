@@ -22,7 +22,6 @@
     MISSING_TYPE *enterContentVM;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

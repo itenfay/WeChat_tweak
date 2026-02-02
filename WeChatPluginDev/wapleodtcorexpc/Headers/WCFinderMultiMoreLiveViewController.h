@@ -18,7 +18,6 @@
     WCFinderLivePageStayReporter *_exposeReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLivePageStayReporter *exposeReporter; // @synthesize exposeReporter=_exposeReporter;
 @property(nonatomic) unsigned long long initSelectedSubTabId; // @synthesize initSelectedSubTabId=_initSelectedSubTabId;
 @property(nonatomic) unsigned long long initSelectedTabId; // @synthesize initSelectedTabId=_initSelectedTabId;

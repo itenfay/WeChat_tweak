@@ -17,7 +17,6 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) NSMutableArray *panelCells; // @synthesize panelCells=_panelCells;
 @property(retain, nonatomic) MMUIButton *arrowButton; // @synthesize arrowButton=_arrowButton;

@@ -13,7 +13,6 @@
     UIImageView *_snapshotView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *snapshotView; // @synthesize snapshotView=_snapshotView;
 @property(retain, nonatomic) MiniTaskAnimiatedTransitioningConfig *config; // @synthesize config=_config;
 - (void)onTaskSnapShotUpdate:(id)arg1 snapshot:(id)arg2;

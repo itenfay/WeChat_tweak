@@ -22,7 +22,6 @@
     NSString *_footerTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *footerTitle; // @synthesize footerTitle=_footerTitle;
 @property(retain, nonatomic) NSString *heatTitle; // @synthesize heatTitle=_heatTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

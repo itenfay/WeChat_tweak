@@ -12,7 +12,6 @@
 
 + (id)createMessageViewModelWithMessageWrap:(id)arg1 contact:(id)arg2 chatContact:(id)arg3;
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoIPBubbleMsg *bubbleMsg; // @synthesize bubbleMsg=_bubbleMsg;
 @property(readonly, nonatomic) UIColor *contentTextColor;
 - (id)additionalAccessibilityDescription;

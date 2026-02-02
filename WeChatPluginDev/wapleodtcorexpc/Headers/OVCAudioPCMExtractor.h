@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OVCAudioPCMExtractor : NSObject
 {
@@ -12,4 +13,3 @@
 + (void)extractPCMForAudioFileAtPath:(id)arg1 outputSettings:(CDStruct_14f26992)arg2 outputFilePath:(id)arg3 progress:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 
 @end
-

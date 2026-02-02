@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, NotifyMsgDB;
 
 @interface ServiceNotifyMsgMgr
@@ -12,7 +14,6 @@
     NotifyMsgDB *_notifyDB;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isServerNotifyBoxExposed; // @synthesize isServerNotifyBoxExposed=_isServerNotifyBoxExposed;
 @property(retain, nonatomic) NotifyMsgDB *notifyDB; // @synthesize notifyDB=_notifyDB;
 @property(retain, nonatomic) NSMutableDictionary *dicClientReqInfo; // @synthesize dicClientReqInfo=_dicClientReqInfo;
@@ -50,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

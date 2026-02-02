@@ -16,7 +16,6 @@
     NSString *_indexStr;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *indexStr; // @synthesize indexStr=_indexStr;
 @property(retain, nonatomic) SolitaireItem *solitaireItem; // @synthesize solitaireItem=_solitaireItem;
 @property(retain, nonatomic) UIView *contentTextContainerView; // @synthesize contentTextContainerView=_contentTextContainerView;

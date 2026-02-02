@@ -15,7 +15,6 @@
     NSMutableDictionary *_transferTableDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *transferTableDic; // @synthesize transferTableDic=_transferTableDic;
 @property(nonatomic) unsigned int columnCount; // @synthesize columnCount=_columnCount;
 @property(retain, nonatomic) WCAdPickerDataInfo *pickerDataInfo; // @synthesize pickerDataInfo=_pickerDataInfo;

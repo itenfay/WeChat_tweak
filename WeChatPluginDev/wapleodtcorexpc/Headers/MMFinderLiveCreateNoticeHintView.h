@@ -19,7 +19,6 @@
     MMUIButton *_createButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *createButton; // @synthesize createButton=_createButton;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

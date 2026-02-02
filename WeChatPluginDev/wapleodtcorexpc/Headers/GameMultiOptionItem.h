@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _didSetOptionBlock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasClearOption; // @synthesize hasClearOption=_hasClearOption;
 @property(copy, nonatomic) CDUnknownBlockType didSetOptionBlock; // @synthesize didSetOptionBlock=_didSetOptionBlock;
 @property(retain, nonatomic) NSArray *optionAndDescArray; // @synthesize optionAndDescArray=_optionAndDescArray;
@@ -29,4 +29,3 @@
 - (id)initWithDebugKey:(id)arg1 title:(id)arg2 optionAndDescArray:(id)arg3;
 
 @end
-

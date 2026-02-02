@@ -26,7 +26,6 @@
     NSString *_m_searchText;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_categoryDisplayType; // @synthesize m_categoryDisplayType=_m_categoryDisplayType;
 @property(nonatomic) unsigned int m_searchType; // @synthesize m_searchType=_m_searchType;
 @property(retain, nonatomic) NSString *m_searchText; // @synthesize m_searchText=_m_searchText;

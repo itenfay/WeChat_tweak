@@ -12,7 +12,6 @@
     MMUILabel *_totalTimeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *totalTimeLabel; // @synthesize totalTimeLabel=_totalTimeLabel;
 @property(retain, nonatomic) MMUILabel *splitLabel; // @synthesize splitLabel=_splitLabel;
 @property(retain, nonatomic) MMUILabel *currentTimeLabel; // @synthesize currentTimeLabel=_currentTimeLabel;

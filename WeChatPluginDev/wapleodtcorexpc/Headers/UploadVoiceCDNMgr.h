@@ -17,7 +17,6 @@
     MMTimer *_timerCheck;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timerCheck; // @synthesize timerCheck=_timerCheck;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) UploadVoiceWrap *currentUploadItem; // @synthesize currentUploadItem=_currentUploadItem;

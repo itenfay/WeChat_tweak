@@ -12,7 +12,6 @@
     TPPlayerEventPublisher *_publisher;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TPPlayerEventPublisher *publisher; // @synthesize publisher=_publisher;
 - (id)init;
 

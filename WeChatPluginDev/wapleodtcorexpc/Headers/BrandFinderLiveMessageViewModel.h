@@ -13,7 +13,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShouldLayout; // @synthesize isShouldLayout=_isShouldLayout;
 @property(nonatomic) __weak id <BrandFinderLiveMessageCellViewDelegate> finderLiveDelegate; // @synthesize finderLiveDelegate=_finderLiveDelegate;
 - (void)onFinderLiveReplayStatusUpdated:(id)arg1 replayStatus:(unsigned int)arg2;

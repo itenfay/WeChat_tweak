@@ -11,7 +11,6 @@
     NSString *_appidList;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appidList; // @synthesize appidList=_appidList;
 @property(nonatomic) unsigned long long destopEnterScene; // @synthesize destopEnterScene=_destopEnterScene;
 - (id)reportString;

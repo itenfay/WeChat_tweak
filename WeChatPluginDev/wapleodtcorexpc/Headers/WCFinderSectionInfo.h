@@ -25,7 +25,6 @@
     unsigned long long _refreshTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long refreshTime; // @synthesize refreshTime=_refreshTime;
 @property(nonatomic) unsigned int recommendType; // @synthesize recommendType=_recommendType;
 @property(retain, nonatomic) FinderGetRelatedListResp *relatedResp; // @synthesize relatedResp=_relatedResp;

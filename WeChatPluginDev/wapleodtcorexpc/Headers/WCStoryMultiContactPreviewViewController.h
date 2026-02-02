@@ -32,7 +32,6 @@
     WCStoryMultiContactPreviewCell *_currentPlayCell;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCStoryMultiContactPreviewCell *currentPlayCell; // @synthesize currentPlayCell=_currentPlayCell;
 @property(nonatomic) __weak MMUIButton *moreActionBtn; // @synthesize moreActionBtn=_moreActionBtn;
 @property(nonatomic) unsigned long long statusChangePreviewType; // @synthesize statusChangePreviewType=_statusChangePreviewType;

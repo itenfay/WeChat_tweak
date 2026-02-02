@@ -15,7 +15,6 @@
     long long _chatBoxMinIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long chatBoxMinIndex; // @synthesize chatBoxMinIndex=_chatBoxMinIndex;
 @property(nonatomic) long long totalTopSessionCount; // @synthesize totalTopSessionCount=_totalTopSessionCount;
 @property(retain, nonatomic) NSMutableArray *allTopSessions; // @synthesize allTopSessions=_allTopSessions;

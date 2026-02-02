@@ -17,7 +17,6 @@
 }
 
 + (id)parseArray:(id)arg1;
-- (void).cxx_destruct;
 - (void)updateBindings:(id)arg1;
 - (void)matchView:(id)arg1 delegate:(id)arg2;
 - (void)matchSubviewsIn:(id)arg1;

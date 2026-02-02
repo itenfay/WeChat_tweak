@@ -22,7 +22,6 @@
     MMTimer *_timeoutTimer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
 @property(retain, nonatomic) MMTimer *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(nonatomic, getter=isRecordingTooShort) _Bool recordingTooShort; // @synthesize recordingTooShort=_recordingTooShort;

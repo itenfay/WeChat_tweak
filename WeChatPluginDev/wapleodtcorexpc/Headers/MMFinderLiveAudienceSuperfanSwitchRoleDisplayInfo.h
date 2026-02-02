@@ -17,7 +17,6 @@
 }
 
 + (id)infoWithNick:(id)arg1 headUrl:(id)arg2 aliasType:(long long)arg3 isCurrentRole:(_Bool)arg4 superfanBadge:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveBadgeInfo *superfanBadge; // @synthesize superfanBadge=_superfanBadge;
 @property(nonatomic) _Bool isCurrentRole; // @synthesize isCurrentRole=_isCurrentRole;
 @property(retain, nonatomic) NSString *headUrl; // @synthesize headUrl=_headUrl;

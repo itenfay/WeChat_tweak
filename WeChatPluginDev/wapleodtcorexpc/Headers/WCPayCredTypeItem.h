@@ -16,7 +16,6 @@
     UIPickerView *_pickerView;
 }
 
-- (void).cxx_destruct;
 @property(retain) UIPickerView *pickerView; // @synthesize pickerView=_pickerView;
 @property(retain) MMPanelView *panelView; // @synthesize panelView=_panelView;
 @property double contentMaxWidth; // @synthesize contentMaxWidth=_contentMaxWidth;

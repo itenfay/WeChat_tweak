@@ -16,7 +16,6 @@
     double _cornerRadius;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) NSString *svgIconName; // @synthesize svgIconName=_svgIconName;
 @property(nonatomic) _Bool useFlexibleWidth; // @synthesize useFlexibleWidth=_useFlexibleWidth;

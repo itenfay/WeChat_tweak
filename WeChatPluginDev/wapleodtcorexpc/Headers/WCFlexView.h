@@ -13,7 +13,6 @@
     NSValue *_preSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool updateLock; // @synthesize updateLock=_updateLock;
 @property(retain, nonatomic) NSValue *preSize; // @synthesize preSize=_preSize;
 - (struct CGSize)intrinsicContentSize;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MiniTaskCollectionCellViewModel, MiniTaskLongPressGesture, NSString, UIImageView;
 @protocol MiniTaskCollectionCellDelegate;
@@ -18,7 +19,6 @@
     MiniTaskLongPressGesture *_longPressGes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MiniTaskLongPressGesture *longPressGes; // @synthesize longPressGes=_longPressGes;
 @property(nonatomic) _Bool isEditing; // @synthesize isEditing=_isEditing;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

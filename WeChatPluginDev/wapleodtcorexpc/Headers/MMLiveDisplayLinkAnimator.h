@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink;
 
@@ -17,7 +18,6 @@
     CADisplayLink *_displayLink;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(copy, nonatomic) CDUnknownBlockType completed; // @synthesize completed=_completed;
@@ -31,4 +31,3 @@
 - (id)initWithDuration:(double)arg1 animationBlock:(CDUnknownBlockType)arg2 completedBlock:(CDUnknownBlockType)arg3;
 
 @end
-

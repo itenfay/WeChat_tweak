@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAudioRouteManager, AVVideoDevice, CContact, MMTimer, MMTipsViewController, MMVoipToastWindow, NSDate, NSObject, NSString, UIView, VOIPVideoRender, VoIPCallerViewController, VoIPMainWindow, VoIPReceiverViewController, VoipCheckAudioDeviceObj, WavAudioPlayer;
 @protocol VoIPUIManagerWindowInfo;
 
@@ -52,7 +54,6 @@
 + (_Bool)canForceStartVoiceWithContact:(id)arg1;
 + (_Bool)canStartVideoWithContact:(id)arg1;
 + (_Bool)canStartVoipWithOpenFrom:(unsigned long long)arg1 isVideoMode:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableVoIPCoreAudioLogic; // @synthesize enableVoIPCoreAudioLogic=_enableVoIPCoreAudioLogic;
 @property(nonatomic) _Bool isUIShowedAtApplcationStateActive; // @synthesize isUIShowedAtApplcationStateActive=_isUIShowedAtApplcationStateActive;
 @property(nonatomic) double suspendTimestamp; // @synthesize suspendTimestamp=_suspendTimestamp;
@@ -380,4 +381,3 @@
 @property(readonly) Class superclass;
 
 @end
-

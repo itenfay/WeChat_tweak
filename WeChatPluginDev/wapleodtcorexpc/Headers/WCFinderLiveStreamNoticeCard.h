@@ -14,7 +14,6 @@
 }
 
 + (id)finderLiveStreamNoticeCardFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) FinderLiveNoticeInfo *noticeInfo; // @synthesize noticeInfo=_noticeInfo;
 - (id)toFinderLiveStreamNoticeCard;

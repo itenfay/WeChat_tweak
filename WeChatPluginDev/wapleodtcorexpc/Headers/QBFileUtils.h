@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface QBFileUtils : NSObject
 {
@@ -22,4 +23,3 @@
 + (_Bool)disableFileBackup:(id)arg1;
 
 @end
-

@@ -11,7 +11,6 @@
     TPDynamicStatisticParams *_dynamicStatisticParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPDynamicStatisticParams *dynamicStatisticParams; // @synthesize dynamicStatisticParams=_dynamicStatisticParams;
 @property(retain, nonatomic) TPGeneralPlayFlowParams *generalPlayFlowParams; // @synthesize generalPlayFlowParams=_generalPlayFlowParams;
 - (id)init;

@@ -17,7 +17,6 @@
 
 + (void)reportBatchUpgradeAssociateChatRoomResultWithRecomdSuccessCount:(unsigned long long)arg1 andRecomdFailCount:(unsigned long long)arg2 andOtherSuccessCount:(unsigned long long)arg3 andOtherFailCount:(unsigned long long)arg4 andSuccessRoomUsrNameList:(id)arg5 andTicketId:(id)arg6;
 + (void)reportBatchUpgradeAssociateChatRoomWithRecomdCount:(unsigned long long)arg1 andIsClickMore:(_Bool)arg2 andRecomdSelectCount:(unsigned long long)arg3 andOtherSelectCount:(unsigned long long)arg4 andIsClickChange:(_Bool)arg5 andTicketId:(id)arg6 andOtherCount:(unsigned long long)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_normalChatRoomUsrNameAr; // @synthesize m_normalChatRoomUsrNameAr=_m_normalChatRoomUsrNameAr;
 @property(retain, nonatomic) NSArray *m_upgradeOpenIMChatRoomUsrNameAr; // @synthesize m_upgradeOpenIMChatRoomUsrNameAr=_m_upgradeOpenIMChatRoomUsrNameAr;
 @property(retain, nonatomic) NSString *chatRoomBatchUpgradeOpenIMTicket; // @synthesize chatRoomBatchUpgradeOpenIMTicket=_chatRoomBatchUpgradeOpenIMTicket;

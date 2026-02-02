@@ -12,7 +12,6 @@
     id <MMLiveCompleteViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveCompleteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long currDeviceOrientation; // @synthesize currDeviceOrientation=_currDeviceOrientation;
 @property(nonatomic) _Bool needAutoRotateToPortrait; // @synthesize needAutoRotateToPortrait=_needAutoRotateToPortrait;

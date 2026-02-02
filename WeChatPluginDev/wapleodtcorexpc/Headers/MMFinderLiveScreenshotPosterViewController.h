@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveScreenshotPosterImages, NSString;
 
 @interface MMFinderLiveScreenshotPosterViewController
@@ -10,7 +12,6 @@
     MMFinderLiveScreenshotPosterImages *_images;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveScreenshotPosterImages *images; // @synthesize images=_images;
 - (id)audienceLogReporter;
 - (id)liveTask;
@@ -38,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

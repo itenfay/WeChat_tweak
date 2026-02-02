@@ -10,7 +10,6 @@
     MMUIButton *_imageBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *imageBtn; // @synthesize imageBtn=_imageBtn;
 - (_Bool)addBlurEffectWithColor:(id)arg1;
 - (void)setImage:(id)arg1 forState:(unsigned long long)arg2;

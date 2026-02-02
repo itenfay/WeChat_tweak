@@ -11,7 +11,6 @@
 }
 
 + (id)createReplayOperationCommentSnapshotWithCommentItems:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *diffCommentItemArr; // @synthesize diffCommentItemArr=_diffCommentItemArr;
 
 @end

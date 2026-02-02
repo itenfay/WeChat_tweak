@@ -22,7 +22,6 @@
 }
 
 + (id)objWithPkgList:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id pkgList; // @synthesize pkgList=_pkgList;
 - (void)sendReport;
 - (void)clear;

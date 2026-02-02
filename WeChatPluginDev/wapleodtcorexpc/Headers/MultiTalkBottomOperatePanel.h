@@ -46,7 +46,6 @@
 + (id)voipHangupButtonBackImage;
 + (id)normalVoipDescriptButtonBackImage;
 + (_Bool)isiPhoneWithNotch;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int deviceStatus; // @synthesize deviceStatus=_deviceStatus;
 @property(nonatomic) _Bool isVideoButtonEnable; // @synthesize isVideoButtonEnable=_isVideoButtonEnable;
 @property(retain, nonatomic) UIImageView *multiPathCellularArrowView; // @synthesize multiPathCellularArrowView=_multiPathCellularArrowView;

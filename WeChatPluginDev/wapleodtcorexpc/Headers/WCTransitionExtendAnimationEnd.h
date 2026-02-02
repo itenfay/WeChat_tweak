@@ -15,7 +15,6 @@
 }
 
 + (id)animationResultRect:(struct CGRect)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(nonatomic) struct CGRect resultRect; // @synthesize resultRect=_resultRect;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, MMUIImageView, MMUILabel, NSString, UIView;
 
 @interface MMLiveVoteFloatingView
@@ -19,7 +21,6 @@
     double _tipLabelStaticHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double tipLabelStaticHeight; // @synthesize tipLabelStaticHeight=_tipLabelStaticHeight;
 @property(retain, nonatomic) UIView *staticBGView; // @synthesize staticBGView=_staticBGView;
 @property(nonatomic) _Bool isStaticStyle; // @synthesize isStaticStyle=_isStaticStyle;
@@ -40,4 +41,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 taskId:(id)arg2;
 
 @end
-

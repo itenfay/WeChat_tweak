@@ -36,7 +36,6 @@
     EmoticonCustomCreateLogic *_customCreateLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonCustomCreateLogic *customCreateLogic; // @synthesize customCreateLogic=_customCreateLogic;
 @property(nonatomic) unsigned long long insertPositionForReport; // @synthesize insertPositionForReport=_insertPositionForReport;
 @property(nonatomic) _Bool needResetBrickView; // @synthesize needResetBrickView=_needResetBrickView;

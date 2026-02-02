@@ -16,7 +16,6 @@
 }
 
 + (double)preferredHeight;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(readonly, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

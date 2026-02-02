@@ -13,7 +13,6 @@
     NSArray *_carouselJumpInfoList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *carouselJumpInfoList; // @synthesize carouselJumpInfoList=_carouselJumpInfoList;
 @property(nonatomic) __weak WCFinderProgressBarStatusInfo *progressBarStatusInfo; // @synthesize progressBarStatusInfo=_progressBarStatusInfo;
 

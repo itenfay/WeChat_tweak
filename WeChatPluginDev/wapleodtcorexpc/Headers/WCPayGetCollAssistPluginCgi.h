@@ -10,7 +10,6 @@
     id <WCPayGetCollAssistPluginCgiDelegate> _logicDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayGetCollAssistPluginCgiDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetResponse:(id)arg1;

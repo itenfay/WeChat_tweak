@@ -25,7 +25,6 @@
     unsigned long long _finderFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long finderFlag; // @synthesize finderFlag=_finderFlag;
 @property(retain, nonatomic) UIImageView *finderFlagView; // @synthesize finderFlagView=_finderFlagView;
 @property(nonatomic) _Bool showGenderIcon; // @synthesize showGenderIcon=m_showGenderIcon;

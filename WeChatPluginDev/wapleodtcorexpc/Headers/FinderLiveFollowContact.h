@@ -15,7 +15,6 @@
 }
 
 + (id)createFollowContact:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *uniqueKey; // @synthesize uniqueKey=_uniqueKey;
 @property(nonatomic) unsigned long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) FinderLiveContact *liveContact; // @synthesize liveContact=_liveContact;

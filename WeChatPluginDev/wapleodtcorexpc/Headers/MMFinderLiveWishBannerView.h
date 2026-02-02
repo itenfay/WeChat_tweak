@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, FinderLiveGiftWallInfo, MMFinderLiveRewardWish, MMTimer, MMUILabel, NSArray, NSMutableSet, NSString, UIImageView;
 
 @interface MMFinderLiveWishBannerView
@@ -30,7 +32,6 @@
 }
 
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *wishRewardGiftIdSet; // @synthesize wishRewardGiftIdSet=_wishRewardGiftIdSet;
 @property(retain, nonatomic) MMFinderLiveRewardWish *wishGiftItem; // @synthesize wishGiftItem=_wishGiftItem;
 @property(retain, nonatomic) NSArray *liveRewardWishes; // @synthesize liveRewardWishes=_liveRewardWishes;
@@ -83,4 +84,3 @@
 @property(readonly) Class superclass;
 
 @end
-

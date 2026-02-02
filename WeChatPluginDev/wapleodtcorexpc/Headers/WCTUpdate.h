@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)execute;
 - (id)toRow:(id)arg1;
 - (id)toValue:(id)arg1;

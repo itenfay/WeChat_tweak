@@ -11,7 +11,6 @@
     _Bool _forNativeWeApp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forNativeWeApp; // @synthesize forNativeWeApp=_forNativeWeApp;
 - (void)onSuccess:(id)arg1;
 - (void)shareWithParams:(id)arg1 username:(id)arg2;

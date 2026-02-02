@@ -21,7 +21,6 @@
     MMUILabel *_subLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needsUpdateView; // @synthesize needsUpdateView=_needsUpdateView;
 @property(retain, nonatomic) MMUILabel *subLabel; // @synthesize subLabel=_subLabel;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;

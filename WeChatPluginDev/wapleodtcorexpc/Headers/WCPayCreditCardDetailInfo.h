@@ -14,7 +14,6 @@
     NSString *m_nsCVV;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsValidThru; // @synthesize m_nsValidThru;
 @property(retain, nonatomic) NSString *m_nsCVV; // @synthesize m_nsCVV;
 @property(retain, nonatomic) NSString *m_nsCardNo; // @synthesize m_nsCardNo;

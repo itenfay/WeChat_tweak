@@ -13,7 +13,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *hotZone; // @synthesize hotZone=_hotZone;
 @property(retain, nonatomic) UILabel *shareText; // @synthesize shareText=_shareText;
 @property(retain, nonatomic) UIImageView *shareIcon; // @synthesize shareIcon=_shareIcon;

@@ -21,7 +21,6 @@
 + (void)PBArrayAdd_dataBuffer;
 + (void)PBArrayAdd_versionType;
 + (void)PBArrayAdd_appid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSData *dataBuffer; // @synthesize dataBuffer=_dataBuffer;
 @property(nonatomic) unsigned int versionType; // @synthesize versionType=_versionType;

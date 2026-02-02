@@ -19,7 +19,6 @@
     double _detailBrowsingAccumulatedTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double detailBrowsingAccumulatedTime; // @synthesize detailBrowsingAccumulatedTime=_detailBrowsingAccumulatedTime;
 @property(nonatomic) long long operatedType; // @synthesize operatedType=_operatedType;
 @property(nonatomic) _Bool didComment; // @synthesize didComment=_didComment;

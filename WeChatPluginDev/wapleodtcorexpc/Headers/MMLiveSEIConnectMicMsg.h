@@ -23,7 +23,6 @@
     NSArray *_gl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *gl; // @synthesize gl=_gl;
 @property(retain, nonatomic) NSArray *hl; // @synthesize hl=_hl;
 @property(nonatomic) unsigned long long i; // @synthesize i=_i;

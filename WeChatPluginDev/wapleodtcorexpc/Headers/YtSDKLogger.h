@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface YtSDKLogger : NSObject
 {
@@ -18,4 +19,3 @@
 + (void)registerLoggerListener:(CDUnknownBlockType)arg1 withNativeLog:(_Bool)arg2;
 
 @end
-

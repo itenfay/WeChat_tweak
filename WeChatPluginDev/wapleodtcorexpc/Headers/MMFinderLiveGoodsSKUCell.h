@@ -23,7 +23,6 @@
 + (struct CGSize)cellWithImageSizeWithMaxNumberOfLines:(unsigned long long)arg1;
 + (struct CGSize)cellWithoutImageSizeForText:(id)arg1;
 + (double)cellHeightWithoutImageSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) MMPaddingView *sellOutLabel; // @synthesize sellOutLabel=_sellOutLabel;

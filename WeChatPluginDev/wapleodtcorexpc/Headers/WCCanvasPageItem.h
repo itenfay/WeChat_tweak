@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_canvasPageXml;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *canvasPageXml; // @synthesize canvasPageXml=_canvasPageXml;
 - (id)toXML;
 - (_Bool)fromXML:(struct XmlReaderNode_t *)arg1;

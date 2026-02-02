@@ -19,7 +19,6 @@
 }
 
 + (id)defaultCenter;
-- (void).cxx_destruct;
 - (void)NotifyFromMainCtrl:(id)arg1 Event:(unsigned int)arg2;
 - (void)NotifyFromMainCtrl:(unsigned int)arg1 MessageInfo:(id)arg2 Event:(unsigned int)arg3;
 - (id)observerListByPBEvent:(id)arg1;

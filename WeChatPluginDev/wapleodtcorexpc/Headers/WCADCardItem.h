@@ -13,7 +13,6 @@
     NSString *cardExt;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cardExt; // @synthesize cardExt;
 @property(retain, nonatomic) NSString *cardTpId; // @synthesize cardTpId;
 - (id)initWithCoder:(id)arg1;

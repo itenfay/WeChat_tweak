@@ -24,7 +24,6 @@
     NSString *_boxsDescription;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *boxsDescription; // @synthesize boxsDescription=_boxsDescription;
 @property(nonatomic) unsigned long long mdatLen; // @synthesize mdatLen=_mdatLen;
 @property(retain, nonatomic) NSDictionary *dicVideoBoxs; // @synthesize dicVideoBoxs=_dicVideoBoxs;

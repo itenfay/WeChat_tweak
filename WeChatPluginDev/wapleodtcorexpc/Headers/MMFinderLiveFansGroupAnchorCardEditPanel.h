@@ -15,7 +15,6 @@
     MMFinderLiveSimpleSelectionSheetView *_visibilitySelectionSheetView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveSimpleSelectionSheetView *visibilitySelectionSheetView; // @synthesize visibilitySelectionSheetView=_visibilitySelectionSheetView;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

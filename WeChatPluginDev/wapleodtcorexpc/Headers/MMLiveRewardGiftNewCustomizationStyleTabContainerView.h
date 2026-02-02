@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIScrollView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveGiftNewCustomizationModel, MMLiveRewardGiftNewCustomizationEditLogic, MMLiveRewardGiftStyleTabLabel, NSMutableArray;
 
@@ -17,7 +18,6 @@
 
 + (double)styleTabLabelLeftInset;
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveRewardGiftStyleTabLabel *currentSelectTabLabel; // @synthesize currentSelectTabLabel=_currentSelectTabLabel;
 @property(retain, nonatomic) NSMutableArray *styleTabLabelList; // @synthesize styleTabLabelList=_styleTabLabelList;
 @property(retain, nonatomic) MMLiveRewardGiftNewCustomizationEditLogic *customizationEditLogic; // @synthesize customizationEditLogic=_customizationEditLogic;
@@ -43,4 +43,3 @@
 - (id)initWithCustomizationEditLogic:(id)arg1;
 
 @end
-

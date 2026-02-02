@@ -16,7 +16,6 @@
     NSMutableDictionary *_extraInfo;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *extraInfo; // @synthesize extraInfo=_extraInfo;
 @property(retain, nonatomic) MMFinderLiveShopSelfOpenParams *openShopSelfParams; // @synthesize openShopSelfParams=_openShopSelfParams;
 @property(retain, nonatomic) FinderWindowProductInfo *productInfo; // @synthesize productInfo=_productInfo;

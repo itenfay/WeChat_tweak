@@ -21,7 +21,6 @@
     NSString *_msgUserName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int exposureTime; // @synthesize exposureTime=_exposureTime;
 @property(nonatomic) _Bool isRevoke; // @synthesize isRevoke=_isRevoke;
 @property(retain, nonatomic) NSString *msgUserName; // @synthesize msgUserName=_msgUserName;

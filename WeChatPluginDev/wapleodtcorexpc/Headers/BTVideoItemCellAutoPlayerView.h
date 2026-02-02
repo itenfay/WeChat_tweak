@@ -19,7 +19,6 @@
     NSString *_videoPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *videoPath; // @synthesize videoPath=_videoPath;
 @property(retain, nonatomic) BTVideoItemCellAutoMediaWrap *mediaWrap; // @synthesize mediaWrap=_mediaWrap;
 @property(retain, nonatomic) WCPlayerPlayArgs *playerInfo; // @synthesize playerInfo=_playerInfo;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSHashTable, NSString;
 
@@ -18,7 +19,6 @@
     CDUnknownBlockType _fail;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fail; // @synthesize fail=_fail;
 @property(copy, nonatomic) CDUnknownBlockType success; // @synthesize success=_success;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
@@ -33,4 +33,3 @@
 - (id)init;
 
 @end
-

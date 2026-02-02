@@ -14,7 +14,6 @@
 
 + (_Bool)checkSelectedImageIsSizeLegal:(struct CGSize)arg1;
 + (_Bool)selectedImagesSizeLegal:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(nonatomic) __weak id <WCFinderFullScreenEditImageViewControllerDelegate> finderDelegate; // @synthesize finderDelegate=_finderDelegate;
 - (void)registerYReportSdk;

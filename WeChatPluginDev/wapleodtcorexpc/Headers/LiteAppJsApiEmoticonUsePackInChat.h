@@ -10,7 +10,6 @@
     NSString *_pid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pid; // @synthesize pid=_pid;
 - (_Bool)checkMsgControllerFrom:(id)arg1;
 - (id)getViewController;

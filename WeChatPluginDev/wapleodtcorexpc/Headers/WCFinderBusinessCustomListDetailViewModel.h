@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, WCFinderBaseCgi, WCFinderCustomBusinessFeedIDModel, WCFinderGeneralJumpErrMsgModel;
 @protocol WCFinderBusinessCustomListDetailViewModelDelegate;
@@ -26,7 +27,6 @@
     WCFinderGeneralJumpErrMsgModel *_errMsgModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderGeneralJumpErrMsgModel *errMsgModel; // @synthesize errMsgModel=_errMsgModel;
 @property(nonatomic) long long preFetchTopCount; // @synthesize preFetchTopCount=_preFetchTopCount;
 @property(nonatomic) long long batchFetchFeedsMaxCount; // @synthesize batchFetchFeedsMaxCount=_batchFetchFeedsMaxCount;
@@ -63,4 +63,3 @@
 - (id)initWithCommentScene:(int)arg1;
 
 @end
-

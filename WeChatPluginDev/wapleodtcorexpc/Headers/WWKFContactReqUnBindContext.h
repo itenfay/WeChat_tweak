@@ -4,14 +4,13 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WWKFContactReqUnBindContext : NSObject
 {
     CDUnknownBlockType _completeBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 
 @end
-

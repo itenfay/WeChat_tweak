@@ -12,7 +12,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *fansGroupLabelView; // @synthesize fansGroupLabelView=_fansGroupLabelView;
 @property(retain, nonatomic) UIView *fansGroupLabelBackgroundView; // @synthesize fansGroupLabelBackgroundView=_fansGroupLabelBackgroundView;
 - (void)updateWithGiftItem:(id)arg1;

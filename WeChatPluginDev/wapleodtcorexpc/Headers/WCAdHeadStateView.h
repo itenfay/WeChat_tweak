@@ -12,7 +12,6 @@
     WCAdHeadStateInfo *_stateInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdHeadStateInfo *stateInfo; // @synthesize stateInfo=_stateInfo;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) WCAdURLImageView *headStateImageView; // @synthesize headStateImageView=_headStateImageView;

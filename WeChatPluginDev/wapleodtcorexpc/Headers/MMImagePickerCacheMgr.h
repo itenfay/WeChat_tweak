@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMImagePickerCacheObj, NSRecursiveLock, NSString;
 
 @interface MMImagePickerCacheMgr
@@ -14,7 +16,6 @@
     long long _maxAssetCacheCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long maxAssetCacheCount; // @synthesize maxAssetCacheCount=_maxAssetCacheCount;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) long long currentOption; // @synthesize currentOption=_currentOption;
@@ -54,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMBaseTimeLabel, NSDate;
 
@@ -14,7 +15,6 @@
     CDUnknownBlockType _arriveTargetTime;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType arriveTargetTime; // @synthesize arriveTargetTime=_arriveTargetTime;
 @property(retain, nonatomic) NSDate *targetTime; // @synthesize targetTime=_targetTime;
 @property(readonly, nonatomic) MMBaseTimeLabel *baseTimeLabel; // @synthesize baseTimeLabel=_baseTimeLabel;
@@ -25,4 +25,3 @@
 - (void)updateTime;
 
 @end
-

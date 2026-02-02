@@ -23,7 +23,6 @@
 + (id)sendPatWrapKeyForPat:(id)arg1 fromChat:(id)arg2;
 + (id)sendPatWrapFromMessageWrap:(id)arg1;
 + (id)chatUserNameFromMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SendPatReportObject *reportObject; // @synthesize reportObject=_reportObject;
 @property(nonatomic) unsigned int associateMessageLocalID; // @synthesize associateMessageLocalID=_associateMessageLocalID;
 @property(retain, nonatomic) PatSuffixWrap *cachedPatSuffixWrap; // @synthesize cachedPatSuffixWrap=_cachedPatSuffixWrap;

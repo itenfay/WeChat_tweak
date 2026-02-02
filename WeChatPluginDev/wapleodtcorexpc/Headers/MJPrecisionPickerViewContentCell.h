@@ -12,7 +12,6 @@
     UIView *_pickerContentView;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *pickerContentView; // @synthesize pickerContentView=_pickerContentView;
 - (void)configPickerContentView:(id)arg1 withSize:(struct CGSize)arg2;
 - (void)prepareForReuse;

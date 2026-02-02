@@ -12,7 +12,6 @@
     JSApiScopeAuthViewModel *_asaViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSApiScopeAuthViewModel *asaViewModel; // @synthesize asaViewModel=_asaViewModel;
 @property(nonatomic) unsigned int sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) unsigned int selectedAvatarId; // @synthesize selectedAvatarId=_selectedAvatarId;

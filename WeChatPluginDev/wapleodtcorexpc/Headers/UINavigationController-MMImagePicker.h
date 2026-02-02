@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UINavigationController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -58,4 +59,3 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @end
-

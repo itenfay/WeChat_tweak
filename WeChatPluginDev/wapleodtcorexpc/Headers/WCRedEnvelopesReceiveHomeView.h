@@ -40,7 +40,6 @@
     UIImageView *_promotionMaskView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int enterTimestamp; // @synthesize enterTimestamp=_enterTimestamp;
 @property(nonatomic) _Bool isPromotionViewShowing; // @synthesize isPromotionViewShowing=_isPromotionViewShowing;
 @property(retain, nonatomic) UIImageView *promotionMaskView; // @synthesize promotionMaskView=_promotionMaskView;

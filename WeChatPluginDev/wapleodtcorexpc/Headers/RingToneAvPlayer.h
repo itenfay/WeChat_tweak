@@ -20,7 +20,6 @@
     NSString *_curPlayFile;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *curPlayFile; // @synthesize curPlayFile=_curPlayFile;
 @property(retain, nonatomic) NSObject *timeObserver; // @synthesize timeObserver=_timeObserver;
 @property(copy, nonatomic) NSString *ringId; // @synthesize ringId=_ringId;

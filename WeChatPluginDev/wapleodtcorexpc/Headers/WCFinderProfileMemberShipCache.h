@@ -25,7 +25,6 @@
 + (void)PBArrayAdd_videoNum;
 + (void)PBArrayAdd_price;
 + (void)PBArrayAdd_videoTids;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool autoRenewSwitch; // @synthesize autoRenewSwitch=_autoRenewSwitch;
 @property(nonatomic) long long autoPrice; // @synthesize autoPrice=_autoPrice;
 @property(copy, nonatomic) NSString *wecoinProductId; // @synthesize wecoinProductId=_wecoinProductId;

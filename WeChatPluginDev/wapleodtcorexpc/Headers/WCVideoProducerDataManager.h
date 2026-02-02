@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCMomentsPostReportSession, WCVideoProducerOptions, WCVideoProducerPreloadConfigs;
 
@@ -45,7 +46,6 @@
 + (_Bool)_isMusic:(id)arg1 containedInList:(id)arg2;
 + (_Bool)_isTemplate:(id)arg1 containedInList:(id)arg2;
 + (void)_checkTaskCount:(unsigned long long)arg1 forBlock:(CDUnknownBlockType)arg2 withResult:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsPostReportSession *postReportSession; // @synthesize postReportSession=_postReportSession;
 @property(retain, nonatomic) NSMutableDictionary *inputAssetPathIdentifierMap; // @synthesize inputAssetPathIdentifierMap=_inputAssetPathIdentifierMap;
 @property(retain, nonatomic) NSMutableSet *wxDefaultAndCreateSameTemplateIdSet; // @synthesize wxDefaultAndCreateSameTemplateIdSet=_wxDefaultAndCreateSameTemplateIdSet;
@@ -148,4 +148,3 @@
 @property(readonly) Class superclass;
 
 @end
-

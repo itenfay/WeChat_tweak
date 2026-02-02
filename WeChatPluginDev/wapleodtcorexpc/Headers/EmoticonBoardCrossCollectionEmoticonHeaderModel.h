@@ -20,7 +20,6 @@
     unsigned long long _index;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(nonatomic) _Bool isLayoutForExpand; // @synthesize isLayoutForExpand=_isLayoutForExpand;
 @property(nonatomic) _Bool hasReddot; // @synthesize hasReddot=_hasReddot;

@@ -17,7 +17,6 @@
     NSData *m_data;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_wifiStatus; // @synthesize m_wifiStatus;
 @property(retain, nonatomic) NSData *m_data; // @synthesize m_data;
 @property(nonatomic) long long m_sessionId; // @synthesize m_sessionId;

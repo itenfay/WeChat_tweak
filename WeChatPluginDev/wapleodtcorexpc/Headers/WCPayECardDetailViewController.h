@@ -14,7 +14,6 @@
     UIButton *_footerButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *footerButton; // @synthesize footerButton=_footerButton;
 @property(retain, nonatomic) QryCancelECardDescRes *descResponse; // @synthesize descResponse=_descResponse;
 @property(retain, nonatomic) WCPayQryCancelECardDescCgi *descCgi; // @synthesize descCgi=_descCgi;

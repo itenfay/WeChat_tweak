@@ -17,7 +17,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool preloadFlag; // @synthesize preloadFlag=_preloadFlag;
 @property(retain, nonatomic) NSString *requestId; // @synthesize requestId=_requestId;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;

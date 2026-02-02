@@ -14,7 +14,6 @@
     UIView *_m_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain) UIView *m_backgroundView; // @synthesize m_backgroundView=_m_backgroundView;
 @property(retain, nonatomic) UILabel *m_titleLabel; // @synthesize m_titleLabel=_m_titleLabel;
 @property(retain, nonatomic) WCPayOverseaTypeInfoObject *m_typeInfo; // @synthesize m_typeInfo=_m_typeInfo;

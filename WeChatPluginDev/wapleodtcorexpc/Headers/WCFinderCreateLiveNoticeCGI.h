@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveNoticeInfo, FinderLivePaymentSetting, NSArray, NSString;
 
 @interface WCFinderCreateLiveNoticeCGI
@@ -20,7 +22,6 @@
     unsigned long long _modifyFieldFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long modifyFieldFlag; // @synthesize modifyFieldFlag=_modifyFieldFlag;
 @property(copy, nonatomic) NSString *modReason; // @synthesize modReason=_modReason;
 @property(nonatomic) unsigned long long reportingSourceScene; // @synthesize reportingSourceScene=_reportingSourceScene;
@@ -38,4 +39,3 @@
 - (id)initWithFinderUserName:(id)arg1 liveNoticeInfo:(id)arg2 optype:(unsigned int)arg3 paymentSetting:(id)arg4 couponsStockIDs:(id)arg5 delReason:(id)arg6 modifyReason:(id)arg7 modifyFieldFlag:(unsigned long long)arg8 reportingSourceScene:(unsigned long long)arg9 successBlock:(CDUnknownBlockType)arg10 failureBlock:(CDUnknownBlockType)arg11;
 
 @end
-

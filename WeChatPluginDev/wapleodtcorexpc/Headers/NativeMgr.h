@@ -16,7 +16,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <wxNativeLogDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)nativeLog:(int)arg1 log:(const char *)arg2 target:(long long)arg3;
 

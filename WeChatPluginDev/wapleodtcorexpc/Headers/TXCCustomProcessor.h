@@ -10,7 +10,6 @@
     TXCCustomConvertFilter *_convertFilter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCCustomConvertFilter *convertFilter; // @synthesize convertFilter=_convertFilter;
 - (id)initWithContext:(id)arg1 delegate:(id)arg2 format:(unsigned long long)arg3 bufferType:(unsigned long long)arg4;
 

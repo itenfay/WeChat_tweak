@@ -12,7 +12,6 @@
 
 + (id)getInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)notifyScreenCapture;
 - (void)applicationRestart;
 - (void)takeScreenshot;

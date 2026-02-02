@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_isGameAPP;
 + (void)PBArrayAdd_debugMode;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(copy, nonatomic) NSString *appEntryPage; // @synthesize appEntryPage=_appEntryPage;
 @property(nonatomic) _Bool isGameAPP; // @synthesize isGameAPP=_isGameAPP;

@@ -21,7 +21,6 @@
     NSString *_bank_serial;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int realname_scene; // @synthesize realname_scene=_realname_scene;
 @property(nonatomic) unsigned int bindbankscene; // @synthesize bindbankscene=_bindbankscene;
 @property(retain, nonatomic) NSString *bank_serial; // @synthesize bank_serial=_bank_serial;

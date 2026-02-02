@@ -10,7 +10,6 @@
     MMWebAddContactView *m_jsAddContactView;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)currentViewController;
 - (void)OnWebAddContactReturn;

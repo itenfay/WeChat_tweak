@@ -11,7 +11,6 @@
     UIView *_liveStreamPlayerCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *liveStreamPlayerCache; // @synthesize liveStreamPlayerCache=_liveStreamPlayerCache;
 @property(retain, nonatomic) UIView *likeAnimationViewCache; // @synthesize likeAnimationViewCache=_likeAnimationViewCache;
 

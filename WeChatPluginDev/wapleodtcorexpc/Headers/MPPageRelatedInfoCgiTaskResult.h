@@ -12,7 +12,6 @@
     NSArray *_relatedInfoArr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int maxRequestUrlCount; // @synthesize maxRequestUrlCount=_maxRequestUrlCount;
 @property(nonatomic) unsigned int refreshIntervalSec; // @synthesize refreshIntervalSec=_refreshIntervalSec;
 @property(retain, nonatomic) NSArray *relatedInfoArr; // @synthesize relatedInfoArr=_relatedInfoArr;

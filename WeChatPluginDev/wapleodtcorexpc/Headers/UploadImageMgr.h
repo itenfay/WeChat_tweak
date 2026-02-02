@@ -12,7 +12,6 @@
     MessageCommonUploader *_uploader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MessageCommonUploader *uploader; // @synthesize uploader=_uploader;
 - (void)OnWillRevokeMsg:(id)arg1 revokeContext:(id)arg2;
 - (_Bool)isWxamEnable;

@@ -12,7 +12,6 @@
 
 + (double)heightForItemContentViewWithViewItem:(id)arg1 inTableView:(id)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSNSNodeVideoView *videoView; // @synthesize videoView=_videoView;
 - (void)onWillFullPlay:(_Bool *)arg1 sightView:(id)arg2;
 - (void)onClickWCSight:(id)arg1;

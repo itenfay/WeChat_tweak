@@ -15,7 +15,6 @@
     NSMutableDictionary *_cgiBuffDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cgiBuffDict; // @synthesize cgiBuffDict=_cgiBuffDict;
 @property(retain, nonatomic) NSMutableDictionary *cgiDict; // @synthesize cgiDict=_cgiDict;
 @property(nonatomic) __weak id <EmoticonListUpdateLogicDelegate> delegate; // @synthesize delegate=_delegate;

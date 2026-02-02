@@ -15,7 +15,6 @@
     MMUILabel *_topUseIconLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *topUseIconLabel; // @synthesize topUseIconLabel=_topUseIconLabel;
 @property(retain, nonatomic) MMUILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(nonatomic) _Bool singleRowLayout; // @synthesize singleRowLayout=_singleRowLayout;

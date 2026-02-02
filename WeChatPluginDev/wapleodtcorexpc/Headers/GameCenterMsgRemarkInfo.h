@@ -14,7 +14,6 @@
     NSString *_background_color;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *background_color; // @synthesize background_color=_background_color;
 @property(retain, nonatomic) NSString *text_color; // @synthesize text_color=_text_color;
 @property(nonatomic) unsigned int remark_type; // @synthesize remark_type=_remark_type;

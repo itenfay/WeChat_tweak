@@ -11,7 +11,6 @@
     WCFinderFeedImageCDNView *_finderCoverView;
 }
 
-- (void).cxx_destruct;
 - (_Bool)supportAddToMinimize;
 - (void)updateWithListInfo:(id)arg1;
 - (id)defaultImage;

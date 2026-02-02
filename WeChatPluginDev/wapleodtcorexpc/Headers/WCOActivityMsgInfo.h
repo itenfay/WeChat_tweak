@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_desc;
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_type;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *startBtnTxt; // @synthesize startBtnTxt=_startBtnTxt;
 @property(retain, nonatomic) NSString *imgUrl; // @synthesize imgUrl=_imgUrl;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;

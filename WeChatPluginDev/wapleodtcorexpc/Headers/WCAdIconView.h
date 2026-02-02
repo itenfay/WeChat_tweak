@@ -13,7 +13,6 @@
     NSString *_labelLanguage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *labelLanguage; // @synthesize labelLanguage=_labelLanguage;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIImageView *icon; // @synthesize icon=_icon;

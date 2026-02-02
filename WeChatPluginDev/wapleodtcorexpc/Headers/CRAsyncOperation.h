@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSOperation.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CRAsyncOperation : NSOperation
 {
@@ -14,7 +15,6 @@
 }
 
 + (id)operationWithBlock:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property(nonatomic) _Bool isExecuting; // @synthesize isExecuting=_isExecuting;
@@ -28,4 +28,3 @@
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 
 @end
-

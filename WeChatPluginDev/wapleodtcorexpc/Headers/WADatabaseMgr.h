@@ -41,7 +41,6 @@
 + (_Bool)deleteInfoDataWithTable:(id)arg1 where:(const void *)arg2;
 + (_Bool)insertOrUpdateInfoDataWithTable:(id)arg1 infoData:(id)arg2;
 + (id)getInfoDataWithTable:(id)arg1 primaryKey:(id)arg2;
-- (void).cxx_destruct;
 @property(retain) WCTTable *tableNewXmlPushMsg; // @synthesize tableNewXmlPushMsg=_tableNewXmlPushMsg;
 @property(retain) WCTTable *tableExptPermissionInfo; // @synthesize tableExptPermissionInfo=_tableExptPermissionInfo;
 @property(retain) WCTTable *tableWeAppPluginVersionInfo; // @synthesize tableWeAppPluginVersionInfo=_tableWeAppPluginVersionInfo;

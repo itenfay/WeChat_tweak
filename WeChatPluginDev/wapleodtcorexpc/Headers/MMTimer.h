@@ -17,7 +17,6 @@
 
 + (id)startTimeCheckWithInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3;
 + (id)scheduledNoRetainTimerWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4 repeats:(_Bool)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *previousFireDate; // @synthesize previousFireDate=_previousFireDate;
 @property(retain, nonatomic) NSDate *pauseStart; // @synthesize pauseStart=_pauseStart;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;

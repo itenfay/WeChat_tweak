@@ -18,7 +18,6 @@
     CLLocation *m_location;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *m_location; // @synthesize m_location;
 @property(retain, nonatomic) LocationRetriever *m_locationRetrieve; // @synthesize m_locationRetrieve;
 @property(retain, nonatomic) LbsContactInfoList *m_lbsContactList; // @synthesize m_lbsContactList;

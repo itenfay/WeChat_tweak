@@ -28,7 +28,6 @@
     double _keyboardHeight;
 }
 
-- (void).cxx_destruct;
 @property double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(retain) WCPayCss *css; // @synthesize css=_css;
 @property(retain) WCPayDecimalKeyboardView *keyboard; // @synthesize keyboard=_keyboard;

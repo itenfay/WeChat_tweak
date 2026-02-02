@@ -22,7 +22,6 @@
 
 + (unsigned long long)timeRangeIndexInPoint:(double)arg1;
 + (double)timeRange;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderBulletItemTextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) _Bool locale; // @synthesize locale=_locale;
 @property(nonatomic) double disappearPoint; // @synthesize disappearPoint=_disappearPoint;

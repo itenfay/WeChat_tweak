@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
@@ -15,7 +16,6 @@
     NSMutableDictionary *_sourceToTargetsDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sourceToTargetsDict; // @synthesize sourceToTargetsDict=_sourceToTargetsDict;
 @property(copy, nonatomic) CDUnknownBlockType clearCallback; // @synthesize clearCallback=_clearCallback;
 @property(copy, nonatomic) NSString *selectorName; // @synthesize selectorName=_selectorName;
@@ -26,4 +26,3 @@
 - (id)init;
 
 @end
-

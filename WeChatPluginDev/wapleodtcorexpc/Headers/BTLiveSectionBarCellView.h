@@ -30,7 +30,6 @@
 + (double)barViewHeight;
 + (double)cellHeightForFold;
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *voiceOverElements; // @synthesize voiceOverElements=_voiceOverElements;
 @property(nonatomic) unsigned long long splitLineIndex; // @synthesize splitLineIndex=_splitLineIndex;
 @property(retain, nonatomic) UIView *splitLineView; // @synthesize splitLineView=_splitLineView;

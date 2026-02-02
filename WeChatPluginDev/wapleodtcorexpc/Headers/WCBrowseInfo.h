@@ -93,7 +93,6 @@
     NSString *_lastestUnreadFeedId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int clickTingListCardCount; // @synthesize clickTingListCardCount=_clickTingListCardCount;
 @property(nonatomic) unsigned int browseTingListCardCount; // @synthesize browseTingListCardCount=_browseTingListCardCount;
 @property(nonatomic) unsigned int clickTingAudioCardCount; // @synthesize clickTingAudioCardCount=_clickTingAudioCardCount;

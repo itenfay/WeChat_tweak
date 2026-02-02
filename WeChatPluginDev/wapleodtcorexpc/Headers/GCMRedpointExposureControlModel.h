@@ -14,7 +14,6 @@
     unsigned long long _logicType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool blockLog; // @synthesize blockLog=_blockLog;
 @property(nonatomic) unsigned long long logicType; // @synthesize logicType=_logicType;
 @property(retain, nonatomic) NSMutableDictionary *controlInfoDict; // @synthesize controlInfoDict=_controlInfoDict;

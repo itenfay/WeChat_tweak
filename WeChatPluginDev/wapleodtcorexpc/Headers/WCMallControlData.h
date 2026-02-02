@@ -31,7 +31,6 @@
     NSArray *_bannerDics;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bIsShowSetting; // @synthesize m_bIsShowSetting=_m_bIsShowSetting;
 @property(retain, nonatomic) NSArray *bannerDics; // @synthesize bannerDics=_bannerDics;
 @property(retain, nonatomic) NSDictionary *m_functionTypeMap; // @synthesize m_functionTypeMap;

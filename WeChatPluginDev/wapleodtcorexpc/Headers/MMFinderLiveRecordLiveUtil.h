@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMFinderLiveRecordLiveUtil : NSObject
 {
@@ -18,4 +19,3 @@
 + (void)getFilteredGameUserInfoWithAppId:(id)arg1 finderLiveTask:(id)arg2 filteredGameCompleteBlock:(CDUnknownBlockType)arg3;
 
 @end
-

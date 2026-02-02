@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveFlashSaleInfo, MMCountDownLabel, NSString, NSURL, UIImageView;
 
@@ -20,7 +21,6 @@
     NSURL *_currentImageURL;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *currentImageURL; // @synthesize currentImageURL=_currentImageURL;
 @property(retain, nonatomic) UIImageView *tagView; // @synthesize tagView=_tagView;
 @property(retain, nonatomic) MMCountDownLabel *countDownLabel; // @synthesize countDownLabel=_countDownLabel;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

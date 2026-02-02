@@ -16,7 +16,6 @@
     id <WebviewJSEventHandlerBaseDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WebviewJSEventHandlerBaseDelegate> m_delegate; // @synthesize m_delegate;
 - (void)OnWillAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)setJSFunctionMap:(id)arg1;

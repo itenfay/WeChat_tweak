@@ -12,7 +12,6 @@
     NSDictionary *_paramDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *paramDict; // @synthesize paramDict=_paramDict;
 @property(nonatomic) __weak id <WCPayJSOpenOfflinePayControlLogicDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;
 - (void)onOfflinePayLogicStop:(_Bool)arg1;

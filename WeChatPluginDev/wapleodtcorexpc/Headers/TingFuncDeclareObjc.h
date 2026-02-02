@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -59,7 +60,6 @@
 + (id)from_Void_AsyncResultUR_2_Block:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)to_TingReportContext_2_TingReportContext_2_Block:(id)arg1;
 + (id)from_TingReportContext_2_TingReportContext_2_Block:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType Void_TingTaskSnapshot_2_Block; // @synthesize Void_TingTaskSnapshot_2_Block=_Void_TingTaskSnapshot_2_Block;
 @property(readonly, copy, nonatomic) CDUnknownBlockType Void_TingRGBAImageData_2_Block; // @synthesize Void_TingRGBAImageData_2_Block=_Void_TingRGBAImageData_2_Block;
 @property(readonly, copy, nonatomic) CDUnknownBlockType Void_TingMusicSquareClientInsertionPatch_1_Block; // @synthesize Void_TingMusicSquareClientInsertionPatch_1_Block=_Void_TingMusicSquareClientInsertionPatch_1_Block;
@@ -103,4 +103,3 @@
 @property(readonly) Class superclass;
 
 @end
-

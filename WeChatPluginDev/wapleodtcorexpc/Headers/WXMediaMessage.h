@@ -21,7 +21,6 @@
 }
 
 + (id)message;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *msgSignature; // @synthesize msgSignature=_msgSignature;
 @property(copy, nonatomic) NSString *thumbDataHash; // @synthesize thumbDataHash=_thumbDataHash;
 @property(retain, nonatomic) NSString *messageAction; // @synthesize messageAction;

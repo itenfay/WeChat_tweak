@@ -23,7 +23,6 @@
     double _containerCacheWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double containerCacheWidth; // @synthesize containerCacheWidth=_containerCacheWidth;
 @property(retain, nonatomic) MentionListLastReadInfo *lastReadInfo; // @synthesize lastReadInfo=_lastReadInfo;
 @property(copy, nonatomic) NSData *pageBuffer; // @synthesize pageBuffer=_pageBuffer;

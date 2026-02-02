@@ -10,7 +10,6 @@
     NSString *_giftMsgTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *giftMsgTitle; // @synthesize giftMsgTitle=_giftMsgTitle;
 
 @end

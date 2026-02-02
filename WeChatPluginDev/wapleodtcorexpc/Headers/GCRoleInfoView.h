@@ -13,7 +13,6 @@
     MMWebImageView *_roleIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *roleIcon; // @synthesize roleIcon=_roleIcon;
 @property(retain, nonatomic) UILabel *roleTextLabel; // @synthesize roleTextLabel=_roleTextLabel;
 - (void)configWithCellModel:(id)arg1;

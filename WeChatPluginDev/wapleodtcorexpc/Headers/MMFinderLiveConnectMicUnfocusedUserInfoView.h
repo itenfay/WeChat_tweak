@@ -16,7 +16,6 @@
     MMFinderLiveClockCountdownView *_paidMicCountdownView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveClockCountdownView *paidMicCountdownView; // @synthesize paidMicCountdownView=_paidMicCountdownView;
 @property(nonatomic) __weak MMLiveViewHiddenStatusContainer *hiddenStatusContainer; // @synthesize hiddenStatusContainer=_hiddenStatusContainer;
 @property(retain, nonatomic) UILabel *heatValueLabel; // @synthesize heatValueLabel=_heatValueLabel;

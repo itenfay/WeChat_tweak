@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)ongetResortContextComplete:(int)arg1 context:(id)arg2;
 - (id)initWithCpp:(const void *)arg1;
 

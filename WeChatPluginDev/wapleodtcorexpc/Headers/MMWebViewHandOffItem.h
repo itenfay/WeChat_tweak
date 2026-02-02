@@ -11,7 +11,6 @@
     NSString *_icon;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 - (id)initFromMinimizeTaskData:(id)arg1;

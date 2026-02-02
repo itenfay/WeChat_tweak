@@ -99,7 +99,6 @@
 + (void)PBArrayAdd_wxMentionModel;
 + (void)PBArrayAdd_isSilencePlay;
 + (void)PBArrayAdd_finderContactUsername;
-- (void).cxx_destruct;
 @property(nonatomic) long long machineLatestLeaveSecond; // @synthesize machineLatestLeaveSecond=_machineLatestLeaveSecond;
 @property(nonatomic) long long recommendLatestLeaveSecond; // @synthesize recommendLatestLeaveSecond=_recommendLatestLeaveSecond;
 @property(nonatomic) long long followLatestLeaveSecond; // @synthesize followLatestLeaveSecond=_followLatestLeaveSecond;

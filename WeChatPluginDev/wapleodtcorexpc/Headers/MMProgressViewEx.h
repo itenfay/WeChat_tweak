@@ -19,7 +19,6 @@
     _Bool _autoContinue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool autoContinue; // @synthesize autoContinue=_autoContinue;
 @property(nonatomic) _Bool hideOnCompleteProcess; // @synthesize hideOnCompleteProcess;
 @property(nonatomic) double stepDuration; // @synthesize stepDuration;

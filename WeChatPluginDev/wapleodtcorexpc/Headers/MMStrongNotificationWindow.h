@@ -10,7 +10,6 @@
     StrongNotificationViewController *_viewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StrongNotificationViewController *viewController; // @synthesize viewController=_viewController;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)initWithViewController:(id)arg1;

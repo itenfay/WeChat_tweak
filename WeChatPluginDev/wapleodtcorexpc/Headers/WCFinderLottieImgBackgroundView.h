@@ -19,7 +19,6 @@
     UIImageView *_leftTopImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *leftTopImageView; // @synthesize leftTopImageView=_leftTopImageView;
 @property(retain, nonatomic) UIImageView *leftImageView; // @synthesize leftImageView=_leftImageView;
 @property(retain, nonatomic) UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;

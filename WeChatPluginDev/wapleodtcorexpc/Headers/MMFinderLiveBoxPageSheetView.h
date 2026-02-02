@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIButton, UILabel, UIView, WCLiveBlurButton;
 
 @interface MMFinderLiveBoxPageSheetView
@@ -20,7 +22,6 @@
     CDUnknownBlockType _didDismiss;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didDismiss; // @synthesize didDismiss=_didDismiss;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(nonatomic) double contentHeight; // @synthesize contentHeight=_contentHeight;
@@ -41,4 +42,3 @@
 - (id)initWithTitleCenter:(double)arg1 detailTop:(double)arg2 buttonTop:(double)arg3 contentHeight:(double)arg4;
 
 @end
-

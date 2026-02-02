@@ -13,7 +13,6 @@
     id <FavSecurityDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavSecurityDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)HandleResp:(id)arg1 Event:(unsigned int)arg2;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

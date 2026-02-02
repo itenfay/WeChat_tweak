@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIFont.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIFont (PreHot)
 + (id)preHotPriceFontOfSize:(double)arg1;
@@ -77,4 +78,3 @@
 - (double)redesignLinespacing;
 - (double)topMargin;
 @end
-

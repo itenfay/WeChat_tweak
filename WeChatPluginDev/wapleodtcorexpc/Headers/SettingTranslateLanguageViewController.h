@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray;
 
 @interface SettingTranslateLanguageViewController
@@ -16,7 +18,6 @@
     id _userData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id userData; // @synthesize userData=_userData;
 @property(copy, nonatomic) CDUnknownBlockType onTranslateLanguageChangedBlock; // @synthesize onTranslateLanguageChangedBlock=_onTranslateLanguageChangedBlock;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
@@ -33,4 +34,3 @@
 - (id)init;
 
 @end
-

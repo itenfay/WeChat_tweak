@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVSpeechSynthesizer, CADisplayLink, NSMutableArray, NSString, SpeakTextAudioExtInfo, SpeakTextReporter, SpeakTextResourceLoader, StreamAudioQueuePlayer;
 @protocol SpeakTextDelegate;
@@ -40,7 +41,6 @@
 + (_Bool)hasLanguageOtherThanCN:(id)arg1;
 + (_Bool)forceUseLocalSpeak;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SpeakTextReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) unsigned long long startSpeakTime; // @synthesize startSpeakTime=_startSpeakTime;
 @property(nonatomic) unsigned long long prepareSpeakTime; // @synthesize prepareSpeakTime=_prepareSpeakTime;
@@ -101,4 +101,3 @@
 @property(readonly) Class superclass;
 
 @end
-

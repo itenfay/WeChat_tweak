@@ -10,7 +10,6 @@
     MISSING_TYPE *biz;
 }
 
-- (void).cxx_destruct;
 - (void)onAttachedToViewController:(id)arg1;
 - (void)onDetachedFromEngine:(id)arg1;
 - (id)provideBiz;

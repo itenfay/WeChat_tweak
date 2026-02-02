@@ -23,7 +23,6 @@
 }
 
 + (struct CGSize)getHeadImageSize;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <RSHeadImageViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CContact *m_contact; // @synthesize m_contact;
 @property(nonatomic) int m_iPointIndex; // @synthesize m_iPointIndex;

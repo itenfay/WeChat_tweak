@@ -13,7 +13,6 @@
     MMFinderLiveJSAPIShareFinderShopParams_LiteAppInfo *_liteAppInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveJSAPIShareFinderShopParams_LiteAppInfo *liteAppInfo; // @synthesize liteAppInfo=_liteAppInfo;
 @property(retain, nonatomic) MMFinderLiveJSAPIShareFinderShopParams_ShareInfo *shareInfo; // @synthesize shareInfo=_shareInfo;
 

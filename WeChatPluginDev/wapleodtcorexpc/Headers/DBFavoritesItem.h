@@ -129,7 +129,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *StrRes3; // @synthesize StrRes3=_StrRes3;
 @property(retain, nonatomic) NSString *StrRes2; // @synthesize StrRes2=_StrRes2;
 @property(retain, nonatomic) NSString *StrRes1; // @synthesize StrRes1=_StrRes1;

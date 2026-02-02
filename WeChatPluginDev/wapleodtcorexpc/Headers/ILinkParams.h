@@ -17,7 +17,6 @@
     NSString *_rtmpUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableCustomAudio; // @synthesize enableCustomAudio=_enableCustomAudio;
 @property(copy, nonatomic) NSString *rtmpUrl; // @synthesize rtmpUrl=_rtmpUrl;
 @property(copy, nonatomic) NSString *sdkGroupId; // @synthesize sdkGroupId=_sdkGroupId;

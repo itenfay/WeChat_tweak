@@ -17,7 +17,6 @@
     UIColor *_navBarColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool loading; // @synthesize loading=_loading;
 @property(nonatomic) _Bool rightButtonHidden; // @synthesize rightButtonHidden=_rightButtonHidden;
 @property(retain, nonatomic) UIColor *navBarColor; // @synthesize navBarColor=_navBarColor;

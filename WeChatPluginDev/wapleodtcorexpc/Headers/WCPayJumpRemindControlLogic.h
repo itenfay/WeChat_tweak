@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWebViewController, NSString, WCPayJumpRemindInfo;
 @protocol MMUIViewControllerDelegate;
 
@@ -17,7 +19,6 @@
     MMWebViewController *_m_gdprUserKeyInfoWebviewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebViewController *m_gdprUserKeyInfoWebviewController; // @synthesize m_gdprUserKeyInfoWebviewController=_m_gdprUserKeyInfoWebviewController;
 @property(nonatomic) unsigned int payScene; // @synthesize payScene=_payScene;
 @property(nonatomic) unsigned int clientScene; // @synthesize clientScene=_clientScene;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

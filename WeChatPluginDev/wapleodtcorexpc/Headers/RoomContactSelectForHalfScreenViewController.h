@@ -47,7 +47,6 @@
     WCSearchBar *_searchBarNew;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSearchBar *searchBarNew; // @synthesize searchBarNew=_searchBarNew;
 @property(retain, nonatomic) _TtC6WeChat13DNDReportItem *dndReportItem; // @synthesize dndReportItem=_dndReportItem;
 @property(nonatomic) _Bool isInSearchState; // @synthesize isInSearchState=_isInSearchState;

@@ -14,7 +14,6 @@
 }
 
 + (id)getInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMDeviceMotion *lastMotion; // @synthesize lastMotion=_lastMotion;
 @property(retain, nonatomic) NSMutableDictionary *attachedObjects; // @synthesize attachedObjects=_attachedObjects;
 @property(retain, nonatomic) NSObject *motionManagerLock; // @synthesize motionManagerLock=_motionManagerLock;

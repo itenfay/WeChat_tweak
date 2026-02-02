@@ -18,7 +18,6 @@
     TSKModelParam *_modelParam;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TSKModelParam *modelParam; // @synthesize modelParam=_modelParam;
 @property(retain, nonatomic) NSString *roleName; // @synthesize roleName=_roleName;
 @property(retain, nonatomic) NSArray *sectionInfoArr; // @synthesize sectionInfoArr=_sectionInfoArr;

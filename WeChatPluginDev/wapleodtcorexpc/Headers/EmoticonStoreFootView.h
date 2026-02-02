@@ -12,7 +12,6 @@
     UILabel *m_label;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_lineViewWidth; // @synthesize m_lineViewWidth;
 @property(retain, nonatomic) UILabel *m_label; // @synthesize m_label;
 @property(retain, nonatomic) MMUIActivityIndicatorView *m_activityIndicatorView; // @synthesize m_activityIndicatorView;

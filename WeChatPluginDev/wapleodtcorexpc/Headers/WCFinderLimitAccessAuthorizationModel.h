@@ -22,7 +22,6 @@
     MMFinderLiveRouterParams *_liveParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRouterParams *liveParams; // @synthesize liveParams=_liveParams;
 @property(copy, nonatomic) NSString *bizKey; // @synthesize bizKey=_bizKey;
 @property(copy, nonatomic) NSString *nonceId; // @synthesize nonceId=_nonceId;

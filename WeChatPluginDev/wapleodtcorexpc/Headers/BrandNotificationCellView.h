@@ -15,7 +15,6 @@
     CALayer *_bottomLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) MMHeadImageView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) MMUILabel *timeLabel; // @synthesize timeLabel=_timeLabel;

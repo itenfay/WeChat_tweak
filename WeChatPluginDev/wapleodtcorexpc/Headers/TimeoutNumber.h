@@ -23,7 +23,6 @@
     double _noAnimationDelay;
 }
 
-- (void).cxx_destruct;
 @property double noAnimationDelay; // @synthesize noAnimationDelay=_noAnimationDelay;
 @property unsigned long long noAnimationStart; // @synthesize noAnimationStart=_noAnimationStart;
 @property double delay; // @synthesize delay=_delay;

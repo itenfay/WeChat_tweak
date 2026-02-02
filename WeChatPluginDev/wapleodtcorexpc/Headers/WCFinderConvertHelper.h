@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderConvertHelper : NSObject
 {
@@ -77,4 +78,3 @@
 + (id)generateUploadFinderItemWithImagePathArray:(id)arg1 finderUsername:(id)arg2;
 
 @end
-

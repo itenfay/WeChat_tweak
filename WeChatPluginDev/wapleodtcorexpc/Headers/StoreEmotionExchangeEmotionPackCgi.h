@@ -14,7 +14,6 @@
     EmoticonStoreItem *_item;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonStoreItem *item; // @synthesize item=_item;
 @property(nonatomic) int exchangeScence; // @synthesize exchangeScence=_exchangeScence;
 @property(nonatomic) __weak id <StoreEmotionExchangeEmotionPackCgiDelegate> delegate; // @synthesize delegate=_delegate;

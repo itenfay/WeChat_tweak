@@ -16,7 +16,6 @@
     id <WCPayF2FJSAPIAuthCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayF2FJSAPIAuthCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 @property(retain, nonatomic) NSString *timeStamp; // @synthesize timeStamp=_timeStamp;
 @property(retain, nonatomic) NSString *noncestr; // @synthesize noncestr=_noncestr;

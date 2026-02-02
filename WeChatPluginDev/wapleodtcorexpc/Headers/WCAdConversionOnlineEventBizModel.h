@@ -30,7 +30,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *vangoghId; // @synthesize vangoghId=_vangoghId;
 @property(retain, nonatomic) NSString *uxInfo; // @synthesize uxInfo=_uxInfo;
 @property(retain, nonatomic) NSString *pageExitAction; // @synthesize pageExitAction=_pageExitAction;

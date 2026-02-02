@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVPlayer, AVPlayerItemVideoOutput, CADisplayLink, FlutterEventChannel, NSString;
 
@@ -21,7 +22,6 @@
     struct CGAffineTransform _preferredTransform;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isInitialized; // @synthesize isInitialized=_isInitialized;
 @property(nonatomic) _Bool isLooping; // @synthesize isLooping=_isLooping;
 @property(readonly, nonatomic) _Bool isPlaying; // @synthesize isPlaying=_isPlaying;
@@ -64,4 +64,3 @@
 @property(readonly) Class superclass;
 
 @end
-

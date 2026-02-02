@@ -37,7 +37,6 @@
 + (unsigned long long)wcmj_videoDimensionLevelFromEncodeParams:(id)arg1;
 + (unsigned long long)wcmj_videoFrameRateFromEncodeParams:(id)arg1;
 + (id)wcmj_exportSettingsFromEncodeParams:(id)arg1 enableHDR:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long checksumType; // @synthesize checksumType=_checksumType;
 @property(nonatomic) float coverImageClarityThreshold; // @synthesize coverImageClarityThreshold=_coverImageClarityThreshold;
 @property(nonatomic) float coverImageDetectionDarknessRatioThreshold; // @synthesize coverImageDetectionDarknessRatioThreshold=_coverImageDetectionDarknessRatioThreshold;

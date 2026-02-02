@@ -13,7 +13,6 @@
     NSIndexPath *_rightPlayingIndexPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *rightPlayingIndexPath; // @synthesize rightPlayingIndexPath=_rightPlayingIndexPath;
 @property(retain, nonatomic) NSIndexPath *leftPlayingIndexPath; // @synthesize leftPlayingIndexPath=_leftPlayingIndexPath;
 - (_Bool)containIndexPath:(id)arg1;

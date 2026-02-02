@@ -16,7 +16,6 @@
     long long m_inputToolWeAppNotShowIndex;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_svcApps; // @synthesize m_svcApps;
 @property(nonatomic) __weak id <SelectAttachmentViewControllerDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onTipsShowInfoChangeWithPathKey:(id)arg1;

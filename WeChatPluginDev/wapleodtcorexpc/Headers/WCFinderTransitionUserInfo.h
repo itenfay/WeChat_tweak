@@ -18,7 +18,6 @@
     NSMutableDictionary *_datas;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *datas; // @synthesize datas=_datas;
 @property(nonatomic) _Bool isTransfer; // @synthesize isTransfer=_isTransfer;
 @property(retain, nonatomic) NSString *currentBrowseTid; // @synthesize currentBrowseTid=_currentBrowseTid;

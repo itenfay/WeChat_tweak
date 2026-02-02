@@ -17,7 +17,6 @@
 }
 
 + (double)headerHeight;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAProfileSectionHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)layoutSubviewsImmediately;
 - (void)layoutSubviews;

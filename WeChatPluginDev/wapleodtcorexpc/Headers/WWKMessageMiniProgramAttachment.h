@@ -16,7 +16,6 @@
     unsigned long long _miniProgramType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long miniProgramType; // @synthesize miniProgramType=_miniProgramType;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;

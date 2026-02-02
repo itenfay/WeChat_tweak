@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property __weak id <MMMusicMVClipUploaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onFinderPostSessionUpLoadFailWithTid:(id)arg1 errorType:(long long)arg2;

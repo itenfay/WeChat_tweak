@@ -22,7 +22,6 @@
 + (id)defaultForFirstOpenGiftDetailCardViewForAudience;
 + (id)defaultForOpenGiftDetailCardViewForAnchor;
 + (id)defaultForOpenGiftDetailCardViewUnavailable;
-- (void).cxx_destruct;
 @property(retain, nonatomic) Class cardViewClazz; // @synthesize cardViewClazz=_cardViewClazz;
 @property(retain, nonatomic) NSString *coinSum; // @synthesize coinSum=_coinSum;
 @property(retain, nonatomic) NSString *coinImgUrl; // @synthesize coinImgUrl=_coinImgUrl;

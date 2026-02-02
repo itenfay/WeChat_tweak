@@ -15,7 +15,6 @@
 }
 
 + (id)sharedCenter;
-- (void).cxx_destruct;
 @property(retain) AVAudioSessionRouteDescription *cachedRoute; // @synthesize cachedRoute=_cachedRoute;
 - (void)audioSessionRouteChange:(id)arg1;
 - (void)_updateCachedRouteAsynchronously;

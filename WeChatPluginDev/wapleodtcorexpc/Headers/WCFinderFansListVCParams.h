@@ -14,7 +14,6 @@
 }
 
 + (id)paramsWithContact:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalFansCount; // @synthesize totalFansCount=_totalFansCount;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 

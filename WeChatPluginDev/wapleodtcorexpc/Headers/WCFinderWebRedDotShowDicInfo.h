@@ -38,7 +38,6 @@
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_count;
 + (void)PBArrayAdd_showType;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long businessType; // @synthesize businessType=_businessType;
 @property(nonatomic) unsigned long long ctrlInfoType; // @synthesize ctrlInfoType=_ctrlInfoType;
 @property(copy, nonatomic) NSString *tipsUuid; // @synthesize tipsUuid=_tipsUuid;

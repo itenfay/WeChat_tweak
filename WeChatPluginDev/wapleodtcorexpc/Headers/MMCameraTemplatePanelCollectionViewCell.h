@@ -19,7 +19,6 @@
 + (id)genLabel;
 + (struct CGSize)getCellSize;
 + (id)cellID;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UILabel *nonImageView; // @synthesize nonImageView=_nonImageView;

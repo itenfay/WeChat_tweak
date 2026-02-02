@@ -19,7 +19,6 @@
 }
 
 + (double)cellHeightWithViewModel:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;
 @property(nonatomic) __weak UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UIImageView *detailImageView; // @synthesize detailImageView=_detailImageView;

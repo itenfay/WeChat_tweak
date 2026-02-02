@@ -15,7 +15,6 @@
     id <ContactTagNoTagBatchSetEditLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ContactTagNoTagBatchSetEditLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *m_arrContactUserName; // @synthesize m_arrContactUserName;
 @property(retain, nonatomic) NSArray *m_arrAllTagNameList; // @synthesize m_arrAllTagNameList;

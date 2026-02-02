@@ -15,7 +15,6 @@
     long long _status;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(nonatomic) long long size; // @synthesize size=_size;
 @property(copy, nonatomic) NSString *pinyin; // @synthesize pinyin=_pinyin;

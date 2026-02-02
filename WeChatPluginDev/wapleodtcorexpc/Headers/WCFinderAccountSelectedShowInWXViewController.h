@@ -11,7 +11,6 @@
     NSArray *_selfContactArry;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *selfContactArry; // @synthesize selfContactArry=_selfContactArry;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

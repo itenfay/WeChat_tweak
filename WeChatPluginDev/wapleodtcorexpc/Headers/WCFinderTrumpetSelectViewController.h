@@ -23,7 +23,6 @@
     NSNumber *_isPrivateMsgVisiableInfoSwitchOn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *isPrivateMsgVisiableInfoSwitchOn; // @synthesize isPrivateMsgVisiableInfoSwitchOn=_isPrivateMsgVisiableInfoSwitchOn;
 @property(retain, nonatomic) NSNumber *selectedPrivacyType; // @synthesize selectedPrivacyType=_selectedPrivacyType;
 @property(retain, nonatomic) NSNumber *selectedAccountType; // @synthesize selectedAccountType=_selectedAccountType;

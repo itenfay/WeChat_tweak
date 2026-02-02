@@ -11,7 +11,6 @@
     NSString *_password;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetTenPayError:(id)arg1;

@@ -11,7 +11,6 @@
     MMUIImageView *_maskImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIImageView *maskImageView; // @synthesize maskImageView=_maskImageView;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;
 - (void)layoutSubviews;

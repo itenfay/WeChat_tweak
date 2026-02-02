@@ -24,7 +24,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastMaxExposureSeq; // @synthesize lastMaxExposureSeq=_lastMaxExposureSeq;
 @property(retain, nonatomic) NSString *chatRoomUserName; // @synthesize chatRoomUserName=_chatRoomUserName;
 

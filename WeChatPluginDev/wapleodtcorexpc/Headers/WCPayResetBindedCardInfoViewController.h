@@ -17,7 +17,6 @@
     id <WCPayResetBindedCardInfoViewControllerDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)WCBaseInfoItemEndEdit:(id)arg1;
 - (void)WCBaseInfoItemBeginEdit:(id)arg1;
 - (void)WCBaseInfoItemEditChanged:(id)arg1;

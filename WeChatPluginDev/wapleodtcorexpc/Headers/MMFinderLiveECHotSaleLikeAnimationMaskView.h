@@ -19,7 +19,6 @@
     struct CGPoint _margin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveECHotSaleLikeAnimationView *currentAnimationView; // @synthesize currentAnimationView=_currentAnimationView;
 @property(nonatomic) _Bool hasAnimationViewEnter; // @synthesize hasAnimationViewEnter=_hasAnimationViewEnter;
 @property(retain, nonatomic) NSArray *history; // @synthesize history=_history;

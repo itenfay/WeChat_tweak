@@ -14,7 +14,6 @@
     NSString *_userIcon;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *userIcon; // @synthesize userIcon=_userIcon;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;

@@ -15,7 +15,6 @@
     WCPlayerPlaybackInfo *_playbackInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerPlaybackInfo *playbackInfo; // @synthesize playbackInfo=_playbackInfo;
 @property(retain, nonatomic) WCPlayerPlayArgs *playerArgs; // @synthesize playerArgs=_playerArgs;
 @property(retain, nonatomic) WCPlayerReporter *reporter; // @synthesize reporter=_reporter;

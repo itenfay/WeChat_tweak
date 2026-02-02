@@ -15,7 +15,6 @@
     unsigned long long _buttonTextLocation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long buttonTextLocation; // @synthesize buttonTextLocation=_buttonTextLocation;
 @property(nonatomic) double bottomLabelOffsetY; // @synthesize bottomLabelOffsetY=_bottomLabelOffsetY;
 @property(nonatomic) _Bool hideDescLabel; // @synthesize hideDescLabel=_hideDescLabel;

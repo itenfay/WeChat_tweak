@@ -21,7 +21,6 @@
 + (id)defaultNoopPackage;
 + (id)beautyPackageInLocalDirectory:(id)arg1 withConfigurationPath:(id)arg2;
 + (id)beautyPackageInResourcePackage:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveBeautySuite *activeSuite; // @synthesize activeSuite=_activeSuite;
 @property(retain, nonatomic) MMLiveBeautyBadgeCollection *badges; // @synthesize badges=_badges;
 @property(retain, nonatomic) NSString *opaqueResourcesPath; // @synthesize opaqueResourcesPath=_opaqueResourcesPath;

@@ -14,7 +14,6 @@
     IPadQRCodeOAuthLogic *_authLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) IPadQRCodeOAuthLogic *authLogic; // @synthesize authLogic=_authLogic;
 @property(retain, nonatomic) IPadAuthSuccessContainView *authSuccContainView; // @synthesize authSuccContainView=_authSuccContainView;
 @property(retain, nonatomic) IPadAuthContainView *authContainView; // @synthesize authContainView=_authContainView;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, UILabel;
 
@@ -17,7 +18,6 @@
     MMUIButton *_rightButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *rightButton; // @synthesize rightButton=_rightButton;
 @property(retain, nonatomic) MMUIButton *leftButton; // @synthesize leftButton=_leftButton;
 @property(retain, nonatomic) UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
@@ -33,4 +33,3 @@
 - (id)init;
 
 @end
-

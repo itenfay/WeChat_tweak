@@ -13,7 +13,6 @@
     NSString *_mpUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mpUrl; // @synthesize mpUrl=_mpUrl;
 @property(nonatomic) __weak NewLifeScrollActionSheet *actionSheet; // @synthesize actionSheet=_actionSheet;
 - (void)originalArticleRowViewDidClick:(id)arg1;

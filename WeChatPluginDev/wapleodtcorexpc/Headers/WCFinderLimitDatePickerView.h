@@ -27,7 +27,6 @@
     NSString *_dayString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *dayString; // @synthesize dayString=_dayString;
 @property(copy, nonatomic) NSString *monthString; // @synthesize monthString=_monthString;
 @property(copy, nonatomic) NSString *yearString; // @synthesize yearString=_yearString;

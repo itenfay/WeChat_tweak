@@ -15,7 +15,6 @@
 }
 
 + (id)unpackLensPackage:(id)arg1 toTargetDir:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *lensItems; // @synthesize lensItems=_lensItems;
 @property(retain, nonatomic) EmoticonLensPackageConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) NSString *packagePath; // @synthesize packagePath=_packagePath;

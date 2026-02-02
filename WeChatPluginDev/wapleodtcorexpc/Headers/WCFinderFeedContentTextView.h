@@ -33,7 +33,6 @@
 + (double)textHeightWithConfig:(id)arg1;
 + (id)contentTextViewWithConfig:(id)arg1;
 + (_Bool)isInvisibleLinesAreLinkStyleForContent:(id)arg1 width:(double)arg2 font:(id)arg3 unExpandLineNum:(unsigned long long)arg4 lineSpacing:(double)arg5 rightIconPadding:(double)arg6;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needExtraLine; // @synthesize needExtraLine=_needExtraLine;
 @property(nonatomic) long long contentLine; // @synthesize contentLine=_contentLine;
 @property(nonatomic) _Bool isEnableReadMoreAction; // @synthesize isEnableReadMoreAction=_isEnableReadMoreAction;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FaceRecogBaseView, FaceRecogPayConfigLogic, NSData, NSString;
 
 @interface FaceRecogPayRamdomPoseHandler
@@ -16,7 +18,6 @@
     NSString *_faceVerifyTitle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int poseMode; // @synthesize poseMode=_poseMode;
 @property(retain, nonatomic) NSString *faceVerifyTitle; // @synthesize faceVerifyTitle=_faceVerifyTitle;
 @property(nonatomic) _Bool hasClickBizButton; // @synthesize hasClickBizButton=_hasClickBizButton;
@@ -50,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

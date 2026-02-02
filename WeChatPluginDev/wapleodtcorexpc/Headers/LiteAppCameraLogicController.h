@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GPUImageCropFilter, LiteAppCameraCapture, LiteAppCameraPreview, NSMutableArray, NSMutableDictionary, NSString, WAFilterLogic;
 @protocol OS_dispatch_queue;
@@ -52,7 +53,6 @@
 
 + (_Bool)isAuthStatusOK;
 + (_Bool)needCheckRequestAuthAccess;
-- (void).cxx_destruct;
 @property(nonatomic) double jpgCompressQuality; // @synthesize jpgCompressQuality=_jpgCompressQuality;
 @property(nonatomic) _Bool takePhotoSelfieMirror; // @synthesize takePhotoSelfieMirror=_takePhotoSelfieMirror;
 @property(copy, nonatomic) CDUnknownBlockType takePhotoCallBack; // @synthesize takePhotoCallBack=_takePhotoCallBack;
@@ -146,4 +146,3 @@
 @property(readonly) Class superclass;
 
 @end
-

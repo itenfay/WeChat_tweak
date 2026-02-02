@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, TingAudioRecorder;
 
 @interface TingAudioRecorderMgr
@@ -18,7 +20,6 @@
     TingAudioRecorder *_recorder;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPermission; // @synthesize hasPermission=_hasPermission;
 @property(nonatomic) int recordStatus; // @synthesize recordStatus=_recordStatus;
 @property(retain, nonatomic) TingAudioRecorder *recorder; // @synthesize recorder=_recorder;
@@ -52,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -21,7 +21,6 @@
     unsigned long long _BuffDuration_31;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int NetworkType_32; // @synthesize NetworkType_32=_NetworkType_32;
 @property(nonatomic) unsigned long long BuffDuration_31; // @synthesize BuffDuration_31=_BuffDuration_31;
 @property(nonatomic) unsigned long long VideoDuration_30; // @synthesize VideoDuration_30=_VideoDuration_30;

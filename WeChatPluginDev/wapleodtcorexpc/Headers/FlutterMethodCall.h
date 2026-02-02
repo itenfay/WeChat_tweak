@@ -14,7 +14,6 @@
 }
 
 + (id)methodCallWithMethodName:(id)arg1 arguments:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id arguments; // @synthesize arguments=_arguments;
 @property(readonly, nonatomic) NSString *method; // @synthesize method=_method;
 - (unsigned long long)hash;

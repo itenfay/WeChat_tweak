@@ -19,7 +19,6 @@
     WCPlayerProgressBar *_progressBar;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasStarted; // @synthesize hasStarted=_hasStarted;
 @property(nonatomic) _Bool isPlaying; // @synthesize isPlaying=_isPlaying;
 @property(retain, nonatomic) WCPlayerProgressBar *progressBar; // @synthesize progressBar=_progressBar;

@@ -12,7 +12,6 @@
     NSMutableArray *_keyframes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *keyframes; // @synthesize keyframes=_keyframes;
 - (void)removeKeyframesInTimeRange:(CDStruct_e83c9415)arg1;
 - (void)removeAllKeyframes;

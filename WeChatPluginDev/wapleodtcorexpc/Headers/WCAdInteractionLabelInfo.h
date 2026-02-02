@@ -17,7 +17,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rollingLabels; // @synthesize rollingLabels=_rollingLabels;
 @property(nonatomic) double themeColorAlpha; // @synthesize themeColorAlpha=_themeColorAlpha;
 @property(retain, nonatomic) NSString *themeColor; // @synthesize themeColor=_themeColor;

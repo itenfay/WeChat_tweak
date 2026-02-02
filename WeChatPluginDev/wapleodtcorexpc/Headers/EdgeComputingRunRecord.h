@@ -10,7 +10,6 @@
     NSMutableDictionary *runRecords;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)getLastRecord:(id)arg1;
 - (void)removeRecord:(id)arg1;
 - (void)addRecord:(id)arg1 withTime:(unsigned long long)arg2;

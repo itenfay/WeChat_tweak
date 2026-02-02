@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 @protocol OS_dispatch_queue;
@@ -17,7 +18,6 @@
     NSMutableArray *_arrDownloadTask;
 }
 
-- (void).cxx_destruct;
 - (void)downloadFileTaskDidEnd:(id)arg1;
 - (void)cancelAndDeleteAllTaskWithError:(id)arg1;
 - (void)deleteTask:(id)arg1;
@@ -40,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

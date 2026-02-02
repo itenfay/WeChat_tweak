@@ -12,7 +12,6 @@
     BrandNewXMLNotificationMsgInfo *_msgInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandNewXMLNotificationMsgInfo *msgInfo; // @synthesize msgInfo=_msgInfo;
 @property(retain, nonatomic) BrandNewXMLNotificationAccountInfo *accountInfo; // @synthesize accountInfo=_accountInfo;
 @property(copy, nonatomic) NSString *plain; // @synthesize plain=_plain;

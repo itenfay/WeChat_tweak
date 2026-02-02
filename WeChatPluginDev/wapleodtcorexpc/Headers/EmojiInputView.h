@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)emojiListForScene:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *buttonList; // @synthesize buttonList=_buttonList;
 @property(copy, nonatomic) CDUnknownBlockType tapEmojiHandler; // @synthesize tapEmojiHandler=_tapEmojiHandler;
 @property(retain, nonatomic) NSArray *emojiList; // @synthesize emojiList=_emojiList;
@@ -26,4 +26,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

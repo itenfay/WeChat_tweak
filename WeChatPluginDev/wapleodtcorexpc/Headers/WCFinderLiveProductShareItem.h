@@ -82,7 +82,6 @@
 + (void)PBArrayAdd_finderObjectID;
 + (void)PBArrayAdd_finderUsername;
 + (void)PBArrayAdd_finderLiveID;
-- (void).cxx_destruct;
 @property(nonatomic) double secondProductTagAspectRatio; // @synthesize secondProductTagAspectRatio=_secondProductTagAspectRatio;
 @property(copy, nonatomic) NSString *secondProductTagURL; // @synthesize secondProductTagURL=_secondProductTagURL;
 @property(nonatomic) double firstProductTagAspectRatio; // @synthesize firstProductTagAspectRatio=_firstProductTagAspectRatio;

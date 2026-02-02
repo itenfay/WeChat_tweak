@@ -25,7 +25,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localIds; // @synthesize localIds=_localIds;
 @property(retain, nonatomic) NSString *tag; // @synthesize tag=_tag;
 

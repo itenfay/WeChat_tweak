@@ -20,7 +20,6 @@
 + (id)_dictionary:(id)arg1 floatNumberForKey:(id)arg2;
 + (id)_dictionary:(id)arg1 longLongNumberForKey:(id)arg2;
 + (id)ruleFromDictionaryInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMLiveEnergyRuleAdjustments *adjustments; // @synthesize adjustments=_adjustments;
 @property(nonatomic) _Bool forcesHit; // @synthesize forcesHit=_forcesHit;
 @property(readonly, nonatomic) MMLiveEnergyRuleConditions *conditions; // @synthesize conditions=_conditions;

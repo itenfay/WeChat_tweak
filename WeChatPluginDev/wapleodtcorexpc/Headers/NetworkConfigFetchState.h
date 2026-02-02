@@ -18,7 +18,6 @@
     int backendProtoType;
 }
 
-- (void).cxx_destruct;
 - (void)responseHandler:(id)arg1 error:(id)arg2;
 - (void)handleGetLiveTypeReq;
 - (void)handleLiveFourGetReq;

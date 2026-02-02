@@ -19,7 +19,6 @@
     double _distance;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double distance; // @synthesize distance=_distance;
 @property(nonatomic) _Bool isRunning; // @synthesize isRunning=_isRunning;
 @property(nonatomic) _Bool isShouldBegin; // @synthesize isShouldBegin=_isShouldBegin;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, WCTDatabase, WCTTable;
 
 @interface MMOrderCenterDataService
@@ -14,7 +16,6 @@
 }
 
 + (_Bool)isOrderCenterEnabledForFinder;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool prefetchedOrderDetailsWeApp; // @synthesize prefetchedOrderDetailsWeApp=_prefetchedOrderDetailsWeApp;
 @property(retain, nonatomic) WCTTable *orderSearchHistoryTable; // @synthesize orderSearchHistoryTable=_orderSearchHistoryTable;
 @property(retain, nonatomic) WCTDatabase *database; // @synthesize database=_database;
@@ -49,4 +50,3 @@
 @property(readonly) Class superclass;
 
 @end
-

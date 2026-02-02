@@ -17,7 +17,6 @@
     WCPayNoticeItemView *_noticeItemView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNoticeItemView *noticeItemView; // @synthesize noticeItemView=_noticeItemView;
 @property(retain, nonatomic) UIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) UISwitch *modifyNotificationSwitch; // @synthesize modifyNotificationSwitch=_modifyNotificationSwitch;

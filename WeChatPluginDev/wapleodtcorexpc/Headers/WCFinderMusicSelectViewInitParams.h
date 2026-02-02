@@ -15,7 +15,6 @@
 }
 
 + (id)defaultParams;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ostBtnDefaultOn; // @synthesize ostBtnDefaultOn=_ostBtnDefaultOn;
 @property(nonatomic) unsigned long long btnOption; // @synthesize btnOption=_btnOption;
 @property(copy, nonatomic) NSString *ostBtnTitle; // @synthesize ostBtnTitle=_ostBtnTitle;

@@ -14,7 +14,6 @@
     WCTTable *_gameLifeSessionInfoTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *gameLifeSessionInfoTable; // @synthesize gameLifeSessionInfoTable=_gameLifeSessionInfoTable;
 @property(retain, nonatomic) WCTTable *gameLifeContactTable; // @synthesize gameLifeContactTable=_gameLifeContactTable;
 @property(retain, nonatomic) WCTDatabase *dataBase; // @synthesize dataBase=_dataBase;

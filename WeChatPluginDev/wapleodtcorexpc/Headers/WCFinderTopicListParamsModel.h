@@ -34,7 +34,6 @@
 }
 
 + (id)genFetchTabDataArrayByTopicType:(int)arg1 refObjectid:(id)arg2 innerTabType:(int)arg3 topicId:(unsigned long long)arg4 commentScene:(int)arg5 encryptedTopicID:(id)arg6 byPassInfo:(id)arg7 rollDirection:(int)arg8 lastBuffer:(id)arg9;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderNextObjectInfo *nextObjectInfo; // @synthesize nextObjectInfo=_nextObjectInfo;
 @property(nonatomic) int prefetchType; // @synthesize prefetchType=_prefetchType;
 @property(nonatomic) int mediaTabType; // @synthesize mediaTabType=_mediaTabType;

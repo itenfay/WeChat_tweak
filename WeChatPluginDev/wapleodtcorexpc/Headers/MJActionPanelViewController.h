@@ -17,7 +17,6 @@
     MJSegmentInspectorViewModel *_bindedSegmentInspectorVM;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MJSegmentInspectorViewModel *bindedSegmentInspectorVM; // @synthesize bindedSegmentInspectorVM=_bindedSegmentInspectorVM;
 @property(retain, nonatomic) MJActionPanelMainMenuView *mainMenuView; // @synthesize mainMenuView=_mainMenuView;
 @property(nonatomic) __weak id <MJActionPanelViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

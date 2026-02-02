@@ -15,7 +15,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceDarkMode; // @synthesize forceDarkMode=_forceDarkMode;
 @property(nonatomic) unsigned int priceInWecoin; // @synthesize priceInWecoin=_priceInWecoin;
 @property(retain, nonatomic) MMCPLabel *priceInWecoinNameLabel; // @synthesize priceInWecoinNameLabel=_priceInWecoinNameLabel;

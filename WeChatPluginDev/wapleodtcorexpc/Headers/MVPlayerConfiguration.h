@@ -18,7 +18,6 @@
     unsigned long long _minimizationWindowUIStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long minimizationWindowUIStyle; // @synthesize minimizationWindowUIStyle=_minimizationWindowUIStyle;
 @property(nonatomic) double initalTime; // @synthesize initalTime=_initalTime;
 @property(retain, nonatomic) MVPlayerTimeRange *loopTimeRange; // @synthesize loopTimeRange=_loopTimeRange;

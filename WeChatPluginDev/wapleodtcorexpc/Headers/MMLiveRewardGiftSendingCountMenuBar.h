@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveRewardGiftItem, MMFinderLiveTask, MMFinderLiveTaskId, NSArray, NSIndexPath, NSMutableArray;
 
 @interface MMLiveRewardGiftSendingCountMenuBar
@@ -15,7 +17,6 @@
     NSIndexPath *_indexPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(retain, nonatomic) NSArray *batchSendConfigNumbers; // @synthesize batchSendConfigNumbers=_batchSendConfigNumbers;
 @property(retain, nonatomic) NSMutableArray *countNumberViews; // @synthesize countNumberViews=_countNumberViews;
@@ -38,4 +39,3 @@
 - (id)initWithTaskId:(id)arg1 frame:(struct CGRect)arg2 orientation:(long long)arg3;
 
 @end
-

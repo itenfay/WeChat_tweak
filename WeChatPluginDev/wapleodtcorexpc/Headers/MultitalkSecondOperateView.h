@@ -19,7 +19,6 @@
     UILabel *_m_statusLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *m_statusLabel; // @synthesize m_statusLabel=_m_statusLabel;
 @property(retain, nonatomic) MMTimerLabel *m_timerView; // @synthesize m_timerView=_m_timerView;
 @property(retain, nonatomic) MMUIButton *m_minimizeButton; // @synthesize m_minimizeButton=_m_minimizeButton;

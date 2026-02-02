@@ -28,7 +28,6 @@
 + (struct CGSize)cellViewSizeForType:(long long)arg1;
 + (long long)cellTypeFromId:(id)arg1;
 + (id)sectionIdForType:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double changingTemplateProgress; // @synthesize changingTemplateProgress=_changingTemplateProgress;
 @property(nonatomic) _Bool isChangingTemplate; // @synthesize isChangingTemplate=_isChangingTemplate;
 @property(nonatomic) _Bool canShowProgressMaskView; // @synthesize canShowProgressMaskView=_canShowProgressMaskView;

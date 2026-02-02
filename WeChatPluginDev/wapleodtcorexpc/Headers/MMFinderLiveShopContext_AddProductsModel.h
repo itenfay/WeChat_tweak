@@ -14,7 +14,6 @@
     FinderWxAppInfo *_selectionCenterHomePage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderWxAppInfo *selectionCenterHomePage; // @synthesize selectionCenterHomePage=_selectionCenterHomePage;
 @property(retain, nonatomic) FinderWxAppInfo *shopAssistApp; // @synthesize shopAssistApp=_shopAssistApp;
 @property(nonatomic) unsigned long long openType; // @synthesize openType=_openType;

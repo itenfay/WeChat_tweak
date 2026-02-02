@@ -68,7 +68,6 @@
     id <IWAPrivacyConfirmService> _privacyConfirmProxy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <IWAPrivacyConfirmService> privacyConfirmProxy; // @synthesize privacyConfirmProxy=_privacyConfirmProxy;
 @property(retain, nonatomic) NSArray *arrIgnoreOtherWebViewDidAppeaerOnReloadFirstPage; // @synthesize arrIgnoreOtherWebViewDidAppeaerOnReloadFirstPage=_arrIgnoreOtherWebViewDidAppeaerOnReloadFirstPage;
 @property(nonatomic) _Bool isPagePushed; // @synthesize isPagePushed=_isPagePushed;

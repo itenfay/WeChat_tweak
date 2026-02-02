@@ -46,7 +46,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) WXPBGeneratedMessage *pbMsg; // @synthesize pbMsg=_pbMsg;
 @property(nonatomic) double expireDuration; // @synthesize expireDuration=_expireDuration;

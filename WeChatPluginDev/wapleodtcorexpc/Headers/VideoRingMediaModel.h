@@ -18,7 +18,6 @@
     NSString *_friendNickName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCroped; // @synthesize isCroped=_isCroped;
 @property(copy, nonatomic) NSString *friendNickName; // @synthesize friendNickName=_friendNickName;
 @property(copy, nonatomic) NSString *friendUserName; // @synthesize friendUserName=_friendUserName;

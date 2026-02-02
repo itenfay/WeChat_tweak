@@ -13,7 +13,6 @@
     NSString *_md5Hash;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *md5Hash; // @synthesize md5Hash=_md5Hash;
 @property(retain, nonatomic) NSString *uri; // @synthesize uri=_uri;
 

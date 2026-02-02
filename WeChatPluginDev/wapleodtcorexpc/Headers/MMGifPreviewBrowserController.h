@@ -18,7 +18,6 @@
     MMAsset *_asset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMAsset *asset; // @synthesize asset=_asset;
 @property(nonatomic) __weak id <MMImagePickerManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MMImagePickerControlCenter> controlCenter; // @synthesize controlCenter=_controlCenter;

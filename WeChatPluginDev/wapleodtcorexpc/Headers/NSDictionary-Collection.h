@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSDictionary.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSDictionary (Collection)
 + (id)fromString:(id)arg1;
@@ -20,4 +21,3 @@
 - (id)toJson;
 - (id)toString;
 @end
-

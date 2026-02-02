@@ -12,7 +12,6 @@
     MMUIView *_cardContentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *cardContentView; // @synthesize cardContentView=_cardContentView;
 @property(nonatomic) __weak id <WCShareCardInvoiceCardHeaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (double)getRealHeight;

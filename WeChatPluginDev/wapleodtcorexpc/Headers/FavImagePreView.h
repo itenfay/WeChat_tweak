@@ -26,7 +26,6 @@
 + (struct CGSize)GetPreSizeByImageSize:(struct CGSize)arg1 maxWidth:(double)arg2;
 + (struct CGSize)GetPreSizeByRecordDataSource:(id)arg1 maxWidth:(double)arg2;
 + (struct CGSize)GetPreSizeByRecordDataSource:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavImagePreViewDelegate> m_delegate; // @synthesize m_delegate;
 @property(retain, nonatomic) NSString *m_imageLocalPath; // @synthesize m_imageLocalPath;
 @property(retain, nonatomic) id <RecordNodeDataSource> dataSource; // @synthesize dataSource;

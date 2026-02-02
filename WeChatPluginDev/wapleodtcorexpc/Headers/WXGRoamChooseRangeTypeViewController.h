@@ -18,7 +18,6 @@
     NSMutableArray *_selectedUserIncludes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *selectedUserIncludes; // @synthesize selectedUserIncludes=_selectedUserIncludes;
 @property(retain, nonatomic) NSArray *selectedTags; // @synthesize selectedTags=_selectedTags;
 @property(retain, nonatomic) NSMutableSet *selectedSet; // @synthesize selectedSet=_selectedSet;

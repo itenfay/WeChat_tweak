@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVCaptureVideoPreviewLayer, CALayer, UIImageView, UIView;
 
 @interface FaceRecogRoundView
@@ -17,7 +19,6 @@
     struct CGRect _faceRoundFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *blurView; // @synthesize blurView=_blurView;
 @property(retain, nonatomic) UIView *blurBkView; // @synthesize blurBkView=_blurBkView;
 @property(retain, nonatomic) UIView *previewView; // @synthesize previewView=_previewView;
@@ -32,4 +33,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 FaceFrame:(struct CGRect)arg2;
 
 @end
-

@@ -18,7 +18,6 @@
     struct _NSRange _displayRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak BaseStyle *eventRespondStyle; // @synthesize eventRespondStyle=_eventRespondStyle;
 @property(nonatomic) _Bool isSelectable; // @synthesize isSelectable=_isSelectable;
 @property(nonatomic) _Bool bHighlighted; // @synthesize bHighlighted=_bHighlighted;

@@ -16,7 +16,6 @@
 }
 
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *rightArrowIcon; // @synthesize rightArrowIcon=_rightArrowIcon;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UIImageView *titleIcon; // @synthesize titleIcon=_titleIcon;

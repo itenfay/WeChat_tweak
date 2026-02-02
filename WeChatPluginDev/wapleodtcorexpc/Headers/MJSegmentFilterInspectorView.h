@@ -21,7 +21,6 @@
     MJMaterialLoadingStatusCoordinator *_coordinator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJMaterialLoadingStatusCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property(nonatomic) _Bool didSelectFilterItem; // @synthesize didSelectFilterItem=_didSelectFilterItem;
 @property(nonatomic) _Bool didSelectTitleItem; // @synthesize didSelectTitleItem=_didSelectTitleItem;

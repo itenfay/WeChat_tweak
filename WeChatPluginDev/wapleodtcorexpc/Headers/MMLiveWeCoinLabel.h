@@ -12,7 +12,6 @@
     double _padding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double padding; // @synthesize padding=_padding;
 @property(retain, nonatomic) MMUILabel *wecoinIconLabel; // @synthesize wecoinIconLabel=_wecoinIconLabel;
 @property(retain, nonatomic) UIImageView *wecoinIconView; // @synthesize wecoinIconView=_wecoinIconView;

@@ -16,7 +16,6 @@
     MISSING_TYPE *chooseFunctionPanel;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;

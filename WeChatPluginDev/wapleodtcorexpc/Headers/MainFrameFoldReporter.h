@@ -17,7 +17,6 @@
 }
 
 + (void)checkReportSessionInfoWithOneScreenCount:(long long)arg1 foldRate:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldReportExposeDetail; // @synthesize shouldReportExposeDetail=_shouldReportExposeDetail;
 @property(nonatomic) unsigned long long prevEnterChatTime; // @synthesize prevEnterChatTime=_prevEnterChatTime;
 @property(nonatomic) unsigned long long enterForegroundTime; // @synthesize enterForegroundTime=_enterForegroundTime;

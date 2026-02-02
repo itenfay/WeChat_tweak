@@ -17,7 +17,6 @@
     NSString *_authKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *authKey; // @synthesize authKey=_authKey;
 @property(retain, nonatomic) NSString *tpUrl; // @synthesize tpUrl=_tpUrl;
 @property(retain, nonatomic) NSString *externUrl; // @synthesize externUrl=_externUrl;

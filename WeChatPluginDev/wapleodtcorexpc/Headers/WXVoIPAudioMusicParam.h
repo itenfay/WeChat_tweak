@@ -18,7 +18,6 @@
     long long _endTimeMS;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long endTimeMS; // @synthesize endTimeMS=_endTimeMS;
 @property(nonatomic) long long startTimeMS; // @synthesize startTimeMS=_startTimeMS;
 @property(nonatomic) _Bool isShortFile; // @synthesize isShortFile=_isShortFile;

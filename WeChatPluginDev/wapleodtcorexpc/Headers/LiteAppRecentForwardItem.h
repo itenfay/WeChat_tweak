@@ -15,7 +15,6 @@
     NSString *_nsDefaultHeadImgUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsDefaultHeadImgUrl; // @synthesize nsDefaultHeadImgUrl=_nsDefaultHeadImgUrl;
 @property(retain, nonatomic) NSString *nsHeadImgUrl; // @synthesize nsHeadImgUrl=_nsHeadImgUrl;
 @property(retain, nonatomic) NSString *nsNickName; // @synthesize nsNickName=_nsNickName;

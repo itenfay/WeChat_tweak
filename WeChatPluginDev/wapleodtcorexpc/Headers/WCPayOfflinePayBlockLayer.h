@@ -18,7 +18,6 @@
     NSString *_repayment_tiny_app_path;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *repayment_tiny_app_path; // @synthesize repayment_tiny_app_path=_repayment_tiny_app_path;
 @property(retain, nonatomic) NSString *repayment_tiny_app_username; // @synthesize repayment_tiny_app_username=_repayment_tiny_app_username;
 @property(retain, nonatomic) NSString *reminder_content; // @synthesize reminder_content=_reminder_content;

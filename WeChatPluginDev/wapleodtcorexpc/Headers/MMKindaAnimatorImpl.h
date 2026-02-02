@@ -12,7 +12,6 @@
     MMVoidCallback *_shakeCompletion;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMVoidCallback *shakeCompletion; // @synthesize shakeCompletion=_shakeCompletion;
 - (void)startShakeRotateImpl:(id)arg1 completion:(id)arg2;
 - (void)startAnimationImpl:(float)arg1 animation:(id)arg2 completion:(id)arg3;

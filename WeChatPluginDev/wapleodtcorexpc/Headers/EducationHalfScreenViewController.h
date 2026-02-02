@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, OrientationSafePageSheetContainer;
 
 @interface EducationHalfScreenViewController
@@ -16,7 +18,6 @@
     OrientationSafePageSheetContainer *container;
 }
 
-- (void).cxx_destruct;
 - (long long)styleForPageSheetConfirmButton;
 - (double)bottomViewTopMargin;
 - (void)onClickPageSheetConfirmButton;
@@ -37,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

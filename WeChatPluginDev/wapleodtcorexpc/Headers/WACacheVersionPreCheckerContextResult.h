@@ -21,7 +21,6 @@
     NSMutableArray *_checkAutoUpdateInfoDatas;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *checkAutoUpdateInfoDatas; // @synthesize checkAutoUpdateInfoDatas=_checkAutoUpdateInfoDatas;
 @property(retain, nonatomic) NSMutableArray *pluginInfoDatas; // @synthesize pluginInfoDatas=_pluginInfoDatas;
 @property(retain, nonatomic) NSMutableArray *checkFailedInfoDatas; // @synthesize checkFailedInfoDatas=_checkFailedInfoDatas;

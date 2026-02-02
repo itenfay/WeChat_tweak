@@ -11,7 +11,6 @@
     NSMutableDictionary *_dicBizName2Config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicBizName2Config; // @synthesize dicBizName2Config=_dicBizName2Config;
 @property(retain, nonatomic) _TtC6WeChat31MagicPermissionConfigPkgManager *pkgMgr; // @synthesize pkgMgr=_pkgMgr;
 - (id)getBizConfig:(id)arg1 moduleType:(id)arg2 configName:(id)arg3;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, RealNameNewWordingSection, TPIDKeyboardView, UIButton, UILabel, WCBaseTextFieldItem, WCPayAddressItem, WCPayCountryCodeItem, WCPayCredTypeItem, WCPayGetProfessionItemV2, WCPayRealnameViewData, WCPaySelectCountItemV2, WCPaySelectDateItemV2, WCPaySelectGenderItem;
 @protocol WCPayRealnameInfoViewV2Delegate;
@@ -46,7 +47,6 @@
     struct CGPoint _currentOffset;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSMutableArray *lineArray; // @synthesize lineArray=_lineArray;
 @property double leftTitleMaxWidth; // @synthesize leftTitleMaxWidth=_leftTitleMaxWidth;
 @property double leftTitleMinWidth; // @synthesize leftTitleMinWidth=_leftTitleMinWidth;
@@ -159,4 +159,3 @@
 @property(readonly) Class superclass;
 
 @end
-

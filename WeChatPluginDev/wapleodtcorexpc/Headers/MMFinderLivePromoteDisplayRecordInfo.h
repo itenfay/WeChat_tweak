@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -20,7 +21,6 @@
     double _sumCostDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCancelCountDown; // @synthesize isCancelCountDown=_isCancelCountDown;
 @property(nonatomic) _Bool isBeginCountDown; // @synthesize isBeginCountDown=_isBeginCountDown;
 @property(nonatomic) double sumCostDuration; // @synthesize sumCostDuration=_sumCostDuration;
@@ -44,4 +44,3 @@
 - (_Bool)udpateEnableDisplayDuraion:(unsigned int)arg1;
 
 @end
-

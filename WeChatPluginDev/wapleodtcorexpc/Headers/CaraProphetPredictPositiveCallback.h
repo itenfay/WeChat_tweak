@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -12,7 +13,6 @@
     CDUnknownBlockType _block;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (id)zidl;
 - (void)invoke:(id)arg1;
@@ -28,4 +28,3 @@
 @property(readonly) Class superclass;
 
 @end
-

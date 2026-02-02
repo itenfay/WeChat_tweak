@@ -14,7 +14,6 @@
     UIImageView *_playIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *playIconView; // @synthesize playIconView=_playIconView;
 @property(retain, nonatomic) WCMomentsPageContext *pageContext; // @synthesize pageContext=_pageContext;
 @property(retain, nonatomic) WCMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;

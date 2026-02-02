@@ -18,7 +18,6 @@
 
 + (_Bool)isMessageWrapSendUseSendMessageMgr:(id)arg1;
 + (unsigned long long)SendMessageCountLimit;
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)SendMsg;
 - (void)CheckResend;

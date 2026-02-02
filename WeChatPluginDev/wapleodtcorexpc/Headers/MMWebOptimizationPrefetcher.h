@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSString, NSURLSession;
 
 @interface MMWebOptimizationPrefetcher
@@ -17,7 +19,6 @@
 }
 
 + (id)prefetchUserAgent;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(retain, nonatomic) NSMutableDictionary *a8keyLiteTaskDic; // @synthesize a8keyLiteTaskDic=_a8keyLiteTaskDic;
 @property(retain, nonatomic) NSMutableArray *a8keyLiteTaskQueue; // @synthesize a8keyLiteTaskQueue=_a8keyLiteTaskQueue;
@@ -46,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

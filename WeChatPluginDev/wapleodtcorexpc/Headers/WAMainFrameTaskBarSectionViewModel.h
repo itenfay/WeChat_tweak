@@ -12,7 +12,6 @@
     NSMutableArray *_items;
 }
 
-- (void).cxx_destruct;
 - (id)deleteDataForIndex:(long long)arg1;
 - (long long)allCount;
 - (long long)count;

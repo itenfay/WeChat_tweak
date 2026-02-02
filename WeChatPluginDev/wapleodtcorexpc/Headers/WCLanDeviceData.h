@@ -15,7 +15,6 @@
     WCLanDeviceKissFileMsg *m_nsFileInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCLanDeviceKissFileMsg *m_nsFileInfo; // @synthesize m_nsFileInfo;
 @property(retain, nonatomic) WCMediaItem *m_nsMediaItem; // @synthesize m_nsMediaItem;
 @property(nonatomic) unsigned long long m_nsSource; // @synthesize m_nsSource;

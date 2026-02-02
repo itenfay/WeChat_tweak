@@ -15,7 +15,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_dicResInfo;
 + (void)PBArrayAdd_domain;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int openType; // @synthesize openType=_openType;
 @property(retain, nonatomic) NSMutableDictionary *dicResInfo; // @synthesize dicResInfo=_dicResInfo;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;

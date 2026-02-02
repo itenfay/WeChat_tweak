@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_actions;
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_type;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) int type; // @synthesize type=_type;

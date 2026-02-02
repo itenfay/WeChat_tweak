@@ -12,7 +12,6 @@
     WePkgDownloader *_downloader;
 }
 
-- (void).cxx_destruct;
 - (int)checkIfFileValidAfterDownloadSuccess:(id)arg1 TmpFilePath:(id)arg2;
 - (void)downloaderDidFinishDownloadFor:(id)arg1 TmpFilePath:(id)arg2 isSuccess:(_Bool)arg3 isLocalValidFile:(_Bool)arg4;
 - (void)tryNextDownload;

@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_adTopicList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *adTopicList; // @synthesize adTopicList=_adTopicList;
 - (void)parseTopicListWithTopicList:(id)arg1;
 - (id)initWithCoder:(id)arg1;

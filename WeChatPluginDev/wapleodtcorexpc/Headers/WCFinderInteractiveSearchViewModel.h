@@ -20,7 +20,6 @@
     long long _tabType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long tabType; // @synthesize tabType=_tabType;
 @property(retain, nonatomic) NSString *dataScene; // @synthesize dataScene=_dataScene;
 @property(retain, nonatomic) WCFinderCustomCGI *lastCGI; // @synthesize lastCGI=_lastCGI;

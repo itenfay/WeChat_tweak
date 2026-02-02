@@ -16,7 +16,6 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) OMJHandleBoxBorderStyle *borderStyle; // @synthesize borderStyle=_borderStyle;
 @property(readonly, nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(readonly, nonatomic) NSArray *titles; // @synthesize titles=_titles;

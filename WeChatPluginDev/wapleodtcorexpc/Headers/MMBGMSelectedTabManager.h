@@ -22,7 +22,6 @@
     long long _currentIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAutoStopped; // @synthesize isAutoStopped=_isAutoStopped;
 @property(nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;

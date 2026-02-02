@@ -26,7 +26,6 @@
     NSNumber *_foregroundColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(retain, nonatomic) UIImageView *shadowView; // @synthesize shadowView=_shadowView;
 @property(nonatomic) long long scrollNavBarState; // @synthesize scrollNavBarState=_scrollNavBarState;

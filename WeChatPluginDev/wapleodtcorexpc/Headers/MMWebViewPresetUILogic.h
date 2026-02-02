@@ -15,7 +15,6 @@
     NSDictionary *_functions;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *functions; // @synthesize functions=_functions;
 @property(retain, nonatomic) NSMutableDictionary *functionHandlers; // @synthesize functionHandlers=_functionHandlers;
 @property(nonatomic) __weak id <MMWebViewPresetUILogicDelegate> delegate; // @synthesize delegate=_delegate;

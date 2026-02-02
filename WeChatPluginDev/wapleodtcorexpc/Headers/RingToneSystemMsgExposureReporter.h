@@ -16,7 +16,6 @@
     NSString *_userName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int titleType; // @synthesize titleType=_titleType;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(copy, nonatomic) NSString *uin; // @synthesize uin=_uin;

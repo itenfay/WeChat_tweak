@@ -12,7 +12,6 @@
     FlutterCgiServiceCallback *_callback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterCgiServiceCallback *callback; // @synthesize callback=_callback;
 - (void)sendAsync:(unsigned long long)arg1 funcId:(long long)arg2 uri:(id)arg3 data:(id)arg4 longPolling:(_Bool)arg5 longPollingTimeout:(long long)arg6;
 

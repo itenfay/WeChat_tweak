@@ -15,7 +15,6 @@
 }
 
 + (unsigned long long)getTickCount;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *runloopMode; // @synthesize runloopMode=_runloopMode;
 @property(retain, nonatomic) NSMutableSet *playingTasks; // @synthesize playingTasks=m_playingTasks;
 - (void)updateTasks;

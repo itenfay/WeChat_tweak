@@ -24,7 +24,6 @@
     NSMutableArray *unreadMergeRecords;
 }
 
-- (void).cxx_destruct;
 - (id)getCalcSessionType:(id)arg1;
 - (void)calcSessionUnread:(id)arg1;
 - (void)saveAppSwitchMergeRecords:(id)arg1 withKey:(id)arg2;

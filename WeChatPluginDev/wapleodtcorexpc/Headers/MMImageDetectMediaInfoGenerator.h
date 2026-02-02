@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMImageDetectMediaInfoGenerator : NSObject
 {
@@ -27,4 +28,3 @@
 + (id)syncGenerateDetectMediaInfoWithSnsMediaItem:(id)arg1 businessType:(unsigned int)arg2;
 
 @end
-

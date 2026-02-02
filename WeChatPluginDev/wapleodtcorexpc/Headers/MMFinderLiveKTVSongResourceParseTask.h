@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKTVSongResourceLoadResult, NSString;
 
@@ -14,7 +15,6 @@
     NSString *_parseResourceDir;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isParseFinished; // @synthesize isParseFinished=_isParseFinished;
 @property(retain, nonatomic) NSString *parseResourceDir; // @synthesize parseResourceDir=_parseResourceDir;
 @property(retain, nonatomic) MMFinderLiveKTVSongResourceLoadResult *resource; // @synthesize resource=_resource;
@@ -29,4 +29,3 @@
 - (id)initWithResource:(id)arg1 parseResourceDir:(id)arg2;
 
 @end
-

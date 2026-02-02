@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCLivePhotoMovModel : NSObject
 {
@@ -21,4 +22,3 @@
 + (void)addMetadataToVideoWithAsset:(id)arg1 outputVideoPath:(id)arg2 identifier:(id)arg3 preferedHEVC:(_Bool)arg4 stillImageTimeMs:(long long)arg5 completionHandler:(CDUnknownBlockType)arg6;
 
 @end
-

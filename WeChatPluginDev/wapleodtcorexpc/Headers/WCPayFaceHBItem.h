@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_svrID;
 + (void)PBArrayAdd_createTime;
 + (void)PBArrayAdd_msg;
-- (void).cxx_destruct;
 @property(retain) NSString *sendNickName; // @synthesize sendNickName=_sendNickName;
 @property(retain) NSString *sendHeadImage; // @synthesize sendHeadImage=_sendHeadImage;
 @property(nonatomic) _Bool isLucky; // @synthesize isLucky=_isLucky;

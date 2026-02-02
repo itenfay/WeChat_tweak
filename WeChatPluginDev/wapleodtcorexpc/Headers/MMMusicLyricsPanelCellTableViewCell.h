@@ -15,7 +15,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightedView; // @synthesize highlightedView=_highlightedView;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)resumeProgressAnimation;

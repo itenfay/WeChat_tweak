@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewHeaderFooterView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, UILabel;
 
@@ -15,7 +16,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *expandButton; // @synthesize expandButton=_expandButton;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(copy, nonatomic) CDUnknownBlockType expandActionBlock; // @synthesize expandActionBlock=_expandActionBlock;
@@ -24,4 +24,3 @@
 - (id)initWithReuseIdentifier:(id)arg1;
 
 @end
-

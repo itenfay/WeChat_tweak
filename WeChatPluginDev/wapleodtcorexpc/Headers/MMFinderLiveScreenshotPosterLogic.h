@@ -19,7 +19,6 @@
     NSMutableDictionary *_posterImageConfigurations;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *posterImageConfigurations; // @synthesize posterImageConfigurations=_posterImageConfigurations;
 @property(retain, nonatomic) NSMutableArray *primaryImageMaskingDescriptors; // @synthesize primaryImageMaskingDescriptors=_primaryImageMaskingDescriptors;
 @property(retain, nonatomic) NSMutableArray *associatedImages; // @synthesize associatedImages=_associatedImages;

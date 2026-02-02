@@ -13,7 +13,6 @@
     struct CLLocationCoordinate2D _location;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QIndoorInfo *indoorInfo; // @synthesize indoorInfo=_indoorInfo;
 @property(nonatomic) struct CLLocationCoordinate2D location; // @synthesize location=_location;
 

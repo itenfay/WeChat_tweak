@@ -13,7 +13,6 @@
     id <WCFinderFullScreenEditImageLayoutViewDelegate> _finderDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needAdjustThumbItemSize; // @synthesize needAdjustThumbItemSize=_needAdjustThumbItemSize;
 @property(nonatomic) _Bool hiddenCropBtn; // @synthesize hiddenCropBtn=_hiddenCropBtn;
 @property(nonatomic) __weak id <WCFinderFullScreenEditImageLayoutViewDelegate> finderDelegate; // @synthesize finderDelegate=_finderDelegate;

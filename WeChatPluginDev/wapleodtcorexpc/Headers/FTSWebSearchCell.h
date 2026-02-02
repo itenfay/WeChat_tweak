@@ -19,7 +19,6 @@
 + (double)IconViewWidth;
 + (double)GetCellHeightForSublabelText:(id)arg1 width:(double)arg2;
 + (double)getCellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;
 @property(retain, nonatomic) UIImageView *indicatorView; // @synthesize indicatorView=_indicatorView;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;

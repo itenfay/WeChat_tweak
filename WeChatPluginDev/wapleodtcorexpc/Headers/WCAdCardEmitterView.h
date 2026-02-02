@@ -14,7 +14,6 @@
     struct CGPoint _lastPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double chanceGap; // @synthesize chanceGap=_chanceGap;
 @property(nonatomic) double distanceGap; // @synthesize distanceGap=_distanceGap;
 @property(retain, nonatomic) UIImage *cellContent; // @synthesize cellContent=_cellContent;

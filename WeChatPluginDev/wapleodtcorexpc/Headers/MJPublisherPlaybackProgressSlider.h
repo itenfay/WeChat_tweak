@@ -13,7 +13,6 @@
     CDStruct_1b6d18a9 _duration;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *expandedCircleView; // @synthesize expandedCircleView=_expandedCircleView;
 @property(retain, nonatomic) MJTimecodeView *timeCodeView; // @synthesize timeCodeView=_timeCodeView;
 @property(nonatomic) CDStruct_1b6d18a9 duration; // @synthesize duration=_duration;

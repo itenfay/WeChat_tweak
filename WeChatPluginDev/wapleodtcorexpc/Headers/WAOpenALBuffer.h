@@ -21,7 +21,6 @@
 
 + (id)getAudioDataWithData:(id)arg1 filePath:(id)arg2;
 + (id)cachedBufferWithPath:(id)arg1 decodeInfo:(id)arg2 appId:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) struct ALCcontext_struct *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId;
 @property(readonly) float duration; // @synthesize duration;

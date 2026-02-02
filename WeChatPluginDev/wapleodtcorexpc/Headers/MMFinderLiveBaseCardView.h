@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMFinderLiveBaseCardView : UIView
 {
@@ -14,7 +15,6 @@
     CDUnknownBlockType _closeBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType closeBlock; // @synthesize closeBlock=_closeBlock;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIView *cardView; // @synthesize cardView=_cardView;
@@ -27,4 +27,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

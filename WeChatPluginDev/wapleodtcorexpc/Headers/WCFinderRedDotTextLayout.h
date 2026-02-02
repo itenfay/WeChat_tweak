@@ -15,7 +15,6 @@
     double _remainWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double remainWidth; // @synthesize remainWidth=_remainWidth;
 @property(nonatomic) double contentSingleLineWidth; // @synthesize contentSingleLineWidth=_contentSingleLineWidth;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;

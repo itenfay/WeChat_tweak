@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKSKitAudioEngine, MMFinderLiveKTVNoteManageLogic, MMFinderLiveKTVSEIRecvHandler, MMFinderLiveKTVSEISynchronizeLogic, MMFinderLiveKTVSingingData, MMFinderLiveKTVSongItem, MMFinderLiveKTVStateInfo, MMFinderLiveKtvAllWaitSongCountInfo, MMFinderLiveKtvPlayerWaitListInfo, MMFinderLiveKtvSelfWaitSongCountInfo, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveBaseTask, MMLiveSEIKTVSongItem, NSMutableArray, NSString;
 @protocol MMFinderLiveTaskFunctionPlugin, MMLiveUniqueTaskId;
@@ -37,7 +38,6 @@
 + (long long)getKTVPreferMediaVolumeType;
 + (unsigned int)pendingSongItemRequireCnt;
 + (_Bool)isKTVPreferMediaVolumeType;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) id <MMLiveUniqueTaskId> taskId; // @synthesize taskId=_taskId;
 @property(nonatomic) double lastVadDetectTime; // @synthesize lastVadDetectTime=_lastVadDetectTime;
@@ -196,4 +196,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
     id <WACameraScanViewControllerHelperDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WACameraScanViewControllerHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CameraScanViewController *viewController; // @synthesize viewController=_viewController;
 - (void)onCameraScanViewControllerDidBePoped;

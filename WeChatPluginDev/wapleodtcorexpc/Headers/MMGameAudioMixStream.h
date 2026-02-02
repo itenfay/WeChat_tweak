@@ -28,7 +28,6 @@
     unsigned int ignoreSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long format; // @synthesize format=_format;
 @property(nonatomic) int samplerate; // @synthesize samplerate=_samplerate;
 @property(nonatomic) int channel; // @synthesize channel=_channel;

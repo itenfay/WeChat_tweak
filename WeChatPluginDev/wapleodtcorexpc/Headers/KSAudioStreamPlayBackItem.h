@@ -42,7 +42,6 @@
     long long _timmerDispatchCnt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPauseStatusAtPreSeek; // @synthesize isPauseStatusAtPreSeek=_isPauseStatusAtPreSeek;
 @property(nonatomic) _Bool isPlayingEndingPause; // @synthesize isPlayingEndingPause=_isPlayingEndingPause;
 @property(nonatomic) _Bool bForceStop; // @synthesize bForceStop=_bForceStop;

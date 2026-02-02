@@ -11,7 +11,6 @@
     WCPayScanMaterialRewardCodeCgi *_scanMaterialRewardCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayScanMaterialRewardCodeCgi *scanMaterialRewardCgi; // @synthesize scanMaterialRewardCgi=_scanMaterialRewardCgi;
 @property(retain, nonatomic) WCPayQRCodeRewardPayControlLogic *qrcodeRewardPayerLogic; // @synthesize qrcodeRewardPayerLogic=_qrcodeRewardPayerLogic;
 - (BOOL)QRCodeType;

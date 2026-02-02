@@ -15,7 +15,6 @@
     NSString *_customFont;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *customFont; // @synthesize customFont=_customFont;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) QIndoorLevel *indoorLevel; // @synthesize indoorLevel=_indoorLevel;

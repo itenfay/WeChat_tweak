@@ -10,7 +10,6 @@
     TrueDashLineBoarderView *_dashLineBoarderView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TrueDashLineBoarderView *dashLineBoarderView; // @synthesize dashLineBoarderView=_dashLineBoarderView;
 - (id)getView;
 - (float)getCornerRadius;

@@ -17,7 +17,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *alert_wording; // @synthesize alert_wording=_alert_wording;
 @property(retain, nonatomic) NSString *result_msg; // @synthesize result_msg=_result_msg;
 @property(nonatomic) long long result_code; // @synthesize result_code=_result_code;

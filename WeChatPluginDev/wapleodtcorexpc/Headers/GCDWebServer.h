@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSURL;
 @protocol GCDWebServerDelegate, OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source;
@@ -43,7 +44,6 @@
 
 + (void)initialize;
 + (void)setLogLevel:(int)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long dispatchQueuePriority; // @synthesize dispatchQueuePriority=_dispatchQueuePriority;
 @property(readonly, nonatomic) _Bool shouldAutomaticallyMapHEADToGET; // @synthesize shouldAutomaticallyMapHEADToGET=_mapHEADToGET;
 @property(readonly, nonatomic) NSDictionary *authenticationDigestAccounts; // @synthesize authenticationDigestAccounts=_authenticationDigestAccounts;
@@ -96,4 +96,3 @@
 - (void)logVerbose:(id)arg1;
 
 @end
-

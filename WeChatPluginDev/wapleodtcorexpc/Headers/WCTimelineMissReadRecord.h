@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_weishangFeeds;
 + (void)PBArrayAdd_missReadFeeds;
 + (void)PBArrayAdd_missReadRecordId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRealCreatTime; // @synthesize isRealCreatTime=_isRealCreatTime;
 @property(nonatomic) unsigned int firstFeedCreatTime; // @synthesize firstFeedCreatTime=_firstFeedCreatTime;
 @property(retain, nonatomic) NSMutableArray *invisibleFeeds; // @synthesize invisibleFeeds=_invisibleFeeds;

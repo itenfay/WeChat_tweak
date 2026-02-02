@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCPayGPLaunchParamInvalidTipsView
 {
     _Bool _bHasShow;
@@ -15,4 +17,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

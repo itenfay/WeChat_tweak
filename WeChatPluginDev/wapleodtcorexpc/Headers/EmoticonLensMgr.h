@@ -13,7 +13,6 @@
     EmoticonLensIconDownloader *_iconDownloader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonLensIconDownloader *iconDownloader; // @synthesize iconDownloader=_iconDownloader;
 @property(retain, nonatomic) EmoticonLensInfoBatchCgi *requestLensInfoCgi; // @synthesize requestLensInfoCgi=_requestLensInfoCgi;
 @property(retain, nonatomic) EmoticonLensListCgi *lensListCgi; // @synthesize lensListCgi=_lensListCgi;

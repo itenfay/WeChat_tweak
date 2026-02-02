@@ -18,7 +18,6 @@
     unsigned long long _remakeFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long remakeFlag; // @synthesize remakeFlag=_remakeFlag;
 @property(nonatomic) __weak UIView *redDotRenderView; // @synthesize redDotRenderView=_redDotRenderView;
 @property(retain, nonatomic) NSMutableString *reddotShowContent; // @synthesize reddotShowContent=_reddotShowContent;

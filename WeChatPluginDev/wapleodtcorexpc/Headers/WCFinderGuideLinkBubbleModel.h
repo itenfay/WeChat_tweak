@@ -14,7 +14,6 @@
     NSString *_content;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool linkStyle; // @synthesize linkStyle=_linkStyle;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;
 @property(copy, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;

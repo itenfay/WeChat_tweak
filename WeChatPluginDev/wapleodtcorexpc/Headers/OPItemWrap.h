@@ -38,7 +38,6 @@
     EcsJumpInfo *_ecsJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EcsJumpInfo *ecsJumpInfo; // @synthesize ecsJumpInfo=_ecsJumpInfo;
 @property(nonatomic) _Bool opItemThumbnalShowPlaybtn; // @synthesize opItemThumbnalShowPlaybtn=_opItemThumbnalShowPlaybtn;
 @property(retain, nonatomic) NSString *opItemThumbnail; // @synthesize opItemThumbnail=_opItemThumbnail;

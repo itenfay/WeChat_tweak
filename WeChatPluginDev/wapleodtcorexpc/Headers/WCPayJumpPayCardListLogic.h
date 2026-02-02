@@ -13,7 +13,6 @@
     NSDictionary *_m_param;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *m_param; // @synthesize m_param=_m_param;
 @property(nonatomic) __weak id <WCPayJumpPayCardListLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) JSEvent *m_jsEvent; // @synthesize m_jsEvent=_m_jsEvent;

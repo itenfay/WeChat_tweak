@@ -18,7 +18,6 @@
     NSString *_kvUid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *kvUid; // @synthesize kvUid=_kvUid;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *clickCountString; // @synthesize clickCountString=_clickCountString;

@@ -14,7 +14,6 @@
     _Bool _isWorking;
 }
 
-- (void).cxx_destruct;
 - (void)removeAllCacheForUsr:(id)arg1;
 - (void)onServiceInit;
 - (void)dealloc;

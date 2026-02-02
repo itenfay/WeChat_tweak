@@ -11,7 +11,6 @@
 }
 
 + (_Bool)isContactHasMsgInTime:(unsigned int)arg1 username:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *autoExpiredKV; // @synthesize autoExpiredKV=_autoExpiredKV;
 - (void)onDeleteContact:(id)arg1;
 - (void)onAddBrandTimelineMsg:(id)arg1;

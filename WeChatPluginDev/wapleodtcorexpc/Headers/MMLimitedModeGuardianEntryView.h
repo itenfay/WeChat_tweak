@@ -15,7 +15,6 @@
     id <MMLimitedModeGuardianEntryViewDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLimitedModeGuardianEntryViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) MMUILabel *m_descLabel; // @synthesize m_descLabel;
 - (void)clickSetLimitedModeGuardian;

@@ -67,7 +67,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bMainFrameClicked; // @synthesize bMainFrameClicked=_bMainFrameClicked;
 @property(nonatomic) _Bool bMainFrameExposed; // @synthesize bMainFrameExposed=_bMainFrameExposed;
 @property(retain, nonatomic) NSString *noticeID; // @synthesize noticeID=_noticeID;

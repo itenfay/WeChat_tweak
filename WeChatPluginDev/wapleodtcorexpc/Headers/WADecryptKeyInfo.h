@@ -44,7 +44,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int reportId; // @synthesize reportId=_reportId;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;
 @property(nonatomic) unsigned int encryptType; // @synthesize encryptType=_encryptType;

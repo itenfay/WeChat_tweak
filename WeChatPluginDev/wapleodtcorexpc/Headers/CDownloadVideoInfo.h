@@ -15,7 +15,6 @@
     int m_nRetCode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int m_nRetCode; // @synthesize m_nRetCode;
 @property(nonatomic) unsigned int m_uiOpType; // @synthesize m_uiOpType;
 @property(nonatomic) unsigned long long m_ui64StartTime; // @synthesize m_ui64StartTime;

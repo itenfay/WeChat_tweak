@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIImage, UIImageView, UIView, UIViewPropertyAnimator;
 
@@ -34,7 +35,6 @@
     struct CGRect _maskTargetFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) UIImage *toImage; // @synthesize toImage=_toImage;
 @property(copy, nonatomic) CDUnknownBlockType popTargetCallback; // @synthesize popTargetCallback=_popTargetCallback;
@@ -77,4 +77,3 @@
 @property(readonly) Class superclass;
 
 @end
-

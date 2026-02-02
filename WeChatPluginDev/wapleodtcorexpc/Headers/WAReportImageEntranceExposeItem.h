@@ -21,7 +21,6 @@
     NSString *_imageKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *imageKey; // @synthesize imageKey=_imageKey;
 @property(copy, nonatomic) NSString *exposePath; // @synthesize exposePath=_exposePath;
 @property(copy, nonatomic) NSString *exposeAppId; // @synthesize exposeAppId=_exposeAppId;

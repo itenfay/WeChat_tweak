@@ -12,7 +12,6 @@
     NSMutableDictionary *m_cache;
 }
 
-- (void).cxx_destruct;
 - (void)onClickWCImage:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveFansGroupDetailNavBar, MMFinderLiveFansGroupIntimacyInfo, MMFinderLiveFansGroupSignView, MMFinderLiveTask, MMFinderLiveTaskId, MMUILabel, NSMutableArray, NSString, RichTextView, UICollectionView, UIView, WCFinderAnimationLoadingView;
 
 @interface MMFinderLiveFansGroupDetailPanel
@@ -31,7 +33,6 @@
     unsigned long long _reserveLiveContinueModCnt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAfterJoin; // @synthesize isAfterJoin=_isAfterJoin;
 @property(nonatomic) unsigned long long reserveLiveContinueModCnt; // @synthesize reserveLiveContinueModCnt=_reserveLiveContinueModCnt;
 @property(nonatomic) _Bool isReserveLiveModing; // @synthesize isReserveLiveModing=_isReserveLiveModing;
@@ -128,4 +129,3 @@
 @property(readonly) Class superclass;
 
 @end
-

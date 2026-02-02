@@ -19,7 +19,6 @@
 }
 
 + (id)genParamsByDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRedPacketVideoEditCropRectModel *cropRectModel; // @synthesize cropRectModel=_cropRectModel;
 @property(nonatomic) double durationMaxLimit; // @synthesize durationMaxLimit=_durationMaxLimit;
 @property(nonatomic) double startAtSeconds; // @synthesize startAtSeconds=_startAtSeconds;

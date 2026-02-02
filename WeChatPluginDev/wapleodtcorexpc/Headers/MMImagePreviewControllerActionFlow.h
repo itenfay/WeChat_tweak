@@ -18,7 +18,6 @@
     NSDictionary *_byPassInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *byPassInfo; // @synthesize byPassInfo=_byPassInfo;
 @property(retain, nonatomic) EditVideoAttr *editVideoAttr; // @synthesize editVideoAttr=_editVideoAttr;
 @property(retain, nonatomic) MMAsset *srcVideoAsset; // @synthesize srcVideoAsset=_srcVideoAsset;

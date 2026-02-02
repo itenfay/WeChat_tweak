@@ -15,7 +15,6 @@
     NSString *m_nsRecommandDesc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsUserName; // @synthesize m_nsUserName;
 @property(retain, nonatomic) NSString *m_nsRecommandDesc; // @synthesize m_nsRecommandDesc;
 @property(retain, nonatomic) NSString *m_nsNickName; // @synthesize m_nsNickName;

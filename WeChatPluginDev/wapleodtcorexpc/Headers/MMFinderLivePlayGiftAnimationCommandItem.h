@@ -15,7 +15,6 @@
 }
 
 + (id)itemWithAnimation:(id)arg1 extension:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveHapticsPattern *hapticsPattern; // @synthesize hapticsPattern=_hapticsPattern;
 @property(retain, nonatomic) MMFinderLivePlayGiftAnimationCommandResource *soundEffect; // @synthesize soundEffect=_soundEffect;
 @property(retain, nonatomic) MMFinderLivePlayGiftAnimationCommandResource *animation; // @synthesize animation=_animation;

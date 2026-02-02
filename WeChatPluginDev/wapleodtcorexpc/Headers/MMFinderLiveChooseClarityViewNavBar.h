@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveRewardGiftCoinButton, MMUIButton, MMUILabel, NSString;
 
@@ -21,7 +22,6 @@
     NSString *_rightText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *rightText; // @synthesize rightText=_rightText;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) MMUIButton *ticketCoinButton; // @synthesize ticketCoinButton=_ticketCoinButton;
@@ -51,4 +51,3 @@
 - (id)initWithType:(unsigned long long)arg1;
 
 @end
-

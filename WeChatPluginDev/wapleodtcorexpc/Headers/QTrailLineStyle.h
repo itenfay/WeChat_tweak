@@ -18,7 +18,6 @@
     double _width;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int animationEndTime; // @synthesize animationEndTime=_animationEndTime;
 @property(nonatomic) int animationStartTime; // @synthesize animationStartTime=_animationStartTime;
 @property(nonatomic) double width; // @synthesize width=_width;

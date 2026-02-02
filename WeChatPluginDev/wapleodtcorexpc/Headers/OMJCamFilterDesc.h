@@ -15,7 +15,6 @@
     NSString *_lutImageFilePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEnabled; // @synthesize isEnabled=_isEnabled;
 @property(nonatomic) float intensity; // @synthesize intensity=_intensity;
 @property(retain, nonatomic) NSString *lutImageFilePath; // @synthesize lutImageFilePath=_lutImageFilePath;

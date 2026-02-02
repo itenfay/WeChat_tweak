@@ -26,7 +26,6 @@
     UITextField *_textView;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UITextField *textView; // @synthesize textView=_textView;
 @property(nonatomic) __weak id <TenpayMiniProgramKeyboardDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)keyboardTouchDelete;

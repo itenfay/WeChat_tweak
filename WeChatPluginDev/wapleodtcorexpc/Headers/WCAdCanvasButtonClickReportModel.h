@@ -23,7 +23,6 @@
     NSDictionary *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int halfScreenMode; // @synthesize halfScreenMode=_halfScreenMode;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) int subType; // @synthesize subType=_subType;

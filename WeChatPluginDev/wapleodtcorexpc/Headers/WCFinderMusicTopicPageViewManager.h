@@ -18,7 +18,6 @@
     WCFinderPostMgr *_postMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPostMgr *postMgr; // @synthesize postMgr=_postMgr;
 @property(retain, nonatomic) WCFinderTopicRouteParams *params; // @synthesize params=_params;
 @property(nonatomic) __weak MMUIViewController<WCFinderFeedBaseViewControllerProtocol> *currentViewController; // @synthesize currentViewController=_currentViewController;

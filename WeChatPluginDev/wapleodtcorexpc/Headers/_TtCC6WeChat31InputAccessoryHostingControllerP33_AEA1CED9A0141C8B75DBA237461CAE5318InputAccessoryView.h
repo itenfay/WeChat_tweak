@@ -13,7 +13,6 @@
     MISSING_TYPE *viewModel;
 }
 
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 @property(nonatomic, readonly) struct CGSize intrinsicContentSize;

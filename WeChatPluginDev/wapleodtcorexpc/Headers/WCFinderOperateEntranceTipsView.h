@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderCustomImageRichTextView;
 
@@ -16,7 +17,6 @@
     WCFinderCustomImageRichTextView *_textView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needReflush; // @synthesize needReflush=_needReflush;
 @property(retain, nonatomic) WCFinderCustomImageRichTextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) __weak UIView *referView; // @synthesize referView=_referView;
@@ -30,4 +30,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

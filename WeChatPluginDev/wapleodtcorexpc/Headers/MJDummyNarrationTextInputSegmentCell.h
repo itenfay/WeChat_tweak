@@ -12,7 +12,6 @@
     UILabel *_placeholderLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *placeholderLabel; // @synthesize placeholderLabel=_placeholderLabel;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -12,7 +12,6 @@
     MMMusicPostVideoBasePageController *_pageController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicPostVideoBasePageController *pageController; // @synthesize pageController=_pageController;
 
 @end

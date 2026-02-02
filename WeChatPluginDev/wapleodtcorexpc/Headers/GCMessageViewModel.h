@@ -39,7 +39,6 @@
     NSMutableDictionary *_lockLoadMoreDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *lockLoadMoreDict; // @synthesize lockLoadMoreDict=_lockLoadMoreDict;
 @property(nonatomic) _Bool isAllChannel; // @synthesize isAllChannel=_isAllChannel;
 @property(nonatomic) _Bool isChosenChannel; // @synthesize isChosenChannel=_isChosenChannel;

@@ -11,7 +11,6 @@
     UITableView *_contentTableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *contentTableView; // @synthesize contentTableView=_contentTableView;
 @property(retain, nonatomic) RichTextView *contentTitleLabel; // @synthesize contentTitleLabel=_contentTitleLabel;
 - (void)limitedContentClickConfirmAsSelectedModelArray:(id)arg1;

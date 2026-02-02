@@ -19,7 +19,6 @@
 }
 
 + (id)ViewReportStructWithViewId:(id)arg1 checkViewExposure:(_Bool)arg2 checkBtnNoResponse:(_Bool)arg3 checkColor:(_Bool)arg4 bgColor:(int)arg5 event:(long long)arg6 customKey:(id)arg7;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *customKey; // @synthesize customKey=_customKey;
 @property(readonly, nonatomic) long long event; // @synthesize event=_event;
 @property(readonly, nonatomic) int bgColor; // @synthesize bgColor=_bgColor;

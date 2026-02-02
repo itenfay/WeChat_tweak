@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class RTEAttributeNode, RTELinkedListNode;
 
 @interface RTELinkedList
@@ -14,7 +16,6 @@
 }
 
 + (id)creatEmptyList:(unsigned int)arg1 Length:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalLength; // @synthesize totalLength=_totalLength;
 @property(nonatomic) unsigned long long cacheLocation; // @synthesize cacheLocation=_cacheLocation;
 @property(nonatomic) __weak RTELinkedListNode *cacheNode; // @synthesize cacheNode=_cacheNode;
@@ -40,4 +41,3 @@
 - (_Bool)updateListIndexSinceHeadNode:(id)arg1 withLocation:(unsigned long long)arg2 withTotalLength:(unsigned long long)arg3;
 
 @end
-

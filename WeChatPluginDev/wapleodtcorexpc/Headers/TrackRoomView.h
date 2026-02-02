@@ -53,7 +53,6 @@
     TrackRoomReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TrackRoomReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) int currentAuthLogType; // @synthesize currentAuthLogType=_currentAuthLogType;
 @property(nonatomic) __weak id <TrackRoomViewDelegate> trackRoomViewDelegate; // @synthesize trackRoomViewDelegate=_trackRoomViewDelegate;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJPlaybackConfiguration, OMCPlaybackSession, OMCTimeline, UBBooleanSignal, UBDictionarySignal, UBValueSignal, WCAudioModuleProxy;
 @protocol MJPlaybackViewModelDelegate;
@@ -24,7 +25,6 @@
     CDStruct_1b6d18a9 _lastClipSkimTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAudioModuleProxy *auidoModuleProxy; // @synthesize auidoModuleProxy=_auidoModuleProxy;
 @property(readonly, nonatomic) MJPlaybackConfiguration *playbackConfiguration; // @synthesize playbackConfiguration=_playbackConfiguration;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 lastClipSkimTime; // @synthesize lastClipSkimTime=_lastClipSkimTime;
@@ -79,4 +79,3 @@
 - (id)initWithTimeline:(id)arg1;
 
 @end
-

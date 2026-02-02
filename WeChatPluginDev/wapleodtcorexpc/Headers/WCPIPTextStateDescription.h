@@ -18,7 +18,6 @@
 }
 
 + (id)createLiveStateDescription:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *customTextFont; // @synthesize customTextFont=_customTextFont;
 @property(nonatomic) _Bool disbleDisplayIcon; // @synthesize disbleDisplayIcon=_disbleDisplayIcon;
 @property(retain, nonatomic) NSString *iconName; // @synthesize iconName=_iconName;

@@ -15,7 +15,6 @@
     WCTTable *_tableLiteAppConfigInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *tableLiteAppConfigInfo; // @synthesize tableLiteAppConfigInfo=_tableLiteAppConfigInfo;
 @property(retain, nonatomic) WCTTable *tableIlinkCheckResourceInfo; // @synthesize tableIlinkCheckResourceInfo=_tableIlinkCheckResourceInfo;
 @property(retain, nonatomic) WCTTable *tableLiteAppBaseLibInfo; // @synthesize tableLiteAppBaseLibInfo=_tableLiteAppBaseLibInfo;

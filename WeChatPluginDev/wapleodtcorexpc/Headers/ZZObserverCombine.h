@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 @protocol IZZReactive;
@@ -20,7 +21,6 @@
 }
 
 + (id)createWithPOList:(id)arg1 mapAction:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id mapAction; // @synthesize mapAction=_mapAction;
 @property(copy, nonatomic) CDUnknownBlockType filterAction; // @synthesize filterAction=_filterAction;
 @property(copy, nonatomic) CDUnknownBlockType nextAction; // @synthesize nextAction=_nextAction;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

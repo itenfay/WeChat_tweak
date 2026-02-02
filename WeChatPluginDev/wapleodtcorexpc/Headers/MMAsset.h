@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface MMAsset
@@ -21,7 +23,6 @@
 + (_Bool)isAsset:(id)arg1 CreateWithInSecond:(double)arg2;
 + (struct CGSize)LongImageSizeWithOriginSize:(struct CGSize)arg1;
 + (id)decodeXmlString:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isUseLivePhoto; // @synthesize m_isUseLivePhoto=_m_isUseLivePhoto;
 @property(retain, nonatomic) NSString *m_livePhotoVideoPath; // @synthesize m_livePhotoVideoPath=_m_livePhotoVideoPath;
 @property(nonatomic) unsigned long long originVideoSize; // @synthesize originVideoSize=_originVideoSize;
@@ -92,4 +93,3 @@
 - (void)encodeWithCoder:(id)arg1;
 
 @end
-

@@ -12,7 +12,6 @@
     id <WCPayWalletCollectionViewFlowLayoutDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayWalletCollectionViewFlowLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;

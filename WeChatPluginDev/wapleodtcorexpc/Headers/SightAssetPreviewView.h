@@ -36,7 +36,6 @@
     CDStruct_e83c9415 _fixedPlayTimeRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long previewOrientation; // @synthesize previewOrientation=_previewOrientation;
 @property(nonatomic) _Bool hasStartedPlaying; // @synthesize hasStartedPlaying=_hasStartedPlaying;
 @property(nonatomic, getter=isVideoReady) _Bool videoReady; // @synthesize videoReady=_videoReady;

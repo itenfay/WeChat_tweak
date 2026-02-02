@@ -12,7 +12,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *rejectButton; // @synthesize rejectButton=_rejectButton;
 @property(retain, nonatomic) UIButton *acceptButton; // @synthesize acceptButton=_acceptButton;
 - (void)onAcceptButtonClick;

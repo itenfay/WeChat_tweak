@@ -24,7 +24,6 @@
 
 + (double)selectViewWidth;
 + (id)getNotifySelectButtonTitleWithIndex:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long selectInitialIndex; // @synthesize selectInitialIndex=_selectInitialIndex;
 @property(nonatomic) long long selectTypeCount; // @synthesize selectTypeCount=_selectTypeCount;
 @property(nonatomic) double buttonTotalWidthSize; // @synthesize buttonTotalWidthSize=_buttonTotalWidthSize;

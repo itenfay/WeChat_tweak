@@ -16,7 +16,6 @@
     UIView *_animateCellView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *animateCellView; // @synthesize animateCellView=_animateCellView;
 @property(nonatomic) __weak MMUIViewController *fromVC; // @synthesize fromVC=_fromVC;
 @property(nonatomic) _Bool isCancelSchedule; // @synthesize isCancelSchedule=_isCancelSchedule;

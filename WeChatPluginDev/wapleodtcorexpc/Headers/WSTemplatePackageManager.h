@@ -14,7 +14,6 @@
     WSTemplatePackage *_appResourcePackage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WSTemplatePackage *appResourcePackage; // @synthesize appResourcePackage=_appResourcePackage;
 @property(retain, nonatomic) WSTemplatePackage *devResourcePackage; // @synthesize devResourcePackage=_devResourcePackage;
 @property(retain, nonatomic) WSTemplatePackage *updatedResourcePackage; // @synthesize updatedResourcePackage=_updatedResourcePackage;

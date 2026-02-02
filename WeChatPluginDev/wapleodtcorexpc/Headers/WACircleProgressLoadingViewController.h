@@ -26,7 +26,6 @@
     _TtC9WeAppCore41WALoadingNetWorkInvalidTipsViewController *_networkInavalidVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC9WeAppCore41WALoadingNetWorkInvalidTipsViewController *networkInavalidVC; // @synthesize networkInavalidVC=_networkInavalidVC;
 @property(retain, nonatomic) WCTagsView *flagshipImageView; // @synthesize flagshipImageView=_flagshipImageView;
 @property(retain, nonatomic) WCTagsView *easyBuyLogoImageView; // @synthesize easyBuyLogoImageView=_easyBuyLogoImageView;

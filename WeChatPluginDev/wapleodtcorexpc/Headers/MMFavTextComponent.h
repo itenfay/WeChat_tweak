@@ -17,7 +17,6 @@
 + (id)getCurDescFont:(id)arg1;
 + (id)getCurTitleFont:(id)arg1;
 + (double)calHeightWithComData:(id)arg1;
-- (void).cxx_destruct;
 - (void)configContentLayout;
 - (void)changeWidth:(double)arg1;
 - (void)configLabel;

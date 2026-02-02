@@ -15,7 +15,6 @@
     UIImageView *_arrowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) UILabel *jumpLabel; // @synthesize jumpLabel=_jumpLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

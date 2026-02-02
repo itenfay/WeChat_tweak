@@ -77,7 +77,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) unsigned long long resourceExpireTime; // @synthesize resourceExpireTime;
 @property(nonatomic) unsigned long long resourceType; // @synthesize resourceType;

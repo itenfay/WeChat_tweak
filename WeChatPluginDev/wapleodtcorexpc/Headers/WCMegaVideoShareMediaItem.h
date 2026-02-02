@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_width;
 + (void)PBArrayAdd_thumbUrl;
 + (void)PBArrayAdd_url;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *videoPlayDuration; // @synthesize videoPlayDuration=_videoPlayDuration;
 @property(copy, nonatomic) NSString *coverUrl; // @synthesize coverUrl=_coverUrl;
 @property(copy, nonatomic) NSString *height; // @synthesize height=_height;

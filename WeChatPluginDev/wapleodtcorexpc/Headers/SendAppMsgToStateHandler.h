@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSString, OpenApiImageCdnUploader, OpenApiParameter, UINavigationController, WXMediaInternalMessage, WXSceneInternalMessage;
 
@@ -17,7 +18,6 @@
     MMUIViewController *_statePublishVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *statePublishVC; // @synthesize statePublishVC=_statePublishVC;
 @property(retain, nonatomic) WXSceneInternalMessage *sceneInfo; // @synthesize sceneInfo=_sceneInfo;
 @property(retain, nonatomic) WXMediaInternalMessage *mediaMessage; // @synthesize mediaMessage=_mediaMessage;
@@ -56,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

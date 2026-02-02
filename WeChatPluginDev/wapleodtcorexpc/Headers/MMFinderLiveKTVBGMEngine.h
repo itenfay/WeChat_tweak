@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class BGMAudioInfo, MMLiveTask, MMLiveTaskId;
 @protocol MMFinderLiveKTVBGMEngineDelegate;
@@ -36,7 +37,6 @@
 + (double)transferPitchValueToPitch:(int)arg1;
 + (void)notifyAudioRouteChanged:(long long)arg1 fromRoute:(long long)arg2;
 + (void)setVoiceEarMonitorEnabled:(_Bool)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStartPlaySucc; // @synthesize isStartPlaySucc=_isStartPlaySucc;
 @property(nonatomic) _Bool isVoiceMuted; // @synthesize isVoiceMuted=_isVoiceMuted;
 @property(nonatomic) _Bool isBGMMuted; // @synthesize isBGMMuted=_isBGMMuted;
@@ -121,4 +121,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

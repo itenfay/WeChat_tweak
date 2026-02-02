@@ -19,7 +19,6 @@
 }
 
 + (id)nextPageWithType:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fromFinderFeedId; // @synthesize fromFinderFeedId=_fromFinderFeedId;
 @property(nonatomic) NSNumber *locLineType; // @synthesize locLineType=_locLineType;
 @property(nonatomic) unsigned long long bizType; // @synthesize bizType=_bizType;

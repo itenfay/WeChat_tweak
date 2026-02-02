@@ -14,7 +14,6 @@
 }
 
 + (id)undefined;
-- (void).cxx_destruct;
 - (id)init;
 - (double)percentOf:(double)arg1;
 - (_Bool)isPercent;

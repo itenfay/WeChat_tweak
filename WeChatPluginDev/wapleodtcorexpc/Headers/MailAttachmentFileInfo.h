@@ -17,7 +17,6 @@
     NSString *attachID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int totalSize; // @synthesize totalSize;
 @property(nonatomic) unsigned int startPos; // @synthesize startPos;
 @property(retain, nonatomic) NSString *attachID; // @synthesize attachID;

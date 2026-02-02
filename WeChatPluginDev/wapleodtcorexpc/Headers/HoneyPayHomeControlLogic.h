@@ -14,7 +14,6 @@
     HoneyPayHomeViewController *_homeVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool createCardSuccess; // @synthesize createCardSuccess=_createCardSuccess;
 @property(retain, nonatomic) HoneyPayHomeViewController *homeVC; // @synthesize homeVC=_homeVC;
 @property(retain, nonatomic) WCPayHoneyPayListCgi *listCgi; // @synthesize listCgi=_listCgi;

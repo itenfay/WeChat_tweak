@@ -10,7 +10,6 @@
     NSString *_imageName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 
 @end

@@ -12,7 +12,6 @@
     WCFinderNoMoreView *_noMoreView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderNoMoreView *noMoreView; // @synthesize noMoreView=_noMoreView;
 - (void)layoutSubviews;
 - (void)setupViews;

@@ -12,7 +12,6 @@
     NSArray *_motionItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *motionItems; // @synthesize motionItems=_motionItems;
 @property(retain, nonatomic) NSArray *gyroItems; // @synthesize gyroItems=_gyroItems;
 @property(retain, nonatomic) NSArray *accelerationItems; // @synthesize accelerationItems=_accelerationItems;

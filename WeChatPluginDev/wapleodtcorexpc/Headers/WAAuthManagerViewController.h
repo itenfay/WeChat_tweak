@@ -13,7 +13,6 @@
     NSMutableArray *_editList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *editList; // @synthesize editList=_editList;
 @property(nonatomic) _Bool isEditMode; // @synthesize isEditMode=_isEditMode;
 @property(readonly, nonatomic) WAAppAuthRespData *authData; // @synthesize authData=_authData;

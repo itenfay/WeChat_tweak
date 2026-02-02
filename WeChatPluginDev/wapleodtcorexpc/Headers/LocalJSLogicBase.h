@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WKWebView;
 @protocol WSWebViewPluginableProtocol, YYWebViewInterface;
 
@@ -19,7 +21,6 @@
     NSMutableArray *_cachedJSNotiArr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cachedJSNotiArr; // @synthesize cachedJSNotiArr=_cachedJSNotiArr;
 @property(retain, nonatomic) NSMutableSet *jsEvents; // @synthesize jsEvents=_jsEvents;
 @property(nonatomic) double delayShowTimeForWebviewDidFinishLoad; // @synthesize delayShowTimeForWebviewDidFinishLoad=_delayShowTimeForWebviewDidFinishLoad;
@@ -73,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

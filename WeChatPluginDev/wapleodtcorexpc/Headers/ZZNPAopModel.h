@@ -15,7 +15,6 @@
 }
 
 + (id)createWithName:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *eventMap; // @synthesize eventMap=_eventMap;
 @property(retain, nonatomic) NSMutableArray *eventList; // @synthesize eventList=_eventList;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

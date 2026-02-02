@@ -13,7 +13,6 @@
 + (id)attributedStringForContent:(id)arg1;
 + (struct CGSize)preferSizeForCellFrame:(id)arg1 inWidth:(double)arg2;
 + (double)cornerRadius;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (void)onTap;
 - (void)runCustomEnterAnimation;

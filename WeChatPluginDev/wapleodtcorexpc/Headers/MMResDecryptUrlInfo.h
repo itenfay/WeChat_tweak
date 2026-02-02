@@ -15,7 +15,6 @@
     NSString *_originalSha1;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *originalSha1; // @synthesize originalSha1=_originalSha1;
 @property(retain, nonatomic) NSString *originalMd5; // @synthesize originalMd5=_originalMd5;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;

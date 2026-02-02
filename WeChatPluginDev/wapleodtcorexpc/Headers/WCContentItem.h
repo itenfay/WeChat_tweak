@@ -75,7 +75,6 @@
 + (void)PBArrayAdd_linkUrl;
 + (void)PBArrayAdd_desc;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderThemeLiveStreamShareItem *finderThemeLiveShareItem; // @synthesize finderThemeLiveShareItem=_finderThemeLiveShareItem;
 @property(retain, nonatomic) WCMomentsDragonInfo *dragonInfo; // @synthesize dragonInfo=_dragonInfo;
 @property(retain, nonatomic) WCMomentsRabbitInfo *rabbitInfo; // @synthesize rabbitInfo=_rabbitInfo;

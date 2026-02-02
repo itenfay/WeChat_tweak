@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_district;
 + (void)PBArrayAdd_city;
 + (void)PBArrayAdd_province;
-- (void).cxx_destruct;
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
 @property(retain, nonatomic) NSString *district; // @synthesize district=_district;

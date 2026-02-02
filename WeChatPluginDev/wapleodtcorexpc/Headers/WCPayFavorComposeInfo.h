@@ -20,7 +20,6 @@
     NSString *m_nsVariableFavorDesc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsVariableFavorDesc; // @synthesize m_nsVariableFavorDesc;
 @property(retain, nonatomic) NSString *m_nsInvariableFavorDesc; // @synthesize m_nsInvariableFavorDesc;
 @property(nonatomic) _Bool m_bIsVariableFavor; // @synthesize m_bIsVariableFavor;

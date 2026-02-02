@@ -12,7 +12,6 @@
     MiniTaskAnimiatedTransitioningConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MiniTaskAnimiatedTransitioningConfig *config; // @synthesize config=_config;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

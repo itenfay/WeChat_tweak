@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_pDataMd5;
 + (void)PBArrayAdd_pid;
 + (void)PBArrayAdd_baseID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *eccmd5SignatureList; // @synthesize eccmd5SignatureList=_eccmd5SignatureList;
 @property(nonatomic) unsigned int fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSString *pDataMd5; // @synthesize pDataMd5=_pDataMd5;

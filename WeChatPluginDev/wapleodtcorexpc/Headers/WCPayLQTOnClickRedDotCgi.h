@@ -10,7 +10,6 @@
     id <WCPayLQTOnClickRedDotCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayLQTOnClickRedDotCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetResponse:(id)arg1;

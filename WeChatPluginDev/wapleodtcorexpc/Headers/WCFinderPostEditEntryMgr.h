@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLocation, MMUIViewController, NSMutableDictionary, NSString;
 @protocol WCFinderPostEditEntrySnsProtocol;
@@ -23,7 +24,6 @@
 }
 
 + (unsigned long long)getPostSceneByFromScene:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) unsigned long long postFromScene; // @synthesize postFromScene=_postFromScene;
@@ -67,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

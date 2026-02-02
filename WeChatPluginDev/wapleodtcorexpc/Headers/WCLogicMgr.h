@@ -12,7 +12,6 @@
     NSMutableSet *setWorkingItems;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCLogicMgrDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onModifyDataItemStarStatusWithResponse:(id)arg1 event:(unsigned int)arg2;
 - (_Bool)modifyDataItem:(id)arg1 isStarred:(_Bool)arg2;

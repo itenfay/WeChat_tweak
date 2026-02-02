@@ -15,7 +15,6 @@
     NSData *_seiData;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *seiData; // @synthesize seiData=_seiData;
 @property(readonly, nonatomic) long long seiDataSize; // @synthesize seiDataSize=_seiDataSize;
 @property(readonly, nonatomic) long long videoSeiType; // @synthesize videoSeiType=_videoSeiType;

@@ -10,7 +10,6 @@
     id <WCFinderLiveFullScreenGestureDelegate> _fullScreenGestureDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderLiveFullScreenGestureDelegate> fullScreenGestureDelegate; // @synthesize fullScreenGestureDelegate=_fullScreenGestureDelegate;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)cancelPressEvents;

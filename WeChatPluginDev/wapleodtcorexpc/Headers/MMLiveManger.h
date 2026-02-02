@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CIContext, MMAVCameraCapture, MMLiveMangerProxy, MMLiveVideoFrameReprocessPipeLine, MMLiveVideoFrameWidgetManageLogic, MMRenderVideoFrame, MMVideoRciRenderView, MMVideoRenderView, MMViewCapture, MMWeEffectManager, NSString, UIImageView, WCLoopMetricsCollector;
 @protocol MMLiveManagerCaptureDelegate, MMLiveManagerMetricsDelegate, MMLiveMangerPusherDelegate;
@@ -69,7 +70,6 @@
 + (void)destroySharedInstance;
 + (id)sharedInstance;
 + (CDUnknownBlockType)createReportTimer:(long long)arg1 block:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType renderFpsReport; // @synthesize renderFpsReport=_renderFpsReport;
 @property(copy) CDUnknownBlockType captureFpsReport; // @synthesize captureFpsReport=_captureFpsReport;
 @property unsigned long long renderFpsStatCnt; // @synthesize renderFpsStatCnt=_renderFpsStatCnt;
@@ -210,4 +210,3 @@
 @property(readonly) Class superclass;
 
 @end
-

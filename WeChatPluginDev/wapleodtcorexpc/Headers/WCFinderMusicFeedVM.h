@@ -33,7 +33,6 @@
 }
 
 + (id)feedVMWithContentVM:(id)arg1 style:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) _Bool showProgress; // @synthesize showProgress=_showProgress;

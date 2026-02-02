@@ -20,7 +20,6 @@
 }
 
 + (void)initialize;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *redirectURL; // @synthesize redirectURL=_redirectURL;
 @property(readonly, copy, nonatomic) NSArray *permissions; // @synthesize permissions=_permissions;
 @property(nonatomic) __weak id <FBSDKDeviceLoginManagerDelegate> delegate; // @synthesize delegate=_delegate;

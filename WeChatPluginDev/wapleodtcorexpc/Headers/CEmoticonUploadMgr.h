@@ -13,7 +13,6 @@
     EmoticonUploader *m_emoticonUploader;
 }
 
-- (void).cxx_destruct;
 - (void)OnWillRevokeMsg:(id)arg1 revokeContext:(id)arg2;
 - (void)onEmoticonUploadFailWithUploadInfo:(id)arg1 reason:(unsigned long long)arg2 realMd5:(id)arg3;
 - (void)onEmoticonUploadSuccessWithEmoji:(id)arg1 uploadInfo:(id)arg2;

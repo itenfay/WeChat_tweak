@@ -9,7 +9,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)initWithBackingSegment:(const void *)arg1;
 
 @end

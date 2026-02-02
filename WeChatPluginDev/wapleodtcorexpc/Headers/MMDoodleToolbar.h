@@ -13,7 +13,6 @@
     NSMutableArray *_items;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) MMDoodleToolbarItem *penItem; // @synthesize penItem=_penItem;
 @property(retain, nonatomic) UIView *itemBar; // @synthesize itemBar=_itemBar;

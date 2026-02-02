@@ -15,7 +15,6 @@
     double _lineWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(nonatomic) double to; // @synthesize to=_to;
 @property(nonatomic) double from; // @synthesize from=_from;

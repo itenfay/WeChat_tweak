@@ -10,7 +10,6 @@
     NewLifeShareCoverImageViewModel *m_innerViewModel;
 }
 
-- (void).cxx_destruct;
 - (id)innerViewModel;
 
 @end

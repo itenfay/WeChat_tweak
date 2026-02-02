@@ -14,7 +14,6 @@
     unsigned long long _matchingMaxLength;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long matchingMaxLength; // @synthesize matchingMaxLength=_matchingMaxLength;
 @property(copy, nonatomic) NSString *regExpPattern; // @synthesize regExpPattern=_regExpPattern;
 @property(copy, nonatomic) NSDictionary *replacements; // @synthesize replacements=_replacements;

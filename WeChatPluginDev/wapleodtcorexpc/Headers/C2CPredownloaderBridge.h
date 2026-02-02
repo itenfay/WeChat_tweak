@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface C2CPredownloaderBridge : NSObject
 {
@@ -12,4 +13,3 @@
 + (void)predownloadVideo:(id)arg1 useQuota:(_Bool)arg2 completeBlock:(CDUnknownBlockType)arg3;
 
 @end
-

@@ -15,7 +15,6 @@
 
 + (id)headerID;
 + (double)headerH;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bgView; // @synthesize bgView=_bgView;
 @property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 - (void)layoutSubviews;

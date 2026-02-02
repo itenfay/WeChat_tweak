@@ -19,7 +19,6 @@
     EmotionSummary *_downloadingItemSummary;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmotionSummary *downloadingItemSummary; // @synthesize downloadingItemSummary=_downloadingItemSummary;
 @property(retain, nonatomic) NSMutableArray *failedArray; // @synthesize failedArray=_failedArray;
 @property(nonatomic) _Bool m_isActive; // @synthesize m_isActive=_m_isActive;

@@ -13,7 +13,6 @@
     int m_lastIndex;
 }
 
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)makeCell:(id)arg1 forLog:(id)arg2;

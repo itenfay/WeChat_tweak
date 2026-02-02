@@ -15,7 +15,6 @@
     struct UIEdgeInsets _timelineViewContentInsets;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJTimelineLayout *backingLayout; // @synthesize backingLayout=_backingLayout;
 @property(nonatomic) struct UIEdgeInsets timelineViewContentInsets; // @synthesize timelineViewContentInsets=_timelineViewContentInsets;
 @property(nonatomic) __weak UIScrollView *timelineView; // @synthesize timelineView=_timelineView;

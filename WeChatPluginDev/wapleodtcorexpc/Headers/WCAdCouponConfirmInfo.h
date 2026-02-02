@@ -11,7 +11,6 @@
     NSString *_couponStockId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *couponStockId; // @synthesize couponStockId=_couponStockId;
 @property(retain, nonatomic) NSString *couponAppId; // @synthesize couponAppId=_couponAppId;
 

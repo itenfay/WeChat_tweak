@@ -19,7 +19,6 @@
     unsigned long long _type;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSNumber *selectedPrivacyType; // @synthesize selectedPrivacyType=_selectedPrivacyType;
 @property(retain, nonatomic) NSNumber *selectedAccountType; // @synthesize selectedAccountType=_selectedAccountType;

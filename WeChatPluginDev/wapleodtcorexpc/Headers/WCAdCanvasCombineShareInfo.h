@@ -24,7 +24,6 @@
     WCADCanvasGiveHBCardInfo *_giveHBCardInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCADCanvasGiveHBCardInfo *giveHBCardInfo; // @synthesize giveHBCardInfo=_giveHBCardInfo;
 @property(nonatomic) _Bool isInteractiveCanvas; // @synthesize isInteractiveCanvas=_isInteractiveCanvas;
 @property(retain, nonatomic) NSString *originSKAdItems; // @synthesize originSKAdItems=_originSKAdItems;

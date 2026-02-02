@@ -12,7 +12,6 @@
     AVAudioMix *_audioMix;
 }
 
-- (void).cxx_destruct;
 @property(retain) AVAudioMix *audioMix; // @synthesize audioMix=_audioMix;
 @property(retain) AVVideoComposition *videoComposition; // @synthesize videoComposition=_videoComposition;
 @property(retain) AVComposition *compositon; // @synthesize compositon=_compositon;

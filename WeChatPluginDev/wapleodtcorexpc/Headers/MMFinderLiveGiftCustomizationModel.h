@@ -24,7 +24,6 @@
 }
 
 + (id)customizationModelForFinderLiveGift:(id)arg1 useStrictTextValidationPolicy:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentCustomText; // @synthesize currentCustomText=_currentCustomText;
 @property(retain, nonatomic) MMFinderLiveGiftCustomizationStyleItem *selectedStyle; // @synthesize selectedStyle=_selectedStyle;
 @property(nonatomic) _Bool styleSet; // @synthesize styleSet=_styleSet;

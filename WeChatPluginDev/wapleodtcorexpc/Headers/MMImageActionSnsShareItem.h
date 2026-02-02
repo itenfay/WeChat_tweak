@@ -12,7 +12,6 @@
     NSString *_noteId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromFav; // @synthesize isFromFav=_isFromFav;
 @property(nonatomic) unsigned int favLocalId; // @synthesize favLocalId=_favLocalId;
 @property(retain, nonatomic) NSString *noteId; // @synthesize noteId=_noteId;

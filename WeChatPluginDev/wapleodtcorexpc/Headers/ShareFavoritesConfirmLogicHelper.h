@@ -18,7 +18,6 @@
     NSData *_fileData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *fileData; // @synthesize fileData=_fileData;
 @property(retain, nonatomic) NSData *thumbData; // @synthesize thumbData=_thumbData;
 @property(retain, nonatomic) NSDictionary *userData; // @synthesize userData=_userData;

@@ -16,7 +16,6 @@
     NSString *_identifier_27;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier_27; // @synthesize identifier_27=_identifier_27;
 @property(nonatomic) unsigned int markCellRow_26; // @synthesize markCellRow_26=_markCellRow_26;
 @property(nonatomic) unsigned int markCellSection_25; // @synthesize markCellSection_25=_markCellSection_25;

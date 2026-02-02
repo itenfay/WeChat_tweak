@@ -19,7 +19,6 @@
     UIButton *_nameVerifyButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *nameVerifyButton; // @synthesize nameVerifyButton=_nameVerifyButton;
 @property(retain, nonatomic) MMAcceptAgreementCommonHeadView *nameVerifyHeadView; // @synthesize nameVerifyHeadView=_nameVerifyHeadView;
 @property(nonatomic) _Bool isVerify; // @synthesize isVerify=_isVerify;

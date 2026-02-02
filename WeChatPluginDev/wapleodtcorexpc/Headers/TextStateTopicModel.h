@@ -13,7 +13,6 @@
     OrderedDictionary *_usernameToTextState;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderedDictionary *usernameToTextState; // @synthesize usernameToTextState=_usernameToTextState;
 @property(retain, nonatomic) NSString *topicId; // @synthesize topicId=_topicId;
 - (_Bool)localJudgeClusterWithTopicId:(id)arg1;

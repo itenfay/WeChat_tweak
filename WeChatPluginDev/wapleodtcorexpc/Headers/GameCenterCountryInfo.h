@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_lastFetchTime;
 + (void)PBArrayAdd_countryCode;
 + (void)PBArrayAdd_productID;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastFetchTime; // @synthesize lastFetchTime=_lastFetchTime;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(retain, nonatomic) NSString *productID; // @synthesize productID=_productID;

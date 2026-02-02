@@ -13,7 +13,6 @@
     UIImageView *_loadingIndicator;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 @property(retain, nonatomic) UIImageView *loadingIndicator; // @synthesize loadingIndicator=_loadingIndicator;
 - (void)stopAnimation;

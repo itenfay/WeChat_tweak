@@ -14,7 +14,6 @@
     NSMutableDictionary *_timeDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *timeDic; // @synthesize timeDic=_timeDic;
 @property(nonatomic) double currentTotalPlaybackTime; // @synthesize currentTotalPlaybackTime=_currentTotalPlaybackTime;
 @property(nonatomic) double startTotalPlaybackTime; // @synthesize startTotalPlaybackTime=_startTotalPlaybackTime;

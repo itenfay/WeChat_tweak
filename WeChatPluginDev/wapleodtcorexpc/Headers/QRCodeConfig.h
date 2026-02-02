@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_revokeQrcodeLastId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *revokeQrcodeLastId; // @synthesize revokeQrcodeLastId=_revokeQrcodeLastId;
 - (id)getPBPropertyTable;
 

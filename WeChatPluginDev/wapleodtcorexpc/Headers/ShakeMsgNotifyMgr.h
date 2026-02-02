@@ -14,7 +14,6 @@
     id <ShakeMsgNotifyMgrDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ShakeMsgNotifyMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (_Bool)hasSameMsg:(id)arg1;

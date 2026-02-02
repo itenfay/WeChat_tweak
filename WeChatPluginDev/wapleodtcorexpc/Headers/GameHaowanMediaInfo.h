@@ -14,7 +14,6 @@
     unsigned long long _fileSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int editFlag; // @synthesize editFlag=_editFlag;
 @property(nonatomic) unsigned int mediaType; // @synthesize mediaType=_mediaType;
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;

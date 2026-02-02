@@ -16,7 +16,6 @@
     struct _NSRange _downloadRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *savePath; // @synthesize savePath=_savePath;
 @property(nonatomic) long long fileSize; // @synthesize fileSize=_fileSize;
 @property(nonatomic) struct _NSRange downloadRange; // @synthesize downloadRange=_downloadRange;

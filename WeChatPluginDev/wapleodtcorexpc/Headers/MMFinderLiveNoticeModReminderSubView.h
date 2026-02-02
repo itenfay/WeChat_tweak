@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, UIImageView, UIView;
 
 @interface MMFinderLiveNoticeModReminderSubView
@@ -19,7 +21,6 @@
     UIView *_sepLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sepLine; // @synthesize sepLine=_sepLine;
 @property(retain, nonatomic) UIImageView *selectStateImg; // @synthesize selectStateImg=_selectStateImg;
 @property(retain, nonatomic) MMUILabel *stateLabel; // @synthesize stateLabel=_stateLabel;
@@ -40,4 +41,3 @@
 - (void)updateType:(int)arg1 selectType:(int)arg2 isDisable:(_Bool)arg3 fromType:(unsigned long long)arg4;
 
 @end
-

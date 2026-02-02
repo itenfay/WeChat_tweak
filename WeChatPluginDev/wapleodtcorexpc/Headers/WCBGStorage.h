@@ -19,7 +19,6 @@
 + (void)PBArrayAdd_albumList;
 + (void)PBArrayAdd_hash;
 + (id)bgStorageFromServerObject:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *albumList; // @synthesize albumList=_albumList;
 @property(nonatomic) unsigned int hash; // @synthesize hash;
 - (id)toBuffer;

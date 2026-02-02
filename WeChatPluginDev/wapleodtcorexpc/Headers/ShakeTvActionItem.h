@@ -32,7 +32,6 @@
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_commentId;
 + (void)PBArrayAdd_actionType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ShakeUrlItem *urlItem; // @synthesize urlItem=_urlItem;
 @property(retain, nonatomic) ShakeProductItem *productItem; // @synthesize productItem=_productItem;
 @property(retain, nonatomic) ShakePayItem *payItem; // @synthesize payItem=_payItem;

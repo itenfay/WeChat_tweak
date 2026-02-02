@@ -18,7 +18,6 @@
     NSString *_TemplateID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int contactType; // @synthesize contactType=_contactType;
 @property(nonatomic) unsigned int GlobalNotifySwitch; // @synthesize GlobalNotifySwitch=_GlobalNotifySwitch;
 @property(nonatomic) unsigned int MenuOperateType; // @synthesize MenuOperateType=_MenuOperateType;

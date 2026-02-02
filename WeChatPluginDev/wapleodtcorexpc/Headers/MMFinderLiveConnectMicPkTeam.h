@@ -15,7 +15,6 @@
     unsigned long long _genericScore;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long genericScore; // @synthesize genericScore=_genericScore;
 @property(nonatomic) unsigned long long rank; // @synthesize rank=_rank;
 @property(nonatomic) long long pkResult; // @synthesize pkResult=_pkResult;

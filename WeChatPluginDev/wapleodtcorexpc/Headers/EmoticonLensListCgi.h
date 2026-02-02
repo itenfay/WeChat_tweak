@@ -14,7 +14,6 @@
     NSData *_pageBuff;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *pageBuff; // @synthesize pageBuff=_pageBuff;
 @property(nonatomic) __weak id <EmoticonLensListCgiDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;

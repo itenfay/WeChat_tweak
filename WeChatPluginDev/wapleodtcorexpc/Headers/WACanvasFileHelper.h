@@ -17,7 +17,6 @@
 + (unsigned int)genDownloadTaskId;
 + (id)pathForResWithUrl:(id)arg1;
 + (id)pathOfCacheDir;
-- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *dicCanvasId2TaskQueue; // @synthesize dicCanvasId2TaskQueue=_dicCanvasId2TaskQueue;
 @property(retain) NSURLSession *session; // @synthesize session=_session;
 - (void)URLSession:(id)arg1 task:(id)arg2 didFinishCollectingMetrics:(id)arg3;

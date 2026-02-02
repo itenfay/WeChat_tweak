@@ -10,7 +10,6 @@
     MISSING_TYPE *bizName;
 }
 
-- (void).cxx_destruct;
 - (id)initWithInstanceName:(id)arg1;
 
 @end

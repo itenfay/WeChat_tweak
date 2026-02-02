@@ -22,7 +22,6 @@
     unsigned long long _jumpOutTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long jumpOutTime; // @synthesize jumpOutTime=_jumpOutTime;
 @property(nonatomic) int alertSelectType; // @synthesize alertSelectType=_alertSelectType;
 @property(nonatomic) unsigned long long alertClickTime; // @synthesize alertClickTime=_alertClickTime;

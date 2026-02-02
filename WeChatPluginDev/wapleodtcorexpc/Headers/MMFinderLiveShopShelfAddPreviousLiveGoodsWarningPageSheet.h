@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface MMFinderLiveShopShelfAddPreviousLiveGoodsWarningPageSheet
@@ -12,7 +14,6 @@
 }
 
 + (void)showWithPageInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasClickedConfirm; // @synthesize hasClickedConfirm=_hasClickedConfirm;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (id)titleForPageSheetConfirmButton;
@@ -34,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

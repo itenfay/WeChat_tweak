@@ -27,7 +27,6 @@
     GetWCOCallInfoResponse *_callinfoResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GetWCOCallInfoResponse *callinfoResp; // @synthesize callinfoResp=_callinfoResp;
 @property(retain, nonatomic) WCOutGetCallInfoCgi *getCallinfo; // @synthesize getCallinfo=_getCallinfo;
 @property(retain, nonatomic) MMUILabel *freeTipsLabel; // @synthesize freeTipsLabel=_freeTipsLabel;

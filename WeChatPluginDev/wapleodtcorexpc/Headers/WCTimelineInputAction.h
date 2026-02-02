@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_commitContent;
 + (void)PBArrayAdd_changeHistoryList;
 + (void)PBArrayAdd_lastInputLength;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property(retain, nonatomic) NSString *reportDataXml; // @synthesize reportDataXml=_reportDataXml;
 @property(retain, nonatomic) NSString *inLenList; // @synthesize inLenList=_inLenList;

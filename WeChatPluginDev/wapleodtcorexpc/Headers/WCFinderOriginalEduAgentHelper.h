@@ -15,7 +15,6 @@
     unsigned long long _sourcePageType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sourcePageType; // @synthesize sourcePageType=_sourcePageType;
 @property(nonatomic) __weak MMUIViewController *fromVC; // @synthesize fromVC=_fromVC;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

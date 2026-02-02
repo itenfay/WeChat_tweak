@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderLayoutHelper : NSObject
 {
@@ -12,4 +13,3 @@
 + (CDUnknownBlockType)factoryLayoutForView:(Class)arg1;
 
 @end
-

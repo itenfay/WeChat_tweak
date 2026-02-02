@@ -13,7 +13,6 @@
     WCSKAdNetworkItem *_adItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSKAdNetworkItem *adItem; // @synthesize adItem=_adItem;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 

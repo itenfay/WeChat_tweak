@@ -10,7 +10,6 @@
     id <WCAdConventionalHalfScreenWebViewControllerDelegate> _adHalfScreenDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAdConventionalHalfScreenWebViewControllerDelegate> adHalfScreenDelegate; // @synthesize adHalfScreenDelegate=_adHalfScreenDelegate;
 - (void)setTitle:(id)arg1;
 

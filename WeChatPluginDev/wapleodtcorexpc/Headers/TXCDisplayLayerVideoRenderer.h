@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, TXCDispatchQueue, TXCDisplayLayerView, TXCGSensor, TXCVideoRenderConfig, UIView;
 @protocol TXILocalVideoRendererDelegate;
 
@@ -20,7 +22,6 @@
 }
 
 + (_Bool)IsHdrSupported:(int)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long renderRotation; // @synthesize renderRotation=_renderRotation;
 @property(nonatomic) unsigned long long fillMode; // @synthesize fillMode=_fillMode;
 @property(retain) TXCDisplayLayerView *renderView; // @synthesize renderView=_renderView;
@@ -58,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

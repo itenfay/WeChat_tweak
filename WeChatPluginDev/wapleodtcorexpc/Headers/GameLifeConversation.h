@@ -71,7 +71,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameLifeContact *gameLifeContact; // @synthesize gameLifeContact=_gameLifeContact;
 @property(retain, nonatomic) NSString *digestPrefix; // @synthesize digestPrefix=_digestPrefix;
 @property(nonatomic) unsigned int digestFlag; // @synthesize digestFlag=_digestFlag;

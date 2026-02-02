@@ -34,7 +34,6 @@
     struct UIEdgeInsets _contentInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAuthorHeadImgHidden; // @synthesize isAuthorHeadImgHidden=_isAuthorHeadImgHidden;
 @property(retain, nonatomic) TingPAGImageView *pagCoverImageView; // @synthesize pagCoverImageView=_pagCoverImageView;
 @property(retain, nonatomic) TingPAGCoverController *pagCoverController; // @synthesize pagCoverController=_pagCoverController;

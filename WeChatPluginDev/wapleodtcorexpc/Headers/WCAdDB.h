@@ -13,7 +13,6 @@
     WCTTable *_pullRecordTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *pullRecordTable; // @synthesize pullRecordTable=_pullRecordTable;
 @property(retain, nonatomic) WCTDatabase *adDB; // @synthesize adDB=_adDB;
 - (id)getWCDBPath;

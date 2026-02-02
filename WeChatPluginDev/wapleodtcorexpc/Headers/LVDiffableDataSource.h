@@ -12,7 +12,6 @@
     id <LVDiffableDataSourceDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <LVDiffableDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;

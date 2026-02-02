@@ -11,7 +11,6 @@
     id <IWALocationService> _locationService;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <IWALocationService> locationService; // @synthesize locationService=_locationService;
 - (void)onCancelOpenLocation;
 - (void)navigateToLocationView:(id)arg1 navigationController:(id)arg2;

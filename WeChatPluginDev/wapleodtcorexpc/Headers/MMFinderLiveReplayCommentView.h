@@ -10,7 +10,6 @@
     MMFinderLiveReplayOperationCommentSnapShot *_currentSnapShot;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveReplayOperationCommentSnapShot *currentSnapShot; // @synthesize currentSnapShot=_currentSnapShot;
 - (double)initialCommentTableBackViewBottom;
 - (double)commentTableBackViewBottom;

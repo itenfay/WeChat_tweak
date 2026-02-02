@@ -14,7 +14,6 @@
     WCFinderDataItem *_dataItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(nonatomic) _Bool hasFound; // @synthesize hasFound=_hasFound;
 @property(retain, nonatomic) FinderBatchLoadObjectRequestID *request; // @synthesize request=_request;

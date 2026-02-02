@@ -16,7 +16,6 @@
 }
 
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBGMSelectedConfig *panelConfig; // @synthesize panelConfig=_panelConfig;
 @property(retain, nonatomic) MMBGMPanelPublishContext *publishContext; // @synthesize publishContext=_publishContext;
 @property(retain, nonatomic) MMBGMCategoryItem *item; // @synthesize item=_item;

@@ -16,7 +16,6 @@
 
 + (id)fromDSLJson:(id)arg1;
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicCanvasDSLHalfScreenInfo *halfScreenInfo; // @synthesize halfScreenInfo=_halfScreenInfo;
 @property(retain, nonatomic) WCAdDynamicCanvasDSLFallbackInfo *fallback; // @synthesize fallback=_fallback;
 @property(retain, nonatomic) NSArray *preload; // @synthesize preload=_preload;

@@ -34,7 +34,6 @@
     unsigned long long _m_puffyLogicFileSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bStatOK; // @synthesize bStatOK=_bStatOK;
 @property(nonatomic) unsigned long long m_puffyLogicFileSize; // @synthesize m_puffyLogicFileSize=_m_puffyLogicFileSize;
 @property(nonatomic) unsigned long long m_puffyFileSize; // @synthesize m_puffyFileSize=_m_puffyFileSize;

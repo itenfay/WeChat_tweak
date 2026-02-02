@@ -31,7 +31,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableCheckLocalServerOnCreate; // @synthesize enableCheckLocalServerOnCreate=_enableCheckLocalServerOnCreate;
 @property(nonatomic) _Bool enableCheckLocalServer; // @synthesize enableCheckLocalServer=_enableCheckLocalServer;
 @property(nonatomic) int serverCheckTimeInterval; // @synthesize serverCheckTimeInterval=_serverCheckTimeInterval;

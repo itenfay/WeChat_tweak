@@ -14,7 +14,6 @@
     MMBadgeView *_badgeView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) UIView *backgroundBlurView; // @synthesize backgroundBlurView=_backgroundBlurView;
 @property(retain, nonatomic) UIColor *blurColor; // @synthesize blurColor=_blurColor;

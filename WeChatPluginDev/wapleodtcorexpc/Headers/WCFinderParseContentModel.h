@@ -25,7 +25,6 @@
 + (void)PBArrayAdd_topicsArray;
 + (void)PBArrayAdd_contentHighlight;
 + (void)PBArrayAdd_content;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastParseTimeStamp; // @synthesize lastParseTimeStamp=_lastParseTimeStamp;
 @property(retain, nonatomic) NSMutableArray *mentionRangeArray; // @synthesize mentionRangeArray=_mentionRangeArray;
 @property(retain, nonatomic) NSMutableArray *mentionArray; // @synthesize mentionArray=_mentionArray;

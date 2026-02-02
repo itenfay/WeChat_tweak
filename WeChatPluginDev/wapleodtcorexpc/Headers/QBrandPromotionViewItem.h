@@ -14,7 +14,6 @@
     QBrandPromotionContext *_brandPromotionContext;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak QBrandPromotionContext *brandPromotionContext; // @synthesize brandPromotionContext=_brandPromotionContext;
 @property(retain, nonatomic) InnerQMarker *marker; // @synthesize marker=_marker;
 @property(readonly, nonatomic) QBrandPromotionItem *item; // @synthesize item=_item;

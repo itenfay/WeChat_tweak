@@ -16,7 +16,6 @@
     UIButton *_manageBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *manageBtn; // @synthesize manageBtn=_manageBtn;
 @property(retain, nonatomic) UIButton *postBtn; // @synthesize postBtn=_postBtn;
 @property(nonatomic) __weak id <WCFinderProfileMusicPostTabCellDelegate> delegate; // @synthesize delegate=_delegate;

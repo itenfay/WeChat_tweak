@@ -23,7 +23,6 @@
 + (id)URLForRenderBackToReferrerBarURL:(id)arg1;
 + (id)URLWithInboundURL:(id)arg1 sourceApplication:(id)arg2;
 + (id)URLWithURL:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *inputQueryParameters; // @synthesize inputQueryParameters=_inputQueryParameters;
 @property(readonly, nonatomic) NSURL *inputURL; // @synthesize inputURL=_inputURL;
 @property(readonly, nonatomic) FBSDKAppLink *appLinkReferer; // @synthesize appLinkReferer=_appLinkReferer;

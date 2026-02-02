@@ -19,7 +19,6 @@
     MMUIButton *_adTipsButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *adTipsButton; // @synthesize adTipsButton=_adTipsButton;
 @property(retain, nonatomic) UIView *separateLine; // @synthesize separateLine=_separateLine;
 @property(retain, nonatomic) UILabel *countdownLabel; // @synthesize countdownLabel=_countdownLabel;

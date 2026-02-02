@@ -14,7 +14,6 @@
     unsigned long long _likeCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isClipMode; // @synthesize isClipMode=_isClipMode;
 @property(nonatomic) unsigned long long likeCount; // @synthesize likeCount=_likeCount;
 @property(retain, nonatomic) MMLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;

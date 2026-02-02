@@ -20,7 +20,6 @@
     MMLiveQueue *_animationQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveQueue *animationQueue; // @synthesize animationQueue=_animationQueue;
 @property(retain, nonatomic) NSMutableDictionary *processedAnimationInfoDic; // @synthesize processedAnimationInfoDic=_processedAnimationInfoDic;
 @property(retain, nonatomic) FinderLiveHotCommentAnimationInfoList *animationInfoList; // @synthesize animationInfoList=_animationInfoList;

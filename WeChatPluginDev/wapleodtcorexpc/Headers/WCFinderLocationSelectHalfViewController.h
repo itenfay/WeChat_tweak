@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSMutableArray, NSString, UILabel, UITableView, UIView, WCFinderLocationSelectItem, WCTimelinePOIPickerViewController;
 @protocol WCFinderLocationSelectHalfVCDelegate;
 
@@ -27,7 +29,6 @@
     WCTimelinePOIPickerViewController *_poiPickerViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool pickedCustomLocation; // @synthesize pickedCustomLocation=_pickedCustomLocation;
 @property(nonatomic) int enterCommentScene; // @synthesize enterCommentScene=_enterCommentScene;
 @property(nonatomic) _Bool pageExpReported; // @synthesize pageExpReported=_pageExpReported;
@@ -81,4 +82,3 @@
 @property(readonly) Class superclass;
 
 @end
-

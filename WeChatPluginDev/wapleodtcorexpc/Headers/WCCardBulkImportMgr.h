@@ -10,7 +10,6 @@
     id <WCCardBulkImportMgrDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 - (void)handleImportBulkCardResp:(id)arg1 Event:(unsigned int)arg2;
 - (void)handleGetBulkCardResp:(id)arg1 Event:(unsigned int)arg2;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

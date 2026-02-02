@@ -15,7 +15,6 @@
     MiniTaskInteractionGuideTransitionContext *_guideTransitionContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MiniTaskInteractionGuideTransitionContext *guideTransitionContext; // @synthesize guideTransitionContext=_guideTransitionContext;
 @property(retain, nonatomic) MiniTaskTransitionContext *taskTransitionContext; // @synthesize taskTransitionContext=_taskTransitionContext;
 @property(retain, nonatomic) id <UIViewControllerInteractiveTransitioning> pushInteractionController; // @synthesize pushInteractionController=_pushInteractionController;

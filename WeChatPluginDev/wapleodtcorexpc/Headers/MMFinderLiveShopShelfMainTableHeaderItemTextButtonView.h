@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIButton;
 
 @interface MMFinderLiveShopShelfMainTableHeaderItemTextButtonView
@@ -11,7 +13,6 @@
     UIButton *_button;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(copy, nonatomic) CDUnknownBlockType onButtonClicked; // @synthesize onButtonClicked=_onButtonClicked;
 - (void)doOnButtonClick;
@@ -19,4 +20,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

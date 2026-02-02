@@ -14,7 +14,6 @@
     JSApiSelectContactsViewController *_oSelectContactViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSApiSelectContactsViewController *oSelectContactViewController; // @synthesize oSelectContactViewController=_oSelectContactViewController;
 @property(retain, nonatomic) JSApiSelectSessionViewController *oSelectSessionViewController; // @synthesize oSelectSessionViewController=_oSelectSessionViewController;
 @property(nonatomic) _Bool isChatRoom; // @synthesize isChatRoom=_isChatRoom;

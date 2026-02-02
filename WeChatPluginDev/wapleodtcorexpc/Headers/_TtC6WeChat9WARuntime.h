@@ -25,7 +25,6 @@
     MISSING_TYPE *contact;
 }
 
-- (void).cxx_destruct;
 - (_Bool)checkJSApiPermission:(id)arg1;
 - (id)init;
 

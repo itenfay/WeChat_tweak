@@ -22,7 +22,6 @@
     NSString *_briefString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *briefString; // @synthesize briefString=_briefString;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSMutableDictionary *totalMediaType; // @synthesize totalMediaType=_totalMediaType;

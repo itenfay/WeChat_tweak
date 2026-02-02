@@ -14,7 +14,6 @@
     long long _bizId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long bizId; // @synthesize bizId=_bizId;
 @property(copy, nonatomic) NSString *bizDesc; // @synthesize bizDesc=_bizDesc;
 @property(retain, nonatomic) SwitchInfo *switchInfo; // @synthesize switchInfo=_switchInfo;

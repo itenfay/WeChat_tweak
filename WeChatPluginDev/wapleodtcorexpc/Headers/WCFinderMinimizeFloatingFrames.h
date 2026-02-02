@@ -14,7 +14,6 @@
     struct CGRect _minimizeAnimatedViewFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIBezierPath *minimizeBezierPath; // @synthesize minimizeBezierPath=_minimizeBezierPath;
 @property(nonatomic) struct CGRect minimizeAnimatedViewFrame; // @synthesize minimizeAnimatedViewFrame=_minimizeAnimatedViewFrame;
 @property(nonatomic) struct CGRect maximizeAnimatedViewFrame; // @synthesize maximizeAnimatedViewFrame=_maximizeAnimatedViewFrame;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 @protocol OS_dispatch_queue;
@@ -23,7 +24,6 @@
 + (id)providerWithSegments:(id)arg1 maxPixelSize:(struct CGSize)arg2 useOriginMediaClip:(_Bool)arg3;
 + (id)providerWithSegments:(id)arg1 maxPixelSize:(struct CGSize)arg2;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize maxPixelSize; // @synthesize maxPixelSize=_maxPixelSize;
 - (void)cancelAllTasks;
 - (void)cancelTask:(long long)arg1;
@@ -36,4 +36,3 @@
 - (id)initWithClipSegments:(id)arg1 maxPixelSize:(struct CGSize)arg2 useOriginMediaClip:(_Bool)arg3 callbackQueue:(id)arg4;
 
 @end
-

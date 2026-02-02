@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveTask, MMLiveTaskId;
 
@@ -22,7 +23,6 @@
     CDUnknownBlockType _selfClapEndCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType selfClapEndCallback; // @synthesize selfClapEndCallback=_selfClapEndCallback;
 @property(copy, nonatomic) CDUnknownBlockType globalClapEndCallback; // @synthesize globalClapEndCallback=_globalClapEndCallback;
 @property(nonatomic) unsigned int playSelfClapVoiceCnt; // @synthesize playSelfClapVoiceCnt=_playSelfClapVoiceCnt;
@@ -58,4 +58,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

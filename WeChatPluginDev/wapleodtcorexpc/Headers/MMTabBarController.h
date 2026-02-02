@@ -17,7 +17,6 @@
     UITapGestureRecognizer *_singleTapGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *singleTapGesture; // @synthesize singleTapGesture=_singleTapGesture;
 - (id)customTabBar;
 - (void)onTabBarHiddenChanged:(_Bool)arg1;

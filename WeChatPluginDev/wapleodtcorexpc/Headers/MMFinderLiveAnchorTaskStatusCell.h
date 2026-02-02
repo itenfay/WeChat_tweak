@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveQuestInstance, MMFinderLiveNewAnchorTaskViewModel, MMUIImageView, MMUILabel, MMUIView;
 
@@ -24,7 +25,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *actionLabel; // @synthesize actionLabel=_actionLabel;
 @property(retain, nonatomic) MMUIView *rightLine; // @synthesize rightLine=_rightLine;
 @property(retain, nonatomic) MMUIView *leftLine; // @synthesize leftLine=_leftLine;
@@ -47,4 +47,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -19,7 +19,6 @@
     unsigned long long _colorType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long colorType; // @synthesize colorType=_colorType;
 @property(nonatomic) Class defaultViewClass; // @synthesize defaultViewClass=_defaultViewClass;
 @property(nonatomic) __weak id <RTEAttachmentViewProviderDelegate> delegate; // @synthesize delegate=_delegate;

@@ -25,7 +25,6 @@
     MISSING_TYPE *$__lazy_storage_$_loadMoreView;
 }
 
-- (void).cxx_destruct;
 - (void)onLoadDone;
 - (void)onLoadMore;
 - (void)scrollViewWillBeginDecelerating:(id)arg1;

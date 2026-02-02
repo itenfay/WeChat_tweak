@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCPCSizeNotEnounghPageSheet
@@ -11,7 +13,6 @@
     CDUnknownBlockType _cancelCallBack;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cancelCallBack; // @synthesize cancelCallBack=_cancelCallBack;
 @property(copy, nonatomic) CDUnknownBlockType confirmCallBack; // @synthesize confirmCallBack=_confirmCallBack;
 - (long long)styleForPageSheetConfirmButton;
@@ -33,4 +34,3 @@
 @property(readonly) Class superclass;
 
 @end
-

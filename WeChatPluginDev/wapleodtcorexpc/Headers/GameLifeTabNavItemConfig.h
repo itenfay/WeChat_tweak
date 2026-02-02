@@ -21,7 +21,6 @@
 
 + (id)navItemConfigArrayFromCornerSettings:(id)arg1;
 + (id)navItemConfigFromCornerSetting:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasSmallRedDot; // @synthesize hasSmallRedDot=_hasSmallRedDot;
 @property(nonatomic) long long badgetValue; // @synthesize badgetValue=_badgetValue;
 @property(retain, nonatomic) JumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;

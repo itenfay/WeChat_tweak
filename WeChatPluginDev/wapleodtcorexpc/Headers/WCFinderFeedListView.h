@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonCustomCreateLogic, MMFinderHandOffItem, MMTimer, NSIndexPath, NSMutableDictionary, NSMutableSet, NSNumber, NSString, UIImage, UIImageView, UILabel, UITableView, UITableViewCell, UIViewController, WCFinderAnimationLoadingView, WCFinderFeedAudioHelper, WCFinderFeedDragUpDislikeController, WCFinderFeedFriendsLikeListViewController, WCFinderLandscapeReportInfo, WCFinderPlayRateOperationViewV3, WCFinderPlaybackSpeedView, WCFinderPostMgr, WCFinderPullDownRefreshHeaderView, WCFinderRefreshTableFooterView, WCFinderScrollActionSheet, WCFinderTopPullStatusView;
 @protocol WCFinderCommentBaseViewProtocol, WCFinderFeedListViewDataSource, WCFinderFeedListViewDelegate, WCFinderFeedListViewReportDelegate;
@@ -70,7 +71,6 @@
 }
 
 + (void)configViewController:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cancelSpeedViewAnimateBlock; // @synthesize cancelSpeedViewAnimateBlock=_cancelSpeedViewAnimateBlock;
 @property(retain, nonatomic) WCFinderLandscapeReportInfo *landscapeReportInfo; // @synthesize landscapeReportInfo=_landscapeReportInfo;
 @property(retain, nonatomic) MMFinderHandOffItem *finderHandoffItem; // @synthesize finderHandoffItem=_finderHandoffItem;
@@ -555,4 +555,3 @@
 @property(readonly) Class superclass;
 
 @end
-

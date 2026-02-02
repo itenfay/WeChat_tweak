@@ -18,7 +18,6 @@
 }
 
 + (double)height;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCLabSettingDetailImagesCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)initImages;
 - (void)onClickImage:(id)arg1;

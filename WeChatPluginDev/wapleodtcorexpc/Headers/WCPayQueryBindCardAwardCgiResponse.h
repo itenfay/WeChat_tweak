@@ -15,7 +15,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBindCardActivityChangeInfo *activity_change_info; // @synthesize activity_change_info=_activity_change_info;
 @property(nonatomic) long long retcode; // @synthesize retcode=_retcode;
 @property(retain, nonatomic) NSString *retmsg; // @synthesize retmsg=_retmsg;

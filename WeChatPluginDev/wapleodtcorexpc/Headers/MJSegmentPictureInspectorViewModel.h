@@ -16,7 +16,6 @@
     NSArray *_valueItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *valueItems; // @synthesize valueItems=_valueItems;
 - (void)notifyDidApplyToAll:(id)arg1;
 - (void)setValuesToOriginal;

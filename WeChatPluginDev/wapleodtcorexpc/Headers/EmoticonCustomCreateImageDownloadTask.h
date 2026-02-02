@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSMutableArray, NSString;
 
 @interface EmoticonCustomCreateImageDownloadTask
@@ -13,7 +15,6 @@
     NSMutableArray *_needDownloadImages;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *needDownloadImages; // @synthesize needDownloadImages=_needDownloadImages;
 @property(retain, nonatomic) NSArray *mediaInfoArray; // @synthesize mediaInfoArray=_mediaInfoArray;
 @property(copy, nonatomic) CDUnknownBlockType finderSucBlock; // @synthesize finderSucBlock=_finderSucBlock;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

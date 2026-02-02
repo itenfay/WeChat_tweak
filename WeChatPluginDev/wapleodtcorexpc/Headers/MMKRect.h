@@ -14,7 +14,6 @@
 }
 
 + (id)KRectWithOrigin:(id)arg1 size:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMKSize *size; // @synthesize size=_size;
 @property(readonly, nonatomic) MMKPoint *origin; // @synthesize origin=_origin;
 - (id)description;

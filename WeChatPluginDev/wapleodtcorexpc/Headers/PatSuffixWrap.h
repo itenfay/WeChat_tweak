@@ -13,7 +13,6 @@
     unsigned long long _templeteVersion;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long templeteVersion; // @synthesize templeteVersion=_templeteVersion;
 @property(retain, nonatomic) NSString *patSuffix; // @synthesize patSuffix=_patSuffix;
 

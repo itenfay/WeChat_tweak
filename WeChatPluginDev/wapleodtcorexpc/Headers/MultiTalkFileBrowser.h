@@ -10,7 +10,6 @@
     NSString *_chatName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *chatName; // @synthesize chatName=_chatName;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

@@ -21,7 +21,6 @@
     UIButton *_rightButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *rightButton; // @synthesize rightButton=_rightButton;
 @property(retain, nonatomic) MMUILabel *inputCountLabel; // @synthesize inputCountLabel=_inputCountLabel;
 @property(retain, nonatomic) MMGrowTextView *textView; // @synthesize textView=_textView;

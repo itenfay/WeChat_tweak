@@ -18,7 +18,6 @@
     id <QTextChangeDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <QTextChangeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) int routeId; // @synthesize routeId=_routeId;
 @property(retain, nonatomic) NSArray *segments; // @synthesize segments=_segments;

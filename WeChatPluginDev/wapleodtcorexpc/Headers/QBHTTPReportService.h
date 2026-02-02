@@ -25,7 +25,6 @@
 + (id)sharedInstance;
 @property(retain) NSMutableDictionary *tempSubHostInfo; // @synthesize tempSubHostInfo=_tempSubHostInfo;
 @property(retain) NSMutableDictionary *subHostInfo; // @synthesize subHostInfo=_subHostInfo;
-- (void).cxx_destruct;
 - (void)handleRespError:(id)arg1;
 - (void)handleRespData:(id)arg1;
 - (id)validSubPVStringFromDic:(id)arg1;

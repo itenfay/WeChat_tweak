@@ -15,7 +15,6 @@
     id _userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool userDismissable; // @synthesize userDismissable=_userDismissable;
 @property(nonatomic) _Bool relinquishUponUpcomingPromotion; // @synthesize relinquishUponUpcomingPromotion=_relinquishUponUpcomingPromotion;

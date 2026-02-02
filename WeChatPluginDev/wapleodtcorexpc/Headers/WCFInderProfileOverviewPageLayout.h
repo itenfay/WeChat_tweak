@@ -12,7 +12,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) long long flag; // @synthesize flag=_flag;
 - (struct UIEdgeInsets)_getEdgeInsetForSection:(long long)arg1 pos:(long long)arg2;
 - (struct UIEdgeInsets)_contentInsetsSeperator:(long long)arg1 pos:(long long)arg2;

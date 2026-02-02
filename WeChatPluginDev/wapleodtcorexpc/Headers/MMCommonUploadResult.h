@@ -17,7 +17,6 @@
     NSString *_bigFileSignature;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bigFileSignature; // @synthesize bigFileSignature=_bigFileSignature;
 @property(nonatomic) unsigned long long uploadSize; // @synthesize uploadSize=_uploadSize;
 @property(retain, nonatomic) NSString *imgInfoBuffer; // @synthesize imgInfoBuffer=_imgInfoBuffer;

@@ -20,7 +20,6 @@
     struct CGRect _containerFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long startExposeTimestamp; // @synthesize startExposeTimestamp=_startExposeTimestamp;
 @property(nonatomic) _Bool shouldCloseAfterFeedback; // @synthesize shouldCloseAfterFeedback=_shouldCloseAfterFeedback;
 @property(nonatomic) struct CGRect containerFrame; // @synthesize containerFrame=_containerFrame;

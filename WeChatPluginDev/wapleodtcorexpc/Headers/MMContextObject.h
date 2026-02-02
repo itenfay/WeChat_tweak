@@ -18,7 +18,6 @@
 
 + (id)contextObjectWithContext:(id)arg1 obj:(id)arg2 store:(_Bool)arg3;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)strongContextObjectIfExist;
 - (id)strongContextObjectWithContext:(id)arg1;
 - (id)strongContextObject;

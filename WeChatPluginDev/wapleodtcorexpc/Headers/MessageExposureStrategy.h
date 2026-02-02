@@ -20,7 +20,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int ignore_exceed_exposure; // @synthesize ignore_exceed_exposure=_ignore_exceed_exposure;
 @property(nonatomic) float click_score; // @synthesize click_score=_click_score;
 @property(nonatomic) unsigned int channel; // @synthesize channel=_channel;

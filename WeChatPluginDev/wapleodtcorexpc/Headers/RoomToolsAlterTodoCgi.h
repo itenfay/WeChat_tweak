@@ -14,7 +14,6 @@
     CMessageWrap *_message;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *message; // @synthesize message=_message;
 @property(retain, nonatomic) ChatRoomToolMessageEventInfo *eventInfo; // @synthesize eventInfo=_eventInfo;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

@@ -18,7 +18,6 @@
     OMJCaptureSession *_captureSession;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float lensDirtyCheckThreshold; // @synthesize lensDirtyCheckThreshold=_lensDirtyCheckThreshold;
 @property(retain, nonatomic) OMJCaptureSession *captureSession; // @synthesize captureSession=_captureSession;
 @property(nonatomic) double aigcGeneratingTimeout; // @synthesize aigcGeneratingTimeout=_aigcGeneratingTimeout;

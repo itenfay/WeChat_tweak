@@ -51,7 +51,6 @@
 + (void)PBArrayAdd_eventName;
 + (void)PBArrayAdd_contact;
 + (void)PBArrayAdd_eventTopicId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int availableFlag; // @synthesize availableFlag=_availableFlag;
 @property(nonatomic) unsigned long long endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) FinderEventMusicInfo *musicInfo; // @synthesize musicInfo=_musicInfo;

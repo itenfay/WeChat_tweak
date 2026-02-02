@@ -15,7 +15,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveGradientLayerView *shadingView; // @synthesize shadingView=_shadingView;
 @property(retain, nonatomic) UIView *colorView; // @synthesize colorView=_colorView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;

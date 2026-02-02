@@ -12,7 +12,6 @@
     _Bool hasReportTransferAlertTips;
 }
 
-- (void).cxx_destruct;
 - (void)onChatBackgroundChanged:(id)arg1;
 - (void)accessibilityElementDidBecomeFocused;
 - (_Bool)accessibilityPerformMagicTap;

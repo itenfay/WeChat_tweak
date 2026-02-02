@@ -12,7 +12,6 @@
     UIView *_hightLightMaskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *hightLightMaskView; // @synthesize hightLightMaskView=_hightLightMaskView;
 - (void)setHighlighted:(_Bool)arg1;
 

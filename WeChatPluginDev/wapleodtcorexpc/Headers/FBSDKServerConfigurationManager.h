@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface FBSDKServerConfigurationManager : NSObject
 {
@@ -23,4 +24,3 @@
 - (id)init;
 
 @end
-

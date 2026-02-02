@@ -16,7 +16,6 @@
     NSDictionary *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extInfo; // @synthesize extInfo=_extInfo;
 @property(retain, nonatomic) NSString *callbackUrl; // @synthesize callbackUrl=_callbackUrl;
 @property(retain, nonatomic) NSString *universalLink; // @synthesize universalLink=_universalLink;

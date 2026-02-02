@@ -15,7 +15,6 @@
     WCFinderHalfScreenEditFrameBlurView *_frameCropView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needAdjustThumbItemSize; // @synthesize needAdjustThumbItemSize=_needAdjustThumbItemSize;
 @property(retain, nonatomic) WCFinderHalfScreenEditFrameBlurView *frameCropView; // @synthesize frameCropView=_frameCropView;
 @property(nonatomic) WCFinderAlbumScrollViewParamModel *scrollViewParamModel; // @synthesize scrollViewParamModel=_scrollViewParamModel;

@@ -16,7 +16,6 @@
     NSString *_sugTitle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sugType; // @synthesize sugType=_sugType;
 @property(retain, nonatomic) NSString *sugTitle; // @synthesize sugTitle=_sugTitle;
 @property(retain, nonatomic) NSDictionary *dicSearchMatchTip; // @synthesize dicSearchMatchTip=_dicSearchMatchTip;

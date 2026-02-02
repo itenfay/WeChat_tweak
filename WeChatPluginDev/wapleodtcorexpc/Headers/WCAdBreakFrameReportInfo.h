@@ -13,7 +13,6 @@
     WCADVideoPlayInfo *_playInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int videoSeekCount; // @synthesize videoSeekCount=_videoSeekCount;
 @property(retain, nonatomic) WCADVideoPlayInfo *playInfo; // @synthesize playInfo=_playInfo;
 - (id)init;

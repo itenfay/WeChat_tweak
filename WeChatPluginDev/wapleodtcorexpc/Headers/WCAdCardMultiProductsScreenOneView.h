@@ -18,7 +18,6 @@
 + (id)getDescColorAgainstTitle:(id)arg1;
 + (id)getDescFontAgainstTitle:(id)arg1;
 + (double)calcHeightWithTitle:(id)arg1 desc:(id)arg2 maxWidth:(double)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint descOriCenter; // @synthesize descOriCenter=_descOriCenter;
 @property(nonatomic) struct CGPoint titleOriCenter; // @synthesize titleOriCenter=_titleOriCenter;
 @property(retain, nonatomic) MMUILabel *descView; // @synthesize descView=_descView;

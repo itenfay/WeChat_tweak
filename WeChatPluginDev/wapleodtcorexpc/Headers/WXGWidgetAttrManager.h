@@ -19,7 +19,6 @@
 + (void)wxgWidgetView:(id)arg1 setAttrWithName:(id)arg2 value:(id)arg3 hostView:(id)arg4;
 + (id)getClassNameByTag:(id)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *viewClassNameMap; // @synthesize viewClassNameMap=_viewClassNameMap;
 @property(readonly, copy, nonatomic) NSDictionary *contentModeMap; // @synthesize contentModeMap=_contentModeMap;
 @property(readonly, copy, nonatomic) NSDictionary *lineBreakModeMap; // @synthesize lineBreakModeMap=_lineBreakModeMap;

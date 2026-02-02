@@ -13,7 +13,6 @@
 }
 
 + (double)getCellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *lyricsItem; // @synthesize lyricsItem=_lyricsItem;
 - (void)mySelected:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;

@@ -18,7 +18,6 @@
     unsigned long long _totalUserCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalUserCount; // @synthesize totalUserCount=_totalUserCount;
 @property(nonatomic) unsigned long long onlineUserCount; // @synthesize onlineUserCount=_onlineUserCount;
 @property(retain, nonatomic) NSString *roomId; // @synthesize roomId=_roomId;

@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_poiName;
 + (void)PBArrayAdd_longitudeString;
 + (void)PBArrayAdd_latitudeString;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *poiCategories; // @synthesize poiCategories=_poiCategories;
 @property(copy, nonatomic) NSString *poiClassifyId; // @synthesize poiClassifyId=_poiClassifyId;
 @property(copy, nonatomic) NSString *infoUrl; // @synthesize infoUrl=_infoUrl;

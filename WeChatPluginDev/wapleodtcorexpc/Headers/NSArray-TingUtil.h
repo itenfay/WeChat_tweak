@@ -4,9 +4,9 @@
 //
 
 #import <Foundation/NSArray.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSArray (TingUtil)
 - (id)firstWhere:(CDUnknownBlockType)arg1;
 - (id)compactMap:(CDUnknownBlockType)arg1;
 @end
-

@@ -4,9 +4,9 @@
 //
 
 #import <Foundation/NSArray.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSArray (Line)
 - (CDUnknownBlockType)layoutHorizontal;
 - (CDUnknownBlockType)layoutVertical;
 @end
-

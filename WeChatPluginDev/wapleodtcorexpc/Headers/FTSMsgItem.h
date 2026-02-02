@@ -17,7 +17,6 @@
     CMessageWrap *_msgWrap;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInvalid; // @synthesize isInvalid=_isInvalid;
 @property(retain, nonatomic) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;
 @property(retain, nonatomic) NSString *ftsContent; // @synthesize ftsContent=_ftsContent;

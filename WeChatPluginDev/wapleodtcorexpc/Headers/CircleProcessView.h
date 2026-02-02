@@ -14,7 +14,6 @@
     UIColor *_progressTintColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *progressTintColor; // @synthesize progressTintColor=_progressTintColor;
 @property(nonatomic) double value; // @synthesize value=_value;
 @property(retain, nonatomic) UIImageView *bgImage; // @synthesize bgImage=_bgImage;

@@ -16,7 +16,6 @@
     unsigned long long _exitType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasReportTextChanged; // @synthesize hasReportTextChanged=_hasReportTextChanged;
 @property(nonatomic) unsigned long long exitType; // @synthesize exitType=_exitType;
 @property(nonatomic) unsigned long long searchEnterScene; // @synthesize searchEnterScene=_searchEnterScene;

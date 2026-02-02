@@ -37,7 +37,6 @@
     struct CGPoint _currentOffset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayLQTDepositProtocolPageSheet *protocolPageSheet; // @synthesize protocolPageSheet=_protocolPageSheet;
 @property _Bool hasClickCardItem; // @synthesize hasClickCardItem=_hasClickCardItem;
 @property _Bool hasClickDateItem; // @synthesize hasClickDateItem=_hasClickDateItem;

@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_globalFavoriteCount;
 + (void)PBArrayAdd_likeCount;
 + (void)PBArrayAdd_feedIds;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *feedIds; // @synthesize feedIds=_feedIds;
 @property(nonatomic) long long shareCount; // @synthesize shareCount=_shareCount;
 @property(nonatomic) long long heartLikeCount; // @synthesize heartLikeCount=_heartLikeCount;

@@ -12,7 +12,6 @@
     WCFinderStreamFooterView *_footerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderStreamFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) WCFinderTingAlbumViewModel *viewModel; // @synthesize viewModel=_viewModel;

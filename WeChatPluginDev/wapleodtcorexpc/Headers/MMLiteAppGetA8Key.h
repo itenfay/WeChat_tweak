@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, WebViewA8KeyLogicImpl;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)getInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *mPreAuthCallback; // @synthesize mPreAuthCallback=_mPreAuthCallback;
 @property(retain, nonatomic) NSMutableDictionary *mCache; // @synthesize mCache=_mCache;
 @property(retain, nonatomic) WebViewA8KeyLogicImpl *a8keyLogic; // @synthesize a8keyLogic=_a8keyLogic;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

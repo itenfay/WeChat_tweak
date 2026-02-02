@@ -12,7 +12,6 @@
     NSMutableDictionary *receiveDataThresholdRecords;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)getCacheDataTimeLimit;
 - (unsigned long long)getCacheDataCountLimit;
 - (unsigned long long)getTotalCacheDataCountLimit;

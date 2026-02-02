@@ -15,7 +15,6 @@
     struct CGSize _size;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool sorted; // @synthesize sorted=_sorted;
 @property(nonatomic) unsigned long long maxIndex; // @synthesize maxIndex=_maxIndex;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;

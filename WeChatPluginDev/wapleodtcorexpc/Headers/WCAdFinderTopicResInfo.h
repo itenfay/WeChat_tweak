@@ -16,7 +16,6 @@
     NSString *_finderType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderType; // @synthesize finderType=_finderType;
 @property(retain, nonatomic) NSString *duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSString *barBgColor; // @synthesize barBgColor=_barBgColor;

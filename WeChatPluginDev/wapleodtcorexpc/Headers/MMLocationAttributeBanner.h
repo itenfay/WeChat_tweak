@@ -16,7 +16,6 @@
     MMWebImageView *_logoImgView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLocationAttributeBannerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *logoUrl; // @synthesize logoUrl=_logoUrl;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;

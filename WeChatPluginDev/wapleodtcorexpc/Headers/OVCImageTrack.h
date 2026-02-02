@@ -13,7 +13,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SharedPtr_18dc3c11 backingImageTrack; // @synthesize backingImageTrack=_backingImageTrack;
 @property(readonly, nonatomic) unsigned long long orientation;
 @property(readonly, nonatomic) unsigned long long aspectRatio;

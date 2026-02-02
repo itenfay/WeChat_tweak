@@ -14,7 +14,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *systemInfo; // @synthesize systemInfo=_systemInfo;
 @property(retain, nonatomic) NSMutableArray *binaryImages; // @synthesize binaryImages=_binaryImages;
 - (id)getSystemInfo;

@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)allKeysAndObjects;
 - (id)allObjects;
 - (id)allKeys;

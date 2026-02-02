@@ -16,7 +16,6 @@
     NSData *_data;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int tryCount; // @synthesize tryCount=_tryCount;
 @property(nonatomic) unsigned int endflag; // @synthesize endflag=_endflag;
 @property(nonatomic) unsigned int offset; // @synthesize offset=_offset;

@@ -28,7 +28,6 @@
     NSMutableSet *_filterSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *filterSet; // @synthesize filterSet=_filterSet;
 @property(retain, nonatomic) NSArray *arrSharedGroup; // @synthesize arrSharedGroup=_arrSharedGroup;
 @property(retain, nonatomic) NSMutableArray *arrSharedGroupCnt; // @synthesize arrSharedGroupCnt=_arrSharedGroupCnt;

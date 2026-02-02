@@ -16,7 +16,6 @@
     LineStyleWrap *_extraWrap;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int smallTextCount; // @synthesize smallTextCount=_smallTextCount;
 @property(nonatomic) _Bool hideDashLine; // @synthesize hideDashLine=_hideDashLine;
 @property(retain, nonatomic) LineStyleWrap *extraWrap; // @synthesize extraWrap=_extraWrap;

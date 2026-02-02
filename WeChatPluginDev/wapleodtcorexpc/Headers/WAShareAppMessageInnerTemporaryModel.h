@@ -27,7 +27,6 @@
 }
 
 + (id)model;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool waitingShare; // @synthesize waitingShare=_waitingShare;
 @property(nonatomic) _Bool forNativeApp; // @synthesize forNativeApp=_forNativeApp;
 @property(retain, nonatomic) NSMutableDictionary *scrollOffset; // @synthesize scrollOffset=_scrollOffset;

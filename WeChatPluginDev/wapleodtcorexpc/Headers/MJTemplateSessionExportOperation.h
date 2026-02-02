@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSError, NSString, OMJMaasCore, OMJMovieExportSettings, OMJMovieSession, OMJMusicInfo, OMJTemplateInfo, UIImage;
 
@@ -25,7 +26,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *coverImage; // @synthesize coverImage=_coverImage;
 @property(copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
@@ -54,4 +54,3 @@
 - (id)initWithMaasCore:(id)arg1 maasSession:(id)arg2 sessionKey:(id)arg3 timeRange:(CDStruct_e83c9415)arg4 outputFilePath:(id)arg5 exportSettings:(id)arg6 progressHandler:(CDUnknownBlockType)arg7 resultHandler:(CDUnknownBlockType)arg8;
 
 @end
-

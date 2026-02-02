@@ -19,7 +19,6 @@
     UILabel *_endTimeLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSliding; // @synthesize isSliding=_isSliding;
 @property(retain, nonatomic) UILabel *endTimeLabel; // @synthesize endTimeLabel=_endTimeLabel;
 @property(retain, nonatomic) UILabel *curTimeLabel; // @synthesize curTimeLabel=_curTimeLabel;

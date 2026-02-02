@@ -16,7 +16,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_button; // @synthesize m_button=_m_button;
 @property(retain, nonatomic) NSString *m_body2; // @synthesize m_body2=_m_body2;
 @property(retain, nonatomic) NSString *m_body1; // @synthesize m_body1=_m_body1;

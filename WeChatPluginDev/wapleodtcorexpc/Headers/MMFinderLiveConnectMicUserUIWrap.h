@@ -17,7 +17,6 @@
     unsigned long long _totalCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useVideo; // @synthesize useVideo=_useVideo;
 @property(nonatomic) unsigned long long totalCount; // @synthesize totalCount=_totalCount;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;

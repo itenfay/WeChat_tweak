@@ -27,7 +27,6 @@
     NSMutableArray *_toDeleteItemDatas;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *toDeleteItemDatas; // @synthesize toDeleteItemDatas=_toDeleteItemDatas;
 @property(retain, nonatomic) WAStarMoveContext *moveContext; // @synthesize moveContext=_moveContext;
 @property(retain, nonatomic) UIImageView *emptyLogo; // @synthesize emptyLogo=_emptyLogo;

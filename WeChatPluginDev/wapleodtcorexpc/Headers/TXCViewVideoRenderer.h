@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, TXCDispatchQueue, TXCDroppableDispatcher, TXCFramebufferDrawer, TXCGSensor, TXCVideoFrame, TXCVideoFrameCoords, TXCVideoRenderConfig, UIView;
 @protocol TXIGlContext, TXILocalVideoRendererDelegate, TXIVideoRenderViewInterface;
 
@@ -23,7 +25,6 @@
     TXCVideoFrame *_lastFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCVideoFrame *lastFrame; // @synthesize lastFrame=_lastFrame;
 @property(retain, nonatomic) TXCDroppableDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(readonly, copy, nonatomic) CDUnknownBlockType drawOperation; // @synthesize drawOperation=_drawOperation;
@@ -74,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

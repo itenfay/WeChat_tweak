@@ -12,7 +12,6 @@
     MMAddressAnnotation *_addressAnnotation;
 }
 
-- (void).cxx_destruct;
 - (CDStruct_b7cb895d)getConvexRegion:(_Bool)arg1;
 - (void)onlyShowMe;
 - (void)removeAllFriendAnnotationCalloutAnimation;

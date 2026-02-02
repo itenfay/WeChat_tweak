@@ -18,7 +18,6 @@
     NSString *_package_sign;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool is_need_cert; // @synthesize is_need_cert=_is_need_cert;
 @property(retain, nonatomic) NSString *package_sign; // @synthesize package_sign=_package_sign;
 @property(retain, nonatomic) NSString *package; // @synthesize package=_package;

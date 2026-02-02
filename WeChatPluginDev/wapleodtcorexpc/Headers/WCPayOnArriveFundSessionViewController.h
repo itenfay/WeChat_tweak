@@ -13,7 +13,6 @@
     NSString *m_confirmingSessionName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_confirmingSessionName; // @synthesize m_confirmingSessionName;
 @property(retain, nonatomic) NSMutableArray *m_arrChatName; // @synthesize m_arrChatName;
 @property(retain, nonatomic) NSMutableArray *m_arrSessionInfo; // @synthesize m_arrSessionInfo;

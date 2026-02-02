@@ -23,7 +23,6 @@
 @property(nonatomic) int currPollNum; // @synthesize currPollNum=_currPollNum;
 @property(nonatomic) int iTotalPollNum; // @synthesize iTotalPollNum=_iTotalPollNum;
 @property(nonatomic) int eIPType; // @synthesize eIPType=_eIPType;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

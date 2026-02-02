@@ -14,7 +14,6 @@
     struct CGRect _frame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(retain, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
 @property(retain, nonatomic) FinderCollectionInfo *userInfo; // @synthesize userInfo=_userInfo;

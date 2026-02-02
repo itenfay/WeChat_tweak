@@ -32,7 +32,6 @@
 
 + (struct CGSize)sizeForContent:(id)arg1 maxWidth:(double)arg2 font:(id)arg3 parseType:(long long)arg4 cleanable:(_Bool)arg5 inset:(struct UIEdgeInsets)arg6 outArrStyles:(id *)arg7 hasImage:(_Bool)arg8;
 + (struct CGSize)sizeForContent:(id)arg1 maxWidth:(double)arg2 font:(id)arg3 parseType:(long long)arg4 cleanable:(_Bool)arg5 inset:(struct UIEdgeInsets)arg6 outArrStyles:(id *)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *visionBgView; // @synthesize visionBgView=_visionBgView;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;

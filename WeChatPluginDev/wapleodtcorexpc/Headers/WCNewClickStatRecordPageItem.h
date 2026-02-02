@@ -13,7 +13,6 @@
 }
 
 + (id)pageItem:(id)arg1 withAction:(unsigned int)arg2 withTimeStamp:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int timeStamp; // @synthesize timeStamp;
 @property(retain, nonatomic) NSString *pageID; // @synthesize pageID;
 @property(nonatomic) unsigned int pageAction; // @synthesize pageAction;

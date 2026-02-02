@@ -21,7 +21,6 @@
     WCPayGetPayPwdTokenCgi *_getPayPwdTokenCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayGetPayPwdTokenCgi *getPayPwdTokenCgi; // @synthesize getPayPwdTokenCgi=_getPayPwdTokenCgi;
 @property(retain, nonatomic) HoneyPayGetMCreditLineTokenCgi *getMCreditLineTokenCgi; // @synthesize getMCreditLineTokenCgi=_getMCreditLineTokenCgi;
 @property(retain, nonatomic) WCPayModifyHoneyPayerNotifyCgi *modifyNotifyCgi; // @synthesize modifyNotifyCgi=_modifyNotifyCgi;

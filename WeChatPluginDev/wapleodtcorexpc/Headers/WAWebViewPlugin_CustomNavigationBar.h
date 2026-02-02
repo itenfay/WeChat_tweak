@@ -21,7 +21,6 @@
     long long _gameMenuStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long gameMenuStyle; // @synthesize gameMenuStyle=_gameMenuStyle;
 @property(nonatomic) _Bool shouldUseDynamicPageShare; // @synthesize shouldUseDynamicPageShare=_shouldUseDynamicPageShare;
 @property(nonatomic) _Bool listenTapStatusBar; // @synthesize listenTapStatusBar=_listenTapStatusBar;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSEvent, NSString;
 
 @interface WebviewJSEventHandler_getH5PrepayRequest
@@ -12,7 +14,6 @@
     _Bool m_isNativeCashier;
 }
 
-- (void).cxx_destruct;
 - (void)call:(id)arg1;
 - (void)onWebViewDidFinishLoad:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
@@ -31,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

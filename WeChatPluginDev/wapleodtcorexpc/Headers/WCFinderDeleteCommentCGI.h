@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderComment;
 
 @interface WCFinderDeleteCommentCGI
@@ -17,7 +19,6 @@
     NSString *_sessionBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) NSString *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
@@ -32,4 +33,3 @@
 - (id)initWithComment:(id)arg1 tid:(id)arg2 rootCommentID:(unsigned long long)arg3 scene:(unsigned long long)arg4 sessionBuffer:(id)arg5 commentScene:(int)arg6 successful:(CDUnknownBlockType)arg7 failure:(CDUnknownBlockType)arg8;
 
 @end
-

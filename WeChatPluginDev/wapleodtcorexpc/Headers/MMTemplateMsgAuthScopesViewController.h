@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BrandTemplateMsgAuthSettingPageModel, NSMutableArray, NSString, WAContactGetter;
 
 @interface MMTemplateMsgAuthScopesViewController
@@ -17,7 +19,6 @@
     unsigned long long _enterScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(retain, nonatomic) BrandTemplateMsgAuthSettingPageModel *settingPageModel; // @synthesize settingPageModel=_settingPageModel;
 @property(nonatomic) _Bool isGlobalRecv; // @synthesize isGlobalRecv=_isGlobalRecv;
@@ -46,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

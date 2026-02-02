@@ -16,7 +16,6 @@
     TingAudioTraceLog *_traceLog;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingAudioTraceLog *traceLog; // @synthesize traceLog=_traceLog;
 @property(nonatomic) __weak id <TingPlayingInfoDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) TingBizPlayer *bizPlayer; // @synthesize bizPlayer=_bizPlayer;

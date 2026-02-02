@@ -13,7 +13,6 @@
 }
 
 + (id)tipsViewForTipsItem:(id)arg1 delegate:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMsgContentTipsItem *item; // @synthesize item=_item;
 @property(nonatomic) _Bool shouldDisableAccessibility; // @synthesize shouldDisableAccessibility=_shouldDisableAccessibility;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;

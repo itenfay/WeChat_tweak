@@ -15,7 +15,6 @@
     double _m_maxWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double m_maxWidth; // @synthesize m_maxWidth=_m_maxWidth;
 @property(retain, nonatomic) NSString *m_textString; // @synthesize m_textString=_m_textString;
 @property(retain, nonatomic) UIColor *m_textColor; // @synthesize m_textColor=_m_textColor;

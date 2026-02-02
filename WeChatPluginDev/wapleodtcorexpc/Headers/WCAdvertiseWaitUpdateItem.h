@@ -15,7 +15,6 @@
     NSData *_remindFriendsInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int reportScene; // @synthesize reportScene=_reportScene;
 @property(retain, nonatomic) NSData *remindFriendsInfo; // @synthesize remindFriendsInfo=_remindFriendsInfo;
 @property(retain, nonatomic) NSString *syncBuffer; // @synthesize syncBuffer=_syncBuffer;

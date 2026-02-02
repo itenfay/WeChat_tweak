@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)imageToFeatureBuf:(id)arg1 filePath:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(retain, nonatomic) NSMutableArray *ocrResults; // @synthesize ocrResults=_ocrResults;
@@ -30,4 +30,3 @@
 - (id)initWithImage:(id)arg1 timeout:(double)arg2 handler:(CDUnknownBlockType)arg3;
 
 @end
-

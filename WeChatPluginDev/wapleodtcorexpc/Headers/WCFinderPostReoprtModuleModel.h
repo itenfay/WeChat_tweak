@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_startTimeStamp;
 + (void)PBArrayAdd_moduleName;
 + (void)PBArrayAdd_pageName;
-- (void).cxx_destruct;
 @property(nonatomic) int endReasonType; // @synthesize endReasonType=_endReasonType;
 @property(nonatomic) long long duration; // @synthesize duration=_duration;
 @property(nonatomic) long long endTimeStamp; // @synthesize endTimeStamp=_endTimeStamp;

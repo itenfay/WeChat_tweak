@@ -10,7 +10,6 @@
     SnsObjItem *_snsObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SnsObjItem *snsObj; // @synthesize snsObj=_snsObj;
 - (id)toXML;
 - (_Bool)fromXML:(struct XmlReaderNode_t *)arg1;

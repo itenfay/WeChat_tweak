@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableArray, NSString;
 
@@ -14,7 +15,6 @@
     NSMutableArray *_appendedInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *appendedInfos; // @synthesize appendedInfos=_appendedInfos;
 @property(retain, nonatomic) NSDictionary *dictValue; // @synthesize dictValue=_dictValue;
 @property(retain, nonatomic) NSString *jsonValue; // @synthesize jsonValue=_jsonValue;
@@ -24,4 +24,3 @@
 - (void)flush;
 
 @end
-

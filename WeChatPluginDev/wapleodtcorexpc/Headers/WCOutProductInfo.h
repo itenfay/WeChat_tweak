@@ -20,7 +20,6 @@
     NSString *_webPayListUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *webPayListUrl; // @synthesize webPayListUrl=_webPayListUrl;
 @property(retain, nonatomic) NSString *discountMD5; // @synthesize discountMD5=_discountMD5;
 @property(nonatomic) long long buttonTagID; // @synthesize buttonTagID=_buttonTagID;

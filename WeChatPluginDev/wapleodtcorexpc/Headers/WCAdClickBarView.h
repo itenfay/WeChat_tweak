@@ -19,7 +19,6 @@
     double _titleViewOriginX;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double titleViewOriginX; // @synthesize titleViewOriginX=_titleViewOriginX;
 @property(nonatomic) double iconViewOriginX; // @synthesize iconViewOriginX=_iconViewOriginX;
 @property(nonatomic) double selfOriginX; // @synthesize selfOriginX=_selfOriginX;

@@ -12,7 +12,6 @@
     WCPayWalletEntryHeaderView *_entryView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayWalletEntryHeaderView *entryView; // @synthesize entryView=_entryView;
 - (void)layoutSubviews;
 

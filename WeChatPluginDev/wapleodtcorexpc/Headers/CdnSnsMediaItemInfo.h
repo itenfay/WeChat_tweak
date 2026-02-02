@@ -16,7 +16,6 @@
     WCMediaItem *_mediaItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool finishFlag; // @synthesize finishFlag=_finishFlag;
 @property(retain, nonatomic) WCMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(nonatomic) unsigned long long decryptKey; // @synthesize decryptKey=_decryptKey;

@@ -14,7 +14,6 @@
     NSString *_desc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(nonatomic) unsigned int qrcode_level; // @synthesize qrcode_level=_qrcode_level;
 @property(retain, nonatomic) NSString *m_nsFixedAmountQRCode; // @synthesize m_nsFixedAmountQRCode;

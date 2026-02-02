@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, EmoticonBoardView, MMGrowTextView, MMLiveInputController, MMUILabel, NSMutableArray, NSString, UIButton, UIColor, UIFont;
 @protocol WCFinderBulletInputToolbarViewDelegate;
@@ -37,7 +38,6 @@
 }
 
 + (double)inputToolViewInitialHeight;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *limitView; // @synthesize limitView=_limitView;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) MMUILabel *disableTipLabel; // @synthesize disableTipLabel=_disableTipLabel;
@@ -123,4 +123,3 @@
 @property(readonly) Class superclass;
 
 @end
-

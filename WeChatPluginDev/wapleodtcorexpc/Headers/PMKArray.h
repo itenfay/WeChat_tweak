@@ -11,7 +11,6 @@
     unsigned long long count;
 }
 
-- (void).cxx_destruct;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 
 @end

@@ -13,7 +13,6 @@
     WCPayNetImageResource *_m_bankLogoImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNetImageResource *m_bankLogoImage; // @synthesize m_bankLogoImage=_m_bankLogoImage;
 @property(retain, nonatomic) NSString *m_bankType; // @synthesize m_bankType;
 - (void)OnGetBankResourcesNotification:(id)arg1;

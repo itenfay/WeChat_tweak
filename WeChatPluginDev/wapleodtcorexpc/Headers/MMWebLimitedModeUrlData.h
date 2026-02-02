@@ -15,7 +15,6 @@
     NSData *_coverData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *coverData; // @synthesize coverData=_coverData;
 @property(copy, nonatomic) NSString *coverUrl; // @synthesize coverUrl=_coverUrl;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

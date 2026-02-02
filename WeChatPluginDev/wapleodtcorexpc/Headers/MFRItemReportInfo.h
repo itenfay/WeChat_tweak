@@ -16,7 +16,6 @@
     long long _unexposureReason;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFinalUnexposureReason; // @synthesize isFinalUnexposureReason=_isFinalUnexposureReason;
 @property(nonatomic) long long unexposureReason; // @synthesize unexposureReason=_unexposureReason;
 @property(nonatomic) _Bool isExposed; // @synthesize isExposed=_isExposed;

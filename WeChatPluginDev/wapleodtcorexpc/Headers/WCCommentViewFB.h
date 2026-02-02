@@ -48,7 +48,6 @@
 + (id)accessibilityLabelForTimeline:(id)arg1;
 + (id)getDisplayCommentContentPattern:(id)arg1 dataItem:(id)arg2;
 + (id)getDisplayCommentContent:(id)arg1 dataItem:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *accessibilityButtonForTruncatedTrailingLinkText; // @synthesize accessibilityButtonForTruncatedTrailingLinkText=_accessibilityButtonForTruncatedTrailingLinkText;
 @property(retain, nonatomic) WCMomentsFireworksIconView *springIconButton; // @synthesize springIconButton=_springIconButton;
 @property(retain, nonatomic) MMUIButton *emotionView; // @synthesize emotionView=_emotionView;

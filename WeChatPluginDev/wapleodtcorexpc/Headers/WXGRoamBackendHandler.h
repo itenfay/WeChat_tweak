@@ -16,7 +16,6 @@
 + (id)channelRespToString:(id)arg1;
 + (id)encodeDataBae64:(id)arg1;
 + (id)decodeBase64String:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool onAutoTestMode; // @synthesize onAutoTestMode=_onAutoTestMode;
 @property(nonatomic) __weak id <WXGRoamBackendHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)mockAutoTestPackage;

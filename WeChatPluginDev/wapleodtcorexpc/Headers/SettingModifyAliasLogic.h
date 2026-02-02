@@ -12,7 +12,6 @@
 
 + (void)reportSettingModifyAliasBackOrCancelWithSessionid:(id)arg1 andModifyAliasPageScene:(unsigned int)arg2;
 + (void)reportSettingModifyAliasWithSessionid:(id)arg1 andModifyAliasActionCode:(unsigned int)arg2 andModifyAliasErrortype:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <SettingModifyAliasLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)OnModifyAlias:(id)arg1;
 - (_Bool)modifyAlias:(id)arg1 checkCanSetAliasTicket:(id)arg2 setAliasPwdTicket:(id)arg3 setAliasHumanFaceTicket:(id)arg4;

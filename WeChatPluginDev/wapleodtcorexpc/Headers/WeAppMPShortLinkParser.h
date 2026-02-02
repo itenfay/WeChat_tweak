@@ -12,7 +12,6 @@
 }
 
 + (id)newInstance;
-- (void).cxx_destruct;
 - (id)getStyle;
 - (id)attributeStringForContent:(id)arg1;
 - (id)getStylesForString:(id)arg1 withStyleString:(id)arg2;

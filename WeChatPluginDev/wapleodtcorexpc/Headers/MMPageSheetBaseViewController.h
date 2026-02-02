@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMPageSheetConfig, NSString, UIView;
 @protocol MMPageSheetContainer;
 
@@ -13,7 +15,6 @@
     id <MMPageSheetContainer> _pageSheetContainer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMPageSheetContainer> pageSheetContainer; // @synthesize pageSheetContainer=_pageSheetContainer;
 @property(retain, nonatomic) UIView *detailView; // @synthesize detailView=_detailView;
 @property(retain, nonatomic) MMPageSheetConfig *pageSheetConfig; // @synthesize pageSheetConfig=_pageSheetConfig;
@@ -54,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

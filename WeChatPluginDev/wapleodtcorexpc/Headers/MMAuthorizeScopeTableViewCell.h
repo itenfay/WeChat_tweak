@@ -17,7 +17,6 @@
 }
 
 + (double)viewHeightWithScopeText:(id)arg1 cellWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelect; // @synthesize isSelect=_isSelect;
 @property(nonatomic) _Bool isMustSelect; // @synthesize isMustSelect=_isMustSelect;
 @property(retain, nonatomic) NSString *scopeDescription; // @synthesize scopeDescription=_scopeDescription;

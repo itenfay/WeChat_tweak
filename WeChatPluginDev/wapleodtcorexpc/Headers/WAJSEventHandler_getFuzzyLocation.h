@@ -12,7 +12,6 @@
     TencentLBSLocationManager *_locationMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TencentLBSLocationManager *locationMgr; // @synthesize locationMgr=_locationMgr;
 - (struct CLLocationCoordinate2D)randomDeviate:(struct CLLocationCoordinate2D)arg1;
 - (void)onTencentLBSLocationError:(id)arg1;

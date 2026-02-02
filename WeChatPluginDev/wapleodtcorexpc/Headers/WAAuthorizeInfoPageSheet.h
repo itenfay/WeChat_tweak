@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIButton, UILabel, UIScreenEdgePanGestureRecognizer, UIScrollView, WAMenuPopInteractiveTransition;
 @protocol IWARichTextViewHelper;
 
@@ -20,7 +22,6 @@
     UIScreenEdgePanGestureRecognizer *_panGR;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *panGR; // @synthesize panGR=_panGR;
 @property(retain, nonatomic) WAMenuPopInteractiveTransition *popIT; // @synthesize popIT=_popIT;
 @property(readonly, nonatomic) NSString *info; // @synthesize info=_info;
@@ -51,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

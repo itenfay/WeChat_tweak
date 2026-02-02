@@ -19,7 +19,6 @@
 
 + (_Bool)checkActiveWithLocalID:(unsigned int)arg1 infoType:(unsigned long long)arg2 fileName:(id)arg3 with:(id)arg4;
 + (unsigned int)parseMesLocalIdFromPath:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *reportTimer; // @synthesize reportTimer=_reportTimer;
 @property(nonatomic) _Bool isScanning; // @synthesize isScanning=_isScanning;
 @property(retain, nonatomic) MMActiveStorageReportStatus *lastReportStatus; // @synthesize lastReportStatus=_lastReportStatus;

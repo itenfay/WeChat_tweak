@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_modelDescription;
 + (void)PBArrayAdd_error;
 + (void)PBArrayAdd_time;
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) _TtC6WeChat42KaraProphetBehaviorExtractFeaturesAnalysis *extractFeatures; // @synthesize extractFeatures;
 @property(nonatomic, copy) NSString *modelDescription;

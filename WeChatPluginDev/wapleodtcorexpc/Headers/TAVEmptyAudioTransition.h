@@ -13,7 +13,6 @@
     CDStruct_1b6d18a9 _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)applyPreviousAudioMixInputParameters:(id)arg1 timeRange:(CDStruct_e83c9415)arg2;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UITapGestureRecognizer;
 
@@ -14,7 +15,6 @@
     UITapGestureRecognizer *_tapGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(copy, nonatomic) CDUnknownBlockType tapEntityHandler; // @synthesize tapEntityHandler=_tapEntityHandler;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
@@ -23,4 +23,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

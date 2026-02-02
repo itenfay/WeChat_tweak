@@ -12,7 +12,6 @@
     WCTTable *_weChatOutMsgTable;
 }
 
-- (void).cxx_destruct;
 - (id)getWeChatOutMsgBeginLocalID:(unsigned int)arg1 limit:(int)arg2;
 - (_Bool)insertOrUpdateWcoMsg:(id)arg1;
 - (_Bool)deleteRecentCallByPhoneNum:(id)arg1 withCountryCode:(id)arg2;

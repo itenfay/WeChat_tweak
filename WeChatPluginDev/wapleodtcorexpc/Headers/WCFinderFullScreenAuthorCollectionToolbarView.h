@@ -41,7 +41,6 @@
     NSDictionary *_eyeReportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *eyeReportInfo; // @synthesize eyeReportInfo=_eyeReportInfo;
 @property(nonatomic) _Bool useEyeStyle; // @synthesize useEyeStyle=_useEyeStyle;
 @property(nonatomic) _Bool isPrivateState; // @synthesize isPrivateState=_isPrivateState;

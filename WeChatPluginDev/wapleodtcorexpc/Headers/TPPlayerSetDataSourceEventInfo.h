@@ -12,7 +12,6 @@
     long long _urlProtocol;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long urlProtocol; // @synthesize urlProtocol=_urlProtocol;
 @property(nonatomic, getter=isUseProxy) _Bool useProxy; // @synthesize useProxy=_useProxy;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;

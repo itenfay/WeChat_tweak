@@ -21,7 +21,6 @@
     double _panelHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double panelHeight; // @synthesize panelHeight=_panelHeight;
 @property(nonatomic) double subviewsScale; // @synthesize subviewsScale=_subviewsScale;
 @property(retain, nonatomic) MultiTalkHDHeadView *headImageView; // @synthesize headImageView=_headImageView;

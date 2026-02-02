@@ -38,7 +38,6 @@
     NSDictionary *_dictRawEnterInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dictRawEnterInfo; // @synthesize dictRawEnterInfo=_dictRawEnterInfo;
 @property(nonatomic) unsigned int openArticleFromScene; // @synthesize openArticleFromScene=_openArticleFromScene;
 @property(nonatomic) int bizFromScene; // @synthesize bizFromScene=_bizFromScene;

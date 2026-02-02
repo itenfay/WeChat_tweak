@@ -13,7 +13,6 @@
     NSMutableSet *_attrFetchingSet;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)handleSetBizEnterpriseAttrToSvr:(id)arg1;
 - (void)updateAttrToSvr:(id)arg1 mask:(unsigned int)arg2;

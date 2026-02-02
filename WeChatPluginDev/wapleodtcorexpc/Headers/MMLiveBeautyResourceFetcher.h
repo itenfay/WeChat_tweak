@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveBeautyResourceFetcherRootAction, NSString;
 
 @interface MMLiveBeautyResourceFetcher
@@ -10,7 +12,6 @@
     MMLiveBeautyResourceFetcherRootAction *_flowInstance;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveBeautyResourceFetcherRootAction *flowInstance; // @synthesize flowInstance=_flowInstance;
 - (void)fetchBeautyResourcesInDescriptor:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)fetchBeautyResourcesInPackages:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
@@ -26,4 +27,3 @@
 @property(readonly) Class superclass;
 
 @end
-

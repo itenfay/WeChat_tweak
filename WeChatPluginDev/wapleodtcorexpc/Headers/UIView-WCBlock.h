@@ -4,10 +4,10 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (WCBlock)
 - (void)addTapAction:(CDUnknownBlockType)arg1;
 - (void)whenTapWithNumberOfTouches:(unsigned long long)arg1 numberOfTaps:(unsigned long long)arg2 delay:(double)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)whenTapWithNumberOfTouches:(unsigned long long)arg1 numberOfTaps:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 @end
-

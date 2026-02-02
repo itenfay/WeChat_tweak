@@ -14,7 +14,6 @@
     NSData *m_ndImgData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *m_nsThumbImage; // @synthesize m_nsThumbImage;
 @property(retain, nonatomic) NSString *m_nsImgUrl; // @synthesize m_nsImgUrl;
 @property(retain, nonatomic) NSData *m_ndImgData; // @synthesize m_ndImgData;

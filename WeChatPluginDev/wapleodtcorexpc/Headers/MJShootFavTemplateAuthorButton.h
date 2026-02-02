@@ -12,7 +12,6 @@
 }
 
 + (id)createAuthorButton;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *authorNameLabel; // @synthesize authorNameLabel=_authorNameLabel;
 @property(retain, nonatomic) MMWebImageView *authorIcon; // @synthesize authorIcon=_authorIcon;
 - (void)updateAuthorDisplayName:(id)arg1;

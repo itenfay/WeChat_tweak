@@ -13,7 +13,6 @@
     WCPayF2FDynamicCodeCgi *_m_f2fDynamicCodeCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayF2FDynamicCodeCgi *m_f2fDynamicCodeCgi; // @synthesize m_f2fDynamicCodeCgi=_m_f2fDynamicCodeCgi;
 @property __weak id <WCPayF2FMiddlePageSubLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) WCPayControlData *m_data; // @synthesize m_data=_m_data;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCSequentialAction : NSObject
 {
@@ -13,11 +14,9 @@
     unsigned long long _options;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) long long type; // @synthesize type=_type;
 
 @end
-

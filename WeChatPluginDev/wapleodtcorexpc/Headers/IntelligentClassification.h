@@ -19,7 +19,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)getClassificationWithImage:(id)arg1;
 - (id)getIntelligentClsPerfEveryDayId;
 - (void)doReportIntelligentClsPerfEveryDay:(id)arg1 inferenceCost:(float)arg2;

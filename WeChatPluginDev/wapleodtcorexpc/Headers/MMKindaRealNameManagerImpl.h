@@ -13,7 +13,6 @@
     MMVoidCallback *_realnameCancelCallBack;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMVoidCallback *realnameCancelCallBack; // @synthesize realnameCancelCallBack=_realnameCancelCallBack;
 @property(retain, nonatomic) MMVoidITransmitKvDataCallback *privacyVCCallBack; // @synthesize privacyVCCallBack=_privacyVCCallBack;
 - (void)startRealNameVerifyPhone:(id)arg1;

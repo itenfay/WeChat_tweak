@@ -24,7 +24,6 @@
     RichTextView *_checkBoxInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *checkBoxInfo; // @synthesize checkBoxInfo=_checkBoxInfo;
 @property(retain, nonatomic) MMUIButton *checkBoxButton; // @synthesize checkBoxButton=_checkBoxButton;
 @property(retain, nonatomic) RichTextView *termsOfService; // @synthesize termsOfService=_termsOfService;

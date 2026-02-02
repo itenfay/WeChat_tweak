@@ -13,7 +13,6 @@
     double _restoreVolume;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUsingEarPhone; // @synthesize isUsingEarPhone=_isUsingEarPhone;
 @property(nonatomic) double restoreVolume; // @synthesize restoreVolume=_restoreVolume;
 @property(retain, nonatomic) MMNotificationViewController *tipsController; // @synthesize tipsController=_tipsController;

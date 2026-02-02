@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMediaServiceWrapper, NSMutableDictionary;
 
 @interface MMWebJsMediaServiceHandler
@@ -11,7 +13,6 @@
     NSMutableDictionary *_dicEvent2CallBackFunc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicEvent2CallBackFunc; // @synthesize dicEvent2CallBackFunc=_dicEvent2CallBackFunc;
 @property(retain, nonatomic) MMMediaServiceWrapper *mediaService; // @synthesize mediaService=_mediaService;
 - (void)addApi_audioRemove:(id)arg1;
@@ -40,4 +41,3 @@
 - (id)init;
 
 @end
-

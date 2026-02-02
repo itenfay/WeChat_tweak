@@ -19,7 +19,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_mirrored; // @synthesize m_mirrored;
 @property(nonatomic) _Bool m_acceptNV12; // @synthesize m_acceptNV12;
 @property(nonatomic) SEL selector; // @synthesize selector;

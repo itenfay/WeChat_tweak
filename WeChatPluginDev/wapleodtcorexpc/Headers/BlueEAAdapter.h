@@ -11,7 +11,6 @@
     NSRunLoop *m_runLoop;
 }
 
-- (void).cxx_destruct;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)accessoryDidDisconnect:(id)arg1;
 - (_Bool)isWeChatDevice:(id)arg1;

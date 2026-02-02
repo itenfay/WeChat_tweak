@@ -13,7 +13,6 @@
     UIImageView *_arrowImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) UIView *barView; // @synthesize barView=_barView;
 - (void)layoutSubviews;

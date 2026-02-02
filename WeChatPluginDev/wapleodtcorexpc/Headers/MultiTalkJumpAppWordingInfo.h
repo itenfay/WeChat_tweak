@@ -16,7 +16,6 @@
     NSString *_bannerContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bannerContent; // @synthesize bannerContent=_bannerContent;
 @property(retain, nonatomic) NSString *bannerTitle; // @synthesize bannerTitle=_bannerTitle;
 @property(retain, nonatomic) NSString *dialogGotoButtonTitle; // @synthesize dialogGotoButtonTitle=_dialogGotoButtonTitle;

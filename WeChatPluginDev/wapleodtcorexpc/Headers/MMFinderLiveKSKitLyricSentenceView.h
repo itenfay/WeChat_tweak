@@ -19,7 +19,6 @@
 }
 
 + (id)lyricWordFont;
-- (void).cxx_destruct;
 @property(nonatomic) double singLeftInset; // @synthesize singLeftInset=_singLeftInset;
 @property(nonatomic) int endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) int startTime; // @synthesize startTime=_startTime;

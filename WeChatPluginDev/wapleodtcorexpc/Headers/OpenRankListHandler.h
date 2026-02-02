@@ -12,7 +12,6 @@
     MMUINavigationController *_navigationController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) OpenApiParameter *parameter; // @synthesize parameter=_parameter;

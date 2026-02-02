@@ -23,7 +23,6 @@
     NSDictionary *_liveChnlExtra;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *liveChnlExtra; // @synthesize liveChnlExtra=_liveChnlExtra;
 @property(nonatomic) _Bool forbidReport; // @synthesize forbidReport=_forbidReport;
 @property(nonatomic) unsigned long long cellExposeReportRate; // @synthesize cellExposeReportRate=_cellExposeReportRate;

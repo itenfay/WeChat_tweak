@@ -24,7 +24,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) NSString *recv_headimgurl; // @synthesize recv_headimgurl=_recv_headimgurl;
 @property(retain, nonatomic) NSString *nsNoticeUrl; // @synthesize nsNoticeUrl=_nsNoticeUrl;
 @property(retain, nonatomic) NSString *nsNotice; // @synthesize nsNotice=_nsNotice;

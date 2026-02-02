@@ -21,7 +21,6 @@
     OrderedDictionary *_joinTeamQualifications;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int curCoinValue; // @synthesize curCoinValue=_curCoinValue;
 @property(nonatomic) unsigned int curJoinTeamMode; // @synthesize curJoinTeamMode=_curJoinTeamMode;
 @property(nonatomic) unsigned int lastJoinTeamMode; // @synthesize lastJoinTeamMode=_lastJoinTeamMode;

@@ -21,7 +21,6 @@
     unsigned long long _mt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mt; // @synthesize mt=_mt;
 @property(nonatomic) unsigned long long i; // @synthesize i=_i;
 @property(nonatomic) unsigned long long f; // @synthesize f=_f;

@@ -24,7 +24,6 @@
     ThumbImageUploader *_thumbImageUploader;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCompressDataUploadSucc; // @synthesize isCompressDataUploadSucc=_isCompressDataUploadSucc;
 @property(nonatomic) _Bool isRawDataUploadSucc; // @synthesize isRawDataUploadSucc=_isRawDataUploadSucc;
 @property(nonatomic) _Bool isUseCgiUpload; // @synthesize isUseCgiUpload=_isUseCgiUpload;

@@ -12,7 +12,6 @@
     NSMutableDictionary *_pixelBufferCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pixelBufferCache; // @synthesize pixelBufferCache=_pixelBufferCache;
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (void)cleanCache;

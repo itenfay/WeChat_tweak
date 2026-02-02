@@ -43,7 +43,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ConStrRes2; // @synthesize ConStrRes2;
 @property(retain, nonatomic) NSString *ConStrRes1; // @synthesize ConStrRes1;
 @property(nonatomic) unsigned int ConIntRes2; // @synthesize ConIntRes2;

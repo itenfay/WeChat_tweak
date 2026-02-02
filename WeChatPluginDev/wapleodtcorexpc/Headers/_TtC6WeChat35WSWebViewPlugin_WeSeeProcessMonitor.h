@@ -11,7 +11,6 @@
     MISSING_TYPE *$__lazy_storage_$_reporter;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)handleEvent:(id)arg1 userInfo:(id)arg2;
 @property(nonatomic, readonly) _Bool exposedButNotRender;

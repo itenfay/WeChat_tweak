@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MiniTaskFavHelper : NSObject
 {
@@ -14,4 +15,3 @@
 + (_Bool)canAddToFav:(id)arg1;
 
 @end
-

@@ -13,7 +13,6 @@
     NSArray *_extension;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *extension; // @synthesize extension=_extension;
 @property(retain, nonatomic) NSString *fileType; // @synthesize fileType=_fileType;
 

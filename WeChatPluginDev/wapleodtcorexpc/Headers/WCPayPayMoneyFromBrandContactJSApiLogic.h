@@ -18,7 +18,6 @@
     id <WCPayPayJSApiLogicParamDelegate> _paramDelegate;
 }
 
-- (void).cxx_destruct;
 @property _Bool cancelByUser; // @synthesize cancelByUser=_cancelByUser;
 @property(nonatomic) __weak id <WCPayPayJSApiLogicParamDelegate> paramDelegate; // @synthesize paramDelegate=_paramDelegate;
 - (void)cancelPayMoneyFromOverseaH5WalletLogic:(id)arg1;

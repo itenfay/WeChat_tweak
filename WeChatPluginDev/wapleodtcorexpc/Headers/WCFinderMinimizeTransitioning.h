@@ -18,7 +18,6 @@
     UIViewController *_animatedTransitionRespondViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMinimize; // @synthesize isMinimize=_isMinimize;
 @property(nonatomic) __weak UIViewController *animatedTransitionRespondViewController; // @synthesize animatedTransitionRespondViewController=_animatedTransitionRespondViewController;
 @property(nonatomic) _Bool useWhenVCPop; // @synthesize useWhenVCPop=_useWhenVCPop;

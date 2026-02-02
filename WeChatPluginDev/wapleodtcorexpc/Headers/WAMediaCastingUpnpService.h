@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WAMediaCastingUpnpDevice, WAMediaCastingUpnpDiscovery, WAMediaCastingUpnpServiceCallback, WAMediaCastingUpnpServicePoll;
 @protocol WAMediaCastingUpnpServiceDelegate;
@@ -24,7 +25,6 @@
 
 + (void)runOnMainQueue:(CDUnknownBlockType)arg1;
 + (id)service;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldResumePollingWhenAppear; // @synthesize shouldResumePollingWhenAppear=_shouldResumePollingWhenAppear;
 @property(retain, nonatomic) WAMediaCastingUpnpServiceCallback *callback; // @synthesize callback=_callback;
 @property(nonatomic) _Bool isLive; // @synthesize isLive=_isLive;
@@ -74,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

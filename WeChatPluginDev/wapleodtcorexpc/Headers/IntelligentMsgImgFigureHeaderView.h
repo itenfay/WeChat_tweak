@@ -12,7 +12,6 @@
     MMUILabel *m_figureCountLabel;
 }
 
-- (void).cxx_destruct;
 - (double)calculationHeight;
 - (void)updateFigureImageView:(id)arg1 figureCount:(unsigned int)arg2;
 - (void)layoutSubviews;

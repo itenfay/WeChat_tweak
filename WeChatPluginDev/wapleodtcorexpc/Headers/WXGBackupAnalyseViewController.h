@@ -11,7 +11,6 @@
     NSString *_infoString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *infoString; // @synthesize infoString=_infoString;
 @property(retain, nonatomic) UITextView *infoTextView; // @synthesize infoTextView=_infoTextView;
 - (void)sendDataToFileHelper;

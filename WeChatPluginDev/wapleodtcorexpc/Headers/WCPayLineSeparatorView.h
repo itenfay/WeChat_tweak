@@ -15,7 +15,6 @@
     double _lineX;
 }
 
-- (void).cxx_destruct;
 @property double lineX; // @synthesize lineX=_lineX;
 @property _Bool needLine; // @synthesize needLine=_needLine;
 @property double interval; // @synthesize interval=_interval;

@@ -21,7 +21,6 @@
     double _labelDisappearTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double labelDisappearTime; // @synthesize labelDisappearTime=_labelDisappearTime;
 @property(nonatomic) double labelAppearTime; // @synthesize labelAppearTime=_labelAppearTime;
 @property(retain, nonatomic) NSString *soundPath; // @synthesize soundPath=_soundPath;

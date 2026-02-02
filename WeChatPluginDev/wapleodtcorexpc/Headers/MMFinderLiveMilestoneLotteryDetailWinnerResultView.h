@@ -28,7 +28,6 @@
     RichTextView *_supplementLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *supplementLabel; // @synthesize supplementLabel=_supplementLabel;
 @property(retain, nonatomic) MMUIButton *voteResultBtn; // @synthesize voteResultBtn=_voteResultBtn;
 @property(retain, nonatomic) MMWebImageView *lostEncourageImageView; // @synthesize lostEncourageImageView=_lostEncourageImageView;

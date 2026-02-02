@@ -17,7 +17,6 @@
     struct _NSRange _downloadRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double costTime; // @synthesize costTime=_costTime;
 @property(nonatomic) double downloadSpeed; // @synthesize downloadSpeed=_downloadSpeed;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;

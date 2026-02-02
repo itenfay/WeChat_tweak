@@ -16,7 +16,6 @@
 }
 
 + (void)reportDeleteComment:(id)arg1 with:(id)arg2 confirm:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cacheCommentText; // @synthesize cacheCommentText=_cacheCommentText;
 @property(nonatomic) unsigned long long showTimeMs; // @synthesize showTimeMs=_showTimeMs;
 @property(nonatomic) unsigned long long endTimeMs; // @synthesize endTimeMs=_endTimeMs;

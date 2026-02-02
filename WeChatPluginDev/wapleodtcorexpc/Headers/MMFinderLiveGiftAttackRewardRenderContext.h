@@ -16,7 +16,6 @@
     GiftAttackRenderScriptObj *_renderScript;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GiftAttackRenderScriptObj *renderScript; // @synthesize renderScript=_renderScript;
 @property(nonatomic) long long renderScriptId; // @synthesize renderScriptId=_renderScriptId;
 @property(retain, nonatomic) NSValue *startPos; // @synthesize startPos=_startPos;

@@ -62,7 +62,6 @@
 + (void)PBArrayAdd_mediaType;
 + (void)PBArrayAdd_mediaArray;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(nonatomic) double feedLongitude; // @synthesize feedLongitude=_feedLongitude;
 @property(nonatomic) double feedLatitude; // @synthesize feedLatitude=_feedLatitude;
 @property(nonatomic) unsigned long long subLbsFlagType; // @synthesize subLbsFlagType=_subLbsFlagType;

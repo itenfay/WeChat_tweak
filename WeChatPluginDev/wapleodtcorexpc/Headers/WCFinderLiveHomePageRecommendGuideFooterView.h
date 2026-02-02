@@ -19,7 +19,6 @@
 
 + (double)footerWidth;
 + (id)footerIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *labelArrowView; // @synthesize labelArrowView=_labelArrowView;
 @property(retain, nonatomic) UILabel *swipeEducationLabel; // @synthesize swipeEducationLabel=_swipeEducationLabel;
 @property(retain, nonatomic) UIView *scrollLabelContainer; // @synthesize scrollLabelContainer=_scrollLabelContainer;

@@ -17,7 +17,6 @@
     WCFinderProfilePOISearchViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProfilePOISearchViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) NSString *currentText; // @synthesize currentText=_currentText;
 @property(retain, nonatomic) UILabel *stateTipsLabel; // @synthesize stateTipsLabel=_stateTipsLabel;

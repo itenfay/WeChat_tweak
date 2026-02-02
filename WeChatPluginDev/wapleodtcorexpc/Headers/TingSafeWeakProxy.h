@@ -11,7 +11,6 @@
     id _innerWeakContextObject;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id innerWeakContextObject; // @synthesize innerWeakContextObject=_innerWeakContextObject;
 @property(nonatomic) __weak id object; // @synthesize object=_object;
 - (id)debugDescription;

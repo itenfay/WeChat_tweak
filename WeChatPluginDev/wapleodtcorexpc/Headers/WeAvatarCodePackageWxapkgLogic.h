@@ -14,7 +14,6 @@
     id <IWeAvatarResPackageLogic> _resLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IWeAvatarResPackageLogic> resLogic; // @synthesize resLogic=_resLogic;
 @property(retain, nonatomic) MBPackageLogic *pkg; // @synthesize pkg=_pkg;
 - (id)getFileData:(id)arg1;

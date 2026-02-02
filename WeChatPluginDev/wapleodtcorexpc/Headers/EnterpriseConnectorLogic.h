@@ -19,7 +19,6 @@
     id <EnterpriseConnectorLogicDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EnterpriseConnectorLogicDelegate> delegate; // @synthesize delegate;
 - (void)callDelegateConnectFail;
 - (void)callDelegateConnectSucceed;

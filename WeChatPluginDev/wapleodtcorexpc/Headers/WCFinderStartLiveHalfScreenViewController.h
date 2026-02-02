@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIButton, UIImageView, UILabel;
 
 @interface WCFinderStartLiveHalfScreenViewController
@@ -15,7 +17,6 @@
     UIButton *_certainButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *certainButton; // @synthesize certainButton=_certainButton;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UILabel *topTitleLabel; // @synthesize topTitleLabel=_topTitleLabel;
@@ -31,4 +32,3 @@
 - (void)viewDidLoad;
 
 @end
-

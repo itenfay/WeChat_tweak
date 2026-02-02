@@ -15,7 +15,6 @@
 }
 
 + (id)fromFinderLiveRoomManager:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) _Bool fromWechatContact; // @synthesize fromWechatContact=_fromWechatContact;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;

@@ -15,7 +15,6 @@
     CDStruct_e83c9415 _initialTimeRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_e83c9415 initialTimeRange; // @synthesize initialTimeRange=_initialTimeRange;
 @property(retain, nonatomic) MJPublisherButton *quickAdjustButton; // @synthesize quickAdjustButton=_quickAdjustButton;
 @property(retain, nonatomic) MJTimelineViewController *timelineVC; // @synthesize timelineVC=_timelineVC;

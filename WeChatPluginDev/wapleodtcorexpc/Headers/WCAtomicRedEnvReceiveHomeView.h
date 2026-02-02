@@ -22,7 +22,6 @@
     UIImageView *imageView;
 }
 
-- (void).cxx_destruct;
 - (void)OnCheckChanged;
 - (void)showSuccessOpenAnimation;
 - (void)removeView;

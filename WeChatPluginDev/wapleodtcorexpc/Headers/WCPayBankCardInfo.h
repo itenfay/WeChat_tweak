@@ -14,7 +14,6 @@
     NSString *_mobile_tips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mobile_tips; // @synthesize mobile_tips=_mobile_tips;
 @property(retain, nonatomic) NSString *mobile_hint; // @synthesize mobile_hint=_mobile_hint;
 @property(retain, nonatomic) NSString *bank_type; // @synthesize bank_type=_bank_type;

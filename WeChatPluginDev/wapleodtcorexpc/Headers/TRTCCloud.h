@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, TXAudioEffectManager, TXBeautyManager, TXDeviceManager;
 @protocol OS_dispatch_queue, TRTCCloudDelegate;
@@ -36,7 +37,6 @@
 + (void)setNetEnv:(int)arg1;
 + (void)load;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *trtcSubClouds; // @synthesize trtcSubClouds=_trtcSubClouds;
 @property(nonatomic) __weak TRTCCloud *mainCloud; // @synthesize mainCloud=_mainCloud;
 @property(nonatomic) int screenStreamType; // @synthesize screenStreamType=_screenStreamType;
@@ -203,4 +203,3 @@
 - (struct PipelineInterface *)pipeline;
 
 @end
-

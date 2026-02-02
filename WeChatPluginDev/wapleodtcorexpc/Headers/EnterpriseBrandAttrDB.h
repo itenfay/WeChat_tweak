@@ -13,7 +13,6 @@
     WCTTable *_table;
 }
 
-- (void).cxx_destruct;
 - (_Bool)setAttr:(id)arg1 onProperties:(const void *)arg2;
 - (_Bool)deleteAttrByUserName:(id)arg1;
 - (id)getAttrByUserName:(id)arg1;

@@ -20,7 +20,6 @@
     NSString *_reportSessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportSessionId; // @synthesize reportSessionId=_reportSessionId;
 @property(retain, nonatomic) NSMutableDictionary *cacheReceiveDict; // @synthesize cacheReceiveDict=_cacheReceiveDict;
 @property(retain, nonatomic) WCPayInterceptWinLogic *interceptWinLogic; // @synthesize interceptWinLogic=_interceptWinLogic;

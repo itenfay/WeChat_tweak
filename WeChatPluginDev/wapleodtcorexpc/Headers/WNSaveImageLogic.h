@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTableView, MMTimer, NSArray, NSMutableArray, NSMutableAttributedString, UITextPosition, UIView, WNContentStorage, WNSaveImageConfiguration, WNSaveImageReportDataModel, WNTextView;
 @protocol WNSaveImageLogicDataSource;
 
@@ -31,7 +33,6 @@
     UITextPosition *_lastSavePos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITextPosition *lastSavePos; // @synthesize lastSavePos=_lastSavePos;
 @property(retain, nonatomic) WNTextView *curSaveView; // @synthesize curSaveView=_curSaveView;
 @property(retain, nonatomic) NSMutableArray *arrSaveImages; // @synthesize arrSaveImages=_arrSaveImages;
@@ -93,4 +94,3 @@
 - (void)setNoteViewController:(id)arg1 withTableView:(id)arg2 andStorage:(id)arg3 andVisibHeight:(double)arg4 andSquareHeight:(double)arg5 andForceLoadImage:(_Bool *)arg6;
 
 @end
-

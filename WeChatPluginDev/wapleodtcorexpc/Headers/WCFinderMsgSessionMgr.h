@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSString, WCFinderMsgAuthorSessionMgr, WCFinderMsgSessionInfoStorage, WCFinderMsgSessionStatusStorage;
 
 @interface WCFinderMsgSessionMgr
@@ -23,7 +25,6 @@
 + (_Bool)isFinderContactUserName:(id)arg1;
 + (unsigned int)accountTypeForUsername:(id)arg1;
 + (id)userNameForMyAccountType:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *contactExtInfoDict; // @synthesize contactExtInfoDict=_contactExtInfoDict;
 @property(retain, nonatomic) NSMutableSet *sessionIdsForUpdatedStatusFromSvr; // @synthesize sessionIdsForUpdatedStatusFromSvr=_sessionIdsForUpdatedStatusFromSvr;
 @property(retain, nonatomic) NSMutableSet *finderUserNamesUpdated; // @synthesize finderUserNamesUpdated=_finderUserNamesUpdated;
@@ -136,4 +137,3 @@
 @property(readonly) Class superclass;
 
 @end
-

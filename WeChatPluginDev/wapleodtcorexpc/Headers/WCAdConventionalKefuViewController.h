@@ -12,7 +12,6 @@
     UIButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) WCAdConventionalKefuDetailView *detailView; // @synthesize detailView=_detailView;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;

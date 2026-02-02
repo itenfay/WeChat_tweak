@@ -25,7 +25,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TAVPixelBufferCache *pixelBufferCache; // @synthesize pixelBufferCache=_pixelBufferCache;
 @property(retain, nonatomic) TAVRenderReportData *renderReportData; // @synthesize renderReportData=_renderReportData;
 @property(nonatomic) _Bool cacheDecodedFrameAsEmptyFrame; // @synthesize cacheDecodedFrameAsEmptyFrame=_cacheDecodedFrameAsEmptyFrame;

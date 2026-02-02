@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonCustomCreateLogic, MMFinderHandOffItem, MMScrollViewProxy, MMUILabel, NSIndexPath, NSMutableDictionary, NSString, PAGView, UIImage, UIImageView, UILabel, UITableView, UITapGestureRecognizer, UIView, UIViewController, WCFinderCustomPaging, WCFinderFeedDragUpDislikeController, WCFinderFeedFriendsLikeListViewController, WCFinderFeedListBannderView, WCFinderFeedRecommendVM, WCFinderLandscapeReportInfo, WCFinderLeadToMachineTableViewCell, WCFinderMsgBubbleMgrPanelView, WCFinderOpenTimelineParams, WCFinderPlayRateOperationView, WCFinderPlayRateOperationViewV3, WCFinderPullDownRefreshHeaderView, WCFinderRefreshTableFooterView, WCFinderScrollActionSheet, WCFinderTLUnreadModel, WCFinderTimelineJumpView, WCFinderTipBarView, WCStoryTouchToDismissView, _TtC6WeChat25WCFinderFeedFastSlipLogic;
 @protocol WCFinderCommentBaseViewProtocol, WCFinderFullFeedRecommendViewControllerDelegate;
 
@@ -64,7 +66,6 @@
     CDUnknownBlockType _pendingInsertionBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType pendingInsertionBlock; // @synthesize pendingInsertionBlock=_pendingInsertionBlock;
 @property(retain, nonatomic) WCFinderLandscapeReportInfo *landscapeReportInfo; // @synthesize landscapeReportInfo=_landscapeReportInfo;
 @property(retain, nonatomic) MMFinderHandOffItem *finderHandoffItem; // @synthesize finderHandoffItem=_finderHandoffItem;
@@ -600,4 +601,3 @@
 @property(readonly) Class superclass;
 
 @end
-

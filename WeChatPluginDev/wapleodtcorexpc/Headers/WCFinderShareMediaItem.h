@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_thumbUrl;
 + (void)PBArrayAdd_url;
 + (void)PBArrayAdd_mediaType;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *videoPlayDuration; // @synthesize videoPlayDuration=_videoPlayDuration;
 @property(copy, nonatomic) NSString *fullClipInset; // @synthesize fullClipInset=_fullClipInset;
 @property(copy, nonatomic) NSString *fullCoverUrl; // @synthesize fullCoverUrl=_fullCoverUrl;

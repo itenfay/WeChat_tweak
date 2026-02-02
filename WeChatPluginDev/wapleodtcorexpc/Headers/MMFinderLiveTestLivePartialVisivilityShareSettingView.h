@@ -10,7 +10,6 @@
     MMFinderLiveTestLivePartialVisivilitySettingInfo *_testLiveSettingInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTestLivePartialVisivilitySettingInfo *testLiveSettingInfo; // @synthesize testLiveSettingInfo=_testLiveSettingInfo;
 - (void)OnSelectSessions:(id)arg1 SessionSelectController:(id)arg2;
 - (void)selectVisibleFileListFromAllVisibilityFileLists;

@@ -11,7 +11,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *supportTypes; // @synthesize supportTypes=_supportTypes;
 
 @end

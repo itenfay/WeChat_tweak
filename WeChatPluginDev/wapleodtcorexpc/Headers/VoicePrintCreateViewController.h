@@ -13,7 +13,6 @@
     NSString *_digits;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, getter=isRecordButtonPressed) _Bool recordButtonPressed; // @synthesize recordButtonPressed=_recordButtonPressed;
 @property(retain, nonatomic) NSString *digits; // @synthesize digits=_digits;
 @property(nonatomic) __weak id <VoicePrintCreateViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

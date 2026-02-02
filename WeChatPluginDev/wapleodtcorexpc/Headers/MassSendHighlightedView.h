@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSSet, UIColor;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _handleTouchUpInside;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handleTouchUpInside; // @synthesize handleTouchUpInside=_handleTouchUpInside;
 @property(retain, nonatomic) UIColor *highlightBackgroundColor; // @synthesize highlightBackgroundColor=_highlightBackgroundColor;
 @property(retain, nonatomic) UIColor *defaultBackgroundColor; // @synthesize defaultBackgroundColor=_defaultBackgroundColor;
@@ -26,4 +26,3 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end
-

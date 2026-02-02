@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSString, UIImageView, WCAdConventionalHalfScreenDetailBaseView, WCAdConventionalHalfScreenMediaBaseView;
 
 @interface WCAdConventionalFullScreenViewController
@@ -18,7 +20,6 @@
     struct CGRect _originRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect originRect; // @synthesize originRect=_originRect;
 @property(copy, nonatomic) CDUnknownBlockType didDisappearBlock; // @synthesize didDisappearBlock=_didDisappearBlock;
 @property(copy, nonatomic) CDUnknownBlockType willDisappearBlock; // @synthesize willDisappearBlock=_willDisappearBlock;
@@ -60,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

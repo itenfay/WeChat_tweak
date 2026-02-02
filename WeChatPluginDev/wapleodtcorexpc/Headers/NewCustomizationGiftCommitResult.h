@@ -15,7 +15,6 @@
     NSString *_antispamCustomText;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasAntispamCustomText; // @synthesize hasAntispamCustomText=_hasAntispamCustomText;
 @property(nonatomic) _Bool hasCustomized; // @synthesize hasCustomized=_hasCustomized;
 @property(retain, nonatomic) NSString *antispamCustomText; // @synthesize antispamCustomText=_antispamCustomText;

@@ -12,7 +12,6 @@
     id _decoderFactory;
 }
 
-- (void).cxx_destruct;
 - (void)destoryAVCDecoder:(void *)arg1;
 - (void *)createAVCDecoder;
 - (void)destroyHEVCDecoder:(void *)arg1;

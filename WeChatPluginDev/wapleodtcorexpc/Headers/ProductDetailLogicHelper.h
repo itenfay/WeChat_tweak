@@ -14,7 +14,6 @@
     id <ProductDetailLogicHelperDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ProductDetailLogicHelperDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

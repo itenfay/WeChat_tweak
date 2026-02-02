@@ -15,7 +15,6 @@
     NSString *_rightButtonUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *rightButtonUrl; // @synthesize rightButtonUrl=_rightButtonUrl;
 @property(retain, nonatomic) NSString *rightButtonWording; // @synthesize rightButtonWording=_rightButtonWording;
 @property(retain, nonatomic) NSString *leftButtonWording; // @synthesize leftButtonWording=_leftButtonWording;

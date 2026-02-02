@@ -14,7 +14,6 @@
     long long _textAlign;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long textAlign; // @synthesize textAlign=_textAlign;
 @property(nonatomic) float textSize; // @synthesize textSize=_textSize;
 @property(retain, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;

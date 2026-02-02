@@ -16,7 +16,6 @@
     unsigned long long _vibrateType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long vibrateType; // @synthesize vibrateType=_vibrateType;
 @property(nonatomic) unsigned long long valid; // @synthesize valid=_valid;
 @property(nonatomic) unsigned long long usageRange; // @synthesize usageRange=_usageRange;

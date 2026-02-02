@@ -14,7 +14,6 @@
     WCFinderProfilePreloadCGIInfo *_homepage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProfilePreloadCGIInfo *homepage; // @synthesize homepage=_homepage;
 @property(retain, nonatomic) WCFinderProfilePreloadCGIInfo *userpage; // @synthesize userpage=_userpage;
 @property(retain, nonatomic) WCFinderProfilePreloadCGIInfo *header; // @synthesize header=_header;

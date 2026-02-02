@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_wording_size;
 + (void)PBArrayAdd_wording_color;
 + (void)PBArrayAdd_wording;
-- (void).cxx_destruct;
 @property(retain) NSString *right_icon; // @synthesize right_icon=_right_icon;
 @property(retain) NSString *left_icon; // @synthesize left_icon=_left_icon;
 @property(retain) NSString *route_url; // @synthesize route_url=_route_url;

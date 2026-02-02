@@ -18,7 +18,6 @@
     UIView *_seperator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperator; // @synthesize seperator=_seperator;
 @property(retain, nonatomic) UIButton *headerButton; // @synthesize headerButton=_headerButton;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;

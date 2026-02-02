@@ -13,7 +13,6 @@
     NSString *_feedLiveId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *feedLiveId; // @synthesize feedLiveId=_feedLiveId;
 @property(copy, nonatomic) NSString *feedNonceId; // @synthesize feedNonceId=_feedNonceId;
 @property(copy, nonatomic) NSString *feedObjectId; // @synthesize feedObjectId=_feedObjectId;

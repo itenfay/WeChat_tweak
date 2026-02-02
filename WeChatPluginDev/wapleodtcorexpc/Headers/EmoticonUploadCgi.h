@@ -17,7 +17,6 @@
     NSMutableSet *_cgiSets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *cgiSets; // @synthesize cgiSets=_cgiSets;
 @property(retain, nonatomic) NSString *m_md5; // @synthesize m_md5=_m_md5;
 @property(nonatomic) unsigned int m_totalLen; // @synthesize m_totalLen=_m_totalLen;

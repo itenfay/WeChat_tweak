@@ -13,7 +13,6 @@
 }
 
 + (id)stringWithString:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

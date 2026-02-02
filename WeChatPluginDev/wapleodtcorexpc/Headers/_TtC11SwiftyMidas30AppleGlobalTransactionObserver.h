@@ -16,7 +16,6 @@
     MISSING_TYPE *restoreReceiver;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)paymentQueueDidChangeStorefront:(id)arg1;
 - (void)paymentQueue:(id)arg1 updatedTransactions:(id)arg2;

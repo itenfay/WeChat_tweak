@@ -10,7 +10,6 @@
     UIButton *_closeButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 - (void)closeButtonDidClick:(id)arg1;
 - (void)layoutSubviews;

@@ -22,7 +22,6 @@
     UIView *_separator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(retain, nonatomic) UILabel *unitLabel; // @synthesize unitLabel=_unitLabel;

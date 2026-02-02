@@ -12,7 +12,6 @@
 }
 
 + (id)pkgInfoFromFilePath:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dicRenderMetaInfo; // @synthesize dicRenderMetaInfo=_dicRenderMetaInfo;
 @property(retain, nonatomic) NSDictionary *dicContextMetaInfo; // @synthesize dicContextMetaInfo=_dicContextMetaInfo;
 

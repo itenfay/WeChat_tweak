@@ -13,7 +13,6 @@
     MultitalkMinimizeView *_m_minimizeView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultitalkMinimizeView *m_minimizeView; // @synthesize m_minimizeView=_m_minimizeView;
 @property(nonatomic) __weak id <MultitalkMinimizeViewControllerDelegate> m_delegate; // @synthesize m_delegate;
 @property(retain, nonatomic) BackgroundMoveView *m_backgroundImageView; // @synthesize m_backgroundImageView;

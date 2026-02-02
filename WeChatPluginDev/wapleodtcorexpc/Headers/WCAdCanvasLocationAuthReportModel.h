@@ -11,7 +11,6 @@
     NSString *_status;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 

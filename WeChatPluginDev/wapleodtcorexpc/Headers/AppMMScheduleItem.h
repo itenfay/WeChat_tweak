@@ -13,7 +13,6 @@
     NSMutableArray *_opItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *opItems; // @synthesize opItems=_opItems;
 @property(retain, nonatomic) ScheduleOPWrap *scheduleOpWrap; // @synthesize scheduleOpWrap=_scheduleOpWrap;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;

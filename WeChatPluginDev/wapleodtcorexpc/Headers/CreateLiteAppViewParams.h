@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CreateLiteAppViewParams : NSObject
 {
@@ -20,7 +21,6 @@
     double _heightPercent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool autoRotate; // @synthesize autoRotate=_autoRotate;
 @property(nonatomic) _Bool landscape; // @synthesize landscape=_landscape;
 @property(nonatomic) _Bool withMask; // @synthesize withMask=_withMask;
@@ -36,4 +36,3 @@
 - (id)init;
 
 @end
-

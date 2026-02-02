@@ -13,7 +13,6 @@
 }
 
 + (id)center;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *serviceData; // @synthesize serviceData=_serviceData;
 - (_Bool)unregisterServiceForProtocol:(id)arg1;
 - (Class)serviceForProtocol:(id)arg1;

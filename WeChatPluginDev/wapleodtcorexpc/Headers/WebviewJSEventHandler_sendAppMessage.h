@@ -10,7 +10,6 @@
     SendAppMessageBaseImpl *_sendMessageImpl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SendAppMessageBaseImpl *sendMessageImpl; // @synthesize sendMessageImpl=_sendMessageImpl;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;
 

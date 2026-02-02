@@ -17,7 +17,6 @@
     UIView *_iconContentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCellSelected; // @synthesize isCellSelected=_isCellSelected;
 @property(retain, nonatomic) UIView *iconContentView; // @synthesize iconContentView=_iconContentView;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;

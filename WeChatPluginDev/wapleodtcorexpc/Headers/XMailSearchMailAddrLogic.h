@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCCgiBlockHelper;
 
@@ -16,7 +17,6 @@
     WCCgiBlockHelper *_curSearchingCgiHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCgiBlockHelper *curSearchingCgiHelper; // @synthesize curSearchingCgiHelper=_curSearchingCgiHelper;
 @property(nonatomic) unsigned long long lastSearchStartTime; // @synthesize lastSearchStartTime=_lastSearchStartTime;
 @property(retain, nonatomic) NSString *nextSearchInput; // @synthesize nextSearchInput=_nextSearchInput;
@@ -27,4 +27,3 @@
 - (void)searchWithInput:(id)arg1;
 
 @end
-

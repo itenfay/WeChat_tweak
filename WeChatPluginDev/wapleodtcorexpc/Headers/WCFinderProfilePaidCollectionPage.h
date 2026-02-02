@@ -14,7 +14,6 @@
     UIView *_topSeperator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topSeperator; // @synthesize topSeperator=_topSeperator;
 @property(retain, nonatomic) WCFinderDataLoadTips *emptyTips; // @synthesize emptyTips=_emptyTips;
 @property(retain, nonatomic) UITableViewDiffableDataSource *tableViewDataSource; // @synthesize tableViewDataSource=_tableViewDataSource;

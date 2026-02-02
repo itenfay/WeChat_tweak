@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class _YYModelPropertyMeta;
 
@@ -20,10 +21,8 @@
     _YYModelPropertyMapperNode *_parentNode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak _YYModelPropertyMapperNode *parentNode; // @synthesize parentNode=_parentNode;
 - (void)dealloc;
 - (id)init;
 
 @end
-

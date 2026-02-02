@@ -12,7 +12,6 @@
     double randomNum;
 }
 
-- (void).cxx_destruct;
 - (void)report30863:(id)arg1 resourceName:(id)arg2 version:(long long)arg3 scene:(long long)arg4 state:(long long)arg5 errNo:(long long)arg6 errCode:(long long)arg7 duration:(long long)arg8 sampleRate:(float)arg9;
 - (unsigned char)sampleReport:(float)arg1;
 - (unsigned char)getDuration:(unsigned int)arg1;

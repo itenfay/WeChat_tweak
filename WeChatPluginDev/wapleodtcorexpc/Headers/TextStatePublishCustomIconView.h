@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, MMUITextField, MMWebImageView, NSString, TextStateIcon, UIImageView, UIImpactFeedbackGenerator, UITapGestureRecognizer, UIViewPropertyAnimator;
 @protocol TextStatePublishCustomIconViewDelegate;
@@ -36,7 +37,6 @@
 
 + (id)generateActionButton;
 + (double)standardHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStateIcon *selectedIcon; // @synthesize selectedIcon=_selectedIcon;
 @property(retain, nonatomic) TextStateIcon *autoReplacedIcon; // @synthesize autoReplacedIcon=_autoReplacedIcon;
 @property(nonatomic) double expandHeight; // @synthesize expandHeight=_expandHeight;
@@ -98,4 +98,3 @@
 @property(readonly) Class superclass;
 
 @end
-

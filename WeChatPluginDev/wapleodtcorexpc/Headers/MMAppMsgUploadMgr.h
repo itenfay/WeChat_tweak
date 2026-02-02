@@ -12,7 +12,6 @@
     MMAppMsgUploadDataBase *_database;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldStopClean; // @synthesize shouldStopClean=_shouldStopClean;
 @property(retain, nonatomic) MMAppMsgUploadDataBase *database; // @synthesize database=_database;
 @property(retain, nonatomic) NSMutableDictionary *msgWrapDict; // @synthesize msgWrapDict=_msgWrapDict;

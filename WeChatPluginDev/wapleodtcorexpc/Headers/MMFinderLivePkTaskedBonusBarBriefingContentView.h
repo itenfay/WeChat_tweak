@@ -17,7 +17,6 @@
     MMFinderLivePkTaskedBonusModel *_model;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePkTaskedBonusModel *model; // @synthesize model=_model;
 @property(nonatomic) double currentProgress; // @synthesize currentProgress=_currentProgress;
 @property(retain, nonatomic) MMLiveDisplayLinkAnimator *animator; // @synthesize animator=_animator;

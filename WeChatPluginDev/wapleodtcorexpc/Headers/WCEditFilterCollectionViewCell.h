@@ -17,7 +17,6 @@
     UILabel *_filterNameLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *filterNameLabel; // @synthesize filterNameLabel=_filterNameLabel;
 @property(retain, nonatomic) UIImageView *toolView; // @synthesize toolView=_toolView;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;

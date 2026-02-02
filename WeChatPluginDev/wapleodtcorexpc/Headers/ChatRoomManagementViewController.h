@@ -17,7 +17,6 @@
     id <ChatRoomManagementDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool waitingDismissGroupResp; // @synthesize waitingDismissGroupResp=_waitingDismissGroupResp;
 @property(nonatomic) __weak id <ChatRoomManagementDelegate> m_delegate; // @synthesize m_delegate;
 @property(retain, nonatomic) CContact *m_chatRoomContact; // @synthesize m_chatRoomContact;

@@ -12,7 +12,6 @@
     MemoryMappedKV *_mmkv;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mmkv; // @synthesize mmkv=_mmkv;
 @property(retain, nonatomic) NSMapTable *mPublicServiceFsMap; // @synthesize mPublicServiceFsMap=_mPublicServiceFsMap;
 @property(retain, nonatomic) NSMapTable *mBizFsMap; // @synthesize mBizFsMap=_mBizFsMap;

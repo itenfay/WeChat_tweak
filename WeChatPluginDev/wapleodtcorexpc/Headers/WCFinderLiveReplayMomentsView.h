@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMUIButton, MMUILabel, NSMutableArray, NSString, UICollectionView;
 @protocol WCFinderLiveReplayMomentsViewDelegate;
@@ -21,7 +22,6 @@
     double _replayVideoWHPercent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double replayVideoWHPercent; // @synthesize replayVideoWHPercent=_replayVideoWHPercent;
 @property(retain, nonatomic) NSMutableArray *replayMoments; // @synthesize replayMoments=_replayMoments;
 @property(nonatomic) double lastContentViewHeight; // @synthesize lastContentViewHeight=_lastContentViewHeight;
@@ -63,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

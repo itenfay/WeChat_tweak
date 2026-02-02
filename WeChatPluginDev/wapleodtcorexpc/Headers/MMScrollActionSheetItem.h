@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, NSString, UIColor, UIImage;
 
@@ -29,7 +30,6 @@
     CDUnknownBlockType _action;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(nonatomic) _Bool disableDismissActionOnTapped; // @synthesize disableDismissActionOnTapped=_disableDismissActionOnTapped;
 @property(nonatomic) unsigned long long redDotType; // @synthesize redDotType=_redDotType;
@@ -53,4 +53,3 @@
 @property(nonatomic) int itemType;
 
 @end
-

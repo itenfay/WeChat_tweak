@@ -11,7 +11,6 @@
     MMLiveRewardGiftNewCustomizationInputToolView *_inputToolView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveRewardGiftNewCustomizationInputToolView *inputToolView; // @synthesize inputToolView=_inputToolView;
 @property(retain, nonatomic) MMLiveRewardGiftNewCustomizationEditLogic *customizationEditLogic; // @synthesize customizationEditLogic=_customizationEditLogic;
 - (void)onUnSupportTipLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

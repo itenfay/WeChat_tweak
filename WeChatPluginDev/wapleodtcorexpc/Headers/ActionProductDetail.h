@@ -16,7 +16,6 @@
     NSString *_digest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *digest; // @synthesize digest=_digest;
 @property(retain, nonatomic) NSString *productid; // @synthesize productid=_productid;
 @property(retain, nonatomic) NSString *iconurl; // @synthesize iconurl=_iconurl;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFansGroupInputView, MMUIButton, MMUILabel, NSString, RichTextView, UIImageView, UITapGestureRecognizer;
 
@@ -25,7 +26,6 @@
     double _keyBoardHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double keyBoardHeight; // @synthesize keyBoardHeight=_keyBoardHeight;
 @property(nonatomic) _Bool isKeyBoardShow; // @synthesize isKeyBoardShow=_isKeyBoardShow;
 @property(retain, nonatomic) UITapGestureRecognizer *closeTapGesture; // @synthesize closeTapGesture=_closeTapGesture;
@@ -73,4 +73,3 @@
 @property(readonly) Class superclass;
 
 @end
-

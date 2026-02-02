@@ -10,7 +10,6 @@
     WCBatchViewCardHelper *_viewCardHelp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBatchViewCardHelper *viewCardHelp; // @synthesize viewCardHelp=_viewCardHelp;
 - (void)onBatchViewCardReturn;
 - (id)getDelegateViewController;

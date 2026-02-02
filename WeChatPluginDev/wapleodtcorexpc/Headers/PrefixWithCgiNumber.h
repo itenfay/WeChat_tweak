@@ -15,7 +15,6 @@
 }
 
 + (id)Prefix:(id)arg1 Cgi:(unsigned int)arg2 Name:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_cgiName; // @synthesize m_cgiName=_m_cgiName;
 @property(nonatomic) unsigned int m_cgiNumber; // @synthesize m_cgiNumber=_m_cgiNumber;
 @property(retain, nonatomic) NSString *m_prefix; // @synthesize m_prefix=_m_prefix;

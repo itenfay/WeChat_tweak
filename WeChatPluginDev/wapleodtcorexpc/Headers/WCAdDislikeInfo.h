@@ -17,7 +17,6 @@
     WCMultiLanguageItem *_forbidClickReason;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useNewStyle; // @synthesize useNewStyle=_useNewStyle;
 @property(nonatomic) _Bool isPersonalizedAdClose; // @synthesize isPersonalizedAdClose=_isPersonalizedAdClose;
 @property(retain, nonatomic) WCMultiLanguageItem *forbidClickReason; // @synthesize forbidClickReason=_forbidClickReason;

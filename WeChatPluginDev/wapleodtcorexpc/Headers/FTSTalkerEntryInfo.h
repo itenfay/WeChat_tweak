@@ -14,7 +14,6 @@
     NSString *_query;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInSession; // @synthesize isInSession=_isInSession;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(copy, nonatomic) NSString *talker; // @synthesize talker=_talker;

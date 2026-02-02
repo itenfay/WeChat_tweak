@@ -13,7 +13,6 @@
     long long _base;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long base; // @synthesize base=_base;
 @property(retain, nonatomic) MMMemoryLayout *node; // @synthesize node=_node;
 @property(nonatomic) long long type; // @synthesize type=_type;

@@ -16,7 +16,6 @@
 
 + (double)getHeight;
 + (double)getWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SnsEmojiInfoObj *snsEmojiInfoObj; // @synthesize snsEmojiInfoObj=_snsEmojiInfoObj;
 @property(retain, nonatomic) WCUserComment *userComment; // @synthesize userComment=_userComment;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;

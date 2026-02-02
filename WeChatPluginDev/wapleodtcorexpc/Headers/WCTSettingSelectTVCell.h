@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCTSettingSelectView;
 
 @interface WCTSettingSelectTVCell
@@ -11,7 +13,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCTSettingSelectView *view; // @synthesize view=_view;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setViewDelegate:(id)arg1;
@@ -29,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -17,7 +17,6 @@
 
 + (double)translateViewHeightWithComment:(id)arg1 maxWidth:(double)arg2;
 + (double)translateViewHeightWithContent:(id)arg1 type:(unsigned long long)arg2 maxWidth:(double)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long translateType; // @synthesize translateType=_translateType;
 @property(nonatomic) __weak WCFinderFeedContentTextView *translateView; // @synthesize translateView=_translateView;
 @property(nonatomic) __weak WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;

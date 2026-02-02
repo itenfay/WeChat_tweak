@@ -11,7 +11,6 @@
     NSMutableArray *_lineLayerList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *lineLayerList; // @synthesize lineLayerList=_lineLayerList;
 @property(nonatomic) _Bool isRoundMaskPathAfterAnimation; // @synthesize isRoundMaskPathAfterAnimation=_isRoundMaskPathAfterAnimation;
 - (void)updateAllSublayerAnimated:(double)arg1 ViewPath:(id)arg2 Duration:(double)arg3;

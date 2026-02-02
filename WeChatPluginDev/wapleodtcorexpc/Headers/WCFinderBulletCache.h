@@ -12,7 +12,6 @@
     NSArray *_caches;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *caches; // @synthesize caches=_caches;
 
 @end

@@ -14,7 +14,6 @@
     UIView *_redEnvelopesDetailView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *redEnvelopesDetailView; // @synthesize redEnvelopesDetailView=_redEnvelopesDetailView;
 @property(retain, nonatomic) WCRedEnvelopesAtmospherePagView *atmospherePagView; // @synthesize atmospherePagView=_atmospherePagView;
 @property(retain, nonatomic) EmojiInfoObj *emojiInfoObj; // @synthesize emojiInfoObj=_emojiInfoObj;

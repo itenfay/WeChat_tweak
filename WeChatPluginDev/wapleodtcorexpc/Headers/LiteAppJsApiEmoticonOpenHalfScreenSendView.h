@@ -14,7 +14,6 @@
     NSString *_sdkRequestId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sdkRequestId; // @synthesize sdkRequestId=_sdkRequestId;
 @property(retain, nonatomic) EmojiInfoObj *emojiInfoObj; // @synthesize emojiInfoObj=_emojiInfoObj;
 @property(nonatomic) _Bool showEntry; // @synthesize showEntry=_showEntry;

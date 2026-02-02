@@ -13,7 +13,6 @@
     OMJILinkAppClientParams *_appClientParams;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) OMJILinkAppClientParams *appClientParams; // @synthesize appClientParams=_appClientParams;
 @property(readonly, nonatomic) OMJILinkContextParams *contextParams; // @synthesize contextParams=_contextParams;
 - (id)initWithContextParams:(id)arg1 appClientParams:(id)arg2;

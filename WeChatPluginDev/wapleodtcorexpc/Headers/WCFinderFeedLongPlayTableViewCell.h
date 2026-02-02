@@ -53,7 +53,6 @@
     long long _orientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) UITapGestureRecognizer *playerTapGesture; // @synthesize playerTapGesture=_playerTapGesture;
 @property(retain, nonatomic) UIPanGestureRecognizer *playerPostionPanGesture; // @synthesize playerPostionPanGesture=_playerPostionPanGesture;

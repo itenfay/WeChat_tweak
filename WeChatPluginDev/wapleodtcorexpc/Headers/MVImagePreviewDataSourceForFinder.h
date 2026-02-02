@@ -10,7 +10,6 @@
     id <MMMusicDataVM> _dataViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMMusicDataVM> dataViewModel; // @synthesize dataViewModel=_dataViewModel;
 - (id)generateSelectItemModelFromAssetInfo:(id)arg1;
 - (long long)previewIndexForAssetInfo:(id)arg1;

@@ -17,7 +17,6 @@
     NSObject<OS_dispatch_queue> *framebufferCacheQueue;
 }
 
-- (void).cxx_destruct;
 - (void)removeFramebufferFromActiveImageCaptureList:(id)arg1;
 - (void)addFramebufferToActiveImageCaptureList:(id)arg1;
 - (void)purgeAllUnassignedFramebuffers;

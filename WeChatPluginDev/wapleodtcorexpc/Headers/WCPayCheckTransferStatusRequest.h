@@ -16,7 +16,6 @@
     NSString *_group_username;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *group_username; // @synthesize group_username=_group_username;
 @property(retain, nonatomic) NSString *m_nsTransactionID; // @synthesize m_nsTransactionID;
 @property(nonatomic) unsigned long long m_uiInvalidTime; // @synthesize m_uiInvalidTime;

@@ -13,7 +13,6 @@
     id <WCCardPkgBatchGetMgrDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCardPkgBatchGetMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)delFinishedCardIDFromBatchGetArray:(id)arg1;
 - (void)handleBatchGetObjectList:(id)arg1;

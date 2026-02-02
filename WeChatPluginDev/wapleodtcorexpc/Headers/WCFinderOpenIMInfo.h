@@ -19,7 +19,6 @@
     NSString *_finderContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderContext; // @synthesize finderContext=_finderContext;
 @property(copy, nonatomic) NSString *searchContext; // @synthesize searchContext=_searchContext;
 @property(nonatomic) _Bool isFromJumpInfo; // @synthesize isFromJumpInfo=_isFromJumpInfo;

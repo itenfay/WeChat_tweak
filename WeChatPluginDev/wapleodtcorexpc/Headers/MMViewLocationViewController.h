@@ -55,7 +55,6 @@
     NSString *_reportSessionID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportSessionID; // @synthesize reportSessionID=_reportSessionID;
 @property(retain, nonatomic) MMScrollActionSheet *scrollActionSheet; // @synthesize scrollActionSheet=_scrollActionSheet;
 @property(retain, nonatomic) NSString *floorName; // @synthesize floorName=_floorName;

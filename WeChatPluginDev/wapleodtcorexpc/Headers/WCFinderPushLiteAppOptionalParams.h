@@ -14,7 +14,6 @@
     NSString *_tagSecKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tagSecKey; // @synthesize tagSecKey=_tagSecKey;
 @property(nonatomic) unsigned long long tagType; // @synthesize tagType=_tagType;
 @property(copy, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;

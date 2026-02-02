@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (ComponentAnimation)
 - (void)standardFadeScaleAnimationFor:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
@@ -13,4 +14,3 @@
 - (unsigned long long)componentAnimating;
 - (void)setComponentAnimating:(unsigned long long)arg1;
 @end
-

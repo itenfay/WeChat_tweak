@@ -15,7 +15,6 @@
     NSDictionary *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) unsigned long long reportScene; // @synthesize reportScene=_reportScene;
 @property(copy, nonatomic) NSString *feedNonceId; // @synthesize feedNonceId=_feedNonceId;

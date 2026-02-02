@@ -21,7 +21,6 @@
     WCFinderRefreshTableFooterView *_noMoreView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRefreshTableFooterView *noMoreView; // @synthesize noMoreView=_noMoreView;
 @property(nonatomic) long long lastSelectedIndex; // @synthesize lastSelectedIndex=_lastSelectedIndex;
 @property(nonatomic) _Bool loading; // @synthesize loading=_loading;

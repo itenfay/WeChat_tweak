@@ -17,7 +17,6 @@
 
 + (id)cellID;
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTableViewManager *tableViewManager; // @synthesize tableViewManager=_tableViewManager;
 @property(retain, nonatomic) FinderLivePersonalCenterPrepareInfo *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) __weak id <WCFinderLivePersonalCenterBasicSettingCollectionCellActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;

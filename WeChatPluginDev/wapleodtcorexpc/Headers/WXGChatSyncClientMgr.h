@@ -17,7 +17,6 @@
 }
 
 + (void)hexStringToUnsignedChar:(id)arg1 output:(char **)arg2 outputLength:(unsigned int *)arg3;
-- (void).cxx_destruct;
 - (id)decryptOriginAesKeyFromAppMsg:(id)arg1 withPrivatekey:(id)arg2;
 - (void)loadStatus;
 - (void)saveStatus;

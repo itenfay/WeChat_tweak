@@ -19,7 +19,6 @@
     struct CGRect _originRectInScreen;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *originGridRectsInScreen; // @synthesize originGridRectsInScreen=_originGridRectsInScreen;
 @property(nonatomic) struct CGRect originRectInScreen; // @synthesize originRectInScreen=_originRectInScreen;
 @property(nonatomic) unsigned long long clickIndex; // @synthesize clickIndex=_clickIndex;

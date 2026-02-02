@@ -17,7 +17,6 @@
 }
 
 + (id)viewDataSource:(id)arg1 width:(double)arg2 currentSelectIndex:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *imageCollectionView; // @synthesize imageCollectionView=_imageCollectionView;
 @property(nonatomic) unsigned long long currentPage; // @synthesize currentPage=_currentPage;
 @property(retain, nonatomic) UIPageControl *pageCtrl; // @synthesize pageCtrl=_pageCtrl;

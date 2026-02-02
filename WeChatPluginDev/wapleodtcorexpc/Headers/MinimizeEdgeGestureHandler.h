@@ -17,7 +17,6 @@
     struct CGPoint _gestureStartPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint gestureStartPoint; // @synthesize gestureStartPoint=_gestureStartPoint;
 @property(nonatomic) double completionSpeed; // @synthesize completionSpeed=_completionSpeed;
 @property(nonatomic) _Bool shouldForceCancel; // @synthesize shouldForceCancel=_shouldForceCancel;

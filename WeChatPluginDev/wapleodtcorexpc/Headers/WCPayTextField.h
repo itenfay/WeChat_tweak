@@ -16,7 +16,6 @@
     UIView *_largeAmountTips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *largeAmountTips; // @synthesize largeAmountTips=_largeAmountTips;
 @property _Bool clearBackground; // @synthesize clearBackground=_clearBackground;
 @property(nonatomic) double tipsOffsetX; // @synthesize tipsOffsetX=_tipsOffsetX;

@@ -25,7 +25,6 @@
     struct CGSize _iconSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long entranceIconType; // @synthesize entranceIconType=_entranceIconType;
 @property(nonatomic) long long openType; // @synthesize openType=_openType;
 @property(retain, nonatomic) NSString *clickOpenUrl; // @synthesize clickOpenUrl=_clickOpenUrl;

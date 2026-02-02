@@ -13,7 +13,6 @@
     UIView *m_viewContent;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)layoutSubviews;
 - (void)animateShowInView:(id)arg1;

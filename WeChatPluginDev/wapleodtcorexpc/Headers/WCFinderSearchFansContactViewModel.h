@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderBaseCgi, WCFinderMentionSearchSection, WCFinderSearchItemReportQueue;
 @protocol WCFinderFollowSearchContactViewModelDelegate;
@@ -23,7 +24,6 @@
     WCFinderMentionSearchSection *_fansSec;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMentionSearchSection *fansSec; // @synthesize fansSec=_fansSec;
 @property(retain, nonatomic) WCFinderBaseCgi *searchCgi; // @synthesize searchCgi=_searchCgi;
 @property(nonatomic) __weak id <WCFinderFollowSearchContactViewModelDelegate> delegate; // @synthesize delegate=_delegate;
@@ -67,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

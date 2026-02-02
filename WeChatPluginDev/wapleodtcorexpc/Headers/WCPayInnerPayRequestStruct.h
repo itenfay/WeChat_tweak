@@ -12,7 +12,6 @@
     NSString *m_nsPackage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsPackage; // @synthesize m_nsPackage;
 
 @end

@@ -18,7 +18,6 @@
 
 + (id)genFromXml:(struct XmlReaderNode_t *)arg1;
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long text_attr; // @synthesize text_attr=_text_attr;
 @property(retain, nonatomic) NSString *link_url; // @synthesize link_url=_link_url;
 @property(retain, nonatomic) NSString *link_addr; // @synthesize link_addr=_link_addr;

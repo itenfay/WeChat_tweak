@@ -22,7 +22,6 @@
     id <WABlePeripheralAdapterLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WABlePeripheralAdapterLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)peripheralManagerIsReadyToUpdateSubscribers:(id)arg1;
 - (void)peripheralManager:(id)arg1 didReceiveWriteRequests:(id)arg2;

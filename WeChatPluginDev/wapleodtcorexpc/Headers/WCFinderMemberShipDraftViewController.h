@@ -10,7 +10,6 @@
     WCFinderMemberShipDraftViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMemberShipDraftViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void)postViewControllerStartUpload;
 - (void)onMusicView:(id)arg1 exposeMenuAction:(id)arg2 feedVM:(id)arg3;

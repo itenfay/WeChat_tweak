@@ -10,7 +10,6 @@
     UIButton *m_sourceButton;
 }
 
-- (void).cxx_destruct;
 - (void)reportClick:(unsigned long long)arg1;
 - (void)initSourceLabel;
 - (void)layoutContentView;

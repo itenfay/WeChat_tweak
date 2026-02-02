@@ -12,7 +12,6 @@
     id <WCCoinPrepareConsumeCgiDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCoinPrepareConsumeCgiDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PrepareWecoinConsumeResponse *response; // @synthesize response=_response;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;

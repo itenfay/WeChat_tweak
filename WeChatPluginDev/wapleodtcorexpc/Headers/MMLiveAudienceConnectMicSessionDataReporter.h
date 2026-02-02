@@ -15,7 +15,6 @@
     NSString *_subSessionId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int liveSubMode; // @synthesize liveSubMode=_liveSubMode;
 @property(nonatomic) unsigned int liveMode; // @synthesize liveMode=_liveMode;
 @property(retain, nonatomic) NSString *subSessionId; // @synthesize subSessionId=_subSessionId;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderLiveHomePageInitialParams, WCFinderLivePageStayReporter;
 
@@ -17,7 +18,6 @@
     WCFinderLiveHomePageInitialParams *_initialParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveHomePageInitialParams *initialParams; // @synthesize initialParams=_initialParams;
 @property(retain, nonatomic) WCFinderLivePageStayReporter *moreLiveReporter; // @synthesize moreLiveReporter=_moreLiveReporter;
 @property(nonatomic) _Bool skipFeedsReport; // @synthesize skipFeedsReport=_skipFeedsReport;
@@ -61,4 +61,3 @@
 - (id)initWithCommentScene:(int)arg1 params:(id)arg2;
 
 @end
-

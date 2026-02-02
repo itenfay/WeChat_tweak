@@ -11,7 +11,6 @@
     FlutterHostAssetDefault *_defaultHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterHostAssetDefault *defaultHandler; // @synthesize defaultHandler=_defaultHandler;
 @property(retain, nonatomic) NSMutableDictionary *handlerMap; // @synthesize handlerMap=_handlerMap;
 - (id)findHandlerWithKey:(id)arg1;

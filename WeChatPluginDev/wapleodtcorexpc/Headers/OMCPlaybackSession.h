@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, UIView;
 @protocol OS_dispatch_group;
@@ -33,7 +34,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *renderView; // @synthesize renderView=_renderView;
 @property(nonatomic) SharedPtr_f7d96994 windowCon; // @synthesize windowCon=_windowCon;
 @property(readonly, nonatomic) SharedPtr_37df0930 backingSession; // @synthesize backingSession=_backingSession;
@@ -123,4 +123,3 @@
 - (void)registerHandleBoxSettingsDidChangeNotification;
 
 @end
-

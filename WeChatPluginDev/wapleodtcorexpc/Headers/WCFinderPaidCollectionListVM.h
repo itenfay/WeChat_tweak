@@ -18,7 +18,6 @@
     NSMutableSet *_paidCollectionIDSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *paidCollectionIDSet; // @synthesize paidCollectionIDSet=_paidCollectionIDSet;
 @property(retain, nonatomic) NSMutableArray *paidCollectionList; // @synthesize paidCollectionList=_paidCollectionList;
 @property(copy, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

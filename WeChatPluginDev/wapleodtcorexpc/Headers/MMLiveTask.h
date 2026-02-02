@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CdnRenderViewBase, FLVNetworkInfo, GameTeamUpSpecialGiftSettingDetail, LiveInfo, LivePAGStatistics, LiveSdkAudioParams, LiveSdkChannelParams, LiveSdkVideoParams, MMFinderLiveBatchRewardAnimationWeVisionRenderer, MMFinderLiveCustomPIPHandler, MMFinderLiveGiftAttackRenderLogic, MMFinderLiveTask, MMLiveBeautyLogic, MMLiveCDNPlayerItem, MMLiveCaptureAdapter, MMLiveCdnStreamErrorReportInfo, MMLiveCdnStreamInfo, MMLiveDisplayMonitor, MMLiveEnergyController, MMLiveFaceDecodeLogic, MMLiveFaceDetectLogic, MMLiveFaceDetectStatisticLogic, MMLiveFaceLogic, MMLiveInteractionGiftRenderLogic, MMLiveMetricsBusinessMonitorLogic, MMLiveMetricsMonitor, MMLiveMultiAngleChannelInfo, MMLivePrepareAdapter, MMLiveRemoteTrtcCustomRenderComposeManager, MMLiveRemoteTrtcCustomRenderManager, MMLiveRewardGiftNewCustomizationMagicEngineEnergyManager, MMLiveRewardGiftNewCustomizationMagicRewardMemoryManager, MMLiveRewardMagicEnginePerformanceStatisticManager, MMLiveStateDataInfoSession, MMLiveTRTCPushAdapter, MMLiveTrtcRenderingNotificationContext, MMLiveUIPerfMonitorLogic, MMLiveView, MMLiveWevisionWidgetManageLogic, MMTimer, MMWeEffectManager, MMXp2pWrapper, MicSetting_PurchaseMicSetting, NSArray, NSData, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, OrderedDictionary, TRTCParams, UINavigationController, UIView, WAApptaskPublicResLogic, WCFinderLiveStarterLiveModeSubItem, WCLiveBlurBtnPowerModeMonitorLogic;
 @protocol MMLiveTaskDelegate;
 
@@ -274,7 +276,6 @@
 + (void)updateLastTaskInfo:(id)arg1;
 + (void)updateMetricsReportInfoWithLiveId:(unsigned long long)arg1 userType:(long long)arg2 liveTask:(id)arg3;
 + (void)updateCrashAttachInfoWithLiveId:(unsigned long long)arg1 userType:(long long)arg2 tab:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool notifyExitLive; // @synthesize notifyExitLive=_notifyExitLive;
 @property(nonatomic) _Bool notifyLiveClosed; // @synthesize notifyLiveClosed=_notifyLiveClosed;
 @property(nonatomic) unsigned long long audienceLiveState; // @synthesize audienceLiveState=_audienceLiveState;
@@ -1127,4 +1128,3 @@
 @property(readonly) Class superclass;
 
 @end
-

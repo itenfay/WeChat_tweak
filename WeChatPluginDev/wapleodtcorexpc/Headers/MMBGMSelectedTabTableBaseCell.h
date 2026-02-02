@@ -17,7 +17,6 @@
 
 + (double)cellHeight;
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBGMPanelPublishContext *publishContext; // @synthesize publishContext=_publishContext;
 @property(nonatomic) __weak id <MMBGMSelectedTabTableViewCellDataReportSource> dataReportSource; // @synthesize dataReportSource=_dataReportSource;
 @property(nonatomic) __weak id <MMBGMSelectedTabTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;

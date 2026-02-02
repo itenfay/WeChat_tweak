@@ -15,7 +15,6 @@
     NSDictionary *_extraInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extraInfo; // @synthesize extraInfo=_extraInfo;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;

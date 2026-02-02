@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebImageView, WCFinderLiveAggregationCard, WCFinderLiveHomePageFeedAggregationCardVM;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _itemActionBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType itemActionBlock; // @synthesize itemActionBlock=_itemActionBlock;
 @property(retain, nonatomic) WCFinderLiveHomePageFeedAggregationCardVM *feedVM; // @synthesize feedVM=_feedVM;
 @property(copy, nonatomic) CDUnknownBlockType backgroundTapAction; // @synthesize backgroundTapAction=_backgroundTapAction;
@@ -35,4 +35,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

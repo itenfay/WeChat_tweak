@@ -11,7 +11,6 @@
     UIImageView *_imageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 - (id)image;

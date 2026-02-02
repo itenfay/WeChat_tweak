@@ -14,7 +14,6 @@
     NSArray *_insertAdInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *insertAdInfos; // @synthesize insertAdInfos=_insertAdInfos;
 @property(nonatomic) unsigned long long currentAdVideoDuration; // @synthesize currentAdVideoDuration=_currentAdVideoDuration;
 @property(nonatomic) unsigned long long currentAdTime; // @synthesize currentAdTime=_currentAdTime;

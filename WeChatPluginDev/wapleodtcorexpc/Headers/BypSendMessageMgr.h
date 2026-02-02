@@ -17,7 +17,6 @@
 }
 
 + (int)bizTypeForMsgWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCgiBlockHelper *curCgiBlockHelper; // @synthesize curCgiBlockHelper=_curCgiBlockHelper;
 @property(retain, nonatomic) CMessageWrap *curSendMsg; // @synthesize curSendMsg=_curSendMsg;
 @property(retain, nonatomic) NSMutableArray *sendMsgQueue; // @synthesize sendMsgQueue=_sendMsgQueue;

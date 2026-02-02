@@ -20,7 +20,6 @@
 }
 
 + (id)initWithLastBuffer:(id)arg1 topicInfo:(id)arg2 queryContinueFlag:(_Bool)arg3 dataSources:(id)arg4 commentScene:(int)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool queryContinueFlag; // @synthesize queryContinueFlag=_queryContinueFlag;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(retain, nonatomic) WCFinderTopicInfo *topicInfo; // @synthesize topicInfo=_topicInfo;

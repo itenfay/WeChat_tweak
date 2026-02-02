@@ -18,7 +18,6 @@
 }
 
 + (id)commonManager;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMListContentView *listContentView; // @synthesize listContentView=_listContentView;
 @property(retain, nonatomic) NSMutableArray *cellArray; // @synthesize cellArray=_cellArray;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;

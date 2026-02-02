@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_tvInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tvInfo; // @synthesize tvInfo=_tvInfo;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)toXML;

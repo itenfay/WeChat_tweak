@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -15,7 +16,6 @@
     long long _requestSeq;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long requestSeq; // @synthesize requestSeq=_requestSeq;
 @property(retain, nonatomic) NSMutableDictionary *cmdIdDict; // @synthesize cmdIdDict=_cmdIdDict;
 @property(retain, nonatomic) NSMutableDictionary *longPollingTimeDict; // @synthesize longPollingTimeDict=_longPollingTimeDict;
@@ -31,4 +31,3 @@
 - (id)init;
 
 @end
-

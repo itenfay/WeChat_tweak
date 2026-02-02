@@ -28,7 +28,6 @@
     NSMutableArray *_randomLiveIds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *randomLiveIds; // @synthesize randomLiveIds=_randomLiveIds;
 @property(retain, nonatomic) MMTimer *delayGetRandomLiveTimer; // @synthesize delayGetRandomLiveTimer=_delayGetRandomLiveTimer;
 @property(retain, nonatomic) WCFinderCustomCGI *prefetchRandomLiveCGI; // @synthesize prefetchRandomLiveCGI=_prefetchRandomLiveCGI;

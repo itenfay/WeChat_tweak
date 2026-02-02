@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_fileSize;
 + (void)PBArrayAdd_filePath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

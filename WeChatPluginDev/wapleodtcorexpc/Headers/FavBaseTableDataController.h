@@ -35,7 +35,6 @@
     id <FavBaseTableDataControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavBaseTableDataControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long maxSelectedCount; // @synthesize maxSelectedCount=_maxSelectedCount;
 @property(nonatomic) _Bool showEraseBtn; // @synthesize showEraseBtn=_showEraseBtn;

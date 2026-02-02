@@ -10,7 +10,6 @@
     NSMutableDictionary *m_friends;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (_Bool)trySyncAddressBookFriends;
 - (void)onFriendListUpdated:(id)arg1 ErrorCode:(unsigned int)arg2 Message:(id)arg3;

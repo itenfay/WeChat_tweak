@@ -14,7 +14,6 @@
 }
 
 + (id)createWithTag:(id)arg1 action:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) id action; // @synthesize action=_action;
 @property(retain, nonatomic) NSString *tag; // @synthesize tag=_tag;
 

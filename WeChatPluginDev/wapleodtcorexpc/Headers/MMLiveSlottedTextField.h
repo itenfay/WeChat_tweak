@@ -26,7 +26,6 @@
     NSArray *_slots;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *slots; // @synthesize slots=_slots;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) double recommendedAspectRatio; // @synthesize recommendedAspectRatio=_recommendedAspectRatio;

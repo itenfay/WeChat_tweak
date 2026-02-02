@@ -17,7 +17,6 @@
     UIView *_m_buttonContentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *m_buttonContentView; // @synthesize m_buttonContentView=_m_buttonContentView;
 @property(retain, nonatomic) UIImageView *m_blurImageView; // @synthesize m_blurImageView=_m_blurImageView;
 @property(retain, nonatomic) UIButton *m_agreeButton; // @synthesize m_agreeButton=_m_agreeButton;

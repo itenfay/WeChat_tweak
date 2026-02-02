@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, SlideTextJSHandler, UIButton, WSTemplateLogicController, WSWebViewPluginScheduler;
 
 @interface SlideTextForRemarkHalfScreenViewController
@@ -19,7 +21,6 @@
     long long _maxCharLength;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long maxCharLength; // @synthesize maxCharLength=_maxCharLength;
 @property(nonatomic) long long currentCharLength; // @synthesize currentCharLength=_currentCharLength;
 @property(retain, nonatomic) NSString *selectedText; // @synthesize selectedText=_selectedText;
@@ -52,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

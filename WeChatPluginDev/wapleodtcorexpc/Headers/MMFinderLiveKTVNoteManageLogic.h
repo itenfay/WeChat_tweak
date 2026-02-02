@@ -20,7 +20,6 @@
 }
 
 + (int)preferNoteAdjustTimeInterval;
-- (void).cxx_destruct;
 @property(nonatomic) double lastNoteDelayIntervalUpdateTime; // @synthesize lastNoteDelayIntervalUpdateTime=_lastNoteDelayIntervalUpdateTime;
 @property(nonatomic) int lastTargetIndex; // @synthesize lastTargetIndex=_lastTargetIndex;
 @property(retain, nonatomic) NSMutableArray *recentNoteRecordList; // @synthesize recentNoteRecordList=_recentNoteRecordList;

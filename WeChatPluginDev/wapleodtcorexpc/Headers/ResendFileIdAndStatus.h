@@ -36,7 +36,6 @@
 + (void)PBArrayAdd_localDataId;
 + (void)PBArrayAdd_fileStatus;
 + (void)PBArrayAdd_fileId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(retain, nonatomic) NSString *streamId; // @synthesize streamId=_streamId;
 @property(retain, nonatomic) NSString *fileAesKey; // @synthesize fileAesKey=_fileAesKey;

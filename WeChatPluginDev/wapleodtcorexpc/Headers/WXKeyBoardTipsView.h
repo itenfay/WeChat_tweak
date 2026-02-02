@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIStackView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUISpacer, NSString, UIImageView, UILabel;
 
@@ -19,7 +20,6 @@
 }
 
 + (id)tipsViewWithScene:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) MMUISpacer *reddotSpacer; // @synthesize reddotSpacer=_reddotSpacer;
 @property(retain, nonatomic) UILabel *wxKeyboardTipsLabel; // @synthesize wxKeyboardTipsLabel=_wxKeyboardTipsLabel;
@@ -47,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

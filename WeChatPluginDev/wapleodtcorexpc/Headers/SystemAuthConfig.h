@@ -13,7 +13,6 @@
     unsigned long long _version;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(retain, nonatomic) NSDictionary *webSceneMap; // @synthesize webSceneMap=_webSceneMap;
 - (id)initWithFile:(id)arg1;

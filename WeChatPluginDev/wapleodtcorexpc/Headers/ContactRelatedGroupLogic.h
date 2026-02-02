@@ -15,7 +15,6 @@
     _Bool _bHasSearch;
 }
 
-- (void).cxx_destruct;
 - (void)onContactListUpdate:(unsigned int)arg1;
 - (id)getContactRelatedGroup;
 - (_Bool)isSearchDone;

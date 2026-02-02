@@ -29,7 +29,6 @@
 
 + (void)reportFailToExposeWithCommentScene:(int)arg1 reson:(unsigned long long)arg2;
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderObjectPlaceHolderInfo *placeHolderInfo; // @synthesize placeHolderInfo=_placeHolderInfo;
 @property(nonatomic) double currentPlayPosition; // @synthesize currentPlayPosition=_currentPlayPosition;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;

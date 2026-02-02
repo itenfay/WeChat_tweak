@@ -23,7 +23,6 @@
     UIScreenEdgePanGestureRecognizer *_screenEdgePanGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *screenEdgePanGesture; // @synthesize screenEdgePanGesture=_screenEdgePanGesture;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) MultiDeviceAutoLoginLogic *autoLoginLogic; // @synthesize autoLoginLogic=_autoLoginLogic;

@@ -10,7 +10,6 @@
     NSMutableArray *_skylineRuntimeArr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *skylineRuntimeArr; // @synthesize skylineRuntimeArr=_skylineRuntimeArr;
 - (void)removeSkylineRuntime:(id)arg1;
 - (void)addSkylineRuntime:(id)arg1;

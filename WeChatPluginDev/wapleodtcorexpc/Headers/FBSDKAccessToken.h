@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate, NSSet, NSString;
 
@@ -25,7 +26,6 @@
 + (_Bool)isCurrentAccessTokenActive;
 + (void)setCurrentAccessToken:(id)arg1;
 + (id)currentAccessToken;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *userID; // @synthesize userID=_userID;
 @property(readonly, copy, nonatomic) NSString *tokenString; // @synthesize tokenString=_tokenString;
 @property(readonly, copy, nonatomic) NSDate *refreshDate; // @synthesize refreshDate=_refreshDate;
@@ -55,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

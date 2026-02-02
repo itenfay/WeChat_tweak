@@ -17,7 +17,6 @@
     int _editSourcePage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromToast; // @synthesize isFromToast=_isFromToast;
 @property(nonatomic) int editSourcePage; // @synthesize editSourcePage=_editSourcePage;
 @property(nonatomic) int m_editSource; // @synthesize m_editSource;

@@ -23,7 +23,6 @@
     id <MMMusicSearchVideoControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMMusicSearchVideoControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MMMusicSearchVideoControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (_Bool)isSelectedWithModel:(id)arg1;

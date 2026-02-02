@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderLiveReplayPreviewPlayerControlView
 {
     _Bool _startLoaded;
@@ -13,7 +15,6 @@
     CDUnknownBlockType _onReceiveAllDataCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onReceiveAllDataCallback; // @synthesize onReceiveAllDataCallback=_onReceiveAllDataCallback;
 @property(copy, nonatomic) CDUnknownBlockType videoSizeChangeCallback; // @synthesize videoSizeChangeCallback=_videoSizeChangeCallback;
 @property(copy, nonatomic) CDUnknownBlockType prepareToPlayCallback; // @synthesize prepareToPlayCallback=_prepareToPlayCallback;
@@ -33,4 +34,3 @@
 - (void)onPlayerSeekCompelete:(double)arg1;
 
 @end
-

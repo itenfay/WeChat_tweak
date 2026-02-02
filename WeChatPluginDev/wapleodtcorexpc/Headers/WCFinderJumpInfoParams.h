@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderJumpInfo_Style, NSDictionary, NSString, WAAppTaskHandlerWrapper, WCFinderContact, WCFinderFeedContentVM, WCFinderLiteAppExtraParams, WCFinderPostSourceInfo;
 @protocol MMLiveMorphDismissTarget, WCAdFinderDialogViewControllerDelegate, WCCanvasHalfScreenViewControllerDelegate, WCFinderCardWebViewControllerDelegate, WCFinderCollectionHalfScreenViewControllerDelegate;
@@ -55,7 +56,6 @@
     FinderJumpInfo_Style *_defaultStyle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderJumpInfo_Style *defaultStyle; // @synthesize defaultStyle=_defaultStyle;
 @property(nonatomic) _Bool forceLightMode; // @synthesize forceLightMode=_forceLightMode;
 @property(copy, nonatomic) CDUnknownBlockType liteAppStoreBlock; // @synthesize liteAppStoreBlock=_liteAppStoreBlock;
@@ -103,4 +103,3 @@
 - (id)init;
 
 @end
-

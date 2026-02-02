@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonStoreReportInfo, NSString, PersonalDesigner;
 
@@ -26,7 +27,6 @@
     CDUnknownBlockType _viewDetailBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType viewDetailBlock; // @synthesize viewDetailBlock=_viewDetailBlock;
 @property(copy, nonatomic) CDUnknownBlockType addNewPackageBlock; // @synthesize addNewPackageBlock=_addNewPackageBlock;
 @property(copy, nonatomic) CDUnknownBlockType closeBlock; // @synthesize closeBlock=_closeBlock;
@@ -45,4 +45,3 @@
 - (id)init;
 
 @end
-

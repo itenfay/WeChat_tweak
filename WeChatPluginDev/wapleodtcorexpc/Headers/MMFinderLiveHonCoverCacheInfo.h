@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_received;
 + (void)PBArrayAdd_honCoverUrl;
 + (void)PBArrayAdd_liveId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int full; // @synthesize full=_full;
 @property(nonatomic) _Bool honCoverReceive; // @synthesize honCoverReceive=_honCoverReceive;
 @property(nonatomic) _Bool received; // @synthesize received=_received;

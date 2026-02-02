@@ -16,7 +16,6 @@
 + (id)eventFrameSetName;
 + (id)eventData;
 + (id)eventName;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -13,7 +13,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(copy, nonatomic) NSString *eventId; // @synthesize eventId=_eventId;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;

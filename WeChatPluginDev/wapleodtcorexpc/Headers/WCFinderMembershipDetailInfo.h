@@ -113,7 +113,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int visitorMemberBlockFlag; // @synthesize visitorMemberBlockFlag=_visitorMemberBlockFlag;
 @property(nonatomic) _Bool isPreviewMode; // @synthesize isPreviewMode=_isPreviewMode;
 @property(nonatomic) unsigned long long unsubscribeMsId; // @synthesize unsubscribeMsId=_unsubscribeMsId;

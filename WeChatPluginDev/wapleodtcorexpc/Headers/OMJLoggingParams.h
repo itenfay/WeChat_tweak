@@ -13,7 +13,6 @@
     long long _maxLogLevel;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long maxLogLevel; // @synthesize maxLogLevel=_maxLogLevel;
 @property(readonly, nonatomic) id <OMJLoggingProvider> loggingProvider; // @synthesize loggingProvider=_loggingProvider;
 - (id)initWithLoggingProvider:(id)arg1 maxLogLevel:(long long)arg2;

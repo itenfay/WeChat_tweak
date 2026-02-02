@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface MMAssetForLocalImage
@@ -12,7 +14,6 @@
     long long _imageDataType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long imageDataType; // @synthesize imageDataType=_imageDataType;
 @property(retain, nonatomic) NSString *localFilePath; // @synthesize localFilePath=_localFilePath;
 @property(retain, nonatomic) NSString *localAssetId; // @synthesize localAssetId=_localAssetId;
@@ -46,4 +47,3 @@
 - (id)initWithUrl:(id)arg1 IsNeedOrigin:(_Bool)arg2;
 
 @end
-

@@ -12,7 +12,6 @@
     MMUILabel *_timeView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *timeView; // @synthesize timeView=_timeView;
 @property(retain, nonatomic) MMCPLabel *nickView; // @synthesize nickView=_nickView;
 @property(retain, nonatomic) MMHeadImageView *headView; // @synthesize headView=_headView;

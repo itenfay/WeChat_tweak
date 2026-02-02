@@ -18,7 +18,6 @@
     _Bool m_bLoading;
 }
 
-- (void).cxx_destruct;
 - (void)MMRefreshTableFooterDidTriggerRefresh:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)getMoreData;

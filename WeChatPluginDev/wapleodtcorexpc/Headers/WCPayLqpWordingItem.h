@@ -14,7 +14,6 @@
     long long _dark_color;
 }
 
-- (void).cxx_destruct;
 @property long long dark_color; // @synthesize dark_color=_dark_color;
 @property long long color; // @synthesize color=_color;
 @property(retain) NSString *wording; // @synthesize wording=_wording;

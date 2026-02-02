@@ -10,7 +10,6 @@
     MMLRUCache *_kvMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLRUCache *kvMap; // @synthesize kvMap=_kvMap;
 - (void)onServiceClearData;
 - (void)onServiceInit;

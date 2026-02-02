@@ -17,7 +17,6 @@
     unsigned long long _relativeTimeInMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long relativeTimeInMs; // @synthesize relativeTimeInMs=_relativeTimeInMs;
 @property(copy, nonatomic) NSString *detail; // @synthesize detail=_detail;
 @property(nonatomic) _Bool isNewCategory; // @synthesize isNewCategory=_isNewCategory;

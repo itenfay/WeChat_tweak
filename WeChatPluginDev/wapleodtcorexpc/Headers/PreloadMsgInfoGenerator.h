@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, NSMutableArray;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)generatorWithDirection:(int)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType getBlock; // @synthesize getBlock=_getBlock;
 @property(copy, nonatomic) CDUnknownBlockType mapBlock; // @synthesize mapBlock=_mapBlock;
 @property(retain, nonatomic) CADisplayLink *preloadTimer; // @synthesize preloadTimer=_preloadTimer;
@@ -33,4 +33,3 @@
 - (id)initWithDirection:(int)arg1;
 
 @end
-

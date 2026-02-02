@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveBoxId, NSString, WCFinderLiveMsgSessionInfo;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)genProductQuestionBoxWithSession:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType loadedCallback; // @synthesize loadedCallback=_loadedCallback;
 @property(nonatomic) _Bool hasLoaded; // @synthesize hasLoaded=_hasLoaded;
 @property(retain, nonatomic) WCFinderLiveMsgSessionInfo *session; // @synthesize session=_session;
@@ -34,4 +34,3 @@
 - (id)initWithSession:(id)arg1;
 
 @end
-

@@ -19,7 +19,6 @@
     struct CGSize _thinImgSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCLabelDynamicLayout *noticeLabelLayout; // @synthesize noticeLabelLayout=_noticeLabelLayout;
 @property(nonatomic) double thinBtnHeight; // @synthesize thinBtnHeight=_thinBtnHeight;
 @property(nonatomic) double thinImgBtnSpace; // @synthesize thinImgBtnSpace=_thinImgBtnSpace;

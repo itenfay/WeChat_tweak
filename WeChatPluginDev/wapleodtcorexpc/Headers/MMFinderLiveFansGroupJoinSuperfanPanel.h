@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMUIButton, NSString, UIImageView, UILabel, UIView;
 
 @interface MMFinderLiveFansGroupJoinSuperfanPanel
@@ -21,7 +23,6 @@
     unsigned long long _openScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long openScene; // @synthesize openScene=_openScene;
 @property(retain, nonatomic) MMUIButton *joinButton; // @synthesize joinButton=_joinButton;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
@@ -61,4 +62,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -19,7 +19,6 @@
     UIImageView *_finderIconImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFinderUser; // @synthesize isFinderUser=_isFinderUser;
 @property(retain, nonatomic) UIImageView *finderIconImageView; // @synthesize finderIconImageView=_finderIconImageView;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;

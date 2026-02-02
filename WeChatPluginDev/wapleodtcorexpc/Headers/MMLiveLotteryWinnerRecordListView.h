@@ -23,7 +23,6 @@
     UIView *_lineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UIImageView *bgImageView; // @synthesize bgImageView=_bgImageView;
 @property(nonatomic) __weak MMFinderLiveLotteryDisplayLogic *lotteryDisplayLogic; // @synthesize lotteryDisplayLogic=_lotteryDisplayLogic;

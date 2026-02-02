@@ -19,7 +19,6 @@
     MMUILabel *_tailTitleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *tailTitleView; // @synthesize tailTitleView=_tailTitleView;
 @property(retain, nonatomic) WCAdURLImageView *tailIconView; // @synthesize tailIconView=_tailIconView;
 @property(retain, nonatomic) MMUILabel *mainTitleView; // @synthesize mainTitleView=_mainTitleView;

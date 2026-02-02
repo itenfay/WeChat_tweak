@@ -29,7 +29,6 @@
     double _customWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double customWidth; // @synthesize customWidth=_customWidth;
 @property(retain, nonatomic) NSString *m_placeholderStr; // @synthesize m_placeholderStr;
 @property(nonatomic) int m_maxHeight; // @synthesize m_maxHeight;

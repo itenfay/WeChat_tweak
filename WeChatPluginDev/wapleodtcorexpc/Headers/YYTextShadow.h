@@ -18,7 +18,6 @@
 
 + (id)shadowWithNSShadow:(id)arg1;
 + (id)shadowWithColor:(id)arg1 offset:(struct CGSize)arg2 radius:(double)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) YYTextShadow *subShadow; // @synthesize subShadow=_subShadow;
 @property(nonatomic) int blendMode; // @synthesize blendMode=_blendMode;
 @property(nonatomic) double radius; // @synthesize radius=_radius;

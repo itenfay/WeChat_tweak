@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDate, UIDatePicker;
 
 @interface WCDatePickerHalfScreeView
@@ -14,7 +16,6 @@
     UIDatePicker *_curDatePicker;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIDatePicker *curDatePicker; // @synthesize curDatePicker=_curDatePicker;
 @property(retain, nonatomic) NSDate *selectedDate; // @synthesize selectedDate=_selectedDate;
 @property(retain, nonatomic) NSDate *maximumDate; // @synthesize maximumDate=_maximumDate;
@@ -26,4 +27,3 @@
 - (id)initWithTitle:(id)arg1 minTime:(id)arg2 maxTime:(id)arg3 selectTime:(id)arg4;
 
 @end
-

@@ -18,7 +18,6 @@
     NSIndexPath *_quickJumpIndex;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *quickJumpIndex; // @synthesize quickJumpIndex=_quickJumpIndex;
 @property(nonatomic) __weak GameCenterMsgListBaseTabViewController *currentTabVc; // @synthesize currentTabVc=_currentTabVc;
 @property(retain, nonatomic) GameCenterMsgListNoticeTabViewController *noticeTabVc; // @synthesize noticeTabVc=_noticeTabVc;

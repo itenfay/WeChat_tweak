@@ -13,7 +13,6 @@
     unsigned long long _voteCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long voteCount; // @synthesize voteCount=_voteCount;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -16,7 +17,6 @@
 }
 
 + (id)instance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *showCallbackMap; // @synthesize showCallbackMap=_showCallbackMap;
 @property(retain, nonatomic) NSMutableDictionary *offsetMap; // @synthesize offsetMap=_offsetMap;
 @property(retain, nonatomic) NSMutableDictionary *imageMap; // @synthesize imageMap=_imageMap;
@@ -31,4 +31,3 @@
 - (id)init;
 
 @end
-

@@ -17,7 +17,6 @@
     MMWebViewController *_uploadIdWebView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebViewController *uploadIdWebView; // @synthesize uploadIdWebView=_uploadIdWebView;
 @property(nonatomic) long long downloadCodeImgScene; // @synthesize downloadCodeImgScene=_downloadCodeImgScene;
 @property(retain, nonatomic) NSString *currentCdnClientID; // @synthesize currentCdnClientID=_currentCdnClientID;

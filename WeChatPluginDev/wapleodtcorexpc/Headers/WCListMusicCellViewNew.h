@@ -15,7 +15,6 @@
 + (id)trimDescWithDataItem:(id)arg1;
 + (id)titleWithDataItem:(id)arg1;
 + (double)calculateHeightWithGroup:(id)arg1 groupItem:(id)arg2 width:(double)arg3 isFirstOneInsection:(_Bool)arg4 isLastOneInSection:(_Bool)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingSharePlayButton *playButton; // @synthesize playButton=_playButton;
 @property(retain, nonatomic) TingItem *tingItem; // @synthesize tingItem=_tingItem;
 - (void)onClickEvent;

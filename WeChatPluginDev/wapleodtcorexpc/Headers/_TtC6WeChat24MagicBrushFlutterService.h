@@ -13,7 +13,6 @@
     MISSING_TYPE *$__lazy_storage_$_sclPlugin;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)getMagicSclPlugin;
 - (id)getSclAdBrandPlugin;

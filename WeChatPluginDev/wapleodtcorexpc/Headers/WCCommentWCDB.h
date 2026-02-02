@@ -14,7 +14,6 @@
     NSString *_dbPath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *dbPath; // @synthesize dbPath=_dbPath;
 @property(retain, nonatomic) WCTDatabase *dataBase; // @synthesize dataBase=_dataBase;
 @property(retain, nonatomic) WCTTable *postingCommentTable; // @synthesize postingCommentTable=_postingCommentTable;

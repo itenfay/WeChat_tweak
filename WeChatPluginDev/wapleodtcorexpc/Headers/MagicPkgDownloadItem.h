@@ -24,7 +24,6 @@
     NSString *_originalName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *originalName; // @synthesize originalName=_originalName;
 @property(retain, nonatomic) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
 @property(retain, nonatomic) NSString *baseApkMd5; // @synthesize baseApkMd5=_baseApkMd5;

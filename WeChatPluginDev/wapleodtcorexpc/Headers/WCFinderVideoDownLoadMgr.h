@@ -37,7 +37,6 @@
     NSArray *_pausePreloadArray;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canUsePCDN; // @synthesize canUsePCDN=_canUsePCDN;
 @property(copy, nonatomic) NSArray *pausePreloadArray; // @synthesize pausePreloadArray=_pausePreloadArray;
 @property(retain, nonatomic) NSString *pausePreloadStreamKey; // @synthesize pausePreloadStreamKey=_pausePreloadStreamKey;

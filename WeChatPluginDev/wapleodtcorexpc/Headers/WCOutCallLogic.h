@@ -27,7 +27,6 @@
     WcoTalkMainWindow *_mainWindow;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMinmizeMode; // @synthesize isMinmizeMode=_isMinmizeMode;
 @property(retain, nonatomic) WcoTalkMainWindow *mainWindow; // @synthesize mainWindow=_mainWindow;
 @property(retain, nonatomic) WcoMinimizeWindow *minWindow; // @synthesize minWindow=_minWindow;

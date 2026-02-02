@@ -18,7 +18,6 @@
     UIFont *_priceSuffixDescriptionFont;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *priceSuffixDescriptionFont; // @synthesize priceSuffixDescriptionFont=_priceSuffixDescriptionFont;
 @property(retain, nonatomic) UIFont *listPriceFont; // @synthesize listPriceFont=_listPriceFont;
 @property(retain, nonatomic) UIFont *currentPriceSuffixFont; // @synthesize currentPriceSuffixFont=_currentPriceSuffixFont;

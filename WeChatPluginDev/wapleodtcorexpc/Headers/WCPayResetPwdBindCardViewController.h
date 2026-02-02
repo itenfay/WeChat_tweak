@@ -14,7 +14,6 @@
     _Bool bPoped;
 }
 
-- (void).cxx_destruct;
 - (void)makeInfoCell:(id)arg1 cellInfo:(id)arg2;
 - (void)webViewReturn:(id)arg1;
 - (void)changeRealName;

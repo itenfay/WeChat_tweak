@@ -17,7 +17,6 @@
     unsigned long long _retryType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long retryType; // @synthesize retryType=_retryType;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) double timeDiff; // @synthesize timeDiff=_timeDiff;

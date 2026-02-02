@@ -30,7 +30,6 @@
     NSMutableArray *_parentAddressFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *parentAddressFrame; // @synthesize parentAddressFrame=_parentAddressFrame;
 @property(retain, nonatomic) id customInfo; // @synthesize customInfo=_customInfo;
 @property(retain, nonatomic) NSString *reportPath; // @synthesize reportPath=_reportPath;

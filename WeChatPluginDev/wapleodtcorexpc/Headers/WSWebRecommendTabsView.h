@@ -21,7 +21,6 @@
 + (double)tabViewBottomMargin;
 + (double)getTabBarItemWidth:(id)arg1;
 + (_Bool)isHasNewLifeTab:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) NSArray *tabListData; // @synthesize tabListData=_tabListData;
 @property(retain, nonatomic) NSMutableDictionary *reddotStatusDic; // @synthesize reddotStatusDic=_reddotStatusDic;

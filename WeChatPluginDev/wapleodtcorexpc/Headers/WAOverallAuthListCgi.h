@@ -14,7 +14,6 @@
     NSString *_usrname;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int recordCount; // @synthesize recordCount=_recordCount;
 @property(nonatomic) unsigned int lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;
 @property(copy, nonatomic) NSString *usrname; // @synthesize usrname=_usrname;

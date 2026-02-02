@@ -18,7 +18,6 @@
     NSMutableDictionary *_elementReportAction;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *elementReportAction; // @synthesize elementReportAction=_elementReportAction;
 @property(retain, nonatomic) NSMutableSet *reportedElements; // @synthesize reportedElements=_reportedElements;
 @property(nonatomic) int scene; // @synthesize scene=_scene;

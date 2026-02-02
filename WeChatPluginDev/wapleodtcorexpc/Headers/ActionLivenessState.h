@@ -48,7 +48,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ActionFinished; // @synthesize ActionFinished=_ActionFinished;
 @property(nonatomic) struct YTPOSE *facePose; // @synthesize facePose=_facePose;
 @property(nonatomic) _Bool canTransitToReflect; // @synthesize canTransitToReflect=_canTransitToReflect;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonBoardView, MMGrowTextView, MMTableView, MMUILabel, MMURLHandler, NSMutableDictionary, NSString, UIButton, UIImageView, UIView, WCDataItem, WCInputController, WCMomentsClickHandler, WCMomentsInputAreaReportInfo, WCMomentsPageContext, WCUserComment;
 @protocol UIViewControllerPreviewing;
 
@@ -37,7 +39,6 @@
     struct CGPoint _userScrollingVelocity;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint userScrollingVelocity; // @synthesize userScrollingVelocity=_userScrollingVelocity;
 @property(nonatomic) long long videoAutoPlayType; // @synthesize videoAutoPlayType=_videoAutoPlayType;
 @property(nonatomic) long long focusedCellMatchingMode; // @synthesize focusedCellMatchingMode=_focusedCellMatchingMode;
@@ -154,4 +155,3 @@
 @property(readonly) Class superclass;
 
 @end
-

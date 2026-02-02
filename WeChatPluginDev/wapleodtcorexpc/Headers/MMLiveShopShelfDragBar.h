@@ -11,7 +11,6 @@
     double _displayDragCloseStyleProgress;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double displayDragCloseStyleProgress; // @synthesize displayDragCloseStyleProgress=_displayDragCloseStyleProgress;
 @property(retain, nonatomic) MMUIView *barView; // @synthesize barView=_barView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

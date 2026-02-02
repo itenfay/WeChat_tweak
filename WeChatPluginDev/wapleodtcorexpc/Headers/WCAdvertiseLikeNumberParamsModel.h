@@ -14,7 +14,6 @@
     NSString *_numberDesc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *numberDesc; // @synthesize numberDesc=_numberDesc;
 @property(retain, nonatomic) NSString *numberDefaultTitle; // @synthesize numberDefaultTitle=_numberDefaultTitle;
 @property(retain, nonatomic) NSString *numberRequestId; // @synthesize numberRequestId=_numberRequestId;

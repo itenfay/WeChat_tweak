@@ -3,14 +3,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface MMLiveMagicEngineMemoryMonitorTask
 {
     CDUnknownBlockType _finalCheckEnableFreeMemoryCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType finalCheckEnableFreeMemoryCallback; // @synthesize finalCheckEnableFreeMemoryCallback=_finalCheckEnableFreeMemoryCallback;
 - (void)checkMemory;
 
 @end
-

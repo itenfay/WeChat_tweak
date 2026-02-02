@@ -15,7 +15,6 @@
     FavoritesItemDataField *_dataField;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FavoritesItemDataField *dataField; // @synthesize dataField=_dataField;
 @property(nonatomic) __weak MultiMediaUploadTask *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;

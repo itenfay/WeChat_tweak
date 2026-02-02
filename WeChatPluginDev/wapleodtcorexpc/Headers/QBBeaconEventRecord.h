@@ -31,7 +31,6 @@
 @property(retain, nonatomic) NSString *eventName; // @synthesize eventName;
 @property(retain, nonatomic) NSString *srcIp; // @synthesize srcIp;
 @property(retain, nonatomic) NSString *apn; // @synthesize apn;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)createWUPModel;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

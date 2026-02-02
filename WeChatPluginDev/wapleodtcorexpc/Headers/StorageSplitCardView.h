@@ -18,7 +18,6 @@
     unsigned long long _viewType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long viewType; // @synthesize viewType=_viewType;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMUILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;

@@ -14,7 +14,6 @@
     double _m_maxWidth;
 }
 
-- (void).cxx_destruct;
 @property double m_maxWidth; // @synthesize m_maxWidth=_m_maxWidth;
 @property(retain) RoundTextViewData *m_viewData; // @synthesize m_viewData=_m_viewData;
 @property(retain) KindaRichLabelViewV2 *m_text; // @synthesize m_text=_m_text;

@@ -25,7 +25,6 @@
     WCFinderSearchKVReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasReportInputText; // @synthesize hasReportInputText=_hasReportInputText;
 @property(nonatomic) int inlineSearchScene; // @synthesize inlineSearchScene=_inlineSearchScene;
 @property(retain, nonatomic) WCFinderSearchKVReporter *reporter; // @synthesize reporter=_reporter;

@@ -10,7 +10,6 @@
     WCSessionDSLExplainer *_sessionDSLExplainer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSessionDSLExplainer *sessionDSLExplainer; // @synthesize sessionDSLExplainer=_sessionDSLExplainer;
 - (_Bool)checkJsonRightful:(id)arg1;
 - (id)executeInstruction:(id)arg1 withDataPath:(id)arg2;

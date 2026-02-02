@@ -16,7 +16,6 @@
     UIColor *_colorValue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *colorValue; // @synthesize colorValue=_colorValue;
 @property(nonatomic) _Bool shouldAdaptLengthValue; // @synthesize shouldAdaptLengthValue=_shouldAdaptLengthValue;
 @property(nonatomic) double floatValue; // @synthesize floatValue=_floatValue;

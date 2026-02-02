@@ -17,7 +17,6 @@
     NSString *_errMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(retain, nonatomic) NSString *fileId; // @synthesize fileId=_fileId;
 @property(retain, nonatomic) NSString *clientMediaID; // @synthesize clientMediaID=_clientMediaID;

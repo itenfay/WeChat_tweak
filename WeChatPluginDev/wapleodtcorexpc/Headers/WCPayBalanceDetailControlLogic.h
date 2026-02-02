@@ -14,7 +14,6 @@
     WCPayBalanceSaveMoneyControlLogic *_saveMoneyControlLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBalanceSaveMoneyControlLogic *saveMoneyControlLogic; // @synthesize saveMoneyControlLogic=_saveMoneyControlLogic;
 @property(retain, nonatomic) WCPayLQTMoneyControlLogic *lqtMoneyControlLogic; // @synthesize lqtMoneyControlLogic=_lqtMoneyControlLogic;
 @property(retain, nonatomic) WCPayLQTDetailControlLogic *lqtDetailControlLogic; // @synthesize lqtDetailControlLogic=_lqtDetailControlLogic;

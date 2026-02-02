@@ -25,7 +25,6 @@
     NSString *_brandWording;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDisplayOriginImage; // @synthesize isDisplayOriginImage=_isDisplayOriginImage;
 @property(copy, nonatomic) NSString *brandWording; // @synthesize brandWording=_brandWording;
 @property(retain, nonatomic) MMUILabel *brandLabel; // @synthesize brandLabel=_brandLabel;

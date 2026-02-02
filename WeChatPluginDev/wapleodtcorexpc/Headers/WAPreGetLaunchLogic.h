@@ -12,7 +12,6 @@
     NSMutableArray *_arrFetchingCmds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrFetchingCmds; // @synthesize arrFetchingCmds=_arrFetchingCmds;
 - (void)onGetLaunchPermissionInfo:(id)arg1 isSuccess:(_Bool)arg2 errorCode:(int)arg3;
 - (id)getFetchingCmdForAppid:(id)arg1 username:(id)arg2;

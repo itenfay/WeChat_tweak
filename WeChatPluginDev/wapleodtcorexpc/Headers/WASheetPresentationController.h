@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIPresentationController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, NSString, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, WASheetHeaderTipsView;
 @protocol WASheetPresentationControllerDelegete;
@@ -38,7 +39,6 @@
     struct CGPoint _currentContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tipsDidClickCloseBlock; // @synthesize tipsDidClickCloseBlock=_tipsDidClickCloseBlock;
 @property(copy, nonatomic) CDUnknownBlockType tipsDidShowBlock; // @synthesize tipsDidShowBlock=_tipsDidShowBlock;
 @property(copy, nonatomic) NSString *tipsText; // @synthesize tipsText=_tipsText;
@@ -144,4 +144,3 @@
 @property(readonly) Class superclass;
 
 @end
-

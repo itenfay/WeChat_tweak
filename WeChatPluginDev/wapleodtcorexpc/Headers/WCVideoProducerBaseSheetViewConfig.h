@@ -17,7 +17,6 @@
 }
 
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(nonatomic) double bottomViewHeight; // @synthesize bottomViewHeight=_bottomViewHeight;
 @property(nonatomic) _Bool isBottomViewEnabled; // @synthesize isBottomViewEnabled=_isBottomViewEnabled;
 @property(retain, nonatomic) NSString *topViewTitle; // @synthesize topViewTitle=_topViewTitle;

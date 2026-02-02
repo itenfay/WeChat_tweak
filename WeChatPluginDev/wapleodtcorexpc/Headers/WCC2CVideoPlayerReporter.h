@@ -22,7 +22,6 @@
     unsigned long long _didPlayVideoTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long didPlayVideoTime; // @synthesize didPlayVideoTime=_didPlayVideoTime;
 @property(nonatomic) unsigned long long didPlayRealTime; // @synthesize didPlayRealTime=_didPlayRealTime;
 @property(retain, nonatomic) OrderedDictionary *playRateDuration; // @synthesize playRateDuration=_playRateDuration;

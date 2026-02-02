@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSObject, UIImageView, UILabel, UIView, WCFinderFeedBubbleButton;
 
 @interface WCFinderFeedBubbleView
@@ -20,7 +22,6 @@
     WCFinderFeedBubbleButton *_actionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedBubbleButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -46,4 +47,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

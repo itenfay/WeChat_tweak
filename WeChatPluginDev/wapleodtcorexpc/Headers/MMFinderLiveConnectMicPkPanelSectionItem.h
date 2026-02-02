@@ -16,7 +16,6 @@
     NSString *_headerTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
 @property(retain, nonatomic) MMFinderLiveConnectMicUser *micUser; // @synthesize micUser=_micUser;
 @property(nonatomic) unsigned long long headerButtonType; // @synthesize headerButtonType=_headerButtonType;

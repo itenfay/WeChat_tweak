@@ -17,7 +17,6 @@
 }
 
 + (id)clickContextFromClickOptions:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *urlExtraInfo; // @synthesize urlExtraInfo=_urlExtraInfo;
 @property(nonatomic) int contactScene; // @synthesize contactScene=_contactScene;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;

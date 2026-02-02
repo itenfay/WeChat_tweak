@@ -40,7 +40,6 @@
 + (void)PBArrayAdd_isScopeRecv;
 + (void)PBArrayAdd_scopeName;
 + (void)PBArrayAdd_scopeID;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAcceptWithForceNotify; // @synthesize isAcceptWithForceNotify=_isAcceptWithForceNotify;
 @property(nonatomic) _Bool isForceNotifyTemplate; // @synthesize isForceNotifyTemplate=_isForceNotifyTemplate;
 @property(retain, nonatomic) NSString *audioTemplateUrl; // @synthesize audioTemplateUrl=_audioTemplateUrl;

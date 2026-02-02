@@ -24,7 +24,6 @@
 
 + (id)genDetectSessionId;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct Mat detectImage; // @synthesize detectImage=_detectImage;
 @property(nonatomic) unsigned int itemSource; // @synthesize itemSource=_itemSource;
 @property(nonatomic) long long imageSource; // @synthesize imageSource=_imageSource;

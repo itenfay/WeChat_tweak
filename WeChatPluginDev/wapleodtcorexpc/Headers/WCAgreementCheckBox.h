@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, RichTextView, UIColor, UIFont, UIImageView, UITapGestureRecognizer;
 
@@ -30,7 +31,6 @@
     struct UIEdgeInsets _expandHitAreaInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needsUpdateAccessibility; // @synthesize needsUpdateAccessibility=_needsUpdateAccessibility;
 @property(retain, nonatomic) NSMutableArray *accessibilityElements; // @synthesize accessibilityElements=_accessibilityElements;
 @property(nonatomic) struct UIEdgeInsets expandHitAreaInsets; // @synthesize expandHitAreaInsets=_expandHitAreaInsets;
@@ -81,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

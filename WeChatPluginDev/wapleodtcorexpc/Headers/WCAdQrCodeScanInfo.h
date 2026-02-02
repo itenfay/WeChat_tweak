@@ -16,7 +16,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long qrResultType; // @synthesize qrResultType=_qrResultType;
 @property(nonatomic) _Bool needUpdateQrUrl; // @synthesize needUpdateQrUrl=_needUpdateQrUrl;
 @property(retain, nonatomic) NSString *qrExtInfo; // @synthesize qrExtInfo=_qrExtInfo;

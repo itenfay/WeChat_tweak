@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UITapGestureRecognizer, WKWebView;
 @protocol IWAFileViewService;
 
@@ -17,7 +19,6 @@
     id <IWAFileViewService> _fileViewServiceProxy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <IWAFileViewService> fileViewServiceProxy; // @synthesize fileViewServiceProxy=_fileViewServiceProxy;
 @property(copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
@@ -55,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

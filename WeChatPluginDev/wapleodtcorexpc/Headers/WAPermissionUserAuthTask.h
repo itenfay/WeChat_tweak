@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WATransferJSAPIRuntimeModel, WAUserAuthorizeLogic, WxaExternalInfo;
 @protocol IWATransferProxyImplProtocol, WAPermissionUserAuthTaskDelegate;
@@ -28,7 +29,6 @@
     id <IWATransferProxyImplProtocol> _transferBridge;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <IWATransferProxyImplProtocol> transferBridge; // @synthesize transferBridge=_transferBridge;
 @property(copy, nonatomic) CDUnknownBlockType transferHandler; // @synthesize transferHandler=_transferHandler;
 @property(retain, nonatomic) WATransferJSAPIRuntimeModel *jsapiModel; // @synthesize jsapiModel=_jsapiModel;
@@ -68,4 +68,3 @@
 @property(readonly) Class superclass;
 
 @end
-

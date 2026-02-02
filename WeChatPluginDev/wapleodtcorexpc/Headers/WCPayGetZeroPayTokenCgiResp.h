@@ -12,7 +12,6 @@
     NSString *_token;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 
 @end

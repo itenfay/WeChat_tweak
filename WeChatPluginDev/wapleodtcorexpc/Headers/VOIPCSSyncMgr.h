@@ -23,7 +23,6 @@
     MMTimer *m_syncTimer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_syncTimerStopValue; // @synthesize m_syncTimerStopValue;
 @property(nonatomic) unsigned int m_syncTimerCnt; // @synthesize m_syncTimerCnt;
 @property(retain, nonatomic) MMTimer *m_syncTimer; // @synthesize m_syncTimer;

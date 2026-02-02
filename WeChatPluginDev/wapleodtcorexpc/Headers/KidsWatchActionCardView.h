@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class KidsWatchButton, MMUILabel;
 
@@ -18,7 +19,6 @@
     KidsWatchButton *_actionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) KidsWatchButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMUILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -35,4 +35,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

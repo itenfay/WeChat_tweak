@@ -15,7 +15,6 @@
     NSMutableArray *_voiceOverElements;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *voiceOverElements; // @synthesize voiceOverElements=_voiceOverElements;
 @property(nonatomic) unsigned int playLength; // @synthesize playLength=_playLength;
 @property(retain, nonatomic) TingItem *tingItem; // @synthesize tingItem=_tingItem;

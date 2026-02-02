@@ -11,7 +11,6 @@
     NSString *_iconUrl;
 }
 
-- (void).cxx_destruct;
 - (void)ImageDidFail:(id)arg1;
 - (void)ImageDidLoad:(id)arg1 Url:(id)arg2;
 - (void)updateIconImage:(id)arg1;

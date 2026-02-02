@@ -13,7 +13,6 @@
     WCFinderTemplatePublishParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isOnlyPreview; // @synthesize isOnlyPreview=_isOnlyPreview;
 @property(retain, nonatomic) WCFinderTemplatePublishParams *params; // @synthesize params=_params;
 

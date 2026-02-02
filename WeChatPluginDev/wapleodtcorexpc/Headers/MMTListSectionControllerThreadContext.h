@@ -14,7 +14,6 @@
     id <MMTListTableViewContext> _tableViewContext;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMTListTableViewContext> tableViewContext; // @synthesize tableViewContext=_tableViewContext;
 @property(nonatomic) __weak MMUIViewController *viewController; // @synthesize viewController=_viewController;
 

@@ -22,7 +22,6 @@
     UIButton *_extJumpActionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *extJumpActionButton; // @synthesize extJumpActionButton=_extJumpActionButton;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;

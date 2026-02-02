@@ -28,7 +28,6 @@
 + (double)cellHWithCollW:(double)arg1;
 + (double)cellWWithCollW:(double)arg1;
 + (double)collectionHWithSelfW:(double)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) UILabel *emptyTipsLabel; // @synthesize emptyTipsLabel=_emptyTipsLabel;
 @property(retain, nonatomic) WCFinderAccoutItem *acctItem; // @synthesize acctItem=_acctItem;

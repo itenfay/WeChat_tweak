@@ -18,7 +18,6 @@
     WXVideoSlider *_slider;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSliderScrubbing; // @synthesize isSliderScrubbing=_isSliderScrubbing;
 @property(retain, nonatomic) WXVideoSlider *slider; // @synthesize slider=_slider;
 @property(retain, nonatomic) MMUILabel *durationLabel; // @synthesize durationLabel=_durationLabel;

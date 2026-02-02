@@ -23,7 +23,6 @@
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
 + (id)modelPropertyBlacklistForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *link; // @synthesize link=_link;
 @property(retain, nonatomic) NSString *extraparam; // @synthesize extraparam=_extraparam;
 @property(retain, nonatomic) NSArray *excerptList; // @synthesize excerptList=_excerptList;

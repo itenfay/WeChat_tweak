@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveQuestInstance, MMFinderLiveNewAnchorTaskRewardView, MMFinderLiveNewAnchorTaskTargetsView, MMFinderLiveNewAnchorTaskViewModel, UIView;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveNewAnchorTaskRewardView *rewardView; // @synthesize rewardView=_rewardView;
 @property(retain, nonatomic) MMFinderLiveNewAnchorTaskTargetsView *targetsView; // @synthesize targetsView=_targetsView;
 @property(retain, nonatomic) MMFinderLiveNewAnchorTaskViewModel *taskVM; // @synthesize taskVM=_taskVM;
@@ -34,4 +34,3 @@
 @property(retain, nonatomic) UIView *backgroundView;
 
 @end
-

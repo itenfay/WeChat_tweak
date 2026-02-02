@@ -16,7 +16,6 @@
     MMOrderCenterTableViewController *_resultTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMOrderCenterTableViewController *resultTable; // @synthesize resultTable=_resultTable;
 @property(retain, nonatomic) MMOrderCenterSearchDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(retain, nonatomic) MMTableView *historyTableView; // @synthesize historyTableView=_historyTableView;

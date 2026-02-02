@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UILabel;
 
@@ -13,7 +14,6 @@
     UILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UILabel *secondLabel; // @synthesize secondLabel=_secondLabel;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
@@ -23,4 +23,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -21,7 +21,6 @@
     unsigned long long mSendVoipSyncTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mSendVoipSyncTime; // @synthesize mSendVoipSyncTime;
 @property(retain, nonatomic) MMTimer *m_syncTimer; // @synthesize m_syncTimer;
 @property(retain, nonatomic) NSRecursiveLock *mOplogLock; // @synthesize mOplogLock;

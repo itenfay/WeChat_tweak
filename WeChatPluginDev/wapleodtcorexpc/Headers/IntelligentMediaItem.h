@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_userName;
 + (void)PBArrayAdd_mesSvrID;
 + (void)PBArrayAdd_mesLocalID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mediaFilePath; // @synthesize mediaFilePath=_mediaFilePath;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(nonatomic) long long mesSvrID; // @synthesize mesSvrID=_mesSvrID;

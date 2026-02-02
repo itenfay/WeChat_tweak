@@ -14,7 +14,6 @@
     MMIlinkCheckResourceMgr *_resourceMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMIlinkCheckResourceMgr *resourceMgr; // @synthesize resourceMgr=_resourceMgr;
 @property(retain, nonatomic) UDRResourceDBMgr *udrDBMgr; // @synthesize udrDBMgr=_udrDBMgr;
 - (void)onReceiveGetSpecifiedResource:(id)arg1 name:(id)arg2 version:(unsigned int)arg3 extInfo:(id)arg4;

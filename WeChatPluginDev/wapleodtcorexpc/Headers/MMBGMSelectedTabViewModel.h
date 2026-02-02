@@ -15,7 +15,6 @@
     MMBGMPanelPublishContext *_publishContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBGMPanelPublishContext *publishContext; // @synthesize publishContext=_publishContext;
 @property(retain, nonatomic) MMBGMSelectedConfig *config; // @synthesize config=_config;
 @property(nonatomic) __weak id <MMBGMSelectedTabViewModelDelegate> delegate; // @synthesize delegate=_delegate;

@@ -16,7 +16,6 @@
     NSString *_singingUserId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *singingUserId; // @synthesize singingUserId=_singingUserId;
 @property(retain, nonatomic) NSMutableArray *pendingSeatArr; // @synthesize pendingSeatArr=_pendingSeatArr;
 @property(retain, nonatomic) OrderedDictionary *seatOrderDict; // @synthesize seatOrderDict=_seatOrderDict;

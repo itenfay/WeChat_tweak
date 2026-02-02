@@ -13,7 +13,6 @@
     NSString *_displayNickname;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int rewardAmountInHeat; // @synthesize rewardAmountInHeat=_rewardAmountInHeat;
 @property(copy, nonatomic) NSString *displayNickname; // @synthesize displayNickname=_displayNickname;
 

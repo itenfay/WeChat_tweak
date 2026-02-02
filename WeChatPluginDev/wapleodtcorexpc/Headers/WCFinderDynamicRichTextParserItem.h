@@ -21,7 +21,6 @@
 + (id)iconItem:(long long)arg1;
 + (id)textItem:(id)arg1 color:(id)arg2 href:(id)arg3;
 + (id)textItem:(id)arg1 color:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *href; // @synthesize href=_href;
 @property(retain, nonatomic) NSString *src; // @synthesize src=_src;
 @property(nonatomic) long long imageId; // @synthesize imageId=_imageId;

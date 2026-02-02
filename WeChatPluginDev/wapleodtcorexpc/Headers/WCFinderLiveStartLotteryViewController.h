@@ -67,7 +67,6 @@
     MMLiveLotteryGiftDistributeSheetView *_distributeSeletionView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMLiveLotteryGiftDistributeSheetView *distributeSeletionView; // @synthesize distributeSeletionView=_distributeSeletionView;
 @property(nonatomic) __weak MMFinderLiveRewardGiftPacketSettingView *giftPacketSettingView; // @synthesize giftPacketSettingView=_giftPacketSettingView;
 @property(retain, nonatomic) NSMutableArray *winnerCntLimitInfos; // @synthesize winnerCntLimitInfos=_winnerCntLimitInfos;

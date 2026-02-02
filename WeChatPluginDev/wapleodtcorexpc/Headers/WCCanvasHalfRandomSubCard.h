@@ -25,7 +25,6 @@
     id <WCCanvasComponentDelegate> _componentDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCanvasComponentDelegate> componentDelegate; // @synthesize componentDelegate=_componentDelegate;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) WCAdvertiseInfo *advertiseInfo; // @synthesize advertiseInfo=_advertiseInfo;

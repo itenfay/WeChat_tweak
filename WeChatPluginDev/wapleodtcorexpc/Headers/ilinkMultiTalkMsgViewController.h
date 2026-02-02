@@ -12,7 +12,6 @@
     NSMutableArray *_members;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *members; // @synthesize members=_members;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) unsigned long long roomID; // @synthesize roomID=_roomID;

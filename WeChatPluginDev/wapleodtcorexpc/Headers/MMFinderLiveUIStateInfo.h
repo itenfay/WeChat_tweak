@@ -12,7 +12,6 @@
     MMFinderLiveStartLiveUIStateInfo *_startLiveUIStateInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveStartLiveUIStateInfo *startLiveUIStateInfo; // @synthesize startLiveUIStateInfo=_startLiveUIStateInfo;
 
 @end

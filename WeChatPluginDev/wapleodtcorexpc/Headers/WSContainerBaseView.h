@@ -15,7 +15,6 @@
     NSNumber *_categoryId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *categoryId; // @synthesize categoryId=_categoryId;
 @property(retain, nonatomic) WSContainerViewReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) __weak UIViewController *tabViewController; // @synthesize tabViewController=_tabViewController;

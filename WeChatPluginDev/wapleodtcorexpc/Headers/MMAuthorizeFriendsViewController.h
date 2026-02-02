@@ -23,7 +23,6 @@
     NSString *_cloudGameScopeWording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cloudGameScopeWording; // @synthesize cloudGameScopeWording=_cloudGameScopeWording;
 @property(retain, nonatomic) MMUILabel *cloudGameScopeLabel; // @synthesize cloudGameScopeLabel=_cloudGameScopeLabel;
 @property(retain, nonatomic) UIButton *denyBtn; // @synthesize denyBtn=_denyBtn;

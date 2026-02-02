@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate, NSString, NSTimer, UIColor, UIFont, UILabel;
 @protocol YTProgressHUDDelegate;
@@ -56,7 +57,6 @@
 + (unsigned long long)hideAllHUDsForView:(id)arg1 animated:(_Bool)arg2;
 + (_Bool)hideHUDForView:(id)arg1 animated:(_Bool)arg2;
 + (id)showHUDAddedTo:(id)arg1 animated:(_Bool)arg2;
-- (void).cxx_destruct;
 @property float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock;
 @property(retain) UIColor *activityIndicatorColor; // @synthesize activityIndicatorColor;
@@ -125,4 +125,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -13,7 +13,6 @@
     MMVoidITransmitKvDataCallback *_opCallback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMVoidITransmitKvDataCallback *opCallback; // @synthesize opCallback=_opCallback;
 @property(retain, nonatomic) MMVoidITransmitKvDataCallback *registerCallback; // @synthesize registerCallback=_registerCallback;
 - (void)onGetOpPatternLockResponse:(id)arg1 eventID:(unsigned int)arg2;

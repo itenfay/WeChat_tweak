@@ -12,7 +12,6 @@
     UIViewPropertyAnimator *_animator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

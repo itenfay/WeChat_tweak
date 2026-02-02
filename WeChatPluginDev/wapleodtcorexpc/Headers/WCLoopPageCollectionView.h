@@ -20,7 +20,6 @@
     NSArray *_cellWidthList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbiddenNextAutoChange; // @synthesize forbiddenNextAutoChange=_forbiddenNextAutoChange;
 @property(retain, nonatomic) NSArray *cellWidthList; // @synthesize cellWidthList=_cellWidthList;
 @property(retain, nonatomic) NSArray *cellList; // @synthesize cellList=_cellList;

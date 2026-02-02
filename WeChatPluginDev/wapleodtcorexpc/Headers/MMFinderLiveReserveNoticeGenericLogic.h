@@ -19,7 +19,6 @@
     WCFinderBaseCgi *_reserveNoticeCGI;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int reportScene; // @synthesize reportScene=_reportScene;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) WCFinderBaseCgi *reserveNoticeCGI; // @synthesize reserveNoticeCGI=_reserveNoticeCGI;

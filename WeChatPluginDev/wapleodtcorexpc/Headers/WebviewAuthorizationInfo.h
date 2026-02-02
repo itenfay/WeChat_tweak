@@ -19,7 +19,6 @@
     NSString *_nonce;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nonce; // @synthesize nonce=_nonce;
 @property(retain, nonatomic) NSString *timeStamp; // @synthesize timeStamp=_timeStamp;
 @property(retain, nonatomic) NSString *signatureMethod; // @synthesize signatureMethod=_signatureMethod;

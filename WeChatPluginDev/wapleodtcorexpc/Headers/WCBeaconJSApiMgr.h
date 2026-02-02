@@ -20,7 +20,6 @@
     unsigned long long m_verifyReqResult;
 }
 
-- (void).cxx_destruct;
 - (void)onDidRangeBeacons:(id)arg1 inRegion:(id)arg2 withTag:(unsigned long long)arg3;
 - (void)onRangingBeaconsDidFailForRegion:(id)arg1 withError:(id)arg2 withTag:(unsigned long long)arg3;
 - (void)centralManagerDidUpdateState:(id)arg1;

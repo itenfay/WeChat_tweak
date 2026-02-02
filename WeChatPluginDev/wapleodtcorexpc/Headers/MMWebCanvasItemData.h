@@ -14,7 +14,6 @@
     NSString *_bizDomain;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bizDomain; // @synthesize bizDomain=_bizDomain;
 @property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(copy, nonatomic) NSString *jsonData; // @synthesize jsonData=_jsonData;

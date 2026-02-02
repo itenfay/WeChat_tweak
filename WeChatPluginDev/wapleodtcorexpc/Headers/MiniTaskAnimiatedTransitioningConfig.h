@@ -22,7 +22,6 @@
 }
 
 + (struct CGRect)cellRectToSnapshotRect:(struct CGRect)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFlutterScenes; // @synthesize isFlutterScenes=_isFlutterScenes;
 @property(nonatomic) double fadeAnimateDuration; // @synthesize fadeAnimateDuration=_fadeAnimateDuration;
 @property(nonatomic) __weak id <MiniTaskTransitionAnimationDelegate> animationDelegate; // @synthesize animationDelegate=_animationDelegate;

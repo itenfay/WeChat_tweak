@@ -21,7 +21,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *allCdnStreamQualityTagList; // @synthesize allCdnStreamQualityTagList=_allCdnStreamQualityTagList;
 @property(retain, nonatomic) NSMutableArray *displayedCdnStreamQualityTagList; // @synthesize displayedCdnStreamQualityTagList=_displayedCdnStreamQualityTagList;
 @property(nonatomic) struct CGSize videoSize; // @synthesize videoSize=_videoSize;

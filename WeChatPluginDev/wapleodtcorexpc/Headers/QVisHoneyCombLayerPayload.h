@@ -21,7 +21,6 @@
     double _gap;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double gap; // @synthesize gap=_gap;
 @property(nonatomic) double size; // @synthesize size=_size;
 @property(nonatomic) double maxHeight; // @synthesize maxHeight=_maxHeight;

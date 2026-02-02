@@ -13,7 +13,6 @@
     NSArray *_attentionMask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *attentionMask; // @synthesize attentionMask=_attentionMask;
 @property(retain, nonatomic) NSArray *tokenTypeIds; // @synthesize tokenTypeIds=_tokenTypeIds;
 - (id)initWithTokenTypeIds:(id)arg1 attentionMask:(id)arg2;

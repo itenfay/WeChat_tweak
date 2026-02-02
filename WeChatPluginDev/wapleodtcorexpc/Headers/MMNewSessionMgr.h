@@ -33,7 +33,6 @@
 }
 
 + (id)getSessionName:(id)arg1;
-- (void).cxx_destruct;
 @property _Bool recoverViewControllerShown; // @synthesize recoverViewControllerShown=_recoverViewControllerShown;
 - (void)updateSession:(id)arg1 lastMsgSvrId:(long long)arg2;
 - (void)modifySessionWithoutNotify:(id)arg1;

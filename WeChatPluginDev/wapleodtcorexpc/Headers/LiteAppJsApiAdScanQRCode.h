@@ -11,7 +11,6 @@
     NSString *_qrExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *qrExtInfo; // @synthesize qrExtInfo=_qrExtInfo;
 @property(retain, nonatomic) NSString *qrUrl; // @synthesize qrUrl=_qrUrl;
 - (void)onUpdateQrCode:(id)arg1 componentId:(id)arg2 snsId:(id)arg3;

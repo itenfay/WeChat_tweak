@@ -19,7 +19,6 @@
     long long _maxShowCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long maxShowCount; // @synthesize maxShowCount=_maxShowCount;
 @property(nonatomic) _Bool isImmediatelyRefreshData; // @synthesize isImmediatelyRefreshData=_isImmediatelyRefreshData;
 @property(retain, nonatomic) NSString *session; // @synthesize session=_session;

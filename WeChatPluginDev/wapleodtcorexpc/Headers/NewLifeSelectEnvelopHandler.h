@@ -10,7 +10,6 @@
     MMUIViewController *_vc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIViewController *vc; // @synthesize vc=_vc;
 - (void)handleRequest:(id)arg1;
 

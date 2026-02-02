@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMMusicMVEditorCardCell, UIButton, UICollectionView, UIImage, UIImageView, UIView;
 
@@ -35,7 +36,6 @@
     UIView *m_titleLabel;
 }
 
-- (void).cxx_destruct;
 - (void)createRecropVideoFirstFrameView:(id)arg1 withFrame:(struct CGRect)arg2;
 - (id)createCurCellViewViewSnapshot;
 - (void)createCancelCellView;
@@ -53,4 +53,3 @@
 - (id)initWithCollectionView:(id)arg1 cancelBtn:(id)arg2 doneBtn:(id)arg3 titleLabel:(id)arg4;
 
 @end
-

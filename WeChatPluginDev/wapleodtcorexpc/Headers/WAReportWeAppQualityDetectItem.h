@@ -46,7 +46,6 @@
     unsigned long long _currentWebViewRouteIntensionTimeStampInMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentWebViewRouteIntensionTimeStampInMs; // @synthesize currentWebViewRouteIntensionTimeStampInMs=_currentWebViewRouteIntensionTimeStampInMs;
 @property(nonatomic) unsigned long long currentWebViewInitTimeStampInMs; // @synthesize currentWebViewInitTimeStampInMs=_currentWebViewInitTimeStampInMs;
 @property(nonatomic) unsigned long long currentServiceLastAliveFailedTimeStampInMs; // @synthesize currentServiceLastAliveFailedTimeStampInMs=_currentServiceLastAliveFailedTimeStampInMs;

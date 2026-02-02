@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UINavigationController;
 @protocol WCFinderLiteAppInfoProvider;
@@ -21,7 +22,6 @@
 
 + (id)paramsWithAppId:(id)arg1 page:(id)arg2 query:(id)arg3 defaultURL:(id)arg4 navVC:(id)arg5;
 + (id)paramsWithLiteAppInfoProvider:(id)arg1 defaultURL:(id)arg2 navVC:(id)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType liteAppCloseBlock; // @synthesize liteAppCloseBlock=_liteAppCloseBlock;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) _Bool withFallback; // @synthesize withFallback=_withFallback;
@@ -32,4 +32,3 @@
 - (id)init;
 
 @end
-

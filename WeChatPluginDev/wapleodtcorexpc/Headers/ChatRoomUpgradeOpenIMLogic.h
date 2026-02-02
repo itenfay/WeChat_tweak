@@ -15,7 +15,6 @@
     CContact *_m_chatRoomContact;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_scene; // @synthesize m_scene=_m_scene;
 @property(retain, nonatomic) CContact *m_chatRoomContact; // @synthesize m_chatRoomContact=_m_chatRoomContact;
 @property(nonatomic) __weak id <ChatRoomUpgradeOpenIMLogicDelegate> m_delegate; // @synthesize m_delegate;

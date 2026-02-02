@@ -13,7 +13,6 @@
     BrandTimelineViewController *_timelineVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasTryResort; // @synthesize hasTryResort=_hasTryResort;
 @property(nonatomic) __weak BrandTimelineViewController *timelineVC; // @synthesize timelineVC=_timelineVC;
 - (id)genResortCommItemFromExposeInfo:(id)arg1;

@@ -13,7 +13,6 @@
     NSArray *_bind_serial_favor_list;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *bind_serial_favor_list; // @synthesize bind_serial_favor_list=_bind_serial_favor_list;
 @property(retain, nonatomic) NSString *bind_serial; // @synthesize bind_serial=_bind_serial;
 

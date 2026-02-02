@@ -18,7 +18,6 @@
     WCAdLookbookCardReportItem *_reportItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdLookbookCardReportItem *reportItem; // @synthesize reportItem=_reportItem;
 @property(nonatomic) _Bool bTimelineScene; // @synthesize bTimelineScene=_bTimelineScene;
 @property(retain, nonatomic) WCMediaItem *mediaData; // @synthesize mediaData=_mediaData;

@@ -12,7 +12,6 @@
     NSMutableArray *m_pageStack;
 }
 
-- (void).cxx_destruct;
 - (long long)getStackDeep:(id)arg1;
 - (unsigned long long)getStackSize;
 - (id)popAllStackPages;

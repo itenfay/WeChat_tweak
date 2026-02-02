@@ -10,7 +10,6 @@
     NSMutableDictionary *_results;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *results; // @synthesize results=_results;
 - (id)GetKeywordTimeResult;
 - (id)sortSteamInputResult;

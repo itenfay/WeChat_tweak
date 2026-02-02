@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveAppMsgGameInvitationInfo, MMFinderLiveGameTeamInfo, MMFinderLiveTaskId, MMUIButton, MMUILabel, NSString, UIView, WCFinderGameLiveJumpGameGuideTipsViewController;
 
 @interface MMLiveGameInviteJoinTeamView
@@ -24,7 +26,6 @@
     WCFinderGameLiveJumpGameGuideTipsViewController *_tipsVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int curJoinTeamMode; // @synthesize curJoinTeamMode=_curJoinTeamMode;
 @property(retain, nonatomic) WCFinderGameLiveJumpGameGuideTipsViewController *tipsVC; // @synthesize tipsVC=_tipsVC;
 @property(retain, nonatomic) MMFinderLiveGameTeamInfo *gameTeamInfo; // @synthesize gameTeamInfo=_gameTeamInfo;
@@ -62,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

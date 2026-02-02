@@ -24,7 +24,6 @@
     long long _animationType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long animationType; // @synthesize animationType=_animationType;
 @property(nonatomic) _Bool hasStartAnimation; // @synthesize hasStartAnimation=_hasStartAnimation;
 @property(nonatomic) unsigned long long beginPosition; // @synthesize beginPosition=_beginPosition;

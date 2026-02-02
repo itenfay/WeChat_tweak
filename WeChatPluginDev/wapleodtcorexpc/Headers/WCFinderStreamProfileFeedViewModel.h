@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSData, NSMutableArray, NSString, WCFinderJustWatchCollectionFeedItem, WCFinderProfileCollectionListLayout, WCFinderProfileTagFeedViewModel, WCFinderTagListViewLayout, WCFinderTopicInfo;
 @protocol WCFinderStreamProfileFeedViewModelDelegate;
 
@@ -31,7 +33,6 @@
 + (id)overviewSectionTypes;
 + (_Bool)pageIsRequired;
 + (int)tabId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *collectionLastBuffer; // @synthesize collectionLastBuffer=_collectionLastBuffer;
 @property(retain, nonatomic) NSArray *collectionInfos; // @synthesize collectionInfos=_collectionInfos;
 @property(nonatomic) _Bool displayTopicExpanded; // @synthesize displayTopicExpanded=_displayTopicExpanded;
@@ -96,4 +97,3 @@
 @property(readonly) Class superclass;
 
 @end
-

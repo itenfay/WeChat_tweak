@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMTimer, NSString, UIButton, UIView;
 
 @interface MMLiveProceedWebViewController
@@ -18,7 +20,6 @@
     NSString *_proceedButtonTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *proceedButtonTitle; // @synthesize proceedButtonTitle=_proceedButtonTitle;
 @property(nonatomic) long long innerReadTimerCountdown; // @synthesize innerReadTimerCountdown=_innerReadTimerCountdown;
 @property(retain, nonatomic) MMTimer *countDownTimer; // @synthesize countDownTimer=_countDownTimer;
@@ -44,4 +45,3 @@
 - (void)viewDidLoad;
 
 @end
-

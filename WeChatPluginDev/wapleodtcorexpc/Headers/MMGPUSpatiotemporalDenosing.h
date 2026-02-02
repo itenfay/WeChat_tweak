@@ -21,7 +21,6 @@
     _Bool mUseMultiTemporalFilter;
 }
 
-- (void).cxx_destruct;
 - (int)processing:(int)arg1 inputRes:(struct CGSize)arg2;
 - (void)setTemporalDenosingSwitch:(int)arg1;
 - (void)setNoiseLevel:(float)arg1;

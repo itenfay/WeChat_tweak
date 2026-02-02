@@ -16,7 +16,6 @@
     NSString *_lastClassName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAppSymbol; // @synthesize isAppSymbol=_isAppSymbol;
 @property(retain, nonatomic) NSString *lastClassName; // @synthesize lastClassName=_lastClassName;
 @property(readonly, nonatomic) MMGCRootsTracingGraphConfiguration *configuration; // @synthesize configuration=_configuration;

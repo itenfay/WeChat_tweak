@@ -17,7 +17,6 @@
     WCPayNoticeItemView *_noticeItemView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNoticeItemView *noticeItemView; // @synthesize noticeItemView=_noticeItemView;
 @property(retain, nonatomic) NSDictionary *bannerData; // @synthesize bannerData=_bannerData;
 @property(retain, nonatomic) UIButton *helpButton; // @synthesize helpButton=_helpButton;

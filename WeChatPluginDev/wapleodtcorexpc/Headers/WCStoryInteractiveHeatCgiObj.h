@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray;
 
 @interface WCStoryInteractiveHeatCgiObj
@@ -13,7 +15,6 @@
     NSArray *_tidArray;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *tidArray; // @synthesize tidArray=_tidArray;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlcok; // @synthesize successBlcok=_successBlcok;
@@ -24,4 +25,3 @@
 - (id)initWithDataItemTidArray:(id)arg1 successBlock:(CDUnknownBlockType)arg2 failBlock:(CDUnknownBlockType)arg3;
 
 @end
-

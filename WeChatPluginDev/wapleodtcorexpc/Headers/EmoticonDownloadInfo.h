@@ -15,7 +15,6 @@
     NSMutableSet *_msgWrapSet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDownloading; // @synthesize isDownloading=_isDownloading;
 @property(retain, nonatomic) NSMutableSet *msgWrapSet; // @synthesize msgWrapSet=_msgWrapSet;
 @property(retain, nonatomic) EmojiInfoObj *emojiInfoObj; // @synthesize emojiInfoObj=_emojiInfoObj;

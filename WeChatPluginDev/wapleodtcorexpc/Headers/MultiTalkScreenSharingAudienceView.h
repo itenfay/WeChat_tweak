@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMContentScrollView, MultiTalkScreenSharingAudienceBackgroundView, MultiTalkScreenSharingAudienceContentView, NSString;
 @protocol MultiTalkScreenSharingAudienceViewDelegate;
@@ -21,7 +22,6 @@
     struct CGRect _contentUnabledFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double contentWHRatio; // @synthesize contentWHRatio=_contentWHRatio;
 @property(retain, nonatomic) MultiTalkScreenSharingAudienceContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) MMContentScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -56,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

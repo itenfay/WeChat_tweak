@@ -15,7 +15,6 @@
 }
 
 + (id)sharedManager;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableDictionary *proxyInitErrorCodeMap; // @synthesize proxyInitErrorCodeMap=_proxyInitErrorCodeMap;
 @property(retain, nonatomic) NSMutableDictionary *proxyMaps; // @synthesize proxyMaps=_proxyMaps;

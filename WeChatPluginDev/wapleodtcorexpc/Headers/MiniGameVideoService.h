@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MiniGameVideoShareHandler, NSMutableDictionary, NSString, WCTTable;
 
 @interface MiniGameVideoService
@@ -13,7 +15,6 @@
     MiniGameVideoShareHandler *_shareHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MiniGameVideoShareHandler *shareHandler; // @synthesize shareHandler=_shareHandler;
 @property(retain, nonatomic) NSMutableDictionary *shareCacheMap; // @synthesize shareCacheMap=_shareCacheMap;
 @property(retain, nonatomic) NSMutableDictionary *publishCallbackMap; // @synthesize publishCallbackMap=_publishCallbackMap;
@@ -52,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

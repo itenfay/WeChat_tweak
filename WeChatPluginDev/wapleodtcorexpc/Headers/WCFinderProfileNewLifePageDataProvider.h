@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString;
 
@@ -35,7 +36,6 @@
 + (long long)indexForPostSuccessInsertion:(id)arg1;
 + (_Bool)mergeData:(id)arg1 fromLocalData:(id)arg2;
 + (long long)indexForLocalInsertion:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long totalFeedCount; // @synthesize totalFeedCount=_totalFeedCount;
 @property(nonatomic) long long heartLikeCount; // @synthesize heartLikeCount=_heartLikeCount;
 @property(nonatomic) long long shareCount; // @synthesize shareCount=_shareCount;
@@ -80,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, WCFinderLiveReplayPreviewImgInfo;
 
@@ -20,7 +21,6 @@
     unsigned long long _lastPreRequestBySide;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastPreRequestBySide; // @synthesize lastPreRequestBySide=_lastPreRequestBySide;
 @property(nonatomic) unsigned long long currPreRequestCnt; // @synthesize currPreRequestCnt=_currPreRequestCnt;
 @property(retain, nonatomic) NSMutableArray *previewImgList; // @synthesize previewImgList=_previewImgList;
@@ -47,4 +47,3 @@
 - (void)startLoad;
 
 @end
-

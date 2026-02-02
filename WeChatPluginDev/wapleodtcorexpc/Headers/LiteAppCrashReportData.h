@@ -12,7 +12,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;
 
 @end

@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_socialHotModel;
 + (void)PBArrayAdd_liveModel;
 + (void)PBArrayAdd_finderModel;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderBusinessTabModel *socialHotModel; // @synthesize socialHotModel=_socialHotModel;
 @property(retain, nonatomic) WCFinderBusinessTabModel *liveModel; // @synthesize liveModel=_liveModel;
 @property(retain, nonatomic) WCFinderBusinessTabModel *finderModel; // @synthesize finderModel=_finderModel;

@@ -10,7 +10,6 @@
     NSMutableArray *_boxIdList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *boxIdList; // @synthesize boxIdList=_boxIdList;
 - (void)addBoxId:(id)arg1;
 - (void)addBoxIdArr:(id)arg1;

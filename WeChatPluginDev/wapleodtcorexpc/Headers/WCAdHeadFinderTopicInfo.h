@@ -13,7 +13,6 @@
     NSString *_finderTopicName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderTopicName; // @synthesize finderTopicName=_finderTopicName;
 @property(retain, nonatomic) NSString *finderEncryptedTopicId; // @synthesize finderEncryptedTopicId=_finderEncryptedTopicId;
 - (_Bool)isValid;

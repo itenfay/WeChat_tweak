@@ -14,7 +14,6 @@
     MMWebImageView *_iconUrlImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *iconUrlImageView; // @synthesize iconUrlImageView=_iconUrlImageView;
 @property(retain, nonatomic) UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

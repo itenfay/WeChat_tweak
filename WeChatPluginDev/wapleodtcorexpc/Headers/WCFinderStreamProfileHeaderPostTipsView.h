@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWebImageView, UIButton, UILabel, WCFinderProfilePostTipsInfo;
 
 @interface WCFinderStreamProfileHeaderPostTipsView
@@ -16,7 +18,6 @@
     CDUnknownBlockType _clickSelfViewBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickSelfViewBlock; // @synthesize clickSelfViewBlock=_clickSelfViewBlock;
 @property(copy, nonatomic) CDUnknownBlockType clickPostBtnBlock; // @synthesize clickPostBtnBlock=_clickPostBtnBlock;
 @property(retain, nonatomic) UIButton *postButton; // @synthesize postButton=_postButton;
@@ -33,4 +34,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

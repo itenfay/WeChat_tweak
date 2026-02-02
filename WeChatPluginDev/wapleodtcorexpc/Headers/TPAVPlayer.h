@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, AVPlayer, AVPlayerItem, AVPlayerItemVideoOutput, NSArray, NSDate, NSDictionary, NSError, NSString, NSTimer, NSURL, TPAVPlayerLayerView, TPFBKVOController, TPFairPlayMgr, TPPlayerLayerViewContainer, TPPlayerLogContext, TPPlayerVideo;
 
@@ -66,7 +67,6 @@
     struct CGSize _presentationSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerLogContext *log; // @synthesize log=_log;
 @property(retain, nonatomic) NSArray *trackInfoArray; // @synthesize trackInfoArray=_trackInfoArray;
 @property(nonatomic) long long seekSource; // @synthesize seekSource=_seekSource;
@@ -191,4 +191,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -12,7 +12,6 @@
     NSString *_wording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;
 @property(retain, nonatomic) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;
 @property(nonatomic) unsigned long long tipsType; // @synthesize tipsType=_tipsType;

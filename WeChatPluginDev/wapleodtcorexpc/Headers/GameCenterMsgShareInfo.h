@@ -21,7 +21,6 @@
 }
 
 + (id)parseFromXml:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldScale; // @synthesize shouldScale=_shouldScale;
 @property(nonatomic) int thumbHeight; // @synthesize thumbHeight=_thumbHeight;
 @property(nonatomic) int thumbWidth; // @synthesize thumbWidth=_thumbWidth;

@@ -25,7 +25,6 @@
 + (_Bool)enableWKProzy:(id *)arg1;
 + (void)initialize;
 @property(nonatomic) _Bool isULinksEnable; // @synthesize isULinksEnable=_isULinksEnable;
-- (void).cxx_destruct;
 - (void)removeFrameInfo;
 - (void)destroy;
 - (void)delayRelease;

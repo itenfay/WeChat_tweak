@@ -28,7 +28,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithPlayerId:(long long)arg1 mediaId:(id)arg2 path:(id)arg3 url:(id)arg4 urlToken:(id)arg5 decodeKey:(id)arg6 videoWidth:(long long)arg7 videoHeight:(long long)arg8 videoDuration:(long long)arg9 fileFormat:(id)arg10 thumbPath:(id)arg11 thumbUrl:(id)arg12 thumbUrlToken:(id)arg13 isLocal:(_Bool)arg14;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLocal; // @synthesize isLocal=_isLocal;
 @property(copy, nonatomic) NSString *thumbUrlToken; // @synthesize thumbUrlToken=_thumbUrlToken;
 @property(copy, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl=_thumbUrl;

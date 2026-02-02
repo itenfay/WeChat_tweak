@@ -32,7 +32,6 @@
     struct CGRect _containerFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLongPressHandled; // @synthesize isLongPressHandled=_isLongPressHandled;
 @property(nonatomic) struct CGPoint touchBeginPoint; // @synthesize touchBeginPoint=_touchBeginPoint;
 @property(nonatomic) struct CGRect containerFrame; // @synthesize containerFrame=_containerFrame;

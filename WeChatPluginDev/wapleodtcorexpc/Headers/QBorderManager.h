@@ -17,7 +17,6 @@
 }
 
 + (id)instance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) QBorder *dataSafetyInlandBorder; // @synthesize dataSafetyInlandBorder=_dataSafetyInlandBorder;
 @property(retain, nonatomic) QBorder *chinaBorder; // @synthesize chinaBorder=_chinaBorder;
 @property(retain, nonatomic) QBorder *inlandBorder; // @synthesize inlandBorder=_inlandBorder;

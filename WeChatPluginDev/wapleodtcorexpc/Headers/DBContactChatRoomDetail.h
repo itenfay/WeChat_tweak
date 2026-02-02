@@ -34,7 +34,6 @@
 + (void)PBArrayAdd_chatRoomDesc;
 + (void)PBArrayAdd_chatRoomInfoSvrVersion;
 + (void)PBArrayAdd_chatRoomInfoVersion;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *richChatRoomDesc; // @synthesize richChatRoomDesc=_richChatRoomDesc;
 @property(nonatomic) unsigned int chatRoomSpamStatus; // @synthesize chatRoomSpamStatus=_chatRoomSpamStatus;
 @property(nonatomic) _Bool chatRoomDescBannerNotShow; // @synthesize chatRoomDescBannerNotShow=_chatRoomDescBannerNotShow;

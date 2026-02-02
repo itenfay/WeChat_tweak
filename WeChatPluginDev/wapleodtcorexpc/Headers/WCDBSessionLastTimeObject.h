@@ -24,7 +24,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_sessionLastTime; // @synthesize m_sessionLastTime;
 @property(retain, nonatomic) NSString *m_sessionName; // @synthesize m_sessionName;
 @property(readonly, copy) NSString *description;

@@ -19,7 +19,6 @@
     id <FavAudioRecorderDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavAudioRecorderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool needStopInBackground; // @synthesize needStopInBackground;
 @property(retain, nonatomic) NSString *m_filePath; // @synthesize m_filePath;

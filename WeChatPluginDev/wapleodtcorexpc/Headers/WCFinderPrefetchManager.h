@@ -17,7 +17,6 @@
     NSMutableArray *_allPrefetchFeatureArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *allPrefetchFeatureArray; // @synthesize allPrefetchFeatureArray=_allPrefetchFeatureArray;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *prefetchQueue; // @synthesize prefetchQueue=_prefetchQueue;
 @property(nonatomic) __weak WCFinderWCDB *finderDB; // @synthesize finderDB=_finderDB;

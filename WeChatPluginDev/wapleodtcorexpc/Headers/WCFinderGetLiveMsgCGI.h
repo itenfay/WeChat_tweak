@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveClientStatus, FinderLiveSeiStatInfo, NSData, NSString, WCFinderGetLiveMsgRequestParams;
 
 @interface WCFinderGetLiveMsgCGI
@@ -20,7 +22,6 @@
 }
 
 + (id)getDescriptionForMsgConfig:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderGetLiveMsgRequestParams *reqParams; // @synthesize reqParams=_reqParams;
 @property(retain, nonatomic) NSString *streamId; // @synthesize streamId=_streamId;
 @property(retain, nonatomic) FinderLiveSeiStatInfo *seiStatInfo; // @synthesize seiStatInfo=_seiStatInfo;
@@ -40,4 +41,3 @@
 - (id)initWithFinderTaskId:(id)arg1 liveCookies:(id)arg2 offline:(_Bool)arg3 offlineScene:(unsigned int)arg4 liveClientStatus:(id)arg5 seiStatInfo:(id)arg6 streamId:(id)arg7 requestParams:(id)arg8 successBlock:(CDUnknownBlockType)arg9 failBlock:(CDUnknownBlockType)arg10;
 
 @end
-

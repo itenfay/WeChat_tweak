@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BTBaseItemCellView, BTFeedbackPanel, BTLNavigationBarButton, BTRecoFlowLogic, BTScrollableFinderCellViewModel, BTVideoViewModelInfo, BrandMsgValidExposeConfig, BrandTLExptConfig, BrandTLTableView, BrandTimelineNotifyLogic, BrandTimelineRelatedInfoLogic, BrandTimelineReportLogic, BrandTimelineResortLogic, CMessageWrap, MMBadgeView, MMTimer, NSIndexSet, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, TableViewCellExposureHelper, UIView, WCTimeLineFooterView, WebViewA8KeyLogicImpl, WebViewJSLogicImpl;
 @protocol BTItemCellViewModelVideoPlayProtocol, WXCustomWebViewControllerDelegate, YYWebViewInterface;
 
@@ -89,7 +91,6 @@
     struct CGPoint _topContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canVideoAutoPlay; // @synthesize canVideoAutoPlay=_canVideoAutoPlay;
 @property(retain, nonatomic) id <BTItemCellViewModelVideoPlayProtocol> selectedItemCellViewModelVideoPlay; // @synthesize selectedItemCellViewModelVideoPlay=_selectedItemCellViewModelVideoPlay;
 @property(retain, nonatomic) BTVideoViewModelInfo *modelInfo; // @synthesize modelInfo=_modelInfo;
@@ -584,4 +585,3 @@
 @property(readonly) Class superclass;
 
 @end
-

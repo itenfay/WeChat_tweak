@@ -15,7 +15,6 @@
     NSMutableDictionary *_commentPostingQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *commentPostingQueue; // @synthesize commentPostingQueue=_commentPostingQueue;
 @property(retain, nonatomic) NSMutableArray *commentQueue; // @synthesize commentQueue=_commentQueue;
 @property(nonatomic) __weak id <WCFinderCommentPostMgrDelegate> delegate; // @synthesize delegate=_delegate;

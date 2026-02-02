@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCDeviceHKUtils : NSObject
 {
@@ -24,4 +25,3 @@
 + (id)pathForHKSourceWhiteCache;
 
 @end
-

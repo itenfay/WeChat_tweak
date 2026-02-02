@@ -13,7 +13,6 @@
     _Bool _isTransitionEnabled;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTransitionEnabled; // @synthesize isTransitionEnabled=_isTransitionEnabled;
 @property(readonly, nonatomic) _Bool isOverlapped; // @synthesize isOverlapped=_isOverlapped;
 @property(nonatomic) _Bool isBlankTransition; // @synthesize isBlankTransition=_isBlankTransition;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableData, NSMutableDictionary, NSString, NSURLSession, NSURLSessionUploadTask, WAUploadFileConfig, WAUploadFileProgressInfo;
 @protocol WAUploadFileTaskDelegate;
@@ -39,7 +40,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain) WAUploadFileProgressInfo *lastNotNotifyProgressInfo; // @synthesize lastNotNotifyProgressInfo=_lastNotNotifyProgressInfo;
 @property unsigned long long lastUpdateProgressAbsoluteTime; // @synthesize lastUpdateProgressAbsoluteTime=_lastUpdateProgressAbsoluteTime;
 @property(nonatomic) _Bool isIgnoreCheckDomain; // @synthesize isIgnoreCheckDomain=_isIgnoreCheckDomain;
@@ -76,4 +76,3 @@
 - (id)initWithAppID:(id)arg1 urlSession:(id)arg2 taskID:(id)arg3 context:(id)arg4 uploadConfig:(id)arg5;
 
 @end
-

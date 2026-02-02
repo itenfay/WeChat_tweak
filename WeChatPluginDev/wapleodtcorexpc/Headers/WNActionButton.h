@@ -16,7 +16,6 @@
     UIButton *_button;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowBorder; // @synthesize isShowBorder=_isShowBorder;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(nonatomic) __weak id <WNActionButtonDelegate> delegate; // @synthesize delegate=_delegate;

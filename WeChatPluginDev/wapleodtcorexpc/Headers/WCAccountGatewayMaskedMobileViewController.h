@@ -10,7 +10,6 @@
     id <WCAccountGatewayMaskedMobileViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAccountGatewayMaskedMobileViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)continueWithNext;
 - (void)viewDidBePopedOrDismissed:(_Bool)arg1;

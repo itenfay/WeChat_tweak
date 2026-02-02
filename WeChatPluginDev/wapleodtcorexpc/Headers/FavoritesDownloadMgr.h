@@ -19,7 +19,6 @@
     id <FavoritesDownloadMgrDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavoritesDownloadMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)ReachabilityChange:(unsigned int)arg1;
 - (_Bool)checkAsyncUploadingDataInDataList:(id)arg1 NeedFix:(_Bool)arg2;

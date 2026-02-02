@@ -43,7 +43,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WebStorageConfigExt *ext; // @synthesize ext=_ext;
 @property(retain, nonatomic) NSString *weightStr; // @synthesize weightStr=_weightStr;
 @property(nonatomic) unsigned int lastModifyTime; // @synthesize lastModifyTime=_lastModifyTime;

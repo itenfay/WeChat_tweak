@@ -15,7 +15,6 @@
     MMCPLabel *m_messageLabel;
 }
 
-- (void).cxx_destruct;
 - (void)updateView:(id)arg1;
 - (void)updateTimeLabel;
 - (void)updateNameLabel;

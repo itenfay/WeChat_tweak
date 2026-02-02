@@ -17,7 +17,6 @@
     NSArray *_arrScopeInfoItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int fromIndex; // @synthesize fromIndex=_fromIndex;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSArray *arrScopeInfoItem; // @synthesize arrScopeInfoItem=_arrScopeInfoItem;

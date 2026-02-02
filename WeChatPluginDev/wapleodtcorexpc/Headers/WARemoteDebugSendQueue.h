@@ -24,7 +24,6 @@
 }
 
 + (id)generateUUID;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDebuggerRunLoopMode; // @synthesize isDebuggerRunLoopMode=_isDebuggerRunLoopMode;
 @property(nonatomic) _Bool sendoutImmediately; // @synthesize sendoutImmediately=_sendoutImmediately;
 @property(nonatomic) __weak id <WARemoteDebugSendQueueDelegate> delegate; // @synthesize delegate=_delegate;

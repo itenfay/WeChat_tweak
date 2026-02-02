@@ -18,7 +18,6 @@
 
 + (struct CGSize)cellSizeWithLabel:(id)arg1 boardType:(unsigned int)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canShowtabIndicatorView; // @synthesize canShowtabIndicatorView=_canShowtabIndicatorView;
 @property(retain, nonatomic) UIView *tabIndicatorView; // @synthesize tabIndicatorView=_tabIndicatorView;
 @property(nonatomic) unsigned int boardType; // @synthesize boardType=_boardType;

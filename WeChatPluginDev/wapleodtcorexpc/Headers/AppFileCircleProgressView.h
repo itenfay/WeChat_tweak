@@ -18,7 +18,6 @@
     MMUIButton *_playButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bSender; // @synthesize bSender=_bSender;
 @property(retain, nonatomic) MMUIButton *playButton; // @synthesize playButton=_playButton;
 @property(retain, nonatomic) MMUIButton *pauseBtn; // @synthesize pauseBtn=_pauseBtn;

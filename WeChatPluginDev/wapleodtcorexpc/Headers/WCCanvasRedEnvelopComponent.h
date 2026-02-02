@@ -12,7 +12,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasDynamicDataLoader *dataLoader; // @synthesize dataLoader=_dataLoader;
 @property(nonatomic) int animateState; // @synthesize animateState=_animateState;
 - (void)reportComponentForReportType:(unsigned int)arg1;

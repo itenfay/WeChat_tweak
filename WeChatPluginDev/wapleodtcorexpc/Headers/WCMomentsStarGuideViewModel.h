@@ -18,7 +18,6 @@
     NSString *_starGuideActionTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *starGuideActionTitle; // @synthesize starGuideActionTitle=_starGuideActionTitle;
 @property(copy, nonatomic) NSString *starGuideTips; // @synthesize starGuideTips=_starGuideTips;
 @property(nonatomic) _Bool canShowStarGuideButton; // @synthesize canShowStarGuideButton=_canShowStarGuideButton;

@@ -14,7 +14,6 @@
     unsigned long long _mode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) UILabel *noDotLabel; // @synthesize noDotLabel=_noDotLabel;
 @property(retain, nonatomic) UILabel *dotLabel; // @synthesize dotLabel=_dotLabel;

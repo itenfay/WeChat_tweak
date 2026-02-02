@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_sub;
 + (void)PBArrayAdd_main;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *sub; // @synthesize sub=_sub;
 @property(retain, nonatomic) NSData *main; // @synthesize main=_main;
 - (id)getPBPropertyTable;

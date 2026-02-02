@@ -15,7 +15,6 @@
     NSString *_m_clickUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_clickUrl; // @synthesize m_clickUrl=_m_clickUrl;
 @property(retain, nonatomic) UILabel *m_titleLabel; // @synthesize m_titleLabel=_m_titleLabel;
 @property(nonatomic) __weak id <WCPayNoticeBannerViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

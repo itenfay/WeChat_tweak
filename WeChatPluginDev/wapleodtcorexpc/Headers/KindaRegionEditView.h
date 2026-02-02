@@ -18,7 +18,6 @@
     NSArray *_areaExcudeArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *areaExcudeArray; // @synthesize areaExcudeArray=_areaExcudeArray;
 @property(nonatomic) _Bool m_autoLocation; // @synthesize m_autoLocation=_m_autoLocation;
 @property(nonatomic) _Bool m_showSelectedLocation; // @synthesize m_showSelectedLocation=_m_showSelectedLocation;

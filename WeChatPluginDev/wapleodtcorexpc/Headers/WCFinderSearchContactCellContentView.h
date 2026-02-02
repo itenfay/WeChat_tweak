@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FavAttributeCPLabel, UIImageView, UILabel, WCFinderAuthInfoIconView, WCFinderHeadImageView;
 
@@ -28,7 +29,6 @@
 
 + (id)replaceNewlineCharacter2WhitespaceCharacter:(id)arg1;
 + (double)calcuateHeight:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType liveClickBlock; // @synthesize liveClickBlock=_liveClickBlock;
 @property(retain, nonatomic) UIView *accessibleView; // @synthesize accessibleView=_accessibleView;
 @property(nonatomic) _Bool useDarkStyle; // @synthesize useDarkStyle=_useDarkStyle;
@@ -57,4 +57,3 @@
 - (id)initWithDarkStyle:(_Bool)arg1;
 
 @end
-

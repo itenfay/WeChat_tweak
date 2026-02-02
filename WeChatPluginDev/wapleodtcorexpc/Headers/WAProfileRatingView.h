@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIControl.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImage, UIView;
 
@@ -23,7 +24,6 @@
     UIImage *_backgroundImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(retain, nonatomic) UIImage *forgroundImage; // @synthesize forgroundImage=_forgroundImage;
 @property(nonatomic) _Bool isUpdateProcess; // @synthesize isUpdateProcess=_isUpdateProcess;
@@ -47,4 +47,3 @@
 - (id)init;
 
 @end
-

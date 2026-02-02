@@ -14,7 +14,6 @@
     WCTTable *_tablePkgNonAtomicSingleFileConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCTTable *tablePkgNonAtomicSingleFileConfig; // @synthesize tablePkgNonAtomicSingleFileConfig=_tablePkgNonAtomicSingleFileConfig;
 @property(retain) WCTTable *tablePkgGlobalConfig; // @synthesize tablePkgGlobalConfig=_tablePkgGlobalConfig;
 @property(retain) WCTTable *tablePkgUpdateConfig; // @synthesize tablePkgUpdateConfig=_tablePkgUpdateConfig;

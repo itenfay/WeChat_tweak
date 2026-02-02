@@ -13,7 +13,6 @@
     WCRedEnvTextStateDetailViewController *_detailVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCRedEnvTextStateDetailViewController *detailVC; // @synthesize detailVC=_detailVC;
 @property(nonatomic) __weak id <WCRedEnvTextStateDetailControlLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WCRedEnvTextStateInfo *detailInfo; // @synthesize detailInfo=_detailInfo;

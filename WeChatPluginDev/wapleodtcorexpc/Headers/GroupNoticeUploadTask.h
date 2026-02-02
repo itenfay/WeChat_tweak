@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CdnProgressInfo, CdnUploadTaskInfo, NSString;
 
@@ -19,7 +20,6 @@
     CDUnknownBlockType _completeBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 @property(retain, nonatomic) CdnUploadTaskInfo *resultInfo; // @synthesize resultInfo=_resultInfo;
 @property(retain, nonatomic) CdnProgressInfo *progressInfo; // @synthesize progressInfo=_progressInfo;
@@ -32,4 +32,3 @@
 - (id)init;
 
 @end
-

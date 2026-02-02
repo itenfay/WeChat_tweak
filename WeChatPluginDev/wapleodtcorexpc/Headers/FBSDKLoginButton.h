@@ -20,7 +20,6 @@
     unsigned long long _tooltipColorStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long tooltipColorStyle; // @synthesize tooltipColorStyle=_tooltipColorStyle;
 @property(nonatomic) unsigned long long tooltipBehavior; // @synthesize tooltipBehavior=_tooltipBehavior;
 @property(copy, nonatomic) NSArray *readPermissions; // @synthesize readPermissions=_readPermissions;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ChatMigrationCreateQRCode, NSArray, NSData, NSString, WXGMigrationMainViewController, WXGMigrationServerEntryViewController, WXGMigrationServerLogic;
 
 @interface WXGMigrationServerMgr
@@ -34,7 +36,6 @@
     unsigned long long _entryOpenType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long entryOpenType; // @synthesize entryOpenType=_entryOpenType;
 @property(nonatomic) unsigned long long notifyCode; // @synthesize notifyCode=_notifyCode;
 @property(nonatomic) unsigned long long inMemoryMigrationSize; // @synthesize inMemoryMigrationSize=_inMemoryMigrationSize;
@@ -101,4 +102,3 @@
 @property(readonly) Class superclass;
 
 @end
-

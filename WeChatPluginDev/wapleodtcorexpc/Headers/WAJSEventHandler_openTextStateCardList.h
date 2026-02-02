@@ -20,7 +20,6 @@
     NSString *_sceneSessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sceneSessionId; // @synthesize sceneSessionId=_sceneSessionId;
 @property(nonatomic) unsigned long long requestId; // @synthesize requestId=_requestId;
 @property(nonatomic) unsigned int likeSource; // @synthesize likeSource=_likeSource;

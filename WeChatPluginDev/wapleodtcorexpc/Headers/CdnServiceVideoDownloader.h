@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CdnServiceVideoDownloader : NSObject
 {
@@ -15,4 +16,3 @@
 + (void)preloadVideoMsg:(id)arg1 behavior:(long long)arg2 percent:(int)arg3 progressBlock:(CDUnknownBlockType)arg4 preloadCompleteBlock:(CDUnknownBlockType)arg5;
 
 @end
-

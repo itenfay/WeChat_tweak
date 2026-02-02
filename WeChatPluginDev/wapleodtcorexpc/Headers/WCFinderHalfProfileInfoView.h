@@ -16,7 +16,6 @@
 }
 
 + (double)finderHalfProfileInfoViewWithPreviewData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTableViewManager *tableViewManager; // @synthesize tableViewManager=_tableViewManager;
 @property(retain, nonatomic) WCFinderContactPreviewData *previewData; // @synthesize previewData=_previewData;
 @property(nonatomic) __weak id <WCFinderHalfProfileInfoViewDelegate> delegate; // @synthesize delegate=_delegate;

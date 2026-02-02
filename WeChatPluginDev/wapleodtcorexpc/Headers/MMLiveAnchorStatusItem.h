@@ -21,7 +21,6 @@
     unsigned long long _timeMs;
 }
 
-- (void).cxx_destruct;
 @property unsigned long long timeMs; // @synthesize timeMs=_timeMs;
 @property(retain, nonatomic) GameJoinTeamSetting_GameTeamUpSpecialGiftSetting *specialGiftSetting; // @synthesize specialGiftSetting=_specialGiftSetting;
 @property _Bool focusModeOnInNormalConnectMic; // @synthesize focusModeOnInNormalConnectMic=_focusModeOnInNormalConnectMic;

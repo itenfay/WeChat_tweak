@@ -10,7 +10,6 @@
     NSMutableArray *_forwardArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *forwardArray; // @synthesize forwardArray=_forwardArray;
 - (void)asyncRecordMicroMerchantForwardInteractionIfNeeded:(id)arg1;
 - (void)onMomentsForwardOpDidCancel:(id)arg1;

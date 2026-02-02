@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GCRecursiveRunTask, NSMutableSet, NSString;
 
 @interface GCGroupServer
@@ -16,7 +18,6 @@
     CDUnknownBlockType _roomStatusUpdateBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType roomStatusUpdateBlock; // @synthesize roomStatusUpdateBlock=_roomStatusUpdateBlock;
 @property(nonatomic) int roomStatusLongPollingSeq; // @synthesize roomStatusLongPollingSeq=_roomStatusLongPollingSeq;
 @property(retain, nonatomic) NSString *previousMoreChatRoomFilter; // @synthesize previousMoreChatRoomFilter=_previousMoreChatRoomFilter;
@@ -38,4 +39,3 @@
 - (id)init;
 
 @end
-

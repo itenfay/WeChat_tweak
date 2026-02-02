@@ -17,7 +17,6 @@
 }
 
 + (_Bool)canUseMusicPlayerWithFavData:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(retain, nonatomic) FileDetailLogicController *baseLogicController; // @synthesize baseLogicController=_baseLogicController;

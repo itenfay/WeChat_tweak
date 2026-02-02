@@ -22,7 +22,6 @@
 }
 
 + (id)CreateWithLiveTaskId:(id)arg1 lotteryMethodItem:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int wecoinCountToPay; // @synthesize wecoinCountToPay=_wecoinCountToPay;
 @property(nonatomic) unsigned int methodId; // @synthesize methodId=_methodId;
 @property(nonatomic) unsigned long long settingFlag; // @synthesize settingFlag=_settingFlag;

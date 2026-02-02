@@ -12,7 +12,6 @@
     NSDictionary *_paramDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *paramDic; // @synthesize paramDic=_paramDic;
 
 @end

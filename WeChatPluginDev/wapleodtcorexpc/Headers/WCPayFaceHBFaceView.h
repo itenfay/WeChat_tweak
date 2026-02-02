@@ -41,7 +41,6 @@
     _Bool _bAnimating;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bAnimating; // @synthesize bAnimating=_bAnimating;
 - (void)updateFaceHB:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;

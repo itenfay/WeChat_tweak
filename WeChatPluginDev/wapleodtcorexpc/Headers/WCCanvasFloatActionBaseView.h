@@ -13,7 +13,6 @@
 }
 
 + (id)viewWithFrame:(struct CGRect)arg1 componentItem:(id)arg2 advertiseInfo:(id)arg3 orientation:(long long)arg4 delegate:(id)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) WCCanvasComponent *component; // @synthesize component=_component;
 @property(retain, nonatomic) WCCanvasComponentItem *componentItem; // @synthesize componentItem=_componentItem;

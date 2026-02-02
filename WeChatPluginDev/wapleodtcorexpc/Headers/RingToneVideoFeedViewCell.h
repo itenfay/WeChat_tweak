@@ -30,7 +30,6 @@
 
 + (double)cellHeightWith:(id)arg1 width:(double)arg2 ring:(id)arg3;
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *tingBtn; // @synthesize tingBtn=_tingBtn;
 @property(retain, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;

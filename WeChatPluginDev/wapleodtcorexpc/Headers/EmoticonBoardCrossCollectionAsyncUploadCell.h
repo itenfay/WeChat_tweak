@@ -12,7 +12,6 @@
     EmoticonAsyncUploadView *_asyncUploadView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonAsyncUploadView *asyncUploadView; // @synthesize asyncUploadView=_asyncUploadView;
 - (id)initWithFrame:(struct CGRect)arg1;
 

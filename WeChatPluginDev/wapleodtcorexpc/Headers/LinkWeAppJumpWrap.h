@@ -15,7 +15,6 @@
     NSString *_chattoolUsername;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *chattoolUsername; // @synthesize chattoolUsername=_chattoolUsername;
 @property(copy, nonatomic) NSString *shareKey; // @synthesize shareKey=_shareKey;
 @property(nonatomic) _Bool isForbidSSignal; // @synthesize isForbidSSignal=_isForbidSSignal;

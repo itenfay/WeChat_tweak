@@ -24,7 +24,6 @@
     NSString *_coverUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int waitType; // @synthesize waitType=_waitType;
 @property(copy, nonatomic) NSString *coverUrl; // @synthesize coverUrl=_coverUrl;
 @property(copy, nonatomic) NSString *fromAppExtInfo; // @synthesize fromAppExtInfo=_fromAppExtInfo;

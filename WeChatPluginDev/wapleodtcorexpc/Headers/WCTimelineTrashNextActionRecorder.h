@@ -17,7 +17,6 @@
 + (void)recordNextLocalId:(id)arg1 previousReportData:(id)arg2;
 + (void)initialize;
 + (void)PBArrayAdd_records;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *records; // @synthesize records=_records;
 - (id)init;
 - (id)getPBPropertyTable;

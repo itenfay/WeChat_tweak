@@ -22,7 +22,6 @@
     NSString *_m_mediaId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_maxUploadTime; // @synthesize m_maxUploadTime=_m_maxUploadTime;
 @property(nonatomic) unsigned int m_uploadTime; // @synthesize m_uploadTime=_m_uploadTime;
 @property(nonatomic) unsigned int m_uploadDataSize; // @synthesize m_uploadDataSize=_m_uploadDataSize;

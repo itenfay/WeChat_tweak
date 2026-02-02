@@ -13,7 +13,6 @@
     NSString *m_nsOutTradeNumber;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsPartnerId; // @synthesize m_nsPartnerId;
 @property(retain, nonatomic) NSString *m_nsOutTradeNumber; // @synthesize m_nsOutTradeNumber;
 

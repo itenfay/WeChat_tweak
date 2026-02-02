@@ -20,7 +20,6 @@
     _TtC6WeChat14LocalJSXHRTask *_xhrTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC6WeChat14LocalJSXHRTask *xhrTask; // @synthesize xhrTask=_xhrTask;
 @property(readonly, nonatomic) NSDictionary *extraData; // @synthesize extraData=_extraData;
 @property(retain, nonatomic) LocalJSEventHandler_BaseEvent *attachEventHandler; // @synthesize attachEventHandler=_attachEventHandler;

@@ -19,7 +19,6 @@
 + (id)snsCacher;
 + (id)fastCacher;
 + (id)headCacher;
-- (void).cxx_destruct;
 - (id)init;
 - (void)onRemoveAll;
 - (void)onDiscardWithImage:(id)arg1;

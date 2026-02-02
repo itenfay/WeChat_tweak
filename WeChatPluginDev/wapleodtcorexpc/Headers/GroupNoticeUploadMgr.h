@@ -12,7 +12,6 @@
     NSMutableArray *_uploaderList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *uploaderList; // @synthesize uploaderList=_uploaderList;
 @property(retain, nonatomic) NSMutableSet *uploadedDataList; // @synthesize uploadedDataList=_uploadedDataList;
 @property(retain, nonatomic) GroupNoticeItem *currentUploadItem; // @synthesize currentUploadItem=_currentUploadItem;

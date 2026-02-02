@@ -14,7 +14,6 @@
     WCPaySelectBankViewController *_m_selectBankViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPaySelectBankViewController *m_selectBankViewController; // @synthesize m_selectBankViewController=_m_selectBankViewController;
 @property(retain, nonatomic) NSMutableArray *m_arrCardTypeList; // @synthesize m_arrCardTypeList=_m_arrCardTypeList;
 - (void)OnWCPaySelectBankViewControllerDidSelectItem:(id)arg1;

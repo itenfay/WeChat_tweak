@@ -16,7 +16,6 @@
     NSString *_dataId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isThumb; // @synthesize isThumb=_isThumb;
 @property(retain, nonatomic) NSString *dataId; // @synthesize dataId=_dataId;
 @property(nonatomic) __weak id <WNImageViewDelegate> delegate; // @synthesize delegate;

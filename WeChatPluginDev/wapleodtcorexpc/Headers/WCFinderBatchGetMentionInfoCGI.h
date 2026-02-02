@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString;
 
 @interface WCFinderBatchGetMentionInfoCGI
@@ -14,7 +16,6 @@
     long long _requestScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long requestScene; // @synthesize requestScene=_requestScene;
 @property(retain, nonatomic) NSArray *mentionIDList; // @synthesize mentionIDList=_mentionIDList;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
@@ -26,4 +27,3 @@
 - (id)initWithUserName:(id)arg1 mentionIDList:(id)arg2 requestScene:(long long)arg3 successful:(CDUnknownBlockType)arg4 failure:(CDUnknownBlockType)arg5;
 
 @end
-

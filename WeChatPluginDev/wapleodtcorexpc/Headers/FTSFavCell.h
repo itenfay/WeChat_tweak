@@ -16,7 +16,6 @@
     UIView *_thumbImageView;
 }
 
-- (void).cxx_destruct;
 - (void)setLineSpaceForLabel:(id)arg1;
 - (void)updateStatus:(_Bool)arg1;
 - (void)updateFavSearchItem:(id)arg1 arrKeyword:(id)arg2 searchText:(id)arg3;

@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_linkName;
 + (void)PBArrayAdd_showType;
 + (void)PBArrayAdd_wording;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *linkSrc; // @synthesize linkSrc=_linkSrc;
 @property(retain, nonatomic) NSString *linkName; // @synthesize linkName=_linkName;
 @property(nonatomic) unsigned int showType; // @synthesize showType=_showType;

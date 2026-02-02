@@ -13,7 +13,6 @@
     WCFinderMsgSessionInfo *_sessionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMsgSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
 @property(nonatomic) __weak WCFinderMsgSessionCell *cell; // @synthesize cell=_cell;
 - (id)sessionTitle;

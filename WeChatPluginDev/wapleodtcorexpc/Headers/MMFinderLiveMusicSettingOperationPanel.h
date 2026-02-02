@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveMusicSettingOperationNavBar, MMFinderLiveMusicSettingOperationTableViewModel, MMFinderLiveMusicTableViewBottomEditingBar, MMFinderLiveMusicVolumnBar, MMFinderLiveTaskId, MMLiveMusicPlayLogic, MMTableView, MMUIActivityIndicatorView, MMUILabel, NSString, UIButton, UIImageView, UIView;
 @protocol MMFinderLiveMusicSettingOperationDelegate, MMFinderLiveMusicSettingReportDelegate;
 
@@ -34,7 +36,6 @@
 }
 
 + (id)transferMusicItem:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long musicCountWhileEditing; // @synthesize musicCountWhileEditing=_musicCountWhileEditing;
 @property(nonatomic) _Bool prepardForSEIMessage; // @synthesize prepardForSEIMessage=_prepardForSEIMessage;
 @property(nonatomic) _Bool isAutoPausing; // @synthesize isAutoPausing=_isAutoPausing;
@@ -153,4 +154,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -11,7 +11,6 @@
     UIImageView *_fgImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *fgImageView; // @synthesize fgImageView=_fgImageView;
 @property(retain, nonatomic) UIImageView *bgImageView; // @synthesize bgImageView=_bgImageView;
 - (void)onMusicPlayStatusChanged;

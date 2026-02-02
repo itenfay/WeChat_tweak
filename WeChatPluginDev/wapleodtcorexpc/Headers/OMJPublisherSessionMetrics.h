@@ -13,7 +13,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) WeakPtr_dad450d4 backingPublisherSessionMetrics; // @synthesize backingPublisherSessionMetrics=_backingPublisherSessionMetrics;
 - (void)notifyMCTouchFeedbackButton;
 - (void)markMCDidCompleteCreation;

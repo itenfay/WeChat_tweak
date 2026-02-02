@@ -13,7 +13,6 @@
     NSThread *_thread;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSThread *thread; // @synthesize thread=_thread;
 @property(nonatomic) struct IMBNativeInterface *interface; // @synthesize interface=_interface;
 - (void)update:(id)arg1;

@@ -18,7 +18,6 @@
     UIImage *_dotInactiveImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *dotInactiveImage; // @synthesize dotInactiveImage=_dotInactiveImage;
 @property(retain, nonatomic) UIImage *dotActiveImage; // @synthesize dotActiveImage=_dotActiveImage;
 @property(nonatomic) _Bool forbidensTouchHlighlight; // @synthesize forbidensTouchHlighlight=_forbidensTouchHlighlight;

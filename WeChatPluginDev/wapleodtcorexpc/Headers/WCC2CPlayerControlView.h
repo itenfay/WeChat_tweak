@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, CMessageWrap, ImageBrowseButton, MMUIButton, MMUILabel, NSString, NSURL, SightIconView, UIButton, UIImageView, UILabel, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, WCC2CPlayerProgressBar, WCC2CShadowLabel, WCC2CVideoPlayerReporter;
 @protocol WCC2CPlayerControlViewDelegate;
 
@@ -46,7 +48,6 @@
     struct CGSize _iconSize;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType customBottomLeftString; // @synthesize customBottomLeftString=_customBottomLeftString;
 @property(copy, nonatomic) CDUnknownBlockType customBottomLeftAction; // @synthesize customBottomLeftAction=_customBottomLeftAction;
 @property(retain, nonatomic) NSURL *rawVideoAssetUrl; // @synthesize rawVideoAssetUrl=_rawVideoAssetUrl;
@@ -176,4 +177,3 @@
 @property(readonly) Class superclass;
 
 @end
-

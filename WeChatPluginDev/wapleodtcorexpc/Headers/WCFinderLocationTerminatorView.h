@@ -20,7 +20,6 @@
 
 + (double)heightForParams:(id)arg1 width:(double)arg2;
 + (double)maxContentWidthWithTotalWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastSize; // @synthesize lastSize=_lastSize;
 @property(retain, nonatomic) InteractionLabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) InteractionLabel *titleLabel; // @synthesize titleLabel=_titleLabel;

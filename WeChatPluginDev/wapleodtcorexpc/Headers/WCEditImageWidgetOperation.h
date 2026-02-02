@@ -11,7 +11,6 @@
     EditImageWidgetTool *_widget;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EditImageWidgetTool *widget; // @synthesize widget=_widget;
 @property(nonatomic) unsigned long long widgetOperationType; // @synthesize widgetOperationType=_widgetOperationType;
 

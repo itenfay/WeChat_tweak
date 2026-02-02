@@ -15,7 +15,6 @@
     NSString *_accessTips;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int codeType; // @synthesize codeType=_codeType;
 @property(nonatomic) _Bool bShowActionBar; // @synthesize bShowActionBar=_bShowActionBar;
 @property(retain, nonatomic) NSString *accessTips; // @synthesize accessTips=_accessTips;

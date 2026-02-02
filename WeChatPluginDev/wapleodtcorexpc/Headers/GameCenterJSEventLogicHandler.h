@@ -15,7 +15,6 @@
     NSMutableSet *_jsEventSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *jsEventSet; // @synthesize jsEventSet=_jsEventSet;
 @property(nonatomic) __weak id <GameCenterJSEventLogicHandlerDelegate> callDelegate; // @synthesize callDelegate=_callDelegate;
 - (id)webviewController;

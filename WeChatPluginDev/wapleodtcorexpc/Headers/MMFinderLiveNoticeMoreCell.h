@@ -16,7 +16,6 @@
 
 + (double)heightForViewItem:(id)arg1 inTableView:(id)arg2;
 + (id)defaultCellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(retain, nonatomic) MMUILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) MMFinderLiveNoticeMoreViewItem *viewItem; // @synthesize viewItem=_viewItem;

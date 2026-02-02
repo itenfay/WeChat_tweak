@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CommUseAppInfo_CommUseConfig, NSString, WAAppOperateLogic, WAGetWxaUsageRecordRequestInfo;
 
 @interface WAAppItemManager
@@ -19,7 +21,6 @@
 
 + (unsigned long long)getAppUserStateByUsername:(id)arg1;
 + (unsigned long long)getAppUserStateByUsername:(id)arg1 appType:(unsigned int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CommUseAppInfo_CommUseConfig *commuseConfig; // @synthesize commuseConfig=_commuseConfig;
 @property(retain, nonatomic) WAGetWxaUsageRecordRequestInfo *lastTaskBarRequestInfo; // @synthesize lastTaskBarRequestInfo=_lastTaskBarRequestInfo;
 @property(nonatomic) unsigned long long taskbarCommonUseWeAppItemsCount; // @synthesize taskbarCommonUseWeAppItemsCount=_taskbarCommonUseWeAppItemsCount;
@@ -113,4 +114,3 @@
 @property(readonly) Class superclass;
 
 @end
-

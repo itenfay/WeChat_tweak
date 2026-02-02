@@ -10,7 +10,6 @@
     QGPPlaySkeletonAnimationParam *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPPlaySkeletonAnimationParam *params; // @synthesize params=_params;
 
 @end

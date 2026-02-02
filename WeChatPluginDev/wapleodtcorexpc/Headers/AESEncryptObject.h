@@ -13,7 +13,6 @@
     NSString *_m_rsaEncryptedKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_rsaEncryptedKey; // @synthesize m_rsaEncryptedKey=_m_rsaEncryptedKey;
 @property(retain, nonatomic) NSString *m_aesKey; // @synthesize m_aesKey=_m_aesKey;
 - (id)encryptWithSourceString:(id)arg1;

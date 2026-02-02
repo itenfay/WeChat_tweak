@@ -23,7 +23,6 @@
     UIWindowScene *_windowScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInOutsidePresentation; // @synthesize isInOutsidePresentation=_isInOutsidePresentation;
 @property(nonatomic) _Bool createNewSceneInVision; // @synthesize createNewSceneInVision=_createNewSceneInVision;
 @property(retain, nonatomic) UIWindowScene *windowScene; // @synthesize windowScene=_windowScene;

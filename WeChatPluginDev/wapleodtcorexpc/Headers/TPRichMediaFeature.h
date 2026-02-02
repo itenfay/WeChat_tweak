@@ -14,7 +14,6 @@
     NSArray *_binding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(copy, nonatomic) NSArray *binding; // @synthesize binding=_binding;
 @property(copy, nonatomic) NSString *featureType; // @synthesize featureType=_featureType;

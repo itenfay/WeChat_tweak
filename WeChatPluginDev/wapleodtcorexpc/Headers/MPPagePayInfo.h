@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_friendPayCountStr;
 + (void)PBArrayAdd_isPaySubscribe;
 + (void)PBArrayAdd_isPaid;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPaySubscribe; // @synthesize isPaySubscribe=_isPaySubscribe;
 @property(copy, nonatomic) NSString *friendPayCountStr; // @synthesize friendPayCountStr=_friendPayCountStr;
 @property(nonatomic) _Bool isPaid; // @synthesize isPaid=_isPaid;

@@ -13,7 +13,6 @@
     CMessageWrap *m_oMessageWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *m_oMessageWrap; // @synthesize m_oMessageWrap;
 - (void)onSwitchChange:(_Bool)arg1 withAppInfo:(id)arg2;
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;

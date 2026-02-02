@@ -31,7 +31,6 @@
 + (void)report14877WithActivityId:(id)arg1 bindSerial:(id)arg2 reportType:(int)arg3 bankType:(id)arg4;
 + (void)reportClickDiscountWithActivityId:(id)arg1 bindSerial:(id)arg2 bankType:(id)arg3;
 + (void)reportShowViewWithActivityId:(id)arg1 bindSerial:(id)arg2 bankType:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_needQuery; // @synthesize m_needQuery=_m_needQuery;
 @property(nonatomic) _Bool m_disableAwardButton; // @synthesize m_disableAwardButton=_m_disableAwardButton;
 @property(retain, nonatomic) WCPayQueryBindCardAwardCgi *m_queryAwardCgi; // @synthesize m_queryAwardCgi=_m_queryAwardCgi;

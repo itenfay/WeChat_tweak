@@ -14,7 +14,6 @@
     long long _pathComponentCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long pathComponentCount; // @synthesize pathComponentCount=_pathComponentCount;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

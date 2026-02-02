@@ -18,7 +18,6 @@
 }
 
 + (_Bool)isImageForUrlExistInCache:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useCdn; // @synthesize useCdn=_useCdn;
 @property(nonatomic) unsigned int downloadScene; // @synthesize downloadScene=_downloadScene;
 @property(retain, nonatomic) NSString *urlDark; // @synthesize urlDark=_urlDark;

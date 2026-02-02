@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, AVAssetReaderAudioMixOutput, AVAssetReaderVideoCompositionOutput, AVAssetWriter, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor, AVAudioMix, AVVideoComposition, NSCondition, NSError, TAVExportReportData, TAVSourceExportAudioConfiguration, TAVSourceExportConfiguration, TAVSourceExportReader, TAVSourceExportVideoConfiguration;
 @protocol OS_dispatch_queue, TAVSourceSoftEncoderFactory;
@@ -46,7 +47,6 @@
     CDStruct_1b6d18a9 _lastAudioTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long backgroundCount; // @synthesize backgroundCount=_backgroundCount;
 @property(nonatomic) double exportStartTime; // @synthesize exportStartTime=_exportStartTime;
 @property(retain, nonatomic) TAVExportReportData *exportReportData; // @synthesize exportReportData=_exportReportData;
@@ -115,4 +115,3 @@
 - (id)init;
 
 @end
-

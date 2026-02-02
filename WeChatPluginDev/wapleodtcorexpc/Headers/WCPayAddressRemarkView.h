@@ -20,7 +20,6 @@
     UIButton *_m_button;
 }
 
-- (void).cxx_destruct;
 @property(retain) UIButton *m_button; // @synthesize m_button=_m_button;
 @property(retain) RichTextView *m_textView; // @synthesize m_textView=_m_textView;
 @property(retain) UIView *m_highlightView; // @synthesize m_highlightView=_m_highlightView;

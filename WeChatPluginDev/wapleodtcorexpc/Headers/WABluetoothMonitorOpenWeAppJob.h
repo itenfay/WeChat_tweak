@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WABluetoothMonitoredDevice;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _openFailHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType openFailHandler; // @synthesize openFailHandler=_openFailHandler;
 @property(copy, nonatomic) CDUnknownBlockType openSuccessHandler; // @synthesize openSuccessHandler=_openSuccessHandler;
 @property(copy, nonatomic) CDUnknownBlockType terminateHandler; // @synthesize terminateHandler=_terminateHandler;
@@ -25,4 +25,3 @@
 - (id)description;
 
 @end
-

@@ -13,7 +13,6 @@
     NSMutableDictionary *_imageProcessMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *imageProcessMap; // @synthesize imageProcessMap=_imageProcessMap;
 @property(retain, nonatomic) NSMapTable *imageCache; // @synthesize imageCache=_imageCache;
 - (id)covertDynamicColor:(id)arg1 dark:(_Bool)arg2;
