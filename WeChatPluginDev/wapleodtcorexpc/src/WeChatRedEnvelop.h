@@ -68,6 +68,7 @@
 @end
 
 @interface WCPluginsMgr : NSObject
+- (void)registerControllerWithTitle:(NSString *)title version:(NSString *)version controller:(id)controller;
 @end
 
 // ============ Custom Category Extensions ============
@@ -78,6 +79,14 @@
 
 @interface CMessageWrap (WCPLAddition)
 - (BOOL)wcpl_isFromSelf;
+@end
+
+@interface NSDictionary (WCPLAddition)
+- (NSString *)stringForKey:(NSString *)key;
+@end
+
+@interface NSString (WCPLAddition)
+- (NSDictionary *)JSONDictionary;
 @end
 
 @protocol MMUIViewControllerDelegate <NSObject>
