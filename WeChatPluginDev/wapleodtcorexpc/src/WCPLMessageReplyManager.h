@@ -32,7 +32,7 @@ static const NSInteger kWCPLRepeatButtonTag = 10087;
                           viewController:(BaseMsgContentViewController *)viewController
                                  msgWrap:(CMessageWrap *)msgWrap;
 
-// 判断消息是否可以复读（文本消息且非自己发送）
+// 判断消息是否可以复读（文本/图片/表情/引用回复）
 - (BOOL)canRepeatMessage:(CMessageWrap *)msgWrap;
 
 // 判断消息是否是对方发送的（非自己发送）
@@ -43,5 +43,8 @@ static const NSInteger kWCPLRepeatButtonTag = 10087;
 
 // 处理表情包消息复读（返回执行日志）
 - (NSString *)handleRepeatEmoticonMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController;
+
+// 处理图片消息复读（返回执行日志）
+- (NSString *)handleRepeatImageMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController;
 
 @end

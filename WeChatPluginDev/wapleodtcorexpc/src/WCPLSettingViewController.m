@@ -263,7 +263,7 @@
 #pragma mark - Swipe Quote Setting
 
 - (void)addSwipeQuoteSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息手势" Footer:@"提示：复读手势不支持图片和视频消息"];
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息手势" Footer:@"提示：复读手势暂不支持视频消息"];
 
     // 消息手势总开关
     [section addCell:[self createSwipeGestureSwitchCell]];

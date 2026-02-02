@@ -724,6 +724,20 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
 // Hook 图片消息 Cell（支持手势操作）
 %hook ImageMessageCellView
 
+- (void)layoutSubviews {
+    %orig;
+
+    // 添加复读按钮
+    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
+}
+
+- (void)prepareForReuse {
+    %orig;
+
+    // Cell 复用时移除按钮
+    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
+}
+
 - (void)didMoveToWindow {
     %orig;
 
@@ -1101,17 +1115,23 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
 - (void)wchook_performRepeatMessage:(CMessageWrap *)msgWrap {
     if (!msgWrap) return;
 
-    // 获取消息内容
-    NSString *content = [[WCPLMessageReplyManager sharedManager] getMessageContent:msgWrap];
-    if (!content || content.length == 0) {
-        NSLog(@"[WCPL] No content to repeat from swipe");
-        return;
-    }
-
     // 获取当前聊天视图控制器
     BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
     if (!chatVC) {
         NSLog(@"[WCPL] Cannot find chat view controller");
+        return;
+    }
+
+    unsigned int msgType = msgWrap.m_uiMessageType;
+    if (msgType == 3) {
+        [[WCPLMessageReplyManager sharedManager] handleRepeatImageMessage:msgWrap viewController:chatVC];
+        return;
+    }
+
+    // 获取消息内容
+    NSString *content = [[WCPLMessageReplyManager sharedManager] getMessageContent:msgWrap];
+    if (!content || content.length == 0) {
+        NSLog(@"[WCPL] No content to repeat from swipe");
         return;
     }
 
