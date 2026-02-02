@@ -721,32 +721,32 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
 
 %end
 
-// Hook 图片消息 Cell（支持手势操作）
+// Hook 图片消息 Cell（已禁用复读功能,仅保留结构以供将来扩展）
 %hook ImageMessageCellView
 
 - (void)layoutSubviews {
     %orig;
 
-    // 添加复读按钮
-    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
+    // 图片消息不支持复读按钮
+    // [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
 }
 
 - (void)prepareForReuse {
     %orig;
 
-    // Cell 复用时移除按钮
+    // 确保移除任何残留的按钮
     [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
 }
 
 - (void)didMoveToWindow {
     %orig;
 
-    // 确保图片消息也支持滑动手势
-    if (self.window) {
-        [self wchook_setupSwipeGestureIfNeeded];
-    } else {
-        [self wchook_resetSwipeAnimated:NO];
-    }
+    // 图片消息不支持滑动手势复读
+    // if (self.window) {
+    //     [self wchook_setupSwipeGestureIfNeeded];
+    // } else {
+    //     [self wchook_resetSwipeAnimated:NO];
+    // }
 }
 
 %end

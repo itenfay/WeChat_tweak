@@ -10,6 +10,9 @@
 
 + (instancetype)sharedLogger;
 
+// 日志开关 (默认关闭)
+@property (nonatomic, assign) BOOL enabled;
+
 // 写入日志到本地文件
 - (void)log:(NSString *)message;
 
@@ -26,3 +29,11 @@
 - (NSString *)readRecentLog:(NSInteger)lines;
 
 @end
+
+// 便捷宏:只在日志启用时才记录
+#define WCPLLog(fmt, ...) \
+    do { \
+        if ([WCPLLogger sharedLogger].enabled) { \
+            [[WCPLLogger sharedLogger] logFormat:fmt, ##__VA_ARGS__]; \
+        } \
+    } while(0)

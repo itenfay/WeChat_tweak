@@ -339,6 +339,7 @@
     if ([WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) {
         [section addCell:[self createRepeatButtonHapticCell]];
         [section addCell:[self createRepeatButtonStyleCell]];
+        [section addCell:[self createDebugLogSwitchCell]];
     }
 
     [self.tableViewMgr addSection:section];
@@ -552,6 +553,24 @@
 
 - (void)settingRepeatButtonHaptic:(UISwitch *)sender {
     [WCPLRedEnvelopConfig sharedConfig].repeatButtonHapticEnable = sender.on;
+}
+
+- (WCTableViewNormalCellManager *)createDebugLogSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingDebugLog:) target:self title:@"启用调试日志" on:[WCPLLogger sharedLogger].enabled];
+}
+
+- (void)settingDebugLog:(UISwitch *)sender {
+    [WCPLLogger sharedLogger].enabled = sender.on;
+
+    if (sender.on) {
+        // 显示日志文件路径提示
+        NSString *logPath = [[WCPLLogger sharedLogger] logFilePath];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"调试日志已启用"
+                                                                       message:[NSString stringWithFormat:@"日志文件路径:\n%@\n\n可通过文件管理器查看", logPath]
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonStyleCell {

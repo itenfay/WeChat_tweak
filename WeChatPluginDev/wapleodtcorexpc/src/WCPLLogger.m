@@ -25,6 +25,9 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        // 默认关闭日志
+        _enabled = NO;
+
         // 创建日志队列，确保线程安全
         _logQueue = dispatch_queue_create("com.wcpl.logger", DISPATCH_QUEUE_SERIAL);
 
@@ -42,10 +45,6 @@
         if (_fileHandle) {
             [_fileHandle seekToEndOfFile];
         }
-
-        // 写入启动日志
-        NSString *startupLog = [NSString stringWithFormat:@"\n\n========== WCPL Logger Started at %@ ==========\n", [self currentTimestamp]];
-        [self writeToFile:startupLog];
     }
     return self;
 }
@@ -58,8 +57,20 @@
 
 #pragma mark - Public Methods
 
+- (void)setEnabled:(BOOL)enabled {
+    if (_enabled != enabled) {
+        _enabled = enabled;
+
+        if (enabled) {
+            // 启用日志时写入启动消息
+            NSString *startupLog = [NSString stringWithFormat:@"\n\n========== WCPL Logger Started at %@ ==========\n", [self currentTimestamp]];
+            [self writeToFile:startupLog];
+        }
+    }
+}
+
 - (void)log:(NSString *)message {
-    if (!message || message.length == 0) return;
+    if (!_enabled || !message || message.length == 0) return;
 
     NSString *timestampedMessage = [NSString stringWithFormat:@"[%@] %@\n", [self currentTimestamp], message];
     [self writeToFile:timestampedMessage];
