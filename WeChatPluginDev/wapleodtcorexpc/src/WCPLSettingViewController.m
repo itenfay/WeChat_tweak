@@ -70,6 +70,7 @@
 
     [self addBasicSettingSection];
     [self addAdvanceSettingSection];
+    [self addMessageIgnoreSettingSection];
     [self addOtherSettingSection];
     [self addMessageReplySettingSection];
     [self addSwipeQuoteSettingSection];
@@ -191,9 +192,6 @@
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"其他"];
     
     [section addCell:[self createAbortRemokeMessageCell]];
-    [section addCell:[self createUserIgnoreEnableCell]];
-    [section addCell:[self createIgnoredChatroomCountCell]];
-    [section addCell:[self createIgnoredUserCountCell]];
     
     [self.tableViewMgr addSection:section];
 }
@@ -204,6 +202,16 @@
 
 - (void)settingMessageRevoke:(UISwitch *)sender {
     [WCPLRedEnvelopConfig sharedConfig].revokeEnable = sender.on;
+}
+
+- (void)addMessageIgnoreSettingSection {
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息屏蔽" Footer:@"开启后可在好友资料页/群聊资料页开启屏蔽，屏蔽后不再接收其消息提醒。"];
+
+    [section addCell:[self createUserIgnoreEnableCell]];
+    [section addCell:[self createIgnoredChatroomCountCell]];
+    [section addCell:[self createIgnoredUserCountCell]];
+
+    [self.tableViewMgr addSection:section];
 }
 
 - (WCTableViewNormalCellManager *)createUserIgnoreEnableCell {

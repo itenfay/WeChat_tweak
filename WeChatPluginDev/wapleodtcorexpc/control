@@ -1,7 +1,7 @@
 Package: com.aple.wapleodtcorexpc
 Name: 微信辣椒
 Depends: mobilesubstrate
-Version: 1.7.8
+Version: 1.7.9
 Architecture: iphoneos-arm
 Description: 微信辣椒 - WeChat Enhancement Plugin
 Maintainer: guanxi
