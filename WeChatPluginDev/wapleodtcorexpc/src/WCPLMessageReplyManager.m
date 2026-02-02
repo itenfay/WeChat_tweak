@@ -186,14 +186,36 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         @"m_nsLocalImgPath",
         @"m_nsImgLocalPath",
         @"m_nsLocalPath",
-        @"m_nsThumbImgPath"
+        @"m_nsThumbImgPath",
+        @"m_nsHDImgPath",
+        @"m_nsBigImagePath",
+        @"imagePath",
+        @"imgPath"
     ];
 
     for (NSString *key in keys) {
         NSString *value = [self wcpl_safeStringValueForObject:msgWrap keyName:key];
-        if (value.length > 0) return value;
+        if (value.length > 0) {
+            WCPLLog(@"Found image path via key '%@': %@", key, value);
+            return value;
+        }
     }
 
+    // 尝试通过 m_oImgInfo 获取路径
+    @try {
+        id imgInfo = [msgWrap valueForKey:@"m_oImgInfo"];
+        if (imgInfo) {
+            NSString *path = [self wcpl_safeStringValueForObject:imgInfo keyName:@"m_nsImagePath"];
+            if (path.length > 0) {
+                WCPLLog(@"Found image path via m_oImgInfo: %@", path);
+                return path;
+            }
+        }
+    } @catch (NSException *e) {
+        WCPLLog(@"Exception accessing m_oImgInfo: %@", e);
+    }
+
+    WCPLLog(@"No image path found in msgWrap");
     return nil;
 }
 
@@ -205,14 +227,34 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         @"m_dtImage",
         @"m_dtImageData",
         @"m_dtThumb",
-        @"m_dtThumbnail"
+        @"m_dtThumbnail",
+        @"imageData",
+        @"imgData"
     ];
 
     for (NSString *key in keys) {
         NSData *data = [self wcpl_safeDataValueForObject:msgWrap keyName:key];
-        if (data.length > 0) return data;
+        if (data.length > 0) {
+            WCPLLog(@"Found image data via key '%@': %lu bytes", key, (unsigned long)data.length);
+            return data;
+        }
     }
 
+    // 尝试通过 m_oImgInfo 获取数据
+    @try {
+        id imgInfo = [msgWrap valueForKey:@"m_oImgInfo"];
+        if (imgInfo) {
+            NSData *data = [self wcpl_safeDataValueForObject:imgInfo keyName:@"m_dtImageData"];
+            if (data.length > 0) {
+                WCPLLog(@"Found image data via m_oImgInfo: %lu bytes", (unsigned long)data.length);
+                return data;
+            }
+        }
+    } @catch (NSException *e) {
+        WCPLLog(@"Exception accessing m_oImgInfo for data: %@", e);
+    }
+
+    WCPLLog(@"No image data found in msgWrap");
     return nil;
 }
 
@@ -1931,6 +1973,29 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             return execLog;
         }
         [execLog appendFormat:@"✓ 聊天对象: %@\n", toUserName];
+
+        // 尝试通过 CMessageMgr 的 ReSendMessage 直接重发
+        @try {
+            id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
+            if (msgMgr && [msgMgr respondsToSelector:@selector(ReSendMessage:MsgWrap:)]) {
+                [execLog appendString:@"✓ 尝试使用 CMessageMgr.ReSendMessage 重发图片\n"];
+                BOOL result = NO;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                result = [[msgMgr performSelector:@selector(ReSendMessage:MsgWrap:)
+                                       withObject:toUserName
+                                       withObject:msgWrap] boolValue];
+#pragma clang diagnostic pop
+                if (result) {
+                    [execLog appendString:@"✅ 通过 ReSendMessage 发送成功\n"];
+                    return execLog;
+                } else {
+                    [execLog appendString:@"⚠️ ReSendMessage 返回 NO，尝试其他方法\n"];
+                }
+            }
+        } @catch (NSException *e) {
+            [execLog appendFormat:@"⚠️ ReSendMessage 异常: %@，尝试其他方法\n", e];
+        }
 
         NSString *imagePath = [self wcpl_imagePathFromMessageWrap:msgWrap];
         NSData *imageData = [self wcpl_imageDataFromMessageWrap:msgWrap];
