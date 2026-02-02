@@ -23,6 +23,7 @@ static NSString *const kWCPLFakeLocLng              = @"kWCPLFakeLocLng";
 static NSString *const kWCPLFakeLocEnable           = @"kWCPLFakeLocEnable";
 static NSString *const kWCPLAVTPOn                  = @"kWCPLAVTPOn";
 static NSString *const kWCPLMessageReplyEnable      = @"kWCPLMessageReplyEnable";
+static NSString *const kWCPLRepeatButtonHapticEnable = @"kWCPLRepeatButtonHapticEnable";
 static NSString *const kWCPLRepeatButtonStyle       = @"kWCPLRepeatButtonStyle";
 static NSString *const kWCPLRepeatButtonIconIndex   = @"kWCPLRepeatButtonIconIndex";
 static NSString *const kWCPLRepeatButtonCustomImage = @"kWCPLRepeatButtonCustomImage";
@@ -68,6 +69,7 @@ static NSString *const kWCPLSwipeRightSelfAction    = @"kWCPLSwipeRightSelfActio
         _fakeLocEnable           = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLFakeLocEnable];
         _TPOn                    = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLAVTPOn];
         _messageReplyEnable      = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLMessageReplyEnable];
+        _repeatButtonHapticEnable = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLRepeatButtonHapticEnable];
         _repeatButtonStyle       = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLRepeatButtonStyle];
         _repeatButtonIconIndex   = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLRepeatButtonIconIndex];
         _repeatButtonCustomImagePath = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonCustomImage];
@@ -194,6 +196,12 @@ static NSString *const kWCPLSwipeRightSelfAction    = @"kWCPLSwipeRightSelfActio
 - (void)setMessageReplyEnable:(BOOL)messageReplyEnable {
     _messageReplyEnable = messageReplyEnable;
     [[NSUserDefaults standardUserDefaults] setBool:messageReplyEnable forKey:kWCPLMessageReplyEnable];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setRepeatButtonHapticEnable:(BOOL)repeatButtonHapticEnable {
+    _repeatButtonHapticEnable = repeatButtonHapticEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:repeatButtonHapticEnable forKey:kWCPLRepeatButtonHapticEnable];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

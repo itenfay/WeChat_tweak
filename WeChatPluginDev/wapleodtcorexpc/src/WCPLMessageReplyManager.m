@@ -9,6 +9,7 @@
 //
 
 #import "WCPLMessageReplyManager.h"
+#import "WCPLRepeatButton.h"
 #import "WCPLRedEnvelopConfig.h"
 #import "WeChatRedEnvelop.h"
 #import <objc/runtime.h>
@@ -581,7 +582,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 #pragma mark - Private Methods
 
 - (UIButton *)createRepeatButton {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *button = [WCPLRepeatButton buttonWithType:UIButtonTypeCustom];
     button.tag = kWCPLRepeatButtonTag;
 
     // 基础布局 - 稍大的尺寸更易点击
@@ -776,7 +777,13 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             buttonX = CGRectGetMaxX(bubbleFrame) + 2;
         }
 
+        CGFloat maxX = CGRectGetWidth(containerView.bounds) - buttonSize;
+        CGFloat maxY = CGRectGetHeight(containerView.bounds) - buttonSize;
+        buttonX = MAX(0.0f, MIN(buttonX, maxX));
+        buttonY = MAX(0.0f, MIN(buttonY, maxY));
+
         button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
+        [containerView bringSubviewToFront:button];
         button.hidden = NO;
     }
     @catch (NSException *exception) {
@@ -1146,6 +1153,12 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
 - (void)repeatButtonTapped:(UIButton *)sender {
     @try {
+        if ([WCPLRedEnvelopConfig sharedConfig].repeatButtonHapticEnable) {
+            UIImpactFeedbackGenerator *generator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
+            [generator prepare];
+            [generator impactOccurred];
+        }
+
         NSString *content = objc_getAssociatedObject(sender, &kRepeatContentKey);
         CMessageWrap *msgWrap = objc_getAssociatedObject(sender, &kRepeatMsgWrapKey);
 

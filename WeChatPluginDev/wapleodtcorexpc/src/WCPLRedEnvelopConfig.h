@@ -51,6 +51,9 @@
 // Message Reply.
 @property (assign, nonatomic) BOOL messageReplyEnable;
 
+// 复读按钮震动反馈
+@property (assign, nonatomic) BOOL repeatButtonHapticEnable;
+
 // Message Reply Button Style.
 // 0 = 文字模式 (+1), 1 = 内置图标, 2 = 自定义图片
 @property (assign, nonatomic) NSInteger repeatButtonStyle;

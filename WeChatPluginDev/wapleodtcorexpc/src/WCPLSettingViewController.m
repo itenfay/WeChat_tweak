@@ -251,8 +251,9 @@
 
     [section addCell:[self createMessageReplySwitchCell]];
 
-    // 只有启用复读机时才显示按钮样式设置
+    // 只有启用复读机时才显示详细设置
     if ([WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) {
+        [section addCell:[self createRepeatButtonHapticCell]];
         [section addCell:[self createRepeatButtonStyleCell]];
     }
 
@@ -459,6 +460,14 @@
 
 - (WCTableViewNormalCellManager *)createMessageReplySwitchCell {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageReply:) target:self title:@"启用复读机 (在消息旁显示按钮)" on:[WCPLRedEnvelopConfig sharedConfig].messageReplyEnable];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonHapticCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButtonHaptic:) target:self title:@"复读按钮震动反馈" on:[WCPLRedEnvelopConfig sharedConfig].repeatButtonHapticEnable];
+}
+
+- (void)settingRepeatButtonHaptic:(UISwitch *)sender {
+    [WCPLRedEnvelopConfig sharedConfig].repeatButtonHapticEnable = sender.on;
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonStyleCell {
