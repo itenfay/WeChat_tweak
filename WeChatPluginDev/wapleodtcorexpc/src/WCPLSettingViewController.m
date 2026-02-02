@@ -10,6 +10,7 @@
 #import "WCPLMultiSelectGroupsViewController.h"
 #import "WCPLFuncService.h"
 #import "WeChatRedEnvelop.h"
+#import "WCPLLogger.h"
 #import <objc/runtime.h>
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
@@ -190,9 +191,10 @@
 
 - (void)addOtherSettingSection {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"其他"];
-    
+
     [section addCell:[self createAbortRemokeMessageCell]];
-    
+    [section addCell:[self createDebugLogCell]];
+
     [self.tableViewMgr addSection:section];
 }
 
@@ -202,6 +204,88 @@
 
 - (void)settingMessageRevoke:(UISwitch *)sender {
     [WCPLRedEnvelopConfig sharedConfig].revokeEnable = sender.on;
+}
+
+- (WCTableViewNormalCellManager *)createDebugLogCell {
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showDebugLog) target:self title:@"查看调试日志" rightValue:@"" accessoryType:1];
+}
+
+- (void)showDebugLog {
+    WCPLLogger *logger = [WCPLLogger sharedLogger];
+    NSString *logPath = [logger logFilePath];
+
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"调试日志"
+                                                                   message:[NSString stringWithFormat:@"日志文件位置:\n%@", logPath]
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    // 查看最近100行日志
+    UIAlertAction *viewAction = [UIAlertAction actionWithTitle:@"查看最近日志" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSString *recentLog = [logger readRecentLog:100];
+        [self showLogContent:recentLog];
+    }];
+
+    // 复制日志文件路径
+    UIAlertAction *copyPathAction = [UIAlertAction actionWithTitle:@"复制文件路径" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = logPath;
+
+        UIAlertController *successAlert = [UIAlertController alertControllerWithTitle:@"成功"
+                                                                               message:@"日志文件路径已复制到剪贴板"
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+        [successAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:successAlert animated:YES completion:nil];
+    }];
+
+    // 清空日志
+    UIAlertAction *clearAction = [UIAlertAction actionWithTitle:@"清空日志" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        UIAlertController *confirmAlert = [UIAlertController alertControllerWithTitle:@"确认清空"
+                                                                               message:@"确定要清空所有调试日志吗？"
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+        [confirmAlert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+        [confirmAlert addAction:[UIAlertAction actionWithTitle:@"清空" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            [logger clearLog];
+            UIAlertController *successAlert = [UIAlertController alertControllerWithTitle:@"成功"
+                                                                                   message:@"日志已清空"
+                                                                            preferredStyle:UIAlertControllerStyleAlert];
+            [successAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:successAlert animated:YES completion:nil];
+        }]];
+        [self presentViewController:confirmAlert animated:YES completion:nil];
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+
+    [alert addAction:viewAction];
+    [alert addAction:copyPathAction];
+    [alert addAction:clearAction];
+    [alert addAction:cancelAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)showLogContent:(NSString *)content {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"最近日志 (最后100行)"
+                                                                   message:content
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    // 复制日志内容
+    UIAlertAction *copyAction = [UIAlertAction actionWithTitle:@"复制日志" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = content;
+
+        UIAlertController *successAlert = [UIAlertController alertControllerWithTitle:@"成功"
+                                                                               message:@"日志内容已复制到剪贴板"
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+        [successAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:successAlert animated:YES completion:nil];
+    }];
+
+    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil];
+
+    [alert addAction:copyAction];
+    [alert addAction:closeAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)addMessageIgnoreSettingSection {

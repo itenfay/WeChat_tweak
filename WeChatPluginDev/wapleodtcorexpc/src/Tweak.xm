@@ -1350,6 +1350,82 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
 
 %end
 
+%hook ChatRoomInfoViewController
+
+- (void)reloadTableData {
+    %orig;
+
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    if (!config.userIgnoreEnable) {
+        return;
+    }
+
+    CContact *contact = self.m_contact;
+    NSString *usrName = contact.m_nsUsrName;
+    if (usrName.length == 0) {
+        return;
+    }
+    // 确保是群聊
+    if ([usrName rangeOfString:@"@chatroom"].location == NSNotFound) {
+        return;
+    }
+
+    id tableViewMgr = nil;
+    Ivar tableViewInfoIvar = class_getInstanceVariable([self class], "m_tableViewInfo");
+    if (tableViewInfoIvar) {
+        tableViewMgr = object_getIvar(self, tableViewInfoIvar);
+    }
+    if (!tableViewMgr) {
+        Ivar tableViewMgrIvar = class_getInstanceVariable([self class], "m_tableViewMgr");
+        if (tableViewMgrIvar) {
+            tableViewMgr = object_getIvar(self, tableViewMgrIvar);
+        }
+    }
+    if (!tableViewMgr || ![tableViewMgr respondsToSelector:@selector(addSection:)] || ![tableViewMgr respondsToSelector:@selector(getTableView)]) {
+        return;
+    }
+
+    WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoHeader:@"消息屏蔽"];
+    WCTableViewNormalCellManager *ignoreCell = [%c(WCTableViewNormalCellManager) switchCellForSel:@selector(wcpl_handleIgnoreChatRoom:) target:self title:@"屏蔽此群消息" on:config.chatIgnoreInfo[usrName].boolValue];
+    [sectionMgr addCell:ignoreCell];
+    [tableViewMgr addSection:sectionMgr];
+
+    MMTableView *tableView = [tableViewMgr getTableView];
+    [tableView reloadData];
+}
+
+%new
+- (void)wcpl_handleIgnoreChatRoom:(UISwitch *)sender {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    if (!config.userIgnoreEnable) {
+        sender.on = NO;
+        return;
+    }
+
+    CContact *contact = self.m_contact;
+    NSString *usrName = contact.m_nsUsrName;
+    if (usrName.length == 0) {
+        sender.on = NO;
+        return;
+    }
+    // 确保是群聊
+    if ([usrName rangeOfString:@"@chatroom"].location == NSNotFound) {
+        sender.on = NO;
+        return;
+    }
+
+    if (sender.on) {
+        config.chatIgnoreInfo[usrName] = @(YES);
+    } else {
+        NSMutableDictionary *igDict = config.chatIgnoreInfo;
+        [igDict removeObjectForKey:usrName];
+        config.chatIgnoreInfo = igDict;
+    }
+    [config saveChatIgnoreNameListToLocalFile];
+}
+
+%end
+
 /*
 %hook SeePeopleNearByLogicController
 

@@ -29,6 +29,7 @@ src/WCHookMessageNavigator.m_CFLAGS = -fobjc-arc -fno-modules
 src/WCHookSettingsManager.m_CFLAGS = -fobjc-arc -fno-modules
 src/WCHookSwipeUtilities.m_CFLAGS = -fobjc-arc -fno-modules
 src/WCHookTableViewFactory.m_CFLAGS = -fobjc-arc -fno-modules
+src/WCPLLogger.m_CFLAGS = -fobjc-arc -fno-modules
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 

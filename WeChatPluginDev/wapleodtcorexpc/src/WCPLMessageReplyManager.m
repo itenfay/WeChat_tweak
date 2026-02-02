@@ -12,6 +12,7 @@
 #import "WCPLRepeatButton.h"
 #import "WCPLRedEnvelopConfig.h"
 #import "WeChatRedEnvelop.h"
+#import "WCPLLogger.h"
 #import <objc/runtime.h>
 
 // 关联对象的 key
@@ -19,6 +20,9 @@ static char kRepeatContentKey;
 static char kRepeatMsgWrapKey;
 static char kRepeatButtonForCellViewKey;
 static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlertEnabled";
+
+// 日志宏定义 - 同时输出到系统日志和本地文件
+#define WCPLLog(fmt, ...) [[WCPLLogger sharedLogger] logFormat:fmt, ##__VA_ARGS__]
 
 @implementation WCPLMessageReplyManager
 
@@ -331,6 +335,14 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         @"SendPicturePath:toUser:"
     ];
 
+    // 微信官方 API: SendImageMessage:withData:ImageInfo:
+    NSArray<NSString *> *imageDataInfoSelectors = @[
+        @"SendImageMessage:withData:ImageInfo:",
+        @"sendImageMessage:withData:ImageInfo:",
+        @"SendImageMessage:withData:imageInfo:",
+        @"sendImageMessage:withData:imageInfo:"
+    ];
+
     for (NSString *selectorName in imageSelectors) {
         if (!image) break;
         SEL selector = NSSelectorFromString(selectorName);
@@ -384,6 +396,41 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         if ([self wcpl_tryInvokeSelector:selector onObject:target argument:imagePath argument2:toUser]) {
             [execLog appendFormat:@"✅ %@ 调用 %@\n", name ?: @"target", selectorName];
             return YES;
+        }
+    }
+
+    // 尝试微信官方 API: SendImageMessage:withData:ImageInfo:
+    for (NSString *selectorName in imageDataInfoSelectors) {
+        if (!image && !imageData) break;
+        SEL selector = NSSelectorFromString(selectorName);
+        if (![target respondsToSelector:selector]) continue;
+
+        @try {
+            NSMethodSignature *signature = [target methodSignatureForSelector:selector];
+            if (!signature || signature.numberOfArguments < 5) continue;
+
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+            [invocation setTarget:target];
+            [invocation setSelector:selector];
+
+            // 参数1: UIImage
+            id arg1 = image;
+            [invocation setArgument:&arg1 atIndex:2];
+
+            // 参数2: NSData
+            id arg2 = imageData ?: UIImageJPEGRepresentation(image, 0.8);
+            [invocation setArgument:&arg2 atIndex:3];
+
+            // 参数3: ImageInfo (可以传 nil)
+            id arg3 = nil;
+            [invocation setArgument:&arg3 atIndex:4];
+
+            [invocation invoke];
+            [execLog appendFormat:@"✅ %@ 调用 %@\n", name ?: @"target", selectorName];
+            return YES;
+        }
+        @catch (NSException *exception) {
+            [execLog appendFormat:@"✗ %@ 调用 %@ 异常: %@\n", name ?: @"target", selectorName, exception.reason];
         }
     }
 
@@ -1434,37 +1481,40 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         NSString *content = objc_getAssociatedObject(sender, &kRepeatContentKey);
         CMessageWrap *msgWrap = objc_getAssociatedObject(sender, &kRepeatMsgWrapKey);
 
-        // 关闭“调试信息弹窗”时，点击直接复读，仅保留 NSLog（默认关闭）
+        // 关闭"调试信息弹窗"时，点击直接复读，仅保留日志输出（默认关闭弹窗）
         BOOL shouldShowDebugAlert = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLRepeatDebugAlertEnabledKey];
         if (!shouldShowDebugAlert) {
             if (!msgWrap) {
-                NSLog(@"[WCPL] Repeat tapped but msgWrap is nil");
+                WCPLLog(@"Repeat tapped but msgWrap is nil");
                 return;
             }
 
             BaseMsgContentViewController *viewController = [self findViewControllerFromView:sender];
             if (!viewController) {
-                NSLog(@"[WCPL] Repeat tapped but cannot find viewController");
+                WCPLLog(@"Repeat tapped but cannot find viewController");
                 return;
             }
 
             BOOL isEmoticonMessage = (msgWrap.m_uiMessageType == 47);
             if (isEmoticonMessage) {
-                (void)[self handleRepeatEmoticonMessage:msgWrap viewController:viewController];
+                NSString *execLog = [self handleRepeatEmoticonMessage:msgWrap viewController:viewController];
+                WCPLLog(@"Emoticon repeat executed:\n%@", execLog);
                 return;
             }
 
             BOOL isImageMessage = (msgWrap.m_uiMessageType == 3);
             if (isImageMessage) {
-                (void)[self handleRepeatImageMessage:msgWrap viewController:viewController];
+                NSString *execLog = [self handleRepeatImageMessage:msgWrap viewController:viewController];
+                WCPLLog(@"Image repeat executed:\n%@", execLog);
                 return;
             }
 
             if (!content || content.length == 0) {
-                NSLog(@"[WCPL] Repeat tapped but content is empty");
+                WCPLLog(@"Repeat tapped but content is empty");
                 return;
             }
 
+            WCPLLog(@"Repeating text message: %@", content);
             [self handleRepeatButtonTapWithContent:content viewController:viewController msgWrap:msgWrap];
             return;
         }
@@ -1924,16 +1974,17 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
 
         BOOL sent = NO;
-        sent = [self wcpl_trySendImageWithTarget:toolView
-                                           name:@"InputToolView"
+        // 优先尝试 LogicController (最可能有 SendImageMessage:withData:ImageInfo:)
+        sent = [self wcpl_trySendImageWithTarget:logicController
+                                           name:@"LogicController"
                                           image:image
                                       imageData:imageData
                                       imagePath:expandedPath
                                          toUser:toUserName
                                         execLog:execLog];
         if (!sent) {
-            sent = [self wcpl_trySendImageWithTarget:viewController
-                                               name:@"ViewController"
+            sent = [self wcpl_trySendImageWithTarget:toolView
+                                               name:@"InputToolView"
                                               image:image
                                           imageData:imageData
                                           imagePath:expandedPath
@@ -1941,8 +1992,8 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                                             execLog:execLog];
         }
         if (!sent) {
-            sent = [self wcpl_trySendImageWithTarget:logicController
-                                               name:@"LogicController"
+            sent = [self wcpl_trySendImageWithTarget:viewController
+                                               name:@"ViewController"
                                               image:image
                                           imageData:imageData
                                           imagePath:expandedPath
