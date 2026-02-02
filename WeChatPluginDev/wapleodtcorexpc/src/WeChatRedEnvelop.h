@@ -64,9 +64,6 @@
 @interface MMService : NSObject
 @end
 
-@interface WXPBGeneratedMessage : NSObject
-@end
-
 @interface AppMessageCellView : CommonMessageCellView
 @end
 
