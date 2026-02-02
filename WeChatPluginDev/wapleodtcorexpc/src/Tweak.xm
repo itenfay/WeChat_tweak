@@ -157,18 +157,26 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
     // 非参数查询请求
     if (arg1.cgiCmdid != 3) { return; }
 
-    NSString *(^parseRequestSign)() = ^NSString *() {
+    NSDictionary *(^parseRequestNativeUrlDict)() = ^NSDictionary *() {
         NSString *requestString = [[NSString alloc] initWithData:arg2.reqText.buffer encoding:NSUTF8StringEncoding];
+        if (requestString.length == 0) return nil;
         NSDictionary *requestDictionary = [%c(WCBizUtil) dictionaryWithDecodedComponets:requestString separator:@"&"];
-        NSString *nativeUrl = [[requestDictionary stringForKey:@"nativeUrl"] stringByRemovingPercentEncoding];
+        NSString *nativeUrl = [requestDictionary stringForKey:@"nativeUrl"];
+        if (nativeUrl.length == 0) return nil;
+        nativeUrl = [nativeUrl stringByRemovingPercentEncoding];
+        if (nativeUrl.length == 0) return nil;
         NSDictionary *nativeUrlDict = [%c(WCBizUtil) dictionaryWithDecodedComponets:nativeUrl separator:@"&"];
 
-        return [nativeUrlDict stringForKey:@"sign"];
+        return nativeUrlDict;
     };
 
     NSDictionary *responseDict = [[[NSString alloc] initWithData:arg1.retText.buffer encoding:NSUTF8StringEncoding] JSONDictionary];
 
-    WeChatRedEnvelopParam *mgrParams = [[WCPLRedEnvelopParamQueue sharedQueue] dequeue];
+    NSDictionary *requestNativeUrlDict = parseRequestNativeUrlDict();
+    NSString *requestSign = [requestNativeUrlDict stringForKey:@"sign"];
+    NSString *requestSendId = [requestNativeUrlDict stringForKey:@"sendid"];
+
+    WeChatRedEnvelopParam *mgrParams = [[WCPLRedEnvelopParamQueue sharedQueue] dequeueMatchingSign:requestSign sendId:requestSendId];
 
     BOOL (^shouldReceiveRedEnvelop)() = ^BOOL() {
         // 手动抢红包
@@ -187,7 +195,8 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
             // 自己发红包的时候没有 sign 字段
             return [WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable;
         } else {
-            return [parseRequestSign() isEqualToString:mgrParams.sign] && [WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable;
+            if (requestSign.length > 0 && ![requestSign isEqualToString:mgrParams.sign]) { return NO; }
+            return [WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable;
         }
     };
 
@@ -266,22 +275,36 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
                 return [WCPLRedEnvelopConfig sharedConfig].receiveSelfRedEnvelop;
             };
 
-            /** 是否在黑名单中 */
-            BOOL (^isGroupInBlackList)() = ^BOOL() {
-                return [[WCPLRedEnvelopConfig sharedConfig].blackList containsObject:wrap.m_nsFromUsr];
+            /** 群聊白名单：仅对白名单内群聊抢红包 */
+            BOOL (^isGroupInAllowList)() = ^BOOL() {
+                NSString *groupUserName = nil;
+                if (isGroupReceiver()) {
+                    groupUserName = wrap.m_nsFromUsr;
+                } else if (isGroupSender()) {
+                    groupUserName = wrap.m_nsToUsr;
+                }
+                if (groupUserName.length == 0) { return NO; }
+                return [[WCPLRedEnvelopConfig sharedConfig].blackList containsObject:groupUserName];
             };
 
             /** 是否自动抢红包 */
             BOOL (^shouldReceiveRedEnvelop)() = ^BOOL() {
                 if (![WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable) { return NO; }
-                if (isGroupInBlackList()) { return NO; }
-
-                return isGroupReceiver() || (isGroupSender() && isReceiveSelfRedEnvelop());
+                if (isGroupReceiver()) {
+                    return isGroupInAllowList();
+                }
+                if (isGroupSender() && isReceiveSelfRedEnvelop()) {
+                    return isGroupInAllowList();
+                }
+                return NO;
             };
 
             NSDictionary *(^parseNativeUrl)(NSString *nativeUrl) = ^NSDictionary *(NSString *nativeUrl) {
-                nativeUrl = [nativeUrl substringFromIndex:[@"wxpay://c2cbizmessagehandler/hongbao/receivehongbao?" length]];
-                return [%c(WCBizUtil) dictionaryWithDecodedComponets:nativeUrl separator:@"&"];
+                NSString *prefix = @"wxpay://c2cbizmessagehandler/hongbao/receivehongbao?";
+                if (nativeUrl.length == 0 || ![nativeUrl hasPrefix:prefix]) return nil;
+                NSString *query = [nativeUrl substringFromIndex:prefix.length];
+                if (query.length == 0) return nil;
+                return [%c(WCBizUtil) dictionaryWithDecodedComponets:query separator:@"&"];
             };
 
             /** 获取服务端验证参数 */
@@ -318,6 +341,7 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
             if (shouldReceiveRedEnvelop()) {
                 NSString *nativeUrl = [[wrap m_oWCPayInfoItem] m_c2cNativeUrl];            
                 NSDictionary *nativeUrlDict = parseNativeUrl(nativeUrl);
+                if (nativeUrlDict.count == 0) { break; }
 
                 queryRedEnvelopesReqeust(nativeUrlDict);
                 enqueueParam(nativeUrlDict);

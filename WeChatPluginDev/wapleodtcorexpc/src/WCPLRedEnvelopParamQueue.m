@@ -7,10 +7,12 @@
 
 #import "WCPLRedEnvelopParamQueue.h"
 #import "WeChatRedEnvelopParam.h"
+#import <dispatch/dispatch.h>
 
 @interface WCPLRedEnvelopParamQueue ()
 
 @property (strong, nonatomic) NSMutableArray *queue;
+@property (nonatomic) dispatch_queue_t syncQueue;
 
 @end
 
@@ -28,36 +30,71 @@
 - (instancetype)init {
     if (self = [super init]) {
         _queue = [[NSMutableArray alloc] init];
+        _syncQueue = dispatch_queue_create("com.wcpl.redenvelop.queue", DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
 
 - (void)enqueue:(WeChatRedEnvelopParam *)param {
-    [self.queue addObject:param];
+    if (!param) return;
+    dispatch_sync(self.syncQueue, ^{
+        [self.queue addObject:param];
+    });
 }
 
 - (WeChatRedEnvelopParam *)dequeue {
-    if (self.queue.count == 0 && !self.queue.firstObject) {
-        return nil;
-    }
-    
-    WeChatRedEnvelopParam *first = self.queue.firstObject;
-    
-    [self.queue removeObjectAtIndex:0];
-    
+    __block WeChatRedEnvelopParam *first = nil;
+    dispatch_sync(self.syncQueue, ^{
+        if (self.queue.count == 0) {
+            return;
+        }
+        first = self.queue.firstObject;
+        [self.queue removeObjectAtIndex:0];
+    });
     return first;
 }
 
+- (WeChatRedEnvelopParam *)dequeueMatchingSign:(NSString *)sign sendId:(NSString *)sendId {
+    __block WeChatRedEnvelopParam *matched = nil;
+    dispatch_sync(self.syncQueue, ^{
+        if (self.queue.count == 0) return;
+
+        NSUInteger index = NSNotFound;
+        for (NSUInteger i = 0; i < self.queue.count; i++) {
+            WeChatRedEnvelopParam *param = self.queue[i];
+            BOOL signMatch = (sign.length > 0 && [param.sign isEqualToString:sign]);
+            BOOL sendIdMatch = (sendId.length > 0 && [param.sendId isEqualToString:sendId]);
+            if (signMatch || sendIdMatch) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index != NSNotFound) {
+            matched = self.queue[index];
+            [self.queue removeObjectAtIndex:index];
+        }
+    });
+    return matched;
+}
+
 - (WeChatRedEnvelopParam *)peek {
-    if (self.queue.count == 0) {
-        return nil;
-    }
-    
-    return self.queue.firstObject;
+    __block WeChatRedEnvelopParam *first = nil;
+    dispatch_sync(self.syncQueue, ^{
+        if (self.queue.count == 0) {
+            return;
+        }
+        first = self.queue.firstObject;
+    });
+    return first;
 }
 
 - (BOOL)isEmpty {
-    return self.queue.count == 0;
+    __block BOOL empty = YES;
+    dispatch_sync(self.syncQueue, ^{
+        empty = (self.queue.count == 0);
+    });
+    return empty;
 }
 
 @end

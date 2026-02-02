@@ -17,6 +17,7 @@
 @property (assign, nonatomic) NSInteger delaySeconds;
 @property (assign, nonatomic) BOOL receiveSelfRedEnvelop;
 @property (assign, nonatomic) BOOL serialReceive;
+// 群聊白名单（历史字段名 blackList）
 @property (strong, nonatomic) NSArray *blackList;
 
 // Advanced sections.

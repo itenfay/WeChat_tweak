@@ -54,7 +54,7 @@
     
     self.navigationItem.rightBarButtonItem = [self rightBarButtonWithSelectCount:self.blackList.count];
     
-    self.title = @"黑名单";
+    self.title = @"白名单";
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0]}];
 }

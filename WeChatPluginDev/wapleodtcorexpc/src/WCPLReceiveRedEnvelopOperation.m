@@ -10,6 +10,7 @@
 #import "WeChatRedEnvelopParam.h"
 #import "WeChatRedEnvelop.h"
 #import <objc/runtime.h>
+#import <dispatch/dispatch.h>
 
 @interface WCPLReceiveRedEnvelopOperation ()
 
@@ -36,30 +37,45 @@
 
 - (void)start {
     if (self.isCancelled) {
-        self.finished  = YES;
-        self.executing = NO;
+        [self completeOperation];
         return;
     }
-    
-    [self main];
-    
+
     self.executing = YES;
-    self.finished  = NO;
+
+    uint64_t delayNsec = (uint64_t)self.delaySeconds * NSEC_PER_SEC;
+    dispatch_time_t when = dispatch_time(DISPATCH_TIME_NOW, delayNsec);
+    __weak typeof(self) weakSelf = self;
+    dispatch_after(when, dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+        __strong typeof(weakSelf) self = weakSelf;
+        if (!self) return;
+        if (self.isCancelled) {
+            [self completeOperation];
+            return;
+        }
+        [self main];
+        [self completeOperation];
+    });
 }
 
 - (void)main {
-    sleep(self.delaySeconds);
-    
     WCRedEnvelopesLogicMgr *logicMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:[objc_getClass("WCRedEnvelopesLogicMgr") class]];
     [logicMgr OpenRedEnvelopesRequest:[self.redEnvelopParam toParams]];
-    
-    self.finished  = YES;
-    self.executing = NO;
 }
 
 - (void)cancel {
-    self.finished  = YES;
-    self.executing = NO;
+    [super cancel];
+    if (self.isExecuting && !self.isFinished) {
+        [self completeOperation];
+    }
+}
+
+- (void)completeOperation {
+    @synchronized (self) {
+        if (self.isFinished) return;
+        self.executing = NO;
+        self.finished = YES;
+    }
 }
 
 - (void)setFinished:(BOOL)finished {

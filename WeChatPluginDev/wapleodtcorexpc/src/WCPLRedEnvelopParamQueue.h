@@ -15,6 +15,7 @@
 
 - (void)enqueue:(WeChatRedEnvelopParam *)param;
 - (WeChatRedEnvelopParam *)dequeue;
+- (WeChatRedEnvelopParam *)dequeueMatchingSign:(NSString *)sign sendId:(NSString *)sendId;
 - (WeChatRedEnvelopParam *)peek;
 - (BOOL)isEmpty;
 
