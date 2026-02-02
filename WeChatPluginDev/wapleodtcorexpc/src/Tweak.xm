@@ -15,6 +15,94 @@
 // ==================== 插件注册 ====================
 static BOOL didRegisterWCPLPlugin = NO;
 
+// ==================== 防撤回辅助方法 ====================
+
+static NSString *wcpl_trimString(NSString *text) {
+    if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
+    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return trimmed.length > 0 ? trimmed : nil;
+}
+
+static NSString *wcpl_extractBetweenTokens(NSString *text, NSString *startToken, NSString *endToken) {
+    if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
+    if (startToken.length == 0 || endToken.length == 0) return nil;
+
+    NSRange startRange = [text rangeOfString:startToken];
+    if (startRange.location == NSNotFound) return nil;
+
+    NSUInteger searchStart = startRange.location + startRange.length;
+    if (searchStart >= text.length) return nil;
+
+    NSRange endRange = [text rangeOfString:endToken options:0 range:NSMakeRange(searchStart, text.length - searchStart)];
+    if (endRange.location == NSNotFound) return nil;
+    if (endRange.location < searchStart) return nil;
+
+    NSRange valueRange = NSMakeRange(searchStart, endRange.location - searchStart);
+    if (valueRange.location == NSNotFound || NSMaxRange(valueRange) > text.length) return nil;
+
+    NSString *value = [text substringWithRange:valueRange];
+    return wcpl_trimString(value);
+}
+
+static NSString *wcpl_extractXmlTagValue(NSString *xml, NSString *tagName) {
+    if (![xml isKindOfClass:[NSString class]] || xml.length == 0) return nil;
+    if (![tagName isKindOfClass:[NSString class]] || tagName.length == 0) return nil;
+
+    NSString *startToken = [NSString stringWithFormat:@"<%@>", tagName];
+    NSString *endToken = [NSString stringWithFormat:@"</%@>", tagName];
+    return wcpl_extractBetweenTokens(xml, startToken, endToken);
+}
+
+static long long wcpl_extractLongLongFromXmlTag(NSString *xml, NSString *tagName) {
+    NSString *value = wcpl_extractXmlTagValue(xml, tagName);
+    if (value.length == 0) return 0;
+
+    NSScanner *scanner = [NSScanner scannerWithString:value];
+    long long result = 0;
+    if (![scanner scanLongLong:&result]) return 0;
+    return result;
+}
+
+static NSString *wcpl_stripCDATAIfNeeded(NSString *text) {
+    NSString *cdataValue = wcpl_extractBetweenTokens(text, @"<![CDATA[", @"]]>");
+    return cdataValue ?: wcpl_trimString(text);
+}
+
+static NSString *wcpl_sanitizeInlineText(NSString *text, NSUInteger maxLen) {
+    NSString *value = wcpl_trimString(text);
+    if (value.length == 0) return nil;
+
+    value = [[value stringByReplacingOccurrencesOfString:@"\r" withString:@" "]
+                stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+
+    if (maxLen > 0 && value.length > maxLen) {
+        value = [[value substringToIndex:maxLen] stringByAppendingString:@"…"];
+    }
+    return value;
+}
+
+static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
+    if (![msgWrap isKindOfClass:%c(CMessageWrap)]) return nil;
+
+    unsigned int type = msgWrap.m_uiMessageType;
+    switch (type) {
+        case 1:
+            return wcpl_sanitizeInlineText(msgWrap.m_nsContent, 120);
+        case 3:
+            return @"[图片]";
+        case 34:
+            return @"[语音]";
+        case 43:
+            return @"[视频]";
+        case 47:
+            return @"[表情]";
+        case 49:
+            return @"[应用消息]";
+        default:
+            return [NSString stringWithFormat:@"[类型:%u]", type];
+    }
+}
+
 %hook MicroMessengerAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -214,47 +302,106 @@ static BOOL didRegisterWCPLPlugin = NO;
 - (void)onRevokeMsg:(CMessageWrap *)arg1 {
     if (![WCPLRedEnvelopConfig sharedConfig].revokeEnable) {
         %orig;
-    } else {
-        if ([arg1.m_nsContent rangeOfString:@"<session>"].location == NSNotFound) { return; }
-        if ([arg1.m_nsContent rangeOfString:@"<replacemsg>"].location == NSNotFound) { return; }
+        return;
+    }
 
-        NSString *(^parseSession)() = ^NSString *() {
-            NSUInteger startIndex = [arg1.m_nsContent rangeOfString:@"<session>"].location + @"<session>".length;
-            NSUInteger endIndex = [arg1.m_nsContent rangeOfString:@"</session>"].location;
-            NSRange range = NSMakeRange(startIndex, endIndex - startIndex);
-            return [arg1.m_nsContent substringWithRange:range];
-        };
-
-        NSString *(^parseSenderName)() = ^NSString *() {
-            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<!\\[CDATA\\[(.*?)撤回了一条消息\\]\\]>" options:NSRegularExpressionCaseInsensitive error:nil];
-
-            NSRange range = NSMakeRange(0, arg1.m_nsContent.length);
-            NSTextCheckingResult *result = [regex matchesInString:arg1.m_nsContent options:0 range:range].firstObject;
-            if (result.numberOfRanges < 2) { return nil; }
-
-            return [arg1.m_nsContent substringWithRange:[result rangeAtIndex:1]];
-        };
-
-        CMessageWrap *msgWrap = [[%c(CMessageWrap) alloc] initWithMsgType:0x2710];    
-        BOOL isSender = [%c(CMessageWrap) isSenderFromMsgWrap:arg1];
-
-        NSString *sendContent;
-        if (isSender) {
-            [msgWrap setM_nsFromUsr:arg1.m_nsToUsr];
-            [msgWrap setM_nsToUsr:arg1.m_nsFromUsr];
-            sendContent = @"你撤回一条消息";
-        } else {
-            [msgWrap setM_nsToUsr:arg1.m_nsToUsr];
-            [msgWrap setM_nsFromUsr:arg1.m_nsFromUsr];
-
-            NSString *name = parseSenderName();
-            sendContent = [NSString stringWithFormat:@"拦截 %@ 的一条撤回消息", name ? name : arg1.m_nsFromUsr];
+    @try {
+        if (!arg1) {
+            %orig;
+            return;
         }
+
+        // 优化：允许自己撤回（仅拦截他人撤回）
+        BOOL isSelfRevoke = NO;
+        @try {
+            isSelfRevoke = [%c(CMessageWrap) isSenderFromMsgWrap:arg1];
+        } @catch (__unused NSException *exception) {
+            isSelfRevoke = NO;
+        }
+        if (isSelfRevoke) {
+            %orig;
+            return;
+        }
+
+        NSString *xml = arg1.m_nsContent;
+        if (xml.length == 0) {
+            %orig;
+            return;
+        }
+
+        // 兜底：避免误拦截非撤回逻辑
+        BOOL looksLikeRevoke = ([xml rangeOfString:@"revokemsg" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+                                [xml rangeOfString:@"replacemsg" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+                                [xml rangeOfString:@"撤回"].location != NSNotFound ||
+                                [xml rangeOfString:@"recalled" options:NSCaseInsensitiveSearch].location != NSNotFound);
+        if (!looksLikeRevoke) {
+            %orig;
+            return;
+        }
+
+        NSString *session = wcpl_extractXmlTagValue(xml, @"session");
+        if (session.length == 0) {
+            // 少数情况下 session 解析失败，退化到 From/To
+            session = wcpl_trimString(arg1.m_nsFromUsr) ?: wcpl_trimString(arg1.m_nsToUsr);
+        }
+        if (session.length == 0) {
+            // 无法确定会话，避免破坏链路，直接走原逻辑
+            %orig;
+            return;
+        }
+
+        NSString *replaceRaw = wcpl_extractXmlTagValue(xml, @"replacemsg");
+        NSString *replaceText = wcpl_sanitizeInlineText(wcpl_stripCDATAIfNeeded(replaceRaw), 160);
+
+        long long revokedMsgId = wcpl_extractLongLongFromXmlTag(xml, @"newmsgid");
+        if (revokedMsgId <= 0) revokedMsgId = wcpl_extractLongLongFromXmlTag(xml, @"msgid");
+
+        CMessageWrap *revokedMsgWrap = nil;
+        if (revokedMsgId > 0 && [self respondsToSelector:@selector(GetMsg:n64SvrID:)]) {
+            id msg = [self GetMsg:session n64SvrID:revokedMsgId];
+            if ([msg isKindOfClass:%c(CMessageWrap)]) {
+                revokedMsgWrap = (CMessageWrap *)msg;
+            }
+        }
+
+        NSString *revokedDigest = wcpl_digestForMessageWrap(revokedMsgWrap);
+
+        NSString *tipText;
+        if (replaceText.length > 0) {
+            tipText = [NSString stringWithFormat:@"已拦截撤回：%@", replaceText];
+        } else {
+            tipText = @"已拦截一条撤回消息";
+        }
+
+        if (revokedDigest.length > 0) {
+            tipText = [NSString stringWithFormat:@"%@ 原消息：%@", tipText, revokedDigest];
+        }
+
+        CMessageWrap *msgWrap = [[%c(CMessageWrap) alloc] initWithMsgType:0x2710];
         [msgWrap setM_uiStatus:0x4];
-        [msgWrap setM_nsContent:sendContent];
+        [msgWrap setM_nsContent:tipText];
         [msgWrap setM_uiCreateTime:[arg1 m_uiCreateTime]];
 
-        [self AddLocalMsg:parseSession() MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0];
+        // 复用原撤回消息的 From/To，确保插入到正确会话
+        if (wcpl_trimString(arg1.m_nsToUsr)) {
+            [msgWrap setM_nsToUsr:arg1.m_nsToUsr];
+        }
+        if (wcpl_trimString(arg1.m_nsFromUsr)) {
+            [msgWrap setM_nsFromUsr:arg1.m_nsFromUsr];
+        }
+
+        if ([self respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:)]) {
+            [self AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0 Unique:0x1];
+        } else {
+            [self AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0];
+        }
+
+        // 核心：不调用 %orig，从而阻止撤回删除
+        return;
+    } @catch (NSException *exception) {
+        NSLog(@"[WCPL] Exception in onRevokeMsg hook: %@", exception);
+        %orig;
+        return;
     }
 }
 

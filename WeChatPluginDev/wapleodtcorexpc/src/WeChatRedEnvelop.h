@@ -130,6 +130,12 @@
 @interface CMessageMgr : MMService
 
 - (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 fixTime:(_Bool)arg3 NewMsgArriveNotify:(_Bool)arg4;
+// iOS/微信不同版本可能存在 Unique 重载，用于避免重复插入
+- (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 fixTime:(_Bool)arg3 NewMsgArriveNotify:(_Bool)arg4 Unique:(_Bool)arg5;
+- (void)AddUniqueLocalMsg:(id)arg1 MsgWrap:(id)arg2;
+
+// 通过会话与服务端 ID 查询消息（用于撤回提示展示原消息摘要）
+- (id)GetMsg:(id)arg1 n64SvrID:(long long)arg2;
 // 正确的微信原生方法签名 (来自微信逆向头文件)
 - (void)DelMsg:(NSString *)chatName MsgWrap:(CMessageWrap *)msgWrap;
 - (void)RevokeMsg:(NSString *)chatName MsgWrap:(CMessageWrap *)msgWrap Counter:(unsigned int)counter;
