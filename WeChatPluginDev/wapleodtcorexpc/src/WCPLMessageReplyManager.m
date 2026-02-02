@@ -16,6 +16,7 @@
 // 关联对象的 key
 static char kRepeatContentKey;
 static char kRepeatMsgWrapKey;
+static char kRepeatButtonForCellViewKey;
 static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlertEnabled";
 
 @implementation WCPLMessageReplyManager
@@ -30,6 +31,63 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 }
 
 #pragma mark - Safe Helpers
+
+- (UITableViewCell *)wcpl_tableViewCellForView:(UIView *)view {
+    UIView *currentView = view;
+    UITableViewCell *foundCell = nil;
+    while (currentView) {
+        if ([currentView isKindOfClass:[UITableViewCell class]]) {
+            foundCell = (UITableViewCell *)currentView;
+        }
+        currentView = currentView.superview;
+    }
+    return foundCell;
+}
+
+- (UIView *)wcpl_repeatButtonContainerViewForCellView:(UIView *)cellView {
+    UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
+    if (cell && cell.contentView) {
+        return cell.contentView;
+    }
+    return cellView;
+}
+
+- (BOOL)wcpl_isRepeatButtonView:(UIView *)view {
+    if (!view) return NO;
+    if (view.tag != kWCPLRepeatButtonTag) return NO;
+    if (![view isKindOfClass:[UIButton class]]) return NO;
+    return YES;
+}
+
+- (void)wcpl_removeRepeatButtonsInView:(UIView *)view excludingButton:(UIButton *)excludingButton {
+    if (!view) return;
+
+    NSMutableArray<UIView *> *buttonsToRemove = [NSMutableArray array];
+    NSMutableArray<UIView *> *stack = [NSMutableArray arrayWithObject:view];
+
+    while (stack.count > 0) {
+        UIView *current = stack.lastObject;
+        [stack removeLastObject];
+
+        for (UIView *subview in current.subviews) {
+            if ([self wcpl_isRepeatButtonView:subview]) {
+                if (excludingButton && subview == excludingButton) {
+                    continue;
+                }
+                [buttonsToRemove addObject:subview];
+                continue;
+            }
+
+            if (subview.subviews.count > 0) {
+                [stack addObject:subview];
+            }
+        }
+    }
+
+    for (UIView *buttonView in buttonsToRemove) {
+        [buttonView removeFromSuperview];
+    }
+}
 
 - (NSString *)wcpl_safeStringValueForObject:(id)obj selectorName:(NSString *)selectorName {
     @try {
@@ -126,9 +184,16 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     @try {
         if (!cellView) return;
 
+        UIView *containerView = [self wcpl_repeatButtonContainerViewForCellView:cellView];
+        UIButton *associatedButton = objc_getAssociatedObject(cellView, &kRepeatButtonForCellViewKey);
+
         // 检查功能是否启用
         if (![WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) {
-            [self removeRepeatButtonFromCellView:cellView];
+            if (associatedButton) {
+                [associatedButton removeFromSuperview];
+                objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+            [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
             return;
         }
 
@@ -138,7 +203,11 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             viewModel = [cellView performSelector:@selector(viewModel)];
         }
         if (!viewModel) {
-            [self removeRepeatButtonFromCellView:cellView];
+            if (associatedButton) {
+                [associatedButton removeFromSuperview];
+                objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+            [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
             return;
         }
 
@@ -148,39 +217,30 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             msgWrap = [viewModel performSelector:@selector(messageWrap)];
         }
         if (!msgWrap) {
-            [self removeRepeatButtonFromCellView:cellView];
+            if (associatedButton) {
+                [associatedButton removeFromSuperview];
+                objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+            [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
             return;
         }
 
         // 检查是否可以复读
         if (![self canRepeatMessage:msgWrap]) {
-            [self removeRepeatButtonFromCellView:cellView];
+            if (associatedButton) {
+                [associatedButton removeFromSuperview];
+                objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+            [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
             return;
         }
 
         // 获取消息唯一标识（用于防止重复添加按钮）
         unsigned int msgLocalID = msgWrap.m_uiMesLocalID;
 
-        // 检查是否已经存在相同消息的按钮
-        for (UIView *subview in cellView.subviews) {
-            if (subview.tag == kWCPLRepeatButtonTag) {
-                // 检查按钮关联的消息 ID 是否相同
-                CMessageWrap *existingMsgWrap = objc_getAssociatedObject(subview, &kRepeatMsgWrapKey);
-                if (existingMsgWrap && existingMsgWrap.m_uiMesLocalID == msgLocalID) {
-                    // 已存在相同消息的按钮，只需更新位置
-                    [self layoutRepeatButton:(UIButton *)subview inCellView:cellView];
-                    return;
-                }
-            }
-        }
-
-        // 先移除所有旧按钮，确保只有一个
-        [self removeRepeatButtonFromCellView:cellView];
-
-        // 表情包消息不需要检查文本内容
+        // 计算内容（用于更新现有按钮的关联对象）
         NSString *content = nil;
         BOOL isEmoticonMessage = (msgWrap.m_uiMessageType == 47);
-
         if (!isEmoticonMessage) {
             // 获取消息内容 - 优先从 ViewModel 的 contentText 获取（用于引用回复消息）
             if ([viewModel respondsToSelector:@selector(contentText)]) {
@@ -191,13 +251,79 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                 content = [self getMessageContent:msgWrap];
             }
             if (!content || content.length == 0) {
+                if (associatedButton) {
+                    [associatedButton removeFromSuperview];
+                    objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                }
+                [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
                 return;
             }
         }
 
+        // 检查是否已经存在相同消息的按钮
+        UIButton *existingButton = nil;
+        NSMutableArray<UIButton *> *repeatButtons = [NSMutableArray array];
+        if (containerView) {
+            NSMutableArray<UIView *> *stack = [NSMutableArray arrayWithObject:containerView];
+            while (stack.count > 0) {
+                UIView *current = stack.lastObject;
+                [stack removeLastObject];
+
+                for (UIView *subview in current.subviews) {
+                    if ([self wcpl_isRepeatButtonView:subview]) {
+                        [repeatButtons addObject:(UIButton *)subview];
+                        continue;
+                    }
+
+                    if (subview.subviews.count > 0) {
+                        [stack addObject:subview];
+                    }
+                }
+            }
+        }
+
+        NSMutableArray<UIButton *> *buttonsToRemove = [NSMutableArray array];
+        for (UIButton *button in repeatButtons) {
+            CMessageWrap *existingMsgWrap = objc_getAssociatedObject(button, &kRepeatMsgWrapKey);
+            BOOL isSameMessage = (existingMsgWrap && existingMsgWrap.m_uiMesLocalID == msgLocalID);
+
+            if (!existingButton && isSameMessage) {
+                existingButton = button;
+            } else {
+                [buttonsToRemove addObject:button];
+            }
+        }
+
+        for (UIButton *button in buttonsToRemove) {
+            [button removeFromSuperview];
+        }
+
+        if (existingButton) {
+            if (existingButton.superview != containerView) {
+                [existingButton removeFromSuperview];
+                [containerView addSubview:existingButton];
+            }
+
+            objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, existingButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+            // 更新关联对象，避免引用回复/渲染更新导致内容不同步
+            objc_setAssociatedObject(existingButton, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
+            objc_setAssociatedObject(existingButton, &kRepeatMsgWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+            [self layoutRepeatButton:existingButton inCellView:cellView];
+            existingButton.hidden = NO;
+            existingButton.alpha = 1.0;
+            return;
+        }
+
+        // 先移除所有旧按钮，确保只有一个
+        [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
+
         // 创建新按钮
         UIButton *repeatButton = [self createRepeatButton];
-        [cellView addSubview:repeatButton];
+        [containerView addSubview:repeatButton];
+
+        objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, repeatButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
         // 关联消息内容和 msgWrap
         objc_setAssociatedObject(repeatButton, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -218,16 +344,14 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     @try {
         if (!cellView) return;
 
-        // 移除所有带有指定 tag 的按钮（避免重复）
-        NSMutableArray *buttonsToRemove = [NSMutableArray array];
-        for (UIView *subview in cellView.subviews) {
-            if (subview.tag == kWCPLRepeatButtonTag) {
-                [buttonsToRemove addObject:subview];
-            }
+        UIButton *associatedButton = objc_getAssociatedObject(cellView, &kRepeatButtonForCellViewKey);
+        if (associatedButton) {
+            [associatedButton removeFromSuperview];
+            objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         }
-        for (UIView *button in buttonsToRemove) {
-            [button removeFromSuperview];
-        }
+
+        UIView *containerView = [self wcpl_repeatButtonContainerViewForCellView:cellView];
+        [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in removeRepeatButtonFromCellView: %@", exception);
@@ -584,6 +708,8 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
 - (void)layoutRepeatButton:(UIButton *)button inCellView:(CommonMessageCellView *)cellView {
     @try {
+        UIView *containerView = button.superview ?: cellView;
+
         // 获取 ViewModel 和 MessageWrap 来判断消息方向
         id viewModel = nil;
         if ([cellView respondsToSelector:@selector(viewModel)]) {
@@ -610,8 +736,8 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
         // 将气泡坐标转换到 cellView 坐标系
         CGRect bubbleFrame = bubbleView.frame;
-        if (bubbleView.superview != cellView) {
-            bubbleFrame = [bubbleView.superview convertRect:bubbleView.frame toView:cellView];
+        if (bubbleView.superview != containerView) {
+            bubbleFrame = [bubbleView.superview convertRect:bubbleView.frame toView:containerView];
         }
 
         // 通过判断消息发送者来确定消息方向（更可靠）
