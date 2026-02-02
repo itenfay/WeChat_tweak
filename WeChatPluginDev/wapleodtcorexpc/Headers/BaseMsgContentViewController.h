@@ -5,10 +5,10 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@class BadRoomLogicController, BaseChatViewModel, CADisplayLink, CMessageWrap, ChatRoomHistoryShareStat, FirstUnReadTipView, MMDropManager, MMEdgeTipsView, MMInputMsgReferView, MMInputToolView, MMLoadingView, MMMsgContentNavBar, MMMsgMenuReporter, MMMultiSelectToolView, MMNewMsgContentNavBar, MMRichTextCoverView, MMScrollActionSheet, MMSpecialMsgSearchHelper, MMTableView, MMTimer, MMUIActivityIndicatorView, MMUIWindow, MessagePageSheetAdapter, MiniRecTransitionController, MsgImgFullScreenWindow, MsgSearchHelper, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, ReaderReporter, RichTextView, ShareMessageConfirmLogicHelper, SpeakTextLogicController, StreamVoiceInputViewController, UIColor, UIImageView, UIScreenEdgePanGestureRecognizer, UIView, VoiceTransTipsHelper;
+@class BadRoomLogicController, BaseChatViewModel, CADisplayLink, CMessageWrap, ChatRoomHistoryShareStat, FirstUnReadTipView, MMDropManager, MMEdgeTipsView, MMInputMsgReferView, MMInputToolView, MMLoadingView, MMMsgContentNavBar, MMMsgMenuReporter, MMMultiSelectToolView, MMNewMsgContentNavBar, MMRichTextCoverView, MMScrollActionSheet, MMSpecialMsgSearchHelper, MMTableView, MMTimer, MMUIActivityIndicatorView, MMUIWindow, MessagePageSheetAdapter, MiniRecTransitionController, MsgImgFullScreenWindow, MsgSearchHelper, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, ReaderReporter, RichTextView, ShareMessageConfirmLogicHelper, SpeakTextLogicController, StreamVoiceInputViewController, UIColor, UIImageView, UIScreenEdgePanGestureRecognizer, UIView, UIViewController, VoiceTransTipsHelper;
 @protocol BaseMsgContentDelgate, MMMsgInputPresenter, MMRecordUIManager, UIViewControllerPreviewing;
 
-@interface BaseMsgContentViewController : NSObject
+@interface BaseMsgContentViewController : UIViewController
 {
     NSMutableArray *m_arrMessageNodeData;
     unsigned int m_uLastTime;
