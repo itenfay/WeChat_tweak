@@ -508,32 +508,6 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
 
 %end
 
-%hook MMUIViewController
-
-%new
-- (void)wcpl_handleIgnoreChatRoom:(UISwitch *)sender {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    if (!config.userIgnoreEnable) {
-        sender.on = NO;
-        return;
-    }
-    NSString *usrName = config.curUsrName;
-    if (usrName.length == 0) {
-        sender.on = NO;
-        return;
-    }
-    if (sender.on) {
-        config.chatIgnoreInfo[usrName] = @(sender.on);
-    } else {
-        NSMutableDictionary *igDict = config.chatIgnoreInfo;
-        [igDict removeObjectForKey:usrName];
-        config.chatIgnoreInfo = igDict;
-    }
-    [config saveChatIgnoreNameListToLocalFile];
-}
-
-%end
-
 %hook BaseMsgContentViewController
 
 /*
@@ -1263,15 +1237,53 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
     if (!config.userIgnoreEnable) {
         return;
     }
-    NSString *usrName = config.curUsrName;
 
+    // 从当前控制器获取群聊联系人
+    CContact *chatRoomContact = self.m_chatRoomContact;
+    NSString *usrName = chatRoomContact.m_nsUsrName;
+    if (usrName.length == 0) {
+        return;
+    }
+
+    // 获取 tableViewInfo
     MMTableViewInfo *tableViewInfo = MSHookIvar<id>(self, "m_tableViewInfo");
-    WCTableViewSectionManager *sectionMgr = [tableViewInfo getSectionAt:3];
+    if (!tableViewInfo || ![tableViewInfo respondsToSelector:@selector(addSection:)] || ![tableViewInfo respondsToSelector:@selector(getTableView)]) {
+        return;
+    }
+
+    // 创建新的 section 并添加屏蔽开关
+    WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoHeader:@"消息屏蔽"];
     WCTableViewNormalCellManager *ignoreCell = [%c(WCTableViewNormalCellManager) switchCellForSel:@selector(wcpl_handleIgnoreChatRoom:) target:self title:@"屏蔽群消息" on:config.chatIgnoreInfo[usrName].boolValue];
     [sectionMgr addCell:ignoreCell];
+    [tableViewInfo addSection:sectionMgr];
 
     MMTableView *tableView = [tableViewInfo getTableView];
     [tableView reloadData];
+}
+
+%new
+- (void)wcpl_handleIgnoreChatRoom:(UISwitch *)sender {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    if (!config.userIgnoreEnable) {
+        sender.on = NO;
+        return;
+    }
+
+    CContact *chatRoomContact = self.m_chatRoomContact;
+    NSString *usrName = chatRoomContact.m_nsUsrName;
+    if (usrName.length == 0) {
+        sender.on = NO;
+        return;
+    }
+
+    if (sender.on) {
+        config.chatIgnoreInfo[usrName] = @(YES);
+    } else {
+        NSMutableDictionary *igDict = config.chatIgnoreInfo;
+        [igDict removeObjectForKey:usrName];
+        config.chatIgnoreInfo = igDict;
+    }
+    [config saveChatIgnoreNameListToLocalFile];
 }
 
 %end
@@ -1295,27 +1307,32 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
         return;
     }
 
-    id tableViewMgr = nil;
-    Ivar tableViewInfoIvar = class_getInstanceVariable([self class], "m_tableViewInfo");
-    if (tableViewInfoIvar) {
-        tableViewMgr = object_getIvar(self, tableViewInfoIvar);
-    }
-    if (!tableViewMgr) {
-        Ivar tableViewMgrIvar = class_getInstanceVariable([self class], "m_tableViewMgr");
-        if (tableViewMgrIvar) {
-            tableViewMgr = object_getIvar(self, tableViewMgrIvar);
+    // ContactInfoViewController 使用 m_oContactInfoAssist 管理表格
+    // m_oContactInfoAssist (WeixinContactInfoAssist) 中包含 m_tableViewInfo
+    id tableViewInfo = nil;
+
+    // 尝试从 m_oContactInfoAssist 获取 m_tableViewInfo
+    Ivar assistIvar = class_getInstanceVariable([self class], "m_oContactInfoAssist");
+    if (assistIvar) {
+        id assist = object_getIvar(self, assistIvar);
+        if (assist) {
+            Ivar tableViewInfoIvar = class_getInstanceVariable([assist class], "m_tableViewInfo");
+            if (tableViewInfoIvar) {
+                tableViewInfo = object_getIvar(assist, tableViewInfoIvar);
+            }
         }
     }
-    if (!tableViewMgr || ![tableViewMgr respondsToSelector:@selector(addSection:)] || ![tableViewMgr respondsToSelector:@selector(getTableView)]) {
+
+    if (!tableViewInfo || ![tableViewInfo respondsToSelector:@selector(addSection:)] || ![tableViewInfo respondsToSelector:@selector(getTableView)]) {
         return;
     }
 
     WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoHeader:@"消息屏蔽"];
     WCTableViewNormalCellManager *ignoreCell = [%c(WCTableViewNormalCellManager) switchCellForSel:@selector(wcpl_handleIgnoreUser:) target:self title:@"屏蔽此人消息" on:config.userIgnoreInfo[usrName].boolValue];
     [sectionMgr addCell:ignoreCell];
-    [tableViewMgr addSection:sectionMgr];
+    [tableViewInfo addSection:sectionMgr];
 
-    MMTableView *tableView = [tableViewMgr getTableView];
+    MMTableView *tableView = [tableViewInfo getTableView];
     [tableView reloadData];
 }
 
